@@ -1,0 +1,41 @@
+In computer science, a concurrent data structure is a particular way of storing and organizing data for access by multiple computing threads (or processes) on a computer.
+Historically, such data structures were used on uniprocessor machines with operating systems that supported multiple computing threads (or processes). The term concurrency captured the multiplexing/interleaving of the threads' operations on the data by the operating system, even though the processors never issued two operations that accessed the data simultaneously.
+Today, as multiprocessor computer architectures that provide parallelism become the dominant computing platform (through the proliferation of multi-core processors), the term has come to stand mainly for data structures that can be accessed by multiple threads which may actually access the data simultaneously because they run on different processors that communicate with one another. The concurrent data structure (sometimes also called a shared data structure) is usually considered to reside in an abstract storage environment called shared memory, though this memory may be physically implemented as either a "tightly coupled" or a distributed collection of storage modules.
+
+
+== Basic principles ==
+Concurrent data structures, intended for use in parallel or distributed computing environments, differ from "sequential" data structures, intended for use on a uni-processor machine, in several ways . Most notably, in a sequential environment one specifies the data structure's properties and checks that they are implemented correctly, by providing safety properties. In a concurrent environment, the specification must also describe liveness properties which an implementation must provide. Safety properties usually state that something bad never happens, while liveness properties state that something good keeps happening. These properties can be expressed, for example, using Linear Temporal Logic.
+The type of liveness requirements tend to define the data structure. The method calls can be blocking or non-blocking. Data structures are not restricted to one type or the other, and can allow combinations where some method calls are blocking and others are non-blocking (examples can be found in the Java concurrency software library).
+The safety properties of concurrent data structures must capture their behavior given the many possible interleavings of methods called by different threads. It is quite intuitive to specify how abstract data structures behave in a sequential setting in which there are no interleavings. Therefore, many mainstream approaches for arguing the safety properties of a concurrent data structure (such as serializability, linearizability, sequential consistency, and quiescent consistency ) specify the structures properties sequentially, and map its concurrent executions to a collection of sequential ones.
+In order to guarantee the safety and liveness properties, concurrent data structures must typically (though not always) allow threads to reach consensus as to the results of their simultaneous data access and modification requests. To support such agreement, concurrent data structures are implemented using special primitive synchronization operations (see synchronization primitives) available on modern multiprocessor machines that allow multiple threads to reach consensus. This consensus can be achieved in a blocking manner by using locks, or without locks, in which case it is non-blocking. There is a wide body of theory on the design of concurrent data structures (see bibliographical references).
+
+
+== Design and Implementation ==
+Concurrent data structures are significantly more difficult to design and to verify as being correct than their sequential counterparts.
+The primary source of this additional difficulty is concurrency, exacerbated by the fact that threads must be thought of as being completely asynchronous: they are subject to operating system preemption, page faults, interrupts, and so on.
+On today's machines, the layout of processors and memory, the layout of data in memory, the communication load on the various elements of the multiprocessor architecture all influence performance. Furthermore, there is a tension between correctness and performance: algorithmic enhancements that seek to improve performance often make it more difficult to design and verify a correct data structure implementation.
+A key measure for performance is scalability, captured by the speedup of the implementation. Speedup is a measure of how effectively the application is utilizing the machine it is running on. On a machine with P processors, the speedup is the ratio of the structures execution time on a single processor to its execution time on T processors. Ideally, we want linear speedup: we would like to achieve a speedup of P when using P processors. Data structures whose speedup grows with P are called scalable. The extent to which one can scale the performance of a concurrent data structure is captured by a formula known as Amdahl's law and more refined versions of it such as Gustafson's law.
+A key issue with the performance of concurrent data structures is the level of memory contention: the overhead in traffic to and from memory as a result of multiple threads concurrently attempting to access the same locations in memory. This issue is most acute with blocking implementations in which locks control access to memory. In order to acquire a lock, a thread must repeatedly attempt to modify that location. On a cache-coherent multiprocessor (one in which processors have local caches that are updated by hardware in order to keep them consistent with the latest values stored) this results in long waiting times for each attempt to modify the location, and is exacerbated by the additional memory traffic associated with unsuccessful attempts to acquire the lock.
+
+
+== See also ==
+Java concurrency (JSR 166)
+Java ConcurrentMap
+
+
+== References ==
+
+
+== Further reading ==
+Nancy Lynch "Distributed Computing"
+Hagit Attiya and Jennifer Welch "Distributed Computing: Fundamentals, Simulations And Advanced Topics, 2nd Ed"
+Doug Lea, "Concurrent Programming in Java: Design Principles and Patterns"
+Maurice Herlihy and Nir Shavit, "The Art of Multiprocessor Programming"
+Mattson, Sanders, and Massingil "Patterns for Parallel Programming"
+
+
+== External links ==
+Multithreaded data structures for parallel computing, Part 1 (Designing concurrent data structures) by Arpan Sen
+Multithreaded data structures for parallel computing: Part 2 (Designing concurrent data structures without mutexes) by Arpan Sen
+libcds - C++ library of lock-free containers and safe memory reclamation schema
+Synchrobench - C/C++ and Java librairies and benchmarks of lock-free, lock-based, TM-based and RCU/COW-based data structures.

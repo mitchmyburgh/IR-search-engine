@@ -1,0 +1,53 @@
+What's the difference between Type 1 and Type 2 hypervisors?
+
+An explanation of what hypervisors are and the differences between type 1 hypervisors and type 2 hypervisors.
+
+THIS ARTICLE COVERS
+
+Virtualization how-tos and learning guides
+RELATED TOPICS
+
+Application virtualization
+Cloud computing architecture
+Cloud computing infrastructure
+Network virtualization
+Networking for Server Virtualization
+Servers and virtualization
+LOOKING FOR SOMETHING ELSE?
+Do application containers on the same host compete for resources?
+Containers vs. VMs: It's not an either or proposition
+Server virtualization trends will de-emphasize hypervisor in 2016
+TECHNOLOGIES
+Hypervisors Type 1 hypervisor Type 2 hypervisor
+Sections
+Related Content
+Understanding hosted and bare-metal virtualization ...
+– SearchServerVirtualization
+Choosing a virtualization hypervisor: Eight factors ...
+– SearchServerVirtualization
+Compare bare-metal hypervisors and hosted hypervisors
+– SearchServerVirtualization
+Sponsored News
+Choosing the Right Hybrid Cloud Solution for Microsoft SQL Server
+–Rackspace
+The Future of Converged Infrastructure
+–Dell
+See More
+Vendor Resources
+Expert Strategies to Securing a Virtual Environment
+–SearchSecurity.com
+Virtual Data Center E-Zine Volume 33: Time to Consider a Second Hypervisor?
+–SearchDataCenter.com
+In virtualization, the hypervisor (also called a virtual machine monitor) is the low-level program that allows multiple operating systems to run concurrently on a single host computer. Hypervisors use a thin layer of code in software or firmware to allocate resources in real-time. You can think of the hypervisor as the traffic cop that controls I/O and memory management.
+
+There are two types of hypervisors: Type 1 and Type 2.
+
+Type 1 hypervisors run directly on the system hardware. They are often referred to as a "native" or "bare metal" or "embedded" hypervisors in vendor literature.
+
+Type 2 hypervisors run on a host operating system. When the virtualization movement first began to take off, Type 2 hypervisors were most popular. Administrators could buy the software and install it on a server they already had.
+
+Type 1 hypervisors are gaining popularity because building the hypervisor into the firmware is proving to be more efficient. According to IBM, Type 1 hypervisors provide higher performance, availability, and security than Type 2 hypervisors. (IBM recommends that Type 2 hypervisors be used mainly on client systems where efficiency is less critical or on systems where support for a broad range of I/O devices is important and can be provided by the host operating system.)
+
+Experts predict that shipping hypervisors on bare metal will impact how organizations purchase servers in the future. Instead of selecting an OS, they will simply have to order a server with an embedded hypervisor and run whatever OS they want.
+
+To keep their market-share, each of the major virtualization software vendors have announced plans to work with hardware manufacturers to embed their hypervisor into the manufacturer's firmware.

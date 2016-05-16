@@ -1,0 +1,61 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Catmull-Rom Splines Catmull-Rom Splines interpolate degree-3 curves with C1 continuity and are made up of cubic curves.
+A user speci?es only the points [¯ p1,...¯ pN] for interpolation, and the tangent at each point is set to be parallel to the vector between adjacent points. So the tangent at ¯ pj is ?(¯ pj+1 - ¯ pj-1) (for
+Copyright c
+2005 David Fleet and Aaron Hertzmann 101
+CSC418 / CSCD18 / CSC2504 Interpolation
+endpoints, the tangent is instead parallel to the vector from the endpoint to its only neighbor). The value of ? is set by the user, determining the "tension" of the curve.
+pj
+pj-1
+pj+1
+Between two points, ¯ pj and ¯ pj+1, we draw a cubic curve using ¯ pj, ¯ pj+1, and two auxiliary points on the tangents, ?(¯ pj+1 - ¯ pj-1) and ?(¯ pj+2 - ¯ pj). We want to ?nd the coef?cients aj when x(t) = 1 t t2 t3  a0 a1 a2 a3 T, where the curve is de?ned as ¯ c(t) = c(t) y(t) (similarly for y(t) and bj). For the curve between ¯ pj and ¯ pj+1, assume we know two end points, ¯ c(0) and ¯ c(1) and their tangents, ~c'(0) and ~c'(1). That is, x(0) = xj, (120) x(1) = xj+1, (121) x'(0) = ?(xj+1 -xj-1), (122) x'(1) = ?(xj+2 -xj). (123) To solve for~a, set up the linear system, ? ? ? ? x(0) x(1) x'(0) x'(1) ? ? ? ? = ? ? ? ? 1 0 0 0 1 1 1 1 0 1 0 0 0 1 2 3 ? ? ? ? ? ? ? ? a0 a1 a2 a3 ? ? ? ? . (124) Then ~x = M~a, so~a = M-1~x. Substituting~a in x(t) yields
+x(t) =  1 t t2 t3 
+? ? ? ?
+1 0 0 0 0 0 1 0 -3 3 -2 -1 2 -2 1 1
+? ? ? ?
+? ? ? ?
+xj xj+1 ?(xj+1 -xj-1) ?(xj+2 -xj)
+? ? ? ?
+(125)
+=  1 t t2 t3 
+? ? ? ?
+0 1 0 0 -? 0 ? 0 2? ?-3 3-2? -? -? 2-? ?-2 ?
+? ? ? ?
+? ? ? ?
+xj-1 xj xj+1 xj+2
+? ? ? ?
+. (126)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 102
+CSC418 / CSCD18 / CSC2504 Interpolation
+For the ?rst tangent in the curve, we cannot use the above formula. Instead, we use:
+~t1 = ?(¯ p2 - ¯ p1) (127)
+and, for the last tangent:
+~tN = ?(¯ pN - ¯ pN-1) (128)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 103
+CSC418 / CSCD18 / CSC2504 Parametric Curves And Surfaces
+15 Parametric Curves And Surfaces
+15.1 Parametric Curves
+Designing Curves • We don't want only polygons. • Curves are used for design. Users require a simple set of controls to allow them to edit and design curves easily. • Curves should have in?nite resolution, so we can zoom in and still see a smooth curve. • We want to have a compact representation. Parametric functions are of the form x(t) = f(t) and y(t) = g(t) in two dimensions. This can be extended for arbitrary dimensions. They can be used to model curves that are not functions of any axis in the plane.
+Curves can be de?ned as polynomials, for example x(t) = 5t10 + 4t9 + 3t8 + .... However, coef?cients are not intuitive editing parameters, and these curves are dif?cult to control. Hence, we will consider more intuitive parameterizations.
+15.2 B´ezier curves
+We can de?ne a set of curves called B´ezier curves by a procedure called the de Casteljau algorithm. Given a sequence of control points ¯ pk, de Casteljau evaluation provides a construction of smooth parametric curves. Evaluation proceeds by repeatedly de?ning new, smaller point sequences until we have a single point at the value for t for which we are evaluating the curve.
+p 0
+p 1 p2
+p 3
+p 0 1
+p 1 1
+p 0 2
+p 1 2
+p 2 1
+p 0 3
+Figure 12: de Casteljau evaluation for t = 0.25.
+¯ p1 0(t) = (1-t)¯ p0 + t¯ p1 (129)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 104
+CSC418 / CSCD18 / CSC2504 Parametric Curves And Surfaces
+¯ p1 1(t) = (1-t)¯ p1 + t¯ p2 (130) ¯ p1 2(t) = (1-t)¯ p2 + t¯ p3 (131) ¯ p2 0(t) = (1-t)¯ p1 0(t) + t¯ p1 1(t) (132) = (1-t)2¯ p0 + 2t(1-t)¯ p1 + t2¯ p2 (133) ¯ p2 1(t) = (1-t)¯ p1 1(t) + t¯ p1 2(t) (134) = (1-t)2¯ p1 + 2t(1-t)¯ p2 + t2¯ p3 (135) ¯ p3 0(t) = (1-t)¯ p2 0(t) + t¯ p2 1(t) (136) = (1-t)3¯ p0 + 3(1-t)2t¯ p1 + 3(1-t)t2¯ p2 + t3¯ p3 (137) The resulting curve ¯ p3 0 is the cubic B´ezier de?ned by the four control points. The curves ¯ p2 0 and ¯ p2 1 are quadratic B´ezier curves, each de?ned by three control points. For all B´ezier curves, we keep t in the range [0...1]

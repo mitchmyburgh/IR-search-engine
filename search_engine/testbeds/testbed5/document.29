@@ -1,0 +1,23 @@
+Of course, a number of libraries that offer much of what a scientist could want are available for Python. NumPy and SciPy are just two of the most notable libraries nurtured as open source projects and tuned for scientific computation.
+
+Scientific and engineering enterprises such as pharmaceutical companies aren't the only ones tapping Python for research. Many Wall Street firms now rely heavily on mathematical analysis and often hire university scientists who bring along their habit of coding in Python. Python is becoming so popular on Wall Street that there are even proposals to require the prospectus for a bond to include a Python algorithm for specifying who gets what return on the investment.
+
+Programming languages on the rise: Ruby
+
+Some may argue that Ruby and Python are hardly "niche" languages, but the truth is, from an enterprise perspective, they remain promising tools all too often pushed to the margin. That said, Ruby, or more precisely the combination of Ruby with the Rails framework known as Ruby on Rails, is becoming increasingly popular for prototyping. Its entrance into the enterprise came on the heels of the Web 2.0 explosion, wherein many websites began as experiments in Ruby. 37signals -- one of Ruby's many proponents -- actually uses Ruby to deploy code.
+
+[ The InfoWorld Test Center puts nine Rails IDEs and editors through their paces in "Lab test: Climb aboard Ruby on Rails." ]
+
+The secret to Ruby's success is its use of "convention over configuration," wherein naming a variable foo causes the corresponding column in the database to automatically be named foo as well. As such, Ruby on Rails is an excellent tool for prototyping, giving you only one reason to type foo. Ruby on Rails takes care of the rest of the CRUD scaffolding for you.
+
+Ruby on Rails sites are devoted to cataloging data that can be stored in tables. Well-known examples include Web applications like Basecamp, Backcamp, and Campfire from 37Signals, a collection of websites that knits together group discussions, debates, and schedules. Ruby on Rails handles the formatting of these database tables, as well as decisions about what information to display. Using Ruby on Rails' naming convention, production quality code can be sketched up easily without much duplicate effort.
+
+Many of the production-grade Ruby websites run on JRuby, a version written in Java that sits squarely on the JVM. JRuby users get all of the JVM's prowess in juggling threads, a very valuable asset in production-level deployments with many concurrent users.
+
+Programming languages on the rise: MATLAB
+
+Built for mathematicians to solve systems of linear equations, MATLAB has found rising interest in the enterprise, thanks to the large volumes of data today's organizations need to analyze. Many of the more sophisticated statistical techniques that match people with advertisements, songs, or Web pages depend upon the power of algorithms like those solved by MATLAB.
+
+Expect MATLAB use to grow as log files grow fatter. It's one thing for a human to look at the list of top pages viewed, but it takes a statistical powerhouse to squeeze ideas from a complex set of paths. Are people more likely to shop for clothes on Monday or Friday? Is there any correlation between product failures and the line that produced them?
+
+MathWorks, the company behind MATLAB, offers a diverse set of whitepapers showing how engineers are searching for statistical answers. Toyota Racing, for instance, plans its NASCAR entries by analyzing tests in wind tunnels and other labs. Canada's Institute for Biodiagnostics is searching for the best treatment for burns.

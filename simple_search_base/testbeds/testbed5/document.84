@@ -1,0 +1,53 @@
+Operators
+Main article: Operators in C and C++
+
+C supports a rich set of operators, which are symbols used within an expression to specify the manipulations to be performed while evaluating that expression. C has operators for:
+
+    arithmetic: +, -, *, /, %
+    assignment: =
+    augmented assignment: +=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=
+    bitwise logic: ~, &, |, ^
+    bitwise shifts: <<, >>
+    boolean logic: !, &&, ||
+    conditional evaluation: ? :
+    equality testing: ==, !=
+    calling functions: ( )
+    increment and decrement: ++, --
+    member selection: ., ->
+    object size: sizeof
+    order relations: <, <=, >, >=
+    reference and dereference: &, *, [ ]
+    sequencing: ,
+    subexpression grouping: ( )
+    type conversion: (typename)
+
+C uses the = operator, reserved in mathematics to express equality, to indicate assignment, following the precedent of Fortran and PL/I, but unlike ALGOL and its derivatives. The similarity between C's operator for assignment and that for equality (==) has been criticized[by whom?] as it makes it easy to accidentally substitute one for the other. In many cases, each may be used in the context of the other without a compilation error (although some compilers produce warnings). For example, the conditional expression in if(a=b+1) is true if a is not zero after the assignment.[24] Additionally, C's operator precedence is non-intuitive, such as == binding more tightly than & and | in expressions like x & 1 == 0, which would need to be written (x & 1) == 0 to be properly evaluated.[25]
+"Hello, world" example
+
+The "hello, world" example, which appeared in the first edition of K&R, has become the model for an introductory program in most programming textbooks, regardless of programming language. The program prints "hello, world" to the standard output, which is usually a terminal or screen display.
+
+The original version was:[26]
+
+main()
+{
+    printf("hello, world\n");
+}
+
+A standard-conforming "hello, world" program is:[a]
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+}
+
+The first line of the program contains a preprocessing directive, indicated by #include. This causes the compiler to replace that line with the entire text of the stdio.h standard header, which contains declarations for standard input and output functions such as printf. The angle brackets surrounding stdio.h indicate that stdio.h is located using a search strategy that prefers headers in the compiler's include path to other headers having the same name; double quotes are used to include local or project-specific header files.[discuss]
+
+The next line indicates that a function named main is being defined. The main function serves a special purpose in C programs; the run-time environment calls the main function to begin program execution. The type specifier int indicates that the value that is returned to the invoker (in this case the run-time environment) as a result of evaluating the main function, is an integer. The keyword void as a parameter list indicates that this function takes no arguments.[b]
+
+The opening curly brace indicates the beginning of the definition of the main function.
+
+The next line calls (diverts execution to) a function named printf, which is supplied from a system library. In this call, the printf function is passed (provided with) a single argument, the address of the first character in the string literal "hello, world\n". The string literal is an unnamed array with elements of type char, set up automatically by the compiler with a final 0-valued character to mark the end of the array (printf needs to know this). The \n is an escape sequence that C translates to a newline character, which on output signifies the end of the current line. The return value of the printf function is of type int, but it is silently discarded since it is not used. (A more careful program might test the return value to determine whether or not the printf function succeeded.) The semicolon ; terminates the statement.
+
+The closing curly brace indicates the end of the code for the main function. According to the C99 specification and newer, the main function, unlike any other function, will implicitly return a status of 0 upon reaching the } that terminates the function. This is interpreted by the run-time system as an exit code indicating successful execution.[27]

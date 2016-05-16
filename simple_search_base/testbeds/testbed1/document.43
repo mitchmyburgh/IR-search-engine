@@ -1,0 +1,34 @@
+Computer_display_standard
+'''Computer display standards''' are a combination of , , , , and . They are associated with specific s,  and .
+==History==
+Various computer display standards or display modes have been used in the history of the . They are often a combination of  (specified as width-to-height ratio),  (specified as the width and height in s),  (measured in s per pixel), and  (expressed in ). Associated with the screen resolution and refresh rate is a display adapter. Earlier display adapters were simple frame-buffers, but later display standards also specified a more extensive set of display functions and software controlled interface.
+Beyond display modes, the  industry organization has defined several standards related to  and device identification, while ergonomics standards are set by the .
+==Standards==
+A number of common resolutions have been used with computers descended from the original . Some of these are now supported by other families of personal computers. These are de facto standards, usually originated by one manufacturer and reverse-engineered by others, though the  group has co-ordinated the efforts of several leading video display adapter manufacturers. Video ''standards'' associated with IBM-PC-descended personal computers are shown in the diagram and table below, alongside those of early Macintosh and other makes for comparison. (From the early 1990s onwards, most manufacturers moved over to PC display standards thanks to widely available and affordable hardware).
+==Display resolution prefixes==
+Although the common standard prefixes ''super'' and ''ultra'' do not indicate specific modifiers to base standard resolutions, several others do:
+;'''Quarter (Q or q)'''
+:A quarter of the base resolution. E.g. , a term for a 320x240 resolution, half the width and height of VGA, hence the quarter total resolution. The "Q" prefix usually indicates "Quad" (4 times as many, not 1/4 times as many) in higher resolutions, and sometimes "q" is used instead of "Q" to specify ''quarter'' (by analogy with es m/M), but this usage is not consistent.
+;'''Wide (W)'''
+:The base resolution increased by increasing the width and keeping the height constant, for square or near-square pixels on a widescreen display, usually with an aspect ratio of either 16:9 (adding an extra 1/3rd width vs a standard 4:3 display) or 16:10 (adding an extra 1/5th). However, it is sometimes used to denote a resolution that would have roughly the same total pixel count as this, but in a different aspect and sharing neither the horizontal OR vertical resolution - typically for a 16:10 resolution which is narrower but taller than the 16:9 option, and therefore larger in both dimensions than the base standard (e.g. compare 1366x768 and 1280x800, both commonly labelled as "WXGA", vs the base 1024x768 "XGA").
+;'''Quad(ruple) (Q)'''
+:Four times as many pixels compared to the base resolution, i.e. twice the horizontal and vertical resolution respectively.
+;'''Hex(adecatuple) (H)'''
+:Sixteen times as many pixels compared to the base resolution, i.e. four times the horizontal and vertical resolutions respectively.
+;'''Super (S)''', '''eXtended (X)''', '''Plus (+)''' and/or '''Ultra (U)'''
+:Vaguer terms denoting successive incremental steps up the resolution ladder from some comparative, more established base, usually somewhat less severe a jump than quartering or Quadrupling - typically less than doubling, and sometimes not even as much of a change as making a "wide" version; for example SVGA (800x600 vs 640x480), SXGA (1280x1024 vs 1024x768), SXGA+ (1400x1050 vs 1280x1024) and UXGA (1600x1200 vs 1024x768 - or more fittingly, vs the 1280x1024 of SXGA, the conceptual "next step down" at the time of UXGA's inception, or the 1400x1050 of SXGA+). Given the use of "X" in "XGA", it is not often used as an additional modifier (e.g. there is no such thing as XVGA except as an alternative designation for SXGA) unless its meaning would be unambiguous.
+These prefixes are also often combined, as in  or , with levels of stacking not hindered by the same consideration towards readability as the decline of the added "X" - especially as there is not even a defined hierarchy or value for S/X/U/+ modifiers.
+==See also==
+* ; this also lists the display resolutions of standard and HD televisions, which are sometimes used as computer monitors.
+* 
+* 
+* 
+* 
+==References==
+* 
+==External links==
+* 
+* 
+* 
+* 
+*

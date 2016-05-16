@@ -1,0 +1,26 @@
+openQRM is a free and open-source cloud computing management platform for managing heterogeneous data center infrastructures. The openQRM platform manages a data center's infrastructure to build private, public and hybrid IaaS (Infrastructure as a Service) clouds. openQRM orchestrates a multiplicity of storage, network, virtualization, monitoring, and security implementations technologies to deploy multi-tier services (e.g. compute clusters) as virtual machines on distributed infrastructures, combining both data center resources and remote cloud resources, according to allocation policies. According to the European Commission's report about the future of cloud computing from a group of experts:
+The openQRM platform emphasizes a separation of hardware (physical servers and virtual machines) from software (operating system server-images). Hardware is treated agnostically as a computing resource which should be replaceable without the need to reconfigure the software.
+Supported virtualization solutions include KVM, Linux-VServer, OpenVZ, VMware ESX and Xen. Virtual machines of these types are managed transparently via openQRM.
+P2V (physical to virtual), V2P (virtual to physical), and V2V (virtual to virtual) migration are possible as well as transitioning from one virtualization technology to another with the same VM
+openQRM is sponsored by openQRM Enterprise.
+
+
+== History ==
+openQRM was initially released by the Qlusters company and went open-source in 2004. Qlusters ceased operations, while openQRM was left in the hands of the openQRM community. In November 2008, the openQRM community released version 4.0 which included a complete port of the platform from Java to PHP/C/Perl/Shell.
+
+
+== See also ==
+
+Cloud computing
+Cloud computing comparison
+Cloud infrastructure
+Eucalyptus
+Nimbus
+
+
+== References ==
+
+
+== External links ==
+OpenQRM Website
+OpenQRM Enterprise Website

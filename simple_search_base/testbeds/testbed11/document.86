@@ -1,0 +1,53 @@
+The internet layer is a group of internetworking methods, protocols, and specifications in the Internet protocol suite that are used to transport datagrams (packets) from the originating host across network boundaries, if necessary, to the destination host specified by a network address (IP address) which is defined for this purpose by the Internet Protocol (IP). The internet layer derives its name from its function of forming an internet (uncapitalized), or facilitating internetworking, which is the concept of connecting multiple networks with each other through gateways.
+Internet-layer protocols use IP-based packets. The internet layer does not include the protocols that define communication between local (on-link) network nodes which fulfill the purpose of maintaining link states between the local nodes, such as the local network topology, and that usually use protocols that are based on the framing of packets specific to the link types. Such protocols belong to the link layer.
+A common design aspect in the internet layer is the robustness principle: "Be liberal in what you accept, and conservative in what you send" as a misbehaving host can deny Internet service to many other users.
+
+
+== Purpose ==
+The internet layer has three basic functions:
+For outgoing packets, select the next-hop host (gateway) and transmit the packet to this host by passing it to the appropriate link layer implementation;
+For incoming packets, capture packets and pass the packet payload up to the appropriate transport layer protocol, if appropriate.
+Provide error detection and diagnostic capability.
+In Version 4 of the Internet Protocol (IPv4), during both transmit and receive operations, IP is capable of automatic or intentional fragmentation or defragmentation of packets, based, for example, on the maximum transmission unit (MTU) of link elements. However, this feature has been dropped in IPv6, as the communications end points, the hosts, now have to perform path MTU discovery and assure that end-to-end transmissions don't exceed the maximum discovered.
+In its operation, the internet layer is not responsible for reliable transmission. It provides only an unreliable service, and "best effort" delivery. This means that the network makes no guarantees about packets' proper arrival (see also Internet Protocol#Reliability). This was an important design principle and change from the previous protocols used on the early ARPANET. Since packet delivery across diverse networks is an inherently unreliable and failure-prone operation, the burden of providing reliability was placed with the end points of a communication path, i.e., the hosts, rather than on the network. This is one of the reasons of the resiliency of the Internet against individual link failures and its proven scalability.
+The function of providing reliability of service is the duty of higher level protocols, such as the Transmission Control Protocol (TCP) in the transport layer.
+In IPv4 (not IPv6), a checksum is used to protect the header of each datagram. The checksum ensures that the information in a received header is accurate, however, IP does not attempt to detect errors that may have occurred to the data in each packet.
+
+
+== Core protocols ==
+The primary protocols in the internet layer are the Internet Protocol (IP). It is implemented in two versions, IPv4 and IPv6. The Internet Control Message Protocol (ICMP) is primarily used for error and diagnostic functions. Different implementations exist for IPv4 and IPv6. The Internet Group Management Protocol (IGMP) is used by IPv4 hosts and adjacent multicast routers to establish multicast group memberships.
+
+
+== Security ==
+Internet Protocol Security (IPsec) is a suite of protocols for securing Internet Protocol (IP) communications by authenticating and encrypting each IP packet in a data stream. IPsec also includes protocols for cryptographic key establishment. IPsec was originally designed as a base specification in IPv6 in 1995, and later adapted to IPv4, with which it has found widespread use in securing virtual private networks.
+
+
+== Relation to OSI model ==
+The internet layer of the TCP/IP model is often compared directly with the network layer (layer 3) in the Open Systems Interconnection (OSI) protocol stack. Although they have some overlap, these layering models represent different classification methods. In particular, the allowed characteristics of protocols (e.g., whether they are connection-oriented or connection-less) placed in these layers are different between the models. OSI's network layer is a catch-all layer for all protocols that facilitate network functionality. The internet layer, on the other hand, is specifically a suite of protocols that facilitate internetworking using the Internet Protocol.
+Because of this, the OSI network layer is often described to include protocols such as the Address Resolution Protocol (ARP) which was placed in link layer by the original TCP/IP architects.
+Strict comparison between the TCP/IP model and the OSI model should be avoided. Layering in TCP/IP is not a principal design criterion and is in general considered to be harmful.
+Despite clear primary references and normative standards documents, the internet layer is often improperly called network layer, in analogy to the OSI model.
+
+
+== IETF standards ==
+RFC 791, Internet Protocol (IP), J. Postel, September 1981
+RFC 792, Internet Control Message Protocol (ICMP), J. Postel, September 1981
+RFC 815: IP Datagram Reassembly Algorithms, D. Clark, July 1982
+RFC 816: Fault Isolation and Recovery, D. Clark, July 1982
+RFC 879, The TCP Maximum Segment Size and Related Topics, J. Postel, November 1983
+RFC 950, Internet Standard Subnetting Procedure, J. Mogul and J. Postel, August 1985
+RFC 1108: Internet Protocol Security Options, B. Schofield, October 1989
+RFC 1112, Host Extensions for IP Multicasting, S. Deering, August 1989
+RFC 1122, Requirements for Internet Hosts—Communication Layers, IETF, R. Braden (Editor), October 1989
+RFC 1123, Requirements for Internet Hosts—Application and Support, IETF, R. Braden (Editor), October 1989
+RFC 3439, Some Internet Architectural Guidelines and Philosophy, R. Bush, D. Meyer, December 2002
+
+
+== See also ==
+End-to-end connectivity
+
+
+== References ==
+
+
+== External links ==

@@ -1,0 +1,27 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+Lighting in OpenGL
+OpenGL provides a slightly modi?ed version of Phong lighting. Lighting and any speci?c lights to use must be enabled to see its effects:
+glEnable(GL_LIGHTING); // enable Phong lighting glEnable(GL_LIGHT0); // enable the first light source glEnable(GL_LIGHT1); // enable the second light source ...
+Lights can be directional (in?nitely far away) or positional. Positional lights can be either point lights or spotlights. Directional lights have the w component set to 0, and positional lights have w set to 1. Light properties are speci?ed with the glLight functions:
+Copyright c
+2005 David Fleet and Aaron Hertzmann 54
+CSC418 / CSCD18 / CSC2504 Basic Lighting and Re?ection
+GLfloat direction[] = {1.0f, 1.0f, 1.0f, 0.0f}; GLfloat position[] = {5.0f, 3.0f, 8.0f, 1.0f}; Glfloat spotDirection[] = {0.0f, 3.0f, 3.0f}; Glfloat diffuseRGBA[] = {1.0f, 1.0f, 1.0f, 1.0f}; Glfloat specularRGBA[] = {1.0f, 1.0f, 1.0f, 1.0f};
+// A directional light glLightfv(GL_LIGHT0, GL_POSITION, direction); glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuseRGBA); glLightfv(GL_LIGHT0, GL_SPECULAR, specularRGBA);
+// A spotlight glLightfv(GL_LIGHT1, GL_POSITION, position); glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuseRGBA); glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spotDirection); glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 45.0f); glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 30.0f);
+OpenGL requires you to specify both diffuse and specular components for the light source. This has no physical interpretation (real lights do not have "diffuse" or "specular" properties), but may be useful for some effects. The glMaterial functions are used to specify material properties, for example:
+GLfloat diffuseRGBA = {1.0f, 0.0f, 0.0f, 1.0f}; GLfloat specularRGBA = {1.0f, 1.0f, 1.0f, 1.0f}; glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuseRGBA); glMaterialfv(GL_FRONT, GL_SPECULAR, specularRGBA); glMaterialf(GL_FRONT, GL_SHININESS, 3.0f);
+Note that both lights and materials have ambient terms. Additionally, there is a global ambient term:
+glLightfv(GL_LIGHT0, GL_AMBIENT, ambientLight); glMaterialfv(GL_FRONT, GL_AMBIENT, ambientMaterial); glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientGlobal);
+The material has an emission term as well, that is meant to model objects that can give off their own light. However, no light is actually cast on other objects in the scene.
+glMaterialfv(GL_FRONT, GL_EMISSION, em);
+The global ambient term is multiplied by the current material ambient value and added to the material's emission value. The contribution from each light is then added to this value.
+When rendering an object, normals should be provided for each face or for each vertex so that lighting can be computed:
+Copyright c
+2005 David Fleet and Aaron Hertzmann 55
+CSC418 / CSCD18 / CSC2504 Basic Lighting and Re?ection
+glNormal3f(nx, ny, nz); glVertex3f(x, y, z);
+Copyright c
+2005 David Fleet and Aaron Hertzmann 56

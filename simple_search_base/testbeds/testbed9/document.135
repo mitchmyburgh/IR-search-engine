@@ -1,0 +1,55 @@
+In computing, a distance oracle (DO) is a data structure for calculating distances between vertices in a graph.
+
+
+== Introduction ==
+Let G(V,E) be an undirected, weighted graph, with n = |V| nodes and m = |E| edges. We would like to answer queries of the form "what is the distance between the nodes s and t?".
+One way to do this is just run the Dijkstra algorithm. This takes time , and requires no extra space (besides the graph itself).
+In order to answer many queries more efficiently, we can spend some time in pre-processing the graph and creating an auxiliary data structure.
+A simple data structure that achieves this goal is a matrix which specifies, for each pair of nodes, the distance between them. This structure allows us to answer queries in constant time , but requires  extra space. It can be initialized in time  using an all-pairs shortest paths algorithm, such as the Floyd–Warshall algorithm.
+A DO lies between these two extremes. It uses less than  space in order to answer queries in less than  time. Most DOs have to compromise on accuracy, i.e. they don't return the accurate distance but rather a constant-factor approximation of it.
+
+
+== Approximate DO ==
+ describe more than 10 different DOs. They then suggest a new DO that, for every k, requires space , such that any subsequent distance query can be approximately answered in time . The approximate distance returned is of stretch at most , that is, the quotient obtained by dividing the estimated distance by the actual distance lies between 1 and . The initialization time is .
+Some special cases include:
+For  we get the simple distance matrix.
+For  we get a structure using  space which answers each query in constant time and approximation factor at most 3.
+For , we get a structure using  space, query time , and stretch .
+Higher values of k do not improve the space or preprocessing time.
+
+
+=== DO for general metric spaces ===
+The oracle is built of a decreasing collection of k+1 sets of vertices:
+
+For every :  contains each element of , independently, with probability . Note that the expected size of  is . The elements of  are called i-centers.
+
+For every node v, calculate its distance from each of these sets:
+For every :  and . I.e.,  is the i-center nearest to v, and  is the distance between them. Note that for a fixed v, this distance is weakly increasing with i. Also note that for every v, .
+.
+For every node v, calculate:
+For every : .  contains all vertices in  which are strictly closer to v than all vertices in . The partial unions of s are balls in increasing diameter, that contain vertices with distances up to the first vertex of the next level.
+For every v, compute its bunch:
+
+It is possible to show that the expected size of  is at most .
+For every bunch , construct a hash table that holds, for every , the distance .
+The total size of the data structure is 
+Having this structure initialized, the following algorithm finds the distance between two nodes, u and v:
+
+while :
+
+ (swap the two input nodes; this does not change the distance between them since the graph is undirected).
+
+return 
+It is possible to show that, in each iteration, the distance  grows by at most . Since , there are at most k-1 iterations, so finally . Now by the triangle inequality, , so the distance returned is at most .
+
+
+=== Improvements ===
+The above result was improved by  who suggest a DO of size  which returns a factor 2 approximation.
+
+
+== Reduction from set intersection oracle ==
+If there is a DO with an approximation factor of at most 2, then it is possible to build a set intersection oracle (SIO) with query time  and space requirements , where n is the number of sets and N the sum of their sizes; see set intersection oracle#Reduction to approximate distance oracle.
+It is believed that the SIO problem does not have a non-trivial solution. I.e., it requires  space to answer queries in time , e.g. using an n-by-n table with the intersection between each two sets. If this conjecture is true, this implies that there is no DO with an approximation factor of less than 2 and a constant query time.
+
+
+== References ==

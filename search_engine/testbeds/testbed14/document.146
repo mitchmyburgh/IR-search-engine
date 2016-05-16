@@ -1,0 +1,69 @@
+﻿The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents. The OWL 2 Document Overview describes the overall state of OWL 2, and should be read before other OWL 2 documents.
+The Manchester syntax is a user-friendly compact syntax for OWL 2 ontologies; it is frame-based, as opposed to the axiom-based other syntaxes for OWL 2. The Manchester Syntax is used in the OWL 2 Primer, and this document provides the language used there. It is expected that tools will extend the Manchester Syntax for their own purposes, and tool builders may collaboratively extend the common language.
+
+The Manchester OWL syntax is a user-friendly syntax for OWL 2 descriptions, but it can also be used to write entire OWL 2 ontologies. The original version of the Manchester OWL syntax [Manchester OWL DL Syntax] was created for OWL 1 [OWL Semantics and Abstract Syntax]; it is here updated for OWL 2 [OWL 2 Specification]. The Manchester syntax is used in Protégé 4 [Protégé 4] and TopBraid Composer® [TopBraid Composer], particularly for entering and displaying descriptions associated with classes. Some tools (e.g., Protégé 4) extend the syntax to allow even more compact presentation in some situations (e.g., for explanation) or to replace IRIs by label values, but this document does not include any of these special-purpose extensions.
+The Manchester OWL syntax gathers together information about names in a frame-like manner, as opposed to RDF/XML [RDF Syntax], the functional-style syntax for OWL 2 [OWL 2 Specification], and the XML syntax for OWL 2 [OWL 2 XML Serialization]. It is thus closer to the abstract syntax for OWL 1 [OWL Semantics and Abstract Syntax], than the above syntaxes for OWL 2. Nevertheless, parsing the Manchester OWL syntax into the OWL 2 structural specification is quite easy, as it is easy to identify the axioms inside each frame.
+As the Manchester syntax is frame-based, it cannot directly handle all OWL 2 ontologies. However, there is a simple transform that will take any OWL 2 ontology that does not overload between object, data, and annotation properties or between classes and datatypes into a form that can be written in the Manchester syntax.
+An example ontology in the Manchester OWL syntax can be found in the OWL Primer [OWL 2 Primer].
+2 The Grammar
+The Manchester syntax for OWL 2 ontologies is defined using a standard BNF notation, which is summarized in the table below.
+Table 1. The BNF Notation Used in this Document
+Construct
+Syntax
+Example
+non-terminal symbols
+boldface
+ClassExpression
+terminal symbols
+single quoted
+'PropertyRange'
+zero or more
+curly braces
+{ ClassExpression }
+zero or one
+square brackets
+[ ClassExpression ]
+alternative
+vertical bar
+Assertion | Declaration
+grouping
+parentheses
+dataPropertyExpression )
+Because comma-separated lists occur in very many places in the syntax, to save space the grammar has three meta-productions, one for non-empty lists, one for lists of minimum length two, and one for non-empty lists with annotations in them.
+<NT>List ::= <NT> { ',' <NT> } <NT>2List ::= <NT> ',' <NT>List <NT>AnnotatedList ::= [annotations] <NT> { ',' [annotations] <NT> } 
+
+Documents in the Manchester OWL syntax form OWL 2 ontologies and consist of sequences of Unicode characters [UNICODE] and are encoded in UTF-8 [RFC 3629].
+The grammar for the Manchester syntax does not explicitly show white space. White space is allowed between any two terminals or non-terminals except insidenonNegativeInteger, prefixName, IRI, and literal. White space is required between two terminals or non-terminals if its removal could cause ambiguity. Generally this means requiring white space except before and after punctuation (e.g., commas, parentheses, braces, and brackets).
+White space is a sequence of blanks (U+20), tabs (U+9), line feeds (U+A), carriage returns (U+D), and comments. Comments are maximal sequences of Unicode characters starting with a '#' and not containing a line feed or a carriage return. Note that comments are only recognized where white space is allowed, and thus not inside the above non-terminals.
+4 Appendix: Translation to and from OWL 2 Functional-Style Syntax
+Most of the translation between the Manchester OWL syntax and OWL 2 is obvious. The translation given here is with the OWL 2 Functional-Style Syntax [OWL 2 Specification].
+4.1 Informal Description
+In many cases there is a one-to-one correspondence between the Manchester OWL syntax and the OWL 2 Functional-Style Syntax. For example, dataComplementOf in the Manchester OWL syntax corresponds directly to dataComplementOf in the OWL 2 Functional-Style Syntax. All that is required is to translate the keywords and adjust to a parenthesized syntax.
+IRIs and their parts are the same in the Manchester OWL syntax and the OWL 2 Functional-Style Syntax, no change is needed for them, except that the "special" datatypes are translated into the corresponding XML Schema datatypes. Literals are mostly the same, but the abbreviated syntaxes for numbers and strings have to be translated in the obvious way. The syntax for data ranges in the Manchester OWL syntax corresponds exactly with the syntax in the OWL 2 Functional-Style Syntax.
+The syntax for annotations in the Manchester OWL syntax closely corresponds to the syntax in the OWL 2 Functional-Style Syntax. The only special processing that needs to be done is to determine which frame to attach entity annotations to in the reverse mapping. Translating to the Functional-Style syntax and back again can thus lose some non-logical information in the Manchester syntax.
+Descriptions also correspond closely between the Manchester OWL syntax and the OWL 2 Functional-Style Syntax.
+The translation of frame axioms is performed by splitting them into pieces that correspond to single axioms. This is done by taking each of the pieces of the frame (Annotations:, Domain:, Range:, etc) and making new frames for each of them. The new frame is of the same kind (Class:, ObjectProperty:, etc.) and for the same IRI. Then each resultant frame that contains an AnnotatedList with more than one element is broken into a frame for each element of the list in a similar manner.
+The resultant axioms and any miscellaneous axioms then correspond closely to the OWL 2 Functional-Style Syntax axioms and can be directly translated. The only special cases are that annotations directly in frames become annotations in entity annotation axioms and that (negative) property assertions have to be disambiguated depending on whether the property is an object property or a data property.
+Translations of OWL 2 Functional-Style Syntax axioms back to frames can be done piecemeal or the axioms on a single entity can be all combined together, which is done here.
+The remaining top-level constructs of an ontology (prefix declarations, imports, ontology annotations, and the ontology name) can be directly translated.
+4.2 Formal Description for Mapping to OWL 2 Functional-Style Syntax
+Formally the transformation takes an ontology in the Manchester OWL syntax and produces an ontology in the Functional-Style syntax. The transformation needs access to the imported ontologies.
+First, for each frame in the ontology, produce the appropriate declaration as follows:
+Frame
+Declaration
+Class: IRI ...
+Declaration( Class(IRI) )
+ObjectProperty: IRI ...
+Declaration( ObjectProperty(IRI) )
+DataProperty: IRI ...
+Declaration( DataProperty(IRI) )
+AnnotationProperty: IRI ...
+Declaration( AnnotationProperty(IRI) )
+Individual: IRI ...
+Declaration( NamedIndividual(IRI) )
+Individual: nodeID ...
+
+Second, split up frames into single axioms in three stages. The first stage splits apart top-level pieces of frames that have multiple top-level pieces, transforming F: IRI p1p2 ... into F: IRI p1 F: IRI p2 ... for F: one of the frame keywords (Class:, ...), until no more transformations are possible. The second stage splits apart the pieces of each of the top-level pieces, transforming F: IRI P: s1 s2 ... into F: IRI P: s1 F: IRI P: s2 ... for P: one of the keywords immediately inside a frame (Annotations:, SubClassOf:, ...), until no more transformations are possible. The third stage just removes any frame containing only an IRI.
+Next, perform the actual syntax transformation. Any piece of syntax with no transformation listed here is just copied through.
+
+

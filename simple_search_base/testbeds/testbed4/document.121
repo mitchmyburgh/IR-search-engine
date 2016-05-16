@@ -1,0 +1,35 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Ambient Illumination
+The diffuse shading model in Eqn (80) is easy to compute, but often appears arti?cial. The biggest issue is the point light source assumption, the most obvious consequence of which is that any surface normal pointing away from the light source (i.e., for which ~s·~n < 0) will have a radiance of zero. A better approximation to the light source is a uniform ambient term plus a point light source. This is a still a remarkably crude model, but it's much better than the point source by itself.
+With a uniform illuminant and a constant BRDF, it is easy to see that the integral in Eqn (79) becomes a constant. That is, the radiance does not depend on the orientation of the surface because the illumination is invariant to surface orientation. As a result we can write the radiance under a uniform illuminant as
+La(¯ p) = ra Ia (82)
+where ra is often called the ambient re?ection coef?cient, and Ia denotes the integral of the uniform illuminant.
+Note: If the illuminant is the sum of a point source and a uniform source, then the resulting radiance is the sum of the radiances to the individual sources, that is, the sum of Eqns (82) and (81).
+Copyright c
+2005 David Fleet and Aaron Hertzmann 89
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+12.5.3 Specular Re?ection For specular (mirror) surfaces, the incident light from each incident direction ~ di is re?ected toward a unique emittant direction ~ de. The emittant direction lies in the same plane as the incident direction ~ di and the surface normal ~n, and the angle between ~n and ~ de is equal to that between ~n and ~ di. One
+ded i
+n
+can show that the emittant direction is given by ~ de = 2(~n· ~ di)~n- ~ di. For all power from ~ di be re?ected into a single emittant direction the BRDF for a perfect mirror must be proportional to a delta function, ?(~ de, ~ di) ? d(~ di -(2(~n· ~ de)~n- ~ de)). In particular, if we choose the constant of proportionality so that the radiant emittance is equal to the total incident power, then the BRDF becomes:
+?(~ de, ~ di) =
+1 ~n· ~ di
+d(~ di -(2(~n· ~ de)~n- ~ de)) (83)
+In this case, Eqn (77) reduces to
+Ls(¯ p, ~ de) = L(¯ p,-(2(~n· ~ de)~n- ~ de)) (84) This equation plays a major role in ray tracing.
+Off-Axis Specularity: Many materials exhibit a signi?cant specular component in their re?ectance. But few are perfect mirrors. First, most specular surfaces do not re?ect all light, and that is easily handled by introducing a scalar constant in Eqn (84) to attenuate surface radiance Ls. Second, most specular surfaces exhibit some form of off-axis specular re?ection. That is, many polished and shiny surfaces (like plastics and metals) emit light in the perfect mirror direction and in some nearby directions as well. These off-axis specularities look a little blurred. Good examples are highlights on plastics and metals.
+The problem with off-axis specularities is that the BRDF is no longer a simple delta function. The radiance into a particular emittant direction will now be affected from the incident power over a range of incident directions about the perfect specular direction. This means that, unlike the simple radiance function in Eqn (84) for perfect measures, we need to return to the integral in Eqn (77). Therefore it is not easy to compute radiance in this case.
+Like the diffuse case above, one way to simplify the model with off-axis specularities is to assume a point light source. With a point light source we can do away with the integral. In that case the
+Copyright c
+2005 David Fleet and Aaron Hertzmann 90
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+light from a distant point source in the direction of ~s is re?ected into a range of directions about the perfect mirror directions m~ = 2(~n·~s)~n-~s. One common model for this is the following: Ls(~ de) = rsI max(0,m~· ~ de)a, (85) where rs is called the specular re?ection coef?cient (often equal to 1-rd), I is the incident power from the point source, and a = 0 is a constant that determines the width of the specular highlights. As a increases, the effective width of the specular re?ection decreases. In the limit as a increases, this becomes a mirror.
+12.5.4 Phong Re?ectance Model
+The above components, taken together, give us the well-known Phong re?ectance model that was introduced earlier:
+L(¯ p, ~ de) = rd Id max(0,~s·~n) + ra Ia + rsIs max(0,m~· ~ de)a, (86)
+where • Ia, Id, and Ir are parameters that correspond to the power of the light sources for the ambient, diffuse, and specular terms; • ra, rd and rs are scalar constants, called re?ection coef?cients, that determine the relative magnitudes of the three re?ection terms; • a determines the spread of the specurlar highlights; • ~n is the surface normal at ¯ p; • ~s is the direction of the distant point source; • m~ is the perfect mirror direction, given ~n and ~s; and • and ~ de is the emittant direction of interest (usually the direction of the camera).
+Copyright c
+2005 David Fleet and Aaron Hertzmann

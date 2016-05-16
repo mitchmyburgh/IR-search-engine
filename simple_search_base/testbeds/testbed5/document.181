@@ -1,0 +1,23 @@
+News
+VB Is Not Dead: Coming Language Features in Visual Basic 14
+
+Microsoft skips to naming the next version of Visual Basic, and commits to new language developments that are planned for release at the same time as the release of Visual Studio 15.
+
+    By Michael Domingo
+    12/16/2014
+
+While much of the excitement with Visual Studio has been on the cloud end and with C# and F#, Microsoft hasn't ignored Visual Basic. Just last week, the company announced some significant development work around what it is calling Visual Basic 14, which is available in preview. The release is expected to be timed with the release of the rest of the forthcoming Visual Studio 15 suite, according to a blog post from Lucian Wischik of the Visual Basic team.
+
+Developers who are interested in contributing to discussions to flesh out the features of the new version should head to the Codeplex discussion here. That discussion has a good list of all the proposed and work-in-progress features. Wischik writes that the work aims to simplify coding patterns and clean up "some irritating corners of the language that you probably already expected to work." Highlighted in his blog are the addition of the ?. and NameOf operators, new ways to perform string interpolation and ulti-line string literals, a more simplified way to write Readonly auto properties, and improved commenting.
+
+The last true version of Visual Basic was 6.0, released in 1998, with support for that version lasting until 2005. Since then, Microsoft developed an object-oriented version called Visual Basic .NET that operates on top of the .NET Framework, but that version veered significantly enough from the original language that there still exists VB 6.0 developers who continue to maintain VB 6-based apps (even as the OSes upon which those apps run are no longer being supported by Microsoft). On a side note, there has even been a petition put forth by a group of VB aficionados, which you can read about here.
+
+The .NET portion was effectively dropped as the company started to rid its products of the confusing addendum in favor of cleaner naming of its products. Visual Basic .NET has since been known as Visual Basic 12.
+
+The numbering of this release is also a curious side note. While the next version probably should be Visual Basic 13, Wischik writes that it will skip numbering to 14, "to keep in line with the version numbering of Visual Studio itself." Yet, there's this article from The Register containing a screen shot of the About screen clearly showing a line item called "Visual Basic 2015 Preview," as well as the end of Wischik's blog, where he likely has mistyped the name where he writes, "If you have time to contribute to Visual Basic 15, we'd love to listen to your thoughts..." It's all a work in progress, and we'll know soon enough what name sticks.
+
+About the Author
+
+You Tell 'Em, Readers: If you've read this far, know that Michael Domingo, Visual Studio Magazine Editor in Chief, is here to serve you, dear readers, and wants to get you the information you so richly deserve. What news, content, topics, issues do you want to see covered in Visual Studio Magazine? He's listening at mdomingo@1105media.com.
+
+

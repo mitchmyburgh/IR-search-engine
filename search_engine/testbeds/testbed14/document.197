@@ -1,0 +1,25 @@
+﻿With its tighter integration with RDF
+and RDFS, DAML+OIL was the
+first Description Logic-inspired language to be completely integrated into the
+fabric of the Semantic Web (as it was then defined). There was, however,
+no formal semantic integration of DAML+OIL with RDF and RDFS , as RDF and
+RDFS did not have a formal semantics at the time when DAML+OIL
+was being developed. DAML+OIL also lacked any formal
+status, having been the product of a group of researchers operating under
+the auspices of the so-called “Joint EU/US ad hoc Agent Markup Language
+Committee”. This group published DAML+OIL as a W3C Note on December 18, 2001 (see http://www.w3.org/Submission/2001/12/).
+To fix these problems, the W3C chartered two working groups in 2001. The RDF Core Working Group was to be responsible for updating the RDF
+recommendation and providing a formal semantics for RDF and thus for the
+Semantic Web. The Web Ontology Working Group was to be responsible for
+designing an ontology language for the web, compatible with the new version
+of RDF. The Web Ontology Working Group developed the Web Ontology Language OWL [ Bechhofer et al., 2004], which became a W3C recommendation on 10 February 2004 (see http://www.w3.org/2004/OWL/).
+In parallel, the RDF Core Working Group developed a formal semantics for RDF and RDFS [Hayes, 2004].
+The OWL recommendation defines a family of three languages in order
+to address concerns ranging from level of expressiveness to degree of compatibility with RDF. Two of these so-called “species” of OWL, OWL Full
+and OWL DL, provide the same set of Description Logic constructors, but
+differ in the way the constructors can be used: in OWL Full they can be
+used in arbitrary
+RDF
+graphs, whereas in OWL DL their use is restricted
+so that OWL DL ontologies correspond directly to Description Logic knowledge bases. The third species of OWL, OWL Lite, is very similar to OWL
+DL, but provides a reduced set of constructors.

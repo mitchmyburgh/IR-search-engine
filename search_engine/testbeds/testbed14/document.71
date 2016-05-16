@@ -1,0 +1,36 @@
+﻿BFO
+
+
+BFO stands for Basic Formal Ontology. It is an example of a Foundational Ontology. 
+
+Contents
+1 Overview 
+2 The Relation Ontology (BFORO) 
+2.1 Extensions under consideration 
+3 References 
+Overview
+The BFO aims to represent reality. It categorizes things as either endurant or perdurant. Endurants can be thought of as a Snap of time, or a moment of time and can be used to characterize static views of the world. Perdurants represent a Span of time, or entities which persist in time. BFOs have limited granularity and are heavily influenced by parthood relations, boundaries and dependence. Using a perdurant approach is essentially including space-time worms. In other words, you are not the same person as you were before reading this. 
+The Relation Ontology (BFORO)
+BFO separates its taxonomy from its relations. The Relation Ontology was built to help ontology developers to avoid errors and assist users in using the ontology for annotations, with the intention that the same set of agreed-upon relations can be used for several ontologies to foster interoperability. 
+The relations are: 
+is_a 
+part_of 
+integral_part_of 
+proper_part_of 
+located_in 
+contained_in 
+adjacent_to 
+transformation_of 
+derives_from 
+preceded_by 
+has_participant 
+has_agent 
+instance_of
+Extensions under consideration
+Relations between generic- and specifically dependent continuants 
+Relation between a process and a process or quality (regulates) 
+Refinements on derived_from 
+Measurements
+References
+Keet, C. M., 2015. 
+

@@ -1,0 +1,49 @@
+  Binary Trees
+ by Nick Parlante
+This article introduces the basic concepts of binary trees, and then works through a series of practice problems with solution code in C/C++ and Java. Binary trees have an elegant recursive pointer structure, so they are a good way to learn recursive pointer algorithms. 
+ Contents 
+Section 1. Binary Tree Structure -- a quick introduction to binary trees and the code that operates on them 
+Section 2. Binary Tree Problems -- practice problems in increasing order of difficulty 
+Section 3. C Solutions -- solution code to the problems for C and C++ programmers 
+Section 4. Java versions -- how binary trees work in Java, with solution code 
+ Stanford CS Education Library -- #110 This is article #110 in the Stanford CS Education Library. This and other free CS materials are available at the library (
+http://cslibrary.stanford.edu/). That people seeking education should have the opportunity to find it. This article may be used, reproduced, excerpted, or sold so long as this paragraph is clearly reproduced. Copyright 2000-2001, Nick Parlante, nick.parlante@cs.stanford.edu. 
+ Related CSLibrary Articles 
+  Linked List Problems (http://cslibrary.stanford.edu/105/) -- a large collection of linked list problems using various pointer techniques (while this binary tree article concentrates on recursion) 
+  Pointer and Memory (http://cslibrary.stanford.edu/102/) -- basic concepts of pointers and memory 
+  The Great Tree-List Problem (http://cslibrary.stanford.edu/109/) -- a great pointer recursion problem that uses both trees and lists 
+ Section 1 -- Introduction To Binary Trees A binary tree is made of nodes, where each node contains a "left" pointer, a "right" pointer, and a data element. The "root" pointer points to the topmost node in the tree. The left and right pointers recursively point to smaller "subtrees" on either side. A null pointer represents a binary tree with no elements -- the empty tree. The formal recursive definition is: a 
+binary tree is either empty (represented by a null pointer), or is made of a single node, where the left and right pointers (recursive definition ahead) each point to a 
+binary tree. 
+   
+    
+A "binary search tree" (BST) or "ordered binary tree" is a type of binary tree where the nodes are arranged in order: for each node, all elements in its left subtree are less-or-equal to the node (&lt =), and all the elements in its right subtree are greater than the node (&gt ). The tree shown above is a binary search tree -- the "root" node is a 5, and its left subtree nodes (1, 3, 4) are &lt = 5, and its right subtree nodes (6, 9) are &gt  5. Recursively, each of the subtrees must also obey the binary search tree constraint: in the (1, 3, 4) subtree, the 3 is the root, the 1 &lt = 3 and 4 &gt  3. Watch out for the exact wording in the problems -- a "binary search tree" is different from a "binary tree". 
+The nodes at the bottom edge of the tree have empty subtrees and are called "leaf" nodes (1, 4, 6) while the others are "internal" nodes (3, 5, 9). 
+ Binary Search Tree Niche Basically, binary search trees are fast at insert and lookup. The next section presents the code for these two algorithms. On average, a binary search tree algorithm can locate a node in an N node tree in order lg(N) time (log base 2). Therefore, binary search trees are good for "dictionary" problems where the code inserts and looks up information indexed by some key. The lg(N) behavior is the average case -- it's possible for a particular tree to be much slower depending on its shape. 
+ Strategy Some of the problems in this article use plain binary trees, and some use binary search trees. In any case, the problems concentrate on the combination of pointers and recursion. (See the articles linked above for pointer articles that do not emphasize recursion.) 
+For each problem, there are two things to understand... 
+  The node/pointer structure that makes up the tree and the code that manipulates it 
+  The algorithm, typically recursive, that iterates over the tree 
+ When thinking about a binary tree problem, it's often a good idea to draw a few little trees to think about the various cases. 
+ Typical Binary Tree Code in C/C++ As an introduction, we'll look at the code for the two most basic binary search tree operations -- lookup() and insert(). The code here works for C or C++. Java programers can read the discussion here, and then look at the Java versions in 
+Section 4. 
+In C or C++, the binary tree is built with a node type like this... 
+struct node {        int data         struct node* left         struct node* right  }    
+ Lookup() Given a binary search tree and a "target" value, search the tree to see if it contains the target. The basic pattern of the lookup() code occurs in many recursive tree algorithms: deal with the base case where the tree is empty, deal with the current node, and then use recursion to deal with the subtrees. If the tree is a binary search tree, there is often some sort of less-than test on the node to decide if the recursion should go left or right. 
+/*   Given a binary tree, return true if a node   with the target data is found in the tree. Recurs   down the tree, chooses the left or right   branch by comparing the target to each node. */ static int lookup(struct node* node, int target) {    // 1. Base case == empty tree    // in that case, the target is not found so return false    if (node == NULL) {        return(false)     }    else {        // 2. see if found here        if (target == node-&gt data) return(true)         else {            // 3. otherwise recur down the correct subtree            if (target &lt  node-&gt data) return(lookup(node-&gt left, target))             else return(lookup(node-&gt right, target))         }    } }    
+The lookup() algorithm could be written as a while-loop that iterates down the tree. Our version uses recursion to help prepare you for the problems below that require recursion. 
+ Pointer Changing Code There is a common problem with pointer intensive code: what if a function needs to change one of the pointer parameters passed to it? For example, the insert() function below may want to change the root pointer. In C and C++, one solution uses pointers-to-pointers (aka "reference parameters"). That's a fine technique, but here we will use the simpler technique that a function that wishes to change a pointer passed to it will 
+return the new value of the pointer to the caller. The caller is responsible for using the new value. Suppose we have a change() function that may change the the root, then a call to change() will look like this... 
+// suppose the variable "root" points to the tree root = change(root)  
+We take the value returned by change(), and use it as the new value for root. This construct is a little awkward, but it avoids using reference parameters which confuse some C and C++ programmers, and Java does not have reference parameters at all. This allows us to focus on the recursion instead of the pointer mechanics. (For lots of problems that use reference parameters, see CSLibrary #105, Linked List Problems, http://cslibrary.stanford.edu/105/). 
+ Insert() Insert() -- given a binary search tree and a number, insert a new node with the given number into the tree in the correct place. The insert() code is similar to lookup(), but with the complication that it modifies the tree structure. As described above, insert() returns the new tree pointer to use to its caller. Calling insert() with the number 5 on this tree... 
+       2      / \    1     10 
+returns the tree... 
+       2      / \    1     10          /        5 
+The solution shown here introduces a newNode() helper function that builds a single node. The base-case/recursion structure is similar to the structure in lookup() -- each call checks for the NULL case, looks at the node at hand, and then recurs down the left or right subtree if needed. 
+/*   Helper function that allocates a new node   with the given data and NULL left and right   pointers. */ struct node* NewNode(int data) {    struct node* node = new(struct node)        // "new" is like "malloc"    node-&gt data = data     node-&gt left = NULL     node-&gt right = NULL  
+   return(node)  }    
+/*   Give a binary search tree and a number, inserts a new node   with the given number in the correct place in the tree.   Returns the new root pointer which the caller should   then use (the standard trick to avoid using reference   parameters). */ struct node* insert(struct node* node, int data) {    // 1. If the tree is empty, return a new, single node    if (node == NULL) {        return(newNode(data))     }    else {        // 2. Otherwise, recur down the tree        if (data &lt = node-&gt data) node-&gt left = insert(node-&gt left, data)         else node-&gt right = insert(node-&gt right, data)  
+       return(node)  // return the (unchanged) node pointer    } }    
+The shape of a binary tree depends very much on the order that the nodes are inserted. In particular, if the nodes are inserted in increasing order (1, 2, 3, 4), the tree nodes just grow to the right leading to a linked list shape where all the left pointers are NULL. A similar thing happens if the nodes are inserted in decreasing order (4, 3, 2, 1). The linked list shape defeats the lg(N) performance. We will not address that issue here, instead focusing on pointers and recursion. 
+ Section 2 -- Binary Tree Problems Here are 14 binary tree problems in increasing order of difficulty. Some of 

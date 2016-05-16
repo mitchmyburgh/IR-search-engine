@@ -1,0 +1,46 @@
+In computer science, a graph is an abstract data type that is meant to implement the undirected graph and directed graph concepts from mathematics.
+A graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges, arcs, or lines for an undirected graph and as arrows, directed edges, directed arcs, or directed lines for a directed graph. The vertices may be part of the graph structure, or may be external entities represented by integer indices or references.
+A graph data structure may also associate to each edge some edge value, such as a symbolic label or a numeric attribute (cost, capacity, length, etc.).
+
+
+== Operations ==
+The basic operations provided by a graph data structure G usually include:
+adjacent(G, x, y): tests whether there is an edge from the vertices x to y;
+neighbors(G, x): lists all vertices y such that there is an edge from the vertices x to y;
+add_vertex(G, x): adds the vertex x, if it is not there;
+remove_vertex(G, x): removes the vertex x, if it is there;
+add_edge(G, x, y): adds the edge from the vertices x to y, if it is not there;
+remove_edge(G, x, y): removes the edge from the vertices x to y, if it is there;
+get_vertex_value(G, x): returns the value associated with the vertex x;
+set_vertex_value(G, x, v): sets the value associated with the vertex x to v.
+Structures that associate values to the edges usually also provide:
+get_edge_value(G, x, y): returns the value associated with the edge (x, y);
+set_edge_value(G, x, y, v): sets the value associated with the edge (x, y) to v.
+
+
+== Representations ==
+Different data structures for the representation of graphs are used in practice:
+Adjacency list
+Vertices are stored as records or objects, and every vertex stores a list of adjacent vertices. This data structure allows the storage of additional data on the vertices. Additional data can be stored if edges are also stored as objects, in which case each vertex stores its incident edges and each edge stores its incident vertices.
+Adjacency matrix
+A two-dimensional matrix, in which the rows represent source vertices and columns represent destination vertices. Data on edges and vertices must be stored externally. Only the cost for one edge can be stored between each pair of vertices.
+Incidence matrix
+A two-dimensional Boolean matrix, in which the rows represent the vertices and columns represent the edges. The entries indicate whether the vertex at a row is incident to the edge at a column.
+The following table gives the time complexity cost of performing various operations on graphs, for each of these representations, with |V | the number of vertices and |E | the number of edges. In the matrix representations, the entries encode the cost of following an edge. The cost of edges that are not present are assumed to be ∞.
+Adjacency lists are generally preferred because they efficiently represent sparse graphs. An adjacency matrix is preferred if the graph is dense, that is the number of edges |E | is close to the number of vertices squared, |V |2, or if one must be able to quickly look up if there is an edge connecting two vertices.
+
+
+== See also ==
+Graph traversal for graph walking strategies
+Graph database for graph (data structure) persistency
+Graph rewriting for rule based transformations of graphs (graph data structures)
+Graph drawing software for software, systems, and providers of systems for drawing graphs
+
+
+== References ==
+
+
+== External links ==
+Boost Graph Library: a powerful C++ graph library
+Networkx: a Python graph library
+Graphs Tutorial by Jebril FILALI

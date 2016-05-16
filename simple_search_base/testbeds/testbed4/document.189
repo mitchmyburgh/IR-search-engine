@@ -1,0 +1,51 @@
+Low poly
+From Wikipedia, the free encyclopedia
+
+This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (July 2011) (Learn how and when to remove this template message)
+
+This polygon mesh representing a dolphin would be considered low poly by modern (2014) standards
+Low poly is a polygon mesh in 3D computer graphics that has a relatively small number of polygons. Low poly meshes occur in real-time applications (e.g. games) and contrast with high poly meshes in animated movies and special effects of the same era. The term low poly is used in both a technical and a descriptive sense; the number of polygons in a mesh is an important factor to optimize for performance but can give an undesirable appearance to the resulting graphics.[1]
+
+Contents  [hide] 
+1	Motivation for low poly meshes
+2	Polygon budget
+3	Appearance of low poly meshes
+4	Low poly as a relative term
+5	Low poly meshes in physics engines
+6	See also
+7	References
+Motivation for low poly meshes[edit]
+Polygon meshes are one of the major methods of modelling a 3D object for display by a computer. Polygons can, in theory, have any number of sides but are commonly broken down into triangles for display. In general the more triangles in a mesh the more detailed the object is, but the more computationally intensive it is to display. In order to decrease render times (i.e. increase frame rate) the number of triangles in the scene must be reduced, by using low poly meshes.[2]
+
+Polygon budget[edit]
+A combination of the game engine or rendering method and the computer being used defines the polygon budget; the number of polygons which can appear in a scene and still be rendered at an acceptable frame rate. Therefore the use of low poly meshes are mostly confined to computer games and other software a user must manipulate 3D objects in real time because processing power is limited to that of a typical personal computer or games console and the frame rate must be high.[3] Computer generated imagery, for example, for films or still images have a higher polygon budget because rendering does not need to be done in real-time, which requires higher frame rates. In addition, computer processing power in these situations is typically less limited, often using a large network of computers or what is known as a render farm. Each frame can take hours to create, despite the enormous computer power involved. A common example of the difference this makes is full motion video sequences in computer games which, because they can be pre-rendered, look much smoother than the games themselves.
+
+Appearance of low poly meshes[edit]
+Objects that are said to be low poly often appear blocky (such as square heads) and lacking in detail (such as no individual fingers). Objects that are supposed to be circular or spherical are most obviously low poly as the number of triangles needed to make a curve appear smooth is high and polygons are restricted to straight edges. Low poly meshes do not necessarily look bad, for example a flat sheet of paper represented by one polygon looks extremely accurate. As computer graphics are getting more powerful, low poly graphics may be used to achieve a certain retro style conceptually similar to pixel art orienting on 'classic' video games.
+
+
+An example of normal mapping used to add detail to a low poly (500 triangle) mesh
+Computer graphics techniques such as normal and bump mapping have been designed to make a low poly object appear to contain more polygons than it does. This is done by altering the shading of polygons to contain internal detail which is not in the mesh.[4]
+
+Low poly as a relative term[edit]
+There is no defined threshold for a mesh to be low poly; low poly is always a relative term and depends on (amongst other factors):
+
+The time the meshes were designed and for what hardware
+The detail required in the final mesh
+The shape and properties of the object in question
+As computing power inevitably increases, the number of polygons that can be used increases too. For example, Super Mario 64 would be considered low poly today, but was considered a stunning achievement when it was released in 1996. Similarly, in 2009, using hundreds of polygons on a leaf in the background of a scene would be considered high poly, but using that many polygons on the main character would be considered low poly.
+
+Low poly meshes in physics engines[edit]
+Physics engines have presented a new role for low poly meshes. Whilst the display of computer graphics has become very efficient, allowing (as of 2009) the display of tens to hundreds of thousands of polygons at 25 frames per second on a desktop computer, the calculation of physical interactions is still slow. A low poly simplified version of the mesh is often used for simplifying the calculation of collisions with other meshes, in some cases this is as simple as a 6 polygon bounding box.
+
+See also[edit]
+Polygon (computer graphics)
+Bump mapping
+Normal mapping
+Sprites
+Nurbs
+References[edit]
+Jump up ^ Dariush Derakhshani, Randi Lorene Munn (2008). Introducing 3ds Max 2008. John Wiley and Sons. p. 240. Retrieved 12 July 2011.
+Jump up ^ Autodesk (2006). Autodesk 3ds Max 9 essentials. Focal Press. p. 190. Retrieved 18 July 2011.
+Jump up ^ C. Finney, Kenneth (2004). 3D game programming all in one. Cengage Learning. pp. 415–416. Retrieved 18 July 2011.
+Jump up ^ Thompson, Jim; Berbank-Green, Barnaby; Cusworth, Nic (2007). Game design course: principles, practice, and techniques. John Wiley and Sons. p. 144. Retrieved 16 July 2015.

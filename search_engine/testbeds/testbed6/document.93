@@ -1,0 +1,291 @@
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-25734021-1', 'auto');
+  ga('send', 'pageview');
+          Home 
+          About 
+          Courses | Fees | Dates 
+          College-Projects 
+          Testimonials 
+          Internship 
+          Developers 
+          Jobs 
+          Contact 
+        Questions &amp; Answers 
+         C Interview Questions
+         C++ Questions
+         Linux MCQs
+         C# Quiz
+         Java MCQs
+         JavaScript MCQs
+         SAN Questions
+         PHP Questions
+         Python Quiz
+        Computer Science Questions 
+         Operating System Quiz
+         Computer Architecture MCQs
+         Software Architecture MCQs
+         Software Engineering MCQs
+         Artificial Intelligence MCQs
+         LISP Programming MCQs
+         Database Management MCQs
+         Computer Network MCQs
+         Microprocessor MCQs
+        C Programming Examples 
+         Simple C Programs
+         C - Arrays
+         C - Matrix
+         C - Strings
+         C - Bitwise Operations
+         C - Linked Lists
+         C - Stacks &amp; Queues
+         C - Searching &amp; Sorting
+         C - Trees
+         C - Strings
+         C - File Handling
+         C - Mathematical Functions
+         C - Puzzles &amp; Games
+         C Programs - Recursion
+         C Programs - No Recursion
+        Java Algorithms 
+         Java - Numerical Problems
+         Java - Combinatorial Problems
+         Java - Graph Problems
+         Java - Hard Graph Problems
+         Java - Computation Geometry
+         Java - Sets &amp; Strings
+         Java - Data-Structures
+         Java - Collection API Problems
+        C++ Algorithms 
+         C++ - Numerical Problems
+         C++ - Combinatorial Problems
+         C++ - Graph Problems
+         C++ - Hard Graph Problems
+         C++ - Computation Geometry
+         C++ - Sets &amp; Strings
+         C++ - Data-Structures
+         C++ - STL Library
+        C Algorithms 
+         C - Numerical Problems
+         C - Combinatorial Problems
+         C - Graph Problems
+         C - Hard Graph Problems
+         C - Computation Geometry
+         C - Sets &amp; Strings
+         C - Data-Structures
+        C++ Program for Topological Sorting in Graphs  
+         Posted on 
+         July 29, 2013 
+         by  Manish   
+         This C++ program, using an adjacency matrix, displays the times at which the different times at which nodes are visited and left thereby producing a linear ordering of vertices in a graph.
+         A graph is a set of nodes connected by edges.
+        Here is the source code of the C++ program to display topological sort. The C++ program is successfully compiled and run on DevCpp, a C++ compiler. The program output is also shown below. 
+               /*
+               &nbsp;* C++ Program for Topological Sorting in Graphs
+               &nbsp;*/
+               #include &lt;iostream&gt;
+               #include &lt;conio.h&gt;
+               using namespace std;
+               struct node_info
+               {
+                   int no;
+                   int lv_time, st_time;
+               }*q = NULL, *r = NULL;
+               struct node
+               {
+                   node_info *pt;
+                   node *next;
+               }*top = NULL, *p = NULL, *np = NULL;
+               int c = 0;
+               void push(node_info *ptr)
+               {
+                   np = new node;
+                   np-&gt;pt = ptr;
+                   np-&gt;next = NULL;
+                   if (top == NULL)
+                   {
+                       top = np;
+                   }
+                   else
+                   {
+                       np-&gt;next = top;
+                       top = np;
+                   }
+               }
+               node_info *pop()
+               {
+                   if (top == NULL)
+                   {
+                       cout&lt;&lt;"underflow\n";
+                   }
+                   else
+                   {
+                       p = top;
+                       top = top-&gt;next;
+                       return(p-&gt;pt);
+                       delete(p);
+                   }
+               }
+               void topo(int *v,int am[][7],int i)
+               {
+                   q = new node_info;
+                   q-&gt;no = i;
+                   q-&gt;st_time = c;
+                   cout&lt;&lt;"start time for node no "&lt;&lt;q-&gt;no&lt;&lt;":"&lt;&lt;c&lt;&lt;endl;
+                   push(q);
+                   v[i] = 1;
+                   for (int j = 0; j &lt; 7; j++)
+                   {
+                       if (am[i][j] == 0 || (am[i][j] == 1 &amp;&amp; v[j] == 1))
+                           continue;
+                       else if(am[i][j] == 1 &amp;&amp; v[j] == 0)
+                       {
+                           c++;
+                           topo(v,am,j);
+                       }
+                   }
+                   c++;
+                   r = pop();
+                   cout&lt;&lt;"leave time for "&lt;&lt;r-&gt;no&lt;&lt;":"&lt;&lt;c&lt;&lt;endl;
+                   return;
+               }
+               int main()
+               {
+                   int v[7],am[7][7];
+                   for (int i = 0; i &lt; 7; i++)
+                   v[i] = 0;
+                   for (int i = 0; i &lt; 7; i++)
+                   {
+                       cout&lt;&lt;"enter the values for adjacency matrix row:"&lt;&lt;i + 1&lt;&lt;endl;
+                       for(int j = 0; j &lt; 7; j++)
+                       {
+                           cin&gt;&gt;am[i][j];
+                       }
+                   }
+                   topo(v,am,0);
+                   getch();
+               }
+         advertisements
+              Output
+enter the values for adjacency matrix row:1
+0
+1
+1
+0
+0
+1
+1
+enter the values for adjacency matrix row:2
+1
+0
+0
+0
+0
+0
+0
+enter the values for adjacency matrix row:3
+1
+0
+0
+0
+0
+0
+1
+enter the values for adjacency matrix row:4
+0
+0
+0
+0
+1
+1
+0
+enter the values for adjacency matrix row:5
+0
+0
+0
+1
+0
+1
+1
+enter the values for adjacency matrix row:6
+1
+0
+0
+1
+1
+0
+0
+enter the values for adjacency matrix row:7
+1
+0
+1
+0
+1
+0
+0
+start time for node no 0:0
+start time for node no 1:1
+leave time for node no 1:2
+start time for node no 2:3
+start time for node no 6:4
+start time for node no 4:5
+start time for node no 3:6
+start time for node no 5:7
+leave time for node no 5:8
+leave time for node no 3:9
+leave time for node no 4:10
+leave time for node no 6:11
+leave time for node no 2:12
+leave time for node no 0:13
+       Sanfoundry Global Education &amp; Learning Series – 1000 C++ Programs. 
+         If you wish to look at all C++ Programming examples, go to 
+        C++ Programs. 
+       If you liked this C++ Program, kindly share, recommend or like below! 
+         « 
+        Java Program to Check Cycle in a Graph using Topological Sort 
+        C++ Program to Find the maximum subarray sub using Binary Search approach » 
+       advertisements
+      Manish Bhojasia, a technology veteran with 19+ years @ Cisco &amp; Wipro, is Founder and CTO at Sanfoundry. He is Linux Kernel Developer and SAN Architect and is passionate about competency developments in these areas. He lives in Bangalore and delivers focused training sessions to IT professionals in Linux Kernel, Linux Debugging, Linux Device Drivers, Linux Networking, Linux Storage &amp; Cluster Administration, Advanced C Programming, SAN Storage Technologies, SCSI Internals and Storage Protocols such as iSCSI &amp; Fiber Channel. Stay connected with us below:
+      Google+ | 
+      Facebook | 
+      Twitter | 
+      LinkedIn 
+       Best Careers 
+         Developer Tracks
+         SAN Developer
+         Linux Kernel Developer
+         Linux Driver Developer
+         Linux Network Developer
+         Live Training Photos
+         Mentoring
+         Software Productivity
+         GDB Assignment
+        Best Training 
+         SAN I - Technology
+         SAN II - Admin
+         Linux Fundamentals
+         Advanced C Training
+         Linux-C Debugging
+         System Programming
+         Network Programming
+         Linux Threads
+         Kernel Programming
+         Kernel Debugging
+         Linux Device Drivers
+         advertisements
+            Sanfoundry is 
+           No. 1 choice for Deep Hands-ON Trainings in 
+           SAN, Linux &amp; C, Kernel Programming. Our Founder has trained employees of almost all Top Companies in India such as VMware, Citrix, Oracle, Motorola, Ericsson, Aricent, HP, Intuit, Microsoft, Cisco, SAP Labs, Siemens, Symantec, Redhat, Chelsio, Cavium, ST-Micro, Samsung, LG-Soft, Wipro, TCS, HCL, IBM, Accenture, HSBC, Mphasis, Tata-Elxsi, Tata VSNL, Mindtree, Cognizant and Startups. 
+     advertisements
+      Terms of Use &amp; Privacy Policy 
+      Copyright 
+      Technology Groups 
+      Interns 
+      Jobs 
+      Sitemap 
+       © 2011-2016 Sanfoundry. All Rights Reserved. 
+        Want to Become Linux Developer? 
+       Read More 
+

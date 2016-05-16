@@ -1,0 +1,71 @@
+CMSC 427 Computer Graphics1
+David M. Mount Department of Computer Science University of Maryland Spring 2004
+
+Lecture 8: Af?ne Transformations
+Reading: Chapter 5 in Hearn and Baker.
+Af?ne Transformations: So far we have been stepping through the basic elements of geometric programming. We have discussed points, vectors, and their operations, and coordinate frames and how to change the representation of points and vectors from one frame to another. Our next topic involves how to map points from one place to
+Lecture Notes 35 CMSC 427
+another. Suppose you want to draw an animation of a spinning ball. How would you de?ne the function that maps each point on the ball to its position rotated through some given angle?
+We will consider a limited, but interesting class of transformations, called af?ne transformations. These include (among others) the following transformations of space: translations, rotations, uniform and nonuniform scalings (stretching the axes by some constant scale factor), re?ections (?ipping objects about a line) and shearings (which deform squares into parallelograms). They are illustrated in the ?gure below.
+Rotation Translation Uniform Scaling Scaling Reflection ShearingNonuniform
+Fig. 25: Examples of af?ne transformations.
+These transformations all have a number of things in common. For example, they all map lines to lines. Note that some (translation, rotation, re?ection) preserve the lengths of line segments and the angles between segments. Others (like uniform scaling) preserve angles but not lengths. Others (like nonuniform scaling and shearing) do not preserve angles or lengths.
+All of the transformation listed above preserve basic af?ne relationships. (In fact, this is the de?nition of an af?ne transformation.) For example, given any transformation T of one of the above varieties, and given two points P and Q, and any scalar a, R = (1-a)P+aQ ? T(R) = (1-a)T(P)+aT(Q). (We will leave the proof that each of the above transformations is af?ne as an exercise.) Putting this more intuitively, if R is the midpoint of segment PQ, before applying the transformation, then it is the midpoint after the transformation.
+There are a couple of special cases of af?ne transformations that are worth noting.
+Rigid transformations: These transformations (also called Euclidean transformations) preserve both angles and lengths. Examples include translations, rotations, re?ections and their combinations. Orthogonal transformations: These transformations preserve angles but not necessarily lengths. Examples include translation, rotation, uniform scaling, and their combinations. Homothetic transformations: These transformations preserves slopes of lines (and hence preserve angles), but do not necessarily preserve lengths. Examples include translation, uniform scaling, and their combinations.
+Matrix Representation of Af?ne Transformations: Let us concentrate on transformations in 3-space. An important consequence of the preservation of af?ne relations is the following. R = a0F.~ e0 +a1F.~ e1 +a2F.~ e2 +a3O ?T (R)=a0T(F.~ e0)+a1T(F.~ e1)+a2T(F.~ e2)+a3T(O). Here a3 is either 0 (for vectors) or 1 (for points). The equation on the left is the representation of a point or vector R in terms of the coordinate frame F. This implication shows that if we know the image of the frame elements under the transformation, then we know the image R under the transformation.
+Lecture Notes 36 CMSC 427
+From the previous lecture we know that the homogeneous coordinate representation of R relative to frame F is R[F]=(a 0,a1,a2,a3)T. (Recall that the superscript T in this context means to transpose this row vector into a column vector, and should not be confused with the transformation T.) Thus, we can express the above relationship in the following matrix form. T(R)[F]= T(F.~ e0)[F]
+ 
+ 
+ 
+ 
+ T(F.~ e1)[F]
+ 
+ 
+ 
+ 
+ T(F.~ e2)[F]
+ 
+ 
+ 
+ 
+ T(F.O)[F]!? ? ? ? a0 a1 a2 a3 ? ? ? ? . Here the columns of the array are the representation (relative to F) of the images of the elements of the frame under T. This implies that applying an af?ne transformation (in coordinate form) is equivalent to multiplying the coordinates by a matrix. In dimension d this is a (d +1)×(d+1)matrix. If this all seems a bit abstract. In the remainder of the lecture we will give some concrete examples of transformations. Rather than considering this in the context of 2-dimensional transformations, let's consider it in the more general setting of 3-dimensional transformations. The two dimensional cases can be extracted by just ignoring the rows and columns for the z-coordinates.
+Translation: Translation by a ?xed vector ~ v maps any point P to P +~ v. Note that free vectors are not altered by translation. (Can you see why?) Suppose that relative to the standard frame, v[F]=(a x,ay,az,0)T are the homogeneous coordinates of ~ v. The three unit vectors are unaffected by translation, and the origin is mapped to O + ~ v, whose homogeneous coordinates are (ax,ay,az,1). Thus, by the rule given earlier, the homogeneous matrix representation for this translation transformation is
+T(~ v)=? ? ? ?
+100a x 010a y 001a z 0 0 0 1 ? ? ? ? .
+O+v
+O
+Translation Uniform Scaling
+0-e
+Reflection
+e0
+e1
+e0 2e0
+e1
+2e1
+Fig. 26: Derivation of transformation matrices.
+Scaling: Uniform scaling is a transformation which is performed relative to some central ?xed point. We will assume that this point is the origin of the standard coordinate frame. (We will leave the general case as an exercise.) Given a scalar ß, this transformation maps the object (point or vector) with coordinates (ax,ay,az,aw)T to (ßax,ßay,ßaz,aw)T. In general, it is possible to specify separate scaling factors for each of the axes. This is called nonuniform scaling. The unit vectors are each stretched by the corresponding scaling factor, and the origin is unmoved. Thus, the transformation matrix has the following form: S(ßx,ßy,ßz)=? ? ? ? ßx 0 0 0 0ß y 00 00ß z0 0 0 0 1 ? ? ? ? . Lecture Notes 37 CMSC 427
+Observe that both points and vectors are altered by scaling.
+Re?ection: A re?ection in the plane is given a line and maps points by ?ipping the plane about this line. A re?ection in 3-space is given a plane, and ?ips points in space about this plane. In this case, re?ection is just a special case of scaling, but where the scale factor is negative. For example, to re?ect points about the yz-coordinate plane, we want to scale the x-coordinate by -1. Using the scaling matrix above, we have the following transformation matrix: Fx =? ? ? ? -1000 0100 0010 0001 ? ? ? ? . The cases for the other two coordinate frames are similar. Re?ection about an arbitrary line or plane is left as an exercise.
+Rotation: In its most general form, rotation is de?ned to take place about some ?xed point, and around some ?xed vector in space. We will consider the simplest case where the ?xed point is the origin of the coordinate frame, and the vector is one of the coordinate axes. There are three basic rotations: about the x, y and z-axes. In each case the rotation is through an angle ? (given in radians). The rotation is assumed to be in accordance with a right-hand rule: if your right thumb is aligned with the axes of rotation, then positive rotation is indicated by your ?ngers. Consider the rotation about the z-axis. The z-unit vector and origin are unchanged. The x-unit vector is mapped to (cos?,sin?,0,0)T, and the y-unit vector is mapped to (-sin?,cos?,0,0)T . Thus the rotation matrix is: Rz(?)=? ? ? ? cos? -sin? 00 sin? cos? 00 0 0 1 0 0 0 0 1 ? ? ? ? .
+x,y
+z
+x,y
+z
+x
+y
+Rotation (about z) Shear (orthogonal to z)
+?
+?
+(sh  , sh  ,1) x y
+? (cos   , sin   ) ?
+(-sin   , cos   ) ??
+Fig. 27: Rotation and shearing.
+For the other two axes we have Rx(?)=? ? ? ? 1 0 0 0 0 cos? -sin? 0 0 sin? cos? 0 0 0 0 1 ? ? ? ? ,R y ( ? )=? ? ? ?
+cos? 0 sin? 0 0 1 0 0 - sin? 0 cos? 0 0 0 0 1 ? ? ? ? . Shearing: A shearing transformation is the hardest of the group to visualize. Think of a shear as a transformation that maps a square into a parallelogram in the plane, or a cube into a parallelepiped in 3-space. We will consider the simplest form, in which we start with a unit cube whose lower left corner coincides with the origin. Consider one of the axes, say the z-axis. The face of the cube that lies on the xy-coordinate plane does not move. The face that lies on the plane z =1, is translated by a vector (shx,shy). In general, a point P =(px,py,pz,1) is translated by the vector pz(shx,shy,0,0). This vector is orthogonal to the
+Lecture Notes 38 CMSC 427
+z-axis, and its length is proportional to the z-coordinate of P. This is called an xy-shear. (The yz- and xz-shears are de?ned analogously.) Under the xy-shear, the origin and x- and y-unit vectors are unchanged. The z-unit vector is mapped to (shx,shy,1,0)T . Thus the matrix for this transformation is: Hxy(?)=? ? ? ? 10shx 0 01shy 0 0 0 1 0 0 0 0 1 ? ? ? ? . Shears involving any other pairs of axes are de?ned similarly.
+Building Transformations through Composition: Now that we know some basic af?ne transformations, we can use these to construct more complex ones. Af?ne transformations are closed under composition. (This is not hard to prove.) This means that if S and T are two af?ne transformations, then the composition (S ? T), de?ned (S ?T)(P)=T(S(P)), is also an af?ne transformation. Since S and T can be represented in matrix form as homogeneous matrices MS and MT, then it is easy to see that we can express their composition as the matrix product MTMS. Notice the reversal of order here, since the last matrix in the produce is the ?rst to be applied. One way to compute more complex transformation is compose a series of the basic transformations together. For example, suppose that you wanted to rotate about a vertical line (parallel to z) passing through the point P. We could do this by ?rst translating the plane by the vectorO-P, so that the (old) point P now coincides with the (new) origin. Then we could apply our rotation about the (new) origin. Finally, we translate space back by P -Oso that the origin is mapped back to P. The resulting sequence of matrices would be Rz(?,P)=T(P-O)·Rz(?)·T(O-P).
+Building Transformations "in One Shot": Another approach for de?ning transformations is to compute the matrix directly by determining the images of the basis elements of the standard frame. Once this is done, you can simply create the appropriate transformation matrix by concatenating these images. This is often an easier approach than composing many basic transformations. I call this the one-shot method because it constructs the matrix in a single step.
+To illustrate the idea, consider the 2-dimensional example illustrated below. We want to compute a transformation that maps the square object shown on the left to position P and rotated about P by some angle ?. To do this, we can de?ne two frames F and G, such that the object is in the same position relative to each frame, as shown in the ?gure.

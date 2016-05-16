@@ -1,0 +1,249 @@
+1 Geometry
+Let no one enter who does not know geometry. Inscription on Plato's door,probably at the Academy ofAthens (c.429-347 BC).
+This section contains formulas often required in computer graphics and is organised into 19 groups:
+1.1 Lines,angles and trigonometry 1.2 Circles 1.3 Triangles 1.4 Quadrilaterals 1.5 Polygons 1.6 Three-dimensional objects 1.7 Coordinate systems 1.8 Vectors 1.9 Quaternions 1.10 Transformations 1.11 Two-dimensional straight lines 1.12 Lines and circles 1.13 Second degree curves 1.14 Three-dimensional straight lines 1.15 Planes 1.16 Lines,planes and spheres 1.17 Three-dimensional triangles 1.18 Parametric curves and patches 1.19 Second degree surfaces in standard form
+Most of these formulas are developed in the section on Proofs and placed in context in the section on Examples.
+1
+01  29/09/04  15:36  Page 1
+Unde?ned results
+The reader will probably be aware that the simplest of formulas must be treated with great care.For example x  a/bappears rather innocent,but is unde?ned when b  0. Similarly,s   t will only generate a real value when t  0.Therefore similar care must be exercised when using vectors and quaternions.For example,if a vector is accidentally set null,e.g.n  ai  bj  ckwhere a  b  c  0 then n•n 0.This in itself is not a problem,but if this dot product is in the denominator of a formula,then the result is unde?ned and will terminate a computer program unless this condition is detected prior to the division.
+Determinants
+Some formulas in this section are expressed in determinant form simply because they provide a neat and compact notation.However,a determinant can be zero,therefore its value must be determined if it is used as a denominator in a formula.
+Vectors
+Formulas involving vectors can often be simpli?ed if they are unit vectors.For example, the angle a between two vectors n1 and n2 is given by
+but if ||n1||  ||n2||  1 a  cos1(n1 • n2) which saves unnecessary computation.
+Matrices
+Matrix transformations are another source of error when developing computer programs. Unfortunately,two systems are still in use and create untold havoc when a matrix is copied from a book or technical paper without knowing the source of the transform.For example, this text employs column vectors:
+where xax  by ycx  dy
+x y
+ab cd
+x y
+  ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+a 
+ cos || ||·|| || 1 12 12 nn nn i? ? ? ? ? ?
+2 Geometry for computer graphics
+01  29/09/04  15:36  Page 2
+However,when using row vectors we have
+where xax  cy ybx  dy which does not produce the same result! The second example can be made identical to the ?rst by transposing the matrix:
+where xax  by ycx  dy which is what the reader will have to do if they discover such a matrix.For example,a rotation matrix using row vectors is
+but when transposed creates the more familiar column vector form
+Readers not familiar with matrices should appreciate that matrix multiplication is not commutative,i.e.in general TA  TB  TB  TA.This is easily seen using a simple example:
+Given
+then
+whereas
+It is obvious that they do not produce the same result.
+Ef?ciency
+The formulas listed in this section are not selected on the basis of speed.Such strategies are beyond the scope of this book and the reader should investigate how these formulas have been developed by authors and researchers to improve their ef?ciency.
+TT ef gh
+ab cd
+ae cf be df ag chBA       ? ? ? ? ? ? ? ? ? ? ? ? bbg dh  ? ? ? ? ? ?
+TT ab cd
+ef gh
+ae bg af bh ce dgAB       ? ? ? ? ? ? ? ? ? ? ? ? ccf dh  ? ? ? ? ? ?
+T ab cd T ef gh AB  ? ? ? ? ? ? ? ? ? ? ? ?
+cos sin sin cos aa aa ? ? ? ? ? ?
+cos sin sin cos aa aa ? ? ? ? ? ?
+x y x y ac bd   ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+x y x y ab cd   ? ? ? ? ? ? ? ? ? ? ? ? ? ?
+Geometry 3
+01  29/09/04  15:36  Page 3
+1.1.1 Points and straight lines
+The building blocks of Euclidian geometry are the pointand the straight line.A point indicates position in space and has no size or magnitude.A moving point describes a line, which has length but no width.From these two concepts evolve the following axioms:
+1. Only one straight line can be drawn between two points. 2. Two straight lines intersect in one point only. 3. Two straight lines cannot enclose a space.
+As soon as we introduce two or more lines,the idea of a plane surface emerges.Such a surface can be tested as follows: A straight line joining two points on a plane surface will also reside on that surface. From these simple de?nitions explode the subject of two-dimensional Euclidian geometry.
+Parallel lines
+Parallel lines remain a constant distance apart and reside on a common surface.
+1.1.2 Angles
+An angle is formed when two straight lines meet at a point.An angle is a spatial quantity and measures the rotational offset between the two lines when rotated about their common point or vertex.By de?nition,anti-clockwise angles are positive and clockwise angles are negative. Furthermore,by de?nition,one revolution equals 360°or 2p radians.
+Acute,obtuse,right and straight angles
+0°	acute angle	(right angle  90°)	obtuse angle	(straight angle  180°)
+Complementary angles
+Complementary angles sum to 90°.
+1.1 Lines,angles and trigonometry
+4 Geometry for computer graphics 
+a  b  90° a b
+01  29/09/04  15:36  Page 4
+Supplementary angles
+Supplementary angles sum to 180°.
+Vertical angles
+Two pairs of vertical angles are created by two intersecting straight lines.
+Interior,exterior,corresponding and opposite angles
+Interior,exterior,corresponding and opposite angles arise when a straight line intersects a pair of parallel lines.
+Interior angles a2 b2 u1 f1
+Alternate interior angles
+Corresponding angles Opposite angles
+Exterior angles a1 b1 u2 f2 Alternate exterior angles
+1.1.3 Trigonometry
+Angular measurement
+By de?nition Right angle 90°
+Straight angle 180° p [radians] One revolution 360° 2p [radians]
+01  29/09/04  15:36  Page 9
+Peripheral angles subtended by a chord Peripheral angles subtended by a common chord are equal.
+Secants
+A secant of a circle is a straight line that intersects the circle's circumference in two points.
+The secant theorem If two secants intersect at Ooutside a circle,then the product of the intercepts between Oand the circle on one is equal to the product of the two intercepts on the other.
+The secant-tangent theorem If two secants intersect at Ooutside a circle,and one of them is tangent to the circle,then the length of the intercept on the tangent between Oand the point of contact is the geometric mean of the lengths of the intercepts of the other secant.
+Arcs
+The central angle subtended by an arc is twice the angle on the circle.
+When the central angle is 180°the angle at the periphery is 90°;and the arc is half the circumference.
+1.2.2 Ellipses
+Area on an ellipse
+Area of an ellipse A  4pab
+10 Geometry for computer graphics
+aa
+Isosceles triangle Equilateral triangle Scalene triangle
+Two equal sides and two All sides are equal and all All sides are unequal and equal base angles. angles equal 60°. all angles unequal.
+1.3.2 Similar triangles
+Two triangles are similar () if corresponding angles are equal,and corresponding sides share a common ratio.
+Conditions for similarity First triangle Second triangle
+Three corresponding sides are in the same ratio.
+Two corresponding sides are in the same ratio,and the included angles are equal.
+01  29/09/04  15:36  Page 11
+Two corresponding angles are equal.
+a  a b  b
+1.3.3 Congruent triangles
+Two triangles are congruent (identical ) if corresponding sides and angles are equal.
+Conditions for congruency First triangle Second triangle
+Three sides are equal. a  a b  b c  c
+Two sides and the included angle are equal. a  a b  b a  a
+One side and the adjoining angles are equal. a  a a  a b  b
+1.3.4 Theorem of Pythagoras
+Pythagorean formula
+In a right-angled triangle,the square of the hypotenuse equals the sum of the squares of the other two sides. a2  b2  c2
+12 Geometry for computer graphics
+01  29/09/04  15:36  Page 13
+1.3.8 Inscribed and circumscribed circles
+General triangle
+A(xA,yA),B(xB,yB),C(xC,yC) are the vertices of a triangle with sides a,b,c. ris the radius of the inscribed circle. Ris the radius of the circumscribed circle. M(xM,yM) is the center of the inscribed circle. P(xP,yP) is the center of the circumscribed circle. and yAC  yC  yA etc.
+or
+or
+Equilateral triangle
+14 Geometry for computer graphics
+a
+b
+c BA
+C
+R
+r
+M
+P
+a
+BA
+C
+R
+rM
+a
+a
+01  29/09/04  15:36  Page 14
+Right-angled triangle
+1.3.9 Centroid of a triangle
+The medians of a triangle are concurrent,and intersect at its centroid two-thirds along a median connecting a vertex to the mid-point of the opposite side.The centroid is also the center of gravity of the triangle.
+General triangle
+AE,BFand CDare medians and Pis the centroid.
+1.3.10 Spherical trigonometry
+Trigonometric rules
+Sine rule
+Cosine rule cos a  cos b cos x  sin b sin x cos A cos A cos Bcos C  sin Bsin Ccos a
+Area of a spherical triangle
+Area r
+E
+E A B C     
+p 2 180 180where
+sin sin
+sin sin
+sin sin ABC ab  
+AP AE BP BF CP CD    2 3 2 3 2 3
+r
+ab s R hypotenuse   2 1 2
+Geometry 15
+ab
+c BA
+C
+R
+rM
+P
+A B
+C
+D
+EF P
+A
+B
+C
+x
+b
+a
+01  29/09/04  15:36  Page 15
+16 Geometry for computer graphics
+Square
+Diagonal
+Area
+Inradius
+Circumradius
+Symmetry properties:A square has equal sides and equal diagonals,which bisect each other and the interior angles,and they intersect at right angles.The interior angles are right angles.
+Rectangle
+Diagonal
+Area A  ab
+Circumradius
+Symmetry properties:A rectangle has equal diagonals,which bisect each other,and the interior angles are right angles.
+Parallelogram (rhomboid)
+Diagonals
+Altitude h  bsina Area A  ah  absina
+Symmetry properties:A parallelogram has two pairs of parallel sides with equal opposite sides.Adjacent interior angles are supplementary and opposite interior angles are equal. The diagonals bisect each other.
+d d a b 1 2 2 2 2 2 2    ()
+d a b ab 2 22 2   cos 
+
+d a b ab 1 22 2   cos 
+Rd  1 2
+d a b  22
+R
+a
+
+2
+ra  1 2
+A a d  2 1 2 2
+da  2
+1.4 Quadrilaterals
+a
+d
+d R r aa
+a
+a
+a
+bb d d R
+a
+a
+bb d1 d2h
+ b a
+01  29/09/04  15:36  Page 16
+Geometry 17
+Rhombus
+Diagonals
+Altitude h  asin a
+Area
+Symmetry properties:A rhombus has two pairs of parallel,equal sides.Adjacent interior angles are supplementary and opposite interior angles are equal.The diagonals bisect each other and the interior angles,and intersect at right angles.
+Trapezium
+Diagonals
+Altitude h  dsin a  bsinb Area
+Symmetry properties:A trapezium has one pair of parallel sides.
+General quadrilateral
+Area
+where
+Symmetry properties:A general quadrilateral has all sides of different lengths and no sides parallel.The sum of interior angles  360°,and the sum of exterior angles  360°.
+01  29/09/04  15:36  Page 17
+Tangent quadrilateral
+Area
+A  sr
+where
+Symmetry properties:A tangent quadrilateral must have an inscribed circle.
+Cyclic quadrilateral
+Diagonals
+d1d2  ac + bd
+Area
+where
+Circumscribed radius
+Symmetry properties:A cyclic quadrilateral must have a circumscribed circle.Opposite interior angles are supplementary (sum to 180°).
+R
+ac bd ad bc ab cd s a s b s c s
+
+ 
+

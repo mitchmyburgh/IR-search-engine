@@ -1,0 +1,84 @@
+Introduction
+This chapter discusses some of the basic concepts behind computer graphics with particular
+emphasis on how to get started with simple drawing in OpenGL. A major portion of the chapter
+explains the simplest methods of drawing in OpenGL and various rendering modes. If this is
+your first encounter with OpenGL, it is highly suggested that you look at the included sample
+code and experiment with some of the OpenGL commands while reading this chapter.
+The first topic considered is the different models for graphics displays. Of particular importance
+for the topics covered later in the book is the idea that an arbitrary three-dimensional
+geometrical shape can be approximated by a set of polygons – more specifically as a set of
+triangles. Second, we discuss some of the basic methods for programming in OpenGL to display
+simple two- and three-dimensional models made from points, lines, triangles, and other
+polygons.We also describe how to set colors and polygonal orientations, how to enable hidden
+surface removal, and how to make animation work with double buffering. The included sample
+OpenGL code illustrates all these capabilities. Later chapters will discuss how to use transformations,
+how to set the viewpoint, how to add lighting and shading, how to add textures, and
+other topics.
+I.1 Display Models
+We start by describing three models for graphics display modes: (1) drawing points, (2) drawing
+lines, and (3) drawing triangles and other polygonal patches. These three modes correspond
+to different hardware architectures for graphics display. Drawing points corresponds roughly to
+the model of a graphics image as a rectangular array of pixels. Drawing lines corresponds to
+vector graphics displays. Drawing triangles and polygons corresponds to the methods used by
+modern graphics display hardware for displaying three-dimensional images.
+I.1.1 Rectangular Arrays of Pixels
+The most common low-level model is to treat a graphics image as a rectangular array of pixels
+in which, each pixel can be independently set to a different color and brightness. This is the
+display model used for cathode ray tubes (CRTs) and televisions, for instance. If the pixels are
+small enough, they cannot be seen individually by the human viewer, and the image, although
+composed of points, can appear as a single smooth image. This technique is used in art aswell –
+notably in mosaics and, even more so, in pointillism, where pictures are composed of small
+1
+Team LRN
+
+I.1 Display Models 3
+y
+x
+1 2
+1
+2
+penup();
+moveto(2,2);
+pendown();
+moveto(2,1);
+penup();
+moveto(1,2);
+pendown();
+moveto(0,2);
+moveto(1,1);
+moveto(1,2);
+Figure I.2. Examples of vector graphics commands.
+or wireframe images of three-dimensional objects. The canonical example of vector graphics
+systems are pen plotters; this includes the “turtle geometry” systems. Pen plotters have a
+drawing pen that moves over a flat sheet of paper. The commands available include (a) pen
+up, which lifts the pen up from the surface of the paper, (b) pen down, which lowers the point
+of the pen onto the paper, and (c) move-to(x, y), which moves the pen in a straight line from
+its current position to the point with coordinates x, y. When the pen is up, it moves without
+drawing; when the pen is down, it draws as it moves (see Figure I.2). In addition, there may be
+commands for switching to a different color pen as well as convenience commands to make it
+easier to draw images.
+Another example of vector graphics devices is vector graphics display terminals, which
+traditionally are monochrome monitors that can draw arbitrary lines. On these vector graphics
+display terminals, the screen is a large expanse of phosphor and does not have pixels. A
+traditional oscilloscope is also an example of a vector graphics display device.
+Vector graphics displays and pixel-based displays use very different representations of
+images. In pixel-based systems, the screen image will be stored as a bitmap, namely, as a table
+containing all the pixel colors. A vector graphics system, on the other hand, will store the
+image as a list of commands – for instance as a list of pen up, pen down, and move commands.
+Sucha list of commands is called a display list.
+Nowadays, pixel-based graphics hardware is very prevalent, and thus even graphics systems
+that are logically vector based are typically displayed on hardware that is pixel based.
+The disadvantage is that pixel-based hardware cannot directly draw arbitrary lines and must
+approximate lines with pixels. On the other hand, the advantage is that more sophisticated
+figures, suchas filled regions, can be drawn.
+Modern vector graphics systems incorporate more than just lines and include the ability to
+draw curves, text, polygons, and other shapes such as circles and ellipses. These systems also
+have the ability to fill in or shade a region with a color or a pattern. They generally are restricted
+to drawing two-dimensional figures. Adobe’s PostScript language is a prominent example of a
+modern vector graphics system.
+I.1.3 Polygonal Modeling
+One step up, in both abstraction and sophistication, is the polygonal model of graphics images. It
+is very common for three-dimensional geometric shapes to be modeled first as a set of polygons
+and then mapped to polygonal shapes on a two-dimensional display. The basic display hardware
+is generally pixel based, but most computers now have special-purpose graphics hardware for
+processing polygons or, at the very least, triangles. Graphics hardware for rendering triangles

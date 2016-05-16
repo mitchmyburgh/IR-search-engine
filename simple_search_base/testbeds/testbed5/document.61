@@ -1,0 +1,93 @@
+Inventor of C++ reflects on 25 years of the programming language
+
+Wired speaks to Bjarne Stroustup -- the inventor of the C++ programming language -- 25 years after its invention
+
+1985: The first official reference guide for the C++ programming language is published. The author, Bjarne Stroustrup, is also the language’s creator.
+
+Stroustrup had been hacking away at his replacement for the C programming language at AT&T Bell labs since 1979, where he and his colleagues in the research department were given free reign to experiment with new ways of building software.
+
+C++ went on to become one of the most popular programming languages ever created. It was designed to be a “general use” language: It can be run on just about any platform, and it shows up almost everywhere, especially in videogames and embedded systems.
+
+“If I had thought of it and had some marketing sense,” Stroustrup says, “every computer and just about any gadget would have had a little ‘C++ Inside’ sticker on it.”
+
+After publishing The C++ Programming Language, Stroustrup continued to stay active in the C++ community, working on the language’s design, writing compilers and helping to make the language an ISO standard in 1998. He is currently a distinguished professor and holder of the College of Engineering Chair in Computer Science at Texas A&M University.
+
+
+To commemorate the silver anniversary of the publication of his definitive text, we asked Stroustrup to reflect on the last 25 years, including the legacy of C++ and the impact it has had on today’s computing applications. Stroustrup also tells us what music he listens to while coding -- a mix of classical and Clapton. He answered our questions by e-mail.
+
+Wired: Who did you create C++ for? Yourself, or was there a wider audience in mind?
+
+Bjarne Stroustrup: It was done for me and my friends and colleagues. We had a wide variety of problems, and C seemed to be an unnecessarily primitive tool for doing the kinds of design and implementation needed for what we could do with faster computers and larger memories. On the other hand, the machines were still ridiculously small and slow by 2010 standards. One MHz and 1 Mb was a luxury. So, minimising overhead to what was logically necessary was important.
+
+At the time, AT&T Bell Labs was simply the most exciting place in the world for an engineer or a computer scientist with a practical bent. There was no end to the variety of interesting challenges and so many interesting people to collaborate with.
+
+‘Sometimes, it is more important to have the right problem than the best solution.’
+
+Wired: At what point did you realise your creation was going to be a “big deal”?
+
+Stroustrup: It dawned on me gradually. I was too busy getting work done to reflect philosophically, but from day one, I aimed at generality, and I knew that only articulated ideas could survive. I knew that object-oriented programming (OOP) was “a big deal,” but I was too close to the process to really appreciate what I was doing.
+
+I just wanted to make programming techniques based on static type safety and abstraction affordable, teachable and applicable to systems programming. In addition to the language design and implementation, I helped on dozens of projects to get a feel for different problem areas.
+
+From 1979 to 1991, the C++ user community doubled every 7.5 months. That left me little time for quiet reflection. It should be noted that this was a time of ferment in the programming community: Ada, Smalltalk, Eiffel, Objective C, the forerunners of CLOS, and other languages were vigorously competing for mind share. In that context, C++ was the only “advanced language” without a marketing organisation.
+
+Please note that my claim to fame is not to have invented OOP. I did not -- that honour belongs to the designers of Simula: Ole-Johan Dahl and Kristen Nygaard -- but I did have a major hand in making it mainstream. Also, my aim for C++ was always to go beyond the narrow definitions of OOP. Even my first paper presented an example of generic programming (and got it all wrong). Sometimes, it is more important to have the right problem than the best solution.
+
+
+Wired: In your eyes, what’s the most significant impact C++ has had on the broader culture -- not programmers, but everyday humans?
+
+Stroustrup: The ultimate measure of success for any programming language must be the impact of its applications.
+
+‘When done well, software is invisible.’
+
+The measure is not the beauty of the individual statement of how elegant an example you can fit into a two-column POPL-format academic paper. So, for me, the main satisfaction comes from interesting and challenging applications that just might not have been done without C++, or possibly been delayed for many years for lack of a language suitable for demanding real-world applications.
+
+The Mars rovers, the human genome project’s DNA string matching, Google, Amazon, airline reservation systems (Amadeus), code analysis (Coverity), animation (Maya), cars, airplanes, Photoshop, telecommunication systems. Videogames like Doom, Warcraft, Age of Empires, Halo. Wind turbines, oil exploration. Most of Microsoft’s software and much of Apple’s. Java virtual machines. Thunderbird and Firefox, MySQL, lots of financial software, OpenOffice, etc.
+
+When done well, software is invisible. There are several processors in my little camera, but I don’t think of my camera as a computer. There are dozens of computers in a modern car, but we still think of it as a car.
+
+People see applications, but I deal primarily with the foundations and infrastructure that support those applications. I guess if I had thought of it and had some marketing sense, every computer and just about any gadget would have had a little “C++ inside” sticker on it.
+
+‘We depend on software. Most people would starve without it. We would also be without electricity, heat and telephones.’
+
+In general, I don’t think people appreciate how much we depend on software. Given the complexity of modern society and modern transportation systems, it is fair to say that most people would simply starve without software. We would also be without electricity, heat and telephones.
+
+Wired: How much time do you spend programming these days?
+
+Stroustrup: Too little, of course. There are days where I don’t write any code, and most days I write only small code fragments and experimental programs. I spend more time thinking about programming, trying to teach about programming, trying to write about programming, and trying to think of fundamentally better ways of developing software.
+
+I don’t find that easy. Writing code is simpler and easier, but in itself, that is typically as sterile and unimportant as it would be to do crossword puzzles.
+
+However, there really are only few days where I don’t get some coding done and I never give a talk without at least some code.
+
+Wired: What hardware and software do you currently use?
+
+Stroustrup: I have a small (sub-3-pounds) laptop with a bunch of C++ compilers. It’s a Windows box. My desktop is Linux with more compilers and tools for software development.
+
+‘If someone claims to have the perfect programming language, he is either a fool or a salesman or both.’
+
+Wired: Looking at newer systems, frameworks, protocols and applications, what do you admire?
+
+Stroustrup: I’ll just note that I consider the idea of one language, one programming tool, as the one and only best tool for everyone and for every problem infantile. If someone claims to have the perfect language he is either a fool or a salesman or both.
+
+Wired: Most programmers are particular about the music they listen to while coding or writing. What do you listen to?
+
+Stroustrup: Tchaikovsky’s Fifth, Wagner’s The Ring Without Words, Grieg’s Peer Gynt Suite, Sibelius, Nielsen’s The Inextinguishable, various Mozart concertos, The Dixie Chicks, Beatles’ Abbey Road, Handel’s Messiah and Water Music, Eric Clapton, Beethoven’s Fifth and Seventh. I looked to see what my laptop had been playing lately.
+
+Wired: In what ways are ultraportable touchscreen devices -- iPhones, Android phones, iPads -- changing the way computers fit into our lives?
+
+Stroustrup: I suspect they are as disruptive as they are helpful. It is nice to be able to get directions and restaurant reviews right in your hand, but being always connected, always accessible or interruptible, and with music blaring most of the time, gets in the way of thinking. I need time for quiet reflection, so I probably don’t appreciate those gadgets as much as others.
+
+Wired: What about the App Stores that serve these hardware platforms? What impact are they having on users, programmers, creativity, the commerce of software?
+
+Stroustrup: I don’t know. I think the issue is what becomes important in the long run: the developer’s use of massive proprietary libraries and run-time environments or the opportunities for innovative applications offered by the ubiquitous presence of the gadgets. The former channels efforts into the conventional, and the latter opens new scope for imagination.
+
+Wired: Do you read e-books?
+
+Stroustrup: Infrequently, and mostly very light literature. I find the screens too small for technical work and the facilities for scribbling and annotation still too weak.
+
+Wired: Any advice for young programmers?
+
+Stroustrup: I guess giving advice is easy compared to taking it. Know your fundamentals (algorithms, data structures, machine architecture, systems) and know several programming languages to the point where you can use them idiomatically.
+
+Know some non-computer field of study well -- math, biology, history, optics, whatever. Learn to communicate effectively in speech and in writing. Spend an unreasonable amount of time on some difficult topic to really master it. Try to do something that might make a difference in the world.

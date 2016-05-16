@@ -1,0 +1,90 @@
+ Hash function 
+   From Wikipedia, the free encyclopedia
+    Jump to: 
+   navigation, 
+   search 
+    This article is about a programming concept. For other meanings of "hash" and "hashing", see 
+    Hash (disambiguation).
+      This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (July 2010) (Learn how and when to remove this template message) 
+       A hash function that maps names to integers from 0 to 15. There is a collision between keys "John Smith" and "Sandra Dee".
+   A hash function is any function that can be used to map data of arbitrary size to data of fixed size. The values returned by a hash function are called hash values, hash codes, hash sums, or simply hashes. One use is a data structure called a hash table, widely used in computer software for rapid data lookup. Hash functions accelerate table or database lookup by detecting duplicated records in a large file. An example is finding similar stretches in DNA sequences. They are also useful in cryptography. A cryptographic hash function allows one to easily verify that some input data maps to a given hash value, but if the input data is unknown, it is deliberately difficult to reconstruct it (or equivalent alternatives) by knowing the stored hash value. This is used for assuring integrity of transmitted data, and is the building block for HMACs, which provide message authentication. 
+   Hash functions are related to (and often confused with) checksums, check digits, fingerprints, randomization functions, error-correcting codes, and ciphers. Although these concepts overlap to some extent, each has its own uses and requirements and is designed and optimized differently. The Hash Keeper database maintained by the American National Drug Intelligence Center, for instance, is more aptly described as a catalogue of file fingerprints than of hash values. 
+     Contents 
+     1 Uses 
+       1.1 Hash tables 
+       1.2 Caches 
+       1.3 Bloom filters 
+       1.4 Finding duplicate records 
+       1.5 Protecting data 
+       1.6 Finding similar records 
+       1.7 Finding similar substrings 
+       1.8 Geometric hashing 
+       1.9 Standard uses of hashing in cryptography 
+     2 Properties 
+       2.1 Determinism 
+       2.2 Uniformity 
+       2.3 Defined range 
+         2.3.1 Variable range 
+         2.3.2 Variable range with minimal movement (dynamic hash function) 
+       2.4 Data normalization 
+       2.5 Continuity 
+       2.6 Non-invertible 
+     3 Hash function algorithms 
+       3.1 Trivial hash function 
+       3.2 Perfect hashing 
+       3.3 Minimal perfect hashing 
+       3.4 Hashing uniformly distributed data 
+       3.5 Hashing data with other distributions 
+       3.6 Hashing variable-length data 
+       3.7 Special-purpose hash functions 
+       3.8 Rolling hash 
+       3.9 Universal hashing 
+       3.10 Hashing with checksum functions 
+       3.11 Multiplicative hashing 
+       3.12 Hashing with cryptographic hash functions 
+       3.13 Hashing by nonlinear table lookup 
+       3.14 Efficient hashing of strings 
+     4 Locality-sensitive hashing 
+     5 Origins of the term 
+     6 List of hash functions 
+     7 See also 
+     8 References 
+     9 External links 
+   Uses[edit] 
+   Hash tables[edit] 
+      This section does not cite any sources. Please help improve this section by adding citations to reliable sources. Unsourced material may be challenged and removed. (August 2015) 
+   Hash functions are primarily used in hash tables,[1] to quickly locate a data record (e.g.,&nbsp;a dictionary definition) given its search key (the headword). Specifically, the hash function is used to map the search key to an index; the index gives the place in the hash table where the corresponding record should be stored. Hash tables, in turn, are used to implement associative arrays and dynamic sets. 
+   Typically, the domain of a hash function (the set of possible keys) is larger than its range (the number of different table indices), and so it will map several different keys to the same index. Therefore, each slot of a hash table is associated with (implicitly or explicitly) a set of records, rather than a single record. For this reason, each slot of a hash table is often called a bucket, and hash values are also called bucket indices. 
+   Thus, the hash function only hints at the record's location — it tells where one should start looking for it. Still, in a half-full table, a good hash function will typically narrow the search down to only one or two entries. 
+   Caches[edit] 
+   Hash functions are also used to build caches for large data sets stored in slow media. A cache is generally simpler than a hashed search table, since any collision can be resolved by discarding or writing back the older of the two colliding items. This is also used in file comparison. 
+   Bloom filters[edit] 
+    Main article: 
+    Bloom filter
+   Hash functions are an essential ingredient of the Bloom filter, a space-efficient probabilistic data structure that is used to test whether an element is a member of a set. 
+   Finding duplicate records[edit] 
+    Main article: 
+    Hash table
+   When storing records in a large unsorted file, one may use a hash function to map each record to an index into a table T, and to collect in each bucket T[i] a list of the numbers of all records with the same hash value i. Once the table is complete, any two duplicate records will end up in the same bucket. The duplicates can then be found by scanning every bucket T[i] which contains two or more members, fetching those records, and comparing them. With a table of appropriate size, this method is likely to be much faster than any alternative approach (such as sorting the file and comparing all consecutive pairs). 
+   Protecting data[edit] 
+    Main article: 
+    Security of cryptographic hash functions
+   A hash value can be used to uniquely identify secret information. This requires that the hash function is collision-resistant, which means that it is very hard to find data that generate the same hash value. These functions are categorized into cryptographic hash functions and provably secure hash functions. Functions in the second category are the most secure but also too slow for most practical purposes. Collision resistance is accomplished in part by generating very large hash values. For example, SHA-1, one of the most widely used cryptographic hash functions, generates 160 bit values. 
+   Finding similar records[edit] 
+    Main article: 
+    Locality sensitive hashing
+   Hash functions can also be used to locate table records whose key is similar, but not identical, to a given key; or pairs of records in a large file which have similar keys. For that purpose, one needs a hash function that maps similar keys to hash values that differ by at most m, where m is a small integer (say, 1 or 2). If one builds a table T of all record numbers, using such a hash function, then similar records will end up in the same bucket, or in nearby buckets. Then one need only check the records in each bucket T[i] against those in buckets T[i+k] where k ranges between −m and&nbsp;m. 
+   This class includes the so-called acoustic fingerprint algorithms, that are used to locate similar-sounding entries in large collection of audio files. For this application, the hash function must be as insensitive as possible to data capture or transmission errors, and to trivial changes such as timing and volume changes, compression, etc.[2] 
+   Finding similar substrings[edit] 
+   The same techniques can be used to find equal or similar stretches in a large collection of strings, such as a document repository or a genomic database. In this case, the input strings are broken into many small pieces, and a hash function is used to detect potentially equal pieces, as above. 
+   The Rabin–Karp algorithm is a relatively fast string searching algorithm that works in O(n) time on average. It is based on the use of hashing to compare strings. 
+   Geometric hashing[edit] 
+   This principle is widely used in computer graphics, computational geometry and many other disciplines, to solve many proximity problems in the plane or in three-dimensional space, such as finding closest pairs in a set of points, similar shapes in a list of shapes, similar images in an image database, and so on. In these applications, the set of all inputs is some sort of metric space, and the hashing function can be interpreted as a partition of that space into a grid of cells. The table is often an array with two or more indices (called a grid file, grid index, bucket grid, and similar names), and the hash function returns an index tuple. This special case of hashing is known as geometric hashing or the grid method. Geometric hashing is also used in telecommunications (usually under the name vector quantization) to encode and compress multi-dimensional signals. 
+   Standard uses of hashing in cryptography[edit] 
+    Main article: 
+    Cryptographic hash function
+   Some standard applications that employ hash functions include authentication, message integrity (using an HMAC (Hashed MAC)), message fingerprinting, data corruption detection, and digital signature efficiency. 
+   Properties[edit] 
+   Good hash functions, in the original sense of the term, are usually required to satisfy certain properties listed below. The exact requirements are dependent on the application, for example a hash function well suited to indexing data will probably be a poor choice for a cryptographic hash function. 
+   Determinism[edit] 
+   A hash procedure must be deterministic—meaning that for a given input value it must always generate the same hash value. In other words, it must be a function of the data to be hashed, in the mathematical sense of the term. This requirement excludes hash functions that depend on external variable parameters, such as pseud

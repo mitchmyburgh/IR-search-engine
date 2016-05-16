@@ -1,0 +1,113 @@
+Curry (programming language)
+From Wikipedia, the free encyclopedia
+This article is about the programming language Curry (named in honour of a mathematician and logician). For the mathematician and logician, see Haskell Curry. For the computer science technique, see Currying.
+Curry
+Paradigm	functional, logic, non-strict, modular
+Designed by	Michael Hanus, Sergio Antoy, et al.
+Typing discipline	static, strong, inferred
+OS	portable
+Website	Curry
+Major implementations
+PAKCS (with Prolog as the target), mcc (with C as the target), KiCS2 (with Haskell as the target)
+Influenced by
+Haskell
+Curry[1] is an experimental functional logic programming language,[2] based on the Haskell language. It merges elements of functional and logic programming, including constraint programming integration.
+
+It is nearly a superset of Haskell, lacking support mostly for overloading using type classes, which some implementations provide anyway as a language extension, such as the Münster Curry Compiler.[3]
+
+Contents  [hide] 
+1	Foundations of Functional Logic Programming
+1.1	Basic Concepts
+1.2	Narrowing
+1.3	Functional Patterns
+1.4	Non-determinism
+1.5	Strategies
+2	References
+3	External links
+Foundations of Functional Logic Programming[edit]
+Basic Concepts[edit]
+A functional program is a set of functions defined by equations or rules. A functional computation consists of replacing subexpressions by equal (with regards to the function definitions) subexpressions until no more replacements (or reductions) are possible and a value or normal form is obtained. For instance, consider the function double defined by
+
+double x = x+x
+The expression “double 1” is replaced by 1+1. The latter can be replaced by 2 if we interpret the operator “+” to be defined by an infinite set of equations, e.g., 1+1 = 2, 1+2 = 3, etc. In a similar way, one can evaluate nested expressions (where the subexpression to be replaced are quoted):
+
+'double (1+2)' ? '(1+2)'+(1+2) ? 3+'(1+2)' ? '3+3' ? 6
+There is also another order of evaluation if we replace the arguments of operators from right to left:
+
+'double (1+2)' ? (1+2)+'(1+2)' ? '(1+2)'+3 ? '3+3' ? 6
+In this case, both derivations lead to the same result, a property known as confluence. This follows from a fundamental property of pure functional languages, termed referential transparency: the value of a computed result does not depend on the order or time of evaluation, due to the absence of side effects. This simplifies the reasoning about and maintenance of pure functional programs.
+
+As functional languages like Haskell do, Curry supports the definition of algebraic data types by enumerating their constructors. For instance, the type of Boolean values consists of the constructors True and False that are declared as follows:
+
+ data Bool = True | False
+Functions on Booleans can be defined by pattern matching, i.e., by providing several equations for different argument values:
+
+ not True = False
+ not False = True
+The principle of replacing equals by equals is still valid provided that the actual arguments have the required form, e.g.:
+
+not '(not False)' ? 'not True' ? False
+More complex data structures can be obtained by recursive data types. For instance, a list of elements, where the type of elements is arbitrary (denoted by the type variable a), is either the empty list “[]” or the non-empty list “x:xs” consisting of a first element x and a list xs:
+
+ data List a = [] | a : List a
+The type “List a” is usually written as [a] and finite lists x1:x2:...:xn:[] are written as [x1,x2,...,xn]. We can define operations on recursive types by inductive definitions where pattern matching supports the convenient separation of the different cases. For instance, the concatenation operation “++” on polymorphic lists can be defined as follows (the optional type declaration in the first line specifies that “++” takes two lists as input and produces an output list, where all list elements are of the same unspecified type):
+
+ (++) :: [a] -> [a] -> [a] 
+ [] ++ ys = ys 
+ (x:xs) ++ ys = x : xs++ys
+Beyond its application for various programming tasks, the operation “++” is also useful to specify the behavior of other functions on lists. For instance, the behavior of a function last that yields the last element of a list can be specified as follows: for all lists xs and elements e, last xs = e iff ?ys:ys++[e] = xs.
+
+Based on this specification, one can define a function that satisfies this specification by employing logic programming features. Similarly to logic languages, functional logic languages provide search for solutions for existentially quantified variables. In contrast to pure logic languages, they support equation solving over nested functional expressions so that an equation like ys++[e] = [1,2,3] is solved by instantiating ys to the list [1,2] and e to the value 3. In Curry one can define the operation last as follows:
+
+ last xs | ys++[e] =:= xs = e where ys,e free
+Here, the symbol “=:=” is used for equational constraints in order to provide a syntactic distinction from defining equations. Similarly, extra variables (i.e., variables not occurring in the left-hand side of the defining equation) are explicitly declared by “where...free” in order to provide some opportunities to detect bugs caused by typos. A conditional equation of the form l | c = r is applicable for reduction if its condition c has been solved. In contrast to purely functional languages where conditions are only evaluated to a Boolean value, functional logic languages support the solving of conditions by guessing values for the unknowns in the condition. Narrowing as discussed in the next section is used to solve this kind of conditions.
+
+Narrowing[edit]
+Narrowing is a mechanism whereby a variable is bound to a value selected from among alternatives imposed by constraints. Each possible value is tried in some order, with the remainder of the program invoked in each case to determine the validity of the binding. Narrowing is an extension of logic programming, in that it performs a similar search, but can actually generate values as part of the search rather than just being limited to testing them.
+
+Narrowing is useful because it allows a function to be treated as a relation: its value can be computed "in both directions". The Curry examples of the previous section illustrate this.
+
+As noted in the previous section, narrowing can be thought of as reduction on a program term graph, and there are often many different ways (strategies) to reduce a given term graph. Antoy et al.[4] proved in the 1990s that a particular narrowing strategy, needed narrowing, is optimal in the sense of doing a number of reductions to get to a "normal form" corresponding to a solution that is minimal among sound and complete strategies. Needed narrowing corresponds to a lazy strategy, in contrast to the SLD-resolution strategy of Prolog.
+
+Functional Patterns[edit]
+The rule defining last shown above expresses the fact that the actual argument must match the result of narrowing the expression ys++[e]. Curry can express this property also in the following more concise way:
+
+ last (ys++[e]) = e
+Purely functional languages, such as Haskell, do not allow such a rule since the pattern in the left-hand side contains a defined function (++). Such a pattern is also called functional pattern[5] Functional patterns are enabled by the combined functional and logic features of Curry and support concise definitions of tasks requiring deep pattern matching in hierarchical data structures.
+
+Non-determinism[edit]
+Since Curry is able to solve equations containing function calls with unknown values, its execution mechanism is based on non-deterministic computations, similarly to logic programming. This mechanism supports also the definition of non-deterministic operations, i.e., operations that delivers more than one result for a given input. The archetype of non-deterministic operations is the predefined infix operation ?, called choice operator, that returns one of its arguments. This operator is defined by the following rules:
+
+ x ? y = x
+ x ? y = y
+Thus, the evaluation of the expression 0 ? 1 returns 0 as well as 1. Computing with non-deterministic operations and computing with free variables by narrowing has the same expressive power.[6]
+
+The rules defining ? show an important feature of Curry: all rules are tried in order to evaluate some operation. Hence, one can define by
+
+ insert x ys     = x : ys
+ insert x (y:ys) = y : insert x ys
+an operation to insert an element into a list at an indeterminate position so that the operation perm defined by
+
+ perm []     = []
+ perm (x:xs) = insert x (perm xs)
+returns any permutation of a given input list.
+
+Strategies[edit]
+Due to the absence of side effects, a functional logic program can be executed with different strategies. To evaluate expressions, Curry uses a variant of the needed narrowing strategy which combines lazy evaluation with non-deterministic search strategies. In contrast to Prolog, which uses backtracking to search for solutions, Curry does not fix a particular search strategy. Hence, there are implementations of Curry, like KiCS2, where the user can easily select a search strategy, like depth-first search (backtracking), breadth-first search, iterative deepening, or parallel search.
+
+References[edit]
+Jump up ^ Michael Hanus (ed.). "Curry: A Truly Integrated Functional Logic Language".
+Jump up ^ Sergio Antoy and Michael Hanus (2010). "Functional Logic Programming". Communications of the ACM (ACM) 53 (4): 74–85. doi:10.1145/1721654.1721675.
+Jump up ^ The Münster Curry Compiler
+Jump up ^ Sergio Antoy, Rachid Echahed and Michael Hanus (2007). "A Needed Narrowing Strategy". Journal of the ACM (ACM) 47 (4): 776–822. doi:10.1145/347476.347484. ISSN 0004-5411.
+Jump up ^ Sergio Antoy and Michael Hanus: Declarative Programming with Function Patterns, LOPSTR 2005
+Jump up ^ Sergio Antoy and Michael Hanus: Overlapping Rules and Logic Variables in Functional Logic Programs, International Conference on Logic Programming 2006
+External links[edit]
+Curry - The home page of Curry
+Smap - A web-based execution environment for Curry and Haskell with various example programs
+MCC - The Münster Curry Compiler, which uses C as the target
+PAKCS A major Curry implementation with a WWW interface, which uses Prolog as the target
+KiCS, KiCS2 A Curry implementation, which uses Haskell as the target
+Curry Mailing List
+Michael Hanus's home page
+Purely Functional Lazy Non-deterministic Programming (Fischer, Shan), Transforming Functional Logic Programs into Monadic Functional Programs (Braßel, Fischer, Hanus, Reck, 2010) on modeling lazy non-deterministic (logic) programming (like in Curry) in a purely functional language (Haskell); such approach might give the programmer more flexibility in the control over the strategies that—in the case of Curry—are built-in.

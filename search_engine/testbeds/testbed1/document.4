@@ -1,0 +1,33 @@
+Access_key
+In a , an '''access key''' or '''accesskey''' allows a   to immediately jump to a specific part of a  via the . They were introduced in 1999 and quickly achieved near-universal browser support.
+In the summer of 2002, a Canadian Web Accessibility consultancy did an informal survey to see if implementing accesskeys caused issues for users of , especially  used by blind and low vision users. These users require numerous keyboard shortcuts to access web pages, as pointing and clicking a mouse is not an option for them. Their research showed that most key stroke combinations did in fact present a conflict for one or more of these technologies, and their final recommendation was to avoid using accesskeys altogether.
+In , a revised web authoring language, the HTML Working Group of the  deprecated the accesskey attribute in favor of the .  However, XHTML 2 has been retired in favor of , which (as of August 2009) continues to permit accesskeys.
+==Access in different browsers==
+For a more complete list of which browsers support the HTML Access keys, please see how they are compared in the .
+===Conflicting access keys===
+If multiple identical accesskeys are assigned within the same document, IE will tab through them on each keypress (IE will tab backwards if  is pressed as well). This way, elements can be logically grouped in various accesskey rings for easier navigation. IE 4.0 only supported letters of the English alphabet as accesskeys. Firefox 2.0 will activate the last of a group of elements assigned the same accesskey.
+==Specifying access keys==
+Access keys are specified in HTML using the accesskey attribute. The value of an elements accesskey attribute is the key the user will press (typically in combination with one or more other keys, as defined by the browser) in order to activate or focus that element. Though the accesskey attribute sets the key that can be pressed, it does not automatically notify the user of the bound access key. One convention is for the page author to show the access key value by using the &lt;u&gt; tag to underline the letter in the links text corresponding to the accesskey assigned. For the link below, a user would press + on Internet Explorer, + on a Mac (the command key can give undesired results) and ++ on Opera to be directed to index.html.
+ Home
+or to emphasize H:
+ Home
+alternatively, the following CSS can be used to indicate the character:
+ *:after 
+Emphasize &lt;em&gt; isnt necessary, but can be useful to the user. It helps them identify which key to press to navigate to where they want to. Another possible way of displaying which accesskeys do what is to create a page with all the accesskeys displayed. Or the webmaster could do both.  Another option for the end user is to install a user script such as FireFox ''Access Bar'' for GreaseMonkey.
+==Use of standard access key mappings==
+In 2004, a standard emerged using numbers, which promotes consistency for users, and enables the increased predictability of keyboard shortcuts on different sites. These include, for example, 1 to go to the homepage, 4 for search, 9 for contact, and others.http://webarchive.nationalarchives.gov.uk/20100807034701/http://archive.cabinetoffice.gov.uk/e-government/resources/handbook/html/6-6.asp This scheme was once in use on popular sites such as ft.com and bbc.co.uk, however it is rarely implemented currently.
+Ten years later, in 2014, an updated and more comprehensive standard using both letters and numbers was released http://www.standardaccesskeys.com/ in order to breathe new life into browser access key standardization efforts.
+==See also==
+* s
+==References==
+==External links==
+*  &ndash; includes lengthy discussion of various problems on different platforms
+* 
+* 
+*  	
+* 
+*  &ndash; instructions on configuring access key behavior in 
+* 
+* 
+* 
+*

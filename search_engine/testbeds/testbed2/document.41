@@ -1,0 +1,32 @@
+The neocognitron is a hierarchical, multilayered artificial neural network proposed by Kunihiko Fukushima in the 1980s. It has been used for handwritten character recognition and other pattern recognition tasks, and served as the inspiration for convolutional neural networks.
+The neocognitron was inspired by the model proposed by Hubel & Wiesel in 1959. They found two types of cells in the visual primary cortex called simple cell and complex cell, and also proposed a cascading model of these two types of cells.
+The neocognitron is a natural extension of these cascading models. The neocognitron consists of multiple types of cells, the most important of which are called S-cells and C-cells. The local features are extracted by S-cells, and these features' deformation, such as local shifts, are tolerated by C-cells. Local features in the input are integrated gradually and classified in the higher layers. The idea of local feature integration is in several other models, such as LeNet and SIFT model.
+There are multiple kinds of neocognitron. For example, some types of neocognitron can detect multiple patterns in the same input by using backward signals to achieve selective attention.
+
+
+== See also ==
+Self-organizing map
+Artificial neural network
+Pattern recognition
+Unsupervised learning
+Deep learning
+Receptive field
+
+
+== Notes ==
+
+
+== References ==
+K. Fukushima. Neocognitron: A self-organizing neural network model for a mechanism of pattern recognition unaffected by shift in position. Biological Cybernetics, 36(4): 93-202, 1980.
+K. Fukushima, S. Miyake, and T. Ito. Neocognitron: a neural network model for a mechanism of visual pattern recognition. IEEE Transactions on Systems, Man, and Cybernetics, Vol. SMC-13(Nb. 3):pp. 826—834, September/October 1983.
+K. Fukushima. "A hierarchical neural network model for selective attention." In Eckmiller, R. & Von der Malsburg, C. eds. Neural computers, Springer-Verlag. pp. 81-90. 1987.
+K. Fukushima. "Neocognitron." Scholarpedia, 2(1):1717. 2007.
+D.H. Hubel and T.N. Wiesel. Receptive fields of single noreones in the cat's striate cortex. J Physiol. 148(3):574-591. Oct. 1959.
+
+
+== External links ==
+Neocognitron on Scholarpedia
+NeoCognitron by Ing. Gabriel Minarik - application (C#) and video
+Neocognitron resources at Visiome Platform - includes MATLAB environment
+Beholder - a Neocognitron simulator
+Neocognitron on Learn artificial neural networks

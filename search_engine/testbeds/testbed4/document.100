@@ -1,0 +1,48 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Transformations in OpenGL OpenGL manages two 4 × 4 transformation matrices: the modelview matrix, and the projection matrix. Whenever you specify geometry (using glVertex), the vertices are transformed by the current modelview matrix and then the current projection matrix. Hence, you don't have to perform these transformations yourself. You can modify the entries of these matrices at any time. OpenGL provides several utilities for modifying these matrices. The modelview matrix is normally used to represent geometric transformations of objects; the projection matrix is normally used to store the camera transformation. For now, we'll focus just on the modelview matrix, and discuss the camera transformation later.
+To modify the current matrix, ?rst specify which matrix is going to be manipulated: use glMatrixMode(GL MODELVIEW) to modify the modelview matrix. The modelview matrix can then be initialized to the identity with glLoadIdentity(). The matrix can be manipulated by directly ?lling its values, multiplying it by an arbitrary matrix, or using the functions OpenGL provides to multiply the matrix by speci?c transformation matrices (glRotate, glTranslate, and glScale). Note that these transformations right-multiply the current matrix; this can be confusing since it means that you specify transformations in the reverse of the obvious order. Exercise: why does OpenGL right-multiply the current matrix?
+OpenGL provides a stacks to assist with hierarchical transformations. There is one stack for the modelview matrix and one for the projection matrix. OpenGL provides routines for pushing and popping matrices on the stack.
+The following example draws an upper arm and forearm with shoulder and elbow joints. The current modelview matrix is pushed onto the stack and popped at the end of the rendering, so, for example, another arm could be rendered without the transformations from rendering this arm affecting its modelview matrix. Since each OpenGL transformation is applied by multiplying a matrix on the right-hand side of the modelview matrix, the transformations occur in reverse order. Here, the upper arm is translated so that its shoulder position is at the origin, then it is rotated, and ?nally it is translated so that the shoulder is in its appropriate world-space position. Similarly, the forearm is translated to rotate about its elbow position, then it is translated so that the elbow matches its position in upper arm coordinates.
+glPushMatrix();
+glTranslatef(worldShoulderX, worldShoulderY, 0.0f); drawShoulderJoint(); glRotatef(shoulderRotation, 0.0f, 0.0f, 1.0f); glTranslatef(-upperArmShoulderX, -upperArmShoulderY, 0.0f); drawUpperArmShape();
+glTranslatef(upperArmElbowX, upperArmElbowY, 0.0f);
+Copyright c
+2005 David Fleet and Aaron Hertzmann 16
+CSC418 / CSCD18 / CSC2504 Transformations
+drawElbowJoint(); glRotatef(elbowRotation, 0.0f, 0.0f, 1.0f); glTranslatef(-forearmElbowX, -forearmElbowY, 0.0f); drawForearmShape();
+glPopMatrix();
+Copyright c
+2005 David Fleet and Aaron Hertzmann 17
+CSC418 / CSCD18 / CSC2504 Coordinate Free Geometry
+4 Coordinate Free Geometry
+Coordinate free geometry (CFG) is a style of expressing geometric objects and relations that avoids unnecessary reliance on any speci?c coordinate system. Representing geometric quantities in terms of coordinates can frequently lead to confusion, and to derivations that rely on irrelevant coordinate systems.
+We ?rst de?ne the basic quantities:
+1. A scalar is just a real number.
+2. A point is a location in space. It does not have any intrinsic coordinates.
+3. A vector is a direction and a magnitude. It does not have any intrinsic coordinates.
+A point is not a vector: we cannot add two points together. We cannot compute the magnitude of a point, or the location of a vector. Coordinate free geometry de?nes a restricted class of operations on points and vectors, even though both are represented as vectors in matrix algebra. The following operations are the only operations allowed in CFG.
+1. k~vk: magnitude of a vector. 2. ¯ p1 +~v1 = ¯ p2, or ~v1 = ¯ p2 - ¯ p1.: point-vector addition. 3. ~v1 +~v2 = ~v3.: vector addition
+4. a~v1 = ~v2: vector scaling. If a > 0, then ~v2 is a new vector with the same direction as ~v1, but magnitude ak~v1k. If a < 0, then the direction of the vector is reversed. 5. ~v1 ·~v2: dot product = k~v1kk~v2kcos(?), where ? is the angle between the vectors. 6. ~v1 ×~v2: cross product, where ~v1 and ~v2 are 3D vectors. Produces a new vector perpedicular to ~v1 and to ~v2, with magnitudek~v1kk~v2ksin(?). The orientation of the vector is determined by the right-hand rule (see textbook). 7. Pi ai~vi = ~v: Linear combination of vectors 8. Pi ai¯ pi = ¯ p, ifPi ai = 1: af?ne combination of points.9. Pi ai¯ pi = ~v, ifPi ai = 0
+Copyright c
+2005 David Fleet and Aaron Hertzmann 18
+CSC418 / CSCD18 / CSC2504 Coordinate Free Geometry
+Example:
+• ¯ p1 + (¯ p2 - ¯ p3) = ¯ p1 +~v = ¯ p4. • a¯ p2 -a¯ p1 = a~v1 = ~v2. • 1 2(p1 + p2) = p1 + 1 2(¯ p2 - ¯ p1) = ¯ p1 + 1 2~v = ¯ p3.
+Note: In order to understand these formulas, try drawing some pictures to illustrate different cases (like the ones that were drawn in class).
+Note that operations that are not in the list are unde?ned. These operations have a number of basic properties, e.g., commutivity of dot product: ~v1 ·~v2 = ~v2 ·~v1, distributivity of dot product: ~v1 ·(~v2 +~v3) = ~v1 ·~v2 +~v1 ·~v3. CFG helps us reason about geometry in several ways:
+1. When reasoning about geometric objects, we only care about the intrinsic geometric properties of the objects, not their coordinates. CFG prevents us from introducing irrelevant concepts into our reasoning.
+2. CFG derivations usually provide much more geometric intuition for the steps and for the results. It is often easy to interpret the meaning of a CFG formula, whereas a coordinatebased formula is usually quite opaque.
+3. CFG derivations are usually simpler than using coordinates, since introducing coordinates often creates many more variables.
+4. CFG provides a sort of "type-checking" for geometric reasoning. For example, if you derive a formula that includes a term ¯ p ·~v, that is, a "point dot vector," then there may be a bug in your reasoning. In this way, CFG is analogous to type-checking in compilers. Although you could do all programming in assembly language - which does not do type-checking and will happily led you add, say, a ?oating point value to a function pointer - most people would prefer to use a compiler which performs type-checking and can thus ?nd many bugs.
+In order to implement geometric algorithms we need to use coordinates. These coordinates are part of the representation of geometry - they are not fundamental to reasoning about geometry itself.
+Example: CFG says that we cannot add two points; there is no meaning to this operation. But what happens if we try to do so anyway, using coordinates? Suppose we have two points: ¯ p0 = (0,0) and ¯ p1 = (1,1), and we add them together coordinate-wise: ¯ p2 = ¯ p0 + ¯ p1 = (1,1). This is not a valid CFG operation, but we have done it anyway just to tempt fate and see what happens. We see that the
+Copyright c
+2005 David Fleet and Aaron Hertzmann 19
+CSC418 / CSCD18 / CSC2504 Coordinate Free Geometry
+resulting point is the same as one of the original points: ¯ p2 = ¯ p1. Now, on the other hand, suppose the two points were represented in a different coordinate frame: ¯ q0 = (1,1) and ¯ q1 = (2,2). The points ¯ q0 and ¯ q1 are the same points as ¯ p0 and ¯ p1, with the same vector between them, but we have just represented them in a different coordinate frame, i.e., with a different origin. Adding together the points we get ¯ q2 = ¯ q0 + ¯ q1 = (3,3). This is a different point from ¯ q0 and ¯ q1, whereas before we got the same point. The geometric relationship of the result of adding two points depends on the coordinate system. There is no clear geometric interpretation for adding two points.
+Aside: It is actually possible to de?ne CFG with far fewer axioms than the ones listed above. For example, the linear combination of vectors is simply addition and scaling of vectors.
+Copyright c
+2005 David Fleet and Aaron Hertzmann

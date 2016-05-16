@@ -1,0 +1,36 @@
+Ambient cloud storage: cheaper, high availability, but what about security?
+Jan 19, 2012
+Check out Symform to see is a real-world example of the evolution of ambient cloud architectures. The cost per stored GB on this is orders of magnitude less than even iCloud, the next most efficient cloud storage consumer offering (more efficient for at least some types of files, like music).
+
+Symform is based in Seattle but doesn’t rely on hydro-powered data centers in the Pacific Northwest like Amazon or Google do. Symform assembles an ambient cloud based on their customers’ local storage.
+
+When I was a cloud & virtualization Entreprenur in Residence at Trinity Ventures, I saw a fundraising pitch from Symform (or maybe or one of their competitors…) I was intrigued at the time and wanted to pursue investing in the deal because of the massive savings in service delivery costs, but the (way more experienced) VC partners didn’t bite because of concerns over consumer discomfort about sharing their drives and their (encrypted) data.
+
+Here’s how Symform works:
+
+You install the Symform software agent
+Data from your machine gets sliced into 64 megabyte segments, each encrypted with 256-bit AES encryption.
+Each 64 MB segment is broken in 1 MB chunks
+Each group of 64 chunks gets assigned parity fragments the same way RAID works (this adds 50% to the size of the data but makes it highly available)
+The resulting 96 fragments (each 1 MB) get distributed randomly across other Symform customers, mostly in the US and Europe today
+When you request data from the cloud, it gets pulled from the many places where it’s stored. If some machines are unavailable, the parity segments allow reconstruction of the data, which makes for a very highly redundant form of storage. You can’t “take out” a data center to delete this type of data.
+
+The coolest thing about this is that the near-zero use of centralized data centers means the service is startlingly low cost, almost to the point of absurdity compared to older centralized storage clouds like Dropbox or Box.net. Symform charges nothing for the first 200 gigabytes of storage. That’s 100 times more storage than Dropbox’s 2 gigabyte freemium offering. 100x differences in capacity are definitely in the range of disruptive technology, which is why I believe ambient clouds will disrupt centralized clouds, and we’ll end up with an cloud architecture mantra that says:
+
+Distribute when you can.
+Centralize when you must.
+Control everything centrally.
+
+Even when it comes to paying for storage, you’re looking at further disruption. $100 buys you 50 gigabytes on Dropbox for a year. That same $100 buys unlimited storage on Symform, which is more than 100x better. Dropbox’s highest level service is 100 gigabytes for $200 per year. Disruption here we come…
+
+There is only one catch to this disruptive “unlimited” idea – you have to provide as much storage on your machine as you want to get from the Symform ambient cloud. What this does is make Symform cost exactly as much as local storage. Call them storage communists.
+
+Here’s my two Bold Predictions of the Day (BPD):
+
+In 5 years, most consumer data will be stored this way, as its WAY cheaper than centralized clouds, and it’s also significantly more immune to data loss. The availability of a solution like this has at least 2 more 9’s than Dropbox or SafeSync because of data redundancy.
+
+No one will trust ambient cloud encryption, so they will add their own layer of encryption, or go with clouds that use individual keys per customer, with those keys solely controlled by the customer.
+
+Which brings us to security as a differentiator in cloud storage. The widespread use of Dropbox by enterprises is amazing given their spotty security architecture. All it takes is for one shared cloud storage provider to suffer a big public breach for people to feel like their personal docs aren’t safe in the cloud.
+
+That’s why I still store my docs on SafeSync, which lets me control the key to my documents online. (It helps that I work for Trend Micro, which provides SafeSync, but I’m not involved with that product strategy.)

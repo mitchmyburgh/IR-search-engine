@@ -1,0 +1,98 @@
+### Turn eTags Off
+By removing the `ETag` header, you disable caches and browsers from being able to validate files, so they are forced to rely on your `Cache-Control` and `Expires` header. [Source](http://www.askapache.com/htaccess/apache-speed-etags.html)
+``` apacheconf
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+```
+
+## Miscellaneous
+
+### Set PHP Variables
+``` apacheconf
+php_value <key> <val>
+
+# For example:
+php_value upload_max_filesize 50M
+php_value max_execution_time 240
+```
+
+### Custom Error Pages
+``` apacheconf
+ErrorDocument 500 "Houston, we have a problem."
+ErrorDocument 401 http://error.example.com/mordor.html
+ErrorDocument 404 /errors/halflife3.html
+```
+
+### Force Downloading
+Sometimes you want to force the browser to download some content instead of displaying it.
+``` apacheconf
+<Files *.md>
+    ForceType application/octet-stream
+    Header set Content-Disposition attachment
+</Files>
+```
+
+Now there is a yang to this yin:
+
+### Prevent Downloading
+Sometimes you want to force the browser to display some content instead of downloading it.
+``` apacheconf
+<FilesMatch "\.(tex|log|aux)$">
+    Header set Content-Type text/plain
+</FilesMatch>
+```
+
+### Allow Cross-Domain Fonts
+CDN-served webfonts might not work in Firefox or IE due to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). This snippet solves the problem.
+``` apacheconf
+<IfModule mod_headers.c>
+    <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+```
+[Source](https://github.com/h5bp/server-configs-apache/issues/32)
+
+### Auto UTF-8 Encode
+Your text content should always be UTF-8 encoded, no?
+``` apacheconf
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for a number of file formats
+AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
+```
+[Source](https://github.com/h5bp/server-configs-apache)
+
+### Switch to Another PHP Version
+If you’re on a shared host, chances are there are more than one version of PHP installed, and sometimes you want a specific version for your website. The following snippet should switch the PHP version for you.
+
+``` apacheconf
+AddHandler application/x-httpd-php56 .php
+
+# Alternatively, you can use AddType
+AddType application/x-httpd-php56 .php
+```
+
+### Disable Internet Explorer Compatibility View
+Compatibility View in IE may affect how some websites are displayed. The following snippet should force IE to use the Edge Rendering Engine and disable the Compatibility View.
+
+``` apacheconf
+<IfModule mod_headers.c>
+    BrowserMatch MSIE is-msie
+    Header set X-UA-Compatible IE=edge env=is-msie
+</IfModule>
+```
+
+### Serve WebP Images
+If [WebP images](https://developers.google.com/speed/webp/?csw=1) are supported and an image with a .webp extension and the same name is found at the same place as the jpg/png image that is going to be served, then the WebP image is served instead.
+
+``` apacheconf
+RewriteEngine On
+RewriteCond %{HTTP_ACCEPT} image/webp
+RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+```
+[Source](https://github.com/vincentorback/WebP-images-with-htaccess)

@@ -1,0 +1,8 @@
+Sorting network
+In computer science, comparator networks are abstract devices built up of a fixed number of "wires", carrying values, and comparator modules that connect pairs of wires, swapping the values on the wires if they are not in a desired order. Such networks are typically designed to perform sorting on fixed numbers of values, in which case they are called sorting networks.
+
+Sorting networks differ from general comparison sorts in that they are not capable of handling arbitrarily large inputs, and in that their sequence of comparisons is set in advance, regardless of the outcome of previous comparisons. This independence of comparison sequences is useful for parallel execution and for implementation in hardware. Despite the simplicity of sorting nets, their theory is surprisingly deep and complex. Sorting networks were first studied circa 1954 by Armstrong, Nelson and O'Connor, who subsequently patented the idea.
+
+Sorting networks can be implemented either in hardware or in software. Donald Knuth describes how the comparators for binary integers can be implemented as simple, three-state electronic devices.Batcher, in 1968, suggested using them to construct switching networks for computer hardware, replacing both buses and the faster, but more expensive, crossbar switches. Since the 2000s, sorting nets (especially bitonic mergesort) are used by the GPGPU community for constructing sorting algorithms to run on graphics processing units
+
+

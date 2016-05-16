@@ -1,0 +1,101 @@
+﻿OWL 2 ontologies can refer to data values such as strings or integers. Each kind of such values is called a datatype. Datatypes can be used in OWL 2 ontologies as described in Section 5.2. Each datatype is identified by an IRI and is defined by the following components:
+The value space is a set determining the set of values of the datatype. Elements of the value space are called data values.
+The lexical space is a set of strings that can be used to refer to data values. Each member of the lexical space is called a lexical form, and it is mapped to a particular data value.
+The facet space is a set of pairs of the form ( F , v ) where F is an IRI called a constraining facet, and v is an arbitrary data value called the constraining value. Each such pair is mapped to a subset of the value space of the datatype.
+A set of datatypes supported by a reasoner is called a datatype map. This is not a syntactic construct — that is, it is not used directly to construct OWL 2 ontologies in a way that, say, classes and datatypes are. Because of that, a datatype map is not represented in the structural specification of OWL 2.
+The rest of this section defines a particular datatype map called the OWL 2 datatype map, which lists the datatypes that can be used in OWL 2 ontologies. Most datatypes are taken from the set of XML Schema Datatypes, version 1.1 [XML Schema Datatypes], the RDF specification [RDF Concepts], or the specification for plain literals [RDF:PLAINLITERAL]. The normative definitions of these datatypes are provided by the respective specifications, and this document merely provides guidance on how to interpret these definitions properly in the context of OWL 2. For all these datatypes, this section lists the normative constraining facets that OWL 2 implementations mustsupport. This section also contains the complete normative definitions of the datatypes owl:real and owl:rational, as these datatypes have not been taken from other specifications.
+4.1 Real Numbers, Decimal Numbers, and Integers
+The OWL 2 datatype map provides the following datatypes for the representation of real numbers, decimal numbers, and integers:
+owl:real
+owl:rational
+xsd:decimal
+xsd:integer
+xsd:nonNegativeInteger
+xsd:nonPositiveInteger
+xsd:positiveInteger
+xsd:negativeInteger
+xsd:long
+xsd:int
+xsd:short
+xsd:byte
+xsd:unsignedLong
+xsd:unsignedInt
+xsd:unsignedShort
+xsd:unsignedByte
+For each datatype from the above list that is identified by an IRI with the xsd: prefix, the definitions of the value space, the lexical space, and the facet space are provided by XML Schema [XML Schema Datatypes]; furthermore, the normative constraining facets for the datatype are xsd:minInclusive, xsd:maxInclusive, xsd:minExclusive, andxsd:maxExclusive. An OWL 2 implementation may support all lexical forms of these datatypes; however, it must support at least the lexical forms listed in Section 5.4 of XML Schema Datatypes [XML Schema Datatypes], which can be mapped to the primitive values commonly found in modern implementation platforms.
+The datatypes owl:real and owl:rational are defined as follows.
+Value Spaces.
+The value space of owl:real is the set of all real numbers.
+The value space of owl:rational is the set of all rational numbers. It is a subset of the value space of owl:real, and it contains the value space of xsd:decimal (and thus of all xsd: numeric datatypes listed above as well).
+Lexical Spaces.
+The owl:real datatype does not directly provide any lexical forms.
+The owl:rational datatype supports lexical forms defined by the following grammar (whitespace within the grammar must be ignored and must not be included in the lexical forms of owl:rational, and single quotes are used to introduce terminal symbols):
+numerator '/' denominator
+Here, numerator is an integer with the syntax as specified for the xsd:integer datatype, and denominator is a positive, nonzero integer with the syntax as specified for the xsd:integer datatype, not containing the plus sign. Each such lexical form of owl:rational is mapped to the rational number obtained by dividing the value ofnumerator by the value of denominator. An OWL 2 implementation may support all such lexical forms; however, it must support at least the lexical forms where the numerator and the denominator are in the value space of xsd:long.
+Facet Spaces. The facet spaces of owl:real and owl:rational are defined in Table 4.
+Table 4. The Facet Spaces of owl:real and owl:rational
+Each pair of the form...
+...is mapped to...
+( xsd:minInclusive , v )
+where v is from the value space of owl:real
+the set of all numbers x from the value space of DT such that x = v or x > v
+( xsd:maxInclusive , v )
+where v is from the value space of owl:real
+the set of all numbers x from the value space of DT such that x = v or x < v
+( xsd:minExclusive , v )
+where v is from the value space of owl:real
+the set of all numbers x from the value space of DT such that x > v
+( xsd:maxExclusive , v )
+where v is from the value space of owl:real
+the set of all numbers x from the value space of DT such that x < v
+Note. DT is either owl:real or owl:rational.
+4.2 Floating-Point Numbers
+The OWL 2 datatype map supports the following datatypes for the representation of floating-point numbers:
+xsd:double
+xsd:float
+As specified in XML Schema [XML Schema Datatypes], the value spaces of xsd:double, xsd:float, and xsd:decimal are pairwise disjoint. In accordance with this principle, the value space of owl:real is defined as being disjoint with the value spaces of xsd:double and xsd:float as well. The normative constraining facets for these datatypes arexsd:minInclusive, xsd:maxInclusive, xsd:minExclusive, and xsd:maxExclusive.
+Although floating-point numbers are numbers, they are not contained in the value space of owl:real. Thus, the value spaces of xsd:double and xsd:float can be understood as containing "fresh copies" of the appropriate subsets of the value space of owl:real. To understand how this impacts the consequences of OWL 2 ontologies, consider the following example.
+DataPropertyRange( a:hasAge xsd:integer )
+The range of the a:hasAge property is xsd:integer.
+DataPropertyAssertion( a:hasAge a:Meg "17"^^xsd:double )
+Meg is seventeen years old.
+The first axiom states that all values of the a:hasAge property must be in the value space of xsd:integer, but the second axiom provides a value for a:hasAge that is equal to the floating-point number 17. Since floating-point numbers are not contained in the value space of xsd:integer, the mentioned ontology is inconsistent.
+According to XML Schema, the value spaces of xsd:double and xsd:float contain positive and negative zeros. These two objects are equal, but not identical. To understand this distinction, consider the following example ontology:
+DataPropertyAssertion( a:numberOfChildren a:Meg "+0"^^xsd:float )
+The value of a:numberOfChildren for a:Meg is +0.
+DataPropertyAssertion( a:numberOfChildren a:Meg "-0"^^xsd:float )
+The value of a:numberOfChildren for a:Meg is -0.
+FunctionalDataProperty( a:numberOfChildren )
+An individual can have at most one value for a:numberOfChildren.
+The last axiom states that no individual should have more than one distinct value for a:numberOfChildren. Since positive and negative zero are not identical, the first two axioms violate the restriction of the last axiom, which makes the ontology inconsistent. In other words, equality of values from the value space of xsd:double andxsd:float has no effect on the semantics of cardinality restrictions of OWL 2; in fact, equality is used only in the definition of facets.
+According to XML Schema, the semantics of facets is defined with respect to equality, and positive and negative zeros are equal. Therefore, the subset of the value space of xsd:double between -1.0 and 1.0 contains both +0 and -0.
+4.3 Strings
+The OWL 2 datatype map provides the rdf:PlainLiteral datatype for the representation of strings in a particular language. The definitions of the value space, the lexical space, the facet space, and the necessary mappings are given in [RDF:PLAINLITERAL]. The normative constraining facets for rdf:PlainLiteral are xsd:length,xsd:minLength, xsd:maxLength, xsd:pattern, and rdf:langRange; furthermore, only basic language ranges [BCP 47] are normative in the rdf:langRange constraining facet.
+In addition, OWL 2 supports the following datatypes defined in XML Schema [XML Schema Datatypes]:
+xsd:string
+xsd:normalizedString
+xsd:token
+xsd:language
+xsd:Name
+xsd:NCName
+xsd:NMTOKEN
+As explained in [RDF:PLAINLITERAL], the value spaces of all of these datatypes are contained in the value space of rdf:PlainLiteral. Furthermore, for each datatype from the above list, the normative constraining facets are xsd:length, xsd:minLength, xsd:maxLength, and xsd:pattern.
+4.4 Boolean Values
+The OWL 2 datatype map provides the xsd:boolean XML Schema datatype [XML Schema Datatypes] for the representation of Boolean values. No constraining facet is normative for this datatype.
+4.5 Binary Data
+The OWL 2 datatype map provides the following XML Schema datatypes [XML Schema Datatypes] for the representation of binary data:
+xsd:hexBinary
+xsd:base64Binary
+As specified in XML Schema [XML Schema Datatypes], the value spaces of these two datatypes are disjoint. For each datatype from the above list, the normative constraining facets are xsd:minLength, xsd:maxLength, and xsd:length.
+According to XML Schema, the value spaces of xsd:hexBinary and xsd:base64Binary are isomorphic copies of the set of all finite sequences of octets — integers between 0 and 255, inclusive. To understand the effect that the disjointness requirement has on the semantics of OWL 2, consider the following example ontology:
+DataPropertyRange( a:personID xsd:base64Binary )
+The range of the a:personID property is xsd:base64Binary.
+DataPropertyAssertion( a:personID a:Meg "0203"^^xsd:hexBinary )
+The ID of Meg is the octet sequence consisting of the octets 2 and 3.
+The first axiom states that all values of the a:personID property must be in the value space of xsd:base64Binary, but the second axiom provides a value for a:personIDthat is in the value space of xsd:hexBinary. Since the value spaces of xsd:hexBinary and xsd:base64Binary are disjoint, the above ontology is inconsistent.
+4.6 IRIs
+The OWL 2 datatype map provides the xsd:anyURI XML Schema datatype [XML Schema Datatypes] for the representation of IRIs. As specified in XML Schema [XML Schema Datatypes], the value spaces of xsd:anyURI and xsd:string are disjoint. The normative constraining facets are xsd:minLength, xsd:maxLength, xsd:length, andxsd:pattern.
+According to XML Schema, the value space of xsd:anyURI is the set of all IRIs. Although each IRI has a string representation, IRIs are not strings. The value space ofxsd:anyURI can therefore be seen as an "isomorphic copy" of a subset of the value space of xsd:string.
+The lexical forms of xsd:anyURI include relative IRIs. If an OWL 2 syntax employs rules for the resolution of relative IRIs (e.g., the OWL 2 XML Syntax [OWL 2 XML Serialization] uses xml:base for that purpose), such rules do not apply to xsd:anyURI lexical forms that represent relative IRIs; that is, the lexical forms representing relative IRIs must be parsed as they are.
+
+

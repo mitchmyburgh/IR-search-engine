@@ -1,0 +1,10 @@
+Behavior
+Main article: Method (computer programming)
+
+The behavior of class or its instances is defined using methods. Methods are subroutines with the ability to operate on objects or classes. These operations may alter the state of an object or simply provide ways of accessing it.[6] Many kinds of methods exist, but support for them varies across languages. Some types of methods are created and called by programmer code, while other special methods—such as constructors, destructors, and conversion operators—are created and called by compiler-generated code. A language may also allow the programmer to define and call these special methods.[7][8]
+The concept of class interface
+Main article: Interface (computing)
+
+Every class implements (or realizes) an interface by providing structure and behavior. Structure consists of data and state, and behavior consists of code that specifies how methods are implemented.[9] There is a distinction between the definition of an interface and the implementation of that interface; however, this line is blurred in many programming languages because class declarations both define and implement an interface. Some languages, however, provide features that separate interface and implementation. For example, an abstract class can define an interface without providing implementation.
+
+Languages that support class inheritance also allow classes to inherit interfaces from the classes that they are derived from.[example needed] In languages that support access specifiers, the interface of a class is considered to be the set of public members of the class, including both methods and attributes (via implicit getter and setter methods); any private members or internal data structures are not intended to be depended on by external code and thus are not part of the interface.

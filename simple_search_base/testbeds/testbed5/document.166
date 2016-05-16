@@ -1,0 +1,37 @@
+
+Programming Language Rankings: Summer 2015
+
+By James Governor on August 17, 2015
+
+summer 2015 rankings
+
+This iteration of the RedMonk Programming Language Rankings is brought to you by HP. The tools you want, the languages you prefer. Built on Cloud Foundry, download the HP Helion Development Platform today.
+
+………………………………………………………………………………………………………………………………………………………………….
+
+    “The basic concept is simple: we regularly compare the performance of programming languages relative to one another on GitHub and Stack Overflow. The idea is not to offer a statistically valid representation of current usage, but rather to correlate language discussion (Stack Overflow) and usage (GitHub) in an effort to extract insights into potential future adoption trends.”
+
+RedMonk continues its exploration of programming language discussion and contribution with our ongoing rankings. We know our methodology isn’t perfect, but has proved a useful guide to potential adoption vectors – notably in the case of Swift. [bonus update – after I posted this on Friday I realised I had missed some stuff important out. Namely talking about the growing influence of our regular rankings. You see, we’ve had some amazing highlights over the last six months – namely that our rankings were cited by Apple, both by Tim Cook in its Q2 earnings report, and in the WWDC keynote.]
+
+    Swift is certainly the first language to crack the Top 20 in a year. By comparison, one of the fastest moving non-Swift languages, Go, ranked #32 in the original 2010 dataset finally cracking the Top 20 in January of this year.
+
+Less surprising is the ongoing jousting for top-spot by Java and Javascript.
+
+    As with last quarter, JavaScript maintains a slim margin on second-place Java, with the caveat that the difference between numerical rankings is slight. The language’s sustained performance, however, reflects the language’s versatility and growing strategic role amongst startups and enterprises alike.
+
+The growth in interest in Javascript should surprise no-one – new frameworks emerge on a daily basis. It is an ecosystem characterised by a rewrite all the things mentality, with NPM becoming a key ecosystem hub – as ever it’s all about packaging. But the ongoing strength of Java is more interesting – given that we’re seeing a shift in programming models with the rise of 12 factor apps, continuous integration and micro-services. It will be interesting to see how Java continues to adapt in the era of the Cloud Native.
+
+As Stephen says:
+
+    One of the biggest issues facing users today is, paradoxically, choice. In years past, the most difficult decision customers had to make was whether to use BEA or IBM for their application server. Today, they have to sort through projects like Aurora, Cloud Foundry, Kubernetes, Mesos, OpenShift and Swarm. They have to understand where their existing investments in Ansible, Chef, Puppet and Salt fit in, or don’t. They have to ask how Kubernetes compares to Diego. Bosh to Mesos. And where do containers fit in with all of the above, which container implementation do they leverage and are they actually ready for production? Oh, and what infrastructure is all of this running on? Bare metal? Or is something like OpenStack required? Is that why Google joined? And on and on.
+
+There are two things to unpick there. Requirements lean to particular language choices – for systems programming Go has emerged as the natural choice, led by the inimitable Derek Collison of Apcera.
+
+    Go: A year ago, we predicted that Go would become a Top 20 language within a six to twelve month timeframe. Six months ago, it achieved that goal landing as the #17 language in our January rankings. In this quarter’s run, Go continues on that same trajectory, up another two spots to #15. In the process, it leapfrogged Haskell and Matlab
+
+Systems programming is not general purpose application programming however- the biggest challenge for Java will be ongoing relevance in an era where stateless programming is the norm rather than the exception, and where fragmentation is seemingly a given. [second bonus update – joining the dots then, we’re still witnessing the slow motion fall out of a model where, as Stephen points out, so much of the core infrastructure was built into the app server. Java is going to need something like Spring Boot to sustain it going forward in this new world, after all, as we have shown frameworks lead language adoption.]
+
+Fragmentation is creating opportunities for languages like Rust and Julia. We’re faced with an interesting model where we’re seeing stability at the core, but a fair degree of movement at the edges, with new languages swiftly (please excuse the pun) coming to the fore.
+
+A final word of thanks to HP. The rankings are Internet-famous, but they have hitherto been something we didn’t charge for. By adopting a sponsorship model I think we have a nice balance between funding our open work, and highlighting a company that wants to engage more closely with developers. The New Patronage Economy, as it were.
+Post Views: 26 

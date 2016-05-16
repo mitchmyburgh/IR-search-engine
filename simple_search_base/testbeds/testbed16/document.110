@@ -1,0 +1,17 @@
+Netflix Releases Free Infrastructure Failure Testing Software "Chaos Monkey" To Public
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+Image representing Netflix as depicted in Crun...
+ 
+Netflix has announced that it has released its “Chaos Monkey“ infrastructure testing software under a free Open Source Apache license.
+
+The software known as Chaos Monkey, is a service which runs in the Amazon Web Services (AWS) cloud, it identifies groups of systems and randomly terminates one of the systems in an automated effort to discover failure points within a cloud infrastructure.
+
+The software was designed to keep Netflix’s applications working even if one or more of its servers goes offline. They say that even in those “special cases”, they want to ensure there are people around to resolve and learn from any problems before they happen by proactivily creating failure with in its cloud infrastructure.With this in mind, Chaos Monkey only runs in business hours with the intent that engineers will be alert and able to respond. A kind of infrastructure fire drill.
+
+In a blog post, Netflix notes, “Failures happen and they inevitably happen when least desired or expected. If your application can’t tolerate an instance failure would you rather find out by being paged at 3am or when you’re in the office and have had your morning coffee?”
+
+It is designed to take a variety of failure scenarios into consideration. Netflix notes that over the last year Chaos Monkey has terminated over 65,000 instances running in the Netflix production and testing environments. The software allows the firm to isolate and resolve problems so they don’t happen again. It allows for an Opt-In or an Opt-Out model, Netflix’s says they use the Opt-Out model, so if an application owner does nothing, Chaos Monkey will automatically work on their application. For other use cases, you have the option to choose what is right for you. This allows what Netflix describes as the ability to “test the water” and try out Chaos Monkey on a specific application to see how it reacts.

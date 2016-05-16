@@ -1,0 +1,73 @@
+The state of Ruby and Rails: Opportunities and obstacles
+More like this
+
+    multiple choice test scantron pencil hand examination
+    Review: 7 JavaScript IDEs put to the test
+    Rails creator doubts Silverlight can win converts
+    Happy Birthday Java
+    Java at 20: The JVM, Java's other big legacy
+    on IDG Answers
+    If I buy a Chromebook and can't get to grips with OS can I convert to windows?
+
+The state of Ruby and Rails: Opportunities and obstacles
+Credit: Thinkstock
+Developer demand for Ruby and Rails remain high, but the specific ways both language and framework shine (or don't) are crucial to know
+
+InfoWorld | Jul 6, 2015
+RELATED TOPICS
+
+    Application Development Web Development Developer Ruby 
+
+3Comments
+
+The Ruby language and the Ruby on Rails framework remain major forces in the world of computing through both their existing broad bases and the strong demand for Ruby and Rails programmers in the field.
+
+With Rails in the wild for more than a decade and Ruby having 20-plus years under its belt, both the language and its associated framework have staked out specific territories. Here's a look at where Ruby and Rails are most at home and where they're facing real challenges, both technical and existential.
+pearl oyster shell treasure jewel gem
+Get to know Perl 6
+
+Perl 6 finally arrived a few weeks ago, carrying a load of new features without losing its free-form
+Read Now
+[ The art of programming is changing rapidly. We help you navigate what's hot in programming and what's going cold and give insights into the technologies that are changing how developers work. | Keep up with hot topics in programming with InfoWorld's Application Development newsletter. ]
+The great: Rapid Web development (especially for Rails)
+
+A big part of the concept behind Ruby (and Ruby on Rails) was making the programmer happy -- keeping it simple to learn and easy to use, but also proffering advanced features when needed. That approach paid off, as Ruby and Ruby on Rails have built a decade-long mutual success story on providing straightforward ways to get a lot done.
+
+With Rails, that means Web apps can be prototyped in a fraction of the time it would take to build them elsewhere. That fast-but-smart approach helped bootstrap a range of sites that have since become household names in IT: Twitter, GitHub, Hulu, and many more. 
+
+Much of the ongoing demand for Ruby also revolves around Rails, which remains one of the broadest practical applications of the language. Openings for jobs involving Rails, as opposed to jobs involving Ruby alone, tend to follow each other closely over time, according to Indeed.com's job trends tracking. Dice has noted demand for Ruby expertise also tends to go hand-in-hand with front-end JavaScript skills.
+
+All of the above constitutes hints that interest in Rails drives much of the business and enterprise interest in Ruby. Work on Rails itself is also ongoing, with the recently released 4.2 providing performance improvements and setting the stage for the long-awaited version 5 of the framework.
+The good: Scripting and libraries
+
+Like Python, another language often mentioned in the same breath, Ruby is useful for automating tasks or stitching together functionality from different parts of the IT ecosystem. Ruby's "gems," or software packages (6,400 and counting), can be installed easily from the command line. SDKs for third-party applications and services, such as Amazon, more often than not include Ruby wrappers or libraries as a way to make them accessible to Ruby apps.
+
+Where Python has an edge, though, is in specialized computing -- specifically, science and math, where Python has a well-developed subculture of both users and libraries. Ruby is addressing this gap by way of projects like SciRuby, although Python has the incumbent advantage in terms of both adoption and coverage.
+The Path to Innovation: The Cloud as the Quickest Shortcut
+
+BrandPost Sponsored by SAP
+
+The Path to Innovation: The Cloud as the Quickest Shortcut
+
+One of the biggest issues companies face with innovation is integrating new systems into legacy systems. Everyone wishes they could simply start with a greenfield deployment and avoid that hassle...
+Resources
+
+    White Paper
+    Now Network Traffic is Under Control
+    White Paper
+    Citrix NetScaler: A Powerful Defense Against Denial of Service Attacks
+
+See All
+Not so good: Projects needing major scale, speed, or asynchronicity
+
+Where Ruby is sliding, it would be fairer to say Rails is the one losing ground in specific settings and pulling Ruby along with it. Some legacy projects in Rails suffering from problems of scale or performance are being rewritten in other languages and frameworks, with Node.js and Go as two of the most common contenders.
+
+High-profile examples abound. Mobile-app outfit Parse switched from Ruby to Go to deal with an explosive amount of growth that its engineers felt couldn't scale effectively in Ruby. Twitter, originally a Ruby on Rails project, was rewritten in Scala and replaced its front end with a custom Java-based solution.
+
+Few sites would experience the same extreme demand as Twitter, so not every Rails-driven site is a candidate for a ground-up rewrite. But other high-profile projects involving Ruby that aren't Rails works are feeling the draw of other language ecosystems. The Puppet project's server component switched from Ruby to Clojure, in big part because of the advantages provided by the Java Virtual Machine (upon which Clojure runs) and its attendant software.
+
+Even JRuby, the version of Ruby hosted on the JVM for both speed and convenience, has its limits as an alternative. As the Parse team found out, "JRuby is still basically Ruby, [since] it still has the problem of asynchronous library support ... The vast majority of Ruby gems are not asynchronous, and many are not threadsafe, so it was often hard to find a library that did some common task asynchronously."
+
+In light of this, one possible reason for the growth in demand for Ruby on Rails and Ruby is to preserve or maintain -- or even replace -- existing Ruby or Rails infrastructure, rather than building new objects with it.
+
+Either way, there's a heavy ongoing demand for both Ruby and Rails. Even better, it often pays well, as Ruby and Rails developers average around $110,000 nationwide, according to Indeed.com.

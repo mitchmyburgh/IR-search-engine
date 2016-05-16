@@ -1,0 +1,17 @@
+Binary Search Tree Traversal Implemented in Java
+
+Most of the students fresh out of their engineering studies or those who are still studying will have the concept of Binary Search Trees fresh in their minds. But with most of the people who have been out of college for many years now will kind of be having a not so clear idea of Binary Search trees unless they have been using it or related concepts at their work. Also you can read the extensive concepts about this topic on any of the popular data structure book in the store.
+
+What is a Binary Search Tree (BST)?
+Binary Search Tree (BST) is a binary tree data structure with a special feature where in the value store at each node is greater than or equal to the value stored at its left sub child and lesser than the value stored at its right sub child. As a type of tree, it is a non-liner data structure.
+
+Now that we have seen how a BST looks, let me show you how one can build a BST and insert nodes into the tree by implementing the algorithm in Java. The basic idea is that at each node we compare with the value being inserted. If the value is lesser then we traverse through the left sub tree and if the value is greater we traverse through the right subtree.
+
+One use of a BST is to find maximum and minimum values in the tree.
+
+Traversing the Binary Search Tree (BST)
+
+Traversing the tree or BST in this case is visiting each of the nodes present in the tree and performing some operation with the value present in the node which in this case will be printing the value present in the node. When we traverse the tree we have to visit the value present in the node, then node’s right sub tree and the left sub tree. Visiting the right and left sub tree will be a recursive operation. The order in which we perform the three operations i.e visiting the value, right sub tree and left sub tree gives rise to three traversal techniques:
+Inorder Traversal
+Preorder Traversal
+Postorder Traversal

@@ -1,0 +1,7 @@
+Local and inner
+
+In some languages, classes can be declared in scopes other than the global scope. There are various types of such classes.
+
+An Inner class is a class defined within another class. The relationship between an inner class and its containing class can also be treated as another type of class association. An inner class is typically neither associated with instances of the enclosing class nor instantiated along with its enclosing class. Depending on language, it may or may not be possible to refer to the class from outside the enclosing class. A related concept is inner types, also known as inner data type or nested type, which is a generalization of the concept of inner classes. C++ is an example of a language that supports both inner classes and inner types (via typedef declarations).[30][31]
+
+Another type is a local class, which is a class defined within a procedure or function. This limits references to the class name to within the scope where the class is declared. Depending on the semantic rules of the language, there may be additional restrictions on local classes compared to non-local ones. One common restriction is to disallow local class methods to access local variables of the enclosing function. For example, in C++, a local class may refer to static variables declared within its enclosing function, but may not access the function's automatic variables

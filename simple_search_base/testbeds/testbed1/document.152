@@ -1,0 +1,8 @@
+Bus_mastering
+In , '''bus mastering''' is a feature supported by many s that enables a device connected to the bus to initiate transactions. It is also referred to as '''"first-party DMA"''', in contrast with "third-party DMA" where a system  (also known as peripheral processor, I/O processor, or channel) actually does the transfer.
+Some types of buses allow only one device (typically the , or its proxy) to initiate transactions.  Most modern bus architectures, such as , allow multiple devices to ''bus master'' because it significantly improves performance for general purpose s.  Some s prohibit peripherals from becoming bus masters, because the scheduler can no longer arbitrate for the bus and hence cannot provide deterministic latency.
+While bus mastering theoretically allows one peripheral device to directly communicate with another, in practice almost all peripherals master the bus exclusively to perform  to main memory.
+If multiple devices are able to master the bus, there needs to be a '''bus arbitration''' scheme to prevent multiple devices attempting to drive the bus simultaneously.  A number of different schemes are used for this; for example  has a fixed priority for each SCSI ID.  PCI does not specify the algorithm to use, leaving it up to the implementation to set priorities.
+==References==
+*  - Tweak3D
+* - Brevard User's Group

@@ -1,0 +1,19 @@
+Software on a Service Oriented Architecture
+
+SOA, or Service Oriented Architecture, allows businesses to use the information technology infrastructure that exists in order to address new needs of the business. It treats the infrastructure that exists like a service, and therefore it can be used for addressing different needs. There are different architectural styles in SOA software. Architectural styles are groups of principals that provide frameworks for families of systems.
+
+COMPONENT-BASED STYLES IN SOA SOFTWARE
+
+Component-based architectural styles use approaches that are software engineering to designing and developing systems. This approach will deconstruct the system’s design into the individual components either on a logical or functional basis. The different components all have communication interfaces that are well defined with a variety of properties. The ability to be reused is a popular characteristic of the components. That means that the components are able to be used in a variety of applications based on different scenarios.
+
+DOMAIN-BASED STYLES IN SOA SOFTWARE
+
+There’s another architectural style used by SOA software which is known as domain driven design. This approach to the software design is object-oriented and it’s based on a business domain and the behaviors and elements of it. It’s also based on the relationship between elements and behaviors. In this style, a domain model is the framework the designer uses to base solutions. This kind of style needs knowledge of the domain that will be modeled. The development teams might even work together with experts in business domains for doing the modeling.
+
+LAYER-BASED STYLES IN SOA SOFTWARE
+
+This style groups the functionality that is related in an application into the different layers which are stacked on top of each of the layers. The functionality’s based on a responsibility or rule that is common. If the layering’s done correctly, it’s going to result in separation that will help it to be flexible. In an approach that is strict layering, one layer’s components are only about to interact with themselves, or with components of a layer that is found right below them. With layering that is not as strict, the components of one layer are able to interact with the components in any of the lower layers.
+
+These are the styles of the SOA architecture that are important to know about when it comes to soa for a business. Each of these styles helps a business to function well when the owner of the business chooses to use SOA.
+
+If you are looking for a company that is knowledgeable about SOA and the incorporated styles, Apprenda is a great place to go.

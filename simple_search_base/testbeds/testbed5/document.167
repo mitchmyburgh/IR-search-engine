@@ -1,0 +1,45 @@
+Top Programming Languages That Generate Software Vulnerabilities
+Classic ASP leads the pack, but nobody really uses it anyway
+Dec 4, 2015 01:51 GMT  ·  By Catalin Cimpanu  ·  Share: 
+
+Scripting languages, in general, tend to spawn more security bugs in applications, as Veracode reports, a security firm that has analyzed 208,670 applications from October 1, 2013, through March 31, 2015.
+
+The report used a unique metric, Flaw Density per MB, meaning the number of security issues discovered in each MB of source code. According to Veracode's analysis, the unfortunate winners are:
+
+»      Classic ASP - with 1,686 flaws/MB (1,112 critical flaws/MB)
+
+»      ColdFusion - with 262 flaws/MB (227 critical flaws/MB)
+
+»      PHP - with 184 flaws/MB (47 critical flaws/MB)
+
+»      Java - with 51 flaws/MB (5.2 critical flaws/MB)
+
+»      .NET - with 32 flaws/MB (9.7 critical flaws/MB)
+
+»      C++ - with 26 flaws/MB (8.8 critical flaws/MB)
+
+»      iOS - with 23 flaws/MB (0.9 critical flaws/MB)
+
+»      Android - with 11 flaws/MB (0.4 critical flaws/MB)
+
+»      JavaScript - with 8 flaws/MB (0.09 critical flaws/MB)
+
+While Classic ASP is almost dead, and ColdFusion is a high-end niche tool, PHP coming third, is actually leading the ranking.
+PHP continues to be one of the main sources for many security bugs
+
+With a huge fanbase and used in countless of apps and websites around the Internet, PHP is ranked the worst when it came to command injection bugs, but also came close to the top when it came to SQL injections, cross-site scripting bugs, and cryptographic issues.
+
+Taking a closer look at PHP, we also see that 86% of all the analyzed apps included XSS issues, 73% included cryptographic issues, 67% allowed for directory traversal, 61% for code injection, 58% had problems with credentials management, 56% included SQL injection issues, and 50% allowed for information leakage.
+
+When it came to policy compliance tests, scanned PHP applications passed the OWASP Top 10 tests only in 19% of the cases. ColdFusion had the only lowest rating with 17% while C/C++ passed OWASP tests in 60% of the cases.
+
+"In particular, note that applications in truly compiled application languages like C/C++ and Objective C (iOS) have a higher OWASP pass rate than general-purpose bytecode languages like Java or .NET, while scripting languages like Classic ASP, ColdFusion and PHP have a far lower pass rate," noted the Veracode team in their report.
+
+For more details, check out Vercode's State of Software Security Report, Vol 6, Fall 2015.
+Top vulnerability categories by programming language
+Top vulnerability categories by programming language
+  CHECK OUT THE GALLERY  (2 Images)
+#PHP#programming#programming language#OWASP#top 10
+
+Read more: http://news.softpedia.com/news/top-programming-languages-that-generate-software-vulnerabilities-497101.shtml#ixzz47ZxWZLEW
+

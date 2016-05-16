@@ -10,11 +10,20 @@ import porter
 
 import parameters
 
-# check parameter for collection name
-if len(sys.argv)==1:
-   print ("Syntax: index.py <collection>")
-   exit(0)
-collection = sys.argv[1]
+collection = "apples"
+
+try:
+  os.mkdir ("indexes")
+except:
+  pass
+
+for i in range(1, 17):
+  # write inverted index to files
+  try:
+     os.makedirs ("indexes/testbed"+str(i)+"_index")
+  except:
+     pass
+  #for i in range(1, 201):
 
 # read and parse input data - extract words, identifiers and titles
 f = open (collection, "r")

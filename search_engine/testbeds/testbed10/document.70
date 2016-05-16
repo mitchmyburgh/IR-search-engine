@@ -1,0 +1,29 @@
+Data mining for customer service support 
+
+S.C. Hui* , G. Jha
+
+Customer service support is becoming an integral part of most multinational manufacturing companies that manufacture and market expensive machines and electronic equipment. Many companies have a customer service department that provides installation, inspection, and maintenance support for their worldwide customers. Although most of these have some engineers to handle day-to-day maintenance and small-scale troubleshooting, expert advice are often required from the manufacturing companies for more complex maintenance and repair jobs. Prompt response to a request is needed to maintain customer satisfaction. Therefore, a hot-line service centre (or help desk) is usually set up to answer frequently encountered problems from the customers. Fig. 1 shows the work¯ow in a traditional hot-line service centre. The service centre is responsible for receiving reports on faulty machines or enquiries from customers via telephone calls. When a problem is reported, a service engineer will suggest a series of checkpoints for customers using the hot-line advisory system. Such suggestions are based on past experience. This has been extracted from a Customer Service Database, which contains previous service records that are identical or similar to the current problem. The customer can then try to solve the problem and subsequently con®rm, with the service centre, if the problem is resolved. If the problem still persists, the centre will dispatch a service engineer to the customer's premise for an on-site repair. During such trips, the service engineer will take past records of the customer's machine, related manuals, and spare partsthat may be required to carry out the repair. Such a process is inconvenient. At the end of each service cycle, a customer service report is used to record the new problem and the proposed remedies or suggestions taken to rectify it. This database is used for billing purposes, as well as formaintainingacorporate knowledge base.The service centre stores the customer service reportin the database. Apart from maintaining a knowledge base on common faults and its remedies, the customer service database also stores data on sales, employees, customers and service reports. These data are not only used for day-to-day management operations, but help the company in decision making on job assignment and promotion of service engineers, and marketing, manufacturing, and maintenance of different machine models. The customer service database serves as a repository of invaluable information and knowledge that can be utilized to assist the customer service department in supporting its activities. The objective of this paper is to discuss how to apply data mining techniques to extract knowledge from the customer service database to support two types of activities: decision support and machine fault diagnosis. The work was carried out as a collaborative work between a multinational company and the School of Applied Science, Nanyang Technological University, Singapore. The company manufactures and supplies insertion and surface mount machines for use mainly in the electronics industry.
+
+6. Conclusions
+As a collaborative research project with a multinational
+company, this research investigated the application
+of data mining techniques to extract knowledge
+from the customer service database for two kinds of
+customer service activities: decision support and
+machine fault diagnosis. The information stored in
+the customer service database are classi®ed as structured
+and unstructured textual data. The structured
+data are mined to enhance the decision making process
+for better management of resources and marketing of
+products. The unstructured data are mined to support
+intelligent diagnosis of machine faults over the World
+Wide Web.
+In order to mine the structured data in the customer
+service database, a data mining process based on the
+data mining tool, DBMiner was proposed. To support
+machine fault diagnosis, a data mining technique
+based on the integration of neural network, case-based
+reasoning, and rule-based reasoning is incorporated.
+This data mining technique can operate within a
+system to provide ef®cient on-line machine fault
+diagnosis over the World Wide Web.

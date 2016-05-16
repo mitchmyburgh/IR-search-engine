@@ -1,0 +1,244 @@
+
+
+This page may be out of date. Save your draft before refreshing this
+page.Submit any pending changes before refreshing this page.
+
+Hide this message.
+
+Quora
+
+****
+
+Sign In
+
+Quantum Computation
+
+Bad
+
+Good
+
+Society
+
+# Will quantum computers be good or bad for society?
+
+I saw a documentary about hacking saying that quantum computers will be able
+to crack RSA and encryption and all that. Will that be bad for activists and
+whistleblowers around the world fighting the good fight? I'm assuming that
+only governments and corporations will be able to afford these computers and
+they will inevitably use them for their own agendas and if we look around the
+world it doesn't paint a very pretty picture. In Australia we just passed meta
+data retention laws (in my opinion to expose whistleblowers), in America they
+demonise Edward Snowden, in India they are trying to get rid of NGOs, God
+knows what China will do with it etc... And that's not even mentioning all the
+despots and authoritarian regimes out there. What are your thoughts?
+
+UpdateCancel
+
+### Answer Wiki
+
+1 Answer
+
+Pranav Gokhale, Bachelor's from Princeton with focus in Quantum Computing
+
+609 Views •
+
+Pranav has 10+ answers and 3 endorsements in
+
+Quantum Computation.
+
+It is true that a scalable quantum computer would spell the end of RSA and
+other public key cryptosystems. I'd agree that this would be an unequivocally
+bad outcome for society.  
+  
+But there is a saving grace to quantum computing and it is called quantum
+cryptography (or quantum key distribution). Quantum cryptography is unlike any
+other form of public-key encryption out there in that is **provably secure**.
+If you and I share a reliable quantum channel of communication, we can have a
+fully encrypted conversation and get this: if someone tries to eavesdrop, the
+system will be able to detect intrusion and report so to us.  
+  
+Moreover, quantum cryptography is far closer to widespread availability than
+quantum computers are. I interned at NIST in Maryland (USA) in 2006 and even
+back then, we had a quantum key distribution system spanning from the computer
+in the foreground to the roof of the building in the background:  
+
+There are already companies like ID Quantique and MagiQ which sell commercial
+quantum cryptosystems to privacy-sensitive entities like banks.  
+  
+So I don't think quantum computers will be bad for society from the citizen
+privacy standpoint. In fact, quantum cryptography will far outclass our
+current encryption schemes to the point where the balance will tip far the
+other way, as governments will no longer be able to eavesdrop on suspected
+criminals in emergency situations.  
+  
+However, quantum computers would have widespread implications apart from
+privacy that are worth considering as well. In particular, quantum computers
+achieve a square-root speedup over traditional computers for many very hard
+tasks (well, every NP-complete problem*) and an exponential speedup for
+certain scientific problems involving simulation of quantum states. This is a
+_fundamentally_ different and more powerful kind of speedup than the kind that
+you can get by just cranking up the clock speed on a processor or by
+increasing memory.  
+  
+How will this impact society? Well, I'm a techno-optimist, so the first things
+that come to mind are that humanitarian problems like protein folding, flight
+routing, spam detection, drug discovery, and language translation will become
+easier.  
+  
+But Neo-Luddites will point to the more nefarious consequences that could
+arise. A quantum computer in the hand of a rogue nation could be used to wreak
+havoc. Elon Musk might tremble in fear at Google's Quantum Artificial
+Intelligence Lab https://plus.google.com/+Quantum... (suggested reading:
+http://arxiv.org/pdf/1409.3097v1...).  
+  
+These concerns certainly have merit. But like I said, I am an optimist.
+Ultimately, I think technological progress in computation will almost always
+be good for society, and so, if quantum computers ever make it out of the
+laboratory, I think we should welcome their advent.  
+
+* * *
+
+* to be clear, this does not mean that quantum computers can solve NP-complete problems in polynomial time. The square root of an exponential is still an exponential, just with a smaller base.
+
+Updated Sep 9, 2015 • View Upvotes
+
+#### Related Questions
+
+      * Will quantum computation become a dominating field of computer science?
+
+      * How can quantum computing change our society &amp; civilization?
+
+      * What's so good about quantum computers?
+
+      * What are some good books for learning quantum computation?
+
+      * Quantum Computation: Is this a good field to go into?
+
+      * Is materialism good or bad for society?
+
+      * Bad: How does religion affect society? (Good and bad ways)
+
+      * What impact would the invention of a true quantum computer have on society?
+
+      * What is a quantum computer?
+
+      * What are some good resources on quantum computing?
+
+      * What are some good logic puzzles related to quantum computing?
+
+      * Is political correctness good or bad for society? Why?
+
+      * What are the future implications of quantum computers for society, technology, security and life in general?
+
+      * Is quantum computing real?
+
+      * What are some good books on quantum computation for beginners?
+
+      * How does quantum computing work?
+
+      * Is Uber good or bad for society? Why?
+
+      * Is goiter advertisement good or bad for society?
+
+      * What is the best option for a good artificial intelligence: Memcomputers or Quantum computers?
+
+      * What's a good h-index for someone working in field of quantum computation (computer science)?
+
+### Related Questions
+
+      * Will quantum computation become a dominating field of computer science?
+
+      * How can quantum computing change our society &amp; civilization?
+
+      * What's so good about quantum computers?
+
+      * What are some good books for learning quantum computation?
+
+      * Quantum Computation: Is this a good field to go into?
+
+      * Is materialism good or bad for society?
+
+      * Bad: How does religion affect society? (Good and bad ways)
+
+      * What impact would the invention of a true quantum computer have on society?
+
+      * What is a quantum computer?
+
+      * What are some good resources on quantum computing?
+
+Top Stories
+
+Read More
+
+What are the most interesting facts you know?
+
+Varsheindra Gautam, Quorious Quoran
+
+75.3k Views
+
+**1)****_ This gorgeous concoction is called Aurora Jungle Juice._**  
+  
+  
+**It's pink in natural light, but when viewed under black light it glows aquamarine. It's made of gin/vodka, Rose's Mojito Passion/pink lemonade and gin.**  
+  
+**2)****_ HILLER LAKE in Western Australia_**  
+  
+  
+  
+**3)**_ _**_Hidden Underground Beach of Marieta Islands, Mexico._**  
+  
+**The Marieta Islands were originally formed many thousands of years ago by volcanic acti...**
+
+Read More
+
+What if the people march on Washington DC and try to arrest Congress?
+
+Ernest W. Adams, Game Design Consultant, Author, and Professor
+
+3.4k Views • Upvoted by
+
+Richard White, 27 years in Military Intelligence, including 1 year (on loan)
+with the DEA
+
+Ernest is a Most Viewed Writer in
+
+U.S. Congress.
+
+Congress would probably go into lockdown and implement the same procedures it
+would in the event of a terrorist attack. They would remain in place until the
+DC police, assisted by the military if necessary, dispersed the crowd.  
+  
+An actual attack on Congress isn't just a riot. It's an effort to prevent the
+Constitutionally-mandated operation of the government. Although the military
+is prohibite...
+
+Read More
+
+Is it recommended to triple major in Universities?
+
+Tom Stagliano, Senior Aerospace Engineer (studied at MIT)
+
+4.1k Views •
+
+Tom is a Most Viewed Writer in
+
+College and University Majors.
+
+Recommended???   No
+
+Indeed, MIT specifically does Not allow a triple major, and instead of
+awarding two bachelors degrees will award one bachelors degree that states it
+is a Dual degree (e.g. Mechanical Engineering and Management).
+
+If you are that interested in academics, then it is likely you will go on to
+graduate school and become better at Your niche.    So instead of triple
+majoring, in (for...
+
+Sitemap
+
+#
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+About \- Careers \- Privacy \- Terms \- Contact
+

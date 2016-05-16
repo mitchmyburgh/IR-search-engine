@@ -1,0 +1,21 @@
+﻿Auxiliary tableaux[edit]
+A different method for dealing with formulae holding in alternate worlds is to start a different tableau for each new world that is introduced in the tableau. For example, \neg \Box A implies that A is false in an accessible world, so one starts a new tableau rooted by \neg A. This new tableau is attached to the node of the original tableau where the expansion rule has been applied; a closure of this tableau immediately generates a closure of all branches where that node is, regardless of whether the same node is associated other auxiliary tableaux. The expansion rules for the auxiliary tableaux are the same as for the original one; therefore, an auxiliary tableau can have in turns other (sub-)auxiliary tableaux.
+Global assumptions[edit]
+The above modal tableaux establish the consistency of a set of formulae, and can be used for solving the local logical consequence problem. This is the problem of telling whether, for each model M, if A is true in a world w, then B is also true in the same world. This is the same as checking whether B is true in a world of a model, in the assumption that A is also true in the same world of the same model.
+A related problem is the global consequence problem, where the assumption is that a formula (or set of formulae) G is true in all possible worlds of the model. The problem is that of checking whether, in all models M where G is true in all worlds, B is also true in all worlds.
+Local and global assumption differ on models where the assumed formula is true in some worlds but not in others. As an example, \{P, \neg \Box (P \wedge Q)\} entails \neg \Box Q globally but not locally. Local entailment does not hold in a model consisting of two worlds making P and \neg P, Q true, respectively, and where the second is accessible from the first; in the first world, the assumption is true but \Box Q is false. This counterexample works because P can be assumed true in a world and false in another one. If however the same assumption is considered global, \neg P is not allowed in any world of the model.
+These two problems can be combined, so that one can check whether B is a local consequence of A under the global assumption G. Tableaux calculi can deal with global assumption by a rule allowing its addition to every node, regardless of the world it refers to.
+Uniform notation[edit]
+When writing tableaux expansion rules, formulae are often denoted using a convention, so that for example \alpha is always considered to be \alpha_1 \wedge \alpha_2. The following table provides the notation for formulae in propositional, first-order, and modal logic.
+Notation	Formulae
+\alpha	\alpha_1 \wedge \alpha_2	\neg (\overline{\alpha_1} \vee \overline{\alpha_2})	\neg (\alpha_1 \rightarrow \overline{\alpha_2})
+\beta	\beta_1 \vee \beta_2	\overline{\beta_1} \rightarrow \beta_2	\neg (\overline{\beta_1} \wedge \overline{\beta_2})
+\gamma	\forall x \gamma_1(x)	\neg\exists x \overline{\gamma_1(x)}
+\delta	\exists x \delta_1(x)	\neg\forall x \overline{\delta_1(x)}
+\pi	\Diamond \pi_1	\neg\Box \overline{\pi_1}
+\upsilon	\Box \upsilon_1	\neg\Diamond \overline{\upsilon_1}
+Each label in the first column is taken to be either formula in the other columns. An overlined formula such as \overline{\alpha_1} indicates that \alpha_1 is the negation of whatever formula appears in its place, so that for example in formula \neg (a \vee b) the subformula \alpha_1 is the negation of a.
+Since every label indicates many equivalent formulae, this notation allows writing a single rule for all these equivalent formulae. For example, the conjunction expansion rule is formulated as:
+(\alpha) \frac{\alpha}{\begin{array}{c}\alpha_1\\ \alpha_2\end{array}}
+Signed formulae[edit]
+A formula in a tableau is assumed true. Signed tableaux allows stating that a formula is false. This is generally achieved by adding a label to each formula, where the label T indicates formulae assumed true and F those assumed false. A different but equivalent notation is that to write formulae that are assumed true at the left of the node and formulae assumed false at its right.

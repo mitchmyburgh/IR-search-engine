@@ -1,0 +1,104 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Basic Line Drawing
+Set the color of pixels to approximate the appearance of a line from (x0,y0) to (x1,y1). It should be • "straight" and pass through the end points. • independent of point order. • uniformly bright, independent of slope.
+The explicit equation for a line is y = mx + b.
+Note: Given two points (x0,y0) and (x1,y1) that lie on a line, we can solve for m and b for the line. Consider y0 = mx0 + b and y1 = mx1 + b. Subtract y0 from y1 to solve for m = y1-y0 x1-x0 and b = y0 -mx0. Substituting in the value for b, this equation can be written as y = m(x-x0) + y0. Consider this simple line drawing algorithm:
+int x float m, y m = (y1 - y0) / (x1 - x0) for (x = x0; x <= x1; ++x) { y = m * (x - x0) + y0 setpixel(x, round(y), linecolor) }
+Copyright c
+2005 David Fleet and Aaron Hertzmann 2
+CSC418 / CSCD18 / CSC2504 Introduction to Graphics
+Problems with this algorithm: • If x1 < x0 nothing is drawn. Solution: Switch the order of the points if x1 < x0. • Consider the cases when m < 1 and m > 1:
+(a) m < 1 (b) m > 1
+A different number of pixels are on, which implies different brightness between the two. Solution: When m > 1, loop over y = y0 ...y1 instead of x, then x = 1 m(y-y0) + x0. • Inef?cient because of the number of operations and the use of ?oating point numbers. Solution: A more advanced algorithm, called Bresenham's Line Drawing Algorithm.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 3
+CSC418 / CSCD18 / CSC2504 Curves
+2 Curves
+2.1 Parametric Curves
+There are multiple ways to represent curves in two dimensions: • Explicit: y = f(x), given x, ?nd y. Example: The explicit form of a line is y = mx + b. There is a problem with this representation-what about vertical lines?
+• Implicit: f(x,y) = 0, or in vector form, f(¯ p) = 0. Example: The implicit equation of a line through ¯ p0 and ¯ p1 is (x-x0)(y1 -y0)-(y-y0)(x1 -x0) = 0. Intuition: - The direction of the line is the vector ~ d = ¯ p1 - ¯ p0. - So a vector from ¯ p0 to any point on the line must be parallel to ~ d. - Equivalently, any point on the line must have direction from ¯ p0 perpendicular to ~ d? = (dy,-dx) =~n. This can be checked with ~ d· ~ d? = (dx,dy)·(dy,-dx) = 0. - So for any point ¯ p on the line, (¯ p- ¯ p0)·~n = 0. Here ~n = (y1 -y0,x0 -x1). This is called a normal. - Finally, (¯ p- ¯ p0)·~n = (x-x0,y-y0)·(y1-y0,x0-x1) = 0. Hence, the line can also be written as:
+(¯ p- ¯ p0)·~n = 0
+Example: The implicit equation for a circle of radius r and center ¯ pc = (xc,yc) is (x-xc)2 + (y-yc)2 = r2, or in vector form, k¯ p- ¯ pck2 = r2.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 4
+CSC418 / CSCD18 / CSC2504 Curves
+• Parametric: ¯ p = ¯ f(?) where ¯ f : R ? R2, may be written as ¯ p(?) or (x(?),y(?)). Example: A parametric line through ¯ p0 and ¯ p1 is
+¯ p(?) = ¯ p0 + ?~ d,
+where ~ d = ¯ p1 - ¯ p0. Note that bounds on ? must be speci?ed: - Line segment from ¯ p0 to ¯ p1: 0 = ? = 1. - Ray from ¯ p0 in the direction of ¯ p1: 0 = ? < 8. - Line passing through ¯ p0 and ¯ p1: -8 < ? < 8
+Example: What's the perpendicular bisector of the line segment between ¯ p0 and ¯ p1?
+- The midpoint is ¯ p(?) where ? = 1 2, that is, ¯ p0 + 1 2
+~ d = ¯ p0+¯ p1 2 .
+- The line perpendicular to ¯ p(?) has direction parallel to the normal of ¯ p(?), which is ~n = (y1 -y0,-(x1 -x0)). Hence, the perpendicular bisector is the line l(a) =¯ p0 + 1 2 ~ d+ a~n. Example: Find the intersection of the lines ¯ l(?) = ¯ p0 + ?~ d0 and f(¯ p) = (¯ p- ¯ p1)·~n1 = 0. Substitute ¯ l(?) into the implicit equation f(¯ p) to see what value of ? satis?es it: f¯ l(?) = ¯ p0 + ?~ d0 - ¯ p1·~n1= ?~ d0 ·~n1 -(¯ p1 - ¯ p0)·~n1 = 0
+Therefore, if ~ d0 ·~n1 6= 0,
+?* =
+(¯ p1 - ¯ p0)·~n1 ~ d0 ·~n1
+,
+and the intersection point is ¯ l(?*). If ~ d0 ·~n1 = 0, then the two lines are parallel with no intersection or they are the same line.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 5
+CSC418 / CSCD18 / CSC2504 Curves
+Example: The parametric form of a circle with radius r for 0 = ? < 1 is ¯ p(?) = (rcos(2p?),rsin(2p?)).
+This is the polar coordinate representation of a circle. There are an in?nite number of parametric representations of most curves, such as circles. Can you think of others?
+An important property of parametric curves is that it is easy to generate points along a curve by evaluating ¯ p(?) at a sequence of ? values.
+2.1.1 Tangents and Normals
+The tangent to a curve at a point is the instantaneous direction of the curve. The line containing the tangent intersects the curve at a point. It is given by the derivative of the parametric form ¯ p(?) with regard to ?. That is,
+~t(?) =
+d¯ p(?) d?
+=dx(?) d?
+,
+dy(?) d? .
+The normal is perpendicular to the tangent direction. Often we normalize the normal to have unit length. For closed curves we often talk about an inward-facing and an outward-facing normal. When the type is unspeci?ed, we are usually dealing with an outward-facing normal.
+tangent
+normal n(?)
+t(?)
+p(?) curve
+We can also derive the normal from the implicit form. The normal at a point ¯ p = (x,y) on a curve de?ned by f(¯ p) = f(x,y) = 0 is:
+~n(¯ p) = ?f(¯ p)|¯ p =?f(x,y) ?x
+,
+?f(x,y) ?y 
+Derivation: For any curve in implicit form, there also exists a parametric representation ¯ p(?) =
+Copyright c
+2005 David Fleet and Aaron Hertzmann 6
+CSC418 / CSCD18 / CSC2504 Curves
+(x(?),y(?)). All points on the curve must satisfy f(¯ p) = 0. Therefore, for any choice of ?, we have: 0 = f(x(?),y(?))
+We can differentiate both side with respect to ?:
+0 =
+d d?
+f(x(?),y(?)) (1)
+0 =
+?f ?x
+dx(?) d?
++
+?f ?y
+dy(?) d?
+(2)
+0 = ?f ?x
+,
+?f ?y·dx(?) d?
+,
+dy(?) d?  (3)
+0 = ?f(¯ p)|¯ p ·~t(?) (4) This last line states that the gradient is perpendicular to the curve tangent, which is the de?nition of the normal vector.
+Example: The implicit form of a circle at the origin is: f(x,y) = x2+y2-R2 = 0. The normal at a point (x,y) on the circle is: ?f = (2x,2y). Exercise: show that the normal computed for a line is the same, regardless of whether it is computed using the parametric or implicit forms. Try it for another surface.
+2.2 Ellipses • Implicit: x2 a2 + y2 b2 = 1. This is only for the special case where the ellipse is centered at the origin with the major and minor axes aligned with y = 0 and x = 0.
+a
+b
+• Parametric: x(?) = acos(2p?), y(?) = bsin(2p?), or in vector form
+¯ p(?) = acos(2p?) bsin(2p?) .
+Copyright c
+2005 David Fleet and Aaron Hertzmann 7
+CSC418 / CSCD18 / CSC2504 Curves
+The implicit form of ellipses and circles is common because there is no explicit functional form. This is because y is a multifunction of x.
+2.3 Polygons
+A polygon is a continuous, piecewise linear, closed planar curve. • A simple polygon is non self-intersecting. • A regular polygon is simple, equilateral, and equiangular. • An n-gon is a regular polygon with n sides. • A polygon is convex if, for any two points selected inside the polygon, the line segment between them is completely contained within the polygon.
+Example: To ?nd the vertices of an n-gon, ?nd n equally spaced points on a circle.
+r
+?
+In polar coordinates, each vertex (xi,yi) = (rcos(?i),rsin(?i)), where ?i = i2p n for i = 0...n-1. • To translate: Add (xc,yc) to each point. • To scale: Change r. • To rotate: Add ?? to each ?i.
+2.4 Rendering Curves in OpenGL
+OpenGL does not directly support rendering any curves other that lines and polylines. However, you can sample a curve and draw it as a line strip, e.g.,:
+float x, y; glBegin(GL_LINE_STRIP); for (int t=0 ; t <= 1 ; t += .01)
+Copyright c
+2005 David Fleet and Aaron Hertzmann

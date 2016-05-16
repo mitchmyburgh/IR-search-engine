@@ -1,0 +1,31 @@
+Description logic
+From Wikipedia, the free encyclopedia
+Description logics (DL) is a family of formal knowledge representation languages. Many DLs are more expressive than propositional logic but less expressive than first-order predicate logic. In contrast to the latter, the core reasoning problems for DLs are (usually) decidable, and efficient decision procedures have been designed and implemented for these problems.
+
+DLs are used in artificial intelligence to describe and reason about the relevant concepts of an application domain (known as terminological knowledge). It is of particular importance in providing a logical formalism for ontologies and the Semantic Web: the Web Ontology Language [OWL] and its profile is based on DLs. The most notable application of DLs and OWL is in biomedical informatics where DL assists in the codification of biomedical knowledge.
+
+Introduction
+A Description Logic (DL) models concepts, roles and individuals, and their relationships.
+
+The fundamental modeling concept of a DL is the axiom - a logical statement relating roles and/or concepts.[1] This is a key difference from the frames paradigm where a frame specification declares and completely defines a class.[1]
+
+Nomenclature[edit]
+Terminology compared to First-Order Logic and OWL[edit]
+The description logic community uses different terminology than the first-order predicate logic community for operationally-equivalent notions; some examples are given below. The Web Ontology Language [OWL] uses again a different terminology, also given in the table below.
+
+Relationship with other logics[edit]
+First order logic[edit]
+Many Description Logics (DLs) are decidable fragments of first order logic (FOL).[4] and are usually fragments of two-variable logic or guarded logic. In addition, some DLs have features that are not covered in FOL; this includes concrete domains (such as integer or strings which can be used as ranges for roles such as hasAge or hasName) or an operator on roles for the transitive closure of that role.[4]
+
+Fuzzy description logic[edit]
+Fuzzy description logics combines fuzzy logic with DLs. Since many concepts that are needed for intelligent systems lack well defined boundaries, or precisely defined criteria of membership, fuzzy logic is needed to deal with notions of vagueness and imprecision. This offers a motivation for a generalization of description logic towards dealing with imprecise and vague concepts.
+
+Modal logic[edit]
+Description Logics is related to — but developed independently of — modal logic (ML).[4] Many — but not all — DL are syntactic variants of ML.[4]
+
+In general, an object corresponds to a possible world, a concept corresponds to a modal proposition, and a role-bounded quantifier to a modal operator with that role as its accessibility relation.
+
+Operations on roles (such as composition, inversion, etc.) correspond to the modal operations used in dynamic logic.[16][16]
+
+Temporal description logic[edit]
+Temporal description logic represents — and allows reasoning about — time dependent concepts and many different approaches to this problem exist.[17] For example, a description logic might be combined with a modal temporal logic such as Linear temporal logic.

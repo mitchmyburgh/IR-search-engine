@@ -1,0 +1,33 @@
+Trees are an example of non-linear data structures in computer science. Another popular example is a graph. In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non-empty) binary tree is a triple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set. Some authors allow the binary tree to be the empty set as well.
+Binary Search Trees – better than “linear” dictionaries; however, the worst–case performance of find, insert, remove
+operations still linear (O(n)).
+
+Height-Balance Property – for every internal node v of T, the heights of the children of v can differ at most by 1;
+if v has only one (internal node) child, its height must be 1.
+
+AVL Tree – any binary search tree T that satisfies the height-balance property is said to be an AVL Tree.
+
+Insertion in AVL trees.
+• A binary search tree T is called balanced if for every
+node v, the height of v’s children differ by at most
+one.
+• Inserting a node into an AVL tree involves
+performing an expandExternal(w) on T, which
+changes the heights of some of the nodes in T.
+• If an insertion causes T to become unbalanced, we
+travel up the tree from the newly created node until
+we find the first node x such that its grandparent z is
+unbalanced node.
+• Since z became unbalanced by an insertion in the
+subtree rooted at its child y,
+height(y) = height(sibling(y)) + 2
+• To rebalance the subtree rooted at z, we must
+perform a restructuring
+- we rename x, y, and z to a, b, and c based on the
+order of the nodes in an in-order traversal.
+- z is replaced by b, whose children are now a and c
+whose children, in turn, consist of the four other
+subtrees formerly children of x, y, and z.
+
+Traversal
+Once a node has been found in a balanced tree, the next or previous nodes can be explored in amortized constant time. Some instances of exploring these "nearby" nodes require traversing up to log(n) links (particularly when moving from the rightmost leaf of the root's left subtree to the root or from the root to the leftmost leaf of the root's right subtree; in the example AVL tree, moving from node 14 to the next but one node 19 takes 4 steps). However, exploring all n nodes of the tree in this manner would use each link exactly twice: one traversal to enter the subtree rooted at that node, another to leave that node's subtree after having explored it. And since there are n?1 links in any tree, the amortized cost is found to be 2×(n?1)/n, or approximately 2.

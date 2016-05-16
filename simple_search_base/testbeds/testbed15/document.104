@@ -1,0 +1,11 @@
+﻿   
+MARK WILSON 06.23.15 12:00 PM
+Even the best CGI humans look dead. And while there can be a lot of reasons for that—the helmet-like hair, the glass eyes, the lack of realistic expressions—one of the biggest culprits is the skin. In the worst instances, computer skin has the flat, wrinkle-less glow of a Olay model, and in the best, the skin looks to have been grafted on a model from a corpse.
+
+
+But a new technique developed by researchers at USC makes artificial skin look remarkably real. Their method? Scan a real human face down to the 10 micron magnification level—close enough to get tiny wrinkles and pores—and then render a special texture map that considers how those tiny fissures and crags squeeze together when you squint, or stretch wide when you smile. Simulated light hits these maps and, as you can see here, it just looks right. Even though I can still tell it’s computer generated (possibly because I already know?), it doesn’t look odd or repulsive in that uncanny valley sort of way.
+
+
+The implications range from Hollywood blockbusters, to Facebook's virtual reality worlds, to Microsoft's virtual assistants, as the researchers have shown the technique can be applied in real time using a graphics card, or processed using tried-and-true dedicated rendering techniques favored by the film and tv industries. Obviously, the dedicated renders will look more realistic, given that the computer is given more or less unlimited time to make things look pretty, but the fact that this was coded from the start with real time rendering in mind gives it a larger, and more immediate potential impact on the humanoid graphics we see everywhere.
+
+But just do me one favor, USC. Put some sort of limiter on this technology, so that when I raise that sniper rifle to my face in Call of Duty, the soldier looking back at me doesn’t look too much like a real person. I’m not ready to be a full-fledged soldier just yet.

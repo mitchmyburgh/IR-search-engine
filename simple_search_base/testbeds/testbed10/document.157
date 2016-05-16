@@ -1,0 +1,64 @@
+Building Domain-Specifc Search Engines with
+Machine Learning Techniques
+
+Andrew McCallumzy
+
+Kamal Nigamy
+
+Jason Renniey
+
+Kristie Seymorey
+
+
+1 Introduction
+As the amount of information on the World Wide
+Web grows, it becomes increasingly diffcult to nd
+just what we want. While general-purpose search engines,
+such as Altavista and HotBot offer high coverage,
+they often provide only low precision, even for detailed
+queries.
+When we know that we want information of a certain
+type, or on a certain topic, a domain-specifc search
+engine can be a powerful tool. For example:
+ www.campsearch.com allows the user to search for
+summer camps for children and adults. The user
+can query the system based on geographic location,
+cost, duration and other requirements.  www.netpart.com lets the user search over company
+pages by hostname, company name, and location. www.mrqe.com allows the user to search for reviews
+of movies. Type a movie title, and it provides links to relevant reviews from newspapers, magazines, and
+individuals from all over the world. 
+
+Performing any of these searches with a traditional,
+general-purpose search engine would be extremely tedious
+or impossible. For this reason, domain-specifc
+search engines are becoming increasingly popular. Unfortunately,
+however, building these search engines is a
+labor-intensive process, typically requiring signifcant
+and ongoing human effort.
+This paper describes the Ra Project|an effort to
+automate many aspects of creating and maintaining
+domain-specifc search engines by using machine learning
+techniques. These techniques allow search engines
+to be created quickly with minimal effort and
+are suited for re-use across many domains. This paper
+presents machine learning methods for spidering
+in an effcient topic-directed manner, extracting topicrelevant
+substrings, and building a browseable topic
+hierarchy. These approaches are briey described in
+the following three paragraphs.
+Every search engine must begin with a collection of
+documents to index. A spider (or \crawler") is an
+agent that traverses the Web, looking for documents
+to add to the search engine. When aiming to populate
+a domain-specfc search engine, the spider need
+not explore the Web indiscriminantly, but should explore
+in a directed fashion in order to and domainrelevant
+documents effciently. We frame the spidering
+task in a reinforcement learning framework (Kaelbling,
+Littman, & Moore 1996), allowing us to precisely and
+mathematically define \optimal behavior." This approach
+provides guidance for designing an intelligent
+spider that aims to select hyperlinks optimally. Our experimental results show that a reinforcement learning
+spider is three times more effcient than a spider
+with a breadth-first search strategy.
+

@@ -1,0 +1,128 @@
+ Cryptographic hash function 
+   From Wikipedia, the free encyclopedia
+    Jump to: 
+   navigation, 
+   search 
+       A cryptographic hash function at work. Even small changes in the source input (here in the word "over") drastically change the resulting output, by the so-called 
+      avalanche effect
+   A cryptographic hash function is a hash function which takes an input (or 'message') and returns a fixed-size alphanumeric string, which is called the hash value (sometimes called a message digest, a digital fingerprint, a digest or a checksum). 
+   The ideal hash function has three main properties: 
+    It is extremely easy to calculate a hash for any given data. 
+    It is extremely computationally difficult to calculate an alphanumeric text that has a given hash. 
+    It is extremely unlikely that two slightly different messages will have the same hash. 
+   Functions with these properties are used as hash functions for a variety of purposes, not only in cryptography. Practical applications include message integrity checks, digital signatures, authentication, and various information security applications. 
+   A hash function takes a string of any length as input and produces a fixed length string which acts as a kind of "signature" for the data provided. In this way, a person knowing the "hash value" is unable to know the original message, but only the person who knows the original message can prove the "hash value" is created from that message. 
+   A cryptographic hash function should behave as much as possible like a random function while still being deterministic and efficiently computable. A cryptographic hash function is considered "insecure" from a cryptographic point of view, if either of the following is computationally feasible: 
+    Finding a (previously unseen) message that matches a given hash values. 
+    Finding "collisions", in which two different messages have the same hash value. 
+   An attacker who can find any of the above computations can use them to substitute an authorized message with an unauthorized one. 
+   Ideally, it should be impossible to find two different messages whose digests ("hash values") are similar; nor would one want an attacker to be able to learn anything useful about a message given only its digest("hash values"). Of course the attacker learns at least one piece of information, the digest itself, by which the attacker can recognise if the same message occurred (repeated) again. 
+   In various standards and applications, the two most commonly used hash functions are MD5 and SHA-1. 
+   In 2005, security defects were identified showing that a possible mathematical weakness might exist, like attacks, and recommending a stronger hash function. 
+   In 2007 the National Institute of Standards and Technology announced a contest to design a hash function which will be given the name SHA-3 and be the subject of a FIPS standard.[1] 
+     Contents 
+     1 Other pages 
+     2 Further reading 
+     3 References 
+     4 Other websites 
+   Other pages[change | change source] 
+    Avalanche effect 
+   Further reading[change | change source] 
+    Bruce Schneier. Applied Cryptography. John Wiley &amp; Sons, 1996. ISBN 0-471-11709-9. 
+   References[change | change source] 
+     ↑ NIST.gov - Computer Security Division - Computer Security Resource Center 
+   Other websites[change | change source] 
+    Hash'em all! – free online text and file hashing with different algorithms 
+    The Hash function lounge – a list of hash functions and known attacks 
+    Helger Lipmaa's links on hash functions 
+    Diagrams explaining cryptographic hash functions 
+    An Illustrated Guide to Cryptographic Hashes by Steve Friedl 
+    Cryptanalysis of MD5 and SHA: Time for a New Standard by Bruce Schneier 
+    Hash collision Q&amp;A 
+    Attacking hash functions by poisoned messages (construction of multiple sensible Postscript messages with the same hash function) 
+    What is a hash function? from RSA Laboratories 
+    Password Hashing in PHP by James McGlinn at the PHP Security Consortium 
+    The code monkey's guide to cryptographic hashes by Val Henson, "in language that any programmer (and even some managers) can understand." 
+    Retrieved from "
+   https://simple.wikipedia.org/w/index.php?title=Cryptographic_hash_function&amp;oldid=5247989" 
+    Category: 
+     Cryptography
+ Navigation menu 
+   Personal tools 
+    Not logged in
+    Talk
+    Contributions
+    Create account
+    Log in 
+    Namespaces 
+     Page 
+     Talk 
+     Variants  
+    Views 
+     Read 
+     Change 
+     Change source 
+     View history 
+    More 
+     Search  
+   Getting around 
+     Main page
+     Simple start
+     Simple talk
+     New changes
+     Show any page
+     Help
+     Give to Wikipedia 
+   Print/export 
+     Make a book
+     Download as PDF
+     Page for printing 
+   Tools 
+     What links here
+     Related changes
+     Upload file
+     Special pages
+     Permanent link
+     Page information
+     Wikidata item
+     Cite this page 
+   In other languages 
+     العربية
+     বাংলা
+     Čeština
+     Deutsch
+     Ελληνικά
+     English
+     Español
+     فارسی
+     Français
+     한국어
+     Italiano
+     עברית
+     Latviešu
+     Lietuvių
+     Magyar
+     മലയാളം
+     日本語
+     Polski
+     Português
+     Русский
+     Slovenčina
+     Српски / srpski
+     Suomi
+     Türkçe
+     Українська
+     Tiếng Việt
+     粵語
+     中文
+     Change links
+   This page was last changed on 30 October 2015, at 13:32. 
+  Text is available under the Creative Commons Attribution/Share-Alike License and the GFDL; additional terms may apply. See Terms of Use for details. 
+  Privacy policy 
+  About Wikipedia 
+  Disclaimers 
+  Developers 
+  Cookie statement 
+  Mobile view 
+(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","user":"ready","user.groups":"ready"});mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.eventLogging.subscriber","ext.gadget.ReferenceTooltips","mmv.bootstrap.autostart","ext.visualEditor.targetLoader","ext.wikimediaEvents","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"]);});
+(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":55,"wgHostname":"mw1253"});});

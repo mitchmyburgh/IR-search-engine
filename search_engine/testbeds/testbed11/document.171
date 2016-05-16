@@ -1,0 +1,12 @@
+The term programmable communicating thermostat (PCT) is used by the California Energy Commission to describe programmable thermostats that can receive information wirelessly.
+The first version of the PCT introduced in the 2008 building standards proceeding also required that PCTs allow temperature control during emergency events to avoid blackouts. This feature was removed after public input indicated a strong fear of the non-overrideable "big brother" feel of this feature.
+A talk at the S4 SCADA security conference in January 2008 indicated adding a public key encryption scheme to the specification, giving each thermostat a random 160-bit number. The installer or homeowner would call this number in to the utility or other service provider (operator), who would then send the Operator's public key to the thermostat over RDS. Using this method, the PCT would receive messages only from the operator(s) explicitly agreed to by the homeowner.
+Thermostats can also communicate wirelessly through the Internet or via a home automation technology, such as Insteon. These advanced thermostats can be adjusted via computer or Internet capable phone to allow users to adjust the temperature in their home without actually being there.
+
+
+== See also ==
+Home automation
+
+
+== External links ==
+TITLE 24, PART 6 – California's Energy Efficiency Standards for Residential and Nonresidential Buildings

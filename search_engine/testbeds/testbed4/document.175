@@ -1,0 +1,27 @@
+Occlusion Culling
+Occlusion Area
+To apply occlusion culling to moving objects you have to create an Occlusion Area and then modify its size to fit the space where the moving objects will be located (of course the moving objects cannot be marked as static). You can create Occlusion Areas by adding the Occlusion Area component to an empty game object (Component -> Rendering -> Occlusion Area in the menus).
+
+After creating the Occlusion Area, check the Is View Volume checkbox to occlude moving objects.
+
+
+Property:	Function:
+Size	Defines the size of the Occlusion Area.
+Center	Sets the center of the Occlusion Area. By default this is 0,0,0 and is located in the center of the box.
+Is View Volume	Defines where the camera can be. Check this in order to occlude static objects that are inside this Occlusion Area.
+Occlusion Area properties for moving objects.
+Occlusion Area properties for moving objects.
+After you have added the Occlusion Area, you need to see how it divides the box into cells. To see how the occlusion area will be calculated, select Edit and toggle the View button in the Occlusion Culling Preview Panel.
+
+
+Testing the generated occlusion
+
+After your occlusion is set up, you can test it by enabling the Occlusion Culling (in the Occlusion Culling Preview Panel in Visualize mode) and moving the Main Camera around in the scene view.
+
+The Occlusion View mode in Scene View
+The Occlusion View mode in Scene View
+As you move the Main Camera around (whether or not you are in Play mode), you’ll see various objects disable themselves. The thing you are looking for here is any error in the occlusion data. You’ll recognize an error if you see objects suddenly popping into view as you move around. If this happens, your options for fixing the error are either to change the resolution (if you are playing with target volumes) or to move objects around to cover up the error. To debug problems with occlusion, you can move the Main Camera to the problematic position for spot-checking.
+
+When the processing is done, you should see some colorful cubes in the View Area. The blue cubes represent the cell divisions for Target Volumes. The white cubes represent cell divisions for View Volumes. If the parameters were set correctly you should see some objects not being rendered. This will be because they are either outside of the view frustum of the camera or else occluded from view by other objects.
+
+After occlusion is completed, if you don’t see anything being occluded in your scene then try breaking your objects into smaller pieces so they can be completely contained inside the cells.

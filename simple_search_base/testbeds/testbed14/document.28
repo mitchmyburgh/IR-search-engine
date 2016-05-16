@@ -1,0 +1,58 @@
+EXPTIME tableaux for ALC
+Abstract
+The last years have seen two major advances in Knowledge Representation and Reasoning. First,
+many interesting problems (ranging from Semi-structured Data to Linguistics) were shown to be
+expressible in logics whose main deductive problems are EXPTIME-complete. Second, experiments
+in automated reasoning have substantially broadened the meaning of “practical tractability”.
+Instances of realistic size for PSPACE-complete problems are now within reach for implemented
+systems.
+Still, there is a gap between the reasoning services needed by the expressive logics mentioned
+above and those provided by the current systems. Indeed, the algorithms based on tree-automata,
+which are used to prove EXPTIME-completeness, require exponential time and space even in simple
+cases. On the other hand, current algorithms based on tableau methods can take advantage of such
+cases, but require double exponential time in the worst case.
+We propose a tableau calculus for the description logic ALC for checking the satisfiability of a
+concept with respect to a TBox with general axioms, and transform it into the first simple tableau based
+decision procedure working in single exponential time.
+To guarantee the ease of implementation, we also discuss the effects that optimizations
+(propositional backjumping, simplification, semantic branching, etc.) might have on our complexity
+result, and introduce a few optimizations ourselves.  2000 Elsevier Science B.V. All rights reserved.
+Keywords: Automated reasoning; Tableaux; Description logics; Modal logics; Algorithms; Computational
+complexity
+1. Introduction and motivations
+Automated Reasoning has been an active research area in the mainstream of Artificial
+Intelligence in the last decades and has received special attention as a tool to provide
+“reasoning services” for Knowledge Representation and Reasoning (KR&R) [53]. That
+is, when knowledge about a problem is coded as formulae in a particular logic, automated
+reasoning services about such knowledge can be offered to a more complex system—
+in more or less the same way implemented data structures offer methods to update the
+structure itself [52]. Of course, to make reliable such a service, some bounds on the
+resources needed to solve the reasoning problem associated to the service should be
+given. This implies that the reasoning problem should be at least decidable; but more
+pragmatically, the service should be accomplished within the resource bounds available
+to the current technology—which is sometimes mentioned as “tractability”.
+Traditionally, “tractability” has been largely understood as polynomial-time solvability
+of the reasoning problems. This resulted in a tremendous effort on isolating the so-called
+tractable fragments of various logics for knowledge representation [21,53,60,61,67].
+The last years have seen a shift from this paradigm, at least for two reasons.
+First, logics with polynomial-time deductive problems have been criticized for their
+too limited expressive power [23]. Although systems with a limited-but-reliable KR&R
+component have been successfully used in complex applications [7,19,79], it is now
+recognized that many interesting KR&R problems can be expressed only in logics
+whose main deductive problems—satisfiability and logical implication—are EXPTIMEcomplete.
+This is true especially for Description Logics, in which many problems, like
+reasoning in conceptual data models, schema integration and semi-structured data [9,10],
+are expressible in EXPTIME-complete Description Logics. The need is also true for logics
+very similar to Description Logics, such as Modal Logics [25,29], Propositional Dynamic
+Logics [27,49], Temporal Logics for Computer Aided Verification [24,78], Hybrid Logics
+for Linguistics [6], Security Modal Logics [1,35].
+Second, a number of recent experimental advances in description and modal logics
+theorem proving and satisfiability checking have substantially broadened the meaning
+of “tractability” for practical purposes. Better algorithms, better coding, better computer
+technology have brought forward a number of novel and effective systems for modal
+and description logics based on on different calculi and implementations, ranging from
+tableau and constraint systems [41,43,44] to DPLL-based implementations [32,34] and
+first order theorem provers [48]. Problems such as as concept satisfiability or modal
+provability, which are PSPACE-complete problems in the worst case, are now within reach
+for instances of realistic size [58]. Potentially EXPTIME-complete problems stemming
+from real applications can be also be reasonably solved [30,41,45].

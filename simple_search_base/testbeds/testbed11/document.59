@@ -1,0 +1,56 @@
+The caGrid computer network and software supported the cancer Biomedical Informatics Grid (caBIG) initiative of the National Cancer Institute of the US National Institutes of Health.
+caBIG is a voluntary virtual informatics infrastructure that connects data, research tools, scientists, and organizations.
+In 2013, the National Cancer Informatics Program (NCIP) re-released caGrid under the BSD 3-Clause license, and migrated the source repository to github.
+
+
+== Globus toolkit ==
+caGrid uses version 4.03 of the Globus Toolkit, produced by the Globus Alliance.
+
+
+== Portal ==
+The caGrid Portal was a Web-based application built on Liferay that enables users to discover and interact with the services that are available on the caGrid infrastructure. Portal serves as the primary visualization tool for the caGrid middleware. It also served as a caBIG information source. Through the caGrid Portal, users had access to information about caBIG participants, caGrid points of contact (POCs), and caGrid-related news and events.
+
+
+== Workflow ==
+caGrid workflow uses:
+Active BPEL
+Taverna
+
+
+== Contributors ==
+Ohio State University
+University of Chicago, Argonne National Laboratory
+SemanticBits, LLC
+Ekagra Software Technologies
+
+
+== Criticism ==
+In March 2011, the NCI published an extensive review of CaBIG, the NCI CBIIT program that funded the caGrid software development (see [1], [2]), which included a long list of problems with the program, and recommended that most of the software development projects should be discontinued.
+
+
+== References ==
+"caGrid". 
+"caGrid 1.0: An Enterprise Grid Infrastructure for Biomedical Research". 
+"Enabling the Provisioning and Management of a Federated Grid Trust Fabric". 
+"Introduce: An Open Source Toolkit for Rapid Development of Strongly Typed Grid Services". 
+"caGrid: design and implementation of the core architecture of the cancer biomedical informatics grid". 
+"Combining the Power of Taverna and caGrid: Scientific Workflows that Enable Web-Scale Collaboration". 
+
+
+== External links ==
+caGrid wiki
+caGrid gforge project
+caGrid Portal
+
+
+=== Components ===
+Introduce Toolkit, also a Globus Incubator Project
+Data Services
+Metadata
+Security
+Credential Delegation Service (CDS)
+Dorian
+GAARDS
+Grid Grouper
+Grid Trust Service (GTS)
+WebSSO - Web Single Sign-on component, based on JASIG CAS

@@ -1,0 +1,302 @@
+
+
+# Hack The Multiverse
+
+## Programming quantum computers for fun and profit
+
+Search
+
+### Main menu
+
+Skip to primary content
+
+Skip to secondary content
+
+  * Home
+  * About
+  * The Hackers
+
+### Post navigation
+
+&lt;- Older posts
+
+# USRA quantum computing request for proposals
+
+Posted on January 18, 2016 by  Geordie
+
+5
+
+The Universities Space Research Association (USRA) is pleased to invite
+proposals for Cycle 2 of the Quantum Artificial Intelligence Laboratory
+Research Opportunity, which will allocate computer time for research projects
+to be run on the D-Wave 2X system at NASA Ames Research Center (ARC) for the
+time period October 2015 through September 2016.
+
+The total allocated computer time for the research opportunity represents
+approximately 20% of the total available runtime during the period. Successful
+projects will be allowed to remotely access the quantum computer, and to run a
+number of jobs up to a maximum allocated runtime usage.
+
+The Call is open to all qualified researchers affiliated to accredited
+universities, not-for-profit organizations, and industry. Exceptions to
+researchers unaffiliated with universities might be considered in case of
+proposals of outstanding quality and the desire to publish the results of the
+investigation. The computer time will be provided free of charge. No financial
+support is offered for the completion of the project.
+
+Proposals are sought for research on artificial intelligence algorithms and
+advanced programming (mapping, decomposition, embedding) techniques for
+quantum annealing, with the objective to advance the state-of-the-art in
+quantum computing and its application to artificial intelligence.
+
+The D-Wave 2X machine currently features the "Washington" chip. High-level
+descriptions of the computer and its programming can be found on D-Wave
+website http://www.dwavesys.com/resources/tutorials. The specific machine
+installed at ARC currently has 1,097 qubits in the working graph, and this is
+planned to be upgraded in the future as new processors become available.
+
+A number of published research papers documenting the use of D-Wave processors
+or discussing its applications can be found at
+http://www.usra.edu/quantum/bibliography.
+
+Applications received by October 31, 2015 will be given full consideration.
+The call for proposals will remain open after this date, and applications
+received after this date will also be considered, in USRA's sole discretion.
+
+For detailed information and application instructions, check out this link.
+
+  * Share
+  * 
+
+  * Facebook
+  * Twitter
+  *   * Tumblr
+  * Google
+  *   * LinkedIn
+  * Reddit
+  *   * Email
+  * 
+
+### Like this:
+
+Like Loading...
+
+Posted in Artificial Intelligence, D-Wave Science &amp; Technology, Quantum
+computer programming, Washington |  **5** Replies
+
+# Interesting progress on improving quantum annealing
+
+Posted on December 27, 2015 by  Geordie
+
+Reply
+
+# Degeneracy, degree, and heavy tails in quantum annealing
+
+Andrew D. King, Emile Hoskinson, Trevor Lanting, Evgeny Andriyash, Mohammad H.
+Amin
+
+(Submitted on 23 Dec 2015)
+
+> Both simulated quantum annealing and physical quantum annealing have shown
+the emergence of "heavy tails" in their performance as optimizers: The total
+time needed to solve a set of random input instances is dominated by a small
+number of very hard instances. Classical simulated annealing, in contrast,
+does not show such heavy tails. Here we explore the origin of these heavy
+tails, which appear for inputs with high local degeneracy--large isoenergetic
+clusters of states in Hamming space. This category includes the low-precision
+Chimera-structured problems studied in recent benchmarking work comparing the
+D-Wave Two quantum annealing processor with simulated annealing. On similar
+inputs designed to suppress local degeneracy, performance of a quantum
+annealing processor on hard instances improves by orders of magnitude at the
+512-qubit scale, while classical performance remains relatively unchanged.
+Simulations indicate that perturbative crossings are the primary factor
+contributing to these heavy tails, while sensitivity to Hamiltonian
+misspecification error plays a less significant role in this particular
+setting.
+
+  * Share
+  * 
+
+  * Facebook
+  * Twitter
+  *   * Tumblr
+  * Google
+  *   * LinkedIn
+  * Reddit
+  *   * Email
+  * 
+
+### Like this:
+
+Like Loading...
+
+Posted in D-Wave Science &amp; Technology, Quantum computing, Research
+articles |  Leave a reply
+
+# Announcing the D-Wave 2X
+
+Posted on August 20, 2015 by  Geordie
+
+14
+
+We are very excited to announce the general availability of the latest
+generation of D-Wave quantum computers, the D-Wave 2X™ system.  With 1000+
+qubits and many other technological advancements, the D-Wave 2X will enable
+customers to run much larger, more complex problems on the system.
+
+Here is a press release describing the system, and here is a paper describing
+benchmarking results performed on it.
+
+Here is one, in the Burnaby lab.
+
+### Like this:
+
+Like Loading...
+
+Posted in Uncategorized |  **14** Replies
+
+# D-Wave Lab Tour part 3
+
+Posted on May 20, 2015 by  Geordie
+
+7
+
+Mark Johnson talks about D-Wave's processors.
+
+### Like this:
+
+Like Loading...
+
+Posted in Lab Tour |  **7** Replies
+
+# D-Wave Lab Tour part 2
+
+Posted on May 14, 2015 by  Geordie
+
+1
+
+D-Wave's Murray Thom explaining what's going on inside the fridge in one of
+our systems.
+
+### Like this:
+
+Like Loading...
+
+Posted in D-Wave Science &amp; Technology, Media, Superconducting Electronics
+|  **1** Reply
+
+# D-Wave Lab Tour part 1
+
+Posted on May 6, 2015 by  Geordie
+
+2
+
+Seeing the D-Wave facilities first-hand is a very cool experience. They look a
+lot like computers did back in the 60s. There are a lot of parallels to back
+then -- we even built our own version of Spacewar! -- except you get to play
+against a quantum computer. (Aside: this game -- which was the world's first
+quantum computer game -- was called MaxCat. I own the only handwritten copy of
+the rules…. one of my most treasured artifacts!)
+
+Here's the first part of a series showing what you'd see if you visited
+D-Wave's main experimental facility. Shot by D-Wave's Dom Walliman --
+experimental physicist, author, and videographer extraordinaire, and starring
+Jeremy Hilton, D-Wave's VP of Processor Development. Hope you like it!
+
+### Like this:
+
+Like Loading...
+
+Posted in Media |  **2** Replies
+
+# Call for Proposals – Computer Time on D-Wave Quantum Computer
+
+Posted on November 12, 2014 by  Geordie
+
+3
+
+Recently the Universities Space Research Association (USRA) announced that
+they were accepting proposals for computer time on the D-Wave system at the
+Quantum Artificial Intelligence Lab located at NASA Ames Research Center.
+Details are as follows, and you can find out more (and download the RFP) at
+USRA’s website at http://www.usra.edu/quantum/rfp/.  We encourage researchers
+to take advantage of this opportunity.
+
+_The Universities Space Research Association (USRA) is pleased to invite
+proposals for Cycle 1 of the Quantum Artificial Intelligence Laboratory
+Research Opportunity, which will allocate computer time for research projects
+to be run on the D-Wave System at NASA Ames Research Center (ARC) for the time
+period November 2014 through September 2015._
+
+_The total allocated computer time for the Cycle 1 research opportunity
+represents approximately 20% of the total available runtime during the period.
+Successful projects will be allowed to remotely access the quantum computer,
+and to run a number of jobs up to a maximum allocated runtime usage._
+
+_The Call is open to all qualified researchers affiliated to accredited
+universities and other research organizations. Exceptions to researchers
+unaffiliated with universities might be considered in case of proposals of
+outstanding quality and the desire to publish the results of the
+investigation. The computer time will be provided free of charge. No financial
+support is offered for the completion of the project._
+
+_Proposals are sought for research on artificial intelligence algorithms and
+advanced programming (mapping, decomposition, embedding) techniques for
+quantum annealing, with the objective to advance the state-of-the-art in
+quantum computing and its application to artificial intelligence._
+
+### Like this:
+
+Like Loading...
+
+Posted in Artificial Intelligence, D-Wave Science &amp; Technology, Learning
+to program the D-Wave One, Machine Learning, World Domination |  **3** Replies
+
+### Post navigation
+
+&lt;- Older posts
+
+### Follow our Feed
+
+  * RSS - Posts
+
+### Recent Posts
+
+  * USRA quantum computing request for proposals
+  * Interesting progress on improving quantum annealing
+  * Announcing the D-Wave 2X
+  * D-Wave Lab Tour part 3
+  * D-Wave Lab Tour part 2
+
+The Twenty Eleven Theme.  |  Blog at WordPress.com.
+
+Hack The Multiverse
+
+Blog at WordPress.com. The Twenty Eleven Theme.
+
+Follow
+
+### Follow "Hack The Multiverse"
+
+Get every new post delivered to your Inbox.
+
+Join 7,807 other followers
+
+Build a website with WordPress.com
+
+Send to Email Address Your Name Your Email Address
+
+Cancel
+
+Post was not sent - check your email addresses!
+
+Email check failed, please try again
+
+Sorry, your blog cannot share posts by email.
+
+Post to
+
+Cancel
+
+%d bloggers like this:
+

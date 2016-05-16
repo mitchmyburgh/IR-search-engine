@@ -1,0 +1,163 @@
+        Brad AppletonSoftware Tools Developer  
+       E-mail: 
+         brad@bradapp.net  
+       WWW: 
+         http://www.bradapp.net  
+AVL Trees: Tutorial and C++ Implementation 
+  Copyright © 1989-1997 by Brad Appleton, All rights reserved.  
+     The following discussion is part of a freely available public domain AVL tree library written in C++. The full C++ source code distribution may be found in AvlTrees.tar.gz (21KB, gzipped tar file). [a plain old K&amp;R C version is available in libavl.tar.gz (25KB, gzipped tar file)] 
+AVL Trees An AVL tree is a special type of binary tree that is always "partially" balanced. The criteria that is used to determine the "level" of "balanced-ness" is the difference between the heights of subtrees of a root in the tree. The "height" of tree is the "number of levels" in the tree. Or to be more formal, the height of a tree is defined as follows: 
+  The height of a tree with no elements is 0 
+  The height of a tree with 1 element is 1 
+  The height of a tree with &gt; 1 element is equal to 1 + the height of its tallest subtree. 
+ An AVL tree is a binary tree in which the difference between the height of the right and left subtrees (or the root node) is never more than one. 
+ The idea behind maintaining the "AVL-ness" of an AVL tree is that whenever we insert or delete an item, if we have "violated" the "AVL-ness" of the tree in anyway, we must then restore it by performing a set of manipulations (called "rotations") on the tree. These rotations come in two flavors: single rotations and double rotations (and each flavor has its corresponding "left" and "right" versions). 
+ An example of a single rotation is as follows: Suppose I have a tree that looks like this: 
+                 c
+                /
+               b
+ Now I insert the item "a" and get the resulting binary tree: 
+                 c
+                /
+               b
+              /
+             a
+ Now, this resulting tree violates the "AVL criteria", the left subtree has a height of 2 but the right subtree has a height of 0 so the difference in the two heights is "2" (which is greater than 1). SO what we do is perform a "single rotation" (or RR for a single right rotation, or LL for a single left rotation) on the tree (by rotating the "c" element down clockwise to the right) to transform it into the following tree: 
+                  b
+                 / \
+                a   c
+ This tree is now balanced. 
+ An example of a "double rotation" (or RL for a double right rotation, or LR for a double left rotation) is the following: Suppose I have a tree that looks like this: 
+                 a
+                  \
+                   c
+ Now I insert the item "b" and get the resulting binary tree: 
+                 a
+                  \
+                   c
+                  /
+                 b
+ This resulting tree also violates the "AVL criteria" so we fix it by first rotating "c" down to the right (so we get "a-b-c"), and then rotating "a" down to the left so that the tree is transformed into this: 
+                 b
+                / \
+               a   c
+ In order to detect when a "violation" of the AVL criteria occurs we need to have each node keep track of the difference in height between its right and left subtrees. We call this "difference" the "balance" factor and define it to be the height of the right subtree minus the height of the left subtree of a tree. So as long as the "balance" factor of each node is never &gt;1 or &lt;-1 we have an AVL tree. As soon as the balance factor of a node becomes 2 (or -2) we need to perform one or more rotations to ensure that the resultant tree satisfies the AVL criteria. 
+Implementing AVL Trees in C++ Before we begin our AVL tree implementation in C++, lets assume we have a template class named "Comparable" defined as follows: 
+   // cmp_t is an enumeration type indicating the result of a
+   // comparison.
+   enum  cmp_t {
+      MIN_CMP = -1,   // less than
+      EQ_CMP  = 0,    // equal to
+      MAX_CMP = 1     // greater than
+   };
+   // Class "Comparable" corresponds to an arbitrary comparable element
+   // with a keyfield that has an ordering relation. The template parameter
+   // KeyType is the "type" of the keyfield
+   //
+   template &lt;class KeyType&gt;
+   class Comparable {
+   private:
+      KeyType  myKey;
+   public:
+      Comparable(KeyType  key) : myKey(key) {};
+      // Use default copy-ctor, assignment, &amp; destructor
+         // Compare this item against the given key &amp; return the result
+      cmp_t Compare(KeyType  key) const;
+        // Get the key-field of an item
+      KeyType Key() const { return  myKey; }
+   };
+ Like the "Comparable" class, our AVL tree will also be a template class parameterized by a KeyType: 
+   // Class AvlNode represents a node in an AVL tree. The template parameter
+   // KeyType is the "type" of the keyfield
+   //
+   template &lt;class KeyType&gt;
+   class AvlNode {
+   private:
+      Comparable&lt;KeyType&gt; * myData;         // Data field
+      AvlNode&lt;KeyType&gt;    * mySubtree[2];   // Subtree pointers
+      short                 myBal;          // Balance factor
+      // ... many details omitted
+   };
+Calculating New Balances After a Rotation To calculate the new balances after a single left rotation; assume we have the following case: 
+             A                                     B
+            / \                                   / \
+           /   \                                 /   \
+          a     B           ==&gt;                 A     c
+               / \                             / \
+              /   \                           /   \
+             b     c                         a     b
+ The left is what the tree looked like BEFORE the rotation and the right is what the tree looks like after the rotation. Capital letters are used to denote single nodes and lowercase letters are used to denote subtrees. 
+ The "balance" of a tree is the height of its right subtree less the height of its left subtree. Therefore, we can calculate the new balances of "A" and "B" as follows (ht is the height function): 
+  NewBal(A) = ht(b) - ht(a)
+  OldBal(A) = ht(B) - ht(a)
+            = ( 1 + max (ht(b), ht(c)) ) - ht(a)
+ subtracting the second equation from the first yields: 
+   NewBal(A) - OldBal(A) = ht(b) - ( 1 + max (ht(b), ht(c)) )
+                           + ht(a) - ht(a)
+ canceling out the ht(a) terms and adding OldBal(A) to both sides yields: 
+   NewBal(A) = OldBal(A) - 1 - (max (ht(b), ht(c)) - ht(b) )
+ Noting that max(x, y) - z = max(x-z, y-z), we get: 
+   NewBal(A) = OldBal(A) - 1 - (max (ht(b) - ht(b), ht(c) - ht(b)) )
+ But ht(c) - ht(b) is OldBal(B) so we get: 
+   NewBal(A) = OldBal(A) - 1 - (max (0, OldBal(B)) )
+             = OldBal(A) - 1 -  max (0, OldBal(B))
+ Thus, for A, we get the equation: 
+   NewBal(A) = OldBal(A) - 1 - max (0, OldBal(B))
+ To calculate the Balance for B we perform a similar computation: 
+   NewBal(B) = ht(c) - ht(A)
+             = ht(c) - (1 + max(ht(a), ht(b)) )
+   OldBal(B) = ht(c) - ht(b)
+ subtracting the second equation from the first yields: 
+   NewBal(B) - OldBal(B) = ht(c) - ht(c)
+                           + ht(b) - (1 + max(ht(a), ht(b)) )
+ canceling, and adding OldBal(B) to both sides gives: 
+   NewBal(B) = OldBal(B) - 1 - (max(ht(a), ht(b)) - ht(b))
+             = OldBal(B) - 1 - (max(ht(a) - ht(b), ht(b) - ht(b))
+ But ht(a) - ht(b) is - (ht(b) - ht(a)) = -NewBal(A), so ... 
+   NewBal(B) = OldBal(B) - 1 - max( -NewBal(A), 0)
+ Using the fact that min(x,y) = -max(-x, -y) we get: 
+   NewBal(B) = OldBal(B) - 1 + min( NewBal(A), 0)
+ So, for a single left rotation we have shown the the new balances for the nodes A and B are given by the following equations: 
+   NewBal(A) = OldBal(A) - 1 - max(OldBal(B), 0)
+   NewBal(B) = OldBal(B) - 1 + min(NewBal(A), 0)
+ Now let us look at the case of a single right rotation. The case we will use is the same one we used for the single left rotation only with all the left and right subtrees switched around so that we have the mirror image of the case we used for our left rotation. 
+             A                                     B
+            / \                                   / \
+           /   \                                 /   \
+          B     a           ==&gt;                 c     A
+         / \                                         / \
+        /   \                                       /   \
+       c     b                                     b     a
+ If we perform the same calculations that we made for the left rotation, we will see that the new balances for a single right rotation are given by the following equations: 
+   NewBal(A) = OldBal(A) + 1 - min(OldBal(B), 0)
+   NewBal(B) = OldBal(B) + 1 + max(NewBal(A), 0)
+ Hence, C++ code for single left and right rotations would be: 
+   // Indices into a subtree array
+   enum  dir_t { LEFT = 0, RIGHT = 1 };
+      // Return the minumum of two numbers
+   inline int
+   MIN(int a, int b) { return  (a &lt; b) ? a : b; }
+      // Return the maximum of two numbers
+   inline int
+   MAX(int a, int b) { return  (a &gt; b) ? a : b; }
+      // Note that RotateLeft and RotateRight are *static* member
+      // functions because otherwise they would have to re-assign
+      // to the "this" pointer.
+   template &lt;class KeyType&gt;
+   void
+   AvlNode&lt;KeyType&gt;::RotateLeft(AvlNode&lt;KeyType&gt; * &amp; root) {
+     AvlNode&lt;KeyType&gt; * oldRoot = root;
+           // perform rotation
+     root = root-&gt;mySubtree[RIGHT];
+     oldRoot-&gt;mySubtree[RIGHT] = root-&gt;mySubtree[LEFT];
+     root-&gt;mySubtree[LEFT] = oldRoot;
+           // update balances
+     oldRoot-&gt;myBal -=  (1 + MAX(root-&gt;myBal, 0));
+     root-&gt;myBal    -=  (1 - MIN(oldRoot-&gt;myBal, 0));
+   }
+   template &lt;class KeyType&gt;
+   void
+   AvlNode&lt;KeyType&gt;::RotateRight(AvlNode&lt;KeyType&gt; * &amp; root) {
+     AvlNode&lt;KeyType&gt; * oldRoot = root;
+           // perform rotation
+     ro

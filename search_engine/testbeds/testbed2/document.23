@@ -1,0 +1,50 @@
+ECJ is a freeware evolutionary computation research system written in Java. It is a framework that supports a variety of evolutionary computation techniques, such as genetic algorithms, genetic programming, evolution strategies, coevolution, particle swarm optimization, and differential evolution. The framework models iterative evolutionary processes using a series of pipelines arranged to connect one or more subpopulations of individuals with selection, breeding (such as crossover, and mutation operators that produce new individuals. The framework is open source and is distributed under the Academic Free License. ECJ was created by Sean Luke, a computer science professor at George Mason University, and is maintained by Sean Luke and a variety of contributors.
+Features (listed from ECJ's project page):
+General Features:
+GUI with charting
+Platform-independent checkpointing and logging
+Hierarchical parameter files
+Multithreading
+Mersenne Twister Random Number Generators
+Abstractions for implementing a variety of EC forms.
+EC Features:
+Asynchronous island models over TCP/IP
+Master/Slave evaluation over multiple processors
+Genetic Algorithms/Programming style Steady State and Generational evolution, with or without Elitism
+Evolutionary-Strategies style (mu,lambda) and (mu+lambda) evolution
+Very flexible breeding architecture
+Many selection operators
+Multiple subpopulations and species
+Inter-subpopulation exchanges
+Reading populations from files
+Single- and Multi-population coevolution
+SPEA2 multiobjective optimization
+Particle Swarm Optimization
+Differential Evolution
+Spatially embedded evolutionary algorithms
+Hooks for other multiobjective optimization methods
+Packages for parsimony pressure
+GP Tree Representations:
+Set-based Strongly Typed Genetic Programming
+Ephemeral Random Constants
+Automatically Defined Functions and Automatically Defined Macros
+Multiple tree forests
+Six tree-creation algorithms
+Extensive set of GP breeding operators
+Seven pre-done GP application problem domains (ant, regression, multiplexer, lawnmower, parity, two-box, edge)
+Vector (GA/ES) Representations:
+Fixed-Length and Variable-Length Genomes
+Arbitrary representations
+Five pre-done vector application problem domains (sum, rosenbrock, sphere, step, noisy-quartic)
+Other Representations:
+Multiset-based genomes in the rule package, for evolving Pitt-approach rulesets or other set-based representations.
+
+
+== See also ==
+Paradiseo, a metaheuristics framework
+MOEA Framework, an open source Java framework for multiobjective evolutionary algorithms
+
+
+== References ==
+ECJ project page
+Wilson, G. C. McIntyre, A. Heywood, M. I. (2004), "Resource Review: Three Open Source Systems for Evolving Programs-Lilgp, ECJ and Grammatical Evolution", Genetic Programming And Evolvable Machines, 5 (19): 103-105, Kluwer Academic Publishers. ISSN 1389-2576

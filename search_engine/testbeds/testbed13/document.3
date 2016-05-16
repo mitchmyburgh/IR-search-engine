@@ -1,0 +1,346 @@
+
+
+# _Ars_Technica
+
+  * Ars Technica
+  * Ars Technica UK
+
+Register Log in
+
+  * Home
+  * Main Menu
+
+    * Information Technology Technology Lab
+    * Product News &amp; Reviews Gear &amp; Gadgets
+    * Business of Technology Ministry of Innovation
+    * Security &amp; Hacktivism Risk Assessment
+    * Civilization &amp; Discontents Law &amp; Disorder
+    * The Apple Ecosystem Infinite Loop
+    * Gaming &amp; Entertainment Opposable Thumbs
+    * Science &amp; Exploration The Scientific Method
+    * All Things Automotive Cars Technica
+
+Feature Report Series The Rise of Specialized Databases
+
+Layout:
+
+    * Grid View
+    * Article View
+    * Unified View
+
+## Site Theme
+
+    * Dark on light
+    * Light on dark
+
+## Explore Ars
+
+    * Reviews
+    * Video
+    * Staff Blogs
+    * Feature Archive
+    * Staff Directory
+    * Contact Us
+
+  * My Stories: 0
+
+## New Since Last Visit
+
+See more news stories
+
+## We Recommend
+
+## My Discussions
+
+Log in to track your discussions.
+
+  * Forums
+  * Subscribe
+  * Jobs
+  * 
+
+#  Scientific Method /  Science &amp; Exploration
+
+# A tale of two qubits: how quantum computers work
+
+## Just how do quantum computers work? It turns out that most of the magic of
+…
+
+by Joseph B. Altepeter \- Jan 19, 2010 5:15 am UTC
+
+  * Share
+  * Tweet
+  * Email
+  * Google
+  * Reddit
+
+88
+
+Quantum information is the physics of knowledge. To be more specific, the
+field of quantum information studies the implications that quantum mechanics
+has on the fundamental nature of information. By studying this relationship
+between quantum theory and information, it is possible to design a new type of
+computer--_a quantum computer_. A largescale, working quantum computer--the
+kind of quantum computer some scientists think we might see in 50 years--would
+be capable of performing some tasks impossibly quickly.
+
+To date, the two most promising uses for such a device are quantum search and
+quantum factoring. To understand the power of a quantum search, consider
+classically searching a phonebook for the name which matches a particular
+phone number. If the phonebook has 10,000 entries, on average you'll need to
+look through about half of them--5,000 entries--before you get lucky. A
+quantum search algorithm only needs to guess 100 times. With 5,000 guesses a
+quantum computer could search through a phonebook with 25 million names.
+
+Although quantum search is impressive, quantum factoring algorithms pose a
+legitimate, considerable threat to security. This is because the most common
+form of Internet security, public key cryptography, relies on certain math
+problems (like factoring numbers that are hundreds of digits long) being
+effectively impossible to solve. Quantum algorithms can perform this task
+exponentially faster than the best known classical strategies, rendering some
+forms of modern cryptography powerless to stop a quantum codebreaker.
+
+Quantum computers are fundamentally different from classical computers because
+the physics of quantum information is also the physics of _possibility_.
+Classical computer memories are constrained to exist at any given time as a
+simple list of zeros and ones. In contrast, in a single quantum memory many
+such combinations--even _all possible_ lists of zeros and ones--can all exist
+_simultaneously_. During a quantum algorithm, this symphony of possibilities
+split and merge, eventually coalescing around a single solution. The
+complexity of these large quantum states made of multiple possibilities make a
+complete description of quantum search or factoring a daunting task.
+
+Rather than focusing on these large systems, therefore, the goal of this
+article is to describe the most fundamental, the most intriguing, and the most
+_disturbing_ consequences of quantum information through an in-depth
+description of the smallest quantum systems. By learning how to think about
+the smallest quantum computers, it becomes possible to get a feeling for how
+and why larger quantum computers are so powerful. To that end, this article is
+divided into three parts:
+
+**Single qubits.** The quantum bit, or qubit, is the simplest unit of quantum information. We look at how single qubits are described, how they are measured, how they change, and the classical assumptions about reality that they force us to abandon. 
+
+**Pairs of qubits.** The second section deals with two-qubit systems, and more importantly, describes what two-qubit systems make possible: _entanglement_. The crown jewel of quantum mechanics, the phenomenon of entanglement is inextricably bound to the power of quantum computers. 
+
+**Quantum physics 101.** The first two sections will focus on the question of _how qubits work_, avoiding the related question of _why they work they way they do_. Here we take a crash course in qualitative quantum theory, doing our best to get a look at the man behind the curtain. The only prerequisites for this course are a little courage and a healthy willingness to ignore common sense.
+
+  
+  
+
+##  Single qubits
+
+Bits, either classical or quantum, are the simplest possible units of
+information. They are oracle-like objects that, when asked a question (i.e.,
+when _measured_), can respond in one of only two ways. Measuring a bit, either
+classical or quantum, will result in one of two possible outcomes. At first
+glance, this makes it sound like there is no difference between bits and
+qubits. In fact, the difference is not in the possible _answers_, but in the
+possible _questions_. For normal bits, only a single measurement is permitted,
+meaning that only a single question can be asked: _Is this bit a zero or a
+one?_ In contrast, a qubit is a system which can be asked many, many different
+questions, but to each question, only one of two answers can be given.
+
+This bizarre behavior is the very essence of quantum mechanics, and the goal
+of this section is to explain both the bounds that quantum theory places on
+such an object and the consequences that such bounds have for our classical
+assumptions. Given how counterintuitive this behavior seems, I will first
+explain in some detail how polarized light provides the perfect example of a
+qubit. Using a little light, some polarized sunglasses, and a 3D screening of
+"Avatar," I'll use that specific example to describe how all single-qubit
+states can be thought of as points on or inside a sphere, and finally how the
+fundamental operations of quantum measurement, rotation, and decoherence can
+be visualized and understood using that sphere.
+
+Before continuing, I should define a word that I'll be using frequently:
+_state_. A system's state is a complete description of that system; every
+system (including a single qubit) is in a particular state, and any systems
+that would behave completely identically are said to have the same state.
+Classical bits, therefore, are always in one of exactly two states, "zero" or
+"one."
+
+With that out of the way, our first step is to find an object which always
+gives one of exactly two answers, but which can be measured in many different
+ways. Here's where you're going to need those polarized sunglasses. Polarized
+sunglasses are different from normal sunglasses because they are designed to
+block the glare from horizontal surfaces, like a long stretch of desert
+highway or the surface of a lake on a sunny day.
+
+How do they work? Light is in fact made of photons--the smallest indivisible
+unit of light--and every photon creates a tiny, oscillating electric field as
+it travels. Light from the sun (and most other sources of light) is composed
+of photons oscillating in all sorts of directions. However, light which is
+reflected off a horizontal surface (like glare off a lake) will become
+horizontally polarized. When the light reaches the sunglasses, the photons are
+either transmitted or absorbed. If a photon's electric field oscillates
+horizontally, polarized sunglasses absorb it. If it oscillates vertically, it
+will pass right through the same sunglasses.
+
+These polarized lenses provide our first example of a _quantum measurement_,
+as they show a way to distinguish between horizontally polarized and
+vertically polarized photons (based on which gets transmitted and which gets
+absorbed). They can, of course, be used to ask a different question (make a
+different measurement) if they are tilted. By tilting your head 90 degrees,
+you make a measurement which is the opposite of the first, as the sunglasses
+transmit all of the glare you were trying to avoid. By tilting your head 45
+degrees to one side (diagonally) or the other side (antidiagonally), they will
+transmit only half the glare.
+
+Does this mean that the types of questions you can ask are limited to the
+angles at which you can tilt your head? That may seem reasonable, but if you
+went to see the 3D showing of _Avatar_, you might have guessed that this isn't
+true. In order to create the illusion of three-dimensional objects on a two-
+dimensional screen, movie theaters need to control exactly which photons go to
+each of your eyes. For decades, this was done using color. (Remember the 3D
+glasses with one red lens and one blue lens?)
+
+To get full-color 3D, we need another way to control which photons go in which
+eye. Once again there are only two answers--absorbed or transmitted--so we
+need new questions. You don't want the entire movie to change when you tilt
+your head, so using horizontally and vertically polarized lenses is out.
+Likewise, diagonally and antidiagonally polarized lenses won't work. (Test
+this out in a 3D movie--tilting your head won't ruin the effect.)
+
+The solution is something completely different, called _circular_
+polarization. The two lenses in modern 3D glasses each ask the question, _is
+an incoming photon right-circularly polarized or left-circularly polarized?_
+Each lens transmits only one of these two types of light (one of the two
+answers to the question), allowing special projectors (which transmit the same
+types of light) to control what image is seen by each of your eyes, thereby
+creating the illusion of electric blue warriors riding extra-terrestrial
+pterodactyls flying off the screen.
+
+If the polarization of a photon is the perfect example of a quantum bit, what
+can the following three questions/measurments tell us about it?
+
+  1. Is the polarization horizontal or vertical? 
+  2. Is the polarization diagonal or anti-diagonal? (In other  
+words, will it pass through my polarized sunglasses when I  
+tilt my head forty-five degrees to the left or to the right of  
+vertical?)
+
+  3. Is the polarization right-circularly or left-circularly  
+polarized? (In other words, does it pass through the right or  
+left lens of a pair of 3D glasses?)
+
+If we performed the measurements that these three questions represent on the
+horizontally polarized photons generated by highway glare, we would learn that
+each photon always passes through a horizontal polarizer (question 1), but has
+only a 50% chance of passing through diagonal (question 2) or right-circular
+polarizers (question 3).
+
+Expand full story
+
+Page:  1 2 3 4 5 6 Next -&gt;
+
+Reader comments 88
+
+You must login or create an account to comment.
+
+  * Share
+
+-
+
+  * Tweet
+  * Email
+  * Google
+
+-
+
+  * Reddit
+
+-
+
+ &lt;- Older Story |  Newer Story -&gt;
+
+## You May Also Like
+
+  * 
+
+## Latest Feature Story
+
+  * ## Feature Story (2 pages)
+
+# Death by GPS
+
+Why do we follow digital maps into dodgy places?
+
+## Watch Ars Video
+
+# We stuffed a VR wand down our pants (for a good reason!)
+
+"RIPmotion" trick looks silly but works great, particularly in cutting out
+nausea.
+
+  * ## Stay in the know with
+
+    *     *     *     *     * ## Latest News
+
+    1. ## RTFM
+
+# Microsoft unveils new effort to make its developer, IT documentation great
+again
+
+    2. ## to protect and serve
+
+# Cops to public: Stop calling alleged drug dealer’s phone, we need to search
+it
+
+    3. # Bad drivers don’t think they’re bad: What Twitter tells us about road rage
+
+    4. # Huge number of sites imperiled by critical image-processing vulnerability [Updated]
+
+    5. # Problematic drug has a byproduct that makes it a great antidepressant
+
+    6. # Legal quirk enabling surveillance state expansion absent Congressional vote
+
+  * 
+
+## Site Links
+
+  * About Us
+  * Advertise with us
+  * Contact Us
+  * Reprints
+
+## Subscriptions
+
+  * Subscribe to Ars
+
+## More Reading
+
+  * RSS Feeds
+  * Newsletters
+
+Visit Ars Technica UK
+
+## Conde Nast Sites
+
+  * Reddit
+  * Wired
+  * Vanity Fair
+  * Style
+  * Details
+
+Visit our sister sites \- - - - - - - - - - - - - - GQ Concierge Epicurious
+Men.Style.com Style.com Wired.com Lipstick.com NutritionData Allure
+Architectural Digest Bon Appetit Brides Conde Nast Portfolio Glamour Golf
+Digest Golf World Lucky Self Teen Vogue The New Yorker Vanity Fair W Subscribe
+to a magazine View All Titles \- - - - - - - - - - - - - - Allure
+Architectural Digest Bon Appetit Brides Conde Nast Portfolio Conde Nast
+Traveler Details Elegant Bride Glamour Golf Digest Golf World GQ Lucky Modern
+Bride Self Teen Vogue The New Yorker Vanity Fair Vogue W Wired
+
+## View Mobile Site
+
+WIRED Media: Ars Technica and WIRED  
+© 2016 Condé Nast. All rights reserved  
+Use of this Site constitutes acceptance of our User Agreement (effective
+1/2/14) and Privacy Policy (effective 1/2/14), and Ars Technica Addendum
+(effective 5/17/2012)  
+Your California Privacy Rights  
+The material on this site may not be reproduced, distributed, transmitted,
+cached or otherwise used, except with the prior written permission of Condé
+Nast.  
+  
+Ad Choices
+

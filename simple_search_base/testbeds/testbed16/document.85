@@ -1,0 +1,25 @@
+How the Cloud Kills Hardware: The Age of Virtual Appliances
+Jan 10, 2012
+Check out this awesome video from dyn.com. It pretty much says it all. No one wants a dedicated hardware appliance unless they have to, and that goes double for cloud providers.
+
+
+
+The virtual appliance writing has been on the wall for some time now. It’s why I left my position running Strategic Planning for the Citrix virtualization business unit in 2006 (ish) in order to become VP of Technology & Marketing at Zeus Technologies, one of the first virtual appliance networking companies. (Zeus recently sold to Riverbed for $100 million).
+
+I was merciless when it came to competing with hardware players like F5 and NetScaler/Citrix (I was Dir of Product Management at Netscaler) – I actually traded Zeus software licenses for brand-new $50,000 pieces of hardware. When customers discovered that a virtual appliance could match or even beat performance from a dedicated hardware box, they preferred to run a virtual appliance on a Dell server rather than deal with hardware support costs from a networking vendor.
+
+Now, in the days of cloud, it’s an even easier situation. You can’t do anything with dedicated hardware boxes in the cloud. Unless maybe you’re a cloud provider, in which case you break your beautiful n+1 scaling when you add extra hardware that can’t be reprovisioned instantly. And you break your already low margins too by paying $50,000 or more for a $5,000 server with a pretty bezel and some software you can’t even migrate to a faster box.
+
+IT departments that really get this are figuring out they save money with virtual appliances too, as these numbers from Trend Micro and Osterman Research show.
+
+
+
+Some startups are really taking advantage of the intersection of virtual appliances and clouds. The ones that I’m paying attention to now include Vyatta, CloudOpt, and of course Trend Micro. Trend is interesting because we are using virtual appliances at branch offices that are tied in to our hosted cloud security service, going far beyond the idea of just deploying a virtual appliance on AWS. (We do that too…) Zeus would have made the list if Riverbed hadn’t eaten them.
+
+Virtual appliances for the cloud get even more interesting when you tie them in with OpenStack and enable them with Openflow. Better yet, usage based pricing works well for virtual appliances and software, but it breaks hardware selling models completely.
+
+Why would a cloud provider – or an enterprise – want any hardware beyond big dumb switches, massive n+1 storage, and lots of commodity servers running cloud software and virtual appliances?
+
+I wouldn’t.
+
+(Disclaimer: I’ve either worked for, been present for the founding of, tried to sell my startup to, partnered with, blogged about, advised, competed with, or had steak with every company mentioned here…there are other cool cloud appliance focused companies too. If you’re one of them, drop me a line!)

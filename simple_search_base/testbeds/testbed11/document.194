@@ -1,0 +1,44 @@
+The TCP window scale option is an option to increase the receive window size allowed in Transmission Control Protocol above its former maximum value of 65,535 bytes. This TCP option, along with several others, is defined in IETF RFC 1323 which deals with long fat networks.
+
+
+== TCP windows ==
+The throughput of a communication is limited by two windows: the congestion window and the receive window. The congestion window tries not to exceed the capacity of the network (congestion control); the receive window tries not to exceed the capacity of the receiver to process data (flow control). The receiver may be overwhelmed by data if for example it is very busy (such as a Web server). Each TCP segment contains the current value of the receive window. If, for example, a sender receives an ack which acknowledges byte 4000 and specifies a receive window of 10000 (bytes), the sender will not send packets after byte 14000, even if the congestion window allows it.
+
+
+== Theory ==
+The TCP window scale option is needed for efficient transfer of data when the bandwidth-delay product is greater than 64K. For instance, if a T1 transmission line of 1.5Mbits/second was used over a satellite link with a 513 millisecond round trip time (RTT), the bandwidth-delay product is (1,572,864 * 0.513) = 806,879 bits or about 100,860 bytes. Using a maximum buffer size of 64K only allows the buffer to be filled to (65,535 / 100,860) = 65% of the theoretical maximum speed of 1.5Mbits/second, or 1.02 Mbit/s.
+By using the window scale option, the receive window size may be increased up to a maximum value of 1,073,725,440 bytes. This is done by specifying a one byte shift count in the header options field. The true receive window size is left shifted by the value in shift count. A maximum value of 14 may be used for the shift count value. This would allow a single TCP connection to transfer data over the example satellite link at 1.5Mbit/second utilizing all of the available bandwidth.
+
+
+== Possible side effects ==
+Because some routers and firewalls do not properly implement TCP Window Scaling, it can cause a user's Internet connection to malfunction intermittently for a few minutes, then appear to start working again for no reason. There is also an issue if a firewall doesn't support the TCP extensions. 
+
+
+== Configuration of operating systems ==
+
+
+=== Windows ===
+TCP Window Scaling is implemented in Windows since Windows 2000. It is enabled by default in Windows Vista / Server 2008 and newer, but can be turned off manually if required. Windows Vista and Windows 7 have a fixed default TCP receive buffer of 64 kB, scaling up to 16 MB through "autotuning", limiting manual TCP tuning over long fat networks.
+
+
+=== Linux ===
+Linux kernels (from 2.6.8, August 2004) have enabled TCP Window Scaling by default. The configuration parameters are found in the /proc filesystem, see pseudo-file /proc/sys/net/ipv4/tcp_window_scaling and its companions /proc/sys/net/ipv4/tcp_rmem and /proc/sys/net/ipv4/tcp_wmem (more information: man tcp, section sysctl).
+Scaling can be turned off by issuing the command sysctl -w "net.ipv4.tcp_window_scaling=0" as root. To maintain the changes after a restart, include the line "net.ipv4.tcp_window_scaling=0" in /etc/sysctl.conf (or /etc/sysctl.d/99-sysctl.conf as of systemd 207).
+
+
+=== FreeBSD, OpenBSD, NetBSD and Mac OS X ===
+The default setting for FreeBSD, OpenBSD, NetBSD and Mac OS X is to have window scaling (and other features related to RFC 1323) enabled.
+To verify their status, a user can check the value of the "net.inet.tcp.rfc1323" variable via the sysctl command:
+
+sysctl net.inet.tcp.rfc1323
+
+A value of 1 (output "net.inet.tcp.rfc1323=1") means scaling is enabled, 0 means "disabled". If enabled it can be turned off by issuing the command:
+
+sudo sysctl -w net.inet.tcp.rfc1323=0
+
+This setting is lost across a system restart. To ensure that it is set at boot time, add the following line to /etc/sysctl.conf:
+
+net.inet.tcp.rfc1323=0
+
+
+== Sources ==

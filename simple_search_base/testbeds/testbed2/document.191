@@ -1,0 +1,56 @@
+In computer science, soft computing is the use of inexact solutions to computationally hard tasks such as the solution of NP-complete problems, for which there is no known algorithm that can compute an exact solution in polynomial time. Soft computing differs from conventional (hard) computing in that, unlike hard computing, it is tolerant of imprecision, uncertainty, partial truth, and approximation. In effect, the role model for soft computing is the human mind.
+The principal constituents of Soft Computing (SC) are Fuzzy Logic (FL), Neural Computing (NC), Evolutionary Computation (EC) Machine Learning (ML) and Probabilistic Reasoning (PR), with the latter subsuming belief networks, chaos theory and parts of learning theory.
+
+
+== Introduction ==
+Soft computing (SC) solutions are unpredictable, uncertain and between 0 and 1. Soft Computing became a formal area of study in Computer Science in the early 1990s. Earlier computational approaches could model and precisely analyze only relatively simple systems. More complex systems arising in biology, medicine, the humanities, management sciences, and similar fields often remained intractable to conventional mathematical and analytical methods. However, it should be pointed out that simplicity and complexity of systems are relative, and many conventional mathematical models have been both challenging and very productive. Soft computing deals with imprecision, uncertainty, partial truth, and approximation to achieve practicability, robustness and low solution cost. As such it forms the basis of a considerable amount of machine learning techniques. Recent trends tend to involve evolutionary and swarm intelligence based algorithms and bio-inspired computation.
+There are main differences between soft computing and possibility. Possibility is used when we don't have enough information to solve a problem but soft computing is used when we don't have enough information about the problem itself. These kinds of problems originate in the human mind with all its doubts, subjectivity and emotions; an example can be determining a suitable temperature for a room to make people feel comfortable.
+
+
+== Components ==
+Components of soft computing include:
+Neural networks (NN)
+Perceptron
+
+Support Vector Machines (SVM)
+Fuzzy logic (FL)
+Evolutionary computation (EC), including:
+Evolutionary algorithms
+Genetic algorithms
+Differential evolution
+
+Metaheuristic and Swarm Intelligence
+Ant colony optimization
+Particle swarm optimization
+Firefly algorithm
+Cuckoo search
+
+Ideas about probability including:
+Bayesian network
+
+Chaos theory
+Generally speaking, soft computing techniques resemble biological processes more closely than traditional techniques, which are largely based on formal logical systems, such as sentential logic and predicate logic, or rely heavily on computer-aided numerical analysis (as in finite element analysis). Soft computing techniques are intended to complement each other.
+Unlike hard computing schemes, which strive for exactness and full truth, soft computing techniques exploit the given tolerance of imprecision, partial truth, and uncertainty for a particular problem. Another common contrast comes from the observation that inductive reasoning plays a larger role in soft computing than in hard computing.
+
+
+== Applications ==
+
+
+=== Bioinformatics and Biomedicine ===
+SC has attracted close attention of researchers and has also been applied successfully to solve problems in bioinformatics and biomedicine . Nevertheless, the amount of information from biological experiments and the applications involving large-scale high-throughput technologies is rapidly increasing nowadays. Therefore, the ability of being scalable across large-scale problems becomes an essential requirement for modern SC approaches.
+
+
+=== Control of a flexible robot manipulator ===
+The conventional approach to design of controllers for any plant, process or system requires knowledge of an accurate mathematical model of the system to be controlled, which is often difficult to derive analytically. In consequence, it is difficult or impossible to design controllers for complex systems such as nonlinear multivariable systems using these conventional approaches that require a plant model.
+A number of research investigations exploit soft computing approaches such as fuzzy logic and neural network techniques in designing improved controllers for flexible link manipulators. Controlling the tip position of a single-link flexible manipulator has been achieved successfully by employing neural-network and fuzzy controllers
+An intelligent optimal control for a nonlinear flexible robot arm driven by a permanent-magnet synchronous servo motor has been designed using a fuzzy neural network control approach.
+
+
+== References ==
+
+
+== External links ==
+EUROPEAN CENTRE FOR SOFT COMPUTING
+BISC SIG IN PHILOSOPHY OF SOFT COMPUTING
+http://www.soft-computing.de/def.html
+http://dspace.nitrkl.ac.in:8080/dspace/bitstream/2080/1136/1/subudhi.pdf

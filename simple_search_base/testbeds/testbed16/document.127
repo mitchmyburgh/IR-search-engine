@@ -1,0 +1,18 @@
+Public Cloud vs. Private Cloud
+
+In a public cloud, a third-party provider offers a range of services to the general public over the internet. Data from several corporate or individual clients may share the same server. A private cloud is similar in principle, but is set up behind a firewall and provides hosted services to only a limited number of approved users.
+
+ACCESSIBILITY
+
+Public clouds can offer the replication of data to many locations, and thus organizations with users all over the world can use public clouds as an alternative to content distribution networks. Because public clouds are accessed over the internet, they may be subject to bandwidth limitations, whereas private clouds are accessed over the Ethernet LAN at high speed.
+
+SECURITY
+
+Because public clouds are publicly accessible, users with sensitive data or who need guaranteed availability and skilled technical support may prefer to use a private cloud. Because it has limited access, some people see private cloud computing as a way around the security concerns of a public cloud.
+Choosing between a Public vs Private Cloud
+
+Public clouds are easy to implement, and because the cost of the hardware, applications, and bandwidth are covered by the provider, users pay only for what they use. Public clouds offer a lower upfront cost and unlimited scalability. Small businesses may prefer the public cloud because of its low cost, but before opting for the public cloud, users should look into their provider’s security policies. Companies like Netflix and Amazon also use public clouds.
+
+A private cloud’s dedicated hardware makes it more efficient. Just like a public cloud, it provides resources on demand, but it is deployed within an organization’s internal IT infrastructure. Many businesses that opt to use private clouds are interested in preserving the existing infrastructure they’ve invested in. Private clouds offer advanced security, dependable availability, and a high level of control. They can be customized according to a user’s specifications and are efficient because they are designed for and managed by the users they serve. Private clouds are well-suited to independent software vendors (ISVs) and larger businesses who want to increase efficiency and interactivity among their staff.
+
+A “platform” serves as a one-stop solution for enterprises that want to set up an entire suite of software or speed up the development or deployment of common commercial applications. One such platform is offered by Apprenda, a private platform-as-a-service for Microsoft-based (.NET) business application development and deployment. Apprenda is also the creator of SaaSGrid, the industry’s leading SaaS.

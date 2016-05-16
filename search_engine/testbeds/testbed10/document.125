@@ -1,0 +1,97 @@
+Characterizing forest canopy structure with lidar composite metrics and
+machine learning
+
+Kaiguang Zhao a,
+⁎, Sorin Popescu b
+, Xuelian Meng c
+, Yong Pang d
+, Muge Agca b
+
+
+1. Introduction
+Lidar remote sensing of canopies far goes beyond the proof-ofconcept
+phase and thus far has become a well-established tool for
+monitoring terrestrial ecosystems, with great potential for continued
+technological advances (Reutebuch et al., 2005). Commercial airborne
+lidar systems currently available, for example, can easily reach a pulse
+repetition frequency of more than 100 kHz and some are even able to simultaneously manipulate multiple pulses in the air. Compared to
+traditional remote sensing such as multispectral imaging and radar,
+lidar (especially small-footprint airborne laser scanner) provides
+superior capabilities for accurately measuring vegetation structure
+with no apparent sign of saturation in predicting high biomass and leaf
+area index (LAI) over dense forests (Koch, 2010). Such advantages spur
+the increasing availability and widespread use of lidar data in canopy
+studies, which, on the other hand, connotes the growing importance of
+reliable vegetation information in practical and scientific applications
+such as natural resource inventory and more interestingly, studies of
+vegetation responses and functioning in a changing climate (Hurtt
+et al., 2004). An early review of basic lidar principles in the context of
+forestry applications is given in Lim et al. (2003b).
+
+The recent use of lidar for characterizing forest landscapes
+encompasses a wide array of applications targeted at estimating various
+vegetation structural parameters across a range of scales (van Leeuwen
+& Nieuwenhuis, 2010). These biophysical parameters include, but are
+not limited to, individual tree dimension variables such as height, crown
+width, crown base height, crown volume, and diameter at breast height
+(dbh) (Coops et al., 2004; Popescu & Wynne, 2004; Falkowski et al.,
+2006; Kato et al., 2009; Popescu & Zhao, 2008), and at the canopy level,
+canopy height, fractional vegetation cover, LAI, total aboveground
+biomass and component biomass, basal area, timber volume, and
+canopy fuel parameters such as canopy base height, available canopy
+fuel, canopy bulk density and coarse wood debris (Andersen et al., 2005;
+Holmgren et al., 2003; Jensen et al., 2008; Næsset, 2002; Zhao et al.,
+2009). Meanwhile, some studies used lidar to examine ecological roles
+of vegetation for various purposes. For example, Quirino et al. (2009)
+assessed the power of lidar-derived variables for directly predicting soil
+respiration at several sites in a Virginia forest. Cook et al. (2009)
+modeled plant productivity through the combined use of vegetation
+variables derived from lidar and Quickbird. A recent study by Falkowski
+et al. (2009) successfully classified forest succession stages in a complex,
+mixed coniferous forest using lidar metrics. There also are several lidar
+studies that derived useful indices for mapping wildlife habitat and
+evaluating habitat suitability, especially for many endangered species
+(Hyde et al., 2006). Overall, past experiences with forestry applications
+accentuate the great potential of lidar for remotely measuring canopy
+structures (Koch, 2010; van Leeuwen & Nieuwenhuis, 2010). Moreover,
+part of these studies clearly articulate the virtues of integrating lidar
+with other remote sensing data such as multispectral images (Erdogy &
+Moskal, 2010), high-resolution (Mutlu et al., 2008) or hyperspectral
+images, and radar backscattering data (Hyde et al., 2006), although a
+few studies point out that for estimating some vegetation variables like
+LAI, the gain from the combined use of lidar and multispectral data is
+only marginal compared to the use of lidar alone (Jensen et al., 2008;
+Zhao & Popescu, 2009), possibly due to the insufficiency of statistical
+models used (Zhao & Popescu, 2009).
+Regarding the processing and analysis of lidar data for canopy
+information extraction, lidar users generally keep two aprons, one
+laden with computational tools borrowed from disciplines such as
+signal/image processing and pattern recognition (Falkowski et al.,
+2006; Kato et al., 2009; Meng et al., 2009; Pang et al., 2008; Popescu &
+Zhao, 2008), and another apron stocked with statistical analysis tools
+for inferring relationships and making prediction (Andersen et al.,
+2005; García et al., 2010; Næsset et al., 2005; van Aardt et al., 2006;
+Zhao et al., 2009). The boundary between the two classes of tools is
+not dichotomous and often, their use is complementary as has been
+previously demonstrated (Popescu et al., 2002). A typical example
+within the first class of tools is segmenting lidar point clouds or more
+frequently, canopy height models for individual tree crown delineation,
+of which maximum filtering, template matching, k-means
+clustering, and the watershed transform are common algorithms
+(Falkowski et al., 2006; Pang et al., 2008; Popescu et al., 2003). Other
+studies customized computer algorithms to directly derive crown
+base height and dbh of individual trees from lidar point clouds (Kato
+et al., 2009; Popescu & Zhao, 2008). In contrast, the vast majority of
+lidar research on canopy structural characteristics is built upon the
+use of statistical tools taken from the second apron, and of particular
+importance therein is not only the selection of appropriate statistical
+procedures (e.g., models) but more important, the choice of effective
+lidar predictors (i.e., metrics) (Lefsky et al., 2005; McRoberts et al.,
+2010; Næsset, 2002). Typically, lidar metrics from discrete-return
+data are obtained in a bookkeeping manner by first enumerating all
+the points within an analysis unit (e.g., grid, plot, or stand) to select
+part or all of the lidar points and then computing the desired statistics
+as metrics from the selected lidar points (Næsset et al., 2005;
+Reutebuch et al., 2005). Common lidar metrics include mean, median,
+maximum and percentile heights, canopy density metrics, truncated mean height, quadratic mean height, variance in height, coefficient of
+variation, etc. (Erdogy & Moskal, 2010; Lim & Treitz, 2004;

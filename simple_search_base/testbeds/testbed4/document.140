@@ -1,0 +1,66 @@
+CMSC 427 Computer Graphics1
+David M. Mount Department of Computer Science University of Maryland Spring 2004
+
+Lecture 10: 3-d Viewing and Orthogonal Projections
+Reading: Chapter 7 (through 7.7) in Hearn and Baker.
+Viewing in OpenGL: For the next couple of lectures we will discuss how viewing and perspective transformations are handled for 3-dimensional scenes. In OpenGL, and most similar graphics systems, the process involves the following basic steps, of which the perspective transformation is just one component. We assume that all objects are initially represented relative to a standard 3-dimensional coordinate frame, in what are called world coordinates.
+Modelview transformation: Maps objects (actually vertices) from their world-coordinate representation to one that is centered around the viewer. The resulting coordinates are called eye coordinates.
+(Perspective) projection: This projects points in 3-dimensional eye-coordinates to points on a plane called the viewplane. (We will see later that this transformation actually produces a 3-dimensional output, where the third component records depth information.) This projection process consists of three separate parts: the projection transformation (af?ne part), clipping, and perspective normalization. Each will be discussed below.
+Mapping to the viewport: Convert the point from these idealized 2-dimensional coordinates (normalized device coordinates) to the viewport (pixel) coordinates.
+Lecture Notes 45 CMSC 427
+Liang-Barsky Line Clipping Algorithm for Polygons
+void clipLB(Point R[], Normal n[], Segment S) { Point P0 = S.oneEndpoint(); // S's endpoints Point P1 = S.otherEndpoint(); float a0 = 0; // clipping parameters float a1 = 1; int i = 0; bool visible = true; while (i < R.size() && visible) { // clip until nothing left visible = clip1Side(R[i], n[i], P0, P1, a0, a1); i++; } if (visible) { // something remains Point Q0 = (1+a0)*P0 + a0*P1; // get endpoints of Point Q1 = (1+a1)*P0 + a1*P1; // ...clipped segment drawLine(Q0, Q1); } } void clip1Side(Point R, Normal n, Point P0, Point P1, float& a0, float& a1) { float d1 = dotProduct((P1 - P0), n); float dr = dotProduct((R - P0), n); if (d1 > 0) a0 = max(a0, dr/d1); else if (d1 < 0) a1 = min(a1, dr/d1); else return (dotProduct((P0 - R), n) >= 0); // parallel return (a0 <= a1); // visible if a0 <= a1 }
+We have ignored a number of issues, such as lighting and hidden surface removal. These will be considered separately later. The process is illustrated in Fig. 34. We have already discussed the viewport transformation, so it suf?ces to discuss the ?rst two transformations.
+ez
+ex
+ey
+scene
+viewport transformation
+viewport
+view plane
+viewer
+Fig. 34: OpenGL Viewing Process.
+Converting to Viewer-Centered Coordinate System: As we shall see below, the perspective transformation is simplest when the center of projection, the location of the viewer, is the origin and the view plane (sometimes called the projection plane or image plane), onto which the image is projected, is orthogonal to one of the axes, say the z-axis. Let us call these eye coordinates. However the user represents points relative to a coordinate system that is convenient for his/her purposes. Let us call these world coordinates. This suggests that prior to performing the perspective transformation, we perform a change of coordinate transformation to map points from world-coordinates to eye coordinates.
+In OpenGL, there is a nice utility for doing this. The procedure gluLookAt() generates the desired transformation to perform this change of coordinates and multiplies it times the transformation at the top of the current
+Lecture Notes 46 CMSC 427
+transformation stack. (Recall OpenGL's transformation structure from the previous lecture on OpenGL transformations.) This should be done in Modelview mode. Conceptually, this change of coordinates is performed after all other Modelview transformations are performed, and immediately before the projection. By the "reverse rule" of transformations, this implies that this change of coordinates transformation should be the ?rst transformation on the Modelview transformation matrix stack. Thus, it is almost always preceded by loading the identity matrix. Here is the typical calling sequence. This should be called when the camera position is set initially, and whenever the camera is (conceptually) repositioned in space.
+// ... assuming: glMatrixMode(GL_MODELVIEW); glLoadIdentity(); gluLookAt(eyeX, eyeY, eyeZ, ctrX, ctrY, ctrZ, upX, upY, upZ); // ... all other Modelview transformations follow this
+The arguments are all of type GLdouble. The arguments consist of the coordinates of two points and vector, in the standard coordinate system. The point Eye =(eyex, eyey, eyez)T is the viewpoint, that is the location of they viewer (or the camera). To indicate the direction that the camera is pointed, a central point to which the camera is facing is given by Ctr =(ctrx,ctry,ctrz)T. The center is signi?cant only that its de?nes the viewing vector, which indicates the direction that the viewer is facing. It is de?ned to be Ctr-Eye. These points de?ne the position and direction of the camera, but the camera is still free to rotate about the viewing direction vector. To ?x last degree of freedom, the vector- ? up =(upx,upy,upz)T provides the direction that is "up" relative to the camera. Under typical circumstances, this would just be a vector pointing straight up (which might be (0,0,1)T in your world coordinate system). In some cases (e.g. in a ?ight simulator, when the plane banks to one side) you might want to have this vector pointing in some other direction. This vector need not be perpendicular to the viewing vector. However, it cannot be parallel to the viewing direction vector.
+The Camera Frame: OpenGL uses the arguments to gluLookAt() to construct a coordinate frame centered at the viewer. The x- and y-axes are directed to the right and up, respectively, relative to the viewer. It might seem natural that the z-axes be directed in the direction that the viewer is facing, but this is not a good idea.
+To see why, we need to discuss the distinction between right-handed and left-handed coordinate systems. Consider an orthonormal coordinate system with basis vectors ~ ex, ~ ey and ~ ez. This system is said to be right-handed if ~ ex ×~ ey = ~ ez, and left-handed otherwise (~ ex ×~ ey = -~ ez). Right-handed coordinate systems are used by default throughout mathematics. (Otherwise computation of orientations is all screwed up.) Given that the xand y-axes are directed right and up relative to the viewer, if the z-axis were to point in the direction that the viewer is facing, this would result in left-handed coordinate system. The designers of OpenGL wisely decided to stick to a right-handed coordinate system, which requires that the z-axes is directed opposite to the viewing direction.
+Building the Camera Frame: How does OpenGL implement this change of coordinate transformation? This turns out to be a nice exercise in geometric computation, so let's try it. We want to construct an orthonormal frame whose origin is the point Eye, whose -z-basis vector is parallel to the view vector, and such that the - ? up vector projects to the up direction in the ?nal projection. (This is illustrated in the Fig. 35, where the x-axis is pointing outwards from the page.)
+out of the page (towards you).
+view
+Ctr
+Eye
+up yC.e
+z
+The x-basis vector is directed
+C.e
+Fig. 35: The camera frame.
+Lecture Notes 47 CMSC 427
+Let C (for camera) denote this frame. Clearly C.O= Eye. As mentioned earlier, the view vector--? view is directed from Eye to Ctr. The z-basis vector is the normalized negation of this vector. --? view = normalize(Ctr-Eye) C.~ ez = ---? view (Recall that normalization operation divides a vector by its length, thus resulting in a vector having the same direction and unit length.) Next, we want to select the x-basis vector for our camera frame. It should be orthogonal to the viewing direction, it should be orthogonal to the up vector, and it should be directed to the camera's right. Recall that the cross product will produce a vector that is orthogonal to any pair of vectors, and directed according to the right hand rule. Also, we want this vector to have unit length. Thus we choose
+C.~ ex = normalize(--? view×- ? up). The result of the cross product must be a nonzero vector. This is why we require that the view direction and up vector are not parallel to each other. We have two out of three vectors for our frame. We can extract the last one by taking a cross product of the ?rst two.
+C.~ ey =(C.~ ez ×C.~ ex). There is no need to normalize this vector, because it is the cross product of two orthogonal vectors, each of unit length. Thus it will automatically be of unit length.
+Camera Transformation Matrix: Now, all we need to do is to construct the change of coordinates matrix from the standard frame F to our camera frame C. Recall from our earlier lecture, that the change of coordinate matrix is formed by considering the matrix M whose columns are the basis elements of C relative to F, and then inverting this matrix. The matrix before inversion is: M = C.~ ex[F]
+ 
+ 
+ 
+ 
+ C.~ ey[F]
+ 
+ 
+ 
+ 
+ C.~ ez[F]
+ 
+ 
+ 
+ 
+ C.O[F]! = ? ? ? ? C.exx C.eyx C.ezx C.Ox C.exy C.eyy C.ezy C.Oy C.exz C.eyz C.ezz C.Oz 0001 ? ? ? ? . We can apply a trick to compute the inverse, M-1, ef?ciently. Normally, inverting a matrix would involve invoking a linear algebra procedure (e.g., based on Gauss elimination). However, because M is constructed from an orthonormal frame, there is a much easier way to construct the inverse. To see this, consider a 3×3 matrix A whose columns are orthogonal and of unit length. Such a matrix is said to be orthogonal. The following from linear algebra is useful in this context (and is not very hard to prove).
+Lemma: The inverse of an orthogonal matrix A is its transpose, that is, A-1 = AT. The upper-left 3×3 submatrix of M is of this type, but the last column is not. But we can still take advantage of this fact. First, we construct a 4×4 matrix R whose upper left 3×3 submatrix is copied from M: R =? ? ? ? C.exx C.eyx C.ezx 0 C.exy C.eyy C.ezy 0 C.exz C.eyz C.ezz 0 0 0 0 1 ? ? ? ? . Note that M is equal to the product of two matrices, a translation by the vector Eye, denoted T(Eye) and R. Using the fact that R-1 = RT, and T(Eye)-1 = T(-Eye) we have M-1 =(T(Eye)·R)-1 = R-1 ·T(Eye)-1 = RT ·T(-Eye).
+Lecture Notes 48 CMSC 427
+Thus, we do not need to invert any matrices to implement gluLookAt(). We simply compute the basis elements of the camera-frame (using cross products and normalization as described earlier), then we compute RT (by copying these elements into the appropriate positions in the ?nal matrix) and compute T(-Eye), and ?nally multiply these two matrices. If you consult the OpenGL Reference Manual you will see that this is essentially how gluLookAt() is de?ned.
+Parallel and Orthogonal Projection: The second part of the process involves performing the projection. Projections fall into two basic groups, parallel projections, in which the lines of projection are parallel to one another, and perspective projection, in which the lines of projection converge a point.
+In spite of their super?cial similarities, parallel and perspective projections behave quite differently with respect to geometry. Parallel projections are af?ne transformations, and perspective projections are not. (In particular, perspective projections do not preserve parallelism, as is evidenced by a perspective view of a pair of straight train tracks, which appear to converge at the horizon.) So let us start by considering the simpler case of parallel projections and consider perspective later.
+There are many different classi?cations of parallel projections. Among these the simplest one is the orthogonal (or orthographic) projection, in which the lines of projection are all parallel to one of the coordinate axes, the z-axis in particular.

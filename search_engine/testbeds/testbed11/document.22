@@ -1,0 +1,44 @@
+Enstratius (formerly enStratus) is a cloud computing infrastructure management platform intended to address governance issues associated with deploying systems in public, private, and hybrid clouds. More than twenty public and private clouds are supported, as well as configuration management tools such as Chef and Puppet. Enstratius supports both SaaS and on-premises deployment models.
+
+
+== History ==
+The company was originally formed in 2008 as enStratus Networks, a spin-off of marketing software maker Valtira. The software forming the backbone of enStratus was a set of cloud management tools that Valtira had developed in support of its cloud operations. The company announced itself publicly at the MinneDemo conference in February 2009 and began accepting on-demand accounts. Co-founders were David Bagley and George Reese. Enstratius moved from a focus purely on security to the wider problem of governance over multiple cloud computing environments. In 2010, Enstratius spun off part of its intellectual property as an open source project hosted at GitHub under the Apache license called Dasein Cloud. Dasein Cloud is a Java abstraction API that Enstratius uses to talk to the clouds it supports.
+The company raised a Series A financing of $4.5 million in November 2011 from El Dorado Ventures, Vesbridge Partners, and Citrix. In March 2013, enStratus Networks changed its name to Enstratius, Inc. Enstratius is headquartered in Eden Prairie, Minnesota, with remote workers across the United States, and offices in Auckland, New Zealand, and Edinburgh, Scotland.
+In May 2013, the company was acquired by Dell. Two weeks later, Dell discontinued its own cloud computing service.
+
+
+== Supported platforms ==
+
+
+=== Compute ===
+Amazon Web Services
+Cloud Central
+GoGrid
+Rackspace
+ReliaCloud
+Terremark vCloud Express
+Joyent
+HP Cloud
+IBM SmartCloud Enterprise
+Dell OpenStack-powered Cloud
+
+
+=== Storage ===
+Amazon Web Services
+AT&T Synaptic Storage
+Azure Services Platform
+Google
+Rackspace
+HP Cloud
+
+
+=== Cloud ===
+EMC Atmos
+Citrix CloudStack
+Eucalyptus
+OpenStack
+vCloud
+vSphere
+
+
+== References ==

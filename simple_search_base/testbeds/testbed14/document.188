@@ -1,0 +1,153 @@
+﻿Semantic Tableau Proof System for
+First-Order Logic
+Khair Eddin Sabri
+McMaster University
+Abstract
+Semantic tableau is a proof system used to prove the validity of a formula, it can also be
+used to prove if a formula is a logic consequence of a set of formulas. Tableau is used in
+both propositional and predicate logic. In this report, it is shown how Tableau proof
+system can be used in predicate logic. It is also shown the proof of the soundness and
+completeness of this proof system.
+Keywords: Semantic Tableau proof system, Predicate Logic, Soundness, Completeness
+1. Introduction
+A semantic tableau is a tree representing all the ways the conjunction of the formulas at
+the root can be true. We expand the formulas based on the structure of the compound
+formulas. This expansion forms a tree. If all branches in the tableau lead to a
+contradiction, then there is no way the conjunction of the formulas at the root can be true.
+A path of the tree represents the conjunction of the formulas along the path. Semantic
+tableaux was invented by E.W. Beth and J. Hintikka (1965).
+A semantic tableau is a proof system used to:
+1. Test a formula A for validity.
+2. Test whether B is a logical consequence of A1…. Ak.
+3. Test A1… Ak for satisfiability.
+Definition 1 A signed formula is an expression TX or FX, where X is an (unsigned)
+formula. Under a given valuation, a signed formula TX is called true if X is true, and
+false if X is false. Also, a signed formula FX is called true if X is false, and false if X is
+true [1]. 
+Definition 2 A signed tableau is a rooted dyadic tree where each node carries a signed
+formula[2].
+If τ is a signed tableau, an immediate extension of τ is a larger tableau τ′ obtained by
+applying a tableau rule to a finite path of τ.
+Definition 3 A path of a tableau is said to be closed if it contains a conjugate pair of
+formulas, i.e., a pair such as TA, FA. A path of a tableau is said to be open if it is not
+closed. A tableau is said to be closed if each of its paths is closed[2].
+The tableau method:
+We will see how tableau can be used to prove each of the mentioned formulae
+1. To test a formula A for validity, form a signed tableau starting with FA. If the
+tableau closes off then A is logically valid.
+2. To test whether B is a logical consequence of A1 …. Ak, form a signed tableau
+starting with TA1 . . . TAk, FB, If the tableau closes off then B is indeed a logical
+consequence of A1 … Ak.
+3. To test A1 …. Ak for satisfiability, form a signed tableau starting with TA1. . .TAk,
+If the tableau closes off then A1 … Ak is not satisfiable. If the tableau does not
+close off then A1 … Ak is satisfiable, and from any open path we can read off an
+assignment satisfying A1 … Ak.
+There are ten rules used to construct the signed tableau in the propositional logic as
+shown in the following figure[3].
+Rules used in Propositional Logic
+T (A ∧ B)
+T A
+T B
+T (A ∨ B)
+T A T B
+T (A => B)
+F A T B
+T (A <=> B)
+T A F B
+T B F B
+T ¬A
+F A
+F (A ∨ B)
+T A
+T B
+F (A ∧ B)
+F A F B
+F (A => B)
+T A
+F B
+F (A <=> B)
+T A F B
+F B T B
+F ¬A
+T A
+2. Predicate Logic
+
+Tableau proof is used also in predicate logic by adding rules to cope with the universal
+and existential quantifiers.
+Definition 4 Fix a countably infinite set V = {a1; a2; ….. ; an;……}. The elements of V
+will be called parameters. If L is a language, L-V -sentences will be called sentences with
+parameters[2].
+Definition 5 A signed tableau is a rooted dyadic tree where each node carries a signed
+L-V -sentence. The tableau rules for predicate logic are the same as those for
+propositional logic, with additional rules[2].
+The rules used in predicate logic are shown in the following figure[3]
+Rules used in Predicate Logic
+T ∀x A(x) F ∃x A(x)
+T A(t) F A(t)
+For any term t in L
+T ∃x A(x) F ∀x A(x)
+T A(c) F A(c)
+For a new constant c 
+The following example shows how tableau proof system is used in proving
+F ((∃x (P(x) ∨ Q(x)) Ù ((∃x P(x)) ∨ ∃x Q(x))
+ T ∃x (P(x) ∨ Q(x) F ∃x (P(x) ∨ Q(x))
+ F ((∃x P(x)) ∨ ∃x Q(x)) T (∃x P(x)) ∨ ∃x Q(x)
+ F ∃x (P(x))
+ F ∃x (Q(x)) T ∃x (P(x)) T ∃x (Q(x))
+T (P(a) ∨ Q(a)) T P(p) T Q(c)
+ F(P(p) ∨ Q(b) F(P(c) ∨ Q(c))
+T P(a) T Q(a) F P(p) F P(c)
+F P(a) F Q(a) F Q(b) F Q(c)
+In this example all the branches are closed. Therefore, the original formula is valid
+3. Decidability
+While in propositional logic the tableau method could be used as decision procedure, this
+will certainly not work in first-order logic anymore. If a formula is not valid, the
+systematic method may lead to an infinite tableau. This is, however, not a deficiency of
+the tableau method. In fact, there is no correct and complete proof method for first-order
+logic that always terminates, as first-order logic is known to undecidable. Nevertheless in
+some cases, the tableau method can decide that a formula is invalid although the proof is
+not finished yet. Whenever we have constructed a branch µ that represents a Hintkka set
+(over the finite domain of the parameters that occur on µ), then we know that the origin
+FX of the tableau is satisfiable and hence X must be invalid. In these rare cases, the
+Hintikka branch gives us a counterexample for the validity of the formula [4].
+Example
+F (∀x (P(x) ∨ Q(x))) => ((∀ x P(x) ∨ (∀ x Q(x)).
+T∀ x (P(x) ∨ Q(x))
+ F ((∀ x P(x) ∨ (∀ x Q(x))
+ F ∀ x P(x)
+ F ∀ x Q(x)
+ F P(a)
+ F Q(b)
+ T (P(a) ∨ Q(a))
+ T (P(b) ∨ Q(b))
+ T P(a) T Q(a)
+ T P(b) T Q(b)
+This tableau cannot be extended anymore in any meaningful way and has one open
+branch. We can assume a language with 2 elements in the domain U = {a,b}.and we can
+assign T to Q(a) and P(b) and F to Q(b) and P(a) 
+4. Soundness1
+Definition 6
+1. An L-V -structure consists of an L-structure M together with a mapping Φ: VÆ UM. If
+A is an L-V -sentence, we write
+
+AΦ = A[a1=_(a1 / Φ(a1),…, ak /Φ (ak)]
+where a1;… ; ak are the parameters occurring in A. Note that AΦ is an L-UMsentence.
+Note also that, if A is an L-sentence, then AΦ
+= A.
+2. Let S be a finite or countable set of (signed or unsigned) L-V -sentences. An L-V -
+structure M, Φ is said to satisfy S if vM(AΦ ) = T for all A∈ S. S is said to be satisfiable
+if there exists an L-V -structure satisfying S.
+3. Let τ be an L-tableau. We say that τ is satisfiable if at least one path of τ is satisfiable.
+Lemma 1. Let τ and τ′ be tableaux such that τ′ is an immediate extension of τ, i.e., τ′ is
+obtained from τ by applying a tableau rule to a path of τ. If τ is satisfiable, then τ′ is
+satisfiable.
+Proof. The proof consists of one case for each tableau rule. We consider some
+representative cases.
+Case 1: Suppose that τ′ is obtained from τ′ by applying the rule
+to the path θ in τ′. Since τ is satisfiable, it has at least one satisfiable path, S. If S ≠ θ,
+then S is a path of τ′, so τ′ is satisfiable. If S = θ, then θ is satisfiable, so let M and Φ :
+VÆ UM satisfy θ. In particular vM((A∨B) Φ) = T, so we have at least one of vM(AΦ) = T
+and vM(BΦ) = T. Thus M and Φ satisfy at least one of θ, A and θ, B. Since these are paths
+of τ′, it follows that τ′ is satisfiable.
+
+

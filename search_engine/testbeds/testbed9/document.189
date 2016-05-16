@@ -1,0 +1,35 @@
+Binary data is data whose unit can take on only two possible states, traditionally termed 0 and +1 in accordance with the binary numeral system and Boolean algebra. Forms and interpretations of binary data come in different technical and scientific fields. Such two-valued unit can be termed:
+"bit" (binary digit) in computer science,
+"truth value" in mathematical logic and related domains,
+"binary variable" in statistics.
+
+
+== Mathematical and combinatoric foundations ==
+A discrete variable that can take only one state contains zero information, and 2 is the next natural number after 1. That is why the bit, a variable with only two possible values, is a standard primary unit of information.
+A collection of n bits may have 2n states: see binary number for details. Number of states of a collection of discrete variables depends exponentially on the number of variables, and only as a power law on number of states of each variable. Ten bits have more (1024) states than three decimal digits (1000). 10k bits are more than sufficient to represent an information (a number or anything else) that requires 3k decimal digits, so information contained in discrete variables with 3, 4, 5, 6, 7, 8, 9, 10… states can be ever superseded by allocating two, three, or four times more bits. So, the use of any other small number than 2 does not provide an advantage.
+
+Moreover, Boolean algebra provides a convenient mathematical structure for collection of bits, with a semantic of a collection of propositional variables. Boolean algebra operations are known as "bitwise operations" in computer science. Boolean functions are also well-studied theoretically and easily implementable, either with computer programs or by so-named logic gates in digital electronics. This contributes to the use of bits to represent different data, even those originally not binary.
+
+
+== In statistics ==
+In statistics, binary data is a statistical data type described by binary variables, which can take only two possible values. Binary data represents the outcomes of Bernoulli trials—statistical experiments with only two possible outcomes. It is a type of categorical data, which more generally represents experiments with a fixed number of possible outcomes. The two values in a binary variable, despite being coded numerically as 0 and 1, are generally considered to exist on a nominal scale, meaning they represent qualitatively different values that cannot be compared numerically. In this respect, also, binary data is similar to categorical data but distinct from count data or other types of numeric data. Often, binary data is used to represent one of two conceptually opposed values, e.g.
+the outcome of an experiment ("success" or "failure")
+the response to a yes-no question ("yes" or "no")
+presence or absence of some feature ("is present" or "is not present")
+the truth or falsehood of a proposition ("true" or "false", "correct" or "incorrect")
+However, it can also be used for data that is assumed to have only two possible values, even if they are not conceptually opposed or conceptually represent all possible values in the space. For example, binary data is often used to represent the party choices of voters in elections in the United States, i.e. Republican or Democratic. In this case, there is no inherent reason why only two political parties should exist, and indeed, other parties do exist in the U.S., but they are so minor that they are generally simply ignored. Modeling continuous data (or categorical data of >2 categories) as a binary variable for analysis purposes is called dichotomization (creating a dichotomy). Like all discretization, it involves discretization error, but the goal is to learn something valuable despite the error (treating it as negligible for the purpose at hand, but remembering that it cannot be assumed to be negligible in general).
+Binary variables that are random variables are distributed according to a Bernoulli distribution. Regression analysis on predicted outcomes that are binary variables is accomplished through logistic regression, probit regression or a related type of discrete choice model.
+
+
+== In computer science ==
+
+In modern computers, binary data refers to any data represented in binary form rather than interpreted on a higher level or converted into some other form. At the lowest level, bits are stored in a bistable device such as a flip-flop. While most binary data has symbolic meaning (except for don't cares) not all binary data is numeric. Some binary data corresponds to computer instructions, such as the data within processor registers decoded by the control unit along the fetch-decode-execute cycle. Computers rarely modify individual bits for performance reasons. Instead, data is aligned in groups of a fixed number of bits, usually 1 byte (8 bits). Hence, "binary data" in computers are actually sequences of bytes. On a higher level, data is accessed in groups of 1 word (4 bytes) for 32-bit systems and 2 words for 64-bit systems.
+In applied computer science and in the information technology field, the term binary data is often specifically opposed to text-based data, referring to any sort of data that cannot be interpreted as text. The "text" vs. "binary" distinction can sometimes refer to the semantic content of a file (e.g. a written document vs. a digital image). However, it often refers specifically to whether the individual bytes of a file are interpretable as text (see character encoding) or cannot so be interpreted. When this last meaning is intended, the more specific terms binary format and text(ual) format are sometimes used. Note that semantically textual data can be represented in binary format (e.g. when compressed or in certain formats that intermix various sorts of formatting codes, as in the DOC format used by Microsoft Word); contrarily, image data is sometimes represented in textual format (e.g. the X PixMap image format used in the X Window System).
+
+
+== See also ==
+Bit array
+Bernoulli distribution
+Computer memory
+Categorical data
+Qualitative data

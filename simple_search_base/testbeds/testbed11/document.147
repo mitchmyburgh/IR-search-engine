@@ -1,0 +1,19 @@
+EPOC (Efficient Probabilistic Public Key Encryption) is a probabilistic public-key encryption scheme.
+EPOC was developed in 1999 by T. Okamoto, S. Uchiyama and E. Fujisaki of NTT Labs in Japan. It is based on the random oracle model, in which a primitive public-key encryption function is converted to a secure encryption scheme by use of a truly random hash function; the resulting scheme is designed to be semantically secure against a chosen ciphertext attack.
+EPOC's primitive encryption function is the OU (Okamoto-Uchiyama) function, in which to invert the OU function is proven to be as hard as factoring a composite integer public-key. There are three versions of EPOC:
+EPOC-1 uses a one-way trapdoor function and a random function (hash function);
+EPOC-2 uses a one-way trapdoor function, two random functions (hash functions) and a symmetric-key encryption (e.g., one-time padding and block-ciphers);
+EPOC-3 uses the Okamoto-Uchiyama one-way trapdoor function and two random functions (hash functions) as well as any symmetric encryption scheme such as the one-time pad, or any classical block-cipher.
+EPOC-1 is designed for key-distribution; EPOC-2 and EPOC-3 are designed for both key-distribution and encrypted data transfer.
+
+
+== See also ==
+Cryptography
+Computational complexity theory
+Okamoto-Uchiyama cryptosystem
+
+
+== References ==
+T. Okamoto, S. Uchiyama and E. Fujisaki (1999). "EPOC: Efficient Probabilistic Public-Key Encryption", Contribution to IEEE - describes EPOC-1 and EPOC-2.
+T. Okamoto and D. Pointcheval (2000). "EPOC-3: Efficient Probabilistic Public-Key Encryption (Version 2)", Contribution to IEEE - describes EPOC-3.
+T. Okamoto; S. Uchiyama (1998). "A New Public-key Cryptosystem as Secure as Factoring". Advances in Cryptology - EUROCRYPT '98 Proceedings. Lecture Notes in Computer Science 1403: 308–318. doi:10.1007/BFb0054135. ISBN 3-540-64518-7.

@@ -1,0 +1,22 @@
+Language support
+
+Most assembly languages and some low-level languages, such as BCPL (Basic Combined Programming Language), lack built-in support for data structures. On the other hand, many high-level programming languages and some higher-level assembly languages, such as MASM, have special syntax or other built-in support for certain data structures, such as records and arrays. For example, the C and Pascal languages support structs and records, respectively, in addition to vectors (one-dimensional arrays) and multi-dimensional arrays.[4][5]
+
+Most programming languages feature some sort of library mechanism that allows data structure implementations to be reused by different programs. Modern languages usually come with standard libraries that implement the most common data structures. Examples are the C++ Standard Template Library, the Java Collections Framework, and Microsoft's .NET Framework.
+
+Modern languages also generally support modular programming, the separation between the interface of a library module and its implementation. Some provide opaque data types that allow clients to hide implementation details. Object-oriented programming languages, such as C++, Java and Smalltalk may use classes for this purpose.
+
+Many known data structures have concurrent versions that allow multiple computing threads to access the data structure simultaneously.
+See also
+    Book: Data structures
+
+    Abstract data type
+    Concurrent data structure
+    Data model
+    Dynamization
+    Linked data structure
+    List of data structures
+    Persistent data structure
+    Plain old data structure
+
+

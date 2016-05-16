@@ -1,0 +1,17 @@
+Keyword Protocol 2000, abbreviated KWP2000, is a communications protocol used for on-board vehicle diagnostics systems (OBD). This protocol covers the application layer in the OSI model of computer networking. The protocol is standardized by International Organization for Standardization as ISO 14230. KWP2000 also covers the session layer in the OSI model, in terms of starting, maintaining and terminating a communications session.
+
+
+== Commonly used physical layers ==
+One underlying physical layer used for KWP2000 is identical to ISO 9141, with bidirectional serial communication on a single line called the K-line. In addition, there is an optional L-line for wakeup. The data rate is between 1.2 and 10.4 kilobaud, and a message may contain up to 255 bytes in the data field.
+When implemented on a K-line physical layer KWP2000 requires special wakeup sequences: 5-baud wakeup and fast-initialisation. Both of these wakeup methods require timing critical manipulation of the K-line signal, and are therefore not easy to reproduce without custom software.
+KWP2000 is also compatible on ISO 11898 (Controller Area Network) supporting higher data rates of up to 1 Mbit/s. CAN is becoming an increasingly popular alternative to K-line because the CAN bus is usually present in modern-day vehicles and thus removing the need to install an additional physical cable.
+Using KWP2000 on CAN with ISO 15765 Transport/Network layers is most common. Also using KWP2000 on CAN does not require the special wakeup functionality.
+KWP2000 can be implemented on CAN using just the service layer and session layer (no header specifying length, source and target addresses is used and no checksum is used); or using all layers (header and checksum are encapsulated within a CAN frame). However using all layers is overkill, as ISO 15765 provides its own Transport/Network layers.
+
+
+== ISO 14230 ==
+ISO 14230 Road vehicles – Diagnostic systems – Keyword Protocol 2000 is structured as follows:
+ISO 14230-1 Physical layer
+ISO 14230-2 Data link layer
+ISO 14230-3 Application layer
+ISO 14230-4 Requirements for emission-related systems

@@ -1,0 +1,43 @@
+Dynamic problems in computational complexity theory are problems stated in terms of the changing input data. In the most general form a problem in this category is usually stated as follows:
+Given a class of input objects, find efficient algorithms and data structures to answer a certain query about a set of input objects each time the input data is modified, i.e., objects are inserted or deleted.
+Problems of this class have the following measures of complexity:
+Space - the amount of Memory space required to store the data structure;
+Initialization time - time required for the initial construction of the data structure;
+Insertion time - time required for the update of the data structure when one more input element is added;
+Deletion time - time required for the update of the data structure when an input element is deleted;
+Query time - time required to answer a query;
+Other operations specific to the problem in question
+The overall set of computations for a dynamic problem is called a dynamic algorithm.
+Many algorithmic problems stated in terms of fixed input data (called static problems in this context and solved by static algorithms) have meaningful dynamic versions.
+
+
+== Special cases ==
+Incremental algorithms, or Online algorithms, are algorithms in which only additions of elements are allowed, possibly starting from the empty/trivial input data.
+Decremental algorithms are algorithms in which only deletions of elements are allowed, starting with an initialization of a full data structure.
+If both additions and deletions are allowed, the algorithm is sometimes called fully dynamic.
+
+
+== Examples ==
+
+
+=== Maximal element ===
+Static problem 
+For a set of N numbers find the maximal one.
+The problem may be solved in O(N) time.
+Dynamic problem 
+For an initial set of N numbers, dynamically maintain the maximal one when insertion and deletions are allowed.
+A well-known solution for this problem is using a self-balancing binary search tree. It takes space O(N), may be initially constructed in time O(N log N) and provides insertion, deletion and query times in O(log N).
+The priority queue maintenance problem 
+It is a simplified version of this dynamic problem, where one requires to delete only the maximal element. This version may do with simpler data structures.
+
+
+=== Graphs ===
+Given a graph, maintain its parameters, such as connectivity, maximal degree, shortest paths etc., when insertion and deletion of its edges are allowed.
+
+
+== See also ==
+Dynamization
+Dynamic connectivity
+
+
+== References ==

@@ -1,0 +1,19 @@
+Artificial neural networks: fundamentals, computing, design, and
+application
+
+I.A. Basheer , M. Hajmeer
+
+Artificial neural networks (ANNs) are relatively new computational tools that have found extensive utilization in solving
+many complex real-world problems. The attractiveness of ANNs comes from their remarkable information processing
+characteristics pertinent mainly to nonlinearity, high parallelism, fault and noise tolerance, and learning and generalization
+capabilities. This paper aims to familiarize the reader with ANN-based computing (neurocomputing) and to serve as a useful
+companion practical guide and toolkit for the ANNs modeler along the course of ANN project development. The history of
+the evolution of neurocomputing and its relation to the field of neurobiology is briefly discussed. ANNs are compared to both
+expert systems and statistical regression and their advantages and limitations are outlined. A bird’s eye review of the various
+types of ANNs and the related learning rules is presented, with special emphasis on backpropagation (BP) ANNs theory and
+design. A generalized methodology for developing successful ANNs projects from conceptualization, to design, to
+implementation, is described. The most common problems that BPANNs developers face during training are summarized in
+conjunction with possible causes and remedies. Finally, as a practical application, BPANNs were used to model the microbial
+growth curves of S. flexneri. The developed model was reasonably accurate in simulating both training and test
+time-dependent growth curves as affected by temperature and pH.  2000 Published by Elsevier Science B.V.
+Keywords: Artificial neural networks; Backpropagation; Growth curves; History; Modeling; S. flexneri

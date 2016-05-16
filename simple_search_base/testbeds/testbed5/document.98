@@ -1,0 +1,32 @@
+Connection to artificial intelligence
+
+Since its inception, Lisp was closely connected with the artificial intelligence research community, especially on PDP-10[11] systems. Lisp was used as the implementation of the programming language Micro Planner which was used in the famous AI system SHRDLU. In the 1970s, as AI research spawned commercial offshoots, the performance of existing Lisp systems became a growing issue.[citation needed]
+Genealogy and variants
+
+Over its fifty-year history, Lisp has spawned many variations on the core theme of an S-expression language. Moreover, each given dialect may have several implementations—for instance, there are more than a dozen implementations of Common Lisp.
+
+Differences between dialects may be quite visible—for instance, Common Lisp uses the keyword defun to name a function, but Scheme uses define.[12] Within a dialect that is standardized, however, conforming implementations support the same core language, but with different extensions and libraries.
+Historically significant dialects
+A Lisp machine in the MIT Museum
+4.3 BSD from the University of Wisconsin, displaying the man page for Franz Lisp
+
+    LISP 1[13] – First implementation.
+    LISP 1.5[14] – First widely distributed version, developed by McCarthy and others at MIT. So named because it contained several improvements on the original "LISP 1" interpreter, but was not a major restructuring as the planned LISP 2 would be.
+    Stanford LISP 1.6[15] – This was a successor to LISP 1.5 developed at the Stanford AI Lab, and widely distributed to PDP-10 systems running the TOPS-10 operating system. It was rendered obsolete by Maclisp and InterLisp.
+    MACLISP[16] – developed for MIT's Project MAC (no relation to Apple's Macintosh, nor to McCarthy), direct descendant of LISP 1.5. It ran on the PDP-10 and Multics systems. (MACLISP would later come to be called Maclisp, and is often referred to as MacLisp.)
+    InterLisp[17] – developed at BBN Technologies for PDP-10 systems running the Tenex operating system, later adopted as a "West coast" Lisp for the Xerox Lisp machines as InterLisp-D. A small version called "InterLISP 65" was published for the 6502-based Atari 8-bit family computer line. For quite some time Maclisp and InterLisp were strong competitors.
+    Franz Lisp – originally a Berkeley project; later developed by Franz Inc. The name is a humorous deformation of the name "Franz Liszt", and does not refer to Allegro Common Lisp, the dialect of Common Lisp sold by Franz Inc., in more recent years.
+    XLISP, which AutoLISP was based on.
+    Standard Lisp and Portable Standard Lisp were widely used and ported, especially with the Computer Algebra System REDUCE.
+    ZetaLisp, also known as Lisp Machine Lisp – used on the Lisp machines, direct descendant of Maclisp. ZetaLisp had a big influence on Common Lisp.
+    LeLisp is a French Lisp dialect. One of the first Interface Builders was written in LeLisp.[citation needed]
+    Scheme (1975).[18]
+    Common Lisp (1984), as described by Common Lisp the Language – a consolidation of several divergent attempts (ZetaLisp, Spice Lisp, NIL, and S-1 Lisp) to create successor dialects[19] to Maclisp, with substantive influences from the Scheme dialect as well. This version of Common Lisp was available for wide-ranging platforms and was accepted by many as a de facto standard[20] until the publication of ANSI Common Lisp (ANSI X3.226-1994).
+    Dylan was in its first version a mix of Scheme with the Common Lisp Object System.
+    EuLisp – attempt to develop a new efficient and cleaned-up Lisp.
+    ISLISP – attempt to develop a new efficient and cleaned-up Lisp. Standardized as ISO/IEC 13816:1997[21] and later revised as ISO/IEC 13816:2007:[22] Information technology – Programming languages, their environments and system software interfaces – Programming language ISLISP.
+    IEEE Scheme – IEEE standard, 1178–1990 (R1995)
+    ANSI Common Lisp – an American National Standards Institute (ANSI) standard for Common Lisp, created by subcommittee X3J13, chartered[23] to begin with Common Lisp: The Language as a base document and to work through a public consensus process to find solutions to shared issues of portability of programs and compatibility of Common Lisp implementations. Although formally an ANSI standard, the implementation, sale, use, and influence of ANSI Common Lisp has been and continues to be seen worldwide.
+    ACL2 or "A Computational Logic for Applicative Common Lisp", an applicative (side-effect free) variant of Common LISP. ACL2 is both a programming language in which you can model computer systems and a tool to help proving properties of those models.
+    Clojure, a recent dialect of Lisp which compiles to the Java virtual machine and handles concurrency very well.
+

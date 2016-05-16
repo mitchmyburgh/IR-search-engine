@@ -1,0 +1,155 @@
+op Programming Languages That Will Future-Proof Your Portfolio
+The most popular programming languages are used to code most of the applications in the world. Here are the 10 most popular now -- and insight into a handful on a rocket up the charts.
+Every year there are lists about programming languages. The 10 most popular, the 10 least popular, the 10 most searched for, most loved, most hated …you get it. In the world of programming languages there are constant lists, but the ones that matter are those that help you plan your future or plan your development teams.
+
+One of the companies that keeps a regular list of the most commonly used languages is TIOBE, a Netherlands-based company that evaluates code for quality. It's a list that shows the relative popularity of languages it is testing right now. We used its work as the basis for choosing the languages presented here because it is a good snapshot of the development market as it exists right now.
+
+Another way of looking at the market for programming languages is through the lens of companies hiring programmers. This is more a view to the future, since even agile-based organizations will tend to have a lag measured in weeks to months between hiring a developer and seeing the first deployable code from the developer's keyboard.
+
+Toptal is a company that acts as a broker between developers and the companies that want to hire them. It has a list of the most popular languages used in hiring searches -- a list that doesn't directly track to the TIOBE list.
+
+Are you prepared for a new world of enterprise mobility? Attend the Wireless & Mobility Track at Interop Las Vegas, May 2-6. Register now!
+
+ 
+
+Alvaro Oliveira is VP of talent operations for Toptal. When I spoke with him on the phone about Toptal's list, we opened with the No. 1 language companies are searching for: Swift. "Swift is new, so it's expected for its growth to be way higher than any other languages," Oliveira said. "It's also the language that has allowed a lot of people to join the iOS market."
+
+Oliveira said that Swift's growth is coming from two sources: Those moving their programming from Objective C, and those coming into the iOS development market for the first time. "The iOS programming market was always held back by Objective C, which is a language that a lot of people found uninviting," he said. "But then Swift came along and was much easier."
+
+The other language at the top of Toptal's chart is HTML. "For any web project, HTML is going to be there. Whether it's a Ruby on Rails or Rython job, HTML will be there. It shows that Web pages are still in demand," Oliveira said.
+
+There was at least one language on the Toptal list that I found quite surprising, but I'll wait until later in the article to talk about it. Until then, let's take a look at the languages most commonly used in March 2016, and see how many of them you have in your project portfolio.
+
+Once you've reviewed our list, tell us in the comments section below which of these are in use in your organization right now, and which ones you're personally working with.
+
+Curtis Franklin Jr. is executive editor for technical content at InformationWeek. In this role he oversees product and technology coverage for the publication. In addition he acts as executive producer for InformationWeek Radio and Interop Radio where he works with ... View Full Bio
+
+Tips about TIPs (Threat Intelligence Platforms)
+More White Papers
+Reports
+[KuppingerCole Report] PAM Life Cycle Support
+[Forrester Report] Improve Cybersecurity with DevOps
+More Reports
+Comments
+Newest First  |  Oldest First  |  Threaded View
+[close this box]
+tfli
+Login
+50%
+50%
+tfli,
+User Rank: Apprentice
+3/15/2016 | 12:29:24 PM
+Top Languages need orchestration
+
+Programming Languages are great but what is really needed is a platform(s) and/or framework to create great apps.  The platform should use languages mentioned here like Javascript (and HTML, the markup language that just missed the list).  In fact scripting languages in general can be faster and easier to use than some of the heavyweight tech languages like C, C++, and Java.  I notice Swift mentioned too but that may be limiting (Apple-centric) at this point.  So, the key is to easily orchestrate an app using a platform that will create and run the app across all commercially dominant operating systems (Windows, Linux, OSX, iOS, Android, etc.).  Not only does the platform need client side scripting (Javascript for example) but easy server side integration too!  It would be nice to see a platform like MANTIS evaluated with its orchestration of included scripting languages and standards usage, tied to robust proven server side processing.
+Reply  |  Post Message  |  Messages List  |  Start a Board
+dried_squid
+Login
+50%
+50%
+dried_squid,
+User Rank: Moderator
+3/14/2016 | 3:12:33 PM
+Languages and Frameworks
+     I wonder if languages matter that much in object-oriented frameworks.
+
+     Seems like once your classes are carved in stone, it doesn't matter what language did the carving. And then there's the Microsoft Common Language Infrastructure concept. Is it a strategy or a tactic? And C# and F# in the Visual Studio Community Edition, ie. no charge. Definitely a tactic.
+
+    Where I work, in the midst of a transition to a "common off the shelf", COTS, implementation, I was told it was no use to take non-credit courses in HTML, CSS, or JavaScript.
+
+    So maybe for some who don't develop frameworks or classes, learning a language may not be that important, unless you have a personal need.
+Reply  |  Post Message  |  Messages List  |  Start a Board
+TerryB
+Login
+50%
+50%
+TerryB,
+User Rank: Ninja
+3/14/2016 | 2:43:29 PM
+Re: Script & Interpreters
+Curtis, I just don't know how you would replace the implied security of a compiled program. That raises the bar so much because you have to have so much inside info, plus usually an elevated security level to even place a compiled program on a server. When you can just feed source code in from client and force it to run, how would you protect from that?
+
+Just think of the simple barrier a mainframe and i5 library list place on hacker. You can look at the client code and see the program being called, along with parameters you are feeding it. But that is all you can manipulate. You don't know what program is doing or where it lives.
+
+When you combine that with some decent session control (block CGI spoofing), none of the popular hacks are going to work. No SQL injection, no XSS, no buffer overflow and inject your own code. If edits are poorly done, you could implement a kind of DoS hack by forcing HTTP jobs to crash. But you aren't going to be stealing data.
+
+PHP guys will tell you, and it is probably true, that a server locked down properly for PHP use is secure. The problem is very few people know how to do that. If at server side you use compiled objects, it's near impossible to screw security up.
+
+If I'm not looking at this right, please correct me. I use an IBM i5 (formally AS400). No common hacks will work if using stored procedures or compiled RPG/COBOL at backend. To use PHP, which a lot of i5 people do, you have to essentially run UNIX shell on top of i5 o/s to use PHP, which kills the native security model. So now you better understand both UNIX and i5 security. How many programmers are that good, especially at small companies?
+Reply  |  Post Message  |  Messages List  |  Start a Board
+Curt Franklin
+Login
+50%
+50%
+Curt Franklin,
+User Rank: Strategist
+3/14/2016 | 2:26:07 PM
+Re: Script & Interpreters
+TerryB, the problem with so many scripting languages is that they were never really intended for applications where security (or, in many cases, the outside world) were considerations.
+
+It would be nice to have a simple, powerful, scipting language that just happens to be intrinsicially secure. I'm just not sure what it would be. And the real problem is that IT executives are always going to want fast, low-cost solutions for development, and nothing really beats a scripting language for fast and cheap.
+Reply  |  Post Message  |  Messages List  |  Start a Board
+TerryB
+IW Pick
+Login
+100%
+0%
+TerryB,
+User Rank: Ninja
+3/14/2016 | 12:56:28 PM
+Script & Interpreters
+The fact things like Python and PHP, and to lesser degree, Perl are showing up go a long way to explain why many web apps are as secure as a 1940 outhouse.
+
+"Advanced web application" should make oxymoron list, right next to "Military Intelligience".
+
+As Charlie was hinting, javascript really needs to be expanded into things like Node.js, JQuery, Linear and Extjs and the rest of fullblown javascript libraries. By almost any measure, those are becoming just like a high level programming language for the client side. The best thing about them is they allow many different approaches to server side, allowing you to avoid scripting if you want.
+
+But so, so many take the easy way out on putting up apps. What's the cheapest hardware and cheapest, easiest programming they can do, that's their choice. And sadly, we seem to be learning nothing, it continues. My favorite analogy is The Three Little Pigs. He built a fine house from straw...until the Big Bad Wolf came along. But the brick house? Took a little longer, cost more, but still going strong after the Wolf came by.
+Reply  |  Post Message  |  Messages List  |  Start a Board
+Curt Franklin
+Login
+50%
+50%
+Curt Franklin,
+User Rank: Strategist
+3/14/2016 | 12:50:10 PM
+Re: Expectation setback: No Go, No Node.js
+Charlie, I was surprised by the lack of Go. There are several possible explanations (aside from the obvious), including that companies using Go aren't using external testing. The lack of interest in hiring language could mean that companies are using existing in-house talent for their dev teams, but either way I agree: You'd think that companies would be both using the languages now and hiring for the future.
+
+The question is whether there's a lot of latent demand or whether there's less uptake than we think.
+Reply  |  Post Message  |  Messages List  |  Start a Board
+Charlie Babcock
+Login
+100%
+0%
+Charlie Babcock,
+User Rank: Author
+3/14/2016 | 12:13:11 PM
+Expectation setback: No Go, No Node.js
+In terms of future-proofing the enterprise, I expected to see Google's Go listed, since it's the language of container orchestration and management, as found in Kubernetes. I also expected to see Node.js in higher demand than JavaScript, but it could be client-side programming still dominates server-side.
+Reply  |  Post Message  |  Messages List  |  Start a Board
+Infographics
+2014 US Salary Survey: 10 Stats
+2014 US Salary Survey: 10 Stats
+InformationWeek surveyed 11,662 IT pros across 30 industries about their pay, benefits, job satisfaction, outsourcing, and more. Some of the results will surprise you.
+0 comments | Read | Post a Comment
+More Infographics
+Register for InformationWeek Newsletters
+Subscribe to Newsletters
+Live Events
+Webinars
+DDoS Attacks & Their Threats to Your Business
+IoT & Insurance: How Big Data May Affect Your Privacy & Premiums
+Risk Data as a Strategy
+Webinar Archives
+White Papers
+Network Computing Tech Digest: SDN
+Compliance 101: Basics for Security Professionals
+3-D Secure: The Force for CNP Fraud Prevention Awakens
+10 Tips for Protecting Data in the Cloud
+Tips about TIPs (Threat Intelligence Platforms)
+More White Papers
+Current Issue
+2016 InformationWeek Elite 100
+Our 28th annual ranking of the leading US users of business technology.

@@ -1,0 +1,19 @@
+Apache_James
+'''Apache James''', aka '''Java Apache Mail Enterprise Server''' or some variation thereof, is an   and   and   written entirely in . James is maintained by contributors to the , with initial contributions by .  support has been added as of preview version 3.0-M2, which now requires Java 1.5 or later.
+The James project manages the Apache Mailet  which defines "matchers" and "mailets". These allow users to write their own mail-handling code, such as to update a database, build a message archive, or filter . A matcher is used to classify messages based on some criteria, and then determines whether the message should be passed to an appropriate mailet for processing. Mailets are so-called due to their conceptual similarity to a , and arose because  declined a proposal to include mail-handling in the servlet implementation. James ships with a variety of pre-written matchers and mailets to serve common tasks. Many sets of mailets and matchers can be combined to produce sophisticated and complex functional behaviour.
+The Apache James project also produces pure Java libraries for implementing Sender Policy Framework (SPF), the  mail filtering language, and parsing MIME content streams, independent of Sun's JavaMail API.
+==Development==
+James was originally formed under the  as Jakarta-James.
+ In January 2003, James was upgraded to a top-level Apache project in a unanimous decision by the ASF Board of Directors under the chairmanship of . 
+James is distributed to within the Phoenix container, which implements the  .
+Recent developments include a version which runs in the  application framework.
+Version 2.3.0 was released in October 2006.
+Version 2.3.1 was released in April 2007.
+Version 2.3.2 was released in August 2009.
+==See also==
+* 
+* 
+==References==
+==External links==
+* 
+*  at IBM developerWorks

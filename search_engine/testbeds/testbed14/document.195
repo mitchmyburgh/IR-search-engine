@@ -1,0 +1,19 @@
+3.4 Tableau Based Reasoning Techniques
+A variety of reasoning techniques can be used to solve the reasoning problems introduced
+in Section 3.2. These include resolution based approaches [102, 104], automata
+based approaches [49, 161], and structural approaches (for sub-Boolean DLs) [6]. The
+most widely used technique, however, is the tableau based approach first introduced
+by Schmidt-Schauß and Smolka [149]. In this section, we described this technique for
+the case of our basic DL �LC.
+3.4.1 A Tableau Algorithm for ALC
+We will concentrate on knowledge base consistency because, as we have seen in Section
+3.2, this is a very general problem to which many others can be reduced. For
+F. Baader, I. Horrocks, U. Sattler 147
+example, given a knowledge base K = (T , �), a concept C is subsumed by a concept
+D with respect to K (K |= C � D) iff (T , � ∪ {x : (C � ¬D)}) is not consistent,
+where x is a new individual name (i.e., one that does not occur in K). For �LC with
+a general TBox, i.e., one where the TBox is not restricted to contain only definitorial
+axioms (see Section 3.2), this problem is known to be EXPTIME-complete [144].
+The tableau based decision procedure for the consistency of general �LC knowledge
+bases sketched below (and described in more detail in [12, 14]), runs in worst case
+non-deterministic double exponential time.

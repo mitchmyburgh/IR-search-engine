@@ -1,0 +1,20 @@
+Android N will support pressure-sensitive screens
+They probably won't call it 3D Touch, though
+By Dieter Bohn  on April 17, 2016 12:03 pm  Email @backlon 
+79
+ 
+ Share on Facebook (104)  Tweet  Share (51)  Pin (4)	
+Android N is going to make it easier for device makers to create their own version of 3D Touch pressure-sensitive screens on their devices. Hopefully, when it's officially released, Google will figure out what to call the feature — because Apple 3D Touch is obviously Apple branding, and "support for pressure-sensitive screens" is an awful thing to have to write over and over again.
+
+So how do we know? Well, support for "Launcher shortcuts" is probably the most exciting new thing in the latest beta for the upcoming Android N operating system, which was released last week. It allows developers to "define shortcuts which users can expose in the launcher to help them perform actions quicker." Which is a fairly technical way of describing what people can do now with an iPhone 6S in its launcher: get a pop-up menu that lets you jump directly into a more specific part of your app.
+
+Want to get even more technical? Phandroid's got you: the site teamed up with the developer of Nova Launcher to test out the new "setDynamicShortcuts(List)" feature. The gist is that Android isn't super specific about how that particular shortcut gets activated, but the method that probably makes the most sense is a pressure-sensitive screen.
+
+
+However, it's not a foregone conclusion that these little technical bits in Android N definitely mean something like 3D Touch is coming to Android. So we reached out to Google to see if Phandroid's conjectures here are right. Long story short: they are.
+
+Google says that the manufacturers who build Android devices wanted this use case addressed by the OS itself — probably so they wouldn't have to develop their own methods individually. That means that we'll see more devices like Huawei's Mate S with pressure-sensitive screens; they'll be more likely to get 3rd-party developer support because they can code for all Android devices instead of reinventing the pressure-sensitive wheel for each OEM.
+
+It doesn't, however, mean that you should expect that most (or even many) upcoming Android phones will have the feature. Everything about this sort of scans as a nice option that heads off future fragmentation at the pass.
+
+The whole point of releasing these Android N previews so early, Google says, is to get developer feedback and get manufacturers on board to improve the update cycle for newer versions of Android. Building support for something like pressure-sensitive screens directly into the OS means that those manufacturers will be more likely to support the new OS instead of hanging on to code they build for older systems.

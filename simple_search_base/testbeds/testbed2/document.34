@@ -1,0 +1,87 @@
+In computer science, computational learning theory (or just learning theory) is a subfield of Artificial Intelligence devoted to studying the design and analysis of machine learning algorithms.
+
+
+== Overview ==
+Theoretical results in machine learning mainly deal with a type of inductive learning called supervised learning. In supervised learning, an algorithm is given samples that are labeled in some useful way. For example, the samples might be descriptions of mushrooms, and the labels could be whether or not the mushrooms are edible. The algorithm takes these previously labeled samples and uses them to induce a classifier. This classifier is a function that assigns labels to samples including the samples that have never been previously seen by the algorithm. The goal of the supervised learning algorithm is to optimize some measure of performance such as minimizing the number of mistakes made on new samples.
+In addition to performance bounds, computational learning theory studies the time complexity and feasibility of learning. In computational learning theory, a computation is considered feasible if it can be done in polynomial time. There are two kinds of time complexity results:
+Positive results – Showing that a certain class of functions is learnable in polynomial time.
+Negative results – Showing that certain classes cannot be learned in polynomial time.
+Negative results often rely on commonly believed, but yet unproven assumptions, such as:
+Computational complexity – P ≠ NP (the P versus NP problem);
+Cryptographic – One-way functions exist.
+There are several different approaches to computational learning theory. These differences are based on making assumptions about the inference principles used to generalize from limited data. This includes different definitions of probability (see frequency probability, Bayesian probability) and different assumptions on the generation of samples. The different approaches include:
+Exact learning, proposed by Dana Angluin;
+Probably approximately correct learning (PAC learning), proposed by Leslie Valiant;
+VC theory, proposed by Vladimir Vapnik and Alexey Chervonenkis;
+Bayesian inference;
+Algorithmic learning theory, from the work of E. Mark Gold;
+Online machine learning, from the work of Nick Littlestone.
+Computational learning theory has led to several practical algorithms. For example, PAC theory inspired boosting, VC theory led to support vector machines, and Bayesian inference led to belief networks (by Judea Pearl).
+
+
+== See also ==
+Grammar induction
+Information theory
+Stability (learning theory)
+Error Tolerance (PAC learning)
+
+
+== References ==
+
+
+=== Surveys ===
+Angluin, D. 1992. Computational learning theory: Survey and selected bibliography. In Proceedings of the Twenty-Fourth Annual ACM Symposium on Theory of Computing (May 1992), pages 351–369. http://portal.acm.org/citation.cfm?id=129712.129746
+D. Haussler. Probably approximately correct learning. In AAAI-90 Proceedings of the Eight National Conference on Artificial Intelligence, Boston, MA, pages 1101–1108. American Association for Artificial Intelligence, 1990. http://citeseer.ist.psu.edu/haussler90probably.html
+
+
+=== VC dimension ===
+V. Vapnik and A. Chervonenkis. On the uniform convergence of relative frequencies of events to their probabilities. Theory of Probability and its Applications, 16(2):264–280, 1971.
+
+
+=== Feature selection ===
+A. Dhagat and L. Hellerstein, "PAC learning with irrelevant attributes", in 'Proceedings of the IEEE Symp. on Foundation of Computer Science', 1994. http://citeseer.ist.psu.edu/dhagat94pac.html
+
+
+=== Inductive inference ===
+Gold, E. Mark (1967). "Language identification in the limit" (PDF). Information and Control 10 (5): 447–474. doi:10.1016/S0019-9958(67)91165-5. 
+
+
+=== Optimal O notation learning ===
+Oded Goldreich, Dana Ron. On universal learning algorithms. http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.47.2224
+
+
+=== Negative results ===
+M. Kearns and Leslie Valiant. 1989. Cryptographic limitations on learning boolean formulae and finite automata. In Proceedings of the 21st Annual ACM Symposium on Theory of Computing, pages 433–444, New York. ACM. http://citeseer.ist.psu.edu/kearns89cryptographic.html
+
+
+=== Boosting (machine learning) ===
+Robert E. Schapire. The strength of weak learnability. Machine Learning, 5(2):197–227, 1990 http://citeseer.ist.psu.edu/schapire90strength.html
+
+
+=== Occam Learning ===
+Blumer, A.; Ehrenfeucht, A.; Haussler, D.; Warmuth, M. K. "Occam's razor" Inf.Proc.Lett. 24, 377–380, 1987.
+A. Blumer, A. Ehrenfeucht, D. Haussler, and M. K. Warmuth. Learnability and the Vapnik-Chervonenkis dimension. Journal of the ACM, 36(4):929–865, 1989.
+
+
+=== Probably approximately correct learning ===
+L. Valiant. A Theory of the Learnable. Communications of the ACM, 27(11):1134–1142, 1984.
+
+
+=== Error tolerance ===
+Michael Kearns and Ming Li. Learning in the presence of malicious errors. SIAM Journal on Computing, 22(4):807–837, August 1993. http://citeseer.ist.psu.edu/kearns93learning.html
+Kearns, M. (1993). Efficient noise-tolerant learning from statistical queries. In Proceedings of the Twenty-Fifth Annual ACM Symposium on Theory of Computing, pages 392–401. http://citeseer.ist.psu.edu/kearns93efficient.html
+
+
+=== Equivalence ===
+D.Haussler, M.Kearns, N.Littlestone and M. Warmuth, Equivalence of models for polynomial learnability, Proc. 1st ACM Workshop on Computational Learning Theory, (1988) 42-55.
+Pitt, L.; Warmuth, M. K. (1990). "Prediction-Preserving Reducibility" (PDF). Journal of Computer System and Science 41: 430–467. doi:10.1016/0022-0000(90)90028-J. 
+A description of some of these publications is given at important publications in machine learning.
+
+
+=== Distribution Learning Theory ===
+
+
+== External links ==
+Review of An Introduction to Computational Learning Theory
+Review of The Nature of Statistical Learning Theory
+Basics of Bayesian inference

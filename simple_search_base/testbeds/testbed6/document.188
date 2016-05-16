@@ -1,0 +1,106 @@
+  Algorithms and Data Structures 
+   Of the many subfields within computer science, 
+   algorithms and data structures may be the most fundamental—it seems to characterize computer science like perhaps no other. What is involved in the study of algorithms and data structures?
+   Importance 
+  Computer Science encompasses theoretical and practical approaches to computation. It’s been said that the four essential subdisciplines are: 
+    THEORYOFCOMPUTATION
+    ALGORITHMS AND DATA STRUCTURES
+    PROGRAMMING METHODOLOGY AND LANGUAGES
+    COMPUTER ELEMENTS AND ARCHITECTURE
+  The ACM has identified eighteen knowledge areas of Computer Science as: 
+     Knowledge Area
+     Code
+     Some Topics 
+     Algorithms and Complexity
+     AL
+     Algorithmic Analysis; Algorithmic Strategies; Data Structures and Algorithms; Automata; Computability; Computational Complexity. 
+     Architecture and Organization
+     AR
+     Digital Logic and Digital Systems; Machine-level Data Representation; Assembly-Level Machine Organization; Memory System Organization and Architecture; Interfacing and Communication; Functional Organization; Multiprocessing and Alternative Architectures; Performance Enhancements. 
+     Computational&nbsp;Science
+     CN
+     Modeling and Simulation; Processing; Interactive Visualization; Data, Information and Knowledge; Numeric Analysis; Symbolic Computation; Mathematical Modeling; High-Performance Computing. 
+     Discrete Structures
+     DS
+     Logic; Sets, Relations, and Functions; Proof Techniques; Basics of Counting; Graphs and Trees; Discrete Probability. 
+     Graphics and Visualization
+     GV
+     Media Applications; Digitization; Color Models; Rendering; Modeling; Animation; Visualization. 
+     Human-Computer Interaction
+     HCI
+     Interactive Systems; Testing; Collaboration and Communication; Statistical Methods; Human Factors; Mixed, Augmented, and Virtual Reality. 
+     Information Assurance and Security
+     IAS
+     Defensive Programming; Threats and Attacks; Network Security; Cryptography; Web Security; Platform Security; Policy and Governance; Digital Forensics; Secure Software Engineering. 
+     Information Management
+     IM
+     Database Systems; Data Modeling; Indexing; Key-Value, Document, Relational, and Graph Databases; Query Languages; Transaction Processing; Distributed Databases; Physical Database Design; Data Mining; Information Storage and Retrieval; Multimedia Systems. 
+     Intelligent Systems
+     IS
+     Knowledge Representation and Reasoning; Search; Machine Learning; Reasoning Under Uncertainty; Agents; Natural Langauge Processing; Robotics; Speech Recognition and Synthesis; Perception and Computer Vision. 
+     Networking and Communication
+     NC
+     Networked Applications; Reliable Data Delivery; Routing and Forwarding; Local and Wide Area Networks; Reource Allocation; Mobility; Social Networking. 
+     Operating Systems
+     OS
+     Operating System Organization; Concurrency; Scheduling and Dispatch; Memory Management; Security and Protection; Virtual Machines; Device Management; File Systems; Realtime and Embedded Systems; Fault Tolerance; System Performance and Evaluation. 
+     Platform-Based Development
+     PBD
+     Web Platforms; Mobile Platforms; Industrial Platforms; game Platforms. 
+     Parallel and Distributed Computing
+     PD
+     Parallel Decomposition; Communication and Coordination; Parallel Algorithms, Analysis, and Programming; Parallel Architecture; Parallel Performance; Distributed Systems; Cloud Computing; Formal Models and Semantics. 
+     Programming Languages
+     PL
+     Object Oriented Programming; Functional Programming; Event-Driven and Reactive Programming; Type Systems; Program Representation; Language Translation and Execution; Syntax Analysis; Semantic Analysis; Code Generation; Runtime Systems; Static Analysis; Concurrency and Parallelism; Type Systems; Formal Semantics; Language Pragmatics; Logic Programming. 
+     Software Development Fundamentals
+     SDF
+     Algorithms and Design; Fundamental Programming Concepts; Fundamental Data Structures; Development Methods. 
+     Software Engineering
+     SE
+     Software Processes; Project Management; Tools and Environments; Requirements Engineering; Software Design; Software Construction; Software Verification and Validation; Software Evolution; Software Reliability; Formal Methods. 
+     Systems Fundamentals
+     SF
+     Computational Paradigms; Cross-Layer Communications; State and State Machines; Parallelism; Evaluation; Resource Allocation and Scheduling; Proximity; Virtualization and Isolation; Reliability through Redundancy; Quantitative Evaluation. 
+     Social Issues and Professional Practice
+     SP
+     Social Context; Analytic Tools; Professional Ethics; Intellectual Property; Privacy and Civil Liberties; Professional Communication; Sustainability; History; Economics of Computing; Security Policies, Law, and Crime. 
+  Why Do They Go Together? 
+  We can’t really separate data structures and algorithms because: 
+   Computing systems are concerned with the storage and retrieval of information. 
+   For systems to be economical the data must be organized (into data structures) in such a way as to support efficient manipulation (by algorithms). 
+   Choosing the wrong algorithms and data structures makes a program slow at best and unmaintainable and insecure at worst. 
+  Topics 
+  While it’s possible to study algorithms and data structures exclusively at a theoretical level, we often study them together with introductory software engineering concepts; the major topics, grouping them roughly as follows: 
+   Data: data types, abstract data types, data structures (arrays and links), classes, APIs, collections, OO. 
+   Algorithms: What is an algorithm?, algorithmic patterns and paradigms (recursion, backtracking, search, etc.), complexity analysis. 
+   Software development: abstraction, efficiency, robustness, classification, inheritance and composition, polymorphism, software life cycle, methodology, modeling languages, design patterns, and testing. 
+ 
+  Collections 
+  A collection is a group of elements treated a single object. Most ADTs seem to be collection types. Collection types can be 
+   Homogeneous or heterogeneous 
+   Unordered or ordered 
+   Linear, Hierarchical, Networked, or Non-Positional 
+  The latter classification looks like this: 
+     Classification 
+     Topology 
+     Examples 
+     SET(NON-POSITIONAL) 
+     Unrelated items, such as people in a class or a hand of cards. 
+     SEQUENCE(LINEAR) 
+     One-to-one relationship, as in a printer queue, ring LAN, or a line at the deli. 
+     TREE(HIERARCHICAL) 
+     One-to-many relationship, as in a family tree, organization chart, expression tree, or folders and files in a file system. 
+     GRAPH(NETWORK) 
+     Many-to-many relationship, as in a road map, schedule, belief network, or communication net. 
+  Operations common to most collections include 
+   Creation and destruction 
+   Adding, removing, replacing, and searching for elements 
+   Getting the size, or figuring out if it is empty or full 
+   Enumeration (traversal) 
+   Equality testing 
+   Cloning 
+   Serializing 
+  Data Structures 
+  A data structure is an arrangement of data for the purpose of being able to store and retrieve information. Usually a data structure is some physical representation of an ADT. 
+

@@ -1,0 +1,44 @@
+Long short-term memory (LSTM) is a recurrent neural network (RNN) architecture (an artificial neural network) published in 1997 by Sepp Hochreiter and Jürgen Schmidhuber. Like most RNNs, an LSTM network is universal in the sense that given enough network units it can compute anything a conventional computer can compute, provided it has the proper weight matrix, which may be viewed as its program. Unlike traditional RNNs, an LSTM network is well-suited to learn from experience to classify, process and predict time series when there are very long time lags of unknown size between important events. This is one of the main reasons why LSTM outperforms alternative RNNs and Hidden Markov Models and other sequence learning methods in numerous applications. For example, LSTM achieved the best known results in unsegmented connected handwriting recognition, and in 2009 won the ICDAR handwriting competition. LSTM networks have also been used for automatic speech recognition, and were a major component of a network that in 2013 achieved a record 17.7% phoneme error rate on the classic TIMIT natural speech dataset.
+
+
+== Architecture ==
+
+An LSTM network is an artificial neural network that contains LSTM blocks instead of, or in addition to, regular network units. An LSTM block may be described as a "smart" network unit that can remember a value for an arbitrary length of time. An LSTM block contains gates that determine when the input is significant enough to remember, when it should continue to remember or forget the value, and when it should output the value.
+A typical implementation of an LSTM block is shown to the right. The four units shown at the bottom of the figure are sigmoid units , where s is some squashing function, such as the logistic function. The left-most of these units computes a value which is conditionally fed as an input value to the block's memory. The other three units serve as gates to determine when values are allowed to flow into or out of the block's memory. The second unit from the left (on the bottom row) is the "input gate". When it outputs a value close to zero, it zeros out the value from the left-most unit, effectively blocking that value from entering into the next layer. The third unit from the left is the "forget gate". When it outputs a value close to zero, the block will effectively forget whatever value it was remembering. The right-most unit (on the bottom row) is the "output gate". It determines when the unit should output the value in its memory. The units containing the  symbol compute the product of their inputs (). These units have no weights. The unit with the  symbol computes a linear function of its inputs (). The output of this unit is not squashed so that it can remember the same value for many time-steps without the value decaying. This value is fed back in so that the block can "remember" it (as long as the forget gate allows). Typically, this value is also fed into the 3 gating units to help them make gating decisions.
+
+
+== Training ==
+To minimize LSTM's total error on a set of training sequences, iterative gradient descent such as backpropagation through time can be used to change each weight in proportion to its derivative with respect to the error. A major problem with gradient descent for standard RNNs is that error gradients vanish exponentially quickly with the size of the time lag between important events, as first realized in 1991. With LSTM blocks, however, when error values are back-propagated from the output, the error becomes trapped in the memory portion of the block. This is referred to as an "error carousel", which continuously feeds error back to each of the gates until they become trained to cut off the value. Thus, regular backpropagation is effective at training an LSTM block to remember values for very long durations.
+LSTM can also be trained by a combination of artificial evolution for weights to the hidden units, and pseudo-inverse or support vector machines for weights to the output units. In reinforcement learning applications LSTM can be trained by policy gradient methods, evolution strategies or genetic algorithms.
+
+
+== Applications ==
+Applications of LSTM include:
+Robot control
+Time series prediction
+Speech recognition
+Rhythm learning
+Music composition
+Grammar learning
+Handwriting recognition
+Human action recognition
+Protein Homology Detection
+
+
+== See also ==
+Artificial neural network
+Prefrontal Cortex Basal Ganglia Working Memory (PBWM)
+Recurrent neural network
+Time series
+Long-term potentiation
+
+
+== References ==
+
+
+== External links ==
+Recurrent Neural Networks with over 30 LSTM papers by Jürgen Schmidhuber's group at IDSIA
+Gers PhD thesis on LSTM networks.
+Fraud detection paper with two chapters devoted to explaining recurrent neural networks, especially LSTM.
+Paper on a high-performing extension of LSTM that has been simplified to a single node type and can train arbitrary architectures.
+Tutorial: How to implement LSTM in python with theano

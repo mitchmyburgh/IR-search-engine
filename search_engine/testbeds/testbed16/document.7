@@ -1,0 +1,84 @@
+9 Worst Cloud Security Threats
+Leading cloud security group lists the "Notorious Nine" top threats to cloud computing in 2013; most are already known but defy 100% solution.
+Shadow IT is a great thing until it runs into the security of cloud computing. All too often line-of-business users are establishing applications and moving data into the cloud without understanding all the security implications.
+
+The Cloud Security Alliance has put together a list of the nine most prevalent and serious security threats in cloud computing. Many of them relate in one way or another to the weaknesses implicit in Shadow IT.
+
+The alliance bills its list as the "Notorious Nine: Cloud Computing Threats in 2013." The CSA itself was formed in 2008 on the heels of the Information Systems Security Association CISO Forum in Las Vegas. Jim Reavis, a well-known security researcher and author, issued a call for action to secure the cloud at the event, leading to the founding of the organization.
+
+The report was released in February and was composed by a group within the alliance, including co-chairs Rafal Los of HP, Dave Shackleford of Voodoo Security, and Bryan Sullivan of Microsoft. They were assisted by staff members Luciano Santos, research director; Evan Scoboria, webmaster; Kendall Scoboria, graphic designer; Alex Ginsburg, copywriter; and John Yeoh, research analyst.
+
+Here are the CSA's biggest concerns.
+
+1. Data Breaches
+The data breach at Target, resulting in the loss of personal and credit card information of up to 110 million individuals, was one of a series of startling thefts that took place during the normal processing and storage of data. "Cloud computing introduces significant new avenues of attack," said the CSA report authors. The absolute security of hypervisor operation and virtual machine operations is still to be proved. Indeed, critics question whether such absolute security can exist. The report's writers said there's lab evidence -- though none known in the wild -- that breaches via hypervisors and virtual machines may occur eventually.
+
+Researchers at the University of Wisconsin, security software firm RSA, and the University of North Carolina cited evidencein November 2012 that it's possible for a user on one virtual machine to listen for activity that signals the arrival of an encryption key on another VM on the same host. It's called the "side channel timing exposure," as was previously reported by InformationWeek.
+
+"It's every CIO's worst nightmare: the organization's sensitive internal data falls into the hands of their competitors," the report said.
+
+[Want to learn more about how cloud security needs to be structured? See Cloud Security Needs More Layers: HyTrust.]
+
+So far, the largest breaches haven't involved any such advanced techniques, which remain for the most part lab experiments. But the possibility still acts as a brake on what is looking like broad enterprise adoption of cloud computing. Clouds represent concentrations of corporate applications and data, and if any intruder penetrated far enough, who knows how many sensitive pieces of information will be exposed. "If a multitenant cloud service database is not properly designed, a flaw in one client's application could allow an attacker access not only to that client's data, but every other client's data as well," the report concluded.
+
+"Unfortunately, while data loss and data leakage are both serious threats to cloud computing, the measures you put in place to mitigate one of these threats can exacerbate the other," the report said. Encryption protects data at rest, but lose the encryption key and you've lost the data. The cloud routinely makes copies of data to prevent its loss due to an unexpected die off of a server. The more copies, the more exposure you have to breaches.
+
+2. Data Loss
+A data breach is the result of a malicious and probably intrusive action. Data loss may occur when a disk drive dies without its owner having created a backup. It occurs when the owner of encrypted data loses the key that unlocks it. Small amounts of data were lost for some Amazon Web Service customers as its EC2 cloud suffered "a remirroring storm" due to human operator error on Easter weekend in 2011. And a data loss could occur intentionally in the event of a malicious attack.
+
+The alliance cited the case of Mat Honan, a writer for Wired magazine, who in the summer of 2012 found an intruder had broken into his Gmail, Twitter, and Apple accounts and deleted all the baby pictures of his 18-month old daughter.
+
+
+"For both consumers and businesses, the prospect of permanently losing one's data is terrifying," the report acknowledged. There are many techniques to prevent data loss. They occur anyway.
+
+3. Account Or Service Traffic Hijacking
+Account hijacking sounds too elementary to be a concern in the cloud, but CSA says it is a problem. Phishing, exploitation of software vulnerabilities such as buffer overflow attacks, and loss of passwords and credentials can all lead to the loss of control over a user account. An intruder with control over a user account can eavesdrop on transactions, manipulate data, provide false and business-damaging responses to customers, and redirect customers to a competitor's site or inappropriate sites.
+
+If your account in the cloud is hijacked, it can be used as a base by an attacker to use the power of your reputation to enhance himself at your expense. The CSA said Amazon.com's wireless retail site experienced a cross-site scripting attack in April 2010 that allowed the attackers to hijack customer credentials as they came to the site. In 2009, it said, "numerous Amazon systems were hijacked to run Zeus botnet nodes." The report doesn't detail what the nodes did, but they were known in 2007 for putting malware on the US Department of Transportation website and in 2009 for putting malware on NASA's and the Bank of America's sites. The compromised EC2 nodes were detected by security firm Prevx, which notified Amazon and they were promptly shutdown.
+
+If credentials are stolen, the wrong party has access to an individual's accounts and systems. A service hijacking lets an intruder into critical areas of a deployed service with the possibility of "compromising the confidentiality, integrity, and availability" of those services, the report said.
+
+The alliance offers tips on how to practice defense in depth against such hijackings, but the must-do points are to prohibit the sharing of account credentials between users, including trusted business partners; and to implement strong two-factor authentication techniques "where possible."
+
+4. Insecure APIs
+The cloud era has brought about the contradiction of trying to make services available to millions while limiting any damage all these largely anonymous users might do to the service. The answer has been a public facing application programming interface, or API, that defines how a third party connects an application to the service and providing verification that the third party producing the application is who he says he is.
+
+Leading web developers, including ones from Twitter and Google, collaborated on specifying OAuth, an open authorization service for web services that controls third party access. OAuth became an Internet Engineering Task Force standard in 2010 and Version 2.0 is used for at least some services by
+
+Charles Babcock is an editor-at-large for InformationWeek and author of Management Strategies for the Cloud Revolution, a McGraw-Hill book. He is the former editor-in-chief of Digital News, former software editor of Computerworld and former technology editor of Interactive ...
+
+Leading cloud security group lists the "Notorious Nine" top threats to cloud computing in 2013; most are already known but defy 100% solution.
+Twitter, Google, Facebook, and Microsoft. But security experts warn that there is no perfectly secure public API, and OAuth, despite its protections and controls, is subject to breach. Implementation of OAuth-supporting APIs by third party developers can be flawed as well.
+
+"From authentication and access control to encryption and activity monitoring, these interfaces must be designed to protect against both accidental and malicious attempts to circumvent policy," the report said. Such policies prevent unauthorized users from reaching parts of applications that are not part of the public service or restrict users to operations that match their privilege level. But layers are added to APIs to reach value-added services and increasing complexity adds to the possibility that some exposure exists. Security-conscious APIs offer many protections, but lapses in OAuth use and other API implementations are bound to occur.
+
+"Reliance on a weak set of interfaces and APIs exposes organizations to a variety of security issues related to confidentiality, integrity, availability and accountability," the report said.
+
+5. Denial Of Service
+Denial of service attacks are an old disrupter of online operations, but they remain a threat nevertheless. The assault by hundreds of thousands or millions of automated requests for service has to be detected and screened out before it ties up operations, but attackers have improvised increasingly sophisticated and distributed ways of conducting the assault, making it harder to detect which parts of the incoming traffic are the bad actors versus legitimate users.
+
+For cloud customers, "experiencing a denial-of-service attack is like being caught in rush-hour traffic gridlock: there's no way to get to your destination, and nothing you can do about it except sit and wait," according to the report. When a denial of service attacks a customer's service in the cloud, it may impair service without shutting it down, in which case the customer will be billed by his cloud service for all the resources consumed during the attack.
+
+Persistent denial of service attacks may make it "too expensive for you to run [your service] and you'll be forced to take it down yourself," the report said.
+
+6. Malicious Insiders
+With the Edward Snowden case and NSA revelations in the headlines, malicious insiders might seem to be a common threat. If one exists inside a large cloud organization, the hazards are magnified. One tactic cloud customers should use to protect themselves is to keep their encryption keys on their own premises, not in the cloud.
+
+"If the keys are not kept with the customer and are only available at data-usage time, the system is still vulnerable to malicious insider attack." Systems that depend "solely on the cloud service provider for security are at great risk" from a malicious insider, the report said.
+
+7. Abuse Of Cloud Services
+Cloud computing brings large-scale, elastic services to enterprise users and hackers alike. "It might take an attacker years to crack an encryption key using his own limited hardware. But using an array of cloud servers, he might be able to crack it in minutes," the report noted. Or hackers might use cloud servers to serve malware, launch DDoS attacks, or distribute pirated software.
+
+Responsibility for use of cloud services rests with service providers, but how will they detect inappropriate uses? Do they have clear definitions of what constitutes abuse? How will it be prevented in the future if it occurs once? The report left resolution of the issue up in the air. But clearly, cloud customers will need to assess service provider behavior to see how effectively they respond.
+
+8. Insufficient Due Diligence
+"Too many enterprises jump into the cloud without understanding the full scope of the undertaking," said the report. Without an understanding of the service providers' environment and protections, customers don't know what to expect in the way of incident response, encryption use, and security monitoring. Not knowing these factors means "organizations are taking on unknown levels of risk in ways they may not even comprehend, but that are a far departure from their current risks," wrote the authors.
+
+Chances are, expectations will be mismatched between customer and service. What are contractual obligations for each party? How will liability be divided? How much transparency can a customer expect from the provider in the face of an incident?
+
+Enterprises may push applications that have internal on-premises network security controls into the cloud, where those network security controls don't work. If enterprise architects don't understand the cloud environment, their application designs may not function with proper security when they're run in a cloud setting, the report warned.
+
+9. Shared Technology
+In a multi-tenant environment, the compromise of a single component, such as the hypervisor, "exposes more than just the compromised customer; rather, it exposes the entire environment to a potential of compromise and breach," the report said. The same could be said other shared services, including CPU caches, a shared database service, or shared storage.
+
+The cloud is about shared infrastructure, and a misconfigured operating system or application can lead to compromises beyond their immediate surroundings. In a shared infrastructure, the CSA recommend an in-depth defensive strategy. Defenses should apply to the use of compute, storage, networking, applications, and user access. Monitoring should watch for destructive moves and behaviors.

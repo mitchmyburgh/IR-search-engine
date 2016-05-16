@@ -1,0 +1,32 @@
+SOA Platforms & Middleware
+
+INTRODUCTION TO SOA AS A PLATFORM
+
+When it comes to a SOA platform, the key to a successful separation is to define the virtual platform that’s equally relevant to numerous real platforms. The virtual platform’s objective is to allow the services and implementation to separate, completely if possible. This will enable the components which are built on the different implementation platforms to provide services which won’t have implementation dependency.
+
+WHAT THE PLATFORM DOES
+
+This virtual SOA platform makes up a blueprint that is going to cover the implementation and development platforms. The blueprint is what provides the guidance on the implementation and development of the applications to be sure that the published services are conforming to the exact same group of the structural principles that relate to the consumer and management view of those services.
+
+PLATFORM COMPONENTS
+
+When a group of various applications are all able to share a structure together, and where those relationships between the structure parts are exactly the same, this might give something known as a common architectural style. There may be different ways that the style is implemented: it could be a technical environment or sets of practices, frameworks, or policies. The examples of platform components of virtual platforms include:
+
+Consumer environment
+Host environment
+Middleware
+Assembly and Integration environment
+Asset management
+Development environment
+Discovery & Publishing
+Management at service level
+Security infrastructure
+Measurement & monitoring
+Failure & Diagnostics
+Subscriber/Consumer management
+Protocols for web service
+Identity management
+Certification
+Versioning & Deployment
+ 
+Hopefully this has given you a better understanding of the SOA platform and what it can offer to a business. One of the best providers of the platform and SOA middleware is Apprenda. They are one of the best suppliers of business solutions such as SOA middleware and other things that can help your business to run easily and smoothly.

@@ -1,0 +1,26 @@
+Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 'search key'[1]) and explores the neighbor nodes first, before moving to the next level neighbors.
+
+BFS was invented in the late 1950s by E. F. Moore, who used it to find the shortest path out of a maze, and discovered independently by C. Y. Lee as a wire routing algorithm (published 1961).
+
+This non-recursive implementation is similar to the non-recursive implementation of depth-first search, which is used for binary tree traversal and topological sort but differs from it in two ways:
+-it uses a queue instead of a stack and
+-it checks whether a vertex has been discovered before enqueueing the vertex rather than delaying this check until the vertex is dequeued from the queue.
+
+The distance attribute of each vertex (or node) is needed for example when searching for the shortest path between nodes in a graph. At the beginning of the algorithm, the distance of each vertex is set to INFINITY, which is just a word that represents the fact that a node has not been reached yet, and therefore it has no distance from the starting vertex. We could have used other symbols, such as -1, to represent this concept.
+
+The parent attribute of each vertex can also be useful to access the nodes in a shortest path, for example by backtracking from the destination node up to the starting node, once the BFS has been run, and the predecessors nodes have been set.
+
+The NIL is just a symbol that represents the absence of something, in this case it represents the absence of a parent (or predecessor) node; sometimes instead of the word NIL, words such as null, none or nothing can also be used.
+
+Note that the word node is usually interchangeable with the word vertex.
+
+Breadth-first search produces a so-called breadth first tree.
+
+Breadth-first search can be used to solve many problems in graph theory, for example:
+Copying garbage collection, Cheney's algorithm
+Finding the shortest path between two nodes u and v, with path length measured by number of edges (an advantage over depth-first search)[10]
+Testing a graph for bipartiteness
+(Reverse) Cuthill–McKee mesh numbering
+Ford–Fulkerson method for computing the maximum flow in a flow network
+Serialization/Deserialization of a binary tree vs serialization in sorted order, allows the tree to be re-constructed in an efficient manner.
+Construction of the failure function of the Aho-Corasick pattern matcher.

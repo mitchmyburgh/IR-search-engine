@@ -1,0 +1,21 @@
+In computer science, an implicit data structure stores very little information other than the main or required data. These storage schemes retain no pointers, represent a file of n k-key records as an n by k array. In implicit data structures, the only structural information is to allow the array to grow and shrink. It is called "implicit" because the order of the elements carries meaning. Another term used interchangeably is space efficient. Definitions of “very little” are vague and can mean from O(1) to O(log n) extra space. Everything is accessed in-place, by reading bits at various positions in the data. To achieve memory-optimal coding, appropriate data items use bits instead of bytes. Implicit data structures are also succinct data structures.
+
+
+== Efficiency concerns ==
+Implicit data structures are designed to improve main memory utilization, concomitantly reducing access to slower storage. A greater fraction of data in an implicit data structure can fit in main memory, reducing administrative processing. Implicit data structures can improve cache-efficiency and thus running speed, especially if the method used improves locality of reference.
+
+
+== Weighted element ==
+For presentation of elements with different weights, several data structures are required. The structure uses one more location besides those required for element values. The first structure supports worst case search time in terms of rank of weight of elements with respect to set of weights. If the elements are drawn from uniform distribution, then variation of this structure will take average time. The same result obtains for the data structures in which the intervals between consecutive values have access probabilities.
+
+
+== Examples ==
+Examples of implicit data structures include:
+Ahnentafel
+Binary heap
+Beap
+Null-terminated string
+
+
+== Further reading ==
+See publications of Hervé Brönnimann, J. Ian Munro, Greg Frederickson

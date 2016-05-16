@@ -1,0 +1,195 @@
+Code Review Stack Exchange is a question and answer site for peer programmer code reviews. It's 100% free, no registration required. 
+Here's how it works: 
+Anybody can ask a question  
+Anybody can answer  
+The best answers are voted up and rise to the top  
+
+Given a binary tree, it's quite common to perform some operation on all nodes while traversing pre-order, in-order, post-order or level-order, depending on the task at hand. For example you might want to extract sorted elements from a binary search tree, for which in-order traversal is handy. Or do a breadth first search to find the shortest path to an element from the root, for which level-order traversal is handy. 
+           Given a TreeNode defined as: 
+           public class TreeNode {
+    public final T value;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(T x) {
+        value = x;
+    }
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
+}
+           The utility class to generate the various iterators: 
+           package com.janosgyerik.examples.tree.binarytree;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+public class Iterators {
+    private Iterators() {
+        // utility class, forbidden constructor
+    }
+    public static &lt;T&gt; Iterator&lt;T&gt; preOrderIterator(TreeNode&lt;T&gt; root) {
+        return new PreOrderIterator&lt;&gt;(root);
+    }
+    public static &lt;T&gt; Iterator&lt;T&gt; inOrderIterator(TreeNode&lt;T&gt; root) {
+        return new InOrderIterator&lt;&gt;(root);
+    }
+    public static &lt;T&gt; Iterator&lt;T&gt; postOrderIterator(TreeNode&lt;T&gt; root) {
+        return new PostOrderIterator&lt;&gt;(root);
+    }
+    public static &lt;T&gt; Iterator&lt;T&gt; levelOrderIterator(TreeNode&lt;T&gt; root) {
+        return new LevelOrderIterator&lt;&gt;(root);
+    }
+    private static class PreOrderIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+        private final Stack&lt;TreeNode&lt;T&gt;&gt; stack = new Stack&lt;&gt;();
+        private PreOrderIterator(TreeNode&lt;T&gt; root) {
+            if (root != null) {
+                stack.push(root);
+            }
+        }
+        @Override
+        public boolean hasNext() {
+            return !stack.isEmpty();
+        }
+        @Override
+        public T next() {
+            TreeNode&lt;T&gt; node = stack.pop();
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            return node.value;
+        }
+    }
+    private static class InOrderIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+        private Stack&lt;TreeNode&lt;T&gt;&gt; stack = new Stack&lt;&gt;();
+        private InOrderIterator(TreeNode&lt;T&gt; root) {
+            moveToLeftMost(root);
+        }
+        private void moveToLeftMost(TreeNode&lt;T&gt; node) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+        }
+        @Override
+        public boolean hasNext() {
+            return !stack.isEmpty();
+        }
+        @Override
+        public T next() {
+            TreeNode&lt;T&gt; current = stack.pop();
+            moveToLeftMost(current.right);
+            return current.value;
+        }
+    }
+    private static class PostOrderIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+        private Stack&lt;TreeNode&lt;T&gt;&gt; stack = new Stack&lt;&gt;();
+        private PostOrderIterator(TreeNode&lt;T&gt; root) {
+            moveToNextLeaf(root);
+        }
+        private void moveToNextLeaf(TreeNode&lt;T&gt; node) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left != null ? node.left : node.right;
+            }
+        }
+        @Override
+        public boolean hasNext() {
+            return !stack.isEmpty();
+        }
+        @Override
+        public T next() {
+            TreeNode&lt;T&gt; current = stack.pop();
+            if (!stack.isEmpty()) {
+                TreeNode&lt;T&gt; parent = stack.peek();
+                if (parent.right != current) {
+                    moveToNextLeaf(parent.right);
+                }
+            }
+            return current.value;
+        }
+    }
+    private static class LevelOrderIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+        private final Queue&lt;TreeNode&lt;T&gt;&gt; queue = new LinkedList&lt;&gt;();
+        private LevelOrderIterator(TreeNode&lt;T&gt; root) {
+            queue.add(root);
+        }
+        @Override
+        public boolean hasNext() {
+            return !queue.isEmpty();
+        }
+        @Override
+        public T next() {
+            TreeNode&lt;T&gt; current = queue.poll();
+            if (current.left != null) {
+                queue.add(current.left);
+            }
+            if (current.right != null) {
+                queue.add(current.right);
+            }
+            return current.value;
+        }
+    }
+}
+           Unit tests: 
+           package com.janosgyerik.examples.tree.binarytree;
+import org.junit.Test;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import static org.junit.Assert.*;
+public class IteratorsTest {
+    // example tree from http://en.wikipedia.org/wiki/Tree_traversal
+    /*
+            F
+        B       G
+      A   D       I
+         C E     H
+          */
+    private final TreeNode&lt;Character&gt; root;
+    public IteratorsTest() {
+        root = new TreeNode&lt;&gt;('F');
+        root.left = new TreeNode&lt;&gt;('B');
+        root.left.left = new TreeNode&lt;&gt;('A');
+        root.left.right = new TreeNode&lt;&gt;('D');
+        root.left.right.left = new TreeNode&lt;&gt;('C');
+        root.left.right.right = new TreeNode&lt;&gt;('E');
+        root.right = new TreeNode&lt;&gt;('G');
+        root.right.right = new TreeNode&lt;&gt;('I');
+        root.right.right.left = new TreeNode&lt;&gt;('H');
+    }
+    static &lt;T&gt; List&lt;T&gt; iterateToList(Iterator&lt;T&gt; iterator) {
+        List&lt;T&gt; list = new LinkedList&lt;&gt;();
+        while (iterator.hasNext()) {
+            list.add(iterator.next());
+        }
+        return list;
+    }
+    @Test
+    public void testPreOrderIterator() {
+        Iterator&lt;Character&gt; iterator = Iterators.preOrderIterator(root);
+        assertEquals(Arrays.asList('F', 'B', 'A', 'D', 'C', 'E', 'G', 'I', 'H'), iterateToList(iterator));
+    }
+    @Test
+    public void testInOrderIterator() {
+        Iterator&lt;Character&gt; iterator = Iterators.inOrderIterator(root);
+        assertEquals(Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'), iterateToList(iterator));
+    }
+    @Test
+    public void testPostOrderIterator() {
+        Iterator&lt;Character&gt; iterator = Iterators.postOrderIterator(root);
+        assertEquals(Arrays.asList('A', 'C', 'E', 'D', 'B', 'H', 'I', 'G', 'F'), iterateToList(iterator));
+    }
+    @Test
+    public void testLevelOrderIterator() {
+        Iterator&lt;Character&gt; iterator = Iterators.levelOrderIterator(root);
+        assertEquals(Arrays.asList('F', 'B', 'G', 'A', 'D', 'I', 'C', 'E', 'H'), iterateToList(iterator));
+    }
+}
+
+I'm looking for a review of all aspects of all the above code. 
+

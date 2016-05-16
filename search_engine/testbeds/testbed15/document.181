@@ -1,0 +1,83 @@
+﻿A (Spotty) History and Who's Who of Computer Graphics
+
+Matthew Ward, WPI CS Department
+Introduction
+
+The impetus for this project occurred in a recent advanced graphics class, when I mentioned a particular algorithm attributed to Jim Blinn. One student innocently asked "who is Jim Blinn?" Well, after a moment of shock, I came to realize that many people working in graphics really don't have a perspective on the history of the field or who the key players are/have been (this is true, I'm sure, in most disciplines). Thus, I decided to create a brief Web-based history of the computer graphics field, which hopefully will evolve and become more complete in time. I freely admit that the information contained is not guaranteed to be correct, and welcome any additions, corrections, and embellishments.
+The Events
+
+The 1960's
+
+Computer Graphics term coined by William Fetter, Boeing (1960).
+First computer animated film (Two-Gyro Gravity-Gradient Attitude Control System, by Edward Zajak, Bell Labs) (1961).
+First computer animation language (MACS), by Larry Breed, Stanford University (1961) [Thanks to Larry Tesler].
+First public performance of a computer animation, by Larry Breed and Earl Boebert, Stanford University (1961) [Thanks to Larry Tesler].
+First video game (Spacewar) developed by Steve Russell at MIT (1961).
+Sketchpad, by Ivan Sutherland, MIT - first extensive interactive drawing program (1963).
+First computer model of a human figure, by William Fetter, Boeng, for use in the study of cockpit design (1964).
+Computer animation language (BEFLIX), by Ken Knowlton, Bell Labs (1965).
+Jack Bresenham develops efficient algorithm to scan convert lines (1965).
+First computer-generated art show, Stuttgart (1965).
+Ivan Sutherland creates first head-mounted display (1966).
+Ralph Baer develops first home video game (Odyssey) which allowed users to move points around a screen (1966).
+Scan-line HSR algorithm developed by Wylie, Romney, Evans, and Erdahl (1967).
+Ray tracing invented by Appel (1968).
+First frame buffer built (3 bits), at Bell Labs (1969).
+Area subdivision algorithm developed by Warnock (1969).
+The 1970's
+Intensity interpolated shading developed by Gouraud (1971).
+Goldstein and Nagel perform first ray tracing using Boolean set operations (the basis of Constructive Solid Geometry) (1971).
+First 8-bit frame buffer (with color map) built by Richard Shoup, Xerox PARC (1972). Evans and Sutherland started marketing frame buffers in 1973-74, with first ones sold to NYIT.
+Depth-sorting developed by Newell, Newell, and Sancha (1972).
+Westworld debuts - first significant entertainment film which employed computer animation (1973).
+Ed Catmull pioneers texture mapping on curved surfaces (1974).
+Sutherland and Hodgman develop a polygon clipping algorithm (1974).
+Phong Bui-Tuong develops specular illumination model and normal interpolation shading (1975).
+Jim Blinn introduces environmental mapping (1976).
+Frank Crow develops solutions to the aliasing problem (1977).
+Jack Bresenham develops efficient algorithm to scan convert circles (1977).
+Jim Blinn introduces bump mapping (1978).
+Cyrus and Beck develop parametric line clipping algorithm (1978).
+First synthesis of rendering transparent surfaces, by Kay and Greenberg (1979).
+The 1980's
+Turner Whitted creates a general ray tracing paradigm which incorporates reflection, refraction, antialiasing, and shadows (1980).
+TRON released by Disney films, containing 15 minutes and 235 scenes of computer generated images. Companies involved were MAGI, Triple I, Digital Effects, and Robert Abel and Associates (1982).
+Octrees introduced as a mechanism for geometric modeling by Meager (1982).
+Silicon Graphics is founded by James Clark (1982).
+James Blinn wins first SIGGRAPH Computer Graphics Achievement Award (1983).
+Particle systems introduced by William Reeves (1983).
+Radiosity introduced by Goral, Torrance, Greenberg, and Battaile (1984).
+Liang and Barsky develop efficient clipping algorithm for rectilinear clipping regions (1984).
+Pixar is bought from Lucasfilm by Steve Jobs (1986).
+Tin Toy wins Academy Award for best animated short film (1989).
+The People
+
+James Blinn - pioneer of texture mapping and light reflection on curved surfaces; planetary fly-bys, educational animations at JPL (1977-88).
+Jack Bresenham - developed efficient algorithms for scan converting lines and curves.
+Loren Carpenter - helped develop use of fractals in graphics, major contributor at Pixar.
+Ed Catmull - invented z-buffer and techniques for displaying curved surfaces (1978), invented texture mapping. Developed animation program TWEEN. First president of Pixar (spun off of Lucasfilm in 1986), long-time collaboration with Alvy Ray Smith.
+Robert Cook - developed stochastic sampling, for use in antialiasing and motion blur, invented shade trees.
+Frank Crow - innovations in anti-aliasing and shading algorithms (1977).
+Charles Csuri - did early work in analog transformations on images, created Computer Research Group and Advanced Computing Center for Arts and Design at Ohio State University, co-founded Cranston-Csuri animation firm (1982-87).
+William Fetter - coined term Computer Graphics (1960); first to develop a computer model of a human form (1964).
+Pat Hanrahan - developed RenderMan with Bill Reeves. Prolific contributor to the graphics field, winner of 1995 SIGGRAPH Computer Graphics Achievement Award.
+Ken Knowlton - created the first computer animation language (1965).
+John Lasseter - writer and director for Disney, Lucasfilm and Pixar. VP of Creative Development at Pixar.
+Nelson Max - pioneer in scientific and mathematical visualization at Lawrence Livermore Labs (1977 - present).
+A. Michael Noll - innovations in stereography and multidimensional visualization. Helped coordinate first computer-generated art show (1965).
+Heinz Otto-Peitgen - significant contributor to mathematical visualization, including work in fractals.
+Alvy Ray Smith - major contributor at NYIT and Lucasfilm/Pixar, directed The Adventures of Andre and Wally B., long-time collaboration with Ed Catmull, VP at Pixar, now at Microsoft.
+Ivan Sutherland - developed Sketchpad in 1963, first head-mounted display in 1966, co-founder of Evans and Sutherland.
+Edward Zajak - created first computer animation film in 1961.
+The Companies
+
+Robert Abel and Associates - innovators in early commercial animations, including sexy robot in Brilliance and lead-in to Amazing Stories (1971-86).
+Digital Effects - pioneering computer animation production house, formed by Judson Rosebush and others in 1978.
+Digital Productions - animation firm founded by John Whitney Jr. and Gary Demos, explored use of supercomputing for animation.
+Evans and Sutherland - one of the first computer graphics companies, founded in 1968.
+Information International, Inc. (Triple I) - produced much of early publicly seen animation in 1970's. Talents included Gary Demos, John Whitney Jr., Frank Crow, and James Blinn.
+Pixar - The former computer graphics group from Lucasfilm (not to be confused with Industrial Lights and Magic, which is the special effects group). Purchased by Steve Jobs in 1986, headed by Ed Catmull and Alvy Ray Smith, later joined by Loren Carpenter, William Reeves, and John Lasseter, responsible for genesis effect in Star Trek II, The Adventures of Andre and Wally B., Luxo Jr., Red's Dream, Tin Toy (Academy award, 1988), and Toy Story. Also created Renderman, which won an Academy award in 1993.
+MAGI - early player in computer animation field, formed in 1966 by Phillip Mittelman. Known for using solids and ray tracing rather than polygonal models.
+Pacific Data Images - founded by Carl Rosendahl in 1980, PDI is one of the most successful computer animation production studios to date. Locomotion is one of their more impressive projects.
+Ray Tracing Corporation - first company to use ray tracing for television and film production (1982). SLOW rendering back in the 80's operating on a Convex/XP vector processor (later acquired by Cray). Became multimillion dollar company. Eventually purchased in late 80s for military uses of ray tracing (radar, sonar). [entry courtesy of Greg Passmore]
+Silicon Graphics, Inc. - founded in 1982 by James Clark, SGI has long been the leader in producing low-end to high-end graphics workstations and supercomputers.

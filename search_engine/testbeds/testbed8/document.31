@@ -1,0 +1,11 @@
+Some languages may provide facilities that enumerate all fields of a record, or at least the fields that are references. This facility is needed to implement certain services such as debuggers, garbage collectors, and serialization. It requires some degree of type polymorphism.
+
+In systems with record subtyping, operations on values of record type may also include:
+
+    Adding a new field to a record, setting the value of the new field.
+    Removing a field from a record.
+
+In such settings, a specific record type implies that a specific set of fields are present, but values of that type may contain additional fields. A record with fields x, y, and z would thus belong to the type of records with fields x and y, as would a record with fields x, y, and r. The rationale is that passing an (x,y,z) record to a function that expects an (x,y) record as argument should work, since that function will find all the fields it requires within the record. Many ways of practically implementing records in programming languages would have trouble with allowing such variability, but the matter is a central characteristic of record types in more theoretical contexts.
+Assignment and comparison
+
+Most languages allow assignment between records that have exactly the same record type (including same field types and names, in the same order). Depending on the language, however, two record data types defined separately may be regarded as distinct types even if they have exactly the same fields.

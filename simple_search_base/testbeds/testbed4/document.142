@@ -1,0 +1,127 @@
+3D toolbar overview
+
+The 3D toolbar appears after you click the 3D model with the Hand tool. This action activates the 3D model and plays animations that are set to play when the file is enabled. The 3D toolbar always appears in the area above the upper-left corner of the 3D model and cannot be moved. A small arrow appears to the right of the Rotate tool, which you can click to either hide or expand the toolbar.
+
+You can use the 3D toolbar to zoom in and out, rotate, and pan across the object. Use the Model Tree to hide or isolate parts, or make parts transparent.
+
+You manipulate a 3D model by selecting and dragging various 3D navigation tools. When you navigate in 3D, it helps to think of it as viewing the stationary 3D model from a camera’s perspective. You can rotate, pan (move up, down, or side-to-side), and zoom in or out.
+
+3D navigation tools
+Rotate 
+
+
+
+Turns 3D objects around relative to the screen. How the objects move depends on the starting view, where you start dragging, and the direction in which you drag.
+
+Note:
+You can also use the Hand tool to rotate an object. Ensure that Enable 3D Selection For The Hand Tool is selected in the 3D panel of the Preferences dialog box.
+
+Spin 
+
+
+
+Turns a 3D model in parallel to two fixed axes in the 3D model, the x-axis and the z-axis.
+
+Pan 
+
+
+
+Moves the model vertically and horizontally only. You can also pan with the Hand tool: Ctrl-drag.
+
+Zoom 
+
+
+
+Moves you toward, or away from, objects in the scene when you drag vertically. You can also zoom with the Hand tool by holding down Shift as you drag.
+
+Walk 
+
+
+
+Pivots horizontally around the scene when you drag horizontally. Moves forward or backward in the scene when you drag vertically; maintains a constant elevation level, regardless of how you drag. The Walk tool is especially useful for architectural 3D models. To change the walking speed, change the default display units in the Preferences (3D).
+
+Note:
+The Walk tool is available when you select the Preferences setting that consolidates tools or when you right-click the 3D model and choose Tools > Walk.
+
+Fly
+
+
+
+Navigates through a model while maintaining the surface orientation. Right-click and drag inside the 3D window. The Fly tool moves more slowly the closer you move toward an object. Drag the pointer right or left to turn.
+
+To rotate the camera view, click the left mouse button inside the 3D window and drag to turn the camera view. To return to the starting camera direction, move the mouse back to the initial click point.
+
+Use the mouse scroll wheel to move rapidly backward and forward along the camera view direction. This functionality is useful if you get lost within a model or fly into the surface.
+
+Camera properties
+
+
+
+Defines the camera angle, alignment, and other properties that define the lens through which a 3D model is viewed. Camera properties are components of views but are set independently.
+
+3D Measurement Tool 
+
+
+
+Measures part sizes and distances in the 3D model.
+
+3D toolbar view controls
+Default View 
+
+
+
+Returns to a preset zoom, pan, rotation, and projection mode of the 3D model. Use the Options menu in the View pane of the Model Tree to set a different view as the default. Or use the Manage Views command on the 3D toolbar Views menu to set a different view as the default.
+
+If an object ever moves out of your view, you have, in essence, turned your camera away from the object. Click the Default View icon on the 3D toolbar to move the object back into view.
+
+Views menu
+
+Lists any views defined for the current 3D model.
+
+Toggle Model Tree 
+
+
+
+Opens and hides the Model Tree.
+
+Play/Pause Animation  
+
+
+
+Plays or pauses any JavaScript-enabled animation. The Play/Pause Animation pop-up menu opens a slider that you can drag back and forth to move to different times in the animation sequence.
+
+Use Orthographic/Perspective Projection 
+
+
+
+Toggles between displaying perspective and orthographic projection of the 3D object.
+
+Model Render Mode menu 
+
+
+
+Determines how the 3D shape appears. For an illustrated guide, see Examples of model rendering modes.
+
+Enable Extra Lighting menu 
+
+
+
+Lists the different lighting effects that are available to enhance the illumination of the 3D object. Experiment to get the visual effects you want.
+
+Background Color 
+
+
+
+Opens the color picker, which you can use to select a different color for the space surrounding the 3D object.
+
+Toggle Cross Section 
+
+
+
+Shows and hides cross sections of the object. Click the pop-up menu to open the Cross Section Properties dialog box. For more information, see Create cross sections.
+
+Add Multimedia/3D Comment
+
+
+
+Enables you to add a sticky note to any part of the 3D model. The note stays with the view. See

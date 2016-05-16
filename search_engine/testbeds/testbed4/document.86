@@ -1,0 +1,275 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Polynomial Splines
+Introduction
+In this section, I will have to assume a basic knowledge of calculus. Note that the topic of spline is rather broad, hence only the basics will be covered here. For a more detailed discussion, one can see [5].
+Sometimes we have many control points (10, for example) that we want to use to generate an interpolating polynomial. However, we might not want to use a 10th degree polynomial for several reasons. They're hard to evaluate. They're numerically unstable. They tend to oscillate wildly between control points.
+To resolve this, we make lower degree interpolating polynomials for each section of the curve. Typically, polynomials of degree 1 (lines), 2 (quadratics) or 3 (cubics) are used. Polynomials of degree higher than 5 are unwieldy and also sometimes exhibit undesirable behavior.
+Basic splines
+A spline will be defined by its type and a list of control points of the form {p1, p2, p3, ..., pn} where pi=(xi,yi) some point in 2d space. The type can be a simple line segment joining each control points, or something more complex like a CatmullRom cubic spline. Note that a spline does not necessarily pass through all interpolation points. It is even possible that a spline does not pass through any of the control points. We will examine such cases later.
+We will start by an example spline of degree 1 that interpolates through all control points. An example picture is shown below:
+52
+In the diagram, the points pi are ordered from left to right, and this is what will happen most of the time, though it is not necessary for now.
+The spline is made up of 5 spline segments, which are line segments in this particular case. Let's look at the first segment that goes from p1 to p2. We can easily find the equation of that line using basic algebra. Remember that p1 is the point (x1,y1) and p2 is the point (x2,y2). The spline segment, since it is a line, is of the form y=mx+b. This line segment goes through p1 and p2, hence these two equations have to verify:
+y1=mx1+b
+y2=mx2+b
+We have two equations and two unknowns (m and b), so we can solve for m and b. Note that this equation can be represented in matrix form:
+y1
+y2
+.
+x1
+x2
+1
+1
+m
+b
+This form will be more interesting for higher degree splines, so we will use this notation from now on. Using linear algebra, we can solve to the (m,b) column vector above and we then know the spline segment from p1 to p2. One of the many problems with this spline is that it's not very smooth. How do we express smoothness? We use the principle of continuity.
+A curve is said to be in C1 continuous if its first derivative is continuous. A curve is in C2 if its second derivative is continuous. Generally speaking, a curve in Cj's jth derivative is continuous. For completeness, we let C0 be the family of curves which are continuous.
+Smoothness can be expressed as continuity. The spline we made above is in C0, but not in C1. (Indeed, at control points, the slope changes abruptly, hence the first derivative is not continuous).
+53
+A very important note: all polynomials are in C8, that is, they can be differentiated infinitely many times. Therefore, if our spline is made of one polynomial, it is inherently very smooth. The problem is, splines aren't exactly polynomials, they're polynomial segments glued together. However, if you look only at one segment of the curve, excluding its endpoints, then it's in C8. Therefore, the only thing that might make it less than C8 is what happens at the endpoints of curve segments.
+To illustrate this, we will now create a quadratic spline which is in C1. Since we will be using this spline repeatedly in our examples, we will name it the Zed splineThis is how we define the curve segment from p[i] to p[i+1]:
+1- the quadratic goes through p[i]
+2- the quadratic goes through p[i+1]
+3- at p[i], the slope is the same as whatever the previous spline segment has at that point.
+Assume the previous curve segment was y=A[i]x2+B[i]x+C[i]. Then, the derivative of that curve segment is:
+y'=2A[i]x+B[i]
+And at p[i], the derivative is:
+y'[i]=2A[i]x[i]+B[i]=K (*)
+The new curve segment is y=A[i+1]x2+B[i+1]x+C[i]. It goes through p[i] and p[i+1] hence:
+y[i]=A[i+1]x[i]2+B[i+1]x[i]+C[i+1]
+y[i+1]=A[i+1]x[i+1]2+B[i+1]x[i+1]+C[i+1]
+Its derivative at y[i] is
+y'[i]=2A[i+1]x[i]+B[i+1]=K (K comes from (*))
+We can re-write these three equations as:
+y
+i
+y
+i 1
+K
+.
+x i
+2
+x i 1
+2
+.2 x i
+x i
+x i 1
+1
+1
+1
+0
+A
+i 1
+B i 1
+C i 1 ?
+Then we can solve for the (A,B,C) vector.
+54
+There is still the question of generating the very first spline segment, since there is no such thing as "previous spline segment's slope at p[1]" (we'll have a hard time computing K). One solution is to let the first spline segment be a quadratic that interpolates through p[1], p[2] and p[3] exactly. Then the second curve segment will maintain the same slope as the first curve segment at p[2], and interpolate through p[2] and p[3].
+Parametrized splines
+As of now, our splines are functions, that is, they cannot curl backwards very easily. Infinite slopes are impossible. That and other things lead us to parametric splines.
+Right now, we have y as a function of x. We will now replace this with y a function of t, and x a function of t. Then we plot all points (x,y) for some values of t and we get the desired spline. We use t as a variable name because it can sometimes be useful to think of the spline as an (x,y) point moving in time. For example, a spaceship's movement could possibly be described as (x,y,z)=(f(t),g(t),h(t)), a function of time for each coordinate. The key point here is that this allows us to extend splines to any number of dimensions elegantly.
+The control points are now of the form (x,y,t) or (x,y,z,t), depending on the number of dimensions we want. A parametric quadratic spline segment in 2d, for instance, would be something of the form:
+x=At2+Bt+C
+y=At2+Bt+C
+We just take each component individually and make it a spline as a function of time. For example, if we have the control points (x0,y0,z0,t0) (x1,y1,z1,t1), ..., (xn,yn,zn,tn). Then, we look at x as a function of t, and make it a spline with the control points (x0,t0), (x1,t1), (x2,t2), ..., (xn,tn). We do the same for y as a function of t, with the control points (y0,t0), (y1,t1), ..., (yn,tn), and similarly for z as a function of t.
+Uniform splines
+55
+Uniform splines are a special breed of splines which the control points are regularly spaced in a special way. That is, a spline of the form (x,f(x)) where the control points are (0,y0), (1/(n-1),y1), (2/(n-1),y2), ..., (1,yn) are called uniform. Notice that the control points x components are uniformly distributed between 0 and 1.
+Uniform splines have special uses. When we want to specify an object's position at an instant with a parametric spline, we want to be able to specify the t component exactly. However, when we're more interested in the shape of the spline, the t component matters less and we use uniform splines.
+Now look back at the equation marked ? for the Zed spline a few pages back. In the case of a uniform Zed spline, we can substitute the values x0=0 and x1=1, since there are but two control points. Then we get:
+A
+B
+C
+.
+0
+1
+0
+0
+1
+1
+1
+1
+0
+1 y
+i
+y
+i 1
+K
+=
+0
+1
+0
+0
+1
+1
+1
+1
+0
+1 1
+0
+1
+1
+0
+0
+1
+1
+0
+=M G
+y
+i
+y
+i 1
+K
+A
+B
+C
+.M G
+The column vector G is called the geometry vector. The product of M and G can be viewed as a linear transformation of the vector G, thus the matrix M is called the basis matrix for the Zed spline. A basis matrix completely defines a uniform spline type, and along with a geometry vector, it defines completely a specific spline.
+To illustrate a few additionnal properties, we need a second type of quadratic spline. We will call it the Baker spline, and it is defined by two control points p0 and p1, and a constant J as follows:
+1- The spline interpolates through p0
+2- The spline has a slope of J at p0
+3- The spline has, at x1, a slope of whatever slope the vector p1-p0 has
+Now, let us see what these three constraint imply. First, let us notice that since it is a quadratic spline, it is of the form y=Ax2+Bx+C. Hence, y'=2Ax+B. Then:
+1- means that y0=Ax02+Bx0+C. Since the spline is uniform, x0=0 and y0=C.
+56
+2- means that J=y'(x0) or J=2Ax0+B or J=B
+3- The slope of p1-p0 is m=(y1-y0)/(x1-x0)=(y1-y0)/1. We want m=y'(x1)=y'(1)=2A+B. Hence, y1-y0=2A+B
+Combining these, we find that
+2A+B=y1-y0
+2A=y1-y0-J
+A=y1/2 - y0/2 - J/2
+We can write this in matrix form as:
+A
+B
+C
+.
+1 2
+0
+1
+1 2
+0
+0
+1 2
+1
+0
+y
+0
+y
+1
+J
+N
+1
+2
+0
+1
+1
+2
+0
+0
+1
+2
+1
+0
+N is the basis matrix for the uniform Baker spline. Now, given a specific geometry vector for a Baker spline, maybe we want geometry vector for a Zed spline which will generate the exact same spline. This is computed using a change of basis. Let M be the Zed spline basis matrix, N is the Baker spline basis matrix, V is the geometry vector for the Baker spline and G is the geometry vector for the Zed spline. K is the (A,B,C) vector of the coefficients of the quadratics. Then we have these equations:
+K=MG or G=M-1K
+K=NV
+Therefore,
+G=M-1(NV) or G=(M-1N)V
+Let L=M-1N then
+G=LV
+57
+L is called the transition matrix from Baker spline to Zed spline. This is all nothing but linear algebra. L is a transform from one space to another space, there is nothing more to it.
+Examples
+Here follows an example calculation for one segment of a parametric nonuniform quadratic spline. Note that this spline is not of the Zed type. This is merely a parametric quadratic spline which interpolates through all 3 control points.
+x 1
+x 2
+x 3
+.
+t
+1
+2
+t
+2
+2
+t
+3
+2
+t
+1
+t
+2
+t
+3
+1
+1
+1
+J 1
+J 2
+J 3
+y
+1
+y
+2
+y
+3
+.
+t
+1
+2
+t
+2
+2
+t
+3
+2
+t
+1
+t
+2
+t
+3
+1
+1
+1
+K 1
+K 2
+K 3
+x . J 1
+t
+2 . J 2
+t J 3
+y . K 1
+t
+2 . K 2
+t K 3
+These are all the equations we need. Next, given the control points x1, x2 and x3, y1, y2 and y3 at times t1, t2 and t3, we can solve for J and K.
+J 1
+J 2
+J 3
+.
+t
+1
+2
+t
+2
+2
+t
+3
+2
+t
+1
+t
+2
+t
+3
+1
+1
+1
+1
+x 1
+x 2
+x 3
+Similarly for K. Now let us give ourselves sample control points:
+x ( ) 0 2 1 y ( ) 2 3 5 t ( ) 1 4 5
+x . 5 12

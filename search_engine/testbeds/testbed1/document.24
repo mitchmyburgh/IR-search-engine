@@ -1,0 +1,7 @@
+ASIC_programming_language
+'''ASIC''' is a , a  dialect and  compiler for  systems.  Written by Dave Visti of 80/20 Software, it achieved brief popularity in the 1990s as one of the few BASIC compilers legally available for  from es.  However, ASIC understood only a small subset of the BASIC language, with most versions having little or no support for s, s, and .  These shortcomings are the reason for the software's tongue-in-cheek motto, "ASIC: It's almost BASIC!", Programmer's Corner: TIPI: A Small Programming Language for Small Comp, By Kent Peterson,Area code magic with AC Hunter  (computer program) (On Disk) (evaluation), by George Campbell, COMPUTE! ISSUE 126 / FEBRUARY 1991 / PAGE 86
+Notably, however, ASIC did feature a rudimentary  and an  communications library for writing  and  software, as well not requiring line numbers., Basic is back, by Tom Campbell, COMPUTE! ISSUE 126 / FEBRUARY 1991 / PAGE 64  The last release of ASIC, version 5.00, was more compatible with  and offered a utility to convert GW-BASIC programs to ASIC syntax.
+ASIC allows compiling to a DOS  file or . The low overhead of the COM file format lets ASIC make one of the smallest compiled executables of the , typically 360 bytes.
+==References==
+==External links==
+*

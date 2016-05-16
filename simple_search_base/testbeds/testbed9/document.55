@@ -1,0 +1,101 @@
+
+D.I.C Head
+
+Reputation: 7
+View blog
+Posts:135
+Joined:08-April 09
+Big-O Analysis of Heapsort
+Posted 13 November 2009 - 03:04 PM
+Hello!
+I have an assignment to write a paper analyzing the Big-O notation of a HeapSort class I wrote. I know the notation is nLogn, but I can't seem to find anything to help with breaking it down from there.
+
+The HeapSort works as a combination of a max-heap and a complete binary tree. For the max-heap part, I'm pretty sure that it's the O(n) bit of the analysis, but I don't why. Basically, each node gets compared to its two children a certain number of times, relative to its position in the tree. So in a tree of ten elements, the first one would be compared to its two children once, the tenth one ten times, and the nth one n times. Then in addition, each of those comparisons is followed by logn comparisons until the element falls into place in the tree (if it wasn't on the bottom two rows). And somehow, I'm pretty sure all of that comes out to O(n) comparisons. I have no idea why.
+
+The binary tree part is simpler - the element on top of the heap is switched with the last one, then the new top one is heaped down logn times. So because that happens for each element, it makes nlogn, plus the max-heap equals 2nlogn and just reduces to nlogn.
+
+There you have it, one pitiful confused programmer. I'm happy to post code for any of those parts if it would help, but I warn that it's not much clearer (at least my implementation isn't :) ).
+
+Thank you SOOO much for any help!!!
+
+*Edited: unjustified "Advanced" tag removed 
+This post has been edited by pbl: 13 November 2009 - 07:52 PM
+
+Is This A Good Question/Topic? 0 +
+Reply Icon MultiQuote
+Reply Icon Quote + Reply
+Replies To: Big-O Analysis Of Heapsort
+#2 pbl  Icon User is offline
+
+There is nothing you can't do with a JTable
+member icon
+
+
+Reputation: 8369
+View blog
+Posts:31,956
+Joined:06-March 08
+Re: Big-O Analysis of Heapsort
+Posted 13 November 2009 - 03:36 PM
+I make my PhD at MIT can you send me a thesis ?
+
+Seriously Big-O is more than well documented on the net even in Wikipedia 
+Was This Post Helpful? 0 +-
+Reply Icon MultiQuote
+Reply Icon Quote + Reply
+#3 macosxnerd101  Icon User is online
+
+Games, Graphs, and Auctions
+member icon
+
+
+
+
+
+Reputation: 11761
+View blog
+Posts:44,201
+Joined:27-December 08
+Re: Big-O Analysis of Heapsort
+Posted 13 November 2009 - 03:46 PM
+Pbl is right- Wikipedia is your friend. I found it very helpful and descriptive.
+
+http://en.wikipedia.org/wiki/Heapsort 
+This post has been edited by macosxnerd101: 13 November 2009 - 03:47 PM
+Was This Post Helpful? 0 +-
+Reply Icon MultiQuote
+Reply Icon Quote + Reply
+#4 SayMoi  Icon User is offline
+
+D.I.C Head
+
+Reputation: 7
+View blog
+Posts:135
+Joined:08-April 09
+Re: Big-O Analysis of Heapsort
+Posted 13 November 2009 - 03:51 PM
+Um, ouch.
+
+I wouldn't have come to DIC except as a last resort after several hours all over the place trying to figure it out myself. I understand the HeapSort, and Big O – I just wanted some pointers to bring them together.
+
+Sorry for wasting the forum's time, feel free to close the thread.
+
+Edit: *Finds binary heap wiki page* *Slams forehead* Wow…no idea how I didn't find that before. So sorry. I just now noticed that link – I was looking at Heap and HeapSort but I didn't see the binary version. Apologies! 
+This post has been edited by SayMoi: 13 November 2009 - 04:05 PM
+Was This Post Helpful? 0 +-
+Reply Icon MultiQuote
+Reply Icon Quote + Reply
+#5 pbl  Icon User is offline
+
+There is nothing you can't do with a JTable
+member icon
+
+
+Reputation: 8369
+View blog
+Posts:31,956
+Joined:06-March 08
+Re: Big-O Analysis of Heapsort
+Posted 13 November 2009 - 07:34 PM
+No problem... just don't start again with a new problem :D 

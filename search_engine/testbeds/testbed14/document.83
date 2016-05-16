@@ -1,0 +1,45 @@
+﻿Ontological frameworks 
+Ontology frameworks provide formalisms for 
+building ontologies, but do not provide the 
+contents. Therefore, they should do at least two 
+things: 
+• 
+provide a 
+formal language
+in which the 
+ontologies can be expressed or specified, and 
+• 
+provide some reasoning capabilities, so that an 
+ontology can be demonstrated to be consistent 
+(i.e. free of contradictions, assuming that 
+contradictions indicate modelling mistakes or 
+errors). 
+Given this standpoint, frameworks that do not 
+provide reasoning capabilities are unsatisfactory. 
+Note also that a 
+formal language
+is usually a 
+logical language
+, with clearly specified syntax and 
+semantics, and the logic should be sound, 
+complete, decidable, and hopefully tractable (or 
+tractable in practice). These properties of the 
+logical framework are necessary to obtain 
+reasoning facilities. The most attractive ontology 
+frameworks seem to be the following (see Table 1 
+for a more detailed comparison of the different 
+frameworks): 
+1. the OIL framework based on 
+description 
+logics
+, 
+2. the OntoEdit/OntoBroker framework (F-logic), 
+3. the Ontolingua framework based on the KIF 
+logic. 
+In general, they provide users with tools that simply the development process of ontologies.
+For FOCAL, we have chosen to employ the OIL 
+and RACER frameworks. Ontologies are built 
+using the OilEd ontology editor and verified using 
+FaCT. At run-time, a RACER agent is initialised 
+with the ontology (see section 3.4). 
+

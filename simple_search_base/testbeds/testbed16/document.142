@@ -1,0 +1,37 @@
+The 3 modes of enterprise cloud applications
+February 27, 2015Tim Crawford
+One of the key attributes to a successful cloud deployment is thinking about the strategy holistically. In my post ‘CIOs are getting out of the data center business’, I introduced the idea of a Data Center/ Cloud Spectrum. The spectrum provides one dimension to consider your cloud journey.
+
+The second dimension considers that of the IT portfolio. What are the different classes of applications and their potential disposition? Over the course of working with companies on their cloud journey, the applications generally break out into this classification structure.
+
+IT Portfolio Categories
+
+The three categories are Enterprise Applications, Application Rewrites and Greenfield Development. There are even sub-categories within each of these, but to provide a baseline, we will stick to the top-line categorization.
+
+Enterprise Applications
+
+Enterprise applications are by far the largest contingent of applications within the enterprise portfolio. These encompass everything from the traditional ERP application to custom applications and platforms built before the advent of cloud. Enterprise organizations may have the opportunity to virtualize these applications, but little else. These applications were never designed with cloud in mind. While these applications are technically legacy applications, they will range from an age of 20 years to recent. Regardless of age, the effort to retrofit or change them is not trivial.
+
+Application Rewrites
+
+Application rewrites is a category of applications (Enterprise Applications) that could be re-written to support cloud computing. Even thought just about every enterprise application could technically be rewritten to support cloud, there are a number of hurdles to get there.
+
+Economic and priority challenges are two of the top inhibitors for application rewrites. Even if the will to change is there, there are a myriad of additional reasons that could prevent a full-blown application rewrite. Some examples include risk profile, skillset requirements, application requirements and cultural challenges.
+
+Eventually, many of the applications in the ‘enterprise applications’ category will move to either Software as a Service (SaaS) or into an application rewrite phase. There is a much smaller contingent that will actually retire.
+
+Greenfield development
+
+Greenfield development is probably the most discussed area of opportunity for cloud computing. However, it also represents one of the smallest areas (relatively speaking) of the overall IT portfolio. Over time, this area will grow, but at the expense of the existing enterprise application base.
+
+For established enterprise organizations, this area represents a very different model from web-scale or new organizations. In the case of new organizations or web-scale companies, they have the ability to start from scratch with little or no legacy to contend with. Unfortunately, the traditional enterprise does not have this luxury.
+
+The forked approach
+
+In order to address the varied demands coming to the CIO and enterprise IT organization, a forked approach is needed. First, it is important not to ignore existing enterprise applications. The irony is that many providers, solutions and organizations do this. The reality is that greenfield development is new, sexy and frankly more interesting in many ways. At the same time the traditional enterprise applications cannot be ignored. A holistic, forked approach is needed.
+
+The holistic effort needs to take into account all three categories of demand. That may mean different models and solutions service them for some time. That’s ok. Part of the strategy needs to take into account how to integrate the models short-term and long-term. For some workloads, over time, they may shift to a different delivery method (private cloud -> SaaS).
+
+Planning and execution
+
+Ignoring the shift and full set of requirements is not an option. Disrupt or be disrupted. The key is to develop a clear strategy that is holistic and includes a well thought out execution plan. The change will not happen overnight. Even for organizations that are strongly aligned for change, it still takes time. For those earlier in the process, it will take more time. The sooner you start, the better.

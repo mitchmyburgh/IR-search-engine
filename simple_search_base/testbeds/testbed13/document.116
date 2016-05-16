@@ -1,0 +1,309 @@
+Skip to main content
+
+  * Home
+  * News
+  * Journals
+  * Topics
+  * Careers
+
+Search  Search__
+
+__ __ __
+
+Search  Search__
+
+### Subscribe
+
+  * Renew my subscription
+  * Sign up for alerts
+  * Librarians
+
+.
+
+  * __
+  * __
+  * __
+  * __
+
+  * Authors
+  * Members
+  * Librarians
+  * Advertisers
+
+  * Home
+    * Recent Videos
+    * Latest Podcasts
+    * Photo Galleries
+    * Data Stories Contest
+  * News
+    * Latest News
+    * ScienceInsider
+    * ScienceShots
+    * Sifter
+    * From the Magazine
+    * About News
+    * Quizzes
+  * Journals
+    * Science
+    * Science Advances
+    * Science Immunology
+    * Science Robotics
+    * Science Signaling
+    * Science Translational Medicine
+  * Topics
+    * Hot Topics
+    * Curated Topics
+    * Special Issues
+    * Custom Publishing
+  * Careers
+    * Articles
+    * Find Jobs
+    * Career Resources
+    * Forum
+    * For Employers
+    * Employer Profiles
+    * Graduate Programs
+    * Booklets
+    * Careers Features
+    * About Careers
+  * Search  Search__
+
+#### Share
+
+  * __  
+  * __  
+  * __  
+  * __  
+
+**Quantum annealer.** To solve a problem, D-Wave's chip seeks the lowest energy state of 512 interacting quantum bits, or qubits, fashioned from tiny rings of superconductor.
+
+Courtesy of D-Wave Systems Inc.
+
+# Quantum or not, controversial computer runs no faster than a normal one
+
+By Adrian ChoJun. 19, 2014 , 2:15 PM
+
+The D-Wave computer, marketed as a groundbreaking quantum machine that runs
+circles around conventional computers, solves problems no faster than an
+ordinary rival, a new test shows. Some researchers call the test of the
+controversial device, described online today in _Science_, the fairest
+comparison yet. But D-Wave argues that the computations used in the study were
+too easy to show what its novel chips can do.
+
+"This is likely the most thorough and precise study that has been done on the
+performance of the D-Wave machine," says Helmut Katzgraber, a computational
+physicist at Texas A&amp;M University, College Station, who was not involved
+in the work. However, Colin Williams, a quantum-computer scientist and
+D-Wave’s director of business development, says the problems used as
+benchmarks were "not at all the right choice for probing a quantum speedup."
+
+D-Wave Systems, a startup in Burnaby, Canada, has sold machines to Lockheed
+Martin Corp. and Google. The company claimed an earlier version of its $10
+million machine was 35,500 times faster than an ordinary computer. However, to
+test D-Wave’s machine, Matthias Troyer, a physicist at the Swiss Federal
+Institute of Technology, Zurich, and colleagues didn't just race it against an
+ordinary computer. Instead, they measured how the time needed to solve a
+problem increases with the problem's size. That's key because the whole idea
+behind quantum computing is that the time will grow much more slowly for a
+quantum computer than for an ordinary one. In particular, a full-fledged
+"universal" quantum computer should be able to factor huge numbers ever faster
+than an ordinary computer as the size of the numbers grow.
+
+The D-Wave machine is not a universal quantum computer, however, but a more
+limited "quantum annealer." Its processor consists of a 2D array of quantum
+bits, or qubits, made of superconducting loops that carry electric currents.
+The qubits act like tiny magnets that can point up, down, or—thanks to quantum
+weirdness—both up and down at the same time. Each qubit can interact with
+certain others through linkers that can be programmed so that the qubits can
+lower their energy by pointing either in the same direction or in opposite
+directions. The idea is to encode a problem by specifying the hundreds of
+interactions within the chip and solve it by finding the qubits' lowest energy
+"ground state."
+
+To do that, the machine starts with each qubit in an up-and-down state and
+slowly turns on the interactions. The system then seeks the lowest energy
+state, like a marble rolling across an evolving energy landscape to find the
+deepest valley. In a nonquantum device, the jiggling of thermal energy would
+drive the marble over the terrain to the low spot through a process called
+thermal annealing. In the D-Wave machine, however, the marble supposedly also
+"tunnels" quantum mechanically between the low spots to find the lowest one
+faster. For problems such as pattern recognition or machine learning, that
+might give the quantum machine an edge.
+
+But is the D-Wave chip really quicker than a conventional computer? To find
+out, Troyer and Daniel Lidar, a physicist at the University of Southern
+California in Los Angeles, tested the Lockheed Martin machine against a
+conventional computer programmed to simulate thermal annealing. To keep things
+simple for the D-Wave chip, they didn’t ask it to do practical calculations.
+Instead, they merely set the interactions between qubits randomly and timed
+how long it took the machine to find its ground state.
+
+In spite of that home-field advantage, the D-Wave chip produced no quantum
+speedup. The researchers ran problems for different-sized groups of qubits,
+ranging from the chip's basic unit of eight to its total of 512. The computing
+time for the conventional computer increased exponentially with the number of
+qubits. But so did the time for the D-Wave machine, Troyer says.
+
+Ironically, the test may not be revealing because the problems may have been
+easy for the ordinary computer, too, says Texas A&amp;M's Katzgraber. Choosing
+interactions at random, he explains, typically creates test problems in which
+qubits lock into a low-energy configuration only exactly at zero temperature.
+That means that at any higher temperature, the energy landscape rolls gently
+and thermal annealing can readily coax the system to the solution. Given the
+easiness of the problems for both machines, Katzgraber says, the study is like
+"two world-class skiers racing on the bunny slope."
+
+But some researchers doubt that a quantum annealer will ever produce a useful
+quantum speedup. Theory strongly suggests that, unlike a universal quantum
+computer, it can't, says Umesh Vazirani, a computer scientist at the
+University of California, Berkeley. "I would bet that there's not a speedup,"
+he says. Hartmut Neven, director of engineering at Google, counters that he is
+"convinced that we will be able to find problem classes for which a next-
+generation quantum annealer will outperform any classical algorithm."
+
+Posted in:
+
+  * Physics
+  * Technology
+
+###  Adrian Cho
+
+Staff Writer
+
+  * __ Email Adrian
+
+## More from News
+
+  * ##  Video: Robot surgeons make a big advance
+
+  * ##  The gene editor CRISPR won’t fully fix sick people anytime soon. Here’s why
+
+  * ##  Critics complain as U.S. shops in Iran's nuclear bazaar
+
+_Please note that, in an effort to combat spam, comments with hyperlinks will
+not be published._
+
+View the discussion thread.
+
+### Follow News from Science
+
+  * __
+  * __
+  * __
+
+## Science Insider
+
+  * ##  Could shrinking NSF’s beloved _Indicators_ be a boon to researchers?
+
+By Jeffrey MervisMay. 4, 2016
+
+  * ##  World’s largest chimpanzee research facility to release its chimps
+
+By David GrimmMay. 4, 2016
+
+  * ##  Science gets little attention in Australian budget
+
+By Leigh DaytonMay. 4, 2016
+
+  * ##  Zika vaccine efficacy trials could start in 2017
+
+By Jon CohenMay. 3, 2016
+
+  * ##  Pedophile drug trial extends crowdfunding effort after falling short
+
+By Tania RabesandratanaMay. 3, 2016
+
+More _Science_Insider
+
+## Sifter
+
+##  The downfall of Moore’s law
+
+May. 4, 2016
+
+  * ##  Leopards have lost three-quarters of their range
+
+May. 4, 2016
+
+  * ##  South Korean Olympians to compete in mosquito-repellant uniforms
+
+May. 4, 2016
+
+  * ##  Four plant species named for James Bond
+
+May. 4, 2016
+
+  * ##  Bison set to become U.S. national mammal
+
+May. 3, 2016
+
+More Sifter
+
+Tweets by @NewsfromScience
+
+## Science
+
+### 29 April 2016
+
+Vol 352, Issue 6285
+
+  * ### Computers/Mathematics
+
+The frustrated science student behind Sci-Hub
+
+  * ### Computers/Mathematics
+
+Who’s downloading pirated papers? Everyone
+
+  * ### Science and Policy
+
+Mexico struggles to woo expat genome jocks
+
+  * ### Immunology
+
+Scandal clouds China's global vaccine ambitions
+
+  * ### Astronomy
+
+Kepler enlists relativity to find planets
+
+  * ### Scientific Community
+
+Saying no to harassment
+
+Table of Contents
+
+  * About us
+    * Journals
+    * Leadership
+    * Team members
+    * Work at AAAS
+  * Advertise
+    * Advertising kits
+    * Custom publishing
+  * For subscribers
+    * Site license info
+    * For members
+  * International
+    * Chinese
+    * Japanese
+  * Help
+    * Access &amp; subscriptions
+    * Reprints &amp; permissions
+    * Contact us
+  * Stay Connected
+    * __
+    * __
+    * __
+    * __
+
+(C) 2016 American Association for the Advancement of Science. All rights
+Reserved. AAAS is a partner of HINARI, AGORA, OARE, PatientInform, CHORUS,
+CLOCKSS, CrossRef and COUNTER.
+
+  * Terms of Service
+  * Privacy Policy
+  * Copyright
+
+  *[RSS]: Really Simple Syndication
+

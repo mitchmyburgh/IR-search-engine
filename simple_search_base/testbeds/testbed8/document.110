@@ -1,0 +1,8 @@
+Comparison to other structures[edit]
+Both AVL trees and red-black trees are self-balancing binary search trees and they are very similar mathematically. The operations to repair the balance of the trees are different, but both take O(1) at one level. However, with both trees, there is a certain chance = 0.5 that the balancing rules will be violated at the next or next but one level higher up to the root. Thus, on the average, where the number of levels being repaired is ˜ 1 or 2, rebalancing consumes O(1), and in the worst case it is in O(log n) when repair happens to take place at each level up to the root. A first difference between the two is the limiting height. For a tree of size  :
+•	An AVL tree's height is strictly less than:[6][7]
+ 
+where   is the golden ratio.
+•	A red-black tree's height is at most  [8]
+As a consequence, AVL trees are more rigidly balanced than red-black trees,[9] leading to faster retrieval but maybe slower insertion and removal. Performance comparisons can be found in Ben Pfaff.[4] His results show in 79 measurement runs the similarity of AVL trees (AVL) and red-black trees (RB) with relations AVL/RB between 0.677 and 1.077,median ˜0.947, and geometric mean ˜0.910.
+Another difference is pointed out by Mehlhorn[10] (p. 165): "AVL trees do not support constant amortized update costs", whereas red-black trees do (p. 158).

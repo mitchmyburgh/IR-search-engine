@@ -1,0 +1,91 @@
+In computer science, a collection or container is a grouping of some variable number of data items (possibly zero) that have some shared significance to the problem being solved and need to be operated upon together in some controlled fashion. Generally, the data items will be of the same type or, in languages supporting inheritance, derived from some common ancestor type. A collection is a concept applicable to abstract data types, and does not prescribe a specific implementation as a concrete data structure, though often there is a conventional choice (see Container for type theory discussion).
+Examples of collections include lists, sets, multisets, trees and graphs.
+Fixed-size arrays (or tables) are usually not considered a collection because they hold a fixed number of data items, although they commonly play a role in the implementation of collections. Variable-size arrays are generally considered collections.
+
+
+== Linear collections ==
+
+Many collections define a particular linear ordering, with access to one or both ends. The actual data structure implementing such a collection need not be linear—for example, a priority queue is often implemented as a heap, which is a kind of tree. Important linear collections include:
+lists;
+stacks;
+queues;
+priority queues;
+double-ended queues;
+double-ended priority queues.
+
+
+=== Lists ===
+
+In a list, the order of data items is significant. Duplicate data items are permitted. Examples of operations on lists are searching for a data item in the list and determining its location (if it is present), removing a data item from the list, adding a data item to the list at a specific location, etc. If the principal operations on the list are to be the addition of data items at one end and the removal of data items at the other, it will generally be called a queue or FIFO. If the principal operations are the addition and removal of data items at just one end, it will be called a stack or LIFO. In both cases, data items are maintained within the collection in the same order (unless they are removed and re-inserted somewhere else) and so these are special cases of the list collection. Other specialized operations on lists include sorting, where, again, the order of data items is of great importance.
+
+
+=== Stacks ===
+
+
+=== Queues ===
+
+
+=== Priority queues ===
+
+In a priority queue, the tracks of the minimum or maximum data item in the collection are kept, according to some ordering criterion, and the order of the other data items does not matter. One may think of a priority queue as a list that always keeps the minimum or maximum at the head, while the remaining elements are kept in a bag.
+
+
+=== Double-ended queues ===
+
+
+=== Double-ended priority queues ===
+
+
+== Associative collections ==
+Other collections can instead be interpreted as sort of function: given an input, the collection yields an output. Important associative collections include:
+sets;
+multisets;
+associative arrays.
+A set can be interpreted as a specialized multiset, which in turn is a specialized associative array, in each case by limiting the possible values—considering a set as represented by its indicator function.
+
+
+=== Sets ===
+
+In a set, the order of data items does not matter but duplicate data items are not permitted. Examples of operations on sets are the addition and removal of data items and searching for a data item in the set. Some languages support sets directly. In others, sets can be implemented by a hash table with dummy values; only the keys are used in representing the set.
+
+
+=== Multisets ===
+
+In a multiset (or bag), like in a set, the order of data items does not matter, but in this case duplicate data items are permitted. Examples of operations on multisets are the addition and removal of data items and determining how many duplicates of a particular data item are present in the multiset. Multisets can be transformed into lists by the action of sorting.
+
+
+=== Associative arrays ===
+
+In an associative array (or map, dictionary, lookup table), like in a dictionary, a lookup on a key (like a word) provides a value (like a definition). The value might be a reference to a compound data structure. A hash table is usually an efficient implementation, and thus this data type is often known as a "hash".
+
+
+== Graphs ==
+
+In a graph, data items have associations with one or more other data items in the collection and are somewhat like trees without the concept of a root or a parent-child relationship so that all data items are peers. Examples of operations on graphs are traversals and searches which explore the associations of data items looking for some specific property. Graphs are frequently used to model real-world situations and to solve related problems. An example is the Spanning tree protocol, which creates a graph (or mesh) representation of a data network and figures out which associations between switching nodes need to be broken to turn it into a tree and thus prevent data going around in loops.
+
+
+=== Trees ===
+
+In a tree, which is a special kind of graph, a root data item has associated with it some number of data items which in turn have associated with them some number of other data items in what is frequently viewed as a parent-child relationship. Every data item (other than the root) has a single parent (the root has no parent) and some number of children, possibly zero. Examples of operations on trees are the addition of data items so as to maintain a specific property of the tree to perform sorting, etc. and traversals to visit data items in a specific sequence.
+Tree collections can be used to naturally store hierarchical data, which is presented in a tree-like manner, such as menu systems and files in directories on a data storage system.
+Specialized trees are used in various algorithms. For example, the heap sort uses a kind of tree called a heap.
+
+
+== Abstract concept vs. implementation ==
+As described here, a collection and the various kinds of collections are abstract concepts. There exists in the literature considerable confusion between the abstract concepts of computer science and their specific implementations in various languages or kinds of languages. Assertions that collections, lists, sets, trees, etc. are data structures, abstract data types or classes must be read with this in mind. Collections are first and foremost abstractions that are useful in formulating solutions to computing problems. Viewed in this light, they retain important links to underlying mathematical concepts which can be lost when the focus is on the implementation.
+For example, a priority queue is often implemented as a heap, while an associative array is often implemented as a hash table, so these abstract types are often referred to by this preferred implementation, as a "heap" or a "hash", though this is not strictly correct.
+
+
+== Implementations ==
+Some collections may be primitive data types in a language, such as lists, while more complex collections are implemented as composite data types in libraries, sometimes in the standard library. Examples include:
+C++: known as "container", implemented in C++ Standard Library and earlier Standard Template Library;
+Java: implemented in the Java collections framework;
+Python: some built-in, others implemented in the collections library.
+
+
+== External links ==
+Apache Commons Collections.
+AS3Commons Collections Framework ActionScript3 implementation of the most common collections.
+CollectionSpy — A profiler for Java's Collections Framework.
+Guava.
+Mango Java library.

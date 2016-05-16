@@ -1,0 +1,54 @@
+Weka: Practical Machine Learning Tools and Techniques
+with Java Implementations
+
+Ian H. Witten, Eibe Frank, Len Trigg, Mark Hall, Geoffrey Holmes, and Sally Jo Cunningham
+
+Introduction
+The Waikato Environment for Knowledge Analysis
+(Weka) is a comprehensive suite of Java class
+libraries that implement many state-of-the-art
+machine learning and data mining algorithms.
+Weka is freely available on the World-Wide Web
+and accompanies a new text on data mining [1]
+which documents and fully explains all the
+algorithms it contains. Applications written using
+the Weka class libraries can be run on any
+computer with a Web browsing capability; this
+allows users to apply machine learning techniques
+to their own data regardless of computer platform.
+Tools are provided for pre-processing data, feeding
+it into a variety of learning schemes, and analyzing
+the resulting classifiers and their performance. An
+important resource for navigating through Weka is
+its on-line documentation, which is automatically
+generated from the source.
+The primary learning methods in Weka are
+“classifiers”, and they induce a rule set or decision
+tree that models the data. Weka also includes
+algorithms for learning association rules and
+clustering data. All implementations have a
+uniform command-line interface. A common
+evaluation module measures the relative
+performance of several learning algorithms over a
+given data set.
+Tools for pre-processing the data, or “filters,” are
+another important resource. Like the learning
+schemes, filters have a standardized command-line
+interface with a set of common command-line
+options.
+The Weka software is written entirely in Java to
+facilitate the availability of data mining tools
+regardless of computer platform. The system is, in
+sum, a suite of Java packages, each documented to
+provide developers with state-of-the-art facilities.
+
+Conclusions
+As the technology of machine learning continues to
+develop and mature, learning algorithms need to be
+brought to the desktops of people who work with
+data and understand the application domain from
+which it arises. It is necessary to get the algorithms
+out of the laboratory and into the work
+environment of those who can use them. Weka is a
+significant step in the transfer of machine learning
+technology into the workplace.

@@ -1,0 +1,50 @@
+MEASURING THE BUSINESS VALUE OF CLOUD COMPUTING
+
+My favorite and least favorite question I get is the same – “Can you help me build a business case and ROI for cloud computing?”
+
+Well, yes… and no. The issue is that cloud computing has such a massive impact on how IT is delivered that many of the metrics and KPIs that are typically used at many enterprises don’t capture it.  I mean, how do you capture Agility – really?
+
+In the past I have broken this down into 3 buckets. Yes, some people have more but these are the big three…
+
+Agility
+
+Agility is reducing cycle time from ideation to product (or system delivery) – incredibly difficult to measure given that it’s hard to do apples to apples when every product/project is unique. You can do this in terms of Agile methodology task points and the number of points per fixed timeframe sprint on average over time. Most IT shops do not really measure developer productivity in any way at the moment so it’s pretty hard to get the baseline let alone any changes. Agility, like developer productivity, is notoriously difficult to quantify.  I have done some work on quantifying developer downtime and productivity, but Agility is almost something you have to take on faith. It’s the real win for cloud computing, no matter how else you slice it.
+
+Efficiency
+
+In a highly automated cloud environment with resource lifecycle management and open self-service on-demand provisioning, the impetus for long-term hoarding of resources is eliminated. Reclamation of resources, only using what you need today because it’s like water (cheap and readily available), coupled with moving dev/test tasks to public clouds when at capacity (see Agility above) can reduce the dev/test infrastructure footprint radically (50% or more). Further, elimination of manual processes will reduce labor as an input to TCO for IT. In a smaller dev/test lab I know of, with only 600 VMs at any given time, 4 FTE onshore roles were converted to 2 FTE offshore resources.
+
+There’s a very deep book on this topic that came out recently from Joe Weiman called Cloudonomics (www.cloudonomics.com). One of the key points is to be able to calculate the economics of a hybrid model where your base level requirements are met with a fixed infrastructure and your variable demand above the base is met with an elastic model. A key quote (paraphrase) “A utility model costs less even though it costs more.”
+
+The book is based on this paper — http://joeweinman.com/Resources/Joe_Weinman_Inevitability_Of_Cloud.pdf
+
+And can be summarized as…
+
+Source: Joe Weiman in “Cloudonomics”
+A hybrid model is the most cost-effective – which is “obvious” on the surface but now rigorously proven (?) by the math.
+
+P = Peak.  T = Time.  U = the utility price premium.
+
+If you add the utility pricing model in Joe Weiman’s work to some of the other levers I listed above, you get a set of interesting metrics here. Most IT shops will focus on this to provide the ROI only. They are the ones who are missing the key point on Agility. However, I do understand the project budgeting dance and if you can’t show an ROI that the CFO will bless, you might not get the budget unless the CEO is a true believer.
+
+Quality
+
+What is the impact of removing human error (though initially inserting systematic error until you work it through)? Many IT shops still provision security manually in their environments, and there are errors. How do you quantify the reputation risk of allowing an improperly secured resource be used to steal PII data?  It’s millions or worse. You can quantify the labor savings (Efficiency above), but you can also show the reduction in operational risk in IT through improved audit performance and easier regulatory compliance certification. Again, this is all through automation.
+
+IT needs to get on the bandwagon and understand the fundamental laws of nature here — for 50-80% of your work even in a regulated environment, a hybrid utility model is both acceptable (risk/regulation) and desirable (agility, economics, and quality).
+
+Do a Study?
+
+The only way to break all of this down financially is to do a Value Engineering study and use this to do the business case. You need to start with a process review from the outside (developer) in (IT) and the inside (IT) out (production systems). Show the elimination of all of the manual steps.  Show the reduced resource footprint and related capex by eliminating hoarding behavior. Show reduced risk and lower costs by fully automating the provisioning of security in your environment. Show the “cloudonomics” of a hybrid model to offset peak demand and cyclicality or to eliminate or defer the expense of a new data center (that last VM with a marginal cost of $100 million anybody?).
+
+History Lesson
+
+In 1987 the stock market crashed and many trading floors could not trade because they lacked real-time position keeping systems. Traders went out and bought Sun workstations, installed Sybase databases, and built their own.  They didn’t wait for IT to solve the problem – they did it themselves.  That’s what happens with all new technology innovation.
+
+The same thing happened with Salesforce.com. Sales teams just started using it and IT came in afterwards to integrate and customize it. It was obviously a good solution because people were risking IT’s displeasure by using it anyway.
+
+If you really want to know if cloud computing really has any business value, take a look at your corporate credit card expenses and find out who in your organization is already using public clouds – with or without your permission. It’s time to stop calculating possible business value and start realizing actual business value from the cloud.
+
+—
+
+(c) 2012 CloudBzz / TechBzz Media, LLC. All rights reserved. This post originally appeared at http://www.cloudbzz.com/. You can follow CloudBzz on Twitter @CloudBzz.

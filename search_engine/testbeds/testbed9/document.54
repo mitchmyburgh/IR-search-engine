@@ -1,0 +1,36 @@
+The winged edge data structure is a data representation used to describe polygon models in computer graphics. It explicitly describes the geometry and topology of faces, edges, and vertices when three or more surfaces come together and meet at a common edge. The ordering is such that the surfaces are ordered counter-clockwise with respect to the innate orientation of the intersection edge. Moreover the representation allows numerically unstable situations like that depicted below.
+The winged edge data structure allows for quick traversal between faces, edges, and vertices due to the explicitly linked structure of the network. This rich form of specifying an unstructured grid is in contrast to simpler specifications of polygon meshes such as a node and element list, or the implied connectivity of a regular grid.
+
+
+== Pseudocode ==
+Here is a data structure suitable for representing a winged edge. The abbreviation "WE" stands for "Winged Edge".
+
+class WE_Edge {
+  WE_Vertex vert1, vert2;
+  WE_Face aFace, bFace;
+  WE_Edge aPrev, aNext, bPrev, bNext; // clockwise ordering
+  WE_EdgeDataObject data;
+}
+class WE_Vertex {
+  List<WE_Edge> edges;
+  WE_VertexDataObject data;
+}
+class WE_Face {
+  List<WE_Edge> edges;
+  WE_FaceDataObject data;
+}
+
+
+== See also ==
+Quad-edge data structure
+Combinatorial maps
+Doubly connected edge list
+Doubly linked face list
+Half-edge data structure
+
+
+== External links ==
+Bruce G. Baumgart. 1972. Winged Edge Polyhedron Representation.. Technical Report. Stanford University, Stanford, CA, USA.
+Bruce G. Baumgart. 1975. A polyhedron representation for computer vision. In Proceedings of the May 19-22, 1975, national computer conference and exposition (AFIPS '75). ACM, New York, NY, USA, 589-596. DOI=10.1145/1499949.1500071 http://doi.acm.org/10.1145/1499949.1500071 ( Winged Edge Polyhedron Representation for Computer Vision )
+The Winged-Edge Data Structure, on Michigan Technological University
+Winged Edge, on university of Pisa

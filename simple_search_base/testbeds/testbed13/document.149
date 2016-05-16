@@ -1,0 +1,103 @@
+  
+** Next:** Principles of Quantum Computation ** Up:** Introduction ** Previous:** Computation and Computers   ** Contents**   
+  
+**Subsections**
+
+  * Quantum Bits
+  * Entanglement of States
+  * Measurement
+  * Reversibility of Computation 
+
+* * *
+
+##  Classical vs. Quantum Computers
+
+This section introduces the most basic differences between classical and
+quantum computers in a phenomenologic manner. For a more rigid and formal
+explanation, please refer to section 2.
+
+###  Quantum Bits
+
+In a classical computer, the logical state is determined by the expectation
+value of its register contents (e.g. tension of a capacitor). The
+interpretation as (classical) bits is performed by comparing the measured
+value to a defined threshold, while the great number of particles guarantees
+that the uncertainty of the measurement is small enough to make errors
+practically impossible.
+
+In a quantum computer, information is represented as the common quantum state
+of many subsystems. Each subsystem is described by a combination of two
+``pure'' states interpreted as  and  (quantum bit, qubit). This can e.g. be
+realised by the spin of a particle, the polarisation of a photon or by the
+ground state and an excited state of an ion.
+
+For a single qubit, this state can be described by the complex amplitudes  and
+of each of the two states (  ) with the condition .
+
+It is obvious, that this interpretation stands in contradiction to classic
+boolean logic, where intermediate states between 0 and 1 are not possible.
+
+###  Entanglement of States
+
+The logical state of a classical register is determined by the states of all
+bits this register contains. Those bits can be changed locally i.e.
+independently form one another. The state of an  bit register, can therefore
+be described by  binary values.
+
+A quantum register containing more than one qubit can not be described by
+simply listing the states of each qubit, moreover it is not even possible to
+define the state of an isolated qubit:
+
+Given an isolated system of two qubits, its state can be described by four
+complex amplitudes  . You can define the expectation value for the first
+qubit, which is  but there is no isolated state for the first qubit anymore
+like e.g.  since  does not implicate that  .
+
+Therefore, manipulations on a single qubit effect the complex amplitudes of
+the overall state and have a global character. To describe the combined state
+of  entangled qubits,  complex numbers are necessary.
+
+###  Measurement
+
+In a classical computer, the formal description of the inner state and the
+measurement of this state (i.e. the output of the program) is the same and
+given by the binary values of the concerned bits. Moreover, the inner state is
+not effected by the process of measurement (non destructive measurement).
+
+According to the Kopenhagner interpretation of quantum physics, the outcome of
+measurements on quantum systems (qubits) must be formulated in classical terms
+(binary bits). The quantum state of the system is thereby reduced: If the
+first bit in the above mentioned 2 qubit state is measured, and a value of 1
+is observed, then the state will be reduced to  with  , thus all basevectors
+which 0 in the first bit (  and  ) will be set to an amplitude of zero.
+
+Therefore it is principally not possible to measure the state of a quantum
+register itself; it is however possible, to estimate the expectation value of
+a qubit by repeated measurements after the same calculation.
+
+###  
+Reversibility of Computation
+
+Heat dissipation is one of the major problems with the miniaturisation of
+classical computers and constant cooling of all components is required. This
+is achieved by the thermic coupling of the circuits to a heat reservoir like
+e.g. the surrounding air.
+
+For a quantum computer, cooling by heat coupling is no option since its
+logical state is directly represented by the common quantum state of its
+registers. Any heat coupling would necessarily result in the entanglement of
+this state with the outside world and destroy the coherence of the
+computation.
+
+The second law of thermodynamics postulates that any non-reversible state
+change of a system must dissipate heat. Many common logical operations like
+AND, OR or resetting a bit to 0 or 1 are non-reversible is the sense that the
+input cannot be calculated from the output. Therefore, these operations cannot
+directly be implemented in a quantum computer.
+
+* * *
+
+  
+** Next:** Principles of Quantum Computation ** Up:** Introduction ** Previous:** Computation and Computers   ** Contents**   
+(c) Bernhard Ömer - oemer@tph.tuwien.ac.at \- http://tph.tuwien.ac.at/~oemer/
+

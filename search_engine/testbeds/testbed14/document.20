@@ -1,0 +1,58 @@
+Natural Language Processing
+Gobinda G. Chowdhury
+ Dept. of Computer and Information Sciences
+ University of Strathclyde, Glasgow G1 1XH, UK
+ e-mail: gobinda@dis.strath.ac.uk
+Introduction
+Natural Language Processing (NLP) is an area of research and application that explores how
+computers can be used to understand and manipulate natural language text or speech to do useful
+things. NLP researchers aim to gather knowledge on how human beings understand and use
+language so that appropriate tools and techniques can be developed to make computer systems
+understand and manipulate natural languages to perform the desired tasks. The foundations of
+NLP lie in a number of disciplines, viz. computer and information sciences, linguistics,
+mathematics, electrical and electronic engineering, artificial intelligence and robotics,
+psychology, etc. Applications of NLP include a number of fields of studies, such as machine
+translation, natural language text processing and summarization, user interfaces, multilingual and
+cross language information retrieval (CLIR), speech recognition, artificial intelligence and expert
+systems, and so on.
+One important area of application of NLP that is relatively new and has not been covered in the
+previous ARIST chapters on NLP has become quite prominent due to the proliferation of the
+world wide web and digital libraries. Several researchers have pointed out the need for
+appropriate research in facilitating multi- or cross-lingual information retrieval, including
+multilingual text processing and multilingual user interface systems, in order to exploit the full
+benefit of the www and digital libraries (see for example, Borgman, 1997; Peters & Picchi, 1997)
+Scope
+Several ARIST chapters have reviewed the field of NLP. The most recent ones include that by
+Warner in 1987, and Haas in 1996. Reviews of literature on large-scale NLP systems, as well as
+the various theoretical issues have also appeared in a number of publications (see for example,
+Jurafsky & Martin, 2000; Manning & Schutze, 1999; Mani & Maybury, 1999; Sparck Jones,
+1999; Wilks, 1996). Smeaton (1999) provides a good overview of the past research on the
+applications of NLP in various information retrieval tasks. Several ARIST chapters have
+appeared on areas related to NLP, such as on machine-readable dictionaries (Amsler, 1984;
+1
+Evans, 1989), speech synthesis and recognition (Lange, 1993), and cross-language information
+retrieval (Oard & Diekema, 1998). Research on NLP is regularly published in a number of
+conferences such as the annual proceedings of ACL (Association of Computational Linguistics)
+and its European counterpart EACL, biennial proceedings of the International Conference on
+Computational Linguistics (COLING), annual proceedings of the Message Understanding
+Conferences (MUCs), Text Retrieval Conferences (TRECs) and ACM-SIGIR (Association of
+Computing Machinery ñ Special Interest Group on Information Retrieval) conferences. The most
+prominent journals reporting NLP research are Computational Linguistics and Natural Language
+Engineering. Articles reporting NLP research also appear in a number of information science
+journals such as Information Processing and Management, Journal of the American Society for
+Information Science and Technology, and Journal of Documentation. Several researchers have
+also conducted domain-specific NLP studies and have reported them in journals specifically
+dealing with the domain concerned, such as the International Journal of Medical Informatics and
+Journal of Chemical Information and Computer Science.
+Beginning with the basic issues of NLP, this chapter aims to chart the major research activities in
+this area since the last ARIST Chapter in 1996 (Haas, 1996), including:
+(i) natural language text processing systems ñ text summarization, information extraction,
+information retrieval, etc., including domain-specific applications;
+(ii) natural language interfaces;
+(iii) NLP in the context of www and digital libraries ; and
+(iv) evaluation of NLP systems.
+Linguistic research in information retrieval has not been covered in this review, since this is a
+huge area and has been dealt with separately in this volume by David Blair. Similarly, NLP issues
+related to the information retrieval tools (search engines, etc.) for web search are not covered in
+this chapter since a separate chapter on indexing and retrieval for the Web has been written in this
+volume by Edie Rasmussen.

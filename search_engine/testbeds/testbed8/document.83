@@ -1,0 +1,14 @@
+Speeding up search
+
+Finding a specific element in a linked list, even if it is sorted, normally requires O(n) time (linear search). This is one of the primary disadvantages of linked lists over other data structures. In addition to the variants discussed above, below are two simple ways to improve search time.
+
+In an unordered list, one simple heuristic for decreasing average search time is the move-to-front heuristic, which simply moves an element to the beginning of the list once it is found. This scheme, handy for creating simple caches, ensures that the most recently used items are also the quickest to find again.
+
+Another common approach is to "index" a linked list using a more efficient external data structure. For example, one can build a red-black tree or hash table whose elements are references to the linked list nodes. Multiple such indexes can be built on a single list. The disadvantage is that these indexes may need to be updated each time a node is added or removed (or at least, before that index is used again).
+Random access lists
+
+A random access list is a list with support for fast random access to read or modify any element in the list.[10] One possible implementation is a skew binary random access list using the skew binary number system, which involves a list of trees with special properties; this allows worst-case constant time head/cons operations, and worst-case logarithmic time random access to an element by index.[10] Random access lists can be implemented as persistent data structures.[10]
+
+Random access lists can be viewed as immutable linked lists in that they likewise support the same O(1) head and tail operations.[10]
+
+A simple extension to random access lists is the min-list, which provides an additional operation that yields the minimum element in the entire list in constant time (without[clarification needed] mutation complexities).

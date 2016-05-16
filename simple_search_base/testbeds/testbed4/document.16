@@ -1,0 +1,60 @@
+Next, we present an intersection algorithm for a ray and a convex polyhedron. The
+convex polyhedron is defined as the intersection of a collection of halfspaces in 3-space. Recall that a halfspace
+is the set of points lying to one side of a plane. The problem of intersecting a ray with a plane is a special case
+of this. (This algorithm is a variation of the Liang-Barsky line segment clipping algorithm, which is used for
+clipping line segments against the 3-dimensional view volume, which was introduced when we were discussing
+perspective.)
+As before, we represent the ray parametrically as P +t~u, for scalar t > 0. Let H1;H2; : : : ; Hk denote the halfspaces
+defining the polyhedron. Each halfspace H is represented by a 4-dimensional homogeneous coordinate
+vector H : (a; b; c; d). It represents the set of points P = (px; py; pz)T satisfying the equation:
+apx + bpy + cpz + d  0
+Observe that if P is expressed in homogenous coordinates P = (px; py; pz; 1)T , then this can be written more
+succinctly as the dot product (H  P)  0. We can think of a plane the special case of the boundary of a
+polyhedron defined by a single halfspace. In such a case the outward pointing normal is ~no = normalize(a; b; c)
+and the inward pointing normal is ~ni = normalize(-a;-b;-c). We will compute the intersection of the ray
+with each halfspace in turn. The final result will be the intersection of the ray with the entire polyhedron.
+An important property of convex bodies (of any variety) is that a line intersects a convex body in at most one
+line segment. Thus the intersection of the ray with the polyhedron can be specified entirely by an interval of
+scalars [t0; t1], such that the intersection is defined by the set of points
+P + t~u for t0  t  t1.
+Initially, let this interval be [0;1]. (For line segment intersection the only change is that the initial value of t1
+is set so that we end and the endpoint of the segment. Otherwise the algorithm is identical.)
+Suppose that we have already performed the intersection with some number of the halfspaces. It might be that
+the intersection is already empty. This will be reflected by the fact that t0 > t1 . When this is so, we may
+terminate the algorithm at any time. Otherwise, let H = (a; b; c; d) be the coefficients of the current halfspace.
+We want to know the value of t (if any) at which the ray intersects the plane. Plugging in the representation of
+the ray into the halfspace inequality we have
+a(px + t~ux) + b(py +t~uy) + c(pz +t~uz) + d  0;
+which after some manipulations is
+t(a~ux + b~uy + c~uz)  -(apx + bpy + cpz + d):
+If P and ~u are given in homogeneous coordinates, this can be written as
+t(H  ~u)  -(H P):
+This is not really a legitimate geometric expression (since dot product should only be applied between vectors).
+Actually the halfspace H should be thought of as a special geometric object, a sort of generalized normal vector.
+(For example, when transformations are applied, normal vectors should be multiplied by the inverse transpose
+matrix to maintain orthogonality.)
+We consider three cases.
+Lecture Notes 89 CMSC 427
+(H  ~u) > 0 : In this case we have the constraint
+t 
+-(H  P)
+(H  ~u) :
+Let t denote the right-hand side of this inequality. We trim the high-end of the intersection interval to
+[t0; min(t1; t)].
+(H  ~u) < 0 : In this case we have
+t 
+-(H  P)
+(H  ~u) :
+Let t denote the right-hand side of this inequality. In this case, we trim the low-end of the intersection
+interval to [max(t0; t); t1].
+(H  ~u) = 0 : In this case the ray is parallel to the plane. Either entirely above or below. We check the origin.
+If (H  P)  0 then the origin lies in (or on the boundary of) the halfspace, and so we leave the current
+interval unchanged. Otherwise, the origin lies outside the halfspace, and the intersection is empty. To
+model this we can set t1 to any negative value, e.g., -1.
+After we repeat this on each face of the polyhedron, we have the following possibilities:
+Miss (t1 < t0) : In this case the ray does not intersect the polyhedron.
+From inside (0 = t0  t1) : In this case, the origin is within the polyhedron. If t1 = 1, then the polyhedron
+must be unbounded (e.g. like a cone) and there is no intersection. Otherwise, the first intersection point
+is the point P + t1~u. In this case, if Hi is the halfspace that generated the intersection point, we use the
+inward pointing normal normalize(-ai;-bi;-ci).
+From outside (0 < t0  t1) : In this case, the origin is outside the polyhedron

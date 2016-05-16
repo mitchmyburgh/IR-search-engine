@@ -1,0 +1,22 @@
+Apache_Velocity
+'''Apache Velocity''' is a -based  that provides a  to reference s defined in Java code. It aims to ensure clean separation between the presentation tier and business tiers in a  (the  design pattern).
+Velocity is an  software project hosted by the . It is released under the .
+== Uses ==
+Some common types of applications that use Velocity are:
+* s: s create  pages with placeholders for dynamic information. The page is processed with ''VelocityViewServlet'' or any of a number of frameworks which support Velocity.
+*  generation: Velocity can be used to generate Java source code, , or , based on . A number of  and commercial development  use Velocity in this manner.
+* Automatic s: Many applications generate automatic emails for account signup,  reminders, or automatically sent reports. Using Velocity, the email  can be stored in a , rather than directly embedded in Java code.
+*  transformation: Velocity provides an  task, called Anakia, which reads an XML file and makes it available to a Velocity template. A common application is to convert  stored in a generic "xdoc" format into a styled HTML document.
+== Code example ==
+The following :
+## Velocity Hello World
+    
+       #set( $foo = "Velocity" )
+       ## followed by
+       Hello $foo World!
+    
+processed by Velocity will produce the following HTML:
+    
+     Hello Velocity World!
+    
+The syntax and overall concept of the Apache Velocity templates is very similar to the syntax of the older  template engine which is now also an open source project.

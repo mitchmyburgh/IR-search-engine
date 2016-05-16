@@ -1,0 +1,133 @@
+Mesh/Exporting a mesh from 3ds Max
+< Mesh
+Second Life Wiki > Mesh > Mesh/Exporting a mesh from 3ds Max
+Mesh
+Basics
+Advanced
+Project Information
+Technical Information
+Mesh creation tools
+Sample mesh content
+3DS Max
+Blender
+Maya
+Sketchup
+ZBrush
+Other tools
+
+3ds Max is a professional level 3D modeling, animation, and rendering software made by Autodesk, Inc. along with many other 3D design programs. It can be used to create Collada .dae type files to upload as mesh assets to Second Life. Note that there are annual versions that are slightly different.
+Contents [hide] 
+1 Software Setup
+1.1 3ds Max 2012 and 2013 version
+1.2 3ds Max 2009, 2010 and 2011 versions
+1.3 Older versions
+2 Basic workflow
+2.1 Scale to meters
+2.2 Creating Your Models
+2.3 UV texture Mapping
+2.4 Apply textures
+2.5 Export to COLLADA
+2.6 Import to SL
+3 Best practices
+3.1 Bones and rigging
+3.2 Gotchas and workarounds
+3.2.1 Fixing number of bones
+3.2.2 Editing the COLLADA File
+3.3 Optimization techniques
+4 Tutorial links
+Software Setup
+3ds Max 2012 and 2013 version
+(Tested with Autodesk FBX 2013.2. Doesn't work with Autodesk FBX 2013.0 or 2013.1)
+To export to DAE, use the Autodesk FBX 2013.2 plugin (works with 2013.3 version as well). Also make sure the objects, materials and textures in the scene do not contain any spaces. (so not "Box 001" which will give the "Error: element is invalid", but "Box001" or "Box_001"). There is no need for the FBX workaround anymore.
+3ds Max 2009, 2010 and 2011 versions
+To export to DAE, download the 2011.3.1 FBX Plugin from Autodesk: Autodesk FBX archive.
+Older versions
+For older verions of 3DS Max, you can follow the same workaround for 3DS Max 2012. Download the latest version available for your version of Max from Autodesk FBX archive (for example, FBX 2006.11.1 is the latest version that supports 3DS Max 7), export your model as FBX and convert to Collada 1.4.0 using FBX Converter 2011.3.1.
+Basic workflow
+Scale to meters
+One meter in 3D Studio Max converts to one meter in Second Life. In order for your model to upload with the expected scale, you will need to change Max's units to metric since it isn't the default unit settings.
+To Set Up the Correct Scale for Your 3D Studio Max Scene:
+From the top drop down menu, select "Customize" --> "Units Setup..."
+In the "Units Setup" dialog box that appears, select "Metric" in the "Display Unit Scale" field. (At Default, Max has the units set to "Generic Units")
+Under Metric you can choose between millimeters, centimeters, meters, and kilometers via a drop down menu.
+Which metric system you would like to use depends on what you're creating. So long as you’re working in metric units, any metric system you choose to work in will upload equally in Second Life. Choosing meters should ideally work for most mesh creations for Second Life. If you are working on very small meshes like jewelery, choosing centimeters may prove more helpful.
+Click on the button "System Unit Setup" in the "Units Setup" dialog box.
+In the "System Unit Setup" dialog box that appears, you'll probably see the following: "1 Unit = 1.0 Inches" as this is the default setting. Select the drop down menu for "Inches" and select a metric unit instead. For example: If you're using meters for the Display Unit Scale, select Centimeters to replace Inches here.
+Creating Your Models
+For basic information on how to use 3ds Max, see the Autodesk 3ds Max Tutorials page, the excellent built in help, and the many third party books, video tutorials, and training courses. This section only covers specifics to creating a model for upload to Second Life.
+You can use any of the modeling tools while working on your item, but in the final form it should be saved as an Editable Poly, with Reset Transforms applied, and the stack collapsed.
+Each object in the 3ds Max scene will import as a separate object in Second Life. If you want your model to appear as a single object once imported, use the Attach function in 3ds Max so that it appears as a single item in the object list.
+You can use up to 8 Material IDs. These will import as Faces in Second Life, which can be individually textured. You need to create a UV mapping for your model which defines what part of the texture will go on which polygons of the model. Fewer Material IDs/Textures are more efficient, and you can combine polygon groups from different parts of your model onto a single map. If you use more than one ID, then set up a single Multi/SubObject material with as many sub-materials as you need, and apply that to the whole object.
+You can define up to 4 Level of Detail (LOD) versions of your model for viewing at different distances. Using simpler versions for far away items saves server and PC workload, and you are rewarded for that with a lower Prim Equivalent use of parcel prim allowance. Each LOD version is saved as a separate Collada .dae file and selected in the upload window. Additionally you can define a Physics Shape which controls how the object collides with the terrain, other objects, and avatars. Complex collision physics is a heavy load on the server, so the Physics shape should be as simple as possible. It is invisible once imported to Second Life. All LODs and the Physics shape will share the same Bounding Box. This is an imaginary box aligned with the X, Y, and Z axes just large enough to contain the model. So keep that in mind when creating the various versions, so they line up properly. The LOD versions need to use the same number of Material IDs, but the layout can be different per version.
+If you want to make an animated attachment (one that bends and follows the underlying avatar movements), then apply the Skin modifier last in the Command Panel > Modify tab. The set of bones must be identical in name and structure to the one used in Second Life. For rigid attachments or non-attached items to be used on a land parcel, you can skip this step.
+Second Life is a real-time environment, and typical Viewers have a few tens of milliseconds to render the entire scene (1 second divided by the frames per second speed). So mesh items should use the least number of triangles and vertexes as possible while looking the way you want it. High detail models used for offline animation and rendering are not suitable. Smoothing varies the shading across the model, giving the impression of a curved surface without a lot of triangles. When different smoothing groups meet at an edge, or when smoothing is not used, the shading will change abruptly at the edge, and give the impression of flat sides with a sharp corner. You can display current polygon, triangle, and vertex count within the 3ds Max viewport to keep track while you work.
+UV texture Mapping
+UVW Mapping / Un-wrapping Video Tutorial
+Part 1 http://youtu.be/vUUhOCEujUI
+Part 2 http://youtu.be/AApNZtlhei8
+Part 3 http://youtu.be/9DjqFpS6Nw8
+Apply textures
+Export to COLLADA
+Before you export your mesh, make sure that it doesn’t have any stray vertices, overlapping edges, or ngons (polygons that have more than four edges). These will either cause unexpected visual results in Second Life or worse, the mesh will fail to upload entirely.
+Once that’s done, select the mesh and...
+1. Go to File --> Export --> Export Selected
+2. Select the directory you wish to save the exported .dae file and create a name for it.
+3. In the “Save as type:” drop down menu, select “Autodesk Collada (.DAE)”.
+4. Autodesk Collada export will open a FBX Export dialog box. You shouldn’t need to change much to the default settings. If you’re exporting a skinned mesh, make sure “Animation” and “Deformations” are checked off. For all meshes, make sure that the “Up Axis” is set to “Z-up”. If the axis isn’t set to Z-up, the mesh axis(and the rig data) will be flipped on its side and/or rotated in Second Life. This will wreak havoc on a skinned mesh.
+Import to SL
+Best practices
+[NOTE: All these links need to be updated because of the Forum software changing, and the threads being archived]
+Forum thread on 3ds Max best practices
+Forum request for input on debugging 3ds Max import workflow
+Another forum thread on exporting a rigged mesh from 3ds Max
+Forum thread on UVW mapping, mostly about 3ds Max
+Forum thread on texturing in Max and uploading to Second Life
+Youtube Rigging example using SLAv and Kristen Viewer
+Bones and rigging
+This is written for 3ds Max 2010. Other workflows may work also, but this one has been tested and works with Viewer 3.0
+Units need to be metric cm or meters. See above for how to set that.
+Your model should be editable poly when done making the geometry (the shape). You can use other object types while making it, but in final form it should be Editable Poly.
+If your model is more than one named object in Max, it will import as separate objects. Use the attach button in Editable Poly rollout to combine objects if you want it as a single one.
+Make sure you have no degenerate triangles (triangles with zero width), stray or duplicated vertices, etc. It needs to be a clean model.
+Maximum complexity for import is 64K triangles. Upload and prim cost depends on model size and complexity.
+You can apply a maximum of 8 submaterial slots in a Multi/SubObject material, using default shader, applied to whole object.
+It needs UV map coordinates if you want to apply a texture. Otherwise SL will have no information on what part of the texture goes on what polygons of the model.
+Once imported, each submaterial ID acts like a "side" on a prim for applying textures. Imported models are one-sided for textures. The other side is transparent. If you want it to be seen from both sides, you need additional triangles facing the other way. Make sure normals point in the direction you will see once imported.
+Use smoothing groups when you have curved shapes. Any polygons in different smoothing groups will show a hard edge between them. Hard edges will increase the vertex count in the upload window.
+Apply "Skin" modifier last, after UV mapping. You might want to do test imports on Aditi at each stage before rigging to find problems in those stages.
+Get the SLAV 3ds Max Plugin, which has a set of bones for the SL avatar pre-made. You may need to scale and rotate the bone rig to human size.
+All vertexes need to be weighted to 1.0 total (no unweighted or partially weighted ones). At joints weight vertexes to the two or more nearest bones to get a smooth bend.
+Add all bones to the Skin modifier. Click here for the whole workaround.
+Delete everything from the scene besides the bone skeleton and your model before export. Save a copy with extra objects if you want, then a second one stripped to those two for export.
+Export using Autodesk Collada using FBX 2013.3 plugin for Max 2012 or 2013. For Max versions 2009, 2010 and 2011, use FBX 2011.3.1. If your version of 3DS Max isnt supported by FBX 2011.3.1, you need to download the nearest version available for your 3DS Max and export as FBX for later convert into Collada using FBX Converter 2013.3 (see above for download links).
+Click Z-up on the export window. Other settings are OK as default.
+On the SL importer, go to the third tab, and click "Skin weights". I recommend doing your test imports on the beta grid (Aditi) because it uses fake L$. Once the items is perfect, you can import once on the main grid. Model will appear in the import window in white, possibly small. It can be rotated and zoomed
+The importer creates a .slm file in the same folder as your Collada .dae file, to save your upload settings. This often causes problems if you change the model and upload again, so delete it.
+Gotchas and workarounds
+Fixing number of bones
+The mesh importer actually requires all bones to be listed inside of the COLLADA (.dae) file. This meant that if you made a shirt where you only use the half upper body part of bones, you still need add all the rest of bones like head, legs, etc.
+There was a way to do it editing manually the COLLADA file with notepad or using a little software that do it for us. But this method isn't accurate and in most of case give us a wrong rigged mesh.
+
+The following will guide you throught the process of fixing this problem directly inside of 3D Studio Max.
+First, rig your mesh as you could do usually. Just using the bones that you need. After you have done your whole rigging process, click on "Edit Envelopes" (1)and check "Vertices" (2). On the "Bones" section, click on "Add" (3) and add all 26 bones from the SL skeleton. Select one vertex with 1.000 weight (4). Can be any vertex, just make sure that is 1.000 weighted to any bone, so is easier later to revert back to it's original bone. Open the "Weight Tool" panel (5).
+Fixing max bones 01.png
+
+On the Skin modifier, scroll down and expand "Advanced Parameters". Set 26 or more on the "Bone Affect Limit" setting.
+Fixing max bones 02.png
+
+Now the process is really easy. We just need add all bones to that single selected vertex. To do this just select one of the bones (1) and apply weight to the vertex using the "Weight Tool" (2). You can assign any kind of weight, in this example I just used "1" because is easy to apply. Do the same with the rest of bones.
+Fixing max bones 03.png
+
+Once you are done, you should have now a single vertex that contains all bones weighted with "0.000" except one that will be weighted to "1.000". Now just select back it's original bone and apply again "1" of weight, so we revert our vertex to it's original value. In the example image, this is the "mShoulderRight" bone. Check that you have all 26 bones there and that's all. Your mesh is now fixed and ready to be exported.
+Fixing max bones 04.png
+Editing the COLLADA File
+In the event that the above method does not work for you, you can manually edit your .dae file in a text editor.
+Once Collada .dae file is created, open it with any text editor (its an XML type text file), and find a string that looks like:
+<Name_array id="DefaultClothingItemController-Joints-array" count="26">
+Add whatever bones you didn't weight after the ones you did weight (which should be there). The importer has been requiring all the bones listed. That may also have been fixed, but to be sure list them all. Ones you actually use go first, then the rest in any order. Here is a full list:
+mHipRight mKneeRight mAnkleRight mFootRight mToeRight mHipLeft mKneeLeft mAnkleLeft mFootLeft mToeLeft mPelvis mTorso mChest mNeck mHead mSkull mEyeRight mEyeLeft mCollarLeft mShoulderLeft mElbowLeft mWristLeft mCollarRight mShoulderRight mElbowRight mWristRight
+Optimization techniques
+Tutorial links
+tutorialized.com Tons of tutorials ranging from basic to advanced.
+3dtotal.com
+Autodesk The official Tutorials from Autodesk from version 9 upwards.

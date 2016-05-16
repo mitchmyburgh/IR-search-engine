@@ -1,0 +1,45 @@
+A GADDAG is a data structure presented by Steven Gordon in 1994, for use in generating moves for Scrabble and other word-generation games where such moves require words that "hook into" existing words. It is often in contrast to move-generation algorithms using a directed acyclic word graph (DAWG) such as the one used by Maven. It is generally twice as fast as the traditional DAWG algorithms, but take about 5 times as much space for regulation Scrabble dictionaries.
+Quackle uses a GADDAG to generate moves.
+
+
+== Description ==
+A GADDAG is a specialization of a Trie, containing states and branches to other GADDAGs. It is distinct for its storage of every reversed prefix of every word in a dictionary. This means every word has as many representations as it does letters; since the average word in most Scrabble regulation dictionaries is 5 letters long, this makes the GADDAG about 5 times as big as a simple DAWG.
+
+
+=== Definition ===
+For any word in a dictionary that is formed by a non-empty prefix x and a suffix y, a GADDAG contains a direct, deterministic path for any string REV(x)+y, where + is a concatenation operator.
+For example, for the word "explain," a GADDAG will contain direct paths to the strings
+
+e+xplain
+xe+plain
+pxe+lain
+lpxe+ain
+alpxe+in
+ialpxe+n
+nialpxe
+
+This setup enables searching for a word given any letter that occurs in it.
+
+
+=== Use in move generation ===
+Any move-generation algorithm must adhere to three types of constraints:
+Board constraints: one may only build by 'hooking' onto existing letters of the board, and one may only place tiles on empty squares.
+Rack constraints: one may only place tiles with letters on one's rack.
+Dictionary constraint: all words resulting from the placement of tiles exist in the game's dictionary.
+DAWG-based algorithms take advantage of the second and third constraint: the DAWG is built around the dictionary, and is traverse using tiles in the rack. It fails, however, to address the first constraint: supposing one want to 'hook into' the letter P in HARPY, and the board has 2 spaces before the P, one must search the dictionary for all words containing letters from the rack where the third letter is P. This is non-deterministic when searching through the DAWG, as many searches through the trie will be fruitless.
+This is addressed by the GADDAG's storage of prefixes: by traversing the P branch of a GADDAG, one sees all words that have a P somewhere in their composition, and can "travel up" the prefix to form the word with tiles in the rack. To use the example from the § Definition section, searching for P turns up "pxe+lain". The letters between P and the + can be placed above the P on the board, and the rest below it (if space on the board permits).
+
+
+== See also ==
+Suffix Tree
+Trie
+Scrabble
+Prefix Hash Tree
+
+
+== References ==
+
+
+== External links ==
+Steven Gordon's 1993 Paper describing the GADDAG.
+Mention of GADDAG in Quackle.

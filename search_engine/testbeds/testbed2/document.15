@@ -1,0 +1,31 @@
+Human-based evolutionary computation (HBEC) is a set of evolutionary computation techniques that rely on human innovation. Human-based evolutionary computation techniques can be classified into three more specific classes analogous to ones in evolutionary computation. There are three basic types of innovation: initialization, mutation, and recombination. Here is a table illustrating which type of human innovation are supported in different classes of HBEC:
+All these three classes also have to implement selection, performed either by humans or by computers.
+
+
+== Examples ==
+
+
+=== Human-based selection strategy ===
+Human-based selection strategy is a simplest human-based evolutionary computation procedure. It is used heavily today by websites outsourcing collection and selection of the content to humans (user-contributed content). Viewed as evolutionary computation, their mechanism supports two operations: initialization (when a user adds a new item) and selection (when a user expresses preference among items). The website software aggregates the preferences to compute the fitness of items so that it can promote the fittest items and discard the worst ones. Several methods of human-based selection were analytically compared in (Kosorukoff, 2000; Gentry, 2005).
+Because the concept seems too simple, most of the websites implementing the idea can't avoid the common pitfall: informational cascade in soliciting human preference. For example, digg-style implementations, pervasive on the web, heavily bias subsequent human evaluations by prior ones by showing how many votes the items already have. This makes the aggregated evaluation depend on a very small initial sample of rarely independent evaluations. This encourages many people to game the system that might add to digg's popularity but detract from the quality of the featured results. It is too easy to submit evaluation in digg-style system based only on the content title, without reading the actual content supposed to be evaluated.
+A better example of a human-based selection system is Stumbleupon. In Stumbleupon, users first experience the content (stumble upon it), and can then submit their preference by pressing a thumb-up or thumb-down button. Because the user doesn't see the number of votes given to the site by previous users, Stumbleupon can collect a relatively unbiased set of user preferences, and thus evaluate content much more precisely.
+
+
+=== Human-based evolution strategy ===
+In this context and maybe generally, the Wikipedia software is the best illustration of a working human-based evolution strategy wherein the (targeted) evolution of any given page comprises the fine tuning of the knowledge base of such information that relates to that page. Traditional evolution strategy has three operators: initialization, mutation, and selection. In the case of Wikipedia, the initialization operator is page creation, the mutation operator is incremental page editing. The selection operator is less salient. It is provided by the revision history and the ability to select among all previous revisions via a revert operation. If the page is vandalised and no longer a good fit to its title, a reader can easily go to the revision history and select one of the previous revisions that fits best (hopefully, the previous one). This selection feature is crucial to the success of the Wikipedia.
+An interesting fact is that the original wiki software was created in 1995, but it took at least another six years for large wiki-based collaborative projects to appear. Why did it take so long? One explanation is that the original wiki software lacked a selection operation and hence couldn't effectively support content evolution. The addition of revision history and the rise of large wiki-supported communities coincide in time. From an evolutionary computation point of view, this is not surprising: without a selection operation the content would undergo an aimless genetic drift and would unlikely to be useful to anyone. That is what many people expected from Wikipedia at its inception. However, with a selection operation, the utility of content has a tendency to improve over time as beneficial changes accumulate. This is what actually happens on a large scale in Wikipedia.
+
+
+=== Human-based genetic algorithm ===
+
+Human-based genetic algorithm (HBGA) provides means for human-based recombination operation (a distinctive feature of genetic algorithms). Recombination operator brings together highly fit parts of different solutions that evolved independently. This makes the evolutionary process more efficient.
+
+
+== References ==
+Kosorukoff, A. (2000) Social classification structures. Optimal decision making in an organization, Genetic and Evolutionary Computation Conference, GECCO-2000, Late breaking papers, 175—178 online
+Kosorukoff, A. (2000) Human-based genetic algorithm online
+Cunningham, Ward and Leuf, Bo (2001): The Wiki Way. Quick Collaboration on the Web. Addison-Wesley, ISBN 0-201-71499-X.
+Kosorukoff, A (2001), Human-based Genetic Algorithm. IEEE Transactions on Systems, Man, and Cybernetics, SMC-2001, 3464-3469
+Kosorukoff, A, Goldberg D. E. (2002), Evolutionary computation as a form of organization, Proceedings of Genetic and Evolutionary Computation Conference, GECCO-2002, pp 965–972
+Gentry, C et al. (2005) Secure Distributed Human Computation In Ninth International Conference on Financial Cryptography and Data Security FC'2005 online
+Kruse, J. and Connor, A.M. (2015), Multi-agent evolutionary systems for the generation of complex virtual worlds, EAI Endorsed Transactions on Creative Technologies 15/5 online, DOI: 10.4108/eai.20-10-2015.150099

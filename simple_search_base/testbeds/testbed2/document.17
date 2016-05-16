@@ -1,0 +1,61 @@
+In evolutionary computation, a human-based genetic algorithm (HBGA) is a genetic algorithm that allows humans to contribute solution suggestions to the evolutionary process. For this purpose, a HBGA has human interfaces for initialization, mutation, and recombinant crossover. As well, it may have interfaces for selective evaluation. In short, a HBGA outsources the operations of a typical genetic algorithm to humans.
+
+
+== Evolutionary genetic systems and human agency ==
+Among evolutionary genetic systems, HBGA is the computer-based analogue of genetic engineering (Allan, 2005). This table compares systems on lines of human agency:
+One obvious pattern in the table is the division between organic (top) and computer systems (bottom). Another is the vertical symmetry between autonomous systems (top and bottom) and human-interactive systems (middle).
+Looking to the right, the selector is the agent that decides fitness in the system. It determines which variations will reproduce and contribute to the next generation. In natural populations, and in genetic algorithms, these decisions are automatic; whereas in typical HBGA systems, they are made by people.
+The innovator is the agent of genetic change. The innovator mutates and recombines the genetic material, to produce the variations on which the selector operates. In most organic and computer-based systems (top and bottom), innovation is automatic, operating without human intervention. In HBGA, the innovators are people.
+HBGA is roughly similar to genetic engineering. In both systems, the innovators and selectors are people. The main difference lies in the genetic material they work with: electronic data vs. polynucleotide sequences.
+
+
+== Differences from a plain genetic algorithm ==
+All four genetic operators (initialization, mutation, crossover, and selection) can be delegated to humans using appropriate interfaces (Kosorukoff, 2001).
+Initialization is treated as an operator, rather than a phase of the algorithm. This allows a HBGA to start with an empty population. Initialization, mutation, and crossover operators form the group of innovation operators.
+Choice of genetic operator may be delegated to humans as well, so they are not forced to perform a particular operation at any given moment.
+
+
+== Functional features ==
+HBGA is a method of collaboration and knowledge exchange. It merges competence of its human users creating a kind of symbiotic human-machine intelligence (see also distributed artificial intelligence).
+Human innovation is facilitated by sampling solutions from population, associating and presenting them in different combinations to a user (see creativity techniques).
+HBGA facilitates consensus and decision making by integrating individual preferences of its users.
+HBGA makes use of a cumulative learning idea while solving a set of problems concurrently. This allows to achieve synergy because solutions can be generalized and reused among several problems. This also facilitates identification of new problems of interest and fair-share resource allocation among problems of different importance.
+The choice of genetic representation, a common problem of genetic algorithms, is greatly simplified in HBGA, since the algorithm need not be aware of the structure of each solution. In particular, HBGA allows natural language to be a valid representation.
+Storing and sampling population usually remains an algorithmic function.
+A HBGA is usually a multi-agent system, delegating genetic operations to multiple agents (humans).
+
+
+== Applications ==
+Evolutionary knowledge management, integration of knowledge from different sources.
+Social organization, collective decision-making, and e-governance.
+Traditional areas of application of interactive genetic algorithms: computer art, user-centered design, etc.
+Collaborative problem solving using natural language as a representation.
+Education and Academic benefits from Real Time Simulation with Synthetic Curriculum Modeling using Dynamic Point Cloud environments.
+The HBGA methodology was derived in 1999-2000 from analysis of the Free Knowledge Exchange project that was launched in the summer of 1998, in Russia (Kosorukoff, 1999). Human innovation and evaluation were used in support of collaborative problem solving. Users were also free to choose the next genetic operation to perform. Currently, several other projects implement the same model, the most popular being Yahoo! Answers, launched in December 2005.
+Recent research suggests that human-based innovation operators are advantageous not only where it is hard to design an efficient computational mutation and/or crossover (e.g. when evolving solutions in natural language), but also in the case where good computational innovation operators are readily available, e.g. when evolving an abstract picture or colors (Cheng and Kosorukoff, 2004). In the latter case, human and computational innovation can complement each other, producing cooperative results and improving general user experience by ensuring that spontaneous creativity of users will not be lost.
+Furthermore, human-based genetic algorithms prove to be a successful measure to counteract fatigue effects introduced by interactive genetic algorithms.
+
+
+== See also ==
+Human-based computation
+Human-based evolutionary computation
+Human-computer interaction
+Interactive genetic algorithm
+Memetics
+Social computing
+
+
+== References ==
+
+Kosorukoff, Alex (1999). Free knowledge exchange. internet archive
+Kosorukoff, Alex (2000). Human-based genetic algorithm. online
+Kosorukoff, Alex (2001). Human-based genetic algorithm. In IEEE International Conference on Systems, Man, and Cybernetics, SMC-2001, 3464-3469. full text
+Cheng, Chihyung Derrick and Alex Kosorukoff (2004). Interactive one-max problem allows to compare the performance of interactive and human-based genetic algorithms. In Genetic and Evolutionary Computational Conference, GECCO-2004. full text
+Milani, Alfredo (2004). Online Genetic Algorithms. International Journal of Information Theories and Applications pp. 20–28
+Milani, Alfredo and Silvia Suriani (2004), ADAN: Adaptive Newspapers based on Evolutionary Programming In IEEE/WIC/ACM International Conference on Web Intelligence,(WI'04), pp. 779–780, IEEE Press, 2004
+Allan, Michael (2005). Simple recombinant design. SourceForge.net, project textbender, release 2005.0, file _/description.html. release archives, later version online
+Kruse, Jan and Connor, Andy (2015). Multi-agent evolutionary systems for the generation of complex virtual worlds. full text
+
+
+== External links ==
+Free Knowledge Exchange, a project using HBGA for collaborative solving of problems expressed in natural language.

@@ -1,0 +1,48 @@
+The OrderOne MANET Routing Protocol is an algorithm for computers communicating by digital radio in a mesh network to find each other, and send messages to each other along a reasonably efficient path. It was designed for, and promoted as working with wireless mesh networks.
+OON's designers say it can handle thousands of nodes, where most other protocols handle less than a hundred. OON uses hierarchical algorithms to minimize the total amount of transmissions needed for routing. Routing overhead is limited to between 1% to 5% of node to node bandwidth in any network and does not grow as the network size grows.
+The basic idea is that a network organizes itself into a tree. Nodes meet at the root of the tree to establish an initial route. The route then moves away from the root by cutting corners, as ant-trails do. When there are no more corners to cut, a nearly optimum route exists. This route is continuously maintained.
+Each process can be performed with localized minimal communication, and very small router tables. OORP requires about 200K of memory. A simulated network with 500 nodes transmitting at 200 bytes/second organized itself in about 20 seconds.
+As of 2004, OORP was patented or had other significant intellectual property restrictions. See the link below.
+
+
+== Assumptions ==
+Each computer, or "node" of the network has a unique name, at least one network link, and a computer with some capacity to hold a list of neighbors.
+
+
+== Organizing the tree ==
+The network nodes form a hierarchy by having each node select a parent. The parent is a neighbor node that is the next best step to the most other nodes. This method creates a hierarchy around nodes that are more likely to be present, and which have more capacity, and which are closer to the topological center of the network. The memory limitations of a small node are reflected in its small routing table, which automatically prevents it from being a preferred central node.
+At the top, one or two nodes are unable to find nodes better-connected than themselves, and therefore become parents of the entire network.
+The hierarchy-formation algorithm does not need a complex routing algorithm or large amounts of communication.
+
+
+== Routing ==
+All nodes push a route to themselves to the root of the tree. A node wanting a connection can therefore push a request to the root of the tree, and always find a route.
+The commercial protocol uses Dijkstra's algorithm to continuously optimize and maintain the route. As the network moves and changes, the path is continually adjusted.
+
+
+== Advantages ==
+Assuming that some nodes in the network have enough memory to know of all nodes in the network, there is no practical limitation to network size.
+Since the control bandwidth is defined to be less than 5% regardless of network size, the amount of control bandwidth required is not supposed to increase as network size grows.
+The system can use nodes with small amounts of memory.
+The network has a reliable, low-overhead way to establish that a node is not in the network. This is a difficult, valuable property in ad hoc mesh networks.
+Most routing protocols scale either by reducing proactive link-state routing information or reactively driving routing by connection requests. OORP mixes the proactive and reactive methods. Properly configured, an OORP net can scale to 100,000's of nodes and can often achieve reasonable performance even though it limits routing bandwidth to 5%.
+
+
+== Critiques ==
+Central nodes have an extra burden because they need to have enough memory to store information about all nodes in the network. At some number of nodes, the network will therefore cease to scale.
+If all the nodes in the network are low capacity nodes the network may be overwhelmed with change. This may limit the maximum scale. However, In virtually all real world networks, the farther away from the edge nodes the more the bandwidth grows.
+These critiques may have no practical effect. For example, consider a low bandwidth 9.6Kbit/second radio. If the protocol was configured to send one packet of 180 bytes every 5 seconds, it would consume 3% of overall network bandwidth.
+Public proposals for OON do not include security or authentication. Security and authentication may provided by the Integrator of the protocol. Typical security measures include encryption or signing or the protocol packets and incrementing counters to prevent replay attacks.
+
+
+== See also ==
+DSR, AODV and OLSR are public-domain mesh network protocols.
+The Ad hoc routing protocol list describes more protocols.
+Dijkstra's algorithm
+
+
+== External links ==
+Fortress Technologies - A licensee of OrderOne Networks
+Navy Assessment - An independent test conducted by the Navy
+OrderOne Networks - provides commercial implementations for sale.
+AFCEA Signal Magazine Article - An article in Signal Magazine describing the OrderOne Networks protocol.

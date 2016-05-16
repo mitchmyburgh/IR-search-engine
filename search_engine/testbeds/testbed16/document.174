@@ -1,0 +1,49 @@
+Virtualization Basics and the different types of Virtualization
+
+Posted by decipherinfosys on February 12, 2009
+
+A lot has been said and written about virtualization and a lot of companies are finding benefits adopting it in their IT infrastructure or the data centers that they might be hosting their applications with.  At Decipher, we have been supporting our clients with their virtualization needs specifically with the VMWare and Hyper-V solutions and have also blogged about it before.  Recently, while making a presentation to a potential client, one of the questions that was asked by the Operations Manager was to give a brief overview of virtualization and the different types of virtualization.  We are sharing that with our readers as well here.
+
+Basically, virtualization is dis-associating the tight bond between software and hardware.  In a traditional world, one would use one server for their Oracle instance, one for a Microsoft instance, yet another one to host their Exchange Server and so on for the other applications that they have to support.  At times, you would be able to consolidate them assuming that the OS, providers and the different vendor requirements are common.  What this ends up doing is give you a tons of servers to manage, which consume more power, waste the resources on these boxes because some of these servers would be under-utilized (CPU, Memory wise).  Not only that, if you need to add more capacity you would either try to scale up (more memory or additional processors if possible) or scale out (more servers).  By being able to dis-associate the bond between the software and the hardware one can then use the same hardware to serve up the needs of the different software servers.  So, you could be running Oracle, MS SQL Server, Exchange, Great Plans, Dynamics CRM, etc. all on the same hardware.  By doing this, it is also possible to run different operating systems so I could run MS SQL Server 2008 on Windows 2008 Server and at the same time run, Oracle on Linux all running on the same hardware.  By doing this, the resources will be better utilized and also allow us to easy add another VM on the same hardware assuming that we have the capacity.  There are additional benefits as well like making use of the vmotion capabilities of VMWare etc..
+
+So, that was a 50,000 ft. overview of virtualization.  So, how does it really work?  What breaks the bond between the software and the hardware?  We are going to talk only about VMWare’s ESX Server 3.5 and MSFT’s Hyper-V since the older offerings from both these vendors had a different architecture.  Both of these are based off hypervisor based architecture.   A hypervisor which is also sometimes called a VMM (Virtual Machine Monitor) is essentially a hardware platform virtualization software using which one can run different OS on the same hardware at the same time.  Hypervisor has access to the physical host hardware.  Even though both Microsoft’s solution as well as the VMWare solution are based on the same hypervisor based technology, there are differences in how the implementation is done.  We won’t cover all those differences here but will provide some links
+
+Now, what are the different types of virtualization available and what are the dominant players in the market that provide a solution for it.  There are essentially three different types:
+
+1) Hardware Virtualization:
+
+This is the most common and is used in IT departments in a company as well as in the data centers.  The server’s hardware is virtualized thus allowing us to be able to run different OS and different applications simultaneously on the same hardware.  This allows us to do server consolidation.  And the benefits are obvious (only listing the critical ones here…and less cost is a major advantage across all of these):
+
+a) Less number of servers required for the same number of applications.
+b) Less power consumption.
+c) Less maintenance overhead for the IT staff.
+d) More resource utilization.
+e) Easier (and faster) to add more capacity.
+f)  Patch management and upgrades become easier.
+g) DRP (Disaster Recovery Planning) becomes easier.  Without any interruption to the service, one can backup and even migrate entire virtual environments.
+
+2) Desktop Virtualization:
+
+We have gotten into the habit of calling this VDI since that is the term that VMWare uses for desktop virtualization.  VDI stands for virtual desktop infrastructure.  But this is not limited to just VMWare.  Citrix systems has a similar offering called the XenDesktop.  What this means is that your end user’s computer’s data – their OS, their applications, their downloads, their preferences etc. are all stored in a VM in a hosted environment which could be hosted either by the company’s IT in-house or hosted in a data center.  Som the VMs are then managed in one single place for all the users in a department/company and the computing environment is delivered remotely to the end users.  The one reason why the adoption has been a bit slow on this front is because unlike server consolidation (hardware virtualization), desktop virtualization requires working across a lot of different organizations within the company and it impacts the end users a lot more during the stages of putting the plan in place and executing it.  Benefits are obvious:
+
+1) Easier upgrades and patch management.
+2) IT Desktop support process becomes much more easier.
+3) You can easily add more users as your organization grows and provisioning of new applications and VMs takes minutes and not days/weeks.
+4) Better resource utilization and less power consumption.
+5) Easier recovery management.
+
+3) Storage Virtualization:
+
+So, consolidating servers as well as the desktops is all great but what happens to the storage requirements then?  Won’t the storage requirements also grow by leaps and bounds?  This is the next question that you are going to get from your clients – internal or external.   This also means that since everything is in one place, one also needs to have a proper plan for disaster recovery and business continuity.   So what does storage virtualization mean then?  It means we would then need to make multiple storage devices appear as a common shared media.  A proper back-up and restore strategy needs to be formed as well then and a proper DRP needs to be done – both local and site failures need to be accounted for.  We will present a more detailed DRP analysis in one of our whitepapers that we are working on.
+
+Major Players:
+
+So, who are the major players in this market?  If you have been following the virtualization world, you already know that VMWare, Citrix and Microsoft are the three leading players in this market right now.  There are other players as well who have entered the market – Red Hat, HP, IBM, Oracle and Virtual Iron Software are some of the other names.  For end consumers like us, the more the competition in the virtualization industry, the more affordable it is going to be for us.  Microsoft’s solution (Hyper-V) is free but that solution is not as robust as the VMWare offering.  A lot has been already said about comparing the two.  Here are some resources to help you with that comparison:
+
+a) VMWare’s Presentation: Here.
+b) WindowsIT Pro comparison (this requires a subscription to read the article): Here.
+c) Good Discussion @ Virtualization.info: Here.
+d) ITComparison.com’s Analysis: Here.
+e) Michael Otey’s article: Here.
+
+Do note that we do not recommend using virtualization for your database servers IF you have a highly transactional system or a datawarehousing/data mining system that requires heavy IO activity.  Read more over here.  If you have applications which do not tax the database that much and the IO is relatively less, virtualization works perfectly fine.  This is based on our research as well as limited tests that we have done in our lab & client sites.

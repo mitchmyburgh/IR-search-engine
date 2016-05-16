@@ -1,0 +1,43 @@
+﻿Higher order relations and Description Logic Higher order relations and Description Logic
+Although description logics on which OIL and
+RACER are based allow only binary relations, we 
+use OIL and Racer in a way that also allows us to 
+employ arbitrary n-ary relations and higher-order 
+relations. Given that a ternary relation can be 
+represented as a binary relation that takes another
+binary relation as one of its argument, any n-ary 
+relations can be represented via higher-order 
+relations, i.e. relations which take other relations as 
+arguments. Suppose that we want to implement a 
+second-order relation that takes as its first 
+argument a binary relation- more precisely, the 
+second order relation takes as its first argument 
+instances of that binary relation- rather than 
+instances of a concept. The instances of the binary 
+relation can be mapped to instances of a newly 
+created concept, i.e. the concept of individuals 
+which are single entities but correspond to (and are 
+linked to) the instances of the binary relation. 
+There is an exact correspondence between the 
+second-order relation taking a binary relation 
+instance 
+as 
+its 
+first 
+argument 
+and 
+its 
+implementation in terms of a binary relation that 
+takes as its first argument an instance of the 
+concept which has instances of the other binary 
+relation as its individuals. The approach we 
+described here has now been used to implement in 
+the FOCAL ontology information which extends 
+beyond the binary relation based language. 
+Multiple facts involving n-ary relation and higher-
+order relation are present in the current version of 
+the FOCAL ontology. ATTITUDE
+agents are 
+currently being built to allow automated reasoning 
+with this extended language. 
+

@@ -1,0 +1,52 @@
+The Arrays class
+
+The java.util.Arrays class is a convenience class for various array manipulations, like comparison, searching, printing, sorting and others. Basically, this class is a set of static methods that are all useful for working with arrays. The code below demonstrates a proper invocation of equals:
+
+int[] a = {1,2,3};
+int[] b = {1,2,3};
+if( Arrays.equals(a, b) )
+   System.out.println("arrays with identical contents");
+
+Another commonly used method is toString() which takes care of of printing
+
+int[] a = {1,2,3};
+System.out.println(Arrays.toString(a));
+
+Here is the example of sorting
+
+int[] a = {3,2,1};
+Arrays.sort(a);
+System.out.println(Arrays.toString(a));
+
+In addition to that, the class has other utility methods for supporting operations over multidimensional arrays.
+Copying arrays
+
+There are four ways to copy arrays
+
+    using a loop structure
+    using Arrays.copyOf()
+    using System.arraycopy()
+    using clone() 
+
+The first way is very well known to you
+
+int[] a = {1, 2, 3};
+int[] b = new int[a.length];
+for(int i = 0; i ‹ a.length; i++) b[i] = a[i];
+
+The next choice is to use Arrays.copyOf()
+
+int[] a = {1, 2, 3};
+int[] b = Arrays.copyOf(a, a.length);
+
+The second parameter specifies the length of the new array, which could either less or equal or bigger than the original length.
+
+The most efficient copying data between arrays is provided by System.arraycopy() method. The method requires five arguments. Here is its signature
+
+public static void arraycopy(Object source,
+                             int srcIndex,
+                             Object destination,
+                             int destIndex,
+                             int length)
+
+The method copies length elements from a source array starting with the index srcIndex to a new array destination at the index destIndex.The above code example can be rewritten as it follows 

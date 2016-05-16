@@ -1,0 +1,15 @@
+Case 5: The parent P is red but the uncle U is black, the current node N is the left child of P, and P is the left child of its parent G. In this case, a right rotation on G is performed; the result is a tree where the former parentP is now the parent of both the current node N and the former grandparent G. G is known to be black, since its former child P could not have been red otherwise (without violating property 4). Then, the colors of P and G are switched, and the resulting tree satisfies property 4 (both children of every red node are black). Property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes) also remains satisfied, since all paths that went through any of these three nodes went through G before, and now they all go through P. In each case, this is the only black node of the three.
+void insert_case5(struct node *n)
+{
+ struct node *g = grandparent(n);
+
+ n->parent->color = BLACK;
+ g->color = RED;
+ if (n == n->parent->left)
+  rotate_right(g);
+ else
+  rotate_left(g);
+}
+Note that inserting is actually in-place, since all the calls above use tail recursion.
+In the algorithm above, all cases are chained in order, except in insert case 3 where it can recurse to case 1 back to the grandparent node: this is the only case where an iterative implementation will effectively loop. Because the problem of repair is escalated to the next higher level but one, it takes maximally h/2 iterations to repair the tree (where h is the height of the tree). Because the probability for escalation decreases exponentially with each iteration the average insertion cost is constant.
+Mehlhorn & Sanders (2008) point out: "AVL trees do not support constant amortized update costs", but red-black trees do.[20]

@@ -1,0 +1,33 @@
+From Wikipedia, the free encyclopedia
+
+This article possibly contains original research. Please improve it by verifying the claims made and adding inline citations. Statements consisting only of original research should be removed. (January 2012)
+The Blinn–Phong reflection model (also called the modified Phong reflection model) is a modification to the Phong reflection model developed by Jim Blinn.[1]
+
+Blinn–Phong is the default shading model used in OpenGL[2] and Direct3D's fixed-function pipeline (before Direct3D 10 and OpenGL 3.1), and is carried out on each vertex as it passes down the graphics pipeline; pixel values between vertices are interpolated by Gouraud shading by default, rather than the more computationally-expensive Phong shading.
+
+Contents  [hide] 
+1	Description
+2	Efficiency
+3	Code samples
+3.1	High-Level Shading Language code sample
+3.2	OpenGL Shading Language code sample
+3.2.1	Vertex shader
+3.2.2	Fragment shader
+4	See also
+5	References
+Description[edit]
+
+Vectors for calculating Phong and Blinn–Phong shading
+In Phong shading, one must continually recalculate the dot product R \cdot V between a viewer (V) and the beam from a light-source (L) reflected (R) on a surface.
+
+If, instead, one calculates a halfway vector between the viewer and light-source vectors,
+
+
+H = \frac{L + V}{\left\| L + V \right\|}
+we can replace R \cdot V with N \cdot H, where N is the normalized surface normal. In the above equation, L and V are both normalized vectors, and H is a solution to the equation V=P_H(-L), where P_H is the Householder matrix that reflects a point in the hyperplane that contains the origin and has the normal H.
+
+This dot product represents the cosine of an angle that is half of the angle represented by Phong's dot product if V, L, N and R all lie in the same plane. This relation between the angles remains approximately true when the vectors don't lie in the same plane, especially when the angles are small. The angle between N and H is therefore sometimes called the halfway angle.
+
+Considering that the angle between the halfway vector and the surface normal is likely to be smaller than the angle between R and V used in Phong's model (unless the surface is viewed from a very steep angle for which it is likely to be larger), and since Phong is using \left( R \cdot V \right)^{\alpha}, an exponent can be set \alpha^\prime > \alpha such that \left(N \cdot H \right)^{\alpha^\prime} is closer to the former expression.
+
+For front-lit surfaces (specular reflections on surfaces facing the viewer), \alpha^\prime = 4\,\alpha will result in specular highlights that very closely match the corresponding Phong reflections. However, while the Phong reflections are always round for a flat surface, the Blinn–Phong reflections become elliptical when the surface is viewed from a steep angle. This can be compared to the case where the sun is reflected in the sea close to the horizon,[3] or where a far away street light is reflected in wet pavement, where the reflection will always be 

@@ -1,0 +1,90 @@
+An application layer is an abstraction layer that specifies the shared protocols and interface methods used by hosts in a communications network. The application layer abstraction is used in both of the standard models of computer networking; the Internet Protocol Suite (TCP/IP) and the Open Systems Interconnection model (OSI model).
+Although both models use the same term for their respective highest level layer, the detailed definitions and purposes are different.
+In TCP/IP, the application layer contains the communications protocols and interface methods used in process-to-process communications across an Internet Protocol (IP) computer network. The application layer only standardizes communication and depends upon the underlying transport layer protocols to establish host-to-host data transfer channels and manage the data exchange in a client-server or peer-to-peer networking model. Though the TCP/IP application layer does not describe specific rules or data formats that applications must consider when communicating, the original specification (in RFC 1123) does rely on and recommend the robustness principle for application design.
+In the OSI model, the definition of the application layer is narrower in scope. The OSI model defines the application layer as the user interface responsible for displaying received information to the user. In contrast, the Internet Protocol model does not concern itself with such detail. OSI also explicitly distinguishes additional functionality below the application layer, but above the transport layer at two additional levels; the session layer and the presentation layer. OSI specifies a strict modular separation of functionality at these layers and provides protocol implementations for each layer.
+
+
+== Application layer protocols ==
+(Session Layer under OSI model) The IETF definition document for the application layer in the Internet Protocol Suite is RFC 1123. It provided an initial set of protocols that covered the major aspects of functionality of the early Internet.
+Remote login to hosts: Telnet
+File transfer: File Transfer Protocol (FTP), Trivial File Transfer Protocol (TFTP)
+Electronic mail transport: Simple Mail Transfer Protocol (SMTP)
+Networking support: Domain Name System (DNS)
+Host initialization: BOOTP
+Remote host management: Simple Network Management Protocol (SNMP), Common Management Information Protocol over TCP (CMOT)
+
+
+== Other protocol examples ==
+9P, Plan 9 from Bell Labs distributed file system protocol
+AFP, Apple Filing Protocol
+APPC, Advanced Program-to-Program Communication
+AMQP, Advanced Message Queuing Protocol
+Atom Publishing Protocol
+BEEP, Block Extensible Exchange Protocol
+Bitcoin
+BitTorrent
+CFDP, Coherent File Distribution Protocol
+CoAP, Constrained Application Protocol
+DDS, Data Distribution Service
+DeviceNet
+eDonkey
+ENRP, Endpoint Handlespace Redundancy Protocol
+FastTrack (KaZaa, Grokster, iMesh)
+Finger, User Information Protocol
+Freenet
+FTAM, File Transfer Access and Management
+Gopher, Gopher protocol
+HL7, Health Level Seven
+HTTP, HyperText Transfer Protocol
+H.323, Packet-Based Multimedia Communications System
+IRCP, Internet Relay Chat Protocol
+Kademlia
+KAP, Anonymous File Transfer over UDP/IP (KickAss Protocol)
+LDAP, Lightweight Directory Access Protocol
+LPD, Line Printer Daemon Protocol
+MIME (S-MIME), Multipurpose Internet Mail Extensions and Secure MIME
+Modbus
+MQTT Protocol
+Netconf
+NFS, Network File System
+NIS, Network Information Service
+NNTP, Network News Transfer Protocol
+NTCIP, National Transportation Communications for Intelligent Transportation System Protocol
+NTP, Network Time Protocol
+OSCAR, AOL Instant Messenger Protocol
+PNRP, Peer Name Resolution Protocol
+RDP, Remote Desktop Protocol
+RELP, Reliable Event Logging Protocol
+RIP, Routing Information Protocol
+Rlogin, Remote Login in UNIX Systems
+RPC, Remote Procedure Call
+RTMP, Real Time Messaging Protocol
+RTP, Real-time Transport Protocol
+RTPS, Real Time Publish Subscribe
+RTSP, Real Time Streaming Protocol
+SAP, Session Announcement Protocol
+SDP, Session Description Protocol
+SIP, Session Initiation Protocol
+SLP, Service Location Protocol
+SMB, Server Message Block
+SMTP, Simple Mail Transfer Protocol
+SNTP, Simple Network Time Protocol
+SSH, Secure Shell
+SSMS, Secure SMS Messaging Protocol
+TCAP, Transaction Capabilities Application Part
+TDS, Tabular Data Stream
+Tor (anonymity network)
+Tox
+TSP, Time Stamp Protocol
+VTP, Virtual Terminal Protocol
+Whois (and RWhois), Remote Directory Access Protocol
+WebDAV
+X.400, Message Handling Service Protocol
+X.500, Directory Access Protocol (DAP)
+XMPP, Extensible Messaging and Presence Protocol
+
+
+== References ==
+
+
+== External links ==

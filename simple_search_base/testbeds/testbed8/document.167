@@ -1,0 +1,20 @@
+Sketch of proof for cost of insertion[edit]
+Define the Imbalance of a node v to be the absolute value of the difference in size between its left node and right node minus 1, or 0, whichever is greater. In other words:
+ 
+Immediately after rebuilding a subtree rooted at v, I(v) = 0.
+Lemma: Immediately before rebuilding the subtree rooted at v,
+ 
+(  is Big O Notation.)
+Proof of lemma:
+Let   be the root of a subtree immediately after rebuilding.  . If there are   degenerate insertions (that is, where each inserted node increases the height by 1), then
+ ,
+  and
+ .
+Since   before rebuilding, there were   insertions into the subtree rooted at   that did not result in rebuilding. Each of these insertions can be performed in  time. The final insertion that causes rebuilding costs  . Using aggregate analysis it becomes clear that the amortized cost of an insertion is  :
+ 
+Deletion[edit]
+Scapegoat trees are unusual in that deletion is easier than insertion. To enable deletion, scapegoat trees need to store an additional value with the tree data structure. This property, which we will call MaxNodeCount simply represents the highest achieved NodeCount. It is set to NodeCount whenever the entire tree is rebalanced, and after insertion is set to max(MaxNodeCount, NodeCount).
+To perform a deletion, we simply remove the node as you would in a simple binary search tree, but if
+NodeCount <= a*MaxNodeCount
+then we rebalance the entire tree about the root, remembering to set MaxNodeCount to NodeCount.
+This gives deletion its worst-case performance of O(n) time; however, it is amortized to O(log n) average time.

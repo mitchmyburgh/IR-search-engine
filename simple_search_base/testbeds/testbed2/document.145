@@ -1,0 +1,23 @@
+The junction tree algorithm (also known as 'Clique Tree') is a method used in machine learning to extract marginalization in general graphs. In essence, it entails performing belief propagation on a modified graph called a junction tree. The basic premise is to eliminate cycles by clustering them into single nodes.
+
+
+== Junction tree algorithm ==
+
+
+=== Hugin algorithm ===
+If the graph is directed then moralize it to make it undirected
+Introduce the evidence
+Triangulate the graph to make it chordal
+Construct a junction tree from the triangulated graph (we will call the vertices of the junction tree "supernodes")
+Propagate the probabilities along the junction tree (via belief propagation)
+Note that this last step is inefficient for graphs of large treewidth. Computing the messages to pass between supernodes involves doing exact marginalization over the variables in both supernodes. Performing this algorithm for a graph with treewidth k will thus have at least one computation which takes time exponential in k.
+
+
+=== Shafer-Shenoy algorithm ===
+
+
+== References ==
+Lauritzen, Steffen L.; Spiegelhalter, David J. (1988). "Local Computations with Probabilities on Graphical Structures and their Application to Expert Systems". Journal of the Royal Statistical Society. Series B (Methodological) (Blackwell Publishing) 50 (2): 157–224. JSTOR 2345762. MR 0964177. 
+Dawid, A. P. (1992). "Applications of a general propagation algorithm for probabilistic expert systems". Statistics and Computing (Springer) 2 (1): 25–26. doi:10.1007/BF01890546. 
+Huang, Cecil; Darwiche, Adnan (1996). "Inference in Belief Networks: A Procedural Guide". International Journal of Approximate Reasoning (Elsevier) 15 (3): 225–263. doi:10.1016/S0888-613X(96)00069-2. 
+Paskin, Mark A. "A Short Course on Graphical Models : 3. The Junction Tree Algorithms" (PDF). Archived from the original on March 19, 2015.

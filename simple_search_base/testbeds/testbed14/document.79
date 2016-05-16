@@ -1,0 +1,57 @@
+Ontology learning
+From Wikipedia, the free encyclopedia
+Ontology learning (ontology extraction, ontology generation, or ontology acquisition) is the automatic or semi-automatic creation of ontologies, including extracting the corresponding domain's terms and the relationships between those concepts from a corpus of natural language text, and encoding them with an ontology language for easy retrieval. As building ontologies manually is extremely labor-intensive and time-consuming, there is great motivation to automate the process.
+
+Typically, the process starts by extracting terms and concepts or noun phrases from plain text using linguistic processors such as part-of-speech tagging and phrase chunking. Then statistical[1] or symbolic [2][3] techniques are used to extract relation signatures, often based on pattern-based[4] or definition-based[5] hypernym extraction techniques.
+
+Contents  [hide]
+1	Procedure
+1.1	Domain terminology extraction
+1.2	Concept discovery
+1.3	Concept hierarchy derivation
+1.4	Learning of non-taxonomic relations
+1.5	Rule discovery
+1.6	Ontology population
+1.7	Concept hierarchy extension
+1.8	Tools
+1.9	Frame and event detection
+2	See also
+3	References
+4	Bibliography
+Procedure[edit]
+Ontology learning is used to (semi-)automatically extract whole ontologies from natural language text.[6][7] The process is usually split into the following eight tasks, which are not all necessarily applied in every ontology learning system.
+
+Domain terminology extraction
+Concept discovery
+Concept hierarchy derivation
+Learning of non-taxonomic relations
+Rule discovery
+Ontology population
+Concept hierarchy extension
+Frame and event detection
+Domain terminology extraction[edit]
+During the domain terminology extraction step, domain-specific terms are extracted, which are used in the following step (concept discovery) to derive concepts. Relevant terms can be determined e. g. by calculation of the TF/IDF values or by application of the C-value / NC-value method. The resulting list of terms has to be filtered by a domain expert. In the subsequent step, similarly to coreference resolution in IE, the OL system determines synonyms, because they share the same meaning and therefore correspond to the same concept. The most common methods therefore are clustering and the application of statistical similarity measures.
+
+Concept discovery[edit]
+In the concept discovery step, terms are grouped to meaning bearing units, which correspond to an abstraction of the world and therefore to concepts. The grouped terms are these domain-specific terms and their synonyms, which were identified in the domain terminology extraction step.
+
+Concept hierarchy derivation[edit]
+In the concept hierarchy derivation step, the OL system tries to arrange the extracted concepts in a taxonomic structure. This is mostly achieved by unsupervised hierarchical clustering methods. Because the result of such methods is often noisy, a supervision, e. g. by evaluation by the user, is integrated. A further method for the derivation of a concept hierarchy exists in the usage of several patterns, which should indicate a sub- or supersumption relationship. Patterns like “X, that is a Y” or “X is a Y” indicate, that X is a subclass of Y. Such pattern can be analyzed efficiently, but they occur too infrequent, to extract enough sub- or supersumption relationships. Instead bootstrapping methods are developed, which learn these patterns automatically and therefore ensure a higher coverage.
+
+Learning of non-taxonomic relations[edit]
+At the learning of non-taxonomic relations step, relationships are extracted, which do not express any sub- or supersumption. Such relationships are e.g. works-for or located-in. There are two common approaches to solve this subtask. The first one is based upon the extraction of anonymous associations, which are named appropriately in a second step. The second approach extracts verbs, which indicate a relationship between the entities, represented by the surrounding words. But the result of both approaches has to be evaluated by an ontologist.
+
+Rule discovery[edit]
+During rule discovery,[8] axioms (formal description of concepts) are generated for the extracted concepts. This can be achieved for example by analyzing the syntactic structure of a natural language definition and the application of transformation rules on the resulting dependency tree. The result of this process is a list of axioms, which is afterwards comprehended to a concept description. This one has to be evaluated by an ontologist.
+
+Ontology population[edit]
+At the ontology population step, the ontology is augmented with instances of concepts and properties. For the augmentation with instances of concepts methods, which are based on the matching of lexico-syntactic patterns, are used. Instances of properties are added by application of bootstrapping methods, which collect relation tuples.
+
+Concept hierarchy extension[edit]
+In the concept hierarchy extension step, the OL system tries to extend the taxonomic structure of an existing ontology with further concepts. This can be realized supervised by a trained classifier or unsupervised by the application of similarity measures.
+
+Tools[edit]
+Dog4Dag - an ontology generation plugin for Protégé 4.1 and OBOEdit. DOG4DAG is an ontology generation plugin for both Protégé 4.1 and OBO-Edit 2.1. It allows for term generation, sibling generation, definition generation, and relationship induction. Integrated into Protégé 4.1 and OBO-Edit 2.1, DOG4DAG allows ontology extension for all common ontology formats (e.g., OWL and OBO). Limited largely to EBI and Bio Portal lookup service extensions.[9]
+
+Frame and event detection[edit]
+During frame/event detection, the OL system tries to extract complex relationships from text, e.g. who departed from where to what place and when. Approaches range from applying SVM with kernel methods to semantic role labeling (SRL) [10] to deep semantic parsing techniques.[11]

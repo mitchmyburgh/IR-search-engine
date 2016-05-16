@@ -1,0 +1,105 @@
+﻿Abstract
+Dynamic First Order Logic (DFOL) results from interpreting quantification over a variable v as
+change of valuation over the v position, conjunction as sequential composition, disjunction as nondeterministic choice, and negation as (negated) test for continuation. We present a tableau style calculus for DFOL with explicit (simultaneous) binding, prove its soundness and completeness, and point out its relevance for programming with DFOL, for automated program analysis including loop invariant detection, and for semantics of natural language. We also extend this to an infinitary calculus for DFOL with iteration and connect up with other work in dynamic logic.
+Keywords: Dynamic Logic, First Order Logic, Assertion Calculus, Tableau Reasoning
+1 Introduction
+The language we use and analyze in this paper consists of formulas that can be used both for programming and for making assertions about programs. The only difference between a program and an assertion is that an assertion is a program with its further computational effect blocked off. In the notation we will introduce below: if φ is a program, then ((φ)) is the assertion that the program φ can be executed. Execution of φ will in general lead to a set of computed answer bindings, execution of ((φ)) to a yes/no answer indicating success or failure of φ.
+Since the formulas of our language, DFOL, can be used for description and computation alike, our calculus is both an execution mechanism for DFOL and a tool for theorem proving in DFOL. One of the benefits of mixing calculation and assertion is that the calculus can be put to use to automatically derive assertions about programs for purposes of verification. And since DFOL has its roots in Natural Language processing (just as Prolog does), we also see a future for our tool-set in a computational semantics of natural language.
+We start our enterprise by developing a theory of binding for DFOL that we then
+put to use in a calculus for DFOL with explicit binding. The explicit bindings represent the intermediate results of calculation that get carried along in the computation process. We illustrate with examples from standard first order reasoning, natural language processing, imperative programming, and derivation of postconditions for imperative programs.
+L. J. of the IGPL, Vol. 9 No. 3, pp. 411–445 2001 411 c Oxford University Press
+412 Tableau Reasoning and Programming with Dynamic First Order Logic
+Finally, we develop an infinitary calculus for DFOL plus iteration, with a completeness proof. Details of the relationships with existing calculi are given below. The two calculi that are the subject of this paper form the computation and inference engine of a toy programming language for theorem proving and computing with DFOL, Dynamo.
+2 Dynamic First Order Logic
+Dynamic First Order Logic results from interpreting quantification over v as change of valuation over the v position, conjunction as sequential composition, disjunction as nondeterministic choice, and negation as (negated) test for continuation. See Groenendijk and Stokhof [16] for a presentation and Visser [31] for an in-depth analysis. A sound and complete sequent style calculus for DFOL (without choice) was presented in Van Eijck [12]. In this paper we present a calculus that also covers the choice operator, and that is much closer to standard analytic tableau style reasoning for FOL (see Smullyan [29] for a classical presentation, Fitting [13] for a textbook treatment and connections with automated theorem proving, [17] for an excellent overview, and [8] for an encyclopedic account).
+For applications of DFOL to programming, the presence of the choice operation ∪ in the language is crucial: choice is the basis of ‘if then else’, and of all nondeterministic programming constructs for exploring various avenues towards a solution. It can (and has been) argued that the full expressive power of ∪ is not necessary for applications of DFOL to natural language semantics. In fact, the presentation of dynamic predicate logic (DPL) in [16] does not cover ∪: in DPL, choice is handled in terms of negation and conjunction, with the argument that natural language ‘or’ is externally static. This means that an ‘or’ construction behaves like a test. The present calculus deals
+with DFOL including choice. 
+A very convenient extension that we immediately add to DFOL is representation
+of simultaneous binding. It is well known that bindings or substitutions are definable in DFOL. Still we will consider them as operators in their own right, in the spirit of Venema [30], where substitutions are studied as modal operators. Simultaneous bindings can in general not be expressed in terms of single bindings without introducing auxiliary variables. E.g., the swap of variables x and y in the simultaneous binding [y/x, x/y] can only be expressed as a sequence of single bindings at the expense of availing ourselves of an extra variable z, as z := x; x := y; y := z. The dynamic effect of this sequence of single bindings is not quite the same as that of [y/x, x/y],
+for z := x; x := y; y := z changes the value of z, while [y/x, x/y] does not, and the semantics of DFOL is sensitive to such subtle differences.
+A first order signature Σ is a pair hPΣ, FΣi, with PΣ a set of predicate constants and FΣ a set of function constants. Let V be an infinite set of variables, and let a : (PΣ ∪ FΣ) → N be a function that assigns to every predicate or function symbol its arity. The function symbols with arity 0 are the individual constants. The set TΣ of terms over the signature is given in the familiar way, by t ::= v | f t1 ···tn, where v ranges over V and f over FΣ, with a(f) = n. The sub-terms of a term are given as usual. We will write sequences of terms t1,...,tn as t.
+A binding θ is a function V → TΣ that makes only a finite number of changes,
+i.e., θ has the property that dom(θ) = {v ∈ V | θ(v) 6= v} is finite. See Apt [1] and 
+2. DYNAMIC FIRST ORDER LOGIC 413
+Doets [10] for lucid introductions to the subject of binding in the context of logic
+programming. We will use rng(θ) for {θ(v) ∈ TΣ | θ(v) 6= v}, and var(rng(θ)) for
+∪{var(θ(v)) | v ∈ dom(θ)}, where var(t) is the set of variables occurring as a subterm
+in t. An explicit form (or: a representation) for binding θ is a sequence
+[θ(v1)/v1,...,θ(vn)/vn],
+where {v1,...,vn} = dom(θ), (i.e., θ(vi) 6= vi, for only the changes are listed), and
+i 6= j implies vi 6= vj (i.e., each variable in the domain is mentioned only once).
+We will use [] for the binding that changes nothing, i.e, [] is the only binding θ
+with dom(θ) = ∅. We use θ, ρ, possibly with indices, as meta-variables ranging over
+bindings. Representations for bindings are given, as usual, by:
+θ ::= [] | [t1/v1,...,tn/vn] provided ti 6= vi, and vi = vj implies i = j.
+We let ◦ denote the syntactic operation of composition of binding representations:
+Let θ = [t1/v1,...,tn/vn] and ρ = [r1/w1,...,rm/wm] be binding representations.
+Then θ ◦ ρ is the result of removing from the sequence
+[θ(r1)/w1,...,θ(rm)/wm, t1/v1,...,tn/vn]
+the binding pairs θ(ri)/wi for which θ(ri) = wi, and the binding pairs tj/vj
+for which vj ∈ {w1,...,wm}.
+For example, [x/y] ◦ [y/z]=[x/z, x/y], [x/z, y/x] ◦ [z/x]=[x/z].
+We are now in a position to define the DFOL language LΣ over signature Σ. We
+distinguish between DFOL units and DFOL formulas (or sequences).
+Definition 2.1 (The DFOL language LΣ over signature Σ)
+t ::= v | ft
+¯
+U ::= θ | ∃v | Pt
+¯ | t1
+.
+= t2 | ¬(φ) | (φ1 ∪ φ2)
+We will omit parentheses where it doesn’t create syntactic ambiguity, and allow the
+usual abbreviations: we write ⊥ for ¬([]), ¬Pt
+¯ for ¬(Pt
+¯), t1 6= t2 for ¬(t1
+.
+= t2),
+φ1 ∪ φ2 for (φ1 ∪ φ2). Similarly, (φ → ψ) abbreviates ¬(φ; ¬(ψ)), ∀v(φ) abbreviates
+¬(∃v; ¬(φ)). A formula φ is a literal if φ is of the form Pt
+¯ or ¬Pt
+¯, or of the form
+t1
+.
+= t2 or t1 6= t2. The complement φ of a formula φ is given by: φ := ψ if φ has the
+form ¬(ψ) and φ := ¬(φ) otherwise. We abbreviate ¬¬(φ) as ((φ)), and we will call
+formulas of the form ((φ)) block formulas.
+We can think of formula φ as built up from units U by concatenation. For formula
+induction arguments, it is sometimes convenient to read a unit U as the formula U; []
+(recall that [] is the empty binding), thus using [] for the empty list formula. In other
+words, we will silently add the [] at the end of a formula list when we need its presence
+in recursive definitions or induction arguments on formula structure.
+Given a first order model M = (D, I) for signature Σ, the semantics of DFOL
+language LΣ is given as a binary relation on the set VD, the set of all variable maps
+(variable states, valuations) into the domain of the model. We impose the usual nonempty
+domain constraint of FOL: any Σ model M = (D, I) has D 6= ∅. If s, u ∈ VD,
+414 Tableau Reasoning and Programming with Dynamic First Order Logic
+we use s ∼v u to indicate that s, u differ at most in their value for v, and s ∼X u to
+indicate that s, u differ at most in their values for the members of X. If s ∈ VD and
+v, v0 ∈ V , we use s[v0
+/v] for the valuation u given by u(v) = s(v0
+), and u(w) = s(w)
+for all w ∈ V with w 6= v. Also, if s and v are as before and d ∈ D we use s[d/v] for
+the valuation u given by u(v) = d, and u(w) = s(w) for all w ∈ V with w 6= v.
+M |=s Pt
+¯indicates that s satisfies the predicate Pt
+¯in M according to the standard
+truth definition for classical first order logic. [[t]]Ms gives the denotation of t in M
+under s. If θ is a binding and s a valuation (a member of VD), we will use sθ for the
+valuation u given by u(v) = [[θ(v)]]M s .
+Definition 2.2 (Semantics of DFOL)
+s[[θ]]Mu iff u = sθ
+s[[∃v]]Mu iff s ∼v u
+s[[Pt
+¯]]Mu iff s = u and M |=s Pt
+¯
+s[[t1
+.
+= t2]]Mu iff s = u and [[t1]]Ms = [[t2]]Ms
+s[[¬(φ)]]Mu iff s = u and there is no u0 with s[[φ]]Mu0
+s[[φ1 ∪ φ2]]Mu iff s[[φ1]]Mu or s[[φ2]]Mu
+s[[U; φ]]Mu iff there is a u0 with s[[U]]Mu0 and u0 [[φ]]Mu
+Note that it follows from this definition that
+s[[((φ))]]Mu iff s = u and there is a u0 with s[[φ]]Mu0 .
+Thus, block formulas have their dynamic effects blocked off: double negation transforms the semantic transition relation into a test.
+We introduce a syntactic blocking operation on formulas as follows (= is used for syntactic identity):
+

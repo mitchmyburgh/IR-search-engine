@@ -1,0 +1,23 @@
+Apple's new programming language Swift is now open source 
+
+Apple introduced a brand new programming language last year that's meant to make coding an app for iOS or OS X easy to do, and today that language is taking a major step: it's going open source. Apple is opening up the language, Swift, through a new website, Swift.org, and through GitHub. Developers outside of Apple will now be able to look inside of Swift, contribute to its development, and bring it to new platforms.
+
+"Swift is now on Linux, and it could come to Windows and Android, too"
+
+Apple is kicking that final item off today by releasing a version of Swift that works on Linux. This is likely meant for Apple's enterprise partners, like IBM, who will now be able to create the consumer-facing portion of apps in Swift and have them talk to Linux servers that speak Swift as well.
+
+While you shouldn't expect Apple to work on further ports of Swift itself, open sourcing its code means that other developers could choose to bring it to Windows and Android, too. Apple has said that it wants Swift to be one of the core programming languages of the next 20 years, and if it truly becomes that, having it work with all of the biggest desktop and mobile platforms will be a key component. It'll also benefit Apple; the more people using Swift, the more people who can code apps for its own devices.
+
+Though Apple being open about anything is a rarity, open sourcing developer-facing creations like this isn't quite as uncommon. iOS's ResearchKit was made open source earlier this year, and Safari's browser engine, WebKit, has long been open to developers.
+
+Going open source doesn't mean that Apple is passing Swift off for others to handle. Apple is still going to lead development on it, with its work on the project now being done out in the open. Outside developers will be able to come in and join Apple, helping to shape the direction that Swift goes and contribute to how it works and what it can do.
+
+"Developers still have to go through Apple to get to the App Store"
+
+While developers will be able to download Swift and start building things with it from this new website, that version of Swift won't be able to build apps that go into the App Store. That's ostensibly for the purpose of security and stability. Developers who want to be in the App Store will still have to pay Apple's fee and use the official version of Swift; that version will be behind the open source version, periodically syncing up with it, likely as new additions become stable.
+
+Though GitHub will handle the Swift code, Apple is establishing a developer community through Swift.org. The site will host a bug tracking system, an engineering blog, and a mailing list. There will also be Swift tutorials and instructions on how to contribute to its development.
+
+Apple hasn't released specific figures on how much uptake Swift has had with developers, though it does cite a few examples — like Yahoo Weather, LinkedIn, and the to-do list app Clear — that have been incorporating it. In addition to iOS and OS X apps, Swift can also be used for tvOS and watchOS apps. The language is supposed to be faster than what developers previously had to use, Objective-C, while also building in protections against common issues and errors.
+
+That flexibility — and Apple's backing — already seems to be enough to make Swift a popular language. The analyst firm RedMonk, which ranks the use of programming languages, wrote in July that "Swift is growing faster than anything else we track." RedMonk's Stephen O'Grady also added: "The forthcoming release of Swift as open source and availability of builds for Linux, as well, should theoretically provide even more momentum going forward."

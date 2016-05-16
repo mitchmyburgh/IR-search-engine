@@ -1,0 +1,199 @@
+Logic programming
+From Wikipedia, the free encyclopedia
+"Rule-Based" redirects here. For rule-based systems, see Rule-based language.
+Programming paradigms
+Action
+Agent-oriented
+Array-oriented
+Automata-based
+Concurrent computing
+Relativistic programming
+Data-driven
+Declarative (contrast: Imperative)
+Constraint
+Constraint logic
+Concurrent constraint logic
+Dataflow
+Flow-based
+Cell-oriented (spreadsheets)
+Reactive
+Functional
+Functional logic
+Purely functional
+Logic
+Abductive logic
+Answer set
+Concurrent logic
+Functional logic
+Inductive logic
+Dynamic
+End-user programming
+Event-driven
+Service-oriented
+Time-driven
+Expression-oriented
+Feature-oriented
+Function-level (contrast: Value-level)
+Generic
+Imperative (contrast: Declarative)
+Literate
+Procedural
+Inductive programming
+Language-oriented
+Natural language programming
+Discipline-specific
+Domain-specific
+Grammar-oriented
+Dialecting
+Intentional
+Metaprogramming
+Automatic
+Reflective
+Attribute-oriented
+Homoiconic
+Template
+Policy-based
+Non-structured (contrast: Structured)
+Array
+Nondeterministic
+Parallel computing
+Process-oriented
+Point-free style
+Concatenative
+Semantic
+Structured (contrast: Non-structured)
+Block-structured
+Modular (contrast: Monolithic)
+Object-oriented
+Actor-based
+Class-based
+Concurrent
+Prototype-based
+By separation of concerns:
+Aspect-oriented
+Role-oriented
+Subject-oriented
+Recursive
+Value-level (contrast: Function-level)
+Probabilistic
+Concept
+v t e
+Logic programming is a programming paradigm based on formal logic. A program written in a logic programming language is a set of sentences in logical form, expressing facts and rules about some problem domain. Major logic programming language families include Prolog, Answer set programming (ASP) and Datalog. In all of these languages, rules are written in the form of clauses:
+
+H :- B1, …, Bn.
+and are read declaratively as logical implications:
+
+H if B1 and … and Bn.
+H is called the head of the rule and B1, …, Bn is called the body. Facts are rules that have no body, and are written in the simplified form:
+
+H.
+In the simplest case in which H, B1, …, Bn are all atomic formulae, these clauses are called definite clauses or Horn clauses. However, there exist many extensions of this simple case, the most important one being the case in which conditions in the body of a clause can also be negations of atomic formulae. Logic programming languages that include this extension have the knowledge representation capabilities of a non-monotonic logic.
+
+In ASP and Datalog, logic programs have only a declarative reading, and their execution is performed by means of a proof procedure or model generator whose behaviour is not meant to be under the control of the programmer. However, in the Prolog family of languages, logic programs also have a procedural interpretation as goal-reduction procedures:
+
+to solve H, solve B1, and ... and solve Bn.
+Consider, for example, the following clause:
+
+fallible(X) :- human(X).
+based on an example used by Terry Winograd [1] to illustrate the programming language Planner. As a clause in a logic program, it can be used both as a procedure to test whether X is fallible by testing whether X is human, and as a procedure to find an X that is fallible by finding an X that is human. Even facts have a procedural interpretation. For example, the clause:
+
+human(socrates).
+can be used both as a procedure to show that socrates is human, and as a procedure to find an X that is human by "assigning" socrates to X.
+
+The declarative reading of logic programs can be used by a programmer to verify their correctness. Moreover, logic-based program transformation techniques can also be used to transform logic programs into logically equivalent programs that are more efficient. In the Prolog family of logic programming languages, the programmer can also use the known problem-solving behaviour of the execution mechanism to improve the efficiency of programs.
+
+Contents  [hide] 
+1	History
+2	Concepts
+2.1	Logic and control
+2.2	Problem solving
+2.3	Negation as failure
+2.4	Knowledge representation
+3	Variants and extensions
+3.1	Prolog
+3.2	Abductive logic programming
+3.3	Metalogic programming
+3.4	Constraint logic programming
+3.5	Concurrent logic programming
+3.6	Concurrent constraint logic programming
+3.7	Inductive logic programming
+3.8	Higher-order logic programming
+3.9	Linear logic programming
+3.10	Object-oriented logic programming
+3.11	Transaction logic programming
+4	See also
+5	References
+5.1	General introductions
+5.2	Other sources
+6	Further reading
+7	External links
+History[edit]
+The use of mathematical logic to represent and execute computer programs is also a feature of the lambda calculus, developed by Alonzo Church in the 1930s. However, the first proposal to use the clausal form of logic for representing computer programs was made by Cordell Green.[2] This used an axiomatization of a subset of LISP, together with a representation of an input-output relation, to compute the relation by simulating the execution of the program in LISP. Foster and Elcock's Absys, on the other hand, employed a combination of equations and lambda calculus in an assertional programming language which places no constraints on the order in which operations are performed.[3]
+
+Logic programming in its present form can be traced back to debates in the late 1960s and early 1970s about declarative versus procedural representations of knowledge in Artificial Intelligence. Advocates of declarative representations were notably working at Stanford, associated with John McCarthy, Bertram Raphael and Cordell Green, and in Edinburgh, with John Alan Robinson (an academic visitor from Syracuse University), Pat Hayes, and Robert Kowalski. Advocates of procedural representations were mainly centered at MIT, under the leadership of Marvin Minsky and Seymour Papert.[citation needed]
+
+Although it was based on the proof methods of logic, Planner, developed at MIT, was the first language to emerge within this proceduralist paradigm.[4] Planner featured pattern-directed invocation of procedural plans from goals (i.e. goal-reduction or backward chaining) and from assertions (i.e. forward chaining). The most influential implementation of Planner was the subset of Planner, called Micro-Planner, implemented by Gerry Sussman, Eugene Charniak and Terry Winograd. It was used to implement Winograd's natural-language understanding program SHRDLU, which was a landmark at that time.[1] To cope with the very limited memory systems at the time, Planner used a backtracking control structure so that only one possible computation path had to be stored at a time. Planner gave rise to the programming languages QA-4, Popler, Conniver, QLISP, and the concurrent language Ether.[citation needed]
+
+The Association for Logic Programming was founded to promote Logic Programming in 1986.
+
+Prolog gave rise to the programming languages ALF, Fril, Gödel, Mercury, Oz, Ciao, Visual Prolog, XSB, and ?Prolog, as well as a variety of concurrent logic programming languages,[8] constraint logic programming languages and datalog.[citation needed]
+
+Concepts[edit]
+Logic and control[edit]
+Main article: Declarative programming
+Logic programming can be viewed as controlled deduction. An important concept in logic programming is the separation of programs into their logic component and their control component. With pure logic programming languages, the logic component alone determines the solutions produced. The control component can be varied to provide alternative ways of executing a logic program. This notion is captured by the slogan
+
+Algorithm = Logic + Control
+where "Logic" represents a logic program and "Control" represents different theorem-proving strategies.[9]
+
+Problem solving[edit]
+In the simplified, propositional case in which a logic program and a top-level atomic goal contain no variables, backward reasoning determines an and-or tree, which constitutes the search space for solving the goal. The top-level goal is the root of the tree. Given any node in the tree and any clause whose head matches the node, there exists a set of child nodes corresponding to the sub-goals in the body of the clause. These child nodes are grouped together by an "and". The alternative sets of children corresponding to alternative ways of solving the node are grouped together by an "or".
+
+Any search strategy can be used to search this space. Prolog uses a sequential, last-in-first-out, backtracking strategy, in which only one alternative and one sub-goal is considered at a time. Other search strategies, such as parallel search, intelligent backtracking, or best-first search to find an optimal solution, are also possible.
+
+In the more general case, where sub-goals share variables, other strategies can be used, such as choosing the subgoal that is most highly instantiated or that is sufficiently instantiated so that only one procedure applies. Such strategies are used, for example, in concurrent logic programming.
+
+Negation as failure[edit]
+Main article: Negation as failure
+For most practical applications, as well as for applications that require non-monotonic reasoning in artificial intelligence, Horn clause logic programs need to be extended to normal logic programs, with negative conditions. A clause in a normal logic program has the form:
+
+H :- A1, …, An, not B1, …, not Bn.
+and is read declaratively as a logical implication:
+
+H if A1 and … and An and not B1 and … and not Bn.
+where H and all the Ai and Bi are atomic formulas. The negation in the negative literals not Bi is commonly referred to as "negation as failure", because in most implementations, a negative condition not Bi is shown to hold by showing that the positive condition Bi fails to hold. For example:
+
+canfly(X) :- bird(X), not abnormal(X).
+abnormal(X) :-  wounded(X).
+bird(john).
+bird(mary).
+wounded(john).
+Given the goal of finding something that can fly:
+
+:- canfly(X).
+there are two candidate solutions, which solve the first subgoal bird(X), namely X = john and X = mary. The second subgoal not abnormal(john) of the first candidate solution fails, because wounded(john) succeeds and therefore abnormal(john) succeeds. However, The second subgoal not abnormal(mary) of the second candidate solution succeeds, because wounded(mary) fails and therefore abnormal(mary) fails. Therefore, X = mary is the only solution of the goal.
+
+Micro-Planner had a construct, called "thnot", which when applied to an expression returns the value true if (and only if) the evaluation of the expression fails. An equivalent operator is normally built-in in modern Prolog's implementations. It is normally written as not(Goal) or \+ Goal, where Goal is some goal (proposition) to be proved by the program. This operator differs from negation in first-order logic: a negation such as \+ X == 1 fails when the variable X has been bound to the atom 1, but it succeeds in all other cases, including when X is unbound. This makes Prolog's reasoning non-monotonic: X = 1, \+ X == 1 always fails, while \+ X == 1, X = 1 can succeed, binding X to 1, depending on whether X was initially bound (note that standard Prolog executes goals in left-to-right order).
+
+The logical status of negation as failure was unresolved until Keith Clark [1978] showed that, under certain natural conditions, it is a correct (and sometimes complete) implementation of classical negation with respect to the completion of the program. Completion amounts roughly to regarding the set of all the program clauses with the same predicate on the left hand side, say
+
+H :- Body1.
+…
+H :- Bodyk.
+as a definition of the predicate
+
+H iff (Body1 or … or Bodyk)
+where "iff" means "if and only if". Writing the completion also requires explicit use of the equality predicate and the inclusion of a set of appropriate axioms for equality. However, the implementation of negation by failure needs only the if-halves of the definitions without the axioms of equality.
+
+For example, the completion of the program above is:
+
+canfly(X) iff bird(X), not abnormal(X).
+abnormal(X) iff wounded(X).
+bird(X) iff X = john or X = mary.
+X = X.
+not john = mary.
+not mary = john.
+The notion of completion is closely related to McCarthy's circumscription semantics for default reasoning, and to the closed world assumption.
+
+As an alternative to the completion semantics, negation as failure can also be interpreted epistemically, as in the stable model semantics of answer set programming. In this interpretation not(Bi) means literally that Bi is not known or not believed. The epistemic interpretation has the advantage that it can be combined very simply with classical negation, as in "extended logic programming", to formalise such phrases as "the contrary can not be shown", where "contrary" is classical negation and "can not be shown" is the epistemic interpretation of negation as failure.
+

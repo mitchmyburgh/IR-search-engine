@@ -1,0 +1,53 @@
+Wireless community networks or wireless community projects are the organizations that attempt to take a grassroots approach to providing a viable alternative to municipal wireless networks for consumers.
+Because of evolving technology and locales, there are at least four different types of solution:
+Cluster: Advocacy groups which simply encourage sharing of unmetered internet bandwidth via Wi-Fi, may also index nodes, suggest uniform SSID (for low-quality roaming), supply equipment, DNS services, etc.
+Mesh: Technology groups which coordinate building a mesh network to provide Wi-Fi access to the internet
+WISP: A mesh that forwards all traffic back to consolidated link aggregation point(s) that have centralized access to the internet
+WUG: A wireless user group run by wireless enthusiasts. An open network not used for the reselling of internet. Running a combination of various off the shelf WIFI hardware running in the license free ISM bands 2.4 GHz/5.8 GHz
+Certain countries regulate the selling of internet access, requiring a license to sell internet access over a wireless network. In South Africa it is regulated by the Independent Communications Authority of South Africa (ICASA). They require that WISP's apply for a VANS or ECNS/ECS license before being allowed to resell internet access over a wireless link.
+The cluster and mesh approaches are more common but rely primarily on the sharing of unmetered residential and business DSL and cable Internet. This sort of usage might be non-compliant with the Terms of Service (ToS) of the typical local providers that deliver their service via the consumer phone and cable duopoly. Wireless community network sometimes advocate complete freedom from censorship, and this position may be at odds with the Acceptable Use Policies of some commercial services used. Some ISPs do allow sharing or reselling of bandwidth.
+
+
+== History ==
+These projects are in many senses an evolution of amateur radio, and more specifically packet radio, as well as an outgrowth of the free software community (which in itself substantially overlaps with amateur radio). The key to using standard wireless networking devices designed for short-range use for multi-kilometre Long Range Wi-Fi linkups is the use of high-gain directional antennas. Rather than purchasing commercially available units, such groups sometimes advocate homebuilt antenna construction. Examples include the cantenna, which is typically constructed from a Pringles potato chip can, and RONJA, an optical link that can be made from a smoke flue and LEDs, with circuitry and instructions released under the GFDL. As with other wireless mesh networks, three distinct generations of mesh networks are used in wireless community networks. In particular, in the 2004 timeframe, some mesh projects suffered poor performance when scaled up.
+
+
+== Organization ==
+Organizationally, a wireless community network requires either a set of affordable commercial technical solutions or a critical mass of hobbyists willing to tinker to maintain operations. Mesh networks require that a high level of community participation and commitment be maintained for the network to be viable. The mesh approach currently requires uniform equipment. One market-driven aspect of the mesh approach is that users who receive a weak mesh signal can often convert it to a strong signal by obtaining and operating a repeater node, thus extending the mesh network.
+Such volunteer organizations focusing in technology that is rapidly advancing sometimes have schisms and mergers. The Wi-Fi service provided by such groups is usually free and without the stigma of piggybacking. An alternative to the voluntary model is to use a co-operative structure.
+
+
+== See also ==
+Community Broadband Network
+Computer network
+List of wireless community networks by region
+Multiple-input multiple-output communications (MIMO)
+Meraki - Google-funded startup to provide affordable equipment
+Neighborhood Internet Service Provider
+Netsukuku
+Optimized Link State Routing Protocol
+Wireless LAN Security
+Wirelesspt.net Portugal's national opensource community mesh network
+Ninux mesh networking community based in Italy
+Guifi.net community network in Spain, and probably the world's largest
+Wireless Nodes Database open-source WiND project
+nodewatcher open-source node database project
+Freifunk mesh networking community based in Germany
+Wireless België Community-based free access internet network in Belgium
+WLAN.org.uk - Original community wireless internet promoting site
+
+
+== References ==
+
+
+== Further reading ==
+Rob Flickenger (2003). Building wireless community networks (2nd ed.). O'Reilly Media. ISBN 978-0-596-00502-3. 
+
+
+== External links ==
+FunkFeuer
+FreeNetworks
+Mesh Cities
+Free Global Wireless: syndicating the free wireless communities and blogs of the world
+Wireless user groups (WUG's) of South Africa
+WLAN.org.uk: Original community wireless internet promoting site

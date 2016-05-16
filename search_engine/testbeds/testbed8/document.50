@@ -1,0 +1,8 @@
+Definitions of subclass
+Main articles: Inheritance (object-oriented programming), Superclass (computer science) and Subclass (computer science)
+
+Conceptually, a superclass is a superset of its subclasses. For example, a common class hierarchy would involve GraphicObject as a superclass of Rectangle and Elipse, while Square would be a subclass of Rectangle. These are all subset relations in set theory as well, i.e., all squares are rectangles but not all rectangles are squares.
+
+A common conceptual error is to mistake a part of relation with a subclass. For example, a car and truck are both kinds of vehicles and it would be appropriate to model them as subclasses of a vehicle class. However, it would be an error to model the component parts of the car as subclass relations. For example, a car is composed of an engine and body, but it would not be appropriate to model engine or body as a subclass of car.
+
+In object-oriented modeling these kinds of relations are typically modeled as object properties. In this example the Car class would have a property called parts. parts would be typed to hold a collection of objects such as instances of Body, Engine, Tires,.... Object modeling languages such as UML include capabilities to model various aspects of part of and other kinds of relations. Data such as the cardinality of the objects, constraints on input and output values, etc. This information can be utilized by developer tools to generate additional code beside the basic data definitions for the objects. Things such as error checking on get and set methods.

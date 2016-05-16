@@ -1,0 +1,56 @@
+Automate Vulnerability Scanning With Amazon Inspector and Deep Security
+Posted on:April 19, 2016
+Posted in:AWS
+Posted by: Mark Nunnikhoven (Vice President, Cloud Research)
+Workflow in a factory centered around a conveyor belt
+Vulnerability scanning in the cloud has always been challenging. Trying to arrange scans with your security team and cloud provider makes it hard to keep up with your continuous deployment workflow and it definitely doesn’t mesh with your DevSecOps philosophy.
+
+Today Amazon Web Services (AWS) announced the general availability of Amazon Inspector, a service designed to solve this security challenge.
+
+What is Amazon Inspector?
+Originally announced at AWS re:Invent 2015, the service allows you to conduct ongoing assessments of your Amazon EC2 application environment in order to find potential security issues.
+
+Amazon Inspector can look for issues related to out of date software (common vulnerabilities and exposures or CVEs), failure to follow best practices, areas to harden the operating system, and many more rules packages to come. This broad coverage gives you a good view into the security posture of your Amazon EC2 instances.
+
+When the service sees an issue it raises a finding. Each finding provides a recommended action. These recommendations provide solid guidance on how to manually resolve each issue.
+
+Deep Security’s Advantage
+Deep Security has a robust set of features to help prevent attacks. This makes it a perfect complement to Amazon Inspector’s vulnerability scanning ability.
+
+Specifically, the intrusion capabilities of Deep Security can be used to mitigate any remotely exploitable vulnerability that the service finds.
+
+A remotely exploitable vulnerability is one that an attacker can use to can access to your workloads over the network. Shellshock and Heartbleed are unfortunate examples of this type of vulnerability.
+
+Finding Recommendations
+When Amazon Inspector finds a remotely exploitable vulnerability, the finding includes a recommendation to patch the issue.
+
+But when these issues first come to light a patch isn’t typically available or it takes some time to properly test the patch.
+
+This is when you need to apply an alternative mitigation like an intrusion prevention rule.
+
+Integrating With Amazon Inspector
+Our initial integration with Amazon Inspector makes addressing these types of vulnerabilities easy.
+
+Using our tool, you can analyze findings from Amazon Inspector and automatically add the appropriate protection for vulnerabilities currently affecting your instances.
+
+Depending on your workflow process, you can run the tool from the command line or automatically via AWS Lambda.
+
+The tools look at each finding and automatically adds the appropriate rules to your Deep Security policy for most remotely exploitable vulnerabilities found.
+
+Our team is constantly working to ensure that Deep Security can protect you from the latest vulnerabilities. When Shellshock was made public, coverage was available worldwide within hours.
+
+One Two Punch
+The flexibility that Amazon Inspector provides for vulnerability scanning makes it easy to integrate into your continuous deployment workflow.
+
+Deep Security is a powerful tool to help prevent attacks on your EC2 instances.
+
+Combine the two together and you’ll ensure that security doesn’t fall by the wayside as you accelerate your build process on the AWS Cloud.
+
+Next Steps
+To learn more about Amazon Inspector, read the launch post from Jeff Barr and check out the service walkthrough.
+
+You can learn more about our integration with Amazon Inspector this post or on the project’s repository on GitHub.
+
+You can get started using Deep Security to protect your AWS workloads quickly using AWS Marketplace.
+
+What do you think of this new service from AWS? Let me know on Twitter where I’m @marknca.

@@ -1,0 +1,16 @@
+Instantaneously trained neural networks are feedforward artificial neural networks that create a new hidden neuron node for each novel training sample. The weights to this hidden neuron separate out not only this training sample but others that are near it, thus providing generalization. This training can be done in a variety of ways and the most popular network in this family is called the CC4 network where the separation is done using the nearest hyperplane that can be written down instantaneously. These networks use unary coding for an effective representation of the data sets.
+Instantaneously trained neural networks have been proposed as models of short term learning and used in web search, and financial time series prediction applications. They have also been used in instant classification of documents and for deep learning and data mining.
+As in other neural networks, their normal use is as software, but they have also been implemented in hardware using FPGAs and by optical implementation.
+
+
+== CC4 network ==
+In the CC4 network, which is a three-stage network, the number of input nodes is one more than the size of the training vector, with the extra node serving as the biasing node whose input is always 1. For binary input vectors, the weights from the input nodes to the hidden neuron (say of index j) corresponding to the trained vector is given by the following formula:
+
+where  is the radius of generalization and  is the Hamming weight (the number of 1s) of the binary sequence. From the hidden layer to the output layer the weights are 1 or -1 depending on whether the vector belongs to a given output class or not. The neurons in the hidden and output layers output 1 if the weighted sum to the input is 0 or positive and 0, if the weighted sum to the input is negative:
+
+
+== Other networks ==
+In feedback networks the Willshaw network as well as the Hopfield network are able to learn instantaneously. But these networks are plagued with spurious memories.
+
+
+== References ==

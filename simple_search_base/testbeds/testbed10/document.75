@@ -1,0 +1,17 @@
+EMPIRICAL ASSESSMENT OF MACHINE LEARNING BASED SOFTWARE DEFECT PREDICTION TECHNIQUES
+VENKATA UDAYA B. CHALLAGULLA
+Department of Computer Science, University of Texas at Dallas, Dallas, TX 75083-0688, USA
+FAROKH B. BASTANI
+Department of Computer Science, University of Texas at Dallas, Dallas, TX 75083-0688, USA
+I-LING YEN
+Department of Computer Science, University of Texas at Dallas, Dallas, TX 75083-0688, USA
+RAYMOND A. PAUL
+OASD/C3I/Y2K, Department of Defense, USA
+
+
+
+Read More: http://www.worldscientific.com/doi/abs/10.1142/S0218213008003947
+
+Automated reliability assessment is essential for systems that entail dynamic adaptation based on runtime mission-specific requirements. One approach along this direction is to monitor and assess the system using machine learning-based software defect prediction techniques. Due to the dynamic nature of software data collected, Instance-based learning algorithms are proposed for the above purposes. To evaluate the accuracy of these methods, the paper presents an empirical analysis of four different real-time software defect data sets using different predictor models.
+The results show that a combination of 1R and Instance-based learning along with Consistency-based subset evaluation technique provides a relatively better consistency in achieving accurate predictions as compared with other models. No direct relationship is observed between the skewness present in the data sets and the prediction accuracy of these models. Principal Component Analysis (PCA) does not show a consistent advantage in improving the accuracy of the predictions. While random reduction of attributes gave poor accuracy results, simple Feature Subset Selection methods performed better than PCA for most prediction models. Based on these results, the paper presents a high-level design of an Intelligent Software Defect Analysis tool (ISDAT) for dynamic monitoring and defect assessment of software modules.
+

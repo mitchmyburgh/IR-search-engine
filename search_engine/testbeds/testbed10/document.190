@@ -1,0 +1,80 @@
+
+Machine Learning for Information Extraction
+in Informal Domains
+
+
+DAYNE FREITAG
+
+1. Introduction
+If I were in the market for a bargain computer, then I would benefit from a program that
+monitors newsgroups where computers are offered for sale until it finds a suitable one for
+me. The design of such a program is essentially an information extraction (IE) problem. We
+know what each document (post) says in general terms; it describes a computer. Information
+extraction is the problem of summarizing the essential details particular to a given document.
+An individual summary produced by our program will take the form of a template
+with typed slots, in which each slot is filled by a fragment of text from the document (e.g.,
+type: “Pentium”; speed: “200 MHz.”; disksize: “1.5Gig”; etc.).
+Existing work in IE can give us some good ideas about how this agent should be constructed,
+but we will find large portions of it inapplicable. Most of this work assumes that
+we can perform syntactic and semantic processing of a document.
+
+ Unfortunately, not only
+do we find strange, syntactically intractable constructions like news headers and user signatures
+in news posts, but sometimes the body of a message lacks even a single grammatical
+construct. How should our agent handle the “messy” text it is likely to encounter? How
+can it exploit whatever conventions of presentation are typical of postings for this newsgroup?
+More interestingly, are there general machine learning methods we can use to train
+a generic agent for use in this and similarly informal domains?
+Our research addresses this question. We are interested in designing machine learning
+components for information extraction which are as flexible as possible, which can exploit syntactic and semantic information when it is available, but which do not depend on its
+availability. Other sources of useful information include:
+• Term frequency statistics
+• Typography (e.g., capitalized and numeric)
+• Meta-text, such as HTML tags
+• Formatting and layout
+We are investigating the usefulness of these kinds of information by designing learning
+components that exploit them. Our ultimate goal is a multistrategy learning system which can
+be easily ported to new domains and can exploit new kinds of structure as it is encountered.
+
+
+6. Conclusion
+It is possible to perform information extraction from informal text of the sort commonly
+found in the online environment, such as email, Usenet posts, and plan files, even in the
+absence of syntactic and semantic information. Machine learning is a rich source of ideas
+for algorithms that can be trained to perform this extraction. With the right machine learning
+techniques, very simple document representations make it possible to train effective
+extractors. Here, we have shown how to create such extractors using only a term-space representation
+and how to exploit typographic information in the form of simple token features.
+Learning methods motivated by ideas in document classification, grammatical inference,
+and inductive logic programming, all have a part to play in this problem. However, in no
+case does any single algorithm subsume all the others. Rather, different algorithms solve
+different parts of the greater problem. This has led us to look for effective multistrategy
+approaches which can take the predictions of all available learners under advisement and
+produce extractors as good as or better than the best individual learner. We have described
+in outline one such approach.
+However, we do not hold all pieces to this puzzle. A number of areas remain to be explored
+or fleshed out:
+From field to record. We have treated each field in a domain as a separate task and target for
+learning. While this decomposition lends clarity to our study, it leaves open the question
+how single field results should be combined to produce a complete record—and how
+learning might exploit co-occurrence of fields in a document.
+Loose multistrategy learning. We feel we have only begun to explore the potential of the
+ideas presented in the last section. This notion of loose multistrategy learning, in which
+the output behavior of learners is modeled and used to combine predictions, seems to
+hold promise for problems other than information extraction. And while it may be strictly
+less powerful than more traditional multistrategy approaches, it is flexible and modular.
+Both the details of how regression is to be conducted, as well as the right methods to use
+in combining predictions, need to be explored.
+Grammatical inference. Our experiments suggest that much of the power of representing
+field structure lies in the transduction step. We believe that integrating this step with
+construction of the grammar would lead to an improvement in performance.
+Layout. One source of information potentially useful for information extraction is document
+formatting. We have not yet attempted to exploit this source of information. Perhaps ideas similar to those motivating our experiments with grammatical inference would
+prove useful.
+Bayes. The way in which BAYES represents field instances is arbitrary. Rather than a fixedsize
+context window, it might be useful to have the context window size depend on the
+problem. Similarly, we are interested in ways to treat multi-term contextual fragments
+as features, rather than each term separately.
+SRV. We continue to seek better ways to combine independently learned and validated
+rule sets. The work of other researchers interested in using covering algorithms for
+information extraction also suggests ways in which SRV might be extended.

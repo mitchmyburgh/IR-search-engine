@@ -1,0 +1,48 @@
+Vue.js lead: Our JavaScript framework is faster than React
+More like this
+
+    lorimerlite framework structure build construction
+    Beyond jQuery: An expert guide to JavaScript frameworks
+    puzzle 000006094572
+    For Vue.js, components power interactive Web interfaces
+    Female executive standing on building looking through telescope at skyline
+    Google predicts Angular 2 is 'not too far away'
+    on IDG Answers
+    Can I install iOS operating system in my android and how?
+
+Vue.js lead: Our JavaScript framework is faster than React
+Credit: Robin Hawkes
+Version 2.0 of the Web interface dev tool focuses on DOM improvements
+
+Paul Krill By Paul Krill Follow
+
+InfoWorld | May 2, 2016
+RELATED TOPICS
+
+    JavaScript Application Development 
+
+Comments
+
+To take on Facebook's vaunted React JavaScript library, the Vue.js front-end framework has been upgraded with a virtual DOM layer improving speed and memory consumption.
+
+Version 2.0 of Vue.js, recently released as a public preview, is leaner and faster than before, according to a bulletin on the technology. "The rendering layer is now based on a lightweight virtual-DOM implementation that improves initial rendering speed and memory consumption by up to 2-4x in most scenarios."
+[ Use JavaScript in your dev shop? InfoWorld looks at 17 JavaScript editors and IDEs and 22 JavaScript frameworks ready for adoption. | Keep up with hot topics in programming with InfoWorld's Application Development newsletter. ]
+
+Mainstream virtual DOM implementations suffer from performance issues like re-rendering, requiring optimizations, Vue principal developer Evan You said. "Vue 2.0 tackles this problem by combining virtual DOM with its reactive dependency tracking system, so that the system can automatically and efficiently determine when and what to re-render, freeing the developer from unnecessary optimization work," he said. Version 1.0.0 of Vue.js was released in late-October.
+
+The upgrade offers both template-based syntax and programmatic rendering with JSX or hyperscript, so developers get maximum flexibility in terms of development style, said You. "Performance-wise, it offers faster rendering than React with minimal optimization efforts. It also offers server-side rendering, a feature deemed the holy grail of universal JavaScript applications."
+ADVERTISING
+inRead invented by Teads
+
+Vue 2.0's built-in streaming server-side rendering enables rendering of components while getting a readable stream back and directly piping it to the HTTP response. You stressed Vue 2.0 also provides a light footprint and a "forgiving" learning curve.
+
+Featuring its core view layer, tools, and libraries, the framework's template-to-virtual-DOM compiler and runtime can be separated; developers can precompile templates and ship applications with only the runtime. "The compiler also works in the browser, which means you can still drop in one script tag and start hacking, just like before," said You. "Even with the compiler included, the build is sitting at 17kb min+gzip, still lighter than the current 1.0 build."
+
+Source code for Vue 2.0 is available on GitHub, with a beta release eyed for May. The documentation warns that developers will have some work to do to migrate an existing app from Vue 1.0 if they use deprecated features. Detailed upgrade guides are planned for the near future.
+Paul Krill
+
+Paul Krill — Editor at Large
+
+Paul Krill is an editor at large at InfoWorld, whose coverage focuses on application development.
+
+From CIO: 8 Free Online Courses to Grow Your Tech Skills 

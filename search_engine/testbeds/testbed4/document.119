@@ -1,0 +1,36 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Bidirectional Re?ectance Distribution Function
+We are now ready to explore how to model the re?ectance properties of different materials. Different objects will interact with light in different ways. Some surfaces are mirror-like, while others scatter light in a wide variety of directions. Surfaces that scatter light often look matte, and appear similar from different viewing directions. Some objects absorb a signi?cant amount of light; the colour of an object is largely a result of which wavelengths it absorbs and which wavelengths it re?ects.
+One simple model of surface re?ectance is refered to as the bidirectional re?ectance distribution function (BRDF). The BRDF describes how light interacts with a surface for a relatively wide range of common materials. In intuitive terms, it speci?es what fraction of the incoming light from a given incident direction will be re?ected toward a given emittant direction. When multiplied by the incident power (i.e., the irradiance), one obtains the desired emittant (i.e., re?ected) power.
+More precisely, the BRDF is a function of emittant and incident directions ~ de and ~ di. It is de?ned to be the ratio of radiance to irradiance:
+?(~ de, ~ di) =
+L H
+(71)
+For most common materials the only way to determine the BRDF is with measurements. That is, for a wide range of incident and emittant directions, a material is illuminated from one direction while the re?ected light is measured from another direction. This is often a tedious procedure. In computer graphics it is more common to design (i.e., make up) parametric BRDF formulae, and then vary the parameters of such models to achieve the desired appearance. Most parametric models are based on analytic models of certain idealized materials, as discussed below.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 85
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+12.4 Computing Surface Radiance
+When rendering an image of an object or scene, one wants to know how much light is incident at each pixel of the image plane. (In effect, one wants to compute the image irradiance.) Fortunately it can be shown that this quantity is linearly related to the scene radiance. In particular, for a point on an opaque object in a given visual direction, one simply needs to compute the radiance from that point on the surface in the direction of the camera. Based on the BRDF model of re?ectance, the surface radiance depends on the incident illumination (irradiance) at the surface, and the BRDF of course.
+Point Light Sources
+For example, consider a single point source with radiant intensity I. To compute the irradiance at a small surface patch we can compute the total ?ux arriving at the surface, and then divide by the area of the surface to ?nd ?ux per unit area. More precisely, radiant intensity for the source is given by I = dF/d?. We multiply by the solid angle subtended by the patch d? to obtain the ?ux on the surface dF, and then we divide by the surface area dA to obtain dF/dA, that is, irradiance as in Eqn (63). For a point light source this was shown above (see Eqn. (66)) to be given by
+H = I
+~n· ~ di r2
+(72)
+where ~n is the unit surface normal, ~ di is the unit vector in the direction of hte light source from the surface patch, and r is the distance from the patch to the light source.
+We now want to compute the radiance from the surface (e.g., toward the camera). Toward this end, we multiply the irradiance H by the BRDF, ?(~ de, ~ di), in order to ?nd radiance as a function of the emittant direction:
+L(¯ p, ~ de) = ?(~ de, ~ di)I
+~n· ~ di r2
+(73)
+This perspective generalizes naturally to multiple light sources. That is, the radiance from a point p on a surface in the direction of the camera is the sum of radiances due to individual light sources. For J point light sources, at locations lj, with intensities Ij, the radiance is given by
+L(¯ p, ~ de) =
+J X j=1
+?(~ de, ~ dj)Ij
+~n· ~ dj r2 j
+(74)
+where rj = ||¯ lj -¯ p||is the distance to the jth source, and ~ dj = (¯ lj -¯ p)/rj is the incident direction of the jth source.
+Copyright c
+2005 David Fleet and Aaron Hertzmann

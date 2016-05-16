@@ -1,0 +1,21 @@
+﻿Basically, a series of approaches have been reported for developing ontologies. In 1990, Lenat
+and Guha published the general steps and some interesting points about the Cyc development.
+Initially, the Enterprise Ontology and the TOVE (TOronto Virtual Enterprise) project ontology
+had been proposed in the domain of enterprise modeling. Bernaras et al. presented a method used
+to build ontology in the domain of electrical networks as part of the Esprit KACTUS project. The
+methodology METHONTOLOGY appeared at the same time.
+In 1997, a new method was
+proposed for building ontologies based on the SENSUS ontology. Some years later, the On-To-
+Knowledge methodology appeared as a result of the project with the same name. However, all
+these methods and methodologies do not consider collaborative and distributed construction of 
+ontologies. In this paper, we are describing some of the methodologies for building ontologies [1].
+3.1 Skeleton Methodology
+This methodology is based on the experience of developing the Enterprise Ontology, ontology for
+enterprise modeling processes. A plan or draft for a project along with activities can be
+represented as ontology. The steps are, first, identify the main purpose of the ontology, second
+build the ontology, where the key concepts and its
+relationships can be captured and third, code it
+with proper language and may be integrated with existing ontology. We can use either top-down
+or bottom-up approach to represent the ontology [1]
+[2]. This method is simple to implement but
+limited to scope.

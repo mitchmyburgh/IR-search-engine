@@ -1,0 +1,42 @@
+Practical application to supplement the stated canonical application[edit] 
+Can we add the practical application in Microsoft Excel and possibly in other similar applications while computing formulae cells that depend on other cells? -- Sundar 05:04, Oct 28, 2004 (UTC) 
+Be bold. 
+Arvindn 21:17, 28 Oct 2004 (UTC)
+Topological sort may need a C implementation like other algorithms described on Wikipedia. Alex, Cluj-Napoca, Romania 
+I think a python implementation would be better.
+The article says 'Any DAG has a topological sort, and in fact must have many.' This is untrue. You can have a simple, linear DAG that has only 1 topological sort. I'm new to Wikipedia and don't feel comfortable editing a page, but if someone could change it to reflect this, I'm sure some budding computer scientists would appreciate it. 
+Just click the edit page and edit the fact&nbsp;:) You mean a graph with only one node? --
+Citral (
+talk) 00:16, 17 April 2008 (UTC)
+Not just one node: two nodes A-&gt;B, three nodes A-&gt;B-&gt;C .... 
+—Preceding unsigned comment added by 89.131.80.110 (talk) 15:36, 10 April 2010 (UTC)
+What did Cormen, Leiserson &amp; Rivest (1990) do that Tarjan didn't?[edit] 
+It seems to me that anyone who has read Tarjan's paper would have no trouble in writing down the algorithm attributed to Cormen, Leiserson &amp; Rivest (1990). Indeed, I set a 2nd-year programming project at least as early as 1988 in which students applied exactly this method in preparing a Gantt Chart of a project network. (During the DFS, times were computed relative to the terminal nodes of the network, then a pass was made through the sorted list of nodes to compute times relative to its initial nodes.) 
+Incidentally, I had earlier tried to submit this method to ACM Collected Algorithms, because their existing CPM algorithm was very inefficient (dating from the 1950's). However, at the time, they would only accept algorithms written in Fortran, which doesn't support recursion. DFS looked such a mess in Fortran, I got on with something else instead. —Preceding unsigned comment added by DrBDwyer (talk • contribs) 03:15, 1 August 2009 (UTC) 
+The correct answer to "what did CLR do etc" is "described the algorithm in a textbook", I believe. I don't think they invented the algorithm (Tarjan did), but their text (or rather the 2nd edition with Stein) is very widely used. Perhaps you could suggest a way of phrasing this that more clearly gives credit to Tarjan while still providing a reference to CLRS for the people who use that text? —
+David Eppstein (
+talk) 03:20, 1 August 2009 (UTC)
+cycle detection[edit] 
+in this case, the algorithm may report a precise error by taking advantage of the fact that all remaining edges at this point are part of such a cycle. 
+This is not true as it is written - Take a graph in the shape of the letter 'p', with a cycle and a tail. Once the topological sort reaches the cycle it will stop, even though the tail is not part of the cycle. It is true that the remainder of the graph is a successor of a cycle, but that is a weaker statement. --njh 04:38, 13 June 2006 (UTC) 
+Cycles[edit] 
+"A directed graph G is acyclic if and only if a depth-first search of G yields no back edges. If a back edge (u, v) exists, this means vertex v must be an ancestor of vertex u in the depth-first search tree. Then there is also a path from /v/ to /u/, and thus the back edge (u, v) must create a cycle." 
+If /v/ is an ancestor of /u/ that does not mean there is an edge /(v,u)/ rather just a path. I will not make this correction now though. Also, the depth-first-search tree should be introduced? Or at least linked to. —The preceding unsigned comment was added by 24.201.102.253 (talk • contribs) 04:18, 6 February 2007 (UTC1) 
+Corrected the sentence. pom 09:24, 6 February 2007 (UTC) 
+I deleted the whole paragraph. Cycle detection using DFS should be in DFS entry, not in "Topological sorting". pom 09:27, 6 February 2007 (UTC) 
+Lead paragraph is a little too technical[edit] 
+Current lead para (italics mine): 
+In graph theory, a topological sort or topological ordering of a directed acyclic graph (DAG) is a linear ordering of its nodes which is compatible with the partial order R induced on the nodes where x comes before y (xRy) if there's a directed path from x to y in the DAG. An equivalent definition is that each node comes before all nodes to which it has outbound edges. Every DAG has one or more topological sorts. 
+It's unlikely anyone who didn't already know what that text meant could decipher it. The curious layman would need to learn the meanings of over a dozen (italics) new terms, as well as new usages of familiar terms, and their underlying concepts. 
+Nothing against rigorous technical definitions, but leading with them is only useful to specialists. There might be no Royal Road, but browsers might first want to know: Who named it? When? What things did the namer wish to signify? How common or important is it? Familiar examples, if any. Before/after lists and pictures. Etymology: are the meanings of the parts of the name special or standard? Maybe a little flowchart of a common algorithm. Then the finer points... --AC (talk) 09:20, 23 January 2008 (UTC) 
+Agreed. Revised this. 
+Dcoetzee 20:41, 23 January 2008 (UTC)
+Thanks, but it's still not there yet. The revision:
+  In graph theory, a topological sort or topological ordering of a directed acyclic graph (DAG) is a linear ordering of its nodes in which each node comes before all nodes to which it has outbound edges. Every DAG has one or more topological sorts.
+  More formally, define the partial order relation R over the nodes of the DAG such that xRy if and only if there is a directed path from x to y. Then, a topological sort is any total order compatible with this partial order.
+Now the curious reader has to jump to 
+DAG, which also is too busy, and from there, if they haven't given up, might lead them to 
+digraph, at which point most anyone not a math major 
+would give up.
+To me this style of ahistoric article begs the question violently. It shows a special form of POV in which a topic is only described as it relates to some ambitiously general, particular and recent 
+ontology, which ontology is but one of many trees to hang the topic on. For readers who don't want to look up or guess what I mean by 'ontology', a metaphor: scholars like to sort their subjects into tree-like classifications, the same way you might shelve your book or record collections; often an item could logically be put in any of several places, and the exact same item might logically go in several other places if your friend or heir with a different system inherited your collection. To scholars a topic becomes a kind of pretty bulb they hang on this year's Xmas tr

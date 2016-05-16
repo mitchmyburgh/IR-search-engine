@@ -1,0 +1,152 @@
+
+Upcoming Webinar:
+Tolly Report: Stopping Attacks You Can’t See
+
+Register
+
+    Brought to you by 
+
+IBM - Security Intelligence
+
+    Become a Contributor
+    Contributors
+
+Security Intelligence
+Analysis and Insight for Information Security Professionals
+
+    Subscribe +
+    
+    
+    
+    
+    
+
+    News Stream
+    Topics
+    Industries
+    X-Force Research
+    CISO Corner
+    Events & Webinars
+
+    Home News Major Programming Languages Fail to Detect Revoked TLS Certificate
+
+Recent research found that certain programming languages may have trouble identifying a revoked TLS certificate, which puts security at risk. Luckily, there are remediation efforts that users can leverage to increase security.	
+
+Bigstock
+Major Programming Languages Fail to Detect Revoked TLS Certificate
+
+    By Larry Loeb •   April 4, 2016 
+
+7
+
+Larry Loeb
+
+Principal, PBC Enterprises
+
+Larry Loeb has written for many of the last century's major "dead tree" computer magazines, having been, among other things, a consulting editor for BYTE magazine and senior editor...
+See All Posts
+
+Security researchers at Sucuri revisited a paper written in 2012 focused on the security of API calls. When used, these calls assumed the integrity of underlying libraries such as JSSE, OpenSSL and GnuTLS, or of data transport libraries such as cURL. However, researchers discovered the TLS certificate used to validate the entire transaction can be spoofed.
+
+Specifically, the original research paper noted that the underlying sources of this vulnerability include “SSL libraries such as OpenSSL, GnuTLS, JSSE, CryptoAPI, etc., as well as higher-level data transport libraries such as cURL, Apache HttpClient, andurllib, that act as wrappers around SSL libraries.” The authors also cited the concern that software may leverage “Web-services middleware such as Apache Axis, Axis 2 or Codehaus XFire.”
+
+Sucuri found that use of these libraries made it hard or impossible to check revocation status of a TLS certificate, as well as other verification problems. This would leave the client open to a man-in-the-middle (MitM) attack.
+The TLS Certificate Problem
+
+Here’s how such an attack would work: The server on the other end of the TLS conversation — the API server — authenticates itself by sending an X.509 certificate to the client. The client must verify the certificate’s signature against the list of known root certificates.
+
+If unchecked, the validity of the X.509 certificate is in question, and the client can be spoofed by the invalid certificate of the API server. The user wouldn’t even know the spoofing was taking place since the browser is untouched in all of this.
+
+PHP addressed some of these concerns in its 5.6 release; Python did the same in 2014.
+
+Sucuri researchers decided to use these new languages and see what would still break by testing TLS. According to the blog, “all programming language implementations fail to check if a certificate is revoked,” which is a recognized OWASP vulnerability. So things are broken by default unless corrective action is taken.
+Mitigation Methods
+
+There are some mitigation routes available. Upgrading to the latest version of languages will remove many certificate verification problems, although not the revocation aspect.
+
+With Python, for example, one must pass the context parameter to verify the certificate. Similarly, the http.client.HTTPSConnection constructor must also pass the context parameter.
+
+TLS implementation in PHP 5.5 and below is broken with the use of stream functions, Sucuri reported. Using cURL functions instead of stream functions and upgrading to PHP 5.6 whenever possible will help.
+
+There are also Web services that can test any APIs a server is using. This kind of service can identify problem situations that may arise from the use of shared or unmaintained programs.
+
+The end result is that TLS can still be broken, even four years after significant faults were pointed out. The remedies are there, but their use must be vigilant for them to be effective.
+
+Topics: Certificate Authority (CA), Man-in-the-Middle (MitM) Attack, Transport Layer Security (TLS)
+
+This article was brought to you by SecurityIntelligence.com. The views and opinions expressed by the author do not reflect the position of IBM.
+Share This Article
+Are C-level executives and other members of upper management taking on enough cybersecurity responsibility, or are they passing off tasks on others? These leaders should be taking initiative when it comes to protecting networks and data.
+Cybersecurity Responsibility: Are Execs Passing...
+Point-of-sale terminals and other transaction technology store lots of financial and payment card information, and they often do so without adding encryption. NIST has now outlined some processes for securing this data without affecting performance.
+New Block Ciphers From NIST Add Tweaks to Credit...
+Related Content
+The developers behind the Cryptowall malware are smart: They leverage human nature and marketing tactics to successfully execute attacks. This combination makes the ransomware one of the most dangerous threats to enterprises today.
+The Secret Keys to Cryptowall’s Success
+Mobile device management in the enterprise setting is growing by leaps and bounds with the help of new services such as Apple's Device Enrollment Program (DEP). DEP is one way organizations can begin managing all mobile devices within its walls.
+Know Your ABCs From Your DEP
+Knowing what motivation could be behind cyberattacks can help organizations understand their risk and implement stronger defensive processes to protect data. However, this involves the difficult task of getting in cybercriminals' heads.
+Know Your Enemy: Understanding the Motivation Behind Cyberattacks
+News Stream RSS Feed
+Subscribe+
+Twitter:
+News Stream:
+
+    Windows ‘God Mode’ May Be the Answer to Malware’s Prayers
+    By Larry Loeb
+    May 2, 2016
+    Public Slack Access Tokens Could Mean Big Compromise for Zero Effort
+    By Douglas Bonderud
+    May 2, 2016
+    SWIFT Banking Network Heist Accomplished With Malware
+    By Larry Loeb
+    April 28, 2016
+    Infection Minus Interaction? New Android Ransomware Delivers
+    By Douglas Bonderud
+    April 28, 2016
+    IBM Unveils Enhancements to Its Mobile Productivity Tools and Data Protection Controls
+    By Security Intelligence Staff
+    April 27, 2016
+    Security Researcher Bypasses Windows AppLocker
+    By Larry Loeb
+    April 26, 2016
+    Just in Time for Summer, MIT Slaps Down New Bug Bounty Program
+    By Douglas Bonderud
+    April 26, 2016 
+
+Upcoming Webinars:
+
+    Tolly Report: Stopping Attacks You Can’t See
+    May 3, 2016
+    Exclusive New App Research and Enterprise App Adoption Explored
+    May 4, 2016
+    Think Like a Hacker! New Attacks, New Approaches
+    May 4, 2016 
+
+Security Intelligence
+The views and opinions expressed in this article are those of the authors and do not necessarily reflect the official policy or position of IBM.
+
+IBM
+Security Intelligence
+
+    CISO Corner
+    Contributors
+    IBM Security Home
+    IBM X-Force
+    Media
+
+Read More
+
+    Recent Articles
+    Industry News
+    Latest Vulnerabilities
+    Security News
+    Webinars and Events
+
+4212 Fans
+
+28328 Followers
+
+1000+ Subscribers
+© 2016 IBM |Contact |Privacy |Terms Of Use |Accessibility
+

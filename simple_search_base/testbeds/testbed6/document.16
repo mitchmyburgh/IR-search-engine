@@ -1,0 +1,107 @@
+AVL Trees Note: Projects are to be completed by each student individually (not by groups of students). 
+Introduction This project requires you to implement part of the 
+java.util.Set interface using AVL trees. Your implementation will be compared against the 
+java.util.HashSet class in a number of test cases. Your AVL trees will also be tested to determine if they have the correct structure and balance. 
+Requirement #1: Implement the java.util.Set Interface The on-line documentation at 
+java.sun.com defines the 
+java.util.Set interface. You must implement the interface using AVL trees. 
+ You must fully implement the following methods: 
+boolean add(Object o)
+void clear()
+boolean contains(Object o)
+boolean isEmpty()
+Iterator iterator()
+boolean remove(Object o)
+int size()
+Object[] toArray()
+ Your implementation is allowed to throw 
+UnsupportedOperationException for the following methods: 
+boolean addAll(Collection c)
+boolean containsAll(Collection c)
+boolean removeAll(Collection c)
+boolean retainAll(Collection c)
+Object[] toArray(Object[] array)
+ For example, you could implement 
+addAll as follows: 
+boolean addAll(Collection c) {
+    throw new UnsupportedOperationException();
+}
+ Your implementation must conform to the required behavior of each method as defined in the on-line documentation. In addition to the requirements given in the on-line documentation, the 
+iterator and 
+remove methods have additional requirements that are defined later in this document. Your implementation must use a binary search tree and your tree must use AVL balancing when adding and removing nodes. Put your implementation class in the 
+cs235.avl package. 
+Requirement #2: Implement the java.util.Iterator Interface The 
+java.util.Iterator interface is defined on-line at 
+java.sun.com. You must implement an 
+Iterator that will iterate over the items stored in your AVL tree. You could implement your 
+Iterator using a class that is nested inside of the class you use to implement 
+java.util.Set. 
+ You must fully implement the following methods: 
+boolean hasNext()
+Object next()
+ Your implementation is allowed to throw 
+UnsupportedOperationException for the following method: 
+void remove()
+ Your implementation must conform to the required behavior of each method as defined in the on-line documentation. The definition of 
+java.util.Set allows an 
+Iterator to return the items in the set in any order. Your implementation must meet an additional requirement. 
+You must return the items in the order given by a preorder traversal of the AVL tree that is implementing the set. The order in which items are returned from the Iterator will be used to determine if your tree is constructed and balanced correctly. 
+ The 
+iterator method in the class that implements 
+java.util.Set should return an 
+Iterator object as described in this section. 
+ The 
+toArray method in the class that implements 
+java.util.Set must fill its array in the same order as described here for the 
+Iterator. In fact, you could use an 
+Iterator to help implement the 
+toArray method. 
+The remove Method in java.util.Set The order of your 
+Iterator could be affected by your implementation of the 
+remove method in the class that implements 
+java.util.Set. The 
+remove method on an AVL tree has a case where two different choices can be made and both choices produce a correct tree. The case occurs when you are removing a node that has two non-null children. The node to be removed can be replaced with either the largest node in the left subtree or the smallest node in the right subtree. Your 
+remove method is required to use the second choice, you must use the smallest node in the right subtree. If you do not use the required choice, the preorder output given by your 
+Iterator will not produce the correct output and your trees will fail a number of test cases. 
+Requirement #3: Implement the method in the cs235.avl.SetFactory class. The file 
+SetFactory.java contains a class named 
+SetFactory. 
+SetFactory has one method named 
+createSet. You must implement this method. The method creates a new instance of your AVL tree class and returns it. 
+Requirement #4: Test Your Code The file 
+TestDriver.java contains a test program you can use to help you test your code. A number of files must be in the current directory when you run the test driver. These files are packaged together in a zip archive 
+avltests.zip. 
+ The test driver should not be viewed as a replacement for doing your own testing. If your code passes the test driver, it is still possible that it will fail at pass off because a different test program is used for pass off (i.e., the pass off driver). It is your responsibility to make sure that your code works. 
+Debugging Tool We have provided 
+AvlGUI.java, 
+TreeFactory.java, 
+Tree.java, and 
+BinaryTreeNode.java to help you see what your AVL tree looks like as you add and remove nodes from it. In order for the GUI to draw your tree, it needs to have access to the root node of your AVL tree. 
+TreeFactory.java allows us to create an instance of your AVL tree. 
+Tree.java is the interface that allows the GUI to access your root node. 
+BinaryTreeNode.java is the interface that allows the GUI to know what kind of node the root node is. This interface also allows the GUI to get information from each node such as the data stored in the node, each child of the node, and the height of the node in the tree. 
+You are not required to implement TreeFactory.java, Tree.java or BinaryTreeNode.java but the AvlGUI will not draw your AVL tree unless you do implement them. 
+Notes for using the GUI The purpose for the graphical user interface (GUI) is to help you visualize your AVL tree after adding or removing a node from the tree. The GUI has been programmed to allow you to add/remove nodes from your AVL tree in two different ways: 
+ type the word that you want to add/remove from the tree in the word text field and then press enter. If the add word checkbox is checked then the word entered will be added. If the remove word checkbox is checked then the word will be removed from the AVL tree when you press enter. 
+ type the name of a file that contains a list of all the words that you want to be added/removed from the tree in it and then press enter. The GUI will load one line of the file at a time into the word field and then you can just keep pressing enter to add each word in the file if you want to see the words added individually or you can press the addAllWords/removeAllWords button if you don't care to see all the words added/removed individually. 
+ The 
+clear tree button will clear the tree and the queue containing all the words loaded from a file. The 
+clear queue button will remove all the left over words from the queue that were loaded from a file without modifying the tree. 
+ You will notice that the tree will quickly grow out of the visible area in the main panel of the GUI. All you need to do is Maximize or Restore Down the window so the Scroll Pane will adjust the visible content. If the tree is larger then the dimensions of the window then you will be able to use the scroll bars to see the area of the tree that you desire to look at. 
+Requirement #5: Submit your project for grading When you have completed the project, put all the *.java files into a single jar and submit it to gradebook. Good luck! 
+ The grading will be done according to the following general breakdown:
+ 5 pts - Checkstyle
+ 5 pts - General coding style (readable, naming convention, clean, no code duplication, etc.)
+ 5 pts - Correctly handle / throw exceptions.
+ 5 pts - Correctly adds
+ 5 pts - Correctly removes
+ 10 pts - Correctly Balances (including grading for using a simple implementation)
+ 5 pts - "Contains" functionality
+ 5 pts - No duplicates
+ 5 pts - Iterator correctly implemented
+ +5 - Early extra credit for working projects (ie, passes the given test driver and checkstyle)
+ Tips There are many bad and inefficient ways for doing AVL balancing. Your code should be able to run even the largest tests in the TestDriver in under 10 seconds. If your code is running slow, here are some things to check. 
+  Is your tree really balanced? Once you get 90,000 items in a tree, it's hard to check sometimes if the tree is really AVL balanced. An unbalanced tree will start to exhibit O(N) behavior in it's contains and insert methods. Usually, the culprit is in the remove method. 
+  Are you re-calculating information that might not be changing? Store the heights of nodes inside the node object and only update them when they might have changed. Only a small fraction of the nodes in a tree will need to have their heights checked during each insertion and deletion and this fraction gets smaller and smaller as the tree gets bigger and bigger 
+  Are you using too much recursion? If you check the heights and the balancing of your tree by calling some recursive method on the root of your tree every time you insert or remove, you are doing too much work. Any time that you insert or remove, the only possible nodes that could need to have their height updated or that might become unbalanced are those along the path from the root node to the inserted note. The insert and remove methods should be recursive, and if they are, this path is "stored" in the recursive calls to insert and remove. Do your height checking, balance checking, and balancing all as you come out of these recursive calls (after the recursive call in your recursive methods, put the code to do the work for these operations) 
+  Lastly, one thing that you should consider as you design your AVL tree, is what to do when the left and right subtrees are the same height when it comes time to balance. You will recall that the decision as to whether a single or double rotation is needed is made by testing to see if the unbalance is left-left or right-right (both of which result in a single rotation) or left-right or right-left (both of which result in a double rotation). These cases are the onl

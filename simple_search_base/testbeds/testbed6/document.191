@@ -1,0 +1,24 @@
+Basic data structures
+We will look at five basic data structures that are available in R.
+
+Vectors
+A collection of values that all have the same data type. The elements of a vector are all numbers, giving a numeric vector, or all character values, giving a character vector.
+A vector can be used to represent a single variable in a data set.
+
+Factors
+A collection of values that all come from a fixed set of possible values. A factor is similar to a vector, except that the values within a factor are limited to a fixed set of possible values.
+A factor can be used to represent a categorical variable in a data set.
+
+Matrices
+A two-dimensional collection of values that all have the same type. The values are arranged in rows and columns.
+There is also an array data structure that extends this idea to more than two dimensions.
+
+Data frames
+A collection of vectors that all have the same length. This is like a matrix, except that each column can contain a different data type.
+A data frame can be used to represent an entire data set.
+
+Lists
+A collection of data structures. The components of a list can be simply vectors--similar to a data frame, but with each column allowed to have a different length. However, a list can also be a much more complicated structure.
+This is a very flexible data structure. Lists can be used to store any combination of data values together.
+
+ 

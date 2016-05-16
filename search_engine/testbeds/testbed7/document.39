@@ -1,0 +1,17 @@
+Why Does A Drop Of Water Confuse My Touchscreen?
+
+Short answer: Water conducts electricity, just like your finger
+
+Modern touchscreens like the one on an iPhone work by measuring the change in charge and voltage across a grid of hair-thin electrodes, aka capacitance. “When you touch your finger to the screen, it sucks out some of the charge,” says Geoff Wilson, a mobile-technology consultant and former touch technologist at Intel. That’s because your body is made mostly of water, which is extremely conductive. The touchscreen locates your finger on the grid by measuring how much the charge drops between two intersecting electrodes, a process called “mutual capacitance.”
+
+The problem is that drops of sweat or rain can reduce the charge too by providing another conduit between the electrodes. Thankfully, over the past few years, touchscreen engineers have solved the water problem by drawing on a different mode of touch sensing called “self-capacitance.”
+
+Instead of measuring the charge across pairs of electrodes, the touchscreen measures the increase in charge between an individual electrode on the screen and the ground you’re standing on. Because water droplets aren’t grounded, the phone’s firmware is better able to ignore them.
+
+However, this method alone won’t work for most smartphones because it can’t handle multitouch gestures such as pinches and zooms. The signal corresponds to rows or columns of the electrode grid, as opposed to individual points. With more than one touch, a phone might register ghost points in addition to real ones.
+
+The solution? Combine the two methods in a single touchscreen. If the device checks for both signals, it can pick up multitouch gestures while controlling for sweat, rain, and other moisture. “It’s the same electrodes and the same controller,” Wilson says. “The only difference is the firmware, which has to be smart enough to combine the measurements.”
+
+Some phones already come equipped with the combo, but that’s rarely advertised. It’s tough to make “mutual and self-capacitance” sound sexy in an ad.
+
+This article was originally published in the November 2015 issue of Popular Science

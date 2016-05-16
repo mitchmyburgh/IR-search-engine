@@ -1,0 +1,40 @@
+Ray tracing is among the conceptually simplest methods for synthesizing highly realistic images. Unlike
+the simple polygon rendering methods used by OpenGL, ray tracing can easily produce shadows, and it can
+model reflective and transparent objects. Because it is slow, ray tracing is typically used for generating highly
+realistic images offline (as opposed to interactively), but it is useful for generating realistic texture maps and
+environment maps that could later be used in interactive rendering. Ray tracing also forms the basis of many
+approaches to more producing highly realistic complex types of shading and lighting. In spite of its conceptual
+simplicity, ray tracing can be computationally quite intensive. Today we will discuss the basic elements of ray
+tracing, and next time we will discuss the details of handling ray intersections in greater detail.
+The Basic Idea: Consider our standard perspective viewing scenario. There is a viewer located at some position, and
+in front of the viewer is the view plane, and on this view plane is a window. We want to render the scene that is
+visible to the viewer through this window. Consider an arbitrary point on this window. The color of this point is
+determined by the light ray that passes through this point and hits the viewer’s eye.
+More generally, light travels in rays that are emitted from the light source, and hit objects in the environment.
+When light hits a surface, some of its energy is absorbed, and some is reflected in different directions. (If the
+object is transparent, light may also be transmitted through the object.) The light may continue to be reflected
+off of other objects. Eventually some of these reflected rays find their way to the viewer’s eye, and only these
+are relevant to the viewing process.
+If we could accurately model the movement of all light in a 3-dimensional scene then in theory we could produce
+very accurate renderings. Unfortunately the computational effort needed for such a complex simulation would
+be prohibitively large. How might we speed the process up? Observe that most of the light rays that are emitted
+from the light sources never even hit our eye. Consequently the vast majority of the light simulation effort is
+wasted. This suggests that rather than tracing light rays as they leave the light source (in the hope that it will
+eventually hit the eye), instead we reverse things and trace backwards along the light rays that hit the eye. This
+is the idea upon which ray tracing is based.
+Ray Tracing Model: Imagine that the viewing window is replaced with a fine mesh of horizontal and vertical grid
+lines, so that each grid square corresponds to a pixel in the final image. We shoot rays out from the eye through
+the center of each grid square in an attempt to trace the path of light backwards toward the light sources.
+Consider the first object that such a ray hits. (In order to avoid problems with jagged lines, called aliasing, it
+is more common to shoot a number of rays per pixel and average their results.) We want to know the intensity
+of reflected light at this surface point. This depends on a number of things, principally the reflective and color
+properties of the surface, and the amount of light reaching this point from the various light sources. The amount
+of light reaching this surface point is the hard to compute accurately. This is because light from the various light
+sources might be blocked by other objects in the environment and it may be reflected off of others.
+A purely local approach to this question would be to use the model we discussed in the Phong model, namely
+that a point is illuminated if the angle between the normal vector and light vector is acute. In ray tracing it is
+Lecture Notes 79 CMSC 427
+common to use a somewhat more global approximation. We will assume that the light sources are points. We
+shoot a ray from the surface point to each of the light sources. For each of these rays that succeeds in reaching
+a light source before being blocked another object, we infer that this point is illuminated by this source, and
+otherwise we assume that it is not illuminated, and hence we are in the shadow of the blocking object. (Can you

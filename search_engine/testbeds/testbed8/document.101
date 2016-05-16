@@ -1,0 +1,10 @@
+Balancing rotations[edit]
+Whereas red-black trees require one bit of balancing metadata per node (the color), AA trees require O(log(N)) bits of metadata per node, in the form of an integer "level". The following invariants hold for AA trees:
+1.	The level of every leaf node is one.
+2.	The level of every left child is exactly one less than that of its parent.
+3.	The level of every right child is equal to or one less than that of its parent.
+4.	The level of every right grandchild is strictly less than that of its grandparent.
+5.	Every node of level greater than one has two children.
+A link where the child's level is equal to that of its parent is called a horizontal link, and is analogous to a red link in the red-black tree. Individual right horizontal links are allowed, but consecutive ones are forbidden; all left horizontal links are forbidden. These are more restrictive constraints than the analogous ones on red-black trees, with the result that re-balancing an AA tree is procedurally much simpler than re-balancing a red-black tree.
+Insertions and deletions may transiently cause an AA tree to become unbalanced (that is, to violate the AA tree invariants). Only two distinct operations are needed for restoring balance: "skew" and "split". Skew is a right rotation to replace a subtree containing a left horizontal link with one containing a right horizontal link instead. Split is a left rotation and level increase to replace a subtree containing two or more consecutive right horizontal links with one containing two fewer consecutive right horizontal links. Implementation of balance-preserving insertion and deletion is simplified by relying on the skew and split operations to modify the tree only if needed, instead of making their callers decide whether to skew or split.
+

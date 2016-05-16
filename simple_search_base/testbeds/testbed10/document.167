@@ -1,0 +1,144 @@
+Application of machine learning techniques
+for supply chain demand forecasting
+
+
+Real Carbonneau, Kevin Laframboise, Rustam Vahidov *
+
+1. Introduction
+Recently, firms have begun to realize the importance
+of sharing information and integration across
+the stakeholders in the supply chain (Zhao et al.,
+2002). Although such initiatives reduce forecast
+errors, they are neither ubiquitous nor complete and forecast errors still abound. Collaborative forecasting
+and replenishment (CFAR) permits a firm
+and its supplier-firm to coordinate decisions by
+exchanging complex decision-support models and
+strategies, thus facilitating integration of forecasting
+and production schedules (Raghunathan, 1999).
+However, in the absence of CFAR, firms are relegated
+to traditional forecasting and production
+scheduling. As a result, the firm’s demand (e.g.,
+the manufacturer’s demand) appears to fluctuate
+in a random fashion even if the final customer’s
+demand has a predictable pattern. Forecasting the
+manufacturer’s demand under these conditions
+becomes a challenging task due to a well-known ‘‘bullwhip effect’’ (Lee et al., 1997a) – a result of
+information asymmetry.
+The objectives of this research are to study the
+feasibility and perform a comparative analysis of
+forecasting the distorted demand signals in the
+extended supply chain using non-linear machine
+learning techniques. More specifically, the work
+focuses on forecasting the demand at the upstream
+end of the supply chain. The main challenge lies in
+the distortion of the demand signal as it travels
+through the extended supply chain. Our use of the
+term extended supply chain reflects both the holistic
+notion of supply chain as presented by Tan (2001)
+and the idealistic collaborative relationships suggested
+by Davis and Spekman (2004).
+The value of information sharing across the supply
+chain is widely recognized as the means of combating
+demand signal distortion (Lee et al., 1997b).
+However, there is a gap between the ideal of integrated
+supply chains and the reality (Gunasekaran,
+2004). A number of factors could hinder such longterm
+stable collaborative efforts. Premkumar (2000)
+lists some critical issues that must be addressed in
+order to permit successful supply chain collaboration.
+These issues include:
+
+• alignment of business interests;
+• long-term relationship management;
+• reluctance to share information;
+• complexity of large-scale supply chain
+management;
+• competence of personnel supporting supply chain
+management;
+• performance measurement and incentive systems
+to support supply chain management.
+In most companies these issues have not yet been
+addressed in any attempts to enable effective
+extended supply chain collaboration (Davis and
+Spekman, 2004). Moreover, in many supply chains
+there are power regimes and power sub-regimes that
+can prevent supply chain optimization (Cox et al.,
+2001; Watson, 2001). ‘‘Hence, even if it is technically
+feasible to integrate systems and share information,
+organizationally it may not be feasible
+because it may cause major upheavals in the power
+structure’’ (Premkumar, 2000, p. 62). Furthermore,
+it has been mathematically demonstrated, that while
+participants in supply chains may gain certain benefits
+from advance information sharing, it actually
+tends to increase the bullwhip effect (Thonemann,
+2002). Another complicating factor is the possibility of
+the introduction of inaccurate information into the
+system. Inaccurate information too would lead to
+demand distortion, as was the case reported in a
+study of the telecom industry demand chain where
+some partners were double forecasting and ration
+gaming (Heikkila¨, 2002), despite the fact that there
+was a collaborative system in place and a push for
+the correct use of this system.
+Finally, with the advance of E-business there is
+an increasing tendency towards more ‘‘dynamic’’
+(Vakharia, 2002) and ‘‘agile’’ (Gunasekaran and
+Ngai, 2004; Yusuf et al., 2004) supply chains. While
+this trend enables the supply chains to be more flexible
+and adaptive, it could discourage companies
+from investing into forming long-term collaborative
+relationships among each other due to the restrictive
+nature of such commitments.
+
+6. Conclusion
+The objective of this research was to study the
+effectiveness of forecasting the distorted demand
+signals in the extended supply chain with advanced
+non-linear machine learning techniques.
+The results are important for situations where
+parties in the supply chain cannot collaborate for
+the reasons discussed in the beginning of the paper.
+In such cases, the ability to increase forecasting
+accuracy will result in lower costs and higher customer
+satisfaction because of more on-time
+deliveries.
+Although showing better results overall, the
+advanced techniques did not provide a large
+improvement over more ‘‘traditional techniques’’
+(as represented by the MLR model) for the simulation
+data set. However, for the real foundries data,
+the more advanced data mining techniques (RNN
+and SVM) provide larger improvements. Recurrent
+Neural Networks (RNN) and Support Vector
+Machines (SVM) provide the best results on the
+foundries test set. We can also see that the trend
+estimation and naı¨ve forecast are the worst types
+of demand signal processing since they have the
+highest level of error.
+Overall, we can conclude that the use of machine
+learning techniques and MLR for forecasting distorted
+demand signals in the extended supply chain provide more accurate forecasts than simpler forecasting
+techniques (including naı¨ve, trend, and moving
+average). However, we did not find that machine
+learning techniques show significantly better performance
+then linear regression. Thus, the marginal
+gain in accuracy of the RNN and SVM models
+should be weighed in practice against the conceptual
+and computational simplicity of the linear regression
+model.
+Future research could be directed to investigating
+the impacts of information sharing on forecasting
+accuracy, e.g., using the Internet, and other e-business
+technologies, as a means of enabling firms to
+coordinate decisions with their various partners
+(Vakharia, 2002). To study the impact of collaborative
+forecasting, the current simulations, models and
+techniques can be used while providing additional
+information from down the supply chain to the data
+mining tools. This additional information would
+likely increase the model’s accuracy. However, as
+demonstrated by Frohlich (2002), as long as barriers
+remain, integration of decision making will continue
+to be a constraint. Such constraints might be alleviated
+with our model.

@@ -1,0 +1,6 @@
+Robin Hood hashing
+
+One interesting variation on double-hashing collision resolution is Robin Hood hashing.[15][16] The idea is that a new key may displace a key already inserted, if its probe count is larger than that of the key at the current position. The net effect of this is that it reduces worst case search times in the table. This is similar to ordered hash tables[17] except that the criterion for bumping a key does not depend on a direct relationship between the keys. Since both the worst case and the variation in the number of probes is reduced dramatically, an interesting variation is to probe the table starting at the expected successful probe value and then expand from that position in both directions.[18] External Robin Hashing is an extension of this algorithm where the table is stored in an external file and each table position corresponds to a fixed-sized page or bucket with B records.[19]
+2-choice hashing
+
+2-choice hashing employs 2 different hash functions, h1(x) and h2(x), for the hash table. Both hash functions are used to compute two table locations. When an object is inserted in the table, then it is placed in the table location that contains fewer objects (with the default being the h1(x) table location if there is equality in bucket size). 2-choice hashing employs the principle of the power of two choices.

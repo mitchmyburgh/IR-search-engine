@@ -1,0 +1,37 @@
+Google’s search engine bot is dumping iPhone for Nexus 5X
+Googlebot trawls the web for information, indexing and ranking sites for your searches. How significant is its switch to Android, and its plans for a bigger, 5in screen-size standard?
+ google nexus devices
+ Googlebot dumps the iPhone for Google’s Nexus 5X, indicating that the new standard for the mobile web could be growing in screen size. Photograph: Justin Sullivan/Getty Images
+Samuel Gibbs
+Wednesday 16 March 2016 13.13 GMT Last modified on Thursday 17 March 2016 12.27 GMT
+Share on Pinterest Share on LinkedIn Share on Google+
+Shares
+1
+ Save for later
+Did you know Google’s been scouring the web identifying itself as an iPhone running iOS 8.3? Well, as of 18 April, that’s about to change, when Googlebot dumps its Apple skin and adopts the new Nexus 5X as its mobile standard.
+
+Googlebot is part of Google’s search engine technology, which crawls the web, identifying every site and service connected to the open web that will let it in so that you don’t have to. It grabs as much information as it can, feeds it to the algorithm that produces the rankings and listings that you as a user access when you type or shout your search terms into the box.
+
+To evaluate a site’s performance for various devices, Googlebot identifies itself as certain types or classes of device. From desktop computers to smartphones, the crawler uses what’s called a “user-agent” string, which includes some of the basic capabilities of a device.
+
+For its profiling of mobile sites Google’s been using a user-agent that identifies it as an iPhone running iOS 8.3 and therefore an older version of Apple’s mobile Safari browser on a relatively small smartphone. Starting on the 18 April, Google will start identifying its mobile crawler as one of the company’s Nexus 5X smartphones running Android 6.0.1 Marshmallow. That includes the more popular Chrome, which claimed a 36% share of the market in February, leading the third-party UC Browser with 20.1% and Apple’s Safari with 18.2%, according to data from StatCounter.
+
+Katsuaki Ikegami, a software engineer for Google said: “We’re updating the user-agent string so that our renderer can better understand pages that use newer web technologies. Our renderer evolves over time and the user-agent string indicates that it is becoming more similar to Chrome than Safari.”
+
+Google reckons that the change will have no effect on 99% of the sites out there in the immediate future and the majority of search experts agree. Google recently changed to the way it ranks sites for performance on mobile devices, which had a significant impact on those not optimised for mobile devices.
+
+The switch to Android and Chrome by the Googlebot could see Google favouring sites adopting newer web technologies in the future.
+
+However, many sites including the Guardian simply ignore user agent and serve a single payload to the device, dynamically resizing and formatting depending on the screen real estate available. For them the switch will likely mean very little.
+
+Bigger is better, probably
+ Nexus 5x
+Facebook Twitter Pinterest
+ The 5.2in Nexus 5X will be the face of the Googlebot. Photograph: Samuel Gibbs for the Guardian
+The one thing that could have a significant impact on the shape of the mobile web going forward is the appreciation of screen size. By defining itself as an iPhone running iOS 8.3 Googlebot set the standard for the mobile page for a screen size that was smaller than 5in. Apple’s iPhones had a screen size of just 4in until the 2014 release of the iPhone 6 with a 4.7in screen. By contrast, Android screen sizes have been getting steadily bigger.
+
+The majority of western devices now have screens that are at least 5in, even at the lower-cost end with devices such as Motorola’s Moto G having a 5in screen. Many so-called phablet devices such as Samsung’s Galaxy Note series and Apple’s iPhone 6S Plus have screens that are larger than 5.5in. The Nexus 5X has a screen that 5.2in and is Google’s second smartphone with a screen around 5in on the diagonal.
+
+The Googlebot user-agent change could indicate that Google has decided that the new standard for the mobile web should be 5in or larger. What effect that will have on smaller devices such as the non-Plus iPhones remains to be seen. But Google is one of the primary drivers of web standards, leveraging its dominance in search to bring sites into line with its view of how the web should work.
+
+Globally, higher-end devices with screens with a resolution of 720p or 1080p, of which the Nexus 5X is one, still only account for 7.4% of mobile devices according to StatCounter. That is likely to change in the next five years as component costs come down, although how long it takes for 5in screens to become the normal for all devices, if ever, is unknown.

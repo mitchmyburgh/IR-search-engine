@@ -1,0 +1,327 @@
+
+
+This page may be out of date. Save your draft before refreshing this
+page.Submit any pending changes before refreshing this page.
+
+Hide this message.
+
+Quora
+
+****
+
+Sign In
+
+Quantum Computation
+
+Comparisons
+
+# What is the fundamental difference between a classical bit and a quantum
+bit?
+
+UpdateCancel
+
+### Answer Wiki
+
+4 Answers
+
+Hadayat Seddiqi, engineering @ biotech startup
+
+3.1k Views •
+
+Hadayat is a Most Viewed Writer in
+
+Quantum Computation with 70+ answers.
+
+I wrote an answer for this question which I will quote here since it might be
+useful if you know a bit of quantum mechanics: What is the relation between
+quantum computing and quantum mechanics? If you aren't too familiar with
+quantum mechanics, read the next paragraph, otherwise you can jump straight to
+the quoted section.  
+  
+Take an electron and it will have some intrinsic spin that could be in two
+possible states, either up or down. In quantum mechanics, after every
+measurement it will be only one or the other. Before the measurement however,
+it can be in any state that is a _superposition_ of up or down. In
+mathematical notation, you can take your overall states
+[math]|\psi\rangle[/math] and describe it like [math]|\psi\rangle = a|\uparrow
+\rangle + b|\downarrow \rangle[/math], where the coefficients [math]a[/math]
+and [math]b[/math] are complex numbers. They are called _probability
+amplitudes_, and to get from these amplitudes to actual probabilities, you
+need to take the modulus squared, i.e. [math]P_{|\uparrow\rangle} = |a|^2 =
+aa^*[/math], where [math]P_k[/math] is the probability of being in the
+[math]k[/math]th state and [math]s^*[/math] means the complex conjugate (that
+is, if you had [math]s = x + iy[/math], then [math]s^* = x - iy[/math]). As in
+normal probability, [math] |a|^2 + |b|^2 = 1[/math].  
+  
+And now the answer to What is the relation between quantum computing and
+quantum mechanics?  
+  
+
+> It's actually quite simple. The information for a qubit in some particle
+will be its spin state. In quantum mechanics, spin is no different than
+position, velocity, energy, etc. That is, you can't know what state it is in
+exactly because it's in a superposition of states. It's related somewhat to
+Heisenberg's uncertainty principle. Take a look at this graph:  
+  
+
+>
+
+>  
+In this diagram, we're using the z-axis as our measurement basis. So the
+vector [math]\left|\psi\right\rangle[/math] has some polar angle
+[math]\theta[/math], and its projection onto the z-axis is what we'll see
+(since we'll be measuring according to the z-basis). But of course, as you can
+see, it's not _fully_ in the zero or one state, it's partially in both. **When
+you measure, though, it will pick one or the other.**
+
+> [clipped]
+
+> So after going through all this trouble, we understand qubits a little bit.
+The key reason why we like qubits better (in some cases) than classical bits
+is clear when we look at a two-qubit system. Remember the notation we used
+above.  
+  
+[math]|\psi\rangle = a|\uparrow\uparrow\rangle + b|\uparrow\downarrow\rangle +
+c|\downarrow\uparrow\rangle + d|\downarrow\downarrow\rangle[/math]  
+  
+How did we get four possible states? The overall state can be in any possible
+configuration (in fact, it _is_ in all these possible configurations, with
+some probability). Another way to say this is that [math]|\psi\rangle[/math],
+the state _vector_, lives in an [math]n[/math]-dimensional space. The state
+vector tells you "how much" you are in a certain state. A simple way of
+visualizing the state vector is given by the Bloch sphere, which is the image
+I used above in the quoted section.  
+  
+With qubits, you have two possible states, so you can see that the number of
+possible states with [math]k[/math] qubits gives you a state vector that lives
+in a space with dimension [math]n = 2^k[/math]. And this is why qubits are so
+powerful. Using entangled qubits allows us an exponentially large
+computational space (Hilbert space) to represent and manipulate information.
+[*]  
+  
+How exactly to use that space to do things is not easy to understand, and
+unfortunately I don't know of any algorithms that are clear enough to explain
+to the layman. Personally, I have to think pretty hard about quantum
+algorithms. If I can come up with anything, I will add it to this post.
+Alternatively, if anyone else has ideas, please feel free to suggest in the
+comments or edit this section.  
+  
+[*] Now this is not "wrong" to say to an introductory person in quantum
+information, but it's still a bit of an open question whether entanglement is
+the whole story for quantum speedup. There are some models, like the one-
+clean-qubit model, that only require one pure-state qubit and a host of other
+qubits that are _not_ entangled. It is not a universal quantum computer, but
+it is believed to be more powerful than classical computers.
+
+Updated Jul 2, 2014 • View Upvotes
+
+#### Related Questions
+
+More Answers Below
+
+    * What can an 8bit quantum computer do better than a classical?
+
+    * Why do junk or garbage bits need to be eliminated when you convert a classical reversible circuit into a quantum gate circuit ?
+
+    * What is the difference between classical mechanics and Quantum Mechanics?
+
+    * What is the difference between a quantum and a classical computer?
+
+    * What is the difference between classical and quantum mechanics?
+
+Kuba Bartczuk
+
+624 Views
+
+**Classical bit **is a variable that holds value from {0, 1}.   
+**Qubit** is a variable holding superposition of clear states   
+(clear states [math] |0&gt;, |1&gt;[/math] correspond to 0,1 respectively)  
+qb =  [math]a |0&gt; \+ b |1&gt;[/math] for complex a,b such that  
+[math]|a|^{2}[/math]  +  [math]|b|^{2} = 1[/math]  
+(If you don't get |x&gt; notation, go look up Dirac/bra-ket notation).  
+  
+But what does this superposition mean? It means that if you measure qb in
+standard basis  
+([math]{|0&gt;, |1&gt;}[/math])  
+you will get  
+[math]|0&gt;[/math], or  [math]|1&gt;[/math] with probability
+[math]|a|^2[/math] and  [math]|b|^{2}[/math] respectively.  
+  
+So, in a way, qubit holds much more information (in a classical sense) than
+classical bit - it can be in any of states that correspond to two complex
+numbers which squared magnitudes sum to one.  
+The problem is, there is no simple way of extracting that information, but why
+is that so probably belongs to another question (this is what quantum
+computing is about).
+
+Updated Sep 13, 2015
+
+Digvijay Singh, Worked on Magnetostrictive Thin Films
+
+632 Views
+
+A Quantum Bit or a Qubit, is the smallest unit of quantum information,
+analogous to the bit, in classical computers.  
+  
+A qubit will have 2 states, that represent its 2 different configurations.  
+For a classical bit, information is the bit being in either one of those
+configurations. But a qubit is in a superposition of both states and hence can
+take all values in between.  
+  
+Say 0 and 1 are the 2 states, then  
+S = a1 |0&gt; \+ a2 |1&gt; , where S is the state of the qubit and summation
+of |an| squared equals 1.  
+For a classical system, S =0 OR 1.
+
+Written Sep 2, 2014 • View Upvotes
+
+Buster Smith
+
+185 Views
+
+I can go into details, but I think Kuba Bartczuk hit the hammer on the nail
+with his rather simple easiest to follow answer
+
+Written Jan 27
+
+More
+
+#### Related Questions
+
+    * What is the difference between Niels Bohr's and Albert Einstein's theories of quantum mechanics?
+
+    * What is the difference between classical physics and quantum physics?
+
+    * What is a quantum computer?
+
+    * What's the difference between 16-bit and 32-bit?
+
+    * What is quantum computing and what is it's scope in future?
+
+    * What is the difference between classical and quantum physics?
+
+    * What are the main differences between Python 32-bit and 64-bit?
+
+    * Why is maximal entanglement with a reference system the appropriate quantum analogue of knowing a bit in classical information theory?
+
+    * What is the main difference between classical physics and quantum physics?
+
+    * How do the current quantum computers store quantum bits?
+
+    * What are the major differences between BIT Mesra and BITS Pilani, apart from placements?
+
+    * What is the difference between 32 bit and 64 bit Excel? Is one faster?
+
+    * What is the difference between bits and bytes?
+
+    * What's the difference between BSIT and BIT undergraduate degrees?
+
+    * What're some of the differences between 8bits, 16bits and 32bits in digital photography and photoshop?
+
+### Related Questions
+
+    * What can an 8bit quantum computer do better than a classical?
+
+    * Why do junk or garbage bits need to be eliminated when you convert a classical reversible circuit into a quantum gate circuit ?
+
+    * What is the difference between classical mechanics and Quantum Mechanics?
+
+    * What is the difference between a quantum and a classical computer?
+
+    * What is the difference between classical and quantum mechanics?
+
+    * What is the difference between Niels Bohr's and Albert Einstein's theories of quantum mechanics?
+
+    * What is the difference between classical physics and quantum physics?
+
+    * What is a quantum computer?
+
+    * What's the difference between 16-bit and 32-bit?
+
+    * What is quantum computing and what is it's scope in future?
+
+Top Stories
+
+Read More
+
+If Donald Trump were to face Bernie Sanders, what material would he attack
+Sanders with?
+
+Daniel Dombrowsky, I don't need much
+
+59.2k Views • Upvoted by
+
+Dexter Jameswood, graduate student studying American history
+
+The fact that Sanders went to the Soviet Union in the late 80's for his
+"honeymoon." (Not really the case, but it will be brought up)
+
+The fact that Bernie Sanders never ran a business.
+
+The fact that he has been a politician for most of his adult life.
+
+He will attempt to illustrate how expensive his agenda will be.
+
+He will bash Sanders about how his tax plan is a non-starter with the current
+House...
+
+Read More
+
+Do babies pee inside the womb? If so, where does it go?
+
+Jae Won Joh, sleepy medical dork
+
+201.6k Views • Upvoted by
+
+Sandra Liu Huang, Have had two babies
+
+Jae is a Most Viewed Writer in
+
+Babies.
+
+Yes. Once babies develop cardiac and renal systems, their kidneys begin to
+process fetal blood flow and create urine, which is subsequently peed out into
+the surrounding amniotic fluid. Fetal urine is a big source of amniotic fluid
+past the first few months of pregnancy!  
+  
+As for where it goes...babies constantly swallow and process amniotic fluid
+over and over throughout gestation, which means ...
+
+Read More
+
+Are people excited for Hillary Clinton in her presidential bid (2016)?
+
+Ron Wiseman
+
+3k Views •
+
+Ron is a Most Viewed Writer in
+
+2016 U.S. Presidential Election.
+
+To put the record straight, Sanders is generating enormously more excitement
+than Clinton is.  Follow last week's third debate....
+
+New York Times poll:
+
+Slate's poll:
+
+Wall Street Journal's poll:
+
+The Washington Times' poll:
+
+Even among Fox News' conservative voters who answered the question "If the
+election were held today, who would you vote for?", Bernie Sanders has a clear
+advantage over Republicans...
+
+Sitemap
+
+#
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+About \- Careers \- Privacy \- Terms \- Contact
+
+  *[5/16/2013]: 2013-05-16T10:37:00-07:00
+  *[BOFH]: Bastard Operator from Hell
+

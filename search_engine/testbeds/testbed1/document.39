@@ -1,0 +1,41 @@
+BETA_(programming_language)
+'''BETA''' is a pure  language originating within the  "Scandinavian School" in object-orientation where the first object-oriented language  was developed.Source:  Ole Lehrmann Madsen: An overview of BETA Among its notable features, it introduced es, and unified classes with procedures into so called patterns.
+==Features==
+===Technical overview===
+From a technical perspective, BETA provides several unique features. Classes and Procedures are unified to one concept, a . Also, classes are defined as properties/attributes of objects.  This means that a class cannot be instantiated without an explicit object context. A consequence of this is that BETA supports es. Classes can be virtually defined, much like virtual methods can be in most object-oriented programming languages. Virtual entities (such as methods and classes) are never overwritten; instead they are redefined or specialized.
+BETA supports the object-oriented perspective on programming and has comprehensive facilities for procedural and functional programming. It has powerful abstraction mechanisms to support identification of objects, classification and composition. BETA is a statically typed language like Simula,  and , with most type checking done at compile-time. BETA aims to achieve an optimal balance between compile-time type checking and run-time type checking.
+===Patterns===
+A major and peculiar feature of the language is the concept of patterns. In another programming language, such as , one would have several classes and procedures. BETA expresses both of these concepts using patterns.
+For example, a simple class in C++ would have the form
+class point ;
+In BETA, the same class could be represented by the pattern
+point: (#
+    x, y: @integer
+#)
+That is, a class called ''point'' will have two fields, ''x'' and ''y'', of type . The symbols ''(#'' and ''#)'' introduce patterns. The colon is used to declare patterns and variables. The ''@'' sign before the integer type in the field definitions specifies that these are integer fields, and not, by contrast, references, arrays or other patterns.
+On the other hand, a procedure in C++ could have the form
+int max(int x, int y)
+In BETA, such a function could be written using a pattern
+max: (#
+    x, y, z: @integer
+enter (x, y)
+do
+    (if x >= y // True then
+        x -> z
+    else
+        y -> z
+    if)
+exit z
+#)
+The ''x'', ''y'' and ''z'' are local variables. The '''enter''' keyword specifies the input parameters to the pattern, while the '''exit''' keyword specifies the result of the function. Between the two, the '''do''' keyword prefixes the sequence of operations to be made. The conditional block is delimited by ''(if'' and ''if)'', that is the '''if''' keyword becomes part of the opening and closing parenthesis. Truth is checked through ''// True'' within an if block. Finally, the assignment operator ''-&gt;'' assigns the value on its left hand side to the variable on its right hand side.
+===Hello world!===
+This snippet prints the standard line :
+(#
+do Hello world!->PutLine
+#)
+==Further reading==
+*Ole Lehrmann Madsen, Birger Mller-Pedersen, Kristen Nygaard: Object-Oriented Programming in the BETA Programming Language, 
+==References==
+==External links==
+*
+* Generalized BETA

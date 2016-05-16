@@ -1,0 +1,25 @@
+What's Wolfram Up To With New Programming Language?
+
+Wolfram Research is famous for its Mathematica scientific computational language, which gave rise to the Wolfram Alpha answer engine. But lately founder Stephen Wolfram has startled commentators with a blog post promising to introduce a new programming language (called Wolfram Language) that's intended to do, well, just about everything.
+
+Wolfram mentioned that the new language would handle natural-language input, raising the possibility that the language would be the long-awaited way for nonprogrammers to write programs using ordinary English rather than frightfully arcane computer languages such as Java and Python, where even a misplaced semicolon can be catastrophic. But after saying his piece in his blog, Stephen Wolfram was then unavailable to answer questions, and his corporate spokesman also said he had nothing further to add. He has since released an introductory pilot version of the Wolfram Language on the Raspberry Pi, a single-board computer used for computer-science training. In another blog posting, Stephen Wolfram called it "an early, unfinished glimpse of the Wolfram Language." In other words, his comment cleared up no mysteries.
+
+Experts who examined his first blog posting are pretty sure about one thing: Stephen Wolfram was not really talking about creating a natural-language programming environment. What they're not so sure about is whether his plans represent just another example of creeping featurism.
+Natural Language
+
+"It doesn't sound to me like he's offering computer programming in English," says Michael Covington, an expert on natural-language processing and the recently retired associate director of the Institute for Artificial Intelligence at the University of Georgia. "Rather, he says things like dates can be expressed in natural English. That is, when English already has a precise way to say something, the program will accept it. That would be a convenience for programmers."
+
+Wolfram is wise not to go in the direction of natural-language programming, Covington says, because its supposed advantages are basically a myth. Programming languages were originally invented because English was not precise and concise enough for the task. Reverting to English would not represent progress, he argues.
+
+"It is monstrously hard to use English precisely enough. The end result would be so wordy that it would be easier to use formulas and symbols, as relied on by computer languages," Covington says. In any case, he says, learning to program is not a matter of learning a computer language: "Learning to program is mostly a matter of learning to think precisely about the things the computer does‚ and that's a lot more work than learning where the semicolon goes."
+Creeping Featurism
+
+But then there is the issue of creeping featurism, also known as mission creep or feature-itis. Since the dawn of the Industrial Revolution product designers have occasionally succumbed to the temptation to announce the inclusion of every conceivable useful feature in a proposed product. Even if they can be achieved, the results are not always practical.
+
+The question of creeping featurism arises here because Stephen Wolfram promised eventually to provide an astonishing array of powerful extensions for his planned language‚ to make it a "computable model of the world," as his blog put it. The Wolfram Language is supposed to have modules to handle data manipulation and analysis; visualization and graphics; symbolic numeric computation; strings and text; graphics; images; geometry; sound; time-related computation; geographic data computation; scientific data computation; engineering data computation; financial data computation; social, cultural, and linguistic data; higher mathematical computation; document presentation; user interface construction; external interfaces; and cloud deployment. Just to name a few.
+
+"Given the scope of the announcement, there are equal parts interest and skepticism," says Stephen O'Grady, principal analyst at RedMonk, an industry analyst firm for software developers. "Obviously, any technology that makes it easier to accomplish the kinds of tasks the language is meant to accomplish would be welcome. However, the audaciousness of the vision guarantees questions about its ability to live up to the expectations set by the announcement."
+
+Covington noted that while the Wolfram Language project seems ambitious, "There have been large-scale projects that were successful because the people behind them were insightful. It may be creeping featurism, but we should not condemn it just for that. My fear is that they will invent something so complicated that nobody ever implements it well," he said.
+
+In other words, the proof will be in the programs.

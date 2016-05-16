@@ -1,0 +1,17 @@
+Advantages
+
+    Linked lists are a dynamic data structure, which can grow and be pruned, allocating and deallocating memory while the program is running.
+    Insertion and deletion node operations are easily implemented in a linked list.
+    Linear data structures such as stacks and queues are easily executed with a linked list.
+    They can reduce access time and may expand in real time without memory overhead.
+
+Disadvantages
+
+    They use more memory than arrays because of the storage used by their pointers.
+    Nodes in a linked list must be read in order from the beginning as linked lists are inherently sequential access.
+    Nodes are stored incontiguously, greatly increasing the time required to access individual elements within the list.
+    Difficulties arise in linked lists when it comes to reverse traversing. For instance, singly linked lists are cumbersome to navigate backwards[1] and while doubly linked lists are somewhat easier to read, memory is wasted in allocating space for a back pointer.
+
+History
+
+Linked lists were developed in 1955–1956 by Allen Newell, Cliff Shaw and Herbert A. Simon at RAND Corporation as the primary data structure for their Information Processing Language. IPL was used by the authors to develop several early artificial intelligence programs, including the Logic Theory Machine, the General Problem Solver, and a computer chess program. Reports on their work appeared in IRE Transactions on Information Theory in 1956, and several conference proceedings from 1957 to 1959, including Proceedings of the Western Joint Computer Conference in 1957 and 1958, and Information Processing (Proceedings of the first UNESCO International Conference on Information Processing) in 1959. The now-classic diagram consisting of blocks representing list nodes with arrows pointing to successive list nodes appears in "Programming the Logic Theory Machine" by Newell and Shaw in Proc. WJCC, February 1957. Newell and Simon were recognized with the ACM Turing Award in 1975 for having "made basic contributions to artificial intelligence, the psychology of human cognition, and list processing". The problem of machine translation for natural language processing led Victor Yngve at Massachusetts Institute of Technology (MIT) to use linked lists as data structures in his COMIT programming language for computer research in the field of linguistics. A report on this language entitled "A programming language for mechanical translation" appeared in Mechanical Translation in 1958.

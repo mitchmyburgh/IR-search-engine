@@ -1,0 +1,35 @@
+The efficiency of the geometric modeling algorithms presented in this tutorial crucially depends
+on the underlying mesh data structures. A variety of data structures has been described in the
+literature, and a number of different implementations are available. We refer to [Ket98] for an
+excellent overview and comparison of different mesh data structures and to [FH03, FH05b] for
+references on data structures for representing non-manifold meshes.
+In general, when choosing a data structure one has to take into account topological as well as
+algorithmic considerations:
+Topological requirements. Which kinds of meshes need to be represented by the data structure?
+Do we need boundaries or can we assume closed meshes? Do we need to represent complex
+edges and singular vertices (see Chapter 4) or can we rely on a manifold mesh? Can we restrict
+ourselves to pure triangle meshes or do we need to represent arbitrary polygonal meshes? Are
+the meshes regular, semi-regular or irregular? Do we want to build up a hierarchy of differently
+refined meshes or do we need only a flat data structure?
+Algorithmic requirements. Which kinds of algorithms will be operating on the data structure?
+Do we simply want to render the mesh? Do we need to modify only the geometry of the mesh,
+or do we also have to modify the connectivity/topology? Do we need to associate additional
+data with the vertices, edges or faces of the mesh? Do we need to have constant-time access to
+the local neighborhoods of vertices, edges and faces? Can we assume the mesh to be globally
+orientable?
+The simplest representation for triangle meshes would just store a set of individual triangles.
+Some data exchange formats use this representation as a common denominator (e.g., STL format).
+However, it is immediately clear that this is not sufficient for most requirements: connectivity
+information cannot be accessed explicitly, and vertices and associated data are replicated.
+The latter can be fixed by a shared vertex data structure, which stores a table of vertices and encodes
+triangles as triples of indices into this table. In fact this representation is used in many file
+formats because it is simple and efficient in storage (assuming no mesh compression is applied).
+Similarly, it is efficient for certain algorithms that assume static data, e.g., rendering. However,
+without additional connectivity information this is still not efficient for most algorithms.
+Before we go on, we want to identify some minimal set of operations that are frequently used
+by most algorithms.
+• Access of individual vertices, edges, faces. This includes enumeration of all elements (in
+no particular order).
+• Oriented traversal of edges of a face, which refers to finding the next edge in a face. (This
+defines also degree of the face and the inverse operation for the previous halfedge. With
+additional access to vertices, e.g., rendering of faces is enabled.)

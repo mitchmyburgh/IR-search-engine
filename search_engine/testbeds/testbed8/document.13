@@ -1,0 +1,64 @@
+And the last copying choice is the use of cloning. Cloning involves creating a new array of the same size and type and copying all the old elements into the new array. The clone() method is defined in the Object class and its invocation is demonstrated by this code segment
+
+int[] a = {1, 2, 3};
+int[] b = (int[]) a.clone();
+
+Note, that casting (int[]) is the must.
+
+Examine the code in ArrayCopyPrimitives.java for further details.
+Insertion and Deletion
+
+Arrays in Java have no methods and only one immutable field length. Once an array is created, its length is fixed and cannot be changed. What do you do to resize the array? You allocate the array with a different size and copy the contents of the old array to the new array. This code example demonstrates deletion from an array of primitives
+
+public char[] delete(char[] data, int pos)
+{
+	if(pos >= 0 && pos < data.length)
+	{
+		char[] tmp = new char[data.length-1];
+		System.arraycopy(data, 0, tmp, 0, pos);
+		System.arraycopy(data, pos+1, tmp, pos, data.length-pos-1);
+		return tmp;
+	}
+	else
+		return data;
+}
+
+The first arraycopy copies the elements from index 0 to index pos-1, the second arraycopy copies the elements from index pos+1 to data.length.
+
+Examine the code in ArrayDemo.java for further details.
+The ArrayList class
+
+The java.util.ArrayList class supports an idea of a dynamic array - an array that grows and shrinks on demand to accomodate the number of elements in the array. Below is a list of commonly used methods
+
+    add(object) - adds to the end
+    add(index, object) - inserts at the index
+    set(index, object) - replaces at the index
+    get(index) - returns the element at that index
+    remove(index) - deletes the element at that index
+    size() - returns the number of elements 
+
+The following code example will give you a heads up into how some of them are used.
+
+/* ADD */
+      ArrayList<Integer> num = new ArrayList<Integer>();
+      for(int i = 0; i < 10; i++) num.add(i);
+      System.out.println(num);
+
+
+/* REMOVE even integers */
+      for(int i = 0; i < num.size(); i++)
+      	if(num.get(i)%2 == 0) num.remove(i);
+      System.out.println(num);
+
+Copying arrays of objects
+
+This topic is more complex for understanding.. Let us start with a simple loop structure
+
+Object[] obj1 = {new Integer(10),
+                new StringBuffer("foobar"),
+                new Double(12.95)};
+Object[] obj2 = new Object[obj1.length];
+for(int i = 0; i ‹ obj1.length; i++)
+	obj2[i] = obj1[i];
+
+At the first glance we might think that all data is copied. In reality, the internal data is shared between two arrays. The figure below illustrates the inner structure 

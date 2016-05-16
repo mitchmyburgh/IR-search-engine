@@ -1,0 +1,92 @@
+Rating programming languages – Swift is hot, Dart is not
+More like this
+
+    cemetary tomb gravestone dead death
+    Stop the funeral! Objective-C is alive and kicking
+    multiple choice test scantron pencil hand examination
+    Review: 7 JavaScript IDEs put to the test
+    Executive weighing pros and cons
+    Why R? The pros and cons of the R language
+    on IDG Answers
+    How to turn on Windows 10's 'Find My Device' feature?
+
+programming code computer laptop hands worker
+Credit: Pixabay
+
+By Paul Rubens Follow
+
+CIO | Sep 21, 2015 6:32 AM PT
+RELATED TOPICS
+
+    Developer Open Source Application Development Apple Google 
+
+Comments
+
+Apple's Swift programming language is enjoying a meteoric rise in popularity and gaining new followers at an unprecedented rate, according to a recent study.
+
+Swift has earned itself a Top 20 spot in developer research firm RedMonk's “Programming Language Rankings: June 2015” study less than a year after the language's launch. By contrast Google's Go, another language that has enjoyed explosive growth in popularity, took almost four years to make it in to RedMonk's Top 20.
+CIO April Digital Issue: Wearables go to work - cover image
+Download the April 2016 Digital Magazine
+
+Inside: How companies are making wearables work, why CIOs aren’t ready for container tech & much more!
+Read Now
+
+"Swift's explosive growth has been primarily fuelled by Apple's decision to anoint it as the successor to Objective C," says Stephen O'Grady, a RedMonk analyst. "It's grown faster than anything else we've seen while targeted primarily at iOS; if it becomes more versatile, it will be interesting to consider what kind of growth we could see," he adds.
+
+In June at Apple's Worldwide Developers Conference, Craig Federighi, the company's senior vice president of software engineering, announced that Swift will be open sourced later this year. There has long been a trend among vendors in open sourcing their programming languages, and Apple's decision to open source Swift shows that it is serious in the desire to attract developers.
+
+That's because for many developers, an open source language is table stakes: if the source isn't available, they are simply not interested in using it, says O'Grady. "Microsoft demonstrated this, in fact, when it decided to make .Net available, finally, as open source software."
+
+[Related: 9 programming languages and the women who created them]
+
+At Apple's conference Federighi also said that Swift could end up being used "everywhere" for applications and for systems programming.  "The interesting question for Swift is whether Apple's decision to make it available as open source under a permissive license, and make it available on Linux, will give it a market opportunity outside of Apple's own ecosystem," says O'Grady.
+
+(It's also worth mentioning that Erlang – a language designed for building large-scale, highly available applications – has recently moved to an Apache License 2.0 from the more restrictive and non-OSI-approved Erlang Public License. Erlang was tipped by CIO.com last year as a language that career-minded developers should think about learning, and O'Grady notes that the license change should reduce friction to the adoption of the language and perhaps allow it to improve on its current #25 position.)
+Languages on the Go
+
+Last year CIO.com also highlighted Google's Go as a language to learn, and this has been vindicated by its entry into RedMonk's Top 20. (Go is a traditional language like C, written expressly for the cloud – with concurrency and other features, such as garbage collection, built in.)
+
+Its popularity may well have been influenced by the fact that Docker – the container platform that has also seen massive take-up over the last twelve months – is written in Go.
+Resources
+
+    White Paper
+    B2B 360-Degrees: A Revolution in EDI and API Integration
+
+See All
+
+"Go's widespread adoption and take-up in important projects like Cloud Foundry (and Docker)  suggests that its designers were successful, and the usage in these projects in turns fuels wider adoption of the language," O'Grady says.
+
+While both Swift and Go have moved up into the Top 20, the Top 10 languages have been relatively static for the last few years. JavaScript has edged Java out of the No. 1 spot, with perennial favourites PHP, Python, C#, C++, Ruby, CSS, C and Objective-C making up the rest of Top 10.
+
+This cosy Top 10 arrangement is unlikely to change any time soon, O'Grady believes. "Each represents a significant population of developers, and while they are all used in a variety of contexts, they also have areas of individual strength," he says.
+
+Even the possibility of building multi-platform applications in C# is unlikely to give that language a significant boost, he feels. That's because the languages it would have to leapfrog are already immensely popular in their own right, and have been multi-platform for years.
+Is Dart missing the bullseye?
+
+One conundrum that's worth considering is the lack of take-up of Dart, an open source language developed by Google as a replacement for JavaScript. Dart can be compiled into JavaScript (using the dart2js compiler,) usually resulting in code that will run faster than handwritten JavaScript.
+
+On the face of it seems surprising that Dart has not moved higher than No. 33 in RedMonk's rankings – especially when you consider that developers are demonstrably willing to take up a new language (like Swift) when it offers benefits over an older language.
+
+[Related: How 13 programming languages got their names]
+Popular On CIO.com
+
+    Apple Pencil
+    IDG Contributor Network
+    iPad Pro: 14 apps enhanced for the Apple Pencil
+    fibit alta
+    3 reasons to buy Fitbit's new Alta band, and 2 reasons not to
+    zodiac jimlynch
+    IDG Contributor Network
+    iPad Pro: 16 gorgeous games
+
+"Dart's primary challenge is that it's competing with an immensely popular language in JavaScript that has seen an explosion in usage as it expanded from its obvious strengths as a front end language to legitimate back end, server-side option," O'Grady explains.
+
+"Swift, for example, has seen explosive growth because it's focused on competing with a widely used, but not loved language: Objective C. Dart does not have that advantage."
+
+With languages like Swift and Go on the up, it's inevitable that other languages have to make way for them. One such language is the venerable – but these days rather unfashionable – Visual Basic. The language has dropped down to No. 19 (along with Clojure and Groovy).
+
+Although its days as a Top 20 language are likely limited due to the lack of new programmers taking up the language, it may last a while longer due to the sheer weight of numbers of people who learned it in the past, O'Grady believes
+
+"While frequently maligned by serious developers as a toy, VB lowered the barrier to entry to programming, and as a result saw volume usage which is reflected in its current status," he says.
+
+But how much longer Microsoft's language can hang in there before falling victim to the success of Apple's and Google's new languages is anyone's guess.

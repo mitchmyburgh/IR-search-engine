@@ -1,0 +1,26 @@
+Evil twin Router is a term for a rogue Wi-Fi access point that appears to be a legitimate one offered on the premises, but actually has been set up to eavesdrop on wireless communications. An evil twin is the wireless version of the phishing scam. An attacker fools wireless users into connecting a laptop or mobile phone to a tainted hotspot by posing as a legitimate provider.
+This type of evil twin attack may be used to steal the passwords of unsuspecting users by either snooping the communication link or by phishing, which involves setting up a fraudulent web site and luring people there.
+
+
+== Method ==
+The attacker uses a bogus wireless access point, purporting to provide wireless Internet services, but snooping on the traffic. When the users log in to unprotected (non-HTTPS) bank or e-mail accounts, the attacker has access to the entire transaction, since it is sent through their equipment. He also is able to connect to other networks.
+Unwitting web users are invited to log in to the attacker's server with bogus login prompts, tempting them to give away sensitive information such as usernames and passwords. Often users are unaware they have been duped until well after the incident has occurred.
+Users think they have logged on to a wireless hotspot connection when in fact they have been tricked into connecting to its evil twin by it sending a stronger signal within proximity to the wireless client.
+Rogue access points are easy to set up, for example using a laptop with a wireless card that acts as an access point (known as "host-ap"), but are hard to trace since they can suddenly be shut off. An attacker can make his own wireless networks that appear to be legitimate by simply giving their access point the same SSID and BSSID to the Wi-Fi network on the premises. The rogue access point can be configured to pass the traffic through to the legitimate access point while monitoring the victim's traffic, or it can simply say the system is temporarily unavailable after obtaining a username and password.
+
+
+== See also ==
+Wireless LAN Security
+Snarfing
+
+
+== References ==
+
+Kirk, Jeremy; ′Evil Twin′ Hotspots Proliferate, IDG News Service, April 25, 2007
+
+
+== External links ==
+Airsnarf - a rogue AP setup utility
+Jasager – Karma on The Fon - rogue AP software
+Evil twin' threat to Wi-Fi users' 2005, CNN
+'Does Your Wi-Fi Hotspot Have an Evil Twin?' 2005, PC World

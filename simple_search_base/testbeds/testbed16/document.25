@@ -1,0 +1,59 @@
+Build Your Own Web or Mobile App In Minutes With These Cloud Based Tools
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+A man waits in line outside the Apple store on...
+ 
+It’s been awhile since I’ve had to sit down and actually build something for the web. When I started developing websites way back in 1995 there really were not a lot of choices other than a text editor and some good old fashion trial and error. I still remember the day I received my first copy of FrontPage, not the Microsoft MSFT -1.68% version but the Vermeer Technologies version pre-acquisition. Later, as my company grew I began to do less and less in terms of actual development work until finally the company was acquired. Now in my new role, I’m finally getting the opportunity to explore my developer roots and explore some of the latest approaches to creating web and mobile applications.
+
+A lot has changed since 1995, literally anyone with almost no technical capabilities can crank out a web or mobile app with ease. So I thought I’d take the opportunity to share some of the more interesting App development platforms I’ve discovered recently.
+
+Knack - Create online databases. All by yourself.
+
+Knack is an interesting platform. Where many companies in the data space focus on so called “Big Data” solutions, Knack has created what can be best described as a cross between Filemaker Pro and Caspio for little data. They describe themselves as a way to build simple web apps. The DIY tool is focused on building web apps that work with your data. The platform makes including functionality like search, custom forms and data display a breeze. The cloud service can be easily integrated in your website via a Javascript or web API.
+
+Although the company is very new, it has already managed to attract a dedicated customer base including a variety of up-starts like transportation management platform MileLogic.com who are using the plaform to manage & track fleet assets, truck mileage, jobs dispatching, and taxes. Another firm using the plaform is Prontomarketing.com who uses it for creating custom reports and pivot table searches. The company says that “this sort of thing just isn’t possible by using Google GOOG -0.85% Spreadsheet formulas. With Knack they are finding all sorts of new ways to explore and share our data.”
+
+Appery.io - Cloud-based Mobile App Builder
+
+Another very cool platform is Appery.io formerly called Tiggzi.  The platfrom is described as a “cloud-based HTML5, jQuery Mobile and Hybrid Mobile App Builder.” It’s very easy to use and builds real cross platform HTML5 applications using jQuery Mobile. It supports Android, iOS and Windows Phone using integrated Apache APA -3.89% Cordova/PhoneGap output. As the builder is running in the cloud, there is nothing to install or download so it’s very easy to build your app using a powerful drag and drop visual builder tool. The company says “a mobile UI is not very useful without data so Appery.io connects to any REST API that can be easily used in your app.  You can even test the REST API before using it on the page and automatically define the service response structure. This makes it very fast to try any new service.”
+
+Continued from page 1
+
+Codiqa - Pure HTML5 with jQuery Mobile
+
+If you are less programmer and more designer then you’ll love Codiqa. Similar to Tiggzi, but less developer focused, Codiqa’s drag-and-drop interface allows for fast and easy mobile prototype building, with a Preview mode to test your prototype. The cloud based platform builds your App with 100% HTML5 components. Their pitch is you can take your idea, prototype it, and output real, usable code. No need to code all over again after making your prototype. No coding necessary.
+
+Conduit – Make Free Mobile Apps
+
+By far the simplest mobile application builder I’ve found is from Conduit. Their pitch is pretty simple, “build stunning app designs quick and easy — no coding, one click and it’s ready!” I’ve tried the application for a Virtustream Mobile App and I was literally able to develop an App for both iOS and Android in a matter of minutes. The tool includes a variety of components such as social feed, RSS, events, e-commerce, notifications and more. They will even submit your App to the various App Stores for you. If you’re non-technical. This is the solution for you.
+
+Kinvey - Bring store-ready mobile apps to market faster
+
+Kinvey is probably the most technical of the various cloud based app development platforms I looked at. But if you don’t mind a little programming, it’s probably the most powerful too. The company describes itself as “taking the hassle out of building and operating mobile backends” and like the others listed it comes through on its promise. Kinvey’s value proposition is to ”eliminate your risk by reducing backend development time from weeks to hours, allowing you to prototype faster and with less effort. No servers to spin up and manage, no “API spaghetti” to detangle, no tedious backend code (e.g., database, user / file management) to write. And you never have to pay unless your app is successful.” Major companies like Johnson & Johnson JNJ -0.05% and startups like Fetchnotes have built apps on Kinvey. It’s a very nice platform and worth a closer look.
+
+Keen.io - The API for Custom Analytics
+
+What’s a modern App without modern analytics, this is where Keen IO comes into play. A rather new startup, the company provides a quick and easy way to embed powerful charting capabilities into your App. The pitch “build your analytics features in minutes. Use our API to collect, analyze, and visualize your data. We do the hard stuff so you can do the fun stuff.”  Its marque customers includes another cool start-up Kickfolio which uses Keen IO to track user sessions and display engagement graphs for every app on their platform.
+
+While I’m on the topic of Kickfolio, they are also worth a look. Once you are done building your App. Kickfolio enables you to easily embed your iOS Apps anywhere, promote your apps, discover new users & engage your audience with an interactive app demos. It’s a very cool service.
+
+A few other platforms worth looking at.
+
+Urban Airship - Improve customer engagement with push notifications, location-based marketing, and analytics.
+Phonegap - Easily create apps using the web technologies you know and love: HTML, CSS, and JavaScript (based on Cordova, see below)
+Apache Cordova – Apache Cordova is a platform for building native mobile applications using HTML, CSS and JavaScript
+Canvas - Canvas makes it easy to publish data collection apps on wireless Smartphones
+weejot - Make mobile apps in minutes.
+Apigee - the leading API platform for enterprises and developers.
+Appcelerator – Create & Manage Native Mobile Apps Across Devices
+jQuery Mobile - Touch-Optimized Web Framework for Smartphones & Tablets
+There are literally hundreds of App building tools out there. These are just a few of the ones I’ve tried. If you have your own favorites, add them to the comment area below.
+
+Find Reuven on Twitter @rUv | Linkedin | Google+ |Facebook | Blog rUv.net
+
+Updates
+cloudbase.io - Mobile Cloud Database service
+ratchet - Prototype iPhone apps with simple HTML, CSS, and JS components

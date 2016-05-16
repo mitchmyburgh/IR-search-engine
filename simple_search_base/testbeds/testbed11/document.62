@@ -1,0 +1,110 @@
+A wireless mesh network (WMN) is a communications network made up of radio nodes organized in a mesh topology. It is also a form of wireless ad hoc network. Wireless mesh networks often consist of mesh clients, mesh routers and gateways. The mesh clients are often laptops, cell phones and other wireless devices while the mesh routers forward traffic to and from the gateways which may, but need not, be connected to the Internet. The coverage area of the radio nodes working as a single network is sometimes called a mesh cloud. Access to this mesh cloud is dependent on the radio nodes working in harmony with each other to create a radio network. A mesh network is reliable and offers redundancy. When one node can no longer operate, the rest of the nodes can still communicate with each other, directly or through one or more intermediate nodes. Wireless mesh networks can self form and self heal. Wireless mesh networks can be implemented with various wireless technologies including 802.11, 802.15, 802.16, cellular technologies and need not be restricted to any one technology or protocol.
+
+
+== History ==
+
+
+=== Architecture ===
+Wireless mesh architecture is a first step towards providing cost effective and dynamic high-bandwidth networks over a specific coverage area. Wireless mesh infrastructure is, in effect, a network of routers minus the cabling between nodes. It's built of peer radio devices that don't have to be cabled to a wired port like traditional WLAN access points (AP) do. Mesh infrastructure carries data over large distances by splitting the distance into a series of short hops. Intermediate nodes not only boost the signal, but cooperatively pass data from point A to point B by making forwarding decisions based on their knowledge of the network, i.e. perform routing. Such an architecture may, with careful design, provide high bandwidth, spectral efficiency, and economic advantage over the coverage area.
+Wireless mesh networks have a relatively stable topology except for the occasional failure of nodes or addition of new nodes. The path of traffic, being aggregated from a large number of end users, changes infrequently. Practically all the traffic in an infrastructure mesh network is either forwarded to or from a gateway, while in ad hoc networks or client mesh networks the traffic flows between arbitrary pairs of nodes.
+
+
+=== Management ===
+This type of infrastructure can be decentralized (with no central server) or centrally managed (with a central server). Both are relatively inexpensive, and can be very reliable and resilient, as each node needs only transmit as far as the next node. Nodes act as routers to transmit data from nearby nodes to peers that are too far away to reach in a single hop, resulting in a network that can span larger distances. The topology of a mesh network is also reliable, as each node is connected to several other nodes. If one node drops out of the network, due to hardware failure or any other reason, its neighbors can quickly find another route using a routing protocol.
+
+
+=== Applications ===
+Mesh networks may involve either fixed or mobile devices. The solutions are as diverse as communication needs, for example in difficult environments such as emergency situations, tunnels, oil rigs, battlefield surveillance, high-speed mobile-video applications on board public transport or real-time racing-car telemetry. An important possible application for wireless mesh networks is VoIP. By using a Quality of Service scheme, the wireless mesh may support local telephone calls to be routed through the mesh.
+Some current applications:
+U.S. military forces are now using wireless mesh networking to connect their computers, mainly ruggedized laptops, in field operations.
+Electric meters now being deployed on residences transfer their readings from one to another and eventually to the central office for billing without the need for human meter readers or the need to connect the meters with cables.
+The laptops in the One Laptop per Child program use wireless mesh networking to enable students to exchange files and get on the Internet even though they lack wired or cell phone or other physical connections in their area.
+The 66-satellite Iridium constellation operates as a mesh network, with wireless links between adjacent satellites. Calls between two satellite phones are routed through the mesh, from one satellite to another across the constellation, without having to go through an earth station. This makes for a smaller travel distance for the signal, reducing latency, and also allows for the constellation to operate with far fewer earth stations than would be required for 66 traditional communications satellites.
+
+
+=== Operation ===
+The principle is similar to the way packets travel around the wired Internet – data will hop from one device to another until it eventually reaches its destination. Dynamic routing algorithms implemented in each device allow this to happen. To implement such dynamic routing protocols, each device needs to communicate routing information to other devices in the network. Each device then determines what to do with the data it receives – either pass it on to the next device or keep it, depending on the protocol. The routing algorithm used should attempt to always ensure that the data takes the most appropriate (fastest) route to its destination.
+
+
+=== Multi-radio mesh ===
+Multi-radio mesh refers to a unique pair of dedicated radios on each end of the link. This means there is a unique frequency used for each wireless hop and thus a dedicated CSMA collision domain. This is a true mesh link where you can achieve maximum performance without bandwidth degradation in the mesh and without adding latency. Thus voice and video applications work just as they would on a wired Ethernet network. In true 802.11 networks, there is no concept of a mesh. There are only APs and Stations. A multi-radio wireless mesh node will dedicate one of the radios to act as a station, and connect to a neighbor node AP radio.
+
+
+=== Research topics ===
+One of the more often cited papers on Wireless Mesh Networks identified the following areas as open research problems in 2005
+New modulation scheme
+In order to achieve higher transmission rate, new wideband transmission schemes other than OFDM and UWB are needed.
+
+Advanced antenna processing
+Advanced antenna processing including directional, smart and multiple antenna technologies is further investigated, since their complexity and cost are still too high for wide commercialization.
+
+Flexible spectrum management
+Tremendous efforts on research of frequency-agile techniques are being performed for increased efficiency.
+
+Cross-layer optimization
+Cross-layer research is a popular current research topic where information is shared between different communications layers in order to increase the knowledge and current state of the network. This could enable new and more efficient protocols to be developed. A joint protocol which combines various design problems like routing, scheduling, channel assignment etc. can achieve higher performance since it is proven that these problems are strongly co-related. It is important to note that careless cross-layer design could lead to code which is difficult to maintain and extend.
+
+Software-defined wireless networking
+Centralized, distributed, or hybrid? - In  a new SDN architecture for WDNs is explored that eliminates the need for multi-hop flooding of route information and therefore enables WDNs to easily expand. The key idea is to split network control and data forwarding by using two separate frequency bands. The forwarding nodes and the SDN controller exchange link-state information and other network control signaling in one of the bands, while actual data forwarding takes place in the other band.
+
+
+== Protocols ==
+
+
+=== Routing protocols ===
+There are more than 70 competing schemes for routing packets across mesh networks. Some of these include:
+AODV (Ad hoc On-Demand Distance Vector)
+B.A.T.M.A.N. (Better Approach To Mobile Adhoc Networking)
+Babel (protocol) (a distance-vector routing protocol for IPv6 and IPv4 with fast convergence properties)
+DNVR (Dynamic NIx-Vector Routing)
+DSDV (Destination-Sequenced Distance-Vector Routing)
+DSR (Dynamic Source Routing)
+HSLS (Hazy-Sighted Link State)
+HWMP (Hybrid Wireless Mesh Protocol)
+IWMP (Infrastructure Wireless Mesh Protocol) for Infrastructure Mesh Networks by GRECO UFPB-Brazil
+Wireless mesh networks routing protocol (MRP) by Jangeun Jun and Mihail L. Sichitiu
+OLSR (Optimized Link State Routing protocol)
+OORP (OrderOne Routing Protocol) (OrderOne Networks Routing Protocol)
+OSPF (Open Shortest Path First Routing)
+Routing Protocol for Low-Power and Lossy Networks (IETF ROLL RPL protocol, RFC 6550)
+PWRP (Predictive Wireless Routing Protocol)
+TORA (Temporally-Ordered Routing Algorithm)
+ZRP (Zone Routing Protocol)
+The IEEE is developing a set of standards under the title 802.11s to define an architecture and protocol for ESS Mesh Networking.
+A less thorough list can be found at Ad hoc routing protocol list.
+
+
+=== Autoconfiguration protocols ===
+Standard autoconfiguration protocols, such as DHCP or IPv6 stateless autoconfiguration may be used over mesh networks.
+Mesh network specific autoconfiguration protocols include:
+Ad Hoc Configuration Protocol (AHCP)
+Proactive Autoconfiguration (Proactive Autoconfiguration Protocol)
+Dynamic WMN Configuration Protocol (DWCP)
+
+
+== Communities and providers ==
+CUWiN
+Freifunk (DE) / FunkFeuer (AT) / OpenWireless (CH)
+Firetide
+Guifi.net
+Netsukuku
+Ninux (IT)
+Senceive
+
+
+== See also ==
+
+
+== References ==
+
+
+== External links ==
+Wireless LAN Mesh Whitepaper
+How Wireless Mesh Networks Work at HowStuffWorks
+First, Second and Third Generation Mesh Architectures History and evolution of Mesh Networking Architectures
+Miners Give a Nod to Nodes Article reprint from Mission Critical Magazine on Mesh in underground mining
+IET From hotspots to blankets
+Akyildiz, Ian. F.; Xudong Wang (September 2005). "A Survey on Wireless Mesh Networks". IEEE Communications Magazine 43 (9): s23–s30. doi:10.1109/MCOM.2005.1509968. CiteSeerX: 10.1.1.133.5446. 
+Mesh Networks Research Group Projects and tutorials' compilation related to the Wireless Mesh Networks
+Linux Wireless Subsystem (80211) by Rami Rosen
+IWT Wireless Communications and Tracking in Underground Mines

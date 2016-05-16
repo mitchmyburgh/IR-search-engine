@@ -1,0 +1,59 @@
+IEEE 802.16 is a series of wireless broadband standards written by the Institute of Electrical and Electronics Engineers (IEEE). The IEEE Standards Board established a working group in 1999 to develop standards for broadband for wireless metropolitan area networks. The Workgroup is a unit of the IEEE 802 local area network and metropolitan area network standards committee.
+Although the 802.16 family of standards is officially called WirelessMAN in IEEE, it has been commercialized under the name "WiMAX" (from "Worldwide Interoperability for Microwave Access") by the WiMAX Forum industry alliance. The Forum promotes and certifies compatibility and interoperability of products based on the IEEE 802.16 standards.
+The 802.16e-2005 amendment version was announced as being deployed around the world in 2009. The version IEEE 802.16-2009 was amended by IEEE 802.16j-2009.
+
+
+== Standards ==
+Projects publish draft and proposed standards with the letter "P" prefixed. Once a standard is ratified and published, that "P" gets dropped and replaced by a trailing dash and suffix year of publication.
+
+
+=== Projects ===
+
+
+== 802.16e-2005 Technology ==
+The 802.16 standard essentially standardizes two aspects of the air interface – the physical layer (PHY) and the media access control (MAC) layer. This section provides an overview of the technology employed in these two layers in the mobile 802.16e specification.
+
+
+=== PHY ===
+802.16e uses scalable OFDMA to carry data, supporting channel bandwidths of between 1.25 MHz and 20 MHz, with up to 2048 subcarriers. It supports adaptive modulation and coding, so that in conditions of good signal, a highly efficient 64 QAM coding scheme is used, whereas when the signal is poorer, a more robust BPSK coding mechanism is used. In intermediate conditions, 16 QAM and QPSK can also be employed. Other PHY features include support for multiple-input multiple-output (MIMO) antennas in order to provide good non-line-of-sight propagation (NLOS) characteristics (or higher bandwidth) and hybrid automatic repeat request (HARQ) for good error correction performance.
+Although the standards allow operation in any band from 2 to 66 GHz, mobile operation is best in the lower bands which are also the most crowded, and therefore most expensive.
+
+
+=== MAC ===
+The 802.16 MAC describes a number of Convergence Sublayers which describe how wireline technologies such as Ethernet, Asynchronous Transfer Mode (ATM) and Internet Protocol (IP) are encapsulated on the air interface, and how data is classified, etc. It also describes how secure communications are delivered, by using secure key exchange during authentication, and encryption using Advanced Encryption Standard (AES) or Data Encryption Standard (DES) during data transfer. Further features of the MAC layer include power saving mechanisms (using sleep mode and idle mode) and handover mechanisms.
+A key feature of 802.16 is that it is a connection-oriented technology. The subscriber station (SS) cannot transmit data until it has been allocated a channel by the base station (BS). This allows 802.16e to provide strong support for quality of service (QoS).
+
+
+==== QoS ====
+Quality of service (QoS) in 802.16e is supported by allocating each connection between the SS and the BS (called a service flow in 802.16 terminology) to a specific QoS class. In 802.16e, there are 5 QoS classes:
+The BS and the SS use a service flow with an appropriate QoS class (plus other parameters, such as bandwidth and delay) to ensure that application data receives QoS treatment appropriate to the application.
+
+
+== Certification ==
+Because the IEEE only sets specifications but does not test equipment for compliance with them, the WiMAX Forum runs a certification program wherein members pay for certification. WiMAX certification by this group is intended to guarantee compliance with the standard and interoperability with equipment from other manufacturers. The mission of the Forum is to promote and certify compatibility and interoperability of broadband wireless products.
+
+
+== See also ==
+WiBro
+WiMAX
+WiBAS
+WiMAX MIMO
+Wireless mesh network
+4G LTE
+
+
+== References ==
+
+
+== External links ==
+"The IEEE 802.16 Working Group on Broadband Wireless Access Standards". Official web site. 
+"802.16: Broadband Wireless MANs". Get IEEE 802 official standards download. 
+IEEE Std 802.16-2004
+IEEE Std 802.16e-2005
+IEEE Std 802.16-2009
+IEEE Std 802.16-2012
+IEEE Std 802.16.1-2012
+
+The WiMAX Forum
+The implications of WiMAX for competition and regulation A paper of the OECD, Organisation for Economic Co-operation and Development
+IEEE 802.16m Technology Introduction

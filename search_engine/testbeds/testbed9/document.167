@@ -1,0 +1,9 @@
+In computer science, a monotone priority queue is a variant of the priority queue/heap data structure. It offers insert and extract-min operations (or extract-max; this article assumes min-priority queues, without loss of generality), like an ordinary priority queue, but imposes the restriction that a key (item) may only be inserted if its priority is greater than that of the last key extracted from the queue. This entails that the sequence of keys extracted from the queue form a monotonically increasing sequence. This restriction is met by several applications, including discrete event simulation and the best-first version of branch and bound.
+Specialized monotone PQ data structures can be used to obtain asymptotically better running times for algorithms using them, compared to standard priority queues. For example, in graphs with integer edge costs, these structures can be used to speed up Dijkstra's algorithm for shortest-path finding (for arbitrary edge costs, it is unknown whether a speedup can be achieved).
+
+
+== References ==
+
+
+== Further reading ==
+Raman, Rajeev (1996). Priority queues: Small, monotone and trans-dichotomous (PDF). ESA. pp. 121–137.

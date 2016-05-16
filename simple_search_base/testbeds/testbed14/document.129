@@ -1,0 +1,22 @@
+﻿In the current literature of knowledge management and artificial intelligence, several
+different approaches have been tried to the problem of developing domain
+ontologies from scratch. All these approaches deal fundamentally with three
+problems: (1) providing a collection of general terms describing classes and
+relations to be employed in the description of the domain itself; (2) organizing the
+terms into a taxonomy of the classes by the ISA relation; and (3) expressing in an
+explicit way the constraints that make the ISA pairs meaningful. Though a number
+of such approaches can be found, no systematic analysis of them exists which can
+be used to understand the inspiring motivation, the applicability context, and the
+structure of the approaches. In this chapter, we provide a framework for analyzing
+the existing methodologies that compare them to a set of general criteria. In
+particular, we obtain a classification based upon the direction of ontology
+construction; bottom-up are those methodologies that start with some descriptions
+of the domain and obtain a classification, while top-down ones start with an abstract
+view of the domain itself, which is given 
+a priori
+. The resulting classification is
+useful not only for theoretical purposes but also in the practice of deployment of
+ontologies in Information Systems, since it provides a framework for choosing the
+right methodology to be applied in the specific context, depending also on the
+needs of the application itself.
+

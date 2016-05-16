@@ -1,0 +1,99 @@
+Bankruptcy prediction using support vector machine
+with optimal choice of kernel function parameters
+
+
+Jae H. Mina
+, Young-Chan Leeb,*
+
+1. Introduction
+Over the past decade, several financial crises observed in
+some emerging markets enjoying financial liberalization
+showed that debt financing could result in large and sudden
+capital outflows, thereby causing a domestic ‘credit crunch.’
+This experience made banking authorities such as Bank for
+International Settlements (BIS) learn a number of lessons,
+among which they all encourage commercial banks to
+develop internal models to better quantify financial risks
+(Basel Committee on Banking Supervision, 1999). Decision
+making problems in the area of credit evaluation have been
+considered very important but difficult ones for financial
+institutions due to a high level of risk from wrong decisions.
+In order to effectively manage the credit risk exposures of
+financial institutions, there is a strong need for sophisticated
+decision support systems backed by analytical tools to
+measure, monitor, manage, and control financial and operational risks as well as inefficiencies (Emel, Oral,
+Reisman, & Yolalan, 2003; Park & Han, 2002).
+A potential client’s credit risk is often evaluated by
+financial institutions’ internal credit scoring models, which
+aim to determine whether an applicant has the capability to
+repay by evaluating the risk of his loan application. Such
+models offer them a means for evaluating the risk of their
+credit portfolio, in a timely manner, by centralizing globalexposures
+data and by analyzing marginal as well as absolute
+contributions to risk components. Armed with these models,
+quantitative risk management systems can thus provide the
+financial institutions early warning signals for potential
+business failures of the clients (Chen & Huang, 2003; Lee,
+Chiu, Lu, & Chen, 2002; Lopez & Saidenberg, 2000; West,
+2000).
+So far, linear probability and multivariate conditional
+probability models, the recursive partitioning algorithm,
+artificial intelligence, multi-criteria decision making, mathematical
+programming have been proposed to support the
+credit decision (Bryant, 1997; Butta, 1994; Cielen &
+Vanhoof, 1999; Coakley & Brown, 2000; Davis, Edelman,
+& Gammerman, 1992; Diakoulaki, Mavrotas, & Papayan
+nakis, 1992; Dimitras, Zanakis, & Zopounidis, 1996;Emel et al., 2003; Falbo, 1991; Frydman, Altman, & Kao,
+1985; Jo & Han, 1996; Lee, Sung, & Chang, 1999; Martin,
+1997; Reichert, Cho, & Wagner, 1983; Roy, 1991; Tam &
+Kiang, 1992; Troutt et al., 1996; Zopounidis & Doumpos,
+1998). In particular, artificial neural networks (ANNs) are
+most frequently used in previous literature since the power
+of prediction is known to be better than the others; however,
+it has been commonly reported that ANN models require a
+large amount of training data to estimate the distribution of
+input pattern, and they have difficulties of generalizing the
+results because of their overfitting nature. In addition, it
+fully depends on researchers’ experience or knowledge to
+preprocess data in order to select control parameters
+including relevant input variables, hidden layer size,
+learning rate, and momentum (Gemen et al., 1992;
+Lawrence, Giles, & Tsoi, 1997; Moody, 1992; Sarle,
+1995; Smith, 1993; Weigend, 1994).
+
+5. Conclusions
+In this paper, we applied SVM to bankruptcy prediction
+problem, and showed its attractive prediction power
+compared to the existing methods. Mapping input vectors
+into a high-dimensional feature space, SVM transforms
+complex problems (with complex decision surfaces) into
+simpler problems that can use linear discriminant functions,
+and it has been successfully introduced in several financial
+applications recently. Achieving similar to or better
+performance than BPNs in practical applications, SVM
+can conduct classification learning with relatively small
+amount of data. Also, embodying the structural risk
+minimization principle (SRM), SVM may prevent the
+overfitting problem and makes its solution global optimum
+since the feasible region is convex set.
+Particularly in this study, we utilize a grid-search
+technique using 5-fold cross-validation in order to choose
+optimal values of the upper bound C and the kernel
+parameter g that are most important in SVM model
+selection. Selecting the optimal parameter values through
+the grid-search, we could build a bankruptcy prediction
+model with high stability and prediction power. To validate
+the prediction performance of this model, we statistically
+compared its prediction accuracy with those of standard
+three-layer fully connected BPNs, MDA, and Logit,
+respectively. The results of empirical analysis showed that
+SVM outperformed the other methods. With these results,
+we claim that SVM can serve as a promising alternative for
+the bankruptcy prediction.
+While this study used RBF kernel as a basic kernel
+function of SVM model, it should be noted that the
+appropriate kernel function can be problem-specific; hence
+it remains an interesting topic for further study to derive
+judicious procedures to select proper kernel functions and
+the corresponding parameter values according to the types
+of classification problems.

@@ -1,0 +1,51 @@
+Video_Coding_Engine
+'''Video Coding Engine''' ('''VCE''', sometimes incorrectly referred to as '''Video Codec Engine''') is    implementing the  . Since 2012 it is integrated into all of their  and .
+Video Coding Engine was introduced with the  on .http://www.amd.com/us/Documents/UVD3_whitepaper.pdf VCE occupies a considerable amount of the  surface and is not to be confused with AMD's  (UVD).
+== Overview ==
+The handling of video data involves computation of  algorithms and possibly of  algorithms. As the template  shows, lossy video compression algorithms involve the steps:  (ME),  (DCT), and entropy encoding (EC).
+AMD Video Codec Engine (VCE) is a full hardware implementation of the video codec H.264/MPEG-4 AVC. The ASIC is capable of delivering 1080p at 60 frames/sec. Because its entropy encoding block is also separately accessible Video Codec Engine can be operated in two modes: full mode and hybrid mode.
+By employing , available for Linux and Microsoft Windows, developers can create hybrid encoders that pair custom motion estimation, inverse discrete cosine transform and motion compensation with the hardware entropy encoding to achieve faster than real-time encoding. In hybrid mode, only the entropy encoding block of the VCE unit is used, while the remaining computation is offloaded to the 3D engine () of the GPU, so the computing scales with the number of available compute units (CUs).
+===VCE 1.0===
+As of April 2014, there are two versions of VCE.http://developer.amd.com/community/blog/2014/02/19/introducing-video-coding-engine-vce/ Version 1.0 supports H.264 YUV420 (I & P frames), H.264 SVC Temporal Encode VCE, and ''Display Encode Mode'' (DEM).
+It can be found on 
+* -based
+** Trinity APUs (Ax - 5xxx, e.g. A10-5800K)
+** Richland APUs (Ax - 6xxx, e.g. A10-6800K)
+* GPUs of the Southern-Island-Generation. These are
+** Radeon HD7700 series
+** Radeon HD7800 series
+** Radeon HD7900 series
+** Radeon R7 250X
+** Radeon R9 270 / 270X
+** Radeon R9 280 / 280X
+===VCE 2.0 ===
+Compared to the first version, VCE 2.0 adds H.264 YUV444 (I-Frames), B-frames for H.264 YUV420, and improvements to the DEM (Display Encode Mode), which results in a better encoding quality.
+It can be found on
+* -based
+** Kaveri APUs (Ax - 7xxx, e.g. A10-7850K)
+* -based
+** Kabini APUs (e.g. Athlon 5350, Sempron 2650)
+** Temash APUs (e.g. A6-1450, A4-1200)
+* -based
+** Beema and Mullins
+* GPUs of the Sea-Islands-Generation as well Bonaire or Hawaii GPUs, such as
+** Radeon 7790 / R7 260 / 260X
+** Radeon R9 290 / 290X
+** Radeon R9 295X2
+===VCE 3.0 ===
+Video Coding Engine 3.0 (VCE&nbsp;3.0) technology features a new high-quality video scaling.,http://lists.freedesktop.org/archives/dri-devel/2015-June/084083.html  amdgpu drm-next-4.2 and will also support for  (HEVC, H.265, but , there are no announcements about VP9 video codec support.http://wccftech.com/amd-embedded-roadmap-2014-2016-leaked-insight-gen-apus-gpus/ AMD Embedded Roadmap 2014-2016 Leaked  Gives Insight Into Next Gen 20nm APUs/SOCs and Discrete GPU Solutionshttp://www.kitguru.net/components/graphic-cards/anton-shilov/key-features-of-amds-third-iteration-of-gcn-architecture-revealed/ Key features of AMDs third iteration of GCN architecture revealedhttp://www.xbitlabs.com/news/graphics/display/20140826114104_AMD_Quietly_Reveals_Third_Iteration_of_GCN_Architecture_with_Tonga_GPU.html AMD Quietly Reveals Third Iteration of GCN Architecture with Tonga GPU.
+It, together with  6.0, can be found on "Tonga", "Iceland", and "Carrizo" based graphics controller hardware, which will be used by upcoming  (Pirate Islands GPU family) and  (Arctic Islands GPU family).
+=== Feature overview ===
+== Operating system support ==
+The VCE SIP core needs to be supported by the . The device driver provides one or multiple , like e.g. . One of this interfaces is then used by end-user software, like e.g.  or , to access the VCE hardware and make use of it.
+AMD's  device driver  is available for multiple operating systems and support for VCE has been added to it. Additionally, a  is available. This driver also supports the VCE hardware.
+===Linux===
+* Initial VCE support has been added on  by Christian Knig of AMD to the free radeon driver.
+*  for  was added  to .
+* The  has been adapted to using OpenMAX with the  OpenMAX (gst-omx) support for exposing the VCE video encode engine.
+* AMD employee Leo Liu implemented  into the Mesa 3D state tracker.
+=== Windows ===
+The software "MediaShow Espresso Video Transcoding" seems to utilize VCE and UVD to the fullest extent possible.
+XSplit Broadcaster supports VCE from version 1.3.
+Open Broadcaster Software (OBS Studio) supports VCE for recording and streaming. The original Open Broadcaster Software (OBS) requires a fork build in order to enable VCE.
+Remotr (PC to Phone / Tablet Streaming Software) supports VCE for streaming, resulting in increased overall FPS during gameplay on the handheld device.

@@ -1,0 +1,100 @@
+We can apply texture mapping in ray tracing just as we did in OpenGL’s rendering model.
+Given the intersection of the ray with an object, we need to map this intersection point to some sort of 2-
+dimensional parameterization (u; v). From this parameterization, we can then apply the inverse wrapping function
+to map this point into texture coordinates (u; v).
+In ray tracing there is another type of texture, which is quite easy to implement. The idea is to create a function
+f(x; y; z) which maps a point in 3-space to a color. This is called a procedural texture.
+We usually think of textures as 2-dimensional “wallpapers” that are wrapped around objects. The notion here is
+different. We imagine that the texture covers all of 3-space and that the object is cut out of this infinite texture.
+This is actually quite realistic in some cases. For example, a wood grain texture arises from the cylindrical
+patterns of light and dark wood that results from the trees varying rates of growth between the seasons. When
+you cut a board of wood, the pattern on the surface is the intersection of a single plane and this cylindrical
+3-dimensional texture. Here are some examples.
+Lecture Notes 90 CMSC 427
+Checker: Let C0 and C1 be two RGB colors. Imagine that we tile all of three dimensional space with a collection of
+unit cubes each of side length s and of alternating colors C0 and C1. This is easiest to see in the 1-dimensional
+case first. Given an x-coordinate, we divide it by s and take its floor. If the resulting number is even then we
+assign the color C0 and if odd we assign C1.
+checker(x) =
+_
+C0 if (bx=sc mod 2) = 0
+C1 otherwise.
+Beware: It is important to use an honest implementation of the floor function, bx=sc. Note that the integer cast
+operation of programming languages such as C, C++, and Java, namely “int(x/s)” will not work properly if x is
+negative. (Integer casting maps to the smaller absolute value.) Instead, on C/C++ systems use the combination,
+“int(floor(x/s)),” which first computes the “honest” floor and then casts the resulting integer-valued double to an
+integer.
+To generalize this to 3-space, we simply apply this idea separately to each coordinate and sum the results.
+checker(x; y; z) =
+_
+C0 if ((bx=sc + by=sc + bz=sc) mod 2) = 0
+C1 otherwise.
+Note that if we intersect an axis-orthogonal plane with the resulting 3-dimensional checker pattern, then the
+result will be a 3-dimensional checker. If we intersect it with a non-axis aligned object (like a sphere) then the
+result takes on a decidedly different appearance.
+Fig. 62: 3-d checkerboard and gradient textures.
+An example is shown in Fig. 62. Notice that the checkerboard appears to be distorted. Although the checkerboard
+is formed of perfectly flat sides, it is being “cut out” along the curved surface of the sphere. This is whay
+makes it appear to be curved. If you consider the slices along the z-axis, they would cut the sphere along a series
+of circular horizontal latitude lines. These can be readily seen in the figure, as can the corresponding circles for
+x and y. Thus, the texture is indeed “three-dimensional.”
+Linear Gradient: A gradient is a texture that alternates smoothly between two colors C0 and C1. To explore this, let
+us first consider a gradient in a 1-dimensional setting for a parameter value x. We want the color to vary back and
+forth from C0 to C1. The color is C0 whenever x is an even multiple of s, that is, x 2 f: : : ;-2s; 0; 2s; 4s; : : :g,
+and we want the color to be C1 whenever x is an odd multiple of s, that is x 2 f: : : ;-s; s; 3s; 5s; : : :g.
+The fact that we are blending the colors suggests that we use an affine combination (1 - _)C0 + _C1, where _
+varies smoothly as a function of x. To achieve smoothness, we can let _ vary as a cosine function. (See Fig. 63.)
+As x varies from 0 to s, we want the blending value to vary from 0 to 1. Since the cosine function naturally
+varies from 1 to -1, as x varies from 0 to _, this suggests the following transformations. First, we transform x
+by mapping it to x0   _x=s. Thus, for x 2 [0; s], we have x0 2 [0; _]. Thus, cos x0 2 [1;-1]. In order to map
+this to the interval [0; 1] we subtract from 1 (yielding the interval [0; 2]) and divide by 2 (yielding the interval
+Lecture Notes 91 CMSC 427
+[0; 1]), which is exactly what we want. Thus we have the final color:
+(1 - _)C0 + _C1 where _ =
+1
+2
+_
+1 - cos _x
+s
+_
+:
+Substitute (by hand) the values x = h0; s;2s; 3si to see that this works.
+2s
+p=P-Q
+-s s 3s
+2s
+-s s 3s
+-2s
++1
+0
+-1
+0
++1
+0
+-2s 0
+(1 - cos ( x/s))/2
+C1
+C1
+C0
+C0
+?
+C0
+C1
+=
+Fig. 63: Computation of the gradient texture.
+In order to generalize this to 3-space, we need to define an appropriate mapping of a point P = (x; y; z) to a
+one dimensional parameter. There are various ways to do this, and different ways produce different textures.
+One simple method is a linear gradient, where the color is constant for all the points on a plane, and then varies
+orthogonally to this plane. Such a gradient can be specified by giving an origin point Q, where the color is C0,
+and some directional vector ~v, which indicates the orthogonal direction. (For example, in Fig. 62, right, the
+origin might be the center of the sphere and the directional vector points up.) At the point Q+~v the color should
+be C1, and Q + 2~v the color is C0, and so one.
+How do we determine the color of an arbitrary point P = (x; y; z) in 3-space. The idea is that for each point P,
+consider the relative length of the projection of the vector ~p = P - Q onto ~v
+_ =
+((P - Q) _ ~v)
+(~v _ ~v) ;
+and then use the value of _ to blend smoothly between C0 and C1. When _ is even, we use color C0 and
+when _ is odd we use the color C1. (See Fig. 63.) Thus, _ takes the role of x in the 1-dimensional case,
+and now s is simply 1. As before, we want to interpolate smoothly between these cases. To do so, we set
+

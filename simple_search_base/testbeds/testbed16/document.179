@@ -1,0 +1,42 @@
+Virtualization: What It Is, What Types There Are & How it Benefits Companies
+Posted on Wednesday, February 27th, 2013 by Carpathia
+
+Virtualization is a form of technology that has been around for a few years now, but has only recently began to make its way into the everyday vocabulary of those involved in the IT industry. Virtualization itself can help to radically transform a company’s infrastructure and can help to improve a company’s overall efficiency.
+
+What is Virtualization?
+You may be asking yourself, “What exactly is virtualization?” Many people tend to confuse virtualization with other forms of technology and sometimes confuse the difference between virtualization and say, cloud computing. Virtualization is the process of creating a “virtual” version of something, such as computing environments, operating systems, storage devices or network components, instead of utilizing a physical version for certain aspects of a company’s infrastructure.
+
+For example, server virtualization is the process in which multiple operating systems (OS) and applications run on the same server at the same time, as opposed to one server running one operating system. If that still seems confusing, think of it as one large server being cut into pieces. The server then imitates or pretends to be multiple servers on the network when in reality it’s only one. This offers companies the capability to utilize their resources efficiently and lowers the overall costs that come with maintaining servers.
+
+What Types of Virtualization Are There?
+Virtualization can be utilized in many different ways and can take many forms aside from just server virtualization. The main types include application, desktop, user, storage and hardware.
+
+Application virtualization allows the user to access the application, not from their workstation, but from a remotely located server. The server stores all personal information and other characteristics of the application, but can still run on a local workstation. Technically, the application is not installed, but acts like it is.
+
+Desktop virtualization allows the users’ OS to be remotely stored on a server in the data center, allowing the user to then access their desktop virtually, from any location.
+
+User virtualization is pretty similar to desktop, but allows users the ability to maintain a fully personalized virtual desktop when not on the company network. Users can basically log into their “desktop” from different types of devices like smartphones and tablets. With more companies migrating to a BYOD policy, desktop and user virtualization are becoming increasingly popular.
+
+Storage virtualization is the process of grouping the physical storage from multiple network storage devices so that it acts as if it’s on one storage device.
+
+Hardware virtualization (also referred to as hardware-assisted virtualization) is a form of virtualization that uses one processor to act as if it were several different processors. The user can then run different operating systems on the same hardware, or more than one user can use the processor at the same time. This type of virtualization requires a virtual machine manager (VM) called a hypervisor.
+
+What Benefits Does Virtualization Provide?
+There are numerous benefits to virtualization including decreasing costs, saving time and energy and minimizing risk overall.
+
+Benefits for Companies
+Virtualization provides several benefits for companies, including:
+
+Greater efficiency and company agility
+Ability to more-effectively manage resources
+Increased productivity, as employees access the company network from any location
+Data stored on one centralized server results in a decrease in risk of lost or stolen data
+Benefits for Data Centers
+Not only is it beneficial for companies, but virtualization provides several benefits for data centers as well, including:
+
+Cutting waste and costs associated with maintaining and cooling its servers by maximizing the capabilities of one server
+Allows data centers to be smaller in size, resulting in overall savings due to a reduction in —
+Energy needed
+Hardware used
+Time and money needed for maintenance
+Carpathia Hosting offers a portfolio of solutions to meet your company’s virtual needs. These range from basic virtual machines to Carpathia-designed cloud solutions built to solve the toughest IT problems. Learn more about Carpathia’s virtualization services.

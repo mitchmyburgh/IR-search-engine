@@ -1,0 +1,9 @@
+AWS Elastic Beanstalk
+Matthias Jung / January 28, 2011
+We already wrote about it recently: 2011 could be the year that sees the rising of PaaS. SaaS providers open up their platforms for third party providers and IaaS providers provide added services that simplify usage and hide low-level abstractions. The first group moves move down in the cloud-stack, the second one move up – both will meet in a more and more crowded middle.
+
+
+
+The latest move of thought- and market-leader AWS confirms this prediction. Last week they released a service called “Elastic Beanstalk“, a clear PaaS offer that enables users to deploy Java web-applications in a Tomcat environment (apparently, other stacks like Ruby on Rails are in the pipe) by uploading their code via a graphical user-interface. AWS starts the application, provides transparent scaling, load-balancing, and fault-tolerance if needed. In so far, it is a direct competitor of Google Apps Engine, but with the difference that it still gives full control to users on OS level. That is, users can deploy and customize whatever they want on the servers and thus have all the flexibility they need, e.g. start cron-jobs to periodically normalize data in the database, use a file system to store their data instead of a database, or produce chart-images in the background – all things not possible with Google Apps engine today. Beanstalk leverages the power of the EC2 offer to address the biggest limitation of existing PaaS offers.
+
+The service seems to be dedicated to SaaS providers, Web-Startups, E-Commerce sites that are often forced to care for all that awkward low-level stuff themselved and often don’t have the resources to do it correctly. Who else will use Beanstalk? Let me know your ideas in the comments.

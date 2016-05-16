@@ -1,0 +1,145 @@
+A study of statistical techniques and performance measures
+for genetics-based machine learning: accuracy
+and interpretability
+
+S. Garcı´a Æ A. Ferna´ndez Æ J. Luengo Æ
+F. Herrera
+
+1 Introduction
+In general terms, the classification problem can be covered
+by numerous techniques and algorithms, which belong to
+different paradigms of machine learning (ML). The new
+developed methods for ML must be analysed against previous
+approaches following a rigorous criterion, since in
+any empirical comparison the results are dependent on the
+choice of the cases for studying, the configuration of the
+experimentation and the measurements of performance.
+Nowadays, the statistical validation of published results is a
+necessity in order to establish a certain conclusion on an
+experimental analysis (Demsˇar 2006).
+Evolutionary rule-based systems (Freitas 2002) is a kind
+of Gen-etics-Based Machine Learning (GBML) that uses
+sets of rules as knowledge representation (Grefenstette
+1993). Many approaches have been proposed in GBMLs
+based on offering some advantages with respect to other
+existing ML techniques; such as the production of interpretable
+models, no assumption of prior relationships
+among attributes and the possibility of obtaining compact
+and precise rule sets. Some examples of proposed GBMLs
+are: GABIL (De Jong et al. 1993), SIA (Venturini 1993),
+XCS (Wilson 1995), DOGMA and JoinGA (Hekanaho
+1998), G-Net (Anglano and Botta 2002), UCS (Bernado´-Mansilla and Garrell 2003), GASSIST (Bacardit 2004),
+OCEC (Jiao et al. 2006) and HIDER (Aguilar-Ruiz et al.
+2000).
+Recently, statistical analysis is highly demanded in any
+research work and thus, we can find recent studies that
+propose some methods for conducting comparisons
+among various approaches (Demsˇar 2006; Markatou et al.
+2005). Statistics allows us to determine whether the
+obtained results are significant with respect to the choices
+taken and whether the conclusions achieved are supported
+by the experimentation that we have carried out. On the
+other hand, the performance of classifiers is not only
+given by their classification rate and there is a growing
+interest in proposing or adapting new accuracy measures
+(Ben-David 2007; Drummond and Holte 2006). Most of
+the accuracy measures are proposed for two-class problems
+and their adaptation to multi-class problems is not
+intuitive (Landgrebe and Duin 2008). Only two accuracy
+measures have been used for multi-class problems with
+successful results: the classical classification rate and the
+Cohen’s kappa measure. The main difference between
+them is the scoring of the true classifications rates.
+Classification rate scores all the successes over all classes,
+whereas Cohen’s kappa scores the successes independently
+for each class and aggregates them. The second
+way of scoring is less sensitive to randomness caused by
+different number of examples in each class, which causes
+a bias in the learner towards the obtention of datadependent
+models.
+In GBMLs, the interpretability of the rule sets obtained
+is very important, due to the fact that very large sets of
+rules or very complex rules are rather lacking in interest.
+The use of parametric statistical techniques over the
+sample of results is only adequate when they fulfill three
+necessary conditions: independency, normality and homoscedasticity
+(Sheskin 2006, Zar 1999). This paper shows
+that these conditions are usually not verified when analysing
+GBML algorithms. Under these assumptions, a
+statistical analysis conducted by means of parametric tests
+may not be safe with respect to the achieved results and
+hence, the conclusions about an experimental study could
+be incorrect.
+In this paper, we are interested in the study of the most
+appropriate statistical techniques and performance measures
+for analysing the experimentation of GBML
+algorithms. We mainly focus on five topics:
+– To study the fulfillment of the necessary conditions for
+a safe usage of parametric tests.
+– To emphasize the existing differences between a
+pairwise comparison statistical procedure and a multiple
+comparison statistical procedure, pointing out the
+advantages of using the second ones. – To notice that the use of different performance
+measures may yield different conclusions in the
+statistical study, due to the fact that they have different
+purposes in the evaluation of the algorithms.
+– To show the generality for comparing GBML algorithm
+with other ML approaches, in spite of the nonstochasticity
+of the latter methods. For this purpose,
+we will include the CN2 algorithm (Clark and Niblett
+1989) when conducting the non-parametric statistical
+analysis.
+– Making an analysis based on interpretability is not
+trivial. We give some concerns in this paper and we
+justify why the available interpretability metrics have
+to be treated with ‘‘a grain of salt’’.
+In order to do that, the paper is organized as follows.
+Section 2 presents the GBML algorithms used. The
+description of the multi-class performance measures
+together with the experimental framework and the results
+obtained are given in Sect. 3. We introduce the statistical
+analysis and we carry out the study of the necessary conditions
+for a safe use of parametric tests in Sect. 4. Section
+5 describes the procedures for doing pairwise comparisons
+with non-parametric statistics. In the case of multiple
+comparisons tests, we present and use them in Sect. 6. We
+present the analysis based on interpretability and we give
+our concerns in Sect. 7. Finally, the conclusions are summarized
+in Sect. 8. An appendix is included containing an
+extended description of the GBML methods used in our
+study.
+
+8 Conclusions
+In this paper we have studied the use of statistical techniques
+in the analysis of the behaviour of GBML
+algorithms in classification problems, analysing the use of
+parametric and non-parametric statistical tests.
+We have raised the necessity of applying non-parametric
+tests in the use of GBML algorithms in classification,
+due to the fact that the initial conditions that guarantee the
+reliability of the parametric tests are not satisfied in a single
+data-set analysis.
+Non-parametric tests can be used in multiple data-set
+analysis and allow the comparison between GBML methods
+and deterministic algorithms. We have shown how to
+use a Friedman, Iman–Davenport, Bonferroni–Dunn,
+Holm, Hochberg, and Wilcoxon tests; which on the whole,
+are a good tool for the analysis of algorithms’ performance.
+We have employed these procedures to carry out a comparison
+in a case study composed by an experimentation
+that involves several data-sets and 4 well-known GBML
+algorithms.
+We have checked that different statistical results are
+obtained when we consider different accuracy measures,
+such as classification rate and Cohen’s kappa. In interpretability
+analysis, the results cannot predict what is the
+algorithm which yields the easiest models, due to the fact
+that the rule sets are different in structure and there are
+many ways of representing knowledge.
+As main conclusion on the use of non-parametric statistical
+methods for analysing results, we have
+emphasized the use of the most appropriate test depending
+on the circumstances and type of comparison. Specifi-
+cally, we have recommended the use of the Holm and
+Hochberg procedures since they are the most powerful
+statistical techniques for multiple comparisons.

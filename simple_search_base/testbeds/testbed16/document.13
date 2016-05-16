@@ -1,0 +1,83 @@
+Apple vs FBI: Who Really Won?
+THE DUST HAS SETTLED BUT THE DEBATE WILL RAGE ON
+Ajmal blog pic
+By Ajmal Kohgadai
+One of the most widely covered and hotly debated technology stories this year has been the public clash between Apple and the FBI. Seen as a battle between two goliaths – one from the private, the other from the public sector – this case promised to be long-drawn and divisive. Both sides of the fence made impassioned arguments; one for privacy, the other for national security.
+
+But in an unexpected and seemingly anti-climactic way, the feud ended with a whimper. The FBI found another way of unlocking the phone—this one through an Israel-based firm, Cellebrite—and recognizing they had an in without all the hoopla, dropped the case against Apple. However, the debate won’t end any time soon.
+
+The background
+
+You’ve likely heard most of the details regarding Apple and the FBI’s public spat. It started with the FBI needing to unlock the iPhone of one of the shooters in the San Bernardino terrorist attack, Syed Rizwan Farook, from last December. However, they soon realized that the iPhone, running iOS 9, was built with default device encryption. In other words, when Farook created the lock screen password, an encryption key was generated. This key, in combination with another key “burnt” into the silicon chip inside the device, is used to encrypt/decrypt the data. The firmware allowed an individual to log 6 incorrect passwords before a time delay. After nine failed attempts, all data in the phone would be erased.
+
+The FBI wanted a software update that would disable the feature that wipes the phone after nine failed attempts as well as the time delays in between failed attempts. If disabled, they could then initiate a “brute force” attack on the phone that would allow them to run every combination of the four-digit numeric passcode. That’s 10,000 combinations that could be applied within minutes.
+
+However, there is a little known wrinkle in that assessment by the FBI. Apple released an important feature in iOS 9, where if a user updates their password, they’re required to create a custom 6-digit passcode. Suddenly, the possible combinations go from ten thousand to one million.
+
+Apple also provided the option of using a six-digit alphanumeric password containing both upper and lower case letters, thereby further increasing the entropy and making a brute force attack exponentially more time consuming.
+
+Apple’s argument
+
+After testifying to Congress on February 9 about the FBI’s inability to bypass Apple’s security measures, on February 16, FBI Director James Carney secured a ruling from U.S Magistrate Judge Sheri Pym of U.S. District Court in Los Angeles to compel Apple to supply “reasonable technical assistance” to the FBI in an effort to break into Farook’s iPhone.
+
+
+FBI Director James Comey testifies before Congress that encryption makes phones "warrantproof"
+ 
+
+The next day, in response to the Pym’s order, Apple CEO Tim Cook published an open letter in which he challenged the court’s order and provided the reasons behind his decision.
+
+“They have asked us to build a backdoor to the iPhone… The government suggests this tool could only be used once, on one phone. But that’s simply not true… the government is asking Apple to hack our own users and undermine decades of security advancements that protect our customers — including tens of millions of American citizens — from sophisticated hackers and cybercriminals. The same engineers who built strong encryption into the iPhone to protect our users would, ironically, be ordered to weaken those protections and make our users less safe.”
+
+– Tim Cook
+
+One of the main points Tim Cook stressed was Apple’s inability to guarantee the safety of the software that’s meant to break into Farook’s iPhone. He claims that neither the FBI nor Apple could protect such software from falling in the hands of bad actors. Matt Blaze, a leading cryptography researcher at University of Pennsylvania summarized the difficulty in creating and protecting such a software when he said “…when I hear [the argument] if we can put a man on the moon, we can do this, I’m hearing an analogy [like] if we can put a man on the moon, well surely we can put a man on the sun.”
+
+Soon, a host of technology companies, including heavy hitters like Google, Facebook, WhatsApp, and Twitter came out in support of Tim Cook. Even the mother of one of the victims of the terrorist attack backed Apple in its fight against FBI. However, a Pew survey of more than 1,000 U.S. adults found that 51% of respondents supported the FBI and thought Apple should comply with its order.
+
+FBI and Department of Justice’s argument
+
+The FBI’s case invoked the 18th century law called the All Writs Act, which itself is as short as the length of two tweets. However, the crux of its argument relied on the fact that its request was made in the best interest of United State’s national security and it would only be used in this one instance, therefore negating the privacy vs security dichotomy.
+
+After Tim Cook’s refusal to cooperate, the DOJ filed a motion, claiming that Apple was more concerned about the viability of its business model and public brand image, rather than a legal argument.
+
+In a blog post in Lawfare, Comey ardently states:
+
+“The particular legal issue is actually quite narrow. The relief we seek is limited and its value increasingly obsolete because the technology continues to evolve. We simply want the chance, with a search warrant, to try to guess the terrorist’s passcode without the phone essentially self-destructing and without it taking a decade to guess correctly. That’s it. We don’t want to break anyone’s encryption or set a master key loose on the land. I hope thoughtful people will take the time to understand that. Maybe the phone holds the clue to finding more terrorists. Maybe it doesn’t. But we can’t look the survivors in the eye, or ourselves in the mirror, if we don’t follow this lead.”
+
+– James Comey, FBI Director
+
+The outcome
+
+A Brooklyn federal judge eventually ruled in favor of Apple, and a month later, the FBI announced that they had successfully broken into Farook’s iPhone without Apple’s assistance.
+
+This case was once again a reminder of the inherent tug of war that exists between strong encryption (and the privacy it affords) and public safety. By all measure, this is an old battle that continues to rear its head. Weakening encryption has its benefits, as it allows law enforcement agencies to gain visibility into the workings of criminals and terrorists which could then save lives. But the issue is far more complicated than that
+
+FREAK, Logjam, and DROWN were all borne out of the government’s desire to weaken encryption years ago. “The U.S. government deliberately weakened three kinds of cryptographic primitives: RSA encryption, Diffie-Hellman key exchange, and symmetric ciphers. FREAK exploited export-grade RSA, and Logjam exploited export-grade Diffie-Hellman. Now, DROWN exploits export-grade symmetric ciphers, demonstrating that all three kinds of deliberately weakened crypto have come to put the security of the Internet at risk decades later,” according to the researchers who discovered the DROWN vulnerability.
+
+Another complication that’s highlighted by high tech leaders is the simple fact that weakening encryption in one service will not guarantee that terrorists won’t just switch to a service that uses stronger encryption, but it will certainly put the data security of millions, if not billions, of users data at risk.
+
+The U.S. government, on the other hand, is worried that end-to-end encryption hinders the ability of law enforcement agents to gain access into terrorist activity as much as it hinders criminals’ access to data belonging to individual citizens.
+
+The encryption debate isn’t limited to the U.S. either. China has a law in place that requires companies to hand over encryption keys when the government requests information. There was a bill proposed last year in the UK that would require encrypted communication to be decipherable by law enforcement. In Germany, however, the encryption community and the government seem to be on the same page, so much so that the German government offer Germans free messaging service which encrypts the emails.
+
+So who won?
+
+APPLE
+
+In refusing to comply with FBI demands and getting away with it, Apple seems to be the winner here. Upon further analysis, however, that might not be the case. When the FBI dropped its case because they had found another firm that was capable of breaking into the iPhone, the whole world discovered something that only a few may have suspected—the iPhone is not as secure as Apple would like its users to believe. There are a few, including Edward Snowden, who also believe that there are other federal agencies that could have cracked the iPhone as well.
+
+By its own admission, Apple understands that the method with which the FBI used to bypass Apple’s security will inevitably land in the wrong hands. This means Apple now has to contend with the possibility that at some future date, cybercriminals could use this method to further undermine Apple’s protection of customer data on the iPhone.
+
+FBI
+
+In the end, the FBI got what they wanted, but not after spending nearly three months unsuccessfully fighting Apple. It’s also likely that the public nature of this fight may encourage other tech companies to implement even stronger end-to-end encryption.
+
+But it’s overly simplistic to declare the FBI a winner or loser. Though they managed to break into the phone, if they can’t protect the method they used (especially from state-sponsored cybercriminals), they will not only face a PR nightmare, but any data breach caused by that knowledge would have to be investigated by none other than the FBI themselves.
+
+THE PUBLIC
+
+The public may be the only stakeholder who emerges from this debate a winner. Despite the fact that the FBI ended up cracking the phone, the public now knows that their devices aren’t as secure as they once may have thought. The heated debate it generated, especially in Congress, is also a signal that the privacy and data security of the public is of high import in the eyes of those in control of making policy.
+
+And the arms race that seems to exist between technology providers continuously introducing stronger encryption and government agencies hoping to protect public safety will be a net positive.
+
+The most important takeaway here is that the benefits of encryption, as the last line of defense in terms of privacy and data security, is negated if a backdoor is built. It is the single most capable data security measure available, and none of the stakeholders of this fight can afford to lose it.

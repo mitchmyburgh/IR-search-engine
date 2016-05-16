@@ -1,0 +1,183 @@
+Topological Sort in Conventional OO Style 
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.net.*;
+class State {
+   int value, START=0, ERROR=1, DONE=2;
+   State () { value = START; }
+}
+class Node {
+   State state;
+   String ident;
+   Vector &lt;Node&gt; depends;
+   int ndepends;
+   TopoFrame frame;
+   Node (String id, TopoFrame f) {
+      ident = id;
+      state = new State();
+      depends = new Vector &lt;Node&gt; ();
+      ndepends = 0;
+      frame = f;
+   }
+   // Topologically sort from this object.  This is 
+   // accomplished by topologically sorting the dependent
+   // objects first then outputing the identity of this
+   // object.  The state value "DONE" is used to prevent
+   // the sort from occurring more than once.  The state
+   // value "ERROR" is used to detect cycles, if they
+   // should exist.  If an error is detected, "this" is
+   // returned (in all other cases NULL is returned) after
+   // printing the ID of the Node on which the cycle is
+   // detected.  When the return value of a call to some
+   // other Node's "topo" method is not NULL, this means
+   // a cycle is being returned.  In that case the ID of
+   // this Node is printed and the returned value is
+   // checked against "this".  If there is a match, the
+   // beginning of the cycle is discovered and execution
+   // terminates.
+   Node topo () {
+      Node node;
+      if (state.value == state.DONE) return null;
+      if (state.value == state.ERROR) {
+         frame.text.append("\nCycle: ");
+         frame.text.append("   "+ident);
+         return this;
+      }
+      state.value = state.ERROR;
+      for (int i=0 ; i &lt; ndepends ; i++) {
+         if ((node=depends.get(i).topo()) != null) {
+            frame.text.append(" &lt;- "+ident);
+            if (this == node) frame.text.append("\n");
+            return node;
+         }
+      }
+      frame.text.append(ident+"\n");
+      state.value = state.DONE;
+      return null;
+   }
+   void greaterThan (Node node) {
+      depends.add(node);
+      ndepends++;
+   }
+}
+class TopoFrame 
+   extends JFrame implements ActionListener {
+   JTextArea text;
+   JButton button;
+   JComboBox combo;
+   int count = 0;
+   Vector &lt;Node&gt; nodes;
+   public TopoFrame () {
+      setLayout(new FlowLayout());
+      add(new JScrollPane(text = new JTextArea(30,20)));
+      text.setFont(new Font("TimesRoman", Font.PLAIN, 18));
+      JPanel p = new JPanel();
+      p.setLayout(new GridLayout(1,2));
+      p.add(combo = new JComboBox());
+      p.add(button = new JButton("Press Me"));
+      add(p);
+      combo.addItem("topo.0.dat");
+      combo.addItem("topo.1.dat");
+      button.addActionListener(this);
+   }
+   public void actionPerformed (ActionEvent evt) {
+      count = 0;
+      nodes = new Vector &lt;Node&gt; ();
+      text.setText("");
+      // Read data from file
+      // Assume format of input file:
+      //   name1 name2 name3 ...
+      //   name1_depend1 name1_depend2 ... name1_dependk1
+      //   name2_depend1 name2_depend2 ... name2_dependk2
+      //   ...
+      //   namen_depend1 namen_depend2 ... name2n_dependkn
+      try {
+         String file = (String)combo.getSelectedItem();
+         String dir = "http://gauss.ececs.uc.edu/Courses"+
+                      "/c4003/java/";
+         String line = null;
+         URL url = new URL(dir+"DataDriven/Topological/"+
+                           file);
+         InputStream is = (InputStream)url.getContent();
+         ViewFrame vf = new ViewFrame(file,this);
+         BufferedReader br = 
+            new BufferedReader(new InputStreamReader(is));
+         try {
+            line = br.readLine();
+            vf.append(line);
+            StringTokenizer t = 
+               new StringTokenizer(line," ");
+            while (true) {
+               String token = t.nextToken();
+               Node node = new Node(token, this);
+               nodes.add(node);
+            }
+         } catch (Exception e) { }
+         count = 0;
+         try {
+            while (true) {
+               line  = br.readLine();
+               vf.append(line);
+               StringTokenizer t = 
+                  new StringTokenizer(line," ");
+               try {
+                  while (true) {
+                     String s = t.nextToken();
+                     int n = Integer.parseInt(s);
+                     Node nd = (Node)nodes.get(count);
+                     nd.greaterThan(nodes.get(n));
+                  }
+               } catch (Exception f) { }
+               count++;
+            }
+         }  catch (Exception e) { }
+      } catch (Exception e) {
+         text.append("Error: "+e.toString()+"\n");
+      }
+      // Done reading data from file.
+      // Do the topological sort.
+      try {
+         for (int i=0 ;  ; i++) nodes.get(i).topo();
+      } catch (Exception e) { }
+      text.append("\n");
+   }
+}
+class ViewFrame extends JFrame {
+   TopoFrame topo;
+   JTextArea text;
+   public ViewFrame (String file, TopoFrame t) {
+      super(file);
+      topo = t;
+      add(new JScrollPane(text=new JTextArea(80,24)));
+      setSize(500,500);
+      setVisible(true);
+   }
+   public void append(String str) {
+      text.append(str+"\n");
+   }
+}
+public class topo 
+   extends Applet implements ActionListener {
+   JButton go;
+   public void init () {
+      setLayout(new BorderLayout());
+      setBackground(new Color(255,255,223));
+      add("Center", go = new JButton("Applet"));
+      go.addActionListener(this);
+   }
+   public void actionPerformed (ActionEvent evt) {
+      TopoFrame solver = new TopoFrame();
+      solver.setSize(400,750);
+      solver.setVisible(true);
+   }
+}
+     &nbsp;-&nbsp; 
+      A factory which produces complex machinery on a single assembly line may need to take some care in planning the order of subassembly or component completion on the line: if a component type is scheduled for completion after it is supposed to be installed then a problem will certainly exist. The problem is compounded by the fact that duplicates of the same component type may be used many times in assembling other components which themselves may be used many times and so on. We need to find an order of assembly of components on a single production line so that no component requires a subassembly that has not been built earlier in the line. A visual depiction of the problem is shown in the figure below  
+        Component types are depicted as circles and 10 components, labeled alphabetically from A to H, are shown in the figure. In the figure, observe a line is drawn the two circles representing A and D with an arrowhead pointing in the direction of D. That line says that A components cannot be built before D components are built. The figure shows a total of 18 such dependencies. If the component assemblies are scheduled in the following order: 
+   E, G, H, B, F, D, A, C, I, J
+ then all the components can be assembled successfully. An ordering such as this, where all dependencies are satisfied, is called a topological sort (in this case, of components A through J). If the figure were such that for some vertex you could visit one or more other vertices by moving in the direction of the arrows, and then return to the vertex at which you started, then a topological sort is impossible.  The problem: Given a collection of component types, and a collection of dependencies, each between pairs of component types, produce a (vertical) list of types so that, from top to bottom, no type depends on a type that is below it in the list.  The code to the left provides a typical object-oriented solution to the problem. Each component is an object of class Node. Each Node object P has a state, initially START, and list of dependent Node objects that must be visited before P's identity is placed in the output list. Visiting a Node object means invoking its topo() method. When a Node object's topo method is invoked, its state changes to ERROR. A subsequent call to topo() in an ERROR state means a cycle has been detected and this is caught by an if statement which is the 3rd line in topo(). Past the assignment statement that make the state ERROR, there is a for loop which invokes all the topo() methods of all the dependent Node objects. By the time this loop is finished, all these dependent objects plus anything they depend on will have been output. However, if a cycle has been detected, the returned value of topo() is not null. The if inside the loop tests this, prints the node's identity as part of the cycle, and quits if the node is the origin of the cycle. If the loop completes, then it is time to output the identity of the node in the 3rd from last line of topo(). Finally, the state is changed again to DONE so any future calls to the topo() of this object will not repeat the search that was just finished. Reaching this point means execution completed normally and null is returned. 
+

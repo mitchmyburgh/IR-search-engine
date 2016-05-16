@@ -1,0 +1,12 @@
+
+Platform Specific Rendering Differences
+Clip space coordinate differences
+Just like with texture coordinates, the clip (“post-projection”) space coordinates differ between Direct3D-like and OpenGL-like platforms:
+•	In Direct3D, Metal and consoles, the clip space depth goes from 0.0 at the near plane, to +1.0 at the far plane.
+•	In OpenGL and OpenGL ES, the clip space depth goes from –1.0 at the near plane, to +1.0 at the far plane.
+Inside shader code, you can use UNITY_NEAR_CLIP_VALUE macro to get the near plane value based on platform.
+Inside script code, GL.GetGPUProjectionMatrix can be used to convert from Unity’s coordinate system (which follows OpenGL conventions) to what the platform expects.
+Precision of shader computations
+PC GPUs treat all floating point types (float, half and fixed) the same and do all calculations using full 32 bit precision. That is not the case on many mobile GPUs, so make sure to test your shaders to avoid precision issues. See data types and precision page for details.
+Similarly, all samplers/textures declared in shader code default to “low precision”. This does not matter for PC GPUs, but on some mobile GPUs you might want to use sampler2D_half (declares half-precision texture), sampler2D_float (full precision texture) etc.
+

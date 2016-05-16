@@ -1,0 +1,108 @@
+Machine-Learning Research
+Four Current Directions
+
+
+Thomas G. Dietterich
+
+■ Machine-learning research has been making great
+progress in many directions. This article summarizes
+four of these directions and discusses some
+current open problems. The four directions are (1)
+the improvement of classification accuracy by
+learning ensembles of classifiers, (2) methods for
+scaling up supervised learning algorithms, (3) reinforcement
+learning, and (4) the learning of complex
+stochastic models.
+The last five years have seen an explosion
+in machine-learning research. This explosion
+has many causes: First, separate
+research communities in symbolic machine
+learning, computational learning theory, neural
+networks, statistics, and pattern recognition
+have discovered one another and begun to
+work together. Second, machine-learning techniques
+are being applied to new kinds of problem,
+including knowledge discovery in databases,
+language processing, robot control, and
+combinatorial optimization, as well as to more
+traditional problems such as speech recognition,
+face recognition, handwriting recognition,
+medical data analysis, and game playing.
+In this article, I selected four topics within
+machine learning where there has been a lot of
+recent activity. The purpose of the article is to
+describe the results in these areas to a broader
+AI audience and to sketch some of the open research
+problems. The topic areas are (1) ensembles
+of classifiers, (2) methods for scaling up supervised
+learning algorithms, (3) reinforcement
+learning, and (4) the learning of complex stochastic
+models.
+The reader should be cautioned that this article
+is not a comprehensive review of each of
+these topics. Rather, my goal is to provide a
+representative sample of the research in each of
+these four areas. In each of the areas, there are
+many other papers that describe relevant work.
+I apologize to those authors whose work I was
+unable to include in the article.
+Ensembles of Classifiers
+The first topic concerns methods for improving
+accuracy in supervised learning. I begin by
+introducing some notation. In supervised
+learning, a learning program is given training
+examples of the form {(x1, y1), ..., (xm, ym)} for
+some unknown function y = f(x). The xivalues
+are typically vectors of the form <xi,1, xi,2, ...,
+xi,n> whose components are discrete or real valued,
+such as height, weight, color, and age.
+These are also called the features of xi
+. I use the
+notation xij to refer to the jth feature of xi
+. In
+some situations, I drop the i subscript when it
+is implied by the context.
+The y values are typically drawn from a discrete
+set of classes {1, ..., K} in the case of classification
+or from the real line in the case of regression.
+In this article, I focus primarily on
+classification. The training examples might be
+corrupted by some random noise.
+Given a set S of training examples, a learning
+algorithm outputs a classifier. The classifier is a
+hypothesis about the true function f. Given
+new x values, it predicts the corresponding y
+values. I denote classifiers by h1, ..., hL.
+An ensemble of classifiers is a set of classifiers
+whose individual decisions are combined in
+some way (typically by weighted or unweighted
+voting) to classify new examples. One of the
+most active areas of research in supervised
+learning has been the study of methods for
+constructing good ensembles of classifiers. The
+main discovery is that ensembles are often
+much more accurate than the individual classifiers
+that make them up.
+
+An ensemble can be more accurate than its
+component classifiers only if the individual
+classifiers disagree with one another (Hansen
+and Salamon 1990). To see why, imagine that
+we have an ensemble of three classifiers: {h1, h2,
+h3}, and consider a new case x. If the three classifiers are identical, then when h1(x) is wrong,
+h2(x) and h3(x) are also wrong. However, if the
+errors made by the classifiers are uncorrelated,
+then when h1(x) is wrong, h2(x) and h3(x)
+might be correct, so that a majority vote correctly
+classifies x. More precisely, if the error
+rates of L hypotheses hl are all equal to p < 1/2
+and if the errors are independent, then the
+probability that the majority vote is wrong is
+the area under the binomial distribution where
+more than L/2 hypotheses are wrong. Figure 1
+shows this area for a simulated ensemble of 21
+hypotheses, each having an error rate of 0.3.
+The area under the curve for 11 or more hypotheses
+being simultaneously wrong is 0.026,
+which is much less than the error rate of the individual
+hypotheses.

@@ -1,0 +1,16 @@
+A kinetic minimum spanning tree is a kinetic data structure that maintains the minimum spanning tree (MST) of a graph whose edge weights are changing as a continuous function of time.
+
+
+== General case ==
+The most efficient known data structure for the general case uses a kinetic sorted list to store the edge weights, and a standard MST algorithm to compute the MST given the sorted edge weights. This data structure must process  events, developing a more efficient data structure remains an open problem.
+
+
+== H-minor-free graphs ==
+Agarwal et al. developed a data structure that maintains the MST for a graph belonging to a minor closed family. It uses the idea of a "swap", calculating the amount by which the weight of the MST would increase if some edge in the tree e was replaced by an edge f outside the tree such that the circle induced by f in the tree contains e. Maintaining the tree is then equivalent to finding and swapping the next pair for which this quantity becomes negative. This data structure considers the dual view of the graph, and then divides based on Frederickson's restricted partitions  to make this efficient. It results in a total run time  if  insertions or deletions are made, or  if only weight changes are allowed. These deterministic bounds are slightly improved if randomization is allowed.
+
+
+== References ==
+
+
+== Further reading ==
+Agarwal, Pankaj; Eppstein, David; Guibas, Leonidas J.; Henzinger, Monika R. (1998). Parametric and Kinetic Minimum Spanning Trees (PDF). FOCS. Retrieved May 19, 2012.  CS1 maint: Multiple names: authors list (link)

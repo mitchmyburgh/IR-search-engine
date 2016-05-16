@@ -1,0 +1,11 @@
+Occlusion Culling
+Occlusion Culling - Bake
+ Occlusion culling inspector bake tab.
+The occlusion culling bake window has a “Set Default Parameters” button, which allows you to reset the bake values to Unity’s default values. These are good for many typical scenes, however you’ll often be able to get better results by adjusting the values to suit the particular contents of your scene.
+Properties
+Property	Function
+Smallest Occluder	The size of the smallest object that will be used to hide other objects when doing occlusion culling. Any objects smaller than this size will never cause objects occluded by them to be culled. For example, with a value of 5, all objects that are higher or wider than 5 meters will cause hidden objects behind them to be culled (not rendered, saving render time). Picking a good value for this property is a balance between occlusion accuracy and storage size for the occlusion data.
+Smallest Hole	This value represents the smallest gap between geometry through which the camera is supposed to see. The value represents the diameter of an object that could fit through the hole. If your scene has very small cracks through which the camera should be able to see, the Smallest Hole value must be smaller than the narrowest dimension of the gap.
+Backface Threshold	Unity’s occlusion uses a data size optimization which reduces unnecessary details by testing backfaces. The default value of 100 is robust and never removes backfaces from the dataset. A value of 5 would aggressively reduce the data based on locations with visible backfaces. The idea is that typically, valid camera positions would not normally see many backfaces - for example, the view of the underside of a terrain, or the view from within a solid object that you should not be able to reach. With a threshold lower than 100, Unity will remove these areas from the dataset entirely, thereby reducing the data size for the occlusion.
+At the bottom of the bake tab is are the Clear and Bake buttons. Click on the Bake Button to start generating the Occlusion Culling data. Once the data is generated, you can use the Visualization tab to preview and test the occlusion culling. If you are not satisfied with the results, click on the Clear button to remove previously calculated data, adjust the settings, and bake again.
+

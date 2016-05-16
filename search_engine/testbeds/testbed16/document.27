@@ -1,0 +1,25 @@
+CipherCloud Risk Lab Details Logjam TLS Vulnerability and Other Diffie-Hellman Weakness
+
+May 21, 2015/in CipherCloud Risk Intelligence Lab, Cloud, Cloud Security /by David Berman
+CipherCloud Lab notifies customers that 1006 cloud applications are vulnerable to logjam and other DH weaknesses, 181 cloud applications move from a low/medium risk score to high risk category, 946 cloud applications risk scores increase.shutterstock_279290126
+
+CipherCloud Risk Intelligence Lab™ has performed a detailed analysis of thousand of cloud applications and today has pushed new intelligence to hundreds of customers with access to cloud risk scoring via the company’s CloudSource™ Knowledge Base.
+
+The logjam vulnerability made public this week affects the Transport Layer Security protocol used to encrypt traffic between client devices and web, VPN and email servers used by cloud providers and enterprises.  The vulnerability allows an attacker to lower the strength of encryption enabling sending and receiving streams of communication to be more easily cracked.  Academics showed that via the vulnerability a secure Diffie-Hellman 2048-bit algorithm can be downgraded by automated exploits to a lower level of encryption.  The attack does not rely on social engineering like getting users to click on a link in an email.  In previous attacks an element of social engineering was required.
+The exploit can be accomplished when the attacker and the user are on the same network – a common scenario when users access cloud applications or corporate networks over public WiFi.
+
+CipherCloud researchers have found 181 cloud applications that can be exploited by public techniques used by any hacker and nation states or other actors with sufficient computing power can theoretically attack 825 cloud applications.
+
+In addition, CipherCloud researchers detailed that many applications are vulnerable to cross-domain attacks when the logjam vulnerability is found on the web site landing domain even when the site’s login domain is not vulnerable.  Post login, users that return to the vulnerable landing domain can have their session encryption automatically downgraded by an attacker if that domain presents the export-grade Diffie-Hellman cipher suite.
+
+The attacks are serious, a special concern is if a credential is stolen it may be used for Single Sign-on to multiple applications or reused in other cloud applications (studies have found that users reuse passwords between sites 30 – 40% of the time).
+
+Detailed steps to remediate the vulnerability can be found at: https://weakdh.org
+
+CipherCloud Lab will provide further updates as providers address the vulnerability.
+
+ Summary of Findings
+
+1006 cloud applications discovered with logjam vulnerability and other DH weaknesses
+181 cloud applications can be exploited by normal attacker (computing power available to anyone)
+825 cloud applications can theoretically be exploited by nation states or attackers with required computing power (capability to break encryption beyond 512-bits)

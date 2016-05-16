@@ -1,0 +1,29 @@
+Static mesh
+From Wikipedia, the free encyclopedia
+Static meshes are polygon meshes which constitute a major part of map architecture in many game engines, including Unreal Engine, Source, and Unity. The word "static" refers only to the fact that static meshes can't be vertex animated, as they can be moved, scaled, or reskinned in realtime.
+
+Static Meshes can create more complex shapes than CSG (the other major part of map architecture) and are faster to render per triangle.
+
+Contents  [hide] 
+1	Characteristics
+1.1	Collision
+1.2	Texturing
+2	Usage
+3	See also
+4	External links
+Characteristics[edit]
+A Static Mesh contains information about its shape (vertices, edges and sides), a reference to the textures to be used, and optionally a collision model (see the simple collision section below).
+
+Collision[edit]
+There are three ways for a Static Mesh to collide:
+
+No collision: a static mesh can be set not to block anything. This is often used for small decoration like grass.
+Per-polygon collision (default): individual polygons collide with actors. Each material (i.e. each part of the Static Mesh using a separate texture) can be set to collide or not independently from the rest. The advantage of this method is that one part of the Static Mesh can collide while another doesn't (a common example: a tree's trunk collides, but its leaves don't). The disadvantage is that for complex meshes this can take a lot of processing power.
+Simple collision: the static mesh doesn't collide itself, but has built-in blocking volumes that collide instead. Usually, the blocking volumes will have a simpler shape than the Static Mesh, resulting in faster collision calculation.
+Texturing[edit]
+Although Static Meshes have built-in information on what textures to use, this can be overridden by adding a new skin in the Static Mesh's properties. Alternatively, the Static Mesh itself can be modified to use different textures by default.
+
+Usage[edit]
+In maps, Static Meshes are very common, as they are used for anything more complex than basic architecture (in which case CSG is used) or terrain.
+
+Additionally, Static Meshes sometimes represent other objects, including weapon projectiles and destroyed vehicles. Often after rendered cutscenes in which, for instance, a tank is destroyed, the tank's hull would be added as a static mesh to the real-game world.

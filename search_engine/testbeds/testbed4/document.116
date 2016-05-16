@@ -1,0 +1,73 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Radiometry and Re?ection
+Until now, we have considered highly simpli?ed models and algorithms for computing lighting and re?ection. These algorithms are easy to understand and can be implemented very ef?ciently; however, they also lack realism and cannot achieve many important visual effects. In this chapter, we introduce the fundamentals of radiometry and surface re?ectance that underly more sophisticated models. In the following chapter, we will describe more advanced ray tracing algorithms that take advantage of these models to produce very realistic and simulate many real-world phenomena.
+12.1 Geometry of lighting
+In our discussion of lighting and re?ectance we will make several simplifying assumptions. First, we will ignore time delays in light propagation from one place to another. Second, we will assume that light is not scattered nor absorbed by the median through which it travels, i.e., we will ignore light scattering due to fog. These assumptions allow us to focus on the geometry of lighting; i.e., we can assume that light travels along straight lines, and is conserved as it travels (e.g., see Fig. 1).
+Light Tube
+A
+B
+Figure 4: Given a set of rays within a tube, passing through A and B but not the sides of the tube, the ?ux (radiant power) at A along these rays is equal to that at B along the same set of rays.
+Before getting into the details of lighting, it will be useful to introduce three key geometric concepts, namely, differential areas, solid angle and foreshortening. Each of these geometric concepts is related to the dependence of light on the distance and orientation between surfaces in a scene that receive or emit light.
+Area differentials: We will need to be able describe the amount of lighting that hitting an area on a surface or passing through a region of space. Integrating functions over a surface requires that we introduce an area differential over the surface, denoted dA. Just as a 1D differential (dx) represents an in?nitesimal region of the real line, an area differential represents an in?nitesimal region on a 2D surface.
+Example: Consider a rectangular patch S in the x?y plane. We can specify points in the patch in terms of an x coordinate and a y coordinate, with x ? [x0,x1],y ? [y0,y1]. We can
+Copyright c
+2005 David Fleet and Aaron Hertzmann 76
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+divide the plane into NM rectangular subpatches, the ij-th subpatch bounded by
+xi ? x ? xi + ?x (47) yj ? y ? yj + ?y (48) where i ? [0...N ?1],j ? [0...M ?1], ?x = (x1 ?x0)/N and ?y = (y1 ?y0)/M. The area of each subpatch is Ai,j = ?x?y. In the limit as N ??and M ??, dA = dxdy (49)
+To compute the area of a smooth surface S, we can break the surface into many tiny patches (i,j), each with area Ai,j, and add up these individual areas: Area(S) =X i,j Ai,j (50) In the planar patch above, the area of the patch is: Area(S) =X i,j Ai,j = NM?x?y = (x1 ?x0)(y1 ?y0) (51) Computing these individual patch areas for other surfaces is dif?cult. However, taking the in?nite limit we get the general formula: Area(S) =ZS dA (52) For the planar patch, this becomes: ZS dA =Z y1 y0 Z x1 x0 dxdy = (x1 ?x0)(y1 ?y0) (53)
+We can create area differentials for any smooth surface. Fortunately, in most radiometry applications, we do not actually need to be able to do so for anything other than a plane. We will use area differentials when we integrate light on the image sensor, which, happily, is planar. However, area differentials are essential to many key de?nitions and concepts in radiometry.
+Solid angle: We need to have a measure of angular extent in 3D. For example, we need to be able to talk about what we mean by the ?eld of view of a camera, and we need a way to quantitfy the width of a directional light (e.g., a spot light).
+Copyright c
+2005 David Fleet and Aaron Hertzmann 77
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+Let’s consider the situation in 2D ?rst. In 2D, angular extent is just the angle between two directions, and we normally specify angular extent in radians. In particular, the angular extent between two rays emanating from a point ¯ q can be measured using a circle centered at ¯ q; that is, the angular extent (in radians) is just the circular arc length l of the circle between the two directions, divided by radius r of the circle, l/r (see Fig. 5). For example, the angular extent of an entire circle having circumference 2?r is just 2? radians. A half-circle has arclength ?r and spans ? radians.
+l
+r
+q
+Figure 5: Angular extent in 2D is given by l/r (radians).
+In 3D, the corresponding quantity to 2D angular extent is called solid angle. Analogous to the 2D case, solid angle is measured as the area a of a patch on a sphere, divided by the squared radius of the sphere (Figure 6); i.e., ? = a r2 (54) The unit of measure for solid angle is the steradian (sr). A solid angle of 2? steradians corresponds to a hemisphere of directions. The entire sphere has a solid angle of 4? sr. As depicted in Figure 2, to ?nd the solid angle of a surface S with respect to a point ¯ q, one projects S onto a sphere of radius r, centered at ¯ q, along lines through ¯ q. This gives us a, so we then divide by r2 to ?nd the solid angle subtended by the surface. Note that the solid angle of a patch does not depend on the radius r, since the projected area a is proportional to r2.
+r
+a
+S
+q
+Figure 6: The solid angle of a patch S is given by the area a of its projection onto a sphere of radius r, divided by the squared radius, r2.
+Note: At a surface point with normal ~n, we express the hemisphere of incident and emittant directions in spherical coordinates. That is, directions in the hemisphere ~ d are
+~ d = (sin?cos?, sin?sin?, cos?)T (55)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 78
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+where ? ? [0,?/2] denotes the angle between ~ d and the normal, and ? ? [??,?) measures the direction projected onto the surface.
+With direction expressed in this way one can write the in?nitesimal solid angle as
+d? = sin?d?d? (56)
+The in?nitesimal solid angle is an area differential for the unit sphere.
+To see this, note that for ? held ?xed, if we vary ? we trace out a circle of radius sin? that is perpendicular to ~n. For a small change d?, the circular arc has length sin?d?, and therefore the area of a small ribbon of angular width d? is just sin?d?d?.
+q
+sinq
+sin d q j
+dj
+dq
+1
+This also allows us to compute the ?nite solid angle for a a range of visual direction, such as ?0 ? ? ? ?1 and ?0 ? ? ? ?1. That is, to compute the solid angle we just integrate the differential solid angle over this region on a unit sphere (r = 1): ? = Z ?1 ?0 Z ?1 ?0 sin? d? d? (57) = Z ?1 ?0 ?cos?|?1 ?0 d? (58) = (?1 ??0)(cos?0 ?cos?1) (59) (Assuming we are in the quadrant where this quantity is positive)
+Foreshortening: Another important geometric property is foreshortening, the reduction in the (projected) area of a surface patch as seen from a particular point or viewer. When the surface normal points directly at the viewer its effective size (solid angle) is maximal. As the surface normal rotates away from the viewer it appears smaller (Figure 7). Eventually when the normal is pointing perpendicular to the viewing direction you see the patch “edge on”; so its projection is just a line (with zero area).
+Putting it all together: Not surprisingly, the solid angle of a small surface patch, with respect to a speci?c viewing location, depends on both on the distance from the viewing location to the patch, and on the orientation of the patch with respect to the viewing direction.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 79
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+?
+~ cos A ? A q ?
+dAcos? dA q r
+Figure 7: Foreshortening in 2D. Left: For a patch with area A, seen from a point ¯ q, the patch’s foreshortened area is approximately Acos?. This is an approximation, since the distance r varies over the patch. The angle ? is the angle between the patch normal and the direction to ¯ q. Right: For an in?nitesimal patch with area dA, the foreshortened area is exactly dAcos?.
+Let ¯ q be the point (such as a light source or a viewer) about which we want to compute solid angle. Let ¯ p be the location of a small planar surface patch S with area A at distance r = ||¯ q ? ¯ p|| from¯ q. Additionally, suppose the surface normal points directly at ¯ q (Figure 8). In this case, we can imagine drawing a hemisphere about ¯ q with radius r, and the projected area a of this patch will be approximately A. Hence, the solid angle ? ? A/r2. In other words, the solid angle is inversely proportional to distance squared; a more distant object obscures less of ¯ q’s “?eld of view.” This is an approximation, however, since the distance r varies over the patch. Nevertheless, if we consider the limit of an in?nitesimal patch with area dA, then the solid angle is exactly d? = dA/r2.
+When the surface normal does not point directly at ¯ q, foreshortening plays a signi?cant role. As the surface normal rotates away from the direction of ¯ q ? ¯ p, the surface, as viewed from point ¯ q, becomes smaller; it projects onto a smaller area on a sphere centered at ¯ q. sphere. So, we say that the area of the patch, as seen from ¯ q, is foreshortened. More formally, let ? be the angle between the normal ~n and direction, ¯ q? ¯ p. Then, for our in?nitesimal surface with area dA, the solid angle subtended by the tilted patch is
+d? =
+dAcos? r2
+, (60)
+The cosine term should look familiar; this is the same cosine term used in Lambertian shading within the Phong model.
+q q
+Figure 8: Solid angle of a patch. Left: A patch with normal pointing at ¯ l. Right: A patch with arbitrary orientation.
+Copyright c
+2005 David Fleet and Aaron Hertzmann

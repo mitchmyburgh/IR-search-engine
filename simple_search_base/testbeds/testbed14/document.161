@@ -1,0 +1,285 @@
+﻿11 OWL Tools
+In order to work with OWL ontologies, tool support is essential. Basically, there are two types of tools addressing the two main stages of the ontology lifecycle: ontology editors are used to create and edit ontologies, whereas reasoners are used to query ontologies for implicit knowledge, i.e., they determine whether a statement in question is a logical consequence of an ontology.
+The currently most widely used OWL editor is Protégé, a free open-source editing framework developed at Stanford University. By virtue of its open plugin structure, it allows for the easy integration of special-purpose ontology editing components. Other editors include TopQuadrant's commercial TopBraid Composer and the open-source systems SWOOP and NeOn-Toolkit.
+There are several reasoners for OWL DL which differ somewhat in terms of coverage of the supported reasoning features. For some of these, OWL 2 conformance is currently planned and the corresponding implementations are in progress. The Test Suite Status document lists to which extent some of the reasoners mentioned below comply with the test cases.
+For reasoning within OWL DL, the most prominent systems are Fact++ by the University of Manchester, Hermit by Oxford University Computing Laboratory, Pellet by Clark & Parsia, LLC, and RacerPro by Racer Systems.
+In addition to those general-purpose reasoners aiming at supporting all of OWL DL, there are reasoning systems tailored to the tractable profiles of OWL. CEL by Dresden University of Technology supports OWL EL. QuOnto by Sapienza Università di Roma supports OWL QL. ORACLE 11g supports OWL RL.
+The open-source OWL API plays a rather prominent role as the currently most important development tool around OWL.
+It must be mentioned that by the time this document was created, several OWL tools were under development, hence the current overview should be seen as a snapshot of this development rather than an up-to-date overview. Extensive listings of OWL tools can be found at semanticweb.org and in the ESW-Wiki.
+12 What To Read Next
+This short primer can only scratch the surface of OWL. There are many longer and more involved tutorials on OWL and how to use OWL tools that can be found by searching on the Web. Reading one of these documents and using a tool to build an OWL ontology is probably the best way to obtain a working knowledge about OWL. For learning more about the foundations of OWL, we recommend to consult first a textbook [FOST] and then the original articles cited therein. An extended introduction to the OWL 2 Profiles can be found in [OWL 2 Profiles Introduction], which is also available on the Web.
+This short primer is also not a normative definition of OWL. The normative definition of the OWL syntax as well as informative descriptions of the meaning of each OWL construct can be found in the OWL 2 Structural Specification and Functional Syntax document [OWL 2 Specification].
+The OWL 2 Quick Reference Guide [OWL 2 Quick Guide] comes handy as a reference when looking for information about a specific language feature.
+For those interested in more formal documents, the formal meaning of OWL 2 can be found in the OWL 2 Semantics documents [OWL 2 Direct Semantics] [OWL 2 RDF-Based Semantics].
+The mapping between OWL syntax and RDF triples can be found in the OWL 2 Mapping to RDF Graphs document [OWL 2 RDF Mapping].
+13 Appendix: The Complete Sample Ontology
+Here we include the complete sample OWL ontology. Ontological axioms are ordered by top-level expressive features they use. Moreover, we follow a commonly-used ordering, with ontology and declaration information first, followed by information about properties, then classes and datatypes, then individuals.
+
+Functional-Style Syntax
+ Prefix(:=<http://example.com/owl/families/>)
+ Prefix(otherOnt:=<http://example.org/otherOntologies/families/>)
+ Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+ Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+ Ontology(<http://example.com/owl/families>
+   Import( <http://example.org/otherOntologies/families.owl> )
+ 
+   Declaration( NamedIndividual( :John ) )
+   Declaration( NamedIndividual( :Mary ) )
+   Declaration( NamedIndividual( :Jim ) )
+   Declaration( NamedIndividual( :James ) )
+   Declaration( NamedIndividual( :Jack ) )
+   Declaration( NamedIndividual( :Bill ) )
+   Declaration( NamedIndividual( :Susan ) )
+   Declaration( Class( :Person ) )
+   AnnotationAssertion( rdfs:comment :Person "Represents the set of all people." )
+   Declaration( Class( :Woman ) )
+   Declaration( Class( :Parent ) )
+   Declaration( Class( :Father ) )
+   Declaration( Class( :Mother ) )
+   Declaration( Class( :SocialRole ) )
+   Declaration( Class( :Man ) )
+   Declaration( Class( :Teenager ) )
+   Declaration( Class( :ChildlessPerson ) )
+   Declaration( Class( :Human ) )
+   Declaration( Class( :Female ) )
+   Declaration( Class( :HappyPerson ) )
+   Declaration( Class( :JohnsChildren ) )
+   Declaration( Class( :NarcisticPerson ) )
+   Declaration( Class( :MyBirthdayGuests ) )
+   Declaration( Class( :Dead ) )
+   Declaration( Class( :Orphan ) )
+   Declaration( Class( :Adult ) )
+   Declaration( Class( :YoungChild ) )
+   Declaration( ObjectProperty( :hasWife ) )
+   Declaration( ObjectProperty( :hasChild ) )
+   Declaration( ObjectProperty( :hasDaughter ) )
+   Declaration( ObjectProperty( :loves ) )
+   Declaration( ObjectProperty( :hasSpouse ) )
+   Declaration( ObjectProperty( :hasGrandparent ) )
+   Declaration( ObjectProperty( :hasParent ) )
+   Declaration( ObjectProperty( :hasBrother ) )
+   Declaration( ObjectProperty( :hasUncle ) )
+   Declaration( ObjectProperty( :hasSon ) )
+   Declaration( ObjectProperty( :hasAncestor ) )
+   Declaration( ObjectProperty( :hasHusband ) )
+   Declaration( DataProperty( :hasAge ) )
+   Declaration( DataProperty( :hasSSN ) )
+   Declaration( Datatype( :personAge ) )
+   Declaration( Datatype( :minorAge ) )
+   Declaration( Datatype( :majorAge ) )
+   Declaration( Datatype( :toddlerAge ) )
+ 
+   SubObjectPropertyOf( :hasWife :hasSpouse )
+   SubObjectPropertyOf(
+     ObjectPropertyChain( :hasParent :hasParent )
+     :hasGrandparent
+   )
+   SubObjectPropertyOf(
+     ObjectPropertyChain( :hasFather :hasBrother )
+     :hasUncle
+   )
+   SubObjectPropertyOf(
+     :hasFather
+     :hasParent
+   )
+ 
+   EquivalentObjectProperties( :hasChild otherOnt:child )
+   InverseObjectProperties( :hasParent :hasChild )
+   EquivalentDataProperties( :hasAge otherOnt:age )
+   DisjointObjectProperties( :hasSon :hasDaughter )
+   ObjectPropertyDomain( :hasWife :Man )
+   ObjectPropertyRange( :hasWife :Woman )
+   DataPropertyDomain( :hasAge :Person )
+   DataPropertyRange( :hasAge xsd:nonNegativeInteger )
+ 
+   SymmetricObjectProperty( :hasSpouse )
+   AsymmetricObjectProperty( :hasChild )
+   DisjointObjectProperties( :hasParent :hasSpouse )
+   ReflexiveObjectProperty( :hasRelative )
+   IrreflexiveObjectProperty( :parentOf )
+   FunctionalObjectProperty( :hasHusband )
+   InverseFunctionalObjectProperty( :hasHusband )
+   TransitiveObjectProperty( :hasAncestor )
+   FunctionalDataProperty( :hasAge )
+ 
+   SubClassOf( :Woman :Person )
+   SubClassOf( :Mother :Woman )
+   SubClassOf(
+     :Grandfather
+     ObjectIntersectionOf( :Man :Parent )
+   )
+   SubClassOf(
+     :Teenager
+     DataSomeValuesFrom( :hasAge
+       DatatypeRestriction( xsd:integer
+         xsd:minExclusive "12"^^xsd:integer
+         xsd:maxInclusive "19"^^xsd:integer
+       )
+     )
+   )
+   SubClassOf(
+     Annotation( rdfs:comment "States that every man is a person." )
+     :Man
+     :Person
+   )
+   SubClassOf(
+     :Father
+     ObjectIntersectionOf( :Man :Parent )
+   )
+   SubClassOf(
+     :ChildlessPerson
+     ObjectIntersectionOf(
+       :Person
+       ObjectComplementOf(
+         ObjectSomeValuesFrom(
+           ObjectInverseOf( :hasParent )
+           owl:Thing
+         )
+       )
+     )
+   )
+   SubClassOf(
+     ObjectIntersectionOf(
+       ObjectOneOf( :Mary :Bill :Meg )
+       :Female
+     )
+     ObjectIntersectionOf(
+       :Parent
+       ObjectMaxCardinality( 1 :hasChild )
+       ObjectAllValuesFrom( :hasChild :Female )
+     )
+   )
+ 
+   EquivalentClasses( :Person :Human )
+   EquivalentClasses(
+     :Mother
+     ObjectIntersectionOf( :Woman :Parent )
+   )
+   EquivalentClasses(
+     :Parent
+     ObjectUnionOf( :Mother :Father )
+   )
+   EquivalentClasses(
+     :ChildlessPerson
+     ObjectIntersectionOf(
+       :Person
+       ObjectComplementOf( :Parent )
+     )
+   )
+   EquivalentClasses(
+     :Parent 
+     ObjectSomeValuesFrom( :hasChild :Person )
+   )
+   EquivalentClasses(
+     :HappyPerson
+     ObjectIntersectionOf(
+        ObjectAllValuesFrom( :hasChild :HappyPerson )
+        ObjectSomeValuesFrom( :hasChild :HappyPerson )
+     )
+   )
+   EquivalentClasses(
+     :JohnsChildren
+     ObjectHasValue( :hasParent :John )
+   )
+   EquivalentClasses(
+     :NarcisticPerson
+     ObjectHasSelf( :loves )
+   )
+   EquivalentClasses(
+     :MyBirthdayGuests
+     ObjectOneOf( :Bill :John :Mary)
+   )
+   EquivalentClasses(
+     :Orphan
+     ObjectAllValuesFrom(
+       ObjectInverseOf( :hasChild )
+       :Dead
+     )
+   )
+   EquivalentClasses( :Adult otherOnt:Grownup )
+   EquivalentClasses(
+     :Parent
+     ObjectSomeValuesFrom(
+       :hasChild
+       :Person
+     )
+   )
+ 
+   DisjointClasses( :Woman :Man )
+   DisjointClasses(
+     :Mother
+     :Father
+     :YoungChild
+   )
+   HasKey( :Person () ( :hasSSN ) )
+ 
+   DatatypeDefinition(
+     :personAge
+     DatatypeRestriction( xsd:integer
+       xsd:minInclusive "0"^^xsd:integer
+       xsd:maxInclusive "150"^^xsd:integer
+     )
+   )
+   DatatypeDefinition(
+     :minorAge
+     DatatypeRestriction( xsd:integer
+       xsd:minInclusive "0"^^xsd:integer
+       xsd:maxInclusive "18"^^xsd:integer
+     )
+   )
+   DatatypeDefinition(
+     :majorAge
+     DataIntersectionOf(
+       :personAge
+       DataComplementOf( :minorAge )
+     )
+   )
+   DatatypeDefinition(
+     :toddlerAge
+     DataOneOf( "1"^^xsd:integer "2"^^xsd:integer ) 
+   )
+ 
+   ClassAssertion( :Person :Mary )
+   ClassAssertion( :Woman :Mary )
+   ClassAssertion(
+     ObjectIntersectionOf(
+       :Person
+       ObjectComplementOf( :Parent )
+     )
+     :Jack
+   )
+   ClassAssertion(
+     ObjectMaxCardinality( 4 :hasChild :Parent )
+     :John
+   )
+   ClassAssertion(
+     ObjectMinCardinality( 2 :hasChild :Parent )
+     :John
+   )
+   ClassAssertion(
+     ObjectExactCardinality( 3 :hasChild :Parent ) 
+     :John
+   )
+   ClassAssertion(
+     ObjectExactCardinality( 5 :hasChild )
+     :John
+   )
+   ClassAssertion( :Father :John )
+   ClassAssertion( :SocialRole :Father )
+ 
+   ObjectPropertyAssertion( :hasWife :John :Mary )
+   NegativeObjectPropertyAssertion( :hasWife :Bill :Mary )
+   NegativeObjectPropertyAssertion(
+     :hasDaughter
+     :Bill
+     :Susan
+   )
+   DataPropertyAssertion( :hasAge :John "51"^^xsd:integer )
+   NegativeDataPropertyAssertion( :hasAge :Jack "53"^^xsd:integer )
+ 
+   SameIndividual( :James :Jim )
+   SameIndividual( :John otherOnt:JohnBrown )
+   SameIndividual( :Mary otherOnt:MaryBrown )
+   DifferentIndividuals( :John :Bill )
+ )
+

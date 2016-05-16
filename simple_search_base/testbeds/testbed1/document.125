@@ -1,0 +1,78 @@
+Apache_Ant
+'''Apache Ant''' is a software tool for  processes, which originated from the  project in early 2000. It was a replacement for the unix make build tool, and was created due to a number of problems with the unix make. It is similar to  but is implemented using the  language, requires the Java platform, and is best suited to building Java projects.
+The most immediately noticeable difference between Ant and Make is that Ant uses  to describe the build process and its dependencies, whereas Make uses . 
+By default the XML file is named build.xml.
+Ant is an  project. It is , and is released under the .
+==History==
+Ant ("Another Neat Tool") was conceived by  while preparing 's  / engine, later , for release as . A  version of ''make'' was used to build it on , but in the open source world there was no way of controlling which platform was used to build Tomcat; so Ant was created as a simple platform-independent tool to build Tomcat from directives in an XML "build file". Ant (version 1.1) was officially released as a stand-alone product on July 19, 2000.
+Several proposals for an Ant version 2 have been made, such as AntEater by James Duncan Davidson, Myrmidon by  and Mutant by , none of which were able to find large acceptance with the developer community.
+At one time (2002), Ant was the build tool used by most Java development projects. For example, most open source Java developers include build.xml files with their distribution.
+Because Ant made it trivial to integrate  tests with the build process, Ant made it easy for willing developers to adopt , and even .
+==Extensions==
+WOProject-Ant is just one of many examples of a ''task'' extension written for Ant. These extensions are put to use by copying their jar files into ant's ''lib'' directory. Once this is done, these extension tasks can be invoked directly in the typical ''build.xml'' file. The WOProject extensions allow  developers to use ant in building their frameworks and applications, instead of using   suite.
+Antcontrib provides a collection of tasks such as conditional statements and operations on properties as well as other useful tasks.
+Ant-contrib.unkrig.de implements tasks and types for networking,  user interfaces,  processing and other.
+Other task extensions exist for , , , and filesystem manipulations, just to name a few.
+==Example==
+Below is listed a sample build.xml file for a simple Java "Hello, world" application. It defines four targets - clean, clobber, compile and jar, each of which has an associated description. The jar target lists the compile target as a dependency. This tells Ant that before it can start the jar target it must first complete the compile target.
+    
+        
+    
+    
+        
+    
+    
+        
+        
+    
+    
+        
+            
+            
+                
+            
+        
+    
+Within each target are the actions that Ant must take to build that target; these are performed using built-in tasks. For example, to build the compile target Ant must first create a directory called classes (which Ant will do only if it does not already exist) and then invoke the Java compiler. Therefore, the tasks used are mkdir and javac. These perform a similar task to the command-line utilities of the same name.
+Another task used in this example is named jar:
+This Ant task has the same name as the common Java command-line utility, JAR, but is really a call to the Ant program's built-in JAR/ZIP file support. This detail is not relevant to most end users, who just get the JAR they wanted, with the files they asked for.
+Many Ant tasks delegate their work to external programs, either native or Java. They use Ant's own  and  tasks to set up the command lines, and handle all the details of mapping from information in the build file to the program's arguments and interpreting the return value. Users can see which tasks do this (e.g. , , , ), by trying to execute the task on a system without the underlying program on the path, or without a full Java Development Kit (JDK) installed.
+==Portability==
+One of the primary aims of Ant was to solve Make's portability problems. The first portability issue in a Makefile is that the actions required to create a target are specified as  commands which are specific to the  on which Make runs. Different platforms require different shell commands. Ant solves this problem by providing a large amount of built-in functionality that is designed to behave the same on all platforms. For example, in the sample build.xml file above, the ''clean'' target deletes the classes directory and everything in it. In a Makefile this would typically be done with the command:
+ rm -rf classes/
+ is a -specific command unavailable in some other environments. , for example, would use:
+ rmdir /S /Q classes
+In an Ant build file the same goal would be accomplished using a built-in command:
+ 
+A second portability issue is a result of the fact that the symbol used to delimit elements of file system directory path components differs from one platform to another. Unix uses a forward slash (/) to delimit components whereas Windows uses a backslash (\). Ant build files let authors choose their favorite convention: forward slash or backslash for directories; semicolon or colon for path separators. It converts each to the symbol appropriate to the platform on which it executes.
+==Limitations==
+*Ant build files, which are written in , can be complex and verbose. The complex structure (hierarchical, partly ordered, and pervasively cross-linked) of Ant documents can be a barrier to learning. The build files of large or complex projects can become unmanageably large. Good design and modularization of build files can improve readability but not necessarily reduce size. Other build tools, such as  or , use more concise scripts at the expense of generality and flexibility.
+*Many of the older tasks&mdash;the core ones that are used every day, such as ,  and &mdash;use default values for options that are not consistent with more recent versions of the tasks. Changing those defaults would break existing Ant scripts.
+*When expanding properties in a string or text element, undefined properties are not raised as an error, but left as an unexpanded reference (e.g. $).
+*Ant has limited fault handling rules, and no persistence of state, so it cannot be used as a workflow tool for any workflow other than classic build and test processes.
+* is not supported. For instance, when working within an Antcontrib  loop, a property cannot be re-evaluated for a sub-value which may be part of the iteration. (Some third-party extensions facilitate a workaround; AntXtras flow-control tasksets do provide for cursor redefinition for loops.)
+*In makefiles, any rule to create one file type from another can be written inline within the makefile. For example, you may transform a document into some other format by using rules to execute another tool. Creating a similar task in Ant is more complex: a separate task must be written in Java and included with the Ant build file in order to handle the same type of functionality. However, this separation can enhance the readability of the Ant script by hiding some of the details of how a task is executed on different platforms.
+There exists a myriad of third-party Ant extensions (called ''antlibs'') that provide much of the missing functionality. Also, the Eclipse  can build and execute Ant scripts, while the  IDE uses Ant for its internal build system. As both these IDEs are very popular development platforms, they can simplify Ant use significantly. (As a bonus, Ant scripts generated by NetBeans can be used outside that IDE as standalone scripts.)
+==See also==
+*.
+*, a project management and build automation tool primarily for Java.
+*, a tool for turning XML into executable code.
+*, Ant-like tool targeted at the .NET environment rather than Java.
+*, a dependency manager which integrates tightly with Ant, subproject of Ant.
+*, a JVM build tool built with Groovy.
+*.
+==References==
+==Bibliography==
+*
+*
+*
+*
+*
+*
+*
+*
+==External links==
+*
+* (, ).
+*.
+*.

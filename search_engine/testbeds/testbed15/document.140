@@ -1,0 +1,32 @@
+﻿A.1 Introduction
+
+Why does my HTML page/form need a script?
+
+There are times when you might want to have some dynamic information (information that is not constant) in your HTML documents. This could include simple information such as the date and time, or a counter that displays "You are visitor number xxx", but it could also include such things as pie charts/graphs based on user input, results from searching a database, or animations. And the only way you can produce results like these is with CGI scripts (though you can also do so with client-side applications like Java and JavaScript, but that's a totally different story!).
+
+What does CGI stand for?
+
+Here is an excellent description that my editor, Andy Oram, wrote up:
+
+Common
+Assures you that CGI can be used by many languages and interact with many different types of systems. It doesn't tie you down to one way of doing what you want.
+
+Gateway
+Suggests that CGI's strength lies not in what it does by itself, but in the potential access it offers to other systems such as databases and graphic generators.
+
+Interface
+Means that CGI provides a well-defined way to call up its features--in other words, that you can write programs that use it.
+
+What is a script, anyway? What can I do with a script?
+
+Simply put, a script is a program! OK, OK, there are semantic differences between the two words. If you really want to know, pick up a book on computer programming (or is that computer scripting :-)
+
+You can create a lot of magic by writing a CGI program/script. You can create graphics on the fly, access databases and return results, and connect to other Internet information servers.
+
+What is Perl and why do so many people use it for CGI?
+
+The answer is located in the first three lines of the Perl manpage:
+
+Perl is an interpreted language optimized for scanning arbitrary text files, extracting information from those text files, and printing reports based on that information.
+
+Most CGI applications involve manipulating data in some fashion and accessing external programs and applications. Perl provides easy-to-use tools that make these tasks a cinch.

@@ -1,0 +1,54 @@
+Processing (programming language)
+From Wikipedia, the free encyclopedia
+Processing is an open source programming language and integrated development environment (IDE) built for the electronic arts, new media art, and visual design communities with the purpose of teaching the fundamentals of computer programming in a visual context, and to serve as the foundation for electronic sketchbooks. The project was initiated in 2001 by Casey Reas and Benjamin Fry, both formerly of the Aesthetics and Computation Group at the MIT Media Lab. One of the stated aims of Processing is to act as a tool to get non-programmers started with programming through the instant gratification of visual feedback. The language builds on the Java language, but uses a simplified syntax and graphics programming model. In 2012, they started the Processing Foundation along with Daniel Shiffman, who formally joined as a third project lead.
+
+Processing includes a sketchbook, a minimal alternative to an integrated development environment (IDE) for organizing projects.
+
+Every Processing sketch is actually a subclass of the PApplet Java class which implements most of the Processing language's features.
+
+When programming in Processing, all additional classes defined will be treated as inner classes when the code is translated into pure Java before compiling. This means that the use of static variables and methods in classes is prohibited unless you explicitly tell Processing that you want to code in pure Java mode.
+
+Processing also allows for users to create their own classes within the PApplet sketch. This allows for complex data types that can include any number of arguments and avoids the limitations of solely using standard data types such as: int (integer), char (character), float (real number), and color (RGB, ARGB, hex).
+
+Related projects[edit]
+Design By Numbers[edit]
+Processing was based on the original work done on Design By Numbers project at MIT. It shares many of the same ideas and is a direct child of that experiment.
+
+Wiring, Arduino, and Fritzing[edit]
+Processing has spawned another project, Wiring, which uses the Processing IDE with a collection of libraries written in the C++ language as a way to teach artists how to program microcontrollers. There are now two separate hardware projects, Wiring and Arduino, using the Wiring environment and language. Fritzing is another software environment of the same sort, which helps designers and artists to document their interactive prototypes and to take the step from physical prototyping to actual product.
+
+Mobile Processing[edit]
+Another spin-off project, now defunct, is Mobile Processing by Francis Li, which allowed software written using the Processing language and environment to run on Java powered mobile devices. Today some of the same functionality is provided by Processing itself.[1]
+
+Processing.js[edit]
+Main article: Processing.js
+In 2008, John Resig ported Processing to JavaScript using the Canvas element for rendering,[2] allowing Processing to be used in modern web browsers without the need for a Java plugin. Since then, the open source community including students at Seneca College in Toronto have taken over the project.
+
+Processing.js is also used to advocate very basic programming to Students of all ages on Khan Academy by creating drawings and animations. Learners showcase their creations to other learners and many of the projects are very fascinating.
+
+p5.js[edit]
+Lauren McCarthy has created p5.js.[3] an alternative to Processing.js that has the official support of the Processing Foundation.[4]
+
+iProcessing[edit]
+iProcessing was built to help people develop native iPhone applications using the Processing language. It is an integration of the Processing.js library and a Javascript application framework for iPhone.
+
+Spde[edit]
+Spde (standing for Scala Processing Development Environment) replaces Processing's reduced Java syntax and custom preprocessor with the off-the-shelf Scala programming language which also runs on the Java platform and enforces some of the same restrictions such as disallowing static methods, while also allowing more concise code, and supporting functional programming.[5][6][7]
+
+Quil[edit]
+Quil (formerly named clj-processing) is a wrapper for Processing in the Clojure language, a Lisp that runs on the Java platform.[8]
+
+Awards[edit]
+In 2005 Reas and Fry won the prestigious Golden Nica award from Ars Electronica in its Net Vision category for their work on Processing.
+
+Ben Fry won the 2011 National Design Award given by the Smithsonian Cooper-Hewitt National Design Museum in the category of Interaction Design. The award statement says:
+
+"Drawing on a background in graphic design and computer science, Ben Fry pursues a long-held fascination with visualizing data. As Principal of Fathom Information Design in Boston, Fry develops software, printed works, installations, and books that depict and explain topics from the human genome to baseball salaries to the evolution of text documents. With Casey Reas, he founded the Processing Project, an open-source programming environment for teaching computational design and sketching interactive-media software. It provides artists and designers with accessible means of working with code while encouraging engineers and computer scientists to think about design concepts."
+
+License[edit]
+Processing's core libraries, the code included in exported applications and applets, is licensed under the GNU Lesser General Public License, allowing users to release their original code with a choice of license.
+
+The IDE is licensed under the GNU General Public License.
+
+Name[edit]
+Originally, Processing had the URL at proce55ing.net, because the processing domain was taken. Eventually Reas and Fry acquired the domain. Although the name had a combination of letters and numbers, it was still pronounced processing. They do not prefer the environment being referred to as Proce55ing. Despite the domain name change, Processing still uses the term p5 sometimes as a shortened name (p5 specifically is used, not p55).

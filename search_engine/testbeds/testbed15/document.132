@@ -1,0 +1,17 @@
+﻿Computer generated imagery (CGI) is now so good that it's often impossible to tell what was filmed and what only ever existed inside a computer.
+
+Game graphics aren't quite that good but they're getting close.
+
+Starting from a 3D model of a scene inside a computer, complete with virtual lighting and a virtual camera, how does the computer render a realistic representation of the model on to the grid of pixels that make up the screen? It's not a simple problem, but there are a few solutions.
+
+Probably the gold standard of computer graphics, used a lot these days in CGI, is a technique called ray tracing, which approaches the problem starting with the pixels. It begins by working out the path that a light ray would take coming from a pixel on the screen to a viewer in front of it. Then it just keeps following the ray backwards into the virtual world behind the screen, finding the closest object in the model that lies along the ray. The pixel gets the colour of that object because that's what the viewer would see if the model really existed on the other side of the screen.
+
+The colour of the object depends on the light falling on it, which in turn depends on the lights in the scene, the colour and transparency of the object itself and reflections and shadows from other objects. So the computer traces additional rays from the source of the first one to discover what the lighting situation is before it colours the pixel on the screen. If there's a lot of reflections and other effects then a lot of rays will be bouncing back and forth.
+
+All this ray tracing can take a long time. That's OK if you're making a movie and can spend hours behind the scenes rendering each second of final footage, but to render interactive graphics in real-time for games there are quicker approaches. The main one is rasterisation, which starts with the model instead of the pixels.
+
+The model in this case is made up of lots of triangular surfaces. Even curved surfaces are approximated by lots of little triangles stitched together. Using a bit of trigonometry to take perspective into account, and taking care not to draw distant triangles over near ones, each triangle is projected on to the two dimensional screen and the corresponding pixels are coloured. Rasterisation takes a less disciplined approach to working out the actual colour of the surface, using a big bag of tricks to approximate the effects of lighting, transparency, reflections and so on.
+
+There are other approaches, too, and its even possible to blend these and other techniques in hybrid graphics systems. But ray tracing and rasterisation have emerged as key technologies in the computer graphics world.
+
+Rasterisation is very fast, but it has many limitations which stop it reaching the photorealism of ray tracing. Photorealism is not always the goal, of course, but real-time ray tracing is just possible at present and as technology improves it is bound to eventually usurp rasterisation, even in games

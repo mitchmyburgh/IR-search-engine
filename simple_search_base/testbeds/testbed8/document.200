@@ -1,0 +1,13 @@
+Dope vector
+From Wikipedia, the free encyclopedia
+In computer programming, a dope vector is a data structure used to hold information about a data object,[1] e.g. an array, especially its memory layout.
+
+A dope vector typically contains information about the type of array element, rank of an array, the extents of an array, and the stride of an array as well as a pointer to the block in memory containing the array elements.
+
+It is often used in compilers to pass entire arrays between procedures in a high level language like Fortran.
+
+The dope vector includes an identifier, a length, a parent address, and a next child address. The identifier is an assigned name and may be unused. The length is the amount of allocated storage to this vector from the end of the dope vector that contains data of use to the internal processes of the computer. This length is called the offset, span, or vector length. The parent and child references are absolute memory addresses, or register and offset settings to the parent or child depending on the type of computer.
+
+Dope vectors are often managed internally by the operating system and allow the processor to allocate and de-allocate storage in specific segments as needed.
+
+Dope vectors may also have a status bit that tells the system if they are active; if it is not active it can be reallocated when needed. Using this technology the computer can perform a more granular memory management.

@@ -1,0 +1,794 @@
+
+
+|  |
+
+|  |
+
+|  
+---|---|---  
+  
+|
+
+|  
+|
+
+About Us | Newsletter Sign Up
+
+Home
+
+News
+
+Opinion
+
+Messages
+
+Authors
+
+Video
+
+Slideshows
+
+Teardown
+
+Education
+
+EELife
+
+Events
+
+Android
+
+Automotive
+
+Embedded
+
+Industrial Control
+
+Internet of Things
+
+MCU
+
+Medical
+
+Memory
+
+Open Source
+
+PCB
+
+Planet Analog
+
+Power Management
+
+Programmable Logic
+
+Prototyping
+
+SoC
+
+Test & Measurement
+
+Wireless & Networking
+
+|  
+|  |  |  |  |  |  
+  
+|  
+|  |
+
+Breaking News
+
+BLOG: Will Intel's Drone Chips Fly?
+
+NEWS & ANALYSIS: Graphene Patterned at Room Temp
+
+NEWS & ANALYSIS: IoT Network Calls for Sensors
+
+BLOG: $40B Power Management Market Ripe for Innovation
+
+NEWS & ANALYSIS: Analog, MEMS Drag on ST Results
+
+|  |  
+|  |
+
+|  |  |  |  |  |  |  
+---|---|---|---|---|---|---  
+|
+
+News & Analysis
+
+# Quantum Computer May Crack Public-Key Encryption
+
+RSA encryption not immune
+
+**R. Colin Johnson**
+
+3/10/2016 11:24 AM EST  
+13 comments
+
+NO RATINGS
+
+1 saves
+
+  * Login to Rate
+
+Tweet
+
+LAKE WALES, Fla.--No shortage of encryption and decryption schemes exists, but
+for those schemes that merely depend on the difficulty of finding the factors
+of two large prime numbers multiplied together, their days may be numbered,
+according to a team of researchers.
+
+Known as public-key encryption, this encryption method--the most notable
+example being the popular Rivest-Shamir-Adleman (RSA) scheme --appears to be
+doomed by quantum computing, according to Massachusetts Institute of
+Technology (MIT, Cambridge) theorists working with prototyping experts at the
+University of Innsbruck (Austria). Using an algorithm invented by MIT
+professor Peter Shor and made scalable by Professor Alexei Kitaev at the
+California Institute of Technology (CalTech, Pasadena), a quantum computer was
+built to prove the concept, as presented in the paper Realization of a
+Scalable Shor Algorithm.
+
+The block diagram for the quantum computer expandable to any number of RSA
+encryption sizes, such as 128- or 256-bits.  
+(Source: MIT)
+
+RSA algorithms use a public key to encrypt messages, but require a private key
+(usually the product of two large prime numbers) to decrypt them. RSA is often
+beefed up by "padding"--adding nonsense phrases at the beginning of an
+encrypted message (such as its most famous example, the world wonders)--or
+"hashing"--a function that maps data of variable lengths to data of fixed
+lengths. However, the leader of the project at MIT--professor Isaac Chuang--
+believes that even padding and hashing added to public-key-encryption can be
+cracked by future quantum computers with a little extra work.
+
+"Shor's quantum factoring algorithm would probably help with breaking schemes
+which employ padding and hashing, but it would not suffice by itself," Chuang
+told EE Times in an exclusive interview.
+
+**[ Understanding the IoT Platform Wars: Technical Trade Offs at ESC Boston]**
+
+Chuang, in fact, warns countries to use a different encryption scheme
+altogether to hide state secrets today, because when quantum computers become
+common in the future, it will be possible to uncover old state secrets that
+could still harm the national security of a sovereign state.
+
+On the other hand, when quantum computers do become common, it will be
+possible to use quantum cryptography methods to produce uncrackable codes--
+even by others who have quantum computers.
+
+"Quantum cryptography is a well-known scheme, which is uncrackable, as long as
+the laws of quantum physics are correct, as known today," Chuang told EE
+Times.
+
+Only the 3 and 5 results from the quantum computer match on the truth table by
+both existing on the intersecting factor lines.  
+(Source: MIT)
+
+Even making Shor's initial algorithm into a bullet-proof executable that could
+be extended to any length decryption key was a feat many years in the making,
+since Shor's original "thought experiment" was presented back in 1994. Even so
+it will be many many years before this proof-of-concept quantum computer can
+be extended to a size to solve today's modern 128- and 256-bit codes.
+
+Based on the University of Innsbruck prototype using Kitaev's approach that
+required 5-qubits (super cooled atoms in traps controlled by lasers) the MIT
+design was thus able to shave 6-qubits off the typical Shor-algorithm (that
+requires 7-qubits plus 4-qubits as a "cache"). Still, the biggest problem it
+could solve was the simplest of all factors of two prime numbers, namely 3 and
+5 (the two smallest prime numbers) as the factors of 15 (with a confidence of
+99 percent, unlike any high-school student who can solve the problem with 100
+percent confidence). The importance of the scheme, however, is its scalability
+that can theoretically someday tackle the 128- and 256-bit codes used by RSA.
+
+Chuang and colleagues admit that it would be prohibitively expensive today to
+use conventional components--super cooled atoms and lasers--to scale up to RSA
+sizes, but the point is that someday when tiny solid-state quantum computers
+are in general use they will be able to use this algorithm to crack today's
+commonly used codes--as well as to produce uncrackable codes using new
+quantum-mechanical methods.
+
+Funding was supplied by the Intelligence Advanced Research Project Activity
+(IARPA), and the MIT-Harvard Center for Ultracold Atoms, a National Science
+Foundation Physics Frontier Center.
+
+-- R. Colin Johnson, Advanced Technology Editor, EE Times
+
+**Related articles:**  
+
+  * IBM Solves Quantum Computing
+  * Is D-Wave a Quantum Computer?
+  * Quantum Highway Frictionless
+  * Quantum Computing: Diode-like Breakthrough Surmounts Roadblock
+  * NIST Hits Quantum Teleport Key Out of the Park
+
+_Article update: The headline now reads "Quantum Computer May Crack Public-Key
+Encryption" rather than the original title ("Quantum Computers Crack Public-
+Key Encryption"), which suggests more than one quantum computer and current
+widespread use. The article is about only one experimental quantum computer
+that was specifically built to prove a quantum computer could break public-key
+encryption._
+
+Email This
+
+Print
+
+Comment
+
+More Related Links
+
+Former Intel Exec Perlmutter to Chair ReRam Startup
+
+Analog Brain to Simulate Real Thing
+
+Researchers Develop Dissolvable Memristor
+
+JEDEC Adds UFS Card Spec
+
+Russia, U.S. Get Closer to Universal Memory
+
+Comments
+
+View Comments:  **Newest First** | Oldest First | Threaded View
+
+[close this box]
+
+Page 1 / 2   >   >>
+
+User Rank  
+Author
+
+Re: 256-bit RSA does not need quantum computer  
+R_Colin_Johnson   3/18/2016 5:19:17 PM
+
+NO RATINGS
+
+  * Login to Rate
+
+Yes, as wave.forest notes, Shor'e quantum formula does crack EEC and more
+easily than RSA since EEC uses 372- bit security, whereas Monern RSA uses 1024
+to 3073.  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Re: Quantum computers are analog  
+Terry.Bollinger   3/14/2016 7:57:31 AM
+
+NO RATINGS
+
+  * Login to Rate
+
+@traneus, you raise a good and simple point that is often overlooked about
+quantum computing, which is this: The parallel processing of a "superposition
+of states" that is a major part (but not the only part) of why quantum
+computing is so fast is in fact pretty much the same thing as what used to be
+called analog computing. An analog wave form is after all just a superposition
+of an infinite number of sinusoidal states, so processing that wave in clever
+ways allows processing power from all of those states at the same time.  
+  
+In quantum computing those sinusoidals are the different momentum states of
+the electrons, allowing you in effect to process at one time an "infinite"
+range of unique electron momentum states in the same circuit, at the same
+time. (I should note that there is also a more exotic, more powerful, and
+completely non-classical aspect of quantum computing that involves time. That
+part of QC cannot be replicated by any type of classical system, pretty much
+by definition, since only quantum systems can in certain ways be indifferent
+to the flow of classical time.)  
+  
+In the old days, pretty much the same idea of processing many electrons states
+at once was implmented much more robustly by having populations of electrons
+form classical (vs the much more delicate quantum) wave forms. We called those
+systems analog computers, and when set up properly they could converge with
+truly amazing speed to an approxmate result.  
+  
+And that also is the rub: "approximate" doesn't work when you are trying to
+factor a very larger number. It has to be exact!  
+  
+However, there are ways to be clever about all of this by dividing up the
+problem in ways where you use multiple approximations to build collectively
+build towards a single well-defined solution. So the problem you raise is very
+much valid, but not necessarily insurmountable. After all, even we humans with
+our slow, rather bizarre, and fully classical mix of analog and digital (yes,
+digital: we use pulse coding to preserve signal levels as they are transmitted
+along nerves) signal processing are capable at times of exquisite levels of
+precision through a combination of approximation and feedback that lets us
+converge to feats such as a precisely thrown major-league baseball. There is
+no fundamental reason why the larger tool set of quantum computing cannot be
+also be configured so that despite the approximations and limits on resolution
+at individual stages of processing, the final result can be very precise
+indeed.  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Re: 256-bit RSA does not need quantum computer  
+wave.forest   3/14/2016 6:05:15 AM
+
+NO RATINGS
+
+  * Login to Rate
+
+@ R_Colin_Johnson  
+  
+The Shor's algorithm works for ECC as well.  
+  
+Neither RSA nor ECC is secure under quantum computing. We all know it is
+coming. The question is "When?"  
+  
+Your article is very good to raise the awareness.  
+  
+On the other hand, the "May" in "Quantum Computer May Crack Public-Key
+Encryption" is not accurate either (LOL). It is not "May" - it is "Will". Your
+articles shows the advance. This advance is well accepted and this is why we
+are on post-quantum cryptography.  
+  
+But, please forgive my picky-ness. Thank you for this very good article.  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Re: Quantum Computers *TO* Crack Public-Key Encryption  
+Navelpluis   3/14/2016 3:52:04 AM
+
+NO RATINGS
+
+  * Login to Rate
+
+@ Colin  
+  
+You are ABSOLUTELY right. We should not sleep, but see the consequences when
+all our RSA secrets are on the streets in -perhaps- a couple of years from
+now. From government point of view this is a no-brainer: They certainly will
+invest in QC, depending of the regime you are living in -of course. Even for
+governmental critical communication: They should consider this fact too.  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Re: Quantum computers are analog  
+R_Colin_Johnson   3/13/2016 4:59:55 PM
+
+NO RATINGS
+
+  * Login to Rate
+
+You may be right there too, but the quantum computer makers claim its only a
+matter of time :)  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Quantum computers are analog  
+traneus   3/13/2016 4:00:04 PM
+
+NO RATINGS
+
+  * Login to Rate
+
+Quantum computers are analog computers, so are sensitive to noise. I expect
+that scaling up will turn out to be more difficult than expected.  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Re: 256-bit RSA does not need quantum computer  
+R_Colin_Johnson   3/13/2016 1:12:01 PM
+
+NO RATINGS
+
+  * Login to Rate
+
+Yes, I think you are right--ECC is definately what those who want their
+secrets to stay secret should use. I'm not sure if there is a theoretical
+quantum algorithm for breaking ECC, but there may be. If there is, that would
+seem to be MIT's obvious next step. Let me contact them and get back to you.
+Thanks for sharing your expertise in RSA and ECC.  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Rookie
+
+256-bit RSA does not need quantum computer  
+MortenC683   3/13/2016 5:35:52 AM
+
+NO RATINGS
+
+  * Login to Rate
+
+Where is the disconnect; As far as I know solving 128bit RSA is done in a few
+seconds on a standard PC. Seems 512bit RSA is cracked in hours these days.
+Furthermore, RSA key lenght for secure encryption went from 1024 bits to 2048
+bits some time ago and 3072bits is next - if RSA is used at all. Elliptic
+Curve Cryptpgtraphy is more popular. For ECC 256 bits are still considered OK,
+but 384 bits is next. I don't think MIT is confued about the difference
+between RSA and ECC? Can we have an update of this article that clarifies?  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Re: Quantum Computers *TO* Crack Public-Key Encryption  
+R_Colin_Johnson   3/11/2016 11:50:17 AM
+
+NO RATINGS
+
+  * Login to Rate
+
+You guys are all missing the point--MIT has cracked RSA and shown the proof of
+concept for 4-bits. Before this we all "knew"--meaning accepted the
+speculation--that quantum computers would eventually crack the prime-factor
+algorithm, but MIT has done it, and shown you step-by-step how to build a
+quantum computer to do it for any sized key. Yes, its prohibitively expensive
+now, but D-Wave and a new wave of companies (and nation states) now have
+explicit instructions on how to build an RSA cracker. Before it seemed to just
+be a matter of time, but now its proven! The code is cracked now--its just up
+to you to expand it from 4- to 128-bits using Shor's algorithm as extended by
+Kitaev. Don't use RSA if you never want your secrets revealed.  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+User Rank  
+Author
+
+Re: Quantum Computers *TO* Crack Public-Key Encryption  
+wave.forest   3/11/2016 10:17:24 AM
+
+NO RATINGS
+
+  * Login to Rate
+
+Of course this is a significant advance, but it is well accepted that quantum
+computing is coming and will break RSA and ECC. The problem is money and time.
+So there are post-quantum crypto research.  
+  
+The title is misleading. ;)  
+  
+
+Reply   Post Message   Messages List   Start a Board
+
+Page 1 / 2   >   >>
+
+|  |  |  |
+
+Most Recent Comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5/5/2016  
+9:22:56 AM
+
+**MWagner_MA** I agree it may sound harsh, but so is this industry.  I don't have time for companies that don't think through a product.  By comparison, I have NEVER had such an issue...
+
+5/5/2016  
+9:22:56 AM
+
+**MWagner_MA** I agree it may sound harsh, but so is this industry.  I don't have time for companies that don't think through a product.  By comparison, I have NEVER had such an issue...
+
+5/5/2016  
+9:18:14 AM
+
+**Peter Clarke** While it is possible you were a one-off, and it is not possible to prove the general case from a single specific instance, that is heavy criticism of ST and an endorsement of...
+
+5/5/2016  
+9:03:57 AM
+
+**dt_hayden** Meanwhile in the deep South, Tom was sure they said this was the fission lab.
+
+5/5/2016  
+9:03:14 AM
+
+**dt_hayden** Arriving at 6am, Stan finds being the earlybird, he is the worm.
+
+5/5/2016  
+7:45:17 AM
+
+**MWagner_MA** During a recent product development project, we abandoned ST because we had issues getting the hardware to perform as specified by their documentation using THEIR evaluation board. ...
+
+5/5/2016  
+7:00:32 AM
+
+**resistion** Maybe the materials too difficult or they're chasing different applications, who knows.
+
+5/5/2016  
+6:05:54 AM
+
+**Peter Clarke** Could the multi-layered PCM known as 3DXPoint face speed problems compared with DRAM and would an MLC addition to the technology be desirable? Weebit is young and just starting...
+
+5/5/2016  
+5:50:32 AM
+
+**DeeJee0** In my opinion, CMU demonstrates that the buz is not about Iot, but about smart services. In their projects, the make of sensors and transceivers is often not even mentioned. They...
+
+5/5/2016  
+5:07:32 AM
+
+**Ron Neale** Here is somebody who it might be thought would be in a position at Intel to understand the realities of 3DXPoint (TM) as against the hype. If the stacked PCM(?) is is great as...
+
+Navigate to Related Links
+
+Former Intel Exec Perlmutter to Chair ReRam Startup
+
+Analog Brain to Simulate Real Thing
+
+Researchers Develop Dissolvable Memristor
+
+JEDEC Adds UFS Card Spec
+
+Russia, U.S. Get Closer to Universal Memory
+
+#### Datasheets.com Parts Search
+
+##### 185 million searchable parts  
+(please enter a part number or hit search to begin)
+
+Cartoon
+
+Contest
+
+May 2016 Cartoon Caption Contest "That Bites!"
+
+"Your caption here!"
+
+38 comments
+
+All Cartoons
+
+April 2016 Cartoon Caption Contest "April Fool"
+
+"Your caption here!"
+
+95 comments
+
+All Cartoons
+
+Most Commented
+
+Most Popular
+
+ 95    Max Faces Cease-and-Desist Order
+
+ 57    Time Portal Tribute to Classic Science ...
+
+ 45    Brussels and Whats Really Important
+
+ 39    Happy Square Root Day!
+
+ 36    Standing at the Crossroads of Coherence & ...
+
+ 36    Google, Can You Teach Me to Play Go?
+
+ 33    MCU Guy, Meet FPGA; FPGA, Meet MCU Guy
+
+ 31    Fixing C
+
+ 29    To Sleep, Perchance to Dream, Perchance ...
+
+ 28    Uber-Cool iClever Folding Bluetooth Keyboard
+
+ 15    Intel to Exit Mobile SoC Business
+
+ 11    Novel Soldering Technique Using Pseudo TIG ...
+
+ 10    Activist Investor Attacks Vex Chipmakers
+
+ 10    How Intel Missed the Smartphone Call
+
+ 8    T.J. Rodgers Steps Down at Cypress
+
+ 7    Smartphone Shipments Down for First Time
+
+ 7    Trade Secret Bill Boosts Protection
+
+ 7    Microchip, Micrel CEOs Duel Over Deal
+
+ 4    Solar Plane Takes Off on Next Leg
+
+ 3    Radio Show Taps into Sensor Nets
+
+Like Us on Facebook
+
+EE Times on Twitter
+
+follow us
+
+Tweets about "from:eetimes"
+
+|  
+|
+
+_Sign up for EE Times newsletter_
+
+|  
+  
+  * **GLOBAL NETWORK**
+  * EE Times Asia
+  * EE Times China
+  * EE Times Europe
+  * EE Times India
+  * EE Times Japan
+  * EE Times Korea
+  * EE Times Taiwan
+  * EDN Asia
+  * EDN China
+  * EDN Japan
+  * ESC Brazil
+
+  * **UBM Communities**
+
+  * EE Times
+|
+
+  * EDN
+|
+
+  * EBN
+|
+
+  * DataSheets.com
+|
+
+  * Embedded
+|
+
+  * TechOnline
+|
+
+  * Design News
+|
+
+  * DesignCon
+|
+
+  * ESC
+
+  * **Working With Us:**
+  * About
+|
+
+  * Editorial Policies
+|
+
+  * Contact Us
+|
+
+  * Media Kits
+|
+
+  * Reprints
+
+  * Terms of Service
+|
+
+  * Privacy Statement
+|
+
+  * Copyright (C) 2016 UBM All Rights Reserved
+
+  
+  
+|  
+  
+  * To rate this item, click on a rating below.
+
+  *   *   *   *   *   * [close this box]
+
+  *  
+
+  * To save this item to your list of favorite EE Times content so you can find it later in your Profile page, click the "Save It" button next to the item.
+
+  *  
+
+  * If you found this interesting or useful, please use the links to the services below to share it with other readers. You will need a free account with each service to share an item via that service.
+
+  * Tweet This
+  * [close this box]
+
+Latest News
+
+Semiconductor News
+
+Blogs
+
+Message Boards
+
+Advanced Technology
+
+Analog
+
+Boards/Buses
+
+Electromechanical
+
+Embedded Tools
+
+FPGAs/PLDs
+
+IP/EDA
+
+Logic & Interfaces
+
+Memory
+
+Operating Systems
+
+Optoelectronics
+
+Passives
+
+Power
+
+Processors
+
+RF/Microwave
+
+Sensors & Transducers
+
+Test & Measurement
+
+ARM Techcon
+
+DesignCon
+
+Designers of Things
+
+ESC
+
+EETimes University
+
+Tech Papers
+
+Courses
+
+   Fundamentals
+
+Webinars
+
+Design West
+
+DesignCon
+
+ARM Techcon
+
+  *[NPG]: Nature Publishing Group
+  *[doi]: Digital Object Identifier
+  *[ISSN]: International Standard Serial Number
+  *[EISSN]: Electronic International Standard Serial Number
+

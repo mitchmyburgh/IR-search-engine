@@ -1,0 +1,17 @@
+The Ping-Pong virus (also called Boot, Bouncing Ball, Bouncing Dot, Italian, Italian-A or VeraCruz) is a boot sector virus discovered on March 1, 1988 at the University of Turin in Italy. It was likely the most common and best known boot sector virus until outnumbered by the Stoned virus.
+
+
+== Replication method ==
+Computers could be contaminated by an infected diskette, showing up as a 1 KB bad cluster (the last one on the disk, used by the virus to store the original boot sector) to most disk checking programs. Due to being labelled as bad cluster, MS-DOS will avoid overwriting it. It infects disks on every active drive and will even infect non-bootable partitions on the hard disk. Upon infection, the virus becomes memory resident.
+
+
+== Effect ==
+
+The virus would become active if a disk access is made exactly on the half-hour and start to show a small "ball" bouncing around the screen in both text mode (the ASCII bullet character "•") and graphical mode. No serious damage is incurred by the virus except on '286 machines (and also V20, '386 and '486), which would sometimes crash during the ball's appearance on the screen. The cause of this crash is the "MOV CS,AX" instruction, which only exists on '88 and '86 processors. For this reason, users of machines at risk were advised to save their work and reboot, since this is the only way to temporarily get rid of the virus.
+The original Ping Pong virus (Ping-Pong.A) only infects floppy disks. Later variants of this virus such as Ping-Pong.B and Ping-Pong.C also infect the hard disk boot sector as well. While the virus is active, one cannot replace the boot sector—it either prevents writing to it or it immediately re-infects it.
+Ping-Pong.A is extinct but the hard-disk variants can still appear.
+
+
+== References ==
+"Virus Descriptions : Ping-Pong". F-Secure. Retrieved June 6, 2006. 
+"SmartDefense Research Center". Zone Labs. 2002. Retrieved June 6, 2006.

@@ -1,0 +1,10 @@
+
+With this chapter, we begin our study of computer graphics by looking at the two-dimensional case. Things are simpler, and a lot easier to visualize, in 2D than in 3D, but most of the ideas that are covered in this chapter will also be very relevant to 3D.
+The chapter begins with four sections that examine 2D graphics in a general way, without tying it to a particular programming language or graphics API. The coding examples in these sections are written in pseudocode that should make sense to anyone with enough programming background to be reading this book. In the next three sections, we will take quick looks at 2D graphics in three particular languages: Java with Graphics2D, JavaScript with HTML <canvas> graphics, and SVG. We will see how these languages use many of the general ideas from earlier in the chapter.
+Pixels, Coordinates, and Colors
+________________________________________
+To create a two-dimensional image, each point in the image is assigned a color. A point in 2D can be identified by a pair of numerical coordinates. Colors can also be specified numerically. However, the assignment of numbers to points or colors is somewhat arbitrary. So we need to spend some time studying coordinate systems, which associate numbers to points, andcolor models, which associate numbers to colors.
+________________________________________
+2.1.1  Pixel Coordinates
+A digital image is made up of rows and columns of pixels. A pixel in such an image can be specified by saying which column and which row contains it. In terms of coordinates, a pixel can be identified by a pair of integers giving the column number and the row number. For example, the pixel with coordinates (3,5) would lie in column number 3 and row number 5. Conventionally, columns are numbered from left to right, starting with zero. Most graphics systems, including the ones we will study in this chapter, number rows from top to bottom, starting from zero. Some, including OpenGL, number the rows from bottom to top instead.
+

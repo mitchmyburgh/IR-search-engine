@@ -1,0 +1,61 @@
+Introduction to Virtualization and its Types
+
+Virtualization explained
+POST TAGS
+
+BUSINESS
+CLOUD
+VIRTUALIZATION
+SHARE THIS
+
+PrivacyBadger has replaced this Twitter button.
+PrivacyBadger has replaced this FacebookLike button.
+PrivacyBadger has replaced this Google+ button.
+PrivacyBadger has replaced this LinkedIn button.
+PrivacyBadger has replaced this Pinterest button.
+PRETTY POSTS
+
+21 (SAAS) SOFTWARE AS A SERVICE VENDORS; A BRIEF OVERVIEW
+LINUX DEVS STILL SCRATCHING HEADS OVER THE UEFI SECURE BOOT
+NEW HP MOBILE TO BE POWERED BY ANDROID OS
+BBM FOR IPHONE HAS BEEN WAITING IN APPLE’S QUEUE FOR ABOUT 2 WEEKS
+QUICKOFFICE BY GOOGLE GOES FREE, USE APP AND GET AN EXTRA 10GB STORAGE
+BY DARSHIK JARIWALA - APRIL, 2ND 2013
+Share
+Virtualization is not a new technology which has suddenly boomed, resulting in a lot of people wanting to know about it. The technology has always been there, but it is in the last few years that is has evolved tremendously and has created quite a buzz. For huge corporate sectors, it is no more a question, but an answer that provides the perfect solution.
+
+What is Virtualization?
+
+Virtualization is nothing but creating a virtual environment for any program to run on an existing platform as a guest, without interfering or interrupting with the host platform’s services or programs. The virtual environment running might be an Operating System, Storage device, Network or an Application server among other things.
+
+ 
+
+It would be easier to understand the concept with more details like it types and uses. Below are some Types of Virtualization:
+
+Operating System Virtualization
+
+Operating System Virtualization is a type of Virtualization concept that most users today are familiar with. It typically allows you to run and install any kind of Operating system like Windows 7 or a Linux distro on your existing operating system. It requires a Virtual Machine Manager (VMM) which allows you to install and manage multiple operating systems running simultaneously even (If your machine has powerful resources).
+
+The operating systems run virtually of course without the any knowledge that it is installed on an existing platform or that there is another virtual operating system running alongside (If you choose to install multiple operating systems on your VMM). VMware is probably the one of the most used Virtual Machine Manager’s today.
+
+In the IT industry, this serves as a huge benefit. It allows them to run their server on the virtual environment, which results in saving the costs of extra machine, hardware components, space, location fees, power management, etc.
+
+Network Virtualization
+
+Chances are that many enterprises; although having deployed and used this form of virtualization are unaware that they are indeed using it, they dont refer to it as virtualization, that’s all. It may not be used at end user level but the even small enterprises deploy it. In its very basic form, a VLAN created even on a small network can be termed as Network Virtualization. In Network Virtualization, Two (or more) virtual networks can be created within the  same physical network  belonging to the same IP range and yet they do not have the authorization to communicate with each other. They operate in their own logical network, with each logical network having different set of processes and functions to perform. They are segregated within the same physical network.
+
+Hardware Virtualization
+
+An individual independent segment of hardware may consist of smaller pieces of hardware from multiple locations but are treated as an single independent device. The process requesting the hardware is totally unaware and usually only alerts in case if the hardware requirements for the process isn’t met.
+
+In other instance, if any process is pre-allocated say about 30 percent of CPU resources, 30 percent of CPU will be set aside and allocated to only that process. The process isn’t allowed more than 30 percent of CPU resources, and if it comes to that, the processes are queued up and run on FIFO (First In First Out) basis.
+
+Storage Virtualization
+
+Storage Virtualization is of mainly 2 types, Block Virtualization and File Virtualization.
+
+In Block Virtualization, multiple storage devices are consolidated, which then actually appears as a single physical storage device. This helps the administrators in many ways such as Load Balancing, optimizing performance and speed. Technically, they actually RAID (Redundant Array of Independent Disks) these devices and configure it as per their needs. In fact, even something as simple as Partitioning you own hard drive into more than one partitions can be considered as an example.
+
+File Virtualization, as the name suggests, is the file or directory stored within the hard drive, which is located in a data center. The file may not be stored within your personal folder; in fact the folder might not even have your own name, it may be located in a data center across the globe.
+
+Apart from these, virtualization can also be defined in other ways such as Application virtualization,  Application Server virtualization, Service virtualization, Infrastructure virtualization and also Management virtualization and maybe more.The new standards and types have recently come to light as per the requirements of the IT industry. Some known companies in Virtualization services are Microsoft, IBM, HP, VMware, Citrix, etc.

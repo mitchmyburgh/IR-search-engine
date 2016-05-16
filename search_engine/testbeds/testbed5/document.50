@@ -1,0 +1,26 @@
+ Future of programming prediction No. 2: Databases will perform increasingly sophisticated analysis
+
+Once programmers ceded control of data to something called a "database," they stopped being "programmers" and started being "database users." This isn't a bad thing. After all, databases are engineered to be more efficient at handling data than anything a normal human programmer can create, especially under tight deadline. They're also (usually) very efficient at using RAM and juggling the memory hierarchy. Dumping numbers into a database and letting the database do its thing is more often than not the most intelligent solution to dealing with data, and it's going to get even more intelligent as the databases themselves get more intelligent with time.
+
+That's because databases of the future are certain to do more than just store numbers. Many database systems already have sophisticated report engines (aka "business intelligence"), and these extras will only become more powerful, enabling databases to run more sophisticated algorithms on tables, search more efficiently for patterns in the data, and do much of the work currently touted by the buzzword "big data."
+
+This power and sophistication will be driven by the cost of moving data around. Simply extracting the information from the database and handing it to a separate "big data" package will become increasingly time consuming and require much more programming. Leaving the data in the database and letting its engine perform the analysis will be much faster because it will limit the overhead of communication, as well as decrease the amount of programming necessary to extract value from the data store.
+
+Future of programming prediction No. 3: JavaScript for everything
+
+No, JavaScript won't be the only language in the programming world, especially given the surprising number of ads for Cobol programmers still being filed, but it will certainly begin to seem that way. JavaScript is inescapable on the browser, which now dominates almost everything a client computer does. Now the server side is embracing it with tools like Node.js.
+
+JavaScript will assuredly become more dominant in other areas as well. Once the only way into a smartphone was to write code in the native language demanded by the manufacturer: Objective-C for the iPhone; Java for Android; C# for Microsoft. Now most mobile developers can get the performance they want out of HTML5 applications running in browserlike views. The result may not be as zippy as native code, but the JavaScript is good enough and portable to the Web, too.
+
+The browser isn't just colonizing phones; it's eating entire platforms. Chrome OS and Chromebooks are making regular operating systems obsolete. Why worry about that layer when JavaScript and the browser can do everything?
+
+The mainframe will have Cobol. Biologists will probably stick with Python. Linux will be written in C. But almost everything else is fair game as JavaScript gobbles the world.
+
+Future of programming prediction No. 4: Android on every device
+
+When the browser doesn't win, Android is close behind. Camera designers, threatened by cellphones with good lenses, started putting Android on cameras, so now you can run Instagram on a Nikon. Does that make Nikon a computer company now? Does it even matter?
+
+There are Android refrigerators, car stereos, watches, televisions, even headphones. Some complain that the UI is too complicated because it can do too much, but that's missing the point. The UI layer can always be simplified. If Android is running underneath, the platform will dominate.
+
+It's going to get even more complicated. PC manufacturers are looking at the burgeoning tablet world and feeling left out. Their solution is to run Android on Windows and let people use their Android apps on their desktops, too. Some just run the stock Android emulators used by programmers, but others are looking beyond that to create brands like "PC Plus." Once Android takes over the PC, it may combine with the browser to push Windows native apps into a distant third place for mindshare on the box.
+

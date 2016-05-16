@@ -1,0 +1,13 @@
+Square Mobile Credit Card Reader App Makes a Great Simple Money Launderer
+
+A simple tool that can turn any iPhone into a credit card machine can also be a simple way for crooks to steal cash, hackers demonstrated this week. Square can eliminate the hassle of money laundering.
+
+Instead of stealing credit card numbers, buying items and then selling those items for cash, Square can deposit money directly into a user's account. Computer security experts from a firm called Aperture Labs described the process at the Black Hat security conference in Las Vegas.
+
+Square enables mobile credit card payments by inserting a small dongle into the headphone jack of an iPhone or iPad. A user swipes the credit card's magnetic stripe through a slit on the dongle, and credit card information is sent to the seller's Square account.
+
+Hacker Adam Laurie realized using the headphone jack meant the device was converting the magnetic strip information into sound waves that were interpreted by the app, according to a writeup by AFP. He realized he could trick the system into falsely reading audio data, so it would enter a transaction using a stolen credit card number.
+
+He inserted a different wire into the iPad's headphone jack, so the software thought a dongle was plugged in. Then he modified some software he had already written for translating magnetic stripe data (we mentioned he's a hacker, right?) and then typed in a credit card number. The data was converted to sound, and the app read the information as if a real card had been swiped. Then he could deposit funds into his Square account, which are delivered within a day.
+
+Laurie and co-hacker Zac Franken said they notified Square of the threat, but were told credit card traffic analysis would spot such malfeasance. Meanwhile, they have since learned the company is planning to release new dongles that encrypt data — which they currently do not. Looks like further motivation to keep your personal data secure.

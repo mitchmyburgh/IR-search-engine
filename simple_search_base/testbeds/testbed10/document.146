@@ -1,0 +1,148 @@
+Use of machine-learning algorithms for
+the automated detection 
+
+ cold-water
+coral habitats: a pilot study
+Autun Purser1,*, Melanie Bergmann2
+, Tomas Lundälv3
+, Jörg Ontrup4
+,
+Tim W. Nattkemper4
+
+INTRODUCTION
+There are a number of standard methodologies used
+to assess community structure from benthic video and
+still images. Assessments tend to quantify either numbers
+of individuals or the percentage of seabed covered
+by either a particular substrate or species within
+an image or video still (Jaap & McField 2001). How this
+is carried out varies with methodology. Perhaps the
+most commonly used method is the point quadrat
+method (Pielou 1974). This method entails overlaying
+the image or still with an array of points (number of
+points variable; increasing the number of points
+increases both accuracy and assessment effort) and
+quantifying the number of points intersecting with the
+various species and/or substrates within the image.
+Another approach is to map all the species and substrates
+present in an image onto a video or digital overlay
+and determine from this the percentage coverage
+of each organism or substrate (Andrew & Mapstone
+
+1987). Although the assessment effort is much higher
+with this second method, accuracy is greatly improved
+(Foster et al. 1991, Whorff & Griffing 1992).
+Accuracy and efficiency of these methods has been
+investigated in a selection of ecosystems, such as tropical
+coral reefs (Leujak & Ormond 2007). Their usefulness
+in some environments, such as within cold-water
+coral ecosystems, has not been rigorously assessed. In
+this pilot study, we compare the ability of these 2 methods
+to assess some aspects of cold-water coral community
+structure at Tisler Reef, Norway. Additionally
+these results are compared with those produced by a
+wholly new approach: the use of machine-learning
+algorithms in the automated identification and quantification
+of cold-water coral and sponge coverage
+within still images extracted from video footage.
+Cold-water coral ecosystems have been found
+throughout the world’s oceans (Roberts et al. 2006). In
+European waters, they are often associated with coldwater
+carbonate mounds, ridges at the edge of the continental
+shelf or at other elevated structures such as
+banks and sills (White et al. 2005, Dorschel et al. 2007).
+Key organisms in these ecosystems are the frameworkbuilding
+scleractinian corals (Roberts et al. 2006).
+These non-zooxanthellate animals form complex 3-
+dimensional reef structures as they excrete hard calcium
+carbonate skeletons during growth (Rogers 1999,
+Hovland 2008). As a reef develops over time, this structure
+can attain significant height above the surrounding
+seabed (De Mol et al. 2007) despite the slow
+growth rates of the corals themselves (Gass & Roberts
+2006, Orejas et al. 2008). In Europe, Lophelia pertusa
+is the most significant reef-building coral species
+(Wheeler et al. 2007), although Madrepora oculata can
+also be found performing this role at certain locations,
+often in close association with L. pertusa (Mortensen et
+al. 2008). The reef structures are characterized by high
+biodiversity (Jonsson et al. 2004, Roberts et al. 2008), as
+the dead skeletal material of the reef provides a useful
+substrate for sessile filter feeders such as sponges
+(Henry & Roberts 2007). Furthermore, the increased
+flow associated with elevation from the seabed
+increases food supply (Thiem et al. 2006, Kiriakoulakis
+et al. 2007). Many species of small and juvenile fish use
+these reef structures as nursery habitat, as they provide
+shelter from predation (Reed 2002). Commercial
+fish densities within the reef environment are often
+higher than in the surrounding ocean (Husebø et al.
+2002, Costello et al. 2005). Although cold-water corals
+have been known since the 18th century (Roberts et al.
+2003), the extent of seabed covered by these organisms
+and associated ecosystems, as well as their potential
+importance to commercial fisheries, only emerged
+in the late 20th century (Costello et al. 2005). Advances
+in marine sampling technology indicate that these ecosystems are relatively common in European waters,
+and many reefs have been located in recent years
+(Roberts et al. 2005, Wienberg et al. 2008). Unfortunately,
+these discoveries are rarely of pristine reefs.
+The majority show signs of impacts from towed fishing
+gears (Fosså et al. 2002). Common indicators of such
+impacts are dislodged blocks of live coral, snagged and
+abandoned fishing equipment and extended areas of
+broken coral fragments amongst trawl tracks. Various
+legal attempts to protect a percentage of these reefs
+against further damage have been made by a number
+of nations (Armstrong & van den Hove 2008) with variable
+success (Davies et al. 2007)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

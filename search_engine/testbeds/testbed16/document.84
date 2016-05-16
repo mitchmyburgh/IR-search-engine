@@ -1,0 +1,41 @@
+How Google Drive Could Kill Cloud Storage Privacy for Everyone: 3rd Party Vulnerabilities
+Apr 25, 2012
+In 1998 I helped to create one of the first modern cloud services at Exodus Communications, and since then there has been a nagging concern in the back of my mind that legacy government interpretations of our Fourth Amendment rights would smack down enterprise adoption of cloud computing. That didn’t happen, thankfully. But now the Terms of Service for the new Google Drive may open a new legal argument that hurts adoption of cloud storage.
+
+To see why this can happen, it helps to understand how courts interpret the Fourth Amendment to the US Constitution, which provides that the people shall “be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures…” (The Electronic Frontier Foundation has a great write up on this in their Surveillance Self-Defense write-up.)
+
+It also provides a method for an unreasonable search to be called “reasonable” and, therefore, constitutionally valid. It’s called a warrant, issued “upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.”
+
+So that means  law enforcement ought to justify itself before conducting invasive searches, and if they don’t, what they find is inadmissible in court. But a warrant isn’t necessary when items are in plain view, or when a person consents to being searched.
+
+Leave it to the courts to figure out when a search requires a warrant. They found that law enforcement requires a warrant if you had a “reasonable expectation of privacy.” That was before the cloud, back in 1967, involving wiretapping of a phone booth, and that’s where Google’s problems begin.
+
+The court’s “reasonable expectation of privacy” test says you had to have a reasonable expectation that your stuff was private, but that it also must be something that society itself would objectively recognize as reasonably private. So you had to think it was private, and everyone else has to think it would have been too. Don’t forget this requirement, as it’s the one that is going to smack Google upside the head.
+
+The “third-party doctrine” interpretation of the Fourth Amendment is the one that could have spelled doom for the modern cloud. That interpretation says that if your data is at a third party, it’s not protected by the Fourth Amendment. Ouch. The classic example here is that police do not need a warrant to know what calls you made because the call record data is held by a service provider. What you said was private; that you made a call is not.
+
+Let’s generalize this to the cloud. Historically, Dropbox and Microsoft’s SkyDrive and Trend Micro’s SafeSync let you keep your copyright and IP rights to the files you upload to their cloud storage. This is a sane and normal approach for businesses. If you keep your own copyright to things you put in the cloud, you can argue that you had a reasonable expectation to privacy, and your cloud files are subject to Fourth Amendment protections even though they are at a third party cloud service.
+
+Leave it to Google to launch a service with terms of service that break this dynamic. Look at these terms of service differences. Italics are mine. (thanks Cnet for gathering these links!)
+
+Dropbox — terms here:
+
+“Your Stuff & Your Privacy: By using our Services you provide us with information, files, and folders that you submit to Dropbox (together, “your stuff”). You retain full ownership to your stuff. We don’t claim any ownership to any of it. These Terms do not grant us any rights to your stuff or intellectual property except for the limited rights that are needed to run the Services, as explained below.”
+
+Microsoft’s SkyDrive — terms here:
+
+“5. Your Content: Except for material that we license to you, we don’t claim ownership of the content you provide on the service. Your content remains your content. We also don’t control, verify, or endorse the content that you and others make available on the service.”
+
+Google Drive — terms here:
+
+“Your Content in our Services: When you upload or otherwise submit content to our Services, you give Google (and those we work with) a worldwide licence to use, host, store, reproduce, modify, create derivative works (such as those resulting from translations, adaptations or other changes that we make so that your content works better with our Services), communicate, publish, publicly perform, publicly display and distribute such content.
+
+The rights that you grant in this licence are for the limited purpose of operating, promoting and improving our Services, and to develop new ones. This licence continues even if you stop using our Services (for example, for a business listing that you have added to Google Maps).”
+
+“Don’t be evil, unless it’s convenient.”
+
+Google, WTF? Your terms of service for Google Drive absolutely destroy any argument that content uploaded to your cloud storage service has a reasonable expectation of privacy. Therefore, data on Google Drive is not subject to subpoena and is clearly open to viewing by law enforcement under the Third Party Doctrine.
+
+But wait, it gets better. Google is one of the largest cloud providers on the planet. Once Google decimates Fourth Amendment protections for their cloud storage, how long will it take for law enforcement and courts to make the argument that all cloud storage shouldn’t be protected by the Fourth Amendment? Not long. Google is a large corporate citizen, large enough to set precedent with their actions.
+
+Here’s hoping the EFF shames Google into at least being less evil. In the meantime, I’m sticking with SafeSync.

@@ -1,0 +1,66 @@
+In computer science, a container is a class, a data structure, or an abstract data type (ADT) whose instances are collections of other objects. In other words, they store objects in an organized way that follows specific access rules. The size of the container depends on the number of objects (elements) it contains. Underlying implementation of various container types may vary in space and time complexity, which provides flexibility in choosing the right implementation for a given scenario.
+
+
+== Overview ==
+Containers can be looked at in three ways:
+access, that is the way of accessing the objects of the container. In the case of arrays, access is done with the array index. In the case of stacks, access is done according to the LIFO (last in, first out) order (alternative name: FILO, first in, last out) and in the case of queues it is done according to the FIFO (first in, first out) order (alternative name: LILO, last in, last out);
+storage, that is the way of storing the objects of the container;
+traversal, that is the way of traversing the objects of the container.
+Container classes are expected to implement methods to do the following:
+create an empty container;
+insert objects into the container;
+delete objects from the container;
+delete all the objects in the container (clear);
+access the objects in the container;
+access the number of objects in the container (size).
+Containers are sometimes implemented in conjunction with iterators.
+
+
+== Single value and associative containers ==
+Containers can be divided into two groups:
+single value containers;
+associative containers.
+
+
+=== Single value containers ===
+Each object is stored independently in the container and it is accessed directly or with an iterator.
+
+
+=== Associative containers ===
+An associative array, map, or dictionary is a container composed of (key,value) pairs, such that each key appears at most once in the container. The key is used to find the value, the object, if it is stored in the container.
+
+
+== Examples of containers ==
+Containers are divided in the Standard Template Library into associative containers and standard sequence containers. Besides these two types, so-called container adaptors exist. Data structures that are implemented by containers include arrays, lists, maps, queues, sets, stacks, tables, trees, and vectors.
+
+
+== Graphic containers ==
+Widget toolkits use special widgets also called Containers to group the other widgets together (windows, panels, ...). Apart from their graphical properties, they have the same type of behavior as container classes, as they keep a list of their child widgets, and allow to add, remove, or retrieve widgets amongst their children.
+
+
+== Implementations ==
+.NET: System.Collections (MSDN)
+ActionScript3: AS3Commons Collections Framework
+C++: C++ Standard Library (SC++L) or the obsolete Standard Template Library (STL)
+Java: Java collections framework (JCF)
+Objective-C: part of the Foundation Kit
+PL/SQL Collections
+Python: has built in containers list, dict, tuple & set and can be further extended by the collections module
+Scala Mutable and Immutable Collections in the packages scala.collection.mutable and scala.collection.immutable
+
+
+== See also ==
+List of data structures
+Standard Template Library#Containers
+Collection (abstract data type)
+Stack data structure
+Java ConcurrentMap
+
+
+== References ==
+
+
+== External links ==
+Container Data Structure Declaration and Initialization
+Container data structures
+Python SortedContainers module A fast implementation of sorted list, sorted dict, and sorted set data types in Python.

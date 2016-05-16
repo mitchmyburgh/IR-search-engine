@@ -1,0 +1,34 @@
+Choosing a Data Structure – Examples of applications using data structures
+We are going to show several problems, where the choice of an appropriate data structure is crucial to the efficiency of their solution. The purpose of this is to show you typical situations, in which the reviewed data structures are used and to teach you in what scenarios what data structures you should use.
+
+Generating Subsets
+It is given a set of strings S. For example S = {ocean, beer, money, happiness}. The task is to write a program, which prints all subsets of S.
+How to implement this algorithm? We have to choose appropriate data structures, right?
+We can start with the data structure keeping the initial set of elements S. It can be an array, linked list, dynamic array (List<string>) or set, imple­mented as SortedSet<string> or HashSet<string>. To answer the question which structure is the most appropriate, let’s think of which are the operations we are going to do on this structure. We can think of only one operation – traversing through all the elements of S. This operation can be implemented efficiently with any of these structures. We choose an array because it is the simplest data structure of all and it is easy to work with.
+The next step is to pick a structure in which we will store one of the subsets we generate, for example {ocean, happiness}. Again we ask ourselves the question what are the operations we execute on this subset of words. The operations are a check whether an element exists and an addition of an element, right? Which data structure quickly implements both opera­tions? The arrays and lists do not search quickly, dictionaries store key-value pairs, which is not our case. Almost no options are left, so we are going to see what the data structure set offers. It supports a quick searching and addition. Which implementation to choose – SortedSet<string> or HashSet<string>? We do not have a requirement to sort the words in alphabetical order, so we choose the faster implementation – HashSet<string>.
+
+Sorting Students
+It is given a text file, containing the data of a group of students and courses which they attend, separated by |. 
+Write a program printing all courses and the students, who have joined them, ordered by last name, and then by first name (if the last names match).
+We can implement the problem using a hash-table, which will hold a list of students by a course name. We are choosing a hash-table, because we can quickly search by course name in it.
+In order to meet the requirements for an order by name and surname, we are going to sort the particular list of students from each course, before we print it. Another option is to use SortedSet<T> for the students attending each course (because it is internally sorted), but since one can have students with the same name, we have to use SortedSet<List<String>>. It becomes too complicated. We choose the easier way – using List<Student> and sorting it before we print it.
+In any case we will have to implement the IComparable interface so we can define the order of the elements of type Student according to the task requirements. It is important to firstly compare the family names and if they are the same to compare the first names. We remind that in order to sort the elements of a given class it is explicitly necessary to define the logic of their order. In .NET Framework this is done by the IComparable<T> interface (or through lambda functions like we shall see in the chapter “Lambda Expressions and LINQ”). 
+
+Sorting a Phone Book
+It is given a text file, containing people’s names, their city names and phone numbers.
+The problem can be solved in many ways, for example we sort by two criteria: firstly by city name and secondly by person name and then we print the phone book.
+However, let’s solve the problem without sorting, but by using the standard data structures in .NET Framework. We want the city names to be sorted. This means that it is best to use a data structure, which internally keeps the elements sorted. Such as, for example, a balanced search tree – SortedSet<T> or SortedDictionary<K,T>. Since every record from the phone book contains beside a city name – other data, it is more convenient to have a SortedDictionary<K,T>, which keeps a list of people’s names and their phone numbers. We want the list of the people’s names from every city to be sorted in alphabetical order by name. Hence, we can use the data structure SortedDictionary<K,T> again. The key will be the name of the person and its value will be his phone number.
+At the end we get the nested structure SortedDictionary<string, SortedDictionary<string, string>>.
+
+Searching in a Phone Book
+Here is another problem, so we can strengthen the way, in which we think in order to choose appropriate data structures. A phone book is stored in a text file, containing names of people, their city names and phone numbers. People’s names can be in the format first name or nickname or first name + last name or first name + surname + last name.
+It is possible several people to be given under the same name or even the same city. It is possible someone to have several phone numbers. In this case he is given several times in the input file. Phone book could be huge (up to 1,000,000 records).
+A file holding a sequence of queries is given. The queries are two types:
+-Search by name / nickname / surname / last name. The query looks like this: list(name).
+-Search by name / nickname / surname / last name + city name. The query looks like this: find(name, town).
+
+Choosing a Data Structure – Conclusions
+By the many examples it is clear that the choice of an appropriate data structure is highly dependable on the specific task. Sometimes data structures have to be combined or we have to use several of them simultaneously.
+What data structure should we pick mostly depends on the operations we will perform, so always ask yourselves "what operations should the structure, I need, perform efficiently". If you are familiar with the operations, you can easily conform which structure does them most efficiently and at the same time is easy and handy.
+In order to efficiently choose an appropriate data structure, you should firstly invent the algorithm, which you are going to implement, and then look for an appropriate data structures for it.
+

@@ -1,0 +1,31 @@
+tableau algorithms for Description Logic and
+thorough complexity analysis
+Schmidt-Schauß and Smolka describe the first complete (tableau-based)
+subsumption algorithm for a non-trivial DL;
+ALC: propositionally closed (negation, disjunction, existential restrictions);
+complexity result: subsumption in ALC is PSPACE-complete.
+Exact worst-case complexity of satisfiability and subsumption for various
+Description Logic (DFKI, University of Rome I).
+Development of tableau-based algorithms for a great variety of DLs
+(DFKI, University of Rome I, RWTH Aachen, ...).
+First DL systems with tableau algorithms: Kris (DFKI), Crack (IRST Trento);
+first optimization techniques for DL systems with tableau algorithms.
+Schild notices a close connection between DLs and modal Description Logics.
+
+algorithms and systems for very expressive Description Logic
+(e.g., without finite model property)
+Decidability results for very expressive Description Logic by translation into PDL
+(propositional dynamic logic) (Uni Roma I), strong complexity results;
+motivated by database applications.
+Intensive optimization of tableau algorithms (Uni Manchester, IRST Trento,
+Bell Labs): very efficient systems for expressive Description Logic.
+Design of practical tableau algorithms for very expressive DLs
+(Uni Manchester, RWTH Aachen).
+
+Complexity: satisfiability/subsumption in ALC with transitive roles
+and role hierarchies is EXPTIME-complete (translation into PDL).
+The tableau algorithm can handle role hierarchies by replacing
+the condition "r(x,y) in A" by "s(x,y) in A for a sub-role s of r".
+The tableau algorithm can handle transitive roles by an additional rule:
+if ∀ r . D(x) and r(x,y) is in A and r is transitive, then add ∀ r . D(y).
+Both ideas must be combined; blocking required for termination.

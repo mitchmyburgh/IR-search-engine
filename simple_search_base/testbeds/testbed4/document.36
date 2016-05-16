@@ -1,0 +1,150 @@
+To overcome this limitation, instead of individual
+planar polygons, convex solid occluders were used,
+such as boxes and cylinders as visibility blocking
+proxies for large isolated structures. For the moment,
+solid occluders are manually defined (modeled). A
+convex solid, when projected on an arbitrary plane, is
+guaranteed to produce a convex polygon. The convex
+frustum of the projected polygon is the union of the
+frusta that would be generated from the individual
+planes of the faces of the solid occluder, thus
+bypassing the need to merge frusta in order to avoid
+partial occlusion.
+Solid occluders are easy and efficient to define in
+open space environments and therefore the method is
+most suitable for such scenes. In enclosed (indoor)
+static environments, although the application of the
+method is equally feasible, it does not provide any
+gain when compared with the simpler cell-and-portal
+occlusion culling schema. Shadow frustum culling
+using solid occluders is inherently compatible with
+moving geometry as the solid blockers can be
+transformed in space in the same manner as the rest
+of the geometry, without any computational
+overhead.
+For each frame, the solid occluder frustum is
+generated as follows (Fig. 3). The view-dependent
+silhouette of the solid occluder is extracted by
+determining the edges belonging to adjacent
+polygons, which are not both visible or hidden
+simultaneously:
+0 0
+( , )
+( ) ( ) 0
+i j
+i i j j
+edge tr tr Silhouette
+N P C N P C
+? ?
+? · - ? · ? · - ? = ?? ?? ?? ??
+?? ?? (1)
+where k N
+??
+is the normal vector of triangle k tr , k 0 P
+the triangle’s first point and C the viewpoint.
+The silhouette edges do not lie on the same plane in
+general. Therefore, a cap (near plane) for the semiinfinite
+frustum must be approximately constructed,
+based on the relative position of the viewer and the
+silhouette points. If the near plane is too close,
+geometry that is contained in the convex hull of the
+edge poly-line may be falsely eliminated. Similarly,
+choosing a plane near the average of the silhouette
+points can be a disastrous selection for elongated
+solid occluders in the view direction for the same
+reason (Fig. 4). Therefore, the near plane of the
+frustum is chosen so that it passes through the furthest
+point of the silhouette line relative to the viewer. The
+normal vector of the near frustum cap is the average
+directional vector between each silhouette point and
+the viewpoint C :
+( ) ( ) 1 1
+0 0
+K K
+near i i
+i i
+N C S C S
+- -
+= =
+=S - S - ??
+(2)
+where i S is the i-th point out of the K silhouette
+vertices.
+The effectiveness of the solid occluders becomes
+apparent when the viewpoint is moving among
+buildings or other isolated obstacles at inspection
+distance (near). Planar occluders would mostly
+produce partial occlusion when the viewer is not
+facing the main sides of the geometry straight on.
+Most of the time, we view structures and moving
+objects from odd angles and this is where the solid
+occluders technique provides a unified and
+contiguous frustum to take into account all planar
+sides at once.
+Figure 3. Frustum creation, from silhouette
+determination to (convex) frustum generation.
+The near cap of the frustum passes from the
+furthest silhouette point to the camera position.
+3. OCCLUDER SELECTION
+As explained by Hudson et al. [Hud97a], a scene may
+contain too many occluders for a real-time
+application to be able to test each object against each
+one of them. For instance, in a finished virtual reality
+production, such as the “Walk through Ancient
+Olympia” by the Foundation of the Hellenic World
+(FHW) [Gai04a], a virtual world may contain more
+than 200 occluder planes and solids. Therefore, an
+optimal set of occluders has to be selected for each
+frame at run-time in order to keep the number of
+“active” occluder primitives to a minimum. For this
+task, a ranking function planar f and solid f has to be
+devised for each type of blocking primitives that
+takes into account the solid angle of the frustum. For
+planar occluders, Hudson et al. use the area-angle
+approximation presented by Coorg and Teller
+[Coo97a]:
+planar 2
+f AN V
+V
+= - ·
+?? ??
+?? (3)
+where A is the area of a planar occluder, N
+??
+is its
+normal vector and V
+??
+is the vector from the
+viewpoint to the center of the occluder. The criterion
+of eq. (3) provides a reliable measure of occluder
+importance. For solid occluders we use an
+approximation formula, which depends on the
+projection on the view plane of the solid occluder’s
+volume Vol and the squared distance of the occluder
+from the viewpoint:
+2
+solid 3
+f Vol V Vol
+V V
+-
+= · =
+??
+?? ?? (4)
+Note that the above ranking function for the solid
+occluders does not depend on angular attributes as
+the near plane of the constructed frustum always
+faces the center of projection (see eq. (2)). planar f and
+solid f are balanced and do not need further biasing to
+become compatible. At each frame cycle, an active
+set of occluders, consisting of both solid and planar
+ones, is determined by evaluating and sorting the
+result of the corresponding ranking function for each
+one of them. Please note that due to time coherence
+and the fact that the occluder selection is not critical
+for the visual quality, it is not necessary to perform
+this sorting task at every frame. A typical size for the
+active occluders set is 10 – 20 occluders, depending
+on the field of view. For instance, our framework,
+running on a four-wall surround-screen platform, uses
+a set of 15 active occluders.
+4.

@@ -1,0 +1,24 @@
+The Wavelet Tree is a succinct data structure to store strings in compressed space. It generalizes the  and  operations defined on bitvectors to arbitrary alphabets.
+Originally introduced to represent compressed suffix arrays, it has found application in several contexts. The tree is defined by recursively partitioning the alphabet into pairs of subsets; the leaves correspond to individual symbols of the alphabet, and at each node a bitvector stores whether a symbol of the string belongs to one subset or the other.
+The name derives from an analogy with the wavelet transform for signals, which recursively decomposes a signal into low-frequency and high-frequency components.
+
+
+== Properties ==
+Let  be a finite alphabet with . By using succinct dictionaries in the nodes, a string  can be stored in , where  is the order-0 empirical entropy of .
+If the tree is balanced, the operations , , and  can be supported in  time.
+
+
+=== Access operation ===
+A wavelet tree contains a bitmap representation of a string. If we know the alphabet set, then the exact string can be inferred by tracking bits down the tree. To find the letter at ith position in the string :-
+If the ith element at root is 0, we move to the left child, else we move to the right child. Now our index in the child node is the rank of the respective bit in the parent node. This rank can be calculated in O(1) by using succinct dictionaries. Along with moving to a child we also refine our alphabet to the respective subset. These steps are repeated till we reach a leaf, where we are left only with one letter in our alphabet, which is the one we were looking for. Thus for a balanced tree, any S[i] in string S can be accessed in   time.
+
+
+== Extensions ==
+Several extensions to the basic structure have been presented in the literature. To reduce the height of the tree, multiary nodes can be used instead of binary. The data structure can be made dynamic, supporting insertions and deletions at arbitrary points of the string; this feature enables the implementation of dynamic FM-indexes. This can be further generalized, allowing the update operations to change the underlying alphabet: the Wavelet Trie exploits the trie structure on an alphabet of strings to enable dynamic tree modifications.
+
+
+== Further reading ==
+Wavelet Trees. A blog post describing the construction of a wavelet tree, with examples.
+
+
+== References ==

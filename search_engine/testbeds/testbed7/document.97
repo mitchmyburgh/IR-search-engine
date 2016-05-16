@@ -1,0 +1,58 @@
+Dashboards
+Google Play Install Stats
+
+The Google Play Developer Console also provides detailed statistics about your users' devices. Those stats may help you prioritize the device profiles for which you optimize your app.
+This page provides information about the relative number of devices that share a certain characteristic, such as Android version or screen size. This information may help you prioritize efforts for supporting different devices by revealing which devices are active in the Android and Google Play ecosystem.
+
+This data reflects devices running the latest Google Play Store app, which is compatible with Android 2.2 and higher. Each snapshot of data represents all the devices that visited the Google Play Store in the prior 7 days.
+
+Platform Versions
+This section provides data about the relative number of devices running a given version of the Android platform.
+
+For information about how to target your application to devices based on platform version, read Supporting Different Platform Versions.
+
+Version	Codename	API	Distribution
+2.2	Froyo	8	0.1%
+2.3.3 -
+2.3.7	Gingerbread	10	2.2%
+4.0.3 -
+4.0.4	Ice Cream Sandwich	15	2.0%
+4.1.x	Jelly Bean	16	7.2%
+4.2.x	17	10.0%
+4.3	18	2.9%
+4.4	KitKat	19	32.5%
+5.0	Lollipop	21	16.2%
+5.1	22	19.4%
+6.0	Marshmallow	23	7.5%
+
+Data collected during a 7-day period ending on May 2, 2016. 
+Any versions with less than 0.1% distribution are not shown.
+
+Note: This data is gathered from the new Google Play Store app, which supports Android 2.2 and above, so devices running older versions are not included. However, in August, 2013, versions older than Android 2.2 accounted for about 1% of devices that checked in to Google servers (not those that actually visited Google Play Store).
+
+Screen Sizes and Densities
+This section provides data about the relative number of devices that have a particular screen configuration, defined by a combination of screen size and density. To simplify the way that you design your user interfaces for different screen configurations, Android divides the range of actual screen sizes and densities into several buckets as expressed by the table below.
+
+For information about how you can support multiple screen configurations in your application, read Supporting Multiple Screens.
+
+ldpi	mdpi	tvdpi	hdpi	xhdpi	xxhdpi	Total
+Small	2.1%						2.1%
+Normal		4.5%	0.1%	41.1%	24.9%	15.1%	85.7%
+Large	0.2%	4.6%	2.2%	0.5%	0.5%		8.0%
+Xlarge		3.2%		0.3%	0.7%		4.2%
+Total	2.3%	12.3%	2.3%	41.9%	26.1%	15.1%
+
+Data collected during a 7-day period ending on May 2, 2016. 
+Any screen configurations with less than 0.1% distribution are not shown.
+
+Open GL Version
+This section provides data about the relative number of devices that support a particular version of OpenGL ES. Note that support for one particular version of OpenGL ES also implies support for any lower version (for example, support for version 2.0 also implies support for 1.1).
+
+
+To declare which version of OpenGL ES your application requires, you should use the android:glEsVersion attribute of the <uses-feature> element. You can also use the <supports-gl-texture> element to declare the GL compression formats that your application uses.
+
+OpenGL ES Version	Distribution
+2.0	49.6%
+3.0	41.4%
+3.1	9.0%
+Data collected during a 7-day period ending on May 2, 2016

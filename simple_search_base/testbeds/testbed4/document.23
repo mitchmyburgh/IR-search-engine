@@ -1,0 +1,41 @@
+The objective function is defined such that its
+minimization drives the mesh vertices to locations that
+improve the mesh, with respect to some quality measure.
+If this objective function is minimized directly, with respect
+to the real coordinates of the vertices, the search
+direction for the minimization may indicate vertex
+movement off the original surface mesh. To constrain
+the movement of the vertices to the discrete surface, the
+optimization must be performed with respect to the
+coordinates of the vertices in a 2D parametric space
+corresponding to the surface mesh. Assuming that there
+is no smooth surface underlying the discrete surface, one
+of several methods can be used to derive such a global
+parametric space from the surface mesh [11–15]. However,
+most of these methods involve substantial cost
+
+since they require the solution of a large system of
+equations that may be nonlinear.
+In this work, instead of using a global parametric
+space derived from the entire mesh, nodes are repositioned
+in a series of local parametric spaces. The local
+parametric spaces are derived from a mapping of mesh
+edges and triangular facets of mesh faces to canonical
+elements in 2D space, as is commonly done in finite
+element methods [16, 17]. Vertices on the boundary of
+the surface mesh (i.e., on a model edge) move in parametric
+spaces of boundary edges of the original mesh.
+The parametric space of each boundary mesh edge is
+derived by mapping it to a unit line segment along the
+x-axis, giving rise to parametric coordinate 0 £ s0 £ 1.
+Vertices in the interior of the surface mesh (i.e., on a
+model face) move in parametric spaces derived from
+faces of the original mesh. The parametric space for a
+mesh triangle is derived using a barycentric mapping
+[17], resulting in parametric coordinates 0 £ (s1, s2) £
+1 (Fig. 1a). Quadrilaterals and more general polygons
+are considered to be made up of triangular facets
+(Fig. 1b) and a parametric space is derived for each facet
+as before. The facetization of polygons is computed by
+choosing a central point and connecting it to the polygon
+edges. To choose the central point, a full quadric

@@ -1,0 +1,72 @@
+
+ Project 5: Topological Sort 
+ Educational Objectives: On successful completion of this assignment, the student should be able to: 
+ Define and discuss ungraph (aka undirected graph) and digraph (aka directed graph) as abstract data types. 
+ Give examples of ungraphs and digraphs. 
+ Give examples of digraphs with directed cycles. 
+ A directed graph with no directed cycles is called a directed acyclic graph or DAG. Give examples of: 
+   Digraphs that are not DAGs 
+   DAGs whose underlying ungraph has (undirected) cycles 
+   DAGS whose underlying ungraph has no cycles 
+ Define and give examples of a topological sort order for the vertices of a DAG. 
+ Describe several applications that are modelled by DAG and how a topological sort order is important for the application. 
+ Describe two distinct algorithms for analyzing a directed graph for cycles and producing a topological sort order when the digraph is a DAG. (Such an algorithm is called a Topological Sort.) 
+ Implement a Topological Sort algorithm. 
+Background Knowledge Required: Be sure that you have mastered the material in these lecture notes and textbook chapters before beginning the project:  Abstract Data Types,  Sets,  Binary Trees and Iterators,  Introduction to Graphs, plus Ch 22, 23 of [Cormen et al]. 
+ Operational Objectives: Implement topological sort as a function template that operates on the graph public interfaces defined in igraph.h. Template parameters specify the particular graph type and the return buffer type. Also produce a representation of a DAG that has some complexity, as defined in the specs below.  
+Deliverables:Two files: 
+topsort.h # contains topsort function template
+bigdaggy  # contains your DAG satisfying the complexity requirements
+Procedural Requirements 
+ Begin by copying the files LIB/cpp/igraph.h and LIB/proj5/* into your project directory. The directory will then contain the following files: 
+   igraph.h        # header file defining integer graph classes
+figraph.cpp     # general graph tester
+ftopsort.cpp    # topological sort functionality test
+dag1            # directed graphs in format expected by test harnesses
+dag2
+dag3
+makefile        # builds both test executables using your topsort.h
+proj5submit.sh  # submits project (chmod 700)
+ Create two more files: 
+topsort.h       # contains topsort function template
+bigdaggy        # specs graph with
+                # 200 vertices at least 300 edges
+                # several undirected cycles
+                # no directed cycles
+   Note that bigdaggy specs a graph with a good bit of complexity. Make certain that your choice for vertex ordering is unrelated to a topological sort order.  
+ Submit the project: copy the file proj5submit.sh into your project directory, change its permissions to executable, and execute the script on shell.  Warning: Submit scripts do not work on the program and linprog servers. Use shell.cs.fsu.edu to submit projects. If you do not receive the second confirmation with the contents of your project, there has been a malfunction.  
+Code Requirements and Specifications 
+ The starting point for the project consists of the hierarchy 
+   IGraph   --  abstract base class for all graphs
+  IALGraph  -- abstract base class for adjacency list graphs
+    IALDGraph  -- adjacency list digraphs
+    IALUGraph  -- adjacency list ungraphs
+  IAMGraph  -- abstract base class for adjacency matrix graphs
+    IAMDGraph  -- adjacency matrix digraphs
+    IAMUGraph  -- adjacency matrix ungraphs
+   that is defined and implemented in the files LIB/cpp/igraph.h and LIB/cpp/igraph.cpp.  
+ Implement topological sort as a template function with this header: 
+   template &lt; class DigraphType , class BufferType &gt;
+bool TopSort (DigraphType&amp; digraph, BufferType&amp; buffer)
+{
+  ...
+} // TopSort
+   The usual multiple read protection should be in place, and TopSort should be in the fsu namespace.  
+ Assumptions on parameter digraph: The algorithm should operate on the public interface of IGraph and use appropriate iterators so that the template operates correctly with either adjacency list or adjacency matrix representations.  
+ Assumptions on parameter buffer: The algorithm should assume the basic queue operation buffer.Push(t) to store output.  
+  TopSort should return 1 if digraph is successfully topologically sorted (i.e., if it is a DAG) and 0 othewise. In either case, the result of applying the algorithm is stored in buffer.   
+ Generally your code should allow building of the supplied test programs and test correctly with either type of digraph. (See the typedef statements at the top of the test code files.)  
+ Your graph spec file bigdaggy should conform to the format and semantics illustrated in the distributed data files. The file should begin with documentation (lines beginning with # are ignored): 
+   # file documentation
+# more file documentation
+# ... 
+# even more file documentation 
+   After the file documentation, there should be nothing but unsigned integer numbers in decimal notation. The first number is the number of vertices. Then the edges follow, one at a time, consisting of the from vertex followed by the to vertex. Note that the format works for either a digraph or an ungraph. (Do not list an edge twice for an ungraph, just read the file into a declared ungraph.) The distributed examples can be instantiated as either ungraphs or digraphs.  
+ bigdaggy should have at least the following: 
+   200 vertices 
+   300 edges 
+   several undirected cycles 
+   no directed cycles 
+   a vertex order that is random with respect to a topological sort order 
+Hints
+-->

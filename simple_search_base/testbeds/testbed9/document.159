@@ -1,0 +1,100 @@
+A pairing heap is a type of heap data structure with relatively simple implementation and excellent practical amortized performance, introduced by Michael Fredman, Robert Sedgewick, Daniel Sleator, and Robert Tarjan in 1986. Pairing heaps are heap-ordered multiway tree structures, and can be considered simplified Fibonacci heaps. They are considered a "robust choice" for implementing such algorithms as Prim's MST algorithm, and support the following operations (assuming a min-heap):
+find-min: simply return the top element of the heap.
+merge: compare the two root elements, the smaller remains the root of the result, the larger element and its subtree is appended as a child of this root.
+insert: create a new heap for the inserted element and merge into the original heap.
+decrease-key (optional): remove the subtree rooted at the key to be decreased, replace the key with a smaller key, then merge the result back into the heap.
+delete-min: remove the root and merge its subtrees. Various strategies are employed.
+The analysis of pairing heaps' time complexity was initially inspired by that of splay trees. The amortized time per delete-min is O(log n), and the operations find-min, merge, and insert run in O(1) amortized time.
+Determining the precise asymptotic running time of pairing heaps when a decrease-key operation is needed has turned out to be difficult. Initially, the time complexity of this operation was conjectured on empirical grounds to be O(1), but Fredman proved that the amortized time per decrease-key is at least  for some sequences of operations. Using a different amortization argument, Pettie then proved that insert, meld, and decrease-key all run in  amortized time, which is . Elmasry later introduced a variant of pairing heaps for which decrease-key runs in  amortized time and with all other operations matching Fibonacci heaps, but no tight  bound is known for the original data structure. Moreover, it is an open question whether a  amortized time bound for decrease-key and a  amortized time bound for insert can be achieved simultaneously.
+Although this is worse than other priority queue algorithms such as Fibonacci heaps, which perform decrease-key in  amortized time, the performance in practice is excellent. Stasko and Vitter, Moret and Shapiro, and Larkin, Sen, and Tarjan conducted experiments on pairing heaps and other heap data structures. They concluded that pairing heaps are often faster in practice than array-based binary heaps and d-ary heaps, and almost always faster in practice than other pointer-based heaps, including data structures like Fibonacci heaps that are theoretically more efficient.
+
+
+== Structure ==
+A pairing heap is either an empty heap, or a pair consisting of a root element and a possibly empty list of pairing heaps. The heap ordering property requires that all the root elements of the subheaps in the list are not smaller than the root element of the heap. The following description assumes a purely functional heap that does not support the decrease-key operation.
+
+type PairingHeap[Elem] = Empty | Heap(elem: Elem, subheaps: List[PairingHeap[Elem]])
+
+A pointer-based implementation for RAM machines, supporting decrease-key, can be achieved using three pointers per node, by representing the children of a node by a singly-linked list: a pointer to the node's first child, one to its next sibling, and one to the parent. Alternatively, the parent pointer can be omitted by letting the last child point back to the parent, if a single boolean flag is added to indicate "end of list". This achieves a more compact structure at the expense of a constant overhead factor per operation.
+
+
+== Operations ==
+
+
+=== find-min ===
+The function find-min simply returns the root element of the heap:
+
+function find-min(heap)
+  if heap == Empty
+    error
+  else
+    return heap.elem
+
+
+=== merge ===
+Merging with an empty heap returns the other heap, otherwise a new heap is returned that has the minimum of the two root elements as its root element and just adds the heap with the larger root to the list of subheaps:
+
+function merge(heap1, heap2)
+  if heap1 == Empty
+    return heap2
+  elsif heap2 == Empty
+    return heap1
+  elsif heap1.elem < heap2.elem
+    return Heap(heap1.elem, heap2 :: heap1.subheaps)
+  else
+    return Heap(heap2.elem, heap1 :: heap2.subheaps)
+
+
+=== insert ===
+The easiest way to insert an element into a heap is to merge the heap with a new heap containing just this element and an empty list of subheaps:
+
+function insert(elem, heap)
+  return merge(Heap(elem, []), heap)
+
+
+=== delete-min ===
+The only non-trivial fundamental operation is the deletion of the minimum element from the heap. The standard strategy first merges the subheaps in pairs (this is the step that gave this datastructure its name) from left to right and then merges the resulting list of heaps from right to left:
+
+function delete-min(heap)
+  if heap == Empty
+    error
+  else
+    return merge-pairs(heap.subheaps)
+
+This uses the auxiliary function merge-pairs:
+
+function merge-pairs(l)
+  if length(l) == 0
+    return Empty
+  elsif length(l) == 1
+    return l[0]
+  else
+    return merge(merge(l[0], l[1]), merge-pairs(l[2.. ]))
+
+That this does indeed implement the described two-pass left-to-right then right-to-left merging strategy can be seen from this reduction:
+
+   merge-pairs([H1, H2, H3, H4, H5, H6, H7])
+=> merge(merge(H1, H2), merge-pairs([H3, H4, H5, H6, H7]))
+     # merge H1 and H2 to H12, then the rest of the list
+=> merge(H12, merge(merge(H3, H4), merge-pairs([H5, H6, H7])))
+     # merge H3 and H4 to H34, then the rest of the list
+=> merge(H12, merge(H34, merge(merge(H5, H6), merge-pairs([H7]))))
+     # merge H5 and H6 to H56, then the rest of the list
+=> merge(H12, merge(H34, merge(H56, H7)))
+     # switch direction, merge the last two resulting heaps, giving H567
+=> merge(H12, merge(H34, H567))
+     # merge the last two resulting heaps, giving H34567
+=> merge(H12, H34567) 
+     # finally, merge the first merged pair with the result of merging the rest
+=> H1234567
+
+
+== Summary of running times ==
+In the following time complexities O(f) is an asymptotic upper bound and Θ(f) is an asymptotically tight bound (see Big O notation). Function names assume a min-heap.
+
+
+== References ==
+
+
+== External links ==
+Louis Wasserman discusses pairing heaps and their implementation in Haskell in The Monad Reader, Issue 16 (pp. 37–52).
+pairing heaps, Sartaj Sahni

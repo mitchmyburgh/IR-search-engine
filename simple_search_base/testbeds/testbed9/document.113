@@ -1,0 +1,36 @@
+In computing, a data source name (DSN, sometimes known as a database source name, though "data sources" can comprise other repositories apart from databases) is a string that has an associated data structure used to describe a connection to a data source. Most commonly used in connection with ODBC, DSNs also exist for JDBC and for other data access mechanisms. The term often overlaps with "connection string". Most systems do not make a difference between DSNs or connection strings and the term can often be used interchangeably.
+DSN attributes may include, but are not limited to:
+the name of the data source
+the location of the data source
+the name of a database driver which can access the data source
+a user ID for data access (if required)
+a user password for data access (if required)
+The system administrator of a client machine generally creates a separate DSN for each relevant data source.
+Standardizing DSNs offers a level of indirection; various applications (for example: Apache/PHP and IIS/ASP) can take advantage of this in accessing shared data sources.
+
+
+== Types of data source name ==
+Two kinds of DSN exist:
+Machine DSNs - stored in collective configuration files (e.g., /etc/odbc.ini, ~/.odbc.ini) and/or system resources (e.g., Windows Registry HKLM\Software\ODBC\odbc.ini)
+File DSNs - stored in the filesystem with one DSN per file
+These are further broken down into
+System DSNs - accessible by any and all processes and users of the system, stored in a centralized location (e.g., /etc/odbc.ini, /etc/odbc_file_dsns/<filename>)
+User DSNs - accessible only by the user who created the DSN, stored in a user-specific location (e.g., ~/.odbc.ini, ~/odbc_file_dsns/<filename>)
+
+
+== Example of use ==
+Software (e.g., Crystal Reports, Microsoft Excel, PHP, Perl, Python, Ruby) users can submit CRUD (Create, Read, Update, Delete) queries to a data source by establishing a connection to the DSN.
+ASP (VBScript) code to open a DSN connection might look like the following:
+
+In PHP using the PEAR::DB package to open a connection without an external DSN (a "DSN-less connection", i.e., using a Connection String), the code might resemble the following
+
+PHP with PDO.
+
+In Perl, using the Perl_DBI module, each driver has its own syntax for the DSN attributes. The only requirement that DBI makes is that all the information, except for username and password is supplied in a single string argument.
+
+
+== See also ==
+ADO.NET
+JDBC
+ODBC
+OLE DB

@@ -1,0 +1,152 @@
+   Downloads 
+   Documentation 
+   Get Involved 
+   Help 
+ PHP 7.0.6 Released
+    Getting Started
+    Introduction
+    A simple tutorial
+    Language Reference
+    Basic syntax
+    Types
+    Variables
+    Constants
+    Expressions
+    Operators
+    Control Structures
+    Functions
+    Classes and Objects
+    Namespaces
+    Errors
+    Exceptions
+    Generators
+    References Explained
+    Predefined Variables
+    Predefined Exceptions
+    Predefined Interfaces and Classes
+    Context options and parameters
+    Supported Protocols and Wrappers
+    Security
+    Introduction
+    General considerations
+    Installed as CGI binary
+    Installed as an Apache module
+    Filesystem Security
+    Database Security
+    Error Reporting
+    Using Register Globals
+    User Submitted Data
+    Magic Quotes
+    Hiding PHP
+    Keeping Current
+    Features
+    HTTP authentication with PHP
+    Cookies
+    Sessions
+    Dealing with XForms
+    Handling file uploads
+    Using remote files
+    Connection handling
+    Persistent Database Connections
+    Safe Mode
+    Command line usage
+    Garbage Collection
+    DTrace Dynamic Tracing
+    Function Reference
+    Affecting PHP's Behaviour
+    Audio Formats Manipulation
+    Authentication Services
+    Command Line Specific Extensions
+    Compression and Archive Extensions
+    Credit Card Processing
+    Cryptography Extensions
+    Database Extensions
+    Date and Time Related Extensions
+    File System Related Extensions
+    Human Language and Character Encoding Support
+    Image Processing and Generation
+    Mail Related Extensions
+    Mathematical Extensions
+    Non-Text MIME Output
+    Process Control Extensions
+    Other Basic Extensions
+    Other Services
+    Search Engine Extensions
+    Server Specific Extensions
+    Session Extensions
+    Text Processing
+    Variable and Type Related Extensions
+    Web Services
+    Windows Only Extensions
+    XML Manipulation
+    Keyboard Shortcuts
+    ?
+    This help
+    j
+    Next menu item
+    k
+    Previous menu item
+    g p
+    Previous man page
+    g n
+    Next man page
+    G
+    Scroll to bottom
+    g g
+    Scroll to top
+    g h
+    Goto homepage
+    g s
+    Goto search
+    (current page)
+    /
+    Focus search box
+    Introduction »  
+    « random_int  
+   PHP Manual 
+   Function Reference 
+   Cryptography Extensions 
+      Change language: 
+       English Brazilian Portuguese Chinese (Simplified) French German Japanese Korean Romanian Russian Spanish Turkish Other  
+    Edit 
+    Report a Bug 
+   HASH Message Digest Framework 
+    Introduction
+    Installing/Configuring
+      Requirements
+      Installation
+      Runtime Configuration
+      Resource Types
+    Predefined Constants
+    Hash Functions
+      hash_algos — Return a list of registered hashing algorithms
+      hash_copy — Copy hashing context
+      hash_equals — Timing attack safe string comparison
+      hash_file — Generate a hash value using the contents of a given file
+      hash_final — Finalize an incremental hash and return resulting digest
+      hash_hmac_file — Generate a keyed hash value using the HMAC method and the contents of a given file
+      hash_hmac — Generate a keyed hash value using the HMAC method
+      hash_init — Initialize an incremental hashing context
+      hash_pbkdf2 — Generate a PBKDF2 key derivation of a supplied password
+      hash_update_file — Pump data into an active hashing context from a file
+      hash_update_stream — Pump data into an active hashing context from an open stream
+      hash_update — Pump data into an active hashing context
+      hash — Generate a hash value (message digest)
+     add a note 
+    User Contributed Notes  
+    There are no user contributed notes for this page.
+    Cryptography Extensions 
+      Crack  
+      CSPRNG  
+      Hash  
+      Mcrypt  
+      Mhash  
+      OpenSSL  
+      Password Hashing  
+    Copyright © 2001-2016 The PHP Group 
+    My PHP.net 
+    Contact 
+    Other PHP.net sites 
+    Mirror sites 
+    Privacy policy 
+

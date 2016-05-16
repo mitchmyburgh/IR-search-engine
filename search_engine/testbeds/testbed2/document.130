@@ -1,0 +1,57 @@
+Deeplearning4j is an open source deep learning library written for Java and the Java Virtual Machine and a computing framework with wide support for deep learning algorithms. Deeplearning4j includes implementations of the restricted Boltzmann machine, deep belief net, deep autoencoder, stacked denoising autoencoder and recursive neural tensor network, as well as word2vec, doc2vec and GloVe. These algorithms all include distributed parallel versions that integrate with Hadoop and Spark. It is commercially supported by the startup Skymind.
+
+
+== IntroductionEdit ==
+Deeplearning4j relies on the widely used programming language, Java - though it is compatible with Clojure and includes a Scala API. It is powered by its own open-source numerical computing library, ND4J, and works with both CPUs and GPUs.  Deeplearning4j is an open source project primarily developed by a machine learning group in San Francisco led by Adam Gibson. Deeplearning4j is the only open-source project listed on Google's Word2vec page for its Java implementation.
+Deeplearning4j has been used in a number of commercial and academic applications. The code is hosted on GitHub and a support forum is maintained on Google Groups.
+The framework is composable, meaning shallow neural nets such as restricted Boltzmann machines, convolutional nets, autoencoders and recurrent nets can be added to one another to create deep nets of varying types.
+
+
+== DistributedEdit ==
+Training with Deeplearning4j takes place in a cluster. Neural nets are trained in parallel via iterative reduce, which works on Hadoop/YARN and on Spark. Deeplearning4j also integrates with Cuda kernels to conduct pure GPU operations, and works with distributed GPUs.
+
+
+== Scientific Computing for the JVMEdit ==
+Deeplearning4j includes an n-dimensional array class using ND4J that allows for scientific computing in Java and Scala, similar to the functionality that Numpy provides to Python. It's effectively based on a library for linear algebra and matrix manipulation in a production environment.
+
+
+== Canova Vectorization Lib for Machine-LearningEdit ==
+Canova vectorizes various file formats and data types using an input/output format system similar to Hadoop's use of MapReduce. A work in progress, Canova is designed to vectorize CSVs, images, sound, text and video. Canova can be used from the command line.
+
+
+== Text & NLPEdit ==
+Deeplearning4j includes a vector space modeling and topic modeling toolkit, implemented in Java and integrating with parallel GPUs for performance. It is specifically intended for handling large text collections.
+Deeplearning4j includes implementations of tf–idf, deep learning, and Mikolov's word2vec algorithm, doc2vec and GloVe - reimplemented and optimized in Java. It relies on t-SNE for word-cloud visualizations.
+
+
+== Real-World Use Cases and IntegrationsEdit ==
+Real-world use cases for Deeplearning4j include fraud detection for the financial sector, anomaly detection in industries such as manufacturing, recommender systems in e-commerce and advertising, and image recognition. Deeplearning4j has integrated with other machine-learning platforms such as RapidMiner and Prediction.io. 
+
+
+== Related librariesEdit ==
+OpenNN, an open source neural networks library written in C++ for deep learning.
+Torch, an open source framework written in Lua with wide support for machine learning algorithms.
+Theano, an open source deep learning library for Python.
+Neuroph
+
+
+== See alsoEdit ==
+
+Comparison of deep learning frameworks
+Artificial intelligence
+Machine learning
+Deep learning
+
+
+== ReferencesEdit ==
+
+
+== External linksEdit ==
+Official website
+"Deeplearning4j Github Repositories". 
+"Deeplearning4j vs. Torch vs. Caffe vs. Theano". 
+"Canova: A General Vectorization Lib for Machine Learning". 
+"ND4J: N-Dimensional Arrays for Java and Scala, A Linear Algebra Library". 
+"Apache Flink". 
+"Java Magazine by Oracle: Deep Learning in Java". 
+"Deeplearning4j Community of Gitter Chat".

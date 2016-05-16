@@ -1,0 +1,138 @@
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = 'http://s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+        gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+          if (gapi.iframes && gapi.iframes.getContext) {
+            gapi.iframes.getContext().openChild({
+                url: 'https://www.blogger.com/navbar.g?targetBlogID\0752319812774583716742\46blogName\75C+Program+Examples\46publishMode\75PUBLISH_MODE_HOSTED\46navbarType\75LIGHT\46layoutType\75LAYOUTS\46searchRoot\75http://www.c-program-example.com/search\46blogLocale\75en\46v\0752\46homepageUrl\75http://www.c-program-example.com/\46targetPostID\0753743977073360818907\46blogPostOrPageUrl\75http://www.c-program-example.com/2012/01/c-program-to-implement-topological-sort.html\46vt\0752516177544326526665',
+                where: document.getElementById("navbar-iframe-container"),
+                id: "navbar-iframe"
+            });
+          }
+        });
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+
+
+C Program to implement topological sort.  
+ Write a c program to implement topological sort.
+Topological sort is the ordering vertices of a 
+directed, acyclic graph(DAG), so that if there is an arc from vertex i to vertex j, then i appears before j in the linear ordering. Read more about 
+C Programming Language . 
+/***********************************************************
+* You can use all the programs on  www.c-program-example.com
+* for personal and learning purposes. For permissions to use the
+* programs for commercial purposes,
+* contact info@c-program-example.com
+* To find more C programs, do visit www.c-program-example.com
+* and browse!
+* 
+*                      Happy Coding
+***********************************************************/
+#include&lt;stdio.h&gt;
+#define MAX 200
+int n,adj[MAX][MAX];
+int front = -1,rear = -1,queue[MAX];
+void main()
+{
+ int i,j = 0,k;
+ int topsort[MAX],indeg[MAX];
+ create_graph();
+ printf(“The adjacency matrix is:\n”);
+ display();
+ for(i=1;i&lt;+n;i++)
+ {
+  indeg[i]=indegree(i);
+  if(indeg[i]==0)
+   insert_queue(i);
+ }
+ while(front&lt;=rear)
+ {
+  k=delete_queue();
+  topsort[j++]=k;
+  for(i=1;i&lt;=n;i++)
+  {
+   if(adj[k][i]==1)
+   {
+    adj[k][i]=0;
+    indeg[i]=indeg[i]-1;
+    if(indeg[i]==0)
+     insert_queue(i);
+   }
+  }
+ }
+ printf("Nodes after topological sorting are:\n");
+ for(i=0;i&lt;=n;i++)
+  printf("%d",topsort[i]);
+ printf("\n");
+}
+create_graph()
+{
+ int i,max_edges,origin,destin;
+ printf("\n Enter number of vertices:");
+ scamf("%d",&amp;n);
+ max_edges = n * (n - 1);
+ for(i = 1;i &lt;= max_edges;i++)
+ {
+  printf("\n Enter edge %d (00 to quit):",i);
+  scanf("%d%d",&amp;origin,&amp;destin);
+  if((origin == 0) &amp;&amp; (destin == 0))
+  {
+   printf("Invalid edge!!\n");
+   i–;
+  }
+  else
+   adj[origin][destin] = 1;
+ }return;
+}
+display()
+{
+ int i,j;
+ for(i = 0;i &lt;= n;i++)
+ {
+  for(j = 1;jrear)
+  {
+   printf(“Queue Underflow”);
+   return;
+  }
+  else
+  {
+   del_item = queue[front];
+   front = front + 1;
+   return del_item;
+  }
+ }
+ int indegree(int node)
+ {
+  int i,in_deg = 0;
+  for(i = 1;i &lt;= n;i++)
+   if(adj[i][node] == 1)
+    in_deg++;
+  returnin_deg;
+ }
+ 
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));

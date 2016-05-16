@@ -1,0 +1,49 @@
+Best and worse case inputs for heap sort and quick sort?
+
+up vote
+1
+down vote
+favorite
+1
+So given a input of lets say 10 strings, what way can we input these so we get the best or worst case for these two given sorts?
+
+Heap sort:
+best case - nlogn
+worst case - nlogn
+
+Quick sort:
+best case - nlogn
+worst case - n^2
+Where i get confused on these two is:
+
+heap- Since the best and worst case are the same does it not matter the input order? The number of comparisons and assignments will always be the same? I imagine in a heap sort it may be the same since the real work is done in the insertion, but the sorting only uses the removal of the max/min heap? Is that why?
+
+quick sort- This one I don't know for sure. I'm not sure what the best case and worst case situations are for this. If its a already sorted list of 10 strings for example wouldn't we always have to choose the same amount of pivots to get complete the recursive algorithm? Any help on this explanation would really help.
+
+Thanks
+
+algorithm-analysis runtime-analysis sorting quicksort
+shareciteimprove this question
+edited Dec 13 '13 at 7:41
+
+Raphael?
+38.3k1098213
+asked Nov 26 '13 at 16:04
+user3037172
+migrated from stackoverflow.com Dec 13 '13 at 5:37
+
+This question came from our site for professional and enthusiast programmers.
+
+add a comment
+1 Answer
+active oldest votes
+up vote
+4
+down vote
+heap- Since the best and worst case are the same does it not matter the input order? The number of comparisons and assignments will always be the same? I imagine in a heap sort it may be the same since the real work is done in the insertion, but the sorting only uses the removal of the max/min heap? Is that why?
+The number of comparisons made actually can depend on the order in which the values are given. The fact that the best and worst case are each T(n log n) only means that asymptotically there's no difference between the two, though they can differ by a constant factor. I don't have any simple examples of this off the top of my head, but I believe that you can construct inputs where the number of comparisons differs by a constant factor between the two approaches. Since big-O notation ignores constants, though, this isn't reflected in the best-case and worst-case analysis.
+
+quick sort- This one I don't know for sure. I'm not sure what the best case and worst case situations are for this. If its a already sorted list of 10 strings for example wouldn't we always have to choose the same amount of pivots to get complete the recursive algorithm? Any help on this explanation would really help.
+The number of pivots chosen is indeed the same regardless of the execution of the algorithm. However, the work done per pivot can vary based on what sort of splits you get. In the best case, the pivot chosen at each step ends up being the median element of the array. When this happens, there are (roughly) n comparisons done at the top layer of the recursion, then (roughly) n at the next layer because there are two subarrays of size n / 2, then there are (roughly) n at the next layer because there are four subarrays of size n / 4, etc. Since there are T(log n) layers and each layer does T(n) work, the total work done is T(n log n). On the other hand, consider choosing the absolute minimum of each array as a pivot. Then (roughly) n compares are done at the top layer, then (roughly) n - 1 in the next layer, then (roughly) n - 2 in the next, etc. The sum 1 + 2 + 3 + ... + n is T(n2), hence the worst case.
+
+Hope this helps!

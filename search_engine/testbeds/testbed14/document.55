@@ -1,0 +1,20 @@
+3.3 Methontology Methodology
+This methodology will give the construction of ontology at knowledge level. The ontology
+development process is: 1) Determine the tasks to be performed when building ontology i.e.
+scheduling, control, quality assurance, specification, knowledge acquisition, conceptualization,
+integration, formalization, implementation, evaluation, maintenance, documentation and
+configuration management. 2) Determine the life cycle of ontology as number of stages. This
+represents the activities to be performed in each stage and how the stages are related. 3)
+Determine the techniques used in each activity, the products that each activity output and how
+they have to be evaluated [1][2]. These methodologies deal with software engineering concepts. It
+handles all the activities in details.
+3.4 Sensus Methodology
+The method based on Sensus is a top-down approach for deriving domain specific ontologies
+from huge ontologies. The steps are: 1) A series of terms are taken as seed. 2) These seed terms
+are linked by hand to SENSUS. 3) All the concepts in the path from the seed terms to the root of
+SENSUS are included. 4) Terms that could be relevant within the domain and have not yet
+appeared are added. 5) Finally, for those nodes that have a large number of paths through them,
+the entire subtree under the node is sometimes added, based on the idea that if many of the nodes
+in a subtree have been found to be relevant, then the other nodes in the subtree are likely to be
+relevant as well [2]. This methodology uses the existing ontology, where the merging will be
+complex due to different structures. 

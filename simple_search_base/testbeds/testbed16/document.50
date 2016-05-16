@@ -1,0 +1,38 @@
+Cloud Service Provider Encryption Doesn’t Solve the Problem
+
+July 14, 2015/in Cloud Security, In the News /by Chenxi Wang
+Salesforce just announced the general availability of Shield, their Platform Encryption function. Organizations can now use Shield to protect data stored in the Salesforce environment.
+
+Cryptography, for years, had been a discipline of only academic and military interest, an esoteric technology to many. With the advent of the web, e-commerce, and later mobility, cryptography has become a widespread and readily accessible technology in the recent years.
+
+encryption in the cloud
+
+Encryption in the Cloud, However, is Not Easy.
+
+A cloud environment, because of its need for agility, demands that data be easily accessible, movable, and injectable into different infrastructure and integrated application environments. Encryption may go against the very grain of that agility, and that is why cloud service providers are typically reticent about cryptographic protection.
+
+Because of these reasons, Salesforce’s entrance to the cloud encryption market is a huge signal that cryptographic technologies have become an essential requirement of cloud computing, which those of us at CipherCloud have always believed. Just as cryptography today secures the world’s digital commerce networks, protects the global payment systems, and guards individual data from credit card numbers to a single X-ray image, it is now a table stake for organizations moving to the cloud.
+
+So what does Salesforce’s entry to the cloud encryption market mean for the existing Gartner defined Cloud Access Security Broker (CASB) market and third-party providers that offer cloud-independent encryption?
+
+Third-party encryption capabilities, such as those offered by CipherCloud and others, existed for a reason. Much of that reason still exist today and cloud users would do well to remember them:
+
+cloud encryption - safeguard against surveillance
+
+1. Safeguard against illegal surveillance and over-zealous government data requests: With third-party encryption technologies, enterprises retain exclusive custodianship of the key – the key never appears in the cloud under any circumstances, not even briefly in the server memory. This renders illegal surveillance impossible and guarantees that when the government approaches the cloud provider for access to their customer data, you — the owner of the data – would be part of the discovery conversation. This is one of the biggest reasons that independent, strong encryption is appealing to cloud users.
+
+cloud encryption - protection insider threats
+
+2. Protection against cloud hacking and insider threats: Hacking and insider threats targeting the cloud are always a concern for cloud users. With cryptographic protection offered by a third party, breaches of the cloud environment and its native defenses will not lead to the compromise of encrypted customer data. This helps to satisfy the encryption safe-harbor provisions in many data breach notification laws around the world, provided that the key is not compromised.
+
+3. Data residency assurance: When cloud data centers are not present in the geographic regions with data residency requirements, third-party, in-geo encryption/tokenization mechanisms can help organizations meet residency requirements while still delivering the benefits of the cloud.
+
+cloud encryption - multi-cloud control
+
+4. Multi-cloud control: When you perform encryption independent of any particular cloud service, you can conceivably integrate enterprise key management with different services and maintain multi-cloud control and visibility, another benefit cloud-native encryption is not capable of providing.
+
+The above benefits are especially important considering the renewed interest and raging debate of government encryption backdoors. When more and more enterprise content/data goes into the cloud, what’s to stop the NSA (or other governments) from turning their attention to large cloud services and campaigning for encryption “backdoors” with these providers?
+
+What once seemed paranoia is now a distinct worry plaguing companies and liberty-minded customers — when the door is kicked in, either by force or covert operations, cloud users need a way to ensure that their most critical data are not exposed to malefactors.
+
+Third-party encryption mechanisms, where the encryption key is held exclusively by the enterprise and the encrypted data hosted in the cloud, provide separation-of-duty, one of the most powerful security design principles, that help you guard against threats, misuse, and a multitude of other risk factors targeting the cloud environment.

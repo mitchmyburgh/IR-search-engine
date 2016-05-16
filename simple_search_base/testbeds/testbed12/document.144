@@ -1,0 +1,202 @@
+YouCompleteMe: a code-completion engine for Vim
+===============================================
+
+[![Build Status](https://travis-ci.org/Valloric/YouCompleteMe.svg?branch=master)](https://travis-ci.org/Valloric/YouCompleteMe)
+[![Build status](https://ci.appveyor.com/api/projects/status/ag9uqwi8s6btwjd8/branch/master?svg=true)](https://ci.appveyor.com/project/Valloric/YouCompleteMe)
+
+- [Intro](#intro)
+- [Installation](#installation)
+    - [Mac OS X](#mac-os-x)
+    - [Ubuntu Linux x64](#ubuntu-linux-x64)
+    - [Fedora Linux x64](#fedora-linux-x64)
+    - [Windows](#windows)
+    - [FreeBSD/OpenBSD](#freebsdopenbsd)
+    - [Full Installation Guide](#full-installation-guide)
+- [Quick Feature Summary](#quick-feature-summary)
+- [User Guide](#user-guide)
+    - [General Usage](#general-usage)
+    - [Client-Server Architecture](#client-server-architecture)
+    - [Completion String Ranking](#completion-string-ranking)
+    - [General Semantic Completion](#general-semantic-completion-engine-usage)
+    - [C-family Semantic Completion](#c-family-semantic-completion-engine-usage)
+    - [JavaScript Semantic Completion](#javascript-semantic-completion)
+    - [Rust Semantic Completion](#rust-semantic-completion)
+    - [Python Semantic Completion](#python-semantic-completion)
+    - [Semantic Completion for Other Languages](#semantic-completion-for-other-languages)
+    - [Writing New Semantic Completers](#writing-new-semantic-completers)
+    - [Diagnostic Display](#diagnostic-display)
+        - [Diagnostic Highlighting Groups](#diagnostic-highlighting-groups)
+- [Commands](#commands)
+    - [YcmCompleter subcommands](#ycmcompleter-subcommands)
+        - [GoTo Commands](#goto-commands)
+        - [Semantic Information Commands](#semantic-information-commands)
+        - [Refactoring and FixIt Commands](#refactoring-and-fixit-commands)
+        - [Miscellaneous Commands](#miscellaneous-commands)
+- [Functions](#functions)
+- [Options](#options)
+- [FAQ](#faq)
+- [Contributor Code of Conduct](#contributor-code-of-conduct)
+- [Contact](#contact)
+- [License](#license)
+
+Intro
+-----
+
+YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine for
+[Vim][]. It has several completion engines:
+
+- an identifier-based engine that works with every programming language,
+- a [Clang][]-based engine that provides native semantic code
+  completion for C/C++/Objective-C/Objective-C++ (from now on referred to as
+  "the C-family languages"),
+- a [Jedi][]-based completion engine for Python 2 and 3 (using the [JediHTTP][] wrapper),
+- an [OmniSharp][]-based completion engine for C#,
+- a combination of [Gocode][] and [Godef][] semantic engines for Go,
+- a [TSServer][]-based completion engine for TypeScript,
+- a [Tern][]-based completion engine for JavaScript,
+- a [racer][]-based completion engine for Rust,
+- and an omnifunc-based completer that uses data from Vim's omnicomplete system
+  to provide semantic completions for many other languages (Ruby, PHP etc.).
+
+![YouCompleteMe GIF demo](http://i.imgur.com/0OP4ood.gif)
+
+Here's an explanation of what happens in the short GIF demo above.
+
+First, realize that **no keyboard shortcuts had to be pressed** to get the list
+of completion candidates at any point in the demo. The user just types and the
+suggestions pop up by themselves. If the user doesn't find the completion
+suggestions relevant and/or just wants to type, they can do so; the completion
+engine will not interfere.
+
+When the user sees a useful completion string being offered, they press the TAB
+key to accept it. This inserts the completion string. Repeated presses of the
+TAB key cycle through the offered completions.
+
+If the offered completions are not relevant enough, the user can continue typing
+to further filter out unwanted completions.
+
+A critical thing to notice is that the completion **filtering is NOT based on
+the input being a string prefix of the completion** (but that works too). The
+input needs to be a _[subsequence][] match_ of a completion. This is a fancy way
+of saying that any input characters need to be present in a completion string in
+the order in which they appear in the input. So `abc` is a subsequence of
+`xaybgc`, but not of `xbyxaxxc`. After the filter, a complicated sorting system
+ranks the completion strings so that the most relevant ones rise to the top of
+the menu (so you usually need to press TAB just once).
+
+**All of the above works with any programming language** because of the
+identifier-based completion engine. It collects all of the identifiers in the
+current file and other files you visit (and your tags files) and searches them
+when you type (identifiers are put into per-filetype groups).
+
+The demo also shows the semantic engine in use. When the user presses `.`, `->`
+or `::` while typing in insert mode (for C++; different triggers are used for
+other languages), the semantic engine is triggered (it can also be triggered
+with a keyboard shortcut; see the rest of the docs).
+
+The last thing that you can see in the demo is YCM's diagnostic display features
+(the little red X that shows up in the left gutter; inspired by [Syntastic][])
+if you are editing a C-family file. As Clang compiles your file and detects
+warnings or errors, they will be presented in various ways. You don't need to
+save your file or press any keyboard shortcut to trigger this, it "just happens"
+in the background.
+
+In essence, YCM obsoletes the following Vim plugins because it has all of their
+features plus extra:
+
+- clang_complete
+- AutoComplPop
+- Supertab
+- neocomplcache
+
+**And that's not all...**
+
+YCM also provides [semantic IDE-like features](#quick-feature-summary) in a
+number of languages, including:
+
+- finding declarations, definitions, usages, etc. of identifiers,
+- displaying type information for classes, variables, functions etc.,
+- displaying documentation for methods, members, etc. in the preview window,
+- fixing common coding errors, like missing semi-colons, typos, etc.,
+- semantic renaming of variables across files (JavaScript only).
+
+Features vary by file type, so make sure to check out the [file type feature
+summary](#quick-feature-summary) and the
+[full list of completer subcommands](#ycmcompleter-subcommands) to
+find out what's available for your favourite languages.
+
+You'll also find that YCM has filepath completers (try typing `./` in a file)
+and a completer that integrates with [UltiSnips][].
+
+Installation
+------------
+
+### Mac OS X
+
+Please refer to the full Installation Guide below; the following commands are
+provided on a best-effort basis and may not work for you.
+
+Install the latest version of [MacVim][]. Yes, MacVim. And yes, the _latest_.
+
+If you don't use the MacVim GUI, it is recommended to use the Vim binary that is
+inside the MacVim.app package (`MacVim.app/Contents/MacOS/Vim`). To ensure it
+works correctly copy the `mvim` script from the [MacVim][] download to your
+local binary folder (for example `/usr/local/bin/mvim`) and then symlink it:
+
+    ln -s /usr/local/bin/mvim vim
+
+Install YouCompleteMe with [Vundle][].
+
+**Remember:** YCM is a plugin with a compiled component. If you **update** YCM
+using Vundle and the ycm_core library APIs have changed (happens
+rarely), YCM will notify you to recompile it. You should then rerun the install
+process.
+
+**NOTE:** If you want C-family completion, you MUST have the latest Xcode
+installed along with the latest Command Line Tools (they are installed
+automatically when you run `clang` for the first time, or manually by running
+`xcode-select --install`)
+
+Install CMake. Preferably with [Homebrew][brew], but here's the [stand-alone
+CMake installer][cmake-download].
+
+_If_ you have installed a Homebrew Python and/or Homebrew MacVim, see the _FAQ_
+for details.
+
+Compiling YCM **with** semantic support for C-family languages:
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py --clang-completer
+
+Compiling YCM **without** semantic support for C-family languages:
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py
+
+The following additional language support options are available:
+
+- C# support: add `--omnisharp-completer` when calling `./install.py`.
+- Go support: ensure go is installed and add `--gocode-completer` when calling
+  `./install.py`.
+- TypeScript support: install [nodejs and npm][npm-install] then install the
+  TypeScript SDK with `npm install -g typescript`.
+- JavaScript support: install [nodejs and npm][npm-install] and add
+  `--tern-completer` when calling `./install.py`.
+- Rust support: install [rustc and cargo][rust-install] and add
+  `--racer-completer` when calling `./install.py`.
+
+To simply compile with everything enabled, there's a `--all` flag.  So, to
+install with all language features, ensure `npm`, `go`, `mono`, `rust`,
+and `typescript` API are installed and in your `PATH`, then simply run:
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py --all
+
+That's it. You're done. Refer to the _User Guide_ section on how to use YCM.
+Don't forget that if you want the C-family semantic completion engine to work,
+you will need to provide the compilation flags for your project to YCM. It's all
+in the User Guide.
+
+YCM comes with sane defaults for its options, but you still may want to take a
+look at what's available for configuration. There are a few interesting options
+that are conservatively turned off by default that you may want to turn on.

@@ -1,0 +1,125 @@
+﻿The OWL 2 RL profile is aimed at applications that require scalable reasoning without sacrificing too much expressive power. It is designed to accommodate both OWL 2 applications that can trade the full expressivity of the language for efficiency, and RDF(S) applications that need some added expressivity from OWL 2. This is achieved by defining a syntactic subset of OWL 2 which is amenable to implementation using rule-based technologies (see Section 4.2), and presenting a partial axiomatization of the OWL 2 RDF-Based Semantics [OWL 2 RDF-Based Semantics] in the form of first-order implications that can be used as the basis for such an implementation (seeSection 4.3). The design of OWL 2 RL has been inspired by Description Logic Programs [DLP] and pD* [pD*].
+For ontologies satisfying the syntactic constraints described in Section 4.2, a suitable rule-based implementation (e.g., one based on the partial axiomatization presented in Section 4.3) will have desirable computational properties; for example, it can return all and only the correct answers to certain kinds of query (see Theorem PR1 and [Conformance]). Such an implementation can also be used with arbitrary RDF graphs. In this case, however, these properties no longer hold — in particular, it is no longer possible to guarantee that all correct answers can be returned, for example if the RDF graph uses the built-in vocabulary in unusual ways. Such an implementation will, however, still produce only correct entailments (see [Conformance]).
+4.1 Feature Overview
+Restricting the way in which constructs are used makes it possible to implement reasoning systems using rule-based reasoning engines, while still providing desirable computational guarantees. These restrictions are designed so as to avoid the need to infer the existence of individuals not explicitly present in the knowledge base, and to avoid the need for nondeterministic reasoning. This is achieved by restricting the use of constructs to certain syntactic positions. For example in SubClassOf axioms, the constructs in the subclass and superclass expressions must follow the usage patterns shown in Table 2.
+Table 2. Syntactic Restrictions on Class Expressions in OWL 2 RL
+Subclass Expressions
+Superclass Expressions
+a class other than owl:Thing
+an enumeration of individuals (ObjectOneOf)
+intersection of class expressions (ObjectIntersectionOf)
+union of class expressions (ObjectUnionOf)
+existential quantification to a class expression (ObjectSomeValuesFrom)
+existential quantification to a data range (DataSomeValuesFrom)
+existential quantification to an individual (ObjectHasValue)
+existential quantification to a literal (DataHasValue)
+a class other than owl:Thing
+intersection of classes (ObjectIntersectionOf)
+negation (ObjectComplementOf)
+universal quantification to a class expression (ObjectAllValuesFrom)
+existential quantification to an individual (ObjectHasValue)
+at-most 0/1 cardinality restriction to a class expression (ObjectMaxCardinality 0/1)
+universal quantification to a data range (DataAllValuesFrom)
+existential quantification to a literal (DataHasValue)
+at-most 0/1 cardinality restriction to a data range (DataMaxCardinality 0/1)
+All axioms in OWL 2 RL are constrained in a way that is compliant with these restrictions. Thus, OWL 2 RL supports all axioms of OWL 2 apart from disjoint unions of classes (DisjointUnion) and reflexive object property axioms (ReflexiveObjectProperty).
+4.2 Profile Specification
+The productions for OWL 2 RL are defined in the following sections. OWL 2 RL is defined not only in terms of the set of supported constructs, but it also restricts the places in which these constructs can be used. Note that each OWL 2 RL ontology must satisfy the global restrictions on axioms defined in Section 11 of the structural specification [OWL 2 Specification].
+4.2.1 Entities
+Entities are defined in OWL 2 RL in the same way as in the structural specification [OWL 2 Specification]. OWL 2 RL supports the predefined classes owl:Nothing andowl:Thing, but the usage of the latter class is restricted by the grammar of OWL 2 RL. Furthermore, OWL 2 RL does not support the predefined object and data propertiesowl:topObjectProperty, owl:bottomObjectProperty, owl:topDataProperty, and owl:bottomDataProperty. Finally, OWL 2 RL supports the following datatypes:
+rdf:text
+rdf:XMLLiteral
+rdfs:Literal
+xsd:decimal
+xsd:integer
+xsd:nonNegativeInteger
+xsd:nonPositiveInteger
+xsd:positiveInteger
+xsd:negativeInteger
+xsd:long
+xsd:int
+xsd:short
+xsd:byte
+xsd:unsignedLong
+xsd:unsignedInt
+xsd:unsignedShort
+xsd:unsignedByte
+xsd:float
+xsd:double
+xsd:string
+xsd:normalizedString
+xsd:token
+xsd:language
+xsd:Name
+xsd:NCName
+xsd:NMTOKEN
+xsd:boolean
+xsd:hexBinary
+xsd:base64Binary
+xsd:anyURI
+xsd:dateTime
+xsd:dateTimeStamp
+The set of supported datatypes has been designed to allow for an implementation in rule systems. The owl:real and owl:rational datatypes must not be used in OWL 2 RL.
+4.2.2 Property Expressions
+Property expressions in OWL 2 RL are identical to the property expressions in the structural specification [OWL 2 Specification].
+4.2.3 Class Expressions
+There are three types of class expressions in OWL 2 RL. The subClassExpression production defines the class expressions that can occur as subclass expressions inSubClassOf axioms; the superClassExpression production defines the class expressions that can occur as superclass expressions in SubClassOf axioms; and theequivClassExpressions production defines the classes that can occur in EquivalentClasses axioms.
+zeroOrOne  := '0' | '1'
+
+subClassExpression :=
+    Class other than owl:Thing |
+    subObjectIntersectionOf | subObjectUnionOf | ObjectOneOf |
+    subObjectSomeValuesFrom | ObjectHasValue |
+    DataSomeValuesFrom | DataHasValue
+subObjectIntersectionOf := 'ObjectIntersectionOf' '(' subClassExpression subClassExpression { subClassExpression } ')'
+subObjectUnionOf := 'ObjectUnionOf' '(' subClassExpression subClassExpression { subClassExpression } ')'
+subObjectSomeValuesFrom :=
+    'ObjectSomeValuesFrom' '(' ObjectPropertyExpression subClassExpression ')' |
+    'ObjectSomeValuesFrom' '(' ObjectPropertyExpression owl:Thing ')'
+
+superClassExpression :=
+    Class other than owl:Thing |
+    superObjectIntersectionOf | superObjectComplementOf |
+    superObjectAllValuesFrom | ObjectHasValue | superObjectMaxCardinality |
+    DataAllValuesFrom | DataHasValue | superDataMaxCardinality
+superObjectIntersectionOf := 'ObjectIntersectionOf' '(' superClassExpression superClassExpression { superClassExpression } ')'
+superObjectComplementOf := 'ObjectComplementOf' '(' subClassExpression ')'
+superObjectAllValuesFrom := 'ObjectAllValuesFrom' '(' ObjectPropertyExpression superClassExpression ')'
+superObjectMaxCardinality :=
+    'ObjectMaxCardinality' '(' zeroOrOne ObjectPropertyExpression [ subClassExpression ] ')' |
+    'ObjectMaxCardinality' '(' zeroOrOne ObjectPropertyExpression owl:Thing ')'
+superDataMaxCardinality := 'DataMaxCardinality' '(' zeroOrOne DataPropertyExpression [ DataRange ] ')' 
+
+equivClassExpression :=
+    Class other than owl:Thing |
+    equivObjectIntersectionOf |
+    ObjectHasValue |
+    DataHasValue
+equivObjectIntersectionOf := 'ObjectIntersectionOf' '(' equivClassExpression equivClassExpression { equivClassExpression } ')'
+4.2.4 Data Ranges
+A data range expression is restricted in OWL 2 RL to the predefined datatypes admitted in OWL 2 RL and the intersection of data ranges.
+DataRange := Datatype | DataIntersectionOf
+4.2.5 Axioms
+OWL 2 RL redefines all axioms of the structural specification [OWL 2 Specification] that refer to class expressions. In particular, it restricts various class axioms to use the appropriate form of class expressions (i.e., one of subClassExpression, superClassExpression, or equivClassExpression), and it disallows the DisjointUnion axiom.
+ClassAxiom := SubClassOf | EquivalentClasses | DisjointClasses
+SubClassOf := 'SubClassOf' '(' axiomAnnotations subClassExpression superClassExpression ')'
+EquivalentClasses := 'EquivalentClasses' '(' axiomAnnotations equivClassExpression equivClassExpression { equivClassExpression } ')'
+DisjointClasses := 'DisjointClasses' '(' axiomAnnotations subClassExpression subClassExpression { subClassExpression } ')'
+OWL 2 RL axioms about property expressions are as in the structural specification [OWL 2 Specification], the only differences being that class expressions in property domain and range axioms are restricted to superClassExpression, and that the use of reflexive properties is disallowed.
+ObjectPropertyDomain := 'ObjectPropertyDomain' '(' axiomAnnotations ObjectPropertyExpression superClassExpression ')'
+ObjectPropertyRange := 'ObjectPropertyRange' '(' axiomAnnotations ObjectPropertyExpression superClassExpression ')'
+DataPropertyDomain := 'DataPropertyDomain' '(' axiomAnnotations DataPropertyExpression superClassExpression ')'
+ObjectPropertyAxiom :=
+    SubObjectPropertyOf | EquivalentObjectProperties |
+    DisjointObjectProperties | InverseObjectProperties |
+    ObjectPropertyDomain | ObjectPropertyRange |
+    FunctionalObjectProperty | InverseFunctionalObjectProperty |
+    IrreflexiveObjectProperty |
+    SymmetricObjectProperty | AsymmetricObjectProperty
+    TransitiveObjectProperty
+OWL 2 RL restricts class expressions in positive assertions to superClassExpression. All other assertions are the same as in the structural specification [OWL 2 Specification].
+ClassAssertion := 'ClassAssertion' '(' axiomAnnotations Individual superClassExpression ')'
+OWL 2 RL restricts class expressions in keys to subClassExpression.
+HasKey := 'HasKey' '(' axiomAnnotations subClassExpression '(' { ObjectPropertyExpression } ')' '(' { DataPropertyExpression } ')' ')'
+All other axioms in OWL 2 RL are defined as in the structural specification [OWL 2 Specification].
+

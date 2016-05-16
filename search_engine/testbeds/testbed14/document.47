@@ -1,0 +1,63 @@
+Web Development 101: Top Web Development Languages in 2014
+
+When it comes to choosing the best web development language for your website, it’s important to remember that there is no single best language.
+
+Instead, a web developer will choose the option that best suits your project, based on the specific functionality or features you want. Which programming languages are most likely to come up in conversation?
+
+An earlier post in this series, “What is Web Development,” described the three parts of web development: client-side scripting, which is a program that runs in a user’s web browser; server-side scripting, which runs on the web server; and database technology, which manages all the information on the server that supports a website.
+
+While there are a couple of basic languages in common use, other languages are used specifically for client-side scripting or server-side scripting.  Here is an overview of the more popular web development languages in use by the industry today.
+
+Basic web development languages
+HTML and CSS are the two most basic web development languages, and are used to build nearly all webpages on the Internet.
+
+HTML
+HTML is the standardized markup language that structures and formats content on the web. Page elements like the titles, headings, text and links are included in the HTML document. It is one of the core technologies in use on the Internet and serves as the backbone of all webpages.
+
+CSS
+CSS (Cascading Style Sheets) is a style-sheet language that basically allows web developers to “set it and forget it.” Paired with HTML, CSS allows a programmer to define the look and format of multiple webpages at once; elements like color, layout and fonts are specified in one file that’s kept separate from the core code of the webpage.
+
+These two languages provide the basic structure and style information used to create a static webpage — a page that looks the same to everyone who visits it. Many webpages now are dynamic webpages, which are slightly tailored to each new visitor. To create these more complex webpages, you need to add more advanced client-side and server-side scripting.
+
+Client-side scripting
+Client-side scripting — which includes HTML and CSS — is any code that runs within a web browser. This means that the web browser temporarily downloads all the files from a web server and, in turn, displays a static web page; you would be able to view these files even if you lost your Internet connection (as long as you left your web browser open). JavaScript and ActionScript are the two most commonly used client-side scripts.
+
+JavaScript
+JavaScript is the programming language that brings animation, games, apps, interactivity and other dynamic effects to life. After HTML and CSS, it’s the most ubiquitous of the client-side scripts. Some JavaScript applications can even run without connecting back to a web server, which means they’ll work in a browser with or without an Internet connection.
+
+ActionScript
+ActionScript is the language used for Adobe Flash, which is especially well suited for rich Internet applications that use Flash animation and streaming audio and video.
+
+Whether you use ActionScript or JavaScript is a matter of personal preference, but if you want to use the popular Adobe Flash Player software to share multimedia applications, ActionScript is a must.
+
+Server-Side Scripting
+All websites need to be hosted (i.e. stored) in a database on a web server. Server-side scripting simply refers to any code that facilitates the transfer of data from that web server to a browser. It also refers to any code used to build a database or manage data on the web server itself.
+
+Server-side scripts run on the web server, which has the power and resources to run programs that are too resource intensive to be run by a web browser. Server-side scripts are also more secure, because the source code remains on the web server rather than being temporarily stored on an individual’s computer.
+
+PHP
+Used by 75 percent of all web servers, PHP is a general-purpose server-side scripting language. The chief advantages of PHP are that it is open source, with a huge online community to support it, and that it’s compatible across multiple platforms. PHP is most often used by websites with lower traffic demands.
+
+Java
+According to a study conducted by W3Tech, Java is the server-side language of choice for large-scale websites with a high volume of traffic. Sam’s Club, Amazon and Apple App Store use Java-based web frameworks.
+
+One potential reason for its popularity among high traffic websites is that Java frameworks outperform other language frameworks in raw speed benchmark tests. That means faster server-based web applications for large scale websites. Java Servlets, JSP and WebObjects are examples of server-side solutions that use Java.
+
+Python
+Python is a general purpose, high-level programming language that puts an emphasis on code readability; for web developers, this means they can do more with fewer lines of code than other popular languages.
+
+Python does this through the use of a large standard library, which keeps the actual code short and simple. This library is a file that contains pre-coded functions, provided by the community, which you can download to your server and use in your own code whenever a specific task appears. Like Java, Python was designed for web servers that deal with a large amount of traffic. Shopzilla, Yahoo Maps, and the National Weather Service are examples of sites that use Python.
+
+Ruby
+Ruby is similar to Python in that it was designed to make programming more productive by emphasizing short and simple code that’s concise, consistent and flexible.
+
+Where Ruby differs is in its language or syntax. In Python, there is only one right way to program things, and it’s efficient and fast. In Ruby, there are multiple ways to do the same thing, and some may be faster than others. Which language you use is really a matter of preference.
+
+Ruby on Rails is a very common open-source web framework that enables web developers to create dynamic websites quickly and efficiently. Like Java, Ruby is more frequently used on web servers that deal with a large amount of traffic. Scribd, Hulu and Twitter all use Ruby.
+
+Pick the best web development language for your needs
+This is only a fraction of the web development languages used by the industry today, but they are the ones you are most likely to discuss with a web developer.
+
+Set a clear goal and purpose for your website; the features and functionality you want will ultimately decide the best language for web development. Factors like the type of database you use, the server platform, server software, your budget and the client-side functionality you want are also important considerations in choosing the right language for your web project.
+
+Any web development topics you’d like to learn about? Ask your questions in the comments section below, and we’ll make sure to address them!

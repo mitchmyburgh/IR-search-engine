@@ -1,0 +1,22 @@
+New Analysis: The Most Hackable Programming Language Is Hands-Down PHP
+
+
+
+Based on code analyses and scans of 50,000 different applications written within the past 18 months, cloud security firm Veracode has compiled a list of the most and least secure programming languages. Software engineers won't find it especially surprising, with PHP, venue for many a popular and ready-made hack, blowing away the competition.
+
+The report looked as a subset of the most pervasive programming languages/language families used today, including PHP, Java, Microsoft Classic ASP, .NET, iOS, Android, C and C++, JavaScript, ColdFusion, Ruby, and COBOL. Some 86 percent of analyzed programs written in PHP came with at least one cross-site scripting (XSS) vulnerability; 56 revealed at least one SQL injection bug; and 73 percent had encryption issues. Of applications written in the ColdFusion language, which serves a web scripting role similar to PHP and is already fairly notorious in its vulnerabilities, 62 percent revealed an SQL injection bug.
+
+Scripting/web development languages were generally worse off than their more traditional counterparts, such as Java and C++. 21 percent of Java apps were found to have SQL injection vulnerabilities, while 29 percent of applications written within Microsoft's .NET framework, which serves to unify several different foundational languages in one execution environment (like Java), had the SQL vulnerability.
+
+Of course, different languages are used for different things and in many respects comparing PHP to Java or C++ is apples and oranges. The prior is used to glue the internet together, essentially, while the latter are used more so to develop compiled/executable software. PHP runs within a web browser, while Java (etc.) runs the web browser itself.
+
+But that's only part of it. In terms of basic design, some languages are just better security-wise.
+
+"It is noteworthy that web vulnerabilities like SQL injection and Cross-Site Scripting are substantially more prevalent in applications written in web scripting languages such as Classic ASP, ColdFusion and PHP, compared to .NET and Java applications," the report explains. "This is very likely due to differences in the feature sets of each language. There are fewer security APIs built into Classic ASP, PHP and ColdFusion than have been provided for .NET and Java."
+
+Java, in particular, has what's known as automated garbage collection. This just means that the language itself (or its execution environment, the Java Virtual Machine) will prevent a program from doing untoward things with a system's memory. "By removing the need (and ability) for developers to directly allocate memory, languages such as Java and the .NET language family avoid (almost) entirely vulnerabilities dealing with memory allocation, most notably buffer overflows," the Veracode report explains.
+
+Part of the problem also has to do with who is using these various languages and what they're level of experience is. Don't believe the hype: A web development crash course is not going to teach the same stuff as years of computer science education (really).
+
+".NET and Java programs are typically used by computer science graduates who learned those languages in school," Chris Wysopal, Veracode's CTO, told Information Week. "A lot of the scripting languages like ColdFusion and ASP came out of the Web dev world, where you're designing websites and starting to learn coding, [and] to make sites more interactive."
+

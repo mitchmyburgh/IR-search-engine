@@ -1,0 +1,14 @@
+Related languages
+	This section needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (February 2016) (Learn how and when to remove this template message)
+
+C has directly or indirectly influenced many later languages such as C#, D, Go, Java, JavaScript, Limbo, LPC, Perl, PHP, Python, and Unix's C shell. The most pervasive influence has been syntactical: all of the languages mentioned combine the statement and (more or less recognizably) expression syntax of C with type systems, data models and/or large-scale program structures that differ from those of C, sometimes radically.
+
+Several C or near-C interpreters exist, including Ch and CINT, which can also be used for scripting.
+
+When object-oriented languages became popular, C++ and Objective-C were two different extensions of C that provided object-oriented capabilities. Both languages were originally implemented as source-to-source compilers; source code was translated into C, and then compiled with a C compiler.
+
+The C++ programming language was devised by Bjarne Stroustrup as an approach to providing object-oriented functionality with a C-like syntax.[38] C++ adds greater typing strength, scoping, and other tools useful in object-oriented programming, and permits generic programming via templates. Nearly a superset of C, C++ now supports most of C, with a few exceptions.
+
+Objective-C was originally a very "thin" layer on top of C, and remains a strict superset of C that permits object-oriented programming using a hybrid dynamic/static typing paradigm. Objective-C derives its syntax from both C and Smalltalk: syntax that involves preprocessing, expressions, function declarations, and function calls is inherited from C, while the syntax for object-oriented features was originally taken from Smalltalk.
+
+In addition to C++ and Objective-C, Ch, Cilk and Unified Parallel C are nearly supersets of C.

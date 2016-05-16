@@ -1,0 +1,52 @@
+Shaft Occlusion Culling (Schauffler, 2000)
+_ Cell based, operates in object space
+_ One of the first cell-based schemes that could handle 3D scenes
+_ Applications: Visibility preprocessing for walkthroughs, ray tracing
+with area lights.
+_ Represent view cells using AABBs
+_ Quadtree describes the occluding power of scene
+_ Leaf node is either opaque, boundary or empty
+ITCS 4010/5010:Game Engine Design 48 Spatial Structures/ Acceleration Algorithms
+Shaft Occlusion Culling:Method
+_ Starting from view cell, traverse quadtree for opaque node
+_ Traversal is performed outwards from the view cell to maximize occlusion
+_ Extend occluder along the coordinate axis that gives the largest angle
+from view cell to occluder (can grow in 2 directions)
+_ Hidden Leaf nodes can also be considered to be part of the occluder
+_ In 3D, can extend in 3 directions and an octree is used. ITCS 4010/5010:Game Engine Design 49 Spatial Structures/ Acceleration Algorithms
+Hardware Occlusion Queries
+_ HP Visualize FX Graphics:
+_ Supports occlusion queries, compares a set of polygons to current
+Z-buffer contents.
+_ Typically bounding volume polygons used.
+_ Performance: 25 to 100 percent, long latency.
+_ NVIDIA:
+_ NV query, returns the number of pixels that pass the depth test
+_ Cull object if n = 0, or n > thresh (speed/quality tradeoff) or
+use to determine LOD.
+_ Can test if the result is back, else return control to application,
+and allows multiple queries in parallel.
+_ Bounding volumes and hierarchies can be used to further optimally
+use the hardware queries (see text).
+ITCS 4010/5010:Game Engine Design 50 Spatial Structures/ Acceleration Algorithms
+Hierarchical Z-Buffering (Greene 93, 95)
+_ Signficance influence on occlusion culling research
+_ Potential for hardware implementation, real-time applications.
+_ Scene model in an octree, frame’s Z-buffer is a pyramid
+_ Octree enables object-space culling, while Z-buffer pyramid enables
+hierarchical Z-buffering of primitves, bounding volumes
+_ Z-Pyramid is the occlusion representation.
+ITCS 4010/5010:Game Engine Design 51 Spatial Structures/ Acceleration Algorithms
+Hierarchical Z-Buffering (HZB) Algorithm
+_ Z-Pyramid Construction: Finest level is the standard Z-buffer, all
+other levels - Z value is the farthest of the 2 × 2 window of adjacent
+finer level.
+_ If a Z value is overwritten, the coarser levels are updated in sequence.
+_ Hierarchical Culling:
+_ BB of octree (screen projected) is tested against the coarsest
+level
+_ If face’s nearest depth (znear) is farther, the face is culled, else
+continue down the Z-pyramid
+_ If bottom level of Z-pyramid reached, and octree box is visible,
+testing continues down the octree.
+ITCS 4010/5010:Game Engine Design 52 Spatial Structures/ Acceleration Algorithms

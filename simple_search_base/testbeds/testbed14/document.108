@@ -1,0 +1,21 @@
+Techniques for attempting to bridge the semantic gap in multimedia retrieval
+have mostly used an
+auto-annotation
+approach, in which keyword annotations
+are applied to unlabelled images. Enser et al. [6] discuss some short-comings of
+auto-annotation due to their lack of
+richness
+when compared to real image annotations in archival collections. Enser et al. [6] goes on to suggest that perhaps a
+way forward is to combine shareable ontologies to make explicit the relationships
+between the keyword labels and concepts they represent (e.g
+[7, 8, 9]). Zhao and
+Grosky [10] proposed an approach to bridging the semantic gap using Latent
+Semantic Indexing (see also [11, 12]).
+This paper describes our experiences in building multimedia retrieval systems, and how through various techniques we are attempting to bridge the semantic gap to improve retrieval quality for end users. Our approaches to attacking this gap have been twofold; In the first section of the paper we describe some
+attempts to automatically learn and apply the semantics of multimedia objects
+from the bottom-up. In the second section, we describe our work in trying to
+bridge the gap from the top down, by using structured knowledge representations
+in the form of ontologies.
+The third section of the paper discusses our current work and
+ideas for combining these bottom-up and top-down approaches to further our goal of improved
+retrieval effectiveness.

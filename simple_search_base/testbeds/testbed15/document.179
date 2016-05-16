@@ -1,0 +1,20 @@
+﻿Features
+
+Presents a model-based control technique where the control system design (PID-based) is derived from a data driven process
+Describes the data-driven model estimation technique using the system identification methodology on the rendering process, which provides better accuracy
+Introduces the concepts of how control systems work with real-time computer graphics
+Offers knowledge and skills in designing and implementing solutions based on this book
+Discusses a practical solution to solving a challenge in resource allocation and the trade-off between quality and speed in interactive computer graphics rendering
+Summary
+
+Consumers today expect extremely realistic imagery generated in real time for interactive applications such as computer games, virtual prototyping, and scientific visualisation. However, the increasing demands for fidelity coupled with rapid advances in hardware architecture pose a challenge: how do you find optimal, sustainable solutions to accommodate both speed of rendering and quality? Real-Time Rendering: Computer Graphics with Control Engineering presents a novel framework for solving the perennial challenge of resource allocation and the trade-off between quality and speed in interactive computer graphics rendering.
+
+Conventional approaches are mainly based on heuristics and algorithms, are largely application specific, and offer fluctuating performance, particularly as applications become more complex. The solution proposed by the authors draws on powerful concepts from control engineering to address these shortcomings. Expanding the horizon of real-time rendering techniques, this book:
+
+Explains how control systems work with real-time computer graphics
+Proposes a data-driven modelling approach that more accurately represents the system behaviour of the rendering process
+Develops a control system strategy for linear and non-linear models using proportional, integral, derivative (PID) and fuzzy control techniques
+Uses real-world data from rendering applications in proof-of-concept experiments
+Compares the proposed solution to existing techniques
+Provides practical details on implementation, including references to tools and source code
+This pioneering work takes a major step forward by applying control theory in the context of a computer graphics system. Promoting cross-disciplinary research, it offers guidance for anyone who wants to develop more advanced solutions for real-time computer graphics rendering.

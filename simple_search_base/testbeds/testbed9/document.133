@@ -1,0 +1,21 @@
+A Kinetic Heater is a kinetic priority queue similar to a kinetic heap, that makes use of randomization to simplify its analysis in a way similar to a treap. Specifically, each element has a random key associated with it in addition to its priority (which changes as a continuous function of time as in all kinetic data structures). The kinetic heater is then simultaneously a binary search tree on the element keys, and a heap on the element priorities. The kinetic heater achieves (expected) asymptotic performance bounds equal to the best kinetic priority queues. In practice however, it is less efficient since the extra random keys need to be stored, and the procedure to handle certificate failure is a (relatively complicated) rotation instead of a simple swap.
+
+
+== Implementation ==
+If every element has a key and a priority associated with it, then there is a unique tree structure that is simultaneously a search tree on the keys and a heap on the priorities - this structure corresponds to the treap (if the priorities are randomly chosen) or the kinetic heater (if the keys are randomly chosen).
+The validity of the tree structure is ensured by creating a certificate at each edge that enforces the heap property on that edge. The main operational difference between a kinetic heap and a kinetic heater is in how they respond to certificate failures. When a certificate on an edge fails, a kinetic heater will perform a rotation around the nodes that failed (instead of the swap that a kinetic heap would perform).
+
+For example, consider the elements B (with parent F) and its left child D (with right child C). When the certificate [B>D] on the edge BD fails, the tree will be rotated around this edge. Thus in this case the resulting structure has D in place of B, C becomes a child of B instead ofD, and there are three certificate changes [B>D] replaced with [D>B], [D>C] replaced with [B>C] and [F>B] replaced with [F>D]. Everything else stays the same.
+
+
+== Analysis ==
+This kinetic data structure is:
+Responsive: There are O(1) certificate updates that need to be done when a certificate fails, which takes O(log n) time
+Local: Each element is involved in O(1) certificates
+Compact: There are O(n) total certificates
+Efficient: It has the same (expected) asymptotic performance as kinetic hanger, kinetic tournament - for a collection of space-time trajectories where each pair intersects at most s times, the kinetic heater processes O(λs+2log n) events inO(λs+2log2n) time, where λs+2 is a Davenport-Schinzel sequence.
+
+
+== References ==
+
+Basch, J. "Kinetic Data Structures". Retrieved May 17, 2012.

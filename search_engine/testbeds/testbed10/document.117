@@ -1,0 +1,113 @@
+Ensemble extraction for classification and detection of bird species☆
+Eric P. Kasten a,b,
+⁎, Philip K. McKinley b
+, Stuart H. Gage a
+
+
+1. Introduction
+Advances in technology have enabled new approaches for sensing
+the environment and collecting data about the world; an important
+application domain is ecosystem monitoring (Porter et al., 2005;
+Szewczyk et al., 2004a; b; Martinez et al., 2004; Luo et al., 2007; Qi
+et al., 2008). Small, powerful sensors can collect data and extend our
+perception beyond that afforded by our natural biological senses.
+Moreover, wireless networks enable data to be acquired simultaneously
+from multiple geographically remote and diverse locations.
+Once collected, sensor readings can be assembled into data streams
+and transmitted over computer networks to observatories (Arzberger,
+2004), which provide computing resources for the storage, analysis
+and dissemination of environmental and ecological data. Such
+information is important to improving our understanding of environmental
+and ecological processes. However, when data is collected
+continuously, automated processing facilitates the organization and
+searching of the resulting data repositories. Without timely processing,
+the sheer volume of the data might preclude the extraction of information of interest. Addressing these problems will likely become
+increasingly important as technology improves and more sensor
+platforms and sensor networks are deployed (The 2020 Science
+Group, 2005).
+Acoustic signals have been used for many years to census vocal
+organisms. For example, the North American Breeding Bird Survey,
+one of the largest long-term, national-scale avian monitor programs,
+has been conducted for more than 30 years using human auditory and
+visual cues (Bystrak, 1981). The North American Amphibian Monitoring
+Program is based on identifying amphibian species primarily by
+listening for their calls (Weir and Mossman, 2005). Recent advances
+in sensor networks enable large-scale, automated collection of
+acoustic signals in natural areas (Estrin et al., 2003). The systematic
+and synchronous collection of acoustic samples at multiple locations,
+combined with measurements of ancillary data such as light,
+temperature, and humidity, can produce an enormous volume of
+ecologically relevant data. Transmuting this raw data into useful
+knowledge requires timely and effective processing and analysis.
+Acoustics as an ecological attribute has the potential to increase
+our understanding of ecosystem change due to human disturbance, as
+well as provide a measure of biological diversity and its subsequent
+change over time (Truax, 1984; Wrightson, 2000). The analysis of
+entire soundscapes may also produce valuable information on the
+dynamics of interactions between ecological systems in heterogeneous
+landscapes (Charles et al., 1999). Moreover, timely analysis and
+processing enables rapid delivery of important environmental
+information to those responsible for conservation and management
+of our natural resources, and can promote public involvement through
+public access to ready information about the environments in whichhas driven the development of wind resource areas and the need to
+better understand the unintended impact of wind farms on wildlife. In
+turn, state and federal agencies have put forth guidelines for
+evaluating the potential effects that a wind farm might have on
+wildlife that include acoustic monitoring (Anderson et al., 1999;
+Michigan Department of Labor and Economic Growth, 2005; United
+States Fish and Wildlife Service, 2003).
+This study addresses the automated classification and detection of
+bird species using acoustic data streams collected in natural environments.
+In this context, classification attempts to accurately recognize
+which species produced a particular vocalization, while detection
+indicates the likelihood that an acoustic clip contains a song voiced by
+a particular species. The project is a collaboration between computer
+scientists and ecologists at the Remote Environmental Assessment
+Laboratory (REAL) at Michigan State University. Acoustic data is
+collected from in-field sensor stations located at the Kellogg Biological
+Research Station (KBS) in Michigan and other locations, some as far
+away Australia. Species classification and detection enables the
+automation of ecological surveys traditionally conducted by human
+observers in the field. Moreover, processing of data as it is collected
+enables annotation of sensor data with meta-information that can
+facilitate later searching and analysis.
+As shown in Fig. 1, the acoustic sensor stations comprise a polemounted
+sensor unit and a solar panel coupled with a deep cycle
+battery for providing power over extended periods. Acoustic clips
+are collected by the sensor units and automatically transmitted to
+REAL over local and regional networks (e.g. over a local wireless
+network to the internet). When network technology is not available,
+manual collection may also be used. Currently, clips are approximately
+30 s long and are collected every half hour. We anticipate
+increasing the collection rate as computing, storage and power
+resources permit.
+Sensor collection of acoustic data enables monitoring of natural
+environments despite visual occlusions, such as trees or buildings, or
+even darkness. Moreover, microphones can collect data from all
+directions simultaneously. However, acoustic data is rich and
+complex. For instance, bird vocalizations vary considerably even
+within a particular bird species. Young birds learn their songs with
+reference to adult vocalizations during sensitive periods (Tchernichovski
+et al., 2004; Thorpe, 1961). At maturity, the song of a specific
+bird will crystallize into a species-specific stereotypical form.
+However, even stereotypical songs vary between individual birds of
+the same species (Catchpole and Slater, 1995). Moreover, many
+vocalizations are not stereotypical but are instead plastic and may
+change with seasons, while some species can learn new songs
+throughout their lives (Brenowitz et al., 1997). Variation of song
+within a species and the occurrence of other sounds in natural
+settings, such as the sound of wind or that produced by human
+we live. For instance, increased interest in renewable energy sources activity, are significant obstacles to automated detection and
+classification of birds. Extraction of candidate bird vocalizations
+from acoustic streams facilitates accurate recognition of a species.
+The main contribution of this paper is to introduce a process that
+enables detection and extraction of meaningful sequences, called
+ensembles, from acoustic data streams. Here we investigate the utility
+of this method to support automated detection and classification of
+bird species using MESO (Kasten and McKinley, 2007), a perceptual
+memory system that supports online, incremental learning. Results of
+our experiments are promising and suggest that extraction and
+analysis of ensembles from acoustic data may facilitate automated
+monitoring of natural environments. Moreover, the extraction of
+ensembles from acoustic clips reduced the amount of data to be
+processed by approximately 80%

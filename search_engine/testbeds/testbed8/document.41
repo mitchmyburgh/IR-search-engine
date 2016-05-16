@@ -1,0 +1,7 @@
+Advantages and disadvantages
+
+The primary advantage of a tagged union over an untagged union is that all accesses are safe, and the compiler can even check that all cases are handled. Untagged unions depend on program logic to correctly identify the currently active field, which may result in strange behavior and hard-to-find bugs if that logic fails.
+
+The primary advantage of a tagged union over a simple record containing a field for each type is that it saves storage by overlapping storage for all the types. Some implementations reserve enough storage for the largest type, while others dynamically adjust the size of a tagged union value as needed. When the value is immutable, it is simple to allocate just as much storage as is needed.
+
+The main disadvantage of tagged unions is that the tag occupies space. Since there are usually a small number of alternatives, the tag can often be squeezed into 2 or 3 bits wherever space can be found, but sometimes even these bits are not available. In this case, a helpful alternative may be folded, computed or encoded tags, where the tag value is dynamically computed from the contents of the union field. Common examples of this are the use of reserved values, where, for example, a function returning a positive number may return -1 to indicate failure, and sentinel values, most often used in tagged pointers.

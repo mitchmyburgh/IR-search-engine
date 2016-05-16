@@ -1,0 +1,37 @@
+A digital organism is a self-replicating computer program that mutates and evolves. Digital organisms are used as a tool to study the dynamics of Darwinian evolution, and to test or verify specific hypotheses or mathematical models of evolution. The study of digital organisms is closely related to the area of artificial life.
+
+
+== History ==
+Digital organisms can be traced back to the game Darwin, developed in 1961 at Bell Labs, in which computer programs had to compete with each other by trying to stop others from executing . A similar implementation that followed this was the game Core War. In Core War, it turned out that one of the winning strategies was to replicate as fast as possible, which deprived the opponent of all computational resources. Programs in the Core War game were also able to mutate themselves and each other by overwriting instructions in the simulated "memory" in which the game took place. This allowed competing programs to embed damaging instructions in each other that caused errors (terminating the process that read it), "enslaved processes" (making an enemy program work for you), or even change strategies mid-game and heal themselves.
+Steen Rasmussen at Los Alamos National Laboratory took the idea from Core War one step further in his core world system by introducing a genetic algorithm that automatically wrote programs. However, Rasmussen did not observe the evolution of complex and stable programs. It turned out that the programming language in which core world programs were written was very brittle, and more often than not mutations would completely destroy the functionality of a program.
+The first to solve the issue of program brittleness was Thomas S. Ray with his Tierra system, which was similar to core world. Ray made some key changes to the programming language such that mutations were much less likely to destroy a program. With these modifications, he observed for the first time computer programs that did indeed evolve in a meaningful and complex way.
+Later, Chris Adami, Titus Brown, and Charles Ofria started developing their Avida system, which was inspired by Tierra but again had some crucial differences. In Tierra, all programs lived in the same address space and could potentially overwrite or otherwise interfere with each other. In Avida, on the other hand, each program lives in its own address space. Because of this modification, experiments with Avida became much cleaner and easier to interpret than those with Tierra. With Avida, digital organism research has begun to be accepted as a valid contribution to evolutionary biology by a growing number of evolutionary biologists. Evolutionary biologist Richard Lenski of Michigan State University has used Avida extensively in his work. Lenski, Adami, and their colleagues have published in journals such as Nature and the Proceedings of the National Academy of Sciences (USA).
+In 1996, Andy Pargellis created a Tierra-like system called Amoeba that evolved self-replication from a randomly seeded initial condition.
+
+
+== See also ==
+
+
+=== Related topics and overviews ===
+
+Artificial life
+Evolutionary computation
+Genetic algorithms
+Combinatorial optimization
+Cellular automaton
+
+
+=== Specific programs ===
+List of digital organism simulators
+Evolution@Home
+Polyworld
+
+
+== References ==
+
+
+== Further reading ==
+O'Neill, B. (2003). Digital Evolution. PLoS Biology 1, 011-014.
+Wilke, C.O. & Adami, C. (2002). The biology of digital organisms. Trends in Ecology and Evolution 17, 528-532.
+Pargellis, A.N. (1996). The spontaneous generation of digital "Life". Physica D 91 86-96
+Misevic, Dusan & Ofria, Charles & Lenski, Richard E. Sexual reproduction reshapes the genetic architecture of digital organisms Proc Biol Sci. 2006 February 22; 273(1585): 457–464.

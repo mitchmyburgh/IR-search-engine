@@ -1,0 +1,112 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Camera Models
+Goal: To model basic geometry of projection of 3D points, curves, and surfaces onto a 2D surface, the view plane or image plane.
+6.1 Thin Lens Model
+Most modern cameras use a lens to focus light onto the view plane (i.e., the sensory surface). This is done so that one can capture enough light in a suf?ciently short period of time that the objects do not move appreciably, and the image is bright enough to show signi?cant detail over a wide range of intensities and contrasts.
+Aside: In a conventional camera, the view plane contains either photoreactive chemicals; in a digital camera, the view plane contains a charge-coupled device (CCD) array. (Some cameras use a CMOS-based sensor instead of a CCD). In the human eye, the view plane is a curved surface called the retina, and and contains a dense array of cells with photoreactive molecules.
+Lens models can be quite complex, especially for compound lens found in most cameras. Here we consider perhaps the simplist case, known widely as the thin lens model. In the thin lens model, rays of light emitted from a point travel along paths through the lens, convering at a point behind the lens. The key quantity governing this behaviour is called the focal length of the lens. The focal length,,|f|, can be de?ned as distance behind the lens to which rays from an in?nitely distant source converge in focus.
+view plane
+lens
+z
+0
+surface point
+optical axis
+z
+1
+More generally, for the thin lens model, if z1 is the distance from the center of the lens (i.e., the nodal point) to a surface point on an object, then for a focal length |f|, the rays from that surface point will be in focus at a distance z0 behind the lens center, where z1 and z0 satisfy the thin lens equation: 1 |f| = 1 z0 + 1 z1 (25)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 32
+CSC418 / CSCD18 / CSC2504 Camera Models
+6.2 Pinhole Camera Model
+A pinhole camera is an idealization of the thin lens as aperture shrinks to zero.
+view plane
+infinitesimal pinhole
+Light from a point travels along a single straight path through a pinhole onto the view plane. The object is imaged upside-down on the image plane.
+Note: We use a right-handed coordinate system for the camera, with the x-axis as the horizontal direction and the y-axis as the vertical direction. This means that the optical axis (gaze direction) is the negative z-axis.
+-z
+y
+z
+x
+Here is another way of thinking about the pinhole model. Suppose you view a scene with one eye looking through a square window, and draw a picture of what you see through the window:
+(Engraving by Albrecht D¨urer, 1525).
+Copyright c
+2005 David Fleet and Aaron Hertzmann 33
+CSC418 / CSCD18 / CSC2504 Camera Models
+The image you'd get corresponds to drawing a ray from the eye position and intersecting it with the window. This is equivalent to the pinhole camera model, except that the view plane is in front of the eye instead of behind it, and the image appears rightside-up, rather than upside down. (The eye point here replaces the pinhole). To see this, consider tracing rays from scene points through a view plane behind the eye point and one in front of it:
+For the remainder of these notes, we will consider this camera model, as it is somewhat easier to think about, and also consistent with the model used by OpenGL.
+Aside: The earliest cameras were room-sized pinhole cameras, called camera obscuras. You would walk in the room and see an upside-down projection of the outside world on the far wall. The word camera is Latin for "room;" camera obscura means "dark room."
+18th-century camera obscuras. The camera on the right uses a mirror in the roof to project images of the world onto the table, and viewers may rotate the mirror.
+6.3 Camera Projections
+Consider a point ¯ p in 3D space oriented with the camera at the origin, which we want to project onto the view plane. To project py to y, we can use similar triangles to get y = f pz py. This is perspective projection.
+Note that f < 0, and the focal length is|f|. In perspective projection, distant objects appear smaller than near objects:
+Copyright c
+2005 David Fleet and Aaron Hertzmann 34
+CSC418 / CSCD18 / CSC2504 Camera Models
+pinhole image
+f
+y
+z
+p
+y
+p z
+Figure 1: *
+Perspective projection
+The man without the hat appears to be two different sizes, even though the two images of him have identical sizes when measured in pixels. In 3D, the man without the hat on the left is about 18 feet behind the man with the hat. This shows how much you might expect size to change due to perspective projection.
+6.4 Orthographic Projection
+For objects suf?ciently far away, rays are nearly parallel, and variation in pz is insigni?cant.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 35
+CSC418 / CSCD18 / CSC2504 Camera Models
+Here, the baseball players appear to be about the same height in pixels, even though the batter is about 60 feet away from the pitcher. Although this is an example of perspective projection, the camera is so far from the players (relative to the camera focal length) that they appear to be roughly the same size.
+In the limit, y = apy for some real scalar a. This is orthographic projection:
+y
+z
+image
+6.5 Camera Position and Orientation
+Assume camera coordinates have their origin at the "eye" (pinhole) of the camera, ¯ e.
+y
+z
+x
+g
+e
+w
+u
+v
+Figure 2:
+Let ~g be the gaze direction, so a vector perpendicular to the view plane (parallel to the camera z-axis) is w~ = -~g k~gk (26)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 36
+CSC418 / CSCD18 / CSC2504 Camera Models
+We need two more orthogonal vectors ~u and ~v to specify a camera coordinate frame, with ~u and ~v parallel to the view plane. It may be unclear how to choose them directly. However, we can instead specify an "up" direction. Of course this up direction will not be perpendicular to the gaze direction.
+Let ~ t be the "up" direction (e.g., toward the sky so ~ t = (0,1,0)). Then we want ~v to be the closest vector in the viewplane to ~ t. This is really just the projection of ~ t onto the view plane. And of course, ~u must be perpendicular to ~v and w~. In fact, with these de?nitions it is easy to show that ~u must also be perpendicular to~ t, so one way to compute ~u and ~v from~ t and ~g is as follows:
+~u =
+~ t×w~ k~ t×w~k
+~v = w~×~u (27)
+Of course, we could have use many different "up" directions, so long as~ t×w~ 6= 0. Using these three basis vectors, we can de?ne a camera coordinate system, in which 3D points are represented with respect to the camera's position and orientation. The camera coordinate system has its origin at the eye point ¯ e and has basis vectors ~u, ~v, and w~, corresponding to the x, y, and z axes in the camera's local coordinate system. This explains why we chose w~ to point away from the image plane: the right-handed coordinate system requires that z (and, hence, w~) point away from the image plane. Now that we know how to represent the camera coordinate frame within the world coordinate frame we need to explicitly formulate the rigid transformation from world to camera coordinates. With this transformation and its inverse we can easily express points either in world coordinates or camera coordinates (both of which are necessary). To get an understanding of the transformation, it might be helpful to remember the mapping from points in camera coordinates to points in world coordinates. For example, we have the following correspondences between world coordinates and camera coordinates: Using such correspondences
+Camera coordinates (xc,yc,zc) World coordinates (x,y,z) (0,0,0) ¯ e (0,0,f) ¯ e + fw~ (0,1,0) ¯ e +~v (0,1,f) ¯ e +~v + fw~
+it is not hard to show that for a general point expressed in camera coordinates as ¯ pc = (xc,yc,zc), the corresponding point in world coordinates is given by
+¯ pw = ¯ e + xc~u + yc~v + zcw~ (28) = ~u ~v w~ ¯ pc + ¯ e (29) = Mcw¯ pc + ¯ e. (30)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 37
+CSC418 / CSCD18 / CSC2504 Camera Models
+where
+Mcw =~u ~v w~ =? ?
+u1 v1 w1 u2 v2 w2 u3 v3 w3
+? ? (31) Note: We can de?ne the same transformation for points in homogeneous coordinates:
+ˆ Mcw = Mcw ¯ e ~ 0T 1 .
+Now, we also need to ?nd the inverse transformation, i.e., from world to camera coordinates. Toward this end, note that the matrix Mcw is orthonormal. To see this, note that vectors ~u, ~v and, w~ are all of unit length, and they are perpendicular to one another. You can also verify this by computing MT cwMcw. Because Mcw is orthonormal, we can express the inverse transformation (from camera coordinates to world coordinates) as
+¯ pc = MT cw(¯ pw -¯ e) = Mwc¯ pw - ¯ d,
+where Mwc = MT cw =? ?
+~uT ~vT w~T ? ?. (why?), and ¯ d = MT cw¯ e. In homogeneous coordinates, ˆ pc = ˆ Mwcˆ pw, where
+ˆ Mv =  Mwc -Mwc¯ e ~ 0T 1  =  Mwc ~ 0 ~ 0T 1  I -¯ e ~ 0T 1 . This transformation takes a point from world to camera-centered coordinates.
+6.6 Perspective Projection
+Above we found the form of the perspective projection using the idea of similar triangles. Here we consider a complementary algebraic formulation. To begin, we are given • a point ¯ pc in camera coordinates (uvw space), • center of projection (eye or pinhole) at the origin in camera coordinates, • image plane perpendicular to the z-axis, through the point (0,0,f), with f < 0, and
+Copyright c
+2005 David Fleet and Aaron Hertzmann 38
+CSC418 / CSCD18 / CSC2504 Camera Models
+• line of sight is in the direction of the negative z-axis (in camera coordinates), we can ?nd the intersection of the ray from the pinhole to ¯ pc with the view plane.
+The ray from the pinhole to ¯ pc is ¯ r(?) = ?(¯ pc -¯ 0). The image plane has normal (0,0,1) = ~n and contains the point (0,0,f) = ¯ f. So a point ¯ xc is on the plane when (¯ xc - ¯ f)·~n = 0. If ¯ xc = (xc,yc,zc), then the plane satis?es zc -f = 0. To ?nd the intersection of the plane zc = f and ray~r(?) = ?¯ pc, substitute~r into the plane equation. With ¯ pc = (pc x,pc y,pc z), we have ?pc z = f, so ?* = f/pc z, and the intersection is ~r(?*) =f pc x pc z ,f pc y pc z ,f= fpc x pc z , pc y pc z ,1= ¯ x*. (32) The ?rst two coordinates of this intersection ¯ x* determine the image coordinates.
+2D points in the image plane can therefore be written as  x* y* = f pc z pc x pc y = 1 0 0 0 1 0 f pc z

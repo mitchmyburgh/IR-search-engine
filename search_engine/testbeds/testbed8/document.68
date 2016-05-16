@@ -1,0 +1,20 @@
+Geometric expansion and amortized cost
+
+To avoid incurring the cost of resizing many times, dynamic arrays resize by a large amount, such as doubling in size, and use the reserved space for future expansion. The operation of adding an element to the end might work as follows:
+
+function insertEnd(dynarray a, element e)
+    if (a.size = a.capacity)
+        // resize a to twice its current capacity:
+        a.capacity ← a.capacity * 2 
+        // (copy the contents to the new memory location here)
+    a[a.size] ← e
+    a.size ← a.size + 1
+
+As n elements are inserted, the capacities form a geometric progression. Expanding the array by any constant proportion a ensures that inserting n elements takes O(n) time overall, meaning that each insertion takes amortized constant time. Many dynamic arrays also deallocate some of the underlying storage if its size drops below a certain threshold, such as 30% of the capacity. This threshold must be strictly smaller than 1/a in order to provide hysteresis (provide a stable band to avoiding repeatedly growing and shrinking) and support mixed sequences of insertions and removals with amortized constant cost.
+
+Dynamic arrays are a common example when teaching amortized analysis.[3][4]
+Growth factor
+
+The growth factor for the dynamic array depends on several factors including a space-time trade-off and algorithms used in the memory allocator itself. For growth factor a, the average time per insertion operation is about a/(a−1), while the number of wasted cells is bounded above by (a−1)n. If memory allocator uses a first-fit allocation algorithm, then growth factor values such as a=2 can cause dynamic array expansion to run out of memory even though a significant amount of memory may still be available.[5] There have been various discussions on ideal growth factor values, including proposals for the Golden Ratio as well as the value 1.5.[6] Many textbooks, however, use a = 2 for simplicity and analysis purposes.[3][4]
+
+Below are growth factors used by several popular implementations:

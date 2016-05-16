@@ -1,0 +1,37 @@
+AmigaBASIC
+'''AmigaBASIC''' was an    implementation for the , designed and written by .  AmigaBASIC shipped with  versions 1.1 to 1.3. It succeeded 's ABasiC, which was included in AmigaOS 1.0 and 1.1, and was superseded by , a -style scripting language, from AmigaOS version 2.0 onwards.
+==History and description==
+AmigaBASIC provided not only the common BASIC language, but also attempted to provide an easy-to-use  for the Amiga's unique graphics and sound capabilities. OBJECT commands, for example, made it easy to create moving objects   and bobs that could be drawn with an external drawing program, ''Object editor'', that was supplied with AmigaBASIC. An unusual feature of the language is that it theoretically allowed the calling of handwritten  subprograms; however, this feature never worked because of a bug that failed to align the assembly language instructions correctly on a  boundary, as required by the Amiga's native  processor.
+'''', a popular computer magazine published while AmigaBASIC was still being shipped, included many AmigaBASIC s in their articles.  These were typically implementations of simple programs such as rudimentary games, system and file  and  such as analog clocks and address books.
+AmigaBASIC itself was rendered obsolete because of incompatibilities with AmigaOS 2.0 and the hardware successors to the  CPU.  Some incompatibilities were due to the disregard of programming guidelines set forth by Commodore. However, there were a number of third-party compiled BASIC languages released for the Amiga that could compile AmigaBASIC programs with minimal changes, like A/C BASIC or Cursor (see below). Some of these compiled BASICs continued to work with AmigaOS 2.0, and as they were compiled rather than interpreted, they generally ran much faster than the original.
+Although AmigaBASIC was superseded by ARexx in AmigaOS 2.0, the two languages had very different functions and capabilities. Hobbyist programmers had changed by the time of AmigaOS 2.0's release and were more likely to be interested in  existing third party applications  than in writing new programs entirely from scratch. ARexx was seen as better fitting their needs than BASIC.
+Along with Microsoft's very similar BASIC for the , AmigaBASIC was the first BASIC interpreter to not require s, adopting instead a top-down approach to executing the , and  to indicate the GOTO instruction where to jump. However programs that contained line numbers were able to run; the line numbers were simply treated as labels for the purpose of flow control. It was also the first Microsoft interpreted language capable of calling OS functions and dynamic libraries through the command "LIBRARY". For example: LIBRARY Graphics.library command invokes the standard Amiga Graphics.library from which to call functions.
+==Hello World in AmigaBASIC==
+' Hello World for AmigaBASIC
+PRINT "Hello world!"
+You can go one better by adding the following line:
+SAY TRANSLATE$ ("HELLO WORLD")
+The Amiga will then say "Hello world" using  in addition to displaying it on screen.
+==Other BASIC languages for AmigaOS==
+* A/C Basic by  was a compiler for AmigaBASIC programs that turned them into native executables that could be run without AmigaBASIC or the program's source code being present.
+*  was a non-Microsoft Basic produced by  that was shipped with Amiga 1000 systems with Workbench 1.0, before AmigaBasic was available.  ABasiC provided a more traditional Basic programming environment, requiring numbered lines and lacking support for  windowing.  ABasiC did provide very good support for Amiga graphics and sound features otherwise, however.
+*  was an AmigaBASIC compiler, written by David Benn. The compiler produced   which could be assembled and linked into native Amiga executables.  The primary benefits were performance, lower run-time memory requirements, the ability to execute software without AmigaBASIC, and the ability to distribute software without having to release the actual source code.  ACE also provided additional language constructs to expand upon the capability of the AmigaBASIC language.
+* , developed by , was a commercial language which provided extensive support for the Amiga's graphics hardware and was designed primarily for games programming. It was used to write several commercial games and educational software.
+*  was a direct commercial competitor to AMOS, published by . Like AMOS, it was targeted at games programming, however it also included the ability to use the Amiga's APIs for use in application software. Its successor, Blitz Basic 2, was used to write several commercial games, including the popular  game .
+* '''Cursor''' was another AmigaBASIC editor and compiler.
+* , originally developed for the , was ported to the Amiga platform by its author, .
+*  was another BASIC variant ported from the Atari ST to the Amiga.
+*
+==References==
+;Notes
+* Amiga Basic by , published by , December 1992, ISBN 978-1-870336-87-1
+* Amiga Basic by , published by , 1989, ISBN 978-88-7056-966-7
+* Amiga Basic Inside and Out, by  and  published by  (Abacus Software Inc.), Jan 1988, ISBN 978-0-916439-87-3
+* Elementary Amiga BASIC by C. Regena, published by  (Compute! Publications Inc.,U.S.), April 1987, ISBN 978-0-87455-041-2
+*Advanced Amiga basic by ~  and , published by  (Compute Library Selection) July 1986, ISBN 978-0-87455-045-0
+==External links==
+*   Source code listing of a fractal mountain generator.
+*   Source code listing for enhanced buttons, such as radio-style buttons.
+*   Source code listing for a masked text input box.
+*   Extra information about AmigaBASIC.
+*

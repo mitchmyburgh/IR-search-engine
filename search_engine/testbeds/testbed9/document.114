@@ -1,0 +1,17 @@
+The Euclidean minimum spanning tree or EMST is a minimum spanning tree of a set of n points in the plane (or more generally in ?d), where the weight of the edge between each pair of points is the Euclidean distance between those two points. In simpler terms, an EMST connects a set of dots using lines such that the total length of all the lines is minimized and any dot can be reached from any other by following the lines.
+
+In the plane, an EMST for a given set of points may be found in ?(n log n) time using O(n) space in the algebraic decision tree model of computation. Faster randomized algorithms of complexity O(n log log n) are known in more powerful models of computation that more accurately model the abilities of real computers.[1]
+
+In higher dimensions (d ? 3), finding an optimal algorithm remains an open problem.An asymptotic lower bound of ?(n log n) for time complexity of the EMST problem can be established in restricted models of computation, such as the algebraic decision tree and algebraic computation tree models, in which the algorithm has access to the input points only through certain restricted primitives that perform simple algebraic computations on their coordinates: in these models, the closest pair of points problem requires ?(n log n) time, but the closest pair is necessarily an edge of the EMST, so the EMST also requires this much time.[2] However, if the input points have integer coordinates and bitwise operations and table indexing operations are permitted using those coordinates, then faster algorithms are possible.[1]
+
+Algorithms for computing EMSTs in two dimensions[edit]
+The simplest algorithm to find an EMST in two dimensions, given n points, is to actually construct the complete graph on n vertices, which has n(n-1)/2 edges, compute each edge weight by finding the distance between each pair of points, and then run a standard minimum spanning tree algorithm (such as the version of Prim's algorithm or Kruskal's algorithm) on it. Since this graph has ?(n2) edges for n distinct points, constructing it already requires ?(n2) time. This solution also requires ?(n2) space to store all the edges.
+
+A better approach to finding the EMST in a plane is to note that it is a subgraph of every Delaunay triangulation of the n points, a much-reduced set of edges:
+
+Compute the Delaunay triangulation in O(n log n) time and O(n) space. Because the Delaunay triangulation is a planar graph, and there are no more than three times as many edges as vertices in any planar graph, this generates only O(n) edges.
+Label each edge with its length.
+Run a graph minimum spanning tree algorithm on this graph to find a minimum spanning tree. Since there are O(n) edges, this requires O(n log n) time using any of the standard minimum spanning tree algorithms such as Bor?vka's algorithm, Prim's algorithm, or Kruskal's algorithm.
+The final result is an algorithm taking O(n log n) time and O(n) space.
+
+If the input coordinates are integers and can be used as array indices, faster algorithms are possible: the Delaunay triangulation can be constructed by a randomized algorithm in O(n log log n) expected time.[1] Additionally, since the Delaunay triangulation is a planar graph, its minimum spanning tree can be found in linear time by a variant of Bor?vka's algorithm that removes all but the cheapest edge between each pair of components after each stage of the algorithm.[3] Therefore, the total expected time for this algorithm is O(n log log n).[1]

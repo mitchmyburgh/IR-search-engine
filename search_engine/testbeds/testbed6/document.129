@@ -1,0 +1,30 @@
+ Your browser does not support Javascript. You should still be able to navigate through these materials but selftest questions will not work.
+ Outcome 1: Dynamic Memory Allocation and Linked Data Structures 
+     Table of Contents 
+      Introduction  
+       Abstract Data Types (ADTs)  
+        Data Types and Data Structures  
+        Data Structures  
+        Abstract Data Type  
+        ADT Components  
+        The Stack ADT  
+        Stack Operations  
+        ADT Task 1  
+        ADT Task 2  
+      ADT Operations  
+      Dynamic Memory Allocation  
+      DMA Operations  
+     Data Types and Data Structures 
+     We are going to be studying abstract data types and linked data structures during the course of this Unit. So what do these terms mean? 
+      Data Type 
+      A data type (in computing terms) is a set of data values having predefined characteristics. You will have encountered data types during computer programming classes. Example data types would be integer, floats, string and characters. Generally in all programming languages we have a limited number of such data types. The range of values that can be stored in each of these data types is defined by the language and the computer hardware that you are using the high level language on. 
+     These basic data types are also known as the primitive data types. 
+     In addition to this all data types can be broken up into: 
+      Scalar Data types  
+      A simple (scalar) data type consists of a collection of ordered values and a set of operations that can be performed on those values. The C, C++ and Java programming languages refer to scalar types as primitive data types.  
+      A scalar variable can hold only one piece of data at a time. So in C, C++ and Java scalar data types include int, char, float and double, along with others. Scalar variables of the same type can be arranged into ascending or descending order based on the value. 
+      Structured data types  
+      Structured data types hold a collection of data values. This collection will generally consist of the primitive data types. Examples of this would include arrays, records (structs), classes and files. These data types, which are created by programmers, are extremely important and are the building block of data structures. So what exactly is a data structure? 
+      Next: Data Structures  
+   DM32 35: Software Development: Linked Data Structures (c) 2008 SQA  
+

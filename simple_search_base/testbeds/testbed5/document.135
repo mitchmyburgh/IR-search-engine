@@ -1,0 +1,136 @@
+
+What’s the Best Programming Language to Learn in 2016?
+Craig Buckler
+January 19, 2016
++132
+Want cutting–edge content?
+Get the best of Front-end plus exclusive deals and freebies in your inbox!
+Success! Subscribed.
+Claim your free ebook!
+
+Get HTML5 and CSS3 for The Real World, 2nd edition when you start a free 14–day SitePoint Premium trial
+Get this deal!
+FacebookTwitter
+
+Was this helpful?
+
+Craig’s Best Programming Language to Learn in 2015 article was a huge hit, and in this article he offers a fresh perspective on the programming landscape in 2016.
+
+It’s the start of a new year, so it’s natural to start thinking about your future life and career choices. I’ve been analyzing ‘best language’ statistics for several years, and we’ve seen reporting systems rise and fall. GitHut — one of my favorites — has not been updated since 2014. There are still a few around, so let’s look at the most recent data.
+TIOBE Index, January 2016
+
+TIOBE’s latest report assesses the popularity of programming languages using the number of skilled engineers and search engine rankings. The results:
+
+    Java
+    C
+    C++
+    C#
+    Python
+    PHP
+    VisualBasic.NET
+    JavaScript
+    Assembly Language
+    Ruby
+    Perl
+    Delphi
+    VisualBasic
+    Swift
+    MATLAB
+    Pascal
+    Groovy
+    Objective-C
+    R
+    PL/SQL
+
+TIOBE states their chart is not an indicator of suitability or the number of lines written. Some languages rise because they’re still used and are relatively older than others. There are a few surprises: is VisualBasic still popular? It’s rarely used by professional developers, but it could be that many people use it for simple ad-hoc applications. That said, I don’t know of anyone who’s used assembly language for many, many years?
+DevPost Student Hackers Report, January 2016
+
+The DevPost report analyzes the work of 13,281 students participating on almost 10,000 projects during the 2014-2015 academic year. The results show technologies used, although it’s intermingled with programming languages:
+
+    HTML/CSS
+    JavaScript
+    Python
+    Java
+    C/C++
+    PHP
+    Objective-C
+    C#
+    Swift
+    JSON
+    Ruby
+    XML
+    Ajax
+    Shell
+    Processing
+    Lua
+    CoffeeScript
+    Go
+    MATLAB
+    OpenGL
+
+The results mostly highlight what students are working on in their spare time. The projects tend to be dominated by native apps, embedded micro-controllers and wearables, which can be fairly niche technologies in the business world. In addition, these are languages the students wanted to use. Whether they were viable or pleasurable is another matter!
+Learn to Program Today!
+
+I’m going to state this clearly. Again:
+
+    never choose a language from survey results
+
+It would be like choosing to live in a particular town because it has a higher population than others. These statistics are interesting, but they don’t help you pick the most appropriate language for your situation, project requirements or career objectives.
+
+Forget choosing a language and start coding in something. It doesn’t matter what you choose. Learn the basic concepts and the majority of other languages become just an alternative syntax.
+…but Don’t Expect to Become Proficient Immediately
+
+Developers often make coding look easy — but anything seems easy once you’ve learned it. Unfortunately, our industry has a tendency to underestimate the challenge.
+
+Have you ever seen books or courses titled “Learn Aeronautical Engineering in 21 Days” or “Bridge Construction for Idiots”? Of course not, yet good developers will spend just as long learning their craft. The primary difference is that development has a lower barrier to entry, and you’re less likely to hurt anyone with shoddy code … unless your software is used to design aircraft or bridges!
+
+Coding is difficult. You’ll be able to create a few simple programs within days, but you’ll need many months’ knowledge to confidently tackle a large application. Most professional jobs require several years of solid experience. Even then, you’re always learning. We all look back at carefully constructed programs developed six months ago and think “who wrote that nonsense?”
+Can You Become a Developer?
+
+Absolutely — but relatively few people will. If the job was easy, developer demand would never exceed supply. However, I do not believe developers are born with innate coding skills. Anyone can learn to program. Just like anyone can learn to play the guitar or speak Japanese … if they’re prepared to put the effort in.
+
+The key is passion. If you’re excited about seeing your name on-screen or moving a green blob from one point to another, programming could be for you. The best developers are motivated by tasks and are mostly self-taught. Education, books and courses will help, but you only learn coding by doing it.
+Where Should I Start?
+More from this author
+
+    How to Use JSON Data Fields in MySQL Databases
+    Opera VPN: the Future of Private Browsing?
+    How to Create a Static Site with Metalsmith
+
+SitePoint is primarily a web development resource, but the web is a hostile environment for beginners. Even if you concentrate on client-side development, you won’t get far without some knowledge of browsers, HTML and CSS (they’re not programming languages and are considerably more quirky!) Here are solid introductions to HTML and CSS from our Premium content collection.
+
+Native OS development in something like Java or C# isn’t much easier. There may be fewer dependencies, but many novices are bamboozled by the IDEs and tools required to get going. A lengthy compile step — which translates your code into something the computer can understand — isn’t conducive to learning.
+
+An interpreted language such as Python, Ruby (we have a great intro) or JavaScript (in Node.js) (ditto) may be a better option, but some are daunted by the command line. It’s also difficult to create anything graphically interesting to hold your excitement.
+
+Modern development environments are complex, and the initial learning curve is steep. I’m showing my age, but I consider myself fortunate to have learned coding on a ZX Spectrum in Sinclair BASIC. The choice was limited — as was the memory and capabilities — but it allowed me to grasp the basics (of BASIC and coding) without getting bogged down in a stack of related technologies.
+
+We’ll never return to the simpler 8-bit days, but there are a number of BASIC environments which could help introduce you to the concepts of code structure, variables, looping and branching, e.g. Basic for Qt, SmallBasic, Basic256 or the ancient QBasic. Snobbier developers berate BASIC because it can teach bad practices, but writing a few lines of terrible code will teach you more than writing none.
+Can I Become a Great Coder?
+
+Yes — in time. The best coders go through several phases on their programming journey:
+
+    The “I know nothing” phase
+    Everything is new, nothing is easy.
+    The “it’s starting to make sense” phase
+    You’ve written a few programs and are making fewer mistakes.
+    The “I’m invincible” phase
+    Your confidence matches your competence. No challenge seems too difficult.
+    The “I know nothing” phase, part II
+    The sudden realization that development is infinitely more complex and you begin to doubt your own abilities.
+    The “I know a bit and that’s OK” phase
+    You have decent coding skills but recognize your limitations and can find solutions to most problems (even if that means hiring another developer).
+
+In my experience, the primary difference between good developers and great developers is curiosity. A great developer is never content to glue pre-written components together. They want to understand how things work. Completing a task in the quickest possible time is of lesser importance.
+
+Consider writing your own libraries before using someone else’s work. For example, write your own JavaScript DOM manipulation functions or PHP database connectivity objects. Using jQuery or an ORM will allow you to produce something faster, but understanding the underlying technology is invaluable. Code re-use becomes increasingly important, but don’t be afraid to delve deeper while you’re learning.
+
+Finally, never be afraid of picking the wrong language … there are no wrong ones. There are those that aren’t best suited to a specific project, but you’ll only discover that by trial and error. Pick an interesting project, choose any language and get going.
+
+Best of luck!
+
+Here at SitePoint, helping people learn web development is kinda our thing. If this article has sparked a passion to get learning, head on over to SitePoint Premium and start your journey with us!
+Tags: language, languages, popular languages, programming, Trends
+
+Was this helpful?
+

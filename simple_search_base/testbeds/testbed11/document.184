@@ -1,0 +1,38 @@
+Channel bonding is a computer networking arrangement in which two or more network interfaces on a host computer are combined for redundancy or increased throughput. Channel bonding is differentiated from load balancing in that load balancing divides traffic between network interfaces on per network socket (OSI model layer 4) basis, while channel bonding implies a division of traffic between physical interfaces at a lower level, either per packet (OSI model Layer 3) or a data link (OSI model Layer 2) basis.
+
+
+== Ethernet ==
+
+On Ethernet interfaces, channel bonding requires assistance from both the Ethernet switch and the host computer's operating system, which must "stripe" the delivery of frames across the network interfaces in the same manner that I/O is striped across disks in a RAID array. For this reason, some discussions of channel bonding also refer to Redundant Array of Inexpensive Nodes (RAIN) or to "redundant array of independent network interfaces".
+
+
+== Modems ==
+Modem bonding is multiple dial-up links over POTS channel-bonded together in the same manner, and can come closer to achieving their aggregate bandwidth than routing schemes which simply load-balance outgoing network connections over the links.
+
+
+== DSL ==
+Similarly, multiple DSL lines can be bonded to give higher bandwidth; in the United Kingdom, ADSL is sometimes bonded to give for example 512kbit/s upload bandwidth and 4 megabit/s download bandwidth, in areas that only have access to 2 megabit/s bandwidth.
+
+
+== Broadband ==
+Broadband bonding is a type of channel bonding that refers to aggregation of multiple channels at OSI layers at level four or above. Channels bonded can be wired links such as a T-1 or DSL line. Additionally, it is possible to bond multiple cellular links for an aggregated wireless bonded link.
+Previous bonding methodologies resided at lower OSI layers, requiring coordination with telecommunications companies for implementation. Broadband bonding, because it is implemented at higher layers, can be done without this coordination.
+Commercial implementations of Broadband Channel Bonding include:
+Mushroom Networks' Broadband Bonding Service 
+Connectify's Speedify Service
+Peplink's SpeedFusion Bonding Technology 
+Viprinet's Multichannel VPN Bonding Technology 
+
+
+== Wi-Fi ==
+
+On 802.11 (Wi-Fi), channel bonding is used in Super G technology, referred as 108Mbit/s. It bonds two channels of standard 802.11g, which has 54Mbit/s data signaling rate.
+On IEEE 802.11n, a mode with a channel width of 40 MHz is specified. This is not channel bonding, but a single channel with double the older 20 MHz channel width, thus using two adjacent 20 MHz bands. This allows direct doubling of the PHY data rate from a single 20 MHz channel, but the MAC and user level throughput also depends on other factors so may not double.
+
+
+== See also ==
+Inverse multiplexing
+Link aggregation
+
+
+== References ==

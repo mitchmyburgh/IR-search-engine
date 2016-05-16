@@ -1,0 +1,53 @@
+Moreover, the consequent use of triangle meshes as surface
+representation avoids error-prone conversions, e.g., from
+CAD surfaces to mesh-based input data of numerical simulations.
+Besides classical geometric modeling, other major
+areas frequently employing triangle meshes are computer
+games and movie production. In this context geometric models
+are often acquired by 3D scanning techniques and have to
+undergo post-processing and shape optimization techniques
+before being actually used in production.
+This course discusses the whole geometry processing
+pipeline based on triangle meshes. We will first introduce
+general concepts of surface representations and point out the
+advantageous properties of triangle meshes in Chapter 2, and
+present efficient data structures for their implementation in
+Chapter 3.
+The different sources of input data and types of geometric
+and topological degeneracies and inconsistencies are described
+in Chapter 4, as well as techniques for their removal,
+resulting in clean two-manifold meshes suitable for
+further processing. Mesh quality criteria measuring geometric
+smoothness and element shape together with the corresponding
+analysis techniques are presented in Chapter 6.
+Mesh smoothing reduces noise in scanned surfaces by generalizing
+signal processing techniques to irregular triangle
+meshes (Chapter 7). Similarly, the underlying concepts from
+differential geometry are useful for surface parametrization
+as well (Chapter 8). Due to the enormous complexity of
+meshes acquired by 3D scanning, mesh decimation techniques
+are required for error-controlled simplification (Chapter
+9). The shape of triangles, which is important for the
+robustness of numerical simulations, can be optimized by
+general remeshing methods (Chapter 10).
+11
+1 Introduction
+After optimizing meshes with respect to the different quality criteria, we finally present techniques
+for intuitive and interactive shape deformation (Chapter 11). Since solving linear systems
+is a commonly required component for many of the presented mesh processing algorithms, we
+will discuss their efficient solution and compare several existing libraries in Chapter
+The efficient processing of geometric objects requires — just like in any other field of computer
+science — the design of suitable data structures. For each specific problem in geometry processing
+we can identify a characteristic set of operations by which the computation is dominated and
+hence we have to choose an appropriate data structure which supports the efficient implementation
+of these operators. From a high level point of view, there are two major classes of surface
+representations: parametric representations and implicit representations.
+The common definition of a surface in the context of computer graphics applications is that
+of an orientable continuous two-dimensional manifold embedded in IR3. Intuitively, this can
+be understood as the boundary surface of a non-degenerate three-dimensional solid where nondegenerate
+means that the solid does not have any infinitely thin parts or features such that the
+surface properly separates the “interior” and “exterior” of the solid. A (non-closed) surface with
+boundaries is one that can be extended into a proper boundary surface by filling the holes.
+Since in most applications the raw information about the input surface is obtained by discrete
+sampling
+

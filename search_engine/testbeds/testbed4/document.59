@@ -1,0 +1,107 @@
+Since the very early days of 3D raster computer graphics, polyhedral
+representation of geometry has been supported. Specified typically
+as a list of vertices, edges, and faces, arbitrary geometry can
+be expressed. These representations, such as winged-edge data
+structures (cf. [6]), were as much designed to support editing of the
+geometry as display. Nowadays vestiges of these representations
+live on as interchange formats (for example, Wavefront OBJ).
+While theoretically compact, some of the compaction is given up
+for readability by use of ASCII representation of the data in interchange
+files. Also, few of these formats are set up to be directly
+passed to rendering hardware as drawing instructions. Another historical
+vestige is the support of n-sided polygons in such formats.
+While early rendering hardware could accept such general primitives,
+nearly all of today’s (very much faster) hardware mandates
+that all polygon geometry be reduced to triangles before being submitted
+to hardware. Polygons with more than three sides cannot in
+general be guaranteed to be either planar or convex. If quadrilaterals
+are accepted as rendering primitives, the fine print somewhere
+indicates that they will be (arbitrarily) split into a pair of triangles
+before rendering. In keeping with this modern reality, we restrict
+geometry to be compressed to triangles.
+Modern graphics languages specify binary formats for the representation
+of collections of 3D triangles, usually as arrays of vertex data
+structures. PHIGS PLUS, PEX, XGL, and proposed extensions to
+OpenGL are of this form. These formats define the storage space
+taken by executable geometry today.
+Triangles can be isolated or chained in “zig-zag” or “star” strips. Iris-
+GL, XGL, and PEX 5.2 define a form of generalized triangle strip that
+can switch from a zig-zag to star-like vertex chaining on a vertex by
+vertex basis (at the expense of an extra header word per vertex in XGL
+The first stage of geometry compression is to convert triangle data
+into an efficient linear strip form: the generalized triangle mesh. This
+is a near-optimal representation of triangle data, given fixed storage.
+The existing concept of a generalized triangle strip structure allows for
+compact representation of geometry while maintaining a linear data
+structure. That is, the geometry can be extracted by a single monotonic
+scan over the vertex array data structure. This is very important for pipelined
+hardware implementations, a data format that requires random access
+back to main memory during processing is very problematic.
+However, by confining itself to linear strips, the generalized triangle
+strip format leaves a potential factor of two (in space) on the table.
+Consider the geometry in figure 1. While it can be represented
+by one triangle strip, many of the interior vertices appear twice in
+the strip. This is inherent in any approach wishing to avoid references
+to old data. Some systems have tried using a simple regular
+mesh buffer to support re-use of old vertices, but there is a problem
+with this in practice: in general, geometry does not come in a perfectly
+regular rectangular mesh structure.
+The generalized technique employed by geometry compression addresses
+this problem. Old vertices are explicitly pushed into a
+queue, and then explicitly referenced in the future when the old vertex
+is desired again. This fine control supports irregular meshes of
+nearly any shape. Any viable technique must recognize that storage
+is finite; thus the maximum queue length is fixed at 16, requiring a
+4-bit index. We refer to this queue as the mesh buffer. The combination
+of generalized triangle strips and mesh buffer references is
+referred to as a generalized triangle mesh.
+The fixed mesh buffer size requires all tessellators/re-strippers for
+compressed geometry to break up any runs longer than 16 unique references.
+Since geometry compression is not meant to be programmed
+directly at the user level, but rather by sophisticated tessellators/re-formatters,
+this is not too onerous a restriction. Sixteen old vertices allows
+up to 94% of the redundant geometry to avoid being re-specified.
+Figure 1 also contains an example of a general mesh buffer representation
+of the surface geometry.
+The language of geometry compression supports the four vertex replacement
+codes of generalized triangle strips (replace oldest, replace
+middle, restart clockwise, and restart counterclockwise), and
+adds another bit in each vertex header to indicate if this vertex
+should be pushed into the mesh buffer or not. The mesh buffer reference
+command has a 4-bit field to indicate which old vertex
+should be re-referenced, along with the 2-bit vertex replacement
+code. Mesh buffer reference commands do not contain a mesh buffer
+push bit; old vertices can only be recycled once.
+Geometry rarely is comprised purely of positional data; generally a
+normal and/or color are also specified per vertex. Therefore, mesh
+buffer entries contain storage for all associated per-vertex information
+(specifically including normal and color). For maximum space
+efficiency, when a vertex is specified in the data stream, (per vertex)
+normal and/or color information should be directly bundled with the
+position information. This bundling is controlled by two state bits:
+bundle normals with vertices (bnv), and bundle colors with vertices
+(bcv). When a vertex is pushed into the mesh buffer, these bits control
+if its bundled normal and/or color are pushed as well. During a mesh
+buffer reference command, this process is reversed; the two bits specify
+if a normal and/or color should be inherited from the mesh buffer
+storage, or inherited from the current normal or current color. There
+are explicit commands for setting these two current values. An important
+exception to this rule occurs when an explicit “set current normal”
+command is followed by a mesh buffer reference, with the bnv
+state bit active. In this case, the former overrides the mesh buffer normal.
+This allows compact representation of hard edges in surface geometry.
+The analogous semantics are also defined for colors, allowing
+compact representation of hard edges in textures.
+Two additional state bits control the interpretation of normals and colors
+when the stream of vertices is turned into triangles. The replicate
+normals over triangle (rnt) bit indicates that the normal in the final vertex
+that completes a triangle should be replicated over the entire triangle.
+The replicate colors over triangle (rct) bit is defined analogously.
+4 COMPRESSION OF XYZ POSITIONS
+The 8-bit exponent of 32-bit IEEE floating-point numbers allows positions
+literally to span the known universe: from a scale of 15 billion
+light years, down to the radius of sub-atomic particles. However for
+any given tessellated object, the exponent is really specified just once
+by the current modeling matrix; within a given modeling space, the
+object geometry is effectively described with only the 24-bit fixedpoint
+mantissa. Visually, in many cases far fewer

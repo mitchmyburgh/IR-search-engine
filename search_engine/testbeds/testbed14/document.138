@@ -1,0 +1,188 @@
+﻿An OWL 2 ontology is an instance O of the Ontology UML class from the structural
+specification of OWL 2 shown in Figure 1 that satisfies certain conditions given
+below. The main component of an OWL 2 ontology is its set of axioms, the
+structure of which is described in more detail in Section 9. Because the association
+between an ontology and its axioms is a set, an ontology cannot contain two
+axioms that are structurally equivalent. Apart from axioms, ontologies can also
+contain ontology annotations (as described in more detail in Section 3.5), and they
+can also import other ontologies (as described in Section 3.4).
+OWL 2 Web Ontology LanguageStructural Specification and FunctionalStyle
+Syntax
+W3C Editor's Draft 14 September
+2009
+Page 13 of 133 http://www.w3.org/2007/OWL/draft/ED-owl2-syntax-20090914/
+Figure 1. The Structure of OWL 2 Ontologies
+The following list summarizes all the conditions that O is required to satisfy to be an
+OWL 2 ontology.
+• O must satisfy the restrictions on the presence of the ontology IRI and
+version IRI from Section 3.1.
+• Each DataIntersectionOf and DataUnionOf in O must satisfy the
+restrictions from Section 7.1 and Section 7.2, respectively.
+• Each DataSomeValuesFrom and DataAllValuesFrom class expression in
+O must satisfy the restrictions from Section 8.4.1 and Section 8.4.2,
+respectively.
+• Each DataPropertyRange axiom in O must satisfy the restriction from
+Section 9.3.5.
+• Each DatatypeDefinition axiom in O must satisfy the restrictions from
+Section 9.4.
+• Each HasKey axiom in O must satisfy the restriction from Section 9.5.
+• Each O' directly imported into O must satisfy all of these restrictions as
+well.
+The following list summarizes all the conditions that an OWL 2 ontology O is
+required to satisfy to be an OWL 2 DL ontology.
+• The ontology IRI and the version IRI (if present) of O must satisfy the
+restrictions on usage of the reserved vocabulary from Section 3.1.
+• Each datatype and each literal in O must satisfy the restrictions from
+Section 5.2 and Section 5.7, respectively.
+• Each entity in O must have an IRI satisfying the restrictions on the usage
+of the reserved vocabulary from Sections 5.1–5.6.
+• O must satisfy the typing constraints from Section 5.8.1.
+• Each DatatypeRestriction in O must satisfy the restriction on the usage of
+constraining facets from Section 7.5, respectively.
+• O must satisfy the global restriction from Section 11.
+• Each O' directly imported into O must satisfy all of these restrictions as
+well.
+OWL 2 Web Ontology LanguageStructural Specification and FunctionalStyle
+Syntax
+W3C Editor's Draft 14 September
+2009
+Page 14 of 133 http://www.w3.org/2007/OWL/draft/ED-owl2-syntax-20090914/
+An instance O of the Ontology UML class may have consistent declarations as
+specified in Section 5.8.2; however, this is not strictly necessary to make O an
+OWL 2 ontology.
+3.1 Ontology IRI and Version IRI
+Each ontology may have an ontology IRI, which is used to identify an ontology. If
+an ontology has an ontology IRI, the ontology may additionally have a version IRI,
+which is used to identify the version of the ontology. The version IRI may, but need
+not be equal to the ontology IRI. An ontology without an ontology IRI must not
+contain a version IRI.
+IRIs from the reserved vocabulary must not be used as an ontology IRI or a version
+IRI of an OWL 2 DL ontology.
+The following list provides conventions for choosing ontology IRI and version IRI in
+OWL 2 ontologies. This specification provides no mechanism for enforcing these
+constraints across the entire Web; however, OWL 2 tools should use them to
+detect problems in ontologies they process.
+• If an ontology has an ontology IRI but no version IRI, then a different
+ontology with the same ontology IRI but no version IRI should not exist.
+• If an ontology has both an ontology IRI and a version IRI, then a different
+ontology with the same ontology IRI and the same version IRI should not
+exist.
+• All other combinations of the ontology IRI and version IRI are not required
+to be unique. Thus, two different ontologies may have no ontology IRI and
+no version IRI; similarly, an ontology containing only an ontology IRI may
+coexist with another ontology with the same ontology IRI and some other
+version IRI.
+The ontology IRI and the version IRI together identify a particular version from an
+ontology series — the set of all the versions of a particular ontology identified using
+a common ontology IRI. In each ontology series, exactly one ontology version is
+regarded as the current one. Structurally, a version of a particular ontology is an
+instance of the Ontology UML class from the structural specification. Ontology
+series are not represented explicitly in the structural specification of OWL 2: they
+exist only as a side-effect of the naming conventions described in this and the
+following sections.
+3.2 Ontology Documents
+An OWL 2 ontology is an abstract notion defined in terms of the structural
+specification. Each ontology is associated with an ontology document, which
+physically contains the ontology stored in a particular way. The name "ontology
+document" reflects the expectation that a large number of ontologies will be stored
+in physical text documents written in one of the syntaxes of OWL 2. OWL 2 tools,
+OWL 2 Web Ontology LanguageStructural Specification and FunctionalStyle
+Syntax
+W3C Editor's Draft 14 September
+2009
+Page 15 of 133 http://www.w3.org/2007/OWL/draft/ED-owl2-syntax-20090914/
+however, are free to devise other types of ontology documents — that is, to
+introduce other ways of physically storing ontologies.
+Ontology documents are not represented in the structural specification of OWL 2,
+and the specification of OWL 2 makes only the following two assumptions about
+their nature:
+• Each ontology document can be accessed from an IRI by means of an
+appropriate protocol.
+• Each ontology document can be converted in some well-defined way into
+an ontology (i.e., into an instance of the Ontology UML class from the
+structural specification).
+Example:
+An OWL 2 tool might publish an ontology as a text document written in the
+functional-style syntax (see Section 3.7) and accessible from the IRI
+<http://www.example.com/ontology>. An OWL 2 tool could also devise a scheme
+for storing OWL 2 ontologies in a relational database. In such a case, each
+subset of the database representing the information about one ontology
+corresponds to one ontology document. To provide a mechanism for accessing
+these ontology documents, the OWL 2 tool should identify different database
+subsets with distinct IRIs.
+The ontology document of an ontology O should be accessible from the IRIs
+determined by the following rules:
+• If O does not contain an ontology IRI (and, consequently, it does not
+contain a version IRI either), then the ontology document of O may be
+accessible from any IRI.
+• If O contains an ontology IRI OI but no version IRI, then the ontology
+document of O should be accessible from the IRI OI.
+• If O contains an ontology IRI OI and a version IRI VI, then the ontology
+document of O should be accessible from the IRI VI; furthermore, if O is
+the current version of the ontology series with the IRI OI, then the ontology
+document of O should also be accessible from the IRI OI.
+Thus, the document containing the current version of an ontology series with some
+IRI OI should be accessible from OI. To access a particular version of OI, one
+needs to know that version's version IRI VI; the ontology document of the version
+should then be accessible from VI.
+Example:
+An ontology document of an ontology that contains an ontology IRI
+<http://www.example.com/my> but no version IRI should be accessible from the
+OWL 2 Web Ontology LanguageStructural Specification and FunctionalStyle
+Syntax
+W3C Editor's Draft 14 September
+2009
+Page 16 of 133 http://www.w3.org/2007/OWL/draft/ED-owl2-syntax-20090914/
+IRI <http://www.example.com/my>. In contrast, an ontology document of an
+ontology that contains an ontology IRI <http://www.example.com/my> and a
+version IRI <http://www.example.com/my/2.0> should be accessible from the IRI
+<http://www.example.com/my/2.0>. In both cases, the ontology document should
+be accessible from the respective IRIs using the HTTP protocol.
+OWL 2 tools will often need to implement functionality such as caching or off-line
+processing, where ontology documents may be stored at addresses different from
+the ones dictated by their ontology IRIs and version IRIs. OWL 2 tools may
+implement a redirection mechanism: when a tool is used to access an ontology
+document at IRI I, the tool may redirect I to a different IRI DI and access the
+ontology document from there instead. The result of accessing the ontology
+document from DI must be the same as if the ontology were accessed from I.
+Furthermore, once the ontology document is converted into an ontology, the
+ontology should satisfy the three conditions from the beginning of this section in the
+same way as if it the ontology document were accessed from I. No particular
+redirection mechanism is specified — this is assumed to be implementation
+dependent.
+Example:
+To enable off-line processing, an ontology document that — according to the
+above rules — should be accessible from <http://www.example.com/my> might
+be stored in a file accessible from <file:///usr/local/ontologies/example.owl>. To
+access this ontology document, an OWL 2 tool might redirect the IRI
+<http://www.example.com/my> and actually access the ontology document from
+<file:///usr/local/ontologies/example.owl>. The ontology obtained after accessing
+ontology document should satisfy the usual accessibility constraints: if the
+ontology contains only the ontology IRI, then the ontology IRI should be equal to
+<http://www.example.com/my>, and if the ontology contains both the ontology
+IRI and the version IRI, then one of them should be equal to
+<http://www.example.com/my>.
+3.3 Versioning of OWL 2 Ontologies
+The conventions from Section 3.2 provide a simple mechanism for versioning OWL
+2 ontologies. An ontology series is identified using an ontology IRI, and each
+version in the series is assigned a different version IRI. The ontology document of
+the ontology representing the current version of the series should be accessible
+from the ontology IRI and, if present, at its version IRI as well; the ontology
+documents of the previous versions should be accessible solely from their
+respective version IRIs. When a new version O in the ontology series is created,
+the ontology document of O should replace the one acessible from the ontology IRI
+(and it should also be accessible from its version IRI).
+OWL 2 Web Ontology LanguageStructural Specification and FunctionalStyle
+Syntax
+W3C Editor's Draft 14 September
+2009
+Page 17 of 133 http://www.w3.org/2007/OWL/draft/ED-owl2-syntax-20090914/
+Example:
+The ontology document containing the current version of an ontology series
+might be accessible from the IRI <http://www.example.com/my>, as well as from
+the version-specific IRI <http://www.example.com/my/2.0>. When a new version
+is created, the ontology document of the previous version should remain
+accessible from <http://www.example.com/my/2.0>; the ontology document of
+the new version, called, say, <http://www.example.com/my/3.0>, should be
+made accessible from both <http://www.example.com/my> and
+<http://www.example.com/my/3.0>.

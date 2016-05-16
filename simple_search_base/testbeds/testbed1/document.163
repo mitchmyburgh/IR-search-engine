@@ -1,0 +1,37 @@
+AMBER
+'''AMBER''' (an  for '''Assisted Model Building with Energy Refinement''') is a family of  for  of  originally developed by 's group at the .  '''AMBER''' is also the name for the molecular dynamics software  that simulates these force fields. It is maintained by an active collaboration between David Case at , Tom Cheatham at the , Tom Darden at NIEHS, Ken Merz at Michigan State University,  at , Ray Luo at , and Junmei Wang at Encysive Pharmaceuticals.
+== Force field ==
+The term "AMBER " generally refers to the functional form used by the family of AMBER force fields. This form includes a number of parameters; each member of the family of AMBER force fields provides values for these parameters and has its own name.
+=== Functional form ===
+The functional form of the AMBER force field is
+:
+V(r^N)=\sum_\text k_b (l-l_0)^2 + \sum_\text k_a (\theta - \theta_0)^2
++ \sum_\text \sum_n \frac V_n  
++\sum_ ^ \sum_ ^N f_\biggl\
+Note that despite the term force field, this equation defines the potential energy of the system; the force is the derivative of this potential with respect to position.
+The meanings of right hand side  are:
+* First term ( over bonds): represents the energy between covalently bonded atoms. This harmonic (ideal spring) force is a good approximation near the equilibrium bond length, but becomes increasingly poor as atoms separate.
+* Second term (summing over angles): represents the energy due to the geometry of electron orbitals involved in covalent bonding.
+* Third term (summing over torsions): represents the energy for twisting a bond due to bond order (e.g. double bonds) and neighboring bonds or lone pairs of electrons. Note that a single bond may have more than one of these terms, such that the total torsional energy is expressed as a .
+* Fourth term (double summation over i and j): represents the non-bonded energy between all atom pairs, which can be decomposed into  (first term of summation) and  (second term of summation) energies.
+The form of the van der Waals energy is calculated using the equilibrium distance ( r_ ) and well depth ( \epsilon ). The factor of 2 ensures that the equilibrium distance is  r_ . The energy is sometimes reformulated in terms of \sigma, where  r_ = 2^(\sigma), as used e.g. in the implementation of the softcore potentials.
+The form of the electrostatic energy used here assumes that the charges due to the protons and electrons in an atom can be represented by a single point charge (or in the case of parameter sets that employ lone pairs, a small number of point charges.)
+=== Parameter sets ===
+To use the AMBER force field, it is necessary to have values for the parameters of the force field (e.g. force constants, equilibrium bond lengths and angles, charges). A fairly large number of these parameter sets exist, and are described in detail in the AMBER software user manual. Each parameter set has a name, and provides parameters for certain types of molecules.
+*Peptide, protein, and nucleic acid parameters are provided by parameter sets with names beginning with "ff" and containing a two digit year number, for instance "ff99".
+*GAFF (General AMBER force field) provides parameters for small organic molecules to facilitate simulations of drugs and small molecule ligands in conjunction with biomolecules.
+*The GLYCAM force fields have been developed by Rob Woods for simulating carbohydrates.
+== Software ==
+The AMBER software suite provides a set of programs for applying the AMBER forcefields to simulations of biomolecules. It is written in  and  with support for most major  systems and . Development is conducted by a loose association of mostly academic labs. New versions are generally released in the spring of even numbered years; AMBER 10 was released in April 2008. The software is available under a site-license agreement, which includes full source, currently priced at US$500 for non-commercial and US$20,000 for commercial organizations.
+=== Programs ===
+* '''LEaP''' is used for preparing input files for the simulation programs
+* '''Antechamber''' automates the process of parameterizing small organic molecules using GAFF
+* '''SANDER''' (Simulated Annealing with NMR-Derived Energy Restraints) is the central simulation program and provides facilities for energy minimization and molecular dynamics with a wide variety of options
+* '''pmemd''' is a somewhat more feature-limited reimplementation of sander by Bob Duke. It was designed with parallel processing in mind and has significantly better performance than sander when running on more than 8&ndash;16 processors
+** '''pmemd.cuda''' has been made in order to run simulations on GPU enabled machines
+** '''pmemd.amoeba '''was developed to handle the extra parameters in the polarizable AMOEBA force field.
+* '''nmode''' calculates normal modes
+* '''ptraj''' provides facilities for numerical analysis of simulation results. AMBER does not include visualization capabilities; visualization is commonly performed with . Ptraj is now unsupported as of AmberTools 13. 
+* '''cpptraj '''is a rewritten version of ptraj made in C++ to provide faster analysis of simulation results. Several actions have been made parallelizable with OpenMP and MPI 
+* '''MM-PBSA''' allows for implicit solvent calculations on snap shots from molecular dynamics simulations
+* '''NAB''' is a built in nucleic acid building environment made to aid in the process of manipulating proteins and nucleic acids where an atomic level of description will help with computation.

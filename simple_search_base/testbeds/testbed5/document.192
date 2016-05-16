@@ -1,0 +1,110 @@
+
+Avoiding a JavaScript Monoculture
+Rasmus Schultz
+April 27, 2016
++21
+Want cutting–edge content?
+Get the best of JavaScript plus exclusive deals and freebies in your inbox!
+Success! Subscribed.
+Claim your free ebook!
+
+Get MEAN Stack when you start a free 14–day SitePoint Premium trial
+Get this deal!
+FacebookTwitter
+
+Was this helpful?
+
+This article was peer reviewed by Tom Greco, Dan Prince and Mallory van Achterberg. Thanks to all of SitePoint’s peer reviewers for making SitePoint content the best it can be!
+
+JavaScript, as a language, has some fundamental shortcomings — I think the majority of us agree on that much. But everyone has a different opinion on what precisely the shortcomings are.
+
+Christoffer Petterson recently wrote that “JavaScript just needs to become a better language” — about the shortcomings of the JavaScript standard run-time, and how this creates a culture of micro-packages and polyfills.
+
+In this related opinion piece, I’d like to challenge that point of view:
+
+Shortcomings of the JavaScript language and run-times are not the fundamental reason we have micro-packages or polyfills.
+
+While various shortcomings of the standard run-time library are the obvious, immediate reason for the creation of micro-packages, I’m going to argue that this point of view is actually obscuring a deeper, underlying problem.
+
+As to opinions about the shortcomings of the language itself, or the standard run-times, it’s important to realize that every developer has a different background, different experience, different needs, temperament, values, and a slew of other cultural motivations and concerns — individual opinions will always be largely personal and, to some degree, non-technical in nature.
+
+For me, the best answer to shortcomings of the language itself has been Typescript, but I understand that’s not everyone’s cup of tea. For one guy, it’s CoffeeScript, for another gal, it’s Dart, Scala, Go, Rust, and so on.
+
+My point is this: the fundamental problem is neither shortcomings of the standard run-time library, nor is it any specific technical shortcoming of the language itself.
+
+The real problem is our lacking willingness to embrace cultural diversity.
+One Size Does Not Fit All
+
+It seems there’s a thriving mass delusion that we can somehow make JavaScript the ideal language for everyone and every thing.
+
+Initiatives such as ES6, while seemingly improving things, are actually a step in the wrong direction.
+
+For instance, those who prefer classical inheritance may enjoy the addition of the class keyword, while others may reject it as conflicting with the idea of a prototypical inheritance model.
+
+Again, this is all opinion-based, and due to the sheer number of developers who rely on this technology as their bread and butter, sub-communities and religiousness forms around patterns, anti-patterns, practices, de-facto standards, micro-packages, polyfills, frameworks, build-tools, etc.
+Less Is More
+
+JavaScript, by now, is ubiquitous enough to affect literally every programmer in the software industry — a software industry that isn’t historically famous for its ability to quickly and unanimously agree on, well, anything.
+
+The problem, in my opinion, isn’t technical in the first place — it’s cultural.
+
+What we really need is not another iteration of the language or the run-times, but a liberation from the forced idea of a “universal” language and run-time.
+
+In other words, we need to standardize things at a lower level. We need to figure out what we can agree upon, and steer clear of the personal and touchy-feely opinions about language details and run-time features.
+
+We need to standardize the petri-dish and not the entire culture.
+
+In my opinion, this means one of two things:
+
+    We standardize on a finite subset of JS (such as asm.js) — and avoid the endless struggle through future iterations of the JavaScript language, competing super-sets and transpilers, or
+    We adjust our point of view, and agree to accept JavaScript for what it is, but start to think of it as a kind of VM for other languages.
+
+The latter has already been explored, in some ways, for some years now — but at nowhere near the scale necessary to eliminate JavaScript as the language you must learn to live with, whether it suits you or not.
+
+Despite a growing variety of languages that compile to JavaScript, the language itself remains the dominant language in both client-side and server-side eco-systems for web development. The idea of replacing JavaScript with languages that compile to JavaScript, has been explored, and for whatever reasons, it hasn’t really liberated anyone from JavaScript.
+
+That leaves option one: reduce the scope of the problem. Simplify.
+
+Ironically, what we’re doing today, is essentially the opposite: rather than reducing the scope of the problem, we continue to grow it, effectively increasing the number of details — and problems — for everyone.
+Two Steps Forward, Three Steps Back
+
+Despite initiatives like ES6 finally moving things “forward” for some (after far too many years at a virtual stand-still) the development of the language and run-times has actually moved “backwards” for others — and despite the immediate jolt of excitement that something is finally changing, the whole process pretty much remains at the same historical stalemate.
+
+ES6 makes some developers a bit happier, and others a bit less happy.
+
+In my opinion, a subset of JavaScript (asm.js or something like it) needs to happen at a much larger scale, and needs to become much more accessible and ubiquitous.
+
+In my own somewhat radical opinion, in order for that to happen, the JavaScript language and run-time needs to be “deprecated”.
+
+Of course, not in the sense that JavaScript needs to go away. I’m not insane.
+
+But in the sense that it needs to be separated, by the umbilical cord, from the client and server platforms.
+
+JavaScript needs to fly from its comfy nest, and learn to survive on its own, on equal terms with other languages and run-times. It’s time to grow up, kid.
+
+If JavaScript were detached from the client and server platforms, the pressure of being a monoculture would be lifted — the next iteration of the JavaScript language or run-time would no longer have to please every developer in the world, but instead could focus on pleasing a much smaller audience of developers who love JavaScript and thrive with it, while enabling others to move to alternative languages or run-times.
+
+This would better for JavaScript, and for every other language.
+
+The elimination of what is arguably the biggest monoculture in the history of software development would mean that we, the community, could finally take charge of both languages and run-times, and start to iterate and grow these independently of browser/server platforms, vendors, and organizations, all pulling in different directions, struggling for control of standards, and (perhaps most importantly) freeing the entire community of developers from the group pressure of One Language To Rule Them All.
+
+Our languages and run-times would be hosted and distributed by CDNs, rather than baked into our client and server environments, where they become risky and difficult to change — where every iteration takes years to agree upon, and additional painful years of polyfills and fallbacks while they propagate to browsers.
+
+Imagine a world where you can upgrade your application to the next version of JavaScript the same day it gets released.
+
+Imagine a JavaScript that evolves to the needs of those who actually want the language — rather than becoming the lowest common denominator of opinions including those held by people who really would rather be using a different language.
+
+Attempting to please everyone, with one thing, always ends up being a trade-off that really doesn’t completely please anyone.
+Standards: Good, Uniformity: Bad
+
+Don’t get me wrong  —  standards are great. Uniformity is bad.
+
+Anthropologically, we thrive because of our ability to adapt to different conditions and diversify ourselves. Our curiosity and eagerness to learn gives us perspective, and enriches us culturally. Developer culture, humbly, is part of that cultural wealth, and we need to embrace that.
+
+Trying to force this one thing to work for everyone is the worst way to do that.
+
+In conclusion, this was an opinion piece — and as such, of course, I welcome your opinion, and hope that this generates some thoughtful, constructive comments and not just flames ;-)
+Tags: es6, Opinion
+
+Was this helpful?
+

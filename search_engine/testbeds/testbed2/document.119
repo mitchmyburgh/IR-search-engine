@@ -1,0 +1,15 @@
+Apprenticeship learning, or apprenticeship via inverse reinforcement learning (AIRP), is a concept in the field of artificial intelligence and machine learning, developed by Pieter Abbeel, Associate Professor in Berkeley's EECS department, and Andrew Ng, Associate Professor in Stanford University's Computer Science Department. It was incepted in 2004. AIRP deals with "Markov decision process where we are not explicitly given a reward function, but where instead we can observe an expert demonstrating the task that we want to learn to perform"
+AIRP concept is closely related to reinforcement learning (RL) that is a sub-area of machine learning concerned with how an agent ought to take actions in an environment so as to maximize some notion of long-term reward. AIRP algorithms are used when the reward function is unknown. The algorithms use observations of the behavior of an expert to teach the agent the optimal actions in certain states of the environment.
+AIRP is a special case of the general area of learning from demonstration (LfD), where the goal is to learn a complex task by observing a set of expert traces (demonstrations). AIRP is the intersection of LfD and RL.
+
+
+== Usage ==
+Apprenticeship learning has been used to model reward functions of highly dynamic scenarios where there is no obvious reward function intuitively. Take the task of driving for example, there are many different objectives working simultaneously - such as maintaining safe following distance, a good speed, not changing lanes too often, etc. This task, may see easy at first glance, but a trivial reward function may not converge to the policy wanted.
+One domain where apprenticeship learning has been used extensively is helicopter control. While simple trajectories can be intuitively derived, complicated tasks like aerobatics for shows has been successful. These include aerobatic maneuvers like - in-place flips, in-place rolls, loops, hurricanes and even auto-rotation landings. This work was developed by Pieter Abbeel, Adam Coates, and Andrew Ng - "Autonomous Helicopter Aerobatics through Apprenticeship Learning"
+
+
+== References ==
+
+
+== See also ==
+Inverse reinforcement learning

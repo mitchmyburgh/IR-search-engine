@@ -1,0 +1,8 @@
+Operations[edit]
+Insertion[edit]
+Insertion is implemented with the same basic ideas as an unbalanced binary search tree, however with a few significant changes.
+When finding the insertion point, the depth of the new node must also be recorded. This is implemented via a simple counter that gets incremented during each iteration of the lookup, effectively counting the number of edges between the root and the inserted node. If this node violates the a-height-balance property (defined above), a rebalance is required.
+To rebalance, an entire subtree rooted at a scapegoat undergoes a balancing operation. The scapegoat is defined as being an ancestor of the inserted node which isn't a-weight-balanced. There will always be at least one such ancestor. Rebalancing any of them will restore the a-height-balanced property.
+One way of finding a scapegoat, is to climb from the new node back up to the root and select the first node that isn't a-weight-balanced.
+Climbing back up to the root requires O(log n) storage space, usually allocated on the stack, or parent pointers. This can actually be avoided by pointing each child at its parent as you go down, and repairing on the walk back up.
+To determine whether a potential node is a viable scapegoat, we need to check its a-weight-balanced property. To do this we can go back to the definition:

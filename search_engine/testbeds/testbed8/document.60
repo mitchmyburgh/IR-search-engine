@@ -1,0 +1,42 @@
+Basic operations
+
+Although most machines are not able to address individual bits in memory, nor have instructions to manipulate single bits, each bit in a word can be singled out and manipulated using bitwise operations. In particular:
+
+    OR can be used to set a bit to one: 11101010 OR 00000100 = 11101110
+    AND can be used to set a bit to zero: 11101010 AND 11111101 = 11101000
+    AND together with zero-testing can be used to determine if a bit is set:
+
+        11101010 AND 00000001 = 00000000 = 0
+        11101010 AND 00000010 = 00000010 ≠ 0
+
+    XOR can be used to invert or toggle a bit:
+
+        11101010 XOR 00000100 = 11101110
+        11101110 XOR 00000100 = 11101010
+
+    NOT can be used to invert all bits.
+
+        NOT 10110010 = 01001101
+
+To obtain the bit mask needed for these operations, we can use a bit shift operator to shift the number 1 to the left by the appropriate number of places, as well as bitwise negation if necessary.
+
+Given two bit arrays of the same size representing sets, we can compute their union, intersection, and set-theoretic difference using n/w simple bit operations each (2n/w for difference), as well as the complement of either:
+
+for i from 0 to n/w-1
+    complement_a[i] := not a[i]
+    union[i]        := a[i] or b[i]
+    intersection[i] := a[i] and b[i]
+    difference[i]   := a[i] and (not b[i])
+
+If we wish to iterate through the bits of a bit array, we can do this efficiently using a doubly nested loop that loops through each word, one at a time. Only n/w memory accesses are required:
+
+for i from 0 to n/w-1
+    index := 0    // if needed
+    word := a[i]
+    for b from 0 to w-1
+        value := word and 1 ≠ 0
+        word := word shift right 1
+        // do something with value
+        index := index + 1    // if needed
+
+Both of these code samples exhibit ideal locality of reference, which will subsequently receive large performance boost from a data cache. If a cache line is k words, only about n/wk cache misses will occur.

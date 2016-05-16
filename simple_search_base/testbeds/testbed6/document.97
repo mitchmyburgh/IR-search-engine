@@ -1,0 +1,59 @@
+        
+     Home » Courses » Electrical Engineering and Computer Science » Introduction to Algorithms » Lecture Videos » Lecture 14: Depth-First Search (DFS), Topological Sort  
+      Lecture 14: Depth-First Search (DFS), Topological Sort   
+function toggleMenu(objID) {
+  if (!document.getElementById) return;
+  var ob = document.getElementById(objID);
+  ob.className = (ob.className == 'selected')?'': 'selected';
+}
+function toggleClass(id)
+{
+  var divtoggleClass= document.getElementById(id);
+  divtoggleClass.className = (divtoggleClass.className == 'mO')?'mC': 'mO';
+  return false;
+}
+function changeAlt(id)
+{
+  id.alt = (id.alt == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+  id.title = (id.title == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+}
+        Course Home   
+          Syllabus  
+          Software  
+        Calendar   
+          Readings  
+          Python Cost Model  
+          Binary Search Trees  
+        Lecture Videos   
+        Recitation Videos   
+        Assignments   
+        Exams   
+        Related Resources   
+       Download Course Materials  
+     var caption_embed_1 ={'English - US': '/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-14-depth-first-search-dfs-topological-sort/AfSk24UTFS8.srt'} 
+       Flash and JavaScript are required for this feature.
+       Download the video from iTunes U or the Internet Archive.
+     ocw_embed_chapter_media('embed_1', 'http://www.youtube.com/v/AfSk24UTFS8', 'youtube', '/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-14-depth-first-search-dfs-topological-sort', 'http://img.youtube.com/vi/AfSk24UTFS8/0.jpg',0,0, '/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-14-depth-first-search-dfs-topological-sort/AfSk24UTFS8.srt') 
+     setThreePlayTranscriptPlugin(2, 455926) 
+		window.onload=function(){
+		init();
+		}
+		var tabLinks = new Array();
+		var contentDivs = new Array();
+		function init() {
+		  // Grab the tab links and content divs from the page
+		  var tabListItems = document.getElementById('tabs').childNodes;
+		  for ( var i = 0; i  
+       
+       The following content is provided under a Creative Commons license. Your support will help MIT OpenCourseWare continue to offer high quality educational resources for free. To make a donation or view additional materials from hundreds of MIT courses, visit MIT OpenCourseWare at ocw.mit.edu 
+       PROFESSOR: All right, let's get started. We return today to graph search. Last time we saw breadth-first search, today we're going to do depth-first search. It's a simple algorithm, but you can do lots of cool things with it. And that's what I'll spend most of today on, in particular, telling whether your graph has a cycle, and something called topological sort. 
+       As usual, basically in all graph algorithms in this class, the input, the way the graph is specified is as an adjacency list, or I guess adjacency list plural. So you have a bunch of lists, each one says for each vertex, what are the vertices I'm connected to? What are the vertices I can get to in one step via an edge? So that's our input and our goal, in general, with graph search is to explore the graph. In particular, the kind of exploration we're going to be doing today is to visit all the vertices, in some order, and visit each vertex only once. 
+       So the way we did breadth-first search, breadth-first search was really good. It explored things layer by layer, and that was nice because it gave us shortest paths, it gave us the fastest way to get to everywhere, from a particular source, vertex s. But if you can't get from s to your vertex, than the shortest way to get there is infinity, there's no way to get there. 
+       And BFS is good for detecting that, it can tell you which vertices are unreachable from s. DFS can do that as well, but it's often used to explore the whole graph, not just the part reachable from s, and so we're going to see how to do that today. This trick could be used for be BFS or for DFS, but we're going to do it here for DFS, because that's more common, let's say. 
+       So DFS. So depth-first search is kind of like how you solve a maze. Like, the other weekend I was at the big corn maze in central Massachusetts, and it's easy to get lost in there, in particular, because I didn't bring any bread crumbs. The proper way to solve a maze, if you're in there and all you can do is see which way to go next and then walk a little bit to the next junction, and then you have to keep making decisions. 
+       Unless you have a really good memory, which I do not, teaching staff can attest to that, then an easy way to do it is to leave bread crumbs behind, say, this is the last way I went from this node, so that when I reach a deadend, I have to turn around and backtrack. I reach a breadcrumb that say, oh, last time you went this way, next time you should go this way, and in particular, keep track at each node, which of the edges have I visited, which ones are still left to visit. And this can be done very easily on a computer using recursion. 
+       So high-level description is we're going to just recursively explore the graph, backtracking as necessary, kind of like how you solve a maze. In fact, when I was seven years old, one of the first computer programs I wrote was for solving a maze. I didn't know it was depth-first search at the time, but now I know. It was so much harder doing algorithms when I didn't know what they were. 
+       Anyway, I'm going to write some code for depth-first search, it is super simple code, the simplest graph algorithm. It's four lines. 
+       That's it. I'm going to write a little bit of code after this, but this is basic depth-first search. This will visit all the vertices reachable from a given source, vertex s. So we're given the adjacency list. I don't know why I put v here, you could erase it, it's not necessary. And all we do is, we have our vertex b, sorry, we have our vertex s. We look at all of the outgoing edges from s. For each one, we'll call it v, we check, have I visited this vertex already? A place where we need to be careful is to not repeat vertices. We need to do this in BFS as well. 
+       So, the way we're going to do that is by setting the parent of a node, we'll see what that actually means later. But for now, it's just, are you in the parent structure or not? This is initially, we've seen s, so we give it a parent of nothing, but it exists in this dictionary. If the vertex b that we're looking at is not in our dictionary, we haven't seen it yet, we mark it as seen by setting its parent to s, and then we recursively visit it. 
+       That's it. Super simple, just recurse. Sort of the magical part is the preventing yourself from repeating. As you explore the graph, if you reach something you've already seen before you just skip it again. So you only visit every vertex once, at most once. This will not visit the entire graph, it will only visit the vertices reachable from s

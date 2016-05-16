@@ -1,0 +1,19 @@
+The D programming language provides bit arrays in its standard library, Phobos, in std.bitmanip. As in C++, the [] operator does not return a reference, since individual bits are not directly addressable on most hardware, but instead returns a bool.
+
+In Java, the class BitSet creates a bit array that is then manipulated with functions named after bitwise operators familiar to C programmers. Unlike the bitset in C++, the Java BitSet does not have a "size" state (it has an effectively infinite size, initialized with 0 bits); a bit can be set or tested at any index. In addition, there is a class EnumSet, which represents a Set of values of an enumerated type internally as a bit vector, as a safer alternative to bitfields.
+
+The .NET Framework supplies a BitArray collection class. It stores boolean values, supports random access and bitwise operators, can be iterated over, and its Length property can be changed to grow or truncate it.
+
+Although Standard ML has no support for bit arrays, Standard ML of New Jersey has an extension, the BitArray structure, in its SML/NJ Library. It is not fixed in size and supports set operations and bit operations, including, unusually, shift operations.
+
+Haskell likewise currently lacks standard support for bitwise operations, but both GHC and Hugs provide a Data.Bits module with assorted bitwise functions and operators, including shift and rotate operations and an "unboxed" array over boolean values may be used to model a Bit array, although this lacks support from the former module.
+
+In Perl, strings can be used as expandable bit arrays. They can be manipulated using the usual bitwise operators (~ | & ^),[3] and individual bits can be tested and set using the vec function.[4]
+
+In Ruby, you can access (but not set) a bit of an integer (Fixnum or Bignum) using the bracket operator ([]), as if it were an array of bits.
+
+Apple's Core Foundation library contains CFBitVector and CFMutableBitVector structures.
+
+PL/I supports arrays of bit strings of arbitrary length, which may be either fixed-length or varying. The array elements may be aligned— each element begins on a byte or word boundary— or unaligned— elements immediately follow each other with no padding.
+
+Hardware description languages such as VHDL, Verilog, and SystemVerilog natively support bit vectors as these are used to model storage elements like flip-flops, hardware busses and hardware signals in general. In hardware verification languages such as OpenVera, e and SystemVerilog, bit vectors are used to sample values from the hardware models, and to represent data that is transferred to hardware during simulations.

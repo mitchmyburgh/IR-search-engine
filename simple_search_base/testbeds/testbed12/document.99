@@ -1,0 +1,159 @@
+Immutable collections for JavaScript
+====================================
+
+[![Build Status](https://travis-ci.org/facebook/immutable-js.svg)](https://travis-ci.org/facebook/immutable-js)
+
+[Immutable][] data cannot be changed once created, leading to much simpler
+application development, no defensive copying, and enabling advanced memoization
+and change detection techniques with simple logic. [Persistent][] data presents
+a mutative API which does not update the data in-place, but instead always
+yields new updated data.
+
+Immutable.js provides many Persistent Immutable data structures including:
+`List`, `Stack`, `Map`, `OrderedMap`, `Set`, `OrderedSet` and `Record`.
+
+These data structures are highly efficient on modern JavaScript VMs by using
+structural sharing via [hash maps tries][] and [vector tries][] as popularized
+by Clojure and Scala, minimizing the need to copy or cache data.
+
+`Immutable` also provides a lazy `Seq`, allowing efficient
+chaining of collection methods like `map` and `filter` without creating
+intermediate representations. Create some `Seq` with `Range` and `Repeat`.
+
+Want to hear more? Watch the presentation about Immutable.js:
+
+<a href="https://youtu.be/I7IdS-PbEgI" target="_blank" alt="Immutable Data and React"><img src="https://img.youtube.com/vi/I7IdS-PbEgI/0.jpg" /></a>
+
+[Persistent]: http://en.wikipedia.org/wiki/Persistent_data_structure
+[Immutable]: http://en.wikipedia.org/wiki/Immutable_object
+[hash maps tries]: http://en.wikipedia.org/wiki/Hash_array_mapped_trie
+[vector tries]: http://hypirion.com/musings/understanding-persistent-vector-pt-1
+
+
+Getting started
+---------------
+
+Install `immutable` using npm.
+
+```shell
+npm install immutable
+```
+
+Then require it into any module.
+
+```javascript
+var Immutable = require('immutable');
+var map1 = Immutable.Map({a:1, b:2, c:3});
+var map2 = map1.set('b', 50);
+map1.get('b'); // 2
+map2.get('b'); // 50
+```
+
+### Browser
+
+To use `immutable` from a browser, download [dist/immutable.min.js](https://github.com/facebook/immutable-js/blob/master/dist/immutable.min.js)
+or use a CDN such as [CDNJS](https://cdnjs.com/libraries/immutable)
+or [jsDelivr](http://www.jsdelivr.com/#!immutable.js).
+
+Then, add it as a script tag to your page:
+
+```html
+<script src="immutable.min.js"></script>
+<script>
+    var map1 = Immutable.Map({a:1, b:2, c:3});
+    var map2 = map1.set('b', 50);
+    map1.get('b'); // 2
+    map2.get('b'); // 50
+</script>
+```
+
+Or use an AMD loader (such as [RequireJS](http://requirejs.org/)):
+
+```javascript
+require(['./immutable.min.js'], function (Immutable) {
+    var map1 = Immutable.Map({a:1, b:2, c:3});
+    var map2 = map1.set('b', 50);
+    map1.get('b'); // 2
+    map2.get('b'); // 50
+});
+```
+
+If you're using [browserify](http://browserify.org/), the `immutable` npm module
+also works from the browser.
+
+### TypeScript
+
+Use these Immutable collections and sequences as you would use native
+collections in your [TypeScript](http://typescriptlang.org) programs while still taking
+advantage of type generics, error detection, and auto-complete in your IDE.
+
+Just add a reference with a relative path to the type declarations at the top
+of your file.
+
+```javascript
+///<reference path='./node_modules/immutable/dist/immutable.d.ts'/>
+import Immutable = require('immutable');
+var map1: Immutable.Map<string, number>;
+map1 = Immutable.Map({a:1, b:2, c:3});
+var map2 = map1.set('b', 50);
+map1.get('b'); // 2
+map2.get('b'); // 50
+```
+
+
+The case for Immutability
+-------------------------
+
+Much of what makes application development difficult is tracking mutation and
+maintaining state. Developing with immutable data encourages you to think
+differently about how data flows through your application.
+
+Subscribing to data events throughout your application creates a huge overhead of
+book-keeping which can hurt performance, sometimes dramatically, and creates
+opportunities for areas of your application to get out of sync with each other
+due to easy to make programmer error. Since immutable data never changes,
+subscribing to changes throughout the model is a dead-end and new data can only
+ever be passed from above.
+
+This model of data flow aligns well with the architecture of [React][]
+and especially well with an application designed using the ideas of [Flux][].
+
+When data is passed from above rather than being subscribed to, and you're only
+interested in doing work when something has changed, you can use equality.
+
+Immutable collections should be treated as *values* rather than *objects*. While
+objects represents some thing which could change over time, a value represents
+the state of that thing at a particular instance of time. This principle is most
+important to understanding the appropriate use of immutable data. In order to
+treat Immutable.js collections as values, it's important to use the
+`Immutable.is()` function or `.equals()` method to determine value equality
+instead of the `===` operator which determines object reference identity.
+
+```javascript
+var map1 = Immutable.Map({a:1, b:2, c:3});
+var map2 = map1.set('b', 2);
+assert(map1.equals(map2) === true);
+var map3 = map1.set('b', 50);
+assert(map1.equals(map3) === false);
+```
+
+Note: As a performance optimization `Immutable` attempts to return the existing
+collection when an operation would result in an identical collection, allowing
+for using `===` reference equality to determine if something definitely has not
+changed. This can be extremely useful when used within memoization function
+which would prefer to re-run the function if a deeper equality check could
+potentially be more costly. The `===` equality check is also used internally by
+`Immutable.is` and `.equals()` as a performance optimization.
+
+If an object is immutable, it can be "copied" simply by making another reference
+to it instead of copying the entire object. Because a reference is much smaller
+than the object itself, this results in memory savings and a potential boost in
+execution speed for programs which rely on copies (such as an undo-stack).
+
+```javascript
+var map1 = Immutable.Map({a:1, b:2, c:3});
+var clone = map1;
+```
+
+[React]: http://facebook.github.io/react/
+[Flux]: http://facebook.github.io/flux/docs/overview.html

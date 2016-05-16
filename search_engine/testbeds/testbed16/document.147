@@ -1,0 +1,24 @@
+The Difference Between Cloud Computing And Virtualization
+Ted Navarro
+By	Ted Navarro
+May 7, 2014
+Cloud vs Virtualization“Cloud Computing” might be one of the most overused buzzwords in the tech industry, often thrown around as an umbrella term for a wide array of different platforms, services, and systems. It’s thus not entirely surprising that there’s a great deal of confusion regarding what the term actually entails. The waters are only made muddier by the fact that – at least on the surface – the cloud shares so much in common with virtualization technology.
+
+This isn’t just a matter of laymen getting confused by the terms tech experts are tossing around; many of those experts have no idea what they’re talking about, either. Because of how nebulous a concept we have of the cloud, even network administrators are getting a little confused. For example, a 2013 survey carried out by Forrester research actually found that 70% of what admins have termed ‘private clouds’ don’t even remotely fit the definition.
+
+It seems we need to clear the air a bit. Cloud computing and virtualization are two very different technologies, and confusing the two has a potential to cost an organization dearly. Let’s start with virtualization.
+
+VIRTUALIZATION
+There are several different breeds of virtualization, though all of them share one thing in common: the end result is a virtualized simulation of a device or resource. In most cases, virtualization is generally accomplished by dividing a single piece of hardware into two or more ‘segments.’ Each segment operates as its own independent environment.
+
+For example, server virtualization partitions a single server into a number of smaller virtual servers, while storage virtualization amalgamates a number of storage devices into a single, cohesive storage unit.  Essentially, virtualization serves to make computing environments independent of physical infrastructure.
+
+It’s no coincidence that this sounds oddly similar to cloud computing, as the cloud is essentially born from virtualization.
+
+CLOUD COMPUTING
+The best way to explain the difference between virtualization and cloud computing is to say that the former is a technology, while the latter is a service whose foundation is formed by said technology.  Virtualization can exist without the cloud, but cloud computing cannot exist without virtualization – at least, not in its current format. The term cloud computing then is best used to refer to a situation in which “shared computing resources, software, or data are delivered as a service and on-demand through the Internet.”
+
+There’s a bit more to it than that, of course. There are a number of other factors which separate cloud computing from virtualization, including self-service for users, broad network access, the ability to elastically scale resources, and the presence of measured service. If you’re looking at what appears to be a server environment which lacks any of these features, then it’s probably not cloud computing, regardless of what it claims to be.
+
+CLOSING THOUGHTS
+It’s easy to see where the confusion lies in telling the difference between cloud and virtualization technology. The fact that “the cloud” may well be the most overused buzzword since “web 2.0” notwithstanding; the two are remarkably similar in both form and function. What’s more, since they so often work together, it’s quite common for people to see clouds where there are none.

@@ -1,0 +1,594 @@
+
+
+  * Login
+  * Become a member
+  * RSS
+  * Part of the TechTarget network
+
+  * Browse Definitions  
+by Topic
+
+  * Browse Definitions  
+by Alphabet
+
+  * Research  
+Library
+
+  * File  
+Extensions
+
+Search
+
+### Browse Alphabetically
+
+  * A
+  * B
+  * C
+  * D
+  * E
+  * F
+  * G
+  * H
+  * I
+  * J
+  * K
+  * L
+  * M
+  * N
+  * O
+  * P
+  * Q
+  * R
+  * S
+  * T
+  * U
+  * V
+  * W
+  * X
+  * Y
+  * Z
+  * #
+
+  * Home
+  * Topics
+  * Computer Science
+  * Computing fundamentals
+  * _quantum computing_
+
+Definition
+
+# quantum computing
+
+  * Facebook Like
+  * Tweet
+  * Google +1
+  * LinkedIn
+  * Email
+
+  * Comment
+  * RSS
+  * Print
+  * A
+  * AA
+  * AAA
+
+Part of the Computing fundamentals glossary:
+
+Quantum computing is the area of study focused on developing computer
+technology based on the principles of quantum theory, which explains the
+nature and behavior of energy and matter on the quantum (atomic and subatomic)
+level. Development of a quantum computer, if practical, would mark a leap
+forward in computing capability far greater than that from the abacus to a
+modern day supercomputer, with performance gains in the billion-fold realm and
+beyond. The quantum computer, following the laws of quantum physics, would
+gain enormous processing power through the ability to be in multiple states,
+and to perform tasks using all possible permutations simultaneously. Current
+centers of research in quantum computing include MIT, IBM, Oxford University,
+and the Los Alamos National Laboratory.
+
+The essential elements of quantum computing originated with Paul Benioff,
+working at Argonne National Labs, in 1981. He theorized a classical computer
+operating with some quantum mechanical principles. But it is generally
+accepted that David Deutsch of Oxford University provided the critical impetus
+for quantum computing research. In 1984, he was at a computation theory
+conference and began to wonder about the possibility of designing a computer
+that was based exclusively on quantum rules, then published his breakthrough
+paper a few months later. With this, the race began to exploit his ideas.
+However, before we delve into what he started, it is beneficial to have a look
+at the background of the quantum world.
+
+#### Quantum Theory
+
+Quantum theory's development began in 1900 with a presentation by Max Planck
+to the German Physical Society, in which he introduced the idea that energy
+exists in individual units (which he called "quanta"), as does matter. Further
+developments by a number of scientists over the following thirty years led to
+the modern understanding of quantum theory.  
+
+
+#### The Essential Elements of Quantum Theory:
+
+  * Energy, like matter, consists of discrete units, rather than solely as a continuous wave.
+  * Elementary particles of both energy and matter, depending on the conditions, may behave like either particles or waves.
+  * The movement of elementary particles is inherently random, and, thus, unpredictable.
+  * The simultaneous measurement of two complementary values, such as the position and momentum of an elementary particle, is inescapably flawed; the more precisely one value is measured, the more flawed will be the measurement of the other value.
+
+#### Further Developments of Quantum Theory
+
+Niels Bohr proposed the Copenhagen interpretation of quantum theory, which
+asserts that a particle is whatever it is measured to be (for example, a wave
+or a particle) but that it cannot be assumed to have specific properties, or
+even to exist, until it is measured. In short, Bohr was saying that objective
+reality does not exist. This translates to a principle called superposition
+that claims that while we do not know what the state of any object is, it is
+actually in all possible states simultaneously, as long as we don't look to
+check.
+
+To illustrate this theory, we can use the famous and somewhat cruel analogy of
+Schrodinger's Cat. First, we have a living cat and place it in a thick lead
+box. At this stage, there is no question that the cat is alive. We then throw
+in a vial of cyanide and seal the box. We do not know if the cat is alive or
+if it has broken the cyanide capsule and died. Since we do not know, the cat
+is both dead and alive, according to quantum law - in a superposition of
+states. It is only when we break open the box and see what condition the cat
+is in that the superposition is lost, and the cat must be either alive or
+dead.
+
+The second interpretation of quantum theory is the _multiverse_ or _many-
+worlds_ theory. It holds that as soon as a potential exists for any object to
+be in any state, the universe of that object transmutes into a series of
+parallel universes equal to the number of possible states in which that the
+object can exist, with each universe containing a unique single possible state
+of that object. Furthermore, there is a mechanism for interaction between
+these universes that somehow permits all states to be accessible in some way
+and for all possible states to be affected in some manner. Stephen Hawking and
+the late Richard Feynman are among the scientists who have expressed a
+preference for the many-worlds theory.
+
+Which ever argument one chooses, the principle that, in some way, one particle
+can exist in numerous states opens up profound implications for computing.
+
+#### A Comparison of Classical and Quantum Computing
+
+Classical computing relies, at its ultimate level, on principles expressed by
+Boolean algebra, operating with a (usually) 7-mode logic gate principle,
+though it is possible to exist with only three modes (which are AND, NOT, and
+COPY). Data must be processed in an exclusive binary state at any point in
+time - that is, either 0 (off / false) or 1 (on / true). These values are
+binary digits, or bits. The millions of transistors and capacitors at the
+heart of computers can only be in one state at any point. While the time that
+the each transistor or capacitor need be either in 0 or 1 before switching
+states is now measurable in billionths of a second, there is still a limit as
+to how quickly these devices can be made to switch state. As we progress to
+smaller and faster circuits, we begin to reach the physical limits of
+materials and the threshold for classical laws of physics to apply. Beyond
+this, the quantum world takes over, which opens a potential as great as the
+challenges that are presented.  
+  
+The Quantum computer, by contrast, can work with a two-mode logic gate: XOR
+and a mode we'll call QO1 (the ability to change 0 into a superposition of 0
+and 1, a logic gate which cannot exist in classical computing). In a quantum
+computer, a number of elemental particles such as electrons or photons can be
+used (in practice, success has also been achieved with ions), with either
+their charge or polarization acting as a representation of 0 and/or 1. Each of
+these particles is known as a quantum bit, or qubit, the nature and behavior
+of these particles form the basis of quantum computing. The two most relevant
+aspects of quantum physics are the principles of superposition and
+_entanglement_ .
+
+#### Superposition
+
+Think of a qubit as an electron in a magnetic field. The electron's spin may
+be either in alignment with the field, which is known as a _spin-up_ state, or
+opposite to the field, which is known as a _spin-down_ state. Changing the
+electron's spin from one state to another is achieved by using a pulse of
+energy, such as from a laser \- let's say that we use 1 unit of laser energy.
+But what if we only use half a unit of laser energy and completely isolate the
+particle from all external influences? According to quantum law, the particle
+then enters a superposition of states, in which it behaves as if it were in
+both states simultaneously. Each qubit utilized could take a superposition of
+both 0 and 1. Thus, the number of computations that a quantum computer could
+undertake is 2^n, where n is the number of qubits used. A quantum computer
+comprised of 500 qubits would have a potential to do 2^500 calculations in a
+single step. This is an awesome number - 2^500 is infinitely more atoms than
+there are in the known universe (this is true parallel processing - classical
+computers today, even so called parallel processors, still only truly do one
+thing at a time: there are just two or more of them doing it). But how will
+these particles interact with each other? They would do so via quantum
+entanglement.  
+  
+**Entanglement** Particles (such as photons, electrons, or qubits) that have interacted at some point retain a type of connection and can be entangled with each other in pairs, in a process known as _correlation_ . Knowing the spin state of one entangled particle - up or down - allows one to know that the spin of its mate is in the opposite direction. Even more amazing is the knowledge that, due to the phenomenon of superpostition, the measured particle has no single spin direction before being measured, but is simultaneously in both a spin-up and spin-down state. The spin state of the particle being measured is decided at the time of measurement and communicated to the correlated particle, which simultaneously assumes the opposite spin direction to that of the measured particle. This is a real phenomenon (Einstein called it "spooky action at a distance"), the mechanism of which cannot, as yet, be explained by any theory - it simply must be taken as given. Quantum entanglement allows qubits that are separated by incredible distances to interact with each other instantaneously (not limited to the speed of light). No matter how great the distance between the correlated particles, they will remain entangled as long as they are isolated.  
+  
+Taken together, quantum superposition and entanglement create an enormously
+enhanced computing power. Where a 2-bit register in an ordinary computer can
+store only one of four binary configurations (00, 01, 10, or 11) at any given
+time, a 2-qubit register in a quantum computer can store all four numbers
+simultaneously, because each qubit represents two values. If more qubits are
+added, the increased capacity is expanded exponentially.
+
+#### Quantum Programming
+
+Perhaps even more intriguing than the sheer power of quantum computing is the
+ability that it offers to write programs in a completely new way. For example,
+a quantum computer could incorporate a programming sequence that would be
+along the lines of "take all the superpositions of all the prior computations"
+- something which is meaningless with a classical computer - which would
+permit extremely fast ways of solving certain mathematical problems, such as
+factorization of large numbers, one example of which we discuss below.  
+  
+There have been two notable successes thus far with quantum programming. The
+first occurred in 1994 by Peter Shor, (now at AT&amp;T Labs) who developed a
+quantum algorithm that could efficiently factorize large numbers. It centers
+on a system that uses number theory to estimate the periodicity of a large
+number sequence. The other major breakthrough happened with Lov Grover of Bell
+Labs in 1996, with a very fast algorithm that is proven to be the fastest
+possible for searching through unstructured databases. The algorithm is so
+efficient that it requires only, on average, roughly N square root (where N is
+the total number of elements) searches to find the desired result, as opposed
+to a search in classical computing, which on average needs N/2 searches.
+
+#### The Problems - And Some Solutions
+
+The above sounds promising, but there are tremendous obstacles still to be
+overcome. Some of the problems with quantum computing are as follows:
+
+  * Interference - During the computation phase of a quantum calculation, the slightest disturbance in a quantum system (say a stray photon or wave of EM radiation) causes the quantum computation to collapse, a process known as de-coherence. A quantum computer must be totally isolated from all external interference during the computation phase. Some success has been achieved with the use of qubits in intense magnetic fields, with the use of ions.
+  * Error correction - Because truly isolating a quantum system has proven so difficult, error correction systems for quantum computations have been developed. Qubits are not digital bits of data, thus they cannot use conventional (and very effective) error correction, such as the triple redundant method. Given the nature of quantum computing, error correction is ultra critical - even a single error in a calculation can cause the validity of the entire computation to collapse. There has been considerable progress in this area, with an error correction algorithm developed that utilizes 9 qubits (1 computational and 8 correctional). More recently, there was a breakthrough by IBM that makes do with a total of 5 qubits (1 computational and 4 correctional).
+  * Output observance - Closely related to the above two, retrieving output data after a quantum calculation is complete risks corrupting the data. In an example of a quantum computer with 500 qubits, we have a 1 in 2^500 chance of observing the right output if we quantify the output. Thus, what is needed is a method to ensure that, as soon as all calculations are made and the act of observation takes place, the observed value will correspond to the correct answer. How can this be done? It has been achieved by Grover with his database search algorithm, that relies on the special "wave" shape of the probability curve inherent in quantum computers, that ensures, once all calculations are done, the act of measurement will see the quantum state decohere into the correct answer.
+
+Even though there are many problems to overcome, the breakthroughs in the last
+15 years, and especially in the last 3, have made some form of practical
+quantum computing not unfeasible, but there is much debate as to whether this
+is less than a decade away or a hundred years into the future. However, the
+potential that this technology offers is attracting tremendous interest from
+both the government and the private sector. Military applications include the
+ability to break encryptions keys via brute force searches, while civilian
+applications range from DNA modeling to complex material science analysis. It
+is this potential that is rapidly breaking down the barriers to this
+technology, but whether all barriers can be broken, and when, is very much an
+open question.
+
+_This was last updated in _ June 2010
+
+_Contributor(s):_ Borys Pawliw
+
+_Posted by:_ Margaret Rouse
+
+#### Related Terms
+
+#### Definitions
+
+  * ##### JBoss
+
+\- JBoss is a division of Red Hat that provides support for the JBoss open
+source application server program and related middleware services marketed
+under the JBoss Enterprise Middleware brand._ (WhatIs.com)_
+
+  * ##### GPU supercomputer
+
+\- A GPU supercomputer is a networked group of computers with multiple
+graphics processing units working as general-purpose GPUs (GPGPUs) in tandem
+on a single task._ (WhatIs.com)_
+
+  * ##### video card (graphics card)
+
+\- A video adapter (alternate terms include graphics card, display adapter,
+video card, video board and almost any combination of the words in these
+terms) is an integrated circuit card in a computer ..._ (WhatIs.com)_
+
+#### Glossaries
+
+  * ##### Computing fundamentals
+
+\- Terms related to computer fundamentals, including computer hardware
+definitions and words and phrases about software, operating systems,
+peripherals and troubleshooting.
+
+  * ##### Internet applications
+
+\- This WhatIs.com glossary contains terms related to Internet applications,
+including definitions about Software as a Service (SaaS) delivery models and
+words and phrases about web sites, e-commerce ...
+
+#### Dig Deeper
+
+#### Continue Reading About quantum computing
+
+  * Dilbert looks at quantum computing.
+  * IBM Research Magazine describes some of IBM's recent advances.
+
+#### People Who Read This Also Read...
+
+  * Quantum computing breakthrough for Japan team
+  * The future of quantum IT
+  * Quantum of storage: Scientists develop smallest ever storage device
+  * IBM develops quantum as a service
+  * Binary makes way for five-way quantum computing
+
+#### Ask a Question About quantum computingPowered by ITKnowledgeExchange.com
+
+Get answers from your peers on your most technical challenges
+
+  * Question Title:
+  * Question:
+  * Tags:
+  * 
+
+#### Tech TalkComment
+
+##### Share
+
+##### Comments
+
+#### Results
+
+#### Contribute to the conversation
+
+All fields are required. Comments will appear at the bottom of the article.
+
+  1. Comment:
+  2. 
+Submit
+
+Back to top
+
+#### Browse Definitions Alphabetically
+
+  * A
+  * B
+  * C
+  * D
+  * E
+  * F
+  * G
+  * H
+  * I
+  * J
+  * K
+  * L
+  * M
+  * N
+  * O
+  * P
+  * Q
+  * R
+  * S
+  * T
+  * U
+  * V
+  * W
+  * X
+  * Y
+  * Z
+  * #
+
+#### Word of the Day
+
+#### cloud backup (online backup)
+
+Cloud backup is a strategy for copying data to a server at a remote data
+center so that it will be preserved in case of equipment failure or other ...
+
+#### Get the Word of the Day via email
+
+#### 20 Newest Terms
+
+  * VMware vRealize Automation (VMware vCloud Automation Center, vCAC)
+  * mobile backend as a service (mobile BaaS)
+  * palm vein recognition
+  * palm print recognition
+  * data modeling
+  * Oracle E-Business Suite
+  * SAP MII (SAP Manufacturing Integration and Intelligence)
+  * edge analytics
+  * Nutanix Prism
+  * Amazon EC2 Dedicated Hosts
+  * Microsoft Azure Data Lake
+  * Microsoft Operations Management Suite
+  * Carbonite
+  * CrashPlan
+  * Backblaze
+  * AribaPay
+  * SAP Financial Supply Chain Management (SAP FIN-FSCM)
+  * Hadoop as a service (HaaS)
+  * Salesforce IdeaExchange
+  * 3D XPoint
+
+Search this site
+
+##### More from Related TechTarget Sites
+
+( View All TechTarget Sites )
+
+  * Server Virtualization
+  * Mobile Computing
+  * Data Management
+  * Oracle
+  * SAP
+  * Business Analytics
+  * ConvergedIT
+  * AWS
+
+  * Server Virtualization
+
+( Find Out More About This Site )
+
+    * ######  VMware vCloud Automation Center (vCAC, VMware vRealize Automation)
+
+VMware vCloud Automation Center, now called VMware vRealize Automation, is
+VMware's unified cloud management software product. The software provides
+administrators with the ability to provision and configure storage, network
+and compute resources across multiple cloud platforms.
+
+    * ######  OpenStack Foundation
+
+The OpenStack Foundation manages and oversees the development of the OpenStack
+open source cloud platform.
+
+    * ######  VM BIOS (virtual machine basic input/output system)
+
+A VM BIOS (virtual machine basic input/output system) is the set of
+instructions that controls the booting process of a virtual machine.
+
+  * Mobile Computing
+
+( Find Out More About This Site )
+
+    * ######  mobile backend as a service (mobile BaaS)
+
+Mobile backend as a service is a cloud computing architecture that provides
+mobile applications with the resources they need to run.
+
+    * ######  Apple Smart Keyboard
+
+Apple's Smart Keyboard is a detachable, full-size, text input device designed
+for the iPad Pro. Its conductive material means the keyboard never has to be
+charged, and it can be unfolded to function also as a protective cover.
+
+    * ######  Apple 3D Touch
+
+Apple 3D Touch is a pressure-sensitive feature first included in iPhone 6s and
+6s Plus that triggers different actions based on how much force the user puts
+on the screen.
+
+  * Data Management
+
+( Find Out More About This Site )
+
+    * ######  data modeling
+
+A data model can be thought of as a diagram or flowchart that illustrates the
+relationships between data. Although capturing all the possible relationships
+in a data model can be very time-intensive, it's an important step that
+shouldn't be rushed.
+
+    * ######  data warehouse as a service (DWaaS)
+
+Data warehousing as a service (DWaaS) is an outsourcing model in which a
+service provider configures and manages the hardware and software resources a
+data warehouse requires, and the customer provides the data and pays for the
+managed service.
+
+    * ######  MPP database (massively parallel processing database)
+
+An MPP database is a database that is optimized to be processed in parallel
+for many operations to be performed by many processing units at a time.
+
+  * Oracle
+
+( Find Out More About This Site )
+
+    * ######  Oracle E-Business Suite
+
+Oracle E-Business Suite is a set of applications for managing business
+operations, including customer relationship management, enterprise resource
+planning and supply chain management processes.
+
+    * ######  Oracle Database 12C
+
+The Oracle Database 12c is a high-performance, enterprise-class database.
+
+    * ######  Oracle Database In-Memory
+
+Oracle Database In-Memory is an optional add-on to Oracle Database 12c that
+enables Oracle's flagship relational software to function as an in-memory
+database.
+
+  * SAP
+
+( Find Out More About This Site )
+
+    * ######  SAP MII (SAP Manufacturing Integration and Intelligence)
+
+SAP MII (SAP Manufacturing Integration and Intelligence) is an application for
+synchronizing manufacturing operations with back-office business processes and
+standardize data. SAP MII functions as a data hub between SAP ERP and
+operational applications, such as manufacturing execution systems (MES).
+
+    * ######  AribaPay
+
+AribaPay is a system for electronic payments for goods and services on the SAP
+Ariba Network, a global business trading community. AribaPay is designed to
+bring visibility and a consumer-like experiences B2B e-commerce, as well as
+replacing complex and inefficient paper-based invoicing processes and systems.
+
+    * ######  SAP Financial Supply Chain Management (SAP FIN-FSCM)
+
+SAP Financial Supply Chain Management (SAP FIN-FSCM) is a set of applications
+meant to support a company's cash-related business processes for more
+efficient management of working capital, receivables and payments.
+
+  * Business Analytics
+
+( Find Out More About This Site )
+
+    * ######  edge analytics
+
+Edge analytics applies algorithms to data at the point of collection in order
+to trigger actions and determine what should be sent back to a central data
+repository and what should be discarded.
+
+    * ######  smart manufacturing (SM)
+
+Smart manufacturing is a strategy for managing manufacturing operations that
+leverages sensor data to better understand and plan the production process.
+
+    * ######  smart city
+
+Smart city is a municipal governance strategy that relies on IT systems to
+collect and analyze data about traffic patterns and other operational elements
+of cities.
+
+  * ConvergedIT
+
+( Find Out More About This Site )
+
+    * ######  Nutanix Prism
+
+Users manage Nutanix hyper-converged infrastructure technology through Prism
+-- software that provides management of clusters, virtual machines and
+networking through a single interface.
+
+    * ######  hyper-converged software
+
+Hyper-converged software is a type of virtualization platform that turns a
+commodity server into a hyper-converged appliance that includes compute,
+storage and server virtualization in one box.
+
+  * AWS
+
+( Find Out More About This Site )
+
+    * ######  Amazon EC2 Dedicated Hosts
+
+Amazon EC2 Dedicated Hosts are servers with virtual machine capacity dedicated
+to one Amazon Web Services customer, instead of sharing server capacity with
+other customers.
+
+    * ######  AWS CodeCommit (Amazon Web Services CodeCommit)
+
+AWS CodeCommit is a source code storage and version-control service for Amazon
+Web Services' public cloud customers.
+
+    * ######  AWS CodePipeline (Amazon Web Services CodePipeline)
+
+AWS CodePipeline is an Amazon Web Services product that automates the software
+deployment process, allowing a developer to quickly model, visualize and
+deliver code for new features and updates. This method is called continuous
+delivery.
+
+All Rights Reserved,Copyright 1999 - 2016, TechTarget
+
+  * About Us
+  * Contact Us
+  * Overview
+  * Site Index
+  * Privacy policy
+  * Advertisers
+  * Business partners
+  * TechTarget events
+  * Media kit
+  * TechTarget Corporate site
+  * Reprints
+  * Site map
+

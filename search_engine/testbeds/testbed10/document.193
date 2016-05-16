@@ -1,0 +1,51 @@
+Programs for Machine Learning by J. Ross Quinlan. Morgan Kaufmann Publishers, Inc., 1993
+
+
+Steven L. Salzberg
+
+1. Overview
+Algorithms for constructing decision trees are among the most well known and widely
+used of all machine learning methods. Among decision tree algorithms, J. Ross Quinlan's
+ID3 and its successor, C4.5, are probably the most popular in the machine learning
+community. These algorithms and variations on them have been the subject of numerous
+research papers since Quinlan introduced ID3. Until recently, most researchers looking
+for an introduction to decision trees turned to Quinlan's seminal 1986 Machine Learning
+journal article [Quinlan, 1986]. In his new book, C4.5: Programs for Machine Learning,
+Quinlan has put together a definitive, much needed description of his complete system,
+including the latest developments. As such, this book will be a welcome addition to the
+library of many researchers and students.
+Quinlan discusses a wide range of issues related to decision trees, from the core algorithm
+for building an initial tree to methods for pruning, converting trees to rules, and
+handling various problems such as missing attribute values. For each of these issues, he
+gives a clear description of the problem, usually accompanied by an example, and he
+describes how C4.5 handles it. The detailed examples are usually drawn from real data
+sets, and they help greatly to illustrate each problem.
+Quinlan also covers a number of limitations of C4.5, such as its bias in favor of rectangular
+regions, and he discusses some ideas for extending the abilities of the algorithm.
+Except for a brief survey in the first chapter, he does not discuss competing decision tree
+construction algorithms (such as Breiman et al.'s CART method [1984]) or competing
+classification methods, presumably because the book is not intended as a general survey
+of learning algorithms. The book should be most useful as a tool for machine learning
+researchers or as a supplementary text in an advanced undergraduate or introductory
+graduate course. Quinlan does not assume any familiarity on the part of readers with any
+previous work on decision trees, and be explains all the requisite concepts in the early
+chapters. 
+
+3. Concluding remarks
+This is a very well-written book, and any reader not familiar with Quinlan's writings will
+quickly discover that Quinlan's style is refreshingly clear. The examples are especially
+helpful, as they provide concrete illustrations of many of the algorithmic details of"
+C4.5. In part because the writing is so good, it would have been nice to have a longer
+book in which he surveyed some of the substantial body of literature on decision trees,
+such as pruning methods, alternative goodness criteria, and experimental results. It
+would have been especially interesting to read what Quinlan thinks of the numerous
+experiments comparing C4.5 and its predecessors to the other classification algorithms
+that are commonly used in the research community. Even at its current length, though,
+this book will be very useful to researchers and practitioners of machine learning. Anyone
+intending to use C4.5 in their experiments or on a practical problem will find this book
+an invaluable resource. 
+
+
+
+
+

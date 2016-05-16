@@ -1,0 +1,58 @@
+Animation, the ultimate tool
+2. The uses of animation
+
+2.1 Cartoons
+
+The most common use of animation, and perhaps the origin of it, is cartoons. Cartoons appear all the time on television and the cinema and can be used for entertainment, advertising, presentations and many more applications that are only limited by the imagination of the designer. The most important factor about making cartoons on a computer is reusability and flexibility. The system that will actually do the animation needs to be such that all the actions that are going to be performed can be repeated easily, without much fuss from the side of the animator. Speed here is not of real importance, as once the sequence is complete, it can be recorded on film or video, frame by frame and played back at an acceptable speed.
+
+2.2 Simulations
+
+Many times it is much cheaper to train people to use certain machines on a virtual environment (i.e. on a computer simulation), than to actually train them on the machines themselves. Simulations of all types that use animation are supposed to respond to real-time stimuli, and hence the events that will take place are non-deterministic. The response to real-time stimuli requires a fast response and the non-determinism, requires a fast system to deal with it. This means that speed is the most important factor in simulation systems.
+
+2.3 Scientific Visualisation
+
+Graphical visualisation is very common in all areas of science. The usual form that is takes is x-y plots and when things get more complicated three dimensional graphs are used. However there are many cases that something is more complex to be visualised in a three dimensional plot, even if that has been enhanced with some other effect (e.g. colour). Here is where animation comes in. Data is represented in multiple images (frames) which differ a little from each other, and displayed one after the other to give the illusion of motion. This adds a fourth dimension and increases the information conveyed. Speed here is again the most important factor, as huge sets of data might have to be displayed in real-time. Someone might argue, that results maybe filmed and played back, but that depends on how often the sequence has to be recalculated. For example it might take a few days or weeks to generate an animation of a fractal, which zooms in slowly, and it might be distressing to realise that it has zoomed in at the wrong place.
+
+The uses of scientific visualisation can be classified into two main categories: analysis and teaching. Both of these are described below
+
+2.3.1 Analysis and Understanding
+
+Very frequently, scientists have large sets of data (often in the form of lists of numbers) that need to be understood and often a theory needs to be formulated that explains their relationship. It would be very difficult to go through these lists manually or otherwise and make any sense out of them, unless some graphical technique is used for the initial approach. If the data set is massive, a short (or long) animation of the data can give the scientists a first idea of how to approach the situation.
+
+Examples of the different uses of animation:
+
+Astronomers use computers to do animations if high speed jets penetrating different gases, to determine why a few galaxies flare dramatically. (This research has given out valuable information about why some galaxies flare into broad plumes and why others remain extremely straight and narrow).
+British Telecom uses sophisticated programs that plot on a map of the UK, the density of telephone fault reports using different colours. When a storm was plotted on top of this map and the whole system was animated it could be seen that the density of faults increased significantly at areas from which the storm had just passed.
+Animation can be used in software engineering, where an algorithm can be animated, in order to understand how it works or to debug it. Spotting errors using animation, becomes much easier.
+2.3.2 Teaching and Communicating
+
+One of the most difficult aspects of teaching is communicating ideas effectively. When this becomes too difficult using the classical teaching tools (speech, blackboard etc.) animation can be used to convey information. From its nature, an animation sequence contains much more information than a single image or page of text. This, and the fact that an animation can be very "pleasing to the eye", makes animation the perfect tool for learning.
+
+Two examples of the use of animation for learning are:
+
+Programs that show the planetary system in action in three dimensions make it very easy for kids to understand rather than using tables of sizes, periods and diameters.
+Astrophysicists at the National Center for Supercomputing Applications, work with artists, in order to explain some phenomena which cannot be seen such as the visualisation of the gravitational field of a Schwarzchild black hole. The latter is not visible as it absorbs all light that falls onto it. The only way of experimenting with it is to animate it on a computer.
+3. History of Animation Techniques
+
+3.1 Brief History of Animation
+
+Picture animation was invented in 1831 by Joseph Antoine Plateau. He used a machine called phenakistoscope to create the illusion of movement. The device consisted of a spinning disc that held a series of drawings and windows that framed the user's perception of the drawings. Many other animating machines were invented since then, but it was not until 1906 when the first complete animated film was produced by J.Steward Blackton. It was called "Humorous Phases of a Funny Face". In 1915, Earl Hurd introduced the technique of cell animation which took its name from the transparent sheets of celluloid that was used. The father of animation, Walt Disney produced a huge cartoon world in less than ten years at 1928. The first commercial animated cartoon, "Snow White and the Seven Dwarfs", was then produced. Many people followed, which contributed to this evolution. The results were good, but to a certain point. When very complex animation was required, everything turned out to be extremely difficult. Something was definitely missing and technology would give the answer in the following years.
+
+3.2 Traditional Animation Techniques
+
+Hand-drawn animation, with each frame individually crafted by an artist, requires a lot of skill, a lot of patience and very little equipment. The drawing is usually done on a cell which allows multiple frames to be drawn by the same cells. Each frame can be recorded on film or video, and the amount of work going into an animation is staggering. A feature film containing the production of 250,000 drawings would take fifty years of labour if all were to be drawn by a single artist. So usually it is coordinated by one person but the work is divided among a number of artists. Senior artists will draw the key frames and junior artists will draw in-between ones.
+
+As we said before all the detail can be painted on to every frame; it is more likely that the frame will be compiled from several cells at the point of filming. The background may be on one cell, static characters on the other and the moving character on the top. In this way the bottom two cells can be used in a number of frames. It might also be that the cells are moved relative to one another, in successive frames, without being redrawn. Conventional animation is oriented mainly towards the production of two-dimensional cartoons. Every frame is a flat picture. In order to achieve the multiple frame design by using the same cells the multiplane technique is used. Several glass layers are placed beneath the camera at varying distances. On the layers the cells are placed and the frame is filmed. A lot of camera effects can be added into the animation but they are usually difficult to produce and sometimes are very expensive. A few of them are: zooming, fade-in, fade-out, etc.
+
+3.3 Computer Assisted Animation
+
+It is very clear that automation of the whole animation or even part of it would be very productive. Computers were used for animation for the first time in early sixties but it was mainly for scientific reasons. Ten years later animators started to consider computers to be a very powerful and useful part of their animation systems.
+
+Today, computers can be used in animation in two main ways: as tools to improve the application of traditional methods; and as a means of generating animation which is not possible using traditional methods. Computers can considerably improve the speed, accuracy and at the same time reduce the cost of traditional animation methods. Projects which were impossible to realise in the past could actually be attempted.
+
+Computer animation systems are classified into several different levels. These levels define the depth of the assistance that is provided by the computer. At the lowest level the animator can use software only to design the drawings. On the other hand at the highest level the whole work drawing, modeling and motion control is produced by the system.
+
+The second more important advantage of modern animation systems apart of the fact that make everything easier is the interactivity. Animation can not only be a visual effect that one simply sees and waits until it is finished. The user becomes a participant of the whole story and can decide upon the development of the sequence. This has a large amount of applications which give to animation systems a very important existence in life.
+
+There are several animation software packages currently available in the market. They all have a different approach to animation but tend to work on the same principle. There is an interactive graphics interface where the drawing, paint and modeling takes place. An animation language takes care of the motion control and of any advanced animation that is required. Every language currently available requires different programming skills. However the more advanced a language is, the more enhanced the produced motion will be. The problem that arises here is that computer animators usually don't have strong programming experience since they mostly come from areas of traditional animation. There is not a single answer to this problem but the most satisfying one is that software should approach differently each user depending on the result that is required to produce.
+

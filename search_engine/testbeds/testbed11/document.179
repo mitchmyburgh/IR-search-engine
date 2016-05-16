@@ -1,0 +1,43 @@
+In computer networking, the link layer is the lowest layer in the Internet Protocol Suite, commonly known as TCP/IP, the networking architecture of the Internet. It is described in RFC 1122 and RFC 1123. The link layer is the group of methods and communications protocols that only operate on the link that a host is physically connected to. The link is the physical and logical network component used to interconnect hosts or nodes in the network and a link protocol is a suite of methods and standards that operate only between adjacent network nodes of a local area network segment or a wide area network connection.
+Despite the different semantics of layering in TCP/IP and OSI, the link layer is sometimes described as a combination of the data link layer (layer 2) and the physical layer (layer 1) in the OSI model. However, the layers of TCP/IP are descriptions of operating scopes (application, host-to-host, network, link) and not detailed prescriptions of operating procedures, data semantics, or networking technologies.
+RFC 1122 exemplifies that local area network protocols such as Ethernet and IEEE 802, and framing protocols such as Point-to-Point Protocol (PPP) belong to the link layer.
+
+
+== Definition in standards and textbooks ==
+Local area networking standards such as Ethernet and IEEE 802 specifications use terminology from the seven-layer OSI model rather than the TCP/IP model. The TCP/IP model in general does not consider physical specifications, rather it assumes a working network infrastructure that can deliver media level frames on the link. Therefore, RFC 1122 and RFC 1123, the definition of the TCP/IP model, do not discuss hardware issues and physical data transmission and set no standards for those aspects. Some textbook authors have supported the interpretation that physical data transmission aspects are part of the link layer. Others assumed that physical data transmission standards are not considered communication protocols, and are not part of the TCP/IP model. These authors assume a hardware layer or physical layer below the link layer, and several of them adopt the OSI term data link layer instead of link layer in a modified description of layering. In the predecessor to the TCP/IP model, the ARPAnet Reference Model (RFC 908, 1982), aspects of the link layer are referred to by several poorly defined terms, such as network-access layer, network-access protocol, as well as network layer, while the next higher layer is called internetwork layer. In some modern text books, network-interface layer, host-to-network layer and network-access layer occur as synonyms either to the link layer or the data link layer, often including the physical layer.
+
+
+== Link layer protocols ==
+The link layer in the TCP/IP model is a descriptive realm of networking protocols that operate only on the local network segment (link) that a host is connected to. Such protocol packets are not routed to other networks.
+The core protocols specified by the Internet Engineering Task Force (IETF) in this layer are the Address Resolution Protocol (ARP), the Reverse Address Resolution Protocol (RARP), and the Neighbor Discovery Protocol (NDP), which is a facility delivering similar functionality as ARP for IPv6. Since the advent of IPv6, Open Shortest Path First (OSPF) is considered to operate on the link level as well, although the IPv4 version of the protocol was considered at the Internet layer.
+IS-IS (RFC 1142) is another link-state routing protocol that fits into this layer when considering TCP/IP model, however it was developed within the OSI reference stack, where it is a Layer 2 protocol. It is not an Internet standard.
+
+
+== Relation to OSI model ==
+The link layer of the TCP/IP model is often compared directly with the combination of the data link layer and the physical layer in the Open Systems Interconnection (OSI) protocol stack. Although they are congruent to some degree in technical coverage of protocols, they are not identical. The link layer in TCP/IP is still wider in scope and in principle a different concept and terminology of classification. This may be observed when certain protocols, such as the Address Resolution Protocol (ARP), which is confined to the link layer in the TCP/IP model, is often said to fit between OSI's data link layer and the network layer. In general, direct or strict comparisons should be avoided, because the layering in TCP/IP is not a principal design criterion and in general is considered to be "harmful" (RFC 3439).
+Another term sometimes encountered, network access layer, tries to suggest the closeness of this layer to the physical network. However, this use is misleading and non-standard, since the link layer implies functions that are wider in scope than just network access. Important link layer protocols are used to probe the topology of the local network, discover routers and neighboring hosts, i.e. functions that go well beyond network access.
+
+
+== IETF standards ==
+RFC 1122, "Requirements for Internet Hosts -- Communication layers," IETF, R. Braden (Editor), October 1989
+RFC 1123, "Requirements for Internet Hosts -- Application and Support," IETF, R. Braden (Editor), October 1989
+RFC 893, "Trailer Encapsulations," S. Leffler and M. Karels, April 1984
+RFC 826, "An Ethernet Address Resolution Protocol," D. Plummer, November 1982
+RFC 894, "A Standard for the Transmission of IP Datagrams over Ethernet Networks," C. Hornig, April 1984
+RFC 1042, "A Standard for the Transmission of IP Datagrams over IEEE 802 Networks," J. Postel and J. Reynolds, February 1988
+RFC 2740, "OSPF for IPv6", R. Coltun, et al., December 1999
+
+
+== See also ==
+Address Resolution Protocol
+Carrier sense multiple access
+Carrier sense multiple access with collision detection
+Data link layer
+Ethernet
+
+
+== References ==
+
+
+== External links ==
+IEEE 802 Standards

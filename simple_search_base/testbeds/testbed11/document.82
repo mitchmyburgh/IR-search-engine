@@ -1,0 +1,60 @@
+Ember was an American company based in Boston, Massachusetts, USA, which is now owned by Silicon Labs. Ember had a radio development centre in Cambridge, England, and distributors worldwide. It developed ZigBee wireless networking technology that enabled companies involved in energy technologies to help make buildings and homes smarter, consume less energy, and operate more efficiently. The low-power wireless technology can be embedded into a wide variety of devices to be part of a self-organizing mesh network. All Ember products conform to IEEE 802.15.4-2003 standards.
+
+
+== History ==
+Ember was founded in 2001 by Andrew Wheeler and Robert Poor. Both were students at MIT when they founded Ember with $3 million in seed funding led by Polaris Venture Partners with DFJ New England, Stata Venture Partners, and Bob Metcalfe. The company began by making mesh networking software for other companies' microchips and has since evolved to manufacturing ZigBee compliant chips itself. In 2003 Ember released its first chip, the EM2420 which was fully compliant with IEEE 802.15.4-2003 standards. Since then, Ember has released the EM260 ZigBee network co-processor and the EM250, ZigBee system-on-chip (SoC), and EmberZNet ZigBee Software in 2005. In 2007, the EmberZNet PRO was launched to provide software that supports the ZigBee PRO Feature Set. The Smart Energy Suite and new versions of ZigBee Development Tools came out in 2008. In 2009 Ember released its third generation chips, the EM300 series.
+In May, 2012, Ember was acquired by Silicon Labs.
+
+
+== Products ==
+Ember produces Zigbee chips, software and development tools.
+
+
+=== Chips ===
+EM351 integrates a programmable ARM Cortex M-3 processor, IEEE 802.15.4 RF transceiver, 128kB of Flash, 12 KB RAM, and the EmberZNet PRO network protocol stack which supports the ZigBee PRO Feature Set.
+EM357 incorporates the features of the EM351 but has 192 KB of Flash for applications that require more memory.
+EM250 SoC combines a radio transceiver with a 16-bit XAP2 microprocessor. It has embedded mesh networking software, on-chip debugging, 128kB of Flash and 5kB of RAM. It was designed for applications that require long battery life, low external component count, and a reliable networking solution.
+EM260 Co-Processor combines a radio transceiver with a flash-based microprocessor. The interface allows application development with any microcontroller and tool-chain. Like the EM250 it was designed for applications that require long battery life, low external component count, and a reliable networking solution.
+EM2420 was the first chip Ember created. It has since become obsolete and has been replaced by second and third generation Ember chips.
+
+
+=== Software ===
+EmberZNet PRO is a ZigBee protocol software package that runs the mesh networking applications. It provides networking for applications such as Advanced Metering Infrastructure (AMI), home automation Networks (HANs), and building automation systems. It is compliant with all the Ember chips.
+
+
+=== Development Tools ===
+InSight Development Kits provide the hardware and software tools needed for application development.
+InSight Desktop allows for the programming and debugging of applications. It combines a packet sniffer, network analysis features, API tracing, and a virtual UART.
+InSight Adapter is used for network and microprocessor debugging and for programming chips.
+InSight USB Link is a FLASH programming device that connects to any PC via USB and to Ember’s Radio Control Module (RCM). It contains the hardware and software tools that read and write applications and program FLASH memory on the chips.
+AppBuilder makes network customization possible. It generates a template application that allows developers to tailor the EmberZNet PRO software to their specifications and complete the application, readying it for hardware integration and testing. It also allows configuration of the Hardware Abstraction Layer (HAL) and generates source code application with places for the developer to insert their own OEM-specific code.
+xIDE is a tool-chain that supports applications being written for the EM250. It has a C-language compiler, assembler, source-level debugger, and graphical editing environment.
+
+
+== Applications ==
+Advanced Metering Infrastructure (AMI)/Advanced Meter Reading (AMR): provides two way meter communications, allowing commands to be sent toward the home for multiple purposes, including “time-of-use” pricing information, demand-response actions, or remote service disconnects. During periods of peak demand, utilities use these networks to throttle high-load devices in participating homes. Utilities may also institute time-of-use pricing schemes, where the home area network (HAN) is used to communicate the current price of energy to the consumer.
+Home Automation: allows household devices such as light switches and fixtures; thermostats and sensors; music, video and speaker systems; security controllers and appliances to network with one another to wirelessly automate the home.
+Hospitality: allows for wireless networking of the devices in the room without the need for a retrofit. The doors and the devices in the rooms can also be remotely monitored from a central location.
+Building Automation: provides building owners and property managers with HVAC, lighting, access and refrigeration control to monitor energy usage in real time to create more energy efficient environments.
+Asset Management: allows for remote monitoring and tracking of assets and cold chain. It also provides container security in shipping.
+Industrial Automation: wirelessly networks and automates industrial processes and allows for temperature, pressure and level sensing as well as providing temperature and flow control.
+Defense: provides both battlefield and shipboard monitoring.
+
+
+== See also ==
+ZigBee
+ZigBee specification
+IEEE 802.15.4-2003
+mesh networking
+home automation
+building automation
+
+
+== References ==
+
+
+== External links ==
+Ember Homepage
+Zigbee Alliance homepage
+IEEE 802.15.4 web site
+Xconomy

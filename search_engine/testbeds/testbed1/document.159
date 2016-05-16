@@ -1,0 +1,30 @@
+Clock_port
+The '''clock port''' is a commonly used term for the  interface of the  computer. The port is a remnant of an abandoned design feature for addition of internal RAM and a clock for time keeping. However, it was later widely used as a general purpose expansion port by third-party developers for devices, such as,  cards, sound cards and even a  controller. Although a real-time clock can be connected to the port, the clock was typically added by other means (usually integrated on CPU or RAM expansions) which leave the clock port free.
+The A1200 was the only Amiga model to have this unique 22-pin connector (some revisions of the A1200 motherboard have additional non-functional pins). However, as the address and data signals used by the interface are available through the internal expansion connectors of other Amiga models, clock port adaptors were later created by third-party developers for these systems. This enables owners of other popular models, such as the  or , to use the hardware created for this interface. Due to the popularity of clock port devices, developers even included one or more compatible clock port interfaces on Amiga  boards to allow hosting such devices on these systems.
+Essentially, the connector provides an 8-bit data interface with limited addressing.
+== Host hardware ==
+The bus is supported by many  products.
+* Amiga 1200  (address $d80001)
+* Zorro IV boards (also addresses $d84001, $d88001 and $d8d001)
+* Clock port adapter for Amiga 500/1000
+* Third party 
+** Buddha flash
+** VarIO
+** DENEB
+** HIGHWAY
+** ISDN-Surfer
+** X-Surf, X-Surf II
+** Unity
+** A603 (1), A604 ($d80001 and $d90001)
+* Third party  expansion port
+** Retro Replay ($de0x or $df2x)
+** MMC64
+** MMC Replay
+**  (address $de0x)
+** Turbo Chameleon 64
+== External links ==
+*  (German)
+*  (German)
+* 
+* 
+== References ==

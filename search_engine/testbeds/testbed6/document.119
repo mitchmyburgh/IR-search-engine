@@ -1,0 +1,114 @@
+
+    $(document).ready(function () { 
+        window.fbAsyncInit = function () {
+            FB.init({ appId: '237674746269801', status: true, cookie: true,
+                xfbml: true
+            });
+        };
+        (function () {
+            var e = document.createElement('script'); e.async = true;
+            e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+        } ());
+    });
+         Tweet 
+        #sharebar-li > span > span + span
+        {
+        	border-bottom: 4px solid white;
+        }
+                0  
+            Please 
+           Sign In or 
+           Register to like this blog. 
+        $(document).ready(function () {
+            // google plus one
+            (function () {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+            // twitter
+            $.getScript('http://platform.twitter.com/widgets.js');
+            // linkedin
+            $.getScript('http://platform.linkedin.com/in.js');
+        });
+       .csharpcode, .csharpcode pre
+{
+	font-size: x-small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+       This post is inspired by Ralph's C# question here. In some cases, it's desirable to have a "perfect" hashing algorithm in preference to a fast hashing algorithm. When using hash tables (as provided by the Dictionary object), it's desirable to have a hashing algorithm that's fast, and doesn't have too many collisions. This is provided by all objects via the Object.GetHashCode() overridable method. 
+       A perfect hashing algorithm is one where it is highly improbable that hash(String1) == hash(String2) if String1 != String2. As it turns out, this is a very desirable characteristic of hashing algorithms used in cryptography. Cryptographic hashing algorithms also have the added probability that given hash(String1) it is practically impossible to find String2 such that hash(String2) == hash(String1). This is a much stricter requirement than I gave above. 
+       Statistically, SHA256 is a good algorithm for encoding any string as 256 bits. The algorithm does a very good job of distributing the entropy of the hashed sequence of bytes across all the 256 bits of the resulting hash. This means we can truncate the 256 bits down to as many bits as we desire to use at a cost of an increasing likelihood of collisions. However due to the algorithms nature, I don't believe it is possible to find a better algorithm to encode in the same number of bits. 
+       SHA256 also works with bytes not characters. In C#, strings are in Unicode. It happens that on an x86 processor, C# will encode the string as little-endium UTF-16, however this is requires platform specific knowledge. It's therefore desirable to convert the string into a standard byte stream. UTF-8 comes to mind here. 
+       The output of SHA256 is 32 bytes (256 bits). If the resulting hash needs to be encoded as a string, these 32 bytes need to be optimally converted into a string form.  
+       The algorithms presented in the sample code below allow a set of symbols (character set of choice) to be provided for the encoding of the resulting hash-string. This is far more complicated then warranted in most applications, but serves to demonstrate a number of things that can be done in C#. This can be compiled and run in a single file "Program.cs". More comments below. 
+           1:  using System;
+           2:  using System.Text;
+           3:  using System.Security.Cryptography;
+           4:  &nbsp;
+           5:  class Program
+           6:  {
+           7:      const int ByteSize = 8;
+           8:      const int ByteMask = 0xff;
+           9:      static char[] charset32 =
+          10:      {
+          11:          'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+          12:          'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+          13:          'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+          14:          'Y', 'Z', '4', '5', '6', '7', '8', '9'
+          15:      };
+          16:  &nbsp;
+          17:      static void Main(string[] args)
+          18:      {
+          19:          //
+          20:          // Sanity check
+          21:          //
+          22:          byte[] vhash = new byte[]
+          23:          {
+          24:              0xa1, 0xb2, 0xc3, 0xd4,
+          25:              0xe5, 0x96, 0x67, 0x54
+          26:          };
+          27:          byte[] vvhash = new byte[vhash.Length];
+          28:          string vencoded = TruncatedEncode(vhash, 16, charset32);
+          29:          ValidationDecode(vvhash, vencoded, charset32);
+          30:          for (int vi = 0; vi &lt; vhash.Length; vi++)
+          31:          {
+          32:              if (vvhash[vi] != vhash[vi])
+          33:              {
+          34:                  throw new Exception("Round-trip failed");
+          35:              }
+          36:          }
+          37:  &nbsp;
+          38:          string myString1 = NormalizedHash("This is a string",
+          39:                                              15, charset32);
+          40:          string myString2 = NormalizedHash("This is a string",
+          41:                                              15, charset32);
+          42:          string myString3 = NormalizedHash("This is a string2",
+          43:                                              15, charset32);
+          44:          if (myString1 != myString2)
+          45:          {
+          46:              throw new Exception("strings should match");
+          47:          }
+          48:          if (myString1 == myString3)
+          49:          {
+          50:              throw new 

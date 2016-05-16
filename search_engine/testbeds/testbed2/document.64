@@ -1,0 +1,111 @@
+Bio-inspired computing, short for biologically inspired computing, is a field of study that loosely knits together subfields related to the topics of connectionism, social behaviour and emergence. It is often closely related to the field of artificial intelligence, as many of its pursuits can be linked to machine learning. It relies heavily on the fields of biology, computer science and mathematics. Briefly put, it is the use of computers to model the living phenomena, and simultaneously the study of life to improve the usage of computers. Biologically inspired computing is a major subset of natural computation.
+
+
+== Areas of research ==
+Some areas of study encompassed under the canon of biologically inspired computing, and their biological counterparts:
+genetic algorithms ↔ evolution
+biodegradability prediction ↔ biodegradation
+cellular automata ↔ life
+emergent systems ↔ ants, termites, bees, wasps
+neural networks ↔ the brain
+artificial life ↔ life
+artificial immune systems ↔ immune system
+rendering (computer graphics) ↔ patterning and rendering of animal skins, bird feathers, mollusk shells and bacterial colonies
+Lindenmayer systems ↔ plant structures
+communication networks and protocols ↔ epidemiology and the spread of disease
+membrane computers ↔ intra-membrane molecular processes in the living cell
+excitable media ↔ forest fires, "the wave", heart conditions, axons, etc.
+sensor networks ↔ sensory organs
+
+
+== Bio-inspired computing and AI ==
+The way in which bio-inspired computing differs from the traditional artificial intelligence (AI) is in how it takes a more evolutionary approach to learning, as opposed to the what could be described as 'creationist' methods used in traditional AI. In traditional AI, intelligence is often programmed from above: the programmer is the creator, and makes something and imbues it with its intelligence. Bio-inspired computing, on the other hand, takes a more bottom-up, decentralised approach; bio-inspired techniques often involve the method of specifying a set of simple rules, a set of simple organisms which adhere to those rules, and a method of iteratively applying those rules. For example, training a virtual insect to navigate in an unknown terrain for finding food includes six simple rules. The insect is trained to
+turn right for target-and-obstacle left;
+turn left for target-and-obstacle right;
+turn left for target-left-obstacle-right;
+turn right for target-right-obstacle-left,
+turn left for target-left without obstacle and
+turn right for target right without obstacle.
+The virtual insect controlled by the trained spiking neural network can find food after training in any unknown terrain. After several generations of rule application it is usually the case that some forms of complex behaviour arise. Complexity gets built upon complexity until the end result is something markedly complex, and quite often completely counterintuitive from what the original rules would be expected to produce (see complex systems). For this reason, in neural network models, it is necessary to accurately model an in vivo network, by live collection of "noise" coefficients that can be used to refine statistical inference and extrapolation as system complexity increases.
+Natural evolution is a good analogy to this method–the rules of evolution (selection, recombination/reproduction, mutation and more recently transposition) are in principle simple rules, yet over millions of years have produced remarkably complex organisms. A similar technique is used in genetic algorithms.
+
+
+== See also ==
+Applications of artificial intelligence
+Artificial life
+Artificial neural network
+Behavior based robotics
+Bioinformatics
+Bionics
+Cognitive architecture
+Cognitive modeling
+Cognitive science
+Connectionism
+Cuckoo search
+Digital morphogenesis
+Digital organism
+Evolutionary algorithm
+Evolutionary computation
+Fuzzy logic
+Gene expression programming
+Genetic algorithm
+Genetic programming
+Gerald Edelman
+Janine Benyus
+Mark A. O'Neill
+Mathematical biology
+Mathematical model
+Natural computation
+Neuroevolution
+Olaf Sporns
+Organic computing
+Swarm intelligence
+Lists
+List of emerging technologies
+Outline of artificial intelligence
+
+
+== References ==
+
+
+== Further reading ==
+(the following are presented in ascending order of complexity and depth, with those new to the field suggested to start from the top)
+"Biologically Inspired Computing"
+"Digital Biology", Peter J. Bentley.
+"First International Symposium on Biologically Inspired Computing"
+Emergence: The Connected Lives of Ants, Brains, Cities and Software, Steven Johnson.
+Dr. Dobb's Journal, Apr-1991. (Issue theme: Biocomputing)
+Turtles, Termites and Traffic Jams, Mitchel Resnick.
+Understanding Nonlinear Dynamics, Daniel Kaplan and Leon Glass.
+Ridge, E.; Kudenko, D.; Kazakov, D. (2005). "Moving Nature-Inspired Algorithms to Parallel, Asynchronous and Decentralised Environments,". Self-Organization and Autonomic Informatics (I) 135: 35–49. CiteSeerX: 10.1.1.64.3403.  
+Swarms and Swarm Intelligence by Michael G. Hinchey, Roy Sterritt, and Chris Rouff,
+Fundamentals of Natural Computing: Basic Concepts, Algorithms, and Applications, L. N. de Castro, Chapman & Hall/CRC, June 2006.
+"The Computational Beauty of Nature", Gary William Flake. MIT Press. 1998, hardcover ed.; 2000, paperback ed. An in-depth discussion of many of the topics and underlying themes of bio-inspired computing.
+Kevin M. Passino, Biomimicry for Optimization, Control, and Automation, Springer-Verlag, London, UK, 2005.
+Recent Developments in Biologically Inspired Computing, L. N. de Castro and F. J. Von Zuben, Idea Group Publishing, 2004.
+Nancy Forbes, Imitation of Life: How Biology is Inspiring Computing, MIT Press, Cambridge, MA 2004.
+M. Blowers and A. Sisti, Evolutionary and Bio-inspired Computation: Theory and Applications, SPIE Press, 2007.
+X. S. Yang, Z. H. Cui, R. B. Xiao, A. H. Gandomi, M. Karamanoglu, Swarm Intelligence and Bio-Inspired Computation: Theory and Applications, Elsevier, 2013.
+Erik Cambria et al., "Biologically inspired opinion mining", Biologically Inspired Cognitive Architectures 4, pp. 41–53, 2013
+"Biologically Inspired Computing Lecture Notes", Luis M. Rocha
+The portable UNIX programming system (PUPS) and CANTOR: a computational envorionment for dynamical representation and analysis of complex neurobiological data, Mark A. O'Neill, and Claus-C Hilgetag, Phil Trans R Soc Lond B 356 (2001), 1259–1276
+"Going Back to our Roots: Second Generation Biocomputing", J. Timmis, M. Amos, W. Banzhaf, and A. Tyrrell, Journal of Unconventional Computing 2 (2007) 349–378.
+Neumann, Frank; Witt, Carsten (2010). Bioinspired computation in combinatorial optimization. Algorithms and their computational complexity. Natural Computing Series. Berlin: Springer-Verlag. ISBN 978-3-642-16543-6. Zbl 1223.68002. 
+Brabazon, Anthony; O’Neill, Michael (2006). Biologically inspired algorithms for financial modelling. Natural Computing Series. Berlin: Springer-Verlag. ISBN 3-540-26252-0. Zbl 1117.91030. 
+
+
+== External links ==
+Nature Inspired Computing and Engineering (NICE) Group, University of Surrey, UK
+ALife Project in Sussex
+Biologically Inspired Computation for Chemical Sensing Neurochem Project
+AND Corporation
+Centre of Excellence for Research in Computational Intelligence and Applications Birmingham, UK
+BiSNET: Biologically-inspired architecture for Sensor NETworks
+BiSNET/e: A Cognitive Sensor Networking Architecture with Evolutionary Multiobjective Optimization
+Biologically inspired neural networks
+NCRA UCD, Dublin Ireland
+The PUPS/P3 Organic Computing Environment for Linux
+SymbioticSphere: A Biologically-inspired Architecture for Scalable, Adaptive and Survivable Network Systems
+The runner-root algorithm
+Bio-inspired Wireless Networking Team (BioNet)
+Biologically Inspired Intelligence

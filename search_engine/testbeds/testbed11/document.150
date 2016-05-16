@@ -1,0 +1,73 @@
+The Grain 128a stream cipher was first purposed at Symmetric Key Encryption Workshop (SKEW) in 2011 as an improvement of the predecessor Grain 128, which added security enhancements and optional message authentication using the Encrypt & MAC approach. One of the important features of the Grain family is that the throughput can be increased at the expense of additional hardware. Grain 128a is designed by Martin Ågren, Martin Hell, Thomas Johansson and Willi Meier.
+
+
+== Description of the cipher ==
+
+Grain 128a consists of two large parts: Pre-output function and MAC. The pre-output function has an internal state size of 256 bits, consisting of two registers of size 128 bit: NLFSR and LFSR. The MAC supports variable tag lengths w such that . The cipher uses a 128 bit key.
+The cipher supports two modes of operation: with or without authentication, which is configured via the supplied  such that if  then authentication of the message is enabled, and if  authentication of the message is disabled.
+
+
+== Pre-output function ==
+The pre-output function consists of two registers of size 128 bit: NLFSR () and LFSR () along with 2 feedback polynomials  and  and a boolean function .
+
+In addition to the feedback polynomials, the update functions for the NLFSR and the LFSR are:
+
+The pre-output stream () is defined as:
+
+
+=== Initialisation ===
+
+Upon initialisation we define an  of 96 bit, where the  dictates the mode of operation.
+The LFSR is initialised as:
+ for 
+ for 
+
+The last 0 bit ensures that similar key-IV pairs do not produce shifted versions of each other.
+The NLFSR is initialised by copying the entire 128 bit key () into the NLFSR:
+ for 
+
+
+=== Start up clocking ===
+Before the pre-output function can begin to output its pre-output stream it has to be clocked 256 times to warm up, during this stage the pre-output stream is fed into the feedback polynomials  and .
+
+
+== Key stream ==
+The key stream () and MAC functionality in Grain 128a both share the same pre-output stream (). As authentication is optional our key stream definition depends upon the .
+When authentication is enabled, the MAC functionality uses the first  bits (where  is the tag size) after the start up clocking to initialise. The key stream is then assigned every other bit due to the shared pre-output stream.
+If authentication is enabled:
+
+If authentication is disabled:
+
+
+== MAC ==
+
+Grain 128a supports tags of size  up to 32 bit, to do this 2 registers of size  is used, a shift register() and an accumulator(). To create a tag of a message  where  is the length of  as we have to set  to ensure that i.e.  and  has different tags, and also making it impossible to generate a tag that completely ignores the input from the shift register after initialisation.
+For each bit  in the accumulator we at time  we denounce a bit in the accumulator as .
+
+
+=== Initialisation ===
+When authentication is enabled Grain 128a uses the first  bits of the pre-output stream() to initialise the shift register and the accumulator. This is done by:
+Shift register:
+ for 
+Accumulator:
+ for 
+
+
+=== Tag generation ===
+Shift register:
+The shift register is fed all the odd bits of the pre-output stream():
+
+Accumulator:
+ for 
+
+
+=== Final tag ===
+When the cipher has completed the L iterations the final tag() is the content of the accumulator:
+ for 
+
+
+== References ==
+
+
+== External links ==
+A New Version of Grain-128 with Authentication

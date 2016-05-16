@@ -1,0 +1,36 @@
+﻿9 OWL 2 DL and OWL 2 Full
+
+There are two alternative ways of assigning meaning to ontologies in OWL 2 called the Direct Semantics [OWL 2 Direct Semantics] and the RDF-Based Semantics [OWL 2 RDF-Based Semantics]. The Direct Semantics can be applied to ontologies that are in the OWL 2 DL subset of OWL 2, which is defined in OWL 2 functional-style syntax document [OWL 2 Specification]. Ontologies that are not in OWL 2 DL are often said to belong to OWL 2 Full, and can only be interpreted under RDF-Based Semantics. Informally, the term OWL 2 DL is often used to refer to OWL 2 ontologies interpreted using the Direct Semantics, but it is also possible to interpret OWL 2 DL ontologies under RDF-Based Semantics.
+
+The Direct Semantics [OWL 2 Direct Semantics] provides a meaning for OWL 2 in a Description Logic [Description Logics] style. The RDF-Based Semantics [OWL 2 RDF-Based Semantics] is an extension of the semantics for RDFS [RDF Semantics] and is based on viewing OWL 2 ontologies as RDF graphs.
+
+When thinking about ontologies the differences between these two semantics are generally quite slight. Indeed, given an OWL 2 DL ontology, many inferences drawn using the Direct Semantics remain valid inferences under the RDF-Based Semantics – see the correspondence theorem in Section 7.2 of the RDF-Based Semantics document [OWL 2 RDF-Based Semantics]. The two main differences are that under the Direct Semantics annotations have no formal meaning and under the RDF-Based Semantics there are some extra inferences that arise from the RDF view of the universe.
+
+Conceptually, we can think of the difference between OWL 2 DL (under Direct Semantics) and OWL 2 Full (under RDF-Based Semantics) in two ways:
+
+One can see OWL 2 DL as a syntactically restricted version of OWL 2 Full where the restrictions are designed to make life easier for implementors. In fact, since OWL 2 Full (under the RDF-Based Semantics) is undecidable, OWL 2 DL (under the Direct Semantics) makes writing a reasoner that, in principle, can return all "yes or no" answers (subject to resource constraints) possible. As a consequence of its design, there are several production quality reasoners that cover the entire OWL 2 DL language under the Direct Semantics. There are no such reasoners for OWL 2 Full under the RDF-Based Semantics.
+One can see OWL 2 Full as the most straightforward extension of RDFS. As such, the RDF-Based Semantics for OWL 2 Full follows the RDFS semantics and general syntactic philosophy (i.e., everything is a triple and the language is fully reflective).
+Of course, the two semantics have been designed together and thus have influenced each other. For example, one design goal of OWL 2 was to bring OWL 2 DL syntactically closer to OWL 2 Full (that is, to allow more RDF Graphs/OWL 2 Full ontologies to be legal OWL 2 DL ontologies). This led to the incorporation of so-called punning into OWL 2, e.g., using the same IRI as a name for both a class and an individual. An example of such usage would be the following, which states that John is a father, and that father is a social role.
+
+Functional-Style Syntax
+ClassAssertion( :Father :John ) 
+ClassAssertion( :SocialRole :Father ) 
+Note that in the first statement, Father is used as a class, while in the second it is used as an individual. In this sense, SocialRole acts as a metaclass for the class Father.
+
+In OWL 1, a document containing these two statements would be an OWL 1 Full document, but not an OWL 1 DL document. In OWL 2 DL, however, this is allowed. It must be noted, though, that the Direct Semantics of OWL 2 DL accommodates this by understanding the class Father and the individual Father as two different views on the same IRI, i.e. they are interpreted semantically as if they were distinct. In particular, if two individuals are equal, then the classes that they denote are equivalent under RDF-Based Semantics, whereas there is no such relationship between the classes under Direct Semantics. This is possibly the one difference between the two semantics that is most relevant in practice.
+
+11 OWL Tools
+
+In order to work with OWL ontologies, tool support is essential. Basically, there are two types of tools addressing the two main stages of the ontology lifecycle: ontology editors are used to create and edit ontologies, whereas reasoners are used to query ontologies for implicit knowledge, i.e., they determine whether a statement in question is a logical consequence of an ontology.
+
+The currently most widely used OWL editor is Protégé, a free open-source editing framework developed at Stanford University. By virtue of its open plugin structure, it allows for the easy integration of special-purpose ontology editing components. Other editors include TopQuadrant's commercial TopBraid Composer and the open-source systems SWOOP and NeOn-Toolkit.
+
+There are several reasoners for OWL DL which differ somewhat in terms of coverage of the supported reasoning features. For some of these, OWL 2 conformance is currently planned and the corresponding implementations are in progress. The Test Suite Status document lists to which extent some of the reasoners mentioned below comply with the test cases.
+
+For reasoning within OWL DL, the most prominent systems are Fact++ by the University of Manchester, Hermit by Oxford University Computing Laboratory, Pellet by Clark & Parsia, LLC, and RacerPro by Racer Systems.
+
+In addition to those general-purpose reasoners aiming at supporting all of OWL DL, there are reasoning systems tailored to the tractable profiles of OWL. CEL by Dresden University of Technology supports OWL EL. QuOnto by Sapienza Università di Roma supports OWL QL. ORACLE 11g supports OWL RL.
+
+The open-source OWL API plays a rather prominent role as the currently most important development tool around OWL.
+
+It must be mentioned that by the time this document was created, several OWL tools were under development, hence the current overview should be seen as a snapshot of this development rather than an up-to-date overview. Extensive listings of OWL tools can be found at semanticweb.org and in the ESW-Wiki.

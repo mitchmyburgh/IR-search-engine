@@ -1,0 +1,15 @@
+620 Cloud Services Still Vulnerable to DROWN One Week After Disclosure
+Skyhigh VP of Engineering
+By Sekhar Sarukkai
+One week after the critical vulnerability in SSL/TLS named DROWN was disclosed, Skyhigh Cloud Security Labs has found that 620 cloud services remain vulnerable to compromise. That’s not much lower than the 653 services that were vulnerable a week ago. So far, cloud providers have been slower to respond to DROWN compared with other SSL vulnerabilities of similar scope such as Heartbleed and POODLE. That’s bad news for the 98.9% of enterprises who use at least one vulnerable service. As of today, the average organization uses 56 vulnerable services.
+
+blog image - 98 DROWN 850
+DROWN allows attackers to compromise an encrypted session by exploiting a vulnerability in the outdated SSLv2 protocol, even if the session itself is encrypted with the newer and more secure TLS protocol. This vulnerability enables attackers to intercept encrypted traffic (e.g. passwords, credit card numbers, sensitive corporate data, etc.) as well as impersonate a trusted cloud provider and modify traffic to and from the service. Any cloud provider that still supports SSLv2, or uses a private key shared with a server that supports SSLv2, is vulnerable.
+
+blog image - 56 DROWN 850
+What’s troubling about this critical vulnerability is how slow cloud providers have been in responding to patch their services against DROWN by disabling SSLv2 support. While more cloud services overall were vulnerable to Heartbleed compared with DROWN, cloud providers quickly patched their systems to close their Heartbleed vulnerabilities. A week after Heartbleed was disclosed, 92.7% of cloud providers initially vulnerable were no longer affected. A week after DROWN was disclosed, just 5.1% of cloud providers that were initially vulnerable have performed necessary remediation.
+
+blog image - DROWN chart 850b
+Skyhigh Cloud Security Labs is recommending that all enterprises notify their end users about this vulnerability in the websites and cloud services they use. Some enterprises may also configure their web proxy to redirect users to an educational page notifying them that their session may not be secure when they attempt to access a vulnerable site or cloud service. Skyhigh Cloud Security Labs will continue to monitor the situation and provide updates as cloud providers secure themselves against DROWN.
+
+ 

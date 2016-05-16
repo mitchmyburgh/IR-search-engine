@@ -1,0 +1,13 @@
+Overview[edit]
+ 
+Tree rotations are very common internal operations on self-balancing binary trees to keep perfect or near-to-perfect balance.
+Most operations on a binary search tree (BST) take time directly proportional to the height of the tree, so it is desirable to keep the height small. A binary tree with height h can contain at most 20+21+···+2h = 2h+1-1 nodes. It follows that for a tree with n nodes and height h:
+ 
+And that implies:
+ .
+In other words, the minimum height of a tree with n nodes is log2(n), rounded down; that is,  .[1]
+However, the simplest algorithms for BST item insertion may yield a tree with height n in rather common situations. For example, when the items are inserted in sorted key order, the tree degenerates into a linked list with n nodes. The difference in performance between the two situations may be enormous: for n = 1,000,000, for example, the minimum height is  .
+If the data items are known ahead of time, the height can be kept small, in the average sense, by adding values in a random order, resulting in a random binary search tree. However, there are many situations (such as online algorithms) where thisrandomization is not viable.
+Self-balancing binary trees solve this problem by performing transformations on the tree (such as tree rotations) at key insertion times, in order to keep the height proportional to log2(n). Although a certain overhead is involved, it may be justified in the long run by ensuring fast execution of later operations.
+Maintaining the height always at its minimum value   is not always viable; it can be proven that any insertion algorithm which did so would have an excessive overhead.[citation needed] Therefore, most self-balanced BST algorithms keep the height within a constant factor of this lower bound.
+In the asymptotic ("Big-O") sense, a self-balancing BST structure containing n items allows the lookup, insertion, and removal of an item in O(log n) worst-case time, and ordered enumeration of all items in O(n) time. For some implementations these are per-operation time bounds, while for others they are amortized bounds over a sequence of operations. These times are asymptotically optimal among all data structures that manipulate the key only through comparisons.

@@ -1,0 +1,107 @@
+A Methodology for Engineering OWL 2 Ontologies in Practise
+Considering their Semantic Normalisation and Completeness
+Introduction
+Ontology related concepts and theories were
+investigated a long ago but only during the last years they
+were empowered with technologies as RDF, RDF(S),
+OWL, currently OWL 2 [1], and SPARQL capable to bring
+ontologies to the Semantic Web and various computerised
+environments. The vision of the Semantic Web addresses
+ontologies as main means of sharing common
+understanding and reasoning about relevant problem
+domains (e.g. information systems; medicine; software,
+electrical and other kinds of system engineering, analysis
+of social relations, etc.) among different communities of
+humans and machines.
+In today practise, ontologies often are designed from
+scratch or reverse-engineered from existing data sources.
+During creation and maintenance of ontologies, developers
+usually are facing with problems of supporting evolution
+of ontologies and preserving integrity of ontology data.
+Though these objectives are very similar to those of
+databases and information systems (IS) [2−5], the purpose
+of ontologies is different, so the theory and best practises
+of databases cannot directly be applied to ontology design.
+In current IS methodologies, databases are designed on the
+base of concept models, which also have much in common
+with ontologies. The goal of the paper is to consolidate
+existing methods and best practises in ontologies,
+databases and conceptual modelling fields into one
+seamless methodology for practical developing ontologies.
+The rest of the paper is structured as follows. Section
+“Related works” analyses criteria and problems in the area
+of developing ontologies. The following sections present
+the example of ontology and the methodology proposed
+illustrated with the example fragments. Finally, we
+summarize conclusions and envisage future works.
+Related works
+For being a sound knowledge base for reasoning in a
+problem domain, the ontology should satisfy certain
+quality criteria as correctness, consistency, extendibility,
+minimality, competence, completeness, and normalization
+[6−10]. These criteria were analysed by different authors
+long before modern semantic technologies have emerged
+e.g. [6, 7].
+Different authors are focused on different aspects of
+ontology development. Methodology of Gruninger and Fox
+is based on competence and completeness of ontology [7].
+Authors working in Description Logics are giving most
+attention to consistency. Rector emphasizes normalisation,
+modularity and reuse [8]. In practical ontologies as, e.g.,
+Systematized Nomenclature of Medicine − Clinical Terms
+(SNOMED CT), the mentioned criteria are hardly satisfied.
+After significant auditing efforts to improve its
+consistency, correctness and completeness, SNOMED CT
+still contains semantically duplicate primitive and defined
+concepts, uses primitive concepts while these can be
+defined in terms of other primitives and roles, and has
+other redundancies of semantic content. Therefore, it
+cannot be efficiently maintained and used in semantic
+applications. For preventing such situations in creating the
+Common Ontology of Lithuanian Language and domainspecific
+ontologies for semantic search in SemantikaLT
+project [11], we present the methodology for developing
+ontologies suitable for semantic search related both with
+structured and unstructured information resources.
+Proton ontology [12] is another example of a practical
+experience in developing ontologies. Proton was developed
+from KIM ontology with preconceived position of
+avoiding shortcomings characteristic to progressively
+gathered ontologies as SNOMED CT. Proton is divided
+into 4 modules of class hierarchies comprising so-called
+“schema ontologies” that approximately correspond to our
+notion of “base ontologies”. Other classifications are
+treated as “topic hierarchies”. Proton authors argue that
+hierarchies of schema ontologies and topics should not be
+mixed up; furthermore, they do not seek for comprehensive
+modelling of semantics of topics considering this
+90
+semantics as very vague. In our approach, we also separate
+the base ontology (or concept schema) not only from its
+supplementing classification ontologies but also from
+inferable constructs; further, we present rules for building
+those classification ontologies, which could be defined,
+and combining different classification criteria.
+
+Ontology example
+For illustrating our methodology, we will take a very
+simplified ontology of a genealogy tree of persons (Fig.1)
+merged with a simplified ontology “friend of a friend” (in
+practise, both ontologies are kept as separate modules).
+Such ontology could be used for analysing human relations
+based both on kindred and friendship (and others). The
+base ontology contains only non-inferable constructs. For
+specifying instances, all mandatory properties, appearing
+in a base ontology, should be inserted into definitions of
+individuals. Genealogy tree ontology, supplemented with
+examples of inferable object properties, is presented in
+Fig. 1 as UML class diagram where UML classes represent
+OWL 2 classes, UML attributes – OWL 2 data properties,
+UML associations – OWL 2 object properties (association
+end names correspond to names of direct and inverse
+object properties; class, related to an association end,
+corresponds to a range of the property, and the class related
+to the opposite end – to a property domain). Inferable
+association ends are marked with “/” symbol. Really, much
+more object properties may be inferable (e.g.
+has_great_grandparent, has_great_grandchild, etc.).

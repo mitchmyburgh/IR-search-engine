@@ -1,0 +1,473 @@
+
+
+  *   *   *     * Computing
+    * Mobile
+    * Internet
+    * Gaming
+    * Electronics
+    * Extreme
+    * Deep Dives
+    * Deals
+    * About ExtremeTech
+    * ET Forums
+    * Contact ExtremeTech
+    * Terms of Use
+    * Privacy Policy
+    * Ziff Davis
+
+  * Home
+  * Extreme
+  * Is the NSA trying to warn us that cryptography is dead?
+
+# Is the NSA trying to warn us that cryptography is dead?
+
+  * By Graham Templeton on October 27, 2015 at 9:00 am
+  * Comment
+
+Back in August, the NSA released an updated advisory that was at once
+interesting and expected: It said that the world had to prepare for the
+oncoming impact of quantum computers, and the possibility that these devices
+could render existing computer cryptography almost completely obsolete. They
+called for the cryptographic community to invest heavily in developing so-
+called post-quantum cryptographic solutions that could survive this
+hypothetical watershed invention. And, as you might imagine, this advisory has
+very nearly driven the internet insane. Now, two security researchers have
+published a paper compiling all the various theories surrounding this
+advisory, and trying to make sense of the situation.
+
+Remember that quantum computers have obsessed internet weirdos for as long as
+the concept has existed. Try really looking into the Deep Web sometime, and
+you'll quickly come up against the idea of a quantum deep web, a deep deep
+_deep_ web, that can only be accessed by/through Illuminati-style quantum
+networks that, of course, don't actually exist. Much of this lore is simply
+gleeful trolling by people who love to mislead noobs, but don't kid yourself
+-- many of the most entrenched People Of The Internet really do believe this
+crap.
+
+So, unsurprisingly, now they believe _this_ crap. The biggest issue springs
+for a single passage (emphasis mine):
+
+> _For those partners and vendors that have not yet made the transition to
+Suite B algorithms, **we recommend** **not making a significant expenditure**
+to do so at this point but instead to prepare for the upcoming quantum
+resistant algorithm transition._
+
+The reason this has surprised so many people is that the NSA has been a long-
+time supporter of several of what we might call pre-quantum cryptographic
+solutions, new and highly advanced algorithms that shore up problems with
+current solutions, but which would probably not be secure in the event of real
+quantum computing. In particular, NSA has been a booster of Elliptical Curve
+Cryptography (ECC), which makes this back-pedaling announcement a bit
+confusing. They're now saying that this ECC is a stopgap solution waiting to
+be made obsolete by quantum research -- but that's what it's _always_ been, so
+what's changed?
+
+DWave's (alleged) quantum computing chip.
+
+However, while it's certainly _possible_ that NSA has a secret, super-
+successful quantum computer behind closed doors, that looks very unlikely at
+this point. Not only does NSA seem to lack the sheer volume of pure-science
+research talent that would be necessary to compete with the major, openly
+admitted research bodies, but the Edward Snowden leaks revealed absolutely no
+indication that NSA has or soon expects to have access to post-quantum
+capabilities.
+
+And so, those viewing the situation have slid down to a possible explanation
+that's at once more and less realistic: a conventional computer algorithm that
+can break modern computer encryption through sheer mathematical efficiency.
+This is more realistic, since it could theoretically come from the mind of
+just a single brilliant analyst, and thus it could come from the NSA, out of
+the blue and with no help from the private sector. On the other hand,
+conventional wisdom in cryptography says that such a classical code-breaking
+system is impossible, with a digital computer.
+
+The fact is that "NSA Has Quantum!" is a bit like the tech-world's equivalent
+of "Half Life 3 Confirmed" -- it's basically a joke at this point, but beneath
+the sarcasm lies an understanding that the cliche does have to come true
+_eventually_, even if not for a very, very long time. That's why both memes
+have been so long-lived: Quantum computers seem like they _will_ come into
+existence at some point, so no matter how many times they cry (or hint) wolf,
+you've still got to be wary -- every single time.
+
+### Tagged In
+
+  * NSA
+  * quantum computing
+  * cryptography
+  * surveillance
+  * Deep Web
+  * RSA
+  * quantum computers
+  * elliptical curve cryptography
+
+### Post a Comment Comment
+
+  * Glenn
+
+When are they going to teach quantum computers to ENCRYPT stuff? Then maybe
+we'll be right back to the start.
+
+    * BummedOut
+
+Exactly… And when will we have 100000000+ bit with rotating random key
+generation??? LOL, I guess at that point everyone with have a Quantum
+computer…
+
+    * Felix Gill
+
+there is no need for 'quantum computer encryption' because quantum
+communication networks are uncrackable, and we are trying to create them
+currently. Basically if you encode information in the quantum state of a
+photon, then if it is ease dropped on it is immediately detectable as it
+changes the stream. It is this aspect of quantum communications that destroys
+the need for encryption. If you can deliver a message and if it is examined
+before it gets to the send two things happen, 1, the sender automatically
+knows an interception is happening, and two the message is in essence
+destroyed. At least to the intended receiver.
+
+      * chojin999
+
+http://www.technologyreview.com/view/418968/commercial-quantum-cryptography-
+system-hacked/  
+" Emerging Technology From the arXiv  
+May 17, 2010  
+Commercial Quantum Cryptography System Hacked  
+Physicists have mounted the first successful attack of its kind on a
+commercial quantum cryptography system."
+
+        * BummedOut
+
+LOL…. If humans created it humans can hack it….
+
+        * Felix Gill
+
+In that hack -- they realized that if a brighter lightsource was introduced
+into the system then it messed everything up. This is a true hack on a systems
+level and a warning on how setting up the system is just as important as the
+transmission line.
+
+      * BenjaminShade
+
+So you choose to give zero consideration to encryption of stored data? Just
+because they can't intercept the transmission of data doesn't mean that
+someone can't break in and steal your computer or physically swipe your phone.
+Also quantum backbone lines will be very expensive, and furthermore have you
+seen the haphazard rollout of fiber optic lines in the U.S.? Dollars to donuts
+my money is on the idea that we won't see a purely quantum consumer network in
+the next 50yrs or more.
+
+        * Felix Gill
+
+Data will be stored in the classical fashion. Qubits are useful for
+calculation not storage.
+
+Europe has been experimenting with how to setup a quantum network for the past
+decade and are leaders in this research. Not that we are behind them… they
+basically came to the conclusion they need to wait a decade or so for better
+engineered parts.
+
+          * BenjaminShade
+
+As I understand it, the problem with a quantum network is that the encryption
+is only point to point, as soon as you introduce a router or some other kind
+of node it becomes the endpoint and the data must be re-encrypted and sent off
+again. This would give whoever controlled the central hub the de-facto control
+of the encryption.
+
+        * Dave Chapman
+
+In a world where donuts cost $1, the 1930s idiom "Dollars to donuts" is almost
+as obsolete as DES-56. :-)
+
+          * BenjaminShade
+
+;-) That made me smile!
+
+          * Geoff Shufflebotham
+
+I paid $3.50 for a really good donut yesterday. No regrets
+
+      * David Swanson
+
+Just don't institute the Zeno effect by observing the communication thus
+jamming it LOL!
+
+      * Kevin Moore
+
+When you're talking about security you're talking about a system not a sole
+part of it. Talented hackers don't ask how do I get through the wall, they ask
+how do I get around it. Even if you boil it down to solely a hack through
+network resources someone will find a way through.
+
+      * Irilis
+
+Wouldn't that require point-to-point communication? No routers, no Internet…
+Dedicated cables only. Expensive and with very limited application.
+
+    * warcaster
+
+Check out "quantum key distribution". China is already deploying it.
+
+    * Grahaman27
+
+because they you would need the power of a quantum computer to decrypt it as
+well…
+
+  * Raymond Rodgers
+
+Not that I'm taking this seriously in any way, but what if the NSA's warning
+isn't because they have a fully functional, "super successful" quantum
+computer but instead have evidence that someone out there has been cracking
+encrypted communications from multiple sources and algorithms within short
+periods? Just a thought.
+
+    * Kevin Moore
+
+Since security experts originated the idea that encryption has become so
+advanced that it's impossible for a digital computer to crack in any practical
+amount of time (we're talking hundreds of thousands of years), our use and
+size of networked super computers has fundamentally changed the way we think
+about digital computing. Scientists are learning that through an extended
+network of computer each computing micro portions of a problem that you can
+process logic in ways previously thought impossible. For example the human
+brain processes information differently than a digital computer but at a much
+"slower" pace. This allows us to actually think and solve complex problems.
+For many of those problems, digital computers have been able to make up for
+their stupidity with exponentially increased speeds, however there are still
+types of problems they can't solve with speed alone. Our modern cryptography
+relies on those equations. However what we're currently experimenting with is
+using a network of computers to function more similarly to a human brain. You
+can think of each computer in a network functioning like an individual neuron
+processing a small manageable portion of the problem and passing it on. It's
+quite possible that this is the sort of thing that is invalidating our
+cryptography. As soon as a computer is able to solve that equation logically
+it's literally as easy to break as figuring out 1+1=2.
+
+  * trasH
+
+Well, I can't see why someone should have _already_ built a Quantum Computer
+(QC) already.  
+If the first _efficient_ QC is _indeed_ 10-50 years away, then obviously NSA
+should already be worried. It's not (only) about your TLS FB connection, this
+is NSA we're talking about: state secrets, military communication, you name
+it. In these cases, a secret needs to _remain_ secret for much longer.
+
+E.g. the Navajo code, remained a secret for 26 years (1942-1968), the Ultra
+operation was only declassified 29 years later. I'm sure there are lot more
+examples.
+
+When Google, NSA and NASA are already funding D-Wave 2, while Intel is
+investing on QC research, even if we're talking about such small amounts, QCs
+are not just sci-fi scenarios; this is near future, at least for time periods
+of tens of years. So, if NSA predicts that a 2-ton QC beast will reside at its
+basement in 15 years, then indeed, today's (2015) secrets will not be safe at
+all in 2030.
+
+  * codeJunkie
+
+This is a joke. I can write unbreakable encryption in seconds. Of course, it
+is only secure as the key is, but none the less, without the key it is
+unbreakable. The key is just random bytes, but the size of the key has to be
+as big, or bigger, than the message you want to encrypt. Then it is just a
+brutally simple Exclusive Or operation of the message and the key, poof
+encrypted. XOR it again against the key and your message is back. What makes
+it unbreakable is it is impossible to validate what the message actually says,
+it could say literally anything with different keys.
+
+    * koconor100
+
+You want a very long key ?  
+Take a picture of the morning traffic during a working day with your cell
+phone camera.
+
+    * BillBasham
+
+Exactly right - well stated.
+
+The real challenge is to get the key, which the NSA has had great success in
+doing. "Give me the key or go to jail"
+
+    * DukeAJuke ✓σοφός
+
+What you say is correct. I think what they mean is the current mainstream
+encryption technologies such as SSL, md4/5, sha, ripemd, whirlpool, tiger,
+snefru, gost, adler32, crc32, haval will have back doors in place for the NSA
+to access data when they see fit.
+
+      * koconor100
+
+You cannot sell encryption in the USA without building a back door in . It's
+illegal.
+
+        * Bri
+
+Source?
+
+        * Sam Doohan
+
+Sorry, that's utterly untrue. Do men in black helicopters come and tell you to
+break your freely available open source project or… What? You'll make Uncle
+Sam sad? You'll disappear to a black jail? Why bother?
+
+People outside the US would still be free create a much safer, much more
+secure system that's totally available to anyone in the US via sourceforge or
+github. And of course your domestic code is going to be available out there
+for people to audit and look for weaknesses which have never been found
+despite extreme effort to do so.
+
+So the US government will show up and tell you to totally compromise the
+purpose of your project and then sit over you and ensure you compromise it in
+such a way that no-one but them will ever notice?
+
+          * Will Ovtuth
+
+No,they wouldn't do that but they would just participate in that open project,
+like any other schlub, which is the inherit flaw and genius dichotomy of open
+source.
+
+      * cirion
+
+Nice list. Pity that only whirlpool and GOST are "encryption technologies".
+SSL ist a protocol using several actual ciphers. The rest are hash functions.
+Adler-32 and CRC32 aren't even cryptographic hash functions. And no, you can't
+encrypt anything with cryptographic hash functions.
+
+If you want to impress with your knowledge, acquire some first.
+
+        * DukeAJuke ✓σοφός
+
+^This guy doesn't understand that hash functions are a critical component of
+data encryption.. And CRC32 is indeed a hash function. Nice post bro.
+
+          * cirion
+
+No, they aren't. In terms of cryptography, they're good for exactly one thing:
+creating a suitably random key from a human generated one. Not for encrypting
+anything. Go learn how a stream or block cipher really works. You can create
+hash functions from ciphers, but not the other way around.
+
+And I said CRC32 isn't a *cryptographic* hash function, not that it isn't a
+hash function at all. I suggest brushing up your reading skills as well.
+
+    * cirion
+
+Dude, if one-time pad encryption was a solution to *any* scenario where
+encryption is really needed, we'd be using it. However, it isn't.
+
+  * warcaster
+
+NSA: "Just chill with plaintext everyone. Cryptography is SO DEAD, really - no
+lie!"
+
+Uh, sure.
+
+  * IKROWNI
+
+soooooooo, Half Life 3 confirmed?
+
+  * Hauhet Heh
+
+The NSA Has Quantum. They bought it from DWave. There are networks of quantum
+computers. Probably in Maryland or somewhere. I recommend an encryption scheme
+which comprises of both NTRU with ECC (McEliece) and AES encapsulation.
+Decoding is AES, McEliece, NTRU, PT.
+
+  * Hauhet Heh
+
+The NSA doesn't have time travel.
+
+  * Dustymack
+
+This has been an issue since quantum computing became relevant. I wonder if
+the government will try to control the market like they do with everything
+else. We need more privet sector involvement. Its times like these where we
+need stronger amendment 4 regulations. I guarantee they will use this against
+citizens if they already aren't.
+
+  * David Swanson
+
+You always can use a Vernam cipher.
+
+  * Will Ovtuth
+
+I think its a reverse psychology ploy by the NSA to make their lives easier at
+this point, lol. We all saw how pissed off they got when the big tech
+companies wanted to encrypt phones etc…. earlier this year and with them not
+being able to thwart that decision and Win 10 adoption tanking, they had to
+try another angle. I highly doubt they are EVER going to do anything for OUR
+benefit, that's for sure. The NSA has their own chip fabs and other
+proprietary R and D sections so im pretty sure they can counter most
+encryptions in short order if they want to. We really need to start
+concentrating on multiple encryption/password setups to deal with the here and
+now, which is ultimately the most important part of life.
+
+  * The Real Stig
+
+The NSA possibly got wind of Australian researchers announcing they have made
+a breakthrough allowing quantum computing on silicon.
+
+http://www.smh.com.au/technology/sci-tech/australian-researchers-make-quantum-
+computing-breakthrough-paving-way-for-worldfirst-chip-20151005-gk1bov.html
+
+  * robert mudry
+
+When I worked for Cadence Design Systems, the NSA was a customer of Cadence.
+Of course our apps engineers were not privy to what the NSA chip designers
+were doing. Based on the questions and problems the NSA engineers were having
+though, it looked like they were trying to migrate their decryption algorithms
+to full custom chips instead of running them on sequential Von Neumann
+computers.
+
+Not really that difficult a migration task either, since Verilog, the Cadence
+Hardware Description Language, was based on the generic unix C compiler. Doing
+this would allow the NSA to factor prime numbers executing in massively
+parallel fashion on arrays of these custom chips…
+
+Of course, then we can assume the NSA is reading this comment so better wear
+your aluminum foil hats and run like hell if you see any black helicopters
+flying around.
+
+  * NewCenturion
+
+Uh huh, or it's a Red Herring to get you not to…
+
+### ExtremeTech Newsletter
+
+Subscribe Today to get the latest ExtremeTech news delivered right to your
+inbox.
+
+Subscribing to a newsletter indicates your consent to our Terms of Use and
+Privacy Policy.
+
+### More Articles
+
+  * New solar project to provide less expensive power than coal, but will it last?  _May 5_
+  * IBM makes quantum computer available for free via the cloud  _May 5_
+  * NOAA scientists are exploring the Mariana Trench, and you can watch it live here  _May 4_
+  * Researchers identify autism-linked receptor that initiates synaptic pruning  _May 4_
+  * How Intel lost the mobile market, part 2: the rise and neglect of Atom  _May 4_
+
+  * About ExtremeTech
+  * Advertising
+  * Contact ExtremeTech
+
+  * Terms of Use
+  * Privacy Policy
+  * Ziff Davis
+
+  * AdChoices 
+  * 
+
+Use of this site is governed by our Terms of Use and Privacy Policy. Copyright
+1996-2016 Ziff Davis, LLC.PCMag Digital Group All Rights Reserved. ExtremeTech
+is a registered trademark of Ziff Davis, LLC. Reproduction in whole or in part
+in any form or medium without express written permission of Ziff Davis, LLC.
+is prohibited.
+
+unused
+
+  *[NPG]: Nature Publishing Group
+  *[doi]: Digital Object Identifier
+  *[ISSN]: International Standard Serial Number
+  *[EISSN]: Electronic International Standard Serial Number
+

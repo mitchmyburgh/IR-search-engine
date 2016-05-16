@@ -1,0 +1,187 @@
+Welcome to History.js <br/> v1.8b2, June 22 2013
+==================
+
+<!-- BADGES/ -->
+
+<span class="badge-slackin"><a href="https://slack.bevry.me" title="Join this project's slack community"><img src="https://slack.bevry.me/badge.svg" alt="Slack community badge" /></a></span>
+<span class="badge-patreon"><a href="http://patreon.com/bevry" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
+<span class="badge-gratipay"><a href="https://www.gratipay.com/bevry" title="Donate weekly to this project using Gratipay"><img src="https://img.shields.io/badge/gratipay-donate-yellow.svg" alt="Gratipay donate button" /></a></span>
+<span class="badge-flattr"><a href="https://flattr.com/profile/balupton" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button" /></a></span>
+<span class="badge-paypal"><a href="https://bevry.me/paypal" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
+<span class="badge-bitcoin"><a href="https://bevry.me/bitcoin" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
+<span class="badge-wishlist"><a href="https://bevry.me/wishlist" title="Buy an item on our wishlist for us"><img src="https://img.shields.io/badge/wishlist-donate-yellow.svg" alt="Wishlist browse button" /></a></span>
+
+<!-- /BADGES -->
+
+
+
+## News
+- 22/06/2013: Beta 2 of v1.8 is released. Fixes and uncompressed bundled files.
+- 31/05/2013: Beta 1 of v1.8 is released. Fixes.
+- 14/02/2013: Alpha 4 of v1.8 is released. Fixes.
+- 05/02/2013: Alpha 3 of v1.8 is released. Tests updated.
+- 21/01/2013: Alpha 2 of v1.8 is released. Correct statechange behaviour.
+- 19/01/2013: Alpha 1 of v1.8 is released. Started to categorize old balupton's issues.
+
+
+### History
+[See the `HISTORY.md` file for a detailed list of features, changes, solved issues and bugs](https://github.com/browserstate/history.js/blob/master/HISTORY.md#files)
+
+
+### Involve
+Please create an issue if something doesn't work or if there is a browser specific bug. I'll try to fix it as soon as possible. Please send me your Pull requests if you have a nice solution! I'm also going to review old issues in balupton's repository and try to solve them too.
+
+
+## Aims
+
+- Follow the [HTML5 History API](https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history) as much as possible
+- Provide a cross-compatible experience for all HTML5 Browsers (they all implement the HTML5 History API a little bit differently causing different behaviours and sometimes bugs - History.js fixes this ensuring the experience is as expected / the same / great throughout the HTML5 browsers)
+- Provide a backwards-compatible experience for all HTML4 Browsers using a hash-fallback (including continued support for the HTML5 History API's `data`, `title`, `pushState` and `replaceState`) with the option to [remove HTML4 support if it is not right for your application](https://github.com/browserstate/history.js/wiki/Intelligent-State-Handling)
+- Provide a forwards-compatible experience for HTML4 States to HTML5 States (so if a hash-fallbacked url is accessed by a HTML5 browser it is naturally transformed into its non-hashed url equivalent)
+- Provide support for as many javascript frameworks as possible via adapters; especially [Dojo](http://dojotoolkit.org/), [ExtJS](http://www.sencha.com/), [jQuery](http://jquery.com/), [MooTools](http://mootools.net/), [Right.js](http://rightjs.org/) and [Zepto](http://zeptojs.com/).
+
+
+## Quick Install
+
+### Via Ajaxify Script
+To ajaxify your entire website with the HTML5 History API, History.js and jQuery the [Ajaxify script](https://github.com/browserstate/ajaxify) is all you need. It's that easy.
+
+### Via Ajaxify Extension
+If you don't have access to your server, or just want to try out the Ajaxify script first, you can install the [History.js It! Google Chrome Extension](https://github.com/browserstate/historyjsit.crx) to try out History.js via Ajaxify on select websites without actually installing History.js/Ajaxify on your server.
+
+### Via Ruby On Rails Gem
+If you are using Rails, then the easiest way for you to try History.js would be to use [Wiselinks](https://github.com/igor-alexandrov/wiselinks) gem. Wiselinks integrates  into Rails application and allows you to start using History.js with three lines of code.
+
+
+## Direct Install
+
+### Working with History.js directly
+
+``` javascript
+(function(window,undefined){
+
+	// Bind to StateChange Event
+	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+		var State = History.getState(); // Note: We are using History.getState() instead of event.state
+	});
+
+	// Change our States
+	History.pushState({state:1}, "State 1", "?state=1"); // logs {state:1}, "State 1", "?state=1"
+	History.pushState({state:2}, "State 2", "?state=2"); // logs {state:2}, "State 2", "?state=2"
+	History.replaceState({state:3}, "State 3", "?state=3"); // logs {state:3}, "State 3", "?state=3"
+	History.pushState(null, null, "?state=4"); // logs {}, '', "?state=4"
+	History.back(); // logs {state:3}, "State 3", "?state=3"
+	History.back(); // logs {state:1}, "State 1", "?state=1"
+	History.back(); // logs {}, "Home Page", "?"
+	History.go(2); // logs {state:3}, "State 3", "?state=3"
+
+})(window);
+```
+
+
+### How would the above operations look in a HTML5 Browser?
+
+1. www.mysite.com
+1. www.mysite.com/?state=1
+1. www.mysite.com/?state=2
+1. www.mysite.com/?state=3
+1. www.mysite.com/?state=4
+1. www.mysite.com/?state=3
+1. www.mysite.com/?state=1
+1. www.mysite.com
+1. www.mysite.com/?state=3
+
+> Note: These urls also work in HTML4 browsers and Search Engines. So no need for the hashbang (`#!`) fragment-identifier that google ["recommends"](https://github.com/browserstate/history.js/wiki/Intelligent-State-Handling).
+
+
+### How would they look in a HTML4 Browser?
+
+1. www.mysite.com
+1. www.mysite.com/#?state=1&_suid=1
+1. www.mysite.com/#?state=2&_suid=2
+1. www.mysite.com/#?state=3&_suid=3
+1. www.mysite.com/#?state=4
+1. www.mysite.com/#?state=3&_suid=3
+1. www.mysite.com/#?state=1&_suid=1
+1. www.mysite.com
+1. www.mysite.com/#?state=3&_suid=3
+
+> Note 1: These urls also work in HTML5 browsers - we use `replaceState` to transform these HTML4 states into their HTML5 equivalents so the user won't even notice :-)
+>
+> Note 2: These urls will be automatically url-encoded in IE6 to prevent certain browser-specific bugs.
+>
+> Note 3: Support for HTML4 browsers (this hash fallback) is optional [- why supporting HTML4 browsers could be either good or bad based on my app's use cases](https://github.com/browserstate/history.js/wiki/Intelligent-State-Handling)
+
+
+### What's the deal with the SUIDs used in the HTML4 States?
+
+- SUIDs (State Unique Identifiers) are used when we utilise a `title` and/or `data` in our state. Adding a SUID allows us to associate particular states with data and titles while keeping the urls as simple as possible (don't worry it's all tested, working and a lot smarter than I'm making it out to be).
+- If you aren't utilising `title` or `data` then we don't even include a SUID (as there is no need for it) - as seen by State 4 above :-)
+- We also shrink the urls to make sure that the smallest url will be used. For instance we will adjust `http://www.mysite.com/#http://www.mysite.com/projects/History.js` to become `http://www.mysite.com/#/projects/History.js` automatically. (again tested, working, and smarter).
+- It works with domains, subdomains, subdirectories, whatever - doesn't matter where you put it. It's smart.
+- Safari 5 will also have a SUID appended to the URL, it is entirely transparent but just a visible side-effect. It is required to fix a bug with Safari 5.
+
+
+### Is there a working demo?
+
+- Sure is, give it a download and navigate to the demo directory in your browser :-)
+- If you are after something a bit more adventurous than a end-user demo, open up the tests directory in your browser and editor - it'll rock your world and show all the vast use cases that History.js supports.
+
+
+## Download & Installation
+
+- Download History.js and upload it to your webserver. Download links: [tar.gz](https://github.com/browserstate/history.js/tarball/master) or [zip](https://github.com/browserstate/history.js/zipball/master)
+
+- Include History.js
+
+	- For [Dojo](http://dojotoolkit.org/) v1.8+
+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/dojo.history.js"></script>
+		```
+
+	- For [ExtJs](http://www.sencha.com/) v1.8+
+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/extjs.history.js"></script>
+		```
+
+	- For [jQuery](http://jquery.com/) v1.3+
+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+		```
+
+	- For [Mootools](http://mootools.net/) v1.3+
+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/mootools.history.js"></script>
+		```
+
+	- For [Right.js](http://rightjs.org/) v2.2+
+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/right.history.js"></script>
+		```
+
+	- For [Zepto](http://zeptojs.com/) v0.5+
+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/zepto.history.js"></script>
+		```
+
+	- For everything else
+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/native.history.js"></script>
+		```
+
+> Note: If you want to only support HTML5 Browsers and not HTML4 Browsers (so no hash fallback support) then just change the `/html4+html5/` part in the urls to just `/html5/`. See [Why supporting HTML4 browsers could be either good or bad based on my app's use cases](https://github.com/browserstate/history.js/wiki/Intelligent-State-Handling)
+
+
+## Get Updates
+
+- For Commit RSS/Atom Updates:
+	- You can subscribe via the [GitHub Commit Atom Feed](http://feeds.feedburner.com/historyjs)
+- For GitHub News Feed Updates:
+	- You can click the "watch" button up the top right of History.js's [GitHub Project Page](https://github.com/browserstate/history.js)

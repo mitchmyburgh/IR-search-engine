@@ -1,0 +1,126 @@
+    
+    In programming, the term data structure refers to a scheme for organizing related pieces of information. The basic types of data structures include: 
+     files 
+     lists 
+     arrays 
+     records 
+     trees 
+     tables 
+    Each of these basic structures has many variations and allows different operations to be performed on the data. 
+      PREVIOUSdata set
+      NEXTdata synchronization
+      TECH RESOURCES FROM OUR PARTNERS 
+	var t=displayDFPTag("imu");
+	document.write(t);
+function navDoAction(email) {
+	var EM = email;
+	var NewsletterKey = document.getElementById('navNewsletterSignup').value;
+	var navRegistrationWebsite = document.getElementById('navRegistrationWebsite').value;
+	var businessUnit = document.getElementById('businessUnit').value; 
+	var NewsletterSignup = document.getElementById('NewsletterSignup').value;  
+	var datavars = "NewsletterKey="+ NewsletterKey + "&RegistrationWebsite="+ navRegistrationWebsite + "&EM=" + EM + "&businessUnit="+businessUnit+"&NewsletterSignup="+NewsletterSignup;
+	jQuery.post("/subscribenewsletter",
+					{
+						NewsletterKey : NewsletterKey,
+						RegistrationWebsite : navRegistrationWebsite,
+						businessUnit : businessUnit,
+						NewsletterSignup: NewsletterSignup,
+						EM : EM
+					},
+					function(data) {
+						jQuery("#nl_response_message").show();
+						jQuery("#nl_response_message").html(data);
+						//jQuery("#navnewslettermailboxID").hide();
+						jQuery("#navnewslettermailboxID").remove(); 
+					});
+}
+function navnews_textclick() {
+	var objTXT = document.getElementById('navnewsletteremailID');
+	var objErrTXT = document.getElementById('navIDnewsletterbox_error');
+	var objContentBox = document.getElementById('navnewemailbox_content');
+	var empty_string = /^\s*$/; //create RegExp object for re-use
+	//navnewemailbox_content  navnewslettermailboxID
+	if (empty_string.test(objTXT.value))
+	{
+		objErrTXT.innerHTML='';
+		objErrTXT.innerHTML="* Enter Email Address";
+		objTXT.value='';
+		objTXT.focus();
+	}
+	else if(validate(objTXT.value))
+	{
+		objErrTXT.innerHTML='';
+		objErrTXT.innerHTML="* Invalid Email Address";
+		objTXT.value='';
+		objTXT.focus();
+	} else {
+		objErrTXT.style.display='none';
+		navDoAction(objTXT.value);
+	}
+     //return false;
+}
+function navnews_mailclick() {
+    document.getElementById('navnewsletteremailID').value='';
+}
+function validate(email) {
+    var reg = /^([A-Za-z0-9_\-\.]{2,})+\@([A-Za-z0-9_\-\.]{2,})+\.([A-Za-z]{2,4})$/;
+    if(reg.test(email) == false)
+       return true;
+    else
+         return false;
+}
+function navshowtext(){
+	if(document.getElementById('navnewsletteremailID').value == 'Email address'){
+		document.getElementById('navnewsletteremailID').value='';
+	}
+}
+function keypress(e){
+	if(e.which == 13){
+		navnews_textclick();
+		return false;
+	}
+}
+     WEBOPEDIA WEEKLY 
+     Stay up to date on the latest developments in Internet terminology with a free weekly newsletter from Webopedia. Join to subscribe now. 
+      LATEST ARTICLES
+      8 Agenda Apps to Help Students Stay Organized 
+      Webopedia's student apps roundup will help you to better organize your class schedule and stay on top of assignments and homework. Read More » 
+      20 Ways to Shorten a URL 
+      If you need to shorten a long URL try this list of 20 free online redirection services. Read More » 
+       Top 10 Tech Terms of 2015 
+      The most popular Webopedia definitions of 2015. Read More » 
+	var t=displayDFPTag("imu");
+	document.write(t);
+      STUDY GUIDES
+      Computer Architecture Study Guide 
+      This Webopedia&nbsp; study guide describes the different parts of a computer system and their relations. Read More » 
+      Network Fundamentals Study Guide 
+      Networking fundamentals teaches the building blocks of modern network design. Learn different types of networks, concepts, architecture and... Read More » 
+      The Five Generations of Computers 
+      Learn about each of the five generations of computers and major technology developments that have led to the current devices that we use today. Read More » 
+	var t=displayDFPTag("lb");
+	document.write(t);
+	var t=displayDFPTag("wa");
+	document.write(t);
+#developerBrand-footer{text-align:center;margin:0 auto}
+#footerlinks{font-size:12px;word-spacing:1px}
+#footerlinks a{color:#000;margin:5px 0 0}
+#itbeBrand-footer{text-align:center;margin:0 auto}
+#itbusinessedge-footer{text-align:center;margin:0 auto}
+#footercopyright{font-size:12px;margin:5px 0 0}
+#developerBrandForum-footer{text-align:center;margin:0 auto}
+#itbeBrandForum-footer{text-align:center;margin:0 auto}
+#eweek-truste-footer{text-align:center;margin:0 auto}
+#developerBrand-truste-footer{text-align:center;margin:0 auto}
+#itbeBrand-truste-footer{text-align:center;margin:0 auto}
+#itbusinessedge-truste-footer{text-align:center;margin:0 auto}
+.footerLogoClass{text-align:center;margin:0 auto}
+            //alert(screen.width);
+            var cssFile, browserWidth, browserHeight;
+            function browserSize(){
+                // Get the dimensions of the viewport
+                browserWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                browserHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                //document.getElementById('jsWidth').innerHTML = browserWidth;  // Display the width
+                //document.getElementById('jsHeight').innerHTML = browserHeight;// Display the height
+                if(768 

@@ -1,0 +1,256 @@
+
+
+Skip to main content
+
+Quantiki Toggle navigation
+
+  * __Browse 
+    * __News
+    * __Forums
+    * __Video Abstracts
+    * __Journal Articles
+    * __RSS Feeds 
+      * __Journal Articles
+      * __News
+      * __Positions
+      * __Video Abstracts
+  * __Events 
+    * Past events
+  * __Groups
+  * __Positions
+  * __Wiki 
+    * __Index
+    * __Popular
+    * __Recent
+  * __About 
+    * __Contact
+    * __FAQ
+    * __Privacy Statement
+
+## Search form
+
+Search
+
+## User login
+
+Username *
+
+Password *
+
+  * Create new account
+  * Request new password
+
+Log in
+
+## Upcoming Conferences
+
+  * Hong Kong Workshop on Quantum Information and Foundations
+
+05/04/2016
+
+  * 4th Quantum Thermodynamics Conference
+
+05/08/2016
+
+  * School and Conference: "Quantum Effects in Biological Systems 2016"
+
+06/02/2016
+
+  * Quantum simulations and many-body physics with light
+
+06/05/2016
+
+  * 48 Symposium on Mathematical Physics: "Gorini-Kossakowski-Lindblad-Sudarshan Master Equation - 40 Years After"
+
+06/10/2016
+
+more
+
+## Recent Papers
+
+  * Blind quantum computation over a collective-noise channel
+  * Information gain and information leak in quantum measurements
+  * Proposal for a quantum delayed-choice experiment with a spin-mechanical setup. (arXiv:1605.00935v1 [quant-ph])
+  * Optomechanical cooling in Non-Markovian regime. (arXiv:1605.00753v1 [quant-ph])
+  * Anyons in quantum mechanics with a minimal length. (arXiv:1605.00964v1 [hep-th])
+
+more
+
+## Follow Quantiki
+
+  *   
+__  
+
+  *   
+__  
+
+  *   
+__  
+
+  *   
+__  
+
+# Grover's search algorithm
+
+**Grover's algorithm** is a quantum algorithm for searching an unsorted database with _N_ entries in _O(N1/2)_ time and using _O(_log_N)_ storage space (see big O notation). It was invented by Lov Grover in 1996.
+
+### Introduction
+
+Classically, searching an unsorted database requires a linear search, which is
+_O(N)_ in time. Grover's algorithm, which takes _O(N1/2)_ time, is the fastest
+possible quantum algorithm for searching an unsorted database. It provides
+"only" a quadratic speedup, unlike other quantum algorithms, which can provide
+exponential speedup over their classical counterparts. However, even quadratic
+speedup is considerable when _N_ is large.
+
+Like all quantum computer algorithms, Grover's algorithm is probabilistic, in
+the sense that it gives the correct answer with high probability. The
+probability of failure can be decreased by repeating the algorithm.
+
+### Uses of Grover's algorithm
+
+Although the purpose of Grover's algorithm is usually described as "searching
+a database", it may be more accurate to describe it as "inverting a function".
+Roughly speaking, if we have a function _y=f(x)_ that can be evaluated on a
+quantum computer, Grover's algorithm allows us to calculate _x_ when given
+_y_. Inverting a function is related to the searching of a database because we
+could come up with a function that produces a particular value of _y_ if _x_
+matches a desired entry in a database, and another value of _y_ for other
+values of _x_.
+
+Grover's algorithm can also be used for estimating the mean and median of a
+set of numbers, and for solving the collision problem. In addition, it can be
+used to solve NP-complete problems by performing exhaustive searches over the
+set of possible solutions. This would result in a considerable speedup over
+classical solutions, even though it does not provide the "holy grail" of a
+polynomial-time solution.
+
+Below, we present the basic form of Grover's algorithm, which searches for a
+single matching entry. The algorithm can be further optimized if there is more
+than one matching entry and the number of matches is known beforehand.
+
+### Setup
+
+Consider an unsorted database with N entries. The algorithm requires an _N_-
+dimensional state space _H_, which can be supplied by log_2N_ qubits.
+
+Let us number the database entries by 0, 1, ... (_N_-1). Choose an observable,
+_Ω_, acting on _H_, with _N_ distinct eigenvalues whose values are all known.
+Each of the eigenstates of _Ω_ encode one of the entries in the database, in a
+manner that we will describe. Denote the eigenstates (using bra-ket notation)
+as
+
+{∣0⟩, ∣1⟩, ⋯, ∣_N_ − 1⟩}
+
+and the corresponding eigenvalues by
+
+{_λ_0, _λ_1, ⋯, _λ__N_ − 1}
+
+We are provided with a unitary operator, _Uω_, which acts as a subroutine that
+compares database entries according to some search criterion. The algorithm
+does not specify how this subroutine works, but it must be a _quantum_
+subroutine that works with superpositions of states. Furthermore, it must act
+specially on one of the eigenstates, |_ω_&gt;, which corresponds to the
+database entry matching the search criterion. To be precise, we require _Uω_
+to have the following effects:
+
+_U__ω_∣_ω_⟩ =  − ∣_ω_⟩
+
+_U__ω_∣_x_⟩ = ∣_x_⟩  for all _x_ ≠ _ω_
+
+Our goal is to identify this eigenstate |ω&gt;, or equivalently the eigenvalue
+ω, that Uω acts specially upon.
+
+### Steps of the algorithm
+
+The steps of Grover's algorithm are as follows:
+
+  1. Initialize the system to the state |s\ranglele = \frac{1}{\sqrt{N}} \sum_x |x\ranglele 
+  2. Perform the following "Grover iteration" _r(N)_ times. The function _r(N)_ is described below. 
+    1. Apply the operator _U__ω_
+    2. Apply the operator _U__s_ = 2∣_s_⟩_l__e_⟨_l__e__s_∣ − _I_.
+  3. Perform the measurement Ω. The measurement result will be λω with probability approaching 1 for N&gt;&gt;1\. From λω, ω may be obtained.
+
+### Explanation of the algorithm
+
+Our initial state is
+
+$$|s\rangle = \frac{1}{\sqrt{N}} \sum_x |x\rangle$$
+
+Consider the plane spanned by |s&gt; and |ω&gt;. Let |ω×&gt; be a ket in this
+plane perpendicular to |ω&gt;. Since |ω&gt; is one of the basis vectors, the
+overlap is
+
+$$\langle\omega|s\rangle = \frac{1}{\sqrt{N}}$$
+
+In geometric terms, there is an angle (π/2 - θ) between |ω&gt; and |s&gt;,
+where θ is given by:
+
+$$\cos \left(\frac{\pi}{2} - \theta \right) = \frac{1}{\sqrt{N}}$$
+
+$$\sin \theta = \frac{1}{\sqrt{N}}$$
+
+The operator Uω is a reflection at the hyperplane orthogonal to |ω&gt;; for
+vectors in the plane spanned by |s&gt; and |ω&gt;, it acts as a reflection at
+the line through |ω×&gt;. The operator Us is a reflection at the line through
+|s&gt;. Therefore, the state vector remains in the plane spanned by |s&gt; and
+|ω&gt; after each application of Us and after each application of Uω, and it
+is straightforward to check that the operator UsUω of each Grover iteration
+step rotates the state vector by an angle of 2θ toward |ω&gt;.
+
+We need to stop when the state vector passes close to |ω&gt;; after this,
+subsequent iterations rotate the state vector _away_ from |ω&gt;, reducing the
+probability of obtaining the correct answer. The number of times to iterate is
+given by _r_. In order to align the state vector exactly with |ω&gt;, we need:
+
+$$\frac{\pi}{2} - \theta = 2 \theta r$$
+
+$$r = \frac{(\frac{\pi}{\theta} - 2)}{4}$$
+
+However, _r_ must be an integer, so generally we can only set _r_ to be the
+integer closest to (π/θ - 2)/4. The angle between |ω&gt; and the final state
+vector is O(θ), so the probability of obtaining the wrong answer is O(1 -
+cos2θ) = O(sin2θ).
+
+For N&gt;&gt;1, θ ≈ N-1/2, so
+
+$$r \rightarrow \frac{\pi \sqrt{N}}{4}$$
+
+Furthermore, the probability of obtaining the wrong answer becomes O(1/N),
+which goes to zero for large N.
+
+### Extensions
+
+If, instead of 1 matching entry, there are _k_ matching entries, the same
+algorithm works but the number of iterations must be _π(N/k)1/2/4_ instead of
+_πN1/2/4_. There are several ways to handle the case if _k_ is unknown. For
+example, one could run Grover's algorithm several times, with
+
+$$\pi \frac{N^{1/2}}{4}, \pi \frac{(N/2)^{1/2}}{4}, \pi \frac{(N/4)^{1/2}}{4},
+\ldots$$
+
+iterations. For any _k_, one of iterations will find a matching entry with a
+sufficiently high probability. The total number of iterations is at most
+
+$$\pi \frac{N^{1/2}}{4} \left( 1+
+\frac{1}{\sqrt{2}}+\frac{1}{2}+\cdots\right)$$
+
+which is still O(_N1/2_).
+
+It is known that Grover's algorithm is optimal. That is, any algorithm that
+accesses the database only by using the operator Uω must apply Uω at least as
+many times as Grover's algorithm (Bernstein et al., 1997).
+
+### References
+
+  1. Grover L.K.: _A fast quantum mechanical algorithm for database search_, Proceedings, 28th Annual ACM Symposium on the Theory of Computing, (May 1996) p. 212 http://arxiv.org/abs/quant-ph/9605043A (available online)
+  2. Grover L.K.: _From Schrodinger's equation to quantum search algorithm_, American Journal of Physics, 69(7): 769-777, 2001. Pedagogical review of the algorithm and its history.
+  3. http://www.bell-labs.com/user/feature/archives/lkgrover/
+  4. Bennett C.H., Bernstein E., Brassard G., Vazirani U., _The strengths and weaknesses of quantum computation_. SIAM Journal on Computing 26(5): 1510-1523 (1997). Shows the optimality of Grover's algorithm.
+
+Category:Quantum Algorithms
+
+Last modified:
+
+Tuesday, November 3, 2015 - 06:20
+

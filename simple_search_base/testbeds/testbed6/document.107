@@ -1,0 +1,73 @@
+ Data structure 
+   From Wikipedia, the free encyclopedia
+    Jump to: 
+   navigation, 
+   search 
+   In computer science, a data structure is the organization of and implementing of values and information. Where data structures are different from abstract data types is in the way they are used. Data structures are the implementations of abstract data types in a concrete and physical setting using algorithms in the implementation process. This can be seen in the relationship between the List (abstract data type) and the linked list (data structure). The List is the containing of a sequence of values or bits of information. The linked list implementation of a List is having a “pointer” or “reference” between each node of information allowing one to traverse forwards or backwards in the list. Furthermore, data structures are often optimized for certain operations. Finding the best data structure when solving a problem is an important part of programming. 
+     Contents 
+     1 Basic data structures 
+       1.1 Array 
+       1.2 Linked list 
+       1.3 Stack 
+       1.4 Queue 
+       1.5 Graph 
+       1.6 Tree 
+     2 References 
+     3 Other websites 
+   Basic data structures[change | change source] 
+   Array[change | change source] 
+   The simplest type of data structure is a linear array. This is also called one-dimensional array. An array holds several values of the same kind. Accessing the elements is very fast. It may not be possible to add more values than defined at the start, without copying all values into a new array. In&nbsp;computer science, an&nbsp;array data structure&nbsp;or simply an&nbsp;array&nbsp;is a&nbsp;data structure&nbsp;consisting of a collection of&nbsp;elements&nbsp;(values&nbsp;or&nbsp;variables), each identified by at least one&nbsp;array index&nbsp;or&nbsp;key. An array is stored so that the position of each element can be computed from its index&nbsp;tuple by a mathematical formula.[1][2] 
+   For example, an array of 10 integer variables, with indices 0 through 9, may be stored as 10&nbsp;words&nbsp;at memory addresses 2000, 2004, 2008, 2036, so that the element with index&nbsp;i&nbsp;has the address 2000 + 4 ×&nbsp;i. 
+   Because the mathematical concept of a&nbsp;matrix&nbsp;can be represented as a two-dimensional grid, two-dimensional arrays are also sometimes called matrices. In some cases the term "vector" is used in computing to refer to an array, although&nbsp;tuples&nbsp;rather than&nbsp;vectors&nbsp;are more correctly the mathematical equivalent. Arrays are often used to implement&nbsp;tables, especially&nbsp;look up tables; the word&nbsp;table&nbsp;is sometimes used as a synonym of&nbsp;array. 
+   Arrays are among the oldest and most important data structures, and are used by almost every program. They are also used to implement many other data structures, such as&nbsp;lists&nbsp;and&nbsp;strings. They effectively exploit the addressing logic of computers. In most modern computers and many&nbsp;external storage&nbsp;devices, the memory is a one-dimensional array of words, whose indices are their addresses.&nbsp;Processors, especially&nbsp;vector processors, are often optimized for array operations. 
+   Arrays are useful mostly because the element indices can be computed at&nbsp;run time. Among other things, this feature allows a single iterative&nbsp;statement&nbsp;to process arbitrarily many elements of an array. For that reason, the elements of an array data structure are required to have the same size and should use the same data representation. The set of valid index tuples and the addresses of the elements (and hence the element addressing formula) are usually,&nbsp;but not always, fixed while the array is in use.[3][4] 
+   The term&nbsp;array&nbsp;is often used to mean&nbsp;array data type, a kind of&nbsp;data type&nbsp;provided by most&nbsp;high-level programming languages&nbsp;that consists of a collection of values or variables that can be selected by one or more indices computed at run-time. Array types are often implemented by array structures; however, in some languages they may be implemented by&nbsp;hash tables,&nbsp;linked lists,&nbsp;search trees, or other data structures. 
+   Linked list[change | change source] 
+   A&nbsp;linked data structure&nbsp;is a set of&nbsp;records&nbsp;linked together by&nbsp;references. The records are often called nodes. The references are often called links or pointers. From here on, the words node and pointer will be used for these concepts. 
+       Each node points to another node.
+   In linked data structures, pointers are only&nbsp;dereferenced&nbsp;or compared for equality. Thus, linked data structures are different than&nbsp;arrays, which require adding and subtracting pointers. 
+   Linked lists,&nbsp;search trees,&nbsp;and expression trees are all linked data structures. They are also important in algorithms such as&nbsp;topological sort[5]&nbsp;and&nbsp;set union-find.[6] 
+   Stack[change | change source] 
+    Main page: 
+    Stack (data structure)
+   A stack is a basic data structure that can be logically thought as linear structure represented by a real physical stack or pile, a structure where insertion and deletion of items takes place at one end called top of the stack. The basic concept can be illustrated by thinking of your data set as a stack of plates or books where you can only take the top item off the stack in order to remove things from it. This structure is used all throughout programming. 
+   The basic implementation of a stack is also called a “Last In First Out” structure; however there are different variations of stack implementations. 
+   There are basically three operations that can be performed on stacks. They are: 
+    inserting (“pushing”) an item into a stack 
+    deleting (“popping”) an item from the stack 
+    displaying the contents of the top item of the stack (“peeking”) 
+   [7] 
+   Queue[change | change source] 
+   A queue is an abstract data type or a linear data structure, in which the first element is inserted from one end (the “tail”), and the deletion of existing element takes place from the other end (the “head”). A queue is a “First In First Out” structure. The process of adding an element to a queue is called “enqueuing” and the process of removing an element from a queue is called “dequeuing”.[8] 
+   Graph[change | change source] 
+   A&nbsp;graph&nbsp;is an&nbsp;abstract data type&nbsp;that is meant to implement the&nbsp;graph&nbsp;and&nbsp;hypergraph&nbsp;concepts from mathematics. 
+   A graph data structure consists of a finite (and possibly mutable)&nbsp;set&nbsp;of ordered pairs, called&nbsp;edges&nbsp;or&nbsp;arcs, of certain entities called nodes&nbsp;or&nbsp;vertices. As in mathematics, an edge (x,y) is said to&nbsp;point&nbsp;or&nbsp;go&nbsp;from&nbsp;x&nbsp;to&nbsp;y. The nodes may be part of the graph structure, or may be external entities represented by integer indices or&nbsp;references. A graph data structure may also associate to each edge some&nbsp;edge value, such as a symbolic label or a numeric attribute.[9] 
+   Tree[change | change source] 
+   The tree is one of the most powerful of the advanced data structures and it often appears in advanced subjects such as AI and design. Surprisingly though the tree is important in a much more basic application - namely the keeping of an efficient index. 
+   Whenever a tree is used there is a high chance that an index is involved somewhere. The simplest type of index is a sorted listing of the key field. This provides a fast lookup because you can use a binary search to locate any item without having to look at each one in turn. 
+   The trouble with a simple ordered list only becomes apparent once you start adding new items and have to keep the list sorted - it can be done reasonably efficiently but it takes some juggling. Additionally, a linear index is not easy to share because the whole index needs to be “locked” when one user edits it, whereas one “branch” of a tree can be locked, leaving the other branches editable by other users (as they cannot be affected).[10] 
+   References[change | change source] 
+     ↑ Black, Paul E. (13 November 2008).&nbsp;"array".&nbsp;Dictionary of Algorithms and Data Structures.&nbsp;National Institute of Standards and Technology 
+     ↑ Bjoern Andres; Ullrich Koethe; Thorben Kroeger; Hamprecht (2010). "Runtime-Flexible Multi-dimensional Arrays and Views for C++98 and C++0x".arXiv:1008.2909 
+     ↑ Bjoern Andres; Ullrich Koethe; Thorben Kroeger; Hamprecht (2010). "Runtime-Flexible Multi-dimensional Arrays and Views for C++98 and C++0x".arXiv:1008.2909 
+     ↑ Garcia, Ronald; Lumsdaine, Andrew (2005). "MultiArray: a C++ library for generic programming with arrays".&nbsp;Software: Practice and Experience&nbsp;35&nbsp;(2): 159–188.doi:10.1002/spe.630.&nbsp;ISSN&nbsp;0038-0644. 
+     ↑ Donald Knuth,&nbsp;The Art of Computer Programming 
+     ↑ Bernard A. Galler&nbsp;and&nbsp;Michael J. Fischer. An improved equivalence algorithm.&nbsp;Communications of the ACM,&nbsp;Volume 7, Issue 5 (May 1964), pages 301-303. The paper originating disjoint-set forests.&nbsp;ACM Digital Library 
+     ↑ Adamchik, Victor S. "Stacks and Queues." CMU, 2009. http://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html 
+     ↑ "Queue Data Structures." Studytonight 2013. http://www.studytonight.com/data-structures/queue-data-structure 
+     ↑ Miller, Brad and Ranum, David. "Graphs." 2013. http://interactivepython.org/courselib/static/pythonds/Graphs/graphintro.html 
+     ↑ "Data Structures-Tree." 2014 http://www.i-programmer.info/babbages-bag/477-trees.html 
+   Other websites[change | change source] 
+    Data structure -Citizendium 
+    Retrieved from "
+   https://simple.wikipedia.org/w/index.php?title=Data_structure&amp;oldid=5327391" 
+    Category: 
+     Data structures
+ Navigation menu 
+   Personal tools 
+    Not logged in
+    Talk
+    Contributions
+    Create account
+    Log in 
+

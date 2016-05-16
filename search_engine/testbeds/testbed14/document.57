@@ -1,0 +1,9 @@
+HermiT OWL Reasoner
+The New Kid on the OWL Block
+OVERVIEW
+HermiT is reasoner for ontologies written using the Web Ontology Language (OWL). Given an OWL file, HermiT can determine whether or not the ontology is consistent, identify subsumption relationships between classes, and much more.
+HermiT is the first publicly-available OWL reasoner based on a novel “hyper tableau” calculus which provides much more efficient reasoning than any previously-known algorithm. Ontologies which previously required minutes or hours to classify can often by classified in seconds by HermiT, and HermiT is the first reasoner able to classify a number of ontologies which had previously proven too complex for any available system to handle.
+HermiT uses direct semantics and passes all OWL 2 conformance tests for direct semantics reasoners.
+We have now released HermiT 1.3.8 under the GNU Lesser General Public License (LGPL). The release should be compatible with Java 1.5 or higher. HermiT 1.3.8 uses the OWL API 3.4.3, which is backwards compatible with the OWL API 3.3.x, 3.2.x and 3.1.x, but not backwards compatible with the OWL API 3.0.x.
+Since version 1.1, HermiT can handle DL Safe rules and the rules can directly be added to the input ontology in functional style or other OWL syntaxes supported by the OWL API (see A Syntax for Rules in OWL 2). Note that reasoning with DL Safe rules is incomplete if the ontology contains property chains or transitivity axioms and complex properties are used in the rule bodies.
+HermiT is open-source and released under LGPL. All components and source code is included in the project folder of the release.

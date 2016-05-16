@@ -1,0 +1,66 @@
+Description Logics
+Franz Baader, Ian Horrocks, Ulrike Sattler
+In this chapter we will introduce description logics, a family of logic-based knowledge
+representation languages that can be used to represent the terminological knowledge
+of an application domain in a structured way. We will first review their provenance
+and history, and show how the field has developed. We will then introduce the basic
+description logic �LC in some detail, including definitions of syntax, semantics
+and basic reasoning services, and describe important extensions such as inverse roles,
+number restrictions, and concrete domains. Next, we will discuss the relationship between
+description logics and other formalisms, in particular first order and modal
+logics; the most commonly used reasoning techniques, in particular tableau, resolution
+and automata based techniques; and the computational complexity of basic reasoning
+problems. After reviewing some of the most prominent applications of description logics,
+in particular ontology language applications, we will conclude with an overview of
+other aspects of description logic research, and with pointers to the relevant literature.
+3.1 Introduction
+Description logics (DLs) [14, 25, 50] are a family of knowledge representation languages
+that can be used to represent the knowledge of an application domain in a
+structured and formally well-understood way. The name description logics is motivated
+by the fact that, on the one hand, the important notions of the domain are
+described by concept descriptions, i.e., expressions that are built from atomic concepts
+(unary predicates) and atomic roles (binary predicates) using the concept and
+role constructors provided by the particular DL; on the other hand, DLs differ from
+their predecessors, such as semantic networks and frames, in that they are equipped
+with a formal, logic-based semantics.
+We will first illustrate some typical constructors by an example; formal definitions
+will be given in Section 3.2. Assume that we want to define the concept of “A man
+that is married to a doctor, and all of whose children are either doctors or professors.”
+This concept can be described with the following concept description:
+Human � ¬Female � (∃married.Doctor) � (∀hasChild.(Doctor � Professor)).
+136 3. Description Logics
+This description employs the Boolean constructors conjunction (�), which is interpreted
+as set intersection, disjunction (�), which is interpreted as set union, and
+negation (¬), which is interpreted as set complement, as well as the existential restriction
+constructor (∃r.C), and the value restriction constructor (∀r.C). An individual,
+say Bob, belongs to ∃married.Doctor if there exists an individual that is married to
+Bob (i.e., is related to Bob via the married role) and is a doctor (i.e., belongs to the
+concept Doctor). Similarly, Bob belongs to ∀hasChild.(Doctor � Professor) if all his
+children (i.e., all individuals related to Bob via the hasChild role) are either doctors or
+professors.
+Concept descriptions can be used to build statements in a DL knowledge base,
+which typically comes in two parts: a terminological and an assertional one. In the
+terminological part, called the TBox, we can describe the relevant notions of an application
+domain by stating properties of concepts and roles, and relationships between
+them—it corresponds to the schema in a database setting. In its simplest form, a TBox
+statement can introduce a name (abbreviation) for a complex description. For example,
+we could introduce the name HappyMan as an abbreviation for the concept description
+from above:
+HappyMan ≡ Human � ¬Female � (∃married.Doctor) �
+(∀hasChild.(Doctor � Professor)).
+More expressive TBoxes allow the statement of more general axioms such as
+∃hasChild.Human � Human,
+which says that only humans can have human children. Note that, in contrast to the
+abbreviation statement from above, this statement does not define a concept. It just
+constrains the way in which concepts and roles (in this case, Human and hasChild)
+can be interpreted.
+Obviously, all the knowledge we have described in our example could easily be
+represented by formulae of first-order predicate logic (see also Section 3.3). The variable-free
+syntax of description logics makes TBox statements easier to read than the
+corresponding first-order formulae. However, the main reason for using DLs rather
+than predicate logic is that DLs are carefully tailored such that they combine interesting
+means of expressiveness with decidability of the important reasoning problems
+(see below).
+The assertional part of the knowledge base, called the ABox, is used to describe a
+concrete situation by stating properties of individuals—it corresponds to the data in a
+database setting. For example, the assertions

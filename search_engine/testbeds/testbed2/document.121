@@ -1,0 +1,68 @@
+Q-learning is a model-free reinforcement learning technique. Specifically, Q-learning can be used to find an optimal action-selection policy for any given (finite) Markov decision process (MDP). It works by learning an action-value function that ultimately gives the expected utility of taking a given action in a given state and following the optimal policy thereafter. A policy is a rule that the agent follows in selecting actions, given the state it is in. When such an action-value function is learned, the optimal policy can be constructed by simply selecting the action with the highest value in each state. One of the strengths of Q-learning is that it is able to compare the expected utility of the available actions without requiring a model of the environment. Additionally, Q-learning can handle problems with stochastic transitions and rewards, without requiring any adaptations. It has been proven that for any finite MDP, Q-learning eventually finds an optimal policy, in the sense that the expected value of the total reward return over all successive steps, starting from the current state, is the maximum achievable.
+
+
+== Algorithm ==
+The problem model consists of an agent, states  and a set of actions per state . By performing an action , the agent can move from state to state. Executing an action in a specific state provides the agent with a reward (a numerical score). The goal of the agent is to maximize its total reward. It does this by learning which action is optimal for each state. The action that is optimal for each state is the action that has the highest long-term reward. This reward is a weighted sum of the expected values of the rewards of all future steps starting from the current state, where the weight for a step from a state  steps into the future is calculated as . Here,  is a number between 0 and 1 () called the discount factor and trades off the importance of sooner versus later rewards.  may also be interpreted as the likelihood to succeed (or survive) at every step .
+The algorithm therefore has a function that calculates the Quantity of a state-action combination:
+
+Before learning has started,  returns an (arbitrary) fixed value, chosen by the designer. Then, each time the agent selects an action, and observes a reward and a new state that may depend on both the previous state and the selected action,  is updated. The core of the algorithm is a simple value iteration update. It assumes the old value and makes a correction based on the new information.
+
+where  is the reward observed after performing  in , and where  () is the learning rate (may be the same for all pairs).
+An episode of the algorithm ends when state  is a final state (or, "absorbing state"). However, Q-learning can also learn in non-episodic tasks. If the discount factor is lower than 1, the action values are finite even if the problem can contain infinite loops.
+Note that for all final states ,  is never updated and thus retains its initial value. In most cases,  can be taken to be equal to zero.
+
+
+== Influence of variables on the algorithm ==
+
+
+=== Learning rate ===
+The learning rate determines to what extent the newly acquired information will override the old information. A factor of 0 will make the agent not learn anything, while a factor of 1 would make the agent consider only the most recent information. In fully deterministic environments, a learning rate of  is optimal. When the problem is stochastic, the algorithm still converges under some technical conditions on the learning rate, that require it to decrease to zero. In practice, often a constant learning rate is used, such as  for all .
+
+
+=== Discount factor ===
+The discount factor  determines the importance of future rewards. A factor of 0 will make the agent "myopic" (or short-sighted) by only considering current rewards, while a factor approaching 1 will make it strive for a long-term high reward. If the discount factor meets or exceeds 1, the action values may diverge. For , without a terminal state, or if the agent never reaches one, all environment histories will be infinitely long, and utilities with additive, undiscounted rewards will generally be infinite. Even with a discount factor only slightly lower than 1, the Q-function learning leads to propagation of errors and instabilities when the value function is approximated with an artificial neural network. In that case, it is known that starting with a lower discount factor and increasing it towards its final value yields accelerated learning.
+
+
+=== Initial conditions (Q0) ===
+Since Q-learning is an iterative algorithm, it implicitly assumes an initial condition before the first update occurs. High initial values, also known as "optimistic initial conditions", can encourage exploration: no matter what action is selected, the update rule will cause it to have lower values than the other alternative, thus increasing their choice probability. Recently, it was suggested that the first reward  could be used to reset the initial conditions. According to this idea, the first time an action is taken the reward is used to set the value of . This will allow immediate learning in case of fixed deterministic rewards. Surprisingly, this resetting-of-initial-conditions (RIC) approach seems to be consistent with human behaviour in repeated binary choice experiments.
+
+
+== Implementation ==
+Q-learning at its simplest uses tables to store data. This very quickly loses viability with increasing sizes of state/action space of the system it is monitoring/controlling. One answer to this problem is to use an (adapted) artificial neural network as a function approximator, as demonstrated by Tesauro in his Backgammon playing temporal difference learning research.
+More generally, Q-learning can be combined with function approximation. This makes it possible to apply the algorithm to larger problems, even when the state space is continuous, and therefore infinitely large. Additionally, it may speed up learning in finite problems, due to the fact that the algorithm can generalize earlier experiences to previously unseen states.
+
+
+== Early study ==
+Q-learning was first introduced by Watkins in 1989. The convergence proof was presented later by Watkins and Dayan in 1992.
+
+
+== Variants ==
+Delayed Q-learning is an alternative implementation of the online Q-learning algorithm, with Probably approximately correct learning (PAC).
+Because the maximum approximated action value is used in the Q-learning update, in noisy environments Q-learning can sometimes overestimate the actions values, slowing the learning. A recent variant called Double Q-learning was proposed to correct this. 
+Greedy GQ is a variant of Q-learning to use in combination with (linear) function approximation. The advantage of Greedy GQ is that convergence guarantees can be given even when function approximation is used to estimate the action values.
+Q-learning may suffer from slow rate of convergence, especially when the discount factor  is close to one. Speedy Q-learning, a new variant of Q-learning algorithm, deals with this problem and achieves a provably same rate of convergence as model-based methods such as value iteration.
+A recent application of Q-learning to deep learning, by Google DeepMind, titled "deep reinforcement learning" or "deep Q-networks", has been successful at playing some Atari 2600 games at expert human levels. Preliminary results were presented in 2014, with a paper published in February 2015 in Nature.
+
+
+== See also ==
+Reinforcement learning
+Temporal difference learning
+SARSA
+Iterated prisoner's dilemma
+Game theory
+Fitted Q iteration algorithm
+
+
+== References ==
+
+
+== External links ==
+Watkins, C.J.C.H. (1989). Learning from Delayed Rewards. PhD thesis, Cambridge University, Cambridge, England.
+Strehl, Li, Wiewiora, Langford, Littman (2006). PAC model-free reinforcement learning
+Reinforcement Learning: An Introduction by Richard Sutton and Andrew S. Barto, an online textbook. See "6.5 Q-Learning: Off-Policy TD Control".
+Piqle: a Generic Java Platform for Reinforcement Learning
+Reinforcement Learning Maze, a demonstration of guiding an ant through a maze using Q-learning.
+Q-learning work by Gerald Tesauro
+Q-learning work by Tesauro Citeseer Link
+Q-learning algorithm implemented in processing.org language
+Solution for the pole balancing problem with Q(lambda) / SARSA(lambda) and the fourier basis in javascript

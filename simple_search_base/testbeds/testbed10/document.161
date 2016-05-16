@@ -1,0 +1,114 @@
+Reduction Techniques for Instance-Based
+Learning Algorithms
+
+D. RANDALL WILSON 
+
+TONY R. MARTINEZ
+
+1. Introduction
+In supervised learning, a machine learning algorithm is shown a training set, T , which is a
+collection of training examples called instances. Each instance has an input vector and an
+output value. After learning from the training set, the learning algorithm is presented with
+additional input vectors, and the algorithm must generalize, i.e., it must use some inductive
+bias (Mitchell, 1980; Schaffer, 1994; Dietterich, 1989; Wolpert, 1993) to decide what the
+output value should be even if the new input vector was not in the training set.
+A large number of machine learning algorithms compute a distance between the input
+vector and stored exemplars when generalizing. Exemplars can be instances from the original
+training set, or can be in other forms such as hyperrectangles, prototypes, or rules. Many
+such exemplar-based learning algorithms exist, and they are often faced with the problem of
+deciding how many exemplars to store, and what portion of the input space they should cover.
+Instance-based learning (IBL) algorithms (Aha, Kibler, & Albert, 1991; Aha, 1992) are
+a subset of exemplar-based learning algorithms that use original instances from the training
+set as exemplars. One of the most straightforward instance-based learning algorithms is
+the nearest neighbor algorithm (Cover & Hart, 1967; Hart, 1968; Dasarathy, 1991). During
+generalization, instance-based learning algorithms use a distance function to determine how
+close a new input vector yE is to each stored instance, and use the nearest instance or instances
+to predict the output class of yE (i.e., to classify yE). Other exemplar-based machine learning paradigms include memory-based reasoning
+(Stanfill & Waltz, 1986), exemplar-based generalization (Salzberg, 1991; Wettschereck &
+Dietterich, 1995), and case-based reasoning (CBR) (Watson & Marir, 1994). Such algorithms
+have had much success on a wide variety of domains. There are also several exemplarbased
+neural network learning algorithms, including probabilistic neural networks (PNN)
+(Specht, 1992; Wilson & Martinez, 1996, 1997b) and other radial basis function networks
+(Broomhead & Lowe, 1988; Renals & Rohwer, 1989; Wasserman, 1993), as well as counterpropagation
+networks (Hecht-Nielsen, 1987), ART (Carpenter & Grossberg, 1987), and
+competitive learning (Rumelhart & McClelland, 1986).
+Exemplar-based learning algorithms must often decide what exemplars to store for use
+during generalization in order to avoid excessive storage and time complexity, and possibly
+to improve generalization accuracy by avoiding noise and overfitting.
+For example, the basic nearest neighbor algorithm retains all of the training instances.
+It learns very quickly because it need only read in the training set without much further
+processing, and it generalizes accurately for many applications. However, since the basic
+nearest neighbor algorithm stores all of the training instances, it has relatively large memory
+requirements. It must search through all available instances to classify a new input vector, so
+it is slow during classification. Also, since it stores every instance in the training set, noisy
+instances (i.e., those with errors in the input vector or output class, or those not representative
+of typical cases) are stored as well, which can degrade generalization accuracy.
+Techniques such as k-d trees (Sproull, 1991; Wess, Althoff, & Richter, 1993) and projection
+(Papadimitriou & Bentley, 1980) can reduce the time required to find the nearest
+neighbor(s) of an input vector, but they do not reduce storage requirements, nor do they
+address the problem of noise. In addition, they often become much less effective as the
+dimensionality of the problem (i.e., the number of input attributes) grows (Sproull, 1991).
+On the other hand, when some of the instances are removed from the training set, the
+storage requirements and time necessary for generalization are correspondingly reduced.
+This paper focuses on the problem of reducing the size of the stored set of instances
+(or other exemplars) while trying to maintain or even improve generalization accuracy.
+It accomplishes this by first providing a relatively thorough survey of machine learning
+algorithms used to reduce the number of instances needed by learning algorithms, and then
+by proposing several new reduction techniques.
+Section 2 discusses several issues related to the problem of instance set reduction, and
+provides a framework for the discussion of individual reduction algorithms. Section 3
+surveys much of the work done in this area. Section 4 presents a collection of six additional
+algorithms called DROP1–DROP5 and DEL that are used to reduce the size of the training set
+while maintaining or even improving generalization accuracy. Section 5 presents empirical
+results comparing 10 of the surveyed techniques with the six additional techniques presented
+in Section 4 on 31 datasets. Section 6 provides conclusions and future research directions.
+
+6. Conclusions and future research directions
+Many techniques have been proposed to reduce the number of instances used for classification
+in instance-based and other exemplar-based learning algorithms. In experiments on 31
+datasets, the results make possible the division of the tested algorithms into several groups.
+The first group consists of algorithms which had low generalization accuracy and are thus mostly of historical significance. This group includes CNN, SNN, IB2 (which led to the
+development of IB3) and DROP1 (which led to the more successful DROP algorithms).
+These had low generalization even before noise was introduced, and dropped further when
+it was. Of this group, only DROP1 kept less than 25% of the instances on average, so the
+storage reduction did not make up for the lack of accuracy.
+The second group consists of the three similar noise-filtering algorithms: ENN, RENN,
+and ALL K-NN. These had high accuracy but also kept most of the instances. In the noisefree
+environment, they achieved slightly lower accuracy than KNN, but when uniform class
+noise was added, their accuracy was higher than KNN, indicating that they are successful
+in the situation for which they were designed. These algorithms are useful when this type
+of noise is expected in the data and when it is reasonable to retain most of the data. Of this
+group, ALL K-NN had the highest accuracy and lowest storage requirements in the presence
+of noise.
+The third group consists of two algorithms, ELGROW and EXPLORE, that were able to
+achieve reasonably good accuracy with only about 2% of the data. ELGROW had the lowest
+storage (about 1.8%) but its accuracy was somewhat poor, especially in the noisy domain.
+The EXPLORE method had fairly good accuracy, especially in the noisy arena, though it
+was not quite as accurate as the DROP methods. However, its aggressive storage reduction
+would make this trade-off acceptable in many cases.
+The final group consists of algorithms which had high accuracy and reasonably good
+storage reduction. These include IB3, DROP2–DROP5 and DEL. IB3 was designed to
+overcome the noise-sensitivity of IB2, and in our experiments it had better accuracy and
+storage reduction than IB2, especially in the noisy case. However, its accuracy still dropped
+substantially in the noisy experiments, and it had lower average accuracy and higher average
+storage than the EXPLORE method both with and without noise.
+The algorithms DROP2–DROP5 had higher average accuracy than IB3 on the original
+data, and had much higher average accuracy in the noisy case. They also improved in terms
+of average storage reduction as well. DROP2–DROP5 all had an accuracy within about
+1% of KNN on the original data, and were about 1% higher when uniform class noise was
+added, with storage ranging from 11% to 18%. DEL had slightly lower accuracy than the
+DROP2–DROP5 methods, but had lower storage in the noisy domain.
+DROP3 seemed to have the best mix of generalization accuracy and storage requirements
+of the DROP methods. DROP3 had significantly higher accuracy and lower storage than
+any of the algorithms in the first group; somewhat lower accuracy but significantly lower
+storage than any of the algorithms in the second group; and significantly worse storage but
+significantly better accuracy than the algorithms in the third group.
+This paper has reviewed much of the work done in the area of reducing storage requirements
+in instance-based learning systems. The effect of uniform output class noise on many
+of the algorithms has also been observed on a collection of datasets. Other factors that
+influence the success of each algorithm must still be identified. Continued research should
+help determine under what conditions each of these algorithms is successful so that an
+appropriate algorithm can be automatically chosen when needed. Current research is also
+focused on combining the reduction techniques proposed here with various weighting techniques
+in order to develop learning systems that can more dynamically adapt to problems of
+interest.

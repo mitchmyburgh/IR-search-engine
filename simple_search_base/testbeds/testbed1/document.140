@@ -1,0 +1,17 @@
+BeanShell
+'''BeanShell''' is a -like , invented by Patrick Niemeyer. It runs in the  (JRE) and uses a variation of the , in addition to scripting commands and syntax.
+== Features ==
+While BeanShell allows its users to define s that can be called from within a script, its underpinning philosophy has been to not pollute its syntax with too many extensions and "", thereby ensuring that code written for a Java  can almost always be executed  by BeanShell without any changes and, almost just as much, vice versa. This makes BeanShell a popular  and  tool for the  platform.
+BeanShell supports scripted objects as simple method closures like those in  and .
+BeanShell is an  project and has been incorporated into many applications, such as , ,  Application Server, jWork.ORG ,  , , , ,  and many others. BeanShell provides an easy to integrate . It can also be run in command-line mode or within its own graphical environment.
+== History ==
+The first versions of BeanShell (0.96, 1.0) were released by Patrick Niemeyer in 1999, followed by a series of versions. BeanShell 1.3.0 was released in August 2003. Version 2.0b1 was released in September 2003, culminating with version 2.0b4 in May 2005, which as of January 2015 is the newest release posted on the official webpage.
+BeanShell has been included in the Linux distribution  since 1999.
+BeanShell was undergoing  through the  (JCP) under JSR 274.. Jcp.org. Retrieved on 2013-07-21.
+Following the JCP approval of the BeanShell JSR Review Ballot in June 2005, no visible activity was taking place around BeanShell.http://jcp.org/en/jsr/results?id=3208 The JSR 274 status is "Dormant".
+Java REPL () is currently targeted for Java 9. 
+A  of BeanShell, ''BeanShell2'', was created in May 2007 on the  website.. Code.google.com (2011-11-21). Retrieved on 2013-07-21. The ''beanshell2'' project has made a number of fixes and enhancements to BeanShell and multiple releases. As of January 2015, the latest version of beanshell2 is v2.1.8 released February 2014.
+In December 2012, following a proposal to accept BeanShell as an  project, BeanShell was licensed to the  and migrated to the Apache Extras, changing the license to . The project was accepted, and projected to become part of the .
+Due to changes in the developers' personal circumstances, the BeanShell community did however not complete the move to Apache, but remained at Apache Extras.
+The project has since released BeanShell 2.0b5, which is used by  and .
+A Windows automated installer, BeanShell Double-Click,. Sourceforge.net. Retrieved on 2013-07-21. was created in 2013. It includes desktop integration features.

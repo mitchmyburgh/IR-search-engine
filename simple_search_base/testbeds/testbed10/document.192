@@ -1,0 +1,78 @@
+Finite-time Analysis of the Multiarmed Bandit
+Problem*
+
+
+PETER AUER
+
+1. Introduction
+The exploration versus exploitation dilemma can be described as the search for a balance
+between exploring the environment to find profitable actions while taking the empirically
+best action as often as possible. The simplest instance of this dilemma is perhaps the
+multi-armed bandit, a problem extensively studied in statistics (Berry & Fristedt, 1985) that
+has also turned out to be fundamental in different areas of artificial intelligence, such as
+reinforcement learning (Sutton & Barto, 1998) and evolutionary programming (Holland,
+1992).
+In its most basic formulation, a K-armed bandit problem is defined by random variables
+Xi,n for 1 ≤ i ≤ K and n ≥ 1, where each i is the index of a gambling machine (i.e., the
+“arm” of a bandit). Successive plays of machine i yield rewards Xi,1, Xi,2,... which are independent and identically distributed according to an unknown law with unknown expectation
+µi . Independence also holds for rewards across machines; i.e., Xi,s and X j,t are
+independent (and usually not identically distributed) for each 1 ≤ i < j ≤ K and each
+s, t ≥ 1.
+A policy, or allocation strategy, A is an algorithm that chooses the next machine to play
+based on the sequence of past plays and obtained rewards. Let Ti(n) be the number of times
+machine i has been played by A during the first n plays. Then the regret of A after n plays
+is defined by
+µ∗n − µj
+
+K
+j=1
+IE[Tj(n)] where µ∗ def
+= max
+1≤i≤K
+µi
+and IE[·] denotes expectation. Thus the regret is the expected loss due to the fact that the
+policy does not always play the best machine.
+In their classical paper, Lai and Robbins (1985) found, for specific families of reward
+distributions (indexed by a single real parameter), policies satisfying is the Kullback-Leibler divergence between the reward density pj of any suboptimal machine
+j and the reward density p∗ of the machine with highest reward expectation µ∗.
+Hence, under these policies the optimal machine is played exponentially more often than
+any other machine, at least asymptotically. Lai and Robbins also proved that this regret is
+the best possible. Namely, for any allocation strategy and for any suboptimal machine j,
+IE[Tj(n)] ≥ (ln n)/D(pj	p∗) asymptotically, provided that the reward distributions satisfy
+some mild assumptions.
+These policies work by associating a quantity called upper confidence index to each machine.
+The computation of this index is generally hard. In fact, it relies on the entire sequence
+of rewards obtained so far from a given machine. Once the index for each machine is computed,
+the policy uses it as an estimate for the corresponding reward expectation, picking
+for the next play the machine with the current highest index. More recently, Agrawal (1995)
+introduced a family of policies where the index can be expressed as simple function of
+the total reward obtained so far from the machine. These policies are thus much easier to
+compute than Lai and Robbins’, yet their regret retains the optimal logarithmic behavior
+(though with a larger leading constant in some cases).1
+In this paper we strengthen previous results by showing policies that achieve logarithmic
+regret uniformly over time, rather than only asymptotically. Our policies are also simple to
+implement and computationally efficient. In Theorem 1 we show that a simple variant of
+Agrawal’s index-based policy has finite-time regret logarithmically bounded for arbitrary
+sets of reward distributions with bounded support (a regret with better constants is proven in Theorem 2 for a more complicated version of this policy). A similar result is shown
+in Theorem 3 for a variant of the well-known randomized ε-greedy heuristic. Finally, in
+Theorem 4 we show another index-based policy with logarithmically bounded finite-time
+regret for the natural case when the reward distributions are normally distributed with
+unknown means and variances.
+Throughout the paper, and whenever the distributions of rewards for each machine are
+understood from the context, we define
+
+i
+def
+= µ∗ − µi
+where, we recall, µi is the reward expectation for machine i and µ∗ is any maximal element
+in the set {µ1,...,µK }.
+
+2. Main results
+Our first result shows that there exists an allocation strategy, UCB1, achieving logarithmic
+regret uniformly over n and without any preliminary knowledge about the reward distributions
+(apart from the fact that their support is in [0, 1]). The policy UCB1 (sketched in
+figure 1) is derived from the index-based policy of Agrawal (1995). The index of this policy
+is the sum of two terms. The first term is simply the current average reward. The second term
+is related to the size (according to Chernoff-Hoeffding bounds, see Fact 1) of the one-sided
+confidence interval for the average reward within which the true expected reward falls with
+overwhelming probability

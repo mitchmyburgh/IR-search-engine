@@ -1,0 +1,34 @@
+﻿Ontologies are a popular research topic in various communities such as knowledge
+engineering, natural language processing, cooperative information systems, intelligent
+information integration, and knowledge management. They provide a shared and common
+understanding of a domain that can be communicated between people and
+heterogeneous and widely spread application systems. They have been developed in
+Artificial Intelligence to facilitate 
+knowledge sharing and reuse
+. There, problem-solving methods
+(cf. [Fensel, 2000]) describe the reasoning behaviour and 
+ontologies
+describe
+the static domain knowledge of a knowledge-based system. Some Examples are KIF
+[Genesereth, 1991], Ontolingua [Gruber, 1993], CYC [Lenat & Guha, 1990], and
+KQML [KQML]. Recent articles covering various aspects of ontologies can be found in
+[Uschold & Grüninger, 1996], [van Heijst et al., 1997], [Studer et al., 1998], [Benjamins
+et al., 1999], [Gomez Perez & Benjamins, 1999]. An ontology provides an explicit
+conceptualisation (i.e., 
+meta-information
+) that describe the semantics of the data. They
+have a similar function as a database schema. The differences are
+1
+:
+•
+A language for defining ontologies is syntactically and semantically richer than
+common approaches for databases.
+•
+The information that is described by an ontology consists of semi-structured
+natural language texts and not tabular information.
+•
+An ontology must be a shared and consensual terminology because it is used for
+information sharing and exchange.
+•
+An ontology provides a domain theory and not the structure of a data container
+

@@ -1,0 +1,36 @@
+﻿10.2 OWL 2 QL
+OWL 2 QL can be realized using standard relational database technology (e.g., SQL) simply by expanding queries in the light of class axioms. This means it can be tightly integrated with RDBMSs and benefit from their robust implementations and multi-user features. Furthermore, it can be implemented without having to “touch the data,” so really as a translational/preprocessing layer. Expressively, it can represent key features of Entity-relationship and UML diagrams (at least those with functional restrictions). Thus, it is suitable both for representing database schemas and for integrating them via query rewriting. As a result, it can also be used directly as a high level database schema language, though users may prefer a diagram based syntax.
+OWL 2 QL also captures many commonly used features in RDFS and small extensions thereof, such as inverse properties and subproperty hierarchies. OWL 2 QL restricts class axioms asymmetrically, that is, you can use constructs as the subclass that you cannot use as the superclass.
+Among other constructs, OWL 2 QL disallows existential quantification of roles to a class expression, e.g. it can be stated that every person has a parent but not that every person has a female parent. Moreover property chain axioms and equality are not supported.
+The QL acronym reflects the fact that query answering in this profile can be implemented by rewriting queries into a standard relational Query Language [DL-Lite].
+The following is an example which uses some of the typical modeling features available in OWL 2 QL. The first axiom states that every childless person is a person for which there does not exist anybody who has the first person as parent.
+Functional-Style Syntax
+ SubClassOf( 
+   :ChildlessPerson 
+   ObjectIntersectionOf(
+     :Person 
+     ObjectComplementOf(
+       ObjectSomeValuesFrom(
+         ObjectInverseOf( :hasParent )
+         owl:Thing
+       )
+     )
+   )
+ ) 
+ 
+ DisjointClasses( 
+   :Mother 
+   :Father
+   :YoungChild 
+ )
+ 
+ DisjointObjectProperties( 
+   :hasSon 
+   :hasDaughter 
+ )
+ 
+ SubObjectPropertyOf( 
+   :hasFather 
+   :hasParent
+ )
+

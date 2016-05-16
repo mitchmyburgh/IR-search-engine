@@ -1,0 +1,25 @@
+BASIC, the 50-Year-Old Computer Programming Language for Regular People
+
+Computer coding ability has gotten especially hip recently. People who can't code revere it as 21st century sorcery, while those who do it professionally are often driven to fits by it. And it was 50 years ago today, two Dartmouth professors debuted a coding language designed to be easy enough for anyone to use. The language that made that all possible. They called it the Beginner's All-purpose Symbolic Instruction Code—BASIC.
+
+Before BASIC, life in the computer programming world was complicated. The first generation mainframe computers were essentially programmed as they were assembled, like a jigsaw puzzle with infinite solutions. You had to know how to put the pieces together to get the outcome you wanted.
+
+John Kemeny and Thomas Kurtz, mathematics and computer science professors at Dartmouth College, wanted to make computers accessible to the average layperson. "Our vision was that every student on campus should have access to a computer, and any faculty member should be able to use a computer in the classroom," Kemeny said in 1991. It was a lofty goal, and it required a more intuitive language than the Fortran and ALGOL systems of the day.
+
+What Kemeny and Kurtz came up with was a computer language made up of common words—HELLO and GOODBYE rather than LOGON and LOGOFF; PRINT, IF/THEN, and END. Pretty logical, even if you'd never set fingers on a keyboard before.
+
+Perhaps even more importantly, though, BASIC worked as a compiler. Previously, every time a user ran a program on a computer, the machine would have to translate the program (carried on scads of paper punch cards) line-by-line. BASIC converted the user's whole string of plain-English inputs in a single shot—allowing simple programs to be completed in under a second.
+
+Kemeny and Kurtz flipped the switch on the first BASIC program on May 1, 1964, at 4AM. Not long after, they made the language available for free to the larger computing community. As outside users tweaked and modified the language into other dialects, the original was dubbed Dartmouth BASIC.
+
+BASIC revolutionized computing by making computers feel less institutional, and more like a tool the average human could use. Harry McCracken at TIME explains this shift far better than I ever could:
+
+    In the mid-1960s, using a computer was generally like playing chess by mail: You used a keypunch to enter a program on cards, turned them over to a trained operator and then waited for a printout of the results, which might not arrive until the next day. BASIC [. . .] both sped up the process and demystified it. You told the computer to do something by typing words and math statements, and it did it, right away.
+
+    Today, we expect computers–and phones, and tablets and an array of other intelligent devices–to respond to our instructions and requests as fast as we can make them. In many ways, that era of instant gratification began with what Kemeny and Kurtz created. Moreover, their work reached the public long before the equally vital breakthroughs of such 1960s pioneers as Douglas Engelbart, inventor of the mouse and other concepts still with us in modern user interfaces.
+
+As mainframe computers (the room-sized leviathans of the 1960s) led to minicomputers (smaller and cheaper than the first generation) and then microcomputers (what we think of as the earliest PCs), BASIC became near-universal: a variant of the language helped launch Micro-Soft, a company that went on to shed the hyphen in its name and make a well-known guy named Bill exceedingly rich.
+
+Today, most computer users don't see raw BASIC code when they turn on their machines. Probably nobody waits by the mailbox for a magazine or book full of code to arrive. Instead, BASIC lives on in the background, powering unseen machinations in Microsoft Office and appearing in coding apps for hardcore computer nerds.
+
+While BASIC may no longer be the de facto coding language of choice, I think it's safe to say Kemeny's goal of universal computing has been largely achieved. If it hadn't, you probably wouldn't be reading this right now.

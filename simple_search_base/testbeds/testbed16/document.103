@@ -1,0 +1,59 @@
+Microsoft Azure Stack fills a major gap for enterprise hybrid cloud
+January 26, 2016Tim Crawford
+Azure Stack is billed as a version of Azure that runs in your corporate data center. Originally announced on May 4, 2015, Microsoft Azure Stack presented a significant change to the enterprise cloud spectrum of options. Prior to Azure Stack, enterprises looking for a private cloud option were left to build their own. While possible, not a trivial feat for most enterprises.
+
+Today, Microsoft announced availability of their Technical Preview 1 (TP1); a series of planned technical previews leading up to Azure Stack’s General Availability later in 2016.
+
+ 
+
+Azure Map
+
+A PRIVATE CLOUD FOR ENTERPRISES
+
+Azure Stack represents an on premise version of Microsoft’s Azure public cloud that runs in your corporate data center. If you are familiar with Azure, you are already familiar with Azure Stack.
+
+Unlike many solutions that start small and scale up, Microsoft was challenged with the opposite problem; to scale down Azure. Azure Stack is essentially a scaled down version of Azure and the code between the two versions of Azure is remarkably similar. The further up the stack, the more similar the code base gets. For developers, this means a more consistent experience between Azure and Azure Stack.
+
+Many enterprise customers are hesitant or incapable of making the leap from workloads on premise to full-on public cloud. Those reasons range from cultural resistance to regulatory considerations. Azure Stack provides a solution that fills the gap between full-on public cloud (Azure) and the prospect of creating a private cloud from scratch. Moreover, because of the consistent experience, customers are able to develop applications on Azure Stack and then move them fairly seamlessly to Azure. Many of the services are similar between the solutions, however, there are some obvious differences inherent to public vs. private cloud.
+
+For now, Microsoft has drawn the line with Azure to focus on the Platform as a Service (PaaS) and Infrastructure as a Service (IaaS) cloud tiers. That may be true for Azure, however, Microsoft continues to grow their SaaS based solutions such as Microsoft Office 365. Microsoft stated that they are in the process of moving Microsoft 365 to Azure. It is anticipated that traditional enterprise core services such as Microsoft SQL server in addition to newer solutions like Internet of Things (IoT) will move to Azure in the form of a deployable ‘Template’.
+
+It should not be minimized that the effort to move existing enterprise applications from their legacy footings is not a trivial effort. This is true for applications moving to Azure Stack, Azure, along with cloud solutions including Amazon AWS, Blue Box, and others.
+
+ 
+
+Enterprise Cloud Map
+
+THE KEY TO AZURE STACK LOCAL TARGET
+
+The beauty of a local version of public cloud solutions is in its ability to sidestep many of the challenges that public cloud presents. In the case of regulatory or data privacy issues, Azure Stack provides the ability to leverage the benefits of cloud, while adhering to local regulatory issues surrounding location of data.
+
+In the most simplistic form, one could consider Azure Stack another ‘Region’ in which to deploy applications. Microsoft’s management application, Azure Resource Manager (ARM) is able to deploy directly to Azure Stack as another target Region just as one would deploy to West US or East US. In the case of Azure Stack, the Region is Local. Customers do have the option to deploy internal (Local) Regions in a single zone or in separate zones.
+
+DEVELOPING ON AZURE
+
+One of the core benefits to Azure Stack is in the ability to build applications for Azure Stack (or Azure) and deploy them to either solution. Microsoft Visual Studio already has the ability to update locations in real-time from Azure and Azure Stack. The core of Azure deployments come in the form of a Template. There are already a number of Templates on GitHub for immediate download:
+
+Quick Start ARM templates that deploy on Azure Stack: http://aka.ms/AzureStackGitHub
+
+The Software Development Kit (SDK) for Azure Stack supports both PowerShell and Command Line Interface (CLI) just like Azure. In addition, deployment tools such as Chef and Puppet are supported via the ARM API to Azure Stack.
+
+GETTING STARTED WITH AZURE STACK
+
+While the download for Azure Stack TP1 will not be available until January 29th, there are a number of minimum requirements to get started. Keep in mind that this is the first Technical Preview of Azure Stack. As such, there is quite a bit of code to optimize for local use vs. the full Azure cloud. With Azure, the minimum configuration covered a full 20 racks! With Azure Stack, the minimum footprint has shrunk to a cluster of four systems with a maximum of 63 systems per cluster. Jeffrey Snover (Chief Architect, Microsoft Azure and Technical Fellow at Microsoft) outlined the minimum and recommended requirements in his blog post last month.
+
+One may notice the Windows Server certification requirement. That is due to Azure Stack running on a base of Microsoft Windows Server. However, the Microsoft team believes that this will evolve over time. The memory requirements may also evolve. When running Azure Stack, the components take up approximately 24GB of RAM per system. While this may get optimized over time, additional components (such as clustering) may increase the memory consumption.
+
+One may express concern at the very mention of a local cloud based on Windows Server. If anything, for the purposes of patching processes. Azure Stack is built to evacuate workloads off resources prior to patching. But Microsoft is looking at a wholly different approach to patching. Instead of applying the traditional Windows Server patches, Microsoft is looking to complete redeploy a new copy of Windows Server for the Azure Stack underpinnings. It will be interesting to see how this plays out.
+
+There are two ways to get started with Azure Stack:
+
+Do It Yourself: Leverage reference architectures from Dell, HP and others that list the parts needed to support Azure Stack.
+Integrated Systems: Purchase a fully assembled, standardized solution.
+ 
+
+IN SUMMARY
+
+Azure Stack presents a significant game changer for Microsoft and the Enterprise cloud spectrum by filling a gap long-since needed. There are a number of other benefits to both enterprises and Managed Service Providers (MSPs) that Azure Stack brings. We will leave those for a later post.
+
+ 

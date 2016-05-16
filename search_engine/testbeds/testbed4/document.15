@@ -1,0 +1,74 @@
+Given the direction to the light source and the direction to the viewer, and the surface normal (which we can
+compute because we know the object that the ray struck), we have all the information that we need to compute
+the reflected intensity of the light at this point, say, by using the Phong model and information about the ambient,
+diffuse, and specular reflection properties of the object. We use this model to assign a color to the pixel. We
+simply repeat this operation on all the pixels in the grid, and we have our final image.
+Even this simple ray tracing model is already better than what OpenGL supports, because, for example, OpenGL’s
+local lighting model does not compute shadows. The ray tracing model can easily be extended to deal with reflective
+objects (such as mirrors and shiny spheres) and transparent objects (glass balls and rain drops). For
+example, when the ray hits a reflective object, we compute the reflection ray and shoot it into the environment.
+We invoke the ray tracing algorithm recursively. When we get the associated color, we blend it with the local
+surface color and return the result. The generic algorithm is outlined below.
+rayTrace(): Given the camera setup and the image size, generate a ray Rij from the eye passing through the
+center of each pixel (i; j) of your image window (See Fig. 56.) Call trace(R) and assign the color returned
+to this pixel.
+trace(R): Shoot R into the scene and let X be the first object hit and P be the point of contact with this object.
+(a) If X is reflective, then compute the reflection ray Rr of R at P. Let Cr   trace(Rr).
+(b) If X is transparent, then compute the transmission (refraction) ray Rt of R at P. Let Ct   trace(Rt).
+(c) For each light source L,
+(i) Shoot a ray RL from P to L.
+(ii) If RL does not hit any object until reaching L, then apply the lighting model to determine the
+shading at this point.
+(d) Combine the colors Cr and Ct due to reflection and transmission (if any) along with the combined
+shading from (c) to determine the final color C. Return C.
+There are two questions to be considered. How to determine what object the ray intersects (which we will
+consider next time) and how to use this information to determine the reflected color? We will concentrate on
+this latter item today.
+Lecture Notes 80 CMSC 427
+Reflection: Recall the Phong reflection model. Each object is associated with a color, and its coefficients of ambient,
+diffuse, and specular reflection, denoted a, d and s. To model the reflective component, each object will
+be associated with an additional parameter called the coefficient of reflection, denoted r. As with the other
+coefficients this is a number in the interval [0; 1]. Let us assume that this coefficient is nonzero. We compute the
+view reflection ray (which equalizes the angle between the surface normal and the view vector). Let ~v denote
+the normalized view vector, which points backwards along the viewing ray. Thus, if you ray is P + t~u, then
+~v = -normalize(~u). (This is essentially the same as the view vector used in the Phong model, but it may not
+point directly back to the eye because of intermediate reflections.) Let ~n denote the outward pointing surface
+normal vector, which we assume is also normalized. The normalized view reflection vector, denoted ~rv was
+derived earlier this semester:
+~rv = 2(~n ~v)~n-~v:
+v rv
+q q
+n
+Fig. 57: Reflection.
+Next we shoot the ray emanating from the surface contact point along this direction and apply the above raytracing
+algorithm recursively. Eventually, when the ray hits a nonreflective object, the resulting color is returned.
+This color is then factored into the Phong model, as will be described below. Note that it is possible for this
+process to go into an infinite loop, if say you have two mirrors facing each other. To avoid such looping, it is
+common to have a maximum recursion depth, after which some default color is returned, irrespective of whether
+the object is reflective.
+Transparent objects and refraction: To model refraction, also called transmission, we maintain a coefficient of
+transmission, denoted t. We also need to associate each surface with two additional parameters, the indices of
+refraction4 for the incident side i and the transmitted side, t. Recall from physics that the index of refraction
+is the ratio of the speed of light through a vacuum versus the speed of light through the material. Typical indices
+of refraction include:
+Material Index of Refraction
+Air (vacuum) 1.0
+Water 1.333
+Glass 1.5
+Diamond 2.47
+Snell’s law says that if a ray is incident with angle i (relative to the surface normal) then it will transmitted with
+angle t (relative to the opposite normal) such that
+sin i
+sin t
+= t
+i
+:
+Let us work out the direction of the transmitted ray from this. As before let ~v denote the normalized view vector,
+directed back along the incident ray. Let~t denote the unit vector along the transmitted direction, which we wish
+to compute. The orthogonal projection of ~v onto the normalized normal vector ~n is
+~mi = (~v  ~n)~n = (cos i)~n:
+4To be completely accurate, the index of refraction depends on the wavelength of light being transmitted. This is what causes white light to be
+spread into a spectrum as it passes through a prism. But since we do not model light as an entire spectrum, but only through a triple of RGB values
+(which produce the same color visually, but not the same spectrum physically) we will not get realistic results. For simplicity we assume that all
+wavelengths have the same index of refraction.
+Lecture Notes

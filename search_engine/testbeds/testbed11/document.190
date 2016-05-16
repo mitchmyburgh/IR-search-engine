@@ -1,0 +1,30 @@
+The Simple Service Discovery Protocol (SSDP) is a network protocol based on the Internet Protocol Suite for advertisement and discovery of network services and presence information. It accomplishes this without assistance of server-based configuration mechanisms, such as the Dynamic Host Configuration Protocol (DHCP) or the Domain Name System (DNS), and without special static configuration of a network host. SSDP is the basis of the discovery protocol of Universal Plug and Play (UPnP) and is intended for use in residential or small office environments. It was formally described in an IETF Internet draft by Microsoft and Hewlett-Packard in 1999. Although the IETF proposal has since expired, SSDP was incorporated into the UPnP protocol stack, and a description of the final implementation is included in UPnP standards documents.
+
+
+== Protocol transport and addressing ==
+SSDP is a text-based protocol based on HTTPU. It uses the User Datagram Protocol (UDP) as the underlying transport protocol. Services are announced by the hosting system with multicast addressing to a specifically designated IP multicast address at UDP port number 1900. In IPv4, the multicast address is 239.255.255.250 and SSDP over IPv6 uses the address set ff0X::c for all scope ranges indicated by X.
+This results in the following well-known practical multicast addresses for SSDP:
+239.255.255.250 (IPv4 site-local address)
+[FF02::C] (IPv6 link-local)
+[FF05::C] (IPv6 site-local)
+[FF08::C] (IPv6 organization-local)
+[FF0E::C] (IPv6 global)
+Additionally, applications may use the source-specific multicast addresses derived from the local IPv6 routing prefix, with group ID C (decimal 12).
+SSDP uses a NOTIFY HTTP method to announce the establishment or withdrawal of services (presence) information to the multicast group. A client that wishes to discover available services on a network, uses the M-SEARCH method. Responses to such search requests are sent via unicast addressing to the originating address and port number of the multicast request.
+Microsoft's IPv6 SSDP implementations in Windows Media Player and Server use the link-local scope address. Microsoft uses port number 2869 for event notification and event subscriptions. However, early implementations of SSDP also used port 5000 for this service.
+
+
+== DDoS attack Vector ==
+Mid 2014 it was discovered that SSDP was being used as part of a DDoS attack known as an SSDP Reflection Attack with Amplification. A large number of devices, including some consumer home routers, have a vulnerability in the UPnP that allows an attacker to get replies out on port number 1900 to a destination ip of their choosing. With a botnet of thousands of devices they are able to generate enough packets per second or bandwidth to saturate links causing the denial of service. 
+
+
+== See also ==
+Universal Plug and Play
+Service Location Protocol
+Jini
+Zero configuration networking
+Neighbor Discovery Protocol
+Discovery and Launch
+
+
+== References ==

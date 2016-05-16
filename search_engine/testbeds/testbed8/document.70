@@ -1,0 +1,15 @@
+Variants
+
+Gap buffers are similar to dynamic arrays but allow efficient insertion and deletion operations clustered near the same arbitrary location. Some deque implementations use array deques, which allow amortized constant time insertion/removal at both ends, instead of just one end.
+
+Goodrich[15] presented a dynamic array algorithm called Tiered Vectors that provided O(n1/2) performance for order preserving insertions or deletions from the middle of the array.
+
+Hashed Array Tree (HAT) is a dynamic array algorithm published by Sitarski in 1996.[16] Hashed Array Tree wastes order n1/2 amount of storage space, where n is the number of elements in the array. The algorithm has O(1) amortized performance when appending a series of objects to the end of a Hashed Array Tree.
+
+In a 1999 paper,[14] Brodnik et al. describe a tiered dynamic array data structure, which wastes only n1/2 space for n elements at any point in time, and they prove a lower bound showing that any dynamic array must waste this much space if the operations are to remain amortized constant time. Additionally, they present a variant where growing and shrinking the buffer has not only amortized but worst-case constant time.
+
+Bagwell (2002)[17] presented the VList algorithm, which can be adapted to implement a dynamic array.
+
+Language support
+
+C++'s std::vector is an implementation of dynamic arrays, as are the ArrayList[18] class supplied with the Java API and the .NET Framework.[19] The generic List<> class supplied with version 2.0 of the .NET Framework is also implemented with dynamic arrays. Smalltalk's OrderedCollection is a dynamic array with dynamic start and end-index, making the removal of the first element also O(1). Python's list datatype implementation is a dynamic array. Delphi and D implement dynamic arrays at the language's core. Ada's Ada.Containers.Vectors generic package provides dynamic array implementation for a given subtype. Many scripting languages such as Perl and Ruby offer dynamic arrays as a built-in primitive data type. Several cross-platform frameworks provide dynamic array implementations for C, including CFArray and CFMutableArray in Core Foundation, and GArray and GPtrArray in GLib.

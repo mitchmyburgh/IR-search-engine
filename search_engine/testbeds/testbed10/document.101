@@ -1,0 +1,104 @@
+Downscaling of precipitation for climate change
+scenarios: A support vector machine approach
+
+
+Shivam Tripathi a
+, V.V. Srinivas a,*, Ravi S. Nanjundiah b
+
+
+Introduction
+Recently, there is growth in scientific evidence that global
+climate has changed, is changing and will continue tochange (NRC, 1998). In this scenario, there is a need to improve
+our understanding of the global climate system to assess
+the possible impact of a climate change on hydrological
+processes.
+General Circulation Models (GCMs), which describe the
+atmospheric process by mathematical equations, are the
+most adapted tools for studying the impact of climate
+change at regional scale. These climate models have been
+evolving steadily over the past several decades. Recently
+fully coupled Atmosphere–Ocean GCMs (AOGCMs), along
+with transient methods of forcing the concentration of
+greenhouse gases, have brought considerable improvement
+in the climate model results.
+The resolution of the present state-of-the-art GCMs is
+coarser than 2 for both latitude and longitude, which is
+of the order of a few hundred kilometers between gridpoints.
+In other words, GCM provides output at nodes of grid
+boxes, which are tens of thousands of square kilometers in
+size, whereas the scale of interest to hydrologists is of the
+order of a few hundred square kilometers. In the past decade,
+to deal with this problem of mismatch of spatial scales
+several downscaling methodologies have been developed.
+More recently, downscaling has found wide application in
+hydroclimatology for scenario construction and simulation/
+prediction of (i) regional precipitation (Kim et al., 2004); (ii)
+low-frequency rainfall events (Wilby, 1998) (iii) mean, minimum
+and maximum air temperature (Kettle and Thompson,
+2004); (iv) soil moisture (Georgakakos and Smith, 2001; Jasper
+et al., 2004); (v) runoff (Arnell et al., 2003) and stream-
+flows (Cannon and Whitfield, 2002); (vi) ground water levels
+(Bouraoui et al., 1999); (vii) transpiration (Misson et al.,
+2002), wind speed (Faucher et al., 1999) and potential evaporation
+rates (Weisse and Oestreicher, 2001); (viii) soil erosion
+and crop yield (Zhang et al., 2004); (ix) landslide
+occurrence (Buma and Dehn, 2000; Schmidt and Glade,
+2003) and (x) water quality (Hassan et al., 1998).
+The approaches, which have been proposed for downscaling
+GCMs could be broadly classified into two categories:
+dynamic downscaling and statistical downscaling. In the dynamic
+downscaling approach a Regional Climate Model
+(RCM) is embedded into GCM. The RCM is essentially a
+numerical model in which GCMs are used to fix boundary
+conditions. The major drawback of RCM, which restricts
+its use in climate impact studies, is its complicated design
+and high computational cost. Moreover, RCM is inflexible
+in the sense that expanding the region or moving to a
+slightly different region requires redoing the entire experiment
+(Crane and Hewitson, 1998).
+The second approach to downscaling, termed statistical
+downscaling, involves deriving empirical relationships that
+transform large-scale features of the GCM (Predictors) to
+regional-scale variables (Predictands) such as precipitation,
+temperature and streamflow. There are three implicit
+assumptions involved in statistical downscaling (Hewitson
+and Crane, 1996). Firstly, the predictors are variables of relevance
+and are realistically modeled by the host GCM. Secondly,
+the empirical relationship is valid also under altered
+climatic conditions. Thirdly, the predictors employed fully
+represent the climate change signal.
+A diverse range of statistical downscaling methods has
+been developed in recent past. Among them Artificial Neural
+Network (ANN) based downscaling techniques havegained wide recognition owing to their ability to capture
+non-linear relationships between predictors and predictand
+(e.g., Cavazos, 1997; Crane and Hewitson, 1998; Wilby
+et al., 1998; Trigo and Palutikof, 1999; Sailor et al., 2000;
+Snell et al., 2000; Mpelasoka et al., 2001; Schoof and Pryor,
+2001; Cannon and Whitfield, 2002; Crane et al., 2002; Olsson
+et al., 2004; Shivam, 2004; Solecki and Oliveri, 2004;
+Tatli et al., 2004). The concept of ANNs came into being
+approximately 60 years ago (McCulloch and Pitts, 1943) inspired
+by a desire to understand the human brain and emulate
+its functioning. Mathematically, an ANN is often viewed
+as a universal approximator. The ability to generalize a relationship
+from given patterns makes it possible for ANNs to
+solve large-scale complex problems such as pattern recognition,
+non-linear modeling and classification. It has been
+extensively used in a variety of physical science applications,
+including hydrology (Govindaraju and Rao, 2000; ASCE
+Task Committee on Artificial Neural Networks in Hydrology,
+2000b).
+Despite a number of advantages, the traditional neural
+network models have several drawbacks including possibility
+of getting trapped in local minima and subjectivity in the
+choice of model architecture (Suykens, 2001). Recently,
+Vapnik (1995, 1998) pioneered the development of a novel
+machine learning algorithm, called support vector machine
+(SVM), which provides an elegant solution to these problems.
+The SVM has found wide application in the field of pattern
+recognition and time series analysis. Readers are
+referred to Vapnik (1995, 1998), Cortes and Vapnik (1995),
+Scho¨lkopf et al. (1998), Cristianini and Shawe-Taylor
+(2000), Haykin (2003) and Sastry (2003) for introductory
+material on SVM
+

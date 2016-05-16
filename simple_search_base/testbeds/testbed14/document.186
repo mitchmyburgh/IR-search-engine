@@ -1,0 +1,357 @@
+﻿3.17 Semantic Tableaux for First-Order LogicTableaux for first-order logic
+
+we extend the rules for propositional logic
+
+principle is the same:
+
+break the formula into its components until contradiction can be detected by simple inspection
+Rules
+
+propositional:		
+A ∧ B
+A
+B
+A ∨ B
+A | B
+first-order:		
+∀x F
+F[t/x]
+∃x F
+F[c/x]
+where t is a ground term		where c is a new constant
+Existential quantification rule
+
+∃x F
+F[c/x]
+c is a new constant
+
+this is Skolemization
+
+∃x F is satisfiable if and only if F[c/x] is so
+
+the second formula is "almost" equivalent to the first 
+(almost=apart from c, not in the original formula)
+
+Universal quantification rule
+
+∀x F
+F[t/x]
+∀x F means: for every object of the domain, F is true
+
+a term t is evaluated to an object of the domain
+
+therefore, F[t/x] is true
+
+this is a consequence of the first formula 
+(note: not equivalent, just a consequence)
+
+New constants
+
+when expanding ∀x F to F[t/x] term t may contain all function symbols and constants, including the ones created by Skolemization
+
+Example
+
+{∀x P(x), ∃x ¬P(f(x))}
+
+Example, first step
+
+
+place formulae in column
+
+Example, expansion of existential quantifier
+
+
+create a new constant c
+
+next: expand ∀
+
+Example, expansion of universal quantifier
+
+to expand ∀x P(x), we can use any ground term t
+
+possible choices:
+
+c
+f(c)
+f(f(c))
+...
+we choose f(c) for the obvious reasons
+
+Example, expansion of universal quantifier
+
+
+expand ∀x P(x) using f(c) as the term
+
+Closure
+
+
+the branch contains ¬P(f(c)) and P(f(c))
+
+opposite literals ⇒ the branch can be closed
+
+all branches closed (only one exists!) ⇒ set is unsatisfiable
+
+Second example
+
+{∀x ¬P(x), ∃x (P(x) ∨ P(f(x)))}
+
+First step
+
+
+which formula to expand first?
+
+no constant in the tableau so for, so no ground term
+
+in order to apply the rule for ∀, we would have to create one
+
+Second step
+
+
+existentially quantified formula expanded
+
+the universal quantification expansion rule could be now applied
+
+also the disjunction
+
+Disjunction
+
+
+disjunction expanded
+
+Closure
+
+
+first branch closed applying the rule for universal quantification
+
+still an unclosed branch!
+
+is set satisfiable?
+
+Unsatisfiability of the set
+
+the set contains ∀x ¬P(x)
+
+we have P(f(c)) in the unclosed branch
+
+the two contradict each other: P cannot be always false but at the same time true for the element of the domain f(c)
+
+we need to apply the rule for universal quantifiers again, generating ¬P(f(c))
+
+Multiple applications
+
+
+∀x ¬P(x) expanded again, 
+now on the second branch and with a different ground term
+
+all branches closed ⇒ set is unsatisfiable
+
+Alternative development
+
+
+there was a choice, at this point:
+
+expand the disjunction or the universal quantifier
+
+make the second choice now
+
+Other choice
+
+
+P(c) could be useful to closing some branch 
+use c as the ground term
+
+Alternative, one step more
+
+
+disjunction expanded
+
+Closure
+
+
+the first branch can be closed
+
+still an unclosed branch
+
+Multiple application
+
+
+∀x ¬P(x) already expanded on the second branch 
+(expansion done in the path from root to P(f(c))
+
+Alternative: unsatisfiability
+
+
+expand universally quantified formula again
+
+the second branch can now be closed
+
+The complete tableau
+
+
+formula ∀x ¬P(x) was expanded twice on the same branch
+
+necessary for closing the tableau still a valid tableau for the set (proves unsatisfiability) in general:
+
+the same universally quantified formula may need to be expanded on the same branch more than once
+Multiple application
+
+in the previous case, the set
+
+had a tableau where a formula is expanded more than once on the same branch
+but also a tableau where this is not the case
+example that cannot be closed without multiple applications:
+
+{P(a), ∀x (P(x) ∧ ¬P(f(x))}
+
+At some point...
+
+
+tableau after expanding every formula in every branch once not closed
+Multiple application, closure
+
+
+closure requires expansion of the universally quantified formula a scond time
+
+Multiple application: conclusion
+
+some tableaux of some sets cannot be closed until the same existentially quantified formula is expanded on the same branch more than once 
+(e.g., the previous example)
+for some sets, this is the case for all tableaux 
+(e.g., this example)
+Example
+
+{ ∀x ¬P(x,a), P(a,b), ∀x∀y (¬P(x,y) ∨ P(y.x)) }
+
+Solution
+
+
+is this the only possible tableau for this set?
+
+how did we reach it?
+
+Meaning of formulae
+
+∀x∀y (¬P(x,y) ∨ P(y,x)) means that P is "symmetric"
+
+therefore, P(a,b) and ∀x ¬P(x,a) contradict each other
+
+this information has been used when developing the tableau
+
+such kind of facts are easy to overlook
+difficult to encode in a general algorithm
+what about making the wrong choice?
+
+Another development for the same set
+
+
+clearly useless
+
+clearly = only knowing the way to prove unsatisfiability in this case
+
+for a computer, b is a perfectly valid choice of a term: simple and mentioned in the tableau already = potentially useful
+
+Further (wrong) development
+
+
+not only lacks progresses toward proving unsatisfiability
+
+there are two branches now, instead of one
+
+unsatisfiability is yet to be proved in both
+
+making the wrong choices may make the problem even harder to solve
+
+Choice of terms
+
+rules for conjunction, disjunction and existential quantification are deterministic
+
+only indeterminacy is their order of application
+
+different for universal quantification:
+
+∀x F
+F[t/x]
+the problem is:
+
+which term t should be used?
+choose randomly
+as shown in the previous example, this could lead to increase difficulty to close the tableau
+wait until all other rules have been applied
+the rule for universal quantification could be the only one left to apply
+use only terms already in the tableau
+done in the previous example, does not solve the problem
+Infinite expansions
+
+since the rule for universal quantification can be applied an unbounded number of times, it may lead to a forever-expanding tableau:
+
+{∀x P(x), ¬P(f(a))}
+
+
+this is a valid (but useless) tableau for the set
+
+Completeness
+
+it can be proved that:
+
+S unsat   ⇒   a closed tableau for S exist
+in the propositional case, a closed tableau is always keeping applying rules (even in a "wrong" order, such as disjunctions before conjunctions)
+
+in the first order case, this is not always the case: as the previous example shows, it is possible to keep expanding the tableau forever even if the set is unsatisfiable
+
+Complete proof procedure
+
+an algorithm of application of the expansion rules that produces a closed tableau if the set is unsatisfiable
+as seen before, applying rules at random yields to a complete proof procedure in the propositional case
+
+reason: keeping applying rules leads to closure eventually, if the set is unsatisfiable
+
+in the first-order case, applying rules at random does not yield to a complete proof procedure
+
+reason: the tableau may not close even if the set is unsatisfiable
+
+Fairness
+
+general concept in computer science
+
+more or less:
+
+unfairness = avoiding doing something useful forever
+in the case of tableau:
+
+a policy of application of the rules is unfair if some tableau contains a branch where one of its formulae ∀x F is never expanded with a specific ground term t
+in other words: given a term t and branch of a tableau containing ∀x F, if the policy never expand the formula with t is unfair
+
+fairness is the opposite of unfairness
+
+given a term t and branch of a tableau containing ∀x F, the policy at some point will expand the formula using t
+
+Effects of unfairness
+
+unfairness means that the policy may forever "avoid" a term t while expanding ∀x F
+
+
+in this case, the policy "skipped" f(a)
+
+because of this, the tableau does not close even if the set is unsatisfiable
+
+A complete proof procedure
+
+a proof procedure that is fair is also complete
+
+note that fairness concerns both ∀x F and t, not just t
+
+counterexample: {∀x P(x), ∀x ¬P(x), Q(f(a))}
+
+
+if ∀x ¬P(x) is never expanded, the tableau does not close
+
+Choice of terms
+
+a fair algorithm of choice of the application of the rules at some point will close all tableaux for unsatisfiable sets
+
+still difficult to choose terms that lead to closure fast
+
+terms that are useful are difficult to determine
+
+solution: delay choice until usefulness of a term is clear 
+this is done employing unification (next page)

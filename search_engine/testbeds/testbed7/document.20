@@ -1,0 +1,32 @@
+Apple Files Court Motion To Close Back Door Into iPhones Forever
+
+The tech giant says a 'GovOS' is 'too dangerous to build'
+By Kelsey D. Atherton Posted February 25, 2016
+
+“The All Writs Act Does Not Provide A Basis To Conscript Apple To Create Software Enabling The Government To Hack Into iPhones” opens the “arguments” section of the motion Apple filed this afternoon against a court order that says Apple needs to help the FBI unlock one of the San Bernardino shooting suspects' phones. In one weirdly formatted line, we have the centerpiece of much of the modern digital economy, an overstretched law from 1789, and a very curious definition of the word “conscript.”
+
+The motion to vacate is the strongest move yet from Apple in its growing legal battle with the FBI over the specifics of a phone used by San Bernardino shooter Syed Farook, and the broader fight over the security and privacy of our increasingly vital mobile devices.
+
+A week ago Tuesday, a judge ordered Apple to help the FBI unlock the old iPhone 5C administed to Farook by his employer, San Berardino County, months before Farook and his wife, Tashfeen Malik, shot and killed 14 people in December 2015.
+
+The FBI wanted to brute force its way into the phone, by guessing at the phone’s password as many times as they could until they got it right. A feature on the operating system of the iPhone 5C is designed to protect against this: guess the password ten times, and the phone wipes out all user data. Rather that guess wrong and risk losing any useful information Farook may have had, the FBI is instead asking Apple to create and sign a software update that will disable the auto-wipe feature.
+
+Apple is refusing to create this software. Shortly after a judge ordered Apple to comply with the FBI's request last week, Apple CEO Tim Cook published a public letter on Apple's website, saying this was against the interests of Apple, its customers, and the basic security of phones themselves.
+
+The information the FBI is seeking in this case isn't coming from iCloud, it’s cloud storage setup, which Apple has provided, and will continue to turn over to the courts when served with a proper warrant. Because iCloud information is held on Apple servers, it’s Apple’s information to hand over. But information stored on the phone's internal hard drive or cached on the phone from other third-party apps and services, Apple argues, isn’t the company's to turn over.
+
+To highlight this, Apple executives on a media call referred to the software they’re being asked to build as "GovOS," a play on Apple's iOS operating system. Apple makes it very clear in its motion that this isn’t just about one phone, but about the sanctity of all smartphones.
+
+From the motion’s introduction:
+
+    This is not a case about one isolated iPhone. Rather, this case is about the Department of Justice and the FBI seeking through the courts a dangerous power that Congress and the American people have withheld: the ability to force companies like Apple to undermine the basic security and privacy interests of hundreds of millions of individuals around the globe. The government demands that Apple create a back door to defeat the encryption on the iPhone, making its users’ most confidential and personal information vulnerable to hackers, identity thieves, hostile foreign agents, and unwarranted government surveillance. The All Writs Act, first enacted in 1789 and on which the government bases its entire case, “does not give the district court a roving commission” to conscript and commandeer Apple in this manner.
+
+The implications for Apple are clear: if they follow this one exception, every phone and every device they make will be compromised. It’ll be like requiring all suitcase locks to be opened by the same government-held master key, and then being surprised when that master key is copied and used by people besides the government to steal belongings. (This is a real thing that happened). Apple continues:
+
+    The order demanded by the government compels Apple to create a new operating system—effectively a “back door” to the iPhone—that Apple believes is too dangerous to build. Specifically, the government would force Apple to create new software with functions to remove security features and add a new capability to the operating system to attack iPhone encryption, allowing a passcode to be input electronically. This would make it easier to unlock the iPhone by “brute force,” trying thousands or millions of passcode combinations with the speed of a modern computer. In short, the government wants to compel Apple to create a crippled and insecure product. Once the process is created, it provides an avenue for criminals and foreign agents to access millions of iPhones. And once developed for our government, it is only a matter of time before foreign governments demand the same tool.
+
+Much of the case hinges on alternative ways for the government to address the trade-off between security and privacy. The motion is a wagging finger at the failure of Congress to craft and pass meaningful legislation for circumstances like this, and that in their failure, law enforcement is forced to use a broad and archaic law.
+
+This motion also puts Apple very squarely at a fight that will define much of security for the next century: are normal people allowed to use the encryption that makes them and their personal information safest, even if that safe encryption can at times shield terror suspects? Or will we have a world of back doors, where encryption is so easily circumvented by the government, malicious actors, and bored hackers so often as to be functionally meaningless?
+
+Apple unequivocally sides with a greater good of strong, meaningful encryption for all. We’ll see if the courts do, too.

@@ -1,0 +1,42 @@
+FAST TCP (also written FastTCP) is a TCP congestion avoidance algorithm especially targeted at long-distance, high latency links, developed at the Netlab, California Institute of Technology and now being commercialized by FastSoft. FastSoft was acquired by Akamai Technologies in 2012.
+FastTCP is compatible with existing TCP algorithms, requiring modification only to the computer which is sending data.
+
+
+== Name ==
+The name FAST is a recursive acronym for FAST AQM Scalable TCP, where AQM stands for Active Queue Management, and TCP stands for Transmission Control Protocol.
+
+
+== Principles of operation ==
+The role of congestion control is to moderate the rate at which data is transmitted, according to the capacity of the network and the rate at which other users are transmitting. Like TCP Vegas, FAST TCP uses queueing delay instead of loss probability as a congestion signal.
+Most current congestion control algorithms detect congestion and slow down when they discover that packets are being dropped, so that the average sending rate depends on the loss probability. This has two drawbacks. First, low loss probabilities are required to sustain high data rates; in the case of TCP Reno, very low loss probabilities are required, but even new congestion avoidance algorithms such as H-TCP, BIC TCP and HSTCP require loss rates lower than those provided by most wireless wide area networks. Moreover, packet loss only provides a single bit of information about the congestion level, whereas delay is a continuous quantity and in principle provides more information about the network.
+A FAST TCP flow seeks to maintain a constant number of packets in queues throughout the network. The number of packets in queues is estimated by measuring the difference between the observed round trip time (RTT) and the base RTT, defined as the round trip time when there is no queueing. The base RTT is estimated as the minimum observed RTT for the connection. If too few packets are queued, the sending rate is increased, while if too many are queued, the rate is decreased. In this respect, it is a direct descendant of TCP Vegas.
+The difference between TCP Vegas and FAST TCP lies in the way in which the rate is adjusted when the number of packets stored is too small or large. TCP Vegas makes fixed size adjustments to the rate, independent of how far the current rate is from the target rate. FAST TCP makes larger steps when the system is further from equilibrium and smaller steps near equilibrium. This improves the speed of convergence and the stability.
+
+
+== Strengths and weaknesses ==
+Delay-based algorithms can, in principle, maintain a constant window size, avoiding the oscillations inherent in loss-based algorithms. However, they also detect congestion earlier than loss-based algorithms, since delay corresponds to partially filled buffers, while loss results from totally filled buffers. This can be either a strength or a weakness. If the only protocol used in a network is delay-based, then the inefficiency of loss can be avoided; however, if loss-based and delay-based protocols share the network, then delay-based algorithms tend to be less aggressive. This can be overcome by suitable choice of parameters, leading to complex interactions studied by Tang et al.
+Delay measurements are also subject to jitter as a result of operating system scheduling, or bus contention.
+Whether the strengths or weaknesses prevail is not clear, and depends in large part on the particular scenario.
+Propagation delay is used in the FAST window control algorithm. In a clean network, the queueing delay maintained by existing FAST flows may be mistaken as part of the propagation delay by new flows that join later, as shown in ns-2 simulations in. The effect of this estimation error isequivalent to modifying the underlying utility functions to favor new flows over existing flows. Method to eliminate this error is suggested in.
+
+
+== Generalized FAST TCP ==
+FAST TCP has been shown to be promising in terms of system stability, throughput and fairness. However, it requires buffering which increases linearly with the number of flows bottlenecked at a link. The paper  proposes a new TCP algorithm that extends FAST TCP to achieve ($\alpha$; n)-proportional fairness in steady state, yielding buffer requirements which grow only as the nth power of the number of flows. The authors call the new algorithm Generalized FAST TCP. They prove stability for the case of a single bottleneck link with homogeneous sources in the absence of feedback delay. Simulation results verify that the new scheme is stable in the presence of feedback delay, and that its buffering requirements can be made to scale significantly better than standard FAST TCP.
+
+
+== Intellectual property ==
+Unlike most TCP congestion avoidance algorithms, FAST TCP is protected by several patents. Instead of seeking standardization by the IETF, the inventors of FAST, notably Steven H. Low and Cheng Jin, are seeking to commercialize it through the company FastSoft. Currently FastSoft sells a 1-Unit rack appliance which can be deployed at the sender-side with no other software or hardware modifications needed on either end.
+
+
+== See also ==
+TCP congestion avoidance algorithm
+Transmission Control Protocol#Development
+
+
+== References ==
+
+
+== External links ==
+FAST Home Page.
+Supercomputing 2005 Bandwidth Challenge
+FastSoft home page

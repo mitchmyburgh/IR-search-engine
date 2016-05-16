@@ -1,0 +1,62 @@
+In computer science, a linked data structure is a data structure which consists of a set of data records (nodes) linked together and organized by references (links or pointers). The link between data can also be called a connector.
+In linked data structures, the links are usually treated as special data types that can only be dereferenced or compared for equality. Linked data structures are thus contrasted with arrays and other data structures that require performing arithmetic operations on pointers. This distinction holds even when the nodes are actually implemented as elements of a single array, and the references are actually array indices: as long as no arithmetic is done on those indices, the data structure is essentially a linked one.
+Linking can be done in two ways - Using dynamic allocation and using array index linking.
+Linked data structures include linked lists, search trees, expression trees, and many other widely used data structures. They are also key building blocks for many efficient algorithms, such as topological sort and set union-find.
+
+
+== Common types of linked data structures ==
+
+
+=== Linked lists ===
+A linked list is a collection of structures ordered not by their physical placement in memory but by logical links that are stored as part of the data in the structure itself. It is not necessary that it should be stored in the adjacent memory locations. Every structure has a data field and an address field. The Address field contains the address of its successor.
+Linked list can be singly, doubly or multiply linked and can either be linear or circular.
+Basic Properties
+Objects, called nodes, are linked in a linear sequence
+A reference to the first node of the list is always kept. This is called the 'head' or 'front'.
+
+
+==== Example in Java ====
+This is an example of the node class used to store integers in a Java implementation of a linked list.
+
+
+==== Example in C ====
+This is an example of the node structure used for implementation of linked list in C.
+
+This is an example using typedefs.
+
+Note: A structure like this which contains a member that points to the same structure is called a self-referential structure.
+
+
+==== Example in C++ ====
+This is an example of the node class structure used for implementation of linked list in C++.
+
+
+=== Search trees ===
+A search tree is a tree data structure in whose nodes data values can be stored from some ordered set, which is such that in an in-order traversal of the tree the nodes are visited in ascending order of the stored values.
+Basic Properties
+Objects, called nodes, are stored in an ordered set.
+In-order traversal provides an ascending readout of the data in the tree
+
+
+== Advantages and disadvantages ==
+
+
+=== Linked list versus arrays ===
+Compared to arrays, linked data structures allow more flexibility in organizing the data and in allocating space for it. In arrays, the size of the array must be specified precisely at the beginning, which can be a potential waste of memory. A linked data structure is built dynamically and never needs to be bigger than the programmer requires. It also requires no guessing in terms of how much space must be allocated when using a linked data structure. This is a feature that is key in saving wasted memory.
+In an array, the array elements have to be in a contiguous (connected and sequential) portion of memory. But in a linked data structure, the reference to each node gives users the information needed to find the next one. The nodes of a linked data structure can also be moved individually to different locations without affecting the logical connections between them, unlike arrays. With due care, a process can add or delete nodes to one part of a data structure even while other processes are working on other parts.
+On the other hand, access to any particular node in a linked data structure requires following a chain of references that stored in it. If the structure has n nodes, and each node contains at most b links, there will be some nodes that cannot be reached in less than logb n steps. For many structures, some nodes may require worst case up to n−1 steps. In contrast, many array data structures allow access to any element with a constant number of operations, independent of the number of entries.
+Broadly the implementation of these linked data structure is through dynamic data structures. It gives us the chance to use particular space again. Memory can be utilized more efficiently by using this data structures. Memory is allocated as per the need and when memory is not further needed, deallocation is done.
+
+
+=== General disadvantages ===
+Linked data structures may also incur in substantial memory allocation overhead (if nodes are allocated individually) and frustrate memory paging and processor caching algorithms (since they generally have poor locality of reference). In some cases, linked data structures may also use more memory (for the link fields) than competing array structures. This is because linked data structures are not contiguous. Instances of data can be found all over in memory, unlike arrays.
+In arrays, nth element can be accessed immediately, while in a linked data structure we have to follow multiple pointers so element access time varies according to where in the structure the element is.
+In some theoretical models of computation that enforce the constraints of linked structures, such as the pointer machine, many problems require more steps than in the unconstrained random access machine model.
+
+
+== See also ==
+List of data structures
+Middleware
+
+
+== References ==

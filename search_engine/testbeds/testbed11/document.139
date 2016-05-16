@@ -1,0 +1,44 @@
+Jython is an implementation of the Python programming language designed to run on the Java platform. It is the successor of JPython.
+
+
+== Overview ==
+Jython programs can import and use any Java class. Except for some standard modules, Jython programs use Java classes instead of Python modules. Jython includes almost all of the modules in the standard Python programming language distribution, lacking only some of the modules implemented originally in C. For example, a user interface in Jython could be written with Swing, AWT or SWT. Jython compiles to Java bytecode (intermediate language) either on demand or statically.
+
+
+== History ==
+Jython was initially created in late 1997 to replace C with Java for performance-intensive code accessed by Python programs, moving to SourceForge in October 2000. The Python Software Foundation awarded a grant in January 2005. Jython 2.5 was released in June 2009.
+
+
+== Status and roadmap ==
+The most recent release is Jython 2.7.0. It was released on 2 May 2015 and is compatible with Python 2.7.
+Although Jython implements the Python language specification, it has some differences and incompatibilities with CPython, which is the reference implementation of Python.
+
+
+== License terms ==
+From version 2.2 on, Jython (including the standard library) is released under the Python Software Foundation License (v2). Older versions are covered by the Jython 2.0, 2.1 license and the JPython 1.1.x Software License.
+The command line interpreter is available under the Apache Software License.
+
+
+== Usage ==
+Jython is one of two scripting languages (with Jacl) used in WebSphere Application Server. It is used in IBM Rational development tools, where Jython projects can be created using wizards. It is used as the main programming language for the DataMelt scientific computing. The usage of Jython for scientific applications was discussed in the books Scientific Data analysis using Jython Scripting and Java and Numeric Computation and Statistical Data Analysis on the Java Platform.
+JBoss – Application Server's CLI (command line interface) scripting using Jython
+wlst - Oracle Weblogic Server Application Server tool scripting using Jython
+wsadmin – IBM WebSphere Application Server tool scripting using Jython
+ZK – a Java Ajax framework that allows glue logic written in Jython
+
+
+== See also ==
+
+List of Java scripting languages
+IronPython – an implementation of Python for .NET and Mono
+PyPy – a self-hosting interpreter for the Python programming language.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official wiki
+#jython connect
+Jython on SourceForge.net

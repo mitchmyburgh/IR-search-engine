@@ -1,0 +1,22 @@
+In genetic algorithms, a chromosome (also sometimes called a genotype) is a set of parameters which define a proposed solution to the problem that the genetic algorithm is trying to solve. The set of all solutions is known as the population. The chromosome is often represented as a binary string, although a wide variety of other data structures are also used.
+
+
+== Chromosome design ==
+The design of the chromosome and its parameters is by necessity specific to the problem to be solved. Traditionally, chromosomes are represented in binary as strings of 0s and 1s, however other encodings are also possible; almost any representation which allows the solution to be represented as a finite-length string can be used. Finding a suitable representation of the problem domain for a chromosome is an important consideration, as a good representation will make the search easier by limiting the search space; similarly, a poorer representation will allow a larger search space. The mutation operator and crossover operator employed by the genetic algorithm must also take into account the chromosome's design.
+
+
+=== Example 1: binary representation ===
+Suppose the problem is to find the integer value of  between 0 and 255 that provides the maximal result for . The possible solutions for this problem are the integers from 0 to 255, which can all be represented as 8-digit binary strings. Thus, we might use an 8-digit binary string as our chromosome. If a given chromosome in the population represents the value 155, its chromosome would be 10011011.
+Note that this is not the type of problem that is normally solved by a genetic algorithm, since it can be trivially solved using numeric methods; it is only used to serve as a simple example.
+
+
+=== Example 2: string representation ===
+A more realistic problem we might wish to solve is the travelling salesman problem. In this problem, we seek an ordered list of cities that results in the shortest trip for the salesman to travel. Suppose there are six cities, which we'll call A, B, C, D, E, and F. A good design for our chromosome might be the ordered list we want to try. An example chromosome we might encounter in the population might be DFABEC.
+
+
+== Selection, crossover and mutation ==
+
+In each generation of the genetic algorithm, two parent chromosomes are selected based on their fitness values; these chromosomes are used by the mutation and crossover operators to produce two offspring chromosomes for the new population.
+
+
+== References ==

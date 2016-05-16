@@ -1,0 +1,69 @@
+Intel_GMA
+The '''Intel Graphics Media Accelerator''', or '''GMA''', is a series of s introduced in 2004 by , replacing the earlier  series and being succeeded by the  series.
+This series targets the market of low-cost graphics solutions. The products in this series are integrated onto the motherboard, have limited graphics processing power, and use the computer's  for storage instead of a dedicated . They are commonly found on s, low-priced s and , as well as business computers which do not need high levels of graphics capability. In early 2007, about 90% of all PC s sold had an integrated .
+== History ==
+The GMA line of GPUs replaces the earlier , and the  line, the latter of which was a discrete unit in the form of  and  cards with technology that evolved from companies  and . Later, Intel integrated the i740 core into the  chipset.
+The original architecture of GMA systems supported only a few functions in hardware, and relied on the host CPU to handle at least some of the graphics pipeline, further decreasing performance. However, with the introduction of Intel's 4th generation of GMA architecture () in 2006, many of the functions are now built into the hardware, providing an increase in performance. The 4th generation of GMA combines fixed function capabilities with a threaded array of programmable executions units, providing advantages to both graphics and video performance. Many of the advantages of the new GMA architecture come from the ability to flexibly switch as needed between executing graphics-related tasks or video-related tasks. While GMA performance has been widely criticized in the past as being too slow for , sometimes being nicknamed Intel GMD (Graphics Media Decelerator) and being essentially referred to as the world's first "graphics decelerator" since the , the latest GMA generation should ease many of those concerns for the casual gamer.
+Despite similarities, Intel's main series of GMA Integrated Graphics Processors (IGPs) is not based on the  technology Intel licensed from Imagination Technologies. Intel used the low-power  designs in chipsets supporting their  platform, and since the sale of XScale in 2006 has licensed the  and used it in the  IGP for use with their  platform.
+With the introduction of the , the Graphics Media Accelerator series ceased, and the CPU-based  series was created.
+== Graphics cores ==
+=== Intel GPU based ===
+==== Generation three based ====
+===== GMA 900 =====
+The GMA 900 was the first graphics core produced under Intel's ''Graphics Media Accelerator'' product name, and was incorporated in the .
+The 3D architecture of the GMA&nbsp;900 was a significant upgrade from the previous ''Extreme 3D'' graphics processors. It is a 4 pixel per clock cycle design supporting DirectX 9 pixel  2.0. It operates at a clock rate ranging from 160 to 333&nbsp;MHz, depending on the particular chipset. At 333&nbsp;MHz, it has a peak pixel fill-rate of 1332 megapixels per second. However, the architecture still lacks support for  and the similar  technologies.
+Like previous Intel integrated graphics parts, the GMA 900 has hardware support for  ,  conversion and  overlay.
+The processor uses different separate clock generators for display and render cores. The display unit includes a 400&nbsp;MHz , two 25200&nbsp;Mpixel/s serial DVO ports, and two display controllers. In mobile chipsets, up to two 18-bit 25112&nbsp;MHz  are included.
+===== GMA 950 =====
+The GMA 950 was the second graphics core produced under Intel's ''Graphics Media Accelerator'' product name, and was incorporated in the .
+The processor includes an up to 400&nbsp;MHz 256-bit core, supporting up to 10.6&nbsp;GB/s memory bandwidth with DDR2-667 system RAM, up to 224&nbsp;MB max. video memory through DVMT scheme, 1.6&nbsp;GPixels/s and 1.6&nbsp;GTexels/s fill rate, a max. resolution of 2048x1536 for both analog and digital displays, 2 SDVO ports for flat-panels and/or TV-Out via ADD2 cards or media expansion cards.
+3D-wise, GMA 950 supports up to four pixels per clock rendering, Microsoft DirectX 9.0 hardware acceleration & Vertex shader 3.0 and OpenGL 1.4 with ARB extensions.
+===== GMA 3000 =====
+The 946GZ, Q965, and Q963 chipsets use the GMA 3000 graphics core. The GMA 3000 3D core is very different from the X3000, despite their similar names. It is based more directly on the previous generation GMA 900 and GMA 950 graphics, and belonging to the same "i915" family with them. It has pixel and vertex shaders which only support Shader Model 2.0b features, and the vertex shaders are still software-emulated. In addition, hardware video acceleration such as hardware-based iDCT computation, ProcAmp (video stream independent ), and VC-1 decoding are not implemented in hardware. Of the GMA 3000-equipped chipsets, only the Q965 retains dual independent display support. The core speed is rated at 400&nbsp;MHz with 1.6&nbsp;Gpixel/s fill rate in datasheets, but was listed as 667&nbsp;MHz core in the white paper.
+The memory controller can now address a maximum of 256&nbsp;MB of system memory, and the integrated serial DVO ports have increased top speed to 270&nbsp;Mpixel/s.
+===== GMA 3100 =====
+Integrated graphics found on G31 and G33 chipsets, and the derived Q33 and Q35 chipset motherboards.
+Supports Pixel Shader 2.0 and doesn't support Vertex Shader with OpenGL 1.4 support.
+===== GMA 3150 =====
+Found in Intel Atom N4xx, N5xx (codenamed '''') processors. Like GMA 3100 and GMA 3000, this is a very close relative of the GMA900/950, completely different from the GMA X3000 series. Supports up to 384 MB video memory, DirectX 9, Shader Model 3.0, OpenGL 1.5 with Microsoft Windows and OpenGL 2.0 with Linux.
+==== Generation four based ====
+===== GMA X3000 =====
+The GMA X3000 for desktop was "substantially redesigned" when compared to previous GMA iterations and it is used in the  north bridge controller. The GMA X3000 was launched in July 2006. The GMA X3000's underlying 3D rendering hardware is organized as a unified shader processor consisting of 8  execution units. Each pipeline can process video, vertex, or texture operations. A central scheduler dynamically dispatches threads to pipeline resources, to maximize rendering throughput (and decrease the impact of individual pipeline stalls.) However, due to the scalar nature of the execution units, they can only process data on a single pixel component at a time.Gasior, Geoff. , Tech Report, April 5, 2007. The GMA X3000 supports DirectX 9.0 with vertex and pixel Shader Model 3.0 features.
+The processor consists of different clock domains, meaning that the entire chip does not operate the same clock speed. This causes some difficulty when measuring peak throughput of its various functions. Further adding to the confusion, it is listed as 667&nbsp;MHz in Intel G965 white paper, but listed as 400&nbsp;MHz in Intel G965 datasheet. There are various rules that define the IGP's processing capabilities.
+Memory controller can now address maximum 384&nbsp;MB memory according to white paper, but only 256&nbsp;MB in datasheet.
+===== GMA X3100 =====
+The GMA X3100 is the mobile version of the GMA X3000 used in the Intel GL960/GM965 chipsets and also in the GS965 chipset. The X3100 supports hardware transform and lighting, up to eight programmable shader units, and up to 384&nbsp;MB video memory. Its display cores can run up to 333&nbsp;MHz on GM965 and 320&nbsp;MHz on GL960. Its render cores can run up to 500&nbsp;MHz on GM965 and 400&nbsp;MHz on GL960. The X3100 display unit includes a 300&nbsp;MHz RAMDAC, two 25112&nbsp;MHz LVDS transmitters, 2 DVO encoders, and a TV encoder. Under Windows, the driver supports DirectX 10.0,
+Intel, , retrieved February 10, 2013 Shader Model 4.0 and OpenGL 1.5.Intel, , retrieved January 16, 2010   Under Linux, OpenGL 2.1 is supported.
+===== GMA X3500 =====
+GMA X3500 is an upgrade of the GMA X3000 and used in the desktop . The shaders support shader model 4.0 features. Architecturally, the GMA X3500 is very similar to the GMA X3000, with both graphics cores running at 667&nbsp;. The major difference between them is that the GMA X3500 supports  4.0 and , whereas the earlier X3000 supports  3.0 and . The X3500 also adds hardware-assistance for playback of VC-1 video.
+===== GMA X4500 =====
+The '''GMA X4500''' and the '''GMA X4500HD''' for desktop platforms were launched in June 2008. The GMA X4500 is used in the  and the GMA X4500HD is used in the . The GMA X4500 is also used in the , which was released in September 2008.
+The '''GMA 4500MHD''' for laptops was launched on July 16, 2008. Featurewise, the 4500MHD is identical to its desktop cousin, the X4500HD. The GMA 4500MHD is used in the GL40, GS40, GM45 and GS45 chipsets. It had been previously rumored that a cost-reduced version, the ''GMA 4500'', was to be launched in late 2008 or early 2009 and was to be used in the upcoming . However, in practice the Q43 and Q45 chipsets also use the GMA X4500.
+The difference between the GMA X4500 and the GMA X4500HD is that the GMA X4500HD is capable of ''"full  high-definition video playback, including  disc movies"'',
+Like the X3500, X4500 supports DirectX 10 and Shader Model 4.0 features. Intel designed the GMA X4500 to be 200% faster than the GMA 3100 () in 3DMark06 performance and 70% faster than the GMA X3500 ().
+=== PowerVR GPU based ===
+Intel developed a new set of low power graphics architecture based on .
+The available Linux drivers do not support much of this.
+==== PowerVR SGX 535 based ====
+===== GMA 500 =====
+The Intel SCH (System Controller Hub; codenamed '''') for the Atom processor Z5xx series features a GMA 500 graphic system. Rather than being developed in-house, this core is a  SGX 535 core licensed from Imagination Technologies.
+Intel describes this as "a flexible, programmable architecture that supports shader-based technology, 2D, 3D and advanced 3D graphics, high-definition video decode, and image processing. Features include screen tiling, internal true color processing, zero overhead anti-aliasing, programmable shader 3D accelerator, and  operations."
+===== GMA 600 =====
+A revised version of the previous Intel SCH (System Controller Hub) for the Atom Z6xx series CPU codenamed ''''. Essentially, this is the same graphic system as the GMA 500, but clocked at double the speed. (From 200&nbsp;MHz to 400&nbsp;MHz).
+==== PowerVR SGX 545 based ====
+===== GMA 3600 =====
+This integrated graphics system was released in Intel Atom (Cedar Trail, 32&nbsp;nm) and based on . Unlike the original PowerVR solution, this model is clocked at 400&nbsp;MHz instead of 200&nbsp;MHz. It is specifically found in the Intel Atom N2600 processor and Atom D2500 models. It supports DirectX version 9.0c.
+===== GMA 3650 =====
+Similar to the GMA 3600, but this version is clocked at 640&nbsp;MHz. It is found in Atom N2800, Atom D2550, Atom D2500, Atom D2600 and Atom D2700 models. It supports DirectX version 9.0c.
+== Specifications ==
+== Protected Audio Video Path ==
+Protected Audio Video Path (PAVP) protects the data path within a computer during video playback (e.g., Blu-ray discs). It is supported by newer  (e.g. ) and operating systems (since ).
+PAVP can be configured in the . Different modes are supported:
+# Disabled.
+# PAVP Lite: Reserves buffer memory for encryption of compressed video data.
+# Paranoid PAVP: Reserve memory during boot which isn't seen by the Operating System. This disables  in .
+The default setting in most BIOS is PAVP Lite.
+Within , the successor of Intel GMA, a similar technology called  exists.
+== Software support ==
+=== Mac OS X ===
+Mac OS X 10.4 supports the GMA 950, since it was used in previous revisions of the , MacMini, and 17-inch s. It has been used in all Intel-based Mac minis (until the Mac Mini released on March 3, 2009). Mac OS X 10.5 Leopard contains drivers for the GMA X3100, which were used in a recent revision of the MacBook range

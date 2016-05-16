@@ -1,0 +1,86 @@
+Automatic extraction of metadata
+from scientific publications for
+CRIS systems
+
+Aleksandar Kovacˇevic´, Dragan Ivanovic´, Branko Milosavljevic´
+and Zora Konjovic
+
+1. Introduction
+“Metadata” as a term is used to denote all of the information that describes the
+characteristics of objects that are stored in digital repositories. The need for quality
+metadata has become greater with the development of the internet, which is becoming a
+powerful resource for the dissemination and exchange of information. Metadata are a
+fundamental component of digital libraries as well as initiatives such as the Semantic
+Web (see www.w3.org/2001/sw/) and Open Archives Initiative (see www.openarchives.
+org/). Institutional repositories such as DSpace (see www.dspace.org/), Fedora (see http://
+fedora-commons.org/) and EPrints (see www.eprints.org/) use metadata to enable
+efficient access and retrieval of digital content. An enormous amount of digital resources
+requiring metadata represent a major challenge for these initiatives, libraries and
+repositories For example, a project which would aim at forming a digital repository of all
+publicly available scientific papers in the UK would have to face a collection with the
+growing pace of 100,000 papers per year that require manual metadata entry (Adams,
+2009). Ideally the metadata should be entered by the authors, but authors rarely do that
+even when they are provided with the appropriate tools (Crystal and Land, 2003).
+According to Crystal and Land (2003), it would take about 60 employee-years to create
+metadata for one million documents. Based on the overwhelming cost of entering
+metadata manually, it is obvious that there is a need for tools that enable their automatic
+extraction. The Directorate for Cataloguing of the US Library of Congress has recognised
+this problem (Adams, 2009) and sponsored the Automatic Metadata Generation
+Applications (AMEGA) project (Greenberg et al., 2006).
+Based on the development of automatic indexing of digital content and the fact that
+it is less costly than manual indexing (Anderson and Pe´rez-Carballo, 2001), it can be
+assumed that, over time, automated metadata extraction is to become more efficient,
+cheaper and more consistent. Although previous studies show that automatic
+generation of metadata provides acceptable performance (Liddy et al., 2002; Han et al.,
+2003; Peng and McCallum, 2004; Takasu, 2003), researchers generally conclude that the
+best results are achieved by integrating automated and manual methods (Schwartz,
+2001).
+This paper presents a method for the automatic extraction of metadata from
+scientific articles in PDF format, which is designed as an integral part of the
+information system for monitoring the scientific research activity – CRIS UNS (see
+http://cris.uns.ac.rs/). The method is implemented as a complement to manual
+metadata entry in the sense that the extraction results are offered to the curator to
+inspect and correct before storing them in the repository.
+
+8. Conclusion
+In this paper a system for the fully automated extraction of metadata from scientific
+publications in PDF format is proposed. The extracted metadata are categorised in
+eight predefined categories (i.e. Title, Authors, Affiliation, Address, Email, Abstract,
+Keywords and Publication Note). The extraction task is formalised as a classification
+problem realised by machine learning methods. Experiments were performed with
+standard classification models, i.e. decision tree, naive Bayes, K-nearest neighbours
+and support vector machines. Both a single classifier with all eight categories and eight
+individual classifiers were tested. Classifiers were evaluated, using five-fold cross
+validation, on a manually annotated corpus of 100 scientific papers in PDF format,
+from various conferences, journals and authors’ personal web pages. Eight separate
+support vector machines models achieved the best performances and based on that,
+were chosen as a classification model for the proposed system. All of the eight SVM
+models performed well. The F-measure was over 85 per cent for almost all of the
+classifiers and over 90 per cent the most of them. Best results were achieved for the
+Title (F-measure of 98.77 per cent) and Email (F-measure of 98.41 per cent) categories.
+Performances for the Abstract, Authors, Affiliation and Address categories were
+slightly lower with F-measures of 91.52 per cent, 92.13 per cent, 90.37 per cent and
+87.80 per cent, respectively. Recall values for Publication Note and Keywords were somewhat lower (between 83 per cent and 71.88 per cent) in comparison to the precision
+(which is in the range with the rest of the categories), indicating that the current
+features have not covered all the possible ways by which these metadata are
+represented (layout, formatting, text content, etc.) in the scientific papers. Decline in
+recall for these two categories can also be explained by their low frequency in the gold
+standard corpus (2.38% for Publication Note and 0.98 per cent for Keywords), i.e.
+training sets for the models.
+The proposed system for automatic metadata extraction using support vector
+machines model was integrated in the software system CRIS UNS. Metadata extraction
+was tested on the publications of researchers from the Department of Mathematics and
+Informatics of the Faculty of Sciences in Novi Sad. An analysis of the extracted
+metadata showed that the performance of the system for previously unseen data is in
+accordance with that obtained by cross-validation from eight separate SVM classifiers.
+Further studies are planned in order to improve performance, for example by using
+hand-crafted rules and new features to boost recall for the Keywords and Publication
+Note categories. Since the first step in entering metadata into CRIS UNS is the selection
+of the proceedings or a journal in which the article is published, this information will be
+used to construct classification models with better performances. Further processing of
+the extracted results for some of the categories, using methods from the field of IE, will
+be performed. For example, Publication Note metadata will be analysed in order to
+extract detailed information such as date, publisher, conference venue, and the volumes
+of journals and so on. Experiments will also be performed with the methods of
+semi-supervised learning such as co-training with a goal of overcoming the problem of
+manual annotation of a large number of scientific papers.

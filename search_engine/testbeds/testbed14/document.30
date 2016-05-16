@@ -1,0 +1,76 @@
+Ontology Engineering Methodology
+Summary. In this chapter we present a methodology for introducing and maintaining
+ontology based knowledge management applications into enterprises with a
+focus on Knowledge Processes and Knowledge Meta Processes. While the former
+process circles around the usage of ontologies, the latter process guides their initial
+set up. We illustrate our methodology by an example from a case study on skills
+management. The methodology serves as a scaffold for Part B “Ontology Engineering”
+of the handbook. It shows where more specific concerns of ontology engineering
+find their place and how they are related in the overall process.
+1 Introduction
+Ontologies constitute valuable assets that are slowly, but continuously gaining
+recognition and use throughout a set of disciplines – as becomes visible in
+Part C of this book. Ontologies frequently being a complex asset, their creation
+and management does neither come by coincidence nor does it come for free.
+Rather, the objectives pursued with their development as well as the development
+itself must be critically assessed by the organization or – rarely – the
+individual who is pushing for their creation and maintenance. The discipline
+that investigates the principles, methods and tools for initiating, developing
+and maintaining ontologies is “ontology engineering” which is the topic of
+this part of the handbook. “Ontology engineering methodology” as a part of
+ontology engineering deals with the process and methodological aspects of ontology
+engineering, i.e. with the issues of how to provide guidelines and advice
+to (potential) developers of ontologies.
+It is the purpose of this chapter to introduce a rather generic ontology engineering
+methodology to the reader and to indicate where this methodology
+links to more specific topics discussed mostly, but obviously not completely,
+in the remainder of part B of this handbook. Such as software engineering
+methodologies cannot be described in isolation from actual software
+S. Staab and R. Studer (eds.), Handbook on Ontologies, International Handbooks 135
+on Information Systems, DOI 10.1007/978-3-540-92673-3,
+c Springer-Verlag Berlin Heidelberg 2009
+136 Y. Sure et al.
+engineering activities, the purpose of ontology engineering methodologies can
+only be understood in the context of actual ontology engineering experiences.
+The methodology presented here, has been derived from several case studies
+of building and using ontologies in the realm of knowledge management.
+Knowledge management deals with the thorough and systematic management
+of knowledge within an enterprise and between several cooperating
+enterprises. Knowledge management is a major issue for human resource
+management, enterprise organization and enterprise culture – nevertheless,
+information technology (IT) constitutes a crucial enabler for many aspects of
+knowledge management and ontologies frequently turn out to be valuable assets
+for knowledge management in order to target core knowledge management
+issues such as search, information integration, or mapping of knowledge assets.
+As a consequence, knowledge management is an inherently interdisciplinary
+subject and ontologies used for knowledge management play a central role, but
+at the same time they are by no means the single factor to determine success
+or failure of the overall system. Thus, we may derive our rationale that the
+objective of knowledge management constitutes a typical, yet comprehensive
+blueprint for issues that arise when developing complex ontologies. Therefore,
+we have chosen the knowledge management setting described below in order
+to report on a generic ontology engineering methodology.
+IT-supported KM solutions are frequently built around some kind of organizational
+memory [1] that integrates informal, semi-formal and formal knowledge
+in order to facilitate its access, sharing and reuse by members of the
+organization(s) for solving their individual or collective tasks [7]. In such a
+context, knowledge has to be modelled, appropriately structured and interlinked
+for supporting its flexible integration and its personalized presentation
+to the consumer. Ontologies may provide such structuring and modeling of
+problems by providing a formal conceptualization of a particular domain that
+is shared by a group of people in an organization [14,22].
+There exist various proposals for methodologies that support the systematic
+introduction of KM solutions into enterprises and with it the construction
+of ontologies. A classical approach for introducing knowledge management
+systems – including ontologies – is CommonKADS that puts emphasis on an
+early feasibility study as well as on constructing several models that capture
+different kinds of knowledge needed for realizing a KM solution [26].
+Re-engineering earlier approaches, we found that methodologies must distinguish
+two processes in order to achieve a clear identification of issues [27]:
+whereas the first process addresses aspects of introducing a new ontology based
+system into an organization as well as maintaining it (the so-called
+“Knowledge Meta Process”), the second process addresses the management
+of knowledge using the developed ontology (or ontologies), i.e. the so-called
+“Knowledge Process” (see Fig. 1). E.g. in the approach described in [25],
+one may recognize the intermingling of the two aspects from the different
+roles that, e.g. “knowledge identification” and “knowledge creation” play.

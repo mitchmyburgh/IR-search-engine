@@ -1,0 +1,77 @@
+Three Machine Learning Techniques for Automatic
+Determination of Rules to Control Locomotion
+
+
+Slavica Joni´c, Student Member, IEEE, Tamara Jankovi´c, Vladimir Gaji´c, and Dejan Popovi´c,* Member, IEEE
+
+I. INTRODUCTION
+CONTEMPORARY functional electrical stimulation
+(FES) systems use volitionally controlled four or six
+channels of stimulation [25], or a preprogrammed sequence
+of stimulation patterns applied to as many as 48 muscles
+[19]. Tuning the stimulation patterns in the later case is handcrafted
+for each user [19]. Several more sophisticated control
+strategies were presented in the literature, involving openloop
+[8], [19], [34] and closed-loop control [16], [17]. When
+considering the closed-loop control it is important to speak of
+dynamic characteristics of muscles. They operate as low-pass
+filters with respect to neural inputs. Dynamics of muscles
+can be characterized by rise time of approximately 50–100
+ms, depending on the muscle type. Muscle activity is delayed
+after the neural signal for about 30–50 ms. Those features of a muscular system impose that a command signal precedes
+the required muscle activity when a real-time control is to be
+implemented, and are the most important arguments against
+implementing closed-loop control.
+An alternative for control is using nonanalytical control to
+clone the biological control [36], [38]. The basic mechanism
+for implementation of such algorithms is a rule-based system
+[37]. Rule-based controllers for locomotion were originally
+hand crafted [1], [2], [4], [12], [44]–[46], and lately automatically
+tuned [11], [15], [18], [20]–[24], [31]–[33] but none
+was sufficiently practical to be widely used. A rule-based
+control is an implementation of “if–then” relations. “If” part
+of a rule describes the sensory states, while a “then” part
+of a rule defines the corresponding motor, that is muscle
+activity. In other words, when a characteristic sensory pattern
+is recognized, a muscle activity must occur.
+In order to design a rule-based system a knowledge base
+has to be generated. It was hypothesized that machine learning
+(ML) can help in acquiring the needed knowledge. Learning
+in general can be described as capturing and memorizing of a
+connectivism between facts. ML is a computerized capturing
+and memorizing process. ML’s were applied successfully to
+automate the walking [11], [18], [20], [33], [37], but the
+walking pattern was not improved.
+We propose to use simulation results of a fully customized
+biomechanical model of a human with disability for inputs and
+outputs required for ML, therefore to clone a desired pattern of
+walking. The simulation described in [14] and [39] generates a
+set of inputs and outputs which is suitable for the said cloning.
+ML’s used in this study are: 1) a multilayer perceptron
+(MLP) with the Levenberg–Marquardt improvement of backpropagation
+(BP) algorithm [41]; 2) an adaptive-networkbased
+fuzzy inference system (ANFIS) [13]; and 3) a combination
+of an entropy minimization-type of inductive learning (IL)
+technique [11], [32], [33], [35], [47] and a radial basis function
+(RBF)-type of artificial neural network (ANN) [6], [32] with
+orthogonal least squares (OLS) learning algorithm [6].
+A comparison of IL with adaptive logic networks (ALN)
+using restriction rules [22], [24] shows that ALN’s have some
+advantages over IL. The application of ALN’s is intentionally
+omitted since it was published earlier in great details [20]–[24].
+Heller et al. [11] compared an IL method based on an
+algorithm called “hierarchical mutual information classifier”
+[42] with a MLP with BP algorithm in reconstructing muscle
+activation from kinematic data during normal walking.
+The conclusion was that both techniques show comparable
+performance, although each technique has some advantages
+over the other one. A comparison of IL method based on minimization of entropy and the RBF network in predicting
+muscle activation and sensory data from the history of sensory
+data for a human with spinal cord injury (SCI) [15] shows
+that the best generalization comes from combining both. The
+benefits of merging fuzzy logic and an ANN were explored
+extensively in the literature [13], [27].
+The aim of the study was to analyze which technique is
+the best when considering the number of rules, the simplicity
+and comprehensibility of rules, and the generalization of the
+results.

@@ -1,0 +1,10 @@
+AmbientTalk
+'''AmbientTalk''' is an experimental  distributed  developed at the Programming Technology Laboratory at the , Belgium. The language is primarily targeted at writing programs deployed in .
+AmbientTalk is meant to serve as an ''experimentation platform'' to experiment with new language features or programming abstractions to facilitate the construction of software that has to run in highly volatile networks exhibiting intermittent connectivity and little infrastructure.Dedecker J., Van Cutsem T., Mostinckx S., D'Hondt T., De Meuter W. Ambient-oriented Programming in AmbientTalk. In Proceedings of the 20th European Conference on Object-Oriented Programming (ECOOP), Dave Thomas (Ed.), Lecture Notes in Computer Science Vol. 4067, pp. 230-254, Springer-Verlag., 2006 It is implemented in  which enables interpretation on various platforms, including . The interpreter standard library also provides a seamless interface between Java and AmbientTalk objects, called the symbiosis.
+The language's  features, which include support for  and event-loop concurrency, are founded on the  and have been largely influenced by the . The language's object-oriented features find their influence in languages like  (i.e. block closures, keyworded messages) and  (, , delegation).
+== Hello world ==
+ system.println("Hello world");
+The classical  is not very representative of the language features. However, consider its distributed version:
+/* Define types that could be discovered on the network */
+deftype Greeter;
+def makeGreeter(myName)

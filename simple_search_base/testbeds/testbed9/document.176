@@ -1,0 +1,13 @@
+Enterprise Data Modeling (EDM) is the practice of creating a graphical model of the data used by an enterprise or company. Typical outputs of this activity include and Enterprise Data Model consisting of Entity Relationship Diagrams (ERD), XML Schemas (XSD), and an enterprise wide data dictionary. Producing such a model allows for a business to get a 'helicopter' view of their enterprise. In EAI (Enterprise Application Integration) an EDM allows data to be represented in a single idiom, enabling the use of a common syntax for the XML of services or operations and the physical data model for database schema creation. Data Modeling Tools for ERDs that also allow the user to create a data dictionary are usually used to aid in the development of an EDM.
+The implementation of an EDM is closely related to the issues of data governance and data stewardship within an organization.
+
+An Enterprise Data Model (EDM) represents a single integrated definition of data, unbiased of any system or application. It is independent of “how” the data is physically sourced, stored, processed or accessed. The model unites, formalizes and represents the things important to an organization, as well as the rules governing them
+
+
+== See also ==
+Data modeling
+
+
+== External links ==
+Noreen Kendle (July 1, 2005). "The Enterprise Data Model". The Data Administration Newsletter. 
+Andy Graham 2010. The Enterprise Data Model: A framework for enterprise data architecture. ISBN 978-0956582904.

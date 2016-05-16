@@ -1,0 +1,55 @@
+3.1.3 The Description Logic SROIQ
+In this section, we summarise the various features that have been introduced informally
+above to provide a comprehensive definition of Description Logic syntax. Doing so yields the description
+logic called SROIQ, which is one of the most expressive Description Logics commonly considered today.
+It also largely agrees in expressivity with the ontology language OWL 2 DL, though there
+are still some differences as explained in Section 4.
+Formally, every DL ontology is based on three finite sets of signature symbols: a set
+NI of individual names, a set NC of concept names and a set NR of role names. Usually
+these sets are assumed to be fixed for some application and are therefore not mentioned
+explicitly. Now the set of SROIQ role expressions R (over this signature) is defined by
+the following grammar:
+R ::= U | NR | NR
+−
+where U is the universal role (Section 3.1.2). Based on this, the set of SROIQ concept
+expressions C is defined as:
+C ::= NC | (CuC) | (CtC) | ¬C | > | ⊥ | ∃R.C | ∀R.C | >n R.C | 6n R.C | ∃R.Self | {NI}
+where n is a non-negative integer. As usual, expressions like (C u C) represent any
+expression of the form (C u D) with C, D ∈ C. It is common to omit parentheses
+if this cannot lead to confusion with expressions of different semantics. For example,
+parentheses do not matter for AtB tC whereas the expressions AuB tC and ∃R.AuB
+are ambiguous.
+Using the above sets of individual names, roles and concepts, the axioms of SROIQ
+can be defined to be of the following basic forms:
+ABox: C(NI ) R(NI , NI ) NI ≈ NI NI 6≈ NI
+TBox: C v C C ≡ C
+RBox: R v R R ≡ R R ◦ R v R Disjoint(R, R)
+with the intuitive meanings as explained in Section 3.1.1 and 3.1.2.
+Roughly speaking, a SROIQ ontology (or knowledge base) is simply a set of such
+axioms. To ensure the existence of reasoning algorithms that are correct and terminating,
+however, additional syntactic restrictions must be imposed on ontologies. These restrictions
+refer not to single axioms but to the structure of the ontology as a whole, hence
+they are called structural restrictions. The two such conditions relevant for SROIQ
+are based on the notions of simplicity and regularity. Notably, both are automatically
+satisfied for ontologies that do not contain complex role inclusion axioms.
+A role R in an ontology O is called non-simple if some complex role inclusion axiom
+(i.e., one that uses role composition ◦) in O implies instances of R; otherwise it is called
+simple. A more precise definition of the non-simple role expressions of the ontology O is
+given by the following rules:
+3.1. DL primer 43
+• if O contains an axiom S ◦ T v R, then R is non-simple,
+• if R is non-simple, then its inverse R− is also non-simple,3
+• if R is non-simple and O contains any of the axioms R v S, S ≡ R or R ≡ S, then
+S is also non-simple.
+All other roles are called simple.4 Now for a SROIQ ontology it is required that the
+following axioms and concepts contain simple roles only:
+Restricted axioms: Disjoint(R, R)
+Restricted concept expressions: ∃R.Self >n R.C 6n R.C.
+The other structural restriction that is relevant for SROIQ is called regularity and is
+concerned with RBox axioms only. Roughly speaking, the restriction ensures that cyclic
+dependencies between complex role inclusion axioms occur only in a limited form. For
+details, please see the pointers given in Section ??. For the introductory treatment in this
+paper, it suffices to note that regularity, just like simplicity, is a property of the ontology
+as a whole that cannot be checked for each axiom individually. An important practical
+consequence is that the union of two regular ontologies may no longer be regular. This
+must be taken into account when merging ontologies in practice.

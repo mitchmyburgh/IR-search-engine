@@ -1,0 +1,62 @@
+Amiga_E
+'''Amiga E''', or very often simply '''E''', is a  created by Wouter van Oortmerssen on the . He has since moved on to develop the  for the new  and the CryScript language (also known as DOG) used during the development of the  .
+Amiga E is a combination of many features from a number of languages, but follows the original  most closely in terms of basic concepts. Amiga E's main benefits are fast compilation (allowing it to be used in place of a scripting language), very readable source code, flexible type system, powerful module system, exception handling (not C++ variant) and .
+A  in Amiga E looks like: 
+   PROC main()
+      WriteF('Hello, World!')
+   ENDPROC
+Amiga E was used to create the core of the popular Amiga graphics software .
+==History==
+1993: The first public release of Amiga E.
+1997: The last version of Amiga E is released (3.3a).
+1999: Unlimited compiler executable of Amiga E is released.
+1999: Source code of the Amiga E compiler in M68K assembler is released under the .
+1999: First version of CreativE is released. Based on Sourcecode of Amiga E.
+1999: First version of PowerD is released. (0.01)
+2000: First version of YAEC (Yet Another E Compiler) is released. (1.0)
+ 
+2001: Final version of CreativE (2.12.3) is released.
+2002: Final version of YAEC is released (2.5d).
+2002: First public release of ECX. (1.0)
+2003: Final version of PowerD is released. (0.20)
+2008: First public release of PortablE. (r1)
+2009: First public release of PortablE for . (r4)
+==Implementations==
+===''Amiga E'', by Wouter van Oortmerssen.===
+The first compiler, written in M68k assembler. Support tools written in E. Generates M68000 machine code directly.
+:*Platforms:  and compatibles.
+:*Targets: AmigaOS with  CPU.
+:*Status: Stable, mature, discontinued, source available, .
+===''CreativE'', by Tomasz Wiszkowski.===
+Based on the GPL sources of Amiga E and adds many extensions to the compiler.
+:*Platforms: AmigaOS and compatibles.
+:*Targets: Like Amiga E + some limited support for generating code that takes advantage of later M680x0 CPUs.
+:*Status: Stable, mature, discontinued, source available, freeware.
+===''PowerD'', by Martin Kuchinka.===
+Based on the AmigaE language, but not compatible with it due to changes in syntax.
+:*Platforms: AmigaOS and compatibles.
+:*Targets: AmigaOS 3.0 68020 CPU+FPU, PPC.
+:*Status: Stable, mature, under development, closed source, freeware.
+===''YAEC'', by Leif Salomonsson.===
+Written from scratch in E. Uses external assembler and linker.
+:*Platforms: AmigaOS and compatibles.
+:*Targets: AmigaOS 3.0 with 68020 CPU and FPU.
+:*Status: Obsolete, unfinished, discontinued, , freeware.
+===''ECX'', by Leif Salomonsson.===
+A compiler and tools written from scratch in E, can compile itself, supports multiple targets and adds many extensions.
+:*Platforms: AmigaOS,  and .
+:*Targets: AmigaOS 3.0 68020, AmigaOS 4, MorphOS.
+:*Status: Stable, mature, under development, closed source (was open source), shareware (was freeware).
+===''PortablE'', by Christopher Handley.===
+A meta-compiler written from scratch in E, can compile itself, supports multiple targets.
+:*Platforms: ,  (68k),  (PPC),  and .
+:*Targets: C++ and Amiga E.
+:*Status: Stable, mature, under development, closed source, freeware.
+==References==
+==External links==
+* 
+* 
+* 
+* 
+* 
+*

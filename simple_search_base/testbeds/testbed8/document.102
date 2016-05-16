@@ -1,0 +1,27 @@
+Insertion begins with the normal binary tree search and insertion procedure. Then, as the call stack unwinds (assuming a recursive implementation of the search), it's easy to check the validity of the tree and perform any rotations as necessary. If a horizontal left link arises, a skew will be performed, and if two horizontal right links arise, a split will be performed, possibly incrementing the level of the new root node of the current subtree. Note, in the code as given above, the increment of level(T). This makes it necessary to continue checking the validity of the tree as the modifications bubble up from the leaves.
+function insert is
+    input: X, the value to be inserted, and T, the root of the tree to insert it into.
+    output: A balanced version T including X.
+
+    Do the normal binary tree insertion procedure. Set the result of the
+    recursive call to the correct child in case a new node was created or the
+    root of the subtree changes.
+    if nil(T) then
+        Create a new leaf node with X.
+        return node(X, 1, Nil, Nil)
+    else if X < value(T) then
+        left(T) := insert(X, left(T))
+    else if X > value(T) then
+        right(T) := insert(X, right(T))
+    end if
+    Note that the case of X == value(T) is unspecified. As given, an insert
+    will have no effect. The implementor may desire different behavior.
+
+    Perform skew and then split. The conditionals that determine whether or
+    not a rotation will occur or not are inside of the procedures, as given
+    above.
+    T := skew(T)
+    T := split(T)
+
+    return T
+end function

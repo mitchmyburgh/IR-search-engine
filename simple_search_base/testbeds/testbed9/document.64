@@ -1,0 +1,29 @@
+As we saw with binary search, certain data structures such as a binary search tree can help improve the efficiency of searches. From linear search to binary search, we improved our search efficiency from O(n) to O(logn) . We now present a new data structure, called a hash table, that will increase our efficiency to O(1) , or constant time.
+
+A hash table is made up of two parts: an array (the actual table where the data to be searched is stored) and a mapping function, known as a hash function. The hash function is a mapping from the input space to the integer space that defines the indices of the array. In other words, the hash function provides a way for assigning numbers to the input data such that the data can then be stored at the array index corresponding to the assigned number.
+
+Let's take a simple example. First, we start with a hash table array of strings (we'll use strings as the data being stored and searched in this example). Let's say the hash table size is 12:
+
+
+Figure %: The empty hash table of strings
+Next we need a hash function. There are many possible ways to construct a hash function. We'll discuss these possibilities more in the next section. For now, let's assume a simple hash function that takes a string as input. The returned hash value will be the sum of the ASCII characters that make up the string mod the size of the table:
+
+
+int hash(char *str, int table_size)
+{
+	int sum;
+
+	/* Make sure a valid string passed in */
+	if (str==NULL) return -1;
+
+	/* Sum up all the characters in the string */
+	for( ; *str; str++) sum += *str;
+
+	/* Return the sum mod the table size */
+	return sum % table_size;
+}
+Now that we have a framework in place, let's try using it. First, let's store a string into the table: "Steve". We run "Steve" through the hash function, and find that hash("Steve",12) yields 3:
+
+
+Figure %: The hash table after inserting "Steve"
+Let's try another string: "Spark". We run the string through the hash function and find that hash("Spark",12) yields 6. Fine. We insert it into the hash table:

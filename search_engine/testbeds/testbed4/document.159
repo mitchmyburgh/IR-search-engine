@@ -1,0 +1,9 @@
+.3.5  Scaling
+A scaling transform can be used to make objects bigger or smaller. Mathematically, a scaling transform simply multiplies each x-coordinate by a given amount and each y-coordinate by a given amount. That is, if a point (x,y) is scaled by a factor of a in the x direction and by a factor of d in the y direction, then the resulting point (x1,y1) is given by
+x1 = a * x
+y1 = d * y
+If you apply this transform to a shape that is centered at the origin, it will stretch the shape by a factor of a horizontally and dvertically. Here is an example, in which the original light gray "F" is scaled by a factor of 3 horizontally and 2 vertically to give the final dark red "F":
+ 
+The common case where the horizontal and vertical scaling factors are the same is called uniform scaling. Uniform scaling stretches or shrinks a shape without distorting it.
+When scaling is applied to a shape that is not centered at (0,0), then in addition to being stretched or shrunk, the shape will be moved away from 0 or towards 0. In fact, the true description of a scaling operation is that it pushes every point away from (0,0) or pulls every point towards (0,0). If you want to scale about a point other than (0,0), you can use a sequence of three transforms, similar to what was done in the case of rotation.
+A 2D graphics API can provide a function scale(a,d) for applying scaling transformations. As usual, the transform applies to all xand y coordinates in subsequent drawing operations. Note that negative scaling factors are allowed and will 

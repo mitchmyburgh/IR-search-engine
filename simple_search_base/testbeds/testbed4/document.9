@@ -1,0 +1,61 @@
+We will now take a look at the next major element of graphics rendering: light and shading.
+This is one of the primary elements of generating realistic images. This topic is the beginning of an important
+shift in approach. Up until now, we have discussed graphics from are purely mathematical (geometric) perspective.
+Light and reflection brings us to issues involved with the physics of light and color and the physiological
+aspects of how humans perceive light and color.
+An accurate simulation of light energy and how it emanates, reflects off and passes through objects is an amazingly
+complex, and computationally intractable task. OpenGL, like most interactive graphics systems, supports
+a very simple lighting and shading model, and hence can achieve only limited realism. This was done primarily
+because speed is of the essence in interactive graphics. OpenGL assumes a local illumination model, which
+means that the shading of a point depends only on its relationship to the light sources, without considering the
+other objects in the scene. For example, OpenGL’s lighting model does not model shadows, it does not handle
+indirect reflection from other objects (where light bounces off of one object and illuminates another), it does not
+handle objects that reflect or refract light (like metal spheres and glass balls). However the designers of OpenGL
+have included a number of tricks for essentially “faking” many of these effects.
+OpenGL’s light and shading model was designed to be very efficient and very general (in order to permit the
+faking alluded to earlier). It contains a number features that seem to bear little or no resemblance to the laws of
+physics. The lighting model that we will is slightly different from OpenGL’s model, but is a bit more meaningful
+from the perspective of physics.
+Light: A detailed discussion of light and its properties would take us more deeply into physics than we care to
+go. For our purposes, we can imagine a simple model of light consisting of a large number of photons being
+emitted continuously from each light source. Each photon has an associated color. Although color is complex
+phenomenon, for our purposes it is sufficient to consider color to be a modeled as a triple of red, green, and
+blue components. (We will consider color later this semester.) The strength or intensity of the light time at any
+location can be defined of in terms of the number of photons passing through a fixed area over a fixed amount
+of time. Assuming that the atmosphere is a vacuum (in particular there is no smoke or fog), photons travel
+unimpeded until hitting a surface, after which one of three things can happen.
+Reflection: The photon can be reflected or scattered back into the atmosphere. If the surface were perfectly
+smooth (like a mirror or highly polished metal) the refection would satisfy the rule “angle of incidence
+Lecture Notes 58 CMSC 427
+equals angle of reflection” and the result would be a mirror-like and very shiny in appearance. On the
+other hand, if the surface is rough at a microscopic level (like foam rubber, say) then the photons are
+scattered nearly uniformly in all directions. We can further distinguish different varieties of reflection:
+Pure reflection: perfect mirror-like reflectors
+Specular reflection: imperfect reflectors like brushed metal and shiny plastics.
+Diffuse reflection: uniformly scattering, and hence not shiny.
+Absorption: The photon can be absorbed into the surface (and hence dissipates in the form of heat energy).
+We do not see this light. Thus, an object appears to be green, because it reflects photons in the green part
+of the spectrum and absorbs photons in the other regions of the visible spectrum.
+Transmission: The photon can pass through the surface. This happens perfectly with transparent objects (like
+glass and polished gem stones) and with a significant amount of scattering with translucent objects (like
+human skin or a thin piece of tissue paper).
+Light source
+pure
+reflection
+specular diffuse
+reflection
+translucent
+transmission
+pure
+transmission
+absorption
+reflection
+Fig. 43: The ways in which a photon of light can interact with a surface point.
+Of course real surfaces possess various combinations of these elements and these element can interact in complex
+ways. For example, human skin is characterized by a complex phenomenon called subsurface scattering,
+in which light is transmitted under the skin and then bounces around and is reflected at some other point.
+What we “see” is a function of the photons that enter our eye. Photons leave the light source, are reflected and
+transmitted in various ways in the environment, they bounce off various surfaces, and then they finally enter our
+eye and we perceive the resulting color. The more accurately we can simulate this physical process, the more
+realistic the lighting will be. Unfortunately, computers are not fast enough to produce a truly realistic simulation
+of indirect reflections in real time, and so we will have to settle for much simpler approximations.

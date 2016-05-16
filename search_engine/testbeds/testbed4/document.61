@@ -1,0 +1,32 @@
+Together, our findings provide evidence for a substantial effect of
+lighting on the perception of 3D shape in simple computer graphics
+renditions. When smoothly curved objects are shaded with the
+Phong model under a single point source, the perceived shape is
+highly mutable depending on the lighting, and can differ considerably
+from the intended shape. This has important implications for
+the visualization of 3D data in industrial design, whenever precise
+perception of 3D shape is required. Surprisingly, Phong illumination
+is still probably the most commonly used shading model, both
+for modelling in CAD software, and for design evaluation. Our results
+may provide some insight into the problems experienced by
+designers using digital models of their designs.
+How might 3D shape visualization be improved? This is a topic of
+active research. One obvious possibility would be to try to improve
+the physical realism of the renderings, for example, by employing
+global illumination rendering methods. Other authors [Ferwerda
+et al. 2004] have shown that subjects are better at perceiving subtle
+shape differences in car designs under global illumination than under
+standard local shading models. Realistic illumination has other
+benefits, for example, it is known to improve the perception of surface
+reflectance [Fleming et al. 2004; te Pas and Pont 2005].
+However, there are a number of caveats to this approach. The first
+is that designers routinely require real-time rendering capabilities,
+and global illumination is still not possible at useful framerates for
+the mega-polygon models used in automobile design. The second
+caveat is that there is evidence that the dependency of perceived
+shape on the illumination conditions extends to real (as opposed
+to CG) objects [Koenderink et al. 1996]. Indeed, whether illumination
+is realistic or not, if the material has a substantial diffuse
+component, the resulting pattern of isophotes (and consequently the
+field of image orientations that could be measured by the front end
+of the visual system) varies with the illumination.

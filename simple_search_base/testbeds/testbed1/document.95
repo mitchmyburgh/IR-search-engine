@@ -1,0 +1,73 @@
+BCPL
+'''BCPL''' ('''Basic Combined Programming Language''') is a , , and    designed by  of the  in 1966.
+Originally intended for writing s for other languages, BCPL is no longer in common use. However, its influence is still felt because a stripped down and syntactically changed version of BCPL, called , was the language on which the  was based. This led many C programmers to give BCPL the humorous  '''Before C Programming Language'''.Expert C Programming: Deep C Secrets by Peter Van Der Linden (Prentice Hall, 1994)
+BCPL was the first , and the braces survived the syntactical changes and have become a common means of denoting program source code statements. In practice, on limited keyboards of the day, source programs often used the sequences $( and $) in place of the symbols .
+The single-line '//' s of BCPL, which were not adopted by , reappeared in , and later in .
+==Design==
+BCPL was a response to difficulties with its predecessor  (CPL), created during the early 1960s. Richards created BCPL by "removing those features of the full language which make compilation difficult". The first compiler implementation, for the  under  (CTSS), was written while Richards was visiting  at the  (MIT) in the spring of 1967. The language was first described in a paper presented to the 1969 Spring Joint Computer Conference.
+It was designed so that small and simple compilers could be written for it; reputedly some compilers could be run in 16 s. Further, the Richards compiler, itself written in BCPL, was easily portable. BCPL was thus a popular choice for  a system.
+A major reason for the compiler's portability lay in its structure. It was split into two parts: the front end parsed the source and generated  for a , and the back end took the O-code and translated it into the code for the target machine. Only 1/5 of the compiler's code needed to be rewritten to support a new machine, a task that usually took between 2 and 5 s. This approach became common practice later, e.g.,  or , but the Richards BCPL compiler was the first to define a virtual machine for this purpose.
+The language is unusual in having only one : a , a fixed number of bits, usually chosen to align with the architecture's machine word and of adequate capacity to represent any valid storage address. For many machines of the time, this data type was a 16-bit word. This choice later proved to be a significant problem when BCPL was used on machines in which the smallest addressable item was not a word, but a  or on machines with larger word sizes: 32-bit and 64-bit words, which allowed them to manage large address spaces.
+The interpretation of any value was determined by the operators used to process the values. (For example, + added two values together treating them as s; ! indirected through a value, effectively treating it as a pointer.) In order for this to work, the implementation provided no . The  was developed to help programmers avoid inadvertent type errors.
+The mismatch between BCPL's  and  hardware was addressed in several ways. One was providing standard library routines for packing and unpacking words into byte strings. Later, two language features were added: the bit-field selection operator and the infix byte indirection operator (denoted by the '%' character).
+BCPL handles bindings spanning separate s in a unique way. There are no user-declarable global variables; instead there is a global vector, which is similar to "blank common" in .  All data shared between different compilation units comprises scalars and pointers to vectors stored in a pre-arranged place in the global vector.  Thus the header files (files included during compilation using the "GET" directive) become the primary means of synchronizing global data between compilation units, containing "GLOBAL" directives that present lists of symbolic names, each paired with a number that associates the name with the corresponding numerically addressed word in the global vector.  As well as variables, the global vector also contains bindings for external procedures.  This makes dynamic loading of compilation units very simple to achieve.  Instead of relying on the link loader of the underlying implementation, effectively BCPL gives the programmer control of the linking process.
+The global vector also made it very simple to replace or augment standard library routines. A program could save the pointer from the global vector to the original routine and replace it with a pointer to an alternative version. The alternative might call the original as part of its processing. This could be used as a quick ad-hoc debugging aid.
+The philosophy of BCPL can be summarised by quoting from the book ''BCPL, the language and its compiler'':
+The design, and philosophy, of BCPL strongly influenced , which in turn influenced .
+There are rumours that BCPL actually stood for "Bootstrap Cambridge Programming Language", however CPL was never created since development stopped at BCPL, and the acronym was reinterpreted for the BCPL book.
+==Uses and implementations==
+BCPL is the language in which the original  was written., '''' The first  was also written in BCPL ().
+Several s were written partially or wholly in BCPL (for example,  and the earliest versions of , a part of ). BCPL was also the initial language used in the seminal   project, the first modern ; among other projects, the   was written in BCPL.
+An early compiler, bootstrapped in 1969 by starting with a paper tape of the  of Martin Richards's  compiler, targeted the . The two machines had different word-lengths (48 vs 24 bits), different character encodings, and different packed string representationsand the successful bootstrapping increased confidence in the practicality of the method.
+By late 1970, implementations existed for the , the , the , the , the , the , the , the  and the . In 1974 a dialect of BCPL was implemented at  without using the intermediate . The initial implementation was a  hosted on BBN's  s, and directly targeted the s used in BBN's implementation of the second generation  used in the .
+There was also a version produced for the  in the mid-1980s by Richards Computer Products, a company started by John Richards, the brother of Dr. Martin Richards.  The  made use of the language. Versions of BCPL for the  and  computers were also released in 1986 by UK software house Arnor Ltd. MacBCPL was released for the Apple Macintosh in 1985 by Topexpress Ltd, of Kensington, England.
+In 1979 implementations of BCPL existed for at least 25 architectures; the language gradually fell out of favor as C became popular on non-Unix systems.
+==Examples==
+These complete and compilable examples are from Martin Richards BCPL distribution.
+Print factorials:
+GET "LIBHDR"
+LET START() = VALOF $(
+	FOR I = 1 TO 5 DO
+		WRITEF("%N! = %I4*N", I, FACT(I))
+	RESULTIS 0
+$)
+AND FACT(N) = N = 0 -> 1, N * FACT(N - 1)
+Count solutions to the :
+GET "LIBHDR"
+GLOBAL $(
+	COUNT: 200
+	ALL: 201
+$)
+LET TRY(LD, ROW, RD) BE
+	TEST ROW = ALL THEN
+		COUNT := COUNT + 1
+	ELSE $(
+		LET POSS = ALL & ~(LD | ROW | RD)
+		UNTIL POSS = 0 DO $(
+			LET P = POSS & -POSS
+			POSS := POSS - P
+			TRY(LD + P  1)
+		$)
+	$)
+LET START() = VALOF $(
+	ALL := 1
+	FOR I = 1 TO 12 DO $(
+		COUNT := 0
+		TRY(0, 0, 0)
+		WRITEF("%I2-QUEENS PROBLEM HAS %I5 SOLUTIONS*N", I, COUNT)
+		ALL := 2 * ALL + 1
+	$)
+	RESULTIS 0
+$)
+==References==
+==Further reading==
+* Martin Richards, '''' (Memorandum M-352, , Cambridge, MA, USA, July, 1967) 
+* Martin Richards, ''BCPL - a tool for compiler writing and systems programming'' ('''Proceedings of the Spring Joint Computer Conference''', Vol 34, pp 557566, 1969)
+* Martin Richards, Arthur Evans, Robert F. Mabee, '''' (MAC TR-141, , Cambridge, MA, USA, 1974)
+* Martin Richards, C. Whitby-Strevens, ''BCPL, the language and its compiler'' (Cambridge University Press, 1980) ISBN 0-521-28681-6
+==External links==
+* 
+*  by  including his commentary about BCPL's influence on C
+*  in the 
+* Nordier & Associates'  
+*

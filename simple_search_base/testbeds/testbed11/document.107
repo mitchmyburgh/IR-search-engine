@@ -1,0 +1,56 @@
+IEEE 802.1ag (also CFM) (IEEE Standard for Local and Metropolitan Area Networks Virtual Bridged Local Area Networks Amendment 5: Connectivity Fault Management) is a standard defined by IEEE. It defines protocols and practices for OAM (Operations, Administration, and Maintenance) for paths through 802.1 bridges and local area networks (LANs). It is an amendment to IEEE 802.1Q-2005 and was approved in 2007.
+IEEE 802.1ag is largely identical with ITU-T Recommendation Y.1731, which additionally addresses performance monitoring.
+The standard:
+Defines maintenance domains, their constituent maintenance points, and the managed objects required to create and administer them
+Defines the relationship between maintenance domains and the services offered by VLAN-aware bridges and provider bridges
+Describes the protocols and procedures used by maintenance points to maintain and diagnose connectivity faults within a maintenance domain;
+Provides means for future expansion of the capabilities of maintenance points and their protocols
+
+
+== Definitions ==
+The document defines various terms:
+Maintenance Domain (MD)
+Maintenance Domains are management space on a network, typically owned and operated by a single entity. MDs are configured with Names and Levels, where the eight levels range from 0 to 7. A hierarchical relationship exists between domains based on levels. The larger the domain, the higher the level value. Recommended values of levels are as follows:
+Customer Domain: Largest (e.g., 7)
+Provider Domain: In between (e.g., 3)
+Operator Domain: Smallest (e.g., 1)
+
+Maintenance Association (MA)
+Defined as a "set of MEPs, all of which are configured with the same MAID (Maintenance Association Identifier) and MD Level, each of which is configured with a MEPID unique within that MAID and MD Level, and all of which are configured with the complete list of MEPIDs.”
+Maintenance association End Point (MEP)
+Points at the edge of the domain, define the boundary for the domain. A MEP sends and receives CFM frames through the relay function, drops all CFM frames of its level or lower that come from the wire side.
+Maintenance domain Intermediate Point (MIP)
+Points internal to a domain, not at the boundary. CFM frames received from MEPs and other MIPs are cataloged and forwarded, all CFM frames at a lower level are stopped and dropped. MIPs are passive points, respond only when triggered by CFM trace route and loop-back messages.
+
+
+== CFM Protocols ==
+IEEE 802.1ag Ethernet CFM (Connectivity Fault Management) protocols comprise three protocols that work together to help administrators debug Ethernet networks. They are:
+Continuity Check Protocol (CCP)
+"Heartbeating" messages for CFM. The Continuity Check Message (CCM) provides a means to detect connectivity failures in an MA. CCMs are multicast messages. CCMs are confined to a domain (MD). These messages are unidirectional and do not solicit a response. Each MEP transmits a periodic multicast Continuity Check Message inward towards the other MEPs.
+Link Trace (LT)
+Link Trace messages otherwise known as Mac Trace Route are Multicast frames that a MEP transmits to track the path (hop-by-hop) to a destination MEP which is similar in concept to User Datagram Protocol (UDP) Trace Route. Each receiving MEP sends a Trace Route Reply directly to the Originating MEP, and regenerates the Trace Route Message.
+Loop-back (LB)
+Loop-back messages otherwise known as MAC ping are Unicast frames that a MEP transmits, they are similar in concept to an Internet Control Message Protocol (ICMP) Echo (Ping) messages, sending Loopback to successive MIPs can determine the location of a fault. Sending a high volume of Loopback Messages can test bandwidth, reliability, or jitter of a service, which is similar to flood ping. A MEP can send a Loopback to any MEP or MIP in the service. Unlike CCMs, Loop back messages are administratively initiated and stopped.
+
+
+== Y.1731 ==
+ITU-T Y.1731 additionally supports the following:
+Ethernet alarm indication signal (ETH-AIS)
+Ethernet remote defect indication (ETH-RDI)
+Ethernet locked signal (ETH-LCK)
+Ethernet test signal (ETH-Test)
+Ethernet automatic protection switching (ETH-APS)
+Ethernet maintenance communication channel (ETH-MCC)
+Ethernet experimental OAM (ETH-EXP)
+Ethernet vendor-specific OAM (ETH-VSP)
+Frame loss measurement (ETH-LM)
+Frame delay measurement (ETH-DM)
+
+
+== References ==
+
+
+== External links ==
+802 Committee website on 802.1ag
+IEEE Std 802.1ag-2007 Virtual Bridged Local Area Networks, Amendment 5: Connectivity Fault Management (through IEEE Get Program)
+ITU-T Recommendation Y.1731 OAM functions and mechanisms for Ethernet based networks

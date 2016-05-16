@@ -1,0 +1,80 @@
+9.1 Analytic Tableaux
+Truth tables were based on the definition that a formula is a tautology if it is true under every
+interpretation. However, using truth tables for evaluating the truth of a formula quickly becomes
+infeasible. For larger formulas, we should therefore look for a better method – something that is
+fairly schematic, but doesn’t rely checking individual valuations anymore.
+Instead, it is better to reason about truth and falsehood as such and to analyze the conditions for
+the truth of a formula under an interpretation based on what we know about its subformulas. For
+this purpose let us rephrase the axioms for boolean valuations in terms of truth and falsehood.
+So, to prove a formula X true, we look at its outer structure, apply the appropriate axiom and then
+check the remaining conditions for the subformulas. Let us look at a simple example.
+Example 9.1 How would you prove P ⇒ P?
+We know that P ⇒ P is true if P is false or P is true. And this is the case for any interpretation
+v0, since v0 can only assign f or t to the variable P. ut
+Yat was easy. But actually, instead of proving a formula true, it is even easier to prove that it
+cannot be false, that is to assume that X is false and to derive a contradiction from that assumption.
+Sometimes this is called an indirect proof or a refutation proof .
+How would that work for P ⇒ P?
+If we assume that P ⇒ P is false then P must be both true and false, and this certainly cannot be
+the case.
+The Tableaux Method is schematic version of the technique we just applied. It replaces the statement
+“X is true” by the signed formula TX and the statement “X is false” by the signed formula
+FX. It replaces logical reasoning by the schematic application of syntactic maniulations to a signed
+formula and takes the rules for doing that from the above observations. Before we formulate these
+rules, let us look at an example.
+by opening two branches, one for each argument that we have to follow.
+Next we use the second of the new formulas. Again we use B4 and derive T¬Q and F¬P, which
+we write as established facts into each of the two branches.
+Let’s look at the left branch and pick the first signed formula that we can still decompose: T¬Q.
+Using B1 we derive FQ and in the same way we derive TP from F¬P. Let us look at the branch
+a little closer.
+We see both FP and TP in that branch, that is a signed formula and its conjugate (i.e. the same
+basic formula with a different sign – Smullyan denotes conjugates by F¯ ). That means, we have
+shown than P is both false and true. Since both are consequences of our initial assumption, the
+branch is contradictory and we close it by marking it with a ×.
+But we’re not done yet. We still have to look at the other branch, because this branch described
+just one of two possibilities. So we decompose T¬Q using B1 and derive FQ. Now we also have
+a contradiction in this branch and check it off as well.
+We now have shown that the assumption that ((P ⇒ Q)⇒ (¬Q ⇒ ¬P)) is false definitely leads
+to a contradiction, so ((P ⇒ Q)⇒ (¬Q ⇒ ¬P)) must be true.
+Note that we have used a top down order
+to decompose formulas. This is not necessary.
+We could also decompose the formula
+F(¬Q ⇒ ¬P) first because we use
+its consequences in both branches. For
+the same reason we would then decompose
+T¬Q before we finally branch by decomposing
+Example 9.3 Let us look at another example, where we change the formula just a little bit to
+((P ⇒ Q) ⇒(¬Q ⇒ P)). Is this formula still valid?
+Let us see what our method reveals. We begin
+as before and get almost the same tableau. However,
+we cannot close off the left branch, since we
+cannot decompose FP while we could decompose
+F¬P before.
+What does that mean?
+Since we decomposed all the formulas, there is
+nothing else we can do, which means that our initial
+assumption is not contradictory.
+But there is more information in the tableau. All the signed formulas in the branch are consequences
+of the assumption that ((P ⇒ Q)⇒ (¬Q ⇒ P)) is false. That means that (P ⇒ Q)
+must be true, (¬Q ⇒ P) must be false, ¬Q must be true, and P and Q must be false.
+So the tableau does not only show that the formula is not a tautology, but also gives us a counterexample,
+i.e. an interpretation of the variables that makes the formula false. ut
+9.2 Rules for the construction of Tableaux
+Let us review what we have just done. We have applied a schematic method that decomposes
+signed formulas according to the 4 axioms of boolean valuations. No semantic arguments were
+involved – just a “stupid” application of syntactic rules. Smullyan states all these rules on page 17
+of the book: for each connective there are two rules, one for the sign T and one for F.
+These rules express exactly the same as the axioms B1 to B4, but now in schematic form and as
+instructions for performing inferences.
+The first rule, for instance, states that from T¬X we can directly infer FX and add this signed
+formula to any branch passing through T¬X.
+The rule for T(X ∧Y) states that we can infer both TX and TY and thus add both formulas to any
+branch passing through T(X ∧Y).
+In contrast to that, the rule for F(X ∧Y) states that either FX or FY can be inferred. Thus the
+tableau has to branch if we apply the rule: to any branch passing through F(X ∧Y) we may add
+two new branches at the leaf – one containing FX and the other FY.
+So for the propositional calculus we have two types of rules – one that adds direct consequences
+and one that branches. Smullyan assigns two types to the corresponding signed formulas. Type A
+(or α) to those that result in direct consequences (also called conjunctive type) and type B (or β) to
+those that cause branching (also called disjunctive type).

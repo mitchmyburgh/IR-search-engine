@@ -1,0 +1,130 @@
+<<<<<<< HEAD
+Frameworks are gaining ground
+Frameworks are challenging programming languages’ supremacy
+May 2, 2016 Gabriela Motroc
+reddit
+LinkedIn
+1
+Google+
+frameworks	
+One pawn staying against full set of chess pieces image via Shutterstock
+
+A growing number of programmers claim that frameworks are the new programming languages, especially since the language wars have simmered down and allowed the framework wars to commence.
+
+Peter Wayner wrote in a 2015 article that frameworks are the new programming languages because it’s no longer feasible to waste time rewriting code if we can rely on our predecessors’ hard work and because knowing the syntax is overrated.
+
+Frameworks remove the need to learn the traits of a language and allow developers to focus more on higher-level methods for designing fresh applications. Becoming an expert in something like how Java initializes static fields in the objects may be a nice addition to one’s CV, but these days it’s better to know the architecture and not the syntax. If you do want to surprise your peers with something, why not focus on the framework’s details instead of the syntax of the language on which it rests?
+Greatest perk: Automation
+
+IDEs are developers’ guardian angels —they tell them when they are not on the right track and give them more time to think about the code while they are busy taking care of the details. Automation equals salvation, because even if they are not supposed to do everything for developers, they make the details about the languages irrelevant.
+
+Wayner also opined that some programming is becoming more visual, which could mean that the underlying computer language does not matter as much. Although visual languages may never fully take over, they further diminish the importance of syntax. Still, not everybody agrees with his viewpoint; some developers claim that most programming remains text dependent, which may mean that visual programming is not likely to become the norm anytime soon.
+
+SEE ALSO: Typescript, Angular 2 and NetBeans IDE: An unbeatable trio
+Keep an eye on these web frameworks
+
+JAXenter recently revealed that the following frameworks remain a focal point this year: Java EE 7, Node.js, Spring Web Flow and more. According to the results of a survey carried out in early 2016, many developers prefer a ‘classic’: 27,3 percent of our respondents find Java EE 7‘very interesting’ and 28,5 percent believe it is ‘interesting’. In total, roughly 56 percent of the respondents have an interest in Java EE 7.
+Screen Shot 2016-05-02 at 2.34.17 PM
+
+JAXenter survey
+
+At the same time, 50,5 percent of the readers said they are interested in Node.js this year, but just a third included Spring Web Flow in their ‘to-work-with’ list. Respondents could not decide between Play Framework and Vaadin, which is why their results are similar: 28,7 percent expressed their interest in Play Framework while 27,2 percent said they find Vaadin interesting. Readers were less interested in dealing with Meteor -only about a fifth of the total number of respondents have an interest in using it.
+
+Just 18,4 percent of the respondents are interested in the Groovy-based Grails and no more than 12,8 percent expressed their interest in dealing with the component-based open-source web framework Apache Wicket. Roughly 10 percent wish to work with (J)Ruby on Rails this year.
+=======
+Metaprogramming languages[edit]
+Metaprogramming is writing of programs that write or manipulate other programs (or themselves) as their data or that do part of the work that is otherwise done at run time during compile time. In many cases, this allows programmers to get more done in the same amount of time as they would take to write all the code manually.
+
+C++
+Curl
+D
+eC
+Elixir
+Forth
+Groovy
+Haskell
+Julia
+Lisp
+Lua
+Maude system
+Mathematica
+MetaOCaml
+Nemerle
+Perl
+Python
+Ruby
+Rust
+Scheme
+SequenceL
+Smalltalk
+Wolfram Language
+XL (concept programming)
+Multiparadigm languages[edit]
+Multiparadigm languages support more than one programming paradigm. They allow a program to use more than one programming style. The goal is to allow programmers to use the best tool for a job, admitting that no one paradigm solves all problems in the easiest or most efficient way.
+
+Ada (concurrent, distributed, generic (template metaprogramming), imperative, object-oriented (class-based))
+ALF (functional, logic)
+Alma-0 (constraint, imperative, logic)
+APL (functional, imperative)
+BETA (functional, imperative, object-oriented (class-based))
+C++ (generic, imperative, object-oriented (class-based), functional)
+C# (generic, imperative, object-oriented (class-based), functional, declarative)
+Ceylon (generic, imperative, object-oriented (class-based), functional, declarative)
+ChucK (imperative, object-oriented, time-based, concurrent, on-the-fly)
+Cobra (generic, imperative, object-oriented (class-based), functional, contractual)
+Common Lisp (functional, imperative, object-oriented (class-based), aspect-oriented (user may add further paradigms, e.g., logic))
+Curl (functional, imperative, object-oriented (class-based), metaprogramming)
+Curry (concurrent, functional, logic)
+D (generic, imperative, functional, object-oriented (class-based), metaprogramming)
+Delphi (generic, imperative, object-oriented (class-based), metaprogramming)
+Dylan (functional, object-oriented (class-based))
+eC (generic, imperative, object-oriented (class-based))
+ECMAScript (functional, imperative, object-oriented (prototype-based))
+ActionScript
+ECMAScript for XML
+JavaScript
+JScript
+Eiffel (imperative, object-oriented (class-based), generic, functional (agents), concurrent (SCOOP))
+F# (functional, generic, object-oriented (class-based), language-oriented)
+Fantom (functional, object-oriented (class-based))
+FPr (function-level, object-oriented (class-based))
+Go (functional, object-oriented (class-based), imperative, procedural),
+Groovy (functional, object-oriented (class-based),imperative,procedural)
+Harbour
+Hop
+J (functional, imperative, object-oriented (class-based))
+Julia (imperative, multiple dispatch ("object-oriented"), functional, metaprogramming)
+LabVIEW (dataflow, visual)
+Lava (object-oriented (class-based), visual)
+Leda (functional, imperative, logic, object-oriented (class-based))
+Lua (functional, imperative, object-oriented (prototype-based))
+Mercury (functional, logical, object-oriented)
+Metaobject protocols (object-oriented (class-based, prototype-based))
+Nemerle (functional, object-oriented (class-based), imperative, metaprogramming)
+Objective-C (imperative, object-oriented (class-based), reflective)
+OCaml (functional, imperative, object-oriented (class-based))
+Oz (functional (evaluation: eager, lazy), logic, constraint, imperative, object-oriented (class-based), concurrent, distributed), and Mozart Programming System cross-platform Oz
+Object Pascal (imperative, object-oriented (class-based))
+Perl (imperative, functional (can't be purely functional), object-oriented, class-oriented, aspect-oriented (through modules))
+PHP (imperative, object-oriented)
+Pike
+Poplog (functional, imperative, logic)
+Prograph (dataflow, object-oriented (class-based), visual)
+Python (functional, compiled, interpreted, object-oriented (class-based), imperative, metaprogramming, extension, impure, interactive mode, iterative, reflective, scripting)
+R (array, interpreted, impure, interactive mode, list-based, object-oriented prototype-based, scripting)
+Racket (functional, imperative, object-oriented (class-based) and can be extended by the user)
+REBOL (functional, imperative, object-oriented (prototype-based), metaprogramming (dialected))
+ROOP (imperative, logic, object-oriented (class-based), rule-based)
+Ruby (imperative, functional, object-oriented (class-based), metaprogramming)
+Rust (concurrent, functional, imperative, object-oriented)
+Scala (functional, object-oriented)
+Seed7 (imperative, object-oriented, generic)
+SISAL (concurrent, dataflow, functional)
+Spreadsheets (functional, visual)
+Tcl (functional, imperative, object-oriented (class-based))
+Tea (functional, imperative, object-oriented (class-based))
+Windows PowerShell (functional, imperative, pipeline, object-oriented (class-based))
+Wolfram Language
+XL (concept programming approach)
+
+>>>>>>> 8101f027b4ff76c9c7a47c43e46d5824b49ecf5a

@@ -1,0 +1,240 @@
+/**
+ * This class extends the BST class to implement use the AVL algorithm to keep balanced search trees.
+ *  
+ * @author Matthew Hertz
+ */
+public class AVLTree extends BinarySearchTree {
+   /**
+    * Create a new tree that uses the given comparator.
+    * 
+    * @param comp The comparator that can compare instances of the keys stored within each tree node.
+    */
+   public AVLTree(Comparator comp) {
+      super(comp);
+   }
+
+   /* (non-Javadoc)
+    * @see BinarySearchTree#insert(java.lang.Object, java.lang.Object)
+    */
+   public MyEntry insert(Object k, Object v) {
+      MyEntry retVal = super.insert(k, v);
+      rebalance(actionPos);
+      return retVal;
+   }
+
+   /* (non-Javadoc)
+    * @see BinarySearchTree#remove(java.lang.Object)
+    */
+   public MyEntry remove(Object key) throws BoundaryViolationException {
+      MyEntry retVal = super.remove(key);
+      rebalance(actionPos);
+      return retVal;
+   }
+   
+   /**
+    * Assign the new height for a node.
+    * 
+    * @param node The node whose height we need to (re-)compute
+    */
+   protected void setHeight(Node node) {
+      // External nodes are at height 0, by definition
+      if (isExternal(node)) {
+         node.setHeight(0);
+      } else {
+         // Internal nodes are at a height one greater than the taller child.
+         if (node.left().getHeight() > node.right().getHeight()) {
+            node.setHeight(node.left().getHeight() + 1);
+         } else {
+            node.setHeight(node.right().getHeight() + 1);
+         }
+      }
+   }
+   
+   /**
+    * Given a Node, find the taller of its children (e.g., the child with the larger height). 
+    * @param node The node whose taller child we wnat
+    * @return The child of node with the larger height
+    */
+   protected Node tallerChild(Node node) {
+      if (node.left().getHeight() >= node.right().getHeight()) {
+         return node.left();
+      } else {
+         return node.right();
+      }
+   }
+   
+   /**
+    * After inserting or removing a Node in the AVL tree, this method will go through and recompute
+    * the height for each node.  In addition, it will check and perform and rebalancing needed.
+    *   
+    * @param node The node that has just been added or removed
+    */
+   protected void rebalance(Node node) {
+      // Set the new height of the node in the tree
+      if (isInternal(node))
+         setHeight(node);
+      // Need to traverse all the way up the tree and check for balance issues.
+      while (!isRoot(node)) {
+         // Move up the tree
+         node = node.parent();
+         // Set the new height of this node.
+         setHeight(node);
+         // If the node's children are unbalanced, we must balance this node
+         if (Math.abs(node.left().getHeight() - node.right.getHeight()) > 1) {
+            // Get the tallest grandchild and restructure the nodes
+            Node trav = tallerChild(tallerChild(node));
+            node = restructure(trav);
+            // Now reassign the heights within the newly balanced tree.
+            setHeight(node.left());
+            setHeight(node.right());
+            setHeight(node);
+         }
+      }
+   }
+   
+   /**
+    * This method performs the standard AVL tree restructuring. This will be used for all
+    * restructuring operations.
+    * 
+    * @param node The grandchild node of the subtree that we are trying to rebalance
+    * @return The root of the rebalanced subtree
+    */
+   protected Node restructure(Node node) {
+      Node left, middle, right;
+      Node t1, t2, t3, t4;
+      Node parent = node.parent();
+      Node gp = parent.parent();
+      // Consider all the different possible restructurings and record where each node ends up
+      if (node.isLeftChild() && parent.isLeftChild()) {
+         middle = parent;
+         left = node;
+         right = gp;
+         t1 = node.left();
+         t2 = node.right();
+         t3 = parent.right();
+         t4 = gp.right();
+      } else if (node.isLeftChild() && parent.isRightChild()) {
+         middle = node;
+         left = gp;
+         right = parent;
+         t1 = gp.left();
+         t2 = node.left();
+         t3 = node.right();
+         t4 = parent.right();
+      } else if (node.isRightChild() && parent.isLeftChild()) {
+         middle = node;
+         left = parent;
+         right = gp;
+         t1 = parent.left();
+         t2 = node.left();
+         t3 = node.right();
+         t4 = gp.right();
+      } else {
+         middle = parent;
+         left = gp;
+         right = node;
+         t1 = gp.left();
+         t2 = parent.left();
+         t3 = node.left();
+         t4 = node.right();
+      }
+      // Reassign the reference into the rebalanced subtree
+      if (isRoot(gp)) {
+         root = middle;
+      } else if (gp.isLeftChild()) {
+         gp.parent().setLeft(middle);
+      } else {
+         gp.parent().setRight(middle);
+      }
+      // Now setup the new parent for the subtree
+      middle.setParent(gp.parent());
+      middle.setLeft(left);
+      // Assign the new left and right child nodes
+      left.setParent(middle);
+      middle.setRight(right);
+      right.setParent(middle);
+      // Now reassign all of the grandchildren
+      left.setLeft(t1);
+      t1.setParent(left);
+      left.setRight(t2);
+      t2.setParent(left);
+      right.setLeft(t3);
+      t3.setParent(right);
+      right.setRight(t4);
+      t4.setParent(right);
+      // Return the new subtree's root node
+      return middle;
+   }
+   
+   /**
+    * This is the method we use to test if things work.
+    * 
+    * @param args The list of arguments we ignore
+    */
+   public static void main(String[] args) {
+      AVLTree tree;
+      /* Test 1:
+       * Purpose: Test the restructuring capabilities, especially at the root
+       * Test Set: Insert 1, 2, and 3 in all four combinations that result in a linear BST
+       * Function to be tested: insert
+       * Expected result: Red-black tree with 2 as root node, 1 as left red child, and 3 as right red child.
+       * Actual result: Matches expected result
+       */
+      tree = new AVLTree(new ObjectComparator());
+      tree.insert(new Integer(1), "One");
+      tree.insert(new Integer(2), "Two");
+      tree.insert(new Integer(3), "Three");
+      System.out.println(tree.toString());
+      tree = new AVLTree(new ObjectComparator());
+      tree.insert(new Integer(3), "Three");
+      tree.insert(new Integer(2), "Two");
+      tree.insert(new Integer(1), "One");
+      System.out.println(tree.toString());
+      tree = new AVLTree(new ObjectComparator());
+      tree.insert(new Integer(3), "Three");
+      tree.insert(new Integer(1), "One");
+      tree.insert(new Integer(2), "Two");
+      System.out.println(tree.toString());
+      tree = new AVLTree(new ObjectComparator());
+      tree.insert(new Integer(1), "One");
+      tree.insert(new Integer(3), "Three");
+      tree.insert(new Integer(2), "Two");
+      System.out.println(tree.toString());
+
+      /* Test 2: 
+       * Purpose: Provide a series of restructuings including ones at multiple levels to provide a "torture test" of this functionality.
+       * Test Set: Insert 0, 9, 1, 8, 2, 7, 3, 6, 4, 5   
+       * Function to be Tested: insert
+       * Expected Result: AVL tree that matches the one from problem 2a) in homework #5 
+       * Actual Result: Matches expected result
+       */
+      tree = new AVLTree(new ObjectComparator());
+      tree.insert(new Integer(0), "Zero");
+      tree.insert(new Integer(9), "Nine");
+      tree.insert(new Integer(1), "One");
+      tree.insert(new Integer(8), "Eight");
+      tree.insert(new Integer(2), "Two");
+      tree.insert(new Integer(7), "Seven");
+      tree.insert(new Integer(3), "Three");
+      tree.insert(new Integer(6), "Six");
+      tree.insert(new Integer(4), "Four");
+      tree.insert(new Integer(5), "Five");
+      System.out.println(tree.toString());
+
+      /* Test 3:
+       * Purpose: Provide a series of restructuring at many levels to provide a "torture test"
+       *          of this functionality.
+       * Test Set: Remove 2, 0, 5
+       * Function to be Tested: remove
+       * Expected Result: AVL tree that matches the one from problem 2c) in homework #5
+       * Actual Result: Matches expected result
+       */
+      try {
+         tree.remove(new Integer(2));
+         tree.remove(new Integer(0));
+      } catch (BoundaryViolationException e) {
+         // Better not get an exception, but let us be certain
+         e.printStackTrace();
+      }
+      System.out.println(tree.toString());
+   }}

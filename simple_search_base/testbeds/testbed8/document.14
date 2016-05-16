@@ -1,0 +1,17 @@
+"Dictionary (data structure)" redirects here. It is not to be confused with data dictionary.
+"Associative container" redirects here. For the implementation of ordered associative arrays in the standard library of the C++ programming language, see associative containers.
+
+In computer science, an associative array, map, symbol table, or dictionary is an abstract data type composed of a collection of (key, value) pairs, such that each possible key appears just once in the collection.
+
+Operations associated with this data type allow:[1][2]
+
+    the addition of a pair to the collection
+    the removal of a pair from the collection
+    the modification of an existing pair
+    the lookup of a value associated with a particular key
+
+The dictionary problem is a classic computer science problem: the task of designing a data structure that maintains a set of data during 'search', 'delete', and 'insert' operations.[3] A standard solution to the dictionary problem is a hash table; in some cases it is also possible to solve the problem using directly addressed arrays, binary search trees, or other more specialized structures.[1][2][4]
+
+Many programming languages include associative arrays as primitive data types, and they are available in software libraries for many others. Content-addressable memory is a form of direct hardware-level support for associative arrays.
+
+Associative arrays have many applications including such fundamental programming patterns as memoization and the decorator pattern.[5]

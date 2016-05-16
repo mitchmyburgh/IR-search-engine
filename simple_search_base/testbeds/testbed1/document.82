@@ -1,0 +1,57 @@
+3GPP
+The '''3rd Generation Partnership Project''' ('''3GPP''') is a collaboration between groups of telecommunications associations, known as the Organizational Partners. The initial scope of 3GPP was to make a globally applicable third-generation ()  system specification based on evolved  (GSM) specifications within the scope of the  project of the  (ITU). The scope was later enlarged to include the development and maintenance of:
+*  and related "" and "" standards including  and 
+*  and related "" standards including 
+*  and related "" standards
+* An evolved  (IMS) developed in an access independent manner
+3GPP standardization encompasses Radio, Core Network and Service architecture. The project was established in December 1998 and  should not be confused with  (), which specifies standards for another 3G technology based on  (CDMA), commonly known as .
+The 3GPP support team (also known as the "Mobile Competence Centre") is located at the  (ETSI) headquarters in  (France).
+== History ==
+The 3rd Generation Partnership Project initiative eventually arose from a strategic initiative between  and . In 1998 AT&T Wireless was operating an  (TDMA) wireless network in the United States. In 1997 Nortel Networks' Wireless R&D center in Richardson, Texas, the wireless division of  had developed a vision for "an all  (IP)" wireless network that went under the internal name "Cell Web". As the concept progressed, Nortel launched the industry vision as "Wireless Internet". AT&T Wireless, poised to evolve its network in the United States, took a strong interest in Wireless Internet and its promise of Internet Protocol (with Nortel Networks as the potential supplier). Within 12 months or so, AT&T launched a global initiative that they named "3GIP", a third generation wireless standard that was "natively" Internet Protocol based. Initially, principal participants included , , , and Nortel Networks, but were eventually joined by NTT DoCoMo, BellSouth, Telenor, and Lucent, Ericsson, Motorola, Nokia, and others. A 3GIP standards forum was instituted and standards began to be developed. The forum progressed into the 2000 time frame, up until AT&T Wireless and British Telecom formed a strategic "partnership project" to facilitate "global roaming" between U.S. and European markets. With this business arrangement, GSM, the prevailing European standard was adopted as the basis of AT&T Wireless' network evolution for North America. Very specifically, this included the deployment of GSM data capabilities, i.e. GPRS, EDGE, and its evolution to UMTS. With this, the original acronym "3GIP" morphed into "3GPP", a "3rd Generation Partnership Project" for defining the next generation wireless network that was fundamentally capable of supporting Internet Protocol based wireless communications. 3GPP became the industry standards forum that defined UMTS and more recently LTE.
+== Organizational Partners ==
+The seven 3GPP Organizational Partners are from Asia, Europe and North America. Their aim is to determine the general policy and strategy of 3GPP and perform the following tasks:
+*The approval and maintenance of the 3GPP scope;
+* The maintenance of the Partnership Project Description;
+* Take the decision to create or cease a Technical Specification Groups, and approve their scope and terms of reference;
+* The approval of Organizational Partner funding requirements;
+* The allocation of human and financial resources provided by the Organizational Partners to the Project Co-ordination Group;
+* Act as a body of appeal on procedural matters referred to them.
+Together with the Market Representation Partners (MRPs) perform the following tasks:
+* The maintenance of the Partnership Project Agreement;
+* The approval of applications for 3GPP partnership;
+* Take the decision against a possible dissolution of 3GPP.
+== Market Representation Partners ==
+The 3GPP Organizational Partners can invite a Market Representation Partner to take part in 3GPP, which:
+*Has the ability to offer market advice to 3GPP and to bring into 3GPP a consensus view of market requirements (e.g., services, features and functionality) falling within the 3GPP scope;
+*Does not have the capability and authority to define, publish and set standards within the 3GPP scope, nationally or regionally;
+*Has committed itself to all or part of the 3GPP scope;
+*Has signed the Partnership Project Agreement.
+As of November 2013 the Market Representation Partners are:
+== Standards ==
+3GPP standards are structured as ''Releases''.  Discussion of 3GPP thus frequently refers to
+the functionality in one release or another.
+Each release incorporates hundreds of individual standards documents, each of which may have been through many revisions.  Current 3GPP standards incorporate the latest revision of the  standards.
+The documents are available freely on 3GPP's Web site.  While 3GPP standards can be bewildering to the newcomer, they are remarkably complete and detailed, and provide insight into how the cellular industry works.  They cover not only the radio part ("''Air Interface''") and Core Network, but also billing information and speech coding down to source code level.   aspects (, ) are also specified in detail.   offers similar information about its system.
+== Specification groups ==
+The 3GPP specification work is done in Technical Specification Groups (TSGs) and Working Groups (WGs).
+There are four Technical Specifications Groups, each of which consists of multiple WGs:
+* '''GERAN''' (GSM/EDGE Radio Access Network): GERAN specifies the GSM radio technology, including GPRS and EDGE. It is composed of three working groups.
+* '''RAN''' (Radio Access Network): RAN specifies the  and the . It is composed of five working groups.
+* '''SA''' (Service and System Aspects): SA specifies the service requirements and the overall architecture of the 3GPP system. It is also responsible for the coordination of the project. SA is composed of six working groups.
+* '''CT''' (Core Network and Terminals): CT specifies the core network and terminal parts of 3GPP. It includes the core network - terminal layer 3 protocols. It is composed of five working groups.
+The 3GPP structure also includes a Project Coordination Group, which is the highest decision-making body. Its missions include the management of overall timeframe and work progress.
+== Standardization process ==
+3GPP standardization work is contribution-driven. Companies ("individual members") participate through their membership to a 3GPP Organizational Partner. As of April 2011, 3GPP is composed of more than 370 individual members.
+Specification work is done at WG and at TSG level:
+* the 3GPP WGs hold several meetings a year. They prepare and discuss change requests against 3GPP specifications. A change request accepted at WG level is called "agreed".
+* the 3GPP TSGs hold plenary meetings quarterly. The TSGs can "approve" the change requests that were agreed at WG level. Some specifications are under the direct responsibility of TSGs and therefore, change requests can also be handled at TSG level. The approved change requests are subsequently incorporated in 3GPP specifications.
+3GPP follows a three-stage methodology as defined in  Recommendation I.130:
+* ''stage 1 specifications'' define the service requirements from the user point of view.
+* ''stage 2 specifications'' define an architecture to support the service requirements.
+* ''stage 3 specifications'' define an implementation of the architecture by specifying protocols in details.
+Test specifications are sometimes defined as stage 4, as they follow stage 3.
+Specifications are grouped into releases. A release consists of a set of internally consistent set of features and specifications.
+Timeframes are defined for each release by specifying freezing dates. Once a release is frozen, only essential corrections are allowed (i.e. addition and modifications of functions are forbidden). Freezing dates are defined for each stage.
+The 3GPP specifications are transposed into deliverables by the Organizational Partners.
+== Deployment ==
+3GPP systems are deployed across much of the established GSM market.GSM/3G Fast Facts.  GSM Suppliers' Association, 10 December 2006Resources: 3G/UMTS Commercial Deployments, Table listing commercially launched 3G/UMTS networks based on WCDMA technology, UMTS Forum  They are primarily ''Release 6'' systems, but as of 2010, growing interest in  and  is driving adoption of ''Release 7'' and its successors.  Since 2005, 3GPP systems were seeing deployment in the same markets as 3GPP2 systems (for example, North AmericaCingular to Deliver 3G Wireless Broadband Services, Press Release, Cingular Wireless, MediaRoom 30 November 2004).  With LTE the official successor to 3GPP2's CDMA systems, 3GPP-based systems will eventually become the single global mobile standard.

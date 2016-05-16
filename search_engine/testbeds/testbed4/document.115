@@ -1,0 +1,20 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Shadows • A simple way to include some global effects with minimal work is to turn off local re?ection when the surface point ¯ p cannot see light sources, i.e. when ¯ p is in shadow. • When computing E at ¯ p, cast a ray toward the light source, i.e. in the direction s = (l- ¯ p). ¯ pW(?) = ¯ pW + ?(lW - ¯ pW) • Find the ?rst intersection with a surface in the scene. If ?* at the ?rst intersection point is 0 = ? = 1, then there exists a surface that occludes the light source from ¯ p. - We should omit diffuse and specular terms from the local Phong model. - The surface radiance at ¯ p becomes
+E = raIa + rgIspec
+Copyright c
+2005 David Fleet and Aaron Hertzmann 73
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+Note: Pseudo-Code: Recursive Ray Tracer
+for each pixel (i,j) < compute ray~ rij(?) = ¯ pij + ?~ dij where ~ dij = ¯ pij -~ e > I = rayTrace( ¯ pij, ~ dij, 1); setpixel(i, j, I) end for
+rayTrace( ¯ a, ~ b, depth) ?ndFirstHit( ¯ a, ~ b, output var obj, ?, ¯ p, ~ n) if ? > 0 then I = rtShade(obj, ¯ p, ~ n,-~ b, depth) else I = background; end if return(I)
+?ndFirstHit( ¯ a, ~ b, output var OBJ, ?h, ¯ ph, ~ nh) ?h = -1; loop over all objects in scene, with object identi?ers objIDk < ?nd ?*for the closest legitimate intersection of ray~ rij(?) and object > if ( ?h < 0 or ?* < ?h) and ?* > 0 then ?h = ?* ¯ ph = ¯ a + ?*~ b; < determine normal at hit point ~ nh > OBJ = objIDk end if end loop
+Copyright c
+2005 David Fleet and Aaron Hertzmann 74
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+Note:
+rtShade(OBJ, ¯ p, ~ n, ~ de, depth) /* Local Component */ ?ndFirstHit( ¯ p,~ lw - ¯ p, output var temp, ?h); if 0 < ?h < 1 then Il = ambientTerm; else Il = phongModel(¯ p, ~ n, ~ de, OBJ.localparams) end if /* Global Component */ if depth < maxDepth then if OBJ has specular re?ection then < calculate mirror direction ~ ms = -~ de + 2~ n·~ de~ n > Ispec = rayTrace( ¯ p, ~ ms, depth+1) < scale Ispec by OBJ.specularRe?Coef > end if if OBJ is refractive then < calculate refractive direction~ t > if not total internal re?ection then Irefr = rayTrace( ¯ p,~ t, depth+1) < scale Irefr by OBJ.refractiveRe?Coef > end if end if Ig = Ispec + Irefr else Ig = 0 end if return(Il + Ig)
+Copyright c
+2005 David Fleet and Aaron Hertzmann

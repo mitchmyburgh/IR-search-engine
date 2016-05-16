@@ -1,0 +1,25 @@
+Case 1: N is the new root. In this case, we are done. We removed one black node from every path, and the new root is black, so the properties are preserved.
+void delete_case1(struct node *n)
+{
+ if (n->parent != NULL)
+  delete_case2(n);
+}
+Note: In cases 2, 5, and 6, we assume N is the left child of its parent P. If it is the right child, left and right should be reversed throughout these three cases. Again, the code examples take both cases into account.
+ 
+Case 2: S is red. In this case we reverse the colors of P and S, and then rotate left at P, turning S into N's grandparent. Note that P has to be black as it had a red child. The resulting subtree has a path short one black node so we are not done. Now N has a black sibling and a red parent, so we can proceed to step 4, 5, or 6. (Its new sibling is black because it was once the child of the red S.) In later cases, we will relabel N's new sibling as S.
+void delete_case2(struct node *n)
+{
+ struct node *s = sibling(n);
+
+ if (s->color == RED) {
+  n->parent->color = RED;
+  s->color = BLACK;
+  if (n == n->parent->left)
+   rotate_left(n->parent);
+  else
+   rotate_right(n->parent);
+ }
+ delete_case3(n);
+}
+ 
+Case 3: P, S, and S's children are black. In this case, we simply repaint S red. The result is that all paths passing throughS, which are precisely those paths not passing through N, have one less black node. Because deleting N's original parent made all paths passing through N have one less black node, this evens things up. However, all paths through P now have one fewer black node than paths that do not pass through P, so property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes) is still violated. To correct this, we perform the rebalancing procedure on P, starting at case 1.

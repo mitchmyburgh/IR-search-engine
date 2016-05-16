@@ -1,0 +1,76 @@
+Our two-step approach of gridding and then fitting has several desirable
+characteristics. First, it is fast. This can be understood as
+follows. At each level of subdivision, each spring mesh point must
+traverse some fraction of the polygons as it relaxes. The cost of this
+relaxation thus depends linearly on size of the polygon mesh. It obviously
+also depends on the size of the spring mesh. If these two
+were equal, as would occur if we immediately subdivided the spring
+mesh to the finest level, then the cost of running the relaxation would
+be O(n2). If, however, we employ the coarse-to-fine strategy described
+in the foregoing sections, then at each subdivision level, four
+times as many spring mesh points move as on the previous (coarser)
+level, but they move on average half as far. Thus, the cost of relaxation
+at each subdivision level is linear in the number of spring mesh
+points, and the total cost due to relaxation is O(n log n). This argument
+breaks down if we start with a large initial set of iso-curves.
+Similar arguments apply to the cost of subdivision.
+A second advantage of our overall strategy is that it allows a user
+to pause the iteration at an intermediate stage and still obtain good
+quality previews of the model. This is a useful property for an interactive
+system, specially when dealing with large meshes. In particular,
+subdivision to higher levels can be postponed until the model
+designer is satisfied with a patch configuration.
+A third advantage of our approach is that once the resampling is
+done, the spline resolution can be changed interactively, since no
+further parameter re-estimation is necessary. We have found this to
+be a useful interactive tool for a modeler, specially when making the
+tradeoff between explicitly represented geometry and displacement
+mapped detail as explained in section 5.
+As mentioned earlier, there are other schemes that may be used to
+parameterize irregular polygon meshes. In particular, the harmonic
+maps of Eck et al[11] produce parameterizations with low edge and
+aspect ratio distortions. However, the scheme has two main drawbacks
+for our purposes. First, it can cause excessive area distortions
+in parameter space. Second, the algorithm employs an O(n2) iteration
+to generate final parameter values for vertices of the mesh and
+no usable intermediate parameterizations are produced. As pointed
+In conclusion, we have presented fast techniques for fitting smooth
+parametric surfaces, in particular tensor product B-splines, to dense,
+irregular polygon meshes. A useful feature of our system is that it
+allows incremental previewing of large patch configurations. This
+feature is enabled by our coarse-to-fine gridded resampling scheme
+and proves invaluable when modelers wish to experiment with different
+patch configurations of the same model. We also provide a
+useful method for storing and manipulating fine surface detail in the
+form of displacement map images. We have found that this representation
+empowers users to manipulate geometry using tools outside
+our modeling system.
+Our system has several limitations. First, becauseit relies on surface
+walking strategies and mesh connectivity to resample polygonal
+patches, it breaks down in the presence of holes in the polygon
+mesh. However, new range image integration techniques include
+methods for filling holes.
+Another limitation is that B-spline surface patches, our choice to
+represent coarse geometry, perform poorly for very complex surfaces
+such as draped cloth. B-splines have other disadvantages as
+well, such as the inability to model triangular patches without excessive
+parametric distortion. Despite these limitations, B-splines
+(and NURBS in general) are widely used in the modeling industry.
+This has been our motivation for choosing this over other representations.
+There are a number of fruitful directions for future research.
+Straightforward extensions include developing tools to assist in
+boundary curve painting and editing, improving robustness in the
+presence of holes, adding further constraints to the the parameterization
+process, allowing variable knot density at the fitting stage,
+implementing other continuity solutions, and using adaptive spring
+grids for sampling decimated meshes. An example of a boundary
+painting tool is a “geometry-snapping” brush that attaches curves to
+features as the user draws on the object. Examples of constraints to
+the parameterization process include interactively placed curve and
+point “attractors” within a patch.
+An interesting application of the parameterization portion of our
+system is the interactive texture mapping and texture placement [26]
+for complex polygonal models. Related to this is the possibility
+of applying procedural texture analysis/synthesis techniques [17] to
+create synthetic displacement maps from real ones. Using our techniques
+such maps can be applied to objects of arbitrary topology.

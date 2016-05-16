@@ -1,0 +1,30 @@
+In the field of machine learning and specifically the problem of statistical classification, a confusion matrix, also known as an error matrix, is a specific table layout that allows visualization of the performance of an algorithm, typically a supervised learning one (in unsupervised learning it is usually called a matching matrix). Each column of the matrix represents the instances in a predicted class while each row represents the instances in an actual class (or vice-versa). The name stems from the fact that it makes it easy to see if the system is confusing two classes (i.e. commonly mislabeling one as another).
+It is a special kind of contingency table, with two dimensions ("actual" and "predicted"), and identical sets of "classes" in both dimensions (each combination of dimension and class is a variable in the contingency table).
+
+
+== Example ==
+If a classification system has been trained to distinguish between cats, dogs and rabbits, a confusion matrix will summarize the results of testing the algorithm for further inspection. Assuming a sample of 27 animals — 8 cats, 6 dogs, and 13 rabbits, the resulting confusion matrix could look like the table below:
+
+
+== Table of confusion ==
+In predictive analytics, a table of confusion (sometimes also called a confusion matrix), is a table with two rows and two columns that reports the number of false positives, false negatives, true positives, and true negatives. This allows more detailed analysis than mere proportion of correct guesses (accuracy). Accuracy is not a reliable metric for the real performance of a classifier, because it will yield misleading results if the data set is unbalanced (that is, when the number of samples in different classes vary greatly). For example, if there were 95 cats and only 5 dogs in the data set, the classifier could easily be biased into classifying all the samples as cats. The overall accuracy would be 95%, but in practice the classifier would have a 100% recognition rate for the cat class but a 0% recognition rate for the dog class.
+Assuming the confusion matrix above, its corresponding table of confusion, for the cat class, would be:
+The final table of confusion would contain the average values for all classes combined.
+Let us define an experiment from P positive instances and N negative instances for some condition. The four outcomes can be formulated in a 2×2 confusion matrix, as follows:
+
+
+== See also ==
+Binary classification
+Contingency table
+Sensitivity and specificity
+Signal detection theory
+Type I and type II errors
+Uncertainty coefficient, aka Proficiency
+
+
+== References ==
+
+
+== External links ==
+Theory about the confusion matrix
+GM-RKB Confusion Matrix concept page

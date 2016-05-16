@@ -1,0 +1,12 @@
+An exponential tree is almost identical to a binary search tree, with the exception that the dimension of the tree is not the same at all levels. In a normal binary search tree, each node has a dimension (d) of 1, and has 2d children. In an exponential tree, the dimension equals the depth of the node, with the root node having a d = 1. So the second level can hold two nodes, the third can hold eight nodes, the fourth 64 nodes, and so on.
+
+
+== Layout ==
+"Exponential Tree" can also refer to a method of laying out the nodes of a tree structure in n (typically 2) dimensional space. Nodes are placed closer to a baseline than their parent node, by a factor equal to the number of child nodes of that parent node (or by some sort of weighting), and scaled according to how close they are. Thus, no matter how "deep" the tree may be, there is always room for more nodes, and the geometry of a subtree is unrelated to its position in the whole tree. The whole has a fractal structure.
+In fact, this method of laying out a tree can be viewed as an application of the upper half-plane model of hyperbolic geometry, with isometries limited to translations only.
+
+
+== See also ==
+Faster deterministic sorting and searching in linear space (Original paper from '95)
+Laying out and Visualizing Large Trees Using a Hyperbolic Space
+Implementation and Performance Analysis of Exponential Tree Sorting

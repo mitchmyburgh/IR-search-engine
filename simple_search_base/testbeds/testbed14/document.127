@@ -1,0 +1,14 @@
+﻿METHONTOLOGY [20] is a methodology, created in the Artificial Intelligence Lab from the
+Technical University of Madrid (UPM), for building ontologies either from scratch, reusing other
+ontologies as they are, or by a process of reengineering them. METHONTOLOGY is the precursor to the NEON methodology. It serves as a gateway methodology. The METHONTOLOGY framework enables the construction of ontologies at the knowledge level. It includes: the identification of the ontology development process, a life cycle based on evolving prototypes (shown in
+Fig. 1), and particular techniques to carry out each activity. The
+ontology development process
+identifies which tasks should be performed when building ontologies (scheduling, control,
+quality assurance, specification, knowledge acquisition, conceptualization, integration, formalization, implementation, evaluation, maintenance, documentation and configuration management). The
+life cycle
+identifies the stages through which the ontology passes during its lifetime,
+as well as the interdependencies with the life cycle of other ontologies [19]. Finally, the methodology specifies the techniques used in each activity, the products that each activity outputs and
+how they have to be evaluated. The main phase in the ontology development process using the
+METHONTOLOGY approach is the conceptualization phase. Tools such as WebODE [1,12] and
+ODE [5] provide support to METHONTOLOGY. However, other tools can be also used to
+develop ontologies following this methodology.

@@ -1,0 +1,38 @@
+In computer science, a mergeable heap (also called a meldable heap) is an abstract data type, which is a heap supporting a merge operation.
+
+
+== Definition ==
+A mergeable heap supports the following operations:
+Make-Heap(), creating an empty heap.
+Insert(H,x), inserting an element x into the heap H.
+Min(H), returning the minimum element, or Nil if no such element exists.
+Extract-Min(H), extracting and returning the minimum element, or Nil if no such element exists.
+Merge(H1,H2), combining the elements of H1 and H2.
+
+
+== Trivial implementation ==
+It is straightforward to implement a mergeable heap given a simple heap:
+Merge(H1,H2):
+x ← Extract-Min(H2)
+while x ≠ Nil
+Insert(H1, x)
+x ← Extract-Min(H2)
+
+This can however be wasteful as each Extract-Min(H) and Insert(H,x) typically have to maintain the heap property.
+
+
+== More efficient implementations ==
+Examples of mergeable heaps include:
+Fibonacci heaps
+Binomial heaps
+Pairing heaps
+A more complete list with performance comparisons can be found here.
+
+
+== See also ==
+Addressable heap
+
+
+== References ==
+
+In computer science, a Fibonacci heap is a data structure for priority queue operations, consisting of a collection of heap-ordered trees. It has a better amortized running time than many other priority queue data structures including the binary heap and binomial heap. Michael L. Fredman and Robert E. Tarjan developed Fibonacci heaps in 1984 and published them in a scientific journal in 1987. They named Fibonacci heaps after the Fibonacci numbers, which are used in their running time analysis.

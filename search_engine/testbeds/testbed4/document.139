@@ -1,0 +1,78 @@
+CMSC 427 Computer Graphics1
+David M. Mount Department of Computer Science University of Maryland Spring 2004
+
+Lecture 9: More Geometric Operators and Applications
+Reading: Cross product is discussed in the Appendix of Hearn and Baker and orientation testing is not discussed. See Chapter 6 for a discussion of various 2-dimensional line clipping algorithms. The Liang-Barsky algorithm discussed here is discussed in Section 6.7. The coordinate-free presentation given here is quite a bit different from the one given in the book and generalizes to all dimensions.
+More Geometric Operators: So far we have discussed two important geometric operations used in computer graphics, change of coordinate systems and af?ne transformations. We saw that both operations could be expressed as the product of a matrix and vector (both in homogeneous form). Next we consider two more geometric operations, which are of a signi?cantly different nature.
+Cross Product: Here is an important problem in 3-space. You are given two vectors and you want to ?nd a third vector that is orthogonal to these two. This is handy in constructing coordinate frames with orthogonal bases. There is a nice operator in 3-space, which does this for us, called the cross product. The cross product is usually de?ned in standard linear 3-space (since it applies to vectors, not points). So we will ignore the homogeneous coordinate here. Given two vectors in 3-space, ~ u and ~ v, their cross product is de?ned to be
+~ u×~ v =? ?
+uyvz -uzvy uzvx -uxvz uxvy -uyvx
+? ?.
+u
+v
+u  v x
+Fig. 29: Cross product.
+A nice mnemonic device for remembering this formula, is to express it in terms of the following symbolic determinant:
+~ u×~ v =
+ 
+ 
+ 
+ 
+ 
+
+~ ex ~ ey ~ ez ux uy uz vx vy vz 
+ 
+ 
+ 
+ 
+ 
+
+.
+Here ~ ex, ~ ey, and ~ ez are the three coordinate unit vectors for the standard basis. Note that the cross product is only de?ned for a pair of free vectors and only in 3-space. Furthermore, we ignore the homogeneous coordinate here. The cross product has the following important properties:
+Lecture Notes 40 CMSC 427
+Skew symmetric: ~ u ×~ v = -(~ v × ~ u). It follows immediately that ~ u × ~ u =0(since it is equal to its own negation).
+Nonassociative: Unlike most other products that arise in algebra, the cross product is not associative. That is
+(~ u×~ v)× ~ w 6= ~ u×(~ v× ~ w). Bilinear: The cross product is linear in both arguments. For example:
+~ u×(a~ v)=a ( ~ u× ~ v ) , ~ u× ( ~ v+~ w )=( ~ u× ~ v )+(~ u×~ w).
+Perpendicular: If ~ u and ~ v are not linearly dependent, then ~ u×~ v is perpendicular to ~ u and ~ v, and is directed according the right-hand rule.
+Angle and Area: The length of the cross product vector is related to the lengths of and angle between the vectors. In particular: |~ u×~ v|=|u||v|sin?, where ? is the angle between ~ u and ~ v. The cross product is usually not used for computing angles because the dot product can be used to compute the cosine of the angle (in any dimension) and it can be computed more ef?ciently. This length is also equal to the area of the parallelogram whose sides are given by ~ u and ~ v. This is often useful.
+The cross product is commonly used in computer graphics for generating coordinate frames. Given two basis vectors for a frame, it is useful to generate a third vector that is orthogonal to the ?rst two. The cross product does exactly this. It is also useful for generating surface normals. Given two tangent vectors for a surface, the cross product generate a vector that is normal to the surface.
+Orientation: Given two real numbers p and q, there are three possible ways they may be ordered: p<q ,p=q, or p>q. We may de?ne an orientation function, which takes on the values +1, 0, or-1in each of these cases. That is, Or1(p,q)=sign(q-p), where sign(x) is either-1, 0, or+1 depending on whether x is negative, zero, or positive, respectively. An interesting question is whether it is possible to extend the notion of order to higher dimensions. The answer is yes, but rather than comparing two points, in general we can de?ne the orientation of d +1 points in d-space. We de?ne the orientation to be the sign of the determinant consisting of their homogeneous coordinates (with the homogenizing coordinate given ?rst). For example, in the plane and 3-space the orientation of three points P, Q, R is de?ned to be Or2(P,Q,R)=sign det? ? 111 p xq xr x p yq yr y ? ? , Or3(P,Q,R,S)=sign det? ? ? ? 1111 p xq xr xs x p yq yr ys y p zq zr zs z ? ? ? ? .
+Or(P,Q,R) = +1
+R
+Q
+P
+R
+Q
+P
+Q
+P
+R
+Or(P,Q,R) = 0 Or(P,Q,R) = -1 Or(P,Q,R,S) = +1 Or(P,Q,R,S) = -1
+S
+P R QQ R
+S
+P
+Fig. 30: Orientations in 2 and 3 dimensions.
+What does orientation mean intuitively? The orientation of three points in the plane is +1 if the triangle PQR is oriented counter-clockwise, -1 if clockwise, and 0 if all three points are collinear. In 3-space, a positive
+Lecture Notes 41 CMSC 427
+orientation means that the points follow a right-handed screw, if you visit the points in the order PQRS.A negative orientation means a left-handed screw and zero orientation means that the points are coplanar. Note that the order of the arguments is signi?cant. The orientation of (P,Q,R) is the negation of the orientation of (P,R,Q). As with determinants, the swap of any two elements reverses the sign of the orientation.
+You might ask why put the homogeneous coordinate ?rst? The answer a mathematician would give you is that is really where it should be in the ?rst place. If you put it last, then positive oriented things are "right-handed" in even dimensions and "left-handed" in odd dimensions. By putting it ?rst, positively oriented things are always right-handed in orientation, which is more elegant. Putting the homogeneous coordinate last seems to be a convention that arose in engineering, and was adopted later by graphics people. The value of the determinant itself is the area of the parallelogram de?ned by the vectors Q-P and R-P, and thus this determinant is also handy for computing areas and volumes. Later we will discuss other methods.
+Application: Intersection of Line Segments: Orientation is a nice operation to keep in mind. For example, suppose you want to know whether two line segments PQand RS intersect in the plane. Although this sounds like a simple problem, it (like many simple geometry primitives) is fraught with special cases and potential pitfalls. For example, you need to consider the possibility of lines being parallel, collinear, or intersecting in a T-junction, etc. Let us assume that we are only interested in proper intersections, in which the interiors of the two segments intersect in exactly one point. (Thus, T-junctions, end-to-end, or collinear intersections are not counted.)
+End-to-endCollinearT-junctionProper
+Fig. 31: Possible intersection types.
+Observe that if any triple of points is collinear, then there is no proper intersection. Assuming that no three of the points are collinear, then observe that the segments intersect if and only if P and Q lie on the opposite sides of the line RS, and if R and S lie on opposite sides of the line PQ. We can reduce these to orientation tests. In particular, if R and S lie on opposite sides of the line PQ, then Or2(P,Q,R) and Or2(P,Q,S) have opposite (nonzero) signs, implying that their product is negative. A simple implementation is shown below.
+Segment Intersection Test
+bool properIntersect(Point P, Point Q, Point R, Point S) { return (Or2(P, Q, R) * Or2(P, Q, S) < 0) && (Or2(R, S, P) * Or2(R, S, Q) < 0); }
+Notice that this also handles the collinearity issue. Since if any triple is collinear, then one of the orientation tests will return 0, and there is no way that we can satisfy both conditions. By the way, this is not the most ef?cient way of testing intersection, because in computing the orientations separately, there are a number of repeated calculations. You might consider how to recode this into a more ef?cient form.
+Application: Line Clipping: To demonstrate some of these ideas, we present a coordinate-free algorithm for a clipping a line relative to a convex polygon in the plane. Clipping is the process of trimming graphics primitives (e.g., line segments, circles, ?lled polygons) to the boundaries of some window. (See Fig. 32 below.) It is often applied in 2-space with a rectangular window. However, we shall see later that this procedure can also be invoked in 3-dimensional space, and remarkably, it is most often invoked in the 4-dimensional space of homogeneous coordinates, as part of a more general process called perspective clipping.
+Lecture Notes 42 CMSC 427
+Line segment Clipping Halfspace
+P
+R
+n
+Fig. 32: Clipping and Halfspaces.
+There are many different clipping algorithms. We will discuss an algorithm for clipping individual line segments called the Liang-Barsky algorithm. Our approach will be coordinate-free in nature. The advantage of the coordinate-free algorithm, which we will discuss, is that it is very easy to derive, and it is very general. It applies to virtually any sort of line segment clipping and in all dimensions. We will use a generalization of this procedure to intersect rays with polyhedra in ray shooting.
+In 2-space, de?ne a halfplane to be the portion of the plane lying to one side of a line. In general, in dimension d, we de?ne a halfspace to the portion of d-space lying to one side of a (d-1)-dimensional hyperplane. In any dimension, a halfspace H can be represented by a pair hR,~ ni, where R is a point lying on the plane and ~ n is a normal vector pointing into the halfspace. Observe that a point P lies within the halfspace if and only if the vector P -R forms an angle of at most 90 degrees with respect to ~ n, that is if ((P -R)·~ n)=0. If the dot product is zero, then P lies on the plane that bounds the halfspace.
+A convex polygon in the plane is the intersection of a ?nite set of halfplanes. (This de?nition is not quite accurate, since it allows for unbounded convex polygons, but it is good enough for our purposes.) In general dimensions, a convex polyhedron is de?ned to be the intersection of a ?nite set of halfspaces. We will discuss the algorithm for the planar case, but we will see that there is nothing in our discussion that precludes generalization to higher dimensions. The input to the algorithm is a set of halfplanes H0,...,Hm-1, where Hi =hRi,~ n iiand a set of line segments,S 1,...,Sn, where each line segment is represented by a pair of points, Pi,0Pi,1. The algorithm works by clipping each line segment and outputting the resulting clipped segment. Thus it suf?ces to consider the case of a single segment P0P1. If the segment lies entirely outside the window, then we return a special status ?ag indicating that the clipped segment is empty.
+

@@ -1,0 +1,221 @@
+     current community 
+        blog 
+        chat 
+         Programmers   
+         Programmers Meta   
+      your communities  
+      Sign up or 
+      log in to customize your list. 
+     more stack exchange communities 
+     company blog 
+    Stack Exchange  
+    Inbox   
+    Reputation and Badges    
+     sign up log in tour  help   
+          Tour  Start here for a quick overview of the site    
+          Help Center  Detailed answers to any questions you might have    
+          Meta  Discuss the workings and policies of this site    
+          About Us  Learn more about Stack Overflow the company    
+          Business  Learn more about hiring developers or posting ads with us    
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    Programmers  
+     Questions 
+     Tags 
+     Users 
+     Badges 
+     Unanswered 
+      Ask Question  
+      _
+       Programmers Stack Exchange is a question and answer site for professional programmers interested in conceptual questions about software development. It's 100% free. 
+      Sign up 
+      Here's how it works: 
+       Anybody can ask a question  
+       Anybody can answer  
+       The best answers are voted up and rise to the top  
+        StackExchange.ready(function () {
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+    Which hashing algorithm is best for uniqueness and speed? 
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,0,"adzerk77110303",4).enableDynamicSiteSelection().setZone(29); });
+          up vote 
+          831 
+          down vote 
+          favorite 
+           815
+           Which hashing algorithm is best for uniqueness and speed? Example (good) uses include hash dictionaries.  
+           I know there are things like SHA-256 and such, but these algorithms are designed to be secure, which usually means they are slower than algorithms that are less unique. I want a hash algorithm designed to be fast, yet remain fairly unique to avoid collisions.  
+           algorithms 
+           hashing 
+               share
+               |
+               improve this question
+                edited Oct 31 '13 at 18:26 
+                Peter Mortensen 
+                 1,118
+                 2
+                 10
+                 14 
+                 asked 
+                Feb 19 '11 at 0:03 
+                Earlz 
+                 8,143
+                 4
+                 31
+                 52 
+                  5  
+                  &nbsp;  
+               For what purpose, security or other? –&nbsp;
+               Orbling 
+               Feb 19 '11 at 0:05 
+                  8  
+                  &nbsp;  
+               @Orbling, for implementation of a hash dictionary. So collisions should be kept to a minimal, but it has no security purpose at all. –&nbsp;
+               Earlz 
+               Feb 19 '11 at 0:06 
+                  22  
+                  &nbsp;  
+               You're wrong; crypto algorithms are designed to be as fast as possible while still remaining secure. –&nbsp;
+               zvrba 
+               Aug 4 '11 at 10:46 
+                  11  
+                  &nbsp;  
+               Great post! Could you also check's Yann Collet's xxHash (creator or LZ4), which is twice as fast as Murmur? Homepage: code.google.com/p/xxhash More info: fastcompression.blogspot.fr/2012/04/… –&nbsp;
+               user55191 
+               May 29 '12 at 12:35 
+                  15  
+                  &nbsp;  
+               @zvrba Depends on the algorithm. bcrypt is designed to be slow. –&nbsp;
+               Izkata 
+               Oct 31 '13 at 19:20 
+          &nbsp;|&nbsp; 
+          show 21 more comments 
+        10 Answers 10  
+          active 
+          oldest 
+          votes 
+           up vote 
+           1574 
+           down vote 
+           accepted 
+            +300
+           I tested some different algorithms, measuring speed and number of collisions. 
+           I used three different key sets: 
+            A list of 216,553 English words (in lowercase) 
+            The numbers "1" to "216553" (think ZIP codes, and how a poor hash took down msn.com) 
+            216,553 "random" (i.e. type 4 uuid) GUIDs 
+           For each corpus, the number of collisions and the average time spent hashing was recorded. 
+           I tested: 
+            DJB2 
+            DJB2a (variant using xor rather than +) 
+            FNV-1 (32-bit) 
+            FNV-1a (32-bit) 
+            SDBM 
+            CRC32 
+            Murmur2 (32-bit) 
+            SuperFastHash 
+           Results 
+           Each result contains the average hash time, and the number of collisions 
+           Hash           Lowercase      Random UUID  Numbers
+=============  =============  ===========  ==============
+Murmur            145 ns      259 ns          92 ns
+                    6 collis    5 collis       0 collis
+FNV-1a            152 ns      504 ns          86 ns
+                    4 collis    4 collis       0 collis
+FNV-1             184 ns      730 ns          92 ns
+                    1 collis    5 collis       0 collis▪
+DBJ2a             158 ns      443 ns          91 ns
+                    5 collis    6 collis       0 collis▪▪▪
+DJB2              156 ns      437 ns          93 ns
+                    7 collis    6 collis       0 collis▪▪▪
+SDBM              148 ns      484 ns          90 ns
+                    4 collis    6 collis       0 collis**
+SuperFastHash     164 ns      344 ns         118 ns
+                   85 collis    4 collis   18742 collis
+CRC32             250 ns      946 ns         130 ns
+                    2 collis    0 collis       0 collis
+LoseLose          338 ns        -             -
+               215178 collis
+           Notes: 
+            The LoseLose algorithm (where hash = hash+character) is truly awful. Everything collides into the same 1,375 buckets 
+            SuperFastHash is fast, with things looking pretty scattered; by my goodness the number collisions. I'm hoping the guy who ported it got something wrong; it's pretty bad 
+            CRC32 is pretty good. Slower, and a 1k lookup table 
+           Do collisions actually happen? 
+           Yes. I started writing my test program to see if hash collisions actually happen - and are not just a theoretical construct. They do indeed happen: 
+           FNV-1 collisions 
+            creamwove collides with quists 
+           FNV-1a collisions 
+            costarring collides with liquid 
+            declinate collides with macallums 
+            altarage collides with zinke 
+            altarages collides with zinkes 
+           Murmur2 collisions 
+            cataract collides with periti 
+            roquette collides with skivie 
+            shawl collides with stormbound 
+            dowlases collides with tramontane 
+            cricketings collides with twanger 
+            longans collides with whigs 
+           DJB2 collisions 
+            hetairas collides with mentioner 
+            heliotropes collides with neurospora 
+            depravement collides with serafins 
+            stylist collides with subgenera 
+            joyful collides with synaphea 
+            redescribed collides with urites 
+            dram collides with vivency 
+           DJB2a collisions 
+            haggadot collides with loathsomenesses 
+            adorablenesses collides with rentability 
+            playwright collides with snush 
+            playwrighting collides with snushing 
+            treponematoses collides with waterbeds 
+           CRC32 collisions 
+            codding collides with gnu 
+            exhibiters collides with schlager 
+           SuperFastHash collisions 
+            dahabiah collides with drapability 
+            encharm collides with enclave 
+            grahams collides with gramary 
+            ...snip 79 collisions... 
+            night collides with vigil 
+            nights collides with vigils 
+            finks collides with vinic 
+           Randomnessification 
+           The other subjective measure is how randomly distributed the hashes are. Mapping the resulting HashTables shows how evenly the data is distributed. All the hash functions show good distribution when mapping the table linearly: 
+           Or as a Hilbert Map (XKCD is always relevant): 
+           Except when hashing number strings ("1", "2", ..., "216553") (for example, zip codes), where patterns begin to emerge in most of the hashing algorithms: 
+           SDBM: 
+           DJB2a: 
+           FNV-1: 
+           A

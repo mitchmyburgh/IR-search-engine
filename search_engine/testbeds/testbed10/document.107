@@ -1,0 +1,59 @@
+Learning and Revising User Profiles:
+The Identification of Interesting Web Sites
+
+MICHAEL PAZZANI 
+DANIEL BILLSUS
+
+1. Introduction
+The World Wide Web (WWW) contains a vast amount of information of varying quality.
+In this paper, we focus on the problem of assisting a person to find information that satisfies
+long-term, recurring goals (such as finding information on machine applications in
+medicine) rather than short-term goals (such as find a paper by a particular author (Armstrong
+et al., 1995)). We define the “interestingness” of a web page as the relevance of the page
+with respect to the user’s long-term information goals. Feedback on the interestingness
+of a set of previously visited sites can be used to learn a profile that would predict the
+interestingness of unseen sites. Since learning accurate classifiers often requires a great
+deal of data and users may be unwilling to rate many sites before accurate predictions are
+made, we allow the user to provide an initial profile that is then revised when the user rates
+visited sites. We will show that revising profiles results in more accurate classifications,
+particularly with small training sets.
+In this paper, we give a brief overview of Syskill & Webert (Pazzani et al., 1996), an
+intelligent agent we designed to learn profiles. Syskill & Webert identifies informative
+words from Web pages to use as Boolean features, and learns a naive Bayesian classifier to
+determine the interestingness of pages. After an initial description of Syskill & Webert, we
+then discuss a number of issues in the learning and revision of profiles.
+• Do more sophisticated and computationally expensive classifiers provide a benefit over
+the naive Bayesian classifier?
+• How can an initial user profile be used to increase the accuracy of initial predictions?
+• What additional knowledge can be brought to bear on the problem to increase the accuracy
+of predictions?
+
+
+7. Future directions
+We are planning two types of enhancements to Syskill & Webert. First, we will investigate
+improvements to the underlying classification technology. However, rather than working
+on the classification algorithm, the representation of profiles and the use of linguistic and
+hierarchical knowledge in the forming of features will be pursued. This had a much larger
+impact than particular classification algorithm used in our experiments.
+Another set of enhancements to Syskill & Webert involve the redesign of the user interface
+to make it more interactive. We are currently reimplementing many of its capabilities so
+that the user profile can then be stored on the client rather than on the Syskill and Webert
+server. We are also exploring several other enhancements to the interface that will make it
+easier to use (and as a consequence allow us to collect more data for our experiments).
+• Implementing routines that interactively annotate the index page with Syskill & Webert’s
+predictions as the initial 2K of each link is processed. Currently, no annotations are added
+until all links have been retrieved and rated. We allow the user to prefetch links so that
+the rating can occur rapidly, but this does require patience the first time Syskill & Webert
+is used and disk space to store local copies of files.
+• Currently, Syskill & Webert displays its rating as annotations on the current page that
+is displayed. We are planning on an option that will create a new page with Syskill &
+Webert’s rankings sorted by the probability estimate that the page is hot.
+• Currently, Syskill & Webert retrieves the original source of a page to determine its
+interestingness. Several of the Web search engines such as LYCOS store a summary of
+the page. We are implementing routines to use this summary for rating the interestingness
+of a page. Combined with the previous option, this will reorder the suggestion made by
+LYCOS based on the user’s profile. This may be particularly useful with “CyberSearch”
+which is a copy of much of the LYCOS database on CD-ROM eliminating the network
+connection overhead as well as the network transmission overhead.
+• We plan on monitoring the topic page of each topic of a user, and notifying the user when
+a new link is added to the page that is rated as interesting.

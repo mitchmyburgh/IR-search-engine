@@ -1,0 +1,16 @@
+Case 4: S and S's children are black, but P is red. In this case, we simply exchange the colors of S and P. This does not affect the number of black nodes on paths going through S, but it does add one to the number of black nodes on paths going through N, making up for the deleted black node on those paths.
+void delete_case4(struct node *n)
+{
+ struct node *s = sibling(n);
+
+ if ((n->parent->color == RED) &&
+     (s->color == BLACK) &&
+     (s->left->color == BLACK) &&
+     (s->right->color == BLACK)) {
+  s->color = RED;
+  n->parent->color = BLACK;
+ } else
+  delete_case5(n);
+}
+ 
+Case 5: S is black, S's left child is red, S's right child is black, and N is the left child of its parent. In this case we rotate right at S, so thatS's left child becomes S's parent and N's new sibling. We then exchange the colors of S and its new parent. All paths still have the same number of black nodes, but now N has a black sibling whose right child is red, so we fall into case 6. Neither N nor its parent are affected by this transformation. (Again, for case 6, we relabel N's new sibling as S.)

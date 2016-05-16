@@ -1,0 +1,150 @@
+Implementing an AVL Tree in Java: Part 2
+When I set out to write an AVL Tree in Java, I did it in such a way as to make it easy to translate the implementation into other languages later, such as C, C++, C#, Javascript, etc., by avoiding the use of custom language constructs and sticking with a procedural style of doing so. Otherwise, the design is relatively straightforward and uses a typical BST node style data structure. In short, there are three classes used in the implementation. Spellchecker uses an instance of AVLTree, which uses a custom collection of zero or more AVLNodes.
+
+AVLNode.java
+
+public class AVLNode {
+    
+    private String key = null;
+    private String originalData = null;
+    private AVLNode leftChild = null;
+    private AVLNode rightChild = null;
+    private int height = 0;
+
+    public AVLNode (String key, String originalData){
+        this.key = key;
+        this.originalData = originalData;
+        leftChild = null;
+        rightChild = null;
+        height = 0;
+    }
+
+    public String getKey(){
+        return key;
+    }
+    
+    public String getOriginalData(){
+        return originalData;
+    }
+
+    public AVLNode getLeftChild (){
+        return leftChild;
+    }
+
+    public void setLeftChild (AVLNode n)
+    {
+        leftChild = n;
+    }
+    
+    public AVLNode getRightChild (){
+        return rightChild;
+    }
+
+    public void setRightChild (AVLNode n){
+        rightChild = n;
+    }
+
+    public int getHeight (){
+        return height;
+    }
+
+    public void setHeight (int h){
+        height = h;
+    }
+}
+AVLTree.java
+
+import java.util.*;
+
+public class AVLTree {
+    
+    private AVLNode root = null;
+    private int size = 0;
+
+    public AVLTree (){
+        root = null;
+        size = 0;
+    }
+
+    public void insert (String key){
+        root = insert(key.toLowerCase(), key, root);
+    }
+
+    private AVLNode insert (String key, String originalData, AVLNode node){
+        if (node == null){
+            node = new AVLNode (key, originalData);
+            size++;
+            return node;
+        }
+        else{
+            if (key.compareTo (node.getKey()) < 0){
+                node.setLeftChild (insert (key, originalData, node.getLeftChild ()));
+                if (height (node.getLeftChild ()) - height (node.getRightChild ()) == 2){
+                    if (key.compareTo ((node.getLeftChild ()).getKey ()) < 0)
+                        node = rotateWithLeft (node);
+                    else
+                        node = doubleWithLeft (node);
+                }
+            }
+            else{
+                if (key.compareTo (node.getKey ()) > 0){
+                    node.setRightChild (insert (key, originalData, node.getRightChild ()));
+                    if (height (node.getRightChild ()) - height (node.getLeftChild ()) == 2){
+                        if (key.compareTo ((node.getRightChild ()).getKey ()) > 0)
+                            node = rotateWithRight (node);
+                        else
+                            node = doubleWithRight (node);
+                    }
+                }
+            }
+        }
+        node.setHeight (max (height (node.getLeftChild ()), height (node.getRightChild ())) + 1);
+        return node;
+    }
+
+    public AVLNode root(){
+        return root;
+    }
+
+    public int size (){
+        return size;
+    }
+    
+    public int height (){
+        return height (root);
+    }
+
+    private int height (AVLNode node){
+        if (node == null)
+            return -1;
+        return node.getHeight ();
+    }
+
+    public boolean isEmpty (){
+        return (size == 0);
+    }
+
+    private AVLNode rotateWithLeft (AVLNode node){
+        AVLNode newNode = node.getLeftChild ();
+        node.setLeftChild (newNode.getRightChild ());
+        newNode.setRightChild (node);
+        node.setHeight (max (height (node.getLeftChild ()), height (node.getRightChild ())) + 1);
+        newNode.setHeight (max (height (newNode.getLeftChild ()), node.getHeight ()) + 1);
+        return newNode;
+    }
+
+
+    private AVLNode rotateWithRight (AVLNode node){
+        AVLNode newNode = node.getRightChild ();
+        node.setRightChild (newNode.getLeftChild ());
+        newNode.setLeftChild (node);
+        node.setHeight (max (height (node.getLeftChild ()), height (node.getRightChild ())) + 1);
+        newNode.setHeight (max (height (newNode.getRightChild ()), node.getHeight ()) + 1);
+        return newNode;
+    }
+
+    private AVLNode doubleWithLeft (AVLNode node){
+        node.setLeftChild (rotateWithRight (node.getLeftChild ()));
+        return rotateWithLeft (node);
+    }
+

@@ -1,0 +1,40 @@
+In metadata, the term data element is an atomic unit of data that has precise meaning or precise semantics. A data element has:
+An identification such as a data element name
+A clear data element definition
+One or more representation terms
+Optional enumerated values Code (metadata)
+A list of synonyms to data elements in other metadata registries Synonym ring
+Data elements usage can be discovered by inspection of software applications or application data files through a process of manual or automated Application Discovery and Understanding. Once data elements are discovered they can be registered in a metadata registry.
+In telecommunication, the term data element has the following components:
+A named unit of data that, in some contexts, is considered indivisible and in other contexts may consist of data items.
+A named identifier of each of the entities and their attributes that are represented in a database.
+A basic unit of information built on standard structures having a unique meaning and distinct units or values.
+In electronic record-keeping, a combination of characters or bytes referring to one separate item of information, such as name, address, or age.
+In the areas of databases and data systems more generally a data element is a concept forming part of a data model. As an element of data representation, a collection of data elements forms a data structure.
+
+
+== In Practice ==
+In practice, data elements (fields, columns, attributes, etc.) are sometimes "over loaded", meaning a given data element will have multiple potential meanings. While a known bad practice, over loading is nevertheless a very real factor or barrier to understanding what a system is doing.
+
+
+== See also ==
+Application Discovery and Understanding
+Data element definition
+Data dictionary
+Data hierarchy
+ISO/IEC 11179 metadata registry specification
+Metadata
+Representation term
+Universal Data Element Framework
+
+
+== References ==
+
+ This article incorporates public domain material from the General Services Administration document "Federal Standard 1037C".
+ This article incorporates public domain material from the United States Department of Defense document "Dictionary of Military and Associated Terms".
+
+
+== External links ==
+Association for Enterprise Integration
+Federal XML Developer's Guide
+ISO/IEC 11179 Standards (see ISO/IEC 11179-3:2003 clause 3.3.36)

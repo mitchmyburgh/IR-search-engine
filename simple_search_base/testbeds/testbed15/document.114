@@ -1,0 +1,11 @@
+﻿Rendering is always an exercise in managing how much computer power you are willing to devote to simulating reality - that cost is expressed in both dollars and time.
+
+Once considered a commodity item in the whole CG / VFX world - rendering is now a hot topic. CG supervisor Scott Metzger jokes that one can't talk about renderers without annoying someone. "Renderers are like religion (laughs). Rendering is a religion! Especially now in this era, which is really really exciting, there is so much going on and there are so many renderers, so much happening. To me it is the most exciting part of being in our industry right now."
+
+As Dana Batali, Vice President of RenderMan products at Pixar commented to fxguide at an earlier Siggraph,  "Rendering drives the largest computational budget of getting the pixels to the screen." He pointed out at that time 'sims' (physical sims like cloth etc) were only about 5% of most film's computation budgets. Since rendering dominates render farms one cannot devote as much effort to perfect light simulations in a render as you can to a destruction simulation in just perhaps one shot.
+
+Renderers are easy to write in the abstract, as perhaps a university project, but to work in production environments is extremely difficult. Arnold, by Solid Angle, is some 200,000 lines of highly optimized C++ code, and it is considered a very direct implementation without a lot of hacks or tricks. Production requirements in terms of rendertime and scene complexity are staggering. And the problem is not just contained to final render time, as Arnold founder Marcos Fajardo pointed out at Siggraph 2010 - final render CPU time might cost $0.10 per hour, but artist time is closer to $40 an hour, so interactivity is also vital.
+
+This leads to the heart of rendering: picking the best approach that will get the results looking as good as possible, in the time you have, and more precisely picking which attributes of an image - be it complex shading, complex motion blur, sub-surface scattering or some other light effects should be your priority - which ones will play in your shot, and which attributes need to be more heavily compromised.
+
+Rendering is an art of trying to cheat compromises.

@@ -1,0 +1,38 @@
+In computing a data-structured language is a programming language in which the data structure is a main organizing principle, representation, model, for data and logic (code) alike, in which both are stored and operated upon, i.e., program data and logic are structured and operated on in the same way, by the same representation.
+These are generally well suited to reflection and introspection, and are in some ways more consistent than many other languages. This makes them easier to learn, and to program in for those problems which naturally fit the language's data structure. Where this occurs, programming may become trivial. For those problems which do not naturally fit a language's data structure, programming may be no easier or even harder than in other languages.
+In programs written in some data-structured languages, when an instance occurs of the type of data representation which forms the basis of the language, then such instance is treated as a special case of quoted program.
+A similar concept based on consistency exists in some object-oriented languages, called "pure", which use a consistent object model: everything in them is treated uniformly as an object, from primitives such as characters and punctuation, all the way up to whole classes, prototypes, blocks, modules, etc.
+
+
+== Variants ==
+Three main classes of data-structured languages exist, determined by the type of data structure on which they are based.
+Array-based
+A/A+
+APL
+J
+K
+Q
+List-based
+Joy
+Lisp
+Arc
+Common Lisp
+Dylan
+Emacs Lisp
+InterLisp
+Logo
+Scheme
+ZetaLisp
+
+Tcl
+TRAC
+Stack-based (open stacks)
+Forth
+Factor
+Poplog via its implementation language POP-11
+PostScript
+Some languages can statically link data inline with instructions. These can be considered data-structured, in the most primitive way. Some Assembly languages can do this.
+
+
+== See also ==
+Homoiconicity

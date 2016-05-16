@@ -1,0 +1,44 @@
+AutoLISP
+'''AutoLISP''' is a  of the  built specifically for use with the full version of  and its derivatives, which include '''', '''' and ''''. Neither the  nor the  to execute AutoLISP code are included in the AutoCAD LT product line. 
+==Features==
+AutoLISP is a small, , dynamically typed  dialect with , immutable list structure and settable symbols, lacking in such regular LISP features as , records definition facilities, arrays, functions  with variable number of arguments or let bindings. Aside from the core language, most of the primitive functions are for geometry, accessing AutoCAD's internal DWG database, or manipulation of graphical entities in AutoCAD. The properties of these graphical entities are revealed to AutoLISP as s in which values are paired with AutoCAD "group codes" that indicate properties such as definitional points, radii, colors, layers, linetypes, etc. AutoCAD loads AutoLISP code from .LSP files.
+AutoLISP code can interact with the user through AutoCAD's graphical editor by use of primitive functions that allow the user to pick points, choose objects on screen, input numbers and other data. AutoLisp also has a built-in GUI , the , for creating modal dialog boxes with automated layout, within AutoCAD. 
+==History==
+AutoLISP was derived from an early version of , which was created by . The language was introduced in AutoCAD Version 2.18 in January 1986, and continued to be enhanced in successive releases up to Release 13 in February 1995. After that, its development was neglected by  in favor of more fashionable development environments like ,  and . However, it has remained AutoCAD's primary user customization language.
+'''Vital-LISP''', a considerably enhanced version of AutoLISP including an ,  and , and , was developed and sold by third party developer . Vital LISP was a superset of the existing AutoLISP language that added -like access to the AutoCAD object model, reactors (event handling for AutoCAD objects), general  support, and some other general Lisp functions.  Autodesk purchased this, renamed it '''Visual LISP''', and briefly sold it as an add-on to AutoCAD Release 14 released in May 1997. It was incorporated into AutoCAD 2000 released in March 1999, as a replacement for AutoLISP.  Since then  has chosen to halt major enhancements to Visual LISP in favor of focusing more effort on  and  and . As of January 31, 2014, Autodesk no longer supports versions of VBA older than 7.1. This is part of a long-term process of switching over from VBA to .NET for customization.   
+AutoLISP has such a strong following that other CAD application vendors add it to their own products. ,  and others have AutoLISP functionality, so that AutoLISP users can consider using them as an alternative to AutoCAD.  Most development involving AutoLISP since AutoCAD 2000 is actually performed within Visual LISP since the original AutoLISP engine was replaced with the Visual LISP engine.  There are thousands of utilities and applications that have been developed using AutoLISP or Visual LISP (distributed as LSP, FAS and VLX files). 
+==Examples==
+A simple  in AutoLisp would be:
+(defun hello ( )
+    (princ "\nHello World!")
+    (princ)
+)
+Note the final line inside the function definition: The princ function, when not passed an argument, does not return a value. As the AutoCAD command line functions as a , this would normally print "Hello World!" to the command line, followed immediately by the return value of the call to princ. Without the final call to the princ function, the result of this would be:
+:Hello World!"\nHello World!"
+A more complex example might be:
+(defun c:pointlabel ( / pnt )
+    (if (setq pnt (getpoint "\nSpecify point: "))
+        (progn
+            (entmake
+                (list
+                   '(0 . "POINT")
+                    (cons 10 (trans pnt 1 0))
+                )
+            )
+            (entmake
+                (list
+                   '(0 . "TEXT")
+                    (cons 10 (trans (cons (+ (car pnt) 0.6) (cdr pnt)) 1 0))
+                    (cons 40 (getvar 'textsize))
+                    (cons  1 (strcat "X:" (rtos (car pnt)) " Y:" (rtos (cadr pnt))))
+                )
+            )
+        )
+    )
+    (princ)
+)
+The above code defines a new  which generates an AutoCAD point object at a given point, with a single-line text object displaying the X and Y coordinates beside it. The name of the function includes a special prefix 'c:', which causes AutoCAD to recognize the function as a regular command. The user, upon typing 'pointlabel' at the AutoCAD Command Prompt, would be prompted to pick a point, either by typing the X and Y coordinates, or clicking a location in the drawing. The function would then place a marker at that point, and create a single-line text object next to it, containing the x and y coordinates of the point expressed relative to the active User Coordinate System (UCS). The function requires no , and contains one  ('pnt').
+The above example could also be written using built-in AutoCAD commands to achieve the same result, however this approach is susceptible to changes to the command prompts between AutoCAD releases.
+==References==
+==External links==
+*

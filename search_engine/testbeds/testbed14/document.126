@@ -1,0 +1,15 @@
+﻿The Uschold and King’s method [70] proposes four activities: (1) to identify the purpose of the
+ontology, (2) to build it, (3) to evaluate it, and (4) to document it. During the building activity, the
+authors propose capturing knowledge, coding it and integrating other ontologies inside the current
+one. The authors also propose three strategies for identifying the main concepts in the ontology: a
+top-down approach, in which the most abstract concepts are identified first, and then, specialized
+into more specific concepts; a bottom-up approach, in which the most specific concepts are identified
+first and then generalized into more abstract concepts; and a middle-out approach, in which the most
+important concepts are identified first and then generalized and specialized into other concepts.
+Gr€uuninger and Fox
+[33] propose a methodology that is inspired on the development of
+knowledge-based systems using first order logic. They propose first to identify intuitively the main
+scenarios (possible applications in which the ontology will be used). Then, a set of natural language questions, called competency questions, are used to determine the scope of the ontology.
+These questions and their answers are used both to extract the main concepts and their properties,
+relations and axioms on the ontology. Such ontology components are formally expressed in first order logic. Therefore, this is a very formal method that takes advantage of the robustness of
+classic logic. It can be used as a guide to transform informal scenarios in computable models.

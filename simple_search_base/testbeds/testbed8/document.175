@@ -1,0 +1,10 @@
+T-tree
+From Wikipedia, the free encyclopedia
+ 	This article relies largely or entirely upon a single source. Relevant discussion may be found on the talk page. Please helpimprove this article by introducing citations to additional sources. (June 2013)
+
+ 
+An example T-tree.
+In computer science a T-tree is a type of binary tree data structure that is used by main-memory databases, such as Datablitz,EXtremeDB, MySQL Cluster, Oracle TimesTen and MobileLite.
+A T-tree is a balanced index tree data structure optimized for cases where both the index and the actual data are fully kept in memory, just as a B-tree is an index structure optimized for storage on block oriented secondary storage devices like hard disks. T-trees seek to gain the performance benefits of in-memory tree structures such as AVL trees while avoiding the large storage space overhead which is common to them.
+T-trees do not keep copies of the indexed data fields within the index tree nodes themselves. Instead, they take advantage of the fact that the actual data is always in main memory together with the index so that they just contain pointers to the actual data fields.
+The 'T' in T-tree refers to the shape of the node data structures in the original paper that first described this type of index.[1]

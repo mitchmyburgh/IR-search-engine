@@ -1,0 +1,27 @@
+A Kinetic hanger is a randomized version of a kinetic heap whose performance is easy to analyze tightly. A kinetic hanger satisfies the heap property (the priority of each element is higher than the priority of its children) but relaxes the requirement that the tree structure must be strictly balanced, thus insertions and deletions can be randomized. As a result, the structure of the kinetic hanger has the property that it is drawn uniformly at random from the space of all possible heap-like structures on its elements.
+
+
+== Implementation ==
+The kinetic hanger structure (including certificates and event queue) is exactly the same as the kinetic heap structure, but without the balancing requirement. Thus, it consists of an efficient priority queue (the event queue) to maintain the certificate failure times, as well as a main (not necessarily balanced) heap-like tree structure in which the elements are stored. There is a certificate associated with each edge that enforces the heap property (priority of parent > priority of child) along that edge.
+The characteristic operation in a kinetic hanger is "hanging", which is defined as follows (a distinction is made between a node in the tree structure and the element stored in it). Hang(Node n, Element e)
+If there is no element at n, put e in n and return
+If the element x in n has a higher priority than e, choose a child c of n randomly and recursively call Hang(c, e)
+If the element x in n has a lower priority than e, put e in n choose a child c of n randomly and recursively call Hang(c, x)
+The main difference between the kinetic hanger and the kinetic heap is in the key operations, which are implemented as follows in a kinetic hanger:
+Build-hanger: First sort elements by priority and then call hang on the root for each element in order. Then calculate and schedule certificate failure times in the event queue. This takes O(n log n) time, similar to a kinetic heap.
+Insert: The kinetic hanger inserts top-down (instead of bottom-up) by "hanging" the new element at the root node. This takes O(log n) time, but O(log n) certificates might have to be changed on the way down, thus total time is O(log2n)
+Delete: This is a simpler operation than in a heap, since the balancing of tree structure doesn't need to be maintained. Thus, the element is simply replaced with the larger of its children, and then that child is recursively deleted. Again, this takes O(log n) time, but O(log n) certificates might have to be updated, so the total time is O(log2n).
+All these operations result in a uniformly random structure for the hanger, with an expected height of O(log n).
+
+
+== Analysis ==
+This structure is:
+Responsive: processing a certificate failure takes O(log n) time, just like in a kinetic heap
+Local: each element is involved in O(1) certificates, just like in a kinetic heap
+Compact: there are a total of O(n) certificates, just like in a kinetic heap
+Efficient: it has the same efficiency as a kinetic tournament or kinetic heater - for a collection of space-time trajectories where each pair intersects at most s times, the kinetic hanger processes O(λs+2log n) events in O(λs+2log2n) time, where λs+2 is a Davenport-Schinzel sequence
+
+
+== References ==
+
+da Fonseca, Guilherme D. and de Figueiredo, Celina M. H. and Carvalho, Paulo C. P. "Kinetic hanger" (PDF). Information Processing Letters. pp. 151–157. Retrieved May 17, 2012.  CS1 maint: Multiple names: authors list (link)

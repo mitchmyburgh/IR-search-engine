@@ -1,0 +1,89 @@
+	Part I. 
+   Introduction 
+   Sorting a list of numbers or strings is easy. Sorting a list of items by a key is not complicated either. But what if you want to order a sequence of items so that an item must be preceded by all the other items it depends on? Welcome to topological sorting! 
+   In the beginning I will show and explain a basic implementation of topological sort in C#. Then I will cover more complex scenarios and improve the solution step-by-step in the process. 
+   Background 
+   I came across this problem recently. We have a list of tasks that read data from a common store and then write the results back there. The trick is some of these tasks depend on results from other tasks. The engine which is running the tasks does not know anything about their internal structure so it cannot simply execute the dependencies first. We have to feed the tasks in correct order ourselves. 
+   In the above image we have sequence of eight items named A to H. The arrows show how these depend on each other. Here A does not depend on anything else, it's a root element, B depends on C and E, while D depends on A etc. The goal is to order the items in such way that there are references from right to left only. 
+   When I started to work on the problem I knew there is something like topological sorting but that was it. So I started to look up more information. There is a nice article about topological sorting on Wikipedia. Of course I was looking for a ready to use solution at first. After a quick search I found this implementation of the depth-first search. It wasn't quite what I needed so I grabbed the code and started from there. 
+   The algorithm 
+   The depth-first search algorithm is not complicated. It works on a directed acyclic graph. Expressed in pseudocode it takes only a couple of lines: 
+   source: the sequence of items to be sorted (input)
+sorted: the list of sorted items (output)
+while there are unmarked nodes in source
+select an unmarked node n
+visit(n)
+function visit(node n)
+if n has temporary mark then this is a cyclic dependency
+if n has no mark
+add temporary mark to n    
+for each dependency of n
+visit(dependency)
+remove temporary mark from n
+add permanent mark to n
+add n to sorted   It doesn't matter how the input is ordered or where we start. We take an item form the input and walk its dependencies. The concept of marking the items help us to keep track of already visited nodes. 
+   The temporary mark says we are currently processing the node. So if we see that mark it means the node is its own dependency i.e. there is a cyclic reference in the graph. Permanent mark means we already processed that item and it was placed in the output. In this case we don't need to do anything as this dependency was already satisfied. 
+   Processing an item simply means going trough all it's dependencies first and add them to the sorted list. Then it is safe to add the processed item itself. 
+   Basic implementation 
+   public static IList&lt;T&gt; Sort&lt;T&gt;(IEnumerable&lt;T&gt; source, Func&lt;T, IEnumerable&lt;T&gt;&gt; getDependencies)
+{
+var sorted = new List&lt;T&gt;();
+var visited = new Dictionary&lt;T, bool&gt;();
+foreach (var item in source)
+{
+Visit(item, getDependencies, sorted, visited);
+}
+return sorted;
+}
+public static void Visit&lt;T&gt;(T item, Func&lt;T, IEnumerable&lt;T&gt;&gt; getDependencies, List&lt;T&gt; sorted, Dictionary&lt;T, bool&gt; visited)
+{
+bool inProcess;
+var alreadyVisited = visited.TryGetValue(item, out inProcess);
+if (alreadyVisited)
+{
+if (inProcess)
+{
+	throw new ArgumentException("Cyclic dependency found.");
+}
+}
+else
+{
+visited[item] = true;
+var dependencies = getDependencies(item);
+if (dependencies != null)
+{
+	foreach (var dependency in dependencies)
+	{
+		Visit(dependency, getDependencies, sorted, visited);
+	}
+}
+visited[item] = false;
+sorted.Add(item);
+}
+}   As you can see there is a list for sorted output and a dictionary to track marked (visited) items. The original implementation from which I'm heavily borrowing here used a HashSet to track visited items. But unfortunately it didn't have any notion of the temporary mark. This was replaced by checking the sorted output for the element in question. I decided to use a dictionary instead where I can store a bool flag for each element, true for temporary mark and false for permanent one. Furthermore, compared to the pseudocode I don't bother with selecting an unmarked item on the top level. There is no need because Visit method handles this situation out of the box. 
+   Let's test it, shall we? First we define the class representing our items to be sorted. 
+   public class Item
+{
+public string Name { get; private set; }
+public Item[] Dependencies { get; private set; }
+public Item(string name, params Item[] dependencies)
+{
+Name = name;
+Dependencies = dependencies;
+}
+}   Items' dependencies are expressed as straightforward as it gets - an array of items. Now the actual test scenario. Please note that we reuse the same instances for dependencies. 
+   var a = new Item("A");
+var c = new Item("C");
+var f = new Item("F");
+var h = new Item("H");
+var d = new Item("D", a);
+var g = new Item("G", f, h);
+var e = new Item("E", d, g);
+var b = new Item("B", c, e);
+var unsorted = new[] { a, b, c, d, e, f, g, h };
+var sorted = TopologicalSort.Sort(unsorted, x =&gt; x.Dependencies);   This will give following output: 
+   A C D F H G E B 
+   Check the diagram above, this is actually correct. The topological sort is working. 
+   Item equality 
+   Do you remember when I pointed out we are reusing the same instances for dependencies? What if that wouldn't be the case? Let's rewrite the test a bit, now creating a new instance every time we need an item. 
+

@@ -1,0 +1,11 @@
+Priority queue operations[edit]
+Binary search trees can serve as priority queues: structures that allow insertion of arbitrary key as well as lookup and deletion of the minimum (or maximum) key. Insertion works as previously explained. Find-min walks the tree, following left pointers as far as it can without hitting a leaf:
+// Precondition: T is not a leaf
+function find-min(T):
+    while hasLeft(T):
+        T ? left(T)
+    return key(T)
+Find-max is analogous: follow right pointers as far as possible. Delete-min (max) can simply look up the minimum (maximum), then delete it. This way, insertion and deletion both take logarithmic time, just as they do in a binary heap, but unlike a binary heap and most other priority queue implementations, a single tree can support all of find-min, find-max,delete-min and delete-max at the same time, making binary search trees suitable as double-ended priority queues.[2]:156
+Types[edit]
+There are many types of binary search trees. AVL trees and red-black trees are both forms of self-balancing binary search trees. A splay tree is a binary search tree that automatically moves frequently accessed elements nearer to the root. In a treap (tree heap), each node also holds a (randomly chosen) priority and the parent node has higher priority than its children. Tango trees are trees optimized for fast searches.
+A degenerate tree is a tree where for each parent node, there is only one associated child node. It is unbalanced and, in the worst case, performance degrades to that of a linked list. If your added node function does not handle re-balancing, then you can easily construct a degenerate tree by feeding it with data that is already sorted. What this means is that in a performance measurement, the tree will essentially behave like a linked list data structure.

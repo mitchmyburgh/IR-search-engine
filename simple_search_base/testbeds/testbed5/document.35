@@ -1,0 +1,81 @@
+Which Programming Language Should I Learn First?
+
+Dear Lifehacker,
+With all the buzz about learning to code, I've decided to give it a try. The problem is, I'm not sure where to start. What's the best programming language for a beginner like me?
+
+Signed,
+Could-Be Coder
+
+Dear Could-Be,
+That's probably one of the most popular questions from first-time learners, and it's something that educators debate as well. The thing is, you can ask ten programmers what the best language is to get your feet wet with and you could get ten different answers—there are thousands of options. Which language you start with depends not only on how beginner-friendly it is, though, but also the kind of projects you want to work on, why you're interested in coding in the first place, and perhaps also whether you're thinking of doing this for a living. Here are some considerations and suggestions to help you decide.
+Why Do You Want to Learn to Code?
+
+Depending on what it is you want to make or do, your choice might already be made up for you. To build a website or webapp, for example, you should learn HTML and CSS, along with JavaScript and perhaps PHP for interactivity. If your focus is mostly/only on building a mobile app, then you can dive right into learning Objective-C for iOS apps or how to program with Java for Android (and other things).
+Apple's Start Developing iOS Apps Today Guide Is a Roadmap for Creating Your First App
+
+If you've ever wanted to create an app for the iPhone or iPad but didn't know where to…
+Read more
+
+If you're looking to go beyond one specific project or specialty, though, or want to learn a bunch of languages, it's best to start with learning the basic concepts of programming and how to "think like a coder." That way, no matter what your first programming language, you can apply those skills towards learning a new one (maybe in as little as 21 minutes). Even kids' coding apps can be useful to start with. For example, the first formal programming course I took (well, other than BASIC back in fourth grade) was Harvard's CS50, which you can take for free. Professor Malan starts the course off with Scratch, a drag-and-drop programming environment built for kids that teaches coding basics and logic—while helping you create something cool—and then he proceeds to teach you C.
+How and Why to Teach Your Kids to Code
+
+Whether or not your child grows up to be the next Zuckerberg, programming is a highly useful skill…
+Read more
+
+We've featured several other excellent resources for learning to code over the years, such as interactive course Codecademy, but even with those you still need to choose which language to start with. So let's take a look at the differences between the more popular ones and which are most recommended as a starter language.
+The Most-Often Recommended Programming Languages for Beginners
+
+Most of the "mainstream" programming languages—such as C, Java, C#, Perl, Ruby, and Python—can do the same—or nearly the same—tasks as the others. Java, for example, works cross-platform and is used for web apps and applets, but Ruby also can do large web apps and Python apps similarly run on Linux and Windows. SOA World points out that because many languages are modeled after each other, the syntax or structure of working on them is often nearly identical, so learning one often helps with learning the others. For example, to print "Hello World," Java and C# are syntactically similar just as Perl and Python are:
+
+Which Programming Language Should I Learn First?
+
+They differ, however, in how easy they are to set up and get into. SOA World continues:
+
+    Hey, by the way, if you looked closely at those examples, you'll notice some are simple, others are complex, and some require semicolons at the ends of lines while others don't. If you're just getting started in programming, sometimes it's best to choose languages without many syntactical (or logical) rules because it allows the language to "Get out of its own way". If you've tried one language and really struggled with it, try a simpler one!
+
+Here's a quick comparison of the most popular programming languages:
+C: Trains You to Write Efficient Code
+
+C is one of, if not the, most widely used programming languages. There are a few reasons for this. As noted programmer and writer Joel Spolsky says, C is to programming as learning basic anatomy is to a medical doctor. C is a "machine level" language, so you'll learn how a program interacts with the hardware and learn the fundamentals of programming at the lowest—hardware—level (C is the foundation for Linux/GNU). You learn things like debugging programs, memory management, and how computers work that you don't get from higher level languages like Java—all while prepping you to code efficiently for other languages. C is the "grandfather" of many other higher level languages, including Java, C#, and JavaScript.
+
+That said, coding in C is stricter and has a steeper learning curve than other languages, and if you're not planning on working on programs that interface with the hardware (tap into device drivers, for example, or operating system extensions), learning C will add to your education time, perhaps unnecessarily. Stack Overflow has a good discussion on C versus Java as a first language, with most people pointing towards C. However, personally, although I'm glad I was exposed to C, I don't think it's a very beginner-friendly language. It'll teach you discipline, but you'll have to learn an awful lot before you can make anything useful. Also, because it's so strict you might end up frustrated like this:
+
+Which Programming Language Should I Learn First?
+Java: One of the Most Practical Languages to Learn
+
+Java is the second most popular programming language, and it's the language taught in Stanford's renowned (and free) Intro to CS programming course. Java enforces solid Object Oriented principles (OOP) that are used in modern languages including C++, Perl, Python, and PHP. Once you've learned Java, you can learn other OOP languages pretty easily.
+
+Java has the advantage of a long history of usage. There are lots of "boilerplate" examples, it's been taught for decades, and it's widely used for many purposes (including Android app development), so it's a very practical language to learn. You won't get machine-level control, as you would with C, but you'll be able to access/manipulate the most important computer parts like the filesystem, graphics, and sound for any fairly sophisticated and modern program—that can run on any operating system.
+Python: Fun and Easy to Learn
+
+Many people recommend Python as the best beginner language because of its simplicity yet great capabilities. The code is easy to read and enforces good programming style (like indenting), without being overly strict about syntax (things like remembering to add a semicolon at the end of each line). Patrick Jordan at Ariel Computing compared the time it takes to write a simple script in various languages (BASIC, C, J, Java, and Python) and determined that while the other languages shouldn't be ignored, Python:
+
+    requires less time, less lines of code, and less concepts to be taught to reach a given goal. […] Finally programming in Python is fun! Fun and frequent success breed confidence and interest in the student, who is then better placed to continue learning to program.
+
+SOA says Python is an absolute must for beginners who want to get their feet wet with Linux (or are already familiar with Linux). Python's popularity is also rising quickly today thanks to wide adoption on popular websites like Pinterest and Instagram.
+JavaScript: For Jumping Right in and Building Websites
+
+JavaScript (of little relation to Java) requires the least amount of set up to get started with, since it's already built into web browsers. O'Reilly Media recommends you start with JavaScript because it has a relatively forgiving syntax (you can code loosely in JavaScript), you see immediate results from your code, and you don't need a lot of tools. In our own Learn to Code night school we use JavaScript to show you the basics like how variables and functions work. If you want to make cool interactive things for the web, JavaScript is a must-have skill.
+Learn to Code: The Full Beginner's Guide
+
+If you've been looking to learn how to code, we can help you get started. Here are 4.5 lessons …
+Read more
+Choosing Your Path
+
+One last consideration is whether or not you might want to go from coding as a hobby to doing it as a career. Dev/Code/Hack breaks down the different job roles and the skills you should pick up for them:
+
+    Back-end/Server-side Programmer: Usually uses one of the following: Python, Ruby, PHP, Java or .Net. Has database knowledge. Possibly has some sysadmin knowledge.
+
+    Front-end/Client-side Programmer: HTML, CSS, JavaScript. Possibly has design skill.
+
+    Mobile Programmer: Objective-C or Java (for Android). HTML/CSS for mobile websites. Potentially has server-side knowledge.
+
+    3D Programmer/Game Programmer: C/C++, OpenGL, Animation. Possibly has good artistic skill.
+
+    High-Performance Programmer: C/C++, Java. May have background in mathematics or quantitative analysis.
+
+In the end, though, there's no one way to get started learning to code. The most important thing is to learn the fundamentals through "scratching your itch," so to speak, with working on a problems you want to solve or something you want to build. As the programming is terrible blog says:
+
+    The first programming language you learn will likely be the hardest to learn. Picking something small and fun makes this less of a challenge and more of an adventure. It doesn't really matter where you start as long as you keep going—keep writing code, keep reading code. Don't forget to test it either. Once you have one language you're happy with, picking up a new language is less of a feat, and you'll pick up new skills on the way.
+
+Once you've decided, previously mentioned Bento will suggest the resources you need and the courses to take after you've learned your first language.

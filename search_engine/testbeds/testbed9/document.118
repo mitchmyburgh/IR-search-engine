@@ -1,0 +1,54 @@
+A Kinetic Heap is a kinetic data structure, obtained by the kinetization of a heap. It is designed to store elements (keys associated with priorities) where the priority is changing as a continuous function of time. As a type of kinetic priority queue, it maintains the maximum priority element stored in it. The kinetic heap data structure works by storing the elements as a tree that satisfies the following heap property - if B is a child node of A, then the priority of the element in A must be higher than the priority of the element in B. This heap property is enforced using certificates along every edge so, like other kinetic data structures, a kinetic heap also contains a priority queue (the event queue) to maintain certificate failure times.
+
+
+== Implementation and operations ==
+A regular heap can be kinetized by augmenting with a certificate [A>B] for every pair of nodesA, B such that B is a child node of A. If the value stored at a node X is a function fX(t) of time, then this certificate is only valid while fA(t) > fB(t). Thus, the failure of this certificate must be scheduled in the event queue at a time t such that fA(t) > fB(t).
+All certificate failures are scheduled on the "event queue", which is assumed to be an efficient priority queue whose operations take O(log n) time.
+
+
+=== Dealing with certificate failures ===
+
+When a certificate [A>B] fails, the data structure must swap A and B in the heap, and update the certificates that each of them was present in.
+For example, if  (call its child nodes ) was a child node of  (call its child nodes and its parent node ), and the certificate [A>B] fails, then the data structure must swap and , then replace the old certificates (and the corresponding scheduled events) [A>B], [A<X], [A>C], [B>Y], [B>Z] with new certificates [B>A], [B<X], [B>C], [A>Y] and [A>Z].
+Thus, assuming non-degeneracy of the events (no two events happen at the same time), only a constant number of events need to be de-scheduled and re-scheduled even in the worst case.
+
+
+=== Operations ===
+A kinetic heap supports the following operations:
+create-heap(h): create an empty kinetic heap h
+find-max(h, t) (or find-min): - return the max (or min for a min-heap) value stored in the heap h at the current virtual time t.
+insert(X, fX, t): - insert a key X into the kinetic heap at the current virtual time t, whose value changes as a continuous function fX(t) of time t. The insertion is done as in a normal heap in O(log n) time, but O(log n) certificates might need to be changed as a result, so the total time for rescheduling certificate failures is O(log 2 n)
+delete(X, t) - delete a key at the current virtual time t. The deletion is done as in a normal heap in O(log n) time, but O(log n) certificates might need to be changed as a result, so the total time for rescheduling certificate failures is O(log 2 n).
+
+
+== Performance ==
+Kinetic heaps perform well according to the four metrics (responsiveness, locality, compactness and efficiency) of kinetic data structure quality defined by Basch et al. The analysis of the first three qualities is straightforward:
+Responsiveness:A kinetic heap is responsive, since each certificate failure causes the concerned keys to be swapped and leads to only few certificates being replaced in the worst case.
+Locality: Each node is present in one certificate each along with its parent node and two child nodes (if present), meaning that each node can be involved in a total of three scheduled events in the worst case, thus kinetic heaps are local.
+Compactness: Each edge in the heap corresponds to exactly one scheduled event, therefore the number of scheduled events is exactly where n is the number of nodes in the kinetic heap. Thus, kinetic heaps are compact.
+
+
+=== Analysis of efficiency ===
+The efficiency of a kinetic heap in the general case is largely unknown.However, in the special case of affine motion f(t) = at + b of the priorities, kinetic heaps are known to be very efficient.
+
+
+==== Affine motion, no insertions or deletions ====
+In this special case, the maximum number of events processed by a kinetic heap can be shown to be exactly the number of edges in the transitive closure of the tree structure of the heap, which is O(nlogn) for a tree of height O(logn) 
+
+
+==== Affine motion, with insertions and deletions ====
+If n insertions and deletions are made on a kinetic heap that starts empty, the maximum number of events processed is . However, this bound is not believed to be tight, and the only known lower bound is .
+
+
+== Variants ==
+This article deals with "simple" kinetic heaps as described above, but other variants have been developed for specialized applications, such as:
+Fibonacci kinetic heap
+Incremental kinetic heap
+Other heap-like kinetic priority queues are:
+Kinetic heater
+Kinetic hanger
+
+
+== References ==
+
+Guibas, Leonidas. "Kinetic Data Structures - Handbook" (PDF). Retrieved May 17, 2012.

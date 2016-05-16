@@ -1,0 +1,13 @@
+New Mobile App Builds Realistic 3-D Models From Cell Phone Camera Snapshots
+
+A new mobile app turns your cell phone into a 3-D scanner, stitching together overlapping snapshots to render a 3-D model of any object. A smooth 3-D model of a car, which can be turned and spun in any direction, would take about 40 snapshots; a model of a guitar took only eight.
+
+Microsoft researchers used PhotoSynth technology to build the app, but it goes beyond that photo-stitching program and also calculates the depth of an object. The model determines the camera's location in space and determines the depth. You don't have to worry about capturing perfectly overlapping panoramas — the software can smooth it all out, as Microsoft researcher Johannes Kopf explains to Technology Review.
+
+The software preserves straight lines and eliminates holes and weird triangular gaps, a common problem in 3-D stitching.
+
+To make a model, you would walk around an object, snapping overlapping pictures from different angles. Upload them to a server for processing, and the app downloads a 3-D model that you can grab and spin on your phone's touchscreen. It recreates your view as you walked around, allowing you to see the object from every angle. Technology Review explains in further detail.
+
+This could be useful for selling items online, among a myriad other uses. The app uses much less bandwidth than a 3-D video would, because it only needs a few images.
+
+The project was developed at Microsoft's Interactive Visual Media group.

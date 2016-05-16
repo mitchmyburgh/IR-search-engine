@@ -1,0 +1,63 @@
+Orange is a free software machine learning and data mining software (written in Python). It has a visual programming front-end for explorative data analysis and visualization, and can also be used as a Python library. The program is maintained and developed by the Bioinformatics Laboratory of the Faculty of Computer and Information Science at University of Ljubljana.
+
+
+== Description ==
+Orange is a component-based visual programming software for data mining, machine learning and data analysis.
+Components are called widgets and they range from simple data visualization, subset selection and preprocessing, to empirical evaluation of learning algorithms and predictive modeling.
+Visual programming is implemented through an interface in which workflows are created by linking predefined or user-designed widgets, while advanced users can use Orange as a Python library for data manipulation and widget alteration.
+
+
+== Software ==
+Orange is an open-source software released under GPL and available for use on github. Versions up to 3.0 include core components in C++ with wrappers in Python. From version 3.0 onwards, Orange uses common Python open-source libraries for scientific computing, such as numpy, scipy and scikit-learn, while its graphical user interface operates within the cross-platform Qt framework.
+The default installation includes a number of machine learning, preprocessing and data visualization algorithms in 6 widget sets (data, visualize, classify, regression, evaluate and unsupervised). Additional functionalities are available as add-ons (bioinformatics, data fusion and text-mining).
+Orange is supported on OS X, Windows and Linux and can also be installed from the Python Package Index repository (pip install Orange). As of 2015 the stable version is 2.7, while 3.0 is available as beta release.
+
+
+== Features ==
+Orange consists of a canvas interface onto which the user places widgets and creates a data analysis workflow. Widgets offer basic functionalities such as reading the data, showing a data table, selecting features, training predictors, comparing learning algorithms, visualizing data elements, etc. The user can interactively explore visualizations or feed the selected subset into other widgets.
+
+Canvas: graphical front-end for data analysis
+Widgets:
+Data: widgets for data input, data filtering, sampling, imputation, feature manipulation and feature selection
+Visualize: widgets for common visualization (box plot, histograms, scatter plot) and multivariate visualization (mosaic display, sieve diagram).
+Classify: a set of supervised machine learning algorithms for classification
+Regression: a set of supervised machine learning algorithms for regression
+Evaluate: cross-validation, sampling-based procedures, reliability estimation and scoring of prediction methods
+Unsupervised: unsupervised learning algorithms for clustering (k-means, hierarchical clustering) and data projection techniques (multidimensional scaling, principal component analysis, correspondence analysis).
+Add-ons:
+Bioinformatics: widgets for gene set analysis, enrichment, and access to pathway libraries
+Data fusion: widgets for fusing different data sets, collective matrix factorization, and exploration of latent factors
+Text mining: widgets for basic tasks in text mining
+Network: widgets for graph and network analysis
+Associate: widgets for mining frequent itemsets and association rule learning
+
+
+== Objectives ==
+The program provides a platform for experiment selection, recommendation systems and predictive modeling and is used in biomedicine, bioinformatics, genomic research, and teaching. In science, it is used as a platform for testing new machine learning algorithms and for implementing new techniques in genetics and bioinformatics. In education, it was used for teaching machine learning and data mining methods to students of biology, biomedicine and informatics.
+
+
+== History ==
+In 1996, the University of Ljubljana and Jožef Stefan Institute started development of ML*, a machine learning framework in C++.
+In 1997, Python bindings were developed for ML*, which together with emerging Python modules formed a joint framework called Orange.
+During the following years most major algorithms for data mining and machine learning have been developed either in C++ (Orange's core) or in Python modules.
+In 2002, first prototypes to create a flexible graphical user interface were designed, using Pmw Python megawidgets.
+In 2003, graphical user interface was redesigned and re-developed for Qt framework using PyQt Python bindings. The visual programming framework was defined, and development of widgets (graphical components of data analysis pipeline) has begun.
+In 2005, extensions for data analysis in bioinformatics was created.
+In 2008, Mac OS X DMG and Fink-based installation packages were developed.
+In 2009, over 100 widgets were created and maintained.
+From 2009, Orange is in 2.0 beta and web site offers installation packages based on daily compiling cycle.
+In 2012, new object hierarchy was imposed, replacing the old module-based structure.
+In 2013, a major GUI redesign.
+In 2015, Orange 3.0 is released
+
+
+== Further reading ==
+Demšar, Janez and Blaž Zupan, Orange: Data Mining Fruitful and Fun - A Historical Perspective, Informatica 37, pgs. 55-60, (2013).
+
+
+== References ==
+
+
+== External links ==
+Official website
+Bioinformatics Laboratory, University of Ljubljana

@@ -1,0 +1,19 @@
+Example
+
+Suppose that the set of loans made by a library is to be represented in a data structure. Each book in a library may be checked out only by a single library patron at a time. However, a single patron may be able to check out multiple books. Therefore, the information about which books are checked out to which patrons may be represented by an associative array, in which the books are the keys and the patrons are the values. For instance (using notation from Python, or JSON (JavaScript Object Notation), in which a binding is represented by placing a colon between the key and the value), the current checkouts may be represented by an associative array:
+
+{
+    "Great Expectations": "John",
+    "Pride and Prejudice": "Alice",
+    "Wuthering Heights": "Alice"
+}
+
+A lookup operation with the key "Great Expectations" in this array would return the name of the person who checked out that book, John. If John returns his book, that would cause a deletion operation in the associative array, and if Pat checks out another book, that would cause an insertion operation, leading to a different state:
+
+{
+    "Pride and Prejudice": "Alice",
+    "The Brothers Karamazov": "Pat",
+    "Wuthering Heights": "Alice"
+}
+
+In this new state, the same lookup as before, with the key "Great Expectations", would raise an exception, because this key is no longer present in the array.

@@ -1,0 +1,105 @@
+
+Topological sort: In computer science, a topological sort or topological ordering of a directed graph is a linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering.
+For example, in following&nbsp; Directed graph , the first black vertex or in which vertex DFS find finish time should place in the last of the output. Here , DFS start traverse from Shirt, but first finished time is jacket .&nbsp; So it goes to the last position of stack or link list.
+  Topological sort
+Here is the algorithm of Topological sort: 
+TOPOLOGICAL-SORT(V, E) 
+1.Call DFS(V, E) to compute finishing times f[v] for each vertex v
+2.When each vertex is finished, insert it onto the front of a linked list
+3.Return the linked list of vertices
+Running time: Q(V + E)
+Here is the Code of Topological sort of directed graph in java : 
+//http://programminghelpbd.blogspot.com
+  import java.util.*;
+ public class Totology {
+      public static int WHITE=1, GREY=2, BLACK=3, INF=310000, NIL=-1;
+     public int num_v, num_e, time=0;
+     Stack&lt;integer&gt; s = new Stack&lt;integer&gt;();
+     public int adj[][] = new int[20][20];
+     public int color[] = new int[20];
+     public int p[] = new int[20];
+     public int d[] = new int[20];
+     public int f[] = new int[20];
+     public int a[] = new int[20];
+  public void initialization() {
+     int k,j;
+     for(k=0;k&lt;20;k++)
+     {
+         for(j=0;j&lt;20;j++)
+         {
+             adj[k][j]=0;
+         }
+     }
+ }
+ @SuppressWarnings("resource") public void build_adj_matrix()
+ {
+     int i,a,b;
+     Scanner g=new Scanner(System.in);
+     num_v=g.nextInt();
+     num_e=g.nextInt();
+     for(i=1;i&lt;=num_e;i++)
+     {
+         a=g.nextInt();
+         b=g.nextInt();
+         adj[a][b]=1;
+         //adj[b][a]=1;
+     }
+ }
+ public void DFS() {
+     int i,u;
+     for(i=1;i&lt;=num_v;i++)
+     {
+         color[i]=WHITE;
+         p[i]=NIL;
+     }
+      for(u=1;u&lt;=num_v;u++)
+     {
+         if(color[u]==WHITE)
+             DFS_Visit(u);
+     }
+  }
+  public void DFS_Visit(int u) {
+     int  v;
+      color[u]=GREY;
+     time = time+1;
+     d[u] = time;
+      for(v=1;v&lt;=num_v;v++)
+     {
+         if(adj[u][v]==1)
+         {
+             if(color[v]==WHITE)
+             {
+                 p[v]=u;
+                 DFS_Visit(v);
+             }
+         }
+     }
+     color[u]=BLACK;
+     time = time+1;
+     f[u] = time;
+             s.push(u);
+  }
+  public void distance_output() {
+     int i;
+     System.out.println("Discovery time and finish time of vertices:");
+     for(i=1; i&lt;=num_v; i++)
+     {
+         System.out.println("node "+i+" is "+d[i]+"/"+f[i]);
+                        }
+      }
+  public void result(){
+    System.out.println("Topological Sort: ");
+   for(int i = 1; i &lt;=num_v ; i++){
+   //System.out.print("|--------|");
+   System.out.print("|  "+s.pop()+"  |");   System.out.print(" -&gt; " );
+    }
+ }
+   public static void main(String[] args) {
+               Totology g = new Totology();
+         g.initialization();
+         g.build_adj_matrix();
+         g.DFS();
+         g.distance_output();
+         g.result();
+            }
+

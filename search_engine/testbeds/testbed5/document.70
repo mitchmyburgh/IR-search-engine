@@ -1,0 +1,18 @@
+Early developments
+
+The earliest computers were often programmed without the help of a programming language, by writing programs in absolute machine language. The programs, in decimal or binary form, were read in from punched cards or magnetic tape, or toggled in on switches on the front panel of the computer. Absolute machine languages were later termed first-generation programming languages (1GL).
+
+The next step was development of so-called second-generation programming languages (2GL) or assembly languages, which were still closely tied to the instruction set architecture of the specific computer. These served to make the program much more human-readable, and relieved the programmer of tedious and error-prone address calculations.
+
+The first high-level programming languages, or third-generation programming languages (3GL), were written in the 1950s. An early high-level programming language to be designed for a computer was Plankalkül, developed for the German Z3 by Konrad Zuse between 1943 and 1945. However, it was not implemented until 1998 and 2000.[26]
+
+John Mauchly's Short Code, proposed in 1949, was one of the first high-level languages ever developed for an electronic computer.[27] Unlike machine code, Short Code statements represented mathematical expressions in understandable form. However, the program had to be translated into machine code every time it ran, making the process much slower than running the equivalent machine code.
+The Manchester Mark 1 ran programs written in Autocode from 1952.
+
+At the University of Manchester, Alick Glennie developed Autocode in the early 1950s. A programming language, it used a compiler to automatically convert the language into machine code. The first code and compiler was developed in 1952 for the Mark 1 computer at the University of Manchester and is considered to be the first compiled high-level programming language.[28][29]
+
+The second autocode was developed for the Mark 1 by R. A. Brooker in 1954 and was called the "Mark 1 Autocode". Brooker also developed an autocode for the Ferranti Mercury in the 1950s in conjunction with the University of Manchester. The version for the EDSAC 2 was devised by D. F. Hartley of University of Cambridge Mathematical Laboratory in 1961. Known as EDSAC 2 Autocode, it was a straight development from Mercury Autocode adapted for local circumstances, and was noted for its object code optimisation and source-language diagnostics which were advanced for the time. A contemporary but separate thread of development, Atlas Autocode was developed for the University of Manchester Atlas 1 machine.
+
+In 1954, language FORTRAN was invented at IBM by John Backus; it was the first widely used high level general purpose programming language to have a functional implementation, as opposed to just a design on paper.[30][31] It is still popular language for high-performance computing[32] and is used for programs that benchmark and rank the world's fastest supercomputers.[33]
+
+Another early programming language was devised by Grace Hopper in the US, called FLOW-MATIC. It was developed for the UNIVAC I at Remington Rand during the period from 1955 until 1959. Hopper found that business data processing customers were uncomfortable with mathematical notation, and in early 1955, she and her team wrote a specification for an English programming language and implemented a prototype.[34] The FLOW-MATIC compiler became publicly available in early 1958 and was substantially complete in 1959.[35] Flow-Matic was a major influence in the design of COBOL, since only it and its direct descendant AIMACO were in actual use at the time.[36]

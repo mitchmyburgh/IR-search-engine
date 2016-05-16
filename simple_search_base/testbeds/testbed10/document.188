@@ -1,0 +1,72 @@
+A Bayesian Computer Vision System
+for Modeling Human Interactions
+Nuria M. Oliver, Barbara Rosario, and Alex P. Pentland
+
+1 INTRODUCTION
+WE describe a real-time computer vision and machine
+learning system for modeling and recognizing human
+behaviors in a visual surveillance task [1]. The system is
+particularly concerned with detecting when interactions
+between people occur and classifying the type of interaction.
+Over the last decade there has been growing interest
+within the computer vision and machine learning communities
+in the problem of analyzing human behavior in video
+([3], [4], [5], [6], [7], [8], [9], [10]). Such systems typically
+consist of a low- or mid-level computer vision system to
+detect and segment a moving objectÐhuman or car, for
+exampleÐand a higher level interpretation module that
+classifies the motion into ªatomicº behaviors such as, for
+example, a pointing gesture or a car turning left.
+However, there have been relatively few efforts to
+understand human behaviors that have substantial extent
+in time, particularly when they involve interactions
+between people. This level of interpretation is the goal of
+this paper, with the intention of building systems that can
+deal with the complexity of multiperson pedestrian and
+highway scenes [2].
+This computational task combines elements of AI/
+machine learning and computer vision and presents
+challenging problems in both domains: from a Computer
+Vision viewpoint, it requires real-time, accurate, and robust
+detection and tracking of the objects of interest in an unconstrained environment; from a Machine Learning and
+Artificial Intelligence perspective, behavior models for interacting
+agents are needed to interpret the set of perceived
+actions and detect eventual anomalous behaviors or
+potentially dangerous situations. Moreover, all the processing
+modules need to be integrated in a consistent way.
+Our approach to modeling person-to-person interactions
+is to use supervised statistical machine learning techniques
+to teach the system to recognize normal single-person
+behaviors and common person-to-person interactions. A
+major problem with a data-driven statistical approach,
+especially when modeling rare or anomalous behaviors, is
+the limited number of examples of those behaviors for
+training the models. A major emphasis of our work,
+therefore, is on efficient Bayesian integration of both prior
+knowledge (by the use of synthetic prior models) with
+evidence from data (by situation-specific parameter tuning).
+Our goal is to be able to successfully apply the system to
+any normal multiperson interaction situation without
+additional training. 
+
+7 SUMMARY AND CONCLUSIONS
+In this paper, we have described a computer vision system
+and a mathematical modeling framework for recognizing
+different human behaviors and interactions in a visual
+surveillance task. Our system combines top-down with bottom-up information in a closed feedback loop, with both
+components employing a statistical Bayesian approach.
+Two different state-based statistical learning architectures,
+namely, HMMs and CHMMs have been proposed
+and compared for modeling behaviors and interactions. The
+superiority of the CHMM formulation has been demonstrated
+in terms of both training efficiency and classification
+accuracy. A synthetic agent training system has been
+created in order to develop flexible and interpretable prior
+behavior models and we have demonstrated the ability to
+use these a priori models to accurately classify real
+behaviors with no additional tuning or training. This fact
+is especially important, given the limited amount of training
+data available.
+The presented CHMM framework is not limited to only
+two interacting processes. Interactions between more than
+two people could potentially be modeled and recognized.

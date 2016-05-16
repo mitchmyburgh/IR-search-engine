@@ -1,0 +1,36 @@
+﻿Propositional logic[edit]
+This section presents the tableau calculus for classical propositional logic. A tableau checks whether a given set of formulae is satisfiable or not. It can be used to check either validity or entailment: a formula is valid if its negation is unsatisfiable and formulae A_1,\ldots,A_n imply B if \{A_1,\ldots,A_n,\neg B\} is unsatisfiable.
+The main principle of propositional tableaux is to attempt to "break" complex formulae into smaller ones until complementary pairs of literals are produced or no further expansion is possible.
+
+Initial tableau for {(a⋁¬b)⋀b,¬a}
+The method works on a tree whose nodes are labeled with formulae. At each step, this tree is modified; in the propositional case, the only allowed changes are additions of a node as descendant of a leaf. The procedure starts by generating the tree made of a chain of all formulae in the set to prove unsatisfiability. A variant to this starting step is to begin with a single-node tree whose root is labeled by \top; in this second case, the procedure can always copy a formula in the set below a leaf. As a running example, the tableau for the set \{(a \vee \neg b) \wedge b, \neg a\} is shown.
+The principle of tableau is that formulae in nodes of the same branch are considered in conjunction while the different branches are considered to be disjuncted. As a result, a tableau is a tree-like representation of a formula that is a disjunction of conjunctions. This formula is equivalent to the set to prove unsatisfiability. The procedure modifies the tableau in such a way that the formula represented by the resulting tableau is equivalent to the original one. One of these conjunctions may contain a pair of complementary literals, in which case that conjunction is proved to be unsatisfiable. If all conjunctions are proved unsatisfiable, the original set of formulae is unsatisfiable.
+And[edit]
+
+(a⋁¬b)⋀b generates a⋁¬b and b
+Whenever a branch of a tableau contains a formula A \wedge B that is the conjunction of two formulae, these two formulae are both consequences of that formula. This fact can be formalized by the following rule for expansion of a tableau:
+(\wedge) If a branch of the tableau contains a conjunctive formula A \wedge B, add to its leaf the chain of two nodes containing the formulae A and B
+This rule is generally written as follows:
+(\and) \frac{A \wedge B}{\begin{array}{c} A \\ B\end{array}}
+A variant of this rule allows a node to contain a set of formulae rather than a single one. In this case, the formulae in this set are considered in conjunction, so one can add \{A, B\} at the end of a branch containing A \wedge B. More precisely, if a node on a branch is labeled X \cup \{A \wedge B\}, one can add to the branch the new leaf X \cup \{A, B\}.
+Or[edit]
+
+a⋁¬b generates a and ¬b
+If a branch of a tableau contains a formula that is a disjunction of two formulae, such as A \vee B, the following rule can be applied:
+(\vee) If a node on a branch contains a disjunctive formula A \vee B, then create two sibling children to the leaf of the branch, containing the formulae A and B, respectively.
+This rule splits a branch into two, differing only for the final node. Since branches are considered in disjunction to each other, the two resulting branches are equivalent to the original one, as the disjunction of their non-common nodes is precisely A \vee B. The rule for disjunction is generally formally written using the symbol | for separating the formulae of the two distinct nodes to be created:
+(\vee) \frac{A \vee B}{A|B}
+If nodes are assumed to contain sets of formulae, this rule is replaced by: if a node is labeled Y \cup \{A \vee B\}, a leaf of the branch this node is in can be appended two sibling child nodes labeled Y \cup \{A\} and Y \cup \{B\}, respectively.
+Not[edit]
+The aim of tableaux is to generate progressively simpler formulae until pairs of opposite literals are produced or no other rule can be applied. Negation can be treated by initially making formulae in negation normal form, so that negation only occurs in front of literals. Alternatively, one can use De Morgan's laws during the expansion of the tableau, so that for example \neg (A \wedge B) is treated as \neg A \vee \neg B. Rules that introduce or remove a pair of negations (such as in \neg \neg A) are also used in this case (otherwise, there would be no way of expanding a formula like \neg \neg (A \wedge B):
+(\neg 1) \frac{A}{\neg \neg A}
+(\neg 2) \frac{\neg \neg A}{A}
+
+The tableau is closed
+Closure[edit]
+Every tableau can be considered as a graphical representation of a formula, which is equivalent to the set the tableau is built from. This formula is as follows: each branch of the tableau represents the conjunction of its formulae; the tableau represents the disjunction of its branches. The expansion rules transforms a tableau into one having an equivalent represented formula. Since the tableau is initialized as a single branch containing the formulae of the input set, all subsequent tableaux obtained from it represent formulae which are equivalent to that set (in the variant where the initial tableau is the single node labeled true, the formulae represented by tableaux are consequences of the original set.)
+
+A tableau for the satisfiable set {a⋀c,¬a⋁b}: all rules have been applied to every formula on every branch, but the tableau is not closed (only the left branch is closed), as expected for satisfiable sets
+The method of tableaux works by starting with the initial set of formulae and then adding to the tableau simpler and simpler formulae until contradiction is shown in the simple form of opposite literals. Since the formula represented by a tableau is the disjunction of the formulae represented by its branches, contradiction is obtained when every branch contains a pair of opposite literals.
+Once a branch contains a literal and its negation, its corresponding formula is unsatisfiable. As a result, this branch can be now "closed", as there is no need to further expand it. If all branches of a tableau are closed, the formula represented by the tableau is unsatisfiable; therefore, the original set is unsatisfiable as well. Obtaining a tableau where all branches are closed is a way for proving the unsatisfiability of the original set. In the propositional case, one can also prove that satisfiability is proved by the impossibility of finding a closed tableau, provided that every expansion rule has been applied everywhere it could be applied. In particular, if a tableau contains some open (non-closed) branches and every formula that is not a literal has been used by a rule to generate a new node on every branch the formula is in, the set is satisfiable.
+This rule takes into account that a formula may occur in more than one branch (this is the case if there is at least a branching point "below" the node). In this case, the rule for expanding the formula has to be applied so that its conclusion(s) are appended to all of these branches that are still open, before one can conclude that the tableau cannot be further expanded and that the formula is therefore satisfiable.

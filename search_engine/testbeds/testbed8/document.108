@@ -1,0 +1,15 @@
+After a rotation a subtree has the same height as before, so retracing can stop. In order to restore the balance factors of all nodes, first observe that all nodes requiring correction lie along the path used during the initial insertion. If the above procedure is applied to nodes along this path, starting from the bottom (i.e. the inserted node), then every node in the tree will again have a balance factor of -1, 0, or 1.
+The time required is O(log n) for lookup, plus a maximum of O(log n) retracing levels on the way back to the root, so the operation can be completed in O(log n) time.
+Deletion[edit]
+Let node X be the node with the value we need to delete, and let node Y be a node in the tree we need to find to take node X's place, and let node Z be the actual node we take out of the tree.
+ 
+Deleting a node with two children from a binary search tree using the in-order predecessor (rightmost node in the left subtree, labelled 6).
+Steps to consider when deleting a node in an AVL tree are the following:
+1.	If node X is a leaf or has only one child, skip to step 5 with Z:=X.
+2.	Otherwise, determine node Y by finding the largest[citation needed] node in node X's left subtree (the in-order predecessor of X - it does not have a right child) or the smallest in its right subtree (the in-order successor of X - it does not have a left child).
+3.	Exchange all the child and parent links of node X with those of node Y. In this step, the in-order sequence between nodes X and Y is temporarily disturbed, but the tree structure doesn't change.
+4.	Choose node Z to be all the child and parent links of old node Y = those of new node X.
+5.	If node Z has a subtree (which then is a leaf), attach it to Z's parent.
+6.	If node Z was the root (its parent is null), update root.
+7.	Delete node Z.
+8.	Retrace the path back up the tree (starting with node Z's parent) to the root, adjusting the balance factors as needed

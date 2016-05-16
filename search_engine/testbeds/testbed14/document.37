@@ -1,0 +1,44 @@
+A Description Logic Primer
+Markus Krötzsch, František Simancík, Ian Horrocks ˇ
+Department of Computer Science, University of Oxford, UK
+Abstract. This paper provides a self-contained first introduction to description logics
+(DLs). The main concepts and features are explained with examples before syntax
+and semantics of the DL SROIQ are defined in detail. Additional sections review
+lightweight DL languages, discuss the relationship to the OWL Web Ontology
+Language and give pointers to further reading.
+Introduction
+Description logics (DLs) are a family of knowledge representation languages that are
+widely used in ontological modelling. An important practical reason for this is that they
+provide one of the main underpinnings for the OWL Web Ontology Language as standardised
+by the World Wide Web Consortium (W3C). However, DLs have been used in
+knowledge representation long before the advent of ontological modelling in the context
+of the Semantic Web, tracing back to first DL modelling languages in the mid 1980s.
+As their name suggests, DLs are logics (in fact most DLs are decidable fragments
+of first-order logic), and as such they are equipped with a formal semantics: a precise
+specification of the meaning of DL ontologies. This formal semantics allows humans and
+computer systems to exchange DL ontologies without ambiguity as to their meaning, and
+also makes it possible to use logical deduction to infer additional information from the
+facts stated explicitly in an ontology – an important feature that distinguishes DLs from
+other modelling languages such as UML.
+The capability of inferring additional knowledge increases the modelling power of
+DLs but it also requires some understanding on the side of the modeller and, above all,
+good tool support for computing the conclusions. The computation of inferences is called
+reasoning and an important goal of DL language design has been to ensure that reasoning
+algorithms of good performance are available. This is one of the reasons why there is not
+just a single description logic: the best balance between expressivity of the language and
+complexity of reasoning depends on the intended application.
+In this paper we provide a self-contained first introduction to description logics. We
+start by explaining the basic way in which knowledge is modelled in DLs in Section 1
+and continue with an intuitive introduction to the most important DL modelling features
+in Section 2. This leads us to the rather expressive DL called SROIQ, the syntax of
+which we summarise in Section 3. In Section 4, we explain the underlying ideas of DL
+∗Version 1.2 of 3 June 2013. Comments and suggestions can be sent to Markus Krötzsch at
+markus.kroetzsch@cs.ox.ac.uk. This document can freely be used and distributed under the terms of CC
+By-SA-NC 3.0. Please contact the authors if you would like to reproduce this document under another license.
+1
+semantics and use it to define the meaning of SROIQ ontologies. Many DLs can be
+obtained by omitting some features of SROIQ and in Section 5 we review some of the
+most important DLs obtained in this way. In particular, this includes various lightweight
+description logics that allow for particularly efficient reasoning. In Section 6 we discuss
+the relationship of DLs to the OWL Web Ontology Language. We conclude with pointers
+to further reading in Section 7.

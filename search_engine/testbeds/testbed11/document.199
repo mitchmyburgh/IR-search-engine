@@ -1,0 +1,13 @@
+TCP Cookie Transactions (TCPCT) is specified in RFC 6013 (experimental status) as an extension of Transmission Control Protocol (TCP) intended to secure it against denial-of-service attacks, such as resource exhaustion by SYN flooding and malicious connection termination by third parties. Unlike the original SYN cookies approach, TCPCT does not conflict with other TCP extensions, but requires TCPCT support in the client (initiator) as well as the server (responder) TCP stack.
+The immediate reason for the TCPCT extension is deployment of the DNSSEC protocol. Prior to DNSSEC, DNS requests primarily used short UDP packets, but due to the size of DNSSEC exchanges, and shortcomings of IP fragmentation, UDP is less practical for DNSSEC. Thus DNSSEC-enabled requests create a large number of short-lived TCP connections.
+TCPCT avoids resource exhaustion on server-side by not allocating any resources until the completion of the three-way handshake. Additionally, TCPCT allows the server to release memory immediately after the connection closes, while it persists in the TIME-WAIT state.
+TCPCT support was partly merged into the Linux kernel in December 2009, but was removed in May 2013 because it was never fully implemented and had a performance cost.
+
+
+== See also ==
+SYN cookies
+T/TCP (Transactional TCP)
+TCP Fast Open
+
+
+== References ==

@@ -1,0 +1,21 @@
+﻿Top Down Approaches
+Top-Down approaches start from the most generic concept and build a structure by
+specialization; the ontology is built by determining first the top concepts and by
+specializing them. The top concepts can be chose in a foundational ontology These
+approaches are prone to the reuse of ontologies and inclusion of high level philosophical considerations which can be very interesting for coherence maintenance
+(Gandon 2002).
+An example of a methodology for a top down approach would DOLCE and BFO. They are used widely.
+Example: A Socio Cultural Ontology
+Human activity creates some geographical object like state, city, administrative border.
+These types of geographical objects are opposed to physical object like mountains,
+rivers. Trausan-Matu (2007) describe urban development as the consequence of
+human activity. He uses a top down approach to develop its socio cultural ontology.
+This ontology explains the human interaction inherent in urban development. He
+adapts the John Sowa’s methodology of classification (Sowa 1999) to the activity
+theory of Engestrom. This ontology is presented in the Chap. 9.32
+C. Roussey et al.
+Example: Urban Morphological Process Ontology
+Camacho-Hubner and Golay (2007) propose to use John Sowa’s methodology to
+develop an ontology of urban morphological change. Their goal is to explain the
+change of urban morphology by studying 3 aspects: time, historical context and
+morphological process.

@@ -1,0 +1,60 @@
+Longene
+'''Longene''' is an   intended to be  with  and s made for  and . In order to accomplish this, key features of the Windows kernel are ported to the .
+Longene is written in the  and is . It is  under the terms of the  version 2 (GPLv2).
+Although the project is in the  of development as of 2015, many Windows programs already work well.
+== Features ==
+Longene aims to add all Windows kernel mechanisms, including system calls, , , Deferred Procedure Call, and others, into the Linux kernel to form a new kernel. The new kernel will allow both Linux and Windows applications and device drivers to work without virtualization or emulation.
+In order to prevent bloating, if a function is available in both the ReactOS and Linux kernel, the Linux implementation is used. Functions are implemented using Linux loadable kernel modules, so they can be loaded and unloaded easily.
+Longene has two sets of system calls and their corresponding tables: a Windows syscall set and a Linux syscall set. Windows applications call the syscall table via software interrupt "int 0x2e". Linux applications call the syscall table via "int 0x80".
+The Longene project does not develop the Windows and the Linux  libraries. Those libraries are offered by others projects, such as , , GNU, and . "The LUK project does not develop the Windows and the Linux userland libraries. Those libraries are offered by the Wine (or Microsoft Windows/ReactOS) project and the Linux project."
+== Development ==
+In September 2005, the Longene project gained sponsorship from Insigma Technology (), a China-based IT consulting corporation. The project leader, Decao Mao (), proposed the idea and route of the Longene. He wrote a series of articles about the market, the intellectual property rights and the techniques to explain why people needed the project and how to implement the Longene. The articles Mao wrote were then compiled to form the white paper of the project.
+According to the white paper, to implement the Longene, one needs to add several parts to the Linux kernel:
+* A framework that matches the properties and requirements of Windows device drivers (i.e., the Windows device driver framework) so that multiple Windows device driver modules may be loaded into the kernel, while retaining their relationship and running conditions as in Windows.
+* A set of export functions defined by Windows kernel export function interface (WDK). To device driver programs, these functions are like library functions provided by kernel.
+* Windows native API. Microsoft did not open their native API, but "Windows NT/2000 Native API Reference" and other materials have unveiled this information. Implementing the Windows system API in the Linux kernel could be compared to the implementation of a high level language in assembly, because inside the kernel usable functions are not implemented by the external Linux kernel API anymore but by internal Linux kernel functions.
+* The Longene project produces patches for the Linux kernel to accomplish its goal. The project developers expect these patches to eventually merge into the Linux kernel main tree. Those who program on the Windows platform would then be able to develop applications and device drivers for the Linux platform or port their products to Linux platform with a low cost.
+=== Development strategy ===
+Longene uses Wine as a base for implementing the Windows API. The project re-implements Wine's modules for use as part of the joint kernel. Longene defers from using Wine modules that have not been sufficiently implemented for the project. Versions of Longene are released when several of the Wine modules have been successfully implemented into the kernel. The new stable version will then be used as a base for implementing future modules. Windows API that have not been implemented by Wine are developed into modules from scratch.
+For device drivers, Longene imports  into the kernel. Modifications are made to  for missing functionality of the Windows Driver Model using  code as a reference. The  implementation is based on  code. It uses a combination of redirecting drivers to Linux kernel resources and additional libraries that implement functions that cannot be implemented in Linux.
+=== Version history ===
+An earlier version, unifiedkernel-2.6.13, released in February 15, 2006. This version actualized the Windows system call mechanism.
+=== Current and future development ===
+Developers are currently working on Longene 2.0, which will support the Windows applications run on non-x86 architecture machine, such as  architecture machine and  architecture machine. And the developers are also working on the  support and porting NDISWrapper code to the project.
+Not yet implemented (but planned):
+*  codes integration
+* The  device driver framework
+* The Windows  mechanism
+* Exported kernel functions defined by Windows DDK
+=== Available Open Source resources ===
+* 
+: The Longene is based on the Linux kernel. It implements its functions in the Linux loadable kernel modules (LKMs). As opposed to ReactOS implementing functions from scratch, Longene exploits the abundant code and documentation of the Linux kernel to generate its functions. These are the main approaches to implementing the Windows mechanisms in Longene:
+:#	System call interface  Some can be grafted to the appropriate Linux system calls, or partially reuse the code from corresponding Linux system calls, and the remnants have no counterpart in Linux require to use low-level Linux kernel functions to implement.
+:#	Device driver framework  The device driver interrupt service register grafted to the Linux interrupt mechanism, the device drivers are concerned about running Windows kernel is mapped to the Linux kernel running on. Device driver will request DPC grafted into Linux-bh function mechanism.
+:#	The Microsoft Windows native system files that are copyrighted by Microsoft  The category of .sys modules used for standard, basic, common external devices, such as disk, USB, graphics devices, network equipment and so on, there are corresponding functions in the Linux kernel. To drive those devices, it is only required to build a bridge and there is no need to create .sys modules. For the category of .sys modules that can not find the corresponding objects in the Linux kernel, emulation is required.
+:#	Windows DDK  The majority of device driver interface function (as well as the data structure) have a counterpart in the Linux kernel. Some function in the Linux kernel does not correspond to relatively close objects, then use Linux kernel stuff to be built all kinds of material. The concrete approaches are, some resources calls and references can be mapped (redirect)/grafted (adapter) the Linux kernel on the counterpart, and the remnants required to realize.
+* 
+: ReactOS is a clone of MS Windows written from scratch. Longene uses ReactOS code as a reference to implement some basic mechanisms of the Microsoft Windows Operating System. That involves implementing the Windows device driver framework, NDIS, the system call interface, the process management and resource management, the device driver interface (Environment), etc.
+* 
+: Wine implements a compatibility layer, providing alternative implementations of the DLLs that Windows programs call, and processes to substitute for the Windows NT kernel. As opposed to Longene using the microkernel functions to implement Windows API in kernel space, Wine uses the macro host OS API to implement Windows API in userspace. Longene offers the Windows Process management, Thread management, Object management, etc., in kernel; Wine offers those by wineserver running in userspace.Longene depends on Wine for the user libraries (the .dll files). Most of Wine's DLLs can be used directly by Longene. Wine code (such as the Windows Registry table) can be referred to implement some functions. In the transitional state, Longene uses Wine to offer those functions that have not been completed yet.
+* Kernel-win32 
+: Kernel-Win32 is a project intended to move some functions from the Wineserver into the Linux kernel to accelerate Wine. Longene project ported (and partly re-implemented) kernel-win32 into Longene to implement the Windows system call mechanism.
+* 
+: NDISWrapper recreated a partial Windows NT kernel inside a Linux kernel module, making it possible to execute modern Windows drivers inside the NT kernel box. NDISWrapper consists of a NTOSKRNL API, a basic WDM controller, and a set of Windows call wrappers such as Wireless/NDIS/USB/PnP to Linux APIs. NDISWrapper is not limited to executing only NDIS drivers; other WDM drivers can be used as long as the driver doesn't call unimplemented Windows API functions. The opening gambit of WDM of Longene will be to import NDISWrapper into Longene. Then the Longene project team implements its WDM via modifying NDISwrapper and adding functions into NDISWrapper with ReactOS code as a reference.
+* 
+: To run Windows applications on x86 architecture binary image directly on the ARM architecture, obviously have to be simulation. QEMU is an open source emulator on Linux that can run on Winebut it is unacceptably slow. QEMU interpreted x86 instruction user space (including Wine instruction), it is just a case of system calls into the Linux kernel , where is the "original" running at full speed . General applications are running in the user period of time, less time to run into the kernel, so very slow. But if push it up the line to the Win API, namely those DLL provided by Wine, will run at full speedthen running speed should can significantly improve because most applications actually always spin in a DLL at runtime, and Wine those DLL is compiled into ARM mode. In this way that combine Wine and QEMU and put Wineserver's functions moved into the kernel, so be able to achieve the goal, this is the idea of Longjing 2.0.
+=== Users ===
+  MagicLinux is a Chinese Linux distribution based on Red Hat Linux. Version 2.1 of MagicLinux, released on December 15, 2008, includes a main version (DVD, with Linux kernel 2.6.25.20), a compact version (CD, with Linux kernel 2.6.25.20) and a Longene version (CD, with Longene 0.2.2).
+=== Hardware requirements ===
+The minimum hardware requirements to run are:
+* IA-32 processor
+* 128&nbsp;MB RAM
+* IDE or SATA harddisk
+* VGA compatible video card
+* Standard (PS/2 or USB) keyboard
+* PS/2 compatible mouse or Microsoft Mouse compatible serial mouse
+=== Architecture support ===
+*  (working)
+*  (not working, in progress)
+*  3 (not working, in progress)
+* Longene can also be run on software which emulates or virtualizes the above hardware, such as  and .

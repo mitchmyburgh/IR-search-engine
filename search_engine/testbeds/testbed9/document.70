@@ -1,0 +1,46 @@
+Frames were proposed by Marvin Minsky in his 1974 article "A Framework for Representing Knowledge." A frame is an artificial intelligence data structure used to divide knowledge into substructures by representing "stereotyped situations." Frames are the primary data structure used in artificial intelligence Frame languages.
+Frames are also an extensive part of knowledge representation and reasoning schemes. Frames were originally derived from semantic networks and are therefore part of structure based knowledge representations. According to Russell and Norvig's "Artificial Intelligence, A Modern Approach," structural representations assemble "...facts about particular object and even types and arrange the types into a large taxonomic hierarchy analogous to a biological taxonomy."
+
+
+== Frame structure ==
+The frame contains information on how to use the frame, what to expect next, and what to do when these expectations are not met. Some information in the frame is generally unchanged while other information, stored in "terminals," usually change. Different frames may share the same terminals.
+Each piece of information about a particular frame is held in a slot. The information can contain:
+Facts or Data
+Values (called facets)
+
+Procedures (also called procedural attachments)
+IF-NEEDED : deferred evaluation
+IF-ADDED : updates linked information
+
+Default Values
+For Data
+For Procedures
+
+Other Frames or Subframes
+
+
+== Features and Advantages ==
+A frame's terminals are already filled with default values, which is based on how the human mind works. For example, when a person is told "a boy kicks a ball," most people will visualize a particular ball (such as a familiar soccer ball) rather than imagining some abstract ball with no attributes.
+One particular strength of frame based knowledge representations is that, unlike semantic networks, they allow for exceptions in particular instances. This gives frames an amount of flexibility that allow representations of real world phenomena to be reflected more accurately.
+Like semantic networks, frames can be queried using spreading activation. Following the rules of inheritance, any value given to a slot that is inherited by subframes will be updated (IF-ADDED) to the corresponding slots in the subframes and any new instances of a particular frame will feature that new value as the default.
+Because frames are structurally based, it is possible to generate a semantic network given a set of frames even though it lacks explicit arcs. The reference to Minsky's teacher Noam Chomsky and his generative grammar of 1950 is generally missing in Minsky's publications. However, the semantic strength is originated by that concept.
+The simplified structures of frames allow for easy analogical reasoning, a much prized feature in any intelligent agent. The procedural attachments provided by frames also allow a degree of flexibility that makes for a more realistic representation and gives a natural affordance for programming applications.
+
+
+== Example ==
+Worth noticing here is the easy analogical reasoning (comparison) that can be done between a boy and a monkey just by having similarly named slots.
+Also notice that Alex, an instance of a boy, inherits default values like "Sex" from the more general parent object Boy, but the boy may also have different instance values in the form of exceptions such as the number of legs.
+
+
+== See also ==
+Frame language
+Frame problem
+
+
+== References ==
+Russell, Stuart J.; Norvig, Peter (2010), Artificial Intelligence: A Modern Approach (2nd ed.), Upper Saddle River, New Jersey: Prentice Hall, ISBN 0-13-604259-7, http://aima.cs.berkeley.edu/ , chpt. 1
+
+
+== External links ==
+Minsky's "A Framework for Representing Knowledge"
+Artificial Intelligence: A Modern Approach Website

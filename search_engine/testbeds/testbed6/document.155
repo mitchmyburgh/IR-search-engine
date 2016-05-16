@@ -1,0 +1,98 @@
+Home  »  Articles  »  C++ Programming  »  Data File Structure
+Posted By: 
+Emily Blunt       
+Category: 
+C++ Programming        
+
+Program of traversing a binary tree in inorder, preorder and postorder fashion.
+Code for Program of traversing a binary tree in inorder, preorder and postorder fashion in C++ Programming
+#include  iostream.h  
+#include  conio.h  
+#include  stdio.h  
+struct btree
+{
+    struct btree *left 
+    struct btree *right 
+    int no 
+} 
+void postorder(struct btree *trav) 
+void inorder(struct btree *trav) 
+void preorder(struct btree *trav) 
+struct btree * create(struct btree *trav) 
+main()
+{
+    struct btree *root=NULL 
+    char c 
+    clrscr() 
+    while(1)
+    {
+        root=create(root) 
+        cout    "Do you want to continue : " 
+        cin    c 
+        if(c=='n' ||c=='N')
+            break 
+    }
+    cout <<"Inoder is    : " inorder(root) 
+    cout <<"Preorder is  : " preorder(root) 
+    cout <<"Postorder is : " postorder(root) 
+    getch() 
+}
+struct btree * create(struct btree *trav)
+{
+    if(trav==NULL)
+    {
+        trav=new btree 
+        trav  right=NULL 
+        trav  left=NULL 
+        cout   "Enter the no : " 
+        cin    trav  no 
+        return(trav) 
+    }
+    char choice 
+    cout    "Enter the left or right child : " 
+    cin    choice 
+    if(choice == 'r' || choice == 'R')
+    {
+        trav-  right=create(trav-  right) 
+    }
+    if(choice=='l' || choice=='L')
+    {
+        trav-  left=create(trav left) 
+    }
+    return(trav) 
+}
+void inorder(struct btree *trav)
+{
+    if(trav==NULL)
+        return  
+    inorder(trav-  left) 
+    cout << " "    trav
+    inorder(trav right) 
+}
+void preorder(struct btree *trav)
+{
+    if(trav==NULL)
+        return 
+    cout << " " trav 
+    preorder(trav left) 
+    preorder(trav right) 
+}
+void postorder(struct btree *trav)
+{
+    if(trav==NULL)
+        return 
+    postorder(trav left) 
+    postorder(trav right) 
+    cout << " " + trav-  no 
+}
+ 
+Previous Post: 
+Program to perform array operations like append, insert, delete, edit, display and search and elemen
+           
+Next Post: 
+Program of circular doubly link list with insert, append, delete, copy, reverse and display operations
+
+Didn't find what you were looking for? Find more on 
+Program of traversing a binary tree in inorder, preorder and postorder fashion Or get search suggestion and latest updates. 
+Emily Blunt author of Program of traversing a binary tree in inorder, preorder and postorder fashion is from Toronto, Canada. 
+        

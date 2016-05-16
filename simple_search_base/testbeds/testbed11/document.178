@@ -1,0 +1,37 @@
+The Neighbor Discovery Protocol (NDP) is a protocol in the Internet protocol suite used with Internet Protocol Version 6 (IPv6). It operates in the Link Layer of the Internet model (RFC 1122) and is responsible for address autoconfiguration of nodes, discovery of other nodes on the link, determining the link layer addresses of other nodes, duplicate address detection, finding available routers and Domain Name System (DNS) servers, address prefix discovery, and maintaining reachability information about the paths to other active neighbor nodes (RFC 4861).
+The protocol defines five different ICMPv6 packet types to perform functions for IPv6 similar to the Address Resolution Protocol (ARP) and Internet Control Message Protocol (ICMP) Router Discovery and Router Redirect protocols for IPv4. However, it provides many improvements over its IPv4 counterparts (RFC 4861, section 3.1). For example, it includes Neighbor Unreachability Detection (NUD), thus improving robustness of packet delivery in the presence of failing routers or links, or mobile nodes.
+The Inverse Neighbor Discovery (IND) protocol extension (RFC 3122) allows nodes to determine and advertise an IPv6 address corresponding to a given link-layer address, similar to Reverse ARP for IPv4. The Secure Neighbor Discovery Protocol (SEND) is a security extension of NDP that uses Cryptographically Generated Addresses (CGA) and the Resource Public Key Infrastructure (RPKI) to provide an alternate mechanism for securing NDP with a cryptographic method that is independent of IPsec. Neighbor Discovery Proxy (ND Proxy) (RFC 4389) provides a service similar to IPv4 Proxy ARP and allows bridging multiple network segments within a single subnet prefix when bridging cannot be done at the link layer.
+
+
+== Technical details ==
+NDP defines five ICMPv6 packet types for the purpose of router solicitation, router advertisement, neighbor solicitation, neighbor advertisement, and network redirects.
+Router Solicitation (Type 133)
+Hosts inquire with Router Solicitation messages to locate routers on an attached link. Routers which forward packets not addressed to them generate Router Advertisements immediately upon receipt of this message rather than at their next scheduled time.
+Router Advertisement (Type 134)
+Routers advertise their presence together with various link and Internet parameters either periodically, or in response to a Router Solicitation message.
+Neighbor Solicitation (Type 135)
+Neighbor solicitations are used by nodes to determine the link layer address of a neighbor, or to verify that a neighbor is still reachable via a cached link layer address.
+Neighbor Advertisement (Type 136)
+Neighbor advertisements are used by nodes to respond to a Neighbor Solicitation message.
+Redirect (Type 137)
+Routers may inform hosts of a better first hop router for a destination.
+These messages are used to provide the following functionality:
+Router discovery: hosts can locate routers residing on attached links.
+Prefix discovery: hosts can discover address prefixes that are on-link for attached links.
+Parameter discovery: hosts can find link parameters (e.g., MTU).
+Address autoconfiguration: stateless configuration of addresses of network interfaces.
+Address resolution: mapping between IP addresses and link-layer addresses.
+Next-hop determination: hosts can find next-hop routers for a destination.
+Neighbor unreachability detection (NUD): determine that a neighbor is no longer reachable on the link.
+Duplicate address detection (DAD): nodes can check whether an address is already in use.
+Recursive DNS Server (RDNSS) and DNS Search List (DNSSL) assignment via a router advertisement (RA) options. This is a new feature and not widely supported by clients.
+Packet redirection to provide a better next-hop route for certain destinations.
+
+
+== See also ==
+Secure Neighbor Discovery Protocol
+radvd (Router Advertisement Daemon)
+NDPMon Neighbor Discovery Protocol Monitor
+
+
+== References ==

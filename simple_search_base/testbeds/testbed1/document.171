@@ -1,0 +1,13 @@
+Artelys_Knitro
+'''Artelys Knitro''' is a   for solving large scale  problems.  Knitro is specialized for , but also solves  problems,  problems, , and .  The unknowns in these problems must be continuous variables in ; however, functions can be  or nonconvex.  Knitro computes a numerical solution to the problem -- it does not find a  solution.
+Knitro can also solve mixed integer linear, quadratic or nonlinear programming problems, i.e. problems with variables that take integer values.
+Optimization problems must be presented to Knitro in mathematical form, and should provide a way of computing function derivatives using .  Problems may be written in , , , , , or , in which case Knitro is called as a software routine to solve the problem.  An often easier approach is to develop the optimization problem in an  (AML) like , , , , , Mosel (through the Xpress-NonLinear module), etc.  The modeling environment computes function derivatives, and Knitro is called as a "solver" from within the environment.
+Knitro offers four different optimization s for solving optimization problems.  Two algorithms are of the  type, and two are of the  type.  These algorithms are known to have fundamentally different characteristics; for example, interior point methods follow a path through the interior of the  while active set methods tend to stay at the boundaries. Knitro provides both types of algorithm for greater flexibility in solving problems, and allows crossover during the solution process from one algorithm to another. The code also provides a multistart option for promoting the computation of the .
+KNITRO (original solver name), short for "''N''onlinear ''I''nterior point ''T''rust ''R''egion ''O''ptimization" (the "''K''" is silent) was created primarily by Richard Waltz, Jorge Nocedal, Todd Plantenga and Richard Byrd.  It is produced by Artelys.  KNITRO was introduced in 2001 as a derivative of academic research at Northwestern University (through Ziena Optimization LLC), and has undergone continual improvement since.
+==References==
+* 
+* 
+== External links ==
+*  (developer of Artelys Knitro)
+*  (home page at Northwestern University)
+*

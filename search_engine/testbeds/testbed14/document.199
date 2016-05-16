@@ -1,0 +1,21 @@
+﻿The Semantic Web has been envisaged as an evolution of the existing Web
+from a linked document repository into an application platform where “information is given well-defined meaning, better enabling computers and people
+to work in cooperation”
+[Berners-Lee
+et al., 2001]. This is to be achieved by
+augmenting the existing layout information with semantic annotations that
+add descriptive terms to Web content, with the meaning of such terms being
+defined in ontologies.
+In order for the meaning of semantic annotations to be accessible to applications (as well as humans), the ontology language being used should have a
+precisely defined semantics and should be amenable to automated processing. Description Logics appear to be ideally suited to this role: they have
+a formal logic-based semantics, and are often equipped with decision procedures that have been designed with the objective of being implemented
+in automated reasoning systems. This view of the potential place of Description Logics in the Semantic Web led to the development of a number of
+languages that brought Description Logic concepts to the Semantic Web, culminating in the development of the Web Ontology Language OWL. OWL is
+the World Wide Web Consortium (W3C) recommended ontology language
+for the Semantic Web, and exploits many of the strengths of Description
+Logics, including well defined semantics and practical reasoning techniques.
+In this chapter we first review briefly the history of Description Logic
+efforts related to the Semantic Web, in particular
+OIL and DAML+OIL.
+We then go on to describe OWL in some detail, and to show how it brings
+Description Logic concepts fully into the Semantic Web.

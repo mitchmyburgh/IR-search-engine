@@ -1,0 +1,26 @@
+A Description Logic (DL) is a structured fragment of FOL; more precisely: any (basic)
+Description Logic language is a subset of L3, i.e., the function-free FOL using only at
+most three variable names, and its representation is at the predicate level: no variables
+are present in the formalism. DLs provide a logical reconstruction and (claimed to be a)
+unifying formalism for other knowledge representation languages, such as frames-based
+systems, object-oriented modelling, Semantic data models, etc. They provide the language
+to formulate theories and systems declaratively expressing structured information
+and for accessing and reasoning with it, and they are used for, among others, terminologies
+and ontologies, formal conceptual data modelling, and information integration.
+Figure 3.1 shows a basic overview of the principal components of a DL knowledge
+base, with the so-called TBox containing the knowledge at the class-level and the ABox
+containing the data (individuals). Sometimes you will see added to the figure an RBox,
+which is used to make explicit there are relationships and the axioms that hold for them.
+
+The remainder of this section contains, first, a general introduction to DL (Section
+3.1), which are the first five sections of the DL Primer [Kr¨otzsch et al., 2012], and
+is reproduced here with permission of its authors Markus Kr¨otzsch, Frantiˇsek Simanˇc´ık,
+35
+36 Chapter 3. Description Logics
+and Ian Horrocks. This is followed by a shorter notation style for the DL language ALC
+in Section 3.2, which one encounters typically in the literature (based on Section 3.1,
+this should be understandable, and it will pass the revue during the lectures); slightly
+more detailed introductory notes with examples can be found in the first 8 pages of
+[Turhan, 2010] and the first 10 pages of [Sattler, 2007]. We close with describing and
+illustrating the standard reasoning services for DLs in Section 3.3. Note that DLs and its
+reasoning services return in Chapter 4 about OWL 2, building upon these foundations.

@@ -1,0 +1,36 @@
+Image processing
+From Wikipedia, the free encyclopedia
+In imaging science, image processing is processing of images using mathematical operations by using any form of signal processing for which the input is an image, a series of images, or a video, such as a photograph or video frame; the output of image processing may be either an image or a set of characteristics or parameters related to the image.[1] Most image-processing techniques involve treating the image as a two-dimensional signal and applying standard signal-processing techniques to it. Images are also processed as three-dimensional signals where the third-dimension being time or the z-axis.
+
+Image processing usually refers to digital image processing, but optical and analog image processing also are possible. This article is about general techniques that apply to all of them. The acquisition of images (producing the input image in the first place) is referred to as imaging.[2]
+
+Closely related to image processing are computer graphics and computer vision. In computer graphics, images are manually made from physical models of objects, environments, and lighting, instead of being acquired (via imaging devices such as cameras) from natural scenes, as in most animated movies. Computer vision, on the other hand, is often considered high-level image processing out of which a machine/computer/software intends to decipher the physical contents of an image or a sequence of images (e.g., videos or 3D full-body magnetic resonance scans).
+
+In modern sciences and technologies, images also gain much broader scopes due to the ever growing importance of scientific visualization (of often large-scale complex scientific/experimental data). Examples include microarray data in genetic research, or real-time multi-asset portfolio trading in finance.
+
+Contents  [hide] 
+1	See also
+2	Further reading
+3	References
+4	External links
+See also[edit]
+Image sharpening
+Image smoothing
+Multidimensional systems
+Near sets
+Photo manipulation
+Further reading[edit]
+Tinku Acharya and Ajoy K. Ray (2006). Image Processing - Principles and Applications. Wiley InterScience.
+Wilhelm Burger and Mark J. Burge (2008). Digital Image Processing: An Algorithmic Approach Using Java. Springer-Verlag. ISBN 978-1-84628-968-2.
+Bernd Jähne (2002). Digital Image Processing,[3]. Springer. ISBN 3-540-67754-2. ref stripmarker in |title= at position 26 (help)
+Tim Morris (2004). Computer Vision and Image Processing. Palgrave Macmillan. ISBN 0-333-99451-5.
+Tony F. Chan and Jackie (Jianhong) Shen (2005). Image Processing and Analysis - Variational, PDE, Wavelet, and Stochastic Methods. Society of Industrial and Applied Mathematics. ISBN 0-89871-589-X.
+Milan Sonka, Vaclav Hlavac and Roger Boyle (1999). Image Processing, Analysis, and Machine Vision. PWS Publishing. ISBN 0-534-95393-X.
+References[edit]
+Jump up ^ Rafael C. Gonzalez; Richard E. Woods (2008). Digital Image Processing. Prentice Hall. pp. 1–3. ISBN 978-0-13-168728-8.
+Jump up ^ Joseph P. Hornak, Encyclopedia of Imaging Science and Technology (John Wiley & Sons, 2002) ISBN 9780471332763
+Jump up ^ http://www.disi.unige.it/person/RovettaS/rad/image-processing-wikipedia-book.pdf
+External links[edit]
+Lectures on Image Processing, by Alan Peters. Vanderbilt University. Updated 7 January 2016.
+Image Processing On Line – Open access journal with image processing algorithms, open source implementations and demonstrations
+IPRG Open group related to image processing research resources

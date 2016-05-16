@@ -1,0 +1,117 @@
+CMSC 427 Computer Graphics1
+David M. Mount Department of Computer Science University of Maryland Spring 2004
+
+Lecture 2: Graphics Systems and Models
+Reading: Today's material is covered roughly in Chapters 2 and 4 of our text. We will discuss the drawing and ?lling algorithms of Chapter 4, and OpenGL commands later in the semester.
+Elements of Pictures: Computer graphics is all about producing pictures (realistic or stylistic) by computer. Before discussing how to do this, let us ?rst consider the elements that make up images and the devices that produce them. How are graphical images represented? There are four basic types that make up virtually of computer generated pictures: polylines, ?lled regions, text, and raster images.
+Polylines: A polyline (or more properly a polygonal curve is a ?nite sequence of line segments joined end to end. These line segments are called edges, and the endpoints of the line segments are called vertices.A single line segment is a special case. (An in?nite line, which stretches to in?nity on both sides, is not usually considered to be a polyline.) A polyline is closed if it ends where it starts. It is simple if it does not self-intersect. Self-intersections include such things as two edge crossing one another, a vertex intersecting in the interior of an edge, or more than two edges sharing a common vertex. A simple, closed polyline is also called a simple polygon. If all its internal angle are at most 180?, then it is a convex polygon. A polyline in the plane can be represented simply as a sequence of the (x,y) coordinates of its vertices. This is suf?cient to encode the geometry of a polyline. In contrast, the way in which the polyline is rendered is determined by a set of properties call graphical attributes. These include elements such as color, line width, and line style (solid, dotted, dashed), how consecutive segments are joined (rounded, mitered or beveled; see the book for further explanation).
+Closed polyline Simple polyline
+No joint
+Simple polygon Convex polygon
+Mitered Rounded Beveled
+Fig. 2: Polylines and joint styles.
+Many graphics systems support common special cases of curves such as circles, ellipses, circular arcs, and Bezier and B-splines. We should probably include curves as a generalization of polylines. Most graphics drawing systems implement curves by breaking them up into a large number of very small polylines, so this distinction is not very important.
+Filled regions: Any simple, closed polyline in the plane de?nes a region consisting of an inside and outside. (This is a typical example of an utterly obvious fact from topology that is notoriously hard to prove. It is called the Jordan curve theorem.) We can ?ll any such region with a color or repeating pattern. In some instances the bounding polyline itself is also drawn and others the polyline is not drawn.
+Lecture Notes 4 CMSC 427
+A polyline with embedded "holes" also naturally de?nes a region that can be ?lled. In fact this can be generalized by nesting holes within holes (alternating color with the background color). Even if a polyline is not simple, it is possible to generalize the notion of interior. Given any point, shoot a ray to in?nity. If it crosses the boundary an odd number of times it is colored. If it crosses an even number of times, then it is given the background color.
+without boundary self intersecting with holeswith boundary
+Fig. 3: Filled regions.
+Text: Although we do not normally think of text as a graphical output, it occurs frequently within graphical images such as engineering diagrams. Text can be thought of as a sequence of characters in some font. As with polylines there are numerous attributes which affect how the text appears. This includes the font's face (Times-Roman, Helvetica, Courier, for example), its weight (normal, bold, light), its style or slant (normal, italic, oblique, for example), its size, which is usually measured in points, a printer's unit of measure equal to 1/72-inch), and its color.
+12 point 10 point
+8 point
+SizeFace (family)
+Courier
+Times-Roman Helvetica
+Bold Normal
+Weight
+Italic Normal
+Style (slant)
+Fig. 4: Text font properties.
+Raster Images: Raster images are what most of us think of when we think of a computer generated image. Such an image is a 2-dimensional array of square (or generally rectangular) cells called pixels (short for "picture elements"). Such images are sometimes called pixel maps. The simplest example is an image made up of black and white pixels, each represented by a single bit (0 for black and 1 for white). This is called a bitmap. For gray-scale (or monochrome) raster images raster images, each pixel is represented by assigning it a numerical value over some range (e.g., from 0 to 255, ranging from black to white). There are many possible ways of encoding color images. We will discuss these further below.
+Graphics Devices: The standard interactive graphics device today is called a raster display. As with a television, the display consists of a two-dimensional array of pixels. There are two common types of raster displays.
+Video displays: consist of a screen with a phosphor coating, that allows each pixel to be illuminated momentarily when struck by an electron beam. A pixel is either illuminated (white) or not (black). The level of intensity can be varied to achieve arbitrary gray values. Because the phosphor only holds its color brie?y, the image is repeatedly rescanned, at a rate of at least 30 times per second.
+Liquid crystal displays (LCD's): use an electronic ?eld to alter polarization of crystalline molecules in each pixel. The light shining through the pixel is already polarized in some direction. By changing the polarization of the pixel, it is possible to vary the amount of light which shines through, thus controlling its intensity.
+Lecture Notes 5 CMSC 427
+Irrespective of the display hardware, the computer program stores the image in a two-dimensional array in RAM of pixel values (called a frame buffer). The display hardware produces the image line-by-line (called raster lines). A hardware device called a video controller constantly reads the frame buffer and produces the image on the display. The frame buffer is not a device. It is simply a chunk of RAM memory that has been allocated for this purpose. A program modi?es the display by writing into the frame buffer, and thus instantly altering the image that is displayed. An example of this type of con?guration is shown below.
+Controller Video Monitor
+Raster Graphics with Display Processor
+I/O Devices
+CPU
+Memory
+Buffer Frame
+Controller Video
+System bus
+Monitor
+Simple Raster Graphics System
+System
+System bus
+I/O Devices
+Memory
+CPU
+Display Processor
+Memory
+Buffer Frame
+Fig. 5: Raster display architectures.
+More sophisticated graphics systems, which are becoming increasingly common these days, achieve great speed by providing separate hardware support, in the form of a display processor (more commonly known as a graphics accelerator or graphics card to PC users). This relieves the computer's main processor from much of the mundane repetitive effort involved in maintaining the frame buffer. A typical display processor will provide assistance for a number of operations including the following:
+Transformations: Rotations and scalings used for moving objects and the viewer's location. Clipping: Removing elements that lie outside the viewing window. Projection: Applying the appropriate perspective transformations. Shading and Coloring: The color of a pixel may be altered by increasing its brightness. Simple shading involves smooth blending between some given values. Modern graphics cards support more complex procedural shading. Texturing: Coloring objects by "painting" textures onto their surface. Textures may be generated by images or by procedures. Hidden-surface elimination: Determines which of the various objects that project to the same pixel is closest to the viewer and hence is displayed.
+An example of this architecture is shown in Fig. 5. These operations are often pipelined, where each processor on the pipeline performs its task and passes the results to the next phase. Given the increasing demands on a top quality graphics accelerator, they have become quite complex. Fig. 6 shows the architecture of existing accelerator. (Don't worry about understanding the various elements just now.)
+Lecture Notes 6 CMSC 427
+transmitter TMDS
+monitor
+cursor
+port input
+Analog
+Video stream
+Video
+monitor Digital
+Graphics port
+Video I/O interface
+RendererRenderer
+2-d Engine
+Host bus interface
+Hardware
+DVD/ HDTV
+stream
+YUV/ RGBScaler
+Texture units
+Vertex skinning cache
+cache Texture
+z-buffer
+Graphics
+overlay control
+expander Ratiometric 
+D/A converter
+Triangle setup
+Keyframe interpolation
+Transform, clip, lighting
+double data-rate memory Synchronous DRAM or
+3-d Engine
+Display engine
+Command engine
+Pallette and
+decoder
+Video Engine
+YUV to RGB
+Scaler
+VGA graphics controller
+Memory controller and interface
+cache Pixel
+Vertex
+Fig. 6: The architecture of a sample graphics accelerator.
+Color: The method chosen for representing color depends on the characteristics of the graphics output device (e.g., whether it is additive as are video displays or subtractive as are printers). It also depends on the number of bits per pixel that are provided, called the pixel depth. For example, the most method used currently in video and color LCD displays is a 24-bit RGB representation. Each pixel is represented as a mixture of red, green and blue components, and each of these three colors is represented as a 8-bit quantity (0 for black and 255 for the brightest color). In many graphics systems it is common to add a fourth component, sometimes called alpha, denoted A. This component is used to achieve various special effects, most commonly in describing how opaque a color is. We will discuss its use later in the semester. For now we will ignore it.
+In some instances 24-bits may be unacceptably large. For example, when downloading images from the web, 24-bits of information for each pixel may be more than what is needed. A common alternative is to used a color map, also called a color look-up-table (LUT). (This is the method used in most gif ?les, for example.) In a typical instance, each pixel is represented by an 8-bit quantity in the range from 0 to 255. This number is an index to a 256-element array, each of whose entries is a 234-bit RGB value. To represent the image, we store both the LUT and the image itself. The 256 different colors are usually chosen so as to produce the best possible reproduction of the image. For example, if the image is mostly blue and red, the LUT will contain many more blue and red shades than others.
+A typical photorealistic image contains many more than 256 colors. This can be overcome by a fair amount of clever trickery to fool the eye into seeing many shades of colors where only a small number of distinct colors exist. This process is called digital halftoning, as shown in Fig. 8. Colors are approximated by putting combinations of similar colors in the same area. The human eye averages them out.
+Lecture Notes 7 CMSC 427
+154 247
+RGB
+Frame buffer
+122 121
+124 125
+Colormap
+031
+176 002
+123
+015123
+Fig. 7: Color-mapped color.
+Fig. 8: Color approximation by digital halftoning. (Note that you are probably not seeing the true image, since has already been halftoned by your document viewer or printer.)
+Lecture Notes 8

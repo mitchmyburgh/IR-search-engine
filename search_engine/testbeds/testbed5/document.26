@@ -1,0 +1,57 @@
+Which Programming Languages Get Used Most At Hackathons?
+
+Picking a programming language to learn can be a stressful task. The trendy language at any given time isn’t necessarily one that anyone will care about in a year, much less the one that’ll get you the best gigs.
+
+It’s interesting, then, to see what language programmers turn to when they’ve got their pick of the litter — when they’re coding not with some bosses’ wishes in mind, but when they’re just cracking away at a project for the hell of it.
+
+Like, say, at a hackathon.
+
+This morning, ChallengePost — a tool that acts as the backend infrastructure for a pretty good chunk of the hackathons that go down (including the ones we host before each TechCrunch Disrupt) — changed their name to Devpost. In celebration of the new name, they’ve released a big ol’ data dump of a bunch of stuff they’ve learned over the past year.
+
+What mobile platforms show up at hackathons the most? Which programming languages are most popular? Which APIs do people tap most often?
+
+After ~160 hackathons with nearly 10,000 projects by 13,281 hackers, they’ve got some answers. You can find their full report over here, but I’ve highlighted some of the most interesting stuff below.
+
+The fan favorite mobile platforms? Android with 38.2%, iOS with 22.7%, and Windows Phone at a distant 4.9%. The remaining 34.2% seemingly didn’t mark a favorite.
+
+The Top 10 Languages At Devpost’s Hackathons:
+
+    HTML/CSS (see note below)
+    JavaScript
+    Python
+    Java
+    C/C++
+    PHP
+    Objective-C
+    C#
+    Swift
+    JSON (which isn’t … really a programming language, but is on their list for some reason, so I’m including #11 too)
+    Ruby
+
+HTML/CSS and Javascript topping the list seems pretty predictable (cue “scripting language” vs “programming language” debate) — they’re forgiving, don’t require a compiler, run in the browser rather than a specific OS, and tend to be the first languages new coders learn. If you’re walking into a room of strangers looking for a team (as is often the case at hackathons), those languages will be pretty universal.
+
+Note: HTML isn’t quite a “programming” language — it’s a markup language, meaning it’s a means of laying out the elements of a document. But it’s a “language” none the less, and one that pretty much every web developer taps endlessly, so we’ll let the semantic stuff slide.
+
+It’s surprising to see Swift up there already, though — Apple only introduced it 13 months ago.
+
+But what about APIs?
+
+Devpost breaks it down category by category as opposed to lumping them all together under one umbrella, but the champs of each section are all pretty excellent tools to have in your belt.
+
+apis
+
+The most popular communications API according to their data? Twilio. Social? Facebook (duh.) and then Twitter (double duh.) Payment? Venmo beats out Paypal, and, perhaps surprisingly, both beat out Stripe. Google Maps dominates the geo category, as most would probably assume.
+
+Twilio’s domination in the communication category makes a ton of sense, if only because Twilio is so active in the hackathon scene. I’ve seen them at just about every hackathon I’ve been to, even if it’s just one of their evangelists showing up in an unofficial capacity. Twilio requires every new employee to hack a project together with their APIs. Hell, one of their lead evangelists parted ways with the company just to start Major League Hacking, a company focusing entirely on leading student hackathons around the world.
+
+In terms of gaming engines, Unity seems to dominate everything else, with over 1,000 Unity projects submitted. The next tool in their list, Pygame, has less than 50.
+
+Seemingly attempting to start some sort of holy war, Devpost also gathered data on text editor of choice. The winner? Sublime Text — which, as it just so happens, is my editor of choice. I’m writing this post in it!
+
+But what about those projects that break out of the virtual walls of software and into the physical hardware world?
+
+hw
+
+The not-at-all surprising king of the hardware hacking prom: Arduino. Flexible enough to be repurposed as the brains of just about any lightweight electronics project and cheap enough that you probably won’t be too crushed if you fry a board or three, it’s a go-to for tinkerers. It’s followed closely by some names that, while trendy, are more set in their purpose — the Myo gesture wristband, the Pebble smartwatch, the Leap motion gesture controller, and Oculus Rift VR headset. Curiously, the flexible and cheap Raspberry Pi comes in all the way at #6.
+
+Remember: this data, while quite fun, isn’t necessarily indicative of real world practicality. It wouldn’t hurt to learn any of the languages that dominate their Top 5, of course — but don’t make any professional life choices based on this data alone. If you’re looking to learn your first language, pick one that seems forgiving (JavaScript isn’t a bad one to get your feet wet), wrap your head around the core universal concepts of programming, then start worrying about all the little differences. If anyone tries to tell you your first language is a terrible decision and you ABSOLUTELY MUST learn TrendyLanguage2015 instead, screw’em.

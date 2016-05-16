@@ -1,0 +1,43 @@
+CGNS stands for CFD General Notation System. It is a general, portable, and extensible standard for the storage and retrieval of CFD analysis data. It consists of a collection of conventions, and free and open software implementing those conventions. It is self-descriptive, cross-platform also termed platform or machine independent, documented, and administered by an international steering committee. It is also an American Institute of Aeronautics and Astronautics (AIAA) recommended practice. The CGNS project originated in 1994 as a joint effort between Boeing and NASA, and has since grown to include many other contributing organizations worldwide. In 1999, control of CGNS was completely transferred to a public forum known as the CGNS Steering Committee. This Committee is made up of international representatives from government and private industry.
+The CGNS system consists of two parts: (1) a standard format (known as Standard Interface Data Structure, or SIDS) for recording the data, and (2) software that reads, writes, and modifies data in that format. The format is a conceptual entity established by the documentation; the software is a physical product supplied to enable developers to access and produce data recorded in that format.
+The CGNS system is designed to facilitate the exchange of data between sites and applications, and to help stabilize the archiving of aerodynamic data. The data are stored in a compact, binary format and are accessible through a complete and extensible library of functions. The application programming interface (API) is cross-platform and can be easily implemented in C, C++, Fortran and Fortran 90 applications. A MEX interface mexCGNS also exists for calling the CGNS API in high-level programming languages MATLAB and GNU Octave. Object oriented interface CGNS++ and Python module pyCGNS exist.
+The principal target of CGNS is data normally associated with compressible viscous flow (i.e., the Navier-Stokes equations), but the standard is also applicable to subclasses such as Euler and potential flows. The CGNS standard includes the following types of data.
+Structured, unstructured, and hybrid grids
+Flow solution data, which may be nodal, cell-centered, face-centered, or edge-centered
+Multizone interface connectivity, both abutting and overset
+Boundary conditions
+Flow equation descriptions, including the equation of state, viscosity and thermal conductivity models, turbulence models, multi-species chemistry models, and electromagnetics
+Time-dependent flow, including moving and deforming grids
+Dimensional units and nondimensionalization information
+Reference states
+Convergence history
+Association to CAD geometry definitions
+User-defined data
+Much of the standard and the software is applicable to computational field physics in general. Disciplines other than fluid dynamics would need to augment the data definitions and storage conventions, but the fundamental database software, which provides platform independence, is not specific to fluid dynamics.
+CGNS is self-describing, allowing an application to interpret the structure and contents of a file without any outside information. CGNS can make use of either two different low-level data formats:
+an internally developed and supported method called Advanced Data Format (ADF), based on a common file format system previously in use at McDonnell Douglas
+HDF5, a widely used hierarchical data format
+
+
+== Tools and Guides ==
+In addition to the CGNS library itself, the following tools and guides are available from SourceForge:
+CGNSTools - Includes ADFVIEWER, a browser and editor for CGNS files
+Users Guide code - small practical example CGNS programs written in both Fortran and C
+F77 Examples - example computer programs written in Fortran that demonstrate all CGNS functionality
+
+
+== See also ==
+Common Data Format (CDF)
+EAS3 (Ein-Ausgabe-System)
+FITS (Flexible Image Transport System)
+GRIB (GRIdded Binary)
+Hierarchical Data Format (HDF)
+NetCDF (Network Common Data Form)
+Tecplot binary files
+XMDF (eXtensible Model Data Format)
+
+
+== External links ==
+CGNS home page
+MEX interface of CGNS for MATLAB and Octave
+pyCGNS

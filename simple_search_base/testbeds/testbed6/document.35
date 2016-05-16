@@ -1,0 +1,383 @@
+    About Us
+    Request a Tutorial
+    Contact Us
+    Advertising
+    Privacy Policy
+    ZenTut
+    Programming Made Easy
+    Home
+    SQL
+    PL/SQL
+    Data Warehouse
+    Data Mining
+    PHP
+      PHP PDO
+    Perl
+    C
+    JSP
+    Java Swing
+    Python
+     Home 
+     / 
+     C Tutorial 
+     / C AVL Tree
+     C AVL Tree
+      Summary: in this tutorial, you will learn about AVL tree and how to implement AVL tree in C.
+      Introduction to AVL tree
+      An AVL tree is a height-balanced binary search tree, where the balance factor is&nbsp;calculated&nbsp;as follows:
+      Balance Factor = height(left subtree) – height(right subtree)
+      In an AVL tree, the balance factor of every node is no more than 1. In practice, the balance factor is often stored at each tree’s node. However a node’s balance factor&nbsp;can be also&nbsp;computed from the heights of its subtrees.
+      The AVL stands for&nbsp;Adelson-Velskii&nbsp;and&nbsp;Landis, who are the inventors of the AVL tree.
+      An AVL tree with N nodes, the complexity of any operations including search, insert and delete takes O(logN) time in the average and worst cases. Notice that for the binary search tree, it takes O(N) time in the worst case and O(logN) time in the average case.
+      In an AVL tree, you may have to re-balance the tree after performing insert and delete operations to keep the tree height-balanced.
+      AVL tree implementation in C
+      AVL tree header file avltree.h:
+#ifndef AVLTREE_H_INCLUDED
+#define AVLTREE_H_INCLUDED
+typedef struct node
+{
+    int data;
+    struct node*  left;
+    struct node*  right;
+    int      height;
+} node;
+void dispose(node* t);
+node* find( int e, node *t );
+node* find_min( node *t );
+node* find_max( node *t );
+node* insert( int data, node *t );
+node* delete( int data, node *t );
+void display_avl(node* t);
+int get( node* n );
+#endif // AVLTREE_H_INCLUDED
+              1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+              10
+              11
+              12
+              13
+              14
+              15
+              16
+              17
+              18
+              19
+              20
+              21
+              #ifndef AVLTREE_H_INCLUDED
+              #define AVLTREE_H_INCLUDED
+              &nbsp;
+              typedef
+              struct
+              node
+              {
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              int
+              data
+              ;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              struct
+              node
+              *
+              &nbsp;&nbsp;
+              left
+              ;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              struct
+              node
+              *
+              &nbsp;&nbsp;
+              right
+              ;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              int
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              height
+              ;
+              }
+              node
+              ;
+              &nbsp;
+              &nbsp;
+              void
+              dispose
+              (
+              node
+              *
+              t
+              )
+              ;
+              node
+              *
+              find
+              (
+              int
+              e
+              ,
+              node
+              *
+              t
+              )
+              ;
+              node
+              *
+              find_min
+              (
+              node
+              *
+              t
+              )
+              ;
+              node
+              *
+              find_max
+              (
+              node
+              *
+              t
+              )
+              ;
+              node
+              *
+              insert
+              (
+              int
+              data
+              ,
+              node
+              *
+              t
+              )
+              ;
+              node
+              *
+              delete
+              (
+              int
+              data
+              ,
+              node
+              *
+              t
+              )
+              ;
+              void
+              display_avl
+              (
+              node
+              *
+              t
+              )
+              ;
+              int
+              get
+              (
+              node
+              *
+              n
+              )
+              ;
+              #endif // AVLTREE_H_INCLUDED
+       AVL Tree source code file avltree.c
+#include &lt;stdio.h&gt;
+#include "avltree.h"
+/*
+    remove all nodes of an AVL tree
+*/
+void dispose(node* t)
+{
+    if( t != NULL )
+    {
+        dispose( t-&gt;left );
+        dispose( t-&gt;right );
+        free( t );
+    }
+}
+/*
+    find a specific node's key in the tree
+*/
+node* find(int e, node* t )
+{
+    if( t == NULL )
+        return NULL;
+    if( e &lt; t-&gt;data )
+        return find( e, t-&gt;left );
+    else if( e &gt; t-&gt;data )
+        return find( e, t-&gt;right );
+    else
+        return t;
+}
+/*
+    find minimum node's key
+*/
+node* find_min( node* t )
+{
+    if( t == NULL )
+        return NULL;
+    else if( t-&gt;left == NULL )
+        return t;
+    else
+        return find_min( t-&gt;left );
+}
+/*
+    find maximum node's key
+*/
+node* find_max( node* t )
+{
+    if( t != NULL )
+        while( t-&gt;right != NULL )
+            t = t-&gt;right;
+    return t;
+}
+/*
+    get the height of a node
+*/
+static int height( node* n )
+{
+    if( n == NULL )
+        return -1;
+    else
+        return n-&gt;height;
+}
+/*
+    get maximum value of two integers
+*/
+static int max( int l, int r)
+{
+    return l &gt; r ? l: r;
+}
+/*
+    perform a rotation between a k2 node and its left child
+    note: call single_rotate_with_left only if k2 node has a left child
+*/
+static node* single_rotate_with_left( node* k2 )
+{
+    node* k1 = NULL;
+    k1 = k2-&gt;left;
+    k2-&gt;left = k1-&gt;right;
+    k1-&gt;right = k2;
+    k2-&gt;height = max( height( k2-&gt;left ), height( k2-&gt;right ) ) + 1;
+    k1-&gt;height = max( height( k1-&gt;left ), k2-&gt;height ) + 1;
+    return k1; /* new root */
+}
+/*
+    perform a rotation between a node (k1) and its right child
+    note: call single_rotate_with_right only if
+    the k1 node has a right child
+*/
+static node* single_rotate_with_right( node* k1 )
+{
+    node* k2;
+    k2 = k1-&gt;right;
+    k1-&gt;right = k2-&gt;left;
+    k2-&gt;left = k1;
+    k1-&gt;height = max( height( k1-&gt;left ), height( k1-&gt;right ) ) + 1;
+    k2-&gt;height = max( height( k2-&gt;right ), k1-&gt;height ) + 1;
+    return k2;  /* New root */
+}
+/*
+    perform the left-right double rotation,
+    note: call double_rotate_with_left only if k3 node has
+    a left child and k3's left child has a right child
+*/
+static node* double_rotate_with_left( node* k3 )
+{
+    /* Rotate between k1 and k2 */
+    k3-&gt;left = single_rotate_with_right( k3-&gt;left );
+    /* Rotate between K3 and k2 */
+    return single_rotate_with_left( k3 );
+}
+/*
+    perform the right-left double rotation
+   notes: call double_rotate_with_right only if k1 has a
+   right child and k1's right child has a left child
+*/
+static node* double_rotate_with_right( node* k1 )
+{
+    /* rotate between K3 and k2 */
+    k1-&gt;right = single_rotate_with_left( k1-&gt;right );
+    /* rotate between k1 and k2 */
+    return single_rotate_with_right( k1 );
+}
+/*
+    insert a new node into the tree
+*/
+node* insert(int e, node* t )
+{
+    if( t == NULL )
+    {
+        /* Create and return a one-node tree */
+        t = (node*)malloc(sizeof(node));
+        if( t == NULL )
+        {
+            fprintf (stderr, "Out of memory!!! (insert)\n");
+            exit(1);
+        }
+        else
+        {
+            t-&gt;data = e;
+            t-&gt;height = 0;
+            t-&gt;left = t-&gt;right = NULL;
+        }
+    }
+    else if( e &lt; t-&gt;data )
+    {
+        t-&gt;left = insert( e, t-&gt;left );
+        if( height( t-&gt;left ) - height( t-&gt;right ) == 2 )
+            if( e &lt; t-&gt;left-&gt;data )
+                t = single_rotate_with_left( t );
+            else
+                t = double_rotate_with_left( t );
+    }
+    else if( e &gt; t-&gt;data )
+    {
+        t-&gt;right = insert( e, t-&gt;right );
+        if( height( t-&gt;right ) - height( t-&gt;left ) == 2 )
+            if( e &gt; t-&gt;right-&gt;data )
+                t = single_rotate_with_right( t );
+            else
+                t = double_rotate_with_right( t );
+    }
+    /* Else X is in the tree already; we'll do nothing */
+    t-&gt;height = max( height( t-&gt;left ), height( t-&gt;right ) ) + 1;
+    return t;
+}
+/*
+    remove a node in the tree
+*/
+node* delete( int e, node* t )
+{
+    printf( "Sorry; Delete is unimplemented; %d remains\n", e );
+    return t;
+}
+/*
+    data data of a node
+*/
+int get(node* n)
+{
+    return n-&gt;data;
+}
+/*
+    Recursively display AVL tree or subtree
+*/
+void display_avl(node* t)
+{
+    if (t == NULL)
+        return;
+    printf("%d",t-&gt;data);
+    if(t-&gt;left != NULL)
+        printf("(L:%d)",t-&gt;left-&gt;data);
+    if(t-&gt;right != NULL)
+        printf("(R:%d)",t-&gt;right-&gt;data);
+    printf("\n");
+    display_avl(t-&gt;left);
+    display_avl(t-&gt;right);
+}
+             

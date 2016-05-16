@@ -1,0 +1,17 @@
+Citing Strong Growth CloudStack Becomes A Top-Level Apache Project
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+Mirror mirror on the wall, who is the most open of them all?
+
+In the battle for who will become the most used open source cloud platform CloudStack has just hit a major milestone. In an announcement earlier today the former Citrix and current Apache project announced that Apache CloudStack has graduated from the Apache Incubator to become a Top-Level Project (TLP), signifying that the project’s community and products have been well-governed under the ASF’s meritocratic process and principles.
+
+Formerly the product of Cloud.com, which was acquired by Citrix for more than $200 million in 2011, CloudStack was donated by Citrix to ASF and submitted to the Apache* Incubator in April 2012. It is a well-established cloud management platform, already widely in production use by many organizations. It is used to deliver Infrastructure-as-a-Service (IaaS) cloud computing in both private-cloud, public, and hybrid cloud environments. According to the groups press release  “it has been proven to be both stable and highly scalable, underpinning production clouds more than 30,000 physical nodes, in geo-distributed environments.”
+
+Sebastien Goasguen an open source cloud computing Evangelist for Citrix sheds some light on the the transition saying “growing an open source community is challenging, folks who participate come from various backgrounds, may seldom meet and interact mostly via emails, social media, instant messaging. Participants come from all over the world, work in different time-zones and donate their time after (and sometime while) dealing with day jobs and family. When growing a community it is fairly natural to want to measure how well we are doing and how healthy the community is. Over the last several months I have started collecting some data to analyze our community, trying to see how we were doing and interacting. I mostly looked at our public mailing lists doing a study similar to the one done about comparing CloudStack, OpenNebula, OpenStack and Ecualyptus.”
+
+When comparing projects it’s important to look at active member involvement versus new membership. According to a recent analysis for OpenStack and OpenNebula, around 30% of their monthly participants are new members.  For CloudStack and Eucalyptus, around 50% of their monthly participants are new members. The report author says  ”this indicates OpenStack and OpenNebula communities are more “sticky” than CloudStack and Eucalyptus communities.”
+
+This is what Goasguen discovered in his analysis of the CloudStack community; ”all in all, analyzing lots of emails showed me that moving to ASF has had a tremendous impact on CloudStack, with over 700 contributors, close to 60 committers, 30 translators, over 1 million lines of code”

@@ -1,0 +1,257 @@
+
+
+Skip to content
+
+  * 
+
+Michael Nielsen
+
+  * About
+  * Michael's main blog
+  * Data-driven intelligence blog
+  * Writing
+
+# Cluster-state quantum computation
+
+by Michael Nielsen on April 15, 2005
+
+One of my main areas of research interest for the past few years has been
+_measurement-based_ models of quantum computation. In the standard accounts of
+quantum computing, a quantum computer is presented as a device that gets its
+power by performing coherent manipulations of superpositions of computational
+states, before a final measurement step destroys the superposition, singling
+out a single computational state to be read out.
+
+Measurement-based quantum computing turns this picture on its head. In such a
+model, there are no coherent manipulations of superpositions. Instead, it's
+just all measurements, all the time. In Debbie Leung's memorable phrase, we
+compute by "pinging Nature".
+
+I've just written a short pedagogical review of one of these models, the so-
+called "one-way quantum computer", or "cluster-state model" of quantum
+computation. A simple version of this model was recently implemented in the
+lab, as reported in _Nature_ by the Zeilinger group.
+
+The review is written to be accessible to anyone with a thorough grounding in
+basic quantum mechanics. The main part of the review is spent explaining what
+a quantum computer is, what the cluster state model is, and how clusters can
+be used to simulate an ordinary quantum computer. At the end, I also explain
+two new results: (1) a no-go theorem which, subject to some caveats (see
+paper), forbids us from obtaining the cluster experimentally by cooling a
+physical system to the ground state; and (2) a proof that clusters must be
+prepared in two or more dimensions if they are to be useful for quantum
+computing.
+
+The review was written for a festschrift in honour of Tony Bracken and Angas
+Hurst, two well-known Australian mathematical physicists. Tony was my fourth-
+year honours thesis advisor, for which he suggested a wonderful topic: whether
+there is any connection between sometimes-negative "probability" distribution
+functions, like the Wigner function, and the Bell inequalities. It was a great
+topic for a student, combining a fundamental physical aspect with beautiful
+mathematics, and requiring only a little background to get started.
+
+From -&gt; General
+
+Comments are closed.
+
+  * ## Follow Michael
+
+    * Subscribe to this blog
+    * Subscribe to this blog by email
+    * Michael's blog on data-driven intelligence
+    * Follow Michael on Twitter
+
+  * ## Other places on the web
+
+    * GitHub
+    * Delicious
+    * Delicious research links for book project
+    * Delicious research links for last book
+    * Google Plus
+
+  * ## Books
+
+  
+Reinventing Discovery: The New Era of Networked Science (Errata)  
+  
+  
+Quantum Computation and Quantum Information
+
+  * ## Other projects
+
+    * Essays
+    * TEDxWaterloo video about open science
+    * Quantum computing for the determined
+    * Polymath wiki
+
+  * ## Recent Posts
+
+    * Where will the key ideas shaping the future of scientific publishing come from?
+    * How the backpropagation algorithm works
+    * Reinventing Explanation
+    * Neural Networks and Deep Learning: first chapter goes live
+    * The artist and the machine
+  * ## Recent Comments
+
+    * Michael Nielsen on Where will the key ideas shaping the future of scientific publishing come from?
+    * wladimir on Where will the key ideas shaping the future of scientific publishing come from?
+    * Brett Buttliere on Where will the key ideas shaping the future of scientific publishing come from?
+    * TianJun on How the backpropagation algorithm works
+    * Michael Nielsen on How the backpropagation algorithm works
+  * ##  Linklog
+
+    * Sponsored: The 3 Week Diet
+
+8 Rules of Fat Loss. Warning: Fast Results! Click Here to Watch Video...
+
+    * OSI: The Internet That Wasn’t - IEEE Spectrum
+
+How TCP/IP won over the OSI. Interesting in part for the discussion of what
+openness means, exactly, and when it is advantageous for a process to be open.
+
+    * Lester Dent's Master Plot Formula
+
+More in the Moorcock vein. It's easy to imagine the reaction of the critic,
+holding their nose at writing to formula. But you can turn that around,
+regarding Dent (and, more plausibly, Moorcock) as a student and theoretician
+of structure. And that's a pretty powerful point of view. Of course, word-by-
+word Dent is a poor […]
+
+    * How to Write a Book in Three Days: Lessons from Michael Moorcock
+
+Fascinating both intrinsically, and for the commentary. The commentary first:
+part of the interest is from people who desire an easy way to write (or, more
+accurately, to have written). But there is also clearly a genuine interest on
+the part of many: what does this guy know that I don't about storytelling? You
+may […]
+
+    * Susan Sontag interview
+
+Conveys well how much force of personality and intellect Sontag brought to her
+writing.
+
+  * ##  Documentaries
+
+    * Sponsored: The 3 Week Diet
+
+8 Rules of Fat Loss. Warning: Fast Results! Click Here to Watch Video...
+
+    * Visual Storytelling: The Digital Video Documentary
+
+A brief skim suggests that this is a very good basic guide to making
+documentaries.
+
+    * The Great Ecstasy of the Woodcarver Steiner - Werner Herzog
+
+Documentary of Wolfgang Steiner, one of the world's top ski-jumpers in the
+1970s. The spine of the documentary is a sequence of extraordinary shots of
+Steiner's jumps, taken with a pair of high-speed cameras.
+
+    * Inge Druckrey: Teaching to See
+
+A reminder of the diversity of life: the passion and learning and insight
+people pour into calligraphy, font design, and design more generally.
+
+    * Indie Game: The Movie (2012) - IMDb
+
+Striking for the level of emotional commitment and uncertainty (and turmoil)
+on the part of the creators!
+
+  * ## Search
+
+  * ## Archives
+
+    * May 2015
+    * April 2014
+    * January 2014
+    * November 2013
+    * February 2013
+    * February 2012
+    * January 2012
+    * October 2011
+    * September 2011
+    * August 2011
+    * June 2011
+    * May 2011
+    * April 2011
+    * March 2011
+    * February 2011
+    * January 2011
+    * December 2010
+    * November 2010
+    * August 2010
+    * May 2010
+    * April 2010
+    * February 2010
+    * January 2010
+    * December 2009
+    * November 2009
+    * October 2009
+    * September 2009
+    * August 2009
+    * July 2009
+    * June 2009
+    * May 2009
+    * April 2009
+    * March 2009
+    * February 2009
+    * January 2009
+    * December 2008
+    * November 2008
+    * October 2008
+    * September 2008
+    * August 2008
+    * July 2008
+    * June 2008
+    * May 2008
+    * April 2008
+    * March 2008
+    * February 2008
+    * January 2008
+    * November 2007
+    * October 2007
+    * September 2007
+    * August 2007
+    * July 2007
+    * June 2007
+    * May 2007
+    * April 2007
+    * August 2006
+    * July 2006
+    * June 2006
+    * April 2006
+    * March 2006
+    * October 2005
+    * August 2005
+    * July 2005
+    * June 2005
+    * May 2005
+    * April 2005
+    * March 2005
+    * February 2005
+    * January 2005
+    * December 2004
+    * November 2004
+    * October 2004
+    * September 2004
+    * August 2004
+    * July 2004
+    * June 2004
+    * May 2004
+    * April 2004
+    * March 2004
+    * February 2004
+    * January 2004
+    * November 2003
+    * October 2003
+    * September 2003
+    * August 2003
+
+  * 
+
+  * 
+
+  * 
+
+Copyright (C) 2016 . Titan Theme by The Theme Foundry
+

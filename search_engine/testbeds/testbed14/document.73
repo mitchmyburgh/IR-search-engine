@@ -1,0 +1,57 @@
+﻿Bottom up ontology development
+
+
+Contents
+
+    1 Overview
+    2 Moving from database to ontology
+    3 Difficulties
+    4 References
+
+Overview
+
+Bottom up ontology development is an alternative approach to using top down with a foundational ontology. Bottom up development starts of by reusing “existing data, information and knowledge” from non-ontological sources to build an ontology[1]. Due to the ‘knowledge acquisition bottleneck’ more natural language interfaces and diagrams are being built that will help make it easier to get subject domain knowledge from the experts and also improve the ease at which the domain experts can reuse the “legacy” material that they already use to store their information knowledge. There are many ‘legacy’ rescources or artifacts that can be converted into an OWL, these include [1]:
+
+    Databases
+    Conceptual data models
+    Frame-based systems
+    OBO Format ontologies
+    Thesauri, Biological models
+    Excel sheets
+    Tagging, folksonomies
+    Output of text mining, machine learning and clustering.
+
+It is not easy (or difficult) to convert a 'legacy' resources into an ontology. The difficulty increases as one gets further from the Semantic web representation, such as Glossaries and data dictionaries. The effort required to make the transformation from ontology decreases if one works with Thesauri, taxonomies and a bit more with MetaData, XML schemas and Data models, until one gets to Formal Ontologies and Inference [1]. This is depicted in figure 1.
+
+
+Figure 1: Various types of less to more comprehensive formalised “legacy” resource [1]
+
+Figure 1: Various types of less to more comprehensive formalised “legacy” resource [1]
+
+
+Database-to-ontology mapping is when “a database and an ontology are semantically related at a conceptual level” [2]. With this mapping one can create an ontology from a database or map a database to an existing ontology [2]. This wiki page will focus only on creating an ontology from a database.
+
+One can not simply reverse engineer a database’s conceptual data model to feed into an OWL ontology. This is due the to flattened structure of a database [1]. To avoid having an ontology that has a class with many attributes which can do minimal automated reasoning one should normalize the conceptual model to to get some structure back into the conceptual view.
+Moving from database to ontology
+
+Figure 2 depicts the steps necessary to convert a database into an ontology. To get a database in ontology form one will start with a denormalized database table (bottom of figure 2). The denormalized database table is then converted to an Enhanced Entity Relationship (EER) model, which is a conceptual data model (middle). The EER contains all the features in an entity relationship model but also includes subclasses and super classes. This is a flattened structure of the database. In converting from the database to the EER diagram each relation becomes and an entity type and each column an attribute [1].
+
+To move to a more structured model, the EER diagram has to be cleaned up, have the original entity types (re-)introduced, add relationships and have the attributes separated accordingly. This is to make some knowledge implicit in the database schema explicit in the model (top part) that is transformed into the ontology This reverse engineering can be done manually or automatically. After this structured model is acquired it can then be transformed into an ontology
+
+Figure 2:The steps it takes to transform a database into an ontology Figure 2:The steps it takes to transform a database into an ontology
+Difficulties
+
+There are quite a few difficulties associated with transforming a database into an ontology. These include the following:
+
+1. “The formal apparatus of the representation languages, and the static linking between the layers and the procedures” [1], these are depicted with the three arrows.
+
+2. The data in the database has to be checked for its real meaning. One might come across instances that are assumed to be concepts/universal/classes, whereas others represent real instances [1].
+
+3. Lastly, the ‘impedance mismatch’ between database values and ABox objects.This is relevant for ontology-based data access [1].
+
+
+References
+
+[1] Maria Keet. Lecture Notes Ontology Engineering [Online]. Available: http://www.meteck.org/teaching/OntoEngLectureNotes14.pdf. [Accessed: 05- Apr- 2016].
+
+[2] Ghawi, R., & Cullot, N. (2007, September). Database-to-ontology mapping generation for semantic interoperability. In VDBL’07 conference, VLDB Endowment ACM (pp. 1-8). 

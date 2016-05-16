@@ -1,0 +1,146 @@
+5.5.3 Phong Shading
+Even the smoothness introduced by Gouraud shading may not prevent the appearance
+of Mach bands. Phong proposed that instead of interpolating vertex intensities,
+as we do in Gouraud shading, we interpolate normals across each polygon. Consider
+a polygon that shares edges and vertices with other polygons in the mesh, as shown
+in Figure 5.30. We can compute vertex normals by interpolating over the normals of
+the polygons that share the vertex. Next, we can use interpolation, as we did in Chapter
+3, to interpolate the normals over the polygon. Consider Figure 5.31. We can use
+the interpolated normals at vertices A and B to interpolate normals along the edge
+between them:
+nC(a) = (1- a)nA
++ anB.
+We can do a similar interpolation on all the edges. The normal at any interior point
+can be obtained from points on the edges by
+n(a, ß) = (1- ß)nC
++ ßnD.
+Once we have the normal at each point, we can make an independent shading calculation.
+Usually, this process can be combined with rasterization of the polygon. Until
+recently, Phong shading could only be carried out off-line because it requires the interpolation
+of normals across each polygon. In terms of the pipeline, Phong shading
+280 Chapter 5 Lighting and Shading
+requires that the lighting model be applied to each fragment, hence, the name perfragment
+shading.We will implement Phong shading through a fragment shader.
+5.6 APPROXIMATION OF A SPHERE
+BY RECURSIVE SUBDIVISION
+We have used the sphere as an example curved surface to illustrate shading calculations.
+However, the sphere is not an object supported within OpenGL, so we will
+generate approximations to a sphere using triangles through a process known as recursive
+subdivision, a technique we introduced in Chapter 2 for constructing the
+Sierpinski gasket. Recursive subdivision is a powerful technique for generating approximations
+to curves and surfaces to any desired level of accuracy. The sphere
+approximation provides a basis for us to write simple programs that illustrate the
+interactions between shading parameters and polygonal approximations to curved
+surfaces.
+Our starting point is a tetrahedron, although we could start with any regular
+polyhedron whose facets could be divided initially into triangles.2 The regular tetrahedron
+is composed of four equilateral triangles, determined by four vertices. We
+start with the four vertices (0, 0, 1), (0, 2
+v
+2/3, -1/3), (-
+v
+6/3, -
+v
+2/3, -1/3), and
+(
+v
+6/3, -
+v
+2/3, -1/3). All four lie on the unit sphere, centered at the origin. (Exercise
+5.6 suggests one method for finding these points.)
+We get a first approximation by drawing a wireframe for the tetrahedron. We
+specify the four vertices as follows:
+point4 v[4]= {vec4(0.0, 0.0, 1.0, 1.0),
+vec4(0.0, 0.942809, -0.333333, 1.0),
+vec4(-0.816497, -0.471405, -0.333333, 1.0),
+vec4(0.816497, -0.471405, -0.333333, 1.0)};
+We then put the vertices into an array
+point4 data[12];
+so we can display the triangles using line loops. Each triangle adds three points to this
+array using the function
+static int k = 0;
+void triangle(point4 a, point4 b, point4 c)
+{
+data[k]= a;
+2. The regular icosahedron is composed of 20 equilateral triangles; it makes a nice starting point for
+generating spheres. See [Shr10].
+5.6 Approximation of a Sphere by Recursive Subdivision 281
+FIGURE 5.32 Tetrahedron.
+k++;
+data[k] = b;
+k++;
+data[k] = c;
+k++
+}
+All the data for the tetrahedron is put into data as follows:
+void tetrahedron()
+{
+triangle(v[0], v[1], v[2]);
+triangle(v[3], v[2], v[1]);
+triangle(v[0], v[3], v[1]);
+triangle(v[0], v[2], v[3]);
+}
+The order of vertices obeys the right-hand rule, so we can convert the code to draw
+shaded polygons with little difficulty. If we add the usual code for initialization, setting
+up a vertex buffer object and drawing the array, our program will generate an
+image such as that in Figure 5.32: a simple regular polyhedron, but a poor approximation
+to a sphere.
+We can get a closer approximation to the sphere by subdividing each facet of the
+tetrahedron into smaller triangles. Subdividing into triangles will ensure that all the
+new facets will be flat. There are at least three ways to do the subdivision, as shown
+in Figure 5.33. We can bisect each of the angles of the triangle and draw the three
+bisectors, which meet at a common point, thus generating three new triangles. We
+can also compute the center of mass (centroid) of the vertices by simply averaging
+them and then draw lines from this point to the three vertices, again generating three
+triangles. However, these techniques do not preserve the equilateral triangles that
+make up the regular tetrahedron. Instead—recalling a construction for the Sierpinski
+gasket of Chapter 2—we can connect the bisectors of the sides of the triangle, forming
+four equilateral triangles, as shown in Figure 5.33(c). We use this technique for our
+example.
+After we have subdivided a facet as just described, the four new triangles will
+still be in the same plane as the original triangle. We can move the new vertices that
+(a) (b) (c)
+FIGURE 5.33 Subdivision of a triangle by (a) bisecting angles,
+(b) computing the centroid, and (c) bisecting sides.
+282 Chapter 5 Lighting and Shading
+we created by bisection to the unit sphere by normalizing each bisected vertex, using
+the normalization function normalize in vec.h. We can now subdivide a single
+triangle, defined by the vertices a, b, and c:
+point4 v1, v2, v3;
+v1 = normalize(a + b);
+v2 = normalize(a + c);
+v3 = normalize(b + c);
+triangle(a, v2, v1);
+triangle(c, v3, v2);
+triangle(b, v1, v3);
+triangle(v1, v2, v3);
+We can use this code in our tetrahedron routine to generate 16 triangles rather than
+4, but we would rather be able to repeat the subdivision process n times to generate
+successively closer approximations to the sphere. By calling the subdivision routine
+recursively, we can control the number of subdivisions.
+First, we make the tetrahedron routine depend on the depth of recursion by
+adding an argument n:
+void tetrahedron(int n)
+{
+divide_triangle(v[0], v[1], v[2], n);
+divide_triangle(v[3], v[2], v[1], n);
+divide_triangle(v[0], v[3], v[1], n);
+divide_triangle(v[0], v[2], v[3], n);
+}
+The divide_triangle function calls itself to subdivide further if n is greater than
+zero but generates triangles if n has been reduced to zero. Here is the code:
+void divide_triangle(point4 a, point4 b, point4 c, int n)
+{
+point4 v1, v2, v3;
+if (n>0)
+{
+v1 = normalize(v[a] + v[b]);
+v2 = normalize(v[a] + v[c]);
+v3 = normalize(v[b] + v[c]);
+divide_triangle(a ,v2, v1, n-1);
+divide_triangle(c ,v3, v2, n-1);
+divide_triangle(b ,v1, v3, n-1);
+divide_triangle(v1 ,v2, v3, n-1);
+}
+else triangle(a, b, c);
+}

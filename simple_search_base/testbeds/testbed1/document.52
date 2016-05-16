@@ -1,0 +1,58 @@
+Windows_10_version_history
+'''''' is an  developed by . Microsoft described Windows 10 as an '' that would receive ongoing updates to its features and functionality, augmented with the ability for enterprise environments to receive non-critical updates at a slower pace, or use long-term support milestones that will only receive critical updates, such as security patches, over their five-year lifespan of mainstream support. , executive vice president of Microsoft's Windows and Devices Group, argued that the goal of this model was to reduce  across the Windows platform.
+== Codename "Threshold 1" ==
+Windows 10, codenamed "''Threshold 1''", is the first release of Windows 10. It carries the build number 10.0.10240. While the build itself doesn't contain the version number, Microsoft retroactively named this version 1507, standing for July 2015 and matching the versioning scheme for later updates. "''Threshold 1''" was announced on an event on September 30, 2014 with a first preview following the day after. The final release was made available to Windows Insiders on July 15, 2015, followed by a public release on July 29, 2015 as a free upgrade to  and .
+The Threshold 1 release of Windows 10 is only supported for users of the Long Term Servicing Branch (LTSB).
+=== Features new to "Threshold 1" ===
+==== Start menu ====
+Windows 10 introduced the old -style Start menu back due to negative criticism of Windows 8's supposed touch-centric design, while Windows 10's Start menu still preserves Windows 8.1's live tiles, the Start menu can switch between Windows 7's "Start menu" and Windows 8.1's "Start screen" modes through a toggle in the Settings app.
+==== Cortana ====
+Cortana is an  that first launched with , Cortana integrates with the   for web searches, Bing SmartSearch for file and setting queries, save reminders, notify users of coming events, and open application programmes.
+==== Task View ====
+Task View is a  and  system that allows a user to quickly locate an open window, quickly hide all windows and show the desktop, and to manage windows across multiple monitors or virtual desktops.
+==== Microsoft Edge ====
+Microsoft Edge is a new , it replaces  though Internet Explorer is still present in Windows 10 for compatibility reasons. Unlike Internet Explorer which uses  Microsoft Edge uses  which is a forked version of Trident.
+==== Action Center ====
+The Action Center is a  first introduced in  that allows for push notification from  and non-Windows Store apps, it also hosts settings for location, "Tablet mode", , "Quiet hours", and allows users to open .
+=== Table of versions ===
+== Codename "Threshold 2" ==
+'''Windows 10 November Update''', or '''Windows 10 Version 1511''', codenamed "''Threshold 2''", is the first minor update to Windows 10. It carries the build number 10.0.10586 and version 1511, referencing its date of release, November 2015. The first preview was released on August 18, 2015. The final release was made available to Windows Insiders on November 3, 2015, followed by a public release on November 12, 2015 to existing Windows 10 users, and as a free upgrade from Windows 7 and Windows 8.1. Unlike the initial release of Windows, this version was also made available to existing -devices and the  and as a preview release to , and was pre-installed on new -devices like the .
+The Threshold 2 release of Windows 10 is  supported for users of the Current Branch (CB) and Current Branch for Businesses (CBB) 
+=== Features New to Threshold 2 ===
+There are some noticeable changes in this update since the initial release of Windows 10. These changes are summarized below. 
+==== App Updates ====
+* Windows Feedback app now allows sharing of feedback.
+==== Cortana ====
+* Cortana is now available in Australia, Canada, India, and Japan.
+* Users no longer need to sign in to the PC.
+* Users can make handwritten reminder in Cortana's notebook.
+* Cortana can now send texts through the desktop, or notify the user of missed calls.
+==== Desktop ====
+* Window titlebar can now sport the user's chosen accent color. By default the titlebar is white, but with this update, enabling color for taskbar, start menu, and Action Center also enables the accent color on the titlebar.
+* Window snapping has been improved to allow auto resizing of the second snapped app when the first snapped app is resized. This only applies when two apps are snapped side-by-side (rather than when apps are snapped in the corners).
+==== Microsoft Edge ====
+* New features (e.g. pointer lock, Canvas blending modes, &lt;meter&gt; element, etc.) in Microsoft Edge
+* 
+==== Miscellaneous ====
+*  of unused memory pages.
+* Added option to turn off the Windows background picture on the sign-in screen.
+==== Start Menu ====
+* The Start menu can now be set to house four columns of medium sized tiles per group.The default is still three columns, same as that of the initial version of Windows 10.
+* The context menu for an app icon or tile includes Jumplist support. The context menu items themselves have been reorganized, with some bearing icons.  
+==== Tablet Mode ====
+* Windows 10's "snap assist" feature has been updated for tablet mode. Now, when two apps are snapped and a third app is launched, the user will be asked to select one of the currently two snapped apps with which to replace the newly launched.
+* Improvements have also been made to "task view" in tablet mode to allow the user to drag open apps to the side of the screen to snap them or to the bottom of the screen to close them directly from task view.
+=== Table of Versions ===
+== Codename "Redstone 1" == 
+'''Windows 10 Anniversary Update''' (codenamed "''Redstone 1''"), is the second major update to Windows 10 and the first of the 2 major updates planned under the Redstone codenames. The first preview was released on December 16, 2015.
+=== Features new to "Redstone 1" ===
+The Anniversary Update brings new features to Windows 10 since Version 1511. The major features are highlighted below.
+==== Extensions for Microsoft Edge and other UWP apps ====
+Microsoft Edge now supports extensions, either installed from the Windows Store or or sideloaded from external sources. This ability is extended to all UWP apps, allowing for ad-ons and DLCs for such apps and games, respectively. Furthermore, these ad-ons can be managed from the Windows Settings app.
+==== Personalization ====
+Universal dark mode has been added, allowing users to globally set whether UWP apps render in dark or light mode. Titlebars color for applications not using a custom color can now be set without needing to enable color on Taskbar, Start menu, and Action Center.
+==== Windows Subsystem for Linux====
+The anniversary update for Windows 10 adds . This allows the   to run natively on Windows. The subsystem translate Linux  that Ubuntu uses to those of Windows NT kernel. This allows the  and other Ubuntu command line apps to run within the Windows console. There is, however, the interoperability restriction: Bash cannot run Windows apps and Windows cannot run Linux software.
+==== Windows Ink Workspace ====
+A new workspace environment for  users. It includes virtual sticky notes on which a pen could be used to take notes. Sticky notes features  to highlight relevant text that can be used by Cortana. The workspace also includes a sketchpad, ability to take a screenshot and draw on it, and a virtual ruler.
+=== Table of versions ===

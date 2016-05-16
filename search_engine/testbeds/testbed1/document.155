@@ -1,0 +1,11 @@
+Cache-only_memory_architecture
+'''Cache only memory architecture''' ('''COMA''') is a  organization for use in s in which the local memories (typically ) at each node are used as cache.  This is in contrast to using the local memories as actual main memory, as in  organizations.
+In NUMA, each address in the global address space is typically assigned a fixed home node.  When processors access some data, a copy is made in their local cache, but space remains allocated in the home node.  Instead, with COMA, there is no home.  An access from a remote node may cause that data to migrate.  Compared to NUMA, this reduces the number of redundant copies and may allow more efficient use of the memory resources.  On the other hand, it raises problems of how to find a particular data (there is no longer a home node) and what to do if a local memory fills up (migrating some data into the local memory then needs to evict some other data, which doesn't have a home to go to).  Hardware  mechanisms are typically used to implement the migration.
+A huge body of research has explored these issues.  Various forms of directories, policies for maintaining free space in the local memories, migration policies, and policies for read-only copies have been developed.  Hybrid NUMA-COMA organizations have also been proposed, such as Reactive NUMA, which allows pages to start in NUMA mode and switch to COMA mode if appropriate and is implemented in the Sun Microsystems's WildFire. A software-based Hybrid NUMA-COMA implementation was proposed and implemented by , allowing for the creation of a shared-memory multiprocessor system out of a cluster of commodity nodes.
+==See also==
+* 
+* 
+== References ==
+* 
+* 
+*

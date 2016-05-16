@@ -1,0 +1,30 @@
+Design philosophy
+
+Rich Hickey developed Clojure because he wanted a modern Lisp for functional programming, symbiotic with the established Java platform, and designed for concurrency.[14][15][33]
+
+Clojure's approach to state is characterized by the concept of identities,[34] which are represented as a series of immutable states over time. Since states are immutable values, any number of workers can operate on them in parallel, and concurrency becomes a question of managing changes from one state to another. For this purpose, Clojure provides several mutable reference types, each having well-defined semantics for the transition between states.[13][34]
+Features
+Version 	Release date 	Major features added
+	2007-10-16[35] 	Initial public release
+1.0 	2009-05-04[36] 	First stable release[37]
+1.1 	2009-12-31[36] 	Futures[38]
+1.2 	2010-08-19[36] 	Protocols[39]
+1.3 	2011-09-23[36] 	Enhanced primitive support[40]
+1.4 	2012-04-15[36] 	Reader literals
+1.5 	2013-03-01[36] 	Reducers
+1.6 	2014-03-25[41] 	Java API, improved hashing algorithms
+1.7 	2015-06-30[22] 	Transducers, reader conditionals
+1.8 	2016-01-19[42] 	String functions, direct linking, socket server
+1.9 	future
+Latest version
+Future release
+
+Clojure runs on the Java virtual machine and as a result integrates with Java and fully supports calling Java code from Clojure,[43] and Clojure code can be called from Java also.[44] The community uses Leiningen[45] for project automation, providing support for Maven integration. Leiningen handles project package management and dependencies and is configured using Clojure syntax.[45]
+
+Like most other Lisps, Clojure's syntax is built on S-expressions that are first parsed into data structures by a reader before being compiled.[46] Clojure's reader supports literal syntax for maps, sets and vectors in addition to lists, and these are compiled to the mentioned structures directly.[46] Clojure is a Lisp-1 and is not intended to be code-compatible with other dialects of Lisp, since it uses its own set of data structures incompatible with other Lisps.[46][47]
+
+As a Lisp dialect, Clojure supports functions as first-class objects, a read–eval–print loop (REPL), and a macro system.[48] Clojure's macro system is very similar to that in Common Lisp with the exception that Clojure's version of the backquote (called "syntax quote") qualifies symbols with their namespace. This helps prevent unintended name capture, as binding to namespace-qualified names is forbidden. It is possible to force a capturing macro expansion, but it must be done explicitly. Clojure does not allow user-defined reader macros, but the reader supports a more constrained form of syntactic extension.[49] Clojure supports multimethods[50] and for interface-like abstractions has a protocol[51] based polymorphism and data type system using records,[52] providing high-performance and dynamic polymorphism designed to avoid the expression problem.
+
+Clojure has support for lazy sequences and encourages the principle of immutability and persistent data structures. As a functional language, emphasis is placed on recursion and higher-order functions instead of side-effect-based looping. Automatic tail call optimization is not supported as the JVM does not support it natively;[53] it is possible to do so explicitly by using the recur keyword.[54] For parallel and concurrent programming Clojure provides software transactional memory[55] a reactive agent system,[56] and channel-based concurrent programming.[57]
+
+Recently Clojure introduced reader conditionals by allowing the embedding of Clojure and ClojureScript code in the same namespace.[22][58] Transducers have been added as a way for composing transformations. Transducers enable higher-order functions such as map and fold to generalize over any source of input data, as traditionally these functions operate on sequences, transducers allow them to work on channels and let the user define their own models for transduction.[59][60][61]

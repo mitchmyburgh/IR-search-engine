@@ -1,0 +1,24 @@
+Flowgrind is a testing and benchmarking tool to measure throughput and other metrics for TCP. It was originally developed to study performance and behavior of TCP variants within Wireless mesh networks.
+In contrast to similar tools like Iperf or Netperf it features a distributed architecture, where throughput and other metrics are measured between flowgrind server processes. The Flowgrind client has the purpose to schedule such measurements and collect the measurement data.
+Inherent with this architecture and its designation for Wireless mesh networks flowgrind supports:
+separation of measured traffic and control traffic (e.g., to measure the wireless performance, but don't let the control traffic interfere),
+a simultaneous measurement between any number of hosts running the flowgrind server (e.g., to create wireless crosstalk),
+uni-directional, bi-directional or sophisticated request/response tests (e.g., to simulate various usage scenarios and protocols) and
+packet capture support (e.g., for offline in-depth traffic analysis).
+Flowgrind allows the user to set various protocol parameters (e.g. the Congestion control algorithm) individually for each connection. This be can be used to explore how certain settings affect network utilization and how they may compete which each other.
+Unlike most cross-platform testing tools, besides application layer metrics, Flowgrind can output some transport layer metrics, which are usually internal to the TCP/IP Stack. For example, on Linux this includes the kernel's estimation of the end-to-end round-trip time and the size of the congestion window.
+
+
+== See also ==
+Iperf, Netperf, Ttcp, bwping: tools of a similar nature.
+Measuring network throughput
+Packet generation model
+
+
+== References ==
+
+
+== External links ==
+Flowgrind Homepage
+Flowgrind's page at github
+Flowgrind's Freecode record

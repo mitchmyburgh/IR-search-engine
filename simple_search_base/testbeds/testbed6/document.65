@@ -1,0 +1,150 @@
+    &nbsp; 
+    &nbsp; 
+    SSL by Globalsign 
+	--> 
+          +1 877-775-4562
+        Sales: --> 
+         Contact Us  
+        | 
+         Account Login  
+        | 
+            EN / United States
+       Products 
+           Small &amp;  Medium Business  
+            SSL Certificates 
+            Managed PKI 
+            Document Signing 
+            S/MIME Certificates 
+            Code Signing Certificates 
+            Authentication Certificates 
+          Enterprise&nbsp; 
+            Managed PKI 
+            Enterprise SSL 
+            Active Directory Integration 
+            Identity and Access Management 
+            Authentication &amp; Access Control 
+            Document Signing 
+            S/MIME 
+            Trusted Root 
+            Time Stamping Service 
+           Cloud  Service Providers  
+            Managed PKI 
+            SSL Certificates 
+            CloudSSL 
+           Internet of  Everything  
+            High Volume Certificate Services 
+            High Scale IAM 
+          Can't find the solution you need? 
+          View all Products
+       SSL 
+             Managed PKI  for SSL   
+             Individual  SSL Certificates   
+             SSL Tools   
+          I need to Secure: 
+            Single domain name  
+            Unlimited subdomains on a given domain  
+            Multiple server names (SANs)  
+            Internal Servers  
+            Compare all certificates  
+          View all SSL Certificates 
+       Partners 
+             System Integrators  &amp; VARs   
+             Hosting &amp;  SSL Resellers   
+             Cloud  &amp; CDN Providers   
+          Additional Links: 
+            Technology Partners  
+            Sign Up Now  
+            View Our Partners  
+            Partner Resource center  
+            Partner Login  
+          Want to become a partner? 
+          Learn how to become a GlobalSign Partner 
+       Company 
+             Company  Profile   
+             Company  Blog   
+             Locations  &amp; Contacts   
+          Learn more about GlobalSign: 
+            News &amp; Events  
+            Leadership  
+            Careers  
+            Legal Repository  
+            GlobalSign Customers  
+           Sales: 1-877-775-4562 
+           Email: sales@globalsign.com 
+           Live Chat 
+       Resources  
+       Support 
+             Support  Website   
+             APIs &amp;  Integration   
+             Resources   
+          Support Quick Links: 
+            Status Updates  
+            Root and Intermediate Certificates  
+            How to Install an SSL Certificate  
+            FDA ESG Support  
+           Call Support: 1-877-775-4562 
+           Submit a Ticket 
+           Live Chat 
+    Choosing Safe Key Sizes &amp; Hashing Algorithms 
+     Algorithms, Key Size and Digital Certificates 
+     Summary 
+     On the surface Digital Certificates are not as complicated as they are occasionally perceived to be. A trusted public body, such as a Certificate Authority (CA) like GlobalSign, verifies a specified selection of evidence to produce an electronic identification for future presentation, indicating that the authentication of the individual or organization has taken place. 
+     The Digital Certificate contains information about who the certificate was issued to, as well as the certifying authority that issued it. Additionally, some certifying authorities may themselves be certified by a hierarchy of one or more certifying authorities, and this information is also part of the certificate chain. When for example a Digital Certificate is used to sign documents and software, this information is stored with the signed item in a secure and verifiable format, so that it can be displayed to a user to establish a trust relationship. 
+     As is usually the case, when examining a little deeper, mechanisms are not quite that simple. In the case of Digital Certificates there are a number of other factors. What are the qualifications of the third-party, their practices and which cryptographic algorithms did they use to produce the digital certificate? 
+     From a CISOs perspective, using Digital Certificates such as SSL raises concerns that may impact on the organization’s operational environment. By using a certificate from a Certificate Authority, the individual/organization will need to fully trust the CA’s practices. 
+     This is especially true when it comes to decisions relating to what cryptographic algorithms and key lengths are acceptable in this ever changing industry. Thankfully you do not need to be a cryptographer to make good decisions on this topic, but you will need to have a basic understanding of the history, advances promoted for future use, and carefully consider algorithms provided by a number of Certificate Authorities operating in the security market at present. 
+     History 
+     Digital signatures are composed of two different algorithms, the hashing algorithm (SHA-1 for example) and the other the signing algorithm (RSA for example). Over time these algorithms, or the parameters they use, need to be updated to improve security. 
+     RSA's strength is directly related to the key size, the larger the key the stronger the signature. Advances in cryptanalysis have driven the increase in the key size used with this algorithm. While this requires some additional computing power, microprocessors have kept pace with the requirements and there is minimal impact to the entities creating or validating signatures. Each time we double the size of an RSA key, decryption operations require 6-7 times more processing power. 
+     As a result of this, since January 2011, Certificate Authorities have aimed to comply with NIST (National Institute of Standards and Technology) recommendations, by ensuring all new RSA certificates have keys of 2048 bits in length or longer. GlobalSign was one of the first Certificate Authorities to implement 2048 bit key strength within its Root CA Certificates, back in 1998 and other Certification Authorities have since followed suit based on these new requirements. 
+     As computational power increases the hashing algorithms start to become susceptible to hashing collisions. MD5 was used for a number of years until it was found to have a security flaw in 2004 which set the stage for SHA-1. Hash algorithms take a variable length input string and reduce it to a typically shorter and fixed length output (160 bits for SHA-1), the goal of which being to provide a unique identifier for that input. The important thing to understand is that hash algorithms can be susceptible to collisions and the advances in the cryptanalysis have made it more likely to create such a collision. The problem here is that there is no parameter to tweak, the only way to address this issue is to change what algorithm one uses to produce the hash. In this case the next evolutionary step is to one of the SHA-2 family of algorithms. 
+     Future 
+     For the last decade or so there has been slow and steady movement to using two new algorithms to address these advances, SHA-2 and ECC. ECC has the potential for significant performance benefits over RSA without reducing security, and SHA-2 offers three versions, each with progressively longer lengths, which help it both address the current risks and provides some longevity. 
+     While the CA/Browser Forum has not yet specified SHA-256 in their Baseline Requirements, Microsoft and Google driving the industry to the January 2017 date when they will stop trusting all SHA-1 Certificates issued under public roots. GlobalSign is tracking the status within the CA and Browser industry as well as within security forms and is actively taking the steps to support SHA-256 SSL certificates in March 2014. 
+     Considerations 
+     The main goal in configuring SSL is to enable users to communicate over the Internet securely. Organizations and individuals need to be able to do this with the fewest hassles, lowest costs and in compliance with any associated standards. 
+     Compliance is another important driving factor when making a decision, whether it is the Payment Card Industry / Data Security Standards (PCI), Federal Information Processing Standards (FIPS), or some other set of criteria you need to meet, this always needs to be taken into account. 
+     Therefore CISOs across organizations worldwide can be rest assured that third-party providers using SHA2 algorithms and RSA 2048-bit key strength will be secure for the next ten or so years, but when making the key decision of choosing a provider it may also be worth taking into consideration when they adopted this level of security. Implementing this standard of security over 10 years before NIST’s recommendations, GlobalSign is always striving to stay one step ahead within the industry. 
+     SSL Information Center 
+      What is SSL? 
+      What is an SSL Certificate? 
+      Certificate Authority Root 
+      What are the Types of SSL? 
+      What is SGC? 
+      CA Network Security Practices 
+      9 Common Myths About CAs 
+      What is EV SSL? 
+      Using a Secure Site Seal 
+      Telling DV &amp; OV Apart 
+      Choosing Safe Key Sizes 
+      Transitioning to SHA-256 
+      1024 bit Public and Private Keys 
+      Security and website Performance 
+      Dangers of Self-Signed Certificates 
+      Removing Upcoming GTLD's used as Internal Server Names 
+      What is public-key cryptography? 
+      &nbsp;  
+         Sales: 
+            1-877-775-4562
+         Support: 
+            1-877-775-4562
+         E-Mail: 
+            sales-us@globalsign.com
+       Livechat 
+       Contactus online 
+       Supportticket 
+       About GlobalSign 
+         Company Profile  
+         Careers  
+         Blog  
+         News &amp; Events  
+         Legal Repository  
+         System Alerts  
+       Tools 
+         SSL Server Test  
+         SSL Inventory Tool  
+         PDF Signing Tool  
+         Code Signing Tool  
+       Learning 
+         Support Site  
+  

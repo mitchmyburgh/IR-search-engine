@@ -1,0 +1,27 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Shading
+Goal: To use the lighting and re?ectance model to shade facets of a polygonal mesh - that is, to assign intensities to pixels to give the impression of opaque surfaces rather than wireframes.
+Assume we're given the following: • ¯ ew - center of projection in world coordinates • ¯ lw - point light source location • Ia,Id - intensities of ambient and directional light sources • ra,rd,rs - coef?cients for ambient, diffuse, and specular re?ections • a - exponent to control width of highlights
+9.1 Flat Shading
+With ?at shading, each triangle of a mesh is ?lled with a single color.
+For a triangle with counterclockwise vertices ¯ p1, ¯ p2, and ¯ p3, as seen from the outside, let the midpoint be ¯ p = 1 3(¯ p1 + ¯ p2 + ¯ p3) with normal ~n = (¯ p2-¯ p1)×(¯ p3-¯ p1) k(¯ p2-¯ p1)×(¯ p3-¯ p1)k. Then we may ?nd the intensity at ¯ p using the Phong model and ?ll the polygon with that:
+E = ˜ Iara + rd˜ Id max(0,~n·~s) + rs˜ Id max(0,~r·~c)a, (41)
+where ~s =
+¯ lw-¯ p k¯ lw-¯ pk, ~c = ¯ ew-¯ p k¯ ew-¯ pk, and ~r = -~s + 2(~s·~n)~n. Flat shading is a simple approach to ?lling polygons with color, but can be inaccurate for smooth surfaces, and shiny surfaces. For smooth surfaces-which are often tesselated and represented as polyhedra, using ?at shading can lead to a very strong faceting effect. In other words, the surface looks very much like a polyhedron, rather than the smooth surface it's supposed to be. This is because our visual system is very sensitive to variations in shading, and so using ?at shading makes faces really look ?at.
+9.2 Interpolative Shading
+The idea of interpolative shading is to avoid computing the full lighting equation at each pixel by interpolating quantites at the vertices of the faces.
+Given vertices ¯ p1, ¯ p2, and ¯ p3, we need to compute the normals for each vertex, compute the radiances for each vertex, project onto the window in device coordinates, and ?ll the polygon using scan conversion.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 57
+CSC418 / CSCD18 / CSC2504 Shading
+There are two methods used for interpolative shading:
+Gouraud Shading The radiance values are computed at the vertices and then linearly interpolated within each triangle. This is the form of shading implemented in OpenGL.
+Phong shading The normal values at each vertex are linearly interpolated within each triangle, and the radiance is computed at each pixel.
+Gouraud shading is more ef?cient, but Phong shading is more accurate. When will Gouraud shading give worse results?
+9.3 Shading in OpenGL
+OpenGL only directly supports Gouraud shading or ?at shading. Gouraud is enabled by default, computing vertex colors, and interpolating colors across triangle faces. Flat shading can be enabled with glShadeModel(GL FLAT). This renders an entire face with the color of a single vertex, giving a faceted appearance.
+Left: Flat shading of a triangle mesh in OpenGL. Right: Gouraud shading. Note that the mesh appears smooth, although the coarseness of the geometry is visible at the silhouettes of the mesh.
+With pixel shaders on programmable graphics hardware, it is possible to achieve Phong shading by using a small program to compute the illumination at each pixel with interpolated normals. It is even possible to use a normal map to assign arbitrary normals within faces, with a pixel shader using these normals to compute the illumination.

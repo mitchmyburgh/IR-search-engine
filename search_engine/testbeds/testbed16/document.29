@@ -1,0 +1,17 @@
+Cloud Acquisitions 2010: Go PaaS?
+Matthias Jung / December 28, 2010
+Let’s have a look at the major acquisitions in the cloud computing space in 2010.
+
+January 2010: VMWare (EMC) acquires Zimbra.
+February 2010: CA acquires 3Tera.
+March 2010: CA acquires Nimsoft.
+November 2010: Redhat acquires Makara.
+December 2010: Saleforces acquires Heroku.
+December 2010: Rackspace acquires Cloudkick.
+Virtualisation company buys SaaS Provider. Big one buys Infrastructure (IaaS) Providers. Big one buys cloud management tool. OS Platform provider buys cloud management tool. Big SaaS provider acquires Platform (PaaS) provider. IaaS Provider buys cloud management tool. This all sounds very confusing, right? In which direction do all those players finally go?
+
+I would say they go all into the same direction. The final destination is PaaS (Platform as a Service). The picture below visualizes the path, which is for some longer and more complicated then for others. The companies in the yellow rectangle in the middle have all been acquired in 2010. The buyers come from different directions, but they all have the same destination.
+
+
+
+Since Amazon EC2 launched their IaaS offer, traditional hosters (Rackspace), the traditional Big 4 (but also ISPs and Telecoms) move into this space. They all want to add additional services on top of a raw IaaS offer – monitoring, management, security, deployment, auto-scaling, automation, load-balancing. The SaaS providers on her turn want to make their SaaS offers more flexible and customizable. And from yet another angle, OS software providers (like Redhat, but also Microsoft and Oracle) enter the market. The Internet Giants Google and Microsoft even built there own PaaS offerings. They will end up to meet and fight in the middle. They all go PaaS.

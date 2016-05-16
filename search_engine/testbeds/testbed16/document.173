@@ -1,0 +1,74 @@
+Virtualization 101: What is a Hypervisor?
+By Michael Gabriel Sumastre on February 27, 2013
+
+If you're starting with cloud and virtualized systems, it's important to understand how to apply solutions like Hyper-V, vSphere or XenApp . Starting to work with a virtual machine may be advantageous as it's an efficient and isolated duplicate of a real machine. It is highly available and it enables fast disaster recovery.
+Virtualization technology also expands the capabilities of your hardware, helps you control IT-related costs, and helps you improve on your system's reliability and security.
+
+What is Hypervisor?
+For the most part, cloud computing entails you being able to access a virtual machine for you to be able to do what you need to do anywhere. A hypervisor manages these virtual machines.
+
+A hypervisor is a program that would enable you to host several different virtual machines on a single hardware. Each one of these virtual machines or operating systems you have will be able to run its own programs, as it will appear that the system has the host hardware's processor, memory and resources. In reality, however, it is actually the hypervisor that is allocating those resources to the virtual machines.
+
+In effect, a hypervisor allows you to have several virtual machines all working optimally on a single piece of computer hardware.
+
+You may think that the hypervisor is a fairly recent phenomenon. The first hypervisors were introduced in the 1960s to allow for different operating systems on a single mainframe computer. However, its current popularity is largely due to Linux and Unix. Around 2005, Linux and Unix systems started using virtualization technology to expand hardware capabilities, control costs, and improved reliability and security that hypervisors provided to these systems.
+
+Now, hypervisors are fundamental components of any virtualization effort. You can think of it as the operating system for virtualized systems. It can access all physical devices residing on a server. It can also access the memory and disk. It can control all aspects and parts of a virtual machine.
+
+How does it work?
+The servers would need to execute the hypervisor. The hypervisor, in turn, loads the client operating systems of the virtual machines. The hypervisor allocates the correct CPU resources, memory, bandwidth and disk storage space for each virtual machine.
+
+A virtual machine can create requests to the hypervisor through a variety of methods, including API calls.
+
+There are two types of hypervisors:
+
+Embedded or hosted hypervisors, and
+Bare metal or native hypervisors.
+Bare metal, native or type I hypervisors
+This is when the hypervisors are run on the host's hardware to control it as well as manage the virtual machines on it.
+
+If you are currently using Microsoft Hyper-V hypervisor, VMware ESX/ESXi, Oracle VM Server for x86, KVM, or Citrix XenServer, then this is the type of hypervisor with which you are working.
+
+Embedded, hosted or type II hypervisors
+These hypervisors are run as a software using an operating system such as Windows, Linux or FreeBSD. This is what the Virtage hypervisor, VirtualBox and VMWare Workstation are classified as.
+
+So, native hypervisors run directly on the hardware while a hosted hypervisor needs an operating system to do its work. Which one is better? It depends on what you're after.
+
+Bare metal hypervisors are faster and more efficient as they do not need to go through the operating system and other layers that usually make hosted hypervisors slower. Type I hypervisors are also more secure than type II hypervisors.
+
+Hosted hypervisors, on the other hand, are much easier to set up than bare metal hypervisors because you have an OS to work with. These are also compatible with a broad range of hardware.
+
+Hypervisors for Data Replication
+What are the uses of hypervisors and where are they applied? Hypervisors may be used in data services for easy cloning and replication. Hypervisor-based replication is also more cost effective and less complex than current replication methods, especially those involving virtual machines.
+
+Traditionally, it is very difficult to replicate virtual machines. For one, you would need to know how to manage and do data replication. If you use a storage system-based replication method, you will need to replicate the entire volume of the virtual machine. If you have a lot of virtual machines running on a particular hardware, you will have to get a significant amount of storage in order to be able to store the entire volume. With hypervisor-based replication, you can choose which VMs and what parts are to be replicated, so that you could save up on storage space.
+
+Hypervisor-based replication is also hardware neutral, meaning you could store any data duplicates to any storage device.
+
+If you are currently using VMWare, you can get hypervisor-based replication in vSphere. Microsoft has also included this feature in any Windows package that has Hyper-V.
+
+Hypervisors for consolidating servers
+Hypervisors have a graphical dashboard you could work with. They are also plug-able where you can download enhancements. This capability lets you easily consolidate your servers even if they do not have the same operating systems.
+
+Hypervisors for desktop virtualization
+You can use a hypervisor to easily host a virtual desktop on a server. This virtual desktop will be the exact replica of a user's physical desktop. This will allow your employees to be able to work remotely, no matter where they are since they can access their PCs over the Internet, or through a slim client.
+
+Cloud Computing Security and Hypervisors: Safe?
+Now we come to the more important question of whether hypervisors can make cloud computing more secure.
+
+A hypervisor is a natural target for hackers because its designed control all the resources of the hardware while managing all the virtual machines residing on it. The bad news is that a hypervisor is vulnerable to a lot of malicious code, especially those coming from a rogue virtual machine.
+
+Gartner's distinguished analyst, Neil MacDonald, writes that 35% of vulnerabilities found in server virtualization were related to the hypervisor. There are a lot of these types of attacks happening, but they are rarely highly publicized.
+
+MacDonald, however, suggests that you should treat your hypervisor as the most sensitive OS in your data center or network. You should know what vulnerabilities exist and make sure that you manage these, as well as the configurations, to make sure that it is secure.
+
+According to TrendMicro, providers such as Microsoft and VMware have also been working to make their hypervisors more secure. The demand for more secure APIs and careful planning for the network can help mitigate the risks.
+
+It will also help to follow industry guidelines and best practices such as NIST's Virtualization Security Guidelines.
+
+If you're ready to start practicing with VMs, check these out for engaging videos and a great read:
+
+VIDEO: Creating a Virtual Machine with Hyper-V 3.0
+How to Run Hyper-V in vSphere 5.1
+Server 2012 Training: Hyper-V Essentials by David Davis
+Ready to test your skills in Computer Networking? See how they stack up with this assessment from Smarterer. Start this Computer Networking test now

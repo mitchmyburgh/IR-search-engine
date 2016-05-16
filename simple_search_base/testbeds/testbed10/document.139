@@ -1,0 +1,84 @@
+A Bayesian Method for the Induction of
+Probabilistic Networks from Data
+
+GREGORY E COOPER
+
+1. Introduction
+In this paper, we present a Bayesian method for constructing a probabilistic network from
+a database of records, which we call cases. Once constructed, such a network can provide
+insight into probabilistic dependencies that exist among the variables in the database. One
+application is the automated discovery of dependency relationships. The computer program
+searches for a probabilistic-network structure that has a high posterior probability given
+the database, and outputs the structure and its probability. A related task is computer-assisted
+hypothesis testing: The user enters a hypothetical structure of the dependency relationships
+among a set of variables, and the program calculates the probability of the structure given
+a database of cases on the variables.
+We can also construct a network and use it for computer-based diagnosis. For example,
+suppose we have a database in which a case contains data about the behavior of some system
+(i.e., findings). Suppose further that a case contains data about whether this particular
+behavior follows from proper system operation, or alternatively, is caused by one of several
+possible faults. Assume that the database contains many such cases from previous episodes
+of proper and faulty behavior. The method that we present in this paper can be used to
+construct from the database a probabilistic network that captures the probabilistic dependencies
+among findings and faults. Such a network then can be applied to classify future cases
+of system behavior by assigning a posterior probability to each of the possible faults and
+to the event "proper system operation." In this paper, we also shall discuss diagnostic inference
+that is based on combining the inferences of multiple alternative networks.
+
+
+ Summary and open problems
+The BLN approach presented in this paper can represent arbitrary belief-network structures
+and arbitrary probability distributions on discrete variables. Thus, in terms of its representation,
+BLN is nearest to the most general probabilistic network approaches discussed
+in section 6.1.
+The BLN learning methodology, however, is closest to the Bayesian classification-tree
+m.~thod discussed in section 6.2. Like that method, BLN calculates the probability of a
+structure of variable relationships given a database. The probability of multiple structures
+can be computed and displayed to the user. Like the option-trees method, BLN also can
+use multiple structures in performing inference, as discussed in section 4.3. The BLN 
+336 G.E COOPER AND E. HERSKOVITS ,
+approach, however, uses a directed acyclic graph on nodes that represent variables rather
+than a tree on nodes that represent variable values or value ranges. When the number of
+domain variables is large, the combinatorics of enumerating all possible belief network
+structures becomes prohibitive. Developing methods for efficiently locating highly probable
+structures remains an open area of research.
+Except for Bayesian classification trees, the methods discussed in section 6 are nonBayesian.
+These methods emphasize finding the single most likely structure, which they
+then may use for inference. They do not, however, quantify the likelihood of that structure.
+If a single structure is used for inference, implicitly the probability of that structure is
+assumed to be 1. Section 6.2 discussed results suggesting that using multiple structures
+may improve the accuracy of classification inference. Also, the non-Bayesian methods rely
+on having threshold values for determining when conditional independence holds. BLN
+does not require the use of such thresholds.
+BLN is data-driven by the cases in the database and model-driven by prior probabilities.
+BLN is able to represent the prior probabilities of belief-network structures. In section 2.1
+we suggested the possibility that these probabilities may provide one way to bridge BLN
+to other AI methods. Prior-probability distributions also can be placed on the conditional
+probabilities of a particular belief network, as we show in corollaries 1 and 2 in the appendix.
+If the prior-probability distributions on structures and on conditional probabilities are
+not available to the computer, then uniform priors may be assumed. Additional methods
+are needed, however, that facilitate the representation and specification of prior probabilities,
+particularly priors on belief-network structures.
+As we discussed in section 6.3, there has been some progress in developing methods
+for detecting hidden variables, and in the case of some parametric distributions, for searching
+for a likely model containing hidden variables. BLN can compute the probability of
+an arbitrary belief-network structure that contains hidden variables and missing data without
+assuming a parametric distribution. More specifically, no additional assumptions or heuristics
+are needed for handling hidden variables and missing data in BLN, beyond the assumptions
+made in section 2.1 for handling known variables and complete data. Additional
+research is needed, however, for developing ways to search efficiently the vast space of
+possible hidden-variable networks to locate the most likely networks.
+Although BLN shows promise as a method for learning and inference, there remain
+numerous open problems, several of which we summarize here. For databases that are generated
+from a belief network, it is important to prove that, as the number of cases in the
+database increases, BLN converges to the underlying generating network or to a network
+that is statistically indistinguishable from the generating network. This result has been proved
+in the special case that we assume a node order (Herskovits, 1991). Proofs of convergence
+in the presence of hidden variables also are needed. Related problems are to determine
+the expected number of cases required to recover a generating network and to determine
+the variance of P(Bs] D). The theoretical and empirical sensitivities of BLN to different
+types of noisy data need to be investigated as well. Another area of research is Bayesian
+learning of undirected networks, or, more generally, of mixed directed and undirected networks.
+Also, recall that the K2 method presented in section 3.1.2 requires an ordering on
+the nodes. We would like to avoid such a requirement. One approach is to search for likely
+undirected graphs and to use these as starting points in searching for directed graphs. 

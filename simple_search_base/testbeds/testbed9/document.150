@@ -1,0 +1,32 @@
+For other meanings, see Mem (disambiguation)
+
+In Computational complexity theory, computing efficiency, Combinatorial optimization, Supercomputing, computational cost (Algorithmic efficiency) and other computational metrics, MEMS is a measurement unit for the number of memory accesses used or needed by a process, function, instruction set, algorithm or data structure.
+Example usage: "A typical search tree in a (10 x 10 Sudoku or Latin square) requires a node of about 75 mems (memory accesses) for processing, to check validity. Therefore the total running time on a modern processor would be roughly the time needed to perform 7020200000000000000♠2×1020 mems." (Donald Knuth, 2011, The Art of Computer Programming, Volume 4A, p. 6).
+Reducing MEMS as a speed and efficiency enhancement is not a linear benefit, as it trades off increases in ordinary operations costs.
+
+
+== History ==
+
+
+== Computational models ==
+
+
+== Comparison with other metrics ==
+
+
+== Role of the OS ==
+
+
+== Trade offs with ordinary operations ==
+
+
+== PFOR Compression ==
+This optimization technique also is called PForDelta
+Although lossless compression methods like Rice, Golomb and PFOR are most often associated with signal processing codecs, the ability to optimize binary integers also adds relevance in reducing MEMS tradeoffs vs. operations. (See Golomb coding for details).
+
+
+== See also ==
+Clock rate, Instructions per second, CAS latency, Memoization, Clock signal, Nanosecond, Benchmarking, Computer performance
+
+
+== References ==

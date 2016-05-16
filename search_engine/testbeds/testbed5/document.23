@@ -1,0 +1,23 @@
+Go Programming Language Is Growing Up
+
+Have we hit "Peak C++"? Some programmers would love to think so, though by most measures Bjarne Stroustrup's object-oriented creation is still going strong. Go, a long-shot contender to steal some of the C++ thunder, might have improved its odds a bit with the release of a new version that casts off some of its ties to the past and adds new features.
+
+Go began life as an exercise for three Google software developers, Robert Griesemer, Rob Pike, and Ken Thompson. The three didn't like C++ and felt that C -- while good -- wasn't perfect. They began with a C-like framework and moved forward until, six years later, we have this week's release of Go 1.5.
+
+One of the notable features of this latest Go release is that it's the first to be written completely in Go. Previous versions were written in C  and required a C compiler to build the distribution. This is the sort of detail that is generally interesting only to compiler nerds. But, it's a point that marks a level of maturity and an ability to generate code that works closely with the low-level operating system and hardware.
+
+(Image: ClkerFreeVectorImages via Pixabay)
+
+(Image: ClkerFreeVectorImages via Pixabay)
+
+There are a number of changes to the language in Version 1.5, but three will be important to a lot of developers. First, the default setting for compiled programs is now to use the maximum number of available cores rather than just one core, as was the case in previous versions.
+
+[ What's ahead for Java? Read Java: 7 Powerful Features For The Future. ]
+
+A much wider variety of internal packages is now supported. This should make it much easier for teams that build libraries and repositories of code to be used and re-used in multiple applications.
+
+Finally, the process of garbage collection, during which all sorts of temporary variables and structures are cleaned up while the application is running, is considerably faster than in previous versions. In general, the updates to the language and its compiler extend the ability of the language to be used in larger, enterprise-class applications and make applications written in Go execute faster.
+
+Is there any bad news for developers? Well, yes. Because the conversion of compiler code from C to Go was done through an automated process, the code for the compiler itself isn't very elegant or efficient. So when you're compiling a program, it's going to take longer in Version 1.5 than in Version 1.4. The developers are well aware of this and plan to fix it in future versions.
+
+Should you use Go? If you like the functionality of C++ but don't like the very long compile times and language complexity, then Go is worth a look. Google has -- some of its applications are written in Go. Version 1.5 is a major step for Go. It will be interesting to see the language, and the development language, improve in the next revision.

@@ -1,0 +1,105 @@
+Machine Learning for the Detection of Oil Spills in
+Satellite Radar Images
+
+
+MIROSLAV KUBAT*
+ROBERT C. HOLTE 
+STAN MATWIN
+1. Introduction
+In this paper we describe an application of machine learning to an important environmental
+problem: detection of oil spills from radar images of the sea surface. We cover the application
+cycle from the problem formulation phase to the delivery of a system for field testing.
+The company that sponsored this work, Macdonald Dettwiler Associates, has just begun
+the final phases of the cycle—field testing, marketing, and deployment. This paper focuses
+on the research issues that arose during the development of the Canadian Environmental
+Hazards Detection System (CEHDS). These issues cover the entire gamut of activities related
+to machine learning, from initial problem formulation, through methodology design,
+to the usual technical activities. For most of the issues, including the technical ones, we
+found few pertinent studies in the research literature. The related work we did find was
+usually by others working on a particular application. The primary purpose of this paper
+is to present to the machine learning research community a set of open research issues that
+are of general importance in machine learning applications. We also present the approach
+taken to these issues in our application. Only about 10% of oil spills originate from natural sources such as leakage from sea beds.
+Much more prevalent is pollution caused intentionally by ships that want to dispose cheaply
+of oil residues in their tanks. Radar images from satellites such asRADARSAT and ERS-
+1 provide an opportunity for monitoring coastal waters day and night, regardless of weather
+conditions. Oil slicks are less reflective of radar than the average ocean surface, so they
+appear dark in an image. An oil slick’s shape and size vary in time depending on weather
+and sea conditions. A spill usually starts out as one or two slicks that later break up into
+several smaller slicks. Several natural phenomena (e.g., rain, algae) can closely resemble
+oil slicks in radar images. They are called lookalikes.
+Figure 1 shows a fragment of a SAR (Synthetic Aperture Radar) image of the North
+Sea with an oil slick in it. The full image consists of 8,000x8,000 pixels, with each pixel
+representing a square of 30x30m; the fragment shown here is approximately 70 × 50
+kilometers. The oil slick is the prominent elongated dark region in the upper right of the
+picture. The dark regions in the middle of the picture and the lower left are lookalikes, most
+probably wind slicks (winds with speeds exceeding 10m/sec decrease the reflectance of the
+radar, hence the affected area looks darker in a radar image).
+
+9. Conclusions
+The oil spill detection workstation has been delivered, under the name of CEHDS, to
+Macdonald Dettwiler Associates and will soon undergo field testing in several European
+countries (Spain, France, Portugal, and Italy). It has image processing suites for two
+satellites, RADARSAT and ERS-1. Two learning algorithms were included: 1-NN
+with one-sided selection and SHRINK. In the latter case, the user can control the rate of
+false alarms, and trade false alarms for missed oil spills. The user can also decide to retrain
+the system should more data become available.
+In developing the Oil Spill Detection Workstation we faced numerous issues. Most are
+not specific to the oil spill detection problem: they are the consequence of properties of
+the application that arise frequently in other machine learning applications. Although each
+application that has faced these issues has, of necessity, developed some solution, they have
+212 M. KUBAT, R. HOLTE, AND S. MATWIN
+not yet been the subject of thorough scientific investigation. They are open research issues
+of great importance to the applications community.
+Perhaps the most important issue is that of imbalanced classes. It arises very often in
+applications and considerably reduces the performance of standard techniques. Numerous
+methods for coping with imbalanced classes have been proposed, but they are scattered
+throughout the literature. At the very least, a large scale comparative study is needed to
+assess the relative merits of these methods and how they work in combination. Many
+individual methods, the SHRINK algorithm for example, can undoubtedly be improved
+by further research. It seems important to study small imbalanced training sets separately
+from large ones. In the latter, positive examples are numerous even though they are greatly
+outnumbered by negative examples. Some of the published methods for learning from imbalanced
+classes, require numerous examples of the minority class. The Bayesian approach
+described by Ezawa et al. (1996), for example, works with several thousand examples in
+the minority class, while we were limited to fewer than fifty.
+Learning from batched examples is another issue which requires further research. With
+the resources (manpower, data) available in this project, we were not able to devise a learning
+algorithm that could successfully take advantage of the grouping of the training examples
+into batches. However, we believe further research could yield such an algorithm. Learning
+from batched examples is related to the issues of learning in the presence of context, as the
+batches often represent the unknown context in which the training examples were collected.
+Learning in context has only recently been recognized as an important problem re-occurring
+in applications of machine learning (Kubat & Widmer, 1996).
+Various tradeoffs arose in our project which certainly warrant scientific study. In formulating
+a problem, one must choose the granularity of the examples (images, regions,
+or pixels in our application) and the number of classes. Different choices usually lead to
+different results. For instance, having several classes instead of just two reduces the number
+of training examples per class but also provides additional information to the induction process.
+How can one determine the optimal choice? Another tradeoff that arose was between
+the discriminating power of the features and the number of examples.
+In machine learning applications, there is no standard measure of domain knowledge, as Solberg and Volden (1997) have done, and use a learning algorithm
+guided by a weak domain theory as done by Clark and Matwin (1993).
+Our experience in this project highlights the fruitful interactions that are possible between
+machine learning applications and research. The application greatly benefited from—
+indeed would not have succeeded without—many ideas developed in the research community.
+Conversely, the application opened new, fertile research directions. Future research
+in these directions will directly benefit the next generation of applications. performance. Classi-
+fication accuracy may be useful in some applications, but it is certainly not ideal for all.
+The research challenge is to develop learning systems that can be easily adapted to different
+performance measures. For example, cost sensitive learning algorithms work with a parameterized
+family of performance measures. Before running the learning algorithm, the user
+selects a specific measure within this family by supplying values for the parameters (i.e., the
+costs). A second example is the “wrapper approach” to feature selection (Kohavi & John,
+to appear), parameter setting (Kohavi & John, 1995), or inductive bias selection (Provost
+& Buchanan, 1995). It can be adapted easily to work with any performance measure. Our
+approach was to have the learning system generate hypotheses across the full range of the
+ROC curve and permit the user to interactively select among them.
+Feature engineering is a topic greatly in need of research. Practitioners always emphasize
+the importance of having good features, but there are few guidelines on how to acquire
+them. Constructive induction techniques can be applied when there is sufficient data that
+overtuning will not occur. An alternative to purely automatic techniques are elicitation
+techniques such as structured induction (Shapiro, 1987). More generally, one can elicit
+
+
+

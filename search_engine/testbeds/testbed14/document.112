@@ -1,0 +1,25 @@
+﻿Electronic Commerce, Agents, and XML
+We have described a number of approaches that provide automatic support in electronic
+commerce ([O
+́
+Leary, 1997b]). Currently, the mixture of natural language, gifs, and
+layout information of HTML is the major barrier for the 
+automatization
+of electronic
+commerce, because the semantics of the information is only understood by human users.
+Therefore, no real automatic processing of this information can be provided. This
+significantly hampers the realization of the advantages of electronic commerce. The
+information service provided by shopping agents is limited: they heuristically extract
+some information, but they cannot fully understand natural language and the effort for
+developing and maintaining shopping agents is costly.
+The new standard XML will significantly improve the situation. HTML is a layout
+language for presenting textual documents whereas XML is a language for defining the
+structure and semantics of information. Therefore, it enables directed information
+search and the exchange of structured data (for example, between databases). In
+consequence, the automated processing of information will be possible and electronic
+commerce can be executed by software agents. Still XML only provides a standardized
+syntax for exchanging data. Defining the structure and semantics (i.e., the vocabulary
+and its meaning), is required additionally. This is precisely what can be achieved with
+ontologies (cf. [Glushko et al., 1999], [Maes et al., 1999]). We will show some of these
+interesting perspectives in the context of B2B.
+

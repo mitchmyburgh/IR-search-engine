@@ -1,0 +1,107 @@
+Data Representation and Storage
+Simple Data Types
+          Character
+          Integer
+          Float
+          Boolean
+Structured Data Types
+          String
+          Record
+Abstract Data Structures
+        Arrays
+        Linked Lists
+        Stacks
+        Queues
+        Binary Trees
+        Hash Tables
+ 
+Traversal Algorithms
+        Linked List Traversal
+            Create Operation
+            IsEmpty
+            Count
+            Insert
+            Delete
+            Display
+            Create, Empty and Destroy
+            Traversing the List
+            Traversal Algorithm
+            Removing a Node
+            Maintaining the Chain
+            Deleting Last Node
+         Tree Traversal
+            Pre-Order Traversal
+            Post-Order Traversal
+            In-Order Traversal
+            Breadth-First Traversal
+            Recursion
+              Recursion and Binary Trees
+              Recursive Algorithms
+        Searching Algorithms
+          Linear Search
+          Binary Search
+        Sorting Algorithms
+          Bubble Sort
+            BS Pass 1
+            BS Pass 2
+            BS Pass 3
+            BS Tasks
+          Insertion Sort
+            IS Pass 3
+            IS Pass 5
+          Selection Sort
+            SS Pass 2
+          Shell Sort
+            Shell Sort 2
+            Shell Sort 3
+            Shell Sort Tasks
+          Merge Sort
+            Merge Sort 2
+        Insertion and Deletion Algorithms
+          Insert at Start
+          Insert in Middle
+          Insert at End
+          Linked List Deletion
+          Linked List Answers
+          Binary Tree Insertion
+      Using Abstract Data Types
+        Simple Data Structures
+        Primitive Operations
+        Linked List ADT
+          Access Primitives
+          Traversal
+          Linear Search
+          Adding Nodes
+          Deleting Nodes
+          Create and Destroy
+          Implementing Lists
+        Stack ADT
+        Queue ADT
+      Standard Collection Classes
+        Generics
+        Lists and Sets
+          ArrayList and LinkedList
+          TreeSet and Hashset
+          EnumSet
+        Maps
+          The Map Interface
+          Views, Subsets and Submaps
+          Hash Tables and Hash Codes
+        Iteration
+        Insertion and Deletion
+        Testing Java Programs
+          Correct and Robust
+          JUnit
+     Simple Data Types 
+      Most programming languages support at least four simple data types: 
+       Character: a single letter, digit, special character or control character 
+       Integer: a whole number 
+       Floating point: a number with a fractional part, sometimes referred to as a real number. 
+       Boolean: a logical data type that can only take the values True or False. 
+      In this course we’re going to use the Java programming language. Java calls simple data types Primitive Data Types. It supports a single character data type (char), three integer data types (byte, short, int and long), two floating point data types (float and double) and a single Boolean data type (boolean). We’ll look at each of these more closely in the following sections. 
+      You can view a short video on Java Primitive Data Types here. 
+      Next: Character 
+     Data Structures  
+    Proudly powered by WordPress. 
+/*  */
+

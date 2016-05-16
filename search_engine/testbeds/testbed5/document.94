@@ -1,0 +1,18 @@
+Clojure
+
+Clojure (pronunciation: /ˈkloʊʒɜːr/, like "closure"[4]) is a dialect of the Lisp programming language created by Rich Hickey.[5] Clojure is a general-purpose programming language with an emphasis on functional programming.[6] It runs on the Java virtual machine, Common Language Runtime,[7] and JavaScript[8] engines. Like other Lisps, Clojure treats code as data and has a macro system.[9] The current development process is community-driven,[10] overseen by Rich Hickey as its benevolent dictator for life (BDFL).[11]
+
+Clojure encourages immutability and immutable data structures. While its type system is entirely dynamic, recent efforts have also sought the implementation of gradual typing.[12] Clojure encourages programmers to be explicit about managing state and identity.[13] This focus on programming with immutable values and explicit progression-of-time constructs are intended to facilitate developing more robust programs, especially multithreaded ones.[14][15]
+
+Clojure is successfully used in industry by firms such as Walmart,[16] Puppet Labs,[17] and other large software firms.[18] Commercial support for Clojure is provided by Cognitect.[18] Annual Clojure conferences are organised every year across the globe, the most famous of them being Clojure/conj (US east coast),[19] Clojure/West (US west coast),[20] and EuroClojure (Europe).[21]
+
+The latest stable version of Clojure is 1.8,[22] released on January 19, 2016. The first stable release was version 1.0, released on May 4, 2009.[23] Clojure is free software released under the Eclipse Public License.[24]
+
+History and development process
+Rich Hickey in San Francisco
+
+Rich Hickey is the creator of the Clojure language.[5] Before Clojure, he developed dotLisp, a similar project based on the .NET Framework,[25] and three earlier attempts to provide interoperability between Lisp and Java: a Java foreign language interface for Common Lisp (jfli),[26] A Foreign Object Interface for Lisp (FOIL),[27] and a Lisp-friendly interface to Java Servlets (Lisplets).[28]
+
+Hickey spent about 2½ years working on Clojure before releasing it publicly, much of that time working exclusively on Clojure with no outside funding. At the end of this time, Hickey sent an email announcing the language to some friends in the Common Lisp community.
+
+The development process is community-driven[10] and is managed at the Clojure Community website.[29] The website contains planning documents and an issue tracker where bugs may be filed. General development discussion occurs at the Clojure Dev Google Group.[30] While anyone can submit bug reports and ideas, to contribute patches one must sign the Clojure Contributor agreement.[31] JIRA tickets are processed by a team of screeners and finally Rich Hickey approves the changes.[32]

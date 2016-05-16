@@ -1,0 +1,34 @@
+There are several cases of red–black tree insertion to handle:
+•	N is the root node, i.e., first node of red–black tree
+•	N's parent (P) is black
+•	N's parent (P) and uncle (U) are red
+•	N is added to right of left child of grandparent, or N is added to left of right child of grandparent (P is red and U is black)
+•	N is added to left of left child of grandparent, or N is added to right of right child of grandparent (P is red and U is black)
+Each case will be demonstrated with example C code. The uncle and grandparent nodes can be found by these functions:
+struct node *grandparent(struct node *n)
+{
+ if ((n != NULL) && (n->parent != NULL))
+  return n->parent->parent;
+ else
+  return NULL;
+}
+
+struct node *uncle(struct node *n)
+{
+ struct node *g = grandparent(n);
+ if (g == NULL)
+  return NULL; // No grandparent means no uncle
+ if (n->parent == g->left)
+  return g->right;
+ else
+  return g->left;
+}
+Case 1: The current node N is at the root of the tree. In this case, it is repainted black to satisfy property 2 (the root is black). Since this adds one black node to every path at once, property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes) is not violated.
+void insert_case1(struct node *n)
+{
+ if (n->parent == NULL)
+  n->color = BLACK;
+ else
+  insert_case2(n);
+}
+Case 2: The current node's parent P is black, so property 4 (both children of every red node are black) is not invalidated. In this case, the tree is still valid. Property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes) is not threatened, because the current node N has two black leaf children, but because N is red, the paths through each of its children have the same number of black nodes as the path through the leaf it replaced, which was black, and so this property remains satisfied.

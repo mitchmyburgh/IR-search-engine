@@ -1,0 +1,51 @@
+Virtualization for Newbies: Five Types of Virtualization
+AUTHOR: STEVE BACA 3 OCTOBER 2013 8,555 VIEWS NO COMMENTS
+TAGS: VIRTUALIZATION
+datacentertech1Although some form of virtualization has been around since the mid-1960s, it has evolved over time, while remaining close to its roots. Much of the evolution in virtualization has occurred in just the last few years, with new types being developed and commercialized. For our purposes, the different types of virtualization are limited to Desktop Virtualization, Application Virtualization, Server Virtualization, Storage Virtualization, and Network Virtualization.
+
+Desktop Virtualization
+The virtualization of the desktop, which sometimes is referred to as Virtual Desktop Infrastructure (VDI), is where a desktop operating system (OS), such as Windows 7, will run as a virtual machine on a physical server with other virtual desktops. The processing of multiple virtual desktops occurs on one or a few physical servers, typically at the centralized data center. The copy of the OS and applications that each end user utilizes will typically be cached in memory as one image on the physical server.
+
+If you go back to the IBM mainframe era in the 1960s, each user would use the mainframe to do the centralized processing for their terminal session, so the user’s environment consisted of a non-color monitor and a keyboard with all of the processing happening back on the centralized mainframe. However, in the 1990s, IT started to migrate to the inexpensive desktop system where each user would have a physical computer, consisting of a color monitor, keyboard, and mouse, with much of the processing and the operating system running locally, using the physical desktop’s central processing unit (CPU) and physical random access memory (RAM) instead of using the centralized mainframe to do the processing.
+
+In today’s VDI marketplace, there are two dominate vendors, VMware Horizon View and Citrix Xen Desktop, vying to become the leader in the desktop virtualization marketplace. Both vendors have the ability to project graphic displays with rapid response from the mainframe. The desktops also come with a mouse, and both solutions make the end-user’s experience feel that the remote desktop is local. Thus, the performance of the remote desktop and how the end-user accesses their applications should be no different than if they were using a physical desktop. Both VMware Horizon View and Citrix Xen Desktop each have a strong footprint and are the most-utilized choices for desktop virtualization in business today.
+
+Application Virtualization
+Application virtualization uses software to package an application into a “single executable and run anywhere” type of application. The software application is separated from the operating system and runs in what is referred to as a “sandbox.” Virtualizing the application allows things like the registry and configuration changes to appear to run in the underlying operating system, although they really are running in the sandbox. There are two types of application virtualization: remote and streaming of the application.
+
+A remote application will run on a server, and the client uses some type of remote display protocol to communicate back to the client machine. Since a large number of system administrators and users have experience running remotely, it can be fairly easy to set up remote displays for applications.
+
+With a streaming application, you can run one copy of the application on the server, and then have many client desktops access and run the streaming application locally. By streaming the application, the upgrade process is easier, since you just set up another streaming application with the new version and have the end users point to the new version of the application.
+Some of the application virtualization products in the marketplace are Citrix XenApp, Novell ZENworks Application Virtualization, and VMware ThinApp,
+
+Server Virtualization
+Server virtualization allows for many virtual machines to run on one physical server. The virtual servers share the resources of the physical server, which leads to better utilization of the physical servers resources. The resources that the virtual machines share are CPU, memory, storage, and networking. All of these resources are provided to the virtual machines through the hypervisor of the physical server. The hypervisor is the operating system and software that operate on the physical box. Each virtual machine runs independently of the other virtual machines on the same box. The virtual machines can have different operating systems and are isolated from each other. The server virtualization offers a way to consolidate applications that used to run on individual physical servers, and now with the hypervisor software runs on the same physical server represented by virtual machines. Server virtualization is what most people think of when they think of virtualization, due to VMware’s vSphere, which has a large percentage of the marketplace. In addition, some of the other vendors are, Citrix XenServer, Microsoft’s Hyper-V, and Red Hat’s Enterprise Virtualization.
+
+Storage Virtualization
+Storage virtualization is the process of grouping physical storage using software to represent what appears to be a single storage device in a virtual format. Correlations can be made between storage virtualization and traditional virtual machines, since both take physical hardware and resources and abstract access to them. There is a difference between a traditional virtual machine and a virtual storage. The virtual machine is a set of files, while virtual storage typically runs in memory on the storage controller that is created using software.
+
+A form of storage virtualization has been incorporated into storage features for many years. Features such as Snapshots and RAID take physical disks and present them in a virtual format. These features can provide a format to help with performance or add redundancy to the storage that is presented to the host as a volume. The host sees the volume as a big disk, which fits the description of storage virtualization.
+
+The storage array vendors have implemented storage virtualization within the operating system of their respective arrays. This type of storage virtualization is called internal storage virtualization. In addition, there is external storage virtualization that is implemented by Veritas and many other storage vendors.
+
+Network Virtualization
+Network virtualization is using software to perform network functionality by decoupling the virtual networks from the underlying network hardware. Once you start using network virtualization, the physical network is only used for packet forwarding, so all of the management is done using the virtual or software-based switches. When VMware’ ESX server grew in popularity, it included a virtual switch that allowed enough network management and data transfer to happen inside of the ESX host. This paradigm shift caught the eye of Cisco, so when VMware was upgrading to vSphere 4.0, Cisco helped to write the code for VMware’s new Distributed Switch. This helped Cisco learn how to work and design network virtualization, and an internal movement was started to write all of the Cisco switches to be software-based administrative entities.
+
+The network virtualization marketplace is really in its infancy with many startups and options to choose from at this time. Cisco and many startup companies are vying for control in this area of virtualization, which has huge potential.
+
+The vendors in network virtualization are the hypervisor’s internal virtual switch. In addition, third-party vendors, such as Cisco and IBM, have developed virtual switches that can be used by hypervisors such as ESXi.
+
+This is an excerpt from the Global Knowledge white paper, Virtualization for Newbies
+
+About the Author
+Steve Baca has been working in the Information Technology field for more than 15 years, after graduating from the University of Nebraska with a Bachelors degree in Computer Science and Mathematics. After spending time programming and doing Systems Administration, Steve has been doing technical training for VMware, Netapp, Sun Microsystems, and Symantec.
+
+Related Courses
+VMware Horizon View: Install, Configure, Manage [V5.2]
+VMware vCloud Director: Install, Configure, Manage [V5.1]
+VMware vSphere: Install, Configure, Manage [V5.1]
+
+Virtualization for Newbies Series
+Virtualization for Newbies: Top Four Reasons to Go Virtual
+Virtualization for Newbies: Five Types of Virtualization
+Virtualization for Newbies: Origins of Virtualization

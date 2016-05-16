@@ -1,0 +1,34 @@
+Apple officially open sources the Swift programming language compiler and tools
+
+by Kyt Dotson | Dec 3, 2015 | 0 comments
+Apple officially open sources the Swift programming language compiler and tools
+
+Earlier this year, Apple, Inc. promised to make its Swift programming language open source, and now that promise has come to fruition. Today, Apple released the first version of the Swift compiler and tools as open source, which means that interested developers can compile the compiler themselves (and look at its underlying code). The announcement is published at Swift.org.
+swiftorg-screenshot
+
+Apple is addressing its developer community by providing open source to the Swift language compiler and tools. This will burn a path for developers to contribute, understand and potentially assist in expanding the language.
+
+“Swift is now open source!” Apple writes. “We are excited by this new chapter in the story of Swift. After Apple unveiled the Swift programming language, it quickly became one of the fastest-growing languages in history.”
+
+True enough, Apple’s Swift saw a dramatic jump in popularity once developers began to play with the language. In Redmonk’s June 2015 Language rankings, Swift landed at a rank of 18, a rise from the January 2015 ranking of 22, which itself was a giant leap from six months earlier in June 2014, up from a ranking of 68.
+
+Swift’s popularity has been undeniable.
+
+The source code has been released by Apple via GitHub where the compiler and standard library are available, as well as documentation on the continued evolution of Swift. Other elements available on GitHub are the core libraries, such as Swift Foundation, source code for libdispatch, providing concurrency primitives for multicore hardware and XCTest providing testing infrastructure for Swift apps.
+
+As for tools, the source code for the Swift package manager is also available and the source for llbuild, a low-level build system used by the Swift package manager.
+
+The Swift compiler development binary snapshots are available for OSX (and Apple platforms) with the XCode Swift 2.2 Snapshot and for Linux with Ubuntu 15.10 and Ubuntu 14.04 Snapshots.
+RELATED:  Hackers stole $81m from Bangladesh Bank by exploiting SWIFT software
+A path for developers to upkeep and understand Swift
+
+By open sourcing the underlying code for the compiler to Swift, this shows that Apple is seeking the support of developers interested in using the language. It also means that developers will have a better concept of what’s going on under-the-hood (and perhaps even be able to suggest fixes or improvements).
+
+Having an open-sourced Swift compiler and tools also means that should Apple ever discard Swift for something newer, which seems unlikely at its popularity, developers will still be able to integrate on the product and support future Swift apps.
+
+According to the blog posts on the Swift site, development of the language continues apace toward as-of-yet unannounced Swift 3, as seen in a post about Swift 3 API Design Guidelines.
+
+For developers interested in contributing to the current version of Swift, Apple has documentation dedicated to that, as well as a mailing list for the community to follow development and ask questions.
+Featured image credit: Objective Macbook. As It Is via photopin (license)
+
+

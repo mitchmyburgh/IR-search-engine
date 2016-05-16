@@ -1,0 +1,59 @@
+Applications of symbolic machine learning to ecological
+modelling
+
+Sasˇo Dzˇeroski *
+
+1. Introduction
+Symbolic machine learning methods induce explicitly
+represented symbolic models from data.
+This is in contrast to methods like neural networks,
+which most often produce black-box models.
+Models constructed by symbolic machine
+learning can be inspected, modified, used and
+verified by human experts and have the potential
+to become part of the knowledge in the respective
+application domain. Symbolic machine learning
+methods include the induction of decision trees
+for classification and regression, algebraic, differential
+and partial differential equations, and classification
+rules, including relational rules (also
+known as inductive logic programming). They
+heuristically search the space of possible models
+to identify models appropriate for the data at
+hand.
+Applications of symbolic machine learning
+methods to ecological modelling problems are
+numerous and varied. They range from modelling
+algal growth in lagoons and lakes (e.g. in the
+Venice lagoon), through modelling interactions of
+a red deer population with the new growth in a
+forest, to habitat-suitability modelling for
+pronghorn antelopes, brown bears, and
+Collembola.
+This paper gives an overview of machine learning
+applications to ecological modelling, focussing
+on applications of symbolic machine learning. It gives more detailed accounts of several such applications.
+Symbolic machine learning methods are
+not described in detail but rather illustrated
+through the presented applications.
+
+5. Conclusion
+Symbolic methods have been successfully applied
+to many problems in environmental science,
+engineering and management. Of the case
+studies presented here, the results of applying
+symbolic machine learning methods are most directly
+relevant to practice in the red deer population
+modelling case.
+These applications have also raised a number
+of issues of concern to developers of symbolic
+machine learning methods. These include problems
+of data quantity (handling large datasets,
+generalize from small datasets), data quality
+(handling missing data, noisy data), and handling
+nonstandard learning tasks (where the
+data do not necessarily reside in a single fixedwidth
+table, e.g. information on chemical structures,
+images). Especially important is the
+problem of using existing domain knowledge in
+the learning process.

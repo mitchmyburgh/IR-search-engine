@@ -1,0 +1,188 @@
+Wavelts in Computer Graphics 2
+
+Figure 2 B-spline scaling functions for V1(d) with degree d = 0,1,2, and 3.
+this case, the functions Nd 0(x),
+:::
+,Nd k(x) form a basis for the space of piecewise-polynomials of degreed with d
+
+1 continuous deriva
+tives and breakpoints at theinterior knots xd+1
+<
+xd+2
+<  <
+xk.
+To make uniformly spaced B-splines, we choose k = 2j + d
+
+1
+and xd+1,
+:::
+,xk to produce 2j equally spaced interior intervals. This construction gives 2j + d B-spline basis functions for a particular degree d and level j. We will use these functions as the endpointinterpolating B-spline scaling functions. Figure 2 shows examples of these functions at level j = 1 (two interior intervals) for various degrees d. Note that the basis functions de?ned here are not normalized in the L2 norm. If Vj(d) denotes the space spanned by the B-spline scaling functions of degree d with 2j uniform intervals, it is not dif?cult to show that thespacesV0(d),V1(d),
+:::
+arenested asrequired by multiresolution
+analysis.
+The rich theory of B-splines can be used to develop expressions for the entries of the re?nement matrix Pj (see Chui and Quak [4] or Quak and Weyrich [13] for details). The columns ofPj are sparse, re?ecting the fact that the B-spline basis functions are locally supported. The ?rst and last d columns of Pj are relatively complicated, but the remaining (interior) columns are shifted versions of column d + 1. Moreover, the entries of these interior columns are, up to a common factor of 1
+=
+2d, given by binomial coef?cients.
+Example: In the case of cubic splines (d = 3), the matrix Pj for j
+
+3 has the form
+Pj = 1 8
+2
+6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 4
+8 4 4 6 2 3 2 11 2 1 4 4 1 6 1 4 4 1 6 4
+
+1
+
+1
+
+4 6 1 4 4 1 11 2
+3 2 2 6 4 4 8
+3
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 5
+where blank entries are taken to be zero, and the dots indicate that the previous column is repeated, shifted down by two rows each time.
+3.2 Inner product
+Thesecond step of designing a multiresolution analysis is the choice of an inner product. We'll simply use the standard inner product here:
+h
+f
+j
+g
+i
+:=
+Z
+1
+0
+f(x)g(x) dx.
+3.3 B-spline wavelets
+Tocomplete our development of a multiresolution analysis based on B-splines, we need to ?nd basis functions for the spacesWj that are orthogonal complements to the spacesVj. As shown in Section 2.1, the wavelets are determined by matricesQj satisfying Equation (5), which we repeat here for convenience:
+[
+h 
+j
+
+1
+j 
+j
+i
+]Qj = 0. (11)
+Since this is a homogeneous system of linear equations, there is not a unique solution. We must therefore impose additional conditions. To get wavelets with small supports, for example, we require each column of Qj to have a minimal number of consecutive nonzeros. This constraint imposes a banded structure onQj similar to that of Pj. For each column q of Qj, Equation (11) leads to a small homogeneous system that we solve for the non-zero entries in q. Thematrices thatresult and the corresponding B-spline wavelets are shown in Appendix A
+Finkelstein and Salesin [8] took this approach to construct cubic Bspline wavelets. Chui and Quak [4] derived slightly different spline wavelets using derivative and interpolation properties of B-splines. Note that both approaches result in semi-orthogonal wavelet bases: The wavelets are orthogonal to scaling functions at the same level, but not to each other, except in the piecewise-constant case.
+3.4 B-spline ?lter bank
+At this point, we have completed the steps in designing a multiresolution analysis. However, to use spline wavelets, we must implement a ?lter bank procedure incorporating the analysis ?ltersAj and Bj. These matrices allow us to determineCj
+
+1 and Dj
+
+1 from Cj using matrix multiplication as in Equations (6) and (7). As discussed earlier in Section 2, the analysis ?lters are uniquely determined by the inverse relation in Equation (10):
+
+Aj Bj
+
+=
+
+Pj Qj
+ 
+1
+However, as Quak and Weyrich [13] point out, when implementing the ?lter bank procedure for spline wavelets, it is generally not a good idea to form the ?ltersAj and Bj explicitly. AlthoughPj and Qj aresparse, having onlyO(d)entries percolumn,Aj andBj areingeneral dense, so matrix-vector multiplication would require quadratic instead of linear time. Fortunately, there is a better approach. The idea is to computeCj
+
+1
+and Dj
+
+1 from Cj by solving the sparse linear system
+
+Pj Qj
+ 
+Cj
+
+1
+Dj
+
+1
+
+= Cj.
+In order to solve this system for
+
+Cj
+
+1
+Dj
+
+1
+
+, we ?rst make the ma
+trix
+
+Pj Qj
+
+into a banded matrix simply by interspersing the columns of Pj and Qj. The resulting banded system can then be
+4
+(a) (b) (c) (d)
+Figure 3 Changing a curve's overall sweep without affecting its character. Given the original curve (a), the system extracts the overall sweep (b). If the user modi?es the sweep (c), the system can reapply the detail (d).
+1
+2
+3
+4
+Figure 4 The middle of the dark curve is pulled, using editing at various levels of smoothing j. A change in a control point inC1 has a very broad effect, while a change in a control point inC4 has a narrow effect.
+solved in linear time using LU decomposition [12]. Thus we can compute the entire ?lter bank operation without ever forming and using Aj or Bj explicitly.
+4 Application III: Multiresolution curves and surfaces
+Wepresented twoapplications of waveletsin Part1: compression of one-dimensional signals and compression of two-dimensional images. Our third application of wavelets in computer graphics is curve design and editing, as described in detail by Finkelstein and Salesin [8]. Their multiresolution curves are built from a wavelet basis for endpoint-interpolating cubic B-splines, which we discussed in the previous section.
+Multiresolution curves conveniently support a variety of operations:
+
+changing a curve's overall "sweep" while maintaining its ?ne details, or "character" (Figures 3 and 4);
+
+changing a curve's "character" without affecting its overall "sweep" (Figure 5);
+
+editing a curve at any continuous level of detail, allowing an arbitrary portion of the curve to be affected through direct manipulation;
+
+smoothing at continuous levels to remove undesirable features from a curve;
+
+approximating or "?tting" a curve within a guaranteed maximum error tolerance, for scan conversion and other applications.
+Here we'll describe brie?y just the ?rst two of these operations, which fall out quite naturally from the multiresolution representation.
+4.1 Editing the sweep of the curve
+Editing the sweep of a curve at an integer level of the wavelet transform is simple. Let CJ be the control points of the original curve fJ(t), let Cj be a low-resolution version of CJ, and let ˆ C j be an edited version of Cj, given by ˆ C j = Cj +
+
+Cj. The edited ver
+sion of the highest resolution curve ˆ C J
+= CJ +
+
+CJ can be computed
+Figure 5 Changing the character of a curve without affecting its sweep.
+through synthesis:
+ˆ C J
+= CJ +
+
+CJ = CJ + PJ PJ
+
+1
+
+Pj+1
+
+Cj.
+Note that editing the sweep of the curve at lower levels of smoothing j affects larger portions of the high-resolution curvefJ(t). At the lowest level, when j = 0, the entire curve is affected. At the highest level, whenj = J, only thenarrow portion in?uenced by one original control point is affected. The kind of ?exibility that this multiresolution editing allows is suggested in Figures 3 and 4.
+4.2 Editing the character of the curve
+Multiresolution curves also naturally support changes in the character of a curve, without affecting its overall sweep. LetCJ be the control points of a curve, and letC0, D0,
+:::
+,DJ
+
+1 denote its wavelet transform. Editingthecharacterofthe curveissimplyamatterofreplacingtheexisting setofdetailcoef?cientsDj,
+:::
+,DJ
+
+1 withsome
+new set ˆ D j
+,
+:::
+, ˆ D J
+
+1
+, and reconstructing. To avoid coordinatesystem artifacts, all detail coef?cients are expressed in terms of the curve's local tangent and normal, rather than thex and y directions.
+Figure 5 demonstrates how the character of curves in an illustration can be modi?ed with various detail styles. (The interactive illustration system used to create this ?gure was described by Salisbury et al. [14].)
+4.3 Multiresolution surfaces
+Multiresolution editing can be extended to surfaces by using tensor products of B-spline scaling functions and wavelets. Either the standard construction or the nonstandard construction described in Part 1 for Haar basis functions can be used to form a twodimensional basis from a one-dimensional B-spline basis. We can then edit surfaces using the same operations described for curves. For example, Figure 6 shows a bicubic tensor-product B-spline surface after altering its sweep at different levels of detail.
+We can further generalize multiresolution analysis to surfaces of arbitrary topology by de?ning wavelets based on subdivision surfaces, as described by Lounsbery et al. [10]. Their nonorthogonal wavelet basis, in combination with the work of Eck et al. [6], allows any polyhedral object to be decomposed into scaling function and wavelet coef?cients. Then a compression scheme similar to the one presented for images in Section 3.3 of Part 1 can be used to display the object atvarious levels of detail simply by leaving out small wavelet coef?cients during reconstruction. An example of this technique is shown in Figure 7.
+5 Conclusion
+Our primer has only touched on a few of the many uses for wavelets in computer graphics. We hope this introduction to the topic has ex
+5
+(a) (b) (c) (d)
+Figure 6 Surface manipulation at different levels of detail: The original surface (a) is changed at a narrow scale (b), an intermediate scale (c), and a broad scale (d).
+(a) (b) (c)
+Figure 7 Surface approximation using subdivision surface wavelets: (a) the original surface, (b) an intermediate approximation, and (c) a coarse approximation.
+plained enough of the fundamentals for interested readers to explore both the construction of wavelets and their application to problems in graphics and beyond. We present a more thorough discussion in a forthcoming monograph [15].
+Acknowledgments
+We wish to thank Adam Finkelstein, Michael Lounsbery, and Sean Anderson for help with several of the ?gures in this paper. Thanks also go to Ronen Barzel, Steven Gortler, Michael Shantzis, and the anonymous reviewers for their many helpful comments. This work was supported by NSF Presidential and National Young Investigator awards (CCR-8957323 and CCR-9357790), by NSFgrant CDA9123308, by an NSF Graduate Research Fellowship, by the University of Washington Royalty Research Fund (65-9731), and by industrial gifts from Adobe, Aldus, Microsoft, and Xerox.

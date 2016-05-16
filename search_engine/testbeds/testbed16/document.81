@@ -1,0 +1,32 @@
+Hacking the Mexican Pork Cloud Conspiracy (DHS vs. DLP)
+May 29, 2012
+Kudos to Mark Lemley, a friend who is also a law professor at Stanford, for that awesome blog post title.
+
+The US Department of Homeland Security was just forced by a Freedom of Information Act lawsuit to release a list of words it uses to monitor social networking sites and online media for signs of terrorism or other threats against the US.
+
+Laughably, the list includes such threatening words as,  ‘pork’, ‘team’, ‘Mexico’, and – you guessed it – ‘cloud’.  I’m pretty sure that since I was named in the Top 100 Bloggers on Cloud Computing list for my work on cloudywords.com, I’m already on a government watch list. (Hi guys!) That doesn’t even reflect my extensive writing on bacon, that venerable pork product.
+
+This list of words is included in the DHS 2011 analysts desktop binder which is used by diligent workers at the National Operations Center, tasked with ‘identifying media reports that reflect adversely on DHS and response activities.’
+
+When questioned, the DHS insisted the practice was for our own good, since they would never look for disparaging remarks about the government or general dissent because they were only looking for “potential threats.” You know, like pork threats. A Homeland Security official told the Huffington Post that the list ‘is a starting point, not the endgame’ in maintaining situational awareness of natural and man-made threats.
+
+The funny thing is, DHS is dealing with the exact same issues that enterprises deal with when it comes to data loss prevention, aka DLP. If you’re at an enterprise, you don’t want employees sending confidential information outside your corporate security perimeter. So what do you do? Establish a list of words and data signatures that might be signs of a leak, and compare them to the data your employees are sending to sites like dropbox or Google that are outside your perimeter.
+
+The end result? Unless you strategically deployed your DLP software, and did a good job of data classification as a part of that deployment, you’ll get pretty much the same laughable effectiveness as the DHS word list program.
+
+Even worse, data protection laws and highly publicized breaches, along with BYOD and BYOC (Bring-Your-Own-Cloud), make the need for DLP real, even though it doesn’t usually have an immediately noticeable return on investment.
+
+That said, good quality DLP can work – in fact in a recent survey, industry analyst firm Canalys predicted that DLP would be the highest growth IT security area of investment for enterprises in 2012 in EMEA and APAC, with more than 3x the spend of messaging security, web threat security, or encryption.
+
+If you work in IT, here are the words you may not use on social networks unless you’re ok with triggering the watch list:
+
+Mitigation, Response, Recovery, Security, Threat, Screening, Crash, Incident,  Cloud, Leak, Infection, Computer Infrastructure, Telecommunications, Critical Infrastructure, Grid, Power, Electric, Attack, Target, Flood, Warning, Phishing, Rootkit, Phreaking, Brute Forcing, Mysql injection, Cyber terror, hacker, China, Worm, Scammers, and…my favorite… social media.
+
+That said, here’s the entire list of words. This is, of course, assuming that the bad guys all speak English, like on Star Trek.
+
+(pasting as images directly from the Analysts Handbook, which EPIC kindly posted. That way I won’t set off too many alarms.)
+
+ 
+
+
+

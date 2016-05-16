@@ -1,0 +1,18 @@
+Rosetta Code “Translates” Code Into Another Programming Language
+
+Rosetta Code is a library of different coding tasks in multiple languages, so you can see how to perform a given task in any language you want.
+
+You can browse by task or by language. If you browse through tasks, you can choose one and it will have the logic in plain English or pseudocode first. Then, as you scroll down, you will be able to jump around see how to code that task in different languages. There are 753 tasks and 554 languages. Some tasks aren't written in every language, so you can also search by language to see the tasks that are available for it.
+
+Sometimes the best way to learn is to see how it's done, and Rosetta Code offers that solution for programmers. While it doesn't give you full-on tutorials, it's definitely a good reference to bookmark. Hit the link below to check it out.
+
+The title of this article is quite misleading.... and frankly so is the body. It all implies that I can take a body of code I have written in language X and have it all magically translated into language Y. A grand example of how that would be desired is say taking the source code for an Android app written in Java and having it all mystically converted into Objective C for iOS. There are SO MANY fundamental problems with that concept though that I hardly know where to begin.
+
+*HOWEVER* after digging into this a bit, it seems that is NOT what Rosetta Code is. It could be better described as "compendium of code snippets for common tasks and functions in various languages." For example, if you use a Fibonacci sequence algorithm in PHP, and you need to do the same thing in Javascript, you can look it up and see how it's done.
+
+Just so people understand WHY it's such a difficult prospect to magically convert your code from one language to another, you have to understand design patterns. Not all languages are created equal, or in even remotely similar galaxies. Javascript is a prototype pattern, whereas PHP is a factory pattern. This basically means that the very objects within the languages are written and created in incredibly different fashions. Also consider things like asynchronous functionality with callbacks and closures with Node.js and trying to convert that to something like Java. Now many similar languages probably can be easily and automatically translated..... perhaps Java and any of the C variants for example.
+Additionally there is the resources problem.... or lack of specific functions. Lets go back to Android vs iOS. There are a lot of classes and functions in both of their relevant languages that are very specific to running things on their devices with their code. Even translating it to an equivalent manually is a nearly impossible task (that's why nearly all apps that are compatible with both simple use HTML5 as the top layer.)
+
+Anyhow, that's my two cents. I agree that this is a good resource.... it just isn't the resource that it has been advertised to be.
+
+I get what you're saying. However, in the same way that you read the mis-leading title, clicked, read the article like a sensible human-being and came to your own sound conclusion as to what it was really about, I don't think it is that much of an issue. 

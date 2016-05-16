@@ -1,0 +1,14 @@
+Opportunistic mesh (OPM) is a wireless networking technology that aims to provide reliable and cost-effective wireless bandwidth when used to build the networking infrastructure of large-scale wireless systems.
+
+
+== Technology ==
+The OPM technology is based on the cognitive networking principles that are advanced from traditional wireless networking by the opportunistic utilization of both spectrum bandwidth and mesh station/radio availability. Traditional wireless networking assumes that those resources can be predetermined, and the protocol stacks from wire-line networks can be re-used. For example, in the traditional stack, the MAC (Media Access Control) layer allocates spectrum resources to wireless links; and the network layer sets up a network routing path from source to destination based on the overall network topology. In large-scale wireless systems, the use of this stack results in a network that is unable to respond to volatile spectrum availability which can be typical in unlicensed bands where interference prevails. In addition, random station/radio availability is also often encountered due to the dynamic traffic load (congestion) and other factors such as radio failure. Bottlenecks along both wireless links and stations are created because the packet forwarding protocol cannot respond quickly to these changes.
+
+By adopting the cross-layer architecture that merges network routing into wireless link and RF design, the OPM technology can create a dynamic (fluid) wireless network without predetermined topology and spectrum allocation. In the multi-hop wireless communications, every packet takes opportunistically available paths and spectrum in the wireless network on each hop. The network resource utilization can potentially reach its instantaneous maximum, in spite of volatile changes and demand placed on the network.
+
+
+== Application ==
+Testing results show that the OPM wireless networks can achieve 5–10 times higher throughput (bandwidth) in multi-hop wireless communications and interference environments. The technology can have great applications in current and future smart wireless systems and infrastructures, including such as location/tracking networks, real-time sensor networks, smart vehicular networks, smart healthcare, smart agriculture, industrial controlling, broadband access and mobile social networking, surveillance, smart utilities, and emergency networks. The promoters and supporters of OPM claim that the technology may make wireless communications ultimately scalable and affordable; and once it potentially becomes ubiquitous, the commercial impact could be big as comparable to: 1) what packet-switched network technology (Internet) has brought to personal communications; 2) what mobile communication technology (cellular) has brought to telephony.
+
+
+== References ==

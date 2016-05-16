@@ -1,0 +1,19 @@
+ Two of the most commonly taught data structures in computer science are the singly-linked list and doubly-linked list. 
+
+When I was taught these data structures, I asked my peers for analogies to conceptualize them. What I heard were several examples, such as a list of groceries and a train. These analogies, as I eventually learned, were inaccurate. A grocery list was more analogous a queue; a train was more analogous to an array. 
+
+As more time passed, I eventually discovered an analogy that accurately described a singly-linked list and a doubly-linked list: a scavenger hunt. If you're curious about the relationship between a scavenger hunt and a linked list, then read below for the answer!
+
+A Singly-Linked List
+In computer science, a singly-linked list is a data structure that holds a sequence of linked nodes. Each node, in turn, contains data and a pointer, which can point to another node.
+
+Nodes of a singly-linked list are very similar to steps in a scavenger hunt. Each step contains a message (e.g. "You've reached France") and pointers to the next step (e.g. "Visit these latitude and longitude coordinates"). When we start sequencing these individual steps to form a sequence of steps, we are creating a scavenger hunt.  
+
+Now that we have a conceptual model of a singly-linked list, let's explore the operations of a singly-linked list.
+
+Operations of a Singly-Linked List
+Since a singly-linked list contains nodes, which can be a separate constructor from a singly-linked list, we outline the operations of both constructors: Node and SinglyList.
+
+Node
+
+data stores a value.

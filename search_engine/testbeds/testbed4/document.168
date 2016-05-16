@@ -1,0 +1,6 @@
+Phong Shading
+
+WebGL Example: Phong / Blinn Phong Shading
+The JavaScript source of this example is: renderer.js
+If you do not see an output below, your browser does not support WebGL. The WebGL shader code is slightly different from the GLSL code (version 1.4 ) that is used in the lecture. This is because WebGL shaders must conform to the OpenGL ES Shading Language (Version 1.0) which can be found here.
+This specification is protected by copyright laws and contains material proprietary to the Khronos Group, Inc. It or any components may not be reproduced, republished, distributed, transmitted, displayed, broadcast or otherwise exploited in any manner without the express prior written permission of Khronos Group. You may use this specification for implementing the functionality herein, without altering or removing any trademark, copyright or other notice from the specification, but the receipt or possession of this specification does not convey any rights to reproduce, disclose, or dis.

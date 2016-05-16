@@ -1,0 +1,32 @@
+A machine learning approach to web page filtering using content and structure analysis 
+
+Michael Chau a,⁎, Hsinchun Chen b
+
+1. Introduction The most popular way to look for information on the Web is to use Web search engines such as Google (www. google.com) and AltaVista (www.altavista.com). Many users begin their Web activities by submitting a query to a search engine. However, as the size of the Web is still growing and the number of indexable pages on the Web has exceeded eight billion, it has become more difficult for search engines to keep an up-to-date and comprehensive search index. Users often find it difficult to search for useful and high-quality information on the Web using general-purpose search engines, especially when searching for specific information on a given topic. Many vertical search engines, or topic-specific search engines, have been built to facilitate more efficient searching in various domains. These search engines alleviate the information overload problem to some extent by providing more precise results and more customized features [11]. For example, LawCrawler allows users to search for legal information and provides links to lawyers and legal information and to relevant government Web sites. BuildingOnline (www.buildingonline.com) is a specialized search engine for the building industry, where users can search by manufacturers, architects, associations, contractors, etc. BioView.com (www.bioview.com) and SciSeek (www.sciseek.com) are two other examples that focus on scientific domains. Although they provide a promising alternative for users, these vertical search engines are not easy to build. There are two major challenges to building vertical search engines: (1) How to locate relevant documents on the Web? (2) How to filter irrelevant documents from a collection? This study tries to address the second issue and to propose new approaches. The remainder of the paper is structured as follows. Section 2 reviews existing work on vertical search engine development, text classification, and Web content and structure analysis. In Section 3 we discuss some problems with existing Web page filtering approaches and pose our research questions. Section 4 describes in detail our proposed approach. Section 5 describes an experiment designed to evaluate our approach and presents experimental results. In Section 6, we conclude our paper with some discussion and suggestions for future research directions.
+
+6. Conclusion and future directions
+In this paper, we have described a Web-feature approach
+to Web page classification that combines Web
+content analysis and Web structure analysis. We compared
+our approaches with traditional text classification
+methods and found the experimental results to be encouraging.
+We believe that the proposed approaches are
+useful for various Web applications, especially for vertical
+search engine development. While the Web-feature approaches are promising, it
+is interesting to examine which of the 14 features used
+are more important than the others in determining the
+relevance of a page. We plan to apply factor analysis
+techniques to the data set to investigate the features in
+detail. Another direction of our future work will be to
+study whether a combined keyword-based and Webfeature
+approach will perform better than using either
+the keywords or the Web features alone. We believe that a
+combined approach may potentially acquire the strengths
+of both approaches and perform better by allowing the
+classifier to rely on the feature scores when the number of
+training documents is small but to rely more on unique
+keyword attributes in the vector when the number of
+training documents reaches a certain level. Finally, we are
+also investigating how the proposed classification method
+can be used in other applications, such as knowledge
+management and Web content management.

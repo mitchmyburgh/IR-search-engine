@@ -1,0 +1,24 @@
+An HTree is a specialized tree data structure for directory indexing, similar to a B-tree. They are constant depth of either one or two levels, have a high fanout factor, use a hash of the filename, and do not require balancing. The HTree algorithm is distinguished from standard B-tree methods by its treatment of hash collisions, which may overflow across multiple leaf and index blocks. HTree indexes are used in the ext3 and ext4 Linux filesystems, and were incorporated into the Linux kernel around 2.5.40. HTree indexing improved the scalability of Linux ext2 based filesystems from a practical limit of a few thousand files, into the range of tens of millions of files per directory.
+
+
+== History ==
+The HTree index data structure and algorithm were developed by Daniel Phillips in 2000 and implemented for the ext2 filesystem in February 2001. A port to the ext3 filesystem by Christopher Li and Andrew Morton in 2002 during the 2.5 kernel series added journal based crash consistency. With minor improvements, HTree continues to be used in ext4 in the Linux 3.x.x kernel series.
+
+
+== Use ==
+ext2 HTree indexes were originally developed for ext2 but the patch never made it to the official branch. The dir_index feature can be enabled when creating an ext2 filesystem, but the ext2 code won't act on it.
+ext3 HTree indexes are available in ext3 when the dir_index feature is enabled.
+ext4 HTree indexes are turned on by default in ext4. This feature is implemented in Linux kernel 2.6.23. HTree indexes is also used for file extents when a file needs more than the 4 extents stored in the inode.
+
+
+== PHTree ==
+PHTree (Physically stable HTree) is a derivation intended as a successor. It fixes all the known issues with HTree except for write multiplication. It is used in the Tux3 filesystem.
+
+
+== References ==
+
+
+== External links ==
+A Directory Index for Ext2 (which describes the HTree data structure)
+HTree
+HPDD Wiki - Parallel Directory High Level Design

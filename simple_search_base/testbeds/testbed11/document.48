@@ -1,0 +1,32 @@
+Bigtop is a Microsoft Research project which gives a framework to create a set of loosely coupled distributed system components. This will result in the creation of a Grid Operating system. Bigtop is not expected before the end of this decade. It is not clear whether Bigtop will be integrated into Windows or launched as a different operating system.
+
+
+== Architecture ==
+Bigtop consists of three different components which allow jobs to be spread over a grid. They are described below.
+
+
+=== Highwire ===
+Highwire is a programming language that is aimed to add system level support, and therefore encapsulate implementation details and make it easier, to develop highly parallel and concurrent application which can then be distributed over a grid.
+
+
+=== Bigparts ===
+Bigparts allow PCs to turn into inexpensive distributed servers for applications. Device-specific applications need not be hosted on the OS of the system hosting the device. Rather it can be hosted by other OSs which are working in parallel to run the grid.
+
+
+=== Bigwin ===
+Bigwin allows software to be decoupled from a single Operating system. The launching OS makes sure the application adheres to some service contract, and then it can be scheduled over any machine running in the grid, and the software can make use of the OS services provided by the local instance of the OS running on that system
+
+
+== Gridline ==
+Gridline is another Microsoft Research project that focuses on grid resource allocation. It is looking into the use of constraint programming to this effect.
+
+
+== References ==
+
+Microsoft Watch
+Betanews
+
+
+== External links ==
+eWeek
+Blog

@@ -1,0 +1,61 @@
+Is the FBI v Apple PR war even about encryption?
+Alex Hern
+What the US intelligence agency is asking the tech company to do may not affect mobile security as much as its CEO Tim Cook wants you to believe
+ The FBI does not want Apple to break the encryption on the iPhone, but to break a security feature that makes it nearly impossible to guess the pin code.
+ The FBI does not want Apple to break the encryption on the iPhone, but to break a security feature that makes it nearly impossible to guess the pin code. Photograph: Carolyn Kaster/AP
+Contact author
+@alexhern
+Tuesday 23 February 2016 10.39 GMT Last modified on Thursday 25 February 2016 14.31 GMT
+Share on Pinterest Share on LinkedIn Share on Google+
+Shares
+0
+Comments
+245
+ Save for later
+The war between Apple and the FBI is a PR war. And it’s one that the FBI has fought well, from its initial selection of the battleground (a fight over access to a dead murderer’s government-owned iPhone) to the choreographed intervention of the relatives of the victims of the San Bernadino shootings – who were contacted by the FBI for support before the dispute even became public, according to Reuters.
+
+But Apple has also been carefully controlling the debate through its own interventions, and nowhere is that more obvious than Tim Cook’s open letter published last week, headlined A Message to Our Customers.
+
+The open letter places the latest fight in the context of wider battles between Apple and governments worldwide over privacy and security, and mirrors many of the talking points from those early conflicts. From the first paragraph header, “The Need for Encryption”, to the letter’s conclusion that “it would be wrong for the government to force us to build a backdoor into our products”, Cook implicitly draws the parallels between this case and others, such as Apple’s earlier battle to try and prevent the UK government forcing a backdoor into its encrypted iMessage chat system.
+
+But that sleight of hand obscures the major difference between this case and previous ones, and suggests that Apple, like the FBI, was keen to engineer an all-or-nothing confrontation.
+
+The FBI does not want Apple to break the encryption on the iPhone. It wants Apple to break a security feature that makes it (nearly) impossible to guess the pin code used to encrypt an iPhone.
+
+It seems like a small point. What’s the difference between Apple breaking encryption, or just making it trivially easy to guess the password used to encrypt a device? Either way, the FBI would gain access to the data inside.
+
+But the distinction strikes at the heart of the encryption wars, which started in the 1990s with the rise of strong consumer-grade encryption and were reborn this decade as the technologies finally moved to the mass market.
+
+Encryption is special. Information can be encrypted using a device you can carry on your wrist which cannot then be decrypted, even if you use every supercomputer on Earth working in tandem – a fact that prompted WikiLeaks founder Julian Assange to write that “the universe believes in encryption”.
+
+Encryption is self-contained. Once you’ve encrypted a piece of information, there’s no way to decrypt it without having access to the encryption key. You can find out to the smallest detail how it was encrypted, you can hack the software used to do the encryption, you can even be the manufacturer of the software, but if you can’t get hold of the encryption key, you can’t decrypt the information.
+
+And encryption doesn’t care about anything other than the encryption key. There’s no way to encrypt information so that it can only be decrypted by the right person, unless “right person” is defined as “anyone who knows the key(s)”.
+
+Those truths have led to the biggest conflicts in the encryption wars. When the head of the FBI said, in July 2015, that he wanted “backdoor access” to encrypted data, the response – from technologists, activists, reporters and security experts – was to detail the inherent problems with doing so.
+
+A backdoor into encrypted communications must be built into the encryption protocol, such as iMessage, itself; in practice, proposals for such encryption systems exist, and they involve a key, or a number of keys, which can be used in concert to decrypt the communications. But those keys, if they were ever stolen or leaked, would necessarily be able to decrypt every single communication sent using the protocol, presenting an enormous security risk the second such a feature is built in to devices or software.
+
+And so the last twenty years of the encryption wars have trained security experts and activists to respond with trepidation whenever a government starts talking about backdoors – training that Tim Cook put to good use.
+
+Cook’s letter firmly places this fight in the same technological battleground as the previous battles. But what the FBI is asking now is fundamentally different from its previous requests.
+
+When an iPhone is powered off, the contents of its memory are encrypted using a key that is derived from two pieces of information: a hardware code unique to that iPhone, and the user’s passcode or password used to lock the phone. The former ensures that the chip can’t simply be pried out of the phone and decrypted elsewhere, while the latter means that you can only decrypt the phone if you have the PIN or password.
+
+But the standard iPhone protection is poor indeed when it comes to encryption: a simple six-digit Pin. With just 1m possible options, an attacker doesn’t need to break encryption to read the contents of an iPhone: they just need to guess the code. That could be done in less than a two weeks – and not with a supercomputer, but with an intern manually typing in every single possible code.
+
+And so Apple adds to that security with a second layer of security, built not into the iPhone’s encryption, but into the operating system itself: the more wrong guesses there are, the longer the delay between entries, eventually rising to an hour between each possible guess. A second, optional, feature allows the phone to be wiped entirely after the tenth wrong guess.
+
+Those security features are important to securing the iPhone, particularly any phone which is otherwise protected with just a perfunctory 4- or 6-digit passcode. But they aren’t the same as the encryption of the device itself – and so breaking them doesn’t have the same pernicious effect.
+
+Putting a backdoor in iMessage, by which the FBI could read otherwise-encrypted messages, would weaken the security of anyone who used the service, whether or not the FBI wanted to read their messages. By contrast, installing software on one iPhone to turn off the anti-brute-force features (in Apple’s language, “building a backdoor” into that iPhone) leaves the security of other devices unaffected.
+
+In fact, one aspect of mobile security this debate has revealed is that there is already a backdoor in iPhones – or, at least, a door of some sort: that’s the loophole that makes it possible for Apple to update the operating system on a device that it doesn’t have the passcode for. It’s clear that Apple, to a certain extent, also recognises that door as a security weakness, because access was tightened by the introduction of the Secure Enclave, a security feature in the iPhone 5S and newer. But the phone at the centre of this conflict is an iPhone 5C, based on older hardware.
+
+Perhaps it is unfair to scrutinise Apple’s language in such a way. It’s fighting an opponent that’s happy to use any tool it can to get its own way, and so bending the truth to win the argument might be for the greater good. There are still many reasons to be fearful of the FBIs request, particularly the international precedent it sets. Once Apple gives in here, does it have to give in to China as well?
+
+And then there’s the risk that this is the first step on a slippery slope. This time, the FBI is very clearly asking for Apple to build software which will never leave Cupertino. But once Apple complies, who is to say that the next request won’t be to hand that software over to the FBI, or even state- or city-level police forces? Proliferation of the weakened version of iOS (nicknamed ‘FBiOS’) and the methods to install it really would harm the security of every Apple customer, and may only be defeated at the first step.
+
+But those battles are hard ones for Apple to fight, and it appears it wants to frame the argument somewhat differently. In fact, this situation is full of many more shades of grey than either Apple or the FBI are prepared to concede.
+
+Updated 25 February. The original article stated that the Secure Enclave could not be updated without a passcode; this is incorrect.

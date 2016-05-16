@@ -1,0 +1,31 @@
+Can cloud finally help enterprises with DR/BC?
+January 28, 2016Tim Crawford
+IMG_2716
+
+Disaster Recovery (DR) and Business Continuity (BC) are collectively, using IT lingo, called DR/BC. Both terms go back to the earliest days of computing. Even though neither term is new, neither are done really well. DR/BC is one of the biggest risks for a company and most do not realize it until failure strikes. So, what is DR/BC and what can be done to change this posture?
+
+WHAT IS DR/BC?
+
+First, let’s break it down. What is DR & BC? They are interrelated, but very different in nature. In essence, they cover a spectrum of solutions when failure strikes. DR typically covers the period of failure and return to operations. BC covers the continuity of business operations during a failure. While that seems pretty straight forward, the complexity comes in when you consider dependencies and costs.
+
+Dependencies cover a range of items from physical circuits to inter-related applications and just about everything in-between. One may ask: Why not just create redundancy in all of the dependencies. That is easier said than done. IT is already a complex beast. Think of it like a ball of yarn. Now add a second ball of yarn that is identical in every way. The very introduction of a second ball means that the first ball is no longer unique. And the cost would be exorbitant. To many, DR/BC is often see like an insurance policy. What is the risk and likelihood of failure? How does this compare against the costs? Again, not a trivial matter; hence the failure of most to enact good DR/BC plans.
+
+TYPES OF DR/ BC
+
+In the past, there was, fundamentally, only one way to provide DR/ BC. Today, there are two fundamental methods when considering DR/BC; application-based and infrastructure based.
+
+Infrastructure-based DR/BC is more common in enterprises, especially with legacy enterprise applications. This method is well understood and heavily leverages redundancy among hardware infrastructure components. For example, redundant storage arrays, clusters of compute infrastructure, redundant power supplies, etc. The application takes a stance where it assumes that the infrastructure resources are always there and available. There is often little to no intelligence within the application to protect against infrastructure failure.
+
+Application-based DR/BC is less common in enterprise applications. It is, however, very common in cloud-native applications. Why? Cloud based infrastructure is often based on commodity hardware with little to no redundancy. Cloud native applications, unlike their legacy relatives, have the benefit of leveraging a totally new architecture from the ground up.
+
+While infrastructure-based methods may be more common, application-based methods are more resilient. Why? Even with the most sophisticated Tier IV data center, brand-name systems, storage sub-systems and network topologies, the fact is that infrastructure still fails. Sure, it has gotten better over time. On the other hand, application-based methods do not assume that infrastructure is always there. As such, the applications themselves contain sophistication to ‘heal’ themselves without impacting the user experience. A whole data center (or a component within) can fail and not impact the user experience of the application.
+
+Getting an application from one architecture to the other is not trivial. In addition, the underlying infrastructure must change with the re-architecture of the application. Running an application with self-healing properties on redundant infrastructure would be a waste in most cases. It would serve as redundancy of redundancy.
+
+WHAT OPTIONS DOES CLOUD PROVIDE?
+
+Cloud-based solutions provide a number of clever benefits for enterprises. First, there is flexibility in the underlying infrastructure options. Need redundant infrastructure one day and non-redundant the next? No problem. There are options for that. Trying to manage these shifts within the enterprise data center is both complicated and expensive. Not to mention it provides little direct business value to manage internally.
+
+Cloud also provides a location for DR/BC that is physically separate from the corporate data center and reduces the overall cost. Only use it when you need. Which means you only pay for what you need and when you need it. Solutions from companies like CloudVelox help enterprises with this migration. (Full Disclosure: I serve as an advisor to CloudVelox)
+
+Regardless if whether you use a third-party solution or do it yourself, cloud provides a significant opportunity for enterprises to finally engage meaningful DR/BC plans. It is not a trivial matter to shift from existing infrastructure-based applications to an architecture that supports application-based intelligence. Cloud can still provide benefits to infrastructure-based applications without the complexity and expense of the alternatives.

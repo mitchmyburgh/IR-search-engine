@@ -1,0 +1,23 @@
+The Echo Protocol is a service in the Internet Protocol Suite defined in RFC 862. It was originally proposed for testing and measurement of round-trip times in IP networks.
+A host may connect to a server that supports the Echo Protocol using the Transmission Control Protocol (TCP) or the User Datagram Protocol (UDP) on the well-known port number 7. The server sends back an identical copy of the data it received.
+
+
+== Inetd implementation ==
+On UNIX-like operating systems an echo server is built into the inetd daemon. The echo service is usually not enabled by default. It may be enabled by adding the following lines to the file /etc/inetd.conf and telling inetd to reload its configuration:
+
+echo   stream  tcp     nowait  root    internal
+echo   dgram   udp     wait    root    internal
+
+On various routers, this TCP or UDP port 7 for the Echo Protocol for relaying ICMP datagrams (or port 9 for the Discard Protocol) is also configured by default as a proxy to relay Wake-on-LAN (WOL) magic packets from the Internet to hosts on the local network in order to wake up them remotely (these hosts must also have their network adapter configured to accept WOL datagrams and the router must have this proxy setting enabled, and possibly also a configuration of forwarding rules in its embedded firewall to open these ports on the Internet side).
+
+
+== See also ==
+Discard Protocol
+Daytime Protocol
+Character Generator Protocol
+Time Protocol
+
+
+== External links ==
+RFC 347 Echo Process
+RFC 862 Echo Protocol

@@ -1,0 +1,75 @@
+CMSC 427 Computer Graphics1
+David M. Mount Department of Computer Science University of Maryland Spring 2004
+
+Lecture 7: Coordinate Frames and Homogeneous Coordinates
+Reading: Chapter 5 and Appendix A in Hearn and Baker.
+Bases, Vectors, and Coordinates: Last time we presented the basic elements of af?ne and Euclidean geometry: points, vectors, and operations such as af?ne combinations. However, as of yet we have no mechanism for de?ning these objects. Today we consider the lower level issues of how these objects are represented using coordinate frames and homogeneous coordinates.
+The ?rst question is how to represent points and vectors in af?ne space. We will begin by recalling how to do this in linear algebra, and generalize from there. We will assume familiarity with concepts from linear algebra. (If any of this seems unfamiliar, please consult any text in linear algebra.) We know from linear algebra that if we have 2-linearly independent vectors, ~ u0 and ~ u1 in 2-space, then we can represent any other vector in 2-space uniquely as a linear combination of these two vectors:
+~ v = a0~ u0 + a1~ u1,
+for some choice of scalars a0, a1. Thus, given any such vectors, we can use them to represent any vector in terms of a triple of scalars (a0,a1). In general d linearly independent vectors in dimension d is called a basis.
+Lecture Notes 30 CMSC 427
+u0
+u1
+v
+(a)
+u0
+u1
+v
+(b)
+x
+y
+z
+01 v=2u  + 3u
+Fig. 22: Bases and linear combinations in linear algebra (a) and the standard basis (b).
+Now, let us consider 3-space. The most familiar basis, called the standard basis, is composed of the three unit vectors. In linear algebra, you probably learned to refer to these unit vectors by the corresponding coordinate vectors, for example:
+~ ex = ? ?
+1 0 0 ? ? ~ ey = ? ?
+0 1 0 ? ? ~ ez = ? ?
+0 0 1 ? ?. These vectors have the nice property of being of length 1 and are all mutually orthogonal. Such a basis is called an orthonormal basis. Because it will be inconvenient to refer to column vectors in the text, we will often use the T symbol (which denotes transpose) to express them more succinctly. For example, we could also write ~ ex = (1 ,0,0)T . With very few exceptions all vectors will be represented as column vectors. Note that we are using the term "vector" in two different senses here, one as a geometric entity and the other as a sequence of numbers, given in the form of a row or column. The ?rst is the object of interest (i.e., the abstract data type, in computer science terminology), and the latter is a representation. As is common in object oriented programming, we should "think" in terms of the abstract object, even though in our programming we will have to get dirty and work with the representation itself.
+Since these three vectors are linearly independent, they form a basis. Given any vector in 3-space, we can represent it as a linear combination of these vectors:
+~ v = ax~ ex +ay~ ey + az~ ez,
+The column vector (ax,ay,az)T contains the Cartesian coordinates of the vector ~ v.
+Coordinate Frames and Coordinates: Now let us turn from linear algebra to af?ne geometry. To de?ne a coordinate frame for an af?ne space we would like to ?nd some way to represent any object (point or vector) as a sequence of scalars. Thus, it seems natural to generalize the notion of a basis in linear algebra to de?ne a basis in af?ne space. Note that free vectors alone are not enough to de?ne a point (since we cannot de?ne a point by any combination of vector operations). To specify position, we will designate an arbitrary a point, denoted O, to serve as the origin of our coordinate frame. Observe that for any point P, P -Ois just some vector ~ v. Such a vector can be expressed uniquely as a linear combination of basis vectors. Thus, given the origin point O and any set of basis vectors ~ ui, any point P can be expressed uniquely as a sum ofO and some linear combination of the basis vectors: P = a0~ u0 + a1~ u1 + a2~ u2 +O, for some sequence of scalars a0, a1, a2. This is how we will de?ne a coordinate frame for af?ne spaces. In general we have:
+De?nition: A coordinate frame for a d-dimensional af?ne space consists of a point, called the origin (which we will denoteO) of the frame, and a set of d linearly independent basis vectors.
+Lecture Notes 31 CMSC 427
+In the ?gure below we show a point P and vector - ? w. We have also given two coordinate frames, F and G. Observe that P and- ? w can be expressed as functions of F and G as follows: P =3 · F.~ e0 +2·F.~ e1 +F.O - ? w =2 · F.~ e0 +1·F.~ e1
+P =1 · G.~ e0 +2·G.~ e1 +G.O - ? w = -1·G.~ e0 +0·G.~ e1
+Notice that the position of- ? w is immaterial, because in af?ne geometry vectors are free to ?oat where they like.
+P
+F.O F.e0F.e0
+F.O
+F.e1
+w
+G.e1
+G.O
+G.e0
+w
+F.e1
+G.e0
+G.O
+G.e1P
+P[F] =(3, 2, 1) =(2, 1, 0)w[F] P[G]=(1, 2, 1) =(-1, 0, 0) w[G]
+Fig. 23: Coordinate Frame.
+The Coordinate Axiom and Homogeneous Coordinates: Recall that our goal was to represent both points and vectors as a list of scalar values. To put this on a more formal footing, we introduce the following axiom. Coordinate Axiom: For every point P in af?ne space, 0·P =~ 0, and 1·P = P. This is a violation of our rules for af?ne geometry, but it is allowed just to make the notation easier to understand. Using this notation, we can now write the point and vector of the ?gure in the following way.
+P =3 · F.~ e0 +2·F.~ e1 +1·F.O - ? w =2 · F.~ e0 +1·F.~ e1 +0·F.O Thus, relative to the coordinate frame F = hF.~ e0,F.~ e1,F.Oi, we can express P and - ? w as coordinate vectors relative to frame F as P[F]=? ? 3 2 1? ? and - ? w[F]=? ? 2 1 0? ?.We will call these homogeneous coordinates relative to frame F. In some linear algebra conventions, vectors are written as row vectors and some as column vectors. We will stick with OpenGL's conventions, of using column vectors, but we may be sloppy from time to time.
+As we said before, the term "vector" has two meanings: one as an free vector in an af?ne space, and now as a coordinate vector. Usually, it will be clear from context which meaning is intended. In general, to represent points and vectors in d-space, we will use coordinate vectors of length d+1. Points have a last coordinate of 1, and vectors have a last coordinate of 0. Some authors put the homogenizing coordinate ?rst rather than last. There are actually good reasons for doing this. But we will stick with standard engineering conventions and place it last.
+Lecture Notes 32 CMSC 427
+Properties of homogeneous coordinates: The choice of appending a 1 for points and a 0 for vectors may seem to be a rather arbitrary choice. Why not just reverse them or use some other scalar values? The reason is that this particular choice has a number of nice properties with respect to geometric operations. For example, consider two points P and Q whose coordinate representations relative to some frame F are P[F] = (3 ,2,1)T and Q[F] = (5 ,1,1)T , respectively. Consider the vector
+~ v = P -Q. If we apply the difference rule that we de?ned last time for points, and then convert this vector into it coordinates relative to frame F, we ?nd that~ v[F]=(-2,1,0)T . Thus, to compute the coordinates of P-Q we simply take the component-wise difference of the coordinate vectors for P and Q. The 1-components nicely cancel out, to give a vector result.
+=(3, 2, 1)
+Q
+=(-2, 1, 0)
+Q[F]
+P-QP
+P[F]
+=(5, 1, 1)
+(P-Q)[F]
+F.e1
+F.e0F.O
+Fig. 24: Coordinate arithmetic.
+In general, a nice feature of this representation is the last coordinate behaves exactly as it should. Let U and V be either points or vectors. After a number of operations of the forms U +V or U -V or aU (when applied to the coordinates) we have: • If the last coordinate is 1, then the result is a point. • If the last coordinate is 0, then the result is a vector. • Otherwise, this is not a legal af?ne operation. This fact can be proved rigorously, but we won't worry about doing so.
+This suggests how one might do type checking for a coordinate-free geometry system. Points and vectors are stored using a common base type, which simply consists of a 4-element array of scalars. We allow the programmer to perform any combination of standard vector operations on coordinates. Just prior to assignment, check that the last coordinate is either 0 or 1, appropriate to the type of variable into which you are storing the result. This allows much more ?exibility in creating expressions, such as:
+centroid ?
+P + Q + R 3 ,
+which would otherwise fail type checking. (Unfortunately, this places the burden of checking on the run-time system. One approach is to de?ne the run-time system so that type checking can be turned on and off. Leave it on when debugging and turn it off for the ?nal version.)
+Alternative coordinate frames: Any geometric programming system must deal with two con?icting goals. First, we want points and vectors to be represented with respect to some universal coordinate frame (so we can operate on points and vectors by just operating on their coordinate lists). But it is often desirable to de?ne points relative to some convenient local coordinate frame. For example, latitude and longitude may be a ?ne way to represent the location of a city, but it is not a very convenient way to represent the location of a character on this page.

@@ -1,0 +1,71 @@
+Writing vertex and fragment shaders
+ShaderLab shaders encompass more than just “hardware shaders”. They do many things. They describe properties that are displayed in the Material Inspector, contain multiple shader implementations for different graphics hardware, configure fixed function hardware state and so on. The actual programmable shaders - like vertex and fragment programs - are just a part of the whole ShaderLab’s “shader” concept. Take a look at shader tutorial for a basic introduction. Here we’ll call the low-level hardware shaders shader programs.
+
+If you want to write shaders that interact with lighting, take a look at Surface Shaders documentation. For some examples, take a look at Vertex and Fragment Shader Examples. The rest of this page will assume shaders that do not interact with Unity lights (e.g. special effects, Image Effects etc.)
+
+Shader programs are written in Cg/HLSL language, by embedding “snippets” in the shader text, somewhere inside the Pass command. They usually look like this:
+
+  Pass {
+      // ... the usual pass state setup ...
+      
+      CGPROGRAM
+      // compilation directives for this snippet, e.g.:
+      #pragma vertex vert
+      #pragma fragment frag
+      
+      // the Cg/HLSL code itself
+      
+      ENDCG
+      // ... the rest of pass setup ...
+  }
+Cg/HLSL snippets
+
+Cg/HLSL program snippets are written between CGPROGRAM and ENDCG.
+
+At the start of the snippet compilation directives can be given as #pragma statements. Directives indicating which shader functions to compile:
+
+#pragma vertex name - compile function name as the vertex shader.
+#pragma fragment name - compile function name as the fragment shader.
+#pragma geometry name - compile function name as DX10 geometry shader. Having this option automatically turns on #pragma target 4.0, described below.
+#pragma hull name - compile function name as DX11 hull shader. Having this option automatically turns on #pragma target 5.0, described below.
+#pragma domain name - compile function name as DX11 domain shader. Having this option automatically turns on #pragma target 5.0, described below.
+Other compilation directives:
+
+#pragma target name - which shader target to compile to. See Shader Compilation Targets page for details.
+#pragma only_renderers space separated names - compile shader only for given renderers. By default shaders are compiled for all renderers. See Renderers below for details.
+#pragma exclude_renderers space separated names - do not compile shader for given renderers. By default shaders are compiled for all renderers. See Renderers below for details.
+#pragma multi_compile …_ - for working with multiple shader variants.
+#pragma enable_d3d11_debug_symbols - generate debug information for shaders compiled for DirectX 11, this will allow you to debug shaders via Visual Studio 2012 (or higher) Graphics debugger.
+Each snippet must contain at least a vertex program and a fragment program. Thus #pragma vertex and #pragma fragment directives are required.
+
+Compilation directives that don’t do anything starting with Unity 5.0 and can be safely removed: #pragma glsl, #pragma glsl_no_auto_normalization, #pragma profileoption, #pragma fragmentoption.
+
+Rendering platforms
+
+Unity supports several rendering APIs (e.g. Direct3D 9 and OpenGL), and by default all shader programs are compiled into all supported renderers. You can indicate which renderers to compile to using #pragma only_renderers or #pragma exclude_renderers directives. This is mostly useful in cases where you are explicitly using some shader language features that you know aren’t possible on some platforms. Currently supported renderer names are:
+
+d3d9 - Direct3D 9.
+d3d11 - Direct3D 11/12.
+glcore - OpenGL 3.x/4.x.
+gles - OpenGL ES 2.0.
+gles3 - OpenGL ES 3.x.
+metal - iOS/Mac Metal.
+d3d11_9x - Direct3D 11 9.x feature level, as commonly used on WSA/WP8 platforms.
+xbox360 - Xbox 360.
+xboxone - Xbox One.
+ps3 - PlayStation 3.
+ps4 - PlayStation 4.
+psp2 - PlayStation Vita.
+n3ds - Nintendo 3DS.
+wiiu - Nintendo Wii U.
+For example, this line would only compile shader into D3D9 mode:
+
+#pragma only_renderers d3d9
+See Also
+
+Accessing Material Properties.
+Writing Multiple Shader Program Variants.
+Shader Compilation Targets.
+Shading Language Details.
+Shader Preprocessor Macros.
+Platform Specific Rendering Differences.

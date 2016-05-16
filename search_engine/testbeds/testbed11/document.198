@@ -1,0 +1,36 @@
+In computer networking, tcpcrypt is a transport layer communication encryption protocol. Unlike prior protocols like TLS (SSL), tcpcrypt is implemented as a TCP extension. It was designed by a team of six security and networking experts: Andrea Bittau, Mike Hamburg, Mark Handley, David Mazières, Dan Boneh and Quinn Slack. Tcpcrypt has been published as an Internet Draft. Experimental user-space implementations are available for Linux, Mac OS X, FreeBSD and Windows. There is also a Linux kernel implementation.
+The TCPINC (TCP Increased Security) working group was formed in June 2014 by IETF to work on standardizing security extensions in the TCP protocol.
+
+
+== Description ==
+Tcpcrypt provides opportunistic encryption — if either side does not support this extension, then the protocol falls back to regular unencrypted TCP. Tcpcrypt also provides encryption to any application using TCP, even ones that do not know about encryption. This enables incremental and seamless deployment.
+Unlike TLS, tcpcrypt itself does not do any authentication, but passes a unique "session ID" down to the application; the application can then use this token for further authentication. This means that any authentication scheme can be used, including passwords or certificates. It also does a larger part of the public-key connection initiation on the client side, to reduce load on servers and mitigate DoS attacks.
+
+
+== History ==
+The first draft of the protocol specification was published in July 2010, with reference implementations following in August. However, after initial meetings in IETF, proponents of the protocol failed to gain traction for standardization and the project remained dormant from 2011 onwards.
+In 2013 and 2014, following Edward Snowden's Global surveillance disclosures about the NSA and agencies of other governments, IETF took a strong stance for protecting Internet users against surveillance. This aligns with tcpcrypt's goals of ubiquitous transparent encryption, which revived interest in standardization of the protocol. An official IETF mailing list was created for tcpcrypt in March 2014, followed by the formation of the TCPINC (TCP Increased Security) working group in June and a new version of the draft specification.
+
+
+== Performance ==
+Tcpcrypt enforces TCP timestamps and adds its own TCP options to each data packet, amounting to 36 bytes per packet compared to plain TCP. With a mean observed packet size for TCP packets of 471 bytes, this can lead to an overhead of 8% of useful bandwidth. This 36 bytes overhead may not be an issue for internet connections faster than 64kbs, but can be an issue for dial up internet users.
+Compared to TLS/SSL, tcpcrypt is designed to have a lower performance impact. In part this is because tcpcrypt does not have built-in authentication, which can be implemented by the application itself. Cryptography primitives are used in such a way to reduce load on the server side, because a single server usually has to provide services for far more clients than reverse.
+
+
+== Implementations ==
+The current user space implementations are considered experimental and are reportedly unstable on some systems. It also does not support IPv6 yet, which is currently only supported by the Linux kernel version. It is expected that once tcpcrypt becomes a standard, operating systems will come with tcpcrypt support built-in, making the user space solution unnecessary.
+
+
+== See also ==
+DTLS
+IPsec
+Obfuscated TCP — an earlier failed proposal for opportunistic TCP encryption
+
+
+== References ==
+
+
+== External links ==
+tcpcrypt.org
+TCPINC Working Group Charter at IETF
+Slides from USENIX 2010 presentation, explaining basics of tcpcrypt

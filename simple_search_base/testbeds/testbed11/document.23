@@ -1,0 +1,46 @@
+The Open Cloud Computing Interface (OCCI) is a set of specifications delivered through the Open Grid Forum, for cloud computing service providers. OCCI has a set of implementations that act as proofs of concept. It builds upon World Wide Web fundamentals by using the Representational State Transfer (REST) approach for interacting with services.
+
+
+== Scope ==
+The aim of the Open Cloud Computing Interface is the development of an open specification and API for cloud offerings. The focus was on Infrastructure-as-a-Service (IaaS) based offerings but the interface can be extended to support Platform and Software as a Service offerings as well.
+IaaS is one of three primary segments of the cloud computing industry in which compute, storage and network resources are provided as services. The API is based on a review of existing service-provider functionality and a set of use cases contributed by the working group. OCCI is a boundary API that acts as a service front-end to an IaaS provider’s internal infrastructure management framework. OCCI provides commonly understood semantics, syntax and a means of management in the domain of consumer-to-provider IaaS. It covers management of the entire life-cycle of OCCI-defined model entities and is compatible with existing standards such as the Open Virtualization Format (OVF) and the Cloud Data Management Interface (CDMI). Notably, it serves as an integration point for standardization efforts including Distributed Management Task Force, Internet Engineering Task Force and the Storage Networking Industry Association.
+
+
+== Context ==
+OCCI began in March 2009 and was initially led by Sun Microsystems, RabbitMQ and the Complutense University of Madrid. Today, the working group has over 250 members and includes numerous individuals, industry and academic parties. The OCCI operates under the umbrella of the Open Grid Forum (OGF), using a wiki  and a mailing list  for collaboration.
+
+
+== Goals ==
+Interoperability: allow different Cloud providers to work together without data schema/format translation, facade/proxying between APIs and understanding and/or dependency on multiple APIs
+Portability: no technical/vendor lock-in and enable services to move between providers allows clients to easily switch between providers based on business objectives (e.g., cost) with minimal technical costs, thus enabling and fostering competition.
+Integration: the specification can be implemented with both the latest infrastructures or legacy ones.
+Extensibility: thanks to the use of a meta-model and capabilities discovery features, an OCCI client is able to interact with any OCCI server using provider-specific OCCI extensions.
+
+
+== Specific Implementations ==
+They implement specific extensions of OCCI for a particular service: IaaS, PaaS, brokering, etc.
+Several implementations have been announced or released.
+
+
+== Generic Implementations (frameworks) ==
+Here are frameworks to build OCCI APIs.
+Complementing these are a variety of developer tools.
+
+
+== Alternatives ==
+Alternative approaches include the use of the Cloud Infrastructure Management Interface (CIMI) and related standards set from DMTF and the Amazon Web Services interfaces from Amazon. (The latter have not been endorsed by any known Standards organization.)
+OpenNebula conducted a survey  of their users in which the results showed 38% do not expose cloud APIs, their users only interface through the Sunstone GUI, 36% mostly use the Amazon Web Services API, and 26% mostly use the OpenNebula’s OCCI API or the OCCI API offered by rOCCI.
+
+
+== See also ==
+Open Data Center Alliance
+Distributed Management Task Force
+Open Grid Forum
+
+
+== References ==
+
+
+== External links ==
+Open Cloud Computing Interface Official site
+OCCI 1.1 Implementation for OpenNebula

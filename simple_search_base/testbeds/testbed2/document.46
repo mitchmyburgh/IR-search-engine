@@ -1,0 +1,36 @@
+The Generalized Hebbian Algorithm (GHA), also known in the literature as Sanger's rule, is a linear feedforward neural network model for unsupervised learning with applications primarily in principal components analysis. First defined in 1989, it is similar to Oja's rule in its formulation and stability, except it can be applied to networks with multiple outputs. The name originates because of the similarity between the algorithm and a hypothesis made by Donald Hebb about the way in which synaptic strengths in the brain are modified in response to experience, i.e., that changes are proportional to the correlation between the firing of pre- and post-synaptic neurons.
+
+
+== Theory ==
+GHA combines Oja's rule with the Gram-Schmidt process to produce a learning rule of the form
+,
+where wij defines the synaptic weight or connection strength between the jth input and ith output neurons, x and y are the input and output vectors, respectively, and η is the learning rate parameter.
+
+
+=== Derivation ===
+In matrix form, Oja's rule can be written
+,
+and the Gram-Schmidt algorithm is
+,
+where w(t) is any matrix, in this case representing synaptic weights, Q = η x xT is the autocorrelation matrix, simply the outer product of inputs, diag is the function that diagonalizes a matrix, and lower is the function that sets all matrix elements on or above the diagonal equal to 0. We can combine these equations to get our original rule in matrix form,
+,
+where the function LT sets all matrix elements above the diagonal equal to 0, and note that our output y(t) = w(t) x(t) is a linear neuron.
+
+
+=== Stability and PCA ===
+ 
+
+
+== Applications ==
+GHA is used in applications where a self-organizing map is necessary, or where a feature or principal components analysis can be used. Examples of such cases include artificial intelligence and speech and image processing.
+Its importance comes from the fact that learning is a single-layer process—that is, a synaptic weight changes only depending on the response of the inputs and outputs of that layer, thus avoiding the multi-layer dependence associated with the backpropagation algorithm. It also has a simple and predictable trade-off between learning speed and accuracy of convergence as set by the learning rate parameter η.
+
+
+== See also ==
+Hebbian learning
+Oja's rule
+Factor analysis
+PCA network
+
+
+== References ==

@@ -1,0 +1,31 @@
+﻿Introduction
+This course is an introduction to realistic 3D rendering in computer graphics. You will learn about the theory and practice of designing 3D rendering programs to generate realistic images. We will cover the background of phyiscally based image synthesis including radiometry, the bidirectional reflectance distribution functions, the rendering equation, and the radiative transfer equation. We will discuss algorithms to compute the rendering equation such as Monte Carlo path tracing, importance sampling, photon mapping, and radiosity. You will learn about strategies for efficient ray tracing, high-quality antialiasing, and more.
+
+The course has several programming assignments in which you will implement a 3D rendering program based on ray tracing step by step. The rendering program will include acceleration structures, and advanced rendering capabilities such as Monte Carlo path tracing and photon mapping. A detailed schedule and all class materials are available on Ilias.
+
+Learning Outcomes
+On successful completion of this class, you will be able to:
+
+Design and implement a rendering system to generate realistic images in an object oriented programming framework.
+Describe how the problem of realistic image synthesis is formulated mathematically using the rendering equation.
+Explain radiometric concepts such as radiance, irradiance, radiosity, and the bidirectional reflectance distribution function (BRDF).
+Describe how the appearance of physical materials can be modeled using BRDFs.
+Describe how the rendering equation can be solved using Monte Carlo path tracing.
+Describe improvements of Monte Carlo path tracing such as importance sampling, bidirectional path tracing, and photon mapping, and list their advantages.
+Describe how the rendering equation can be solved using finite element methods such as radiosity, and compare these to Monte Carlo methods.
+Design and implement extensions and optimizations of a basic path tracing algorithm, including: spatial data structures such as kd-trees; irradiance caching; participating media; lens effects; texturing.
+Programming Assignments
+The course contains several programming assignments. The goal of these assignments is to build your own 3D renderer step by step. There will be four assignments:
+
+Basic ray tracer
+Acceleration structures and area lights
+Global illumination
+Advanced features
+Class Material
+All class material including slides and exercises is available on Ilias.
+Recommended Reading
+Suffern, "Ray tracing from the ground up", AK Peters, 2007
+Shirley, "Realistic ray tracing", AK Peters, 2nd ed. 2008
+Pharr and Humphreys, "Physically Based Rendering", Morgan-Kaufman 2004
+Wann Jensen, "Realistic Image Synthesis Using Photon Mapping", AK Peters, 2001
+Dutré, Bala, and Baekert, "Advanced Global Illumination", AK Peters, 20

@@ -1,0 +1,21 @@
+Facebook Unveils Hack, A New Programming Language For More Reliable Code
+
+Facebook wants to make it easy for developers to write and ship code quickly. To that end, on Thursday, it released Hack, an open-source language that it claims will allow developers to build bug-free code fast. 
+
+Ten years ago, Facebook started out as a website coded in PHP, a scripting language aimed at fast development of interactive Web pages. As the company grew, PHP became difficult to manage and it was easier for developers to make mistakes, said Bryan O’Sullivan, the manager of Facebook’s Hack team, in an interview with ReadWrite. To help eliminate errors in its massive codebase, O’Sullivan and his team created Hack, combining the fast development cycle of PHP with the discipline of more formal programming languages.
+
+The company has migrated almost its entire codebase to Hack over the last year, and released an open-source version of Hack to the public today.
+
+A key difference is how Hack handles checking of data types for consistency—an important feature of programming languages for avoiding bugs that can crash a program or deliver unexpected output. Some languages, like PHP, do this checking on the fly, or dynamically, while others do it when a program is compiled, before it actually runs—a method known as static typing.
+
+“[The] PHP type system doesn’t do anything until the program is running … you find out about logical errors when the site is live,” O’Sullivan said. “What Hack does is it checks these kinds of errors ahead of time, before you ship off the computer you’re developing on. You can catch errors quickly.”
+
+O’Sullivan’s team designed Hack to run on top of another technology Facebook developed, the HipHop Virtual Machine, or HHVM, which converts code written in PHP to native, compiled code for efficiency. This means that although parts of Facebook have been migrated over to Hack, there’s no awkwardness going back and forth between PHP and Hack.
+
+The company said in a blog post that most PHP files are already valid Hack files, but chose not to support functions that were incompatible with static typing:
+
+    Traditionally, dynamically typed languages allow for rapid development but sacrifice the ability to catch errors early and introspect code quickly, particularly on larger codebases. Conversely, statically typed languages provide more of a safety net, but often at the cost of quick iteration. We believed there had to be a sweet spot.
+
+    Thus, Hack was born. We believe that it offers the best of both dynamically typed and statically typed languages, and that it will be valuable to projects of all sizes.
+
+ Hack looks similar to PHP and it runs inside the same software environment, O’Sullivan said. So programmers can convert their codebase over to Hack only in the places that are most important and not necessarily completely redo everything. With Hack, developers can now combine static and dynamic typing—a method known as “gradual typing”—as well as rapid feedback to build and ship programs faster, and with more accuracy. 

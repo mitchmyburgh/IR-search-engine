@@ -1,0 +1,70 @@
+In mathematics and computer science, a directed acyclic graph (DAG Listeni/'dæg/), is a directed graph with no directed cycles. That is, it is an object that consists of vertices and edges, with each edge directed from one vertex to another, such that there is no way to start at any vertex v and follow a consistently-directed sequence of edges that eventually loops back to v again. Equivalently, a DAG may be characterized as a directed graph that has a topological ordering, a sequence of the vertices such that every edge is directed from earlier to later in the sequence.
+
+DAGs may be used to model many different kinds of information. The reachability relation in a DAG forms a partial order, and any finite partial order may be represented by a DAG using reachability. A collection of tasks that must be ordered into a sequence, subject to constraints that certain tasks must be performed earlier than others, may be represented as a DAG with a vertex for each task and an edge for each constraint. Algorithms for topological ordering may be used to generate a valid sequence in linear time. DAGs may be used as a space-efficient representation of a collection of sequences with overlapping subsequences. DAGs have been used to represent systems of events or potential events and the causal relationships between them. DAGs may also be used to model processes in which data flows in a consistent direction through a network of processors, and to model the states of a repository in a version-control system.
+
+The corresponding concept for undirected graphs is a forest, an undirected graph without cycles. Choosing an orientation for a forest produces a special kind of directed acyclic graph called a polytree. However there are many other kinds of directed acyclic graph that are not formed by orienting the edges of an undirected acyclic graph. Moreover, every undirected graph has an acyclic orientation, an assignment of a direction for its edges that makes it into a directed acyclic graph. To emphasize that DAGs are not the same thing as directed versions of undirected acyclic graphs, some authors call them acyclic directed graphs[1] or acyclic digraphs.[2]
+
+Contents  [hide] 
+1	Definitions
+2	Mathematical properties
+2.1	Reachability, transitive closure, and transitive reduction
+2.2	Topological ordering
+2.3	Combinatorial enumeration
+2.4	Related families of graphs
+3	Computational problems
+3.1	Topological sorting and recognition
+3.2	Construction from cyclic graphs
+3.3	Transitive closure and transitive reduction
+3.4	Closure problem
+4	Applications
+4.1	Path algorithms
+4.2	Scheduling
+4.3	Data processing networks
+4.4	Causal structures
+4.5	Genealogy and version history
+4.6	Data compression
+5	References
+6	External links
+Definitions[edit]
+A graph (discrete mathematics) is formed by a collection of vertices and edges, where the vertices are structureless objects that are connected in pairs by edges. In the case of a directed graph, each edge has an orientation, from one vertex to another vertex. A path in a directed graph can be described by a sequence of edges having the property that the ending vertex of each edge in the sequence is the same as the starting vertex of the next edge in the sequence; a path forms a cycle if the starting vertex of its first edge equals the ending vertex of its last edge. A directed acyclic graph is a directed graph that has no cycles.[1][2][3]
+
+A vertex v of a directed graph is said to be reachable from another vertex u when there exists a path that starts at u and ends at v. As a special case, every vertex is considered to be reachable from itself (by a path with zero edges). If a vertex can reach itself via a nontrivial path (a path with one or more edges), then that path is a cycle, so another way to define directed acyclic graphs is that they are the graphs in which no vertex can reach itself via a nontrivial path.[4]
+
+A topological ordering of a directed graph is an ordering of its vertices into a sequence, such that for every edge the start vertex of the edge occurs earlier in the sequence than the ending vertex of the edge. A graph that has a topological ordering cannot have any cycles, because the edge into the earliest vertex of a cycle would have to be oriented the wrong way. Therefore, every graph with a topological ordering is acyclic. Conversely, every directed acyclic graph has a topological ordering. Therefore, this property can be used as an alternative definition of the directed acyclic graphs: they are exactly the graphs that have topological orderings.[2]
+
+Mathematical properties[edit]
+Reachability, transitive closure, and transitive reduction[edit]
+
+A Hasse diagram representing the partial order ? among the subsets of a three-element set.
+Each directed acyclic graph gives rise to a partial order = on its vertices, where u = v exactly when there exists a directed path from u to v in the DAG.[5] However, different DAGs may give rise to the same reachability relation.[6] For example, the DAG with two edges a ? b and b ? c has the same reachability as the graph with three edges a ? b, b ? c, and a ? c. If G is a DAG, its transitive reduction is the graph with the fewest edges that represents the same reachability as G, and its transitive closure is the graph with the most edges that represents the same reachability. The transitive reduction and transitive closure are both uniquely defined for DAGs. In contrast, for a directed graph that is not acyclic, there can be more than one minimal subgraph with the same reachability relation.[7]
+
+The transitive closure of graph G has an edge u ? v for every related pair u = v of distinct elements in the reachability relation of G, and may therefore be thought of as a direct translation of the reachability relation = into graph-theoretic terms. Every partially ordered set may be translated into a DAG in this way. If a DAG G represents a partial order =, then the transitive reduction of G is a subgraph of G with an edge u ? v for every pair in the covering relation of =. Transitive reductions are useful in visualizing the partial orders they represent, because they have fewer edges than other graphs representing the same orders and therefore lead to simpler graph drawings. A Hasse diagram of a partial order is a drawing of the transitive reduction in which the orientation of each edge is shown by placing the starting vertex of the edge in a lower position than its ending vertex.[8]
+
+Topological ordering[edit]
+Every directed acyclic graph has a topological ordering, an ordering of the vertices such that the starting endpoint of every edge occurs earlier in the ordering than the ending endpoint of the edge. The existence of such an ordering can be used to characterize DAGs: a directed graph is a DAG if and only if it has a topological ordering. In general, this ordering is not unique; a DAG has a unique topological ordering if and only if it has a directed path containing all the vertices, in which case the ordering is the same as the order in which the vertices appear in the path.[9]
+
+The family of topological orderings of a DAG is the same as the family of linear extensions of the reachability relation for the DAG,[10] so any two graphs representing the same partial order have the same set of topological orders.
+
+Combinatorial enumeration[edit]
+The graph enumeration problem of counting directed acyclic graphs was studied by Robinson (1973).[11] The number of DAGs on n labeled vertices, for n = 0, 1, 2, 3, … (allowing the vertices to appear in any order in a topological ordering of the DAG) is
+
+1, 1, 3, 25, 543, 29281, 3781503, … (sequence A003024 in OEIS).
+These numbers may be computed by the recurrence relation
+
+a_n = \sum_{k=1}^n (-1)^{k-1} {n\choose k}2^{k(n-k)} a_{n-k}.[11]
+Eric W. Weisstein conjectured,[12] and McKay et al. (2004) proved, that the same numbers count the (0,1) matrices in which all eigenvalues are positive real numbers. The proof is bijective: a matrix A is an adjacency matrix of a DAG if and only if A + I is a (0,1) matrix with all eigenvalues positive, where I denotes the identity matrix. Because a DAG cannot have self-loops, its adjacency matrix must have a zero diagonal, so adding I preserves the property that all matrix coefficients are 0 or 1.[13]
+
+Related families of graphs[edit]
+A polytree is a directed graph formed by orienting the edges of a free tree.[14] Every polytree is a DAG. In particular, this is true of the arborescences formed by directing all edges outwards from the root of a tree. A multitree (also called a strongly unambiguous graph or a mangrove) is a directed graph in which there is at most one directed path (in either direction) between any two vertices; equivalently, it is a DAG in which, for every vertex v, the set of vertices reachable from v forms a tree.[15]
+
+Computational problems[edit]
+Topological sorting and recognition[edit]
+Main article: Topological sorting
+Topological sorting is the algorithmic problem of finding topological orderings; it can be solved in linear time.[16] Kahn's algorithm for topological sorting builds the vertex ordering directly, by maintaining a list of vertices that have no edges connecting them to vertices that have not already been listed, and repeatedly adding one such vertex to the end of the list that is being built.[17] Alternatively, a topological ordering may be constructed by reversing a postorder numbering of a depth-first search graph traversal.[16]
+
+It is also possible to check whether a given directed graph is a DAG in linear time, either by attempting to find a topological ordering and then testing for each edge whether the resulting ordering is valid[18] or alternatively, for some topological sorting algorithms, by verifying that the algorithm successfully orders all the vertices without meeting an error condition.[17]
+
+Construction from cyclic graphs[edit]
+Any undirected graph may be made into a DAG by choosing a total order for its vertices and orienting every edge from the earlier endpoint in the order to the later endpoint. However, different total orders may lead to the same acyclic orientation. The number of acyclic orientations is equal to |?(-1)|, where ? is the chromatic polynomial of the given graph.[19]
+
+Any directed graph may be made into a DAG by removing a feedback vertex set or a feedback arc set. However, the smallest such set is NP-hard to find.[20] An arbitrary directed graph may also be transformed into a DAG, called its condensation, by contracting each of its strongly connected components into a single supervertex.[21] When the graph is already ac

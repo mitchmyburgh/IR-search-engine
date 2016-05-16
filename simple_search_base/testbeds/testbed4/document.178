@@ -1,0 +1,48 @@
+Writing Shaders
+Shaders in Unity can be written in one of three different ways:
+
+Surface Shaders
+
+Surface Shaders are your best option if your shader needs to be affected by lights and shadows. Surface shaders make it easy to write complex shaders in a compact way - it’s a higher level of abstraction for interaction with Unity’s lighting pipeline. Most surface shaders automatically support both forward and deferred lighting. You write surface shaders in a couple of lines of Cg/HLSL and a lot more code gets auto-generated from that.
+
+Do not use surface shaders if your shader is not doing anything with lights. For Image Effects or many special-effect shaders, surface shaders are a suboptimal option, since they will do a bunch of lighting calculations for no good reason!
+
+Vertex and Fragment Shaders
+
+Vertex and Fragment Shaders will be required, if your shader doesn’t need to interact with lighting, or if you need some very exotic effects that the surface shaders can’t handle. Shader programs written this way are the most flexible way to create the effect you need (even surface shaders are automatically converted to a bunch of vertex and fragment shaders), but that comes at a price: you have to write more code and it’s harder to make it interact with lighting. These shaders are written in Cg/HLSL as well.
+
+Fixed Function Shaders
+
+Fixed Function shaders are legacy shader syntax for very simple effects. It is advisable to write programmable shaders, since that allows much more flexibility and works on more platforms (e.g. console platforms do not support fixed function shader syntax). Fixed function shaders are entirely written in a language called ShaderLab, which is similar to Microsoft’s .FX files or NVIDIA’s CgFX.
+
+ShaderLab
+
+Regardless of which type you choose, the actual meat of the shader code will always be wrapped in ShaderLab, which is used to organize the shader structure. It looks like this:
+
+Shader "MyShader" {
+    Properties {
+        _MyTexture ("My Texture", 2D) = "white" { }
+        // other properties like colors or vectors go here as well
+    }
+    SubShader {
+        // here goes the 'meat' of your
+        // - surface shader or
+        // - vertex and fragment shader or
+        // - fixed function shader
+    }
+    SubShader {
+        // here goes a simpler version of the SubShader above that
+        // can run on older graphics cards
+    }
+}
+
+We recommend that you start by reading about some basic concepts of the ShaderLab syntax in the ShaderLab reference and then move on to the tutorials listed below.
+
+The tutorials include plenty of examples for the different types of shaders. Unity’s Image Effects package contains a lot of interesting vertex and fragment shaders.
+
+Read on for an introduction to shaders, and check out the shader reference!
+
+Tutorial: ShaderLab & Fixed Function Shaders
+Tutorial: Vertex and Fragment Shaders
+Surface Shaders
+Writing vertex and fragment shaders

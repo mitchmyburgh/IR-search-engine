@@ -1,0 +1,163 @@
+     current community 
+        blog 
+        chat 
+         Information Security   
+         Information Security Meta   
+      your communities  
+      Sign up or 
+      log in to customize your list. 
+     more stack exchange communities 
+     company blog 
+    Stack Exchange  
+    Inbox   
+    Reputation and Badges    
+     sign up log in tour  help   
+          Tour  Start here for a quick overview of the site    
+          Help Center  Detailed answers to any questions you might have    
+          Meta  Discuss the workings and policies of this site    
+          About Us  Learn more about Stack Overflow the company    
+          Business  Learn more about hiring developers or posting ads with us    
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    Information Security  
+     Questions 
+     Tags 
+     Users 
+     Badges 
+     Unanswered 
+      Ask Question  
+      _
+       Information Security Stack Exchange is a question and answer site for information security professionals. It's 100% free, no registration required. 
+      Sign up 
+      Here's how it works: 
+       Anybody can ask a question  
+       Anybody can answer  
+       The best answers are voted up and rise to the top  
+        StackExchange.ready(function () {
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+    Most secure password hash algorithm(s)? 
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,0,"adzerk1976268069",4).enableDynamicSiteSelection().setZone(29); });
+          up vote 
+          29 
+          down vote 
+          favorite 
+           8
+           What is/are currently the most cryptographically secure hashing algorithm(s)? (available in PHP) 
+           Speed is irrelevant, because I'm iterating the hash over a fixed time (rather than a fixed number of iterations). What I'm interested in is the mathematical strength. 
+           My intuition tells me it's whirlpool, being the largest and slowest of the bunch. That or SHA-512. But where on the 'net can I see what the experts recommend? 
+           passwords 
+           cryptography 
+           hash 
+               share
+               |
+               improve this question
+                edited Sep 21 '14 at 0:33 
+                nealmcb 
+                 14k
+                 3
+                 48
+                 101 
+                 asked 
+                Jun 25 '11 at 17:26 
+                Core Xii 
+                 240
+                 1
+                 3
+                 5 
+           migrated from stackoverflow.com Jun 25 '11 at 18:06  
+          This question came from our site for professional and enthusiast programmers. 
+                  7  
+                  &nbsp;  
+               How can you guarantee that the fixed time always leads to the same number of iterations from run to run? –&nbsp;
+               Amber 
+               Jun 25 '11 at 17:29 
+                  1  
+                  &nbsp;  
+               By securest do you mean having the largest complexity? Sometimes an algorithm that can be considered strong have other flaws. –&nbsp;
+               Yet Another Geek 
+               Jun 25 '11 at 17:29 
+                  3  
+                  &nbsp;  
+               No, cryptographic hash algorithms are designed to be one-way functions that make it difficult for an attacker to modify a piece of data while keeping the hash value the same. The one-way function is designed to make it difficult to determine how a change in input will impact the output hash value. Fundamentally cryptographic hashes are lossy compression functions. The information loss in compression makes it difficult to recover the input data. Design specs for MD5, SHA1, Whirlwind, etc, do not mention confidentiality, because is not a design goal. –&nbsp;
+               this.josh 
+               Jun 27 '11 at 7:31 
+                  2  
+                  &nbsp;  
+               I think the answers here are a little confus(ed|ing) because the time taken by a hashing algorithm is an upper bound on its security. So, except for broken or reduced algorithms, and adjusting for digest length; all hashing algorithms are of equal security if you're iterating for the same amount of time (and doing that in a way that introduces no new vulnerabilities). Except maybe scrypt, since it's memory-hard. –&nbsp;
+               user502 
+               Jun 27 '11 at 14:07 
+                  2  
+                  &nbsp;  
+               @Core Why is adjusting manually not an option? Having security depend on server load seems like a bad idea. –&nbsp;
+               Nick Johnson 
+               Jun 28 '11 at 1:29 
+          &nbsp;|&nbsp; 
+          show 11 more comments 
+        6 Answers 6  
+          active 
+          oldest 
+          votes 
+           up vote 
+           25 
+           down vote 
+           Crypographers could point out that, when you read the fine print, there is no proof that secure hash functions actually exist at all. The only thing we have now are candidates for which no weakness has been found yet. 
+           So the best you can hope for is a function which has survived scrutiny by many cryptographers for a long time. Also, you need it to have a wide enough output (256 bits are enough if you wish to achieve "128-bit security" and getting beyond that has little sense). Right now, as of summer 2011, this points to SHA-256 or SHA-512, not Whirlpool. 
+           Basing the iteration count on the time it takes on a typical machine is a good idea -- but basing it on the time it really takes on your machine is not a good idea. Otherwise, you could end up with low iteration counts for some passwords because the machine was handling many requests at that instant (a situation which an attacker could force, by the way). Using many iterations is meant to thwart attackers by making password hashing slow on the attacker's computer -- that it also makes it slow on your system is an unfortunate byproduct; but the true target is whatever machine power the attacker could muster. Since you cannot really make benchmarks on the attacker's machine, you have to resort to rough estimates, hence a fixed count, as high as possible as long as the average burden is tolerable on your system (the important word here being "average", which disqualifies a dynamic measure as you intend to perform). 
+           Also, the attacker's machine needs not look like yours; it may be, e.g., a GPU or a FPGA, which offers distinct computing abilities from what you can get on a typical server. You want a function for which an attacker will not be able to get huge performance boosts by using non-PC hardware. There again, this promotes SHA-256 or SHA-512, which are meant for CPU efficiency (with 32-bit or 64-bit arithmetic operations), not Whirlpool, which can benefit from hardware optimizations similar to those AES was designed for. 
+           Finally, iterations are just part of the job; you also need a long enough, unique enough salt. Iterations and salting can be a bit tricky to do at the same time; you are warmly encouraged to use a standard construction such as PBKDF2 (although it was meant as a key derivation function, not a password hasher, PBKDF2 turns out to be reasonably good at that too). 
+               share
+               |
+               improve this answer
+                 answered 
+                Jul 7 '11 at 16:56 
+                Thomas Pornin 
+                 216k
+                 38
+                 506
+                 726 
+                   &nbsp;&nbsp;  
+                   &nbsp;  
+                All of your concerns had already been addressed in my implementation. The only thing left to figure out is the hash algorithm to use. –&nbsp;
+                Core Xii 
+                Jul 8 '11 at 16:36 
+           add a comment
+           &nbsp;|&nbsp; 
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,0,"adzerk113457540",4).enableDynamicSiteSelection().setZone(30); });
+           up vote 
+           19 
+           down vote 
+           From OP's comment: 
+            "Secure" as in, based on a mathematical problem that has no known fast solution. "Most secure" as in, based on the most complex of such problems. A hashing algorithm is considered "strong" when breaking it would require a major contribution to cryptology/mathematics. 
+           It sounds as if you have been reading Thomas Ptacek's "Enough With The Rainbow Tables: What You Need

@@ -1,0 +1,53 @@
+Encryption software is software that can encrypt and decrypt data, often in the form of files on a hard drive or packets sent over a network.
+
+
+== Encryption ==
+Encryption software uses an encryption scheme that encodes computer data so that it cannot be recovered without the correct key. Software encryption is a fundamental part of modern computer communications and file protection.
+The purpose of encryption is to prevent third parties from recovering any of the original data, or even any information about the data, from the encrypted data. This is particularly important for sensitive data like social security numbers.
+
+
+== Encryption Schemes ==
+Many encryption algorithms and schemes exist for many different purposes. Public-key algorithms like RSA and ElGamal are used by HTTPS for encrypting web communications and by PGP for encrypting emails. Symmetric-key algorithms like AES operated in CBC mode are popular for encrypting individual files. Full disk encryption has different constraints, and so the now-defunct TrueCrypt used AES in XTS mode.
+
+
+== Encryption Algorithms ==
+
+
+=== Types of Algorithms ===
+Ciphers can be categorized into two general types: public key ciphers and symmetric key ciphers.
+Public key systems use algorithms that rely on a pair of mathematically-linked keys. Data encrypted with one key can only be decrypted using the other key. These systems are used for exchanging secrets (often a key for subsequent use in a symmetric key cipher) and digital signatures.
+Symmetric key ciphers (also referred to as secret key ciphers) use the same key for both encryption and decryption. Thus, in order for messages encrypted with a symmetric key cipher to remain secure, the key used must remain secret. Symmetric key ciphers can be further subdivided into stream ciphers and block ciphers.
+Stream ciphers typically encrypt plaintext a bit or byte at a time, and are most commonly used to encrypt real-time communications, such as audio and video information. The key is used to establish the initial state of a keystream generator, and the output of that generator is used to encrypt the plaintext.
+Block cipher algorithms split the plaintext into fixed-size blocks and encrypt one block at a time. For example, AES processes 16-byte blocks, while its predecessor DES encrypted blocks of eight bytes.
+
+
+=== Choosing an Algorithm ===
+There are many factors that affect the choice of an encryption algorithm. Common factors include the security, speed, parallelizability of encryption and decryption, memory requirements, known weaknesses, and similarity to existing designs.
+A common mistake made by amateur cryptographers is to assume that because the method is secret, the cipher is secure. This is usually not true. Many "home grown" encryption algorithms reveal the key quite easily when fed a string of identical bytes (e.g., nulls).
+The purpose of disseminating an encryption method is to allow the community to evaluate it. If it is indeed secure, then its power lies in the fact that its method has been subjected to scrutiny and found to be sound, not that it is secret.
+
+
+== Applications ==
+Encryption software can be used in many ways. Common categories include:
+Disk encryption software (also known as OTFE software)
+File/folder encryption
+Database encryption
+Web Communication
+Network traffic encryption tools
+Generic
+IPSec based
+Each of these categories define the range and location of the data to be encrypted, but the process is the same for each.
+
+
+== See also ==
+
+Comparison of cryptography libraries
+Cold boot attack
+Disk encryption
+Password manager
+Single sign-on
+Folder Lock
+
+
+== External links ==
+Encryption software at DMOZ

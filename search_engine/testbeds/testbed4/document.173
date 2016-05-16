@@ -1,0 +1,11 @@
+Occlusion Culling
+Setting up Occlusion Culling
+In order to use Occlusion Culling, there is some manual setup involved. First, your level geometry must be broken into sensibly sized pieces. It is also helpful to lay out your levels into small, well defined areas that are occluded from each other by large objects such as walls, buildings, etc. The idea here is that each individual mesh will be turned on or off based on the occlusion data. So if you have one object that contains all the furniture in your room then either all or none of the entire set of furniture will be culled. This doesn’t make nearly as much sense as making each piece of furniture its own mesh, so each can individually be culled based on the camera’s view point.
+You need to tag all scene objects that you want to be part of the occlusion to Occluder Static in the Inspector. The fastest way to do this is to multi-select the objects you want to be included in occlusion calculations, and mark them as Occluder Static and Occludee Static.
+ Marking an object for Occlusion
+When should you use Occludee Static? Transparent objects that do not occlude, as well as small objects that are unlikely to occlude other things, should be marked as Occludees, but not Occluders. This means they will be considered in occlusion by other objects, but will not be considered as occluders themselves, which will help reduce computation.
+Occlusion Culling Window
+For most operations dealing with Occlusion Culling, you should use the Occlusion Culling Window (Window->Occlusion Culling)
+In the Occlusion Culling Window, you can work with occluder meshes, and Occlusion Areas.
+If you are in the Object tab of the Occlusion Culling Window and have a Mesh Renderer selected in the scene, you can modify the relevant Static flags:
+

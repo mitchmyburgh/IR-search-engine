@@ -1,0 +1,273 @@
+﻿Tableaux for First-order Logic ILCS 2006
+Introduction to
+Logic in Computer Science: Autumn 2006
+Ulle Endriss
+Institute for Logic, Language and Computation
+University of Amsterdam
+Ulle Endriss 1
+Tableaux for First-order Logic ILCS 2006
+Plan for Today
+Today’s class will be an introduction to analytic tableaux for
+classical first-order logic:
+• Quick review of syntax and semantics of first-order logic
+• Quantifier rules for Smullyan-style and KE-style tableaux
+• Soundness and completeness proofs
+• Discussion of efficiency issues, undecidability
+• Countermodel generation
+Ulle Endriss 2
+Tableaux for First-order Logic ILCS 2006
+Syntax of FOL
+The syntax of a language defines the way in which basic elements of
+the language may be put together to form clauses of that language.
+In the case of FOL, the basic ingredients are (besides the logic
+operators): variables, function symbols, and predicate symbols. Each
+function and predicate symbol is associated with an arity n ≥ 0.
+Definition 1 (Terms) We inductively define the set of terms as
+the smallest set such that:
+(1) every variable is a term;
+(2) if f is a function symbol of arity k and t
+1, . . . , tk
+are terms,
+then f(t
+1, . . . , tk) is also a term.
+Function symbols of arity 0 are better known as constants.
+Ulle Endriss 3
+Tableaux for First-order Logic ILCS 2006
+Syntax of FOL (2)
+Definition 2 (Formulas) We inductively define the set of
+formulas as the smallest set such that:
+(1) if P is a predicate symbol of arity k and t
+1 . . . , tk
+are terms,
+then P(t
+1, . . . , tk) is a formula;
+(2) if ϕ and ψ are formulas, so are ¬ϕ, ϕ ∧ ψ, ϕ ∨ ψ, and ϕ → ψ;
+(3) if x is a variable and ϕ is a formula, then (∀x)ϕ and (∃x)ϕ are
+also formulas.
+Syntactic sugar: ϕ ↔ ψ ≡ (ϕ → ψ) ∧ (ψ → ϕ); > ≡ P ∨ ¬P
+(for an arbitrary 0-place predicate symbol P); ⊥ ≡ ¬>.
+Also recall: atoms, literals, ground terms, bound and free
+variables, closed formulas (aka sentences), . . .
+Ulle Endriss 4
+Tableaux for First-order Logic ILCS 2006
+Semantics of FOL
+The semantics of a language defines the meaning of clauses in that
+language. In the case of FOL, we do this through the notion of
+models (and variable assignments).
+Definition 3 (Models) A model is a pair M = (D, I), where D
+(the domain) is a non-empty set of objects and I (the
+interpretation function) is mapping each n-place function symbol f
+to some n-ary function f
+I
+: Dn
+→ D and each n-place predicate
+symbol P to some n-ary relation P
+I
+: Dn
+→ {true, false}.
+Note that this definition also covers the cases of 0-place function
+symbols (constants) and predicate symbols.
+Ulle Endriss 5
+Tableaux for First-order Logic ILCS 2006
+Semantics of FOL (2)
+Definition 4 (Assignments) A variable assignment over a
+domain D is a function g from the set of variables to D.
+Definition 5 (Valuation of terms) We define a valuation
+function valI,g over terms as follows:
+valI,g(x) = g(x) for variables x
+valI,g(f(t
+1, . . . , tn)) = f
+I
+(valI,g(t
+1), . . . , valI,g(tn))
+Definition 6 (Assignment variants) Let g and g
+0
+be
+assignments over D and let x be a variable, Then g
+0
+is called an
+x-variant of g iff g(y) = g
+0
+(y) for all variables y 6= x.
+Ulle Endriss 6
+Tableaux for First-order Logic ILCS 2006
+Semantics of FOL (3)
+Definition 7 (Satisfaction relation) We write M, g |= ϕ to say
+that the formula ϕ is satisfied in the model M = (I, D) under the
+assignment g. The relation |= is defined inductively as follows:
+(1) M, g |= P(t
+1, . . . , tn) iff P
+I
+(valI,g(t
+1), . . . , valI,g(tn)) = true;
+(2) M, g |= ¬ϕ iff not M, g |= ϕ;
+(3) M, g |= ϕ ∧ ψ iff M, g |= ϕ and M, g |= ψ;
+(4) M, g |= ϕ ∨ ψ iff M, g |= ϕ or M, g |= ψ;
+(5) M, g |= ϕ → ψ iff not M, g |= ϕ or M, g |= ψ;
+(6) M, g |= (∀x)ϕ iff M, g0
+|= ϕ for all x-variants g
+0
+of g; and
+(7) M, g |= (∃x)ϕ iff M, g0
+|= ϕ for some x-variant g
+0
+of g.
+Ulle Endriss 7
+Tableaux for First-order Logic ILCS 2006
+Semantics of FOL (4)
+Observe that in the case of closed formulas ϕ the variable
+assignment g does not matter (we just write M |= ϕ).
+Satisfiability. A closed formula ϕ is called satisfiable iff it has a
+model, i.e. there exists a model M with M |= ϕ.
+Validity. A closed formula ϕ is called valid iff for every model M
+we have M |= ϕ. We write |= ϕ.
+Consequence relation. Let ϕ be a closed formula and let ∆ be a
+set of closed formulas. We write ∆ |= ϕ iff whenever M |= ψ holds
+for all ψ ∈ ∆ then also M |= ϕ holds.
+Ulle Endriss 8
+Tableaux for First-order Logic ILCS 2006
+Quantifier Rules
+Both the KE-style and the Smullyan-style tableau method for
+propositional logic can be extended with the following rules.
+Gamma Rules:
+(∀x)A
+A[x/t]
+¬(∃x)A
+¬A[x/t]
+Delta Rules:
+(∃x)A
+A[x/c]
+¬(∀x)A
+¬A[x/c]
+Here, t is an arbitrary ground term and c is a constant symbol that
+is new to the branch.
+Unlike all other rules, the gamma rule may have to be applied more
+than once to the same formula on the same branch.
+Substitution. ϕ[x/t] denotes the formula we get by replacing each
+free occurrence of the variable x in the formula ϕ by the term t.
+Ulle Endriss 9
+Tableaux for First-order Logic ILCS 2006
+Smullyan’s Uniform Notation
+Formulas of universal (γ) and existential (δ) type:
+γ γ1(u)
+(∀x)A A[x/u]
+¬(∃x)A ¬A[x/u]
+δ δ1(u)
+(∃x)A A[x/u]
+¬(∀x)A ¬A[x/u]
+We can now state gamma and delta rules as follows:
+γ
+γ1(t)
+δ
+δ1(c)
+where:
+• t is an arbitrary ground term
+• c is a constant symbol new to
+the branch
+Ulle Endriss 10
+Tableaux for First-order Logic ILCS 2006
+Exercises
+Give Smullyan-style or KE-style tableau proofs for the following
+arguments:
+• (∀x)P(x) ∨ (∀x)Q(x) |= ¬(∃x)(¬P(x) ∧ ¬Q(x))
+• |= (∃x)(P(x) ∨ Q(x)) ↔ (∃x)P(x) ∨ (∃x)Q(x)
+Ulle Endriss 11
+Tableaux for First-order Logic ILCS 2006
+Soundness and Completeness
+Let ϕ be a first-order formula and ∆ a set of such formulas. We
+write ∆ ` ϕ to say that there exists a closed tableau for ∆ ∪ {¬ϕ}.
+Theorem 1 (Soundness) If ∆ ` ϕ then ∆ |= ϕ.
+Theorem 2 (Completeness) If ∆ |= ϕ then ∆ ` ϕ.
+We shall prove soundness and completeness only for Smullyan-style
+tableaux (but it’s almost the same for KE-style tableaux).
+Important note: The mere existence of a closed tableau does not
+mean that we have an effective method of finding it! Concretely:
+we don’t know how often we need to apply the gamma rule and
+what terms to use for the substitutions.
+Ulle Endriss 12
+Tableaux for First-order Logic ILCS 2006
+Proof of Soundness
+This works exactly as in the propositional case (❀ last week).
+The central step is to show that each of the expansion rules
+preserves satisfiability:
+• If a non-branching rule is applied to a satisfiable branch, the
+result is another satisfiable branch.
+• If a branching rule is applied to a satisfiable branch, at least
+one of the resulting branches is also satisfiable.
+Ulle Endriss 13
+Tableaux for First-order Logic ILCS 2006
+Proof of Soundness (cont.)
+Gamma rule: If γ appears on a branch, you may add γ1(t) for
+any ground term t to the same branch.
+Proof: suppose branch B with γ ≡ (∀x)γ1(x) ∈ B is satisfiable
+⇒ there exists M = (D, I) s.t. M |= B and hence M |= (∀x)γ1(x)
+⇒ for all var. assignments g: M, g |= γ1(x); choose g
+0
+s.t. g
+0
+(x) = t
+I
+⇒ M, g0
+|= γ1(x) ⇒ M |= γ1(t) ⇒ M |= B ∪ {γ1(t)} X
+Delta rule: If δ appears on a branch, you may add δ1(c) for any
+new constant symbol c to the same branch.
+Proof: suppose branch B with δ ≡ (∃x)δ1(x) ∈ B is satisfiable
+⇒ there exists M = (D, I) s.t. M |= B and hence M |= (∃x)δ1(x)
+⇒ there exists a variable assignment g s.t. M, g |= δ1(x)
+now suppose g(x) = d ∈ D; define new model M0
+= (D, I
+0
+) with I
+0
+like I but additionally c
+I
+0
+= d (this is possible, because c is new)
+⇒ M0
+|= δ1(c) and M0
+|= B ⇒ M0
+|= B ∪ {δ1(c)} X
+Ulle Endriss 14
+Tableaux for First-order Logic ILCS 2006
+Hintikka’s Lemma
+Definition 8 (Hintikka set) A set of first-order formulas H is
+called a Hintikka set provided the following hold:
+(1) not both P ∈ H and ¬P ∈ H for propositional atoms P;
+(2) if ¬¬ϕ ∈ H then ϕ ∈ H for all formulas ϕ;
+(3) if α ∈ H then α1 ∈ H and α2 ∈ H for alpha formulas α;
+(4) if β ∈ H then β1 ∈ H or β2 ∈ H for beta formulas β.
+(5) for all terms t built from function symbols in H (at least one
+constant symbol): if γ ∈ H then γ1(t) for gamma formulas γ;
+(6) if δ ∈ H then δ1(t) ∈ H for some term t, for delta formulas δ.
+Lemma 1 (Hintikka) Every Hintikka set is satisfiable.
+Ulle Endriss 15
+Tableaux for First-order Logic ILCS 2006
+Proof of Hintikka’s Lemma
+Construct a model M = (D, I) from a given Hintikka set H:
+• D: set of terms constructible from function symbols appearing
+in H (add one constant symbol in case there are none)
+• I: (1) function symbols are being interpreted “as themselves”:
+f
+I
+(d1, . . . , dn) = f(d1, . . . , dn); (2) predicate symbols:
+P
+I
+(d1, . . . , dn) = true iff P(d1, . . . , dn) ∈ H
+Claim: ϕ ∈ H entails M |= ϕ.
+Proof: By structural induction. [. . . ] X
+Ulle Endriss 16
+Tableaux for First-order Logic ILCS 2006
+Proof of Completeness
+Fairness. We call a tableau proof fair iff every non-literal gets
+eventually analysed on every branch and, additionally, every
+gamma formula gets eventually instantiated with every term
+constructible from the function symbols appearing on a branch.
+Proof sketch. We will show the contrapositive: assume ∆ 6` ϕ and
+try to conclude ∆ 6|= ϕ.
+If there is no proof for ∆ ∪ {¬ϕ} (assumption), then there can also
+be no fair proof. Observe that any fairly constructed non-closable
+branch enumerates the elements of a Hintikka set H.
+H is satisfiable (Hintikka’s Lemma) and we have ∆ ∪ {¬ϕ} ⊆ H.
+So there is a model for ∆ ∪ {¬ϕ}, i.e. we get ∆ 6|= ϕ. X
+Ulle Endriss 17
+

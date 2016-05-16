@@ -1,0 +1,23 @@
+he Dijkstra–Scholten algorithm (named after Edsger W. Dijkstra and Carel S. Scholten) is an algorithm for detecting termination in a distributed system.[1][2] The algorithm was proposed by Dijkstra and Scholten in 1980.[3]
+
+First, let us consider the case of a simple process graph which is a tree. A distributed computation which is tree-structured is not uncommon. Such a process graph may arise when the computation is strictly a divide-and-conquer type. A node starts the computation and divides the problem in two (or more, usually a multiple of 2) roughly equal parts and distribute those parts to other processors. This process continues recursively until the problems are of sufficiently small size to solve in a single processor.
+
+Contents  [hide] 
+1	Algorithm
+2	Dijkstra–Scholten algorithm for a tree
+3	Dijkstra–Scholten algorithm for directed acyclic graphs
+4	Dijkstra–Scholten algorithm for cyclic directed graphs
+5	See also
+6	References
+Algorithm[edit]
+The Dijkstra–Scholten algorithm is a tree-based algorithm which can be described by the following:
+
+The initiator of a computation is the root of the tree.
+Upon receiving a computational message:
+If the receiving process is currently not in the computation: the process joins the tree by becoming a child of the sender of the message. (No acknowledgment message is sent at this point.)
+If the receiving process is already in the computation: the process immediately sends an acknowledgment message to the sender of the message.
+When a process has no more children and has become idle, the process detaches itself from the tree by sending an acknowledgment message to its tree parent.
+Termination occurs when the initiator has no children and has become idle.
+Dijkstra–Scholten algorithm for a tree[edit]
+For a tree, it is easy to detect termination. When a leaf process determines that it has terminated, it sends a signal to its parent. In general, a process waits for all its children to send signals and then it sends a signal to its parent.
+The program terminates when the root receives signals from all its children.

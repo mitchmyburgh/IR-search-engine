@@ -1,0 +1,83 @@
+ONE-NET is an open-source standard for wireless networking. ONE-NET was designed for low-cost, low-power (battery-operated) control networks for applications such as home automation, security & monitoring, device control, and sensor networks. ONE-NET is not tied to any proprietary hardware or software, and can be implemented with a variety of low-cost off-the-shelf radio transceivers and micro controllers from a number of different manufacturers.
+
+
+== Wireless Transmission ==
+ONE-NET uses UHF ISM radio transceivers and currently operates in the 868 MHz and 915 MHz frequencies with 25 channels available for use in the United States. The ONE-NET standard allows for implementation on other frequencies, and some work is being done to implement it in the 433 MHz and 2.4 GHz frequency ranges.
+ONE-NET utilizes Wideband FSK (Frequency-shift keying) to encode data for transmission.
+ONE-NET features a dynamic data rate protocol with a base data rate of 38.4 kbit/s. The specification allows per-node dynamic data rate configuration for data rates up to 230 kbit/s.
+
+
+== Network Characteristics ==
+ONE-NET supports star, peer-to-peer and multi-hop topology. Star network topology can be used to lower complexity and cost of peripherals, and also simplifies encryption key management. In peer-to-peer mode, a master device configures and authorizes peer-to-peer transactions. Employing repeaters and a configurable repetition radius multi-hop mode allows to cover larger areas or route around dead areas. Mesh routing is not supported.
+Outdoor peer-to-peer range has been measured to over 500 m, indoor peer-to-peer range has been demonstrated from 60 m to over 100 m, and mesh mode can extend operational range to several kilometers.
+Simple, block, and streaming transactions are supported.
+Simple transactions typically use message types as defined by the ONE-NET protocol to exchange sensor data such as temperature or energy consumption, and control data such as on/off messages. Simple transactions use encryption techniques to avoid susceptibility to replay attacks.
+Block transactions can be used to transmit larger blocks of data than simple messages. Block transactions consist of multiple packets containing up to 58 bytes per packet. Blocks transactions can transfer up to 65,535 bytes per block.
+Streaming transactions are similar in format to block transactions but do not require retransmission of lost data packets.
+
+
+== Power Management ==
+ONE-NET is optimized for low power consumption such as battery-powered peripherals. Low-duty-cycle battery-powered ONE-NET devices such as window sensors, moisture detectors, etc. can achieve a three to five year battery life with “AA” or "AAA" alkaline cells.
+Dynamic power adjustment allows signal strength info to be used to scale back transmit power to conserve battery power. High data rates and short packet sizes minimize Transceiver On time. Further power efficiency can be gained utilizing deterministic sleep periods for client devices.
+
+
+== Security ==
+By default, ONE-NET uses the Extended Tiny Encryption Algorithm (XTEA) version 2 with 32 iterations (XTEA2-32). The ONE-NET protocol provides extensions to even higher levels of encryption. Encryption is integral to the ONE-NET protocol, there are no unencrypted modes. Alternate encryption ID tag allows extension to stronger algorithms.
+ONE-NET helps resist a spoofing attack or replay attack by using embedded nonces to ensure unique packets. Cryptographic nonce tracking allows source verification.
+Security key update rate can be set on a per-system basis to allow greater control of security level - faster key updates increase network security.
+Programmable “still operational” messages can be used to detect sensor tampering or device failure.
+
+
+== Hardware ==
+ONE-NET works on a number of transceivers from manufacturers such as TI, Analog Devices, Semtech, RFM, Integration and Micrel. Transceivers that have been tested as working with ONE-NET include:
+TRC102
+XE1203F
+XE1205
+ADF7025
+IA4421
+CC1100
+MICRF505
+AX5051
+SX1211
+Simple ONE-NET devices such as motion sensors have modest host processor requirements:
+16K ROM
+1K RAM
+128 bytes user non-volatile memory
+ONE-NET is well-suited for low-cost 8-bit and 16-bit processors and has been tested with the TI MSP430, Renesas R8C, C8051, and Freescale 68HC08 (HC08).
+
+
+== Open Source License ==
+ONE-NET is available to use for free using an open source license. ONE-NET uses the OSI-approved “Simplified BSD License” which is one of the so-called permissive free software licenses.
+ONE-NET website provides a variety of open source community-supported resources including:
+Schematics
+Bill of Materials
+Printed Circuit Board layouts
+Antenna designs
+Implementation examples
+Source Code
+Documentation
+User forums
+
+
+== Supporting Companies ==
+A number of companies have announced support for the ONE-NET open source initiative including:
+Analog Devices
+Freescale
+Integration Associates
+IQD Frequency Products
+Micrel
+Renesas
+RF Monolithics
+Semtech
+Silicon Labs
+Texas Instruments
+Threshold
+
+
+== References ==
+
+
+== External links ==
+ONE-NET website
+"Open standard for One-Net wireless network and hardware based on it." - The Paper in Russian magazine
+ONE-NET on SourceForge

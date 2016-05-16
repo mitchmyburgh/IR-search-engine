@@ -1,0 +1,92 @@
+A hybrid machine learning approach to network
+anomaly detection
+
+Taeshik Shon a,*, Jongsub Moon b
+
+The Internet has become a part of our daily life. It is now an essential tool in surviving in the World and
+aids people in many areas such as business, education and many more. Businesses in particular use the Internet
+as an important component of their business model. Businesses not only use internet application such as web
+and e-mail to generate revenue and communicate with their customers, but customers often use machines
+accessible through the internet to store important and proprietary information. While this may help businesses
+operate more efficiently, it also makes them extremely vulnerable to attacks, which include stealing data and
+obstructing the operations of the business. It is common to find environments on the Internet that have few
+risks in carrying out an attack. These risks are a result of the high degree of anonymity, and lackluster police
+interest. However, attacks can be easily circumvented by attack prevention schemes. In order to prevent such
+attacks, multitude of systems has been designed or proposed to thwart Internet-based attacks. Many of the
+most commonly used systems today are based on attack signatures, which are unique patterns or conditions
+that may indicate an attack. These systems may seem effective and efficient; however, there are many drawbacks
+to signature-based Network Intrusion Detection Systems (NIDS). The first problem is that these systems
+become a single point of failure. If the deployed NIDS system is disabled for any reason, then it
+often gives the attacker the time needed to compromise the systems and possibly gain a foothold in the network.
+Moreover if NIDS systems are not properly configured or maintained, they may provide a false sense of
+security. In addition, research has shown that if the signatures are not sufficiently robust in describing the
+attack conditions, then simple modifications can be made that will allow the attack to succeed [44]. Besides
+the robustness of the signature, signature-based intrusion detection systems rely on human intervention to create,
+test, and deploy the signatures. Thus, it may take hours or days to generate a new signature for an attack
+which can be too long when dealing with rapidly moving attacks, such as worm propagation. Some effort has
+been put into automatic signature generation, which does not require human intervention, but these systems
+are not yet ready for large scale deployment.
+In order to solve the problem mentioned above, systems that do not rely on human intervention were
+invented. These are anomaly detection systems based on machine learning, data mining or statistical algorithms.
+These systems use a ‘‘normal behavior’’ model for detecting unexpected behavior. These approaches
+fall under two categories: supervised methods, which make use of pre-existing knowledge, and unsupervised
+methods, which do not make use of this knowledge. Several efforts to design anomaly detection algorithms
+using supervised methods have been discussed in [2,7,26,36].
+The research of Anderson et al. [2] and Cabrera et al. [7] deal with statistical methods for intrusion detection.
+Although the two researchers used the same method, the method was used in a different way. The work
+of Anderson et al. [2] is a comprehensive intrusion-detection system that performs real-time monitoring of user
+activity on multiple target systems connected via Ethernet. On the other hand, the statistical method of Cabrera
+et al. [7] is the application of statistical traffic modeling for detecting novel attacks against computer networks.
+Differing from the other researchers, Wenke Lee’s research [26] focuses on theoretical measures for
+anomaly detection. His work uses several information-theoretic measures, namely, entropy, conditional
+entropy, relative conditional entropy, information gain, and information cost for anomaly detection. Also,
+Ryan et al. [36] uses artificial neural networks with supervised learning, based on the back-propagation neural
+network, called Neural Network Intrusion Detector, was trained in the identification task and tests experimentally
+on a system of 10 users. In contrast with the other methods used by researchers that are under supervised
+schemes, unsupervised schemes can create automatically appropriate labels for a given dataset. Anomaly
+detection methods with unsupervised features are explained in [14,15,32,33,39,46].
+Among those unsupervised schemes, MINDS [14] is based on data mining and data clustering methods
+such as Filtering/Preprocessing/Known attack detection module, Scan detector, Anomaly detection algorithms,
+and Summarization of attacks using association pattern analysis. MINDS is still developing a suite
+of data mining techniques to automatically detect attacks against computer networks and systems. Another
+one of unsupervised methods, the research of Eskin et al. [15] and Portnoy et al. [32] are used to detect anomalous
+attacks without pre-existing knowledge. In the case of Eskin’s research, data elements are mapped to a
+feature space, which is a typically vector space, in order to process unlabelled data. Also, Portnoy presented a
+new type of intrusion detection algorithm, which takes a set of unlabeled data as inputs and attempts to find
+3800 T. Shon, J. Moon / Information Sciences 177 (2007) 3799–3821
+intrusion patterns within the data. The basic idea is that since the intrusions are both not normal, and are rare,
+they will appear as outliers in the data. Staniford [39] is the author of SPADE for anomaly-based port scan
+detection in Snort. SPADE utilizes a statistical anomaly detection method with Bayesian probability, and uses
+a simulated annealing method to cluster anomalous packets together into port scans using heuristics developed
+from real scans. Ramaswamy et al. [33] uses an outlier calculation with data mining to propose a novel
+formulation for distance-based outliers, which is based on the distance of a point from its ‘k’ and declares the
+top ‘n’ points to be outliers in this ranking calculation.
+Irrespective of whether good anomaly detection methods are used, the problems such as high false alarm
+rates, difficulty in finding proper features, and high performance requirements still exist. Therefore, if we are
+able to mix the advantages of both learning schemes in machine learning methods, according to their characteristics
+in the problem domain, then the combined approach can be used as an efficient means for detecting
+anomalous attacks.
+In this paper, we have chosen to focus on the Support Vector Machine (SVM) among various machine
+learning algorithms. The SVM is already known as the best learning algorithm for binary classification
+[5,6,12,17,20,23,28,37,40,42]. However, it is not the reason that we have chosen SVM. The most significant
+reason we chose the SVM is because it can be used for either supervised or unsupervised learning. The
+SVM, originally a type of pattern classifier based on a statistical learning technique for classification and
+regression with a variety of kernel functions [12,23,37,42], has been successfully applied to a number of pattern
+recognition applications [6]. Recently, it has also been applied to inform security for intrusion detection
+[17,20,40]. Another positive aspect of SVM is that it is useful for finding a global minimum of the actual risk
+using structural risk minimization, since it can generalize well with kernel tricks even in high-dimensional
+spaces under little training sample conditions. The SVM can select appropriate setup parameters because it
+does not depend on traditional empirical risk such as neural networks. In the case of supervised SVM learning,
+it has relatively fast processing and high detection performance when compared to existing artificial neural
+networks and the unsupervised SVM, as shown in [13,30]. However, one of the main disadvantages of the
+supervised method is that it requires labeled information for efficient learning. Moreover, it can not deal with
+the relationship between consecutive variations of learning inputs without additional preprocessing.
+Therefore, we propose an Enhanced SVM approach which sits between the standard supervised SVM and
+the unsupervised SVM as a core component of the hybrid machine learning approach for network anomaly
+detection. The enhanced SVM approach inherits the advantages of both SVM approaches, namely high performance
+and unlabelled capability. Also, additional learning and packet filtering techniques are applied to the
+hybrid machine learning framework such as SOFM for profiling normal packets, PTF for filtering unknown
+packets, GA for selecting more appropriate packet fields, and considering the relationship of packet sequences
+in order to support the proposed SVM approach. We expect that the hybrid machine learning approach, based
+on this Enhanced SVM and supplemented by the preprocessing and testing techniques described in the next
+section, will demonstrate overall better performance than any previously proposed NIDS.

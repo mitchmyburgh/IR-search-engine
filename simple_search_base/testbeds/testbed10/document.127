@@ -1,0 +1,52 @@
+From Databases
+to Big Data
+
+
+Sam Madden 
+
+My primary research community is focused
+on data management — the buttonedup
+world of business data, relational
+databases, carefully designed schemas, SQL,
+and strict consistency (“ACID semantics”). As
+the token database researcher at MIT, I’m often
+asked questions like, “I heard databases can
+store a lot of data. Does that mean they solve
+the big data problem?” The answer to this question
+is “no,” but before telling you why, let me
+first try to define what I think the big data
+problem is.
+What Is Big Data?
+Among all the definitions offered for “big data,”
+my favorite is that it means data that’s too big,
+too fast, or too hard for existing tools to process.
+Here, “too big” means that organizations
+increasingly must deal with petabyte-scale collections
+of data that come from click streams,
+transaction histories, sensors, and elsewhere.
+“Too fast” means that not only is data big, but it
+must be processed quickly — for example, to perform
+fraud detection at a point of sale or determine
+which ad to show to a user on a webpage.
+“Too hard” is a catchall for data that doesn’t fit
+neatly into an existing processing tool or that
+needs some kind of analysis that existing tools
+can’t readily provide. A similar breakdown is
+being promulgated by Gartner (which is probably
+a sign that I’m oversimplifying things),
+citing the “three Vs” — volume, velocity, and
+variety (a catchall similar to “too hard”).
+On Databases and MapReduce
+So, where do database management systems
+(DBMSs) fall short on these metrics? With
+respect to data size, commercial relational systems
+actually do pretty well: most analytics vendors
+(such as Greenplum, Netezza, Teradata, or Vertica)
+report being able to handle multi-petabyte databases. Although this might not be big
+enough for a few massive Internet companies,
+it probably is for almost everyone else. Unfortunately,
+open source systems such as MySQL
+and Postgres lag far behind commercial systems
+in terms of scalability. It’s on the “too fast” and
+“too hard” fronts where database systems don’t
+fare well.

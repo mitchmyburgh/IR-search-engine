@@ -1,0 +1,160 @@
+
+# Request - Simplified HTTP client
+
+[![npm package](https://nodei.co/npm/request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request/)
+
+[![Build status](https://img.shields.io/travis/request/request/master.svg?style=flat-square)](https://travis-ci.org/request/request)
+[![Coverage](https://img.shields.io/codecov/c/github/request/request.svg?style=flat-square)](https://codecov.io/github/request/request?branch=master)
+[![Coverage](https://img.shields.io/coveralls/request/request.svg?style=flat-square)](https://coveralls.io/r/request/request)
+[![Dependency Status](https://img.shields.io/david/request/request.svg?style=flat-square)](https://david-dm.org/request/request)
+[![Known Vulnerabilities](https://snyk.io/test/npm/request/badge.svg?style=flat-square)](https://snyk.io/test/npm/request)
+[![Gitter](https://img.shields.io/badge/gitter-join_chat-blue.svg?style=flat-square)](https://gitter.im/request/request?utm_source=badge)
+
+
+## Super simple to use
+
+Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.
+
+```js
+var request = require('request');
+request('http://www.google.com', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Show the HTML for the Google homepage.
+  }
+})
+```
+
+
+## Table of contents
+
+- [Streaming](#streaming)
+- [Forms](#forms)
+- [HTTP Authentication](#http-authentication)
+- [Custom HTTP Headers](#custom-http-headers)
+- [OAuth Signing](#oauth-signing)
+- [Proxies](#proxies)
+- [Unix Domain Sockets](#unix-domain-sockets)
+- [TLS/SSL Protocol](#tlsssl-protocol)
+- [Support for HAR 1.2](#support-for-har-12)
+- [**All Available Options**](#requestoptions-callback)
+
+Request also offers [convenience methods](#convenience-methods) like
+`request.defaults` and `request.post`, and there are
+lots of [usage examples](#examples) and several
+[debugging techniques](#debugging).
+
+
+---
+
+
+## Streaming
+
+You can stream any response to a file stream.
+
+```js
+request('http://google.com/doodle.png').pipe(fs.createWriteStream('doodle.png'))
+```
+
+You can also stream a file to a PUT or POST request. This method will also check the file extension against a mapping of file extensions to content-types (in this case `application/json`) and use the proper `content-type` in the PUT request (if the headers don’t already provide one).
+
+```js
+fs.createReadStream('file.json').pipe(request.put('http://mysite.com/obj.json'))
+```
+
+Request can also `pipe` to itself. When doing so, `content-type` and `content-length` are preserved in the PUT headers.
+
+```js
+request.get('http://google.com/img.png').pipe(request.put('http://mysite.com/img.png'))
+```
+
+Request emits a "response" event when a response is received. The `response` argument will be an instance of [http.IncomingMessage](http://nodejs.org/api/http.html#http_http_incomingmessage).
+
+```js
+request
+  .get('http://google.com/img.png')
+  .on('response', function(response) {
+    console.log(response.statusCode) // 200
+    console.log(response.headers['content-type']) // 'image/png'
+  })
+  .pipe(request.put('http://mysite.com/img.png'))
+```
+
+To easily handle errors when streaming requests, listen to the `error` event before piping:
+
+```js
+request
+  .get('http://mysite.com/doodle.png')
+  .on('error', function(err) {
+    console.log(err)
+  })
+  .pipe(fs.createWriteStream('doodle.png'))
+```
+
+Now let’s get fancy.
+
+```js
+http.createServer(function (req, resp) {
+  if (req.url === '/doodle.png') {
+    if (req.method === 'PUT') {
+      req.pipe(request.put('http://mysite.com/doodle.png'))
+    } else if (req.method === 'GET' || req.method === 'HEAD') {
+      request.get('http://mysite.com/doodle.png').pipe(resp)
+    }
+  }
+})
+```
+
+You can also `pipe()` from `http.ServerRequest` instances, as well as to `http.ServerResponse` instances. The HTTP method, headers, and entity-body data will be sent. Which means that, if you don't really care about security, you can do:
+
+```js
+http.createServer(function (req, resp) {
+  if (req.url === '/doodle.png') {
+    var x = request('http://mysite.com/doodle.png')
+    req.pipe(x)
+    x.pipe(resp)
+  }
+})
+```
+
+And since `pipe()` returns the destination stream in ≥ Node 0.5.x you can do one line proxying. :)
+
+```js
+req.pipe(request('http://mysite.com/doodle.png')).pipe(resp)
+```
+
+Also, none of this new functionality conflicts with requests previous features, it just expands them.
+
+```js
+var r = request.defaults({'proxy':'http://localproxy.com'})
+
+http.createServer(function (req, resp) {
+  if (req.url === '/doodle.png') {
+    r.get('http://google.com/doodle.png').pipe(resp)
+  }
+})
+```
+
+You can still use intermediate proxies, the requests will still follow HTTP forwards, etc.
+
+[back to top](#table-of-contents)
+
+
+---
+
+
+## Forms
+
+`request` supports `application/x-www-form-urlencoded` and `multipart/form-data` form uploads. For `multipart/related` refer to the `multipart` API.
+
+
+#### application/x-www-form-urlencoded (URL-Encoded Forms)
+
+URL-encoded forms are simple.
+
+```js
+request.post('http://service.com/upload', {form:{key:'value'}})
+// or
+request.post('http://service.com/upload').form({key:'value'})
+// or
+request.post({url:'http://service.com/upload', form: {key:'value'}}, function(err,httpResponse,body){ /* ... */ })
+```

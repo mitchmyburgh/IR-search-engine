@@ -1,0 +1,40 @@
+Virtualization for Newbies: Top Four Reasons to Go Virtual
+AUTHOR: STEVE BACA 19 SEPTEMBER 2013 3,013 VIEWS NO COMMENTS
+TAGS: HIGH AVAILABILITY, VIRTUALIZATION, VMWARE
+datacentertech4
+
+In general, the idea behind virtualization is to make many from one. For example, from one physical server using virtualization software, multiple virtual machines (VMs) can run as if each VM is a separate physical box.
+
+Here are my top four reasons to go virtual:
+
+1. Control “Data Center Sprawl”
+
+Before virtualization, one or more applications and an operating system would run on their own physical server in a data center. Since each one of those physical servers needed floor or rack space, the growing size and number of data centers that businesses needed was an ongoing problem and led to data center sprawl. Using virtualization to consolidate the number of physical servers reverses data center sprawl and saves companies money.
+
+2. Add Machines Quickly
+
+From the system administrator’s point of view, virtualization enables us to quickly add more VMs as needed without having to purchase new physical servers. The delay in obtaining new servers varies widely with each company and, in some environments, can be quite lengthy. Virtualization greatly reduces the length of this process, because the physical server is already up and running in production. The system administrator can quickly create a brand new VM by adding it to an existing physical host, running many VMs on one physical server.
+
+3. Better Use Resources
+
+Before virtualization, it was not unusual to see a physical server using less than five or ten percent of its CPU and/or memory. Consider the case where a physical server was purchased to run an application only during the evening. When the application is not processing, the physical box sits idle—a tremendous waste of resources. Virtualizing the application that runs at night leaves that VM to run on the same server with other VMs that use resources during the morning or afternoon. The VMs will balance each other’s resource use.
+
+Resources such as memory and CPU on a server can be safely utilized by multiple VMs processing up to 75 to 80 percent on a continuous basis with server-side virtualization from vendors such as VMware. Resource use is far more efficient with virtualization than if applications run on individual physical servers.
+
+4. Create a More Reliable Environment
+
+With virtualization, you can use new features that create a more reliable environment. For example, VMware offers a feature called high availability (HA). It’s used when a physical server fails. After HA has determined that the physical server is down, it can restart the VMs on surviving servers. That means an application will experience less down time using HA as an automated approach to physical server failure. Other vendors have their own features written into their code that offer different forms of reliability as well.
+
+These are just a few of the reasons to virtualize. There are definitely more!
+
+Adapted from the Global Knowledge white paper, Virtualization for Newbies.
+
+Related Courses
+VMware Horizon View: Install, Configure, Manage [V5.2]
+VMware vCloud Director: Install, Configure, Manage [V5.1]
+VMware vSphere: Install, Configure, Manage [V5.1]
+
+Virtualization for Newbies Series
+Virtualization for Newbies: Top Four Reasons to Go Virtual
+Virtualization for Newbies: Five Types of Virtualization
+Virtualization for Newbies: Origins of Virtualization

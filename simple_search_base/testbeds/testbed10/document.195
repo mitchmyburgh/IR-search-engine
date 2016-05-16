@@ -1,0 +1,48 @@
+Evaluation and Selection of Biases in Machine
+Learning
+
+DIANA F. GORDON 
+
+1. Introduction
+This special issue of Machine Learning focuses on the evaluation and selection of biases.
+The papers in this issue describe methods by which intelligent systems automatically evaluate
+and select their own biases, and tools for analyzing and testing various approaches to
+bias selection. In this paper, we motivate the importance of this topic. Since most readers
+will be familiar with supervised concept learning, we phrase our discussion within that
+framework. However, bias as we present it here is a part of every type of learning.
+We outline a framework for treating bias selection as a process of designing appropriate
+search methods over the bias and meta-bias spaces. This framework has two essential
+features: it divides bias into representational and procedural components, and it characterizes
+learning as search within multiple tiers. The sources of bias within a system
+can thus be identified and analyzed with respect to their influence on this multi-tiered
+search process, and bias shift becomes search at the bias level. The framework provides
+an analytic tool with which to compare different systems (including those not developed
+within the framework), as well as an abstract formalism and architecture to guide the
+development of new systems.
+We begin by defining what we mean by the term bias. Next, we explain why the selection
+and evaluation of biases is a critical task for intelligent systems. We then describe
+our search-based framework for bias selection. Finally, we survey recent research in this
+field, using the concepts developed in our framework to guide the discussion.
+
+
+7. Conclusions
+The framework we have presented for treating bias selection as search has two essential
+features: bias is divided into representational and procedural components, and learning
+systems are characterized as potentially having multiple tiers of search (in hypothesis
+20 D. GORDON AND M. DESJARDINS
+space, bias space, meta-bias space, and so on). We advocate the use of this framework
+both as a tool for understanding, analyzing, and comparing existing systems, and as a
+basis for guiding the design and development of new machine learning systems. We
+believe that doing analysis and development within this framework will lead to a better
+understanding of where the implicit and explicit biases in learning systems lie, will
+reduce both system development and knowledge engineering time and effort, and will
+allow explicit representation and incorporation of considerations such as background
+knowledge and cost.
+Of course, the framework provides only the skeleton of a design and an abstract
+formalism for representing and analyzing bias as a multiple-tiered search process. The
+real work will come in the development of systems that fill in the components of the
+outline we have sketched, and that are able to perform learning in complex and dynamic
+domains. The papers in this issue begin to address some of the critical questions in this
+development; we hope that this special issue of Machine Learning inspires the research
+community to look more closely at the central issue of the evaluation and selection of
+biases in machine learning systems.

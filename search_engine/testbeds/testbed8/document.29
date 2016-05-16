@@ -1,0 +1,10 @@
+The concept of record can be traced to various types of tables and ledgers used in accounting since remote times. The modern notion of records in computer science, with fields of well-defined type and size, was already implicit in 19th century mechanical calculators, such as Babbage's Analytical Engine.[citation needed]
+Hollerith punched card (1895)
+
+The original machine-readable medium used for data (as opposed to control) was punch card used for records in the 1890 United States Census: each punch card was a single record. Compare the journal entry from 1880 and the punch card from 1895. Records were well established in the first half of the 20th century, when most data processing was done using punched cards. Typically each record of a data file would be recorded in one punched card, with specific columns assigned to specific fields. Generally, a record was the smallest unit that could be read in from external storage (e.g. card reader, tape or disk).
+
+Most machine language implementations and early assembly languages did not have special syntax for records, but the concept was available (and extensively used) through the use of index registers, indirect addressing, and self-modifying code. Some early computers, such as the IBM 1620, had hardware support for delimiting records and fields, and special instructions for copying such records.
+
+The concept of records and fields was central in some early file sorting and tabulating utilities, such as IBM's Report Program Generator (RPG).
+
+COBOL was the first widespread programming language to support record types,[2] and its record definition facilities were quite sophisticated at the time. The language allows for the definition of nested records with alphanumeric, integer, and fractional fields of arbitrary size and precision, as well as fields that automatically format any value assigned to them (e.g., insertion of currency signs, decimal points, and digit group separators). Each file is associated with a record variable where data is read into or written from. COBOL also provides a MOVE CORRESPONDING statement that assigns corresponding fields of two records according to their names.

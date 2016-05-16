@@ -1,0 +1,31 @@
+Key Research Challenges in Cloud Computing
+I am writing this post to summarize the research challenges that, in my view, need to be tackled to realize the full potential of Cloud Computing. These are the open research issues on cloud computing that should be addressed to create better clouds and so to bridge the existing technology gap in order to foster the adoption of cloud computing.
+
+This is an extract from a post that I wrote in the DSA-Research's blog to describe a keynote at the 3rd EU-Japan Symposium on Future Internet and New Generation Networks.
+
+Cloud Aggregation. Research challenges in the aggregation of resources from diverse cloud providers adding additional layers of service management.
+Novel architectural models for aggregation of cloud providers
+Brokering algorithms for high availability, performance, proximity, legal domains, price, or energy efficiency
+Sharing of resources between cloud providers
+Networking in the deployment of services across multiple cloud providers
+SLA negotiation and management between cloud providers
+Additional privacy, security and trust management layers atop providers
+Support of context-aware applications
+Automatic management of service elasticity
+Cloud Management. Research challenges in delivering infrastructure resources on-demand in a multi-tenant, secure, elastic and scalable environment.
+Scalable management of network, computing and storage capacity
+Scalable orchestration of virtualized resources and data
+Placement optimization algorithms for energy efficiency, load balancing, high availability and QoS
+Accounting, billing, monitoring and pricing models
+Security, privacy and trust issues in the cloud
+Energy efficiency models, metrics and tools at system and datacenter levels
+Cloud Enablement. Research challenges in enhancing platform infrastructure to support cloud management requirements.
+Technologies for virtualization of infrastructure resources
+Virtualization of high performance infrastructure components
+Autonomic and intelligent management of resources
+Implications of Cloud paradigm on networking and storage systems
+Support for vertical elasticity
+Provision of service related metrics
+Cloud Interoperability. Challenges to ensure that the available cloud services can work together and interoperate successfully.
+Common and standard interfaces for cloud computing
+Portability of virtual appliances across diverse clouds providers

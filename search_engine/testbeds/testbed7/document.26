@@ -1,0 +1,19 @@
+Twitter's A.I. Is Beating Facebook's At Classifying Live Video
+
+The end goal: make personalized live video streams for everyone all the time
+
+Periscope, the live streaming app bought by Twitter, is now testing live video tagging with artificial intelligence.
+
+The future of live video could be a personalized stream of content, automatically aggregated from all around the world. If you want to watch snowboarding, turn on your custom snowboarding channel.
+
+But that requires an artificial intelligence algorithm that can watch videos, figure out what's happening, and determine whether you would like it. Researchers at Facebook have been exploring this idea, but it turns out Twitter may be further along. In a demo to MIT Technology Review, Twitter demonstrated the ability to classify (figure out what was happening within) two dozen live Periscope videos simultaneously.
+
+This work is being done by Cortex, Twitter's machine-learning arm.
+
+The classification of objects isn't incredibly precise; right now the best known systems in the world can determine breeds of dogs, and Facebook's can detect faces. But mostly, the tags Twitter can handle are general ones, like "cat" and "bird." So if you're an animal lover, you might be the first to witness this side of artificial intelligence.
+
+Based on the demos that tech companies have put forward, live video and static video seem to be held to different standards. Twitter and Facebook's live video demos have both put great value in quickly recognizing objects— faces or animals or sports. These are useful in getting a general idea of what's in the video, and can be used to roughly tag them for recommendation.
+
+Static video, however, is the realm of heavier work. For instance, Facebook's A.I. research lab is working on predicting future actions in videos by analyzing trajectories of objects in the picture. These kinds of projects are computationally intensive, and more difficult to optimize for live streaming. It's a focus on accuracy versus speed.
+
+Twitter's A.I. isn't inside any of its products yet, but it's being now tested on Periscope, the livestreaming company Twitter bought in January 2015.

@@ -1,0 +1,134 @@
+Text Classification Using Machine Learning Techniques 
+
+M. IKONOMAKIS
+
+S. KOTSIANTIS
+
+V. TAMPAKAS
+
+1 Introduction
+Automatic text classification has always been an
+important application and research topic since the
+inception of digital documents. Today, text
+classification is a necessity due to the very large
+amount of text documents that we have to deal with
+daily.
+In general, text classification includes topic based
+text classification and text genre-based
+classification. Topic-based text categorization
+classifies documents according to their topics [33].
+Texts can also be written in many genres, for
+instance: scientific articles, news reports, movie
+reviews, and advertisements. Genre is defined on
+the way a text was created, the way it was edited,
+the register of language it uses, and the kind of
+audience to whom it is addressed. Previous work on
+genre classification recognized that this task differs
+from topic-based categorization [13].
+Typically, most data for genre classification are
+collected from the web, through newsgroups,
+bulletin boards, and broadcast or printed news.
+They are multi-source, and consequently have
+different formats, different preferred vocabularies
+and often significantly different writing styles even
+for documents within one genre. Namely, the data
+are heterogenous.
+Intuitively Text Classification is the task of
+classifying a document under a predefined
+category. More formally, if i d is a document of the
+entire set of documents D and {cc c 1 2 , ,..., n} is the
+set of all the categories, then text classification
+assigns one category j c to a document i d .
+As in every supervised machine learning task, an
+initial dataset is needed. A document may be
+assigned to more than one category (Ranking Classification), but in this paper only researches on
+Hard Categorization (assigning a single category to
+each document) are taken into consideration.
+Moreover, approaches, that take into consideration
+other information besides the pure text, such as
+hierarchical structure of the texts or date of
+publication, are not presented. This is because the
+main issue of this paper is to present techniques
+that exploit the most of the text of each document
+and perform best under this condition.
+Sebastiani gave an excellent review of text
+classification domain [25]. Thus, in this work apart
+from the brief description of the text classification
+we refer to some more recent works than those in
+Sebastiani’s article as well as few articles that were
+not referred by Sebastiani. In Figure 1 is given the
+graphical representation of the Text Classification
+process.  The task of constructing a classifier for
+documents does not differ a lot from other tasks of
+Machine Learning. The main issue is the
+representation of a document [16]. In Section 2 the
+document representation is presented. One
+particularity of the text categorization problem is  that the number of features (unique words or
+phrases) can easily reach orders of tens of
+thousands. This raises big hurdles in applying many
+sophisticated learning algorithms to the text
+categorization
+Thus dimension reduction methods are called for.
+Two possibilities exist, either selecting a subset of
+the original features [3], or transforming the
+features into new ones, that is, computing new
+features as some functions of the old ones [10]. We
+examine both in turn in Section 3 and Section 4.
+After the previous steps a Machine Learning
+algorithm can be applied. Some algorithms have
+been proven to perform better in Text Classification
+tasks and are more often used; such as Support
+Vector Machines. A brief description of recent
+modification of learning algorithms in order to be
+applied in Text Classification is given in Section 5.
+There are a number of methods to evaluate the
+performance of a machine learning algorithms in
+Text Classification. Most of these methods are
+described in Section 6. Some open problems are
+mentioned in the last section. 
+
+7 Conclusion
+The text classification problem is an Artificial
+Intelligence research topic, especially given the
+vast number of documents available in the form of
+web pages and other electronic texts like emails,
+discussion forum postings and other electronic
+documents.
+It has observed that even for a specified
+classification method, classification performances
+of the classifiers based on different training text
+corpuses are different; and in some cases such
+differences are quite substantial. This observation
+implies that a) classifier performance is relevant to
+its training corpus in some degree, and b) good or
+high quality training corpuses may derive
+classifiers of good performance. Unfortunately, up
+to now little research work in the literature has been
+seen on how to exploit training text corpuses to
+improve classifier’s performance.
+Some important conclusions have not been
+reached yet, including:
+• Which feature selection methods are both
+computationally scalable and high-performing
+across classifiers and collections? Given the
+high variability of text collections, do such
+methods even exist?
+• Would combining uncorrelated, but wellperforming
+methods yield a performance
+increase?
+• Change the thinking from word frequency
+based vector space to concepts based vector
+space. Study the methodology of feature
+selection under concepts, to see if these will
+help in text categorization.
+• Make the dimensionality reduction more
+efficient over large corpus.
+Moreover, there are other two open problems in
+text mining: polysemy, synonymy. Polysemy refers
+to the fact that a word can have multiple meanings.
+Distinguishing between different meanings of a
+word (called word sense disambiguation) is not
+easy, often requiring the context in which the word
+appears. Synonymy means that different words can
+have the same or similar meaning. 
+

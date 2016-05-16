@@ -1,0 +1,26 @@
+Evolutionary data mining, or genetic data mining is an umbrella term for any data mining using evolutionary algorithms. While it can be used for mining data from DNA sequences, it is not limited to biological contexts and can be used in any classification-based prediction scenario, which helps "predict the value ... of a user-specified goal attribute based on the values of other attributes." For instance, a banking institution might want to predict whether a customer's credit would be "good" or "bad" based on their age, income and current savings. Evolutionary algorithms for data mining work by creating a series of random rules to be checked against a training dataset. The rules which most closely fit the data are selected and are mutated. The process is iterated many times and eventually, a rule will arise that approaches 100% similarity with the training data. This rule is then checked against a test dataset, which was previously invisible to the genetic algorithm.
+
+
+== Process ==
+
+
+=== Data preparation ===
+Before databases can be mined for data using evolutionary algorithms, it first has to be cleaned, which means incomplete, noisy or inconsistent data should be repaired. It is imperative that this be done before the mining takes place, as it will help the algorithms produce more accurate results.
+If data comes from more than one database, they can be integrated, or combined, at this point. When dealing with large datasets, it might be beneficial to also reduce the amount of data being handled. One common method of data reduction works by getting a normalized sample of data from the database, resulting in much faster, yet statistically equivalent results.
+At this point, the data is split into two equal but mutually exclusive elements, a test and a training dataset. The training dataset will be used to let rules evolve which match it closely. The test dataset will then either confirm or deny these rules.
+
+
+=== Data mining ===
+Evolutionary algorithms work by trying to emulate natural evolution. First, a random series of "rules" are set on the training dataset, which try to generalize the data into formulas. The rules are checked, and the ones that fit the data best are kept, the rules that do not fit the data are discarded. The rules that were kept are then mutated, and multiplied to create new rules.
+This process iterates as necessary in order to produce a rule that matches the dataset as closely as possible. When this rule is obtained, it is then checked against the test dataset. If the rule still matches the data, then the rule is valid and is kept. If it does not match the data, then it is discarded and the process begins by selecting random rules again.
+
+
+== See also ==
+Data mining
+Evolutionary algorithm
+Knowledge discovery
+Pattern mining
+Data analysis
+
+
+== References ==

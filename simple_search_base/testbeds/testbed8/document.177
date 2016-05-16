@@ -1,0 +1,15 @@
+Deletion[edit]
+•	Search for bounding node of the value to be deleted. If no bounding node is found then finish.
+•	If the bounding node does not contain the value then finish.
+•	delete the value from the node's data array
+Now we have to distinguish by node type:
+•	Internal node:
+If the node's data array now has less than the minimum number of elements then move the greatest lower bound value of this node to its data value. Proceed with one of the following two steps for the half leaf or leaf node the value was removed from.
+•	Leaf node:
+If this was the only element in the data array then delete the node. Rebalance the tree if needed.
+•	Half leaf node:
+If the node's data array can be merged with its leaf's data array without overflow then do so and remove the leaf node. Rebalance the tree if needed.
+Rotation and balancing[edit]
+ 	This section requires expansion.(June 2008)
+A T-tree is implemented on top of an underlying self-balancing binary search tree. Specifically, Lehman and Carey's article describes a T-tree balanced like an AVL tree: it becomes out of balance when a node's child trees differ in height by at least two levels. This can happen after an insertion or deletion of a node. After an insertion or deletion, the tree is scanned from the leaf to the root. If an imbalance is found, one tree rotation or pair of rotations is performed, which is guaranteed to balance the whole tree.
+When the rotation results in an internal node having fewer than the minimum number of items, items from the node's new child(ren) are moved into the internal node.

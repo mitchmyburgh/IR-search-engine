@@ -1,0 +1,39 @@
+A Short Introduction to Digital Image Processing
+
+An image is digitized to convert it to a form which can be stored in a computer's memory or on some form of storage media such as a hard disk or CD-ROM. This digitization procedure can be done by a scanner, or by a video camera connected to a frame grabber board in a computer. Once the image has been digitized, it can be operated upon by various image processing operations.
+ Image processing operations can be roughly divided into three major categories, Image Compression, Image Enhancement and Restoration, and Measurement Extraction. Image compression is familiar to most people. It involves reducing the amount of memory needed to store a digital image.
+
+ Image defects which could be caused by the digitization process or by faults in the imaging set-up (for example, bad lighting) can be corrected using Image Enhancement techniques. Once the image is in good condition, the Measurement Extraction operations can be used to obtain useful information from the image.
+
+ Some examples of Image Enhancement and Measurement Extraction are given below. The examples shown all operate on 256 grey-scale images. This means that each pixel in the image is stored as a number between 0 to 255, where 0 represents a black pixel, 255 represents a white pixel and values in-between represent shades of grey. These operations can be extended to operate on colour images.
+
+The examples below represent only a few of the many techniques available for operating on images. Details about the inner workings of the operations have not been given, but some references to books containing this information are given at the end for the interested reader. 
+  
+ 
+
+Image Enhancement and Restoration
+
+The image at the left of Figure 1 has been corrupted by noise during the digitization process. The 'clean' image at the right of Figure 1 was obtained by applying a median filter to the image. 
+  
+ 
+
+Figure 1. Application of the median filter 
+An image with poor contrast, such as the one at the left of Figure 2, can be improved by adjusting the image histogram to produce the image shown at the right of Figure 2. 
+  
+ 
+
+Figure 2. Adjusting the image histogram to improve image contrast 
+The image at the top left of Figure 3 has a corrugated effect due to a fault in the acquisition process. This can be removed by doing a 2-dimensional Fast-Fourier Transform on the image (top right of Figure 3), removing the bright spots (bottom left of Figure 3), and finally doing an inverse Fast Fourier Transform to return to the original image without the corrugated background bottom right of Figure 3). 
+  
+ 
+
+Figure 3. Application of the 2-dimensional Fast Fourier Transform 
+An image which has been captured in poor lighting conditions, and shows a continuous change in the background brightness across the image (top left of Figure 4) can be corrected using the following procedure. First remove the foreground objects by applying a 25 by 25 greyscale dilation operation (top right of Figure 4). Then subtract the original image from the background image (bottom left of Figure 4). Finally invert the colors and improve the contrast by adjusting the image histogram (bottom right of Figure 4) 
+  
+ 
+
+Figure 4. Correcting for a background gradient 
+Image Measurement Extraction
+
+The example below demonstrates how one could go about extracting measurements from an image. The image at the top left of Figure 5 shows some objects. The aim is to extract information about the distribution of the sizes (visible areas) of the objects. The first step involves segmenting the image to separate the objects of interest from the background. This usually involves thresholding the image, which is done by setting the values of pixels above a certain threshold value to white, and all the others to black (top right of Figure 5). Because the objects touch, thresholding at a level which includes the full surface of all the objects does not show separate objects. This problem is solved by performing a watershed separation on the image (lower left of Figure 5). The image at the lower right of Figure 5 shows the result of performing a logical AND of the two images at the left of Figure 5. This shows the effect that the watershed separation has on touching objects in the original image.
+ Finally, some measurements can be extracted from the image. Figure 6 is a histogram showing the distribution of the area measurements. The areas were calculated based on the assumption that the width of the image is 28 cm. 

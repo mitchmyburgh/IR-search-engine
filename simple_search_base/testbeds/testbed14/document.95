@@ -1,0 +1,124 @@
+﻿OWL DL Axioms
+Module
+The  function of the
+OWL DL Axioms Module
+is
+to
+symbolically  find/learn axioms
+that  prevent  ambiguous  interpretations  and  limit  the  possible  interpretations  of  the
+discourse, enabling  systems to verify and disregard inconsistent data. The  process of
+discovering the axioms is the hardest part of the process of creating ontologies. Here,
+the  axioms  discovered  correspond  to DL ALC expressivity.
+The  module  recognizes
+coordinating conjunctions (OR and AND), labeled CC, indicating the  union (disjunction)  and  intersection  (conjunction)  respectively  for  concepts  and/or  properties,  recognizes  linking  verbs  followed  by  negations,  like
+does  not(or doesn’t), has  not(or hasn’t), and is  not(or isn’t) for  negation  axioms  (),  besides  generating  universal quantifiers () and existential quantifiers ().
+In this module, we used Protégé-OWL API  3.52and  OWL  API3.It  also  recognizes is and are as  taxonomic  relations  (-hierarchical).The  transformations  occur  in  four  steps  and  make  use  of  the  results
+obtained by the previous modules:
+Step  (1):
+construction  of  taxonomic/hierarchical  relations.
+For  our  example,  the results   of
+Step   (1)
+were:
+self
+-
+propelled_vehicle
+is   a
+motor_vehicle 
+self
+-
+propelled_vehicle motor_vehicle| self-propelled_vehicle is aroad_vehicle self-propelled_vehicle road_vehicle.
+By  subsumption  reasoning  the  implicit  hierarchical relations (motor-vehicle vehicle) and (road-vehicle vehicle) are discovered
+and created automatically
+.
+Step (2):
+construction of nonhierarchical relations.
+For our example, the results of
+Step  (2
+)
+were:
+self
+-
+propelled_vehicle operate
+on  rails
+
+self
+-
+propelled_vehicleoperate_on.rails
+.
+Step  (3):
+verification  of  conjunctions  and  disjunctions.  The  conjunctions  OR  and  AND  are  verified  and  analyzed.  They  can  be  associated  with  concepts  and/or  properties.The  results  of Step  (3)
+were:
+:
+A  self
+-propelled_vehicle  is  a motor_vehicle offroad_vehicle self-propelled_vehicle (motor_vehicle road_vehicle).2
+http://protegewiki.stanford.edu/wiki/Main_Page
+3
+http://owlapi.sourceforge.net/
+Step (4):
+detection of negations. The fourth analysis detects the negations, its dependences and classifies the sentence to apply the patterns. Two negations are possible: negations and disjunctions of concepts and negations of properties. For (S1), the following result was obtained:self
+-
+propelled_vehicle that does not operate on rails
+
+self
+-
+propelled_vehicle
+¬
+operate_on.rails.
+The
+final  result
+,  after  the  integration  of  the  partial  results  obtained  by  the  three
+modules,  for  (S1)  in  OWL 2  code,  was:
+(S1):
+“A self
+-
+propelled  vehicle  is  a  motor
+vehicle  or  road  vehicle that does not operate on rails”
+
+self
+-
+prope
+lled_vehicle
+(motor
+-
+vehicle
+road
+-
+vehicle)
+¬
+operate_on.rails     |     (motor_vehicle
+road_vehicle)
+vehicle.
+2.4
+Reasoning Module
+In knowledge
+-
+based systems, the notion of reasoning is associated with the process of
+reaching conclusions. Besides the  knowledge  itself, an arbitrary KB has explicit axioms, useful to turn implicit knowledge evident, through formal logic reasoning. Two
+important aspects of  logic
+-
+based reasoning  with  Semantic  Web Ontologies,  fully addressed  by  our  approach,  are:  (i)  verification  of an ontology’s specification, giver
+some user propositions (
+) ,the approach finds out inconsistencies and contradictions
+in the OWL DL automatically generated code (e.g.: (e.g.:
+1,
+2,
+...
+,
+n
+
+C
+), and
+(ii) the deduction of new axioms, based on the propositions already informed (e.g.:
+1,
+2,
+...,
+n
+
+n
+).
+This statement can be verified by observing the results and discussion,
+at  the  following  section.
+The  activity  of  reasoning  performed  by  our  approach  happens  in  parallel  to  the  activity  processing  of  sentences  in  natural  language  to  OWL
+DL
+ALC
+.

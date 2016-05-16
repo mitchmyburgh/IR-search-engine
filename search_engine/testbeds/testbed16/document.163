@@ -1,0 +1,37 @@
+Top Eight Annoying Things Cloud Marketers Do
+Nov 21, 2012
+
+
+1) Cloudwashing – treat all cloud stuff the same.
+
+Do you mean PaaS, SaaS, IaaS, or private cloud…or just virtualization? Or maybe your kid’s aquarium service that has a web page with online ordering is actually “cloud aquarium management.” I think not.
+
+2) Forget that enterprises own clouds too.
+
+Repeat after me: Public cloud is not the only kind of cloud. Private cloud is real.
+
+3) Say the cloud isn’t secure.
+
+Uh, which cloud? The private one you manage? Gmail? And how secure does it need to be anyway? Or was it really availability that mattered, and you were concerned that security would cause a service outage? Be specific. And if you do it right, you can secure most kinds of clouds.
+
+4) Say the cloud is higher availability.
+
+There is a counting exercise that cloud marketers forget to do. It’s called counting 9s. The average cloud has only three of them (99.9% availability). Traditional enterprise infrastructure that as well architected can have nine of them (99.999%). While we are at it, keep this in mind: the cloud is not a DR (disaster recovery) strategy.
+
+5) Cloudify anything virtualized
+
+Just because it’s virtualized, it’s not cloud. Or even cloud-ready. Believe it or not, we had cloud before virtualization (except mainframe virtualization of course). We had SaaS (Salesforce.com) and even IaaS with usage based pricing and on demand provisioning before server virtualization even touched a real data center.
+
+6) Pretend that colocation or server rental is cloud.
+
+No, it’s not. Remember that up and down scaling thing? That’s why…
+
+7) Assume centralized clouds are the only ones.
+
+There are cloud services today that are scattered all over the Internet, ones that scale far better and far cheaper than centralized clouds ever will. Ambient clouds are here to stay. And don’t forget Akamai!
+
+8) Say the cloud is cheaper.
+
+Yeah right. Sometimes it is, sometimes it’s not. It depends on what you need, what kind of company you are, and what kind of cloud you’re buying. Cloud has more value than on-prem sometimes, and it’s worth paying more for that. Or not. But it’s not a blanket statement either way. The cloud is usually faster to deploy, that’s a safe bet.
+
+Hope you enjoyed reading these as much as I enjoyed writing them. :) 

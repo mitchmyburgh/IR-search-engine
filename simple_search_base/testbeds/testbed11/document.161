@@ -1,0 +1,42 @@
+The Okamoto–Uchiyama cryptosystem was discovered in 1998 by Tatsuaki Okamoto and Shigenori Uchiyama. The system works in the multiplicative group of integers modulo n, , where n is of the form p2q and p and q are large primes.
+
+
+== Scheme definition ==
+Like many public key cryptosystems, this scheme works in the group . A fundamental difference of this cryptosystem is that here n is a of the form p2q, where p and q are large primes. This scheme is homomorphic and hence malleable.
+
+
+=== Key generation ===
+A public/private key pair is generated as follows:
+Generate large primes p and q and set .
+Choose  such that .
+Let h = gn mod n.
+The public key is then (n, g, h) and the private key is the factors (p, q).
+
+
+=== Message encryption ===
+To encrypt a message m, where m is taken to be an element in 
+Select  at random. Set
+
+
+=== Message decryption ===
+If we define , then decryption becomes
+
+
+== How the system works ==
+The group
+.
+The group  has a unique subgroup of order p, call it H. By the uniqueness of H, we must have
+.
+For any element x in , we have xp−1 mod p2 is in H, since p divides xp−1 − 1.
+The map L should be thought of as a logarithm from the cyclic group H to the additive group , and it is easy to check that L(ab) = L(a) + L(b), and that the L is an isomorphism between these two groups. As is the case with the usual logarithm, L(x)/L(g) is, in a sense, the logarithm of x with base g.
+We have
+
+So to recover m we just need to take the logarithm with base gp−1, which is accomplished by
+
+
+== Security ==
+The security of the entire message can be shown to be equivalent to factoring n. The semantic security rests on the p-subgroup assumption, which assumes that it is difficult to determine whether an element x in  is in the subgroup of order p. This is very similar to the quadratic residuosity problem and the higher residuosity problem.
+
+
+== References ==
+Okamoto, Tatsuaki; Uchiyama, Shigenori (1998). "A new public-key cryptosystem as secure as factoring". Advances in Cryptology — EUROCRYPT'98. Lecture Notes in Computer Science 1403. Springer. pp. 308–318. doi:10.1007/BFb0054135.

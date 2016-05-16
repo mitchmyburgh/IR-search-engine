@@ -1,0 +1,21 @@
+Tell the Judge: The Cloud Ate My Homework
+Jan 6, 2012
+Recent headlines focus on how a convicted murderer got a retrial because a computer virus destroyed the transcripts of his trial. Normally, court stenographers document a trial using both electronic media and paper media. In this case, the stenographer ran out of paper and then moved records from her stenograph to her PC, which was corrupted by virus.
+
+For the timber industry and file cabinet manufacturers, it’s refreshing to think that every trial has hundreds of board-feet of trees sitting in a file cabinet somewhere, but the costs of creating and storing the huge volume of paper records created by our huge volume of laws is becoming burdensome, especially for state and local governments.
+
+It’s a foregone conclusion that more and more records will be electronic only and will be stored in the cloud. I predict we will hear more cases like the one above were electronic data is destroyed on a PC before it gets to the cloud or simply “goes missing” when it is in the cloud. Techniques like role-based access, access logging, and even DLP (Data Leak Prevention) are far from commonplace for every single document placed in the cloud.
+
+We are rapidly approaching a time when there is no realistic way to prove that a person did or did not put something in the cloud a month ago, much less a year ago. This is one of the reasons enterprises and companies have a vested interest in semi-–closed systems where they can maintain some semblance of visibility and control over their data. That’s why private clouds, or at least virtual private clouds, are here to stay.
+
+When it comes to public clouds in particular, the problem gets more difficult when you’re dealing with shared storage and IAM (identity and access management) systems that may or may not be integrated with corporate identity records.
+
+This is one of the reasons I believe encryption is a fundamental technology to enable the cloud. If you encrypt what you put in the cloud using a key that is stored on a cloud other than where your data is stored, there will necessarily be records showing that the data was encrypted in the cloud and therefore was placed in the cloud. In the case of the stenographer above, there could have been an alert set to go off if no court records were encrypted and uploaded according to schedule.
+
+Third-party encryption services have the potential to become modern digital “tracking numbers” for files that are used in the cloud. This will prevent excuses like “the check is in the mail” or “the cloud ate my homework.”
+
+However, there is a simpler use of the cloud to stop this kind of data loss. If you configure your documents directory to synchronize in real time with an encrypted online storage service, the odds of a virus destroying your data go down dramatically. One example here is SafeSync, the Trend Micro system that syncs any directory on your PC to a fully encrypted cloud service.
+
+If the stenographer had used SafeSync, the court records of the trial of a convicted murderer would have stayed safe, and the stenographer would have kept her job.
+
+In any case, economics and environmental concerns should drive all governments to cloud-based records that are properly encrypted so that they may not be modified without all affected parties being alerted, and anyone dealing with sensitive data should be syncing it to encrypted data stores today. It’s too cheap and too easy not to do it.

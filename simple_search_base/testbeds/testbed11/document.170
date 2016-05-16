@@ -1,0 +1,29 @@
+M-Bus (Meter-Bus) is a European standard (EN 13757-2 physical and link layer, EN 13757-3 application layer) for the remote reading of gas or electricity meters. M-Bus is also usable for other types of consumption meters. The M-Bus interface is made for communication on two wires, making it very cost effective. A radio variant of M-Bus (Wireless M-Bus) is also specified in EN 13757-4.
+The M-Bus was developed to fill the need for a system for the networking and remote reading of utility meters, for example to measure the consumption of gas or water in the home. This bus fulfills the special requirements of remotely powered or battery-driven systems, including consumer utility meters. When interrogated, the meters deliver the data they have collected to a common master, such as a hand-held computer, connected at periodic intervals to read all utility meters of a building. An alternative method of collecting data centrally is to transmit meter readings via a modem.
+Other applications for the M-Bus such as alarm systems, flexible illumination installations, heating control, etc. are suitable.
+
+
+== Relation to the OSI Model ==
+Since no bus system was available for the requirements of meter reading, the M-Bus was developed by Professor Dr. Horst Ziegler of the University of Paderborn in cooperation with Texas Instruments Deutschland GmbH and Techem GmbH. The concept was based on the ISO-OSI Reference Model, in order to realize an open system which could utilize almost any desired protocol.
+Since the M-Bus is not a network, and therefore does not - among other things - need a transport or session layer, the levels four to six of the OSI model are empty. Therefore, only the physical, the data link, the network and the application layer are provided with functions.
+
+
+== See also ==
+
+Automatic meter reading
+Feed-in Tariff
+Virtual power plant
+Net metering
+Smart meter
+Utility submeter
+Wattmeter
+OLE for process control
+
+
+== References ==
+rSCADA libmbus An Open Source M-bus library written in C.
+jMBus, M-Bus master Java library at openmuc.org, GPL-licensed
+
+
+== See also ==
+[1] the free scada project

@@ -1,0 +1,22 @@
+The Grid Security Infrastructure (GSI), formerly called the Globus Security Infrastructure, is a specification for secret, tamper-proof, delegatable communication between software in a grid computing environment. Secure, authenticatable communication is enabled using asymmetric encryption.
+
+
+== Authentication ==
+Authentication is performed using digital signature technology (see digital signatures for an explanation of how this works); secure authentication allows resources to lock data to only those who should have access to it.
+
+
+=== Delegation ===
+Authentication introduces a problem: often a service will have to retrieve data from a resource independent of the user; in order to do this, it must be supplied with the appropriate privileges. GSI allows for the creation of delegated privileges: a new key is created, marked as a delegated and signed by the user; it is then possible for a service to act on behalf of the user to fetch data from the resource.
+
+
+== Security Mechanisms ==
+Communications may be secured using a combination of methods:
+Transport Layer Security (TLS) can be used to protect the communication channel from eavesdropping or man-in-the-middle attacks.
+Message-Level Security can be used (although currently it is much slower than TLS).
+
+
+== References ==
+
+
+== External links ==
+Overview of the Grid Security Infrastructure

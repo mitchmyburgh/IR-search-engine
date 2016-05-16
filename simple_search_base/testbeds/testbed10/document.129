@@ -1,0 +1,122 @@
+Data Mining with Big Data
+
+
+Xindong Wu, Fellow, IEEE, Xingquan Zhu, Senior Member, IEEE,
+Gong-Qing Wu, and Wei Ding, Senior Member, IEEE
+
+
+1 INTRODUCTION
+DR. Yan Mo won the 2012 Nobel Prize in Literature. This
+is probably the most controversial Nobel prize of this
+category. Searching on Google with “Yan Mo Nobel Prize,”
+resulted in 1,050,000 web pointers on the Internet (as of
+3 January 2013). “For all praises as well as criticisms,” said
+Mo recently, “I am grateful.” What types of praises and
+criticisms has Mo actually received over his 31-year writing
+career? As comments keep coming on the Internet and in
+various news media, can we summarize all types of
+opinions in different media in a real-time fashion, including
+updated, cross-referenced discussions by critics? This type
+of summarization program is an excellent example for Big
+Data processing, as the information comes from multiple,
+heterogeneous, autonomous sources with complex and
+evolving relationships, and keeps growing.
+Along with the above example, the era of Big Data has
+arrived [37], [34], [29]. Every day, 2.5 quintillion bytes of
+data are created and 90 percent of the data in the world
+today were produced within the past two years [26]. Our
+capability for data generation has never been so powerful
+and enormous ever since the invention of the information
+technology in the early 19th century. As another example,
+on 4 October 2012, the first presidential debate between
+President Barack Obama and Governor Mitt Romney
+triggered more than 10 million tweets within 2 hours [46].
+Among all these tweets, the specific moments that
+generated the most discussions actually revealed the public
+interests, such as the discussions about medicare and vouchers. Such online discussions provide a new means
+to sense the public interests and generate feedback in realtime,
+and are mostly appealing compared to generic media,
+such as radio or TV broadcasting. Another example is
+Flickr, a public picture sharing site, which received
+1.8 million photos per day, on average, from February to
+March 2012 [35]. Assuming the size of each photo is
+2 megabytes (MB), this requires 3.6 terabytes (TB) storage
+every single day. Indeed, as an old saying states: “a picture
+is worth a thousand words,” the billions of pictures on
+Flicker are a treasure tank for us to explore the human
+society, social events, public affairs, disasters, and so on,
+only if we have the power to harness the enormous amount
+of data.
+The above examples demonstrate the rise of Big Data
+applications where data collection has grown tremendously
+and is beyond the ability of commonly used
+software tools to capture, manage, and process within a
+“tolerable elapsed time.” The most fundamental challenge
+for Big Data applications is to explore the large volumes of
+data and extract useful information or knowledge for
+future actions [40]. In many situations, the knowledge
+extraction process has to be very efficient and close to real
+time because storing all observed data is nearly infeasible.
+For example, the square kilometer array (SKA) [17] in radio
+astronomy consists of 1,000 to 1,500 15-meter dishes in a
+central 5-km area. It provides 100 times more sensitive
+vision than any existing radio telescopes, answering
+fundamental questions about the Universe. However, with
+a 40 gigabytes (GB)/second data volume, the data
+generated from the SKA are exceptionally large. Although
+researchers have confirmed that interesting patterns, such
+as transient radio anomalies [41] can be discovered from
+the SKA data, existing methods can only work in an offline
+fashion and are incapable of handling this Big Data
+scenario in real time. As a result, the unprecedented data
+volumes require an effective data analysis and prediction
+platform to achieve fast response and real-time classification
+for such Big Data.
+
+6 CONCLUSIONS
+Driven by real-world applications and key industrial
+stakeholders and initialized by national funding agencies,
+managing and mining Big Data have shown to be a
+challenging yet very compelling task. While the term Big
+Data literally concerns about data volumes, our HACE
+theorem suggests that the key characteristics of the Big Data
+are 1) huge with heterogeneous and diverse data sources,
+2) autonomous with distributed and decentralized control,
+and 3) complex and evolving in data and knowledge
+associations. Such combined characteristics suggest that Big
+Data require a “big mind” to consolidate data for maximum
+values [27].
+To explore Big Data, we have analyzed several challenges
+at the data, model, and system levels. To support Big
+Data mining, high-performance computing platforms
+are required, which impose systematic designs to unleash
+the full power of the Big Data. At the data level, the
+autonomous information sources and the variety of the
+data collection environments, often result in data with
+complicated conditions, such as missing/uncertain values.
+In other situations, privacy concerns, noise, and errors can
+be introduced into the data, to produce altered data copies.
+Developing a safe and sound information sharing protocol
+is a major challenge. At the model level, the key challenge is
+to generate global models by combining locally discovered
+patterns to form a unifying view. This requires carefully
+designed algorithms to analyze model correlations between
+distributed sites, and fuse decisions from multiple sources
+to gain a best model out of the Big Data. At the system level,
+the essential challenge is that a Big Data mining framework
+needs to consider complex relationships between samples,
+models, and data sources, along with their evolving changes
+with time and other possible factors. A system needs to be
+carefully designed so that unstructured data can be linked
+through their complex relationships to form useful patterns,
+and the growth of data volumes and item relationships
+should help form legitimate patterns to predict the trend
+and future.
+We regard Big Data as an emerging trend and the need
+for Big Data mining is arising in all science and engineering
+domains. With Big Data technologies, we will hopefully be
+able to provide most relevant and most accurate social
+sensing feedback to better understand our society at realtime.
+We can further stimulate the participation of the
+public audiences in the data production circle for societal
+and economical events. The era of Big Data has arrived.

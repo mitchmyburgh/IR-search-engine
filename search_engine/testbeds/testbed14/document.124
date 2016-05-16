@@ -1,0 +1,20 @@
+Since ontologies are widely used for different purposes (natural language processing, knowledge
+management, e-commerce, intelligent integration information, the semantic web, etc.) in different
+communities (i.e., knowledge engineering, databases and software engineering), Uschold and
+Jasper [69] provided a new definition of the word ontology to popularize it in other disciplines.
+Note that the database community, as well as the object-oriented community, also builds domain
+models using concepts, relations, properties, etc., but most of the times both communities impose
+less semantic constraints than those imposed in heavyweight ontologies. Uschold and Jasper
+defined an ontology as follows: ‘‘An ontology may take a variety of forms, but it will necessarily
+include a vocabulary of terms and some specification of their meaning. This includes definitions
+and an indication of how concepts are inter-related which collectively impose a structure on the
+domain and constrain the possible interpretations of terms.’’
+In this section we have collected the most relevant definitions, although there are other definitions of the word ‘‘ontology’’ in literature. However, we can say that there is consensus among
+the ontology community and so there is not confusion about its usage. Different definitions
+provide different and complementary points of view of the same reality. Some authors provide
+definitions that are independent of the processes followed to build the ontology and also independent
+of its use in applications, while other definitions are influenced by the ontology development
+process. As a main conclusion to this section, we can say that ontologies aim to capture
+consensual knowledge in a generic and formal way, and that they may be reused and shared across
+applications (software) and by groups of people. Ontologies are usually built cooperatively by a
+group of people in different locations.

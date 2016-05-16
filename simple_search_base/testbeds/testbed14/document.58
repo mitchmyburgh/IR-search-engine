@@ -1,0 +1,21 @@
+Ontology
+Ontologies are considered one of the pillars of the Semantic Web, although they do not have a universally accepted definition. A (Semantic Web) vocabulary can be considered as a special form of (usually light-weight) ontology, or sometimes also merely as a collection of URIs with an (usually informally) described meaning.
+
+Ontologies on semanticweb.org.edu are usually assumed to be accompanied by some document in a formal ontology language, though some ontologies do not use standardised formats for that purpose. A list of documents that are considered ontologies in this wiki is given below.
+
+Contents
+1 Definitions
+2 Ontologies on semanticweb.org.edu
+3 Microformats in RDF
+4 Further examples
+Definitions
+There have been several definitions of what an ontology is.
+
+An ontology is a formal specification of a shared conceptualization (Tom Gruber, see [1]) . Many authors cite this definition.
+The main thread of ontology in the philosophical sense is the study of entities and their relations. The question ontology asks is: What kinds of things exist or can exist in the world, and what manner of relations can those things have to each other? Ontology is less concerned with what is than with what is possible. Clay Shirky in his critical entry Ontology is overrated [2] . He says this is the first meaning. AI people took the word and rather define it as "an explicit specification of a conceptualization.", pointing to Gruber.
+
+(If you add another one, please always cite the source as well)
+
+
+Ontologies on semanticweb.org.edu
+The following vocabularies and ontologies are currently described on semanticweb.org.edu, ordered by the occurrence on the web as estimated by Swoogle. See also the UMBC Top 100 of common namespaces . As the revision dates given here indicate, some of the below data may require update: feel free to contribute!

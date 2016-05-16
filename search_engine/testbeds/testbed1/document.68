@@ -1,0 +1,144 @@
+Inference
+'''Inference''' is the act or process of   from s known or assumed to be .http://www.thefreedictionary.com/inference  The  are studied in the field of .
+Alternatively, inference is defined as the non-logical, but rational means, through observation of patterns of facts, to indirectly see new meanings and contexts for understanding.  Of particular use to this application of inference are anomalies and symbols.  Inference, in this sense, does not draw conclusions but opens new paths for inquiry.  (See second set of examples.)  In this definition of inference, there are two types of inference:  and .  Unlike the definition of inference in the first paragraph above, meaning of word meanings are not tested but meaningful relationships are articulated.
+Human inference (i.e. how humans draw conclusions) is traditionally studied within the field of ;  researchers develop automated inference systems to emulate human inference.
+ uses mathematics to draw conclusions in the presence of uncertainty. This generalizes deterministic reasoning, with the absence of uncertainty as a special case. Statistical inference uses quantitative or qualitative (categorical) data which may be subject to random variation.
+==Examples==
+ defined a number of s, correct three part inferences, that can be used as building blocks for more complex reasoning. We begin with a famous example:
+#All men are mortal
+#Socrates is a man
+#Therefore, Socrates is mortal.
+The reader can check that the premises and conclusion are true, but logic is concerned with inference: does the truth of the conclusion follow from that of the premises?
+The validity of an inference depends on the form of the inference. That is, the word "valid" does not refer to the truth of the premises or the conclusion, but rather to the form of the inference.  An inference can be valid even if the parts are false, and can be invalid even if some parts are true.  But a valid form with true premises will always have a true conclusion.
+For example, consider the form of the following  track:
+#All meat comes from animals.
+#Beef is a type of meat.
+#Therefore, beef comes from an animal.
+If the premises are true, then the conclusion is necessarily true, too.
+Now we turn to an invalid form.
+#All A are B.
+#C is a B.
+#Therefore, C is an A.
+To show that this form is invalid, we demonstrate how it can lead from true premises to a false conclusion.
+#All apples are fruit. (Correct)
+#Bananas are fruit. (Correct)
+#Therefore, bananas are apples. (Wrong)
+A valid argument with false premises may lead to a false conclusion:
+#All tall people are Greek.
+#John Lennon was tall.
+#Therefore, John Lennon was Greek. (wrong)
+When a valid argument is used to derive a false conclusion from false premises, the inference is valid because it follows the form of a correct inference.
+A valid argument can also be used to derive a true conclusion from false premises:
+#All tall people are musicians (although wrong)
+#John Lennon was tall (right, Valid)
+#Therefore, John Lennon was a musician (Right)
+In this case we have two false premises that imply a true conclusion.
+===Example for definition #2===
+Evidence:  It is the early 1950s and you are an American stationed in the .  You read in the  newspaper that a  team from a small city in  starts winning game after game.  The team even defeats the Moscow team.  Inference: The small city in Siberia is not a small city anymore.  The Soviets are working on their own nuclear or high-value secret weapons program.
+Knowns: The Soviet Union is a : people and material are told where to go and what to do.  The small city was remote and historically had never distinguished itself; its soccer season was typically short because of the weather.
+Explanation:  In a , people and material are moved where they are needed.  Large cities might field good teams due to the greater availability of high quality players; and teams that can practice longer (weather, facilities) can reasonably be expected to be better.  In addition, you put your best and brightest in places where they can do the most goodsuch as on high-value weapons programs.  It is an anomaly for a small city to field such a good team.  The anomaly (i.e. the soccer scores and great soccer team) indirectly described a condition by which the observer inferred a new meaningful patternthat the small city was no longer small.  Why would you put a large city of your best and brightest in the middle of nowhere?  To hide them, of course.
+==Incorrect inference==
+An incorrect inference is known as a . Philosophers who study  have compiled large lists of them, and cognitive psychologists have documented many  that favor incorrect reasoning.
+==Automatic logical inference==
+AI systems first provided automated logical inference and these were once extremely popular research topics, leading to industrial applications under the form of s and later s.  More recent work on  has had a stronger
+basis in formal logic.
+An inference system's job is to extend a knowledge base automatically. The knowledge base (KB) is a set of propositions that represent what the system knows about the world. Several techniques can be used by that system to extend KB by means of valid inferences. An additional requirement is that the conclusions the system arrives at are  to its task.
+===Example using Prolog===
+ (for "Programming in Logic") is a  based on a  of . Its main job is to check whether a certain proposition can be inferred from a KB (knowledge base) using an algorithm called .
+Let us return to our  . We enter into our Knowledge Base the following piece of code:
+ mortal(X) :- 	man(X).
+ man(socrates). 
+( Here ''''':-''''' can be read as "if".  Generally, if ''P  Q'' (if P then Q)  then in Prolog we would code ''Q''':-'''P'' (Q if P).)
+This states that all men are mortal and that Socrates is a man. Now we can ask the Prolog system about Socrates:
+ ?- mortal(socrates).
+(where ''?-'' signifies a query: Can ''mortal(socrates).'' be deduced from the KB using the rules)
+gives the answer "Yes".
+On the other hand, asking the Prolog system the following:
+ ?- mortal(plato).
+gives the answer "No".
+This is because  does not know anything about , and hence defaults to any property about Plato being false (the so-called ). Finally
+?- mortal(X) (Is anything mortal) would result in "Yes" (and in some implementations: "Yes": X=socrates)
+ can be used for vastly more complicated inference tasks. See the corresponding article for further examples.
+===Use with the semantic web===
+Recently automatic reasoners found in  a new field of application. Being based upon , knowledge expressed using one variant of  can be logically processed, i.e., inferences can be made upon it.
+===Bayesian statistics and probability logic===
+Philosophers and scientists who follow the  for inference use the mathematical rules of  to find this best explanation. The Bayesian view has a number of desirable featuresone of them is that it embeds deductive (certain) logic as a subset (this prompts some writers to call Bayesian probability "probability logic", following ).
+Bayesian's identify probabilities with degrees of beliefs, with certainly true propositions having probability 1, and certainly false propositions having probability 0. To say that "it's going to rain tomorrow" has a 0.9 probability is to say that you consider the possibility of rain tomorrow as extremely likely.
+Through the rules of probability, the probability of a conclusion and of alternatives can be calculated. The best explanation is most often identified with the most probable (see ). A central rule of Bayesian inference is .
+See  for examples.
+=== Non-monotonic logic ===
+A relation of inference is monotonic if the addition of premises does not undermine previously reached conclusions; otherwise the relation is .
+Deductive inference is monotonic: if a conclusion is reached on the basis of a certain set of premises, then that conclusion still holds if more premises are added.
+By contrast, everyday reasoning is mostly non-monotonic because it involves risk: we jump to conclusions from deductively insufficient premises.
+We know when it is worth or even necessary (e.g. in medical diagnosis) to take the risk. Yet we are also aware that such inference is defeasiblethat new information may undermine old conclusions. Various kinds of defeasible but remarkably successful inference have traditionally captured the attention of philosophers (theories of induction, Peirce's theory of , inference to the best explanation, etc.). More recently logicians have begun to approach the phenomenon from a formal point of view. The result is a large body of theories at the interface of philosophy, logic and artificial intelligence.
+==See also==
+* 
+** 
+** 
+** 
+** 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+==References==
+==Further reading==
+* 
+* 
+* 
+* 
+* 
+'''Inductive inference:'''
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+'''Abductive inference:'''
+* 
+* 
+* 
+'''Psychological investigations about human reasoning:'''
+* '''deductive:'''
+**
+**
+**
+**
+**
+* '''statistical:'''
+**
+**,
+* '''analogical:'''
+**
+* '''spatial:'''
+**
+**
+**
+* '''moral:'''
+**
+== External links ==
+* 
+*

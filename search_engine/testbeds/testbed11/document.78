@@ -1,0 +1,64 @@
+OCARI (acronym of Open Communication protocol for Ad hoc Reliable industrial Instrumentation) is a low-rate wireless personal area networks (LR-WPAN) communication protocol that derivates from IEEE 802.15.4 standard. It was initially developed by the following consortium during the OCARI project that is funded by the French National Research Agency (ANR):
+Électricité de France, project leader
+DCNS
+One-RF Technologies now Telit RF [1]
+LATTIS
+LIMOS
+INRIA
+LRI
+Since the end of the ANR project, EDF and INRIA continued to work together (with the participation of BeamLogic) to industrialize OCARI.
+
+
+== OCARI Design Requirements ==
+OCARI was designed to satisfy the following technical requirements:
+Running on standard IEEE 802.15.4 platforms that use Cortex M3 MCU and Atmel AT86RF233/231 transceiver.
+Providing mesh networking with self-configuring and the power saving capability for operation on battery.
+Ability to support a large number of instrumentations (sensors and actuators) per application with the same hardware platform so that interchangeability is possible.
+
+
+== OCARI Features ==
+OCARI distinguishes from protocols such as ZigBee, WirelessHART and Isa100.11a by the following characteristics:
+Energy-efficient proactive and adaptive routing (the path to reach the sink has a minimum energy cost, and new links are automatically created when the existing ones are broken, and only symmetric links are retained) and load balancing of router nodes (node that has the highest residual energy is dynamically selected among one-hop neighbors).
+Distributed synchronization of the operating cycle based on multi-hop deterministic synchronization of nodes using cascaded beacons. It allows to determine the sleeping period of all network nodes for energy saving.
+An activity scheduling mechanism based on a distributed three-hops coloring algorithm that minimizes the number of colors (pre-reserved slots). Thanks to this mechanism, extra energy saving can be obtained because of no collision and a node wakes up in its slot if it has data to transmit and in the slots of its 1-hop neighbors if it has data to receive, and sleeps the rest of the time
+Spatial reuse of the time slots (the 4-hops neighbor can reuse the same color therefore transmitting at the same time). This facilitates the scalability of network per application.
+Support of mobile network node: the mobile node does not have color, it send its data to the nearest (in RSSI) colored device.
+The operating cycle of OCARI is divided into five periods:
+[T0-T1]: Multi-hop deterministic synchronization of nodes using cascaded beacons.
+[T1-T2]: Transmission of messages and signaling data by competition (CSMA/CA).
+[T2-T3]: Transmission of data messages without collision (collection) in colored slots (optimized TDMA).
+[T3-T4]: Transmission of data messages without collision (dissemination) in colored slots.
+[T4-T0]: Sleep
+
+The topology of an OCARI network is organized as follows:
+Coordinator (equivalent of "IEEE 802.15.4 PAN coordinator"): global coordinator of an instrumentation cluster. Its role is to initiate the network and manage it: allocation of network addresses, network access management and access point to the cluster network.
+Router participates in the hierarchical tree relay (with TTL) when the colors are not yet assigned and the ad hoc routing when colors are obtained.
+Mobile device does not relay, it uses colored device as the relay.
+
+
+== OCARI Stack ==
+
+
+== OCARI Applications ==
+OCARI was developed to satisfy the user needs in constraint environments that are founded in Power Plants and in Warships. Typical applications of OCARI are:
+Real time monitoring of dosimetry.
+Real time radiation protection monitoring using mobile radiameters.
+Fire detection.
+Machine and equipment surveillance for predictive maintenance.
+Mobile instrumentation for test and measurement during outage periods.
+Open-loop control.
+
+
+== Current IEEE 802.15.4 modules supported by OCARI ==
+Dresden Electronik deRFsam3-23T09-3/23M09-3: Atmel SAM3S and Atmel AT86RF233
+Adwave Adwrf24-LRS: Atmel SAM3S and Atmel AT86RF233 coupled with a LNA chip
+See also Comparison of 802.15.4 radio modules
+
+
+== References ==
+(English) Khaldoun Al Agha, Marc-Henri Bertin, Tuan Dang, Alexandre Guitton, Pascale Minet, Thierry Val and Jean-Baptiste Viollet, “Which wireless technology for industrial wireless sensor networks? The development of OCARI technology”, IEEE Transactions on Industrial Electronics, Vol. 56, No. 10, October 2009.
+(English) OCARI: A Wireless Sensor Network for Industrial Environments, ERCIM News 101, April 2015
+
+
+== External links ==
+(English) OCARI Gitlab repository

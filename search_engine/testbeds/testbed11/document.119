@@ -1,0 +1,17 @@
+WTCP ("Wireless Transmission Control Protocol") is a proxy based modification of TCP that preserves the end-to-end semantics of TCP. As its name suggests, it is used in wireless networks to improve the performance of TCP.
+
+
+== Where it works ==
+WTCP does not replace the TCP on the hosts, but is placed on a proxy in between two communicating hosts.
+In wireless systems, WTCP is placed on a base station or intermediate gateway between a source host and a mobile (wireless) host. The base station is a wireless transmitter and receiver for the mobile host, and acts as a gateway to the internet for the host.
+The following is a highly simplified example of what happens when the mobile host and source host have a TCP connection with each other. When the mobile host uses its TCP to send a segment, the WTCP at the base station receives it and sends it on through the network, where it eventually reaches the awaiting host. The awaiting host might send an acknowledgment back through the network, to the base station, which transmits it to the mobile host. Despite handling some wireless-related errors, WTCP effectively does exactly what regular TCP does. The two edge hosts aren't even aware that the WTCP exists.
+
+
+== Performance enhancements ==
+Instead of replacing TCP completely, WTCP works with it to enhance TCP's performance over wireless. It accomplishes this by handling the negative effects of the wireless channel, including high bit error rates that are known to occur in bursts over the wireless medium.
+It detects wireless-related problems (such as lost or corrupted segments due to multipath fading or high BER) with the use of timeouts and duplicate acknowledgments. WTCP then attempts to mitigate the problem by retransmitting a lost segment only once, until it receives an acknowledgment back from the mobile host that it was received. Any other lost segments will have to wait in the WTCP's buffer until the first one is confirmed to have been received.
+There are times when packets will sit in WTCP's buffer for many milliseconds. In order to avoid having either TCP end host go into its congestion avoidance mode, (due to TCP looking at a segment's timestamp and determining that it took a long time to arrive, therefore wrongly assuming it's due to congestion) WTCP uniquely hides the time spent by the packets at the WTCP proxy, so that the RTT estimation is not affected.
+In one study on WTCP's performance in Wireless WANs, WTCP showed an improvement of 20%-200% over comparable TCP algorithms such as New Reno, Vegas, and Snoop.
+
+
+== References ==

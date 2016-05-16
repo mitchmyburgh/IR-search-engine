@@ -1,0 +1,158 @@
+Microsoft Small Basic
+From Wikipedia, the free encyclopedia
+This article is about the Microsoft programming language. For the GPL programming language, see SmallBASIC.
+Microsoft Small Basic
+Microsoft Small Basic icon.png
+Small Basic.png
+Paradigm	Structured, imperative, object-oriented
+Designed by	Microsoft, Vijaye Raji
+Developer	Microsoft
+First appeared	October 23, 2008; 7 years ago[1][2]
+Stable release	v1.2 / October 1, 2015; 6 months ago[3]
+Typing discipline	Dynamic, weak
+Platform	.NET Framework 4.5[3]
+OS	Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows Server 2008 R2[4]
+License	Freeware
+Filename extensions	.sb
+Website	www.smallbasic.com
+Influenced by
+Visual Basic .NET, QBasic
+Microsoft Small Basic is a programming language and associated IDE. It is Microsoft's simplified variant of the BASIC programming language, intended as an easy programming language for beginners. The associated IDE provides a simplified programming environment with functionality such as syntax highlighting, intelligent code completion, and in-editor documentation access.[5] The language has only 14 keywords.[6]
+
+Contents  [hide] 
+1	History
+2	Language
+2.1	Conditional branching
+2.2	Looping
+2.3	Data types
+3	Libraries
+3.1	Standard library
+3.1.1	Turtle Graphics
+3.2	Third-party libraries
+4	See also
+5	References
+6	External links
+History[edit]
+Version	Release date
+v0.1	October 23, 2008[1]
+v0.2	December 17, 2008[7]
+v0.3	February 10, 2009[8]
+v0.4	April 14, 2009[9]
+v0.5	June 16, 2009[10]
+v0.6	August 19, 2009[11]
+v0.7	October 23, 2009[2]
+v0.8	February 4, 2010[12]
+v0.9	June 11, 2010[13]
+v0.91	November 17, 2010[14]
+v0.95	February 8, 2011[15]
+v1.0	July 12, 2011[16]
+v1.1	March 27, 2015[17]
+v1.2	October 1, 2015[3]
+Old versionOlder version, still supported
+Latest versionFuture release
+Microsoft announced Small Basic in October 2008,[1] and released the first stable version for distribution on July 12, 2011[16] on a Microsoft Developer Network (MSDN) website with a teaching curriculum[18] and an introductory guide.[19] Between announcement and stable release, a number of Community Technology Preview (CTP) releases were made.
+
+On March 27, 2015, Microsoft released Small Basic version 1.1,[17] which fixed a bug and upgraded the targeted .NET Framework version from version 3.5 to version 4.5.
+
+Microsoft released Small Basic version 1.2 on October 1, 2015.[3] Version 1.2 was the first update after a four-year hiatus to introduce new features to Small Basic. The update added classes for working with Microsoft's Kinect motion sensors,[3] increased the number of languages supported by the included Dictionary object, and fixed a number of bugs.[4]
+
+Language[edit]
+In Small Basic, one writes the illustrative "Hello, world!" program as follows:
+
+TextWindow.WriteLine("Hello World!")
+Microsoft Small Basic is Turing complete. It supports conditional branching, loop structures, and subroutines for event handling. Variables are weakly typed and dynamic with no scoping rules.
+
+Conditional branching[edit]
+The following example demonstrates conditional branching. It requests the current temperature in Fahrenheit and comments on the answer.
+
+TextWindow.Write("Enter the temperature today (in F): ")
+temp = TextWindow.ReadNumber()
+If temp > 100 Then
+  TextWindow.WriteLine("It is pretty hot.")
+ElseIf temp > 70 Then
+  TextWindow.WriteLine("It is pretty nice.")
+ElseIf temp > 50 Then
+  TextWindow.WriteLine("Don't forget your coat.")
+Else
+  TextWindow.WriteLine("Stay home.")
+EndIf
+Looping[edit]
+This example demonstrates a loop. Starting from one and ending with ten, it multiplies each number by four and displays the result of multiplication.
+
+TextWindow.WriteLine("Multiplication Tables")
+For i = 1 To 10
+  TextWindow.Write(i * 4)
+EndFor
+While loops are also supported, and the demonstrated For loop can be augmented through the use of the Step keyword. The Step keyword is used in setting the value by which the counter variable, i, is incremented each iteration.
+
+Data types[edit]
+Small Basic supports basic data types, like strings, integers and decimals, and will readily convert one type to another as required by the situation. In the example, both the Read and ReadNumber methods read a string from the command line, but ReadNumber rejects any non-numeric characters. This allows the string to be converted to a numeric type treated as a number rather than a string by the + operator.
+
+TextWindow.WriteLine("Enter your name:")
+name = TextWindow.Read()
+
+TextWindow.Write("Enter your age: ")
+age = TextWindow.ReadNumber()
+
+TextWindow.WriteLine("Hello " + name + "!")
+TextWindow.WriteLine("In 5 years you will be " + ( age + 5 ) + " years old!")
+As Small Basic will readily convert between data types, numbers can be manipulated as strings and numeric strings as numbers. This is demonstrated through the second example.
+
+TextWindow.WriteLine(Math.log("100")) 'Prints 2
+TextWindow.WriteLine("100" + "3000") ' Prints 3100
+TextWindow.WriteLine("Windows " + 8) ' Prints Windows 8
+TextWindow.WriteLine(Text.GetLength(1023.42)) ' Prints 7 (length of decimal representation including decimal point)
+In the second example, both strings are treated as numbers and added together, producing the output 3100. To concatenate the two values, producing the output 1003000, it is necessary to use the Text.Append(text1, text2) method.
+
+Libraries[edit]
+Standard library[edit]
+The Small Basic standard library includes basic classes for mathematics, string handling, and input/output, as well as more exotic classes that are intended to make using the language more fun for learners. Examples of these include a Turtle graphics class, a class for retrieving photos from Flickr, and classes for interacting with Microsoft Kinect sensors.
+
+To make the classes easier to use for learners, they have been simplified. This simplification is demonstrated through the code used to retrieve a random mountain-themed image from Flickr:
+
+For i = 1 To 10
+  pic = Flickr.GetRandomPicture("mountains")
+  Desktop.SetWallPaper(pic)
+  Program.Delay(10000)
+EndFor
+Turtle Graphics[edit]
+Small Basic includes a "Turtle" graphics library that borrows from the Logo family of programming languages. For example, to draw a square using the turtle, the turtle is moved forward by a given number of pixels and rotated 90 degrees in a given direction. This action is then repeated four times to draw the four sides of the square.
+
+For i = 1 to 4
+  Turtle.Move(100) ' Forward 100 pixels
+  Turtle.Turn(90) ' Turn 90 degrees right
+EndFor
+More complex drawings are possible by altering the turning angle of the turtle and the number of iterations of the loop. For example, one can draw a hexagon by setting the turn angle to 60 degrees and the number of iterations to six.
+
+Third-party libraries[edit]
+Small Basic allows the use of third-party libraries. These libraries must be written in a CLR-compatible language, and the compiled binaries must target a compatible .NET Framework version. The classes provided by the library are required to be static, flagged with a specific attribute, and must use a specific data type.
+
+An example of a class to be used in Small Basic is provided below, written in C#.
+
+[SmallBasicType]
+public static class ExampleClass
+{
+    public static Primitive Add(Primitive A, Primitive B) => A + B;
+
+    public static Primitive SomeProperty
+    {
+        get;
+        set;
+    }
+
+    public static Primitive Pi => (Primitive)3.14159;
+}
+If available, the Small Basic development environment will display documentation for third-party libraries. The development environment accepts documentation in the form of an XML file, which can be automatically generated from source code comments by tools such as Microsoft Visual Studio and MonoDevelop.
+
+See also[edit]
+Related Microsoft technologies:
+
+Visual Basic
+Visual Studio Express
+Kodu
+Related languages:
+
+Logo
+RoboMind
+Scratch
+References

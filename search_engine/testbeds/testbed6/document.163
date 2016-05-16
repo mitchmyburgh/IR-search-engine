@@ -1,0 +1,16 @@
+What is the time complexity of inorder,postorder and preorder traversal of binary trees in data structures?? Is it O(n) or O(log n) or O(n^2)?? 
+
+In-order, Pre-order, and Post-order traversals are Depth-First traversals.
+For a Graph, the complexity of a Depth First Traversal is O(n + m), where n is the number of nodes, and m is the number of edges.
+Since a Binary Tree is also a Graph, the same applies here. The complexity of each of these Depth-first traversals is O(n+m).
+Since the number of edges that can originate from a node is limited to 2 in the case of a Binary Tree, the maximum number of total edges in a Binary Tree is n-1, where n is the total number of nodes.
+The complexity then becomes O(n + n-1), which is O(n).
+
+O(n), because you traverse each node once. Or rather - the amount of work you do for each node is constant (does not depend on the rest of the nodes).
+
+Travesal is O(n) for any order - because you are hitting each node once. Lookup is where it can be less than O(n) IF the tree has some sort of organizing schema (ie binary search tree).
+
+O(n),I would say . I am doing for a balanced tree,applicable for all the trees. Assuming that you use recursion,
+T(n) = 2*T(n/2) + 1 ----------> (1)
+T(n/2) for left sub-tree and T(n/2) for right sub-tree and '1' for verifying the base case.
+On Simplifying (1) you can prove that the traversal(either inorder or preorder or post order) is of order O(n).

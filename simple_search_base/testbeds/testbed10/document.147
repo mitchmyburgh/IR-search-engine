@@ -1,0 +1,73 @@
+A machine learning approach for Arabic text classification using
+N-gram frequency statistics
+
+
+Laila Khreisat
+
+1. Introduction
+The rapid growth of the Internet has increased the number of online documents available. This has led to the development
+of automated text and document classification systems that are capable of automatically organizing and classifying documents.
+Text classification (or categorization) is the process of structuring a set of documents according to a group structure
+that is known in advance. There are several different methods for text classification, including statistical-based algorithms,
+Bayesian classification, distance-based algorithms, k-nearest neighbors, decision tree-based methods (Dunham, 2003), to
+name a few.
+Text classification techniques are used in many applications, including e-mail filtering, mail routing, spam filtering, news
+monitoring, sorting through digitized paper archives, automated indexing of scientific articles, classification of news stories
+and searching for interesting information on the world wide web.
+The majority of these systems are designed to handle documents written in the English language, and therefore are not
+applicable to documents written in the Arabic language. Developing text classification systems for Arabic documents is a
+challenging task due to the complex and rich nature of the Arabic language. The Arabic language consists of 28 letters. The
+language is written from right to left. It has very complex morphology.
+The majority of words have a tri-letter root. The rest have either a quad-letter root, penta-letter root or hexa-letter root.
+Previous work on Arabic text classification has used distance-based algorithms (Duwairi, 2005, 2006), Learning algorithms
+(Sawaf, Zaplo, & Ney, 2001), and Bayesian classification methods (El-Kourdi, Bensaid, & Rachidi, 2004) in developing
+automated text classification systems. Specifically (Mustafa & Al-Radaideh, 2004) used N-grams for searching Arabic text
+documents. They investigated di-grams and tri-grams. No stemming was performed. They concluded that the N-gramtechnique is not an efficient approach to corpus-based Arabic word conflation. Savoy and Rasolofo (2002) used tri-grams
+for indexing Arabic documents without any prior stemming. The work of (Xu, Fraser, & Weischedel, 2002) uses N-grams
+with and without stemming for text searching. Their results indicate that the use of tri-grams combined with stemming
+improved the performance of search retrieval, however, it was not statistically significant. Preliminary results of this work
+were reported in (Khreisat, 2006).
+In this paper the behavior of the N-gram frequency statistics technique for classifying Arabic text documents is studied.
+The technique employs a dissimilarity measure called the “Manhattan distance”, and Dice’s measure of similarity, for the
+purposes of classification. The Dice measure was used for comparison purposes. Results show that tri-gram text classification
+using the Dice measure gives better classification results compared to the Manhattan measure.
+A corpus of Arabic text documents was collected from four online Jordanian Arabic newspapers (Al Arab, 2008; Al Ghad,
+2008; Al Ra’I, 2008; Ad Dustour, 2008). For each category of topics, articles were collected from the four sources. Forty percent
+of the corpus was used as training classes and the remaining 60% of the corpus was used for classification. All documents,
+whether training documents or documents to be classified went through a preprocessing phase removing punctuation marks,
+stop words, diacritics, and non-letters. For the training documents, the N-gram (N = 3) frequency profile was generated for
+each document and saved in text files. Then for each document to be classified, the N-gram frequency profile was generated
+and compared against the N-gram frequency profiles of all the training classes. The Manhattan and Dice measures were
+computed. Using the Manhattan measure, the category to which a document belongs is the one with the smallest Manhattan
+distance, and using the Dice measure, the category is the one with the largest Dice measure. The classification results using
+these two measures were compared in terms of recall and precision.
+The rest of the paper is organized as follows: in section 2 a description of the Arabic language is provided, the concept of
+N-grams is presented in Section 3, Section 4 describes the text preprocessing phase and Section 5 gives detailed description
+of the classification procedure. The results are reported in Section 6. technique is not an efficient approach to corpus-based Arabic word conflation. Savoy and Rasolofo (2002) used tri-grams
+for indexing Arabic documents without any prior stemming. The work of (Xu, Fraser, & Weischedel, 2002) uses N-grams
+with and without stemming for text searching. Their results indicate that the use of tri-grams combined with stemming
+improved the performance of search retrieval, however, it was not statistically significant. Preliminary results of this work
+were reported in (Khreisat, 2006).
+In this paper the behavior of the N-gram frequency statistics technique for classifying Arabic text documents is studied.
+The technique employs a dissimilarity measure called the “Manhattan distance”, and Dice’s measure of similarity, for the
+purposes of classification. The Dice measure was used for comparison purposes. Results show that tri-gram text classification
+using the Dice measure gives better classification results compared to the Manhattan measure.
+A corpus of Arabic text documents was collected from four online Jordanian Arabic newspapers (Al Arab, 2008; Al Ghad,
+2008; Al Ra’I, 2008; Ad Dustour, 2008). For each category of topics, articles were collected from the four sources. Forty percent
+of the corpus was used as training classes and the remaining 60% of the corpus was used for classification. All documents,
+whether training documents or documents to be classified went through a preprocessing phase removing punctuation marks,
+stop words, diacritics, and non-letters. For the training documents, the N-gram (N = 3) frequency profile was generated for
+each document and saved in text files. Then for each document to be classified, the N-gram frequency profile was generated
+and compared against the N-gram frequency profiles of all the training classes. The Manhattan and Dice measures were
+computed. Using the Manhattan measure, the category to which a document belongs is the one with the smallest Manhattan
+distance, and using the Dice measure, the category is the one with the largest Dice measure. The classification results using
+these two measures were compared in terms of recall and precision.
+The rest of the paper is organized as follows: in section 2 a description of the Arabic language is provided, the concept of
+N-grams is presented in Section 3, Section 4 describes the text preprocessing phase and Section 5 gives detailed description
+of the classification procedure. The results are reported in Section 6.
+
+7. Conclusion
+This paper presented the results of classifying Arabic text documents using the tri-gram frequency statistics technique
+employing a dissimilarity measure called the “Manhattan distance”, and Dice’s measure of similarity. The Dice measure
+was used for comparison purposes. Results showed that tri-gram text classification using the Dice measure outperforms
+classification using the Manhattan measure.

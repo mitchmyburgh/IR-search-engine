@@ -1,0 +1,104 @@
+Geometric Programming: We are going to leave our discussion of OpenGL for a while, and discuss some of the
+basic elements of geometry, which will be needed for the rest of the course. There are many areas of computer
+science that involve computation with geometric entities. This includes not only computer graphics, but also
+areas like computer-aided design, robotics, computer vision, and geographic information systems. In this and
+the next few lectures we will consider how this can be done, and how to do this in a reasonably clean and painless
+way.
+Computer graphics deals largely with the geometry of lines and linear objects in 3-space, because light travels
+in straight lines. For example, here are some typical geometric problems that arise in designing programs for
+computer graphics.
+Geometric Intersections: Given a cube and a ray, does the ray strike the cube? If so which face? If the ray is
+reflected off of the face, what is the direction of the reflection ray?
+Orientation: Three noncollinear points in 3-space define a unique plane. Given a fourth point q, is it above,
+below, or on this plane?
+Transformation: Given unit cube, what are the coordinates of its vertices after rotating it 30 degrees about the
+vector (1; 2; 1).
+Change of coordinates: A cube is represented relative to some standard coordinate system. What are its coordinates
+relative to a different coordinate system (say, one centered at the camera’s location)?
+Such basic geometric problems are fundamental to computer graphics, and over the next few lectures, our goal
+will be to present the tools needed to answer these sorts of questions. (By the way, a good source of information
+on how to solve these problems is the series of books entitled “Graphics Gems”. Each book is a collection of
+many simple graphics problems and provides algorithms for solving them.)
+Lecture Notes 26 CMSC 427
+Coordinate-free programming: If you look at almost any text on computer graphics (ours included) you will find
+that the section on geometric computing begins by introducing coordinates, then vectors, then matrices. Then
+what follows are many long formulas involving many 4_4 matrices. These formulas are handy, because (along
+with some procedures for matrix multiplication) we can solve many problems in computer graphics. Unfortunately,
+from the perspective of software design they are a nightmare, because the intention of the programmer
+has been lost in all the “matrix crunching.” The product of a matrix and a vector can have many meanings. It
+may represent a change of coordinate systems, it may represent a transformation of space, and it may represent
+a perspective projection.
+We will attempt to develop a clean, systematic way of thinking about geometric computations. This method
+is called coordinate-free programming (so named by Tony DeRose, its developer). Rather than reducing all
+computations to vector-matrix products, we will express geometric computations in the form of high-level geometric
+operations. These in turn will be implemented using low-level matrix computations, but if you use a good
+object-oriented programming language (such as C++ or Java) these details are hidden. Henceforth, when the
+urge to write down an expression involving point coordinates comes to you, ask yourself whether it is possible
+to describe this operation in a high-level coordinate-free form.
+Ideally, this should be the job of a good graphics API. Indeed, OpenGL does provide the some support for
+geometric operations. For example, it provides procedures for performing basic affine transformations. Unfortunately,
+a user of OpenGL is still very aware of underlying presence of vectors and matrices in programming.
+A really well designed API would allow us to conceptualize geometry on a higher level.
+Geometries: Before beginning we should discuss a little history. Geometry is one of the oldest (if not the oldest)
+branches of mathematics. Its origins were in land surveying (and hence its name: geo=earth, and metria=
+measure). Surveying became an important problem as the advent of agriculture required some way of
+defining the boundaries between one family’s plot and anothers.
+Ancient civilizations (the Egyptians, for example) must have possessed a fairly sophisticated understanding of
+geometry in order to build complex structures like the pyramids. However, it was not until much later in the
+time of Euclid in Greece in the 3rd century BC, that the mathematical field of geometry was first axiomatized
+and made formal. Euclid worked without the use of a coordinate system. It was much later in the 17th century
+when cartesian coordinates were developed (by Descartes), which allowed geometric concepts to be expressed
+arithmetically.
+In the late 19th century a revolutionary shift occurred in people’s view of geometry (and mathematics in general).
+Up to this time, no one questioned that there is but one geometry, namely the Euclidean geometry. Mathematicians
+like Lobachevski and Gauss, suggested that there may be other geometric systems which are just as
+consistent and valid as Euclidean geometry, but in which different axioms apply. These are called noneuclidean
+geometries, and they played an important role in Einstein’s theory of relativity.
+We will discuss three basic geometric systems: affine geometry, Euclidean geometry, and projective geometry.
+Affine geometry is the most basic of these. Euclidean geometry builds on affine geometry by adding the concepts
+of angles and distances. Projective geometry is more complex still, but it will be needed in performing
+perspective projections.
+Affine Geometry: The basic elements of affine geometry are scalars (which we can just think of as being real numbers),
+points and free vectors (or simply vectors). Points are used to specify position. Free vectors are used to
+specify direction and magnitude, but have no fixed position. The term “free” means that vectors do not necessarily
+emanate from some position (like the origin), but float freely about in space. There is a special vector
+called the zero vector, ~0, that has no magnitude, such that ~v +~0 = ~0 +~v = ~v. Note in particular that we did
+not define a zero point or “origin” for affine space. (Although we will eventually have to break down and define
+something like this in order, simply to be able to define coordinates for our points.)
+You might ask, why make a distinction between points and vectors? Both can be represented in the same way
+as a list of coordinates. The reason is to avoid hiding the intention of the programmer. For example, it makes
+perfect sense to multiply a vector and a scalar (we stretch the vector by this amount). It is not so clear that it
+Lecture Notes 27 CMSC 427
+makes sense to multiply a point by a scalar. By keeping these concepts separate, we make it possible to check
+the validity of geometric operations.
+We will use the following notational conventions. Points will be denotes with upper-case Roman letters (e.g.,
+P, Q, and R), vectors will be denoted with lower-case Roman letters (e.g., u, v, and w) and often to emphasize
+this we will add an arrow (e.g., ~u, ~v, ~w), and scalars will be represented as lower case Greek letters (e.g., _, _,
+). In our programs scalars will be translated to Roman (e.g., a, b, c).
+The table below lists the valid combinations of these entities. The formal definitions are pretty much what you
+would expect. Vector operations are applied in the same way that you learned in linear algebra. For example,
+vectors are added in the usual “tail-to-head” manner. The difference P -Q of two points results in a free vector
+directed from Q to P. Point-vector addition R +~v is defined to be the translation of R by displacement ~v. Note
+that some operations (e.g. scalar-point multiplication, and addition of points) are explicitly not defined.
+vector   scalar _ vector; vector   vector=scalar scalar-vector multiplication
+vector   vector + vector; vector   vector - vector vector-vector addition
+vector   point - point point-point difference
+point   point + vector; point   point - vector point-vector addition
+v
+R+v
+R
+point-vector addition
+P
+point subtraction
+P-Q
+u+v Q
+u v
+vector addition
+Fig. 19: Affine operations.
+Affine Combinations: Although the algebra of affine geometry has been careful to disallow point addition and scalar
+multiplication of points, there is a particular combination of two points that we will consider legal. The operation
+is called an affine combination.
+Let’s say that we have two points P and Q and want to compute their midpoint R, or more generally a point R
+that subdivides the line segment PQ into the proportions _ and 1 - _, for some _ 2 [0; 1]. (The case _ = 1=2
+is the case of the midpoint). This could be done by taking the vector Q-P, scaling it by _, and then adding the
+result to P. That is,

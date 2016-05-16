@@ -1,0 +1,29 @@
+C++ Notes: Binary Tree Traversal 
+Typical binary tree node Assume these definition for the following examples. 
+struct tree_node {
+    tree_node *left;   // left subtree has smaller elements
+    tree_node *right;  // right subtree has larger elements
+    int data;
+}; 
+Traversing a binary tree Traversing (visiting all the nodes) a tree starting at 
+node is often done in one of three orders 
+Preorder - node, left subtree, right subtree. 
+Inorder - left subtree, node, right subtree. This could be used to print a binary search tree in sorted order. 
+Postorder - left subtree, right subtree, node. This could be used to print an expression tree in reverse polish notation (postfix). 
+
+Recursive code to print a binary search tree By far the easiest way to print (or otherwise process) a binary tree is with a
+recursive function. This is one of the first uses of recursion that makes an algorithm much easier to code. 
+
+void print_inorder(tree_node *p) {
+    if (p != NULL) {
+        print_inorder(p-&gt;left);  // print left subtree
+        cout &lt;&lt; p-&gt;data &lt;&lt; endl; // print this node
+        print_inorder(p-&gt;right); // print right subtree
+    }
+} 
+Exercises 
+Rewrite this for preorder and postorder traversals. 
+To save the cost of a call, this could test each pointer for non-NULL before making the call to process that subtree. Make this small improvement.  
+The example above prints each element of the tree. Rewrite the function to add (ie, push_back) data elements onto a global vector&lt;int&gt; v. 
+The resulting vector will have all elements in sorted order as a consequence of the inorder traversal.  
+

@@ -1,0 +1,8 @@
+For example, to find the character at i=10 in Figure 2.1 shown on the right, start at the root node (A), find that 22 is greater than 10 and there is a left child, so go to the left child (B). 9 is less than 10, so subtract 9 from 10 (leaving i=1) and go to the right child (D). Then because 6 is greater than 1 and there's a left child, go to the left child (G). 2 is greater than 1 and there's a left child, so go to the left child again (J). Finally 2 is greater than 1 but there is no left child, so the character at index 1 of the short string "na", is the answer.
+Concat[edit]
+ 
+Figure 2.2: Concatenating two child ropes into a single rope.
+Definition: Concat(S1, S2): concatenate two ropes, S1 and S2, into a single rope.
+Time complexity: O(1) (or O(log N) time to compute the root weight)
+A concatenation can be performed simply by creating a new root node with left = S1 and right = S2, which is constant time. The weight of the parent node is set to the length of the left child S1, which would take O(log N) time, if the tree is balanced.
+As most rope operations require balanced trees, the tree may need to be re-balanced after concatenation.

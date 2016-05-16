@@ -1,0 +1,62 @@
+Moxie Marlinspike Makes Encryption for Everyone
+
+The Signal developer on why the FBI and governments can’t be trusted
+While Moxie Marlinspike doesn’t have the mainstream notoriety of Edward Snowden, the dreadlocked, free-spirited coder and cryptographer is one of the most important individuals working within today’s global tech community (and certainly the only one with as mellifluous a pseudonym).
+
+Marlinspike is the founder of Open Whisper Systems, a non-profit software group, and the designer of Signal, an open-source platform for encrypted voice and text communication [that has garnered praise by everyone from Snowden to filmmaker Laura Poitras and prominent cryptographers Bruce Schneier and Matthew Green.
+
+While Marlinspike has admirers throughout the encryption community, law enforcement figures like FBI director James Comey have issued dire warnings about the ability to communicate beyond the reach of eavesdropping. Last month, the FBI abruptly walked away from its high-profile case in which it tried to compel Apple to defeat its own iPhone security measures, but only after a third-party provided the means to hack into the work phone of the dead San Bernardino terrorist Syed Farook.
+
+But the hallmark that has made Signal so popular is “end-to-end encryption” — with cryptographic keys housed only on the devices of the sender and recipient. This means that the company servers act merely as go-betweens that cannot decrypt the contents of messages passed along, even if served with a warrant.
+
+End-to-end encryption is a tool that is now ready to go from niche to mainstream. Future smart phone users won't even have the option to use "dumb" unencrypted text systems — so-called "overlay" encryption services like WhatsApp, Signal, or Facebook Messenger will run on top of your normal smartphone platform to do the texting.
+
+Marlinspike, along with Brian Acton and Jan Koum, the creators of WhatsApp, the insanely popular international messaging service, announced in early April that WhatsApp's various communication tools will be end-to-end encrypted. WhatsApp, which is owned by Facebook, has a user base of a cool 1 billion people who can now communicate without the fear that their messages, phone calls, or even emojis will be overheard.
+
+As we conduct more and more of our lives online, should there be places for us to talk without the government listening in? Popular Science corresponded over email with Marlinspike to discuss the ever-growing rise in encryption services.
+Popular Science: Given the FBI walking away from its case against Apple, what are the implications for strong encryption in the United States?
+
+Moxie Marlinspike: The FBI has been talking about strong encryption in consumer devices for years. They've largely struck out in the policy space, but they've also been biding their time for a test case like this one. At this point it seems like they've decided it's not the perfect test case they'd hoped for. So it's great that they didn't win, but they didn't lose either. We still have to wait in fear of the moment when they have an even more strategic case to set the precedent they want.
+
+Read More: Exclusive Q&A With Edward Snowden on Our Digital Naïveté, Online Privacy, and Encryption
+You mentioned at the RSA conference how you think that law enforcement should be hard. Can you expand on what you meant by that?
+
+In the San Bernardino case, there's almost certainly nothing of value on this particular phone. It's not the shooter's personal phone — which he intentionally destroyed — but his work phone, which he left in a drawer. The FBI already has a ton of information about it.
+
+They have all the call records that were made from the phone, which they got from the phone's mobile carrier, and they have a full iCloud backup from the device. They'd have an even more recent iCloud backup if the FBI hadn't fucked up and reset the device's iCloud password before prompting a sync. So they have a ton of information.
+
+What they seem to be saying, though, is that they need this capability because they might be missing something. Some little detail. But the thing about a world where the FBI never misses anything is that it's also a world where the FBI knows everything. I don't think that's the world we want, but it's the world they're asking for. [Editor's note: According to various reports, the FBI paid more than $1 million to hack into the phone, and has yet to announce finding anything of significant value.]
+
+I have the somewhat unpopular opinion that it should be possible to break the law. Recently we've seen the legalization of same sex marriage in many US states, as well as the legalization of marijuana. These are the outcomes of a democratic process, but we also have to recognize that they wouldn't have been possible without the ability to break the law.
+Moxie Marlinspike
+
+How would we know that we wanted to legalize same-sex marriage if nobody had ever been able to have a same sex relationship, because the sodomy laws on the books in all these states had been perfectly enforced? How would we know that we wanted to legalize marijuana consumption, if nobody had ever been able to consume marijuana? We can only desire based on what we know. It is our present experience of what we are and are not able to do that largely determines our sense for what is possible.
+Given the threat of these sleeper cells that attack civilian targets seemingly at random, like in San Bernardino or Brussels, can you put yourself in the shoes of law enforcement? The position that “we need to be able to engage in surveillance to get tips that might thwart the next attack”? Does the difficulty of their situation make you at all sympathetic to their desire to get up on people’s phones?
+
+By framing the question like that, you're already taking a big leap, because this encryption debate has nothing to do with terrorism. The FBI is asking for a ban on strong encryption by default in consumer products, not a ban on strong encryption -- which they know would be impossible.
+
+Encryption isn't a physical product that's made in a factory somewhere and can be regulated, it's just a set of pretty simple algorithms that have been widely published and circulated for over 30 years. There have been software packages that allow you to communicate using strong encryption since the '90s.
+
+Most people don't use them because they're difficult to use. Not difficult in the sense that you need to be smart, but difficult in the sense that it takes three extra clicks every time you send an email. For most people, that's too much friction in their ordinary work flow, but people engaged in high-risk criminal activity are always going to be willing to click three extra times. The only people who aren't are normal people like you and I. So we're the only ones affected by mass surveillance, and we're also the ones that have our data leaked and compromised every time consumer internet services get hacked.
+
+These services are finally realizing that end-to-end encryption is the only way to keep our data safe, which is why we're starting to see it deployed in major consumer products. The FBI wants us to believe that strong encryption in consumer products will enable terrorists, but they already have access to encryption. It's the rest of us that don't.
+
+Read More: Laura Poitras and Jacob Appelbaum on How to Fix the Internet]
+We’ve learned that the Paris attackers used burner phones, not encryption. As far as I can tell, encryption played little role in the San Bernardino attacks. As a cryptographer, do you ever feel like a scapegoat whenever there’s a terrorist attack, where encryption gets blamed, even if it played no role?
+
+I'm not a techno-optimist [but] when it comes to the narrow question of communication and encryption, though, I'm optimistic.
+
+Of course. The growing adoption of end-to-end encryption in consumer products has nothing to do with terrorism, but the FBI is trying to build that association as strongly as they can. Every time there's something people will react to, "unnamed government sources" immediately leak that end-to-end encryption is involved.
+
+In the end, though, we learn that it wasn't. And even if terrorists do find end-to-end encryption useful at some point, that is unrelated to whether or not it should be available in consumer products for the rest of us.
+Conversely, it’s not hard to imagine a situation where terrorists might use Signal or WhatsApp or an encrypted iPhone to send messages to one another. If that were to occur, would you, as a proponent of strong encryption, feel at all guilty?
+
+Not at all. Maybe they like Signal because it's easy to use, but they'd be just as willing to use the clunky encryption products that have been around since the '90s. Or they'd write their own clunky products without any difficulty. What we do at Open Whisper Systems isn't about creating encryption — that’s been done already. What we're doing is creating encryption that people who aren't engaged in high risk criminal activity can actually use and benefit from.
+In 2014, security researcher Oliver Day told Popular Science that anyone who markets a product as “NSA-proof” is selling snake oil. Do you agree that’s true? (To the best of your knowledge?) Can the NSA get into folks’ iPhones? Or hack into Signal?
+
+What we're doing with Signal is working to make mass surveillance impossible. That includes mass surveillance by the NSA. What we're not doing is trying to stop targeted attacks. There are plenty of ways that the NSA could physically compromise the device of a Signal user and record what is typed before it's even encrypted or transmitted.
+
+But those attacks are very risky for the NSA. It's not just network monitoring anymore, or activity happening on a server somewhere, and the economics of how they achieve that kind of access requires that they do it very selectively.
+Moxie Marlinspike
+
+'m not a techno-optimist — I believe that as technology's role in mediating our lives increases, we will continue to lose fundamental control over those aspects of our lives — but when it comes to the narrow question of communication and encryption, though, I'm uncharacteristically optimistic. It seems in that in the short term, the future of mobile communication is overlay services, and it looks to me like the future of overlay services is end-to-end encryption.

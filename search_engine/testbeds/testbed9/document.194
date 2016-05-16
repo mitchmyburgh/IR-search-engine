@@ -1,0 +1,44 @@
+In computer science, a U-form is an abstract data type comprising a collection of attribute-value pairs associated with a universally-unique identifier (UUID). A U-form essentially comprises an associative array augmented with a UUID and with keys limited to strings.
+The UUID that is associated with a u-form is immutable, however all data "contained" in the u-form are mutable (including the keys/names).
+The mutability of contained data combined with an immutable identifier make implementations of fully mutable, replicable digital objects possible. This has applications in distributed computing, non-relational database systems, information visualization, and knowledge representation systems.
+Navigational databases, Entity and associative entity relationships can be implemented by using a UUID, or multiple UUIDs, as attribute values.
+The u-form's design goals center around supporting an open, extensible distributed information space, emphasizing the unambiguous identity of data objects and the separation between data storage, data characterization, and schema development. The use of non-semantic UUIDs combined with a simple attribute-value model draws a clear distinction between identity and data.
+Although u-forms share certain design characteristics with serialization formats such as XML, they should not be confused with such representational formats. Since u-forms are abstract, they do not specify any particular representational format. Indeed they may be stored as or communicated via XML or other types of serialization.
+
+
+== Operations ==
+The operations defined for a u-form are similar to associative arrays:
+Set_Attribute: Bind an attribute name to a value (replacing any existing binding to that name)
+Delete_Attribute: Unbind an attribute name from a value and remove the name from the u-form
+Get_Attribute: Find the value (if any) that is bound to a name.
+List_Attributes: Find all names that have a non-empty value.
+
+
+== Properties ==
+U-forms have the following properties:
+A UUID is defined as an array of bytes that is intended to be unique in the Universe.
+Note that these are not limited to the standards for ISO, Microsoft, or DCE UUIDs though those are examples of acceptable sources of UUIDs.
+Attribute names are case-folded and normalized strings of Unicode characters
+Values are arbitrary-length arrays of bytes (BLOBs, though not necessary "large")
+Each attribute has only one value (though the bytes may be interpreted to represent a vector of data)
+The number of attribute-value pairs is arbitrary and extensible at any time
+The attribute-value pairs are treated as a set (i.e., they are unordered)
+
+
+== Copying vs Replication ==
+An important characteristic of u-forms, of significance to distributed database systems, is that they support a clear distinction between copying and replication of data objects. Copying a u-form involves the creation of a new u-form (i.e., one with a different UUID), but with all attribute-value pairs identical to those of the original u-form. Replicating a u-form involves creating a new instance of the u-form with the same UUID as the original. Note that in a distributed system, two instances of the same u-form may be inconsistent (i.e., they may contain different attribute-value pairs). However, the fact that they have the same UUID means that they are intended to eventually be identical.
+
+
+== History ==
+U-forms were developed at MAYA Design as part of the Visage Information Visualization System, a joint project of MAYA and Carnegie Mellon University funded by DARPA and The Army Research Laboratory. The name "u-form" derives from the term "e-form", a hypothetical "electronic form" proposed by Michael Dertouzos in his 1997 book "What Will Be". In addition to their continuing use in Visage, they have been used as the basis of a number of significant research  and large-scale production systems, most notably the US Army's Command Post of the Future.
+
+
+== References ==
+
+
+== External links ==
+http://www.maya.com/portfolio/maya-universal-database
+http://www.bio-itworld.com/issues/2006/july-aug/infocommons/
+http://www.asis.org/Bulletin/Jun-07/Bulletin_JunJul07.pdf
+http://www.biotech-online.com/fileadmin/artimg/the-universal-genetics-database_-information-sharing-in-genetics-and-beyond.pdf
+http://books.google.com/books?id=oDYEAAAAMBAJ&lpg=PA20&vq=u-form&pg=PA20#v=onepage&q&f=false

@@ -1,0 +1,43 @@
+ Since all occlusion culling techniques are based on exploiting
+spatial coherence, first a hierarchy must be generated
+for a given scene. The type of hierarchy depends on the
+requirements of the application, e.g. whether the scene is
+mainly static or fully dynamic. In our tests we used the p-
+HBVO algorithm [MBH_01] since our models were static.
+As required for any hardware occlusion culling technique,
+this scene hierarchy is traversed in a front to back order,
+while issuing occlusion queries. Note that sorting and traversal
+do not slow down rendering, since they are performed
+c The Eurographics Association 2006.
+M. Guthe, Á. Balázs, & R. Klein / Near Optimal Hierarchical Culling
+on the otherwise almost idle CPU. In contrast to Bittner et
+al. [BWPP04] we consider the characteristics of the graphics
+hardware and perform a cost/benefit balancing to amortize
+the cost of wasted queries over time. In addition, we do
+not only issue queries for termination nodes, but consider
+nodes on all levels of the hierarchy to find the optimal balance
+between query time and expected speedup. This also
+means that unlike the CHC method multiple queries can be
+issued for a subtree in case previous queries did not succeed
+but subsequent queries are still reasonable according to the
+heuristic. Additionally it also allows using the query result
+for a performance gain already in the current frame. Figure 4
+shows the pseudo-code for the traversal algorithm.
+Table 4 shows the average and minimum frame rates
+achieved when using view frustum culling only (VFC), coherent
+hierarchical culling (CHC) [BWPP04], the proposed
+method (NOHC) and the theoretically optimal algorithm that
+only queries occluded nodes for which issuing a query is
+faster than simply rendering them. In addition, a node is
+not queried if querying the children is faster. Comparing
+to this theoretical algorithm gives the overhead required for
+the wasted queries using the CHC algorithm and thus shows
+how much it is reduced with our approach. The results in Table
+4 were obtained using the latest (as of April 2006) drivers
+both for ATI and nVidia cards. In addition to using different
+graphics cards, we also tested the method using two driver
+performance/quality settings, where the maximum performance
+setting means no anti-aliasing, no anisotropic filtering
+and only bilinear texture filtering (no mip-mapping) and
+the high quality setting refers to maximum anti-aliasing,
+c

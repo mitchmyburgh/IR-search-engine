@@ -1,0 +1,67 @@
+Machine learning: a review of classification
+and combining techniques
+
+
+S. B. Kotsiantis · I. D. Zaharakis · P. E. Pintelas
+
+1 Introduction
+There are several applications for Machine Learning (ML), the most significant of which is
+predictive data mining. Every instance in any dataset used by machine learning algorithms
+is represented using the same set of features. The features may be continuous, categorical or binary. If instances are given with known labels (the corresponding correct outputs) then
+the learning is called supervised, in contrast to unsupervised learning, where instances are
+unlabeled (Jain et al. 1999).
+Numerous ML applications involve tasks that can be set up as supervised. In the present
+paper, we have concentrated on the techniques necessary to do this. In particular, this work is
+concerned with classification problems in which the output of instances admits only discrete,
+unordered values. We have limited our references to recent refereed journals, published books
+and conferences. A brief review of what ML includes can be found in (Dutton and Conroy
+1996). De Mantaras and Armengol (1998) also presented a historical survey of logic and
+instance based learning classifiers.
+After a better understanding of the strengths and limitations of each method, the possibility
+of integrating two or more algorithms together to solve a problem should be investigated. The
+objective is to utilize the strengths of one method to complement the weaknesses of another.
+If we are only interested in the best possible classification accuracy, it might be difficult or
+impossible to find a single classifier that performs as well as a good ensemble of classifiers.
+Our next section covers wide-ranging issues of supervised machine learning such as data
+pre-processing and feature selection. Logic-based learning techniques are described in Sect.
+3, whereas perceptron-based techniques are analyzed in Sect. 4. Statistical techniques for ML
+are covered in Sect. 5. Section 6 deals with the newest supervised ML technique—Support
+Vector Machines (SVMs). In Sect. 7, a representative algorithm for each learning technique
+is compared to a number of datasets in order for researchers to have baseline accuracy for new
+algorithms in these well-known datasets. Section 8 presents the recent attempt for improving
+classification accuracy—ensembles of classifiers. Finally, the last section concludes this
+work.
+
+9 Conclusions
+This paper describes the best-know supervised techniques in relative detail. The key question
+when dealing with ML classification is not whether a learning algorithm is superior to others,
+but under which conditions a particular method can significantly outperform others on a
+given application problem. Meta-learning is moving in this direction, trying to find functions
+that map datasets to algorithm performance (Brazdil et al. 2003; Kalousis and Gama 2004).
+If we are only interested in the best possible classification accuracy, it might be difficult or
+impossible to find a single classifier that performs as well as a good ensemble of classifiers.
+Despite the obvious advantages, ensemble methods have at least three weaknesses. The first
+weakness is increased storage as a direct consequence of the requirement that all component
+classifiers, instead of a single classifier, need to be stored after training. The total storage
+depends on the size of each component classifier itself and the size of the ensemble (number
+of classifiers in the ensemble). The second weakness is increased computation because
+in order to classify an input query, all component classifiers (instead of a single classifier)
+must be processed. The last weakness is decreased comprehensibility. With involvement of
+multiple classifiers in decision-making, it is more difficult for non-expert users to perceive the
+underlying reasoning process leading to a decision. A first attempt for extracting meaningful
+rules from ensembles was presented in (Wall et al. 2003).
+For all these reasons, the application of ensemble methods is suggested only if we are only
+interested in the best possible classification accuracy. Another time-consuming attempt that
+tried to increase classification accuracy without decreasing comprehensibility is the wrapper
+feature selection procedure (Guyon and Elissee 2003). Theoretically, having more features
+should result in more discriminating power. However, practical experience with machine
+learning algorithms has shown that this is not always the case. Wrapper methods wrap the
+feature selection around the induction algorithm to be used, using cross-validation to predict
+the benefits of adding or removing a feature from the feature subset used.
+The database community deals with gigabyte databases. Of course, it is unlikely that all
+the data in a data warehouse would be mined simultaneously. Most of the current learning
+algorithms are computationally expensive and require all data to be resident in main memory,
+which is clearly untenable for many realistic problems and databases. Distributed machine
+learning involves breaking the dataset up into subsets, learning from these subsets concurrently
+and combining the results (Basak and Kothari 2004). Distributed agent systems can
+be used for this parallel execution of machine learning processes (Klusch et al. 2003).

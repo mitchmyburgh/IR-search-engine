@@ -1,0 +1,20 @@
+Agent-oriented_programming
+'''Agent-oriented programming''' (AOP) is a  where the construction of the software is centered on the concept of s. In contrast to  which has objects (providing methods with variable parameters) at its core, AOP has externally specified agents (with interfaces and messaging capabilities) at its core. They can be thought of as abstractions of objects. Exchanged messages are interpreted by receiving "agents", in a way specific to its class of agents.
+== History ==
+Historically the concept of Agent-oriented programming and the idea of centering your software around the concept of agent was first used by  within his Artificial Intelligence studies, in 1990.
+ His agents are specific to his own paradigm as they have just one method, with a single parameter. To quote Yoav Shoham from his paper in 1990 for a basic difference between of AOP against OOP:
+:...agent-oriented programming (AOP), which can be viewed as a specialization of object-oriented programming. ...
+== Frameworks ==
+There are multiple AOP 'frameworks' also called Agent Platforms that implement Shoham's programming paradigm. The following examples illustrate how a basic agent is programmed as a Hello World Program.
+=== JADE ===
+For the Java-platform one of the frameworks is JADE  (http://jade.tilab.com/).
+Here is a very basic example  of an Agent that runs code
+package helloworld;
+import jade.core.Agent;
+public class Hello extends Agent 
+At the core of JADE's AOP model is that its  supports the standard  
+=== Agent Speak (Jason) ===
+For a literal translation of Agent Oriented concepts into a scheme unobfuscated as is JADE, behind Java and Object Orientedness, Agent Speak Anand S. Rao, 1996. AgentSpeak(L): BDI Agents Speak Out in a Logical Computable Language. Proceedings of Seventh European Workshop on Modelling Autonomous Agents in a Multi-Agent World (MAAMAW-96). () provides a "natural" language for agents.
+	
+	started.
+	+started

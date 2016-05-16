@@ -1,0 +1,78 @@
+    jQuery(document).ready(function ($) {
+        var $siteSwitcher = $('#siteSwitcher-dialog');
+        if(document.location.href.indexOf("moderator.stackexchange.com") !== -1) {
+            $('.current-site-header').hide();
+            $('.current-site-container').hide();
+        }
+        $(document).click(function (e) {
+            if (e.target != $('.topbar-icon')[0] && !$.contains($siteSwitcher[0], e.target) && $siteSwitcher.is(':visible')) {
+                $('.logo-se').click();
+            }
+        });
+        $('.logo-se').click(function () {
+            $(this).parent().toggleClass('topbar-icon-on');
+            $siteSwitcher.css('top', $('.topbarWrapper').offset().top + $('.topbarWrapper').height());
+            $siteSwitcher.toggle();
+            return false;
+        });
+    });
+    current community
+       chat 
+         IT Security   
+         IT Security Meta   
+    more communities
+      Explore other Stack Exchange communitieson stackexchange.com  
+   Stack Exchange 
+    About 
+    Archive 
+    About Secure Password Hashing 
+     2013-09-13 by 
+     lucaskauffman. 
+     19 comments 
+     An often overlooked and misunderstood concept in application development is the one involving secure hashing of passwords. We have evolved from plain text password storage, to hashing a password, to appending salts and now even this is not considered adequate anymore. In this post I will discuss what hashing is, what salts and peppers are and which algorithms are to be used and which are to be avoided.  
+     Hashing 
+     Hashing is a type of algorithm which takes any size of data and turns it into a fixed-length of data. This is often used to ease the retrieval of data as you can shorten large amounts of data to a shorter string (which is easier to compare). For instance let’s say you have a DNA sample of a person, this would consist of a large amount of data (about 2.2 – 3.5 MB), and you would like to find out to who this DNA sample belongs to. You could take all samples and compare 2.2 MB of data to all DNA samples in the database, but comparing 2.2 MB against 2.2 MB of data cant take quite a while, especially when you need to traverse thousands of samples. This is where hashing can come in handy, instead of comparing the data, you calculate the hash of this data (in reality, several hashes will be calculated for the different locations on the chromosomes, but for the sake of the example let’s assume it’s one hash), which will return a fixed length value of, for instance, 128 bits. It will be easier and faster to query a database for 128-bits than for 2.2 MB of data. 
+     The main difference between hashing and encryption is that a hash is not reversible. When we are talking about cryptographic hash functions, we are referring to hash functions which have these properties: 
+      It is easy to compute the hash value for any given message. 
+      It is infeasible to generate a message that has a given hash. 
+      It is infeasible to modify a message without changing the hash. 
+      It is infeasible to find two different messages with the same hash. 
+     The hash function should be resistant against these properties: 
+      Collisions (two different messages generating the same hash) 
+      Pre-image resistance: Given a hash h it should be difficult to find any message m such that h = hash(m). 
+      Resistance to second-preimages: given m, it is infeasible to find m’ distinct from m and such that MD-5(m) = MD-5(m’). 
+     Modern Hashing Algorithms 
+     Some hashing algorithms you may encounter are: 
+      MD-5 
+      SHA-1 
+      SHA-2 
+      SHA-3 
+     MD-5 
+     MD-5 is a hashing algorithm which is still widely used but cryptographically flawed as it’s prone to collisions. MD-5 is broken in regard to collisions, but not in regard of preimages or second-preimages. The first attacks on MD-5 were published in 1996, this was in fact an attack on the compression of MD-5 rather than MD-5 itself. In 2004 a theoretical attack was produced which allowed for weakening the pre-image resistance property of MD-5. In practice the attack is way too slow to be useful. 
+     SHA 
+     SHA or Secure Hashing Algorithm is a family of cryptographic hash functions published by the National Institute of Standards and Technology (NIST) as a U.S. Federal Information Processing Standard (FIPS). Currently three algorithms are defined: 
+      SHA-1: A 160-bit hash function which resembles the earlier MD-5 algorithm. This was designed by the National Security Agency (NSA) to be part of the Digital Signature Algorithm. Cryptographic weaknesses were discovered in SHA-1, and the standard was no longer approved for most cryptographic uses after 2010. 
+      SHA-2: A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA. 
+      SHA-3: SHA-3 is not yet defined. NIST is working on the exact parameters they will use; SHA-3 will be Keccak, or “close enough”, but not necessarily the Keccak which was submitted (it is a configurable function, and they seem to want to tweak the parameters a bit differently than what was first proposed). 
+     Note that while SHA-1 is “cryptographically broken” the properties we seek in a password hashing algorithm are still valid. In the real world finding a password hashing algorithm built on SHA-1 is still secure in the sense, that if it’s implemented there is no reason to assume it should be immediately changed to something newer. 
+     Strong passwords 
+     Apart from choosing a good hashing algorithm you should also force your users to choose a password which is built up of at least eight, random characters. Unfortunately people aren’t designed to remember and generate random sequences of characters. This is why we force our users to make passwords which contain numbers, letters, signs and at least one capital letter. But how does this help in regard to password hashing? 
+     To attack hashed passwords there are different strategies: 
+      Dictionary Attacks 
+      Bruteforce 
+      Rainbow Tables (generate everything upfront in a database and do a look up for each hash) 
+     With a dictionary attack you will try to use word lists, these can consist of mostly used passwords, words, names, years, etc. For each word you will run the hashing algorithm and see if the generated hash is the same as the hash in the database. If this is the case then you know that the word from which you derived the hash is the password. 
+     With a bruteforce attack you will try all possible combinations of characters. When using passwords of at least eight characters long, only using the ASCII characters set, there are 128^8 possibilities of passwords. 
+     To show the importance of the length of a password: 
+     These days, using a single, modern GPU, you can process about 10.323.000.000 passwords per second when bruteforcing plain MD-5. With this speed, when using a password of eight random characters, it will take about eighty days to generate every single possibility. This single GPU only costs about 500 USD (AMD Radeon 6990). People have actually constructed clusters which contain 25 of these cards, optimized it and managed to generate 350 billion passwords per second. This means they can generate all possible passwords of eight random characters long in less than two days. 
+     Now when you add one character to the password, the possibilities will be 128^9. With previous calculation of 350 billion it will now take 305 days. 10 characters -&gt; 106 years. This seems long, but we need to take into account Moore’s law: 
+      Moore’s law is the observation that, over the history of computing hardware, the number of transistors on integrated circuits doubles approximately every two years. The period often quoted as “18 months” is due to Intel executive David House, who predicted that period for a doubling in chip performance (being a combination of the effect of more transistors and their being faster).
+     Computers have become faster and faster over the years, which is something we need to take into account. From a cryptographical point of view, 106 years is still a short period. We want infinity (something which will take several hundred-thousand to millions of years). 
+     Hashing Passwords 
+     Why do we hash passwords? 
+     We hash passwords because in the event an attacker gets read access to our database, we do not want him to retrieve the passwords plain text. Remember often we store usernames, email addresses and other personal information in our database. Security rule #1 dictates that users need to be protected from themselves. We can make them aware of the risks, we can tell them not to re-use passwords, but we all know that in the end there will still be people who use the same password for their Facebook, Gmail, Linkedin and corporate email. What you do not want is that when the attacker gets his hand on your database, he immediately has access to all the above accounts (usernames/email addresses will be the same). 
+     Hashing passwords is to prevent this from happening, when the attacker gets his hands on your database, you want to make it as painful as possible to retrieve those passwords using a brute-force attack. Hashing passwords will not make your site any more secure, but it will perform damage containment in the event of a breach. 
+     Properties 
+     Now that you have a small overview of hashing algorithms let’s dive into password hashing. Password hashing requires the following properties: 
+      Have a unique salt per password (salt may only be used once across the database containing all password hashes) to prevent a bruteforce attack of compromising the data in one run 
+      Fast on software (executing the f

@@ -1,0 +1,761 @@
+
+
+NOVA
+
+The Nature of Reality NOVA Twitter Facebook
+
+  * Search for:
+
+  *   * Home
+  * Topics
+  * Archive
+  * About
+
+Thought Experiments
+
+10
+
+Apr
+
+# Is There Anything Beyond Quantum Computing?
+
+### By Scott Aaronson on Thu, 10 Apr 2014
+
+  * Read Later
+  * Share
+  * Tweet
+  * Comment
+
+A quantum computer is a device that could exploit the weirdness of the quantum
+world to solve certain specific problems much faster than we know how to solve
+them using a conventional computer. Alas, although scientists have been
+working toward the goal for 20 years, we don’t yet have useful quantum
+computers. While the theory is now well-developed, and there’s also been
+spectacular progress on the experimental side, we don’t have any computers
+that uncontroversially use quantum mechanics to solve a problem faster than we
+know how to solve the same problem using a conventional computer.
+
+Credit: Marcin Wichary/Flickr, under a Creative Commons license.
+
+Yet some physicists are already beginning to theorize about what might lie
+beyond quantum computers. You might think that this is a little premature, but
+I disagree. Think of it this way: From the 1950s through the 1970s, the
+intellectual ingredients for quantum computing were already in place, yet no
+one broached the idea. It was as if people were afraid to take the known laws
+of quantum physics and see what they implied about computation. So, now that
+we know about quantum computing, it’s natural not to want to repeat that
+mistake! And in any case, I’ll let you in on a secret: Many of us care about
+quantum computing less for its (real but modest) applications than because it
+defies our preconceptions about the ultimate limits of computation. And from
+that standpoint, it’s hard to avoid asking whether quantum computers are “the
+end of the line.”
+
+Now, I’m emphatically not asking a philosophical question about whether a
+computer could be conscious, or “truly know why” it gave the answer it gave,
+or anything like that. I’m restricting my attention to math problems with
+definite right answers: e.g., what are the prime factors of a given number?
+And the question I care about is this: Is there any such problem that
+_couldn’t_ be solved efficiently by a quantum computer, but _could_ be solved
+efficiently by some other computer allowed by the laws of physics?
+
+Here I’d better explain that, when computer scientists say “efficiently,” they
+mean something very specific: that is, that the amount of time and memory
+required for the computation grows like the size of the task raised to some
+fixed power, rather than exponentially. For example, if you want to use a
+classical computer to find out whether an n-digit number is prime or
+composite—though not what its prime factors are!—the difficulty of the task
+grows only like n cubed; this is a problem classical computers can handle
+efficiently. If that’s too technical, feel free to substitute the everyday
+meaning of the word “efficiently”! Basically, we want to know which problems
+computers can solve not only in principle, but in practice, in an amount of
+time that won’t quickly blow up in our faces and become longer than the age of
+the universe. We don’t care about the exact speed, e.g., whether a computer
+can do a trillion steps or “merely” a billion steps per second. What we care
+about is the _scaling behavior_: How does the number of steps grow as the
+number to be factored, the molecule to be simulated, or whatever gets bigger
+and bigger? Scaling behavior is where we see profound differences between
+today’s computers and quantum computers; it’s the whole reason why anyone
+wants to build quantum computers in the first place. So, could there be a
+physical device whose scaling behavior is better than quantum computers’?
+
+**The Simulation Machine **
+
+A quantum computer, as normally envisioned, would be a very specific kind of
+quantum system: one built up out of “qubits,” or quantum bits, which exist in
+“superpositions” of the “0” and “1” states. It’s not immediately obvious that
+a machine based on qubits could simulate other kinds of quantum-mechanical
+systems, for example, systems involving particles (like electrons and photons)
+that can move around in real space. And if there are systems that are hard to
+simulate on standard, qubit-based quantum computers, then those systems
+themselves could be thought of as more powerful kinds of quantum computers,
+which solve at least one problem—the problem of _simulating themselves_—faster
+than is otherwise possible.
+
+“It looks likely that a single device, a quantum computer, would in the future
+be able to simulate all of quantum chemistry and atomic physics efficiently.”
+
+So maybe Nature could allow more powerful kinds of quantum computers than the
+“usual” qubit-based kind? Strong evidence that the answer is “no” comes from
+work by Richard Feynman in the 1980s, and by Seth Lloyd and many others
+starting in the 1990s. They showed how to take a wide range of realistic
+quantum systems and simulate them using nothing but qubits. Thus, just as
+today’s scientists no longer need wind tunnels, astrolabes, and other analog
+computers to simulate classical physics, but instead represent airflow,
+planetary motions, or whatever else they want as zeroes and ones in their
+digital computers, so too it looks likely that a single device, a quantum
+computer, would in the future be able to simulate all of quantum chemistry and
+atomic physics efficiently.
+
+So far, we’ve been talking about computers that can simulate "standard," non-
+relativistic quantum mechanics. If we want to bring special relativity into
+the picture, we need quantum field theory—the framework for modern particle
+physics, as studied at colliders like the LHC—which presents a slew of new
+difficulties. First, many quantum field theories aren’t even rigorously
+defined: It’s not clear what we should program our quantum computer to
+simulate. Also, in most quantum field theories, even a vacuum is a complicated
+object, like an ocean surface filled with currents and waves. In some sense,
+this complexity is a remnant of processes that took place in the moments after
+the Big Bang, and it’s not obvious that a quantum computer could efficiently
+simulate the dynamics of the early universe in order to reproduce that
+complexity. So, is it possible that a “quantum field theory computer” could
+solve certain problems more efficiently than a garden-variety quantum
+computer? If nothing else, then at least the problem of simulating quantum
+field theory?
+
+While we don’t yet have full answers to these questions, over the past 15
+years we’ve accumulated strong evidence that qubit quantum computers are up to
+the task of simulating quantum field theory. First, Michael Freedman, Alexei
+Kitaev, and Zhenghan Wang showed how to simulate a “toy” class of quantum
+field theories, called topological quantum field theories (TQFTs), efficiently
+using a standard quantum computer. These theories, which involve only two
+spatial dimensions instead of the usual three, are called “topological”
+because in some sense, the only thing that matters in them is the global
+topology of space. (Interestingly, along with Michael Larsen, these authors
+also proved the converse: TQFTs can efficiently simulate everything that a
+standard quantum computer can do.)
+
+Then, a few years ago, Stephen Jordan, Keith Lee, and John Preskill gave the
+first detailed, efficient simulation of a “realistic” quantum field theory
+using a standard quantum computer. (Here, “realistic” means they can simulate
+a universe containing a specific kind of particle called scalar particles.
+Hey, it’s a start.) Notably, Jordan and his colleagues solve the problem of
+creating the complicated vacuum state using an algorithm called “adiabatic
+state preparation” that, in some sense, mimics the cooling the universe itself
+underwent shortly after the Big Bang. They haven’t yet extended their work to
+the full Standard Model of particle physics, but the difficulties in doing so
+are probably surmountable.
+
+So, if we’re looking for areas of physics that a quantum computer would have
+trouble simulating, we’re left with just one: quantum gravity. As you might
+have heard, quantum gravity has been the white whale of theoretical physicists
+for almost a century. While there are deep ideas about it (most famously,
+string theory), no one really knows yet how to combine quantum mechanics with
+Einstein’s general theory of relativity, leaving us free to project our hopes
+onto quantum gravity—including, if we like, the hope of computational powers
+beyond those of quantum computers!
+
+**Boot Up Your Time Machine**
+
+But is there anything that could support such a hope? Well, quantum gravity
+might force us to reckon with breakdowns of causality itself, if _closed
+timelike curves_ (i.e., time machines to the past) are possible. A time
+machine is _definitely_ the sort of thing that might let us tackle problems
+too hard even for a quantum computer, as David Deutsch, John Watrous and I
+have pointed out. To see why, consider the “Shakespeare paradox,” in which you
+go back in time and dictate Shakespeare’s plays to him, to save Shakespeare
+the trouble of writing them. Unlike with the better-known “grandfather
+paradox,” in which you go back in time and kill your grandfather, here there’s
+no logical contradiction. The only “paradox,” if you like, is one of
+“computational effort”: somehow Shakespeare’s plays pop into existence without
+anyone going to the trouble to write them!
+
+“A time machine is _definitely_ the sort of thing that might let us tackle
+problems too hard even for a quantum computer.”
+
+Using similar arguments, it’s possible to show that, if closed timelike curves
+exist, then under fairly mild assumptions, one could “force” Nature to solve
+hard combinatorial problems, just to keep the universe’s history consistent
+(i.e., to prevent things like the grandfather paradox from arising). Notably,
+the problems you could solve that way include the _NP-complete problems_: a
+class that includes hundreds of problems of practical importance (airline
+scheduling, chip design, etc.), and that’s believed to scale exponentially in
+time even for quantum computers.
+
+Of course, it’s also possible that quantum gravity will simply tell us that
+closed timelike curves can’t exist—and maybe the computational superpowers
+they would give us if they _did_ exist is evidence that they must be
+forbidden!
+
+**Simulating Quantum Gravity**
+
+Going even further out on a limb, the famous mathematical physicist Roger
+Penrose has speculated that quantum gravity is literally impossible to
+simulate using either an ordinary computer or a quantum computer, even with
+unlimited time and memory at your disposal. That would put simulating quantum
+gravity into a class of problems studied by the logicians Alan Turing and Kurt
+Gödel in the 1930s, which includes problems way harder than even the NP-
+complete problems—like determining whether a given computer program will ever
+stop running (the “halting problem”). Penrose further speculates that the
+human brain is sensitive to quantum gravity effects, and that this gives
+humans the ability to solve problems that are fundamentally unsolvable by
+computers. However, virtually no other expert in the relevant fields agrees
+with the arguments that lead Penrose to this provocative position.
+
+What’s more, there are recent developments in quantum gravity that seem to
+support the opposite conclusion: that is, they hint that a standard quantum
+computer could efficiently simulate even quantum-gravitational processes, like
+the formation and evaporation of black holes. Most notably, the AdS/CFT
+correspondence, which emerged from string theory, posits a “duality” between
+two extremely different-looking kinds of theories. On one side of the duality
+is AdS (Anti de Sitter): a theory of quantum gravity for a hypothetical
+universe that has a negative cosmological constant, effectively causing the
+whole universe to be surrounded by a reflecting boundary. On the other side is
+a CFT (Conformal Field Theory): an “ordinary” quantum field theory, without
+gravity, that lives only on the _boundar_y of the AdS space. The AdS/CFT
+correspondence, for which there’s now overwhelming evidence (though not yet a
+proof), says that any question about what happens in the AdS space can be
+translated into an “equivalent” question about the CFT, and vice versa.
+
+“Even if a quantum gravity theory seems 'wild'—even if it involves
+nonlocality, wormholes, and other exotica—there might be a dual description of
+the theory that’s more 'tame,' and that’s more amenable to simulation by a
+quantum computer.”
+
+This suggests that, if we wanted to simulate quantum gravity phenomena in AdS
+space, we might be able to do so by first translating to the CFT side, then
+simulating the CFT on our quantum computer, and finally translating the
+results back to AdS. The key point here is that, since the CFT doesn’t involve
+gravity, the difficulties of simulating it on a quantum computer are “merely”
+the relatively prosaic difficulties of simulating quantum field theory on a
+quantum computer. More broadly, the lesson of AdS/CFT is that, even if a
+quantum gravity theory seems “wild”—even if it involves nonlocality,
+wormholes, and other exotica—there might be a dual description of the theory
+that’s more “tame,” and that’s more amenable to simulation by a quantum
+computer. (For this to work, the translation between the AdS and CFT
+descriptions also needs to be computationally efficient—and it’s possible that
+there are situations where it isn’t.)
+
+**The Black Hole Problem**
+
+So, is there any other hope for doing something in Nature that a quantum
+computer couldn’t efficiently simulate? Let’s circle back from the abstruse
+reaches of string theory to some much older ideas about how to speed up
+computation. For example, wouldn’t it be great if you could program your
+computer to do the first step of a computation in one second, the second step
+in half a second, the third step in a quarter second, the fourth step in an
+eighth second, and so on—halving the amount of time with each additional step?
+If so, then much like in Zeno’s paradox, your computer would have completed
+infinitely many steps in a mere two seconds!
+
+Or, what if you could leave your computer on Earth, working on some incredibly
+hard calculation, then board a spaceship, accelerate to close to the speed of
+light, then decelerate and return to Earth? If you did this, then Einstein’s
+special theory of relativity firmly predicts that, depending on just how close
+you got to the speed of light, millions or even trillions of years would have
+elapsed in Earth’s frame of reference. Presumably, civilization would have
+collapsed and all your friends would be long dead. But if, hypothetically, you
+could find your computer in the ruins and it was still running, then you could
+learn the answer to your hard problem!
+
+We’re now faced with a puzzle: What goes wrong if you try to accelerate
+computation using these sorts of tricks? The key factor is _energy_. Even in
+real life, there are hobbyists who “overclock” their computers, or run them
+faster than the recommended speed; for example, they might run a 1000 MHz chip
+at 2000 MHz. But the well-known danger in doing this is that your microchip
+might overheat and melt! Indeed, it’s precisely because of the danger of
+overheating that your computer has a fan. Now, the faster you run your
+computer, the more cooling you need—that’s why many supercomputers are cooled
+using liquid nitrogen. But cooling takes energy. So, is there some fundamental
+limit here? It turns out that there is. Suppose you wanted to cool your
+computer so completely that it could perform about 1043 operations per
+second—that is, one about operation per Planck time (where a Planck time,
+~10-43 seconds, is the smallest measurable unit of time in quantum gravity).
+To run your computer that fast, you’d need so much energy concentrated in so
+small a space that, according to general relativity, your computer would
+collapse into a black hole!
+
+And the story is similar for the “relativity computer.” There, the more you
+want to speed up your computer, the closer you have to accelerate your
+spaceship to the speed of light. But the more you accelerate the spaceship,
+the more energy you need, with the energy diverging to infinity as your speed
+approaches that of light. At some point, your spaceship will become so
+energetic that it, too, will collapse into to a black hole.
+
+Now, how do we know that collapse into a black hole is inevitable—that there’s
+no clever way to avoid it? The calculation combines Newton’s gravitational
+constant G with Planck’s constant h, the central constant of quantum
+mechanics. That means one is doing a quantum gravity calculation! I’ll end by
+letting you savor the irony: Even as some people hope that a quantum theory of
+gravity might let us surpass the known limits of quantum computers, quantum
+gravity might play just the opposite role, _enforcing_ those limits.
+
+**Go Deeper**  
+_Editor's picks for further reading_
+
+Computer History Museum  
+Explore 2000 years of computer history at the web site of this unique Mountain
+View, California museum.
+
+Quantum Computing Since Democritus  
+Described by its author as "a candidate for the weirdest book ever to be
+published by Cambridge University Press," Scott Aaronson's book is a romp
+through the past and present of math, physics, and computer science.
+
+The New York Times: Quantum Computing Promises New Insights, Not Just
+Supermachines  
+In this essay, Scott Aaronson argues that the popular conception of quantum
+computers "misses the most important part of the story," and that the greatest
+payoff may be a deeper understanding of quantum mechanics.
+
+Tell us what you think on Twitter, Facebook, or email.
+
+## Scott Aaronson
+
+Scott Aaronson is an Associate Professor of Electrical Engineering and
+Computer Science at MIT. Prior to joining MIT, he received his PhD in computer
+science from UC Berkeley, and did postdocs at the Institute for Advanced
+Study, Princeton, and the University of Waterloo. His research focuses on the
+capabilities and limits of quantum computers, and more generally on
+computational complexity theory and its relationship to physics. His first
+book, "Quantum Computing Since Democritus," was recently published by
+Cambridge University Press. Aaronson has written about quantum computing for
+Scientific American and the New York Times, and writes a popular blog
+(http://www.scottaaronson.com/blog). He's received the National Science
+Foundation's Alan T. Waterman Award, the United States PECASE Award, and MIT's
+Junior Bose Award for Excellence in Teaching.
+
+Other posts from this contributor
+
+  * PREV
+  * NEXT
+
+  * Anonymous
+
+And I thought Moore's law was a problem!
+
+I'm not sure how useful it is to consider such questions at a period of such
+infancy in not only our pursuit of quantum computing but even in our
+understanding of all of the quantum mechanical laws behind it. We are jyst
+getting started. Although these considerstions coild help us avoid dead-ends I
+suppose.
+
+And why is q-computing limited to two variables - 1 &amp; ,0? I thought one of
+the great benefits of q-computing was having in-between states for data? And
+Wouldn't each additional data state increase the processing speed
+exponentially without the brute force of just pumping more electricity into
+the system to solve the problem only using 1's and 0's? Break the problem
+apart and reassemble at the end. That's what our brains do don't they? The
+brain uses different regions to solve different parts of the problem and then
+pulls all of the completed pieces together.
+
+I think a bigger practical obstacle than reaching a point of diminishing
+returns in processing ability set by the universe is the ability to adequately
+shield the quanrum states of the particles at the heart of these computers
+from all cosmic rays and other interfetence, etc.
+
+    * Scott Aaronson
+
+Anonymous: It's long been understood that going from bits to "trits" (0, 1,
+2), or to systems with even higher numbers of data states, has no effect
+whatsoever on the scaling behavior of algorithms, neither classically nor
+quantum-mechanically. The reason for that is that you can always encode, for
+example, a trit using two bits (0 = 00, 1 = 01, 2 = 10), and then just
+simulate any operation you'd wanted to do on trits using operations on bits.
+As for ordinary parallelism, of course both our brains and our computers can
+and do exploit it in practice. The issue is simply that if you wanted an
+exponential scaling advantage that way, then the size of your computer would
+also need to expand exponentially, until before long the computer would have
+to be larger than the observable universe.
+
+      * Anonymous
+
+Thanks for responding Scott! It has been a while since I've read anything on
+this topic but I remembered something about in-between quantum states being
+exploitable, but it sounds like this is not the case.
+
+I guess there is no way around it: a variable is a variable and needs to be
+individually accounted for in bits or qbits for any calculation to be done.
+
+        * Scott Aaronson
+
+Well, a quantum bit (or qubit) can indeed exist in a "superposition" of the 0
+and 1 states--that's what makes it a qubit in the first place! Superposition
+is a subtle concept that takes time to understand, and most popular articles
+get it totally wrong. A superposition is kind of like a probability
+distribution over 0 or 1--if you look at the bit, then you'll only ever see 0
+or 1, never anything in between--except that instead of probabilities, you
+have to assign each outcome (in this case, 0 and 1) a complex number called an
+"amplitude." And amplitudes behave very differently from probabilities.
+Ultimately, you do use the amplitudes to calculate the probability that you'll
+see either 0 or 1 when you look. But when a quantum system is isolated from
+its environment, its amplitudes can do things that probabilities would never
+do, like "interfere destructively" and cancel each other out.
+
+Anyway, it's probably too ambitious to teach you quantum mechanics in the
+space of a blog comment.  For more, you could check out Lenny Susskind's
+superb "Quantum Mechanics: The Theoretical Minimum," or my own "Quantum
+Computing Since Democritus," or (e.g.) my essay "Quantum Computing for High
+School Students".
+
+In the comment above, the only point I was making is that, once you can have
+quantum superpositions of the 0 and 1 states (i.e., qubits), you don't gain
+any *additional* computational power by allowing superpositions of, say, the
+0, 1, and 2 states (i.e., qutrits). The one can simulate the other.
+
+          * Anonymous
+
+Thanks for the reading references Scott. And I do understand what you are
+saying that the superpositions do not give us additional computational power.
+I need to do more reading in this area.
+
+I am curious as to how a theory of quantum gravity would be thought to be
+helpful though. Even if a theory is found, it seems to me that the
+gravitational energy it describes would be so infinitesimally small relative
+to what we are able to experimentally detect that any relativistic
+differentials would be equally as small and not terribly helpful if exploited.
+
+Another thought vis-a-vis the limits of quantum computing is, if we take the
+quantum world, quantum fields, to be the primary determiner or primal cause,
+first mover - of reality then how could we expect computing ability beyond
+this?
+
+Thanks again for the great article and references.
+
+          * Scott Aaronson
+
+No, we think superpositions DO give additional computational power! But only
+for certain specific problems, like factoring integers and (not surprisingly)
+simulating quantum mechanics. For other problems, like NP-complete problems,
+we don't really know yet how much advantage the use of superpositions provides
+(compared to the best classical algorithms), but the speedup might be modest
+or nonexistent.
+
+  * Nathan Fleischman
+
+Star Trek had a duotronic computer. I believe that it combines the best
+aspects of both electronic and quantum computers. That is why it is called
+duotronic.
+
+    * http://ansimionescu.com/ Andrei Simionescu
+
+I can attest the soundness of this observation
+
+    * Joe Joejoe
+
+actually the duotronic computers in star trek were replaced with an even more
+advanced 'isolinear' computer.
+
+but these are all fictional technologies with zero basis on real world
+science.
+
+in reality, we know of NOTHING in physics beyond the power of quantum
+computing. that may someday change, but it may also simply be the end all in
+computing.
+
+if we mastered quantum computing, a microscopic piece of matter could provide
+countless times more computing power than everything in the world. one day the
+whole world may actually be able to use only one quantum chip for world wide
+processing, wireslessly linked to every device on the quantum level…..no
+matter how far away.
+
+      * Nathan Fleischman
+
+Of course, they are fictional. I am just positing what a real-life duotronic
+computer might be. Also, I was only referring to The Original Series.
+
+        * Matt
+
+in fact, star trek is not all fiction. there was a LOT of theoretical physics
+in star trek because gene Roddenberry collaborated with physicists. the
+tachyon drive for example is based upon the tachyon particle and someday could
+be created. it would involve enveloping the spaceship in a super powerful
+electrical force field that could trick the universe into thinking it's a
+tachyon particle. it could then exploit these properties to travel faster than
+the speed of light and instantaneously appear anywhere else in the universe
+(hopefully somewhere pre-determined). life is more interesting than fiction.
+
+  * Scott Aaronson
+
+Dear Readers: I apologize; there's one point in this article that's not quite
+right and ought to be clarified. Namely, when I said that a spaceship
+traveling exponentially close to the speed of light would collapse to a black
+hole: that's *only* true because, when the spaceship inevitably collided with
+some interstellar particle, the energy in the center-of-momentum rest frame
+would be exponential. A spaceship in a theoretical vacuum could get
+arbitrarily close to the speed of light without collapsing.
+
+However, it's important to understand that this doesn't change the
+computational situation in any important way. It's still true that, to
+accelerate exponentially close to the speed of light, you need an exponential
+amount of energy! And therefore, it will take you exponential time to
+accelerate to such a speed--*unless* your fuel tank (or whatever else is
+providing your energy) is exponentially concentrated, in which case it will
+exceed the Schwarzschild limit and indeed collapse to a black hole.
+
+    * None
+
+You are guilty of abuse of the term "exponential".
+
+"the energy in the… rest frame would be exponential" - does not make sense at
+all, and in fact the idea that this would for some reason cause a black hole
+is incorrect. More likely it would pass straight through and out the other
+side probably causing severe damage if the spaceship was extremely rigid. Any
+minute locality where the collision happened which miraculously took the
+energy density at the point of collision to that which would begin the first
+stage of black hole formation, ie electron degeneration, would almost
+certainly be left behind as a tiny black black hole containing the speck and
+would very quickly disappear again through Hawking radiation, given its tiny
+size. The spaceship would just keep ploughing on much like a meteor
+disintegrating in the atmosphere until there was nothing left of it as it hit
+more particles. Spaceship encompassing black holes though, there would be
+none.
+
+Your repeated use of the term "exponentially close" is also totally vague,
+since it is not a proper mathematical or physical expression (a couple of
+googled mathematical papers is not going to disprove that fact), for example
+you will not find it at either wikipedia or wolframalpha. You "approach" a
+limit asymptotically , becoming infinitely or infinitesimally close to it, you
+do not become "exponentially close".
+
+      * Scott Aaronson
+
+In computer science, "exponential" (if not further specified) ALWAYS means
+"growing as exp(n), where n is the size of the input." Likewise, two
+quantities are called "exponentially close" if their differences decreases as
+exp(-n). I did have a paragraph in the article where I explained our concern
+with polynomial vs. exponential scaling as a function of input size, though
+maybe it could have been clearer. That you would think I would use
+"exponential" in the colloquial sense of "really, really big" is amusing!
+
+And yes, you might be right that a spaceship traveling at speed c(1-exp(-n))
+would collapse into many small black holes as it collided with interstellar
+particles, rather than a single large black hole. It would be fun to work out
+the dynamics in detail. In any case, presumably the more relevant point is
+that reaching that speed in the first place would take exp(n) time, and for
+reasonably large n, the entire observable universe would've long ago
+degenerated into radiation before that happened.
+
+  * Frank
+
+I've had this feeling that the next step is bio engineering. I think we're
+going to find that humans are the ultimate machine. As gross as all those
+Aliens movies are and sticky goo and flesh…UGH. But when you think about how
+cells regenerate and how everything is interconnected I think we'll all be
+living in some armor suite like the alien from Independence Day.
+
+    * Joe Joejoe
+
+what does that have to do with computers? sure, we may have bio based
+computers one day, but they will come nowhere close to quantum computing.
+
+it's important to remember, the quantum world is smaller than the atoms that
+make up the nucleotides that make up your dna.
+
+if anything one day we'll be soo technologically advanced we'll be able to
+bioengineer ourselves without it even being visible. we could have a whole
+supercomputer embedded into our skin, or we'll seed the air with nanites that
+power themselves and deliver computing power to everything wirelessly. we'll
+be able to manipulate our DNA to where we can say, breathe different
+atmospheres…..and I'm not talking from birth….I'm talking on-the-fly. one
+little injection or flip of a switch, and your DNA is altered the way you need
+it to be.
+
+the future of technology is much grander than some organic armor space suit.
+
+      * Frank
+
+Nice. Great points.
+
+        * nick w.
+
+And when we have bioengineered ourselves to be limitless and seek out new
+worlds on a whim…I think we'll still find that love is the force that guides
+us in our choices and more powerful than the ability to change. Love will
+remain the deepest connection and the longest standing mystery that no
+computer can solve
+
+          * ChestHair
+
+Love is a chemical reaction.
+
+          * sdff
+
+Love is controlled by hormones. It is not a mystery.
+
+  * Tor Barstad
+
+"Presumably, civilization would have collapsed and all your friends would be
+long dead. But if, hypothetically, you could find your computer in the ruins
+and it was still running, then you could learn the answer to your hard
+problem!"
+
+I might be beside the point here, but in my mind those are unreasonable
+presumptions, and unless I've misunderstood something it seems the space-trip
+would be an unnecessary step for achieving this. Here are some videos if you
+wish to see this perspective explained:
+
+https://www.youtube.com/watch?v=JtHgIJ6kalk  
+https://www.youtube.com/watch?v=tsg-__K_IAI  
+https://www.youtube.com/watch?v=dUOB4tdFDYM
+
+Regardless: Awesome article!
+
+  * Roger
+
+I'm still happy with my Windows 98.
+
+  * peskyone
+
+i was always sort of assuming that since parallel processing does not scale as
+well as we'd like that inevitably we would begin looking at predictive
+branching. since bio-engineered processing is massively redundant and spin-
+tronincs or optical circuits are best implemented together (probabilistic
+computing with optical bus speeds) but really, what i look forward to is
+predictive computing. i.e. running a process as soon as my finger approaches
+the icon, or calculating + - offsets for "what if" buffers. sort of trial and
+error for best guess or incremental self improvement. HMM's may be a little
+too primitive for this.  
+More of a language issue than a hardware issue i know but still,….  
+I'm an EE but i just dont see anything in the physics journals i read that
+tells me anything other than redundancy is in the discernible future.
+
+  * COBRACHOPPERGIRL
+
+You never really defined what a quantum computer was.
+
+    * Scott Aaronson
+
+Sorry, that's a different article! Try, for example, my "Quantum Computing for
+High School Students" (http://www.scottaaronson.com/writings/highschool.html)
+or Michael Nielsen's excellent essay (http://michaelnielsen.org/blog/?p=459).
+(Or Wikipedia.)
+
+      * joe somebody
+
+Link is broken:) excellent grammar with poor navigational instructions.
+
+  * Varelze
+
+What if we had the ability to create a small artificial black hole, place a
+computer crunching data near the hole until it solves the problem, then yank
+it back out to retrieve the answer?
+
+  * Manoranjan Padhy
+
+It is really interesting to read things over here. Moreover I tried to express
+my views regarding Quantum Computing and Quantun Data Teleportation
+
+http://www.outscream.com/data-teleportation-now-reality/
+
+  * Carl Wells
+
+Ok, I've got a question that I'm having a hard time putting into words because
+of my lack of knowledge related to math and physics, so I hope this doesn't
+sound silly but; the understanding I have of space-time is that space and time
+are two separate and perpendicular "dimensions", time being a horizontal line
+comprised of an infinite series of intersections if you will and space being
+an infinite series of vertical lines representing each and every static
+"state" of the universe from the beginning to the end, so we experience the
+superposition of space by progressing through time, and space-time is the name
+given to what we experience as reality, which would be considered to be, at
+any moment, an intersection between a point in space and time (I realize that
+nothing I've said is likely to be representative of any classical
+understanding of either space, time, or space-time but it will help me explain
+the concept behind the idea I'm going to question you about). What I'm
+wondering is if it could be possible to construct a physical system, perhaps
+quantum, that performs its calculations along a third axis, a second "time
+dimension" that instead of being a line is more like a…loop, connected to the
+same point in space throughout every stage of the calculation, to then return
+its outcome back to the exact moment in our space-time progression where we
+input the question. In other words, to answer as it's asked, seemingly
+instantaneously, performing its calculations in time over space rather than
+space over time, like every model of computation available to us right now,
+through the use of its own "time" axis rather than over our own.
+
+  * Matt
+
+didn't people used to think that silicon chips couldn't do certain
+calculations? maybe if the right software is written for quantum
+supercomputers, dna computing solutions, etc, or if they were configured in
+such a way that they interacted with different types of computational
+hardware, it could then harness that computational potential and become
+applicable to the various types of computations that we wouldn't expect it to
+be able to solve currently?
+
+#### Support provided by:
+
+#### Related Posts
+
+  1. Can Quantum Computing Reveal the True Meaning of Quantum Mechanics?
+  2. Do Computers Dream of Electric People?
+  3. Could Simple Experiments Reveal the Quantum Nature of Spacetime?
+  4. Quantum Biology: Better Living Through Quantum Mechanics
+
+#### From NOVA Online
+
+  * How Vultures Can Eat Rotten Meat
+
+Posted on 3 November 2015, 5:00 am
+
+Why don't vultures get food poisoning?
+
+  * North America Sky Tour
+
+Posted on 3 November 2015, 5:00 am
+
+Fly coast to coast to see highlights of how North America took the shape it is
+today.
+
+  * Towers of Chalk in Kansas
+
+Posted on 3 November 2015, 5:00 am
+
+Amidst the flat plains of Kansas are the gorgeous remains of an ancient inland
+sea.
+
+  * CyberWar Threat
+
+Posted on 3 November 2015, 5:00 am
+
+As internet connections multiply so do points of attack and risks to national
+security.
+
+  * Making North America: Origins
+
+Posted on 3 November 2015, 5:00 am
+
+Experience the colossal geologic forces that shaped our continent over
+billions of years.
+
+Search NOVA Online
+
+#### More from PBS
+
+    * Science &amp; Nature
+
+Explore the best of PBS science programs and science news. Video and web
+content from your favorite PBS shows like Nature, NOVA, and more. Animals,
+space and astronomy, natural history, environment and environmental issues,…
+
+    * New Space Telescope to Map Dark Matter
+
+This week, NASA announced that it will partner with the European Space Agency
+to send a 4,760-pound spacecraft into space to peer out over billions of
+galaxies in an effort to map and measure the universe. Its purpose: to
+investigate the mysteries of dark matter and dark energy.
+
+Funded by the Foundational Questions Institute (FQXi) Fund, a donor-advised
+fund of the Silicon Valley Community Foundation.
+
+    * National corporate funding for NOVA is provided by Google and Cancer Treatment Centers of America. Major funding for NOVA is provided by the David H. Koch Fund for Science, the Corporation for Public Broadcasting, and PBS viewers.
+
+    *     * This website was produced for PBS Online by WGBH.
+
+PBS is a 501(c)(3) not-for-profit organization.
+
+Website (C) 1996-2016 WGBH Educational Foundation
+
+    * Privacy | Terms
+  *[5/16/2013]: 2013-05-16T10:37:00-07:00
+  *[BOFH]: Bastard Operator from Hell
+

@@ -1,0 +1,12 @@
+Neural machine translation (NMT) is the approach to machine translation in which a large neural network is trained to maximize translation performance. It is a radical departure from the phrase-based statistical translation approaches, in which a translation system consists of subcomponents that are separately optimized.
+The artificial neural network (ANN) is a unique learning algorithm inspired by the functional aspects and structure of the brain’s biological neural networks. With use of ANN, it is possible to execute a number of tasks, such as classification, clustering, and prediction, using machine learning techniques like supervised or reinforced learning. Therefore, ANN is a subset of machine learning algorithms.
+A bidirectional recurrent neural network (RNN), known as an encoder, is used by the neural network to encode a source sentence for a second RNN, known as a decoder, that is used to predict words in the target language.
+NMT models are inspired by deep representation learning. They require only a fraction of the memory needed by traditional statistical machine translation (SMT) models. Furthermore, unlike conventional translation systems, each and every component of the neural translation model is trained jointly to maximize the translation performance.
+When a new neural network is created, it is trained for certain domains or applications. Once an automatic learning mechanism is established, the network practices. With time it starts operating according to its own judgment, turning into an "expert".
+
+
+== References ==
+
+
+== External links ==
+Neural machine translation at LISA, the machine learning laboratory of the University of Montreal

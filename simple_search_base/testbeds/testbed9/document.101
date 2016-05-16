@@ -1,0 +1,42 @@
+! A hash table (also called a hash set)
+stores objects in an array of Lists
+! When we want to access objects, we
+convert the hash-code for that object
+(which can be any integer value) to an
+acceptable array index
+! When there are collisions (two
+objects with the same index), we place
+them into the stored list
+! The overall ratio of objects to arraysize
+is kept small, so that the lists do
+not grow too long
+! Whenever the number of objects gets
+too large, we increase the array size
+and then re-hash, distributing objects
+over the new range of indices. 
+A HashSet<E> is instantiated with its specific type, and will
+then keep a single copy of any input to the add() method
+! When we remove( Object o ), the method returns a boolean
+that is true if o is in the set, and false otherwise
+! A HashMap<K, V> is instantiated with two types: the first
+is the key-type, and the second is the value-type
+! The key is the thing that is hashed: it can then be used to look up
+objects of the value type
+! We add objects using put(K key, V value), which stores the
+value with an associated key to look it up again
+! When we get( K key ), the method returns the associated
+value for that key, or null if there is no such key-value pair 
+The built-in hashCode()
+method for the String class
+returns a value computed based
+on the (Unicode) integer values
+associated with each character
+! Although hash collisions are
+inevitable, since there is a
+(literal) infinite number or
+possible String objects, and a
+finite number of integers that
+the hash-function can return, the
+arithmetic is done in such a way
+as to keep the values as welldistributed
+as possible 

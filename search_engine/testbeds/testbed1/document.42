@@ -1,0 +1,41 @@
+Boot_Camp_(software)
+'''Boot Camp Assistant''' is a   included with 's  that assists users in installing  s on  computers. The utility guides users through non-destructive  (including resizing of an existing  partition, if necessary) of their  and installation of Windows s for the Apple hardware. The utility also installs a   for selecting the boot operating system.
+Initially introduced as an unsupported beta for , the utility was first included with  and has been included in subsequent versions of the operating system ever since. Previous versions of Boot Camp supported ,  and . Boot Camp 4.0 for  up to  version 10.8.2 only supported Windows 7. However, with the release of Boot Camp 5.0 for OS X Mountain Lion version 10.8.3, only  versions of Windows 7 and  are officially supported.
+Boot Camp 6.0 added support for .
+==Overview==
+Holding down the  () at startup brings up the , allowing the user to choose which operating system to start up. When using a non-Apple keyboard, the  usually performs the same action. The boot manager can also be launched by holding down the menu button on the  at startup.
+On older Macs, its functionality relies on  emulation through  and a partition table information synchronization mechanism between  and  combined.
+On newer Macs, Bootcamp keeps the hard disk as a  so that Windows is installed and booted in  mode.
+==Requirements==
+===OS X Lion and Mountain Lion===
+Apple's Boot Camp system requirements lists the following requirements for  and Mountain Lion:
+* 8&nbsp; USB storage device, or external drive formatted as  () for installation of Windows drivers for Mac hardware
+* 20&nbsp;GB free hard disk space for a first-time installation or 40&nbsp;GB for an upgrade from a previous version of Windows
+* A full version of one of the following operating systems:
+** Windows 7 Home Premium, Professional, or Ultimate
+** Windows 8 and/or Windows 8 Pro (64-bit editions only)
+===Mac OS X Leopard and Snow Leopard===
+Apple lists the following requirements for Mac OS X Leopard and Snow Leopard:
+* An Intel-based Macintosh computer with the latest  (Early Intel-based Macintosh computers require an EFI firmware update for BIOS compatibility).
+* A Mac OS X Leopard or Mac OS X Snow Leopard installation disc or Mac OS X Disc 1 included with Macs that have Leopard or Snow Leopard preinstalled; this disc is needed for installation of Windows drivers for Mac hardware
+* 10&nbsp;GB free hard disk space (16&nbsp;GB is recommended for Windows 7)
+* A full version of one of the following operating systems:
+** Windows XP Home Edition or Professional with Service Pack 2 or higher (32-bit editions only)
+** Windows Vista Home Basic, Home Premium, Business, Enterprise or Ultimate (32-bit and 64-bit editions)
+** Windows 7 Home Premium, Professional, Enterprise or Ultimate (32-bit and 64-bit editions)
+===Supported Macintosh computers with Windows 8===
+Officially, the earliest Macintosh models that support Windows 8 are the mid-2011 , 13-inch-mid-2011 or 15 and 17-inch-mid-2010 , mid-2011 ,  21-inch-mid-2011 or 27-inch-mid-2010 , and early 2009 . By running the Boot Camp assistant with a compatible version of Microsoft Windows setup disc in the drive and switching to a Windows 8 disc when OS X reboots the machine to begin installing Windows, Windows 8 can be installed on older unsupported hardware.
+==Limitations==
+* Boot Camp will only help you partition your disk if you currently have only a primary  partition, an , and an OS X Recovery Partition. Thus, for example, it is not possible to maintain an additional storage partition. A workaround has been discovered that involves interrupting the standard procedure after creating the Boot Camp partition, resizing the primary OS X partition and creating a third partition in the now available space, then continuing with the Windows install. Changes to the partition table after Windows is installed are officially unsupported, but can be achieved with the help of third party software.
+* Boot Camp will not help you install Linux, and does not provide drivers for it. Most methods for dual-booting with Linux on Mac rely on manual disk partitioning, and the use of an  boot manager such as .
+==Version history==
+==See also==
+*
+* and 
+*
+*
+==References==
+==External links==
+*
+*
+*

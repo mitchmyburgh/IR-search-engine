@@ -1,0 +1,27 @@
+MiWi and MiWi P2P are proprietary wireless protocols designed by Microchip Technology that use small, low-power digital radios based on the IEEE 802.15.4 standard for wireless personal area networks (WPANs). It is designed for low data transmission rates and short distance, cost constrained networks, such as industrial monitoring and control, home and building automation, remote control, low-power wireless sensors, lighting control and automated meter reading.
+The MiWi protocols are supported on certain Microchip PIC and dsPIC microcontrollers. When developing for these platforms, proprietary SDKs and hardware development tools, such as the ZENA wireless packet sniffer, may be used.
+
+
+== Protocols ==
+Microchip has released two application notes which present technical information on MiWi. These are not primarily protocol specifications and more than half of these documents are focused on implementing the MiWi protocol on Microchip microcontrollers.
+As of 2009, interoperable third party implementations have not appeared. Unless they do, it will not be clear if those specifications are complete or accurate enough to serve roles other than supporting Microchip's code or being one more proprietary example of a lightweight WPAN stack. Many developers trying to use WPAN technologies have observed that Zigbee seems undesirably complex. Accordingly, there exists a technical niche for a simpler protocols, of which MiWi is a proprietary example.
+
+
+== Software ==
+On the PIC platform, the MiWi protocol stacks are small foot-print alternatives (3K-17K) to ZigBee (40K-100K), which makes them useful for cost-sensitive applications with limited memory. Although the MiWi software can all be downloaded for free from its official website, there exists a unique restriction and obligation to use it only with Microchip microcontrollers.
+The MiWi P2P protocol stack supports star and peer-to-peer wireless-network topologies, useful for simple, short-range, wireless node-to-node communication. Additionally, the stack provides sleeping-node, active-scan and energy-detect features while supporting the low-power requirements of battery-operated devices.
+
+
+== Hardware ==
+
+
+=== MiWi Module ===
+
+In 2008, Microchip released a 2.4 GHz wireless transceiver module that is compatible with certain Microchip PIC and dsPIC microcontrollers (the Microchip MRF24J40MB), and can be used in production devices. Being ZigBee compliant, and capable of communicating using MiWi wireless protocols, it is based on the IEEE 802.15.4 Wireless PAN standard. Designed only for low-data rates and being low-cost, it has an integrated PCB antenna. The module is regulatory-agency certified for the USA (Federal Communications Commission (FCC)), Canada (Industry Canada) and Europe (ETSI), eliminating the need to receive independent FCC certification for their wireless products.
+
+
+=== Network Analyzer ===
+The Microchip ZENA (or formerly, Zigbee Enhanced Network Analyzer) is a wireless packet sniffer and network analyzer following the IEEE 802.15.4 specification on the 2.4 GHz band. The ZENA analyzer supports both the ZigBee and MiWi protocols. Accompanying software can analyze network traffic and graphically display decoded packets. It can also display the network topology and the messages as they flow through the network. With the provided key of the network, data on encrypted MiWi networks can be sniffed and viewed as well.
+
+
+== References ==

@@ -1,0 +1,113 @@
+Is more better? Heterogeneous hypervisor environments have pros, cons
+
+ 
+by
+Beth Pariseau
+Senior News Writer
+   
+Heterogeneous hypervisor environments offer a financial advantage, but is this just a transitional phase that will lead back to homogeneity?
+
+THIS ARTICLE COVERS
+
+Improving server management with virtualization
+RELATED TOPICS
+
+Green data center: Reducing power consumption with virtualization
+Reducing IT costs with server virtualization
+Server consolidation and improved resource utilization
+LOOKING FOR SOMETHING ELSE?
+Automation challenges have companies hesitating
+Automation nation: Choosing the right IT automation tools
+What are the limitations of software-defined technology?
+In this Article
+Related Content
+Heterogeneous virtualization shops aim to simplify ...
+– SearchServerVirtualization
+VMware pricing under fire from Hyper-V, cloud
+– SearchServerVirtualization
+Windows Server 2012 R2 Hyper-V gives Linux VMs a boost
+– SearchWindowsServer
+Sponsored News
+Optimizing Your Microsoft® Investments Through Managed Services
+–Rackspace
+Effective IT Transformation Through Managed Services for Microsoft® Solutions
+–Rackspace
+See More
+Vendor Resources
+Modern Infrastructure E-Zine: Creating Tomorrow's Data Centers
+–SearchDataCenter.com
+The Growth of Mixed Virtual Environments
+–VMware, Inc.
+This article can also be found in the Premium Editorial Download:
+Modern Infrastructure: The new automation imperative:
+
+Download
+VMware Inc.'s vSphere hypervisor remains the dominant player in the server virtualization market, but as alternatives like open source KVM and Microsoft's Hyper-V mature, some enterprises are hedging their bets by running heterogeneous hypervisor environments.
+
+The major benefit enterprises glean from the heterogeneous hypervisor approach is usually financial savings.
+
+“It has the potential to save us hundreds of thousands of dollars,” said Searl Tate, director of engineering for international law firm Paul Hastings LLP, based in Los Angeles.
+
+The firm is rolling out Windows Server 2012 R2 Hyper-V in a newly built European data center. Windows Server 2012 R2 Hyper-V, released to manufacturers just last August, is widely regarded as bringing Hyper-V to full competitive strength against vSphere. It enables features such as shared-nothing live migration of virtual machines and built-in replication through integration with System Center Virtual Machine Manager (SCVMM).
+
+“We're a Microsoft shop by way of entitlement—we have an enterprise licensing agreement—but like a lot of others we haven't run Hyper-V historically except in the lab,” Tate said. “The indirect savings comes from not having to add VMware licenses—in our European data center, that would've been $250,000.”
+
+But these savings can come at a cost of their own; operational challenges are also inherent in managing two different IT infrastructure platforms in the same data center.
+
+Fantasizing about true full management tools
+
+Enterprises considering heterogeneous hypervisor environments need to weigh the potential capital expenditure (Capex) savings against the operational expenditure (Opex) necessary to manage multiple hypervisors, according to David Kinsman, national technical solutions architect for World Wide Technologies Inc., based in St. Louis, Mo.
+
+“We're moving into a time where customers will have more than one hypervisor in their data center, siloed off potentially into different application pods based on Capex costs,” Kinsman said.
+
+Tools that can manage heterogeneous hypervisor under one console include SCVMM and HotLink Corp.'s SuperVISOR software, which is used by heterogeneous hypervisor shops to manage other hypervisors under the vCenter Server management console.
+
+“Now that everything is tied into vCenter, we only have to teach new admins one platform,” said Michael Warchut, senior network engineer for Monsoon Commerce, an e-commerce firm based in Portland, Ore. which uses SuperVISOR to manage some 300 vSphere VMs, 35 Hyper-V VMs and about 40 XenServer instances, as well as Amazon Web Services (AWS)' Elastic Compute Cloud.
+
+“We're able to keep a record of who does what and manage our security notifications [through HotLink] as well,” he said.
+
+But these tools also have limitations, Kinsman pointed out.
+
+“You're never going to get the real feature parity you'd get if you were managing a given hypervisor with its own manager,” Kinsman said.
+
+Until there are virtualization management platforms on the market that offer full feature parity when managing heterogeneous hypervisors, there will be inefficiencies inherent to running more than one hypervisor in the data center, Kinsman said, and predicted that without this type of management platform the market will move back to more of a homogeneous hypervisor state.
+
+“The odds of such a manager existing in the next two to three years are slim,” he said.
+
+Paul Hastings' Tate said his team will keep vCenter to manage vSphere and SCVMM to manage Hyper-V as separate consoles.
+
+“We have also rolled some of our own tools, some in PowerShell, some in C#, and we wrote our own infrastructure portal manager,” Tate said. “We're going to have to live that way.”
+
+Because of the hassle involved in managing heterogeneous hypervisors, some industry watchers believe heterogeneous hypervisor environments are a transitional phase in the deployment of virtualized infrastructure, rather than a permanent state of affairs.
+
+“We're eyeing the possibility of Hyper-V everywhere, but you've got to start somewhere,” Tate said.
+
+Despite its cost, some industry watchers say the winner of that movement back to homogeneity will still be VMware, because of the way it's branching beyond the hypervisor and into infrastructure services such as software-defined networking and storage.
+
+“Part of the pull back toward VMware is going to be VMware and Nicira together, as well as a whole bunch of companies recently founded by people who used to work at VMware supporting VMware's hypervisor first,” said Andy Brown, an entrepreneur who until recently served as group CTO at global financial services firm UBS.
+
+Others see a very different picture over the next few years.
+
+“Hyper-V is not going anywhere anytime soon, and neither is vSphere,” said Warchut.
+
+When worlds collide
+
+As cloud computing comes online, infrastructure intelligence is moving up the stack, beyond the hypervisor to the overall cloud orchestration or application layer—amping up the debate about heterogeneous IT management as a transitional or permanent state of being all over again, with some new players added to the mix.
+
+There are also cloud management tools on the market today which can manage both multiple cloud environments and their underlying heterogeneous hypervisor environments, but it is still early days for cloud in the enterprise.
+
+For now, experts say, keeping options open is a wise choice as the cloud market continues to evolve.
+
+“I think what happens is that the conversation moves to the next level up, which is that I need to manage multiple clouds as well as multiple hypervisors, and how do I do that?” said Brown.
+
+While the enterprise virtualization market is divided primarily between VMware and Hyper-V, cloud computing platforms are also bringing open source KVM into the spotlight at some companies.
+
+“Whenever anybody's starting or they have the ability to start from scratch, they're running KVM,” said Mark Shirman, president and CEO of cloud migration firm RiverMeadow Software, based in San Jose, Calif.
+
+“So much of the cloud is still being architected by geeks,” Shirman said. “They love the open source environment … everybody wants to get into the weeds.”
+
+Unlike Hyper-V, however, open source KVM is far from feature parity with vSphere. Under the much-hyped OpenStack cloud management platform, for instance, KVM doesn't offer live migration, distributed resource scheduling or automated restarts of machines for high availability, according to Kenneth Hui, open cloud architect with Rackspace Hosting based in San Antonio, Tex.
+
+Still, Hui argued before a meetup group of OpenStack enthusiasts in Minneapolis on Oct. 22 that these features will belong to the cloud orchestration layer eventually, rather than the hypervisor.
+
+“Servers are fragile, but the cloud is not,” Hui said. “Resiliency should be handled at various layers of the cloud, primarily at the application layer and not the server layer.”

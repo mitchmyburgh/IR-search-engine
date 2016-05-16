@@ -1,0 +1,19 @@
+Out-of-core or external memory algorithms are algorithms that are designed to process data that is too large to fit into a computer's main memory at one time. Such algorithms must be optimized to efficiently fetch and access data stored in slow bulk memory such as hard drives or tape drives.
+A typical example is geographic information systems, especially digital elevation models, where the full data set easily exceeds several gigabytes or even terabytes of data.
+This notion naturally extends to a network connecting a data server to a treatment or visualization workstation. Popular mass-of-data based web applications such as google-Map or google-Earth enter this topic.
+This extends beyond general purpose CPUs, and also includes GPU computing as well as classical digital signal processing. In GPGPU based computing where powerful graphics cards (GPUs) with little memory (compared to the more familiar system memory which is most often referred to simply as RAM) and slow CPU to GPU memory transfer (when compared to computation bandwidth).
+
+
+== See also ==
+External sorting
+Online algorithm
+Streaming algorithm
+
+
+== References ==
+
+
+== External links ==
+Out of Core SVD and QR
+Out of core graphics
+Scalapack design

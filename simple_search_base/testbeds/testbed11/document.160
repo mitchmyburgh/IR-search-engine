@@ -1,0 +1,41 @@
+Note: this is not to be confused with the Naccache–Stern cryptosystem based on the higher residuosity problem.
+The Naccache–Stern Knapsack Cryptosystem is an atypical public-key cryptosystem developed by David Naccache and Jacques Stern in 1997. This cryptosystem is deterministic, and hence is not semantically secure. This system also lacks provable security.
+
+
+== System Overview ==
+This system is based on a type of knapsack problem. Specifically, the underlying problem is this: given integers c,n,p and v0,...,vn, find a vector  such that
+
+The idea here is that when the vi are relatively prime and much smaller than the modulus p this problem can be solved easily. It is this observation which allows decryption.
+
+
+=== Key Generation ===
+To generate a public/private key pair
+Pick a large prime modulus p.
+Pick a positive integer n and for i from 0 to n, set pi to be the ith prime, starting with p0 = 2 and such that .
+Pick a secret integer s < p-1, such that gcd(p-1,s) = 1.
+Set .
+The public key is then p,n and v0,...,vn. The private key is s.
+
+
+=== Encryption ===
+To encrypt an n-bit long message m, calculate
+
+where mi is the ith bit of the message m.
+
+
+=== Decryption ===
+To decrypt a message c, calculate
+
+This works because the fraction
+
+is 0 or 1 depending on whether pi divides cs mod p.
+
+
+== See also ==
+Merkle–Hellman knapsack cryptosystem
+Graham–Shamir knapsack cryptosystem
+
+
+== References ==
+Original Paper
+Recent bandwidth improvement

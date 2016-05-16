@@ -1,0 +1,107 @@
+Disk encryption is a technology which protects information by converting it into unreadable code that cannot be deciphered easily by unauthorized people. Disk encryption uses disk encryption software or hardware to encrypt every bit of data that goes on a disk or disk volume. Disk encryption prevents unauthorized access to data storage.
+Expressions full disk encryption (FDE) or whole disk encryption often signify that everything on disk is encrypted – including the programs that can encrypt bootable operating system partitions – when part of the disk is necessarily not encrypted. On systems that use a master boot record (MBR), that part of the disk remains non encrypted. Some hardware-based full disk encryption systems can truly encrypt an entire boot disk, including the MBR.
+
+
+== Transparent encryption ==
+Transparent encryption, also known as real-time encryption and on-the-fly encryption (OTFE), is a method used by some disk encryption software. "Transparent" refers to the fact that data is automatically encrypted or decrypted as it is loaded or saved.
+With transparent encryption, the files are accessible immediately after the key is provided, and the entire volume is typically mounted as if it were a physical drive, making the files just as accessible as any unencrypted ones. No data stored on an encrypted volume can be read (decrypted) without using the correct password/keyfile(s) or correct encryption keys. The entire file system within the volume is encrypted (including file names, folder names, file contents, and other meta-data).
+To be transparent to the end user, transparent encryption usually requires the use of device drivers to enable the encryption process. Although administrator access rights are normally required to install such drivers, encrypted volumes can typically be used by normal users without these rights .
+In general, every method in which data is transparently encrypted on write and decrypted on read can be called transparent encryption.
+
+
+== Disk encryption vs. filesystem-level encryption ==
+Disk encryption does not replace file encryption in all situations. Disk encryption is sometimes used in conjunction with filesystem-level encryption with the intention of providing a more secure implementation. Since disk encryption generally uses the same key for encrypting the whole volume, all data is decryptable when the system runs. However, some disk encryption solutions use multiple keys for encrypting different partitions. If an attacker gains access to the computer at run-time, the attacker has access to all files. Conventional file and folder encryption instead allows different keys for different portions of the disk. Thus an attacker cannot extract information from still-encrypted files and folders.
+Unlike disk encryption, filesystem-level encryption does not typically encrypt filesystem metadata, such as the directory structure, file names, modification timestamps or sizes.
+
+
+== Disk encryption and Trusted Platform Module ==
+Trusted Platform Module (TPM) is a secure cryptoprocessor embedded in the motherboard that can be used to authenticate a hardware device. Since each TPM chip is unique to a particular device, it is capable of performing platform authentication. It can be used to verify that the system seeking the access is the expected system.
+A limited number of disk encryption solutions have support for TPM. These implementations can wrap the decryption key using the TPM, thus tying the hard disk drive (HDD) to a particular device. If the HDD is removed from that particular device and placed in another, the decryption process will fail. Recovery is possible with the decryption password or token.
+Although this has the advantage that the disk cannot be removed from the device, it might create a single point of failure in the encryption. For example, if something happens to the TPM or the motherboard, a user would not be able to access the data by connecting the hard drive to another computer, unless that user has a separate recovery key.
+
+
+== Implementations ==
+
+There are multiple tools available in the market that allow for disk encryption. However, they vary greatly in features and security. They are divided into three main categories: software-based, hardware-based within the storage device, and hardware-based elsewhere (such as CPU or host bus adaptor). Hardware-based full disk encryption within the storage device are called self-encrypting drives and have no impact on performance whatsoever. Furthermore, the media-encryption key never leaves the device itself and is therefore not available to any virus in the operating system.
+The Trusted Computing Group Opal drive provides industry accepted standardization for self-encrypting drives. External hardware is considerably faster than the software-based solutions although CPU versions may still have a performance impact, and the media encryption keys are not as well protected.
+All solutions for the boot drive require a Pre-Boot Authentication component which is available for all types of solutions from a number of vendors. It is important in all cases that the authentication credentials are usually a major potential weakness since the symmetric cryptography is usually strong.
+
+
+== Password/data recovery mechanism ==
+Secure and safe recovery mechanisms are essential to the large-scale deployment of any disk encryption solutions in an enterprise. The solution must provide an easy but secure way to recover passwords (most importantly data) in case the user leaves the company without notice or forgets the password.
+
+
+=== Challenge/response password recovery mechanism ===
+Challenge/Response password recovery mechanism allows the password to be recovered in a secure manner. It is offered by a limited number of disk encryption solutions.
+Some benefits of challenge/response password recovery:
+No need for the user to carry a disc with recovery encryption key.
+No secret data is exchanged during the recovery process.
+No information can be sniffed.
+Does not require a network connection, i.e. it works for users that are at a remote location.
+
+
+=== Emergency Recovery Information (ERI) file password recovery mechanism ===
+An Emergency Recovery Information (ERI) file provides an alternative for recovery if a challenge response mechanism is unfeasible due to the cost of helpdesk operatives for small companies or implementation challenges.
+Some benefits of ERI file recovery:
+Small companies can use it without implementation difficulties
+No secret data is exchanged during the recovery process.
+No information can be sniffed.
+Does not require a network connection, i.e. it works for users that are at a remote location.
+
+
+== Security concerns ==
+Most full disk encryption schemes are vulnerable to a cold boot attack, whereby encryption keys can be stolen by cold-booting a machine already running an operating system, then dumping the contents of memory before the data disappears. The attack relies on the data remanence property of computer memory, whereby data bits can take up to several minutes to degrade after power has been removed. Even a Trusted Platform Module (TPM) is not effective against the attack, as the operating system needs to hold the decryption keys in memory in order to access the disk.
+Full disk encryption is also vulnerable when a computer is stolen when suspended. As wake-up does not involve a BIOS boot sequence, it typically does not ask for the FDE password. Hibernation, in contrast goes via a BIOS boot sequence, and is safe.
+All software-based encryption systems are vulnerable to various side channel attacks such as acoustic cryptanalysis and hardware keyloggers. In contrast, self-encrypting drives are not vulnerable to these attacks since the hardware encryption key never leaves the disk controller.
+
+
+== Full disk encryption ==
+
+
+=== Benefits ===
+Full disk encryption has several benefits compared to regular file or folder encryption, or encrypted vaults. The following are some benefits of disk encryption:
+Nearly everything including the swap space and the temporary files is encrypted. Encrypting these files is important, as they can reveal important confidential data. With a software implementation, the bootstrapping code cannot be encrypted however. (For example, BitLocker Drive Encryption leaves an unencrypted volume to boot from, while the volume containing the operating system is fully encrypted.)
+With full disk encryption, the decision of which individual files to encrypt is not left up to users' discretion. This is important for situations in which users might not want or might forget to encrypt sensitive files.
+Immediate data destruction, such as simply destroying the cryptographic keys, renders the contained data useless. However, if security towards future attacks is a concern, purging or physical destruction is advised.
+
+
+=== The boot key problem ===
+One issue to address in full disk encryption is that the blocks where the operating system is stored must be decrypted before the OS can boot, meaning that the key has to be available before there is a user interface to ask for a password. Most Full Disk Encryption solutions utilize Pre-Boot Authentication by loading a small, highly secure operating system which is strictly locked down and hashed versus system variables to check for the integrity of the Pre-Boot kernel. Some implementations such as BitLocker Drive Encryption can make use of hardware such as a Trusted Platform Module to ensure the integrity of the boot environment, and thereby frustrate attacks that target the boot loader by replacing it with a modified version. This ensures that authentication can take place in a controlled environment without the possibility of a bootkit being used to subvert the pre-boot decryption.
+With a Pre-Boot Authentication environment, the key used to encrypt the data is not decrypted until an external key is input into the system.
+Solutions for storing the external key include:
+Username / password
+Using a smartcard in combination with a PIN
+Using a biometric authentication method such as a fingerprint
+Using a dongle to store the key, assuming that the user will not allow the dongle to be stolen with the laptop or that the dongle is encrypted as well.
+Using a boot-time driver that can ask for a password from the user
+Using a network interchange to recover the key, for instance as part of a PXE boot
+Using a TPM to store the decryption key, preventing unauthorized access of the decryption key or subversion of the boot loader.
+Use a combination of the above
+All these possibilities have varying degrees of security; however, most are better than an unencrypted disk.
+
+
+== See also ==
+
+Digital forensics
+Disk encryption hardware
+Disk encryption software
+Disk encryption theory
+Encryption
+Filesystem-level encryption
+Hardware-based full disk encryption
+In re Boucher
+Single sign-on
+
+
+== References ==
+
+
+== Further reading ==
+Casey, Eoghan; Stellatos, Gerasimos J. (2008). "The impact of full disk encryption on digital forensics". Operating Systems Review 42 (3): 93–98. doi:10.1145/1368506.1368519. 
+
+
+== External links ==
+Presidential Mandate requiring data encryption on US government agency laptops
+On-The-Fly Encryption: A Comparison - Reviews and lists the different features of many disk encryption systems
+All about on-disk/full-disk encryption on one page - a page covering the use of dm-crypt/LUKS on Linux, starting with theory and ending with many practical examples about its usage.
+Buyer's Guide to Full Disk Encryption - Overview of full-disk encryption, how it works, and how it differs from file-level encryption—plus an overview of leading full-disk encryption software.

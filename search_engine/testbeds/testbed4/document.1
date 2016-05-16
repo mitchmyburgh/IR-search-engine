@@ -1,0 +1,43 @@
+In 2D we specify a window on 2D world and a view port on 2D view surface
+objects in world are clipped against window and are then transformed into view port for display.
+Added complexity caused by
+i. added dimension
+ii. display devise are only 2D
+Solution is accomplished by introducing projections that transform 3D objects onto 2D plane
+In 3D we specify view volume(only those objects within view volume will appear in display on output device
+others are clipped from display) in world , projection onto projection plane and view port on view surface
+So objects in 3D world are clipped against 3D view volume and are then projected
+the contents of projection of view volume onto projection plane called window are then transformed
+(mapped onto ) view port for display.
+Projections
+Transform points in coordinate system of dimension ‘n’ into points in a coordinate system of dimension less
+than ‘n’.
+Projection of 3D object is defined by straight projection rays(projectors) emanating from center of
+projection, passing thru each point of object and intersecting a projection plane to form projection.
+These are planar geometric projection as the projection is onto a plane rather than some curved surface and
+uses straight rather than curved projectors.
+2 types of projections
+i. distinction is in relation of center of projection to projection plane
+ii. if the distance from one to other
+is finite then projection is perspective
+iii. if the distance is infinite then projection is parallel.
+Perspective
+A perspective projection whose center is
+a point at infinity becomes a parallel projection
+Visual effect of perspective projection is similar to that of photographic system and human visual system.
+Size of perspective projection of an object varies inversely with distance of that object from the center of
+projection
+Although objects tend to look realistic, is not particularly useful for recording exact shape and measurements
+of objects.
+Perspective projection of any set of parallel lines that are not parallel to projection plane converge to
+vanishing point
+In 3D parallel lines meet only at infinity
+If the set of lines parallel to one of three principal axes then vanishing point is called axis vanishing point
+eg. If projection plane cuts only z axis and normal to it , only z axis has principle vanishing point as lines
+parallel to either y or x axes are also parallel to projection plane and has no vanishing points
+In fig lines parallel to x,y do not converge only lines parallel to z axis converge
+Parallel
+Coordinate positions are transformed to the view plane along parallel lines
+Preserves relative proportions of objects so that accurate views of various sides of an object are obtained but
+doesn’t give realistic representation of the 3D object.
+Can be used for exact measurements so parallel lines remain parallel.

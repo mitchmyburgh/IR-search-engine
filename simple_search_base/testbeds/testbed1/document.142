@@ -1,0 +1,29 @@
+Air_cooling
+'''Air cooling''' is a method of dissipating . It works by expanding the surface area of or increasing the flow of air over the object to be cooled, or both. An example of the former is to add  to the surface of the object, either by making them integral or by attaching them tightly to the object's surface (to ensure efficient heat transfer). In the case of the latter, it is done by using a  blowing air into or onto the object one wants to cool. The addition of fins to a  increases its total surface area, resulting in greater cooling effectiveness.
+In all cases, the air has to be cooler than the object or surface from which it is expected to remove heat. This is due to the , which states that heat will only move spontaneously from a hot reservoir (the heat sink) to a cold reservoir (the air).
+==Examples==
+===Vehicles===
+Air is mainly used for air-cooled internal combustion engines (ICE), particularly those powering , because it is a readily available fluid and is often at a suitable temperature to be used efficiently. While many such ICE are called "liquid cooled" the cooling liquid is usually cooled by air passing through a radiator or heat exchanger. Examples of direct air cooling in modern automobiles are rare. The most common example is the  or ''Boxer'' engine, once used extensively by Porsche and still in use on  motorcycles. Notable past models include the  and related models, the , the  and the  until 1998.
+===Turbines===
+Gas turbine engines (e.g. turbojets, turbofans, etc.) incorporate turbines, which are exposed to the hot gases exiting the combustion chamber. Where necessary, relatively cold air is bled from the compression system and used to cool the turbine blades and vanes, to prevent them from melting.
+===Electronics===
+Its use is widespread in computers and , where the computer s produce large quantities of heat that, if not dissipated, could damage the CPU and other electronic components. In this case air has the advantage of being a good  too. However, in the future, new processors might generate too much heat to be dissipated through direct air cooling and it would follow that such direct cooling for computers and their components will become obsolete.  is somewhat popular in very high-power situations, such as large servers or heavily overclocked amateur systems.
+===Industries===
+A very large number of  processes use air as a cooling medium, either directly or indirectly.  is a very common process in which the air in a room, or a whole building, is cooled in order to maintain a comfortable environment for its occupants. Often the air has been cooled by chilled water or  and the heat transferred to that medium is transported outside the building where, often, fan-driven water-to-air  is again effected to reject the heat into the atmosphere. A common sight around, for example, s are the large waisted concrete towers that emit steam more or less constantly. These are, in part, using air cooling on a grand scale.
+== Derating at high altitude ==
+When operating in an environment with lower air pressure like high altitude or airplane cabins. The cooling capacity has to be derated compared to that of sea level.
+A rule-of-thumb formula 1 - (h/17500) = derating factor. Where ''h'' is the height over sea level in meters. And the result is the factor that should be multiplied with the cooling capacity in  to get the cooling capacity at the specified height over sea level. table "Cooling efficiency"
+==See also==
+* 
+* 
+* 
+* 
+* 
+*  cooling
+*  cooling
+* 
+==References==
+*
+*P V Lamarque, "The design of cooling fins for Motorcycle Engines", Report of the Automobile Research Committee, Institution of Automobile Engineers Magazine, March 1943 issue, and also in "The Institution of Automobile Engineers Proceedings, Session 1942-1943, pp 99-134 and 309-312.
+*Julius Mackerle, "Air-Cooled Motor Engines". Charles Griffin & Company Ltd., London 1972
+*Anish Gokhale et al.: "Optimization of Engine Cooling through Conjugate Heat Transfer Simulation and Analysis of Fins"; SAE Paper 2012-32-0054

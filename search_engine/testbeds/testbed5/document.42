@@ -1,0 +1,48 @@
+There's an Arnold Schwarzenegger Programming Language
+
+If coding bores you, maybe you just need to try a different programming language. Perhaps you'll allow us to recommend one but together by Lauri Hartikka—which is themed around Arnold Schwarzenegger.
+
+Called ArnoldC—see what he did there?—it's "an imperative programming language where the basic keywords are replaced with quotes from different Schwarzenegger movies." Yes, really.
+
+So, every program has to start ("IT'S SHOWTIME") and stop ("YOU HAVE BEEN TERMINATED"). To print text you use the command "TALK TO THE HAND"; to declare a variable you type "HEY CHRISTMAS TREE "; while is "STICK AROUND"; return is, obviously, "I'LL BE BACK". And so on, and so on, hilariously.
+
+If you're interested—and of course you are—a full program to print all the numbers from 1 to 10 would look something like this:
+
+    IT'S SHOWTIME
+
+    HEY CHRISTMAS TREE isLessThan10
+
+    YOU SET US UP @NO PROBLEMO
+
+    HEY CHRISTMAS TREE n
+
+    YOU SET US UP 0
+
+    STICK AROUND isLessThan10
+
+    GET TO THE CHOPPER n
+
+    HERE IS MY INVITATION n
+
+    GET UP 1
+
+    ENOUGH TALK
+
+    TALK TO THE HAND n
+
+    GET TO THE CHOPPER isLessThan10
+
+    HERE IS MY INVITATION 10
+
+    LET OFF SOME STEAM BENNET n
+
+    ENOUGH TALK
+
+    CHILL
+
+    YOU HAVE BEEN TERMINATED
+
+You can check it out in full on GitHub. [GitHub via Animal]
+
+
+

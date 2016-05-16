@@ -1,0 +1,42 @@
+﻿Working with OWL 2 EL is fairly similar to working with OWL 2 DL: one can use class expressions on both sides of a subClassOf statement and even infer such relations. For many large, class-expression oriented ontologies, by only a little simplification one can get an OWL 2 EL ontology and preserve the bulk of the meaning of the original ontology.
+OWL 2 EL is designed with large biohealth ontologies in mind, such as SNOMED-CT, the NCI thesaurus, and Galen. Common characteristics of such ontologies include complex structural descriptions (e.g., defining certain body parts in terms of what parts they contain and are contained in or propagating diseases along part-subpart relations), huge numbers of classes, the heavy use of classification to manage the terminology, and the application of the resulting terminology to vast amounts of data. Thus, OWL 2 EL has a comparatively expressive class expression language and it has no restrictions on how they may be used in axioms. It also has fairly expressive property expressions, including property chains but excluding inverse.
+Sensible use of OWL 2 EL is obviously not restricted to the biohealth domain: as with the other profiles, OWL 2 EL is domain independent. However, OWL 2 EL shines when your domain and your application require recognition of structurally complex objects. Such domains include system configurations, product inventories, and many scientific domains.
+Besides negation and disjunction, OWL 2 EL also disallows universal quantification on properties. Therefore propositions like “all children of a rich person are rich” cannot be stated. Moreover, as all kinds of role inverses are not available, there is no way of specifying that, say, parentOf and childOf are inverses of each other.
+The EL acronym reflects the profile's basis in the so-called EL family of description logics [EL++]; they are Languages providing mainly Existential quantification of variables.
+The following is an example which uses some of the typical modeling features available in OWL 2 EL.
+Functional-Style Syntax
+ SubClassOf(
+   :Father 
+   ObjectIntersectionOf( :Man :Parent )
+ )
+ 
+ EquivalentClasses(
+   :Parent 
+   ObjectSomeValuesFrom(
+     :hasChild 
+     :Person
+   )
+ )
+ 
+ EquivalentClasses( 
+   :NarcisticPerson 
+   ObjectHasSelf( :loves ) 
+ )
+ 
+ DisjointClasses( 
+   :Mother 
+   :Father 
+   :YoungChild 
+ )
+ 
+ SubObjectPropertyOf( 
+   ObjectPropertyChain( :hasFather :hasBrother ) 
+   :hasUncle 
+ )
+ 
+ NegativeObjectPropertyAssertion( 
+   :hasDaughter 
+   :Bill 
+   :Susan 
+ )
+

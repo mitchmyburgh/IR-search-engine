@@ -1,0 +1,94 @@
+
+Flaw-finding Ruby on Rails bot steams past humans
+MIT project adds to developer job insecurity
+reddit
+Twitter
+Facebook
+16
+linkedin
+7
+15 Apr 2016 at 20:39, Iain Thomson
+
+Boffins at MIT have designed a Ruby on Rails interpreter that can find code flaws much faster than fleshy programmers.
+
+Dubbed Space, the software has been tested against 50 popular web applications written in Rails, and found 23 previously undiagnosed security flaws. None of the programs required more than 64 seconds for a debugging run.
+
+Professor Daniel Jackson from MIT's department of electrical engineering and computer science developed Space with a PhD student. They rewrote the code libraries Rails uses and fed the results into a Rails interpreter, which converted the software into machine-readable code after checking it for bugs using static analysis.
+
+"The classic example of this is if you wanted to do an abstract analysis of a program that manipulates integers, you might divide the integers into the positive integers, the negative integers, and zero," Jackson said.
+
+"The problem with this is that it can't be completely accurate, because you lose information," Jackson says. "If you add a positive and a negative integer, you don't know whether the answer will be positive, negative, or zero. Most work on static analysis is focused on trying to make the analysis more scalable and accurate to overcome those sorts of problems."
+
+Two other attempts at a debugger were less successful, but Space worked just fine, and the developers say it would work even better if software developers integrate it into new code libraries rather than trying to rewrite old ones.
+
+The final code will be presented at the International Conference on Software Engineering in Austin, Texas, in May. ®
+Tips and corrections
+20 Comments
+More from The Register
+Chef logo
+Chef plugs Ruby vulns with Server release
+Always something else you can throw in the pot
+A Handful of Giant Weta by Mike Locke
+US government tells Apple it has security problems that Apple fixed last year
+FBI gets the 'don't hoard vulnerabilities' memo at last
+14 Comments
+Cloud security
+THOUSANDS of Ruby on Rails sites leave logins lying around
+Unexpired session cookies can be stolen, re-used
+2 Comments
+Uninstall QuickTime for Windows: Apple will not patch its security bugs
+Two critical flaws found and the official fix is: remove the app
+70 Comments
+The Register breaking news
+Ruby off the Rails: Enormo security hole puts 240k sites at risk
+Update NOW or give everyone shell access to your app server
+26 Comments
+Microsoft&#39;s Scott Guthrie announces new Azure features at Build 2016
+Microsoft explains which cloud security problems are your problem
+And reveals that for really bad problems, Microsoft will break Azure to fix it
+16 Comments
+Whitepapers
+PDF Icon
+Securing Your Network and Application Infrastructure
+A range of industry analysts, consultants, and hands-on security experts provided responses to this question.
+PDF Icon
+Data architecture optimisation
+learn how Data Architecture Optimisation can make data architectures capable of realising new and improved business outcomes while driving significant cost.
+PDF Icon
+Hyper converge your IT and get ready for hybrid cloud
+Highly efficient general-purpose virtualisation platform is easy to use and hybrid cloud-ready.
+PDF Icon
+Granular recovery of active directory objects
+In this white paper, you will learn more about recovering Active Directory objects and will show you a few different options for performing those tasks.
+Most read
+
+    Teresa Azevedo http://www.shutterstock.com/gallery-80202p1.html
+    Audiophile torrent site What.CD fully pwnable thanks to wrecked RNG
+    Windows 95 on Apple Watch
+    Chap runs Windows 95 on Apple Watch
+    F-35s failed 'scramble test' because of buggy software
+    US data suggests Windows 10 adoption in business is slowing
+    hands waving dollar bills in the air
+    If the Internet of Things will be SOOO BIG why did Broadcom just quit the market?
+
+Spotlight
+Daniel Craig and Dabbsy
+I am sending pouting selfies to a robot. Its AI is well buff
+Hipster with laptop photo via Shutterstock
+Slack smackback: There's no IRC in team (software), say open-sourcers
+This Damn War image via Shutterstock
+Computer says: Stop using MacWrite II, human!
+Croteam's Talos Principle is among the first games to support Vulkan
+Khronos releases Vulkan 1.0 open graphics specification
+Man types something into Mac while sipping a glass of lemon water. Not a brilliant idea. Photo by SHutterstock
+Which keys should I press to enable the CockUp feature?
+Attack film poster
+Attack! Run. WTF? A decade of enterprise class fear and uncertainty with AWS
+Microsoft SQL Server for Linux is a brilliant and logical idea
+London bus photo, by Nando Machado Shutterstock
+Alice, Bob and Verity, too. Yeah, everybody's got a story, pal
+Sponsored links
+
+    Sign up to The Register to receive newsletters and alerts
+
+

@@ -1,0 +1,99 @@
+
+Sitepoint.com
+The last time we looked at the best programming languages to learn in 2015, JavaScript, Java, PHP and Python appeared good options when you analyze popularity on sites such as GitHub and StackOverflow.
+
+Alternatively, perhaps we can determine the “best” technologies to learn from job-related metrics such as demand and salaries? Career planning company Gooroo examines more than 500,000 IT vacancies throughout the US, UK and Australia to produce their 2015 salaries and demand report.
+More from this author
+
+    How to Use JSON Data Fields in MySQL Databases
+    Opera VPN: the Future of Private Browsing?
+    How to Create a Static Site with Metalsmith
+
+Top Ten In-demand Technologies
+
+The following technologies feature most strongly in job vacancy advertisements:
+
+    Java — featured in 18% of adverts with an average salary of $100,000 USD
+    JavaScript — 17%, $90,000
+    C# — 16%, $85,000
+    C — 9%, $90,000
+    C++ — 9%, $95,000
+    PHP — 7%, $75,000
+    Python — 5.5%, $100,000
+    R — 3%, $95,000
+    Scheme — 3%, $65,000
+    Perl — 3%, $100,000
+
+These are worldwide statistics which will have a US bias owing to its larger market. C# hits the top spot in the UK (32%) while JavaScript wins in Australia (13%).
+Top Ten Technology Salaries
+
+The following technologies all pay more than $100,000, with Erlang developers earning an average of $125,000 USD per year:
+
+    Erlang
+    Clojure
+    Haskell
+    Lua
+    Lisp
+    Groovy
+    Scala
+    F#
+    Ruby
+    Python
+
+Interestingly, only Python appears in both lists. Does that make it the best option?
+Gooroo Caveats
+
+Before you knock down your boss’s door to demand a pay rise and Python re-training, Gooroo discloses:
+
+    Not all jobs are advertised, nor can they capture every vacancy.
+    Salary information is sparse and, when available, is often quoted as a range.
+    The data includes temporary contract and full-time permanent roles, which can offer wildly different salaries.
+    Jobs often require more than one skill. In those situations, Gooroo divides the salary by the number of skills to obtain an average for each.
+    It can be difficult to extract skills, e.g. Microsoft SQL Server could be referred to as “SQL Server”, “MSSQL”, “SQL 2014”, etc. (On personal note, I’m yet to meet a recruiter who understands Java is not JavaScript!)
+
+The report is interesting, contains useful information and reaches reasonable conclusions. Unfortunately, demand and salary statistics are misleading unless you appreciate the underlying data. The following issues should be noted…
+Large Corporations Have a Larger Influence
+
+Recruitment is expensive. Agencies typically charge 25% of first year salary to find suitable applicants so they can can afford to purchase adverts in online and offline media.
+
+This explains why Java (18%) and C# (16%) feature prominently. Neither is better than competing languages but large corporations invest in them because:
+
+    they have long-term business goals
+    they employ many developers and cannot switch platforms quickly
+    the technologies are available with support from Oracle and Microsoft.
+
+Smaller companies may have more vacancies and similar salaries for PHP, Node.js or Ruby. However, they will be less willing or able to pay hefty recruitment fees. Their adverts are less noticeable, so the results are skewed accordingly.
+Salaries are Averages
+
+Is it fair that PHP developers are paid 25% less than Java developers? No — but it’s not true.
+
+Salaries are based on the value of the product you’re creating and your personal contribution to the project. It doesn’t matter whether you’re using Java, PHP, COBOL or QBasic.
+
+Despite the figures above, there are more PHP than Java roles; PHP runs on 80% of the world’s web servers and WordPress powers one in four websites. You’ll find jobs where PHP is better paid than Java, but you’ll also find many jobs in theme development or general website support at the lower end of the salary scale. The average PHP salary is reduced.
+Job Titles are Vague
+
+You’ll rarely see jobs advertised for “Java Developer”, “PHP Professional” or “Python Programmer”. The top-paying role is Service-Oriented Architecture? That could describe skills required by every developer, regardless of their language specialisms.
+Jobs are Multi-skilled
+
+The days of being able to forge a career with a single language are long gone. Most roles require a multitude of skills — including business analysis, systems architecture, database design, data exchange formats, frameworks, graphic design, front-end development and support. Those working on the web will be exposed to HTML, CSS and JavaScript even when the job advert neglects to mention it.
+Past Events Do Not Determine Future Trends
+
+Technology changes rapidly, yet it can take many years to become a competent developer. If we look back five years, Node.js had only just been released, and front-end-specific jobs were relatively uncommon. Ten years ago, iOS and Android didn’t exist. Fifteen years ago, ColdFusion and Classic ASP with VBS were popular web development platforms. Twenty years ago, few developers ventured beyond C++ and VisualBasic.
+
+Even technologies which persist over the long-term will fluctuate in popularity.
+Noted — But What Should I Learn?
+
+Programming is a passion. It requires a combination of logical thinking, experience, creativity, imagination and curiosity. Some people are naturally adept, but there are no short-cuts. It takes considerable time to achieve a reasonable level of competence, and you never stop learning. After all that, be prepared to give up the obsolete technologies you spent years crafting.
+
+Before you embark on preparation for a career in software development, ask yourself a single question:
+
+    Would I write programs in my spare time for enjoyment?
+
+Be honest. Only one person can motivate you. Only one person can teach you to program. Only one person can devote the time, energy and costs required to learn the skills. If you’re not prepared to make the investment, no one else will — so pick a career which interests you more or requires less effort.
+
+Choosing a single technology based on surveys, salaries or the opinions of others will also fail. Complete your own small development tasks and expose yourself to as many languages, tools and techniques as possible. Examine code and discuss it with your peers. That knowledge becomes invaluable as you progress to increasingly complex projects.
+
+You may reach a point where someone will pay handsomely for your expertise, but don’t depend on it. Being paid for something you enjoy is a bonus. If you don’t enjoy programming, it will become a chore, and no monetary reward will make you happy.
+
+What are you waiting for? Think of a problem and code a solution. You may pick a troublesome technology, but it’s the experience that matters — not the language.
+

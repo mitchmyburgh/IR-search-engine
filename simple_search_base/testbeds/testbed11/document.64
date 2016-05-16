@@ -1,0 +1,28 @@
+IEEE 802.11k-2008 is an amendment to IEEE 802.11-2007 standard for radio resource management. It defines and exposes radio and network information to facilitate the management and maintenance of a mobile Wireless LAN. IEEE 802.11k was incorporated in IEEE Std 802.11-2012; see IEEE 802.11.
+
+
+== Radio Resource Management ==
+IEEE 802.11k and 802.11r are industry standards that enable seamless Basic Service Set (BSS) transitions in the WLAN environment. The 802.11k standard provides information to discover the best available access point.
+802.11k is intended to improve the way traffic is distributed within a network. In a wireless LAN, each device normally connects to the access point (AP) that provides the strongest signal. Depending on the number and geographic locations of the subscribers, this arrangement can sometimes lead to excessive demand on one AP and underutilization of others, resulting in degradation of overall network performance. In a network conforming to 802.11k, if the AP having the strongest signal is loaded to its full capacity, a wireless device is connected to one of the underutilized APs. Even though the signal may be weaker, the overall throughput is greater because more efficient use is made of the network resources.
+
+
+== Protocol operation ==
+The following steps are performed before switching to a new access point.
+Access point determines that client is moving away from it.
+Informs client to prepare to switch to a new access point.
+Client requests list of nearby access points
+Access point gives site report
+Client moves to best access point based on report
+
+
+== See also ==
+IEEE 802.11r
+IEEE 802.11v
+
+
+== External links ==
+IEEE 802.11k-2008 — Amendment 1: Radio Resource Measurement of Wireless LANs. doi:10.1109/IEEESTD.2008.4544755. ISBN 978-0-7381-5421-3. 
+IEEE Task Group TGk
+
+
+== References ==

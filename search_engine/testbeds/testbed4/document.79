@@ -1,0 +1,428 @@
+Wavelets for Computer Graphics: A Primer Part 2
+y
+Eric J. Stollnitz Tony D. DeRose David H. Salesin
+University of Washington
+1 Introduction
+Wavelets are a mathematical tool for hierarchically decomposing functions. They allowa function to be described in terms of a coarse overall shape, plus details that range from broad to narrow. Regardless of whether the function of interest is an image, a curve, or a surface, wavelets provide an elegant technique for representing the levels of detail present.
+In Part 1 of this primer we discussed the simple case of Haar wavelets in one and two dimensions, and showed how they can be used for image compression. In Part 2, we present the mathematical theory of multiresolution analysis, then develop bounded-interval spline wavelets and describe their use in multiresolution curve and surface editing.
+2 Multiresolution analysis
+The Haar wavelets we discussed in Part 1 are just one of many bases that can be used to treat functions in a hierarchical fashion. In this section, we develop a mathematical framework known asmultiresolution analysis for studying wavelets [2, 11]. Our examples will continue to focus on the Haar basis, but the more general mathematical notation used here will come in handy for discussing other wavelet bases in later sections.
+Multiresolution analysis relies on many results from linear algebra. Some readers may wish to consult the appendix in Part 1 for a brief review.
+As discussed in Part 1, the starting point for multiresolution analysis is a nested set of vector spaces
+V0
+
+V1
+
+V2
+  As j increases, the resolution of functions inVj increases. The basis functions for the space Vj are known as scaling functions.
+The next step in multiresolution analysis is to de?newavelet spaces. For each j, we de?ne Wj as the orthogonal complementof Vj in Vj+1. This means thatWj includes all the functions inVj+1 that are orthogonal to all those in Vj under some chosen inner product. The functions we choose as a basis forWj are called wavelets.
+2.1 A matrix formulation for re?nement
+The rest of our discussion of multiresolution analysis will focus on wavelets de?ned on a bounded domain, although we will also refer to wavelets on the unbounded real line wherever appropriate. In the bounded case, each spaceVj has a?nitebasis, allowing ustousematrix notation in much of what follows, as did Lounsberyet al. [10] and Quak and Weyrich [13].
+y
+Eric J. Stollnitz, Tony D.DeRose, and David H. Salesin. Wavelets for computer graphics: A primer, part 2. IEEE Computer Graphics and Applications, 15(4):75-85, July 1995.
+It is often convenient to put the different scaling functions
+-
+j i(x) for
+a given level j together into a single row matrix,
+
+j(x) := [
+-
+j 0(x)
+ -
+j mj
+
+1
+(x)],
+where mj is the dimension of Vj. We can do the same for the wavelets:	
+j(x) := [ 
+j 0(x)
+ 
+j nj
+
+1
+(x)],
+where nj is the dimension ofWj. Because Wj is the orthogonal complement of Vj in Vj+1, the dimensions of these spaces satisfymj+1 = mj + nj. Thecondition that the subspacesVj be nested is equivalent to requiring thatthe scaling functions bere?nable. That is, forallj = 1,2,
+:::
+there must exist a matrix of constants Pj such that
+
+j
+
+1(x) =
+
+j(x)Pj. (1)
+In other words, each scaling function at levelj
+
+1 must be expressible as a linear combination of "?ner" scaling functions at levelj. Note that since Vj and Vj
+
+1 have dimensions mj and mj
+
+1, respec
+tively, Pj is an mj
+
+mj
+
+1 matrix (taller than it is wide). Since the wavelet space Wj
+
+1 is by de?nition also a subspace ofVj,
+wecan writethewavelets	
+j
+
+1(x)aslinearcombinations ofthescal
+ing functions
+
+j(x). This means there is an mj
+
+nj
+
+1 matrix of con
+stants Qj satisfying	
+j
+
+1(x) =
+
+j(x)Qj. (2)
+Example: In the Haar basis, at a particular level j there are mj = 2j scaling functions and nj = 2j wavelets. Thus, there must be re?nement matrices describing how the two scaling functions in V1 and the two wavelets in W1 can be made from the four scaling functions inV2:
+P2 =
+2
+6 4
+1 0 1 0 0 1 0 1
+3
+7 5
+and Q2 =
+2
+6 4
+1 0
+
+1 0 0 1 0
+
+1
+3
+7 5
+Remark: In the case of wavelets constructed on the unbounded real line, the columns of Pj are shifted versions of one another, as are the columns of Qj. One column therefore characterizes each matrix, so Pj and Qj are completely determined by sequences (
+:::
+,p
+
+1,p0,p1,
+:::
+) and
+(
+:::
+,q
+
+1,q0,q1,
+:::
+), which also do not depend on j. Equations (1) and (2) therefore often appear in the literature as expressions of the form
+-
+(x) =
+X
+i
+pi
+-
+(2x
+
+i) 
+(x) =
+X
+i
+qi
+-
+(2x
+
+i).
+These equations are referred to as two-scale relations for scaling functions and wavelets, respectively.
+Note that equations (1) and (2) can be expressed as a single equation using block-matrix notation:   j
+
+1	
+j
+
+1
+
+=
+
+j
+
+Pj Qj
+
+. (3)
+Example: Substituting the matrices from the previous example into Equation (3) along with the appropriate basis functions gives
+[
+-
+1 0
+-
+1 1 
+1 0 
+1 1] = [
+-
+2 0
+-
+2 1
+-
+2 2
+-
+2 3]
+2
+6 4
+1 0 1 0 1 0
+
+1 0 0 1 0 1 0 1 0
+
+1
+3
+7 5
+It is important to realize that once we have chosen scaling functions and their re?nement matrices Pj, the wavelet matrices Qj are somewhat constrained (though not completely determined). In fact, since all functions in
+
+j
+
+1(x) must be orthogonal to all functions
+in	
+j
+
+1(x), we know
+h -
+j
+
+1
+k
+j 
+j
+
+1 ` i
+= 0 for all k and
+`
+.
+To deal with all these inner products simultaneously, let's de?ne some new notation for a matrix of inner products. We will denote by [ h  j
+
+1
+j	
+j
+
+1
+i
+] the matrix whose (k,
+`
+) entry is
+h - j
+
+1
+k
+j 
+j
+
+1 ` i
+. Armed with this notation, we can rewrite the orthogonality condition on the wavelets as
+[
+h  j
+
+1
+j	
+j
+
+1
+i
+] = 0. (4)
+Substituting Equation (2) into Equation (4) yields
+[
+h 
+j
+
+1
+j 
+j
+i
+]Qj = 0. (5)
+A matrix equation with a right-hand side of zero like this one is known as a homogeneous system of equations. The set of all possible solutions is called the null space of [ h  j
+
+1
+j  j
+i
+], and the columns ofQj mustformabasisforthisspace. Thereareamultitude of bases for the null space of a matrix, implying that there are many different wavelet bases for a given wavelet spaceWj. Ordinarily, we uniquely determine theQj matrices by imposing further constraints in addition tothe orthogonality requirement given above. For example, the Haar wavelet matrices can be found by requiring the least number of consecutive nonzero entries in each column.
+The literature on wavelets includes various terminologies for orthogonality. Some authors refer to a collection of functions that are orthogonal toscalingfunctions but nottoeach otheraspre-wavelets, reserving the term "wavelets" for functions that are orthogonal to each other as well. Another common approach is to differentiate between an orthogonal wavelet basis, in which all functions are mutually orthogonal, and a semi-orthogonal wavelet basis, in which the wavelets are orthogonal to the scaling functions but not to each other. The Haar basis is an example of an orthogonal wavelet basis, while the spline wavelets we will describe in Section 3 are examples of semi-orthogonal wavelet bases.
+Finally, itissometimes desirabletode?ne waveletsthatarenot quite orthogonal to scaling functions in order to have wavelets with small supports. This last alternative might be termed a non-orthogonal wavelet basis, and we will mention an example when we describe multiresolution surfaces in Section 4.3.
+2.2 The ?lter bank
+The previous section showed how scaling functions and wavelets could be related by matrices. In this section, we show how matrix
+notation can also be used for the decomposition process outlined in Section 2.1 of Part 1. Consider a function in some approximation spaceVj. Let's assume we have the coef?cients of this function in terms of some scaling function basis. We can write these coef?cients as a column matrix of values Cj = [cj 0
+
+cj mj
+
+1
+]
+T
+. The coef?cients cj i could, for example, be thought of as pixel colors, or alternatively, as the x- or y-coordinates of a curve's control points in IR2. Suppose we wish to create a low-resolution versionCj
+
+1 of Cj with
+a smaller number of coef?cients mj
+
+1. The standard approach for
+creating the mj
+
+1 values of Cj
+
+1 is to use some form of linear ?ltering and down-sampling on themj entries of Cj. This process can be expressed as a matrix equation Cj
+
+1 = Aj Cj (6)
+where Aj is an mj
+
+1
+
+mj matrix of constants (wider than it is tall).
+Since Cj
+
+1 contains fewer entries than Cj, this ?ltering process clearly loses some amount of detail. For many choices ofAj, it is possible to capture the lost detail as another column matrixDj
+
+1,
+computed by
+Dj
+
+1 = Bj Cj (7)
+whereBj is annj
+
+1
+
+mj matrix of constants related toAj. The pair of matricesAj and Bj are calledanalysis ?lters. The process of splitting thecoef?cientsCj intoa low-resolution versionCj
+
+1 and detailDj
+
+1
+is called analysis or decomposition. If Aj and Bj are chosen appropriately, then the original coef?cients Cj can be recovered from Cj
+
+1 and Dj
+
+1 by using the matrices Pj
+and Qj from the previous section: Cj = Pj Cj
+
+1 + Qj Dj
+
+1. (8)
+RecoveringCj fromCj
+
+1 and Dj
+
+1 is called synthesisor reconstruction. In this context, Pj and Qj are called synthesis ?lters.
+Example: In the unnormalized Haar basis, the matricesA2 and B2 are given by: A2 = 1 2
+
+1 1 0 0 0 0 1 1
+
+B2 = 1 2
+
+1
+
+1 0 0 0 0 1
+
+1
+
+These matrices represent the averaging and differencing operations described in Section 2.1 of Part 1.
+Remark: Once again, the matrices for wavelets constructed on the unbounded real line have a simple structure: The rows of Aj are shifted versions of each other, as are the rows ofBj. The analysis Equations (6) and (7) often appear in the literature as cj
+
+1 k =
+X `
+a
+` 
+2k cj
+`
+dj
+
+1 k =
+X `
+b
+` 
+2k cj
+`
+where the sequences (
+:::
+,a
+
+1,a0,a1,
+:::
+) and
+(
+:::
+,b
+
+1,b0,b1,
+:::
+) are the entries in a row of Aj and Bj, respectively. Similarly, Equation (8) for reconstruction often appears as
+cj k =
+X ` 
+pk
+
+2
+`
+cj
+
+1
+`
++ qk
+
+2
+`
+dj
+
+1 ` 
+.
+2
+Cj
+H
+H
+H
+H H j
+Bj
+Dj
+
+1
+
+Aj
+Cj
+
+1
+H
+H
+H
+H H j
+Bj
+
+1
+Dj
+
+2
+
+
+Aj
+
+1
+Cj
+
+2
+
+C1
+H
+H
+H
+H H j
+B1
+D0
+
+A1
+C0
+Figure 1 The ?lter bank.
+Note that the procedure for splitting Cj into a low-resolution part Cj
+
+1 and a detail part Dj
+
+1 can be applied recursively to the
+low-resolution version Cj
+
+1. Thus, the original coef?cients can be expressed as a hierarchy of lower-resolution versionsC0,
+:::
+,Cj
+
+1
+and details D0,
+:::
+,Dj
+
+1, as shown in Figure 1. This recursive process is known as a ?lter bank. Since the original coef?cients Cj can be recovered from the sequence C0, D0, D1,
+:::
+, Dj
+
+1, we can think of this sequence as a transform of theoriginal coef?cients, known as awavelet transform. Note that the total size of the transformC0, D0, D1, D3
+ 

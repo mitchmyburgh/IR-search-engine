@@ -1,0 +1,60 @@
+2. Related Work
+We use the functional-style syntax of owl in this article, but several equivalent owl syntaxes
+exist. There has also been work to develop controlled natural languages (cnls), mostly
+English-like, to be used as alternative owl syntaxes. Sydney owl Syntax (sos) (Cregan,
+Schwitter, & Meyer, 2007) is an English-like cnl with a bidirectional mapping to and from
+the functional-style syntax of owl; sos is based on peng (Schwitter & Tilbrook, 2004).
+A similar bidirectional mapping has been defined for Attempto Controlled English (ace)
+(Kaljurand, 2007). Rabbit (Denaux, Dimitrova, Cohn, Dolbear, & Hart, 2010) and clone
+(Funk, Tablan, Bontcheva, Cunningham, Davis, & Handschuh, 2007) are other owl cnls,
+mostly intended to be used by domain experts when authoring ontologies (Denaux, Dolbear,
+Hart, Dimitrova, & Cohn, 2011). We also note that some owl cnls cannot express all the
+kinds of owl statements (Schwitter, Kaljurand, Cregan, Dolbear, & Hart, 2008).
+Much work on owl cnls focuses on ontology authoring and querying (Bernardi, Calvanese,
+& Thorne, 2007; Kaufmann & Bernstein, 2010; Schwitter, 2010b); the emphasis is
+mostly on the direction from cnl to owl or query languages.7 More relevant to our work
+are cnls like sos and ace, to which automatic mappings from normative owl syntaxes are
+available. By feeding an owl ontology expressed, for example, in functional-style syntax
+to a mapping that translates to an English-like cnl, all the axioms of the ontology can be
+turned into English-like sentences. Systems of this kind are often called ontology verbalizers.
+This term, however, also includes systems that translate from owl to English-like statements
+that do not belong in an explicitly defined cnl (Halaschek-Wiener, Golbeck, Parsia,
+Kolovski, & Hendler, 2008; Schutte, 2009; Power & Third, 2010; Power, 2010; Stevens,
+Malone, Williams, Power, & Third, 2011; Liang, Stevens, Scott, & Rector, 2011b).
+Although verbalizers can be viewed as performing a kind of light nlg, they typically
+translate axioms one by one, as already noted, without considering the coherence (or topical
+cohesion) of the resulting texts, usually without aggregating sentences nor generating
+referring expressions, and often by producing sentences that are not entirely fluent or natural.
+For example, ace and sos occasionally use variables instead of referring expressions
+(Schwitter et al., 2008). Also, verbalizers typically do not employ domain-dependent generation
+resources and typically do not support multiple languages. Expressing the exact
+meaning of the axioms of the ontology in an unambiguous manner is considered more important
+in verbalizers than composing a fluent and coherent text in multiple languages,
+partly because the verbalizers are typically intended to be used by domain experts.
+7. Conceptual authoring or wysiwym (Power & Scott, 1998; Hallett, Scott, & Power, 2007), which has been
+applied to owl (Power, 2009), and round-trip authoring (Davis, Iqbal, Funk, Tablan, Bontcheva, Cunningham,
+& Handschuh, 2008) are bidirectional, but focus mostly on ontology authoring and querying.
+675
+Androutsopoulos, Lampouras, & Galanis
+Figure 1: The processing stages and sub-stages of Naturalowl.
+Some verbalizers use ideas and methods from nlg. For example, some verbalizers include
+sentence aggregation (Williams & Power, 2010) and text planning (Liang, Scott, Stevens, &
+Rector, 2011a). Overall, however, nlg methods have been used only to a very limited extent
+with owl ontologies. A notable exception is ontosum (Bontcheva, 2005), which generates
+natural language descriptions of individuals, but apparently not classes, from rdf schema
+and owl ontologies. It is an extension of miakt (Bontcheva & Wilks, 2004), which was
+used to generate medical reports. Both were implemented in gate (Bontcheva, Tablan,
+Maynard, & Cunningham, 2004) and they provide graphical user interfaces to manipulate
+domain-dependent generation resources (Bontcheva & Cunningham, 2003). No detailed
+description of ontosum appears to have been published, however, and the system does
+not seem to be publicly available, unlike Naturalowl. Also, no trials of ontosum with
+independently created ontologies seem to have been published. More information on how
+ontosum compares to Naturalowl can be found elsewhere (Androutsopoulos et al., 2012).
+Mellish and Sun (2006) focus on lexicalization and sentence aggregation, aiming to
+produce a single aggregated sentence from an input collection of rdf triples; by contrast,
+Naturalowl produces multi-sentence texts. In complementary work, Mellish et al. (2008)
+consider content selection for texts describing owl classes. Unlike Naturalowl, their system
+does not express only facts that are explicit in the ontology, but also facts deduced from
+the ontology. Nguyen et al. (2012) discuss how the proof trees of facts deduced from owl
+ontologies can be explained in natural language. It would be particularly interesting to
+examine how deduction and explanation mechanisms could be added to Naturalowl.

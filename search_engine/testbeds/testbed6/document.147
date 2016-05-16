@@ -1,0 +1,70 @@
+TREE TRAVERSAL ALGORITHMS 
+The most basic traversal algorithms for general trees are preorder traversal and postorder traversal, 
+discussed in Sections 7.2.2 and 7.2.3, respectively, of the Goodrich and Tamassia text. Essentially, 
+a preorder traversal of a tree involves visiting a node of the tree, starting at its root, and then 
+preorder traversing the subtrees rooted at each of its children. A postorder traversal, on the other
+hand, involves first postorder traversing the subtrees rooted at each of the children of a node and
+then visiting the node itself, starting at the root. These algorithms are given in pseudocode below.
+
+Note that the calls preorder(T,T.root()) and postorder(T,T.root()) perform preorder and postorder 
+traversals, respectively, of an entire tree T. 
+ 
+Algorithm preorder(T, v)
+Input: A tree T and a node v of T.
+Output: Depends on the action performed on a visit to a node.
+
+visit node v
+	for each node w in T.children(v)
+		preorder(T,w)   // recursively traverse the subtree rooted at the child w of v
+
+Algorithm postorder(T, v)
+   Input: A tree T and a node v of T.
+   Output: Depends on the action performed on a visit to a node.
+for each node w in T.children(v)
+   postorder(T,w)  // recursively traverse the subtree rooted at the child w of v
+	visit node v
+	
+The preorder and postorder traversals of a binary tree both involve traversals of the left and right subtrees of a node, and this suggests a third kind of traversal scheme known as 
+inorder traversal. All three traversal algorithms for a binary tree are provided in pseudocode below. 
+Algorithm preorder(T, v)
+   Input: A binary tree T and a node v of T.
+   Output: Depends on the action performed on a visit to a node.
+visit node v
+if T.hasLeft(v)
+   preorder(T, T.left(v))   // recursively traverse left subtree
+if T.hasRight(v)
+   preorder(T, T.right(v))  // recursively traverse right subtree
+Algorithm postorder(T, v)
+   Input: A binary tree T and a node v of T.
+   Output: Depends on the action performed on a visit to a node.
+if T.hasLeft(v)
+   postorder(T, T.left(v))   // recursively traverse left subtree
+if T.hasRight(v)
+   postorder(T, T.right(v))  // recursively traverse right subtree
+visit node v
+
+Algorithm inorder(T, v)
+   Input: A binary tree T and a node v of T.
+   Output: Depends on the action performed on a visit to a node.
+if T.hasLeft(v)
+   inorder(T, T.left(v))   // recursively traverse left subtree
+visit node v
+if T.hasRight(v)
+   inorder(T, T.right(v))  // recursively traverse right subtree
+
+The Euler tour traversal of a binary tree generalizes the preorder, postorder, and inorder schemes above and 
+can perform other kinds of traversals as well. Loosely, an Euler tour traversal can be pictured as a walk around 
+a binary tree starting at its root, keeping the edges of the tree to our left as we walk, and visiting each node
+ three times (on the left, from below, and on the right) during our journey. A pseudocode version (which uses 
+ methods visitLeft, visitBelow, and visitRight to perform the three kinds of visit to a node) is given below.  
+Algorithm eulerTour(T, v)
+Input: A binary tree T and a node v of T.
+Output: Depends on the actions performed on the visits to a node.
+visitLeft(T,v)
+	if T.hasLeft(v)
+		eulerTour(T, T.left(v))   // recursively traverse left subtree
+visitBelow(T,v)
+	if T.hasRight(v)
+		eulerTour(T, T.right(v))  // recursively traverse right subtree
+visitRight(T,v)
+

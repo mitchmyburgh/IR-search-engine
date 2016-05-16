@@ -1,0 +1,81 @@
+Using the octree, the visibility algorithm is intuitively clear. We start with the root
+node in the octree (the largest cube) the following procedure. (1) Check if the cube
+intersects with the viewing frustrum. If not, quit. (2) Scan convert the faces of the
+cube to find out whether any part of the cube is visible. If not, quit. (3) Scan convert
+the polygons associated with the cube, recursively process the child nodes of the cube
+in front-to-back order.
+However, step 2 in this procedure might take quite long time using traditional Zbuffer
+scan conversion. To reduce the cost of determining the cube visibility,HZB uses
+a Z-pyramid. The lowest level of this pyramid contains the values from the original
+Z-buffer. Each group of 2x2 values on one level is then combined into one value on
+the next level by choosing the farthest value of Z from these four values. Thus the
+value on top of the Z-pyramid represents the farthest Z-value in the whole image (see
+figure 1).
+In order to use the Z pyramid to test the visibility, we do the following for the cube
+faces and the polygons of the mode. (1) Find the finest-level value of the pyramid
+whose corresponding image region covers the projection of the polygon. (2) If this
+Z-value is nearer than the closest Z-value of the polygon, the polygon is totally hidden
+and we can quit. (3) Otherwise divide the projection of polygon into four and move
+to finer level of the pyramid. (4) If we reach the lowest level of the pyramid, we have
+found a visible pixel.
+In addition, HZB uses a temporal coherence list that contains all visible cubes from
+the previous frame. Before starting the algorithm, all nodes in the list are rendered.
+This forms an initial Z-buffer, which can be used as a basis for the Z-pyramid. If there
+is enough coherence in the frames, it is quite likely that all visible geometry has been
+rendered. This makes the Z-pyramid test very effective. After rendering the frame, we
+remove the non-visible cubes from the list by using the Z-pyramid test on them.
+The main weakness of HZB is its reliance on Z-pyramid. Z-pyramid is too slow to
+be constructed in software, and current hardware is either not capable of or too slow
+in answering the so called Z-query: given the current Z-buffer, are there any visible
+3
+pixels in a polygon? This means that HZB cannot really come up to interactive speeds.
+Some newest hardware chipsets are now becoming available that support the needed
+Z-buffer query. But it seems that there are better and faster algorithms that exploit this
+Z-query (see for example chapter 2.3).
+2.2 BSP tree projection algorithm
+BSP tree projection algorithm (Naylor, 1992) uses the same ideas as HZB: eliminate
+large portions of model with hierarchical structures. Instead of an octree, it uses a
+more complex structure: binary space partitioning tree (BSP tree).
+A BSP tree is a binary tree in which each node represents a plane (or a line in 2D).
+The left subtree of a node corresponds to the negative half-space of the plane and the
+right subtree to the positive half-space. For example, figure 2 shows a 2D BSP tree.
+Figure 2: A BSP tree and the corresponding partitioning of a plane. Lines are denoted
+by letters and regions by numbers.
+If the model consists entirely of polyhedrons, then the whole model could be represented
+as a BSP tree. If we attach a simple in/out variable with the leaf nodes,
+then the in region corresponds to a region inside a polyhedron. This means that no
+additional data structures are needed: BSP tree is the model itself.
+The algorithm starts to transform the BSP tree recursively from near to far. Whenever
+the algorithm encounters a face of the model (a plane that has a region in as its
+direct child), it constructs a small BSP tree that represents the volume occluded by that
+face. (See figure 3.) The formed BSP tree is united with the model tree, thus eliminating
+redundant nodes. In the union, every subtree that has identical in/out regions is
+collapsed into a single leaf. This means that the whole volume that is occluded by the
+face is collapsed into a single leaf.
+The reliance on the BSP tree as a model is the main weakness of the BSP projection
+algorithm. Majority of models are given in other formats, such as boundary
+representations (B-reps). These models must be converted to BSP trees, and it is a bit
+complicated process. First of all it requires the use of heuristic choices presented by
+Naylor, otherwise the resulting algorithm might not be output sensitive. Second, it assumes
+that there are polygons on all object boundaries, only on object boundaries and
+that all polygon normals point out of the objects. As Sudarsky and Gotsman (Sudarsky
+& Gotsman, 1997) point out, actually only a few models meet these requirements.
+4
+Figure 3: An occluding object and its occluding face (red) creates an occluded volume
+(gray) that hides the occluded object (blue).
+2.3 cPLP
+Algorithms in chapters 2.1 and 2.2 approached the visibility problem quite similarly.
+Another approach is presented in (Klosowski & Silva, 2001), which introduces a conservative
+occlusion culling algorithm, cPLP.
+A conservative algorithm produces an image that looks just like the image rendered
+with all polygons (it contains no errors). This kind of algorithm can overestimate the
+output set, but never underestimate it. Examples of these algorithms are HZB (see
+chapter 2.1) and cPLP.
+An approximate algorithm produces an image that is mostly correct; it makes a
+tradeoff between correctness and speed. On some applications, fast rendering is more
+important than correct output. The Prioritized-Layered Projection (PLP) algorithm is
+one such example (Klosowski & Silva, 2000). It is an aggressive culling algorithm that
+renders only those polygons that are most likely to be visible from the given viewpoint.
+The algorithm works on a user-given budget, and stops when the budget has been
+reached.
+Just like HZB and BSP, PLP divides the object-space into no

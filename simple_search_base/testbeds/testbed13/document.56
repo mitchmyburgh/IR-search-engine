@@ -1,0 +1,392 @@
+
+
+# _Ars_Technica
+
+  * Ars Technica
+  * Ars Technica UK
+
+Register Log in
+
+  * Home
+  * Main Menu
+
+    * Information Technology Technology Lab
+    * Product News &amp; Reviews Gear &amp; Gadgets
+    * Business of Technology Ministry of Innovation
+    * Security &amp; Hacktivism Risk Assessment
+    * Civilization &amp; Discontents Law &amp; Disorder
+    * The Apple Ecosystem Infinite Loop
+    * Gaming &amp; Entertainment Opposable Thumbs
+    * Science &amp; Exploration The Scientific Method
+    * All Things Automotive Cars Technica
+
+Feature Report Series The Rise of Specialized Databases
+
+Layout:
+
+    * Grid View
+    * Article View
+    * Unified View
+
+## Site Theme
+
+    * Dark on light
+    * Light on dark
+
+## Explore Ars
+
+    * Reviews
+    * Video
+    * Staff Blogs
+    * Feature Archive
+    * Staff Directory
+    * Contact Us
+
+  * My Stories: 0
+
+## New Since Last Visit
+
+See more news stories
+
+## We Recommend
+
+## My Discussions
+
+Log in to track your discussions.
+
+  * Forums
+  * Subscribe
+  * Jobs
+  * 
+
+#  Scientific Method /  Science &amp; Exploration
+
+# How IBM’s new five-qubit universal quantum computer works
+
+## IBM achieves an important milestone with new quantum computer in the cloud.
+
+by Chris Lee \- May 4, 2016 3:57 pm UTC
+
+  * Share
+  * Tweet
+  * Email
+  * Google
+  * Reddit
+
+66
+
+The five qubits in IBM's quantum computer.
+
+IBM
+
+In the wee hours of Wednesday morning, IBM gave an unwary world its first
+publicly accessible quantum computer. You might be worried that you can tear
+up your passwords and throw away your encryption, for all is now lost.
+However, it's probably a bit early to call time on the world as we know it.
+You see, the whole computer is just five bits.
+
+This might sound like some kind of publicity stunt; maybe it's IBM's way of
+clawing some attention back from D-Wave's quantum computing efforts. But a
+careful look shows that serious science undergirds the announcement.
+
+The IBM system is, on a very superficial level, similar to D-Wave's. Both
+systems use superconducting quantum interference devices as qubits (quantum
+bits). But the similarity ends there. As IBM emphasizes, its quantum computer
+is a universal quantum computer—which D-Wave's is not.
+
+Another big difference: IBM can address and measure the state of each qubit
+individually. The company can measure (and has) all the critical features of
+its device. If you want to know how long a qubit retains its state, IBM can
+tell you. IBM even shows that addressing multiple qubits in a random way
+doesn't affect the state of the others too badly. Big Blue is really building
+its quantum computer from the foundation up, while still ensuring that the
+engineering fits real-world requirements.
+
+And we know a fair bit about the hardware. In 2015, IBM released a detailed
+schematic of how the circuit is put together and how it is linked to the
+outside world. The schematic probably isn't detailed enough for me to build
+the circuit in my local cleanroom, but I bet my friends down the hall who work
+in the field can. Releasing this sort of detail is what we in the industry
+call "doing science."
+
+I was lucky enough to get hold of a draft of the paper about the device. The
+key focus of the hardware at the moment is not on computing (which is
+pointless with five qubits) but on ensuring that the device computes reliably
+thanks to good error correction.
+
+## Let me get my red pen
+
+Modern memory and communications systems would not function without error
+correction. The essential idea is to build some redundancy into the data so
+that you can _always_ tell when data is corrupted and sometimes correct the
+problems without having to ask for information to be resent.
+
+A common scheme in classical communications is to take a group of bits, say
+four, and perform a series of mathematical operations (typically exclusive-or
+operations) on them to produce a single bit of extra data (note that I'm not
+outlining an exact scheme here, so in detail the exact numbers change
+slightly). All five bits are sent to the receiver, which performs exactly the
+same operations.
+
+One can always tell if there is an error in any of the four data bits based on
+whether the operations produce the same value for the fifth bit. Because of
+the way the sequence of operations is structured, somewhere between one and
+two errors can be corrected based on the outcome of the operations. Basically,
+at a cost of about a quarter of your communication channel's capacity, you can
+ensure that almost no uncorrectable errors are received.
+
+There are, of course, a whole bunch of implementation details beyond the math
+that you have to consider to make this work. But it does work. When I briefly
+worked in the microwave link industry, with error correction turned off, we
+expected one bit in a billion to be wrong; with error correction on, it was
+expected to be better than one bit per trillion.
+
+However, this is for classical communications and computation. The quantum
+world, as usual, is a whole different story.
+
+## For quantum error correction, you need a quantum red pen
+
+> So, in addition to a bit-flip error, you can also have a phase-flip error,
+which is an error in the _relationship_ between two bits, rather than an error
+in the value of one particular bit.
+
+Quantum computing has a problem with error correction—a far worse one than
+classical computing faces. Let's put it in perspective. One option for a qubit
+is a superconducting quantum interference device where the typical energy
+difference between a one and a zero is on the order of 10-24 joules. For a
+classical system, we can choose whatever energy difference we want by setting
+thresholds for voltages and/or currents, so we set it to something convenient,
+usually something on the order of a volt.
+
+To come close to having the same 10-24J difference between a one and zero, any
+chip would have to operate with a gate voltage of ten microvolts. So, at
+minimum, classical and quantum computers operate at energy scales that are
+different from one another by about a factor of 10,000.
+
+Making matters worse, a qubit state is not a one or a zero but is a
+probability to produce a one or a zero on measurement, and this probability
+evolves in time. I can take two qubits that are set identically and then
+measure them some time later. After repeating this many times, I should find
+that the probability distributions are the same. That's the theory; in
+practice, they experience slightly different environments, so at some point
+later in time, one will have slightly changed relative to the other in an
+unpredictable way.
+
+So, in addition to a bit-flip error, you can also have a phase-flip error,
+which is an error in the _relationship_ between two bits rather than an error
+in the value of one particular bit.
+
+And this makes error correction for a quantum circuit very difficult—and very,
+very necessary. In classical computers, the first processors could be
+implemented with minimal (or no) error correction. Quantum computing will
+require sophisticated error correction from the get go. It is not just a case
+of flipping a bit; you have to know how the different qubits evolve
+differently in time and how to correct for that _before you measure them_.
+
+Let me give you an idea of how difficult this is. A typical qubit might have a
+lifetime of about 50 microseconds and a coherence time of 20 microseconds.
+What does this mean? It means that once your qubits are set, you have to apply
+error correction within the first 20 microseconds and complete a step of your
+calculation within 50 microseconds. That doesn't seem too bad, right?
+
+But there's always a "but." The operations to manipulate a qubit—either to
+perform a logical operation or to correct an error—involve microwave pulses
+that have a certain amount of energy. They can either be short, sharp pulses
+or long, slow pulses, as long as the area of the pulse remains the same.
+Unfortunately, short, sharp pulses cause problems, so typical pulses are 50 to
+60 nanoseconds long. Given that you need to have everything done within 50
+microseconds, this means you have a total of 1,000 operations for calculation
+and error correction. This makes it an extra-tough problem.
+
+## Making bad neighbors clean up after themselves
+
+The IBM researchers have solved this extra-tough problem. To simplify it
+considerably, they have a cluster of four data qubits that are coupled to a
+single qubit, called the syndrome bit. The state of the syndrome qubit depends
+on the states of all the other qubits. This connectivity is used to determine
+the rate at which qubits induce errors in one another, which is then used to
+correct errors before the computation is complete.
+
+The system took me some time to puzzle out, but essentially it works like
+this. The qubits are electromagnetic waves oscillating back and forth in an
+electronic device. A small amount of the wave is coupled out and mixed with
+the wave from the neighboring qubit. If the two qubits are in the same state,
+then their electromagnetic waves combine in phase and provide a strong signal
+to the syndrome qubit. But if the two qubits are out of phase, they cancel and
+provide no signal to the syndrome qubit. Likewise, the second pair of qubits
+do the same, providing their own combined signal to the syndrome qubit. This
+is called interference.
+
+The interference between the four data qubits controls the state of the
+syndrome bit. This can then be used to correct single errors that crop up in
+the four data qubits (e.g., a flip of one qubit). Essentially, the state of
+the syndrome qubit controls where the signal that fixes the error is sent.
+
+To demonstrate how effective this error correction scheme is, the researchers
+focused on errors introduced through cross-talk. Cross-talk occurs when a
+qubit that is _not_ involved in the current operation causes the value of a
+qubit that _is_ involved to flip. One example of this is when the value of one
+of the four qubits is used to conditionally flip the value of a second. The
+two remaining qubits have a set state but are not involved in this particular
+operation. However, because all the qubits are coupled, the two bystanders can
+introduce an error by causing either the control or the data bit to flip
+states unexpectedly.
+
+The critical thing about IBM's system is that it can correct the error
+_during_ the computation. That is: we don't read out the qubit values and then
+attempt error correction. Instead, we anticipate that a bystander qubit will
+generate a wave that interferes and induces an error. This can be canceled out
+by understanding how the error will be introduced and undoing it before it
+causes a problem.
+
+Simply put: the researchers don't know the state of any of the qubits, but
+they do know how to flip states, and they know the rate at which qubits drive
+each other to flip. They use that knowledge for error correction.
+
+The operation takes a certain amount of time. Over this time, the state of the
+bystander qubit interferes via an electromagnetic wave with a certain phase
+and amplitude. The researchers wait a bit, then flip the bystander qubit. This
+keeps its amplitude the same but inverts the phase, causing constructive
+interference to become destructive interference. After waiting for the same
+amount of time, the net effect of the bystander qubit is exactly nothing, as
+the inverted phase undoes everything that the qubit initially did to its
+neighbors.
+
+After that, the researchers flip the bystander back to its original state so
+that it can also be used without error. By carefully sequencing the
+operational pulses and these error-correcting pulses, researchers can reduce
+the probability of errors significantly.
+
+## How do I get to play with this?
+
+IBM didn't provide a location for experiencing this fancy new device. But a
+quick Internet search revealed that you can get access here (registration
+required). Apparently, IBM really wants people who actually have a serious
+need for quantum computing to sign up, so I haven't actually tried it myself.
+
+In any case, five qubits is still too few to do anything useful. But, if you
+think you might have a good reason to use quantum computing in the future, I
+suggest you register and play around, because IBM has a very aggressive
+timetable for scaling: it expects to hit between 50 and 100 qubits within the
+next decade. At 50 qubits, IBM will be able to do useful stuff. That means
+useful qubit numbers should be coming within five years and toys that do neat
+tricks a couple of years later.
+
+If you want to be ready, it might be best to spend some time understanding the
+system now.
+
+Expand full story
+
+Reader comments 66
+
+You must login or create an account to comment.
+
+  * Share
+
+-
+
+  * Tweet
+  * Email
+  * Google
+
+-
+
+  * Reddit
+
+-
+
+Chris Lee / Chris writes for Ars Technica's science section. A physicist by
+day and science writer by night, he specializes in quantum physics and optics.
+He lives and works in Eindhoven, the Netherlands.
+
+@exMamaku on Twitter  &lt;- Older Story |  Newer Story -&gt;
+
+## You May Also Like
+
+  * 
+
+## Latest Feature Story
+
+  * ## Feature Story (2 pages)
+
+# _Uncharted 4_ is slickly ridiculous action gaming at its best
+
+Review: Cinematic climb-and-shoot action feels familiar on the PS4.
+
+## Watch Ars Video
+
+# We stuffed a VR wand down our pants (for a good reason!)
+
+"RIPmotion" trick looks silly but works great, particularly in cutting out
+nausea.
+
+  * ## Stay in the know with
+
+    *     *     *     *     * ## Latest News
+
+    1. # Companies plan to make you pay for sleep
+
+    2. # Ars Technica UK is one year old today: Here’s what’s coming next
+
+    3. # Triby review: A speaker, message-board device is an obvious home for Amazon’s Alexa
+
+    4. # In _Captain America: Civil War_, Marvel’s cinematic empire strikes back
+
+    5. # _Cumulus_ is your new favorite surveillance-fueled dystopian novel
+
+    6. ## Catch this creep
+
+# Disturbing Twitch recording may trigger site’s proactive police-report
+policy
+
+  * 
+
+## Site Links
+
+  * About Us
+  * Advertise with us
+  * Contact Us
+  * Reprints
+
+## Subscriptions
+
+  * Subscribe to Ars
+
+## More Reading
+
+  * RSS Feeds
+  * Newsletters
+
+Visit Ars Technica UK
+
+## Conde Nast Sites
+
+  * Reddit
+  * Wired
+  * Vanity Fair
+  * Style
+  * Details
+
+Visit our sister sites \- - - - - - - - - - - - - - GQ Concierge Epicurious
+Men.Style.com Style.com Wired.com Lipstick.com NutritionData Allure
+Architectural Digest Bon Appetit Brides Conde Nast Portfolio Glamour Golf
+Digest Golf World Lucky Self Teen Vogue The New Yorker Vanity Fair W Subscribe
+to a magazine View All Titles \- - - - - - - - - - - - - - Allure
+Architectural Digest Bon Appetit Brides Conde Nast Portfolio Conde Nast
+Traveler Details Elegant Bride Glamour Golf Digest Golf World GQ Lucky Modern
+Bride Self Teen Vogue The New Yorker Vanity Fair Vogue W Wired
+
+## View Mobile Site
+
+WIRED Media: Ars Technica and WIRED  
+© 2016 Condé Nast. All rights reserved  
+Use of this Site constitutes acceptance of our User Agreement (effective
+1/2/14) and Privacy Policy (effective 1/2/14), and Ars Technica Addendum
+(effective 5/17/2012)  
+Your California Privacy Rights  
+The material on this site may not be reproduced, distributed, transmitted,
+cached or otherwise used, except with the prior written permission of Condé
+Nast.  
+  
+Ad Choices
+

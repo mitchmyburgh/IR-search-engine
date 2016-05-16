@@ -1,0 +1,22 @@
+A Dynamic Bayesian Network (DBN) is a Bayesian network which relates variables to each other over adjacent time steps. This is often called a Two-Timeslice BN (2TBN) because it says that at any point in time T, the value of a variable can be calculated from the internal regressors and the immediate prior value (time T-1). DBNs were developed by Paul Dagum in the early 1990s when he led research funded by two National Science Foundation grants at Stanford University's Section on Medical Informatics. Dagum developed DBNs to unify and extend traditional linear state-space models such as Kalman filters, linear and normal forecasting models such as ARMA and simple dependency models such as hidden Markov models into a general probabilistic representation and inference mechanism for arbitrary nonlinear and non-normal time-dependent domains.
+Today, DBNs are common in robotics, and have shown potential for a wide range of data mining applications. For example, they have been used in speech recognition, digital forensics, protein sequencing, and bioinformatics. DBN is a generalization of hidden Markov models and Kalman filters.
+
+
+== See also ==
+Recursive Bayesian estimation
+Generalized filtering
+
+
+== References ==
+
+Murphy, Kevin (2002). Dynamic Bayesian Networks: Representation, Inference and Learning. UC Berkeley, Computer Science Division. 
+Ghahramani, Zoubin (1997). "Learning Dynamic Bayesian Networks". Lecture Notes in Computer Science 1387: 168–197. CiteSeerX: 10.1.1.56.7874. 
+Friedman, N.; Murphy, K.; Russell, S. (1998). Learning the structure of dynamic probabilistic networks. UAI’98. Morgan Kaufmann. pp. 139–147. CiteSeerX: 10.1.1.75.2969. 
+
+
+== Software ==
+bnt on GitHub: the Bayes Net Toolbox for Matlab, by Kevin Murphy, (released under a GPL license)
+Graphical Models Toolkit (GMTK): an open source, publicly available toolkit for rapidly prototyping statistical models using dynamic graphical models (DGMs) and dynamic Bayesian networks (DBNs). GMTK can be used for applications and research in speech and language processing, bioinformatics, activity recognition, and any time series application.
+DBmcmc : Inferring Dynamic Bayesian Networks with MCMC, for Matlab (free software)
+GlobalMIT Matlab toolbox at Google Code: Modeling gene regulatory network via global optimization of dynamic bayesian network (released under a GPL license)
+libDAI: C++ library that provides implementations of various (approximate) inference methods for discrete graphical models; supports arbitrary factor graphs with discrete variables, including discrete Markov Random Fields and Bayesian Networks (released under the FreeBSD license)

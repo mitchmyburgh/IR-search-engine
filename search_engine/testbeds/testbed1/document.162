@@ -1,0 +1,95 @@
+ALGOL
+'''ALGOL''' (short for '''Algorithmic Language''')The name of the family is sometimes given in mixed case (), and sometimes in all uppercase (). For simplicity this article uses ''ALGOL''. is a family of  computer s, originally developed in the mid-1950s, which greatly influenced many other languages and was the standard method for  description used by the  in textbooks and academic sources for more than thirty years. Compressed archives of the algorithms. .
+In the sense that most modern languages are "Algol-like", it was arguably the most successful of the four high-level programming languages with which it was roughly contemporary: , , and . It was designed to avoid some of the perceived problems with  and eventually gave rise to many other programming languages, including , , , , , and . ALGOL introduced code blocks and the beginend pairs for delimiting them. It was also the first language implementing  definitions with . Moreover, it was the first programming language which gave detailed attention to formal language definition and through the '''' introduced , a principal notation for language design.
+There were three major specifications:
+*   originally proposed to be called '''IAL''' (for '''International Algebraic Language''').
+*   first implemented as ''X1 ALGOL 60'' in mid-1960  revised 1963
+*   revised 1973  introduced new elements including flexible arrays, slices, parallelism, operator identification, and various extensibility features.
+ based his own  on ALGOL 60 before developing . Algol-W (for the IBM 360) was based on the proposal for the next generation ALGOL, but the ALGOL 68 committee decided on a design that was more complex and advanced, rather than a cleaned, simplified ALGOL 60. The official ALGOL versions are named after the year they were first published.
+Algol 68 is substantially different from Algol 60 and was not well received, so that in general "Algol" means Algol 60 and dialects thereof.  Fragments of ALGOL-like  are sometimes still used as .
+==Important implementations==
+The  (IAL) was extremely influential and generally considered the ancestor of most of the modern programming languages (the so-called Algol-like languages). Additionally, in , '''ALGOL object code''' was a simple and compact and stack-based  mainly used in teaching  construction and other high order languages (of which Algol is generally considered the first).
+==History==
+ALGOL was developed jointly by a committee of European and American computer scientists in a meeting in 1958 at  (cf. ). It specified three different syntaxes: a reference syntax, a publication syntax, and an implementation syntax. The different syntaxes permitted it to use different keyword names and conventions for decimal points (commas vs periods) for different languages.
+ALGOL was used mostly by research computer scientists in the United States and in Europe. Its use in commercial applications was hindered by the absence of standard input/output facilities in its description and the lack of interest in the language by large computer vendors other than . ALGOL 60 did however become the standard for the publication of algorithms and had a profound effect on future language development.
+ developed the  method of describing programming languages specifically for ALGOL 58. It was revised and expanded by  for ALGOL 60, and at 's suggestion renamed .
+Peter Naur: "As editor of the ALGOL Bulletin I was drawn into the international discussions of the language and was selected to be member of the European language design group in November 1959. In this capacity I was the editor of the ALGOL 60 report, produced as the result of the ALGOL 60 meeting in Paris in January 1960.", 2005
+The following people attended the meeting in Paris (from  1 to 16 January):
+* , , , , , , and  (from Europe)
+* , , , , , and  (from the USA).
+Alan Perlis gave a vivid description of the meeting: "The meetings were exhausting, interminable, and exhilarating. One became aggravated when one's good ideas were discarded along with the bad ones of others. Nevertheless, diligence persisted during the entire period. The chemistry of the 13 was excellent."
+ALGOL 60 inspired many languages that followed it.  remarked: "Here is a language so far ahead of its time that it was not only an improvement on its predecessors but also on nearly all its successors.", C.A.R. Hoare, December 1973. Page 27. (This statement is sometimes erroneously attributed to , also involved in implementing the first ALGOL 60 .)  The  programming language, a variant of  that adopted the block structure and lexical scope of ALGOL, also adopted the wording "Revised Report on the Algorithmic Language Scheme" for its standards documents in homage to ALGOL.
+===Algol and programming language research===
+As  noted, the language Algol was the first language to combine seamlessly imperative effects with the (call-by-name) . Perhaps the most elegant formulation of the language is due to , and it best exhibits its syntactic and semantic purity. Reynolds's idealized Algol also made a convincing methodological argument regarding the suitability of local effects in the context of call-by-name languages, to be contrasted with the global effects used by call-by-value languages such as . The conceptual integrity of the language made it one of the main objects of semantic research, along with  and ML. and . 1996. Algol-Like Languages. Birkhauser Boston Inc., Cambridge, MA, USA.
+===IAL implementations timeline===
+To date there have been at least 70 augmentations, extensions, derivations and sublanguages of Algol 60.
+The Burroughs dialects included special Bootstrapping dialects such as  and .  The latter is still used for Unisys MCP system software.
+==Properties==
+ALGOL 60 as officially defined had no  facilities; implementations defined their own in ways that were rarely compatible with each other. In contrast, ALGOL 68 offered an extensive library of ''transput'' (ALGOL 68 parlance for Input/Output) facilities.
+ALGOL 60 allowed for two  for  passing: the common , and . Call-by-name has certain effects in contrast to . For example, without specifying the parameters as ''value'' or ''reference'', it is impossible to develop a procedure that will swap the values of two parameters if the actual parameters that are passed in are an integer variable and an array that is indexed by that same integer variable., Section 7.5, and references therein Think of passing a pointer to swap(i, A) in to a function. Now that every time swap is referenced, it's reevaluated. Say i := 1 and A := 2, so every time swap is referenced it'll return the other combination of the values (, ,  and so on). A similar situation occurs with a random function passed as actual argument.
+Call-by-name is known by many compiler designers for the interesting "s" that are used to implement it.  devised the "" to separate compilers that correctly implemented " and non-local references." This test contains an example of call-by-name.
+ALGOL 68 was defined using a two-level grammar formalism invented by  and which bears his name. s use a  to generate an infinite set of productions that will recognize a particular ALGOL 68 program; notably, they are able to express the kind of requirements that in many other programming language standards are labelled "semantics" and have to be expressed in ambiguity-prone natural language prose, and then implemented in compilers as ''ad hoc'' code attached to the formal language parser.
+==Examples and portability issues==
+===Code sample comparisons===
+====ALGOL 60====
+(The way the bold text has to be written depends on the implementation, e.g. 'INTEGER' (including the quotation marks) for '''integer'''; this is known as .)
+ '''procedure''' Absmax(a) Size:(n, m) Result:(y) Subscripts:(i, k);
+     '''value''' n, m; '''array''' a; '''integer''' n, m, i, k; '''real''' y;
+ '''comment''' The absolute greatest element of the matrix a, of size n by m
+     is transferred to y, and the subscripts of this element to i and k;
+ '''begin'''
+     '''integer''' p, q;
+     y := 0; i := k := 1;
+     '''for''' p := 1 '''step''' 1 '''until''' n '''do'''
+         '''for''' q := 1 '''step''' 1 '''until''' m '''do'''
+             '''if''' abs(a) > y '''then'''
+                 '''begin''' y := abs(a);
+                     i := p; k := q
+                 '''end'''
+ '''end''' Absmax
+Here's an example of how to produce a  using Elliott 803 ALGOL., the manual for Elliott 803 ALGOL
+  FLOATING POINT ALGOL TEST'
+  BEGIN REAL A,B,C,D'
+  &nbsp;
+  READ D'
+  &nbsp;
+  FOR A:= 0.0 STEP D UNTIL 6.3 DO
+  BEGIN
+    PRINT PUNCH(3),L??'
+    B := SIN(A)'
+    C := COS(A)'
+    PRINT PUNCH(3),SAMELINE,ALIGNED(1,6),A,B,C'
+  END'
+  END'
+PUNCH(3) sends output to the teleprinter rather than the tape punch.
+SAMELINE suppresses the carriage return + line feed normally printed between arguments.
+ALIGNED(1,6) controls the format of the output with 1 digit before and 6 after the decimal point.
+====ALGOL 68====
+The following code samples are ALGOL 68 versions of the above ALGOL 60 code samples.
+ALGOL 68 reuses ALGOL 60's . In ALGOL 68's case tokens with the '''bold''' typeface are reserved words, types ('''mode'''s) or operators.
+ '''proc''' abs max = ('''real''' a, '''ref''' '''real''' y, '''ref''' '''int''' i, k)'''real''':
+ '''comment''' The absolute greatest element of the matrix a, of size a by 2a
+ is transferred to y, and the subscripts of this element to i and k; '''comment'''
+ '''begin'''
+    '''real''' y := 0; i := a; k := 2a;
+    '''for''' p '''from''' a '''to''' a '''do'''
+      '''for''' q '''from''' 2a '''to''' 2a '''do'''
+        '''if''' '''abs''' a > y '''then'''
+            y := '''abs''' a;
+            i := p; k := q
+        '''fi'''
+      '''od'''
+    '''od''';
+    y
+ '''end''' # abs max #
+Note: lower () and upper () bounds of an array, and array slicing, are directly available to the programmer.
+ floating point algol68 test:
+ (
+   '''real''' a,b,c,d;
+   &nbsp;
+   # ''printf'' - sends output to the '''file''' ''stand out''. #
+   # ''printf($p$);''  selects a ''new page'' #
+   printf(($pg$,"Enter d:"));  
+   read(d);
+   &nbsp;
+   '''for''' step '''from''' 0 '''while''' a:=step*d; a

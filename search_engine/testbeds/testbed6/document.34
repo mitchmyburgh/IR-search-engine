@@ -1,0 +1,77 @@
+AVL trees 
+This page describes an assembly-language implementation of indexed AVL trees. 
+Introduction Rotations Inserting nodes Deleting nodes 
+Threaded trees Indexed trees 
+Testing 
+References 
+Introduction 
+Binary trees are very usefull to perform ultra-fast dictionnary-type searches. The principle is very simple: the data are arranged in a balanced, binary tree in which each node contains two pointers, to a larger and a smaller value. Here is an example: 
+        "DETERMINE"       /           \    "BULL"        "FROG"   /      \       /    \"ADAM" "CLOUD"       "GUTS"  
+To search for a string, start from the top and compare the target string with that in the node. If it is smaller take the left link, if it is larger follow the right link. In this way, you can search through a thousand words with 10 comparisons, through a million with 20, a billion with 30, etc.  
+This is fine for sets of data that can be arranged in advance: start with the middle value and put it at the top. On level two, put the values that are at 1/4 and 3/4, then those at 1/8, 3/8, 5/8 and 7/8, etc. 
+The problems begin when the user is allowed to enter new values, or to delete existing ones. Suppose the user enters values in alphabetical order, if we just follow a "go left / go right" strategy, we'll end up with: 
+"ADAM"/    \    "BULL"     /    \             "CLOUD"        /    \            "ERIC" 
+Which defeats the purpose of a binary tree. 
+AVL trees were created by G.M. Adel'son-Velskii and E.M. Landis to overcome this problem. The idea is very elegant: each node contains an additional value, the balance, that indicates which child subtree is heaviest (i.e. the depth in levels of the right subtree is substracted from that of the left subtree). A value of 0 indicates that this node is perfectly balanced. Values of +1 and -1 are unavoidable, but anything beyond that is not tolerated and will cause the tree to rearrange. 
+But first, let's see how we can search a binary tree: 
+    * Node structure:* --------------*      DATA key               Key after which nodes are sorted (or ptr to it)*      DATA left-link         Points to smaller node or &gt;0000 if none*      DATA right-link        Points to greater node or &gt;0000 if none*      BYTE balance           Balance factor (-1 / 0 / +1)*      BYTE lcount            Number of items in the left branch (optional)*KEY    EQU  0LEFT   EQU  2RIGHT  EQU  4BAL    EQU  6LCNT   EQU  7NSIZE  EQU  8                 node size *----------------------------------------------------------* Find greatest node in a (sub)tree, keep track of our path* Starting from node in R5, return ptr in R5*----------------------------------------------------------MAX    MOV  5,*8+             save node ptr in stack       MOVB @BAL(5),*8+       and its balance       MOVB @H00,*8+          no link yet       MOV  @RIGHT(5),0       always go to the right       JEQ  SK7               no more: we are done       MOVB @H01,@-1(8)       flag: we went to the right       MOV  0,5               keep going       JMP  MAXSK7    B    *11               found**----------------------------------------------------------* Find smallest node in a (sub)tree, keep track of our path* Starting from node in R5, return ptr in R5*----------------------------------------------------------MIN    MOV  5,*8+             save node ptr in stack       MOVB @BAL(5),*8+       and its balance       MOVB @H00,*8+          no link yet       MOV  @LEFT(5),0        always go to the left       JEQ  SK7               no more: we are done       MOVB @HFF,@-1(8)       flag: we went to the left       MOV  0,5               keep going       JMP  MIN**----------------------------------------------------------* Search for a key, keep track of our route* Value to find (or ptr to it) in R4* Return ptr to node into R5, skip JMP if found*----------------------------------------------------------FIND   MOV  11,10       LI   8,STACK+4         memorize our route on a stack       MOV  @ROOT+4,5         start from top of tree LP2    JEQ  SK6               not found       MOV  5,*8+             save node ptr       MOV  @BAL(5),*8+       save balance        BL   @COMP             compare current node with wanted value       JGT  SK4               value is greater       JLT  SK5               value is smaller       INCT 10                we  found it, skip jumpSK6    B    *10 SK4    MOVB @H01,@-1(8)       leave flag: we went to the right       MOV  @RIGHT(5),5       go right       JMP  LP2 SK5    MOVB @HFF,@-1(8)       leave flag: we went to the left       MOV  @LEFT(5),5        go left       JMP  LP2 *----------------------------------------------------------* User-defined routine.* Compare two keys, return with result in status* Values in R4 and *R5. ( or pointers to values).*----------------------------------------------------------COMP   C    4,*5              here: let's compare values       B    *11 *----------------------------------------------------------* Data area*----------------------------------------------------------00    BYTE &gt;00               constantsH01    BYTE &gt;01HFF    BYTE &gt;FF       EVEN*ROOT   DATA 0,0,0,0           root of the tree WREGS  DATA 0,1,2,3,4,5,6,7,8 our workspace       DATA 0,10,11,MEM,13,14,15 STACK  DATA ROOT,&gt;0001        trace-back stack       BSS  80                20-level deep: 1 million nodes  
+You may wonder what's with the stack pointed by R8. I'm using it to save the route from the root of the tree to the current node: at each step I save a pointer to the node and a flag saying whether we followed the left link or the right link. This is not strictly required for the above routines, but it will be essential for inserting and deleting nodes. Rather than writing two versions of FIND, one with and one without route tracking, I decided to implement it anyhow.  
+ Rotations 
+A tree can be rearranged to restore balance by just rotating a node and its child: 
+ A        balance = +2     ----LL------&gt;       B       balance = 0/ \                         rotate A-B        / \   B       balance = +1       to the          A   C     balance = 0 0 / \                          left          / \ / \    C     balance = 0 
+Now we should check what the effect on the balance will be. There are two possibilities, as node B can be balanced or not (B could be balanced if the rotation was caused by the deletion of a node at the left of A, for instance). 
+   Old balance 
+   New balance 
+   Tree depth 
+   A 
+   B 
+   A 
+   B 
+   Insertion 
+   Deletion 
+   +2 
+   0 
+   +1 
+   -1 
+   (never) 
+   Unchanged  
+   +2 
+   +1 
+   0 
+   0 
+   Unchanged  
+   Changed 
+In fact, one can generalize the above situation and consider the cases when A and B are not terminal nodes (aka "leaves") but have subtrees themselves. In the following sheme, subtrees are denoted by lower-case letters, while individual nodes are represented by upper-case letters. 
+  A          ----LL------&gt;       B       / \           rotate           / \ a1  B          to the          A   b2       / \          left          / \    b1  b2                     a1  b1    
+Obviously, A must have a balance of +2 to cause a rotation, but B could be balanced or not. If this situation was cause by an insertion (in one of the B subtrees) , then B cannot be balanced.  
+Tree depth 
+What will be the effect of such a rotation on the overall tree depth? It depends on the balance of B and on the operation that caused imbalancing: deletion or insertion. An insertion will cause subtree b2 to become longer (insetions in b1 require another type of rotation, see below). As we are moving b2 one level up, it will still reach the same depth. But what about a1? We know that a1 must be exactly one node shorter than b2 before the insertion: if it were 2 nodes shorter a rotation would have occured before, it it were the same length (or larger) no rotation would be required. We are now moving a1 one level down, which means that it will reach the same depth than b2 prior to the insertion. In conclusion, the tree depth is not affected by a rotation caused by an insertion. 
+Things are trickier with a deletion since B could be imbalanced prior to the deletion: b2 could be larger than b1 (the opposite is also possible but calls for another type of rotation). After the deletion, the rotation moved b2 one level higher, which shortened the overall depth of the tree (of course a1 went down, but remember we deleted a node in it, so it reaches the same depth as before). If B was balanced before the deletion, the overall tree depth remains unchanged because b1 did not move and reaches the same depth as before. 
+Why are we so concerned about tree depth? Because we must consider the possibility that our "tree" could in fact be a subtree of a larger tree. In which case, if the depth changes, we must step one level up and see what will be the effect it has on the balance of the parent node. But this will be discussed later.  
+Other rotations 
+For now, I'd like to discuss the other types of rotations: firstly, we have the mirror-image of the above situation, which can be solved by a rotation to the right: 
+    B        ----RR------&gt;       A         / \          rotate          / \   A   b         to the         a1  B     / \            right             / \a1 a2                            a2  b 
+   Old balance 
+   New balance 
+   Tree depth 
+   C 
+   B 
+   C 
+   B 
+   Insertion 
+   Deletion 
+   -2 
+   0 
+   -1 
+   +1 
+   (never) 
+   Unchanged  
+   -2 
+   -1 
+   0 
+   0 
+   Unchanged  
+   Changed 
+  This situation is a bit trickier and requires a double rotation, first right between B and C, then left between A and B: 
+  A                      A      --L--&gt;     B        / \                    / \               / \ a1  C       --R--&gt;     a1  B             A   C    / \                    / \           / \ / \  B  c1                  b1 C         a1 b1 b2 c1 / \                       / \ b1 b2                     b2 c1 
+There 

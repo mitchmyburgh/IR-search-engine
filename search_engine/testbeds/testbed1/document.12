@@ -1,0 +1,48 @@
+Ajax_(programming)
+'''Ajax''' (also '''AJAX'''; ; short for '''asynchronous  and ''')http://shiflett.org/blog/2007/apr/ajax-is-not-an-acronymhttps://blogs.oracle.com/arungupta/entry/ajax_vs_ajax_ajax_ofcourse is a set of  techniques using many web technologies on the  to create  s. With Ajax, web applications can send data to and retrieve from a  asynchronously (in the background) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page. Despite the name, the use of XML is not required ( is often used in the  variant), and the requests do not need to be asynchronous.
+Ajax is not a technology, but a group of technologies.  and  can be used in combination to mark up and style information. The  is accessed with JavaScript to dynamically display  and allow the user to interact with  the information presented. JavaScript and the XMLHttpRequest object provide a method for exchanging data asynchronously between browser and server to avoid full page reloads.
+== History ==
+In the early-to-mid 1990s, most  sites were based on complete HTML pages. Each user action required that a complete page be loaded from the server. This process was inefficient, as reflected by the user experience: all page content disappeared, then reappeared. Each time the browser reloaded a page because of a partial change, all of the content had to be re-sent, even though only some of the information had changed. This placed additional load on the server and made  the limiting factor on performance.
+In 1996, the  tag was introduced by  to load or to fetch content asynchronously.
+In 1998, Microsoft  team implemented the first component  by client script.
+In 1999, Microsoft used its iframe technology to dynamically update the news stories and stock quotes on the default page for Internet Explorer,. Home.microsoft.com (1999-12-31). Retrieved on 2013-07-13. and created the XMLHTTP  control in , which was later adopted by , ,  and other browsers as the XMLHttpRequest  object. Microsoft has adopted the native XMLHttpRequest model as of . The ActiveX version is still supported in Internet Explorer, but not in . The utility of background  requests to the server and asynchronous Web technologies remained fairly obscure until it started appearing in full scale online applications such as Outlook Web App (2000) and  (2002).
+ made a wide deployment of standards-compliant,  Ajax with  (2004) and  (2005). In October 2004 's public beta release was among the first large-scale e-commerce uses of what their developers at that time called "the xml http thing".
+The term "Ajax" was publicly stated on 18 February 2005 by  in an article titled "", based on techniques used on Google pages.
+On 5 April 2006, the  (W3C) released the first draft specification for the XMLHttpRequest object in an attempt to create an official .
+The latest draft of the XMLHttpRequest object was published on 30 January, 2014.
+== Technologies ==
+The term ''Ajax'' has come to represent a broad group of Web technologies that can be used to implement a Web application that communicates with a server in the background, without interfering with the current state of the page. In the article that coined the term Ajax, Jesse James Garrett explained that the following technologies are incorporated:
+*  (or ) and  for presentation
+* The  (DOM) for dynamic display of and interaction with data
+*  or  for the interchange of data, and  for its manipulation
+* The  object for asynchronous communication
+*  to bring these technologies together
+Since then, however, there have been a number of developments in the technologies used in an Ajax application, and in the definition of the term Ajax itself. XML is no longer required for data interchange and, therefore, XSLT is no longer required for the manipulation of data.  (JSON) is often used as an alternative format for data interchange, although other formats such as preformatted HTML or plain text can also be used.
+ (AHAH) involves using XMLHTTPRequest to retrieve (X)HTML fragments, which are then inserted directly into the Web page.
+== Drawbacks ==
+* Any user whose browser does not support JavaScript or XMLHttpRequest, or has this functionality disabled, will not be able to properly use pages that depend on Ajax. Simple devices (such as s and s) may not support the required technologies. The only way to let the user carry out functionality is to fall back to non-JavaScript methods. This can be achieved by making sure links and forms can be resolved properly and not relying solely on Ajax.
+* Similarly, some Web applications that use Ajax are built in a way that cannot be read by screen-reading technologies, such as . The  standards provide a way to provide hints in such a case.
+* Screen readers that are able to use Ajax may still not be able to properly read the dynamically generated content.
+* The  prevents some Ajax techniques from being used across domains, although the W3C has a draft of the XMLHttpRequest object that would enable this functionality. Methods exist to sidestep this security feature by using a special Cross Domain Communications channel embedded as an iframe within a page, or by the use of .
+* The asynchronous  required can lead to complex code that is hard to maintain, to debug
+ and to test.It is worth noting that if your page uses a lot of Ajax on load then WebDriver may not know when it has completely loaded. If you need to ensure such pages are fully loaded, then you can use Explicit and Implicit Waits.
+* Because of the asynchronous nature of Ajax, each chunk of data that is sent or received by the client occurs in a connection established specifically for that event. This creates a requirement that for every action, the client must poll the server, instead of listening, which incurs significant overhead. This overhead leads to several times higher latency with Ajax than what can be achieved with a technology such as websockets.
+* In pre- browsers, pages dynamically created using successive Ajax requests did not automatically register themselves with the browser's history engine, so clicking the browser's "back" button may not have returned the browser to an earlier state of the Ajax-enabled page, but may have instead returned to the last full page visited before it. Such behavior&nbsp; navigating between pages instead of navigating between page states&nbsp; may be desirable, but if fine-grained tracking of page state is required, then a pre- workaround was to use invisible iframes to trigger changes in the browser's history. A workaround implemented by Ajax techniques is to change the URL  (the part of a URL after the "#") when an Ajax-enabled page is accessed and monitor it for changes.  provides an extensive  standard for working with the browser's history engine.
+*  updates also make it difficult to  and return to a particular state of the application. Solutions to this problem exist, many of which again use the URL fragment identifier. The solution provided by HTML5 for the above problem also applies for this.
+* Depending on the nature of the Ajax application, dynamic page updates may disrupt user interactions, particularly if the internet connection is slow or unreliable. For example, editing a search field may trigger a query to the server for search completions, but the user may not know that a search completion popup is forthcoming, and if the internet connection is slow, the popup list may show up at an inconvenient time, when the user has already proceeded to do something else.
+* Excluding , most major s do not execute JavaScript code, so in order to be indexed by , a Web application must provide an alternative means of accessing the content that would normally be retrieved with Ajax. It has been suggested that a  may be used to index content provided by Ajax-enabled websites, although Google is no longer recommending the Ajax crawling proposal they made back in 2009.http://googlewebmastercentral.blogspot.co.uk/2015/10/deprecating-our-ajax-crawling-scheme.html
+== Example ==
+Here is an example of a simple Ajax request using the  method, written in .
+get-ajax-data.js:
+// This is the client-side script.
+// Initialize the Http request.
+var xhr = new XMLHttpRequest();
+xhr.open('get', 'send-ajax-data.php');
+// Track the state changes of the request.
+xhr.onreadystatechange = function () ;
+// Send the request to send-ajax-data.php
+xhr.send(null);
+send-ajax-data.php:
+;jQuery example
+This example uses the popular JavaScript library , to do the same thing as the example above.
+$.get('send-ajax-data.php', function(data) );

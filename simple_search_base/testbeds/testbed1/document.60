@@ -1,0 +1,18 @@
+AIGLX
+'''Accelerated Indirect GLX'''  ("'''AIGLX'''") is an  project founded by  and the  community, led by , to allow accelerated indirect  rendering capabilities to  the  and  drivers. This allows remote X clients to get fully hardware accelerated rendering over the GLX protocol; coincidentally, this development was required for  s to function with hardware acceleration.
+== Rationale ==
+There are two ways in which a windowing system can allow an OpenGL implementation to talk to the graphics card.
+The first is to specify the OpenGL command stream in a portable network-neutral manner using a client/server implementation similar to the X11 drawing routines.  This method, used by AIGLX, is indirect in that the drawing commands are sent to the X server and then the X server sends them along to the graphics card.
+The second way, which is at the base of , is to open a window and then allow the OpenGL library to send commands directly to the graphics card.
+Accelerating the indirect OpenGL path is orthogonal to how the X server itself is implemented, but it has the side effect of allowing the OpenGL command stream to be more easily captured and redirected to a texture.  This allows Compiz and other s to be built on top of a traditional X server with a small extension rather than requiring a full Xgl server. This is also an advantage over  which bypasses the compositing engine even while providing hardware acceleration.
+== Deployment ==
+The AIGLX project was merged into X.Org and has been available with X.Org 7.1.
+AIGLX needed driver support to run. Specifically, it depended on the texture_from_pixmap  extension.
+== Relationship to Xgl ==
+Although the AIGLX project has features similar to , it was not intended to be a competing product. According to , the project was founded in part because Xgl was written during its final stages "behind closed doors." This lack of peer-review drew criticism claiming to be the root of flaws in the software. An agreement was reached to share the source code between the two projects under the premise that doing so would prevent compatibility conflicts. Xgl was removed from the X Server on June 12, 2008.
+== History ==
+File:Linux graphics drivers 2D.svg|2D drivers inside of the 
+File:Linux graphics drivers Utah GLX.svg|Indirect rendering over , using 
+File:Linux graphics drivers DRI early.svg|early 
+File:Linux graphics drivers DRI current.svg|Finally all access goes through the 
+File:Linux graphics drivers DRI Wayland.svg|In Linux kernel 3.12 ''render nodes'' were merged and the  was split off.  implements direct rendering over

@@ -1,0 +1,9 @@
+Orthogonality of the class concept and inheritance
+
+Although class-based languages are commonly assumed to support inheritance, inheritance is not an intrinsic aspect of the concept of classes. Some languages, often referred to as "object-based languages", support classes yet do not support inheritance. Examples of object-based languages include earlier versions of Visual Basic.
+Within object-oriented analysis
+Main article: Association (object-oriented programming)
+
+In object-oriented analysis and in UML, an association between two classes represents a collaboration between the classes or their corresponding instances. Associations have direction; for example, a bi-directional association between two classes indicates that both of the classes are aware of their relationship.[23] Associations may be labeled according to their name or purpose.[24]
+
+An association role is given end of an association and describes the role of the corresponding class. For example, a "subscriber" role describes the way instances of the class "Person" participate in a "subscribes-to" association with the class "Magazine". Also, a "Magazine" has the "subscribed magazine" role in the same association. Association role multiplicity describes how many instances correspond to each instance of the other class of the association. Common multiplicities are "0..1", "1..1", "1..*" and "0..*", where the "*" specifies any number of instances

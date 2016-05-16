@@ -1,0 +1,140 @@
+    Eternally Confuzzled 
+     Tutorials 
+     Articles 
+     Libraries 
+     Contact 
+   New programmers who are introduced to binary search trees quickly learn that if items are inserted in certain orders, the performance of the tree degenerates into that of a glorified linked list. Many brain cells have been devoted to the task of finding efficient ways to avoid these worst cases. Many exceedingly clever solutions have been developed, but only a handful have made it into public knowledge and even fewer into common use. Of those solutions, height balanced trees are the most common, and the AVL tree is probably the oldest of the height balanced trees.  
+   This tutorial will cover, often in painful detail, the concept behind AVL trees and implementation issues with a practical eye. If you are a graduate student looking for lemmas and proofs, or detailed mathematical forumlae proving the performance claims made, this tutorial is not for you. I am neither qualified nor compelled to present such things because AVL trees have been around for a very long time and their performance has been exhaustively studied. I see no point in restating what others have written better than I could. For the graduate students or anyone else interested, an excellent analysis of AVL trees is made in Donald Knuth's “The Art of Computer Programming”, volume 3.  
+   If you are a struggling professional, or an amateur looking to broaden your skills, look no further. This tutorial is written for you, the average programmer who wants to learn what these mysterious “balanced trees” are without having to work through the impenetrable code of a research paper or textbook. Even if you don't care about the theory or the implementation and just want code to solve a problem, this tutorial provides several working versions of insertion and deletion in AVL trees. The code is all public domain, so do with it whatever you want as my gift to you.  
+   I talk about the impenetrable code of papers and textbooks, but there are many who would call my own approach impenetrable as well. I don't use conventional solutions, so to minimize the shock of my implementations, let's cover some of the key ideas behind why my code is the way it is. Most noticeable is my use of an array of two links rather than two separate links in the node structure:  
+  struct jsw_node
+{
+    int data;
+    struct jsw_node *link[2];
+}; 
+   The whole point of this is to avoid symmetric cases. Balanced tree algorithms can be very verbose because code needs to be duplicated for both the left and right subtree cases. Rather than suffer these symmetric cases, I prefer to merge them into a single case through the use of an easily computed array index. While a classic recursive binary search tree insertion would look like this:  
+  struct jsw_node
+{
+    int data;
+    struct jsw_node *left;
+    struct jsw_node *right;
+};
+struct jsw_node *make_node(int data)
+{
+    struct jsw_node *rn = malloc(sizeof *rn);
+    if (rn != NULL)
+    {
+        rn-&gt;data = data;
+        rn-&gt;left = rn-&gt;right = NULL;
+    }
+    return rn;
+}
+struct jsw_node *jsw_insert(struct jsw_node *tree, int data)
+{
+    if (tree == NULL)
+    {
+        tree = make_node(data);
+    }
+    else if (data &lt; tree-&gt;data)
+    {
+        tree-&gt;left = jsw_insert(tree-&gt;left, data);
+    }
+    else
+    {
+        tree-&gt;right = jsw_insert(tree-&gt;right, data);
+    }
+    return tree;
+} 
+   The same function with my idiom would merge the left and right cases into one through the use of a direction index:  
+  struct jsw_node
+{
+    int data;
+    struct jsw_node *link[2];
+};
+struct jsw_node *make_node(int data)
+{
+    struct jsw_node *rn = malloc(sizeof *rn);
+    if (rn != NULL)
+    {
+        rn-&gt;data = data;
+        rn-&gt;link[0] = rn-&gt;link[1] = NULL;
+    }
+    return rn;
+}
+struct jsw_node *jsw_insert(struct jsw_node *tree, int data)
+{
+    if (tree == NULL)
+    {
+        tree = make_node(data);
+    }
+    else
+    {
+        int dir = tree-&gt;data &lt; data;
+        tree-&gt;link[dir] = jsw_insert(tree-&gt;link[dir], data);
+    }
+    return tree;
+} 
+   Now, at this level there don't seem to be any savings, and if you're unfamiliar with the idiom, it might take a moment to verify the correctness of the algorithm. However, consider a balanced tree algorithm that does more than simply walk down the tree in each case:  
+  struct jsw_node *jsw_insert(struct jsw_node *tree, int data)
+{
+    if (tree == NULL)
+    {
+        tree = make_node(data);
+    }
+    else if (data &lt; tree-&gt;data)
+    {
+        tree-&gt;left = jsw_insert(tree-&gt;left, data);
+        /* Fifty lines of left balancing code */
+    }
+    else
+    {
+        tree-&gt;right = jsw_insert(tree-&gt;right, data);
+        /* Fifty lines of right balancing code */
+    }
+    return tree;
+} 
+   That's 50 lines of extra code if you believe the comments, which is very hard for even a talented programmer to keep in his or her head all at once. In this case, my merging idiom is far more beneficial because it eliminates half of that code:  
+  struct jsw_node *jsw_insert(struct jsw_node *tree, int data)
+{
+    if (tree == NULL)
+    {
+        tree = make_node(data);
+    }
+    else
+    {
+        int dir = tree-&gt;data &lt; data;
+        tree-&gt;link[dir] = jsw_insert(tree-&gt;link[dir], data);
+        /* Fifty lines of dir balancing code */
+    }
+    return tree;
+} 
+   Shorter functions are often easier to understand, and more importantly, easier to check for correctness. In a traditional balanced tree implementation, the author has to be very careful to make the left and right cases perfectly symmetric. If this is not done correctly, the code may work fine except in uncommon situations where it would fail mysteriously. By merging the cases together, this repetition is avoided and more effort can be devoted to making sure that a single case is correct, because if the single case is correct, the symmetric case is also correct. This is a basic tenet of good programming practice: avoid code repetition. Once this idiom is understood, everything will fall into place.  
+   How does the comparison for calculating a direction index work though? Put simply, if you want to move down the right link, ensure that the comparison results in 1, otherwise the comparison will result in 0 and you will move down the left link. In the classic algorithm, the comparison “data &lt; tree-&gt;data” moves you down the left link, but if data is less than tree-&gt;data, the result is 1 and that's the wrong direction. So you reverse the test by saying “tree-&gt;data &lt; data”. If this test is true then data is greater than or equal to tree-&gt;data, and you want to move down the right link, which will happen because the result of the test is 1. Alternatively, you could use “data &gt;= tree-&gt;data” with the same results. Consider a case where data is 5 and tree-&gt;data is 11:  
+  5 &lt; 11  == 1  /* Wrong! We want to go left */
+11 &lt; 5  == 0  /* Correct! We want to go left */
+5 &gt;= 11 == 0  /* Correct! */ 
+   Of course, this assumes that if duplicate items are allowed, they are placed in the right subtree, which is by far the most common method if duplicates are allowed in a binary search tree implementation. Now let's consider the opposite case, just for completeness. If data is 27 and tree-&gt;data is 19, the comparisons look like this:  
+  27 &lt; 19  == 0  /* Wrong! We want to go right */
+19 &lt; 27  == 1  /* Correct! 1 is right */
+27 &gt;= 19 == 1  /* Correct! */ 
+  Concept 
+   Basic binary search trees can degenerate into linear data structures in three cases. First, the data could be inserted in ascending or descending sorted order. This results in trees with nothing but left or right links. The third case is far less common, but if items are inserted in alternating order from the outside in, the same degenerate case arises because there is only one choice at each node and the effect is a linear data structure:  
+   0                                  3          0
+   \                              /              \
+     1                          2                  3
+       \          or          /          or      /
+         2                  1                  1
+           \              /                      \
+             3          0                          2 
+   This is basically an inefficient linked list, because the binary search tree algorithms expect each node to have two paths rather than one, whereas linked list algorithms are written with a linear structure in mind. The result is a linear data structure that has expensive algorithms. What we want in a binary search tree is a broad and flat structure, where each node has two links and any path is logarithmic to the number of nodes in the tree:  
+             3
+       /       \
+     1           5
+   /   \       /   \
+ 0       2   4       6 
+   Unfortunately, forcing such perfect balance is very expensive because it requires a global restructuring that visits almost every node in the tree and guarantees balance at each subtree. Alternatives for global balancing use an auxiliary array, which isn't much better. So we have to settle for less than perfect by only making local changes that meet a well chosen invariant. However, with the AVL invariant, these local changes result in a structure that is still very close to perfect.  
+   A binary search tree that meets the AVL invariant is balanced if the height of a node's subtrees differ by no more than 1. In the following diagram, the first two trees are AVL trees but the third is not because the left subtree of 5 has a height of 2 while the right subtree is a null link and has a height of 0:  
+             3                        5                  5
+       /       \                 /     \             /
+     1           5             3         7         3
+   /   \       /   \ 

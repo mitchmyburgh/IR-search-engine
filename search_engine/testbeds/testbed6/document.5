@@ -1,0 +1,174 @@
+  AVL Trees  
+   -- section -- AVL Search Trees AVL Re-balancing Operations Examples Demo programs AVL Tree Code  
+   go 
+ Average and Worst-case path lengths In section 4.3.5, the textbook sets up a recurrence equation for computing the internal path length 
+  D(n) = sum of the depths of all nodes 
+  for a tree created by 
+ n random insertions. By solving this equation (later in the textbook), it can be shown that the 
+ average internal path length over all binary trees with 
+ n nodes is 
+  D(n) = O(n*log(n)) 
+  When we say "all binary trees", we really mean to generate the trees in this manner: 
+   Take a sequence of n ordered elements, like the integers 1,...,n.  
+   Take all permutations of this sequence.  
+   For each permutation, insert the elements into a binary tree in the order of the sequence (the first goes to the root, etc).  
+  Even though the two insertion sequences (2,1,3) and (2,3,1) generate the same tree, we are thinking of these as different trees. Thus a "random tree" means the tree generated from the insertion sequence of a random permutation of the 
+ n ordered elements. 
+  The implication of the order is that the 
+ average path length of a random tree with 
+ n nodes is 
+(average total path length for n nodes)/n = O(n*log(n))/n = O(log(n))
+ This figure from the textbook is an illustration of such a random tree: 
+   Figure 4.26 from Weiss textbook 
+  In contrast the worst case is encountered if the sequence of numbers is sorted or reverse-sorted; the outcome is a tree skewed completely right or left, respectively. For example, inserting the sequence 10, 20, 30, 40, 50 produces the search tree: 
+  In this case the internal path length with 
+ n nodes is: 
+0 + 1 + 2 + … + (n-1) = (n-1)*n/2,  i.e.,  O(n2). 
+ and the average path length is 
+ O(n) 
+  The goal of advanced tree data structures is to ameliorate this worst-case scenario by having its operations "re-balance" the tree under certain circumstances so that the 
+ O(n) depths are avoided or not maintained. 
+ AVL Search Trees An AVL (
+ Adelson-
+ Velski/
+ Landis) tree is a binary search tree which maintains the following height-balanced "AVL property" at each node in the tree: 
+abs( (height of left subtree)  (height of right subtree) ) ≤ 1
+ Namely, the left and right subtrees are of equal height, or their heights differ by 1. Recall that the 
+ height of a tree is the maximum depth (from the root) of any node. A tree with one node has height 0. We will say that the empty (
+ null) tree has height 
+ -1. 
+  It can be proved that an AVL tree with 
+ n nodes has height 
+ O(log(n)), and so any 
+ n search/insert/delete operations ensuring 
+ worst-case search cost of 
+ O(log(n)). The key idea behind the AVL tree is how a subtree is re-balanced when a node insertion or removal causes the AVL property to fail. Like the textbook, we will consider only insertions. 
+ Re-balancing Strategies Suppose that a node satisfies the AVL property and that an add goes into the left subtree. There will be two separate cases to consider: 
+  the add goes into the left-left subtree 
+  the add goes into the left-right subtree 
+  If either of these causes the left subtree to increase in height so that the increased height causes the AVL property to fail, we perform one of the following two respective rotation operations: 
+  single rotate (from the) left 
+  double rotate (from the) left 
+  In either case, the new tree will be balanced (i.e., the AVL property satisfied) and will have height equal to the height of the tree prior to insertion. This means that an add will only ever cause 
+ one re-balancing rotation to reestablish the AVL property for the entire tree. 
+ AVL Re-balancing Operations The recursive add operation goes down the tree to the insertion point. Any AVL-out-of-balance problem will be "discovered" and dealt with as you come out of the recursive call. Consider the 
+ first such "out-of-balance" discovery and subsequent re-balancing operation. We want to argue two things: 
+   the re-balanced tree satisfies the AVL property at each node, and  
+   the height of the re-balanced tree is the height of tree prior to insertion.  
+  Thus as we proceed out of the recursive add calls, no other node will detect an "out-of-balance" state. In particular, only 
+ one re-balance ever needs to be done per add. 
+  Aside from symmetric situations, there are two distinct cases to consider, so suppose the add "goes left." It's trivial to see that if the inserted node 
+ is the left child, then the new tree cannot be unbalanced. Therefore the cases are based on whether the insertion goes to the left or right of the left child. 
+ single rotate (from the) left, on a left-left insertion This diagram depicts the re-balance operation after an unbalancing 
+ left-left insertion. 
+ Proof: Let 
+ x, 
+ y, 
+ z be the heights of the trees X, Y, Z, respectively after insertion. Assume that the insertion into X caused an unbalancing at 
+ k2 (but not at 
+ k1 or at any node in X). We gather this information: 
+   since the insertion into X caused an unbalancing height change for the full tree, the full tree's height after insertion must be x + 2, and thus x + 1 before insertion.  
+  x must be ≥ than y + 1, otherwise the height of the left subtree at k2 would not have increased  
+   x cannot be greater than y + 1, otherwise the "AVL problem" would have been observed at k1; conclude that x = y + 1  
+  x + 1 ≥ z + 2: otherwise there would be no problem at k2  
+   x + 1 cannot be greater than z + 2, otherwise the left side height prior to insertion (x) would be greater than z + 1, meaning that k2 was unbalanced prior to insertion; conclude that x + 1 = z + 2, i.e., x = z + 1  
+  Putting these facts together: 
+x = y + 1, x = z + 1, and so y = z.
+ For the re-balanced tree: 
+  at k2, left side height = y = z = right side height  
+   at k1, left side height = x = y + 1 = right-side height  
+  height of the tree = x + 1 = height before insertion 
+ double rotate (from the) left, on a left-right insertion This diagram depicts the re-balance operation after an unbalancing 
+ left-right insertion. 
+ Proof: Let 
+ a, 
+ b, 
+ c, 
+ d be the heights of the trees A, B, C, D, respectively after insertion. There are 3 cases to consider: 
+   the inserted element is k2  
+  the inserted element goes into B 
+  the inserted element goes into C 
+  In the first case, with a bit of pondering, you can convince yourself that the tree can consist only of the three nodes 
+ k1, 
+ k2 and 
+ k3 with all other subtrees empty. We will show the proof for the second case where the insertion goes into the B subtree; the proof of insertion into the C subtree is symmetric. 
+   since the insertion into B caused an unbalancing height change of the full tree, the full tree's height after insertion must be b + 3, and thus b + 2 before insertion.  
+   b must be &gt; c, otherwise the left subtree at k3 would not have changed height.  
+   b cannot be &gt; c + 1, otherwise there would be a problem at k2; conclude that b = c + 1  
+  b + 1 must be &gt; a, otherwise the left subtree at k3 would not have changed height.  
+   b + 1 cannot be &gt; a + 1, otherwise there would be a problem at k1; conclude that b + 1 = a + 1, i.e., b = a  
+   in order for there to be a "problem" at k3, we must have left-side height ≥ right-side height + 2, i.e., b + 2 ≥ d + 2  
+   we cannot have b + 2 &gt; d + 2, otherwise 
+    b + 1 = left side height before insertion ≥ 
+    d + 2 = right side height before insertion + 2, 
+    meaning that the tree would have been unbalanced before insertion; conclude that b + 2 = d + 2, i.e., b = d  
+  Putting these facts together: 
+d = a = b = c + 1
+ For the re-balanced tree: 
+  at k1, left side height = a = b = right side height  
+   at k3, left side height = c, right-side height = d = c + 1  
+   at k2, left side height = b + 1 = right-side height = d + 1  
+  height of the tree = b + 2 = height before insertion 
+ Examples An important example of AVL trees is the behavior on a worst-case add sequence for regular binary trees: 
+1, 2, 3, 4, 5, 6, 7
+ All insertions are 
+ right-right and so rotations are all 
+ single rotate from the 
+ right. All but two insertions require re-balancing: 
+      at 1 ⇒  
+      at 3 ⇒  
+      at 2 ⇒  
+      at 5 ⇒  
+  It can be shown that inserting the sequence 
+ 1,...,2h-1 will make a perfect tree of height 
+ h-1. 
+  Here is another example. The insertion sequence is: &nbsp; 
+  50, 25, 10, 5, 7, 3, 30, 20, 8, 15  
+      single rot. left at 50 ⇒  
+      double rot. left at 10 ⇒  
+      single rot. left at 25 ⇒  
+      add(30), add(20), add(8) need no re-balancing  
+      double rot. right at 7 ⇒  
+ Demo program The class we wish to create, 
+ AVLTreeSet is an improvement of the 
+ SearchTreeSet class in the sense of always maintaining an 
+ O(log(n)) search time. For demonstration purpose, we will assume you have set up the 
+ TreeDemo project used in the 
+ TreeSets document. Within the 
+ tree package, create a Java Class: 
+Class Name: AVLTreeSet
+package:    tree
+ Then insert the following content 
+   tree.AVLTreeSet &nbsp; 
+   show 
+   hide 
+  The following main class demonstrates the rotations effected by insertions using both fixed and random insertion patterns 
+   AVLDemo &nbsp; 
+   show 
+   hide 
+ AVL Tree Code In order to keep track of height efficiently, the 
+ Node class is expanded to add a 
+ height field: 
+   private class Node&lt;E&gt; {
+  E data;
+  Node&lt;E&gt; left, right;
+  int height;
+&nbsp;
+  Node(E data, Node&lt;E&gt; left, Node&lt;E&gt; right, int height) {
+    this.data = data;
+    this.left = left;
+    this.right = right;
+    this.height = height;
+  }
+&nbsp;
+  Node(E data, Node&lt;E&gt; left, Node&lt;E&gt; right) {
+    this(data, left, right, 0);
+  }
+}
+  A private member function computes the height of node so that empty tree's 
+ height can also be computed: 
+   private int height(Node&lt;E&gt; p) { 
+  return (p == null) ? -1 : p.height; 
+}
+  Let's consider how the 
+ single rotate left will take plac

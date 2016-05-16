@@ -1,0 +1,107 @@
+Motherboard
+
+    Watch
+    Machines
+    Discoveries
+    Space
+    Futures
+    Gaming
+    Earth
+
+	
+Motherboard
+Newsletter
+Python is an Equal Opportunity Programming Language
+Written by
+Joseph Neighbor
+April 11, 2016 // 01:32 PM EST
+Copy This URL
+
+The landscape of programming languages is dynamic and bewilderingly complex, with literally hundreds of languages in use right now across the world. Each has its own pros and cons, its own quirks, its own trajectory of waning or waxing popularity. And each is buoyed by its own community of programmers, bound into a subculture of sorts. In this way, we can say a language, and the community supporting it, has a “character.”
+
+Motherboard talked to David Stewart, an Intel® Software Evangelist, open-source software expert and manager in the Intel Data Center Software Technology group, about a widely accessible programming language, Python. It’s notable for its accessibility to neophyte programmers, and the civil, inclusive tenor of discourse within its community, particularly towards women.
+
+The popularity of Python has grown steadily in recent years. It’s now among the most common “first languages” taught to novice programmers. Recently, several women-lead Python groups have emerged, hosting workshops to teach women how to code. Guided by Stewart’s deep understanding of Python, Motherboard had the opportunity to discuss what’s in store for the future.
+
+Motherboard: Let’s start from the beginning. Can you tell me what Python is?
+
+David Stewart: Python is a programming language. It’s become pretty much ubiquitous in cloud computing. In fact, the biggest projects in open-source cloud computing infrastructure, like OpenStack, are all written in Python.
+
+“Pythonic” programming has also become extremely popular with people who want to write in this new area called "DevOps”—a combination of people who are doing software development and system operations. And folks are trying to write code doing system-administration kinds of tasks, too, or tasks that don’t require a ton of programming, that you want to do kind of quickly.
+
+If you look at the top computer science schools in the country today, the majority of them are teaching this language Python as a first language. What's great about it from a teaching perspective is it’s extremely friendly, even for non-programmers. You don’t have to spend a lot of time fully describing the data types and stuff like that. You more or less just start programming and the language itself figures out what the type information is and handles that all correctly.
+
+Python programming language.
+
+MB: When did Python become so popular?
+
+DS: I actually have a chart here that goes back to 2006. We subscribe to a service by a company called Evans Data Corporation that tracks the popularity of languages. They show Python today with 7 million programmers. It’s like the fifth most popular programming language in the world. It has gradually grown as the use of languages like C has declined over time.
+
+My first exposure with Python was back in 2010, when I took over a project that would build the whole Linux operating system on your desktop in about an hour, which is sort of stunning. This thing is downloading software source code from about a thousand projects all over the internet, and then configures those sources and patches it, compiles it, and turns it into a complete Linux operating system. It does this in about an hour. And the whole thing is written in Python. I'm like, "What? You’ve got to be kidding me."
+
+It has some incredibly advanced features, even though it’s "Pythonic" and easy and accessible. It’s very quick to program in. When it comes down to it, people are very interested in saving time.
+
+MB: I understand Python has a reputation for being friendly to women. What’s going on here?
+
+DS: Of course, it’s kind of ironic to have a man talk about a topic like this. I've been doing work with open-source for a long, long time. A lot of the communities, unfortunately, are kind of unfriendly to women. It’s my observation that the interaction between members of the Python community are much more civil and constructive than in the Linux community, in particular.
+
+The latest Python conference I went to was in Europe last July. It’s called Euro Python. One of the things that was really interesting about it was that the first keynote was actually given by a couple of women who had in the previous year created a nonprofit organization called Django Girls. These are a pair of women who work at a company in the UK, who are both from Poland and both have the first name Ola. The way they gave the keynote was fantastic. It was told as a fable about a little squirrel; she was very interested in technology but felt excluded by the other animals in the forest. This fable was told with a bunch of watercolor drawings that one of the Olas had actually created.
+
+In their first year of operation, Django Girls held 100 workshops all over the world teaching women how to develop websites in Python. Actually, my daughter is 24-years-old, and she’s been trying to figure out what she wants to do with her life. I suggested she go to one of these Django Girls conferences, because it’s a workshop all about hands-on tutorials helping women learn how to program.
+
+Django Girls, in Rome, Flickr: Django Girls
+
+MB: What is it about Python that makes it friendly to women? Is it something about the actual language itself? Or is it more of a subcultural thing within the community?
+
+DS: One thing that I think causes this is the founder of the Python project, a guy named Guido van Rossum. He’s referred to as the “BDFL”—the Benevolent Dictator for Life. The way to think of him is like Linus Torvalds of Linux.
+
+Most of his keynote at that conference was answering questions from the people who had attended. And he actually said, “Let's alternate between men and women asking questions.”On the second day of the conference, he was wearing a shirt from PyLadies, another nonprofit like Django Girls that helps women learn how to program on Python.
+
+I’ve talked to Guido about this. I commented on how accessible it seems to be to women, and he admitted this is a high priority for himself. And Guido, by the way, is highly respected—I would say probably loved by the members of the community. He sets the tone.
+
+It may also be due to the fact that the style of the Python language itself is much more accessible. People talk about coding that is "Pythonic." As they develop the language they’re really looking to preserve this "Pythonic" aspect, which tends to make it more accessible and easier to program.
+
+Again, my daughter, she didn’t have any programming background going into this Django Girls workshop. She was pretty anxious, worried that maybe she wasn’t smart enough to program. When she came out of it, she knew she could do it. She was able to succeed, and I think it’s a huge confidence boost.
+
+Pyladies Meetup: Girl Geek Dinners
+
+MB: So what kind of Python-related work are you involved in?
+
+DS: My interest here at Intel is, that since so much software is now being written in Python, we want to make sure Intel has the best chip to run it on. So we're doing a lot of work to really dig deep into the language, and find ways that we can increase performance.
+
+I'm very interested in PyPy, a Python project that can accelerate the performance a lot. Usually when you're working on servers, and you're looking to improve performance, you have some massive server system you’re trying to make faster. A lot of times we're improving a language a few percent here and there.
+
+There’s a project called Swift, it's part of OpenStack. It’s an open-source project for doing something like object storage, and it’s written in Python. So we started looking at the performance of this thing, and started chipping away a few percentages at a time. And eventually we decided to try this PyPy implementation, because it uses a technique we found extremely useful in Java and other languages.
+
+So we used this version of Python called PyPy and suddenly we got a 2x performance improvement in Swift. It’s like a 111% throughput improvement, and 86% response time improvement. We’re going “holy cow, this is fantastic.” Now we're starting to dig into this and see if there's some way we can make this implementation more mainstream.
+
+We're also finding that a lot of people are using Python for this whole area of machine learning, and analytics and technical computing. This is a huge deal as well. So if someone writes a new algorithm for, let’s say, facial recognition, and they're writing it in Python, we'd like to give them a big acceleration in performance. So Intel is actually creating a Python distribution.
+
+We're creating a Python product ourselves, too. This is a different part of Intel than I’m involved in, but they're actually creating an Intel-accelerated Python product.
+
+But we want to make it easy no matter if you want to stick with the open-source version or the product that we're providing. We're very happy whatever a customer might choose.
+
+MB: Alright, so Python is popular, fast and easy to use. It sounds pretty sweet. Is this the programming language of the future?
+
+DS: “Always the future is changing,” Yoda said. As I look at this chart of trends from 2006 to 2015, it’s definitely been trending up consistently, at least among open-source projects.
+
+This whole language thing is very dynamic. Back when I was a young software engineer in the ‘80s, there was a very famous computer scientist named Brian Reid who I remember giving a talk that basically claimed that the world does not need another general purpose language. Maybe we need some special purpose languages, but not another general purpose one. He was kind of closing the patent office. And since that time, my gosh, all the popular languages I’m looking at have been invented. I think it’s an incredibly surprising area of innovation and development, and it continues to be something people are experimenting with.
+
+I’d say Python is the language of today. Is it also the language of the future? It will be if all these students come out of college knowing Python and using it. But Apple's developing languages. Google’s developing languages. Microsoft’s developing languages. They all have their strengths and weaknesses. We're trying to see where the trends are going, where people are spending their time, and making sure Intel is the best chip to run any of this stuff on. And we're trying to innovate new ideas, and suggest some language features, without trying to rip away control from anyone else. I think we're more in the role of trying to come beside them and help out, and be an asset to those communities.
+
+To learn more about Intel® Software Evangelists, please visit evangelists.intel.com
+
+
+© 2016 Vice Media LLC
+About Motherboard
+Contact
+Privacy Policy
+Terms of Use
+		
+		
+	
+	
+	
+	
+	
+

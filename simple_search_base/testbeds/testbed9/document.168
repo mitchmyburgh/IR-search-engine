@@ -1,0 +1,61 @@
+In computer science, a double-ended queue (dequeue, often abbreviated to deque, pronounced deck) is an abstract data type that generalizes a queue, for which elements can be added to or removed from either the front (head) or back (tail). It is also often called a head-tail linked list, though properly this refers to a specific data structure implementation (see below).
+
+
+== Naming conventions ==
+Deque is sometimes written dequeue, but this use is generally deprecated in technical literature or technical writing because dequeue is also a verb meaning "to remove from a queue". Nevertheless, several libraries and some writers, such as Aho, Hopcroft, and Ullman in their textbook Data Structures and Algorithms, spell it dequeue. John Mitchell, author of Concepts in Programming Languages, also uses this terminology.
+
+
+== Distinctions and sub-types ==
+This differs from the queue abstract data type or First-In-First-Out List (FIFO), where elements can only be added to one end and removed from the other. This general data class has some possible sub-types:
+An input-restricted deque is one where deletion can be made from both ends, but insertion can be made at one end only.
+An output-restricted deque is one where insertion can be made at both ends, but deletion can be made from one end only.
+Both the basic and most common list types in computing, queues and stacks can be considered specializations of deques, and can be implemented using deques.
+
+
+== Operations ==
+The basic operations on a deque are enqueue and dequeue on either end. Also generally implemented are peek operations, which return the value at that end without dequeuing it.
+Names vary between languages; major implementations include:
+
+
+== Implementations ==
+There are at least two common ways to efficiently implement a deque: with a modified dynamic array or with a doubly linked list.
+The dynamic array approach uses a variant of a dynamic array that can grow from both ends, sometimes called array deques. These array deques have all the properties of a dynamic array, such as constant-time random access, good locality of reference, and inefficient insertion/removal in the middle, with the addition of amortized constant-time insertion/removal at both ends, instead of just one end. Three common implementations include:
+Storing deque contents in a circular buffer, and only resizing when the buffer becomes full. This decreases the frequency of resizings.
+Allocating deque contents from the center of the underlying array, and resizing the underlying array when either end is reached. This approach may require more frequent resizings and waste more space, particularly when elements are only inserted at one end.
+Storing contents in multiple smaller arrays, allocating additional arrays at the beginning or end as needed. Indexing is implemented by keeping a dynamic array containing pointers to each of the smaller arrays.
+
+
+== Language support ==
+Ada's containers provides the generic packages Ada.Containers.Vectors and Ada.Containers.Doubly_Linked_Lists, for the dynamic array and linked list implementations, respectively.
+C++'s Standard Template Library provides the class templates std::deque and std::list, for the multiple array and linked list implementations, respectively.
+As of Java 6, Java's Collections Framework provides a new Deque interface that provides the functionality of insertion and removal at both ends. It is implemented by classes such as ArrayDeque (also new in Java 6) and LinkedList, providing the dynamic array and linked list implementations, respectively. However, the ArrayDeque, contrary to its name, does not support random access.
+Python 2.4 introduced the collections module with support for deque objects. It is implemented using a doubly linked list of fixed-length subarrays.
+As of PHP 5.3, PHP's SPL extension contains the 'SplDoublyLinkedList' class that can be used to implement Deque datastructures. Previously to make a Deque structure the array functions array_shift/unshift/pop/push had to be used instead.
+GHC's Data.Sequence module implements an efficient, functional deque structure in Haskell. The implementation uses 2–3 finger trees annotated with sizes. There are other (fast) possibilities to implement purely functional (thus also persistent) double queues (most using heavily lazy evaluation). Kaplan and Tarjan were the first to implement optimal confluently persistent catenable deques. Their implementation was strictly purely functional in the sense that it did not use lazy evaluation. Okasaki simplified the data structure by using lazy evaluation with a bootstrapped data structure and degrading the performance bounds from worst-case to amortized. Kaplan, Okasaki, and Tarjan produced a simpler, non-bootstrapped, amortized version that can be implemented either using lazy evaluation or more efficiently using mutation in a broader but still restricted fashion. Mihaesau and Tarjan created a simpler (but still highly complex) strictly purely functional implementation of catenable deques, and also a much simpler implementation of strictly purely functional non-catenable deques, both of which have optimal worst-case bounds.
+
+
+== Complexity ==
+In a doubly-linked list implementation and assuming no allocation/deallocation overhead, the time complexity of all deque operations is O(1). Additionally, the time complexity of insertion or deletion in the middle, given an iterator, is O(1); however, the time complexity of random access by index is O(n).
+In a growing array, the amortized time complexity of all deque operations is O(1). Additionally, the time complexity of random access by index is O(1); but the time complexity of insertion or deletion in the middle is O(n).
+
+
+== Applications ==
+One example where a deque can be used is the A-Steal job scheduling algorithm. This algorithm implements task scheduling for several processors. A separate deque with threads to be executed is maintained for each processor. To execute the next thread, the processor gets the first element from the deque (using the "remove first element" deque operation). If the current thread forks, it is put back to the front of the deque ("insert element at front") and a new thread is executed. When one of the processors finishes execution of its own threads (i.e. its deque is empty), it can "steal" a thread from another processor: it gets the last element from the deque of another processor ("remove last element") and executes it. The steal-job scheduling algorithm is used by Intel's Threading Building Blocks (TBB) library for parallel programming.
+
+
+== See also ==
+Pipe
+Queue
+Priority queue
+
+
+== References ==
+
+
+== External links ==
+Type-safe open source deque implementation at Comprehensive C Archive Network
+SGI STL Documentation: deque<T, Alloc>
+Code Project: An In-Depth Study of the STL Deque Container
+Deque implementation in C
+VBScript implementation of stack, queue, deque, and Red-Black Tree
+Multiple implementations of non-catenable deques in Haskell

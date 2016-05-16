@@ -1,0 +1,87 @@
+Sparse dictionary learning is a representation learning method which aims at finding a sparse representation of the input data (also known as coding) in the form of a linear combination of basis elements as well as those basis elements themselves. These elements are called atoms and they compose a dictionary. Atoms in the dictionary are not required to be orthogonal. This problem setup also allows the dimensionality of representation space to be higher than the one of the input space. The above two properties lead to having seemingly redundant atoms that allow multiple reconstruction ways but also provide an improvement in sparsity and flexibility of the representation.
+One of the key principles of dictionary learning is that the dictionary has to be inferred from the input data. The emergence of sparse dictionary learning methods was stimulated by the fact that in signal processing one typically wants to represent the input data using as few components as possible. Before this approach the general practice was to use predefined dictionaries (such as fourier or wavelet transforms). However, in certain cases the dictionary learned to fit the input data can significantly improve the sparsity and thus the results of signal processing.
+This method is applied to data decomposition, compression and analysis and has been used in the fields of image denoising and classification, video and audio processing.
+
+
+== Problem statement ==
+Given the input dataset  we wish to find a dictionary  and a representation  such that both  is minimized and the representations  are sparse enough. This can be formulated as a following optimization problem:
+, where 
+ is required to constrain  so that its atoms would not reach arbitrarily high values allowing for arbitrarily low (but non-zero) values of .
+The minimization problem above is not convex because of the ℓ0-"norm" and solving this problem is NP-hard. In some cases L1-norm is known to ensure sparsity and so the above becomes a convex optimization problem with respect to each of the variables  and  in case the other one of them is currently fixed.
+
+
+=== Properties of the dictionary ===
+The dictionary  defined above can be "undercomplete" if  or "overcomplete" in case  with the latter being a typical assumption for a sparse dictionary learning problem. The case of a complete dictionary does not provide any improvement from a representational point of view and thus isn't considered.
+Undercomplete dictionaries represent the setup in which the actual input data lies in a lower-dimensional space. This case is strongly related to dimensionality reduction and techniques like principal component analysis which require atoms  to be orthogonal. Orthogonal dictionaries are appealing from a computational point of view because they allow to compute the representation coefficients by calculating a scalar product between the input data and the atoms, though their main downside is limiting the choice of atoms.
+Overcomplete dictionaries, however, do not require the atoms to be orthogonal thus allowing for more flexible dictionaries and richer data representations.
+
+
+== Algorithms ==
+As the optimization problem described above can be solved with respect to either dictionary or sparse coding while the other one of the two is fixed, most of the algorithms are based on the idea of iteratively updating one and the other.
+The problem of finding an optimal sparse coding  with a given dictionary  is known as sparse approximation (or sometimes just sparse coding problem). There has been developed a number of algorithms to solve it (such as orthogonal matching pursuit and LASSO) which are incorporated into the algorithms described below.
+
+
+=== Method of optimal directions (MOD) ===
+The method of optimal directions (or MOD) was one of the first methods introduced to tackle the sparse dictionary learning problem. The core idea of it is to solve the minimization problem subject to the limited number of non-zero components of the representation vector:
+
+MOD alternates between getting the sparse coding using one of the methods mentioned above and updating the dictionary by computing the analytical solution of the problem given by  where  is a Moore-Penrose pseudoinverse. After this update  is renormalized to fit the constraints and the new sparse coding is obtained again. The process is repeated until convergence.
+MOD has proved to be a very efficient method for low-dimensional input data  requiring just a few iterations to converge. However, due to the high complexity of the inversion operation, computing the pseudoinverse in high-dimensional cases is in many cases intractable. This shortcoming has inspired the development of other dictionary learning methods.
+
+
+=== K-SVD ===
+
+K-SVD is an algorithm that performs SVD at its core to update the atoms of the dictionary one by one and basically is a generalization of K-means. It enforces that each element of the input data  is encoded by a linear combination of not more than  elements in a way identical to the MOD approach:
+
+This algorithm's essence is to first fix the dictionary, find the best possible  under the above constraint (using OMP) and then iteratively update the atoms of dictionary  in the following manner:
+
+Next steps of the algorithm include rank-1 approximation of the residual matrix , updating  and enforcing the sparsity of  after the update. This algorithm is considered to be standard for dictionary learning and is used in a variety of applications. However, it shares weaknesses with MOD being efficient only for signals with relatively low dimensionality and having the possibility for a solution to be stuck at local minima.
+
+
+=== Stochastic gradient descent ===
+
+One can also apply a widespread stochastic gradient descent method with iterative projection to solve this problem. The idea of this method is to update the dictionary using the first order stochastic gradient and project it on the constraint set . The step that occurs at i-th iteration is described by this expression:
+, where  is a random subset of  and  is a gradient step.
+
+
+=== Lagrange dual method ===
+An algorithm based on solving a dual Lagrangian problem provides an efficient way to solve for the dictionary having no complications induced by the sparsity function. Consider the following Lagrangian:
+, where  is a constraint on the norm of the atoms and  are the so-called dual variables forming the diagonal matrix .
+We can then provide an analytical expression for the Lagrange dual after minimization over :
+.
+After applying one of the optimization methods to the value of the dual (such as Newton's method or conjugate gradient) we get the value of :
+
+Solving this problem is less computational hard because the amount of dual variables  is a lot of times much less than the amount of variables in the primal problem.
+
+
+=== Parametric training methods ===
+Parametric training methods are aimed to incorporate the best of both worlds — the realm of analytically constructed dictionaries and the learned ones. This allows to construct more powerful generalized dictionaries that can potentially be applied to the cases of arbitraty-sized signals. Notable approaches include:
+Translation-invariant dictionaries. These dictionaries are composed by the translations of the atoms originating from the dictionary constructed for a finite-size signal patch. This allows the resulting dictionary to provide a representation for the arbitrary-sized signal.
+Multiscale dictionaries. This method focuses on constructing a dictionary that is composed of differently scaled dictionaries to improve sparsity.
+Sparse dictionaries. This method focuses on not only providing a sparse representation but also constructing a sparse dictionary which is enforced by the expression  where  is some pre-defined analytical dictionary with desirable properties such as fast computation and  is a sparse matrix. Such formulation allows to directly combine the fast implementation of analytical dictionaries with the flexibility of sparse approaches.
+
+
+=== Online dictionary learning ===
+Many common approaches to sparse dictionary learning rely on the fact that the whole input data  is available for the algorithm. However, this might not be the case in the real-world scenario as the size of the input data might be too big to fit it into memory. The other case where this assumption can not be made is when the input data comes in a form of a stream. Such cases lie in the field of study of online learning which essentially suggests iteratively updating the model upon the new data points  becoming available.
+A dictionary can be learned in an online manner the following way:
+For 
+Draw a new sample 
+Find a sparse coding using LARS: 
+Update dictionary using block-coordinate approach: 
+This method allows us to gradually update the dictionary as new data becomes available for sparse representation learning and helps drastically reduce the amount of memory needed to store the dataset (which often has a huge size).
+
+
+== Applications ==
+The dictionary learning framework, namely the linear decomposition of an input signal using a few basis elements learned from data itself, has led to the state-of-art results in various image and video processing tasks. This technique can be applied to classification problems in a way that if we have built specific dictionaries for each class, the input signal can be classified by finding the dictionary corresponding to the sparsest representation.
+It also has properties that are useful for signal denoising since usually one can learn a dictionary to represent the meaningful part of the input signal in a sparse way but the noise in the input will have a much less sparse representation.
+Sparse dictionary learning has been successfully applied to various image, video and audio processing tasks as well as to texture synthesis and unsupervised clustering
+
+
+== See also ==
+Sparse approximation
+Sparse PCA
+Matrix factorization
+K-SVD
+Neural sparse coding
+
+
+== References ==

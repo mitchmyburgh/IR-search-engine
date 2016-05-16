@@ -1,0 +1,43 @@
+Android N features overview 
+
+Prasad, 10 March, 2016 Google Android
+Google dropped the Android N build on us out of nowhere last night. This is the first time the company has released the developer preview so early in the development process. Google’s reasoning is that by releasing it to developers early it will be able to incorporate the feedback into the final build when it is released this summer, and that it will also be able to provide the final build to OEMs early so they can begin working on their builds earlier than usual. Basically, Android gets better, and everybody gets it early.
+
+Well, that’s the plan anyway. We will see how that goes. But for now, let’s see what Google has for us in the new build.
+
+Right off the bat we see that the build is only compatible with the Nexus 6, Nexus 5X, Nexus 6P, Nexus Player, Nexus 9, and Pixel C. This doesn’t necessarily mean the final build won’t be on the popular Nexus 5, but we wouldn’t recommend holding your breath for it, as the phone is pretty long in the tooth now.
+
+If you have one of the aforementioned devices, congratulations, you can install the developer preview on your device, which you can get from here. You will also be glad to know that this year onwards the updates to the developer preview will be pushed over the air, just like for stable builds. Once you have it installed, here are some things you can look forward to.
+
+Improved notifications
+
+We have covered some of the notification changes in our previous posts, but now that we have the official version from Android, we are in a better position to comment.
+
+One of the changes is the presence of quick shortcuts when you pull down the notification shade once. Other OEMs have always done this but Google required you to pull down twice to access the toggles, which is not the case anymore.
+
+If you do pull down twice, you will see yet another change, where you can now edit the toggles and the grid is now paginated, which means you have a second page for the less frequently used toggles. This way you can have more toggles without the grid being too long.
+
+Another cool new feature Google is adding to Android N is the ability to reply to messages from notifications. This is something iOS does and it can be very convenient. Say you get a WhatsApp message. The notification might appear on the top of the screen, but you still have to go to the app to reply. With the RemoteInput notification API, you will be able to reply quickly to the message from the notification shade itself without leaving the app you are currently in. Support for the feature will depend upon the developers but hopefully we see all the IM app add support for it quickly (isn’t that the whole point of releasing this preview?)
+
+Split-screen multitasking
+
+Windows does it. iOS does it. Samsung has been doing it since the days dinosaurs walked the Earth. Now, stock Android does it as well. Google has finally added support for split-screen multitasking in Android N.
+
+To use this feature, you have to press the overview (or multitasking) button and then drag one of the windows to the top of the screen to pin it there and then choose from the other apps to fill the rest of the screen. Alternatively, you can just swipe up from the overview key to set the current app to half the screen and then choose from the other apps (h/t Android Police).
+
+This feature currently only works with some apps, mostly Google’s own, and apps will have to add support for it.
+
+Honestly, it’s not the most useful feature on smartphones, but can be very useful on tablets such as the Pixel C. So much so that Google is offering a $150 discount on it for developers to try it out.
+
+Improved Doze and Project Svelte
+
+Doze on Marshmallow would suspend background activities when it detected the device was stationary for a while. To its credit, it did work, unlike the disaster that was Project Volta. With Android N, Google has improved Doze further, and it can now suspend background activities when the display is off, even if the device isn’t stationary. This can be useful when you are out and about with the phone in your pocket. You still aren’t using the device but normally Doze on Marshmallow wouldn’t kick in because it thinks you might be using the device. With the updated Doze, you can expect further savings on battery.
+
+Project Svelte has been improved and now works to reduce background activity by dropping three implicit broadcasts. First is CONNECTIVITY_ACTION, which apps used to wake up when there was a change in network activity, such as shift from data to Wi-Fi. In Android N, apps will no longer wake up altogether when there is a network change. ACTION_NEW_PICTURE and ACTION_NEW_VIDEO broadcasts have also been dropped, which means apps that request these won’t start in the background every time you launched your camera app. These sound like minor things but can have a big impact on battery life over the course of the day and it’s good to see Google cracking down on unnecessary background app wakes.
+
+Improved Settings app
+The Settings app also sees some major changes. All the menu items on the main screen now have a description below, so the battery menu, for example, will show the remaining battery and the storage menu will show the remaining storage, etc. If you go one level deeper you also get a new hamburger menu on the top left to jump to other menu options.
+
+The settings menu also has a few new options, such as the data saver, which reduces data consumption for background apps when you’re using network data instead of Wi-Fi. If you go to the System UI Tuner, you will also find an option to use a dark theme, something a lot of people want. There is also a Night mode, which turns your display warmer, so it’s easier on the eyes when you use it at night. It can be turned on manually or set to enable automatically at a certain time.
+
+This was just a basic overview of all the new stuff. There are many more subtle changes in the first build. We will keep you updated if we find any more cool stuff or let us know if you come across any.

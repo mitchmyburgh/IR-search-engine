@@ -1,0 +1,38 @@
+﻿Bottom-up Ontology Development
+
+
+Bottom-up ontology development is one of the two principal approaches used for developing ontologies which focuses on the reuse of existing information or knowledge. This is contrasted against the other approach, top-down ontology development, which provides a set of generic principles that aid in the modelling process. 
+
+
+Contents
+1 Knowledge Acquisition 
+2 Input Artefacts 
+2.1 Databases 
+2.2 Thesauri 
+2.3 Natural Language Processing 
+3 References 
+Knowledge Acquisition
+Legacy material refers to outdated software which have been improved and superseded, however because of the widespread use of these materials, they are difficult to replace. As bottom-up ontology development makes extensive use of existing data, the notion of knowledge acquisition and the problems around acquiring knowledge from legacy material and domain experts - the knowledge acquisition bottleneck - need to be considered. 
+
+Input Artefacts
+Methods and tools have and are being developed in order to make the process of acquiring information from domain experts and to make it less exacting for the domain experts themselves by reusing legacy material. The difficulty of transforming these artefacts into domain ontologies vary. Some of these input artefacts are discussed here. 
+Databases
+Databases and their conceptual data models are one of the most widely used approaches to structuring and storing data. The problem is that the actual database is not always properly aligned with the database itself. Often in practice, new tables and constraints are added to the database system without updating the conceptual data model. And so, the conceptual data model gets outdated really quickly. 
+The naive approach to convert the database into an ontology would simply be to convert the physical schema. However, this it results in a flat structure that contains classes with a bunch of data properties which is problematic and not very useful in the form of an ontology. There are, however, several reverse engineering tools to convert physical schema which does so using multiple passes of the data. A normalization step is applied in order to retain some of the structure in the conceptual view of the data. 
+Thesauri
+Thesauri provide a vocabulary for a conceptualization. They are a means to describe a structured domain classification and focus on the notion of three terms, i.e. a broader term (BT), a narrower term (NT) and a related term (RT). Consider the term 'Coffee'. A broader term would thus be 'Drink', a related term would be 'Caffeine' and a narrower term would be 'Cappuccino'. 
+There exist three approaches for converting thesauri into ontolgies: 
+Automatically translate the representation into an OWL file and call it an ontology. 
+Deduce some conversion rules from the subject domain and foundational ontologies. 
+Use SKOS format to achieve compatability with other technologies.
+The main problems around thesauri stems from the fact that they are essentially a vocabulary and provide low ontological precision with regards to categories and relations. 
+Natural Language Processing
+Natural Language Processing (NLP) can serve as a useful component in ontology driven-information systems. NLP applications can be augmented using an ontology. There are a few approaches and tools available however these depend on the goal of the developers, the commitment and available resources: 
+Use ontologies to enhance the precision and recall of NLP queries. 
+Use NLP to develop ontologies. 
+Use NLP to populate the ABox of ontologies 
+Use ontologies in natural language generation (NLG) systems.
+
+References
+1.Maria Keet. Lecture Notes Ontology Engineering [Online]. Available: http://www.meteck.org/teaching/OntoEngLectureNotes14.pdf. [Accessed: 05- Apr- 2016]. 
+

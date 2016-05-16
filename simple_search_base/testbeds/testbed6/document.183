@@ -1,0 +1,84 @@
+Data Structures Definition
+Data structure is the structural representation of logical relationships between elements of data. In other words a data
+structure is a way of organizing data items by considering its relationship to each other.
+Data structure mainly specifies the structured organization of data, by providing accessing methods with correct
+degree of associativity. Data structure affects the design of both the structural and functional aspects of a program.
+Algorithm + Data Structure = Program
+Data structures are the building blocks of a program; here the selection of a particular data structure will help the
+programmer to design more efficient programs as the complexity and volume of the problems solved by the computer
+is steadily increasing day by day. The programmers have to strive hard to solve these problems. If the problem is
+analyzed and divided into sub problems, the task will be much easier i.e., divide, conquer and combine.
+A complex problem usually cannot be divided and programmed by set of modules unless its solution is structured or
+organized. This is because when we divide the big problems into sub problems, these sub problems will be
+programmed by different programmers or group of programmers. But all the programmers should follow a standard
+structural method so as to make easy and efficient integration of these modules. Such type of hierarchical structuring
+of program modules and sub modules should not only reduce the complexity and control the flow of program
+statements but also promote the proper structuring of information. By choosing a particular structure (or data
+structure) for the data items, certain data items become friends while others loses its relations. 
+
+Data types vs. Data Structures
+A data type is a well-defined collection of data with a well-defined set of operations on it.
+Data types
+Primitive types
+-Boolean
+-Character
+-Integer
+-String
+-Double
+-Float
+
+Data structures
+There are two types of data structure Linear and Nonlinear
+Linear data structure:
+In linear data structures, values are arranged in linear fashion. Arrays, lists, stacks and queue are examples of linear
+data structures in which values are stored in a sequence.
+
+Array
+Arrays are most frequently used in programming. Mathematical problems like matrix,
+algebra and etc can be easily handled by arrays. An array is a collection of homogeneous
+data elements described by a single name.
+
+List
+A list is an ordered set consisting of a varying number of elements to
+which insertion and deletion can be made. A list represented by displaying the relationship
+between the adjacent elements is said to be a linear list.
+
+Stack
+A stack is one of the most important and useful non-primitive linear data structure in computer science. It is an ordered
+collection of items into which new data items may be added/inserted and from which items may be deleted at only one
+end, called the top of the stack. As all the addition and deletion in a stack is done from the top of the stack, the last added
+element will be first removed from the stack. That is why the stack is also called Last-in-First-out (LIFO).
+
+Queue
+A queue is logically a first in first out (FIFO or first come first serve) linear data structure.
+The concept of queue can be understood by our real life problems. For example a customer come and join in a queue to
+take the train ticket at the end (rear) and the ticket is issued from the front end of queue. That is, the customer who
+arrived first will receive the ticket first.
+
+Nonlinear data structure
+This type is opposite to linear. The data values in this structure are not arranged in order.
+x Graph
+This chapter discusses another nonlinear data structures, graphs. Graphs representations
+have found application in almost all subjects like geography, engineering and
+solving games and puzzles.
+A graph G consist of
+1. Set of vertices V (called nodes), (V = {v1, v2, v3, v4......}) and
+2. Set of edges E (i.e., E {e1, e2, e3......cm}
+A graph can be represents as G = (V, E), where V is a finite and non empty set at
+vertices and E is a set of pairs of vertices called edges. Each edge ‘e’ in E is identified with
+a unique pair (a, b) of nodes in V, denoted by e = [a, b]. 
+
+Tree
+one of the important non-liner data structure in computer science, Trees. Many real life problems can be
+represented and solved using trees.
+Trees are very flexible, versatile and powerful non-liner data structure that can be used to represent data
+items possessing hierarchical relationship between the grand father
+and his children and grand children as so on.
+
+Selection of Data
+There are many considerations to be taken into account when choosing the best data structure for a specific program”
+-Size of data.
+-Speed and manner data use.
+-Data dynamics, as change and edit.
+-Size of required storage.
+-Fetch time of any information from data structure. 

@@ -1,0 +1,45 @@
+Starting a revolution in hybrid environment security
+Posted on:April 19, 2016
+Posted in:Business, Cloud, Cloud Security
+Posted by: Justin Foster
+Enterprises have the cloud on the brain more than ever.
+According to a Gartner survey, 36% of healthcare, 27% of insurance providers and 25% of governments will have a hybrid cloud model by 2017.*
+
+That’s an astounding figure! More than a quarter of these verticals with sensitive data will go outside their data center to adopt cloud services from Amazon Web Services (AWS) and many other providers to satisfy their business goals.
+
+The meteoric rise of infrastructure as a service (IaaS) was initially driven by economics, but now it’s being chosen for the agility and speed with which new services or apps can be introduced. Projects that would have taken months to get off the ground can start in days, and be torn down just in minutes, all without an up front capital expense.
+
+Still, most organizations are on a journey where they will continue to transition to cloud services for years to come. Hybrid cloud, and now increasingly multi-cloud environments, are an ongoing reality for most enterprises.
+
+That’s why it is time for a revolution in how you protect your hybrid cloud .
+
+Trend Micro is excited to share a new way to purchase and run protection for hybrid cloud or multi-cloud deployments with Deep Security. If you are unfamiliar, Trend Micro Deep Security protects against intrusions like Shellshock and Heartbleed, blocks malware and watches for indicators of compromise with integrity monitoring and log inspection.
+
+Until today, the best way to secure a hybrid deployment was with Deep Security software installed in the data center. With more and more organizations moving the majority of their workloads to AWS, it was time for a change. We have streamlined deployment to minutes and introduced consumption-based pricing for your hybrid environment with our new AWS Marketplace solution!
+
+The new appliance in AWS Marketplace can protect instances in AWS, VMs on other clouds or even VMs running VMware in the data center – all priced per hour per server and all added directly to your AWS bill.
+
+Amazon EC2 Instance	Hourly cost
+Any Micro, Small or Medium EC2 instance	$0.01/ instance
+Any Large EC2 instance	$0.03/ instance
+Any Xlarge or bigger EC2 instance	$0.06/ instance
+ 
+
+ 
+
+Other Cloud or Data Center	Hourly cost
+Other cloud VM – 1 core	$0.01/ cloud VM
+Other cloud VM – 2 cores	$0.03/ cloud VM
+Other cloud VM – 4+ cores	$0.06/ cloud VM
+All data center servers	$0.06/ server
+ 
+
+This revolution allows for a centrally managed security posture across your assets, with simplified procurement as it is added to your AWS monthly bill.
+
+AWS_picture_4.18.16
+
+Join the hybrid cloud revolution and launch Deep Security on the AWS Marketplace  today! For more information visit us at http://trendmicro.com/aws.
+
+If you have questions or comments, reach me on Twitter: @justin_foster.
+
+*Gartner, Survey Analysis: Cloud Adoption across Vertical Industries Exhibits More Similarities than Differences (Figure 3), Ed Anderson & Jennifer Mazzucca, G00271486, 18 February 2015.

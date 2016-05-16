@@ -1,0 +1,19 @@
+Foremost is a forensic data recovery program for Linux used to recover files using their headers, footers, and data structures through a process known as file carving. Although written for law enforcement use, it is freely available and can be used as a general data recovery tool.
+
+
+== History ==
+Foremost was created in March 2001 to duplicate the functionality of the DOS program CarvThis for use on the Linux platform. Foremost was originally written by Special Agents Kris Kendall and Jesse Kornblum of the United States Air Force Office of Special Investigations. In 2005, the program was modified by Nick Mikus, a research associate at the Naval Postgraduate School's Center for Information Systems Security Studies and Research as part of a master's thesis. These modifications included improvements to Foremost's accuracy and extraction rates.
+
+
+== Functionality ==
+Foremost is designed to ignore the type of underlying filesystem and directly read and copy portions of the drive into the computer's memory. It takes these portions one segment at a time, and using a process known as file carving searches this memory for a file header type that matches the ones found in Foremost's configuration file. When a match is found, it writes that header and the data following it into a file, stopping when either a footer is found, or until the file size limit is reached.
+Foremost is used from the command-line interface, with no graphical user interface option available. It is able to recover specific filetypes, including jpg, gif, png, bmp, avi, exe, mpg, wav, riff, wmv, mov, pdf, ole, doc, zip, rar, htm, and cpp. There is a configuration file (usually found at /usr/local/etc/foremost.conf) which can be used to define additional file types.
+Foremost can be used to recover data from image files, or directly from hard drives that use the ext3, NTFS, or FAT filesystems. Foremost can also be used via a computer to recover data from iPhones.
+
+
+== See also ==
+
+List of free and open source software packages
+
+
+== References ==

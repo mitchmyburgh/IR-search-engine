@@ -1,0 +1,44 @@
+Directed Acyclic Graphs (DAGs)
+
+In order to support the ability to push and pull changesets between multiple instances of the same repository, we need a specially designed structure for representing multiple versions of things. The structure we use is called a Directed Acyclic Graph (DAG), a design which is more expressive than a purely linear model. The history of everything in the repository is modeled as a DAG.
+
+Second generation tools tend to model the history of a repository as a line. The linear history model is tried and true. History is a sequence of versions, one after the other, as shown in Figure 4.3, “Repository History as a Line”.
+
+Figure 4.3. Repository History as a Line
+To create a new version:
+
+Grab the latest version
+
+Make some changes to it
+
+Check it back in
+
+People like linear history for its simplicity. It provides an unambiguous answer to the question of which version is latest.
+
+But the linear model has one big problem: You can only commit a new version if it was based on the latest version. And this kind of thing happens a lot:
+
+I grab the latest version. At the time I grabbed it, this was version 3.
+
+I make some changes to it.
+
+While I am doing this, somebody commits version 4.
+
+When I go to commit my changes, I can’t, because they are not based on the repository’s current version. The parent for my changes was version 3 because that’s what was current when I started.The linear model of history won’t allow me to create version 5 as shown in Figure 4.4, “Not a Line”. Instead, a linear history VCS requires me to take the changes which were made between versions 3 and 4 and apply them to my version. The result is that my working copy’s parent gets changed from 3 to 4, thus allowing me to commit.
+
+This is unfortunate. My changes were made against version 3, but now they are getting blended with the changes from version 4. What if they don’t blend well?
+
+The obvious question is: What would happen if we allowed 5 to be checked in with 3 as its parent? Our history would no longer be a line. Instead it would be a Directed Acyclic Graph (DAG).
+
+A DAG is a data structure from computer science which can be used to model a wide variety of problems. The DAG consists of the following elements:
+
+Nodes. Each node represents some object or piece of data. In the case of a DVCS, each node represents one revision of the entire repository tree.
+
+Directed edges. A directed edge (or “arrow”) from one node to another represents some kind of relationship between those two nodes. In our situation, the arrow means “is based on”. By convention, I draw DAG arrows from child to parent, from the new revision to the revision from which it was derived. Arrows in a DAG may not form a cycle.
+
+A root node. At least one of the nodes will have no parents. This is the root of the DAG.
+
+Leaf nodes. One or more of the nodes will have no children. These are called leaves or leaf nodes.
+
+A major feature of the DAG model for history is that it doesn’t interrupt the developer at the moment she is trying to commit her work. In this fashion, the DAG is probably a more pure representation of what happens in a team practicing concurrent development. Version 5 was in fact based on version 3, so why not just represent that fact?
+
+Well, it turns out there is a darn good reason why not. In the DAG above, we don’t know which version is “the latest”. This causes all kinds of problems:

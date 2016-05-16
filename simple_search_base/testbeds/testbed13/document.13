@@ -1,0 +1,232 @@
+  
+  
+Jump to navigation
+
+#  D-Wave Systems
+
+## Utility Menu
+
+  * Careers
+  * Contact
+
+  * Our Company
+    * About Us
+    * Leadership 
+    * Investors 
+    * Customers 
+  * D-Wave Technology
+    * D-Wave 2X
+    * Software 
+    * Services 
+  * Quantum Computing
+    * Overview 
+    * Industries 
+    * Applications 
+  * D-Wave Resources
+    * Publications 
+    * Tutorials 
+    * Videos 
+    * Media Resources
+  * D-Wave News
+    * Press Releases
+    * Media Coverage
+    * Events 
+    * Blog 
+
+# Applications
+
+## Helping solve some of the most difficult challenges
+
+# Optimization
+
+Imagine you are building a house, and have a list of things you want to have
+in your house, but you can’t afford everything on your list because you are
+constrained by a budget. What you really want to work out is the combination
+of items which gives you the best value for your money.
+
+This is an example of a optimization problem, where you are trying to find the
+best combination of things given some constraints. Typically, these are very
+hard problems to solve because of the huge number of possible combinations.
+With just 270 on/off switches, there are more possible combinations than atoms
+in the universe!
+
+These types of optimization problems exist in many different domains - systems
+design, mission planning, airline scheduling, financial analysis, web search,
+cancer radiotherapy and many more. They are some of the most complex problems
+in the world, with potentially enormous benefits to businesses, people and
+science if optimal solutions can be readily computed.
+
+> ### Optimization problems are some of the most complex problems to solve.
+
+## Water Network Optimization
+
+This is an example of using a quantum computer with a conventional or HPC
+system. EPANET is public domain numerical software that simulates water
+movement and water quality within pressurized pipe networks. It can model the
+flow of water in each pipe, the pressure at each node, the height of the water
+in each tank, the type of chemical concentration throughout the network during
+a simulation period, water age, source, and tracing. EPANET can compute
+properties of a water network given discrete choices for the design of
+network.
+
+The quantum computer gives us a tool for designing the optimal network, by
+penalizing undesirable outcomes in the network such as low pressure or the
+presence of chemical contaminant levels, while rewarding desirable outcomes
+such as low cost, low risk, safety, etc. This Quantum-Classical hybrid
+solution quickly hones in on good solutions by asking the conventional system
+to evaluate far fewer possibilities.
+
+## Radiotherapy Optimization
+
+There are many examples of problems where a quantum computer can complement an
+HPC (high performance computing) system. While the quantum computer is well
+suited to discrete optimization, the HPC system is much better at large scale
+numerical simulations. Problems like optimizing cancer radiotherapy, where a
+patient is treated by injecting several radiation beams into the patient
+intersecting at the tumor, illustrates how the two systems can work together.
+
+The goal when devising a radiation plan is to minimize the collateral damage
+to the surrounding tissue and body parts – a very complicated optimization
+problem with thousands of variables. To arrive at the optimal radiation plan
+requires many simulations until an optimal solution is determined. With a
+quantum computer, the horizon of possibilities that can be considered between
+each simulation is much broader. But HPC is still the more powerful
+computation tool for running simulations. Using the quantum computer with an
+HPC system will allow faster convergence on an optimal design than is
+attainable by using HPC alone.
+
+## Protein Folding
+
+Simulating the folding of proteins could lead to a radical transformation of
+our understanding of complex biological systems and our ability to design
+powerful new drugs.
+
+This application looks into how to use the quantum computer to explore the
+possible folding configurations of these interesting molecules. With an
+astronomical number of possible structural arrangements, protein folding in an
+enormously complex computational problem. Scientific research indicates that
+nature optimizes the amino acid sequences to create the most stable protein -
+which correlates well to the search for the lowest energy solutions.
+
+With researchers at Harvard, we designed a system for predicting the folding
+patterns for lattice protein folding models and successfully ran small protein
+folding problems in hardware.
+
+# Machine Learning
+
+When you look at a photograph it is very easy for you to pick out the
+different objects in the image: Trees, Mountains, Velociraptors etc. This task
+is almost effortless for humans, but is in fact a hugely difficult task for
+computers to achieve. This is because programmers don’t know how to define the
+essence of a ‘Tree’ in computer code.
+
+Machine learning is the most successful approach to solving this problem, by
+which programmers write algorithms that automatically learn to recognize the
+‘essences’ of objects by detecting recurring patterns in huge amounts of data.
+Because of the amount of data involved in this process, and the immense number
+of potential combinations of data elements, this is a very computationally
+expensive optimization problem. As with other optimization problems, these can
+be mapped to the native ability of the D-Wave processor.
+
+
+
+> ### Machines learn to recognize objects by detecting recurring patterns.
+
+## Object Detection
+
+Quantum hardware, trained using a binary classification algorithm, is able to
+detect whether or not an image contains a car.
+
+Together with researchers at Google, we built software for determining whether
+or not there is a car in an image using a binary classification algorithm run
+in hardware. In excess of 500,000 discrete optimization problems were solved
+during the learning phase, with Google developers accessing the D-Wave system
+remotely.
+
+## Labeling news stories
+
+We built software for automatically applying category labels to news stories
+and images. We found that our approach provided better labeling accuracy than
+a state of the art conventional approach.
+
+The labeling of news stories can be difficult for computers as they can see
+the keywords but don’t understand the meaning of the words when combined. For
+labeling news stories the corpus we used for training and testing performance
+was the REUTERS corpus, a well-known data set for testing multiple label
+assignment algorithms.
+
+We took a similar approach to labeling images and used the SCENE corpus for
+training and testing performance, a well-known data set for testing multiple
+label assignment algorithms.
+
+We found that our approach worked extremely well on these problems,
+demonstrating the quantum computer's ability to do multiple label assignment
+and to label images.
+
+## Video Compression
+
+Using unsupervised machine learning approaches, one can automate the discovery
+of a very sparse way to represent objects. This technique can be used for
+incredibly efficient compression.
+
+The algorithm works by finding a concise representation of the objects being
+fed into the computer. The techniques involved are closely related to those in
+compressive sensing. As a test of the unsupervised feature learning algorithm,
+we discovered an extremely sparse representation of the ‘Frey faces’ data set,
+and demonstrated the ability to perform video compression on the quantum
+computer.
+
+# Monte Carlo Simulation
+
+Many things in the world are uncertain, and governed by the rules of
+probability. We have, in our heads, a model of how things will turn out in the
+future, and the better our model is, the better we are at predicting the
+future. We can also build computer models to try and capture the statistics of
+reality. These tend to be very complicated, involving a huge number of
+variables.
+
+In order to check to see if a computer’s statistical model represents reality
+we need to be able to draw samples from it, and check that the statistics of
+our model match the statistics of real world data. Monte Carlo simulation,
+which relies on repeated random sampling to approximate the probability of
+certain outcomes, is an approach used in many industries such as finance,
+energy, manufacturing, engineering oil &amp; gas and the environment. For a
+complex model, with many different variables, this is a difficult task to do
+quickly.
+
+> ### The better our model, the better we are at predicting the future.
+
+Optimization
+
+Machine Learning
+
+Monte Carlo Simulation
+
+> ### Wired: The Age of Quantum Computing Has (Almost) Arrived
+
+> ### Time: The Quantum Quest for a Revolutionary Computer
+
+> ### The D-Wave 2X™ System
+
+**Canada**  
+  
+3033 Beta Avenue  
+Burnaby, British Columbia,  
+Canada V5G 4M9  
+MAP  
+  
+Tel: +1 604-630-1428  
+Fax: +1 604-630-1434
+
+**US **  
+  
+Palo Alto, CA  
+Washington, DC
+
+Contact D-Wave
+
+Copyright © 2014 D-Wave Systems Inc.Terms Careers Press MediaPatent
+NoticeContact
+
+__ __ __ __
+

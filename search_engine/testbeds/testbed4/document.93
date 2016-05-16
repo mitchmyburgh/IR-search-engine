@@ -1,0 +1,32 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Quaternions
+Introduction
+In this chapter, a good understanding of basic mathematics is assumed. I also have been extremely lazy and I'm not giving any justifications whatsoever. Someday, hopefully, this will be righted. It is possible to do very much everything that is described here using only matrices with a good knowledge of linear algebra. For instance, as a first step, we can find a matrix that rotates about an arbitrary unit vector by a specific angle. Then, if we want to interpolate linearly between two orientations, we can proceed as follows. First find the matrix M that expresses the transform from the first orientation to the second orientation. Then find the eigenvector of that matrix, this is the desired axis of rotation. Then linearly interpolate the angle from 0 to whatever angle the two orientations make.
+Let us recall complex numbers, which have the form a+bi, where i2=-1. These complex numbers can also be represented in polar or exponential form. I will interest myself mainly with the latter. The exponential form of a complex number is Z=r×exp(i?), where (r,?) are the polar coordinates of Z in the complex plane. All points in the plane can be represented by a complex number. Let B be a unit quaternion (that is, of the form B=exp(i?0)). Recall that, when multiplying two complex numbers, we multiply the modules and add the angles. Let us multiply Z by B. Then, we get ZB=r×exp(i?+?0), or Z rotated by ?0.
+The morale of this story is that unit complex numbers can be used to represent rotations in the plane.
+We will now develop a similar tool for modeling rotations in 3d. A quaternion Q will be of the form Q=W+Xi+Yj+Zk, where 1, i, j and k are linearly independent quantities (and i, j and k are linearly independent imaginary numbers). Then, we will define quaternion multiplication, by using the following basic rules:
+i2=j2=k2=-1, ij=-ji=k, jk=-kj=i, ki=-ik=j.
+It will so turn out that, similarly to unit complex numbers represent rotations in the plane, unit quaternions will represent rotations in 3d.
+98
+Obviously, this is a lot of work for "just another representation of rotations in 3d", especially where matrices work fine. Indeed, even if one is using quaternions to represent orientations, one will typically convert to a matrix when actual transformations are required. The main advantage of quaternions is for interpolating between two orientations in a useful manner, and mayhaps also for a compact representation of orientations.
+Preliminaries
+Several notations can be used to write quaternions. The following are all equivalent:
+Q=W+Xi+Yj+Zk
+Q=<W, A> with A=(X,Y,Z) (a real number W, with a 3d vector (X,Y,Z))
+Q=(W,X,Y,Z) (a 4d vector)
+We can define a multiplication operation that respects the following:
+i2=j2=k2=-1, ij=-ji=k, jk=-kj=i, ki=-ik=j.
+<a1, v1>×<a2,v2>=<a1a2-v1•v2 , s2v1+s1v2+v1×v2>
+Of course, a1 and a2 are real numbers and v1 and v2 are 3d vectors.
+The norm or module of a quaternion Q=(W,X,Y,Z) is defined as the euclidian norm of vector (W,X,Y,Z). A unit quaternion is a quaternion for which its norm is 1.
+The conjugate of quaternion Q=<W,A> is defined as Qc=<W,-A>.
+If we have the quaternion
+Q=(0,v)=(0,X,Y,Z)
+and the unit quaternion
+U=(cos(?/2),sin(?/2)×V)
+where V is a unit vector, and
+Q'=(0,v')=U×Q×Uc
+then it can be shown that v' is v rotated about V by an angle of ?.
+99
+Note that this implies that the two unit quaternions Q and -Q represent the same rotation.

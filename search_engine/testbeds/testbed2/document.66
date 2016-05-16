@@ -1,0 +1,48 @@
+Encog is a machine learning framework available for Java, .Net, and C++.  Encog supports different learning algorithms such as Bayesian Networks, Hidden Markov Models and Support Vector Machines. However, its main strength lies in its neural network algorithms. Encog contains classes to create a wide variety of networks, as well as support classes to normalize and process data for these neural networks. Encog trains using many different techniques. Multithreading is used to allow optimal training performance on multicore machines. The C++ version of Encog can offload some processing to an OpenCL compatible GPU for further performance gains.
+Encog can be used for many tasks, including medical and financial research. A GUI based workbench is also provided to help model and train neural networks. Encog has been in active development since 2008.
+
+
+== Neural Network Architectures ==
+ADALINE Neural Network
+Adaptive Resonance Theory 1 (ART1)
+Bidirectional Associative Memory (BAM)
+Boltzmann Machine
+Counterpropagation Neural Network (CPN)
+Elman Recurrent Neural Network
+Neuroevolution of augmenting topologies (NEAT)
+Feedforward Neural Network (Perceptron)
+Hopfield Neural Network
+Jordan Recurrent Neural Network
+Radial Basis Function Network
+Recurrent Self Organizing Map (RSOM)
+Self Organizing Map (Kohonen)
+
+
+== Training Techniques ==
+Backpropagation
+Resilient Propagation (RProp)
+Scaled Conjugate Gradient (SCG)
+Levenberg–Marquardt algorithm
+Manhattan Update Rule Propagation
+Competitive Learning
+Hopfield Learning
+Genetic Algorithm Training
+Instar Training
+Outstar Training
+ADALINE Training
+
+
+== See also ==
+JOONE: another neural network programmed in Java
+FANN, a neural network written in C with bindings to most other languages.
+
+
+== References ==
+
+
+== External links ==
+Encog Homepage
+Encog Project (GitHub)
+Basic Market Forecasting with Encog Neural Networks (DevX Article)
+An Introduction to Encog Neural Networks for Java (Code Project)
+Benchmarking and Comparing Encog, Neuroph and JOONE Neural Networks

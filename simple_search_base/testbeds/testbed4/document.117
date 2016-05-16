@@ -1,0 +1,45 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Elements of Radiometry
+The ?eld of radiometry concerns the measurement of light (electromagnetic radiation), usually restricted to the visible wavelengths, in the range 400-700 nm. Light is often measured in discrete units called photons. It is dif?cult to talk about the number of photons that illuminate a point on a surface at a particular time (as it is almost always zero). Instead, we talk about the average number of photons in small (in?nitesimal) intervals of space or time, that is, we talk about photon density, and thereby treat light as a continuous quantity rather than a photon count. In effect, we are assuming that there is enough light in the scene so that we can treat light as a continuous function of space-time. For example, we will talk about the light hitting a speci?c surface patch as a continuous function over the patch, rather than discuss the discrete photons of light.
+12.2.1 Basic Radiometric Quantities
+Formally, we describe light in terms of radiant energy. You can think of radiant energy as the totality of the photons emitted from a body over its entire surface and over the entire period of time it emits light. Radiant energy is denoted by Q(t) and measured in Joules (J). You can think of radiant energy as describing how much light has been emitted from (or received by) a surface up to a time t, starting from some initial time 0. 2
+The main quantity of interest in radiometry is power, that is, the rate at which light energy is emitted or absorbed by an object. This time-varying quantity, usually called ?ux, is measured in Joules per second (J·s-1). Here we denote ?ux by F(t):
+F(t) =
+dQ(t) dt
+(61)
+We can compute the total light that hits a surface up to time t as: Q(t) =Z t 0 F(t)dt (62) Flux is suf?ciently important that we de?ne a special unit of measure for it, namely, watts (W). One watt is one Joule per second; so a 50 watt light bulb draws 50J of energy per second. Most of this radiant energy is emitted as visible light. The rest is converted to thermal energy (heat). Higher wattage means a brighter light bulb.
+Not surprisingly, the light received or emitted by an object varies over the surface of the object. This is important since the appearance of an object is often based on how the light re?ected from
+2Of course, radiant energy depends on wavelength ?, so it is common to express energy as a function of wavelength; the resulting density function, Q(?), is called spectral energy. This is important since different wavelengths are seen as different colours. Nevertheless, our next major simpli?cation will be to ignore the dependence of radiant energy on wavelength. In computer graphics, colours are controlled by the relative amounts of power in three separate spectral bands, namely, Red, Green, and Blue. What we describe in this chapter can be applied to each colour channel.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 81
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+its surface depends on surface position. Formally, light received at the surface of an object, as a function of image position is called irradiance. The light emitted from a surface, as a function of surface position, is often called radiant exitance (or radiosity).
+Irradiance, the incident ?ux, as a function of surface position ¯ p, is denoted by H(¯ p). Remember, we cannot talk about the amount of light received at a single point on a surface because the number of photons received at a single point is generally zero. Instead, irradiance is the spatial density of ?ux, i.e., the amount of light per unit surface area. The integral of irradiance over the surface of an object gives us the total incident ?ux (i.e., received by) the object. Accordingly, irradiance is the spatial derivative of ?ux. For smooth surfaces we write
+H(¯ p) =
+dF dA
+(63)
+where dA refers to differential surface area. Irradiance is just power per unit surface area (W·m-2).
+Example: For a planar patch in the x-y plane, we can write irradiance as a function of (x,y) position on the patch. Also, we have dA = dxdy. In this case:
+H(x,y) =
+d2F dxdy
+(64)
+These terms are all functions of time t, since lighting F may change over time t. However, we will leave the dependence on time t implicit in the equations that follow for notational simplicity.
+Example: What is the irradiance, owing to a point light source, on an in?nitesimal patch S with area dA? Let's say we have a point light source at ¯ l emitting I watts per steradian into all directions: dF = Id? (65)
+In other words, the amount of light from this source is proportional to solid angle, and independent of direction. Our goal is to compute the irradiance H on the patch, which can be done by subtitution of formulas from this chapter:
+H =
+dF dA
+=
+Id? dA
+=
+IdAcos? dAr2
+=
+I cos? r2
+(66)
+where ¯ p is the position of S, r = ||¯ l - ¯ p||, and ? is the angle between the surface normal and the vector ¯ l- ¯ p. This formula illustrates the importance of solid angle: the amount of light hitting a surface is proportional to its solid angle with respect to
+Copyright c
+2005 David Fleet and Aaron Hertzmann 82
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+the light source. A distant patch (with large r) receives less light than a nearby patch, and a foreshortened patch receives less light than a frontal patch. Furthermore, the amount of light hitting the patch is proportional to the intensity I of the light source.

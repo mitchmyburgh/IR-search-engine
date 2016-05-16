@@ -1,0 +1,15 @@
+2000-present
+
+After having declined somewhat in the 1990s, Lisp has recently experienced a resurgence of interest. Most new activity is focused around implementations of Common Lisp as well as Clojure, Racket, Scheme and Emacs Lisp, and includes the development of new portable libraries and applications.
+
+Many new Lisp programmers were inspired by writers such as Paul Graham and Eric S. Raymond to pursue a language others considered antiquated. New Lisp programmers often describe the language as an eye-opening experience and claim to be substantially more productive than in other languages.[24] This increase in awareness may be contrasted to the "AI winter" and Lisp's brief gain in the mid-1990s.[25]
+
+Dan Weinreb lists in his survey of Common Lisp implementations[26] eleven actively maintained Common Lisp implementations. Scieneer Common Lisp is a new commercial implementation forked from CMUCL with a first release in 2002.
+
+The open source community has created new supporting infrastructure: CLiki is a wiki that collects Common Lisp related information, the Common Lisp directory lists resources, #lisp is a popular IRC channel (with support by a Lisp-written Bot), lisppaste supports the sharing and commenting of code snippets, Planet Lisp collects the contents of various Lisp-related blogs, on LispForum users discuss Lisp topics, Lispjobs is a service for announcing job offers and there is a weekly news service, Weekly Lisp News. Common-lisp.net is a hosting site for open source Common Lisp projects. Quicklisp is a library manager for Common Lisp.
+
+50 years of Lisp (1958–2008) has been celebrated at LISP50@OOPSLA.[27] There are regular local user meetings in Boston, Vancouver, and Hamburg. Other events include the European Common Lisp Meeting, the European Lisp Symposium and an International Lisp Conference.
+
+The Scheme community actively maintains over twenty implementations. Several significant new implementations (Chicken, Gambit, Gauche, Ikarus, Larceny, Ypsilon) have been developed in the last few years. The Revised5 Report on the Algorithmic Language Scheme[28] standard of Scheme was widely accepted in the Scheme community. The Scheme Requests for Implementation process has created a lot of quasi standard libraries and extensions for Scheme. User communities of individual Scheme implementations continue to grow. A new language standardization process was started in 2003 and led to the R6RS Scheme standard in 2007. Academic use of Scheme for teaching computer science seems to have declined somewhat. Some universities, such as MIT, are no longer using Scheme in their computer science introductory courses.[29][30]
+
+There are several new dialects of Lisp: Arc, Hy, Nu, Clojure, Liskell, LFE (Lisp Flavored Erlang) and Racket.

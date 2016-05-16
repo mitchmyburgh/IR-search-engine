@@ -1,0 +1,26 @@
+Virtualization for Newbies: Origins of Virtualization
+AUTHOR: STEVE BACA 17 OCTOBER 2013 2,446 VIEWS NO COMMENTS
+TAGS: IBM, VIRTUALIZATION
+datacentertech2The origins of virtualization began with a paper that Professor Christopher Strachey presented on time-shared computers at the UNESCO International Conference on Information Processing in June 1959.
+
+Time-sharing was a new idea, and Professor Strachey was the first to publish on the topic that would lead to virtualization. After the conference, new research was done, and several more research papers written on the topic of time-sharing began to appear. These research papers energized a small group of programmers at the Massachusetts Institute of Technology (MIT) to begin to develop a Compatible Time-Sharing System (CTSS). From these first time-sharing systems attempts, virtualization was pioneered in the early 1960s by IBM, General Electric, and other companies attempting to solve several problems.
+
+The main problem that IBM wanted to solve was that each new system that they introduced was incompatible with previous systems. In the 1950s, IBM’s president at the time, T. J. Watson, Jr., gave an IBM 704 for use by MIT and other New England schools. Each time IBM built a newer, bigger processor, the system had to be upgraded, and customers had to be retrained. To solve this problem, IBM designed its System/360 (S/360) system to be backwards compatible, but it was still a single-user system running batch jobs.
+
+At this time, MIT and Bell Labs were requesting time-sharing systems to solve their problem of having many programmers and very few systems to run their programs. Thus, IBM developed the System/360-40 (CP-40 mainframe) for their lab to test time-sharing. This first system, the CP-40, eventually evolved into the development and public release of the first commercial mainframe to support virtualization, the System/360-67 (CP-67 mainframe), in 1968.
+
+The new CP-67 contained a 32-bit CPU with virtual memory hardware. The CP-67 mainframe’s operating system was named Control Program/Console Monitor System (CP/CMS). The early hypervisor gave each mainframe user a CMS, essentially a single-user operating system that did not have to be complex because it only supported one user. The hypervisor provided the resources while the CMS supported the time-sharing capabilities, allocation, and protection. CP-67 enabled memory sharing across virtual machines while giving each user their own virtual memory. Thus, the CP/CMS operating system’s approach provided each user with an operating system at the machine instruction level.
+
+Virtualization continues to be used on the mainframe system even today, but it took nearly two decades before virtualization would become heavily used outside of the mainframe world. Although IBM had provided a blueprint for virtualization, the client-server model that took over from the mainframe was inexpensive and not powerful enough to run multiple operating systems. These issues for the client-server model meant that these new systems could not support virtualization, and the idea of virtualization would disappear for many years. Eventually, the hardware performance increased to a point where significant savings could be realized by virtualizing X86. The concepts of virtualization that were developed on the mainframe were eventually ported over to X86 servers by VMware in 1998, and a new era of virtualization began.
+
+This is an excerpt from the Global Knowledge white paper Virtualization for Newbies.
+
+Related Courses
+VMware Horizon View: Install, Configure, Manage [V5.2]
+VMware vCloud Director: Install, Configure, Manage [V5.1]
+VMware vSphere: Install, Configure, Manage [V5.1]
+
+Virtualization for Newbies Series
+Virtualization for Newbies: Top Four Reasons to Go Virtual
+Virtualization for Newbies: Five Types of Virtualization
+Virtualization for Newbies: Origins of Virtualization

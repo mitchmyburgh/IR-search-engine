@@ -1,0 +1,25 @@
+Your phone number is all a hacker needs to read texts, listen to calls and track you
+Weaknesses within mobile phone network interconnection system allows criminals or governments to remotely snoop on anyone with a phone
+ German security expert Karsten Nohl demonstrated the hack by tracking a brand new phone given to US congressman Ted Lieu using only its phone number.
+ German security expert Karsten Nohl demonstrated the hack by tracking a brand new phone given to US congressman Ted Lieu using only its phone number. Photograph: Alamy
+Samuel Gibbs
+Monday 18 April 2016 12.43 BST Last modified on Monday 18 April 2016 14.20 BST
+Share on Pinterest Share on LinkedIn Share on Google+
+Shares
+50
+ Save for later
+Hackers have again demonstrated that no matter how many security precautions someone takes, all a hacker needs to track their location and snoop on their phone calls and texts is their phone number.
+
+The hack, first demonstrated by German security researcher Karsten Nohl in 2014 at a hacker convention in Hamburg, has been shown to still be active by Nohl over a year later for CBS’s 60 Minutes.
+
+The hack uses the network interchange service called Signalling System No. 7 (SS7), also known as C7 in the UK or CCSS7 in the US, which acts as a broker between mobile phone networks. When calls or text messages are made across networks SS7 handles details such as number translation, SMS transfer, billing and other back-end duties that connect one network or caller to another.
+
+By hacking into or otherwise gaining access to the SS7 system, an attacker can track a person’s location based on mobile phone mast triangulation, read their sent and received text messages, and log, record and listen into their phone calls, simply by using their phone number as an identifier.
+
+Nohl, who is currently conducting vulnerability analysis of SS7 for several international mobile phone networks, demonstrated the hack for the CBS show. He tracked a brand new phone given to US congressman Ted Lieu in California from his base in Berlin using only its phone number. Nohl pinpointed Lieu’s movements down to districts within Los Angeles, read his messages and recorded phone calls between Lieu and his staff.
+
+The biggest issue for consumers is that there is little they can do to safeguard against this kind of snooping, short of turning off their mobile phone, as the attack happens on the network side, regardless of the phone used.
+
+Nohl said: “The mobile network is independent from the little GPS chip in your phone, it knows where you are. So any choices that a congressman could’ve made, choosing a phone, choosing a pin number, installing or not installing certain apps, have no influence over what we are showing because this is targeting the mobile network. That, of course, is not controlled by any one customer.”
+
+Hackers have proven that they can break into SS7, but security services, including the US National Security Agency, are also thought to use the system to track and snoop on target users.

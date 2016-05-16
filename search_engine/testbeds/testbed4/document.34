@@ -1,0 +1,58 @@
+Occlusion culling is a genre of algorithms for rapidly eliminating portions of three-dimensional geometry hidden
+behind other, visible objects prior to passing them to the rendering pipeline. In this paper, an extension to the
+popular shadow frustum culling algorithm is presented, which takes into account the fact that many planar
+occluders can be grouped into compound convex solids, which in turn can provide fewer and larger culling frusta
+and therefore more efficient elimination of hidden geometry. The proposed method combines planar and solid
+occluders using a unified selection approach and is ideal for dynamic environments, as it doesn’t depend on precalculated
+visibility data. The solid occluders culling algorithm has been applied to commercially deployed
+virtual reality systems and test cases and results are provided from actual virtual reality shows.
+Keywords
+Hidden surface removal, visibility, virtual reality, games, dynamic environments.
+1. INTRODUCTION
+In dense or large three-dimensional environments, the
+visible geometry consists of many hundreds of
+thousands of polygons. Fortunately, most of these
+primitives are not visible simultaneously from an
+arbitrary vantage point. If the amount of actually
+invisible (hidden) polygons that are nevertheless sent
+to the graphics hardware for rendering is kept low,
+the performance of the application can gain a
+significant boost. The algorithms used for culling
+these surfaces fall into three categories, back face
+elimination, view frustum culling and occlusion
+culling, the later being not so trivial as the rest.
+Occlusion Culling
+In occlusion culling, geometry that is hidden behind
+objects closer to the camera point is discarded before
+being subject to depth sorting algorithms, although
+this geometry may pass the other two culling tests.
+Most occlusion culling methods use planar occluders
+[Hud97a] and their projections on the viewing plane.
+These planar occluders are often the polygons of the
+blocking geometry. Culling tests take place either in
+3D space (viewer coordinate system, see Fig. 1) or in
+the resulting discrete image space, after projecting
+and rasterising the occluders and the potentially
+hidden geometry in an image buffer. The Hierarchical
+Z-Buffer [Gre93a] and the Hierarchical Occlusion
+Map [Zha98a] are two good examples of the later
+approach. Other techniques rely on the concept of
+space partitioning in cells, which are visible through
+openings, named portals, as in [Lue95a]. Binary
+Space Subdivision is often utilized to automatically
+segment space into cells based on the geometry
+[Tel91a]. The related visibility culling techniques
+may use pre-calculated information or clip entire cells
+on the fly. BSP and cell-and-portal techniques work
+very well for enclosed environments, such as building
+interiors and are thus favored by the game
+development community. Occlusion culling
+techniques may pose some restrictions on navigation
+freedom (non-arbitrary view location) in order to gain
+simplicity and performance, as is the case in
+[Dow01a]. A more extensive presentation of the
+different occlusion culling methods is clearly beyond
+the scope of this paper but the interested reader can
+find a thorough and comprehensive survey and
+comparison of occlusion culling algorithms in
+

@@ -1,0 +1,9 @@
+New CloudyScript: Detect Port Ranges
+Matthias Jung / July 1, 2011
+
+
+Amazon EC2 uses the notion of Security Groups to let users define inbound firewall rules (called permissions) that are dynamically applied to all server instances that are part of the group. This concept is easy and very powerful at the same time, since permissions must be configured once only and are then applied like a template to all future server instances – contrarily to traditional firewalls, where rules are defined for every server.  At the other hand, wrong configurations have a higher impact since all server instances of a misconfigured group are affected.
+
+Thus, the configuration of security groups and attribution to launched instances should be done very carefully. One very frequent misconfiguration is to open complete port-ranges for public IP addresses. It may also happen that third party EC2 tools use the API to create security groups with open port ranges to facilitate their own access and thereby exposing your infrastructure.
+
+Open port ranges allow attackers to scan all ports that are actually used, retrieve information about the services running on a particular machine, and focus on attacking particularly critical ports like port 22 for SSH. We added a script to our CloudyScripts library that allows you to identify all security groups with open port ranges in a given EC2 region. You can find the script here. An additional contribution to make the cloud more secure. Your feedback is always welcomed!

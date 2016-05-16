@@ -1,0 +1,43 @@
+﻿Top-down Ontology Development
+
+
+
+
+Contents
+1 Ontology development 
+2 Foundational Ontologies 
+3 Typical contents of a foundational ontology 
+4 Using a Foundational Ontology 
+5 References. 
+Ontology development
+There are two main approaches for ontology development, being top-down and bottom-up ontology development[1]. 
+Foundational Ontologies
+Foundational ontologies are the starting point for top-down development of ontologies and they contain high level categorizations of the kinds of things a developer could represent in an ontology[1]. These “things” include processes, physical objects and relationships among others. Essentially, a foundational ontology provides the main categories of things and relations to give a basic structure to a domain. Pendantic ontologists could even conclude that if a category is not in the foundational ontology, then its developers are of the opinion that it does not exist in reality[1]. 
+Examples of foundational ontologies 
+1. DOLCE (Descriptive Ontology for Linguistic and Cognitive Engineering) 
+2. BFO 
+3. GFO (General Formal Ontology)
+ 
+Figure 1: The categories in a Foundational Ontology(DOLCE) 
+Typical contents of a foundational ontology
+Universals, categories (class hierarchy)
+Foundational ontologies, like other ontologies represented in OWL, have a class hierarchy. However, this hierarchy does not contain domain classes such as Student and Course related to a specific subject domain but rather has categories of kinds of things[1]. For example, all instances of Student at UCT are considered to be physical objects. Similarly, there are non-physical objects. An organisation e.g. UCT will be categorized as a social object which is a type of a non-physical object [1]. These and more categories are presented in a foundational ontology. 
+Relations
+Foundational ontologies contain generic relations (object properties) different from those in domain ontologies[1]. An example of these relations is the part-of relation which can be used by developers to show that that one class is a part of another. 
+Attributions
+Foundational ontologies provide a way of representing attributes of classes. One approach is to represent the attribute using a unary class[1]. The quality category can be used to create these unary classes[1] i.e. a class representing an attribute is of type quality. 
+Using a Foundational Ontology
+Using a foundational ontology has its pros and cons[1]. 
+Advantages 
+Improves the overall quality of an ontology with modelling guidance and prevention of a few novice mistakes. 
+Facilitates interoperability among ontologies. 
+Developer does not have to “reinvent the wheel” with regard to the basic categories and relations to represent the subject domain.
+Disadvantages 
+It takes an excessive amount of time and effort to understand foundational ontologies. This could increase development time and might not weigh up to the benefits. 
+Are sometimes considered too expressive and comprehensive (broad) for the ontology developer has in mind.
+
+Upon selecting a foundational ontology, one can download and import it into a development environment like protege. One needs to fully understand the categories of the foundational ontology or at the very least be able to categorize all the classes in the domain under one of the categories in the foundational ontology. 
+
+References.
+[1] Maria Keet. Lecture Notes Ontology Engineering accessible at http://www.meteck.org/teaching/OntoEngLectureNotes15.pdf [Accessed on 5/4/2016] 
+

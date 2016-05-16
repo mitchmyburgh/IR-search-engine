@@ -1,0 +1,65 @@
+Support Vector Machine Learning for
+Interdependent and Structured Output Spaces
+
+Ioannis Tsochantaridis 
+Thomas Hofmann
+Thorsten Joachims
+Yasemin Altun
+
+1. Introduction
+This paper deals with the general problem of learning
+a mapping from inputs x ∈ X to discrete outputs
+y ∈ Y based on a training sample of input-output pairs
+(x1, y1),...,(xn, yn) ∈X ×Y drawn from some fixed
+but unknown probability distribution. Unlike the case
+of multiclass classification where Y = {1, ..., k} with
+interchangeable, arbitrarily numbered labels, we consider
+structured output spaces Y. Elements y ∈ Y
+may be, for instance, sequences, strings, labeled trees, lattices, or graphs. Such problems arise in a variety of
+applications, ranging from multilabel classification and
+classification withclass taxonomies, to label sequence
+learning, sequence alignment learning, and supervised
+grammar learning, to name just a few.
+We approachthese problems by generalizing large
+margin methods, more specifically multi-class Support
+Vector Machines (SVMs) (Weston & Watkins, 1998;
+Crammer & Singer, 2001), to the broader problem of
+learning structured responses. The naive approach of
+treating eachstructure as a separate class is often intractable,
+since it leads to a multiclass problem witha
+very large number of classes. We overcome this problem
+by specifying discriminant functions that exploit
+the structure and dependencies within Y. In th at respect,
+our approachfollows the work of Collins (2002;
+2004) on perceptron learning witha similar class of
+discriminant functions. However, the maximum margin
+algorithm we propose has advantages in terms of
+accuracy and tunability to specific loss functions. A
+similar philosophy of using kernel methods for learning
+general dependencies was pursued in Kernel Dependency
+Estimation (KDE) (Weston et al., 2003). Yet,
+the use of separate kernels for inputs and outputs and
+the use of kernel PCA with standard regression techniques
+significantly differs from our formulation, which
+is a more straightforward and natural generalization of
+multiclass SVMs.
+
+6. Conclusions
+We formulated a Support Vector Method for supervised
+learning withstructured and interdependent outputs.
+It is based on a joint feature map over input/output
+pairs, which covers a large class of interesting
+models including weighted context-free grammars,
+hidden Markov models, and sequence alignment. Furthermore,
+the approach is very flexible in its ability to
+handle application specific loss functions. To solve the
+resulting optimization problems, we proposed a simple
+and general algorithm for which we prove convergence
+bounds. Our empirical results verify that the algorithm
+is indeed tractable. Furthermore, we show that
+the generalization accuracy of our method is at least
+comparable or often exceeds conventional approaches
+for a wide range of problems. A promising property
+of our method is that it can be used to train complex
+models, which would be difficult to handle in a
+generative setting.

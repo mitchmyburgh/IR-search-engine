@@ -1,0 +1,68 @@
+OpenGL
+From Wikipedia, the free encyclopedia
+Open Graphics Library (OpenGL)[3][4][5] is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics. The API is typically used to interact with a graphics processing unit (GPU), to achieve hardware-accelerated rendering.
+
+Silicon Graphics Inc., (SGI) started developing OpenGL in 1991 and released it in January 1992;[6] applications use it extensively in the fields of computer-aided design (CAD), virtual reality, scientific visualization, information visualization, flight simulation, and video games. OpenGL is managed by the non-profit technology consortium Khronos Group.
+
+Design[edit]
+
+An illustration of the graphics pipeline process
+The OpenGL specification describes an abstract API for drawing 2D and 3D graphics. Although it is possible for the API to be implemented entirely in software, it is designed to be implemented mostly or entirely in hardware.
+
+The API is defined as a set of functions which may be called by the client program, alongside a set of named integer constants (for example, the constant GL_TEXTURE_2D, which corresponds to the decimal number 3553). Although the function definitions are superficially similar to those of the programming language C, they are language-independent. As such, OpenGL has many language bindings, some of the most noteworthy being the JavaScript binding WebGL (API, based on OpenGL ES 2.0, for 3D rendering from within a web browser); the C bindings WGL, GLX and CGL; the C binding provided by iOS; and the Java and C bindings provided by Android.
+
+In addition to being language-independent, OpenGL is also cross-platform. The specification says nothing on the subject of obtaining, and managing, an OpenGL context, leaving this as a detail of the underlying windowing system. For the same reason, OpenGL is purely concerned with rendering, providing no APIs related to input, audio, or windowing.
+
+Development[edit]
+OpenGL is an evolving API. New versions of the OpenGL specifications are regularly released by the Khronos Group, each of which extends the API to support various new features. The details of each version are decided by consensus between the Group's members, including graphics card manufacturers, operating system designers, and general technology companies such as Mozilla and Google.[7]
+
+In addition to the features required by the core API, graphics processing unit (GPU) vendors may provide additional functionality in the form of extensions. Extensions may introduce new functions and new constants, and may relax or remove restrictions on existing OpenGL functions. Vendors can use extensions to expose custom APIs without needing support from other vendors or the Khronos Group as a whole, which greatly increases the flexibility of OpenGL. All extensions are collected in, and defined by, the OpenGL Registry.[8]
+
+Each extension is associated with a short identifier, based on the name of the company which developed it. For example, Nvidia's identifier is NV, which is part of the extension name GL_NV_half_float, the constant GL_HALF_FLOAT_NV, and the function glVertex2hNV().[9] If multiple vendors agree to implement the same functionality using the same API, a shared extension may be released, using the identifier EXT. In such cases, it could also happen that the Khronos Group's Architecture Review Board gives the extension their explicit approval, in which case the identifier ARB is used.[10]
+
+The features introduced by each new version of OpenGL are typically formed from the combined features of several widely implemented extensions, especially extensions of type ARB or EXT.
+
+Documentation[edit]
+OpenGL's popularity is partially due to the quality of its official documentation. The OpenGL Architecture Review Board released a series of manuals along with the specification which have been updated to track changes in the API. These are almost universally known by the colors of their covers:
+
+The Red Book
+OpenGL Programming Guide, 8th Edition. ISBN 0-321-77303-9
+A tutorial and reference book.
+The Orange Book
+OpenGL Shading Language, 3rd edition. ISBN 0-321-63763-1
+A tutorial and reference book for GLSL.
+Historic books (pre-OpenGL 2.0):
+
+The Green Book
+OpenGL Programming for the X Window System. ISBN 978-0-201-48359-8
+A book about X11 interfacing and OpenGL Utility Toolkit (GLUT).
+The Blue Book
+OpenGL Reference manual, 4th edition. ISBN 0-321-17383-X
+Essentially a hard-copy printout of the Unix manual (man) pages for OpenGL.
+Includes a poster-sized fold-out diagram showing the structure of an idealised OpenGL implementation.
+The Alpha Book (white cover)
+OpenGL Programming for Windows 95 and Windows NT. ISBN 0-201-40709-4
+A book about interfacing OpenGL with Microsoft Windows.
+Associated libraries[edit]
+The earliest versions of OpenGL were released with a companion library called the OpenGL Utility Library (GLU). It provided simple, useful features which were unlikely to be supported in contemporary hardware, such as tessellating, and generating mipmaps and primitive shapes. The GLU specification was last updated in 1998, and the latest version depends on features which were deprecated with the release of OpenGL 3.1 in 2009.[8]
+
+Context and window toolkits[edit]
+Given that creating an OpenGL context is quite a complex process, and given that it varies between operating systems, automatic OpenGL context creation has become a common feature of several game-development and user-interface libraries, including SDL, Allegro, SFML, FLTK, and Qt. A few libraries have been designed solely to produce an OpenGL-capable window. The first such library was OpenGL Utility Toolkit (GLUT), later superseded by freeglut. GLFW is a newer alternative.[11]
+
+These toolkits are designed to create and manage OpenGL windows, and manage input, but little beyond that.[12]
+GLFW – A cross-platform windowing and keyboard-mouse-joystick handler; is more game-oriented
+freeglut – A cross-platform windowing and keyboard-mouse handler; its API is a superset of the GLUT API, and it is more stable and up to date than GLUT
+OpenGL Utility Toolkit (GLUT) – An old windowing handler, no longer maintained
+Several "multimedia libraries" can create OpenGL windows, in addition to input, sound and other tasks useful for game-like applications
+Allegro 5 – A cross-platform multimedia library with a C API focused on game development
+Simple DirectMedia Layer (SDL) – A cross-platform multimedia library with a C API
+SFML – A cross-platform multimedia library with a C++ API
+Widget toolkits
+FLTK – A small cross-platform C++ widget library
+Qt – A cross-platform C++ widget toolkit. It provides many OpenGL helper objects, which even abstract away the difference between desktop GL and OpenGL ES
+wxWidgets – A cross-platform C++ widget toolkit
+Extension loading libraries[edit]
+Given the high workload involved in identifying and loading OpenGL extensions, a few libraries have been designed which load all available extensions and functions automatically. Examples include GLEE, GLEW and glbinding. Extensions are also loaded automatically by most language bindings, such as JOGL and PyOpenGL.
+
+Implementations[edit]
+Mesa 3D is an open source implementation of OpenGL. It can do pure software rendering, and it may also use hardware acceleration on the Linux platform by taking advantage of the Direct Rendering Infrastructure. As of version 10.0, it implements version 3.3 of the OpenGL standard.[13]

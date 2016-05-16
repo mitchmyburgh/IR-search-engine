@@ -1,0 +1,89 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Lighting models
+Introduction
+After all we have covered, we still have to decide how much light gets reflected off things and such, and how it gets reflected. For example, some objects that are facing towards a light source will appear much more bright, perhaps with a very brilliant spot somewhere, than objects facing away from it. Objects also cast shadows, which are much harder to compute. We might also want to somehow take into account that a certain quantity of light bounces off everything and lights up things equally from all directions.
+Furthermore, we might want to vary the intensity of light across a given polygon, especially if these polygons are big. If not, one gets a somewhat ugly effect called mach banding where the contrast between faces gets amplified by our brain and eyes. This will raise the question of how the light should vary across a polygon, and why.
+The first part discusses actual lighting models, and the second discusses shading algorithms for rasterization of nonuniformly shaded polygons.
+Lighting models
+The most basic idea we can have is to make light intensity a function of the angle between the direction of the light rays from the light source to a point, and the normal to the point. This is called diffuse lighting. This means that light reflects off the face equally in all directions, so the direction in which the eye is not relevant.
+Looking back on the vector algebra chapter, we had a definition of angle with the dot product. This is written as:
+Cos?=A•B/(|A|×|B|)
+85
+If A is the plane normal (of unit length), then |A| is 1 and can be removed from the equation. B would be the vector from light source to point to be lit. Then, we make light intensity a function of Cos?, which is calculated to be A•B/|B|, which is fairly easy to calculate. Note that if ? is less than p/2, it means that the face is actually facing away from the light source, in which case it should not receive any light from that light source. This can be recognized when A•B/|B|>0.
+Usually, one makes the intensity of the light received from a light source A•B/|B| times some negative constant (since positive values of A•B/|B| mean that the face is facing away and that intensity is then 0).
+One might want to take into account the fact that light usually diminishes the further away you are from a light source. Physics say that light intensity is inversely proportional to the square of the distance to the light source. This can be written as k/|B|2, and multiplying that by the value previously given:
+I=k×A•B/|B|3
+However, as experimentation shows, it is sometimes useful to use some other falloff than square of distance. Generally, people have been using a second degree polynomial of |B|. However, if we try the specific case of linear falloff, we get this very interesting simplification:
+I=k×A•B/|B|2
+If B=(a,b,c), then |B|=(a2+b2+c2)1/2. Thus, |B|2=a2+b2+c2, which eliminates the square root, which is usually the most expensive calculation we have.
+The question of what point on the polygon should be used for calculating the vector B from light source to the point on the polygon is answered as follows. Theoretically, B should be recalculated for each point on the polygon. This might turn out to be expensive, and a constant B is then used across the polygon. In this case, however, the B/|B|2 factor should be calculated only once for the whole polygon.
+The Phong illumination model also includes a specular component. In that case, a function of the angle between the ideal reflection vector and the eye-to-point vector is added. The reflection vector R is the direction in which the light should be most reflected by the surface. R can be shown to be
+R=2A(A•B)-B
+(remember that A is the plane normal and B the light vector and note that A and B should be normalized).
+86
+Let V be the vector from the observed point to the eye, normalized. Then, a function of R•V can be added to the calculated intensity (before fallout due to distance is taken into account), which will add a specular like highlight to the shading. Mr. Phong Bui-Tuong used the following specular component:
+k×(R•V)a
+where a is the so-called specular reflection exponent and k is the specular reflection coefficient. The larger the a, the more punctual the reflection. The larger the k, the more intense the reflection. Values of a around 1-5 yield almost no specular reflection, while a value of 300 or more yields a sharp spot. Note that if a too large k is chosen, the image will look washed out or overexposed.
+These calculations are done on a per light source basis, and should be summed. Ambient light can also be added.
+Shadow casting involves more complex computations which will not be discussed here.
+Smooth shading
+The simplest form of polygon shading calculates one value of intensity and uses that value across the whole polygon.
+The other forms of shading require that we first examine our polyhedral model of objects. The assumption we are making is that the polyhedral model is really an approximation to a curved object. Thus, we would like the normal vectors and the shading intensity to vary smoothly across the surface of the objects, just as it does on a curved surface.
+The usual way of accomplishing this is by computing a pseudo normal vector at each vertex. (Keep in mind that a point in 3d has no normal vector, ergo we call it pseudo-normal.) That pseudo-normal per vertex is not the normal of the vertex, but rather the normal we think represents best the curved surface at that point. If we have actual information about the curved surface, we should use that information if we can to compute the pseudo-normal. Otherwise, one good way of doing this is by computing the weighted sum of the faces that touch the vertex. For example, you could sum all normals of the faces that touch the vertex and then normalize. Or, you could make each face's contribution to the pseudo-normal a function of the face's area or the angle made by that face at the vertex, and so on. For ease in calculations, pseudo-normals should be made unit in length.
+87
+Then, one can go either one of two ways. The first one is interpolated shading, or Gouraud shading. The second one is Phong shading, which is a bit more complex.
+In Gouraud shading, one calculates the intensity of reflected light on the vertices. Then, we linearly interpolate the intensity of the light across the polygon, as shown below.
+As can be seen above, intensities are calculated for all vertices, particularly vertices a, b and c. Then, intensity is linearly interpolated between a and b (assuming m is 1/5 of the way between a and b, we'll assign m an intensity of 4/5×a+1/5×b). It is also interpolate linearly between a and c. Then, given the light intensities at m and n, the intensity is interpolated linearly between m and n. Assuming P is midway between these two, then its intensity should be (m+n)/2.
+Note that for a n-gon, with n>3, gouraud shading is ambiguous in the sense that it depends on scanline orientation. However, with n=3, the shading is unambiguous. As a matter of fact, given a triangle (x0,y0), (x1,y1) and (x2,y2) and the three intensities at the points, respectively i0, i1, i2, we can view this as three points in 3d (x0,y0,i0), (x1,y1,i1), (x2,y2,i2). Since we are linearly interpolating, and that we have 3 points, then there is only one solution, of the form i=Ax+By+C. Using matrix mathematics, one can find the coefficients A, B and C, and then computations are reduced to one add per pixel with very little setup. Specifically, we know that:
+Ax0+By0+C=i0
+Ax1+By1+C=i1
+Ax2+By2+C=i2
+88
+Which can be represented in matrix form as:
+.
+x0
+x1
+x2
+y0
+y1
+y2
+1
+1
+1
+A
+B
+C
+i0
+i1
+i2
+or,
+XK=G, where
+X
+x0
+x1
+x2
+y0
+y1
+y2
+1
+1
+1
+K
+A
+B
+C
+G
+i0
+i1
+i2
+Therefore, we have that K=X-1G, which solves for K.
+As a special note, it should be remembered that a similar process can be used for any type of linear interpolation across the surface of a polygon.
+It is easy to demonstrate that no point within the polygon will be brighter or darker than the brightest or darkest vertex, respectively. If a specular highlight should fall within a polygon, Gouraud shading will miss it entirely.
+Phong shading (not to be confused with the Phong illumination model) works around this the following way. Instead of interpolating the intensity linearly, it interpolates the (x,y,z) values of the pseudo-normals linearly, then normalizes, and the does the lighting calculations once per pixel. As a side note, the interpolation of x, y and z can be done as we just saw for Gouraud shading.
+As you might imagine, this is extremely expensive. Many approximations, workarounds and somesuch have been devised. Here we will study one such approximation.
+We will interpolate the (x,y) value of pseudo-normals linearly, but we will set z=(1-x2-y2)1/2. Note that we still have a square root. However, since z is a function of x and y only, and that x and y vary between -1 and +1 only, we can make a lookup table for z, which makes it a lot faster. Then we can do the lighting calculations. However, this is still a bit slow. If we know our light vector to be constant across the screen, then we can optimize it further.
+89
+Assuming the light vector is (0,0,1), then the lighting calculations for diffuse shading only is (x,y,z)•(0,0,1). This simplifies to z, which is (1-x2-y2)1/2, which is the value we stored in the lookup table. So, interpolate (x,y) linearly and lookup intensity in the lookup table. As a matter of fact, one can even put some other values than (1-x2-y2)1/2 in the lookup table. These can be used to achieve specular highlights, multiple light sources, or some nice metal/chrome/mirror effects.
+A note on the "mirror" effect. If we imagine that we have a sphere centered on our object with an extremely large radius, and the in side of the sphere is paved with a texture (example: stars & stellar objects) and the object has a mirror surface, then the environment (textured sphere) should be reflected on it. The perspective calculations and other things make this complex. However, we can simplify things this way. We assume that the vector from eye to object (eye vector) is constant over all of the surfaces of the object (which is normally true only in parallel projections, but will be almost true if the object has little perspective distortion). Second, we assume that the sphere has a large radius enough that the point of the sphere which is reflected by a point of the object only depends on the eye vector and the surface normal.
+In this case, we can interpolate the surface normal Phong-style, then use that to compute the reflected point from the sphere using the eye vector. However, the computations are still quite expensive. We can simplify them by using the hack where we interpolate x and y linearly and then set z=(1-x2-y2)1/2. Then, the normal vector of a point on the surface is entirely determined by x and y. In this case, the reflected point on the sphere depends on x, y and the eye vector. What we can do is assume a fixed eye vector, then make a lookup table (which is then only dependant on x and y, which is manageable) to find what point on the sphere it reflects to.

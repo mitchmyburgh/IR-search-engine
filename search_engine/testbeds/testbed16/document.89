@@ -1,0 +1,30 @@
+IAAS CLOUD LITMUS TEST – THE 5 MINUTE VM
+
+I will make this simple.  There is only one question you need to ask yourself or your IT department to determine if what you have is really an Infrastructure-as-a-Service cloud.
+
+Can I get a VM in 5-10 minutes?
+
+Perhaps a little bit more detailed?
+
+Can a properly credentialed user, with a legitimate need for cloud resources, log into your cloud portal or use your cloud API, request a set of cloud resources (compute, network, storage), and have them provisioned for them automatically in a matter of a few minutes (typically less than 10 and often less than 5)?
+
+If you can answer yes, congratulations – it’s very likely a cloud.  If you cannot answer yes it is NOT cloud IaaS. There is no wriggle room here.
+
+Cloud is an operating model supported by technology.  And that operating model has as its core defining characteristic the ability to request and receive resources in real-time, on-demand. All of the other NIST characteristics are great, but no amount of metering (measured service), resource pooling, elasticity, or broad network access (aka Internet) can overcome a 3-week (or worse) provisioning cycle for a set of VMs.
+
+Tie this to your business drivers for cloud.
+
+Agility? Only if you get your VMs when you need them.  Like NOW!
+Cost? If you have lots of manual approvals and provisioning, you have not taken the cost of labor out.  5 Minute VMs requires 100% end-to-end automation with no manual approvals.
+Quality? Back to manual processes – these are error prone because humans suck at repetitive tasks as compared to machines.
+Does that thing you call a cloud give you a 5 Minute VM?  If not, stop calling it a cloud and get serious about building the IT Factory of the Future.
+
+“You keep using that word [cloud].  I do not think it means what you think it means.”
+
+– The Princess Cloud
+
+ 
+
+ 
+
+(c) 2012 CloudBzz / TechBzz Media, LLC. All rights reserved. This post originally appeared at http://www.cloudbzz.com/. You can follow CloudBzz on Twitter @CloudBzz.

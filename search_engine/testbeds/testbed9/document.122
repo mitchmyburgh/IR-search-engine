@@ -1,0 +1,91 @@
+Jackson structured programming (JSP) is a method for structured programming based on correspondences between data stream structure and program structure. JSP structures programs and data in terms of sequences, iterations and selections, and as a consequence it is applied when designing a program's detailed control structure, below the level where object-oriented methods become important.
+
+
+== Introduction ==
+Michael A. Jackson originally developed JSP in the 1970s. He documented the system in his 1975 book Principles of Program Design. Jackson's aim was to make COBOL batch file processing programs easier to modify and maintain, but the method can be used to design programs for any programming language that has structured control constructs, languages such as C, Java and Perl. Despite its age, JSP is still in use and is supported by diagramming tools such as Microsoft's Visio and CASE tools such as Jackson Workbench.
+Jackson Structured Programming was seen by many as related to Warnier structured programming, but the latter method focused almost exclusively on the structure of the output stream. JSP and Warnier's method both structure programs and data using only sequences, iterations and selections, so they essentially create programs that are parsers for regular expressions which simultaneously match the program's input and output data streams.
+Because JSP focuses on the existing input and output data streams, designing a program using JSP is claimed to be more straightforward than with other structured programming methods, avoiding the leaps of intuition needed to successfully program using methods such as top-down decomposition.
+Another consequence of JSP's focus on data streams is that it creates program designs with a very different structure to the kind created by the stepwise refinement methods of Wirth and Dijkstra. One typical feature of the structure of JSP programs is that they have several input operations distributed throughout the code in contrast to programs designed using stepwise refinement, which tend to have only one input operation. Jackson illustrates this difference in Chapter 3 of Principles of Program Design. He presents two versions of a program, one designed using JSP, the other using "traditional" methods.
+
+
+== Structural equivalent ==
+For an example comparing Jackson Structured Programming to "traditional" structured programming, let us consider a Java program to count the number of lines in a file.
+The JSP version of the program is structurally equivalent to
+
+and the traditional version of the program is equivalent to
+
+Jackson criticises the traditional version, claiming that it hides the relationships which exist between the input lines, compromising the program's understandability and maintainability by, for example, forcing the use of a special case for the first line and forcing another special case for a final output operation.
+
+
+== The method ==
+JSP uses semi-formal steps to capture the existing structure of a program's inputs and outputs in the structure of the program itself.
+The intent is to create programs which are easy to modify over their lifetime. Jackson's major insight was that requirement changes are usually minor tweaks to the existing structures. For a program constructed using JSP, the inputs, the outputs, and the internal structures of the program all match, so small changes to the inputs and outputs should translate into small changes to the program.
+JSP structures programs in terms of four component types:
+fundamental operations
+sequences
+iterations
+selections
+The method begins by describing a program's inputs in terms of the four fundamental component types. It then goes on to describe the program's outputs in the same way. Each input and output is modelled as a separate Data Structure Diagram (DSD). To make JSP work for compute-intensive applications, such as digital signal processing (DSP) it is also necessary to draw algorithm structure diagrams, which focus on internal data structures rather than input and output ones.
+The input and output structures are then unified or merged into a final program structure, known as a Program Structure Diagram (PSD). This step may involve the addition of a small amount of high level control structure to marry up the inputs and outputs. Some programs process all the input before doing any output, whilst others read in one record, write one record and iterate. Such approaches have to be captured in the PSD.
+The PSD, which is language neutral, is then implemented in a programming language. JSP is geared towards programming at the level of control structures, so the implemented designs use just primitive operations, sequences, iterations and selections. JSP is not used to structure programs at the level of classes and objects, although it can helpfully structure control flow within a class's methods.
+JSP uses a diagramming notation to describe the structure of inputs, outputs and programs, with diagram elements for each of the fundamental component types.
+A simple operation is drawn as a box.
+
+An operation
+A sequence of operations is represented by boxes connected with lines. In the example below, operation A consists of the sequence of operations B, C and D.
+
+A sequence
+An iteration is again represented with joined boxes. In addition the iterated operation has a star in the top right corner of its box. In the example below, operation A consists of an iteration of zero or more invocations of operation B.
+
+An iteration
+Selection is similar to a sequence, but with a circle drawn in the top right hand corner of each optional operation. In the example, operation A consists of one and only one of operations B, C or D.
+
+A selection
+
+
+== A worked example ==
+As an example, here is how a programmer would design and code a run length encoder using JSP.
+A run length encoder is a program which takes as its input a stream of bytes. It outputs a stream of pairs consisting of a byte along with a count of the byte's consecutive occurrences. Run length encoders are often used for crudely compressing bitmaps.
+With JSP, the first step is to describe the structure of a program's inputs. A run length encoder has only one input, a stream of bytes which can be viewed as zero or more runs. Each run consists of one or more bytes of the same value. This is represented by the following JSP diagram.
+
+The run length encoder input
+The second step is to describe the structure of the output. The run length encoder output can be described as zero or more pairs, each pair consisting of a byte and its count. In this example, the count will also be a byte.
+
+The run length encoder output
+The next step is to describe the correspondences between the operations in the input and output structures.
+
+The correspondences between the run length encoders inputs and its outputs
+It is at this stage that the astute programmer may encounter a structure clash, in which there is no obvious correspondence between the input and output structures. If a structure clash is found, it is usually resolved by splitting the program into two parts, using an intermediate data structure to provide a common structural framework with which the two program parts can communicate. The two programs parts are often implemented as processes or coroutines.
+In this example, there is no structure clash, so the two structures can be merged to give the final program structure.
+
+The run length encoder program structure
+At this stage the program can be fleshed out by hanging various primitive operations off the elements of the structure. Primitives which suggest themselves are
+read a byte
+remember byte
+set counter to zero
+increment counter
+output remembered byte
+output counter
+The iterations also have to be fleshed out. They need conditions added. Suitable conditions would be
+while there are more bytes
+while there are more bytes and this byte is the same as the run's first byte and the count will still fit in a byte
+If we put all this together, we can convert the diagram and the primitive operations into C, maintaining a one-to-one correspondence between the code and the operations and structure of the program design diagram.
+
+
+== Criticism ==
+This method will work only when translation from input to output is equivalent to a context-free grammar.
+
+
+== See also ==
+Jackson System Development
+Warnier Structured Programming
+
+
+== References ==
+
+
+== External links ==
+A free graphical JSP Editor written in JAVA
+A JSP editor
+A brief history of the Jackson methods
+Jackson Workbench site

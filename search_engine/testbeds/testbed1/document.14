@@ -1,0 +1,27 @@
+Aloha_Editor
+'''Aloha Editor''' is an    that can be used in webpages. Aloha Editor aims to be easy to use and fast in editing, and allows advanced inline editing. The first version was released 15 July 2010.
+==Description==
+Aloha Editor is built to facilitate editing of content within the same layout that is shown to readers. In this respect, it is different from most other web-based WYSIWYG editors. Aloha features a floating contextual toolbar that hovers over content that the user is actively editing. Aloha Editor tries to implement its functionality respecting the HTML5 Specification Draft.
+==API==
+Aloha Editor includes a   for extensions.
+==Browser compatibility==
+Aloha editor does not require  specific editing. It is compatible across multiple web browsers and  including , , , , and .
+==Implementations==
+The following content management systems work with Aloha Editor either natively or through modules:
+* AlohaX for 
+*  module 
+*  in contributed module project  
+* Front-end Editor  plugin, starting from version 2.1
+*  in its latest version of their Enterprise WCMS  
+* Midgard in IKS Hackathon in Helsinki: the IKS project makes use of the Aloha Editor API and implemented a semantic annotation plugin
+*  in Sprint 3 of  
+==References==
+==See also==
+* 
+* 
+==External links==
+Official Resources:
+* 
+* 
+* 
+*

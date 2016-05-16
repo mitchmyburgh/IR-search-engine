@@ -1,0 +1,198 @@
+
+ A topological sort is an ordered list of the vertices in a directed acyclic graph such that, if there is a path from v to w in the graph, then v appears before w in the list.  
+ A topological sort of the course prerequisite graph would be a possible sequence in which a student might take classes. A topological sort of the spreadsheet graph would be an order in which the formulas could be evaluated.  
+     The Algorithm  
+  Define the indegree of a vertex as the number of edges pointing to it.  
+     A node of indegree 0 can be placed at the start of the sorted order, since there is clearly nothing that must precede it.   
+     There must be at least one vertex of indegree 0.  
+        If not, the graph has a cycle and no topological sort exists.   
+     Once we have placed all nodes of indegree 0 in the list, we can then add all nodes whose indegree would be zero except for edges from the nodes already placed.   
+   Repeating this process yields a topological sort.  
+   // A topological sort of a directed graph is any listing of the vertices
+// in g such that v1 precedes v2 in the listing only if there exists no
+// path from v2 to v1.
+//
+// The following routine attempts a topological sort of g. If the sort is
+// successful, the return value is true and the ordered listing of
+// vertices is placed in sorted.  If no topological sort is possible
+// (because the graph contains a cycle), false is returned and sorted will
+// be empty.
+//
+bool topologicalSort (const DiGraph&amp; g, list&lt;Vertex&gt;&amp; sorted)
+{
+  // Step 1: get the indegrees of all vertices. Place vertices with
+  // indegree 0 into a queue.
+  hash_map&lt;Vertex, unsigned, VertexHash&gt; inDegree;
+  queue&lt;list&lt;Vertex&gt; &gt; q;
+  for (AllVertices v = g.vbegin(); v != g.vend(); ++v)
+    {
+      unsigned indeg = g.indegree(*v);
+      inDegree[*v] = indeg;
+      if (indeg == 0) 
+        q.push(*v);  
+    }
+  // Step 2. Take vertices from the q, one at a time, and add to sorted.
+  // As we do, pretend that we have deleted these vertices from the graph,
+  // decreasing the indegree of all adjacent nodes. If any nodes attain an
+  // indegree of 0 because of this, add them to the queue.
+  while (!q.empty())
+    {
+      Vertex v = q.front();
+      q.pop();
+      sorted.push_back(v);
+      for (AllOutgoingEdges e = g.outbegin(v); e != g.outend(v); ++e)
+        {
+          Vertex adjacent = (*e).dest();
+          inDegree[adjacent] = inDegree[adjacent] - 1; 
+          if (inDegree[adjacent] == 0)
+            q.push (adjacent);        
+        }
+    }
+  // Step 3:  Did we finish the entire graph?
+  if (sorted.size() == g.numVertices())
+    return true; 
+  else
+    {
+      sorted.clear();
+      return false;
+    }
+}
+  Here is the code for a topological sort. 
+  Let's consider it a step at a time. 
+   bool topologicalSort (const DiGraph&amp; g, list&lt;Vertex&gt;&amp; sorted)
+{
+  // Step 1: get the indegrees of all vertices. Place vertices with
+  // indegree 0 into a queue.
+  hash_map&lt;Vertex, unsigned, VertexHash&gt; inDegree;
+  queue&lt;list&lt;Vertex&gt; &gt; q;
+  for (AllVertices v = g.vbegin(); v != g.vend(); ++v)
+    {
+      unsigned indeg = g.indegree(*v);
+      inDegree[*v] = indeg;
+      if (indeg == 0) 
+        q.push(*v);  
+    }
+  In step 1, we get the indegrees of all the vertices, putting them into a map whose key type is Vertex and whose associated data is unsigned. I've chosen to use a hash_map for this code. hash_map is a hash-table implementation of the standard map interface. hash_map isn't actually part of the standard library, but it is a commonly available addition. If I wanted to stay entirely within the standard library, I could just use map, but at the cost of somewhat slower access. Alternatively, I could (and have, in the past) implemented a vector-based implementation of the map interface that simply uses the Vertex::id() function to index into the vector, which would give me true O(1) access time.  
+  As we do this, we also add any vertices whose indegree is zero into a queue, q.  
+   // Step 2. Take vertices from the q, one at a time, and add to sorted.
+  // As we do, pretend that we have deleted these vertices from the graph,
+  // decreasing the indegree of all adjacent nodes. If any nodes attain an
+  // indegree of 0 because of this, add them to the queue.
+  while (!q.empty())
+    {
+      Vertex v = q.front();
+      q.pop();
+      sorted.push_back(v);
+      for (AllOutgoingEdges e = g.outbegin(v); e != g.outend(v); ++e)
+        {
+          Vertex adjacent = (*e).dest();
+          inDegree[adjacent] = inDegree[adjacent] - 1; 
+          if (inDegree[adjacent] == 0)
+            q.push (adjacent);        
+        }
+    }
+  In step 2, we repeatedly remove vertices from the queue and add them to the sorted list output, sorted. We can do this because we know that there is nothing in the graph that needs to come before these vertices.  
+  We then look at the outgoing edges of each vertex, and reduce the inDegree values of the neighboring vertices to simulate having removed v from the graph. If doing this causes any of their (simulated) indegrees to become zero, we add them to the queue, because we know that there is nothing remaining in the graph that needs to come before these vertices.  
+   // Step 3:  Did we finish the entire graph?
+  if (sorted.size() == g.numVertices())
+    return true; 
+  else
+    {
+      sorted.clear();
+      return false;
+    }
+}
+  Finally, in step 3, we check to see if all the vertices have been &#x201c;removed&#x201d; from the graph and placed into the sorted list. If so, we have successfully found a topological sort. If not, then no topological sort is possible (the graph must have a cycle).  
+  Try running a topological sort.  
+     Analysis  
+   bool topologicalSort (const DiGraph&amp; g, list&lt;Vertex&gt;&amp; sorted)
+{
+  // Step 1: get the indegrees of all vertices. Place vertices with
+  // indegree 0 into a queue.
+  hash_map&lt;Vertex, unsigned, VertexHash&gt; inDegree;
+  queue&lt;list&lt;Vertex&gt; &gt; q;
+  for (AllVertices v = g.vbegin(); v != g.vend(); ++v)
+    {
+      unsigned indeg = g.indegree(*v);  // O(1)
+      inDegree[*v] = indeg;             // O(1) 
+      if (indeg == 0)                   // O(1) = O(1) 
+        q.push(*v);                     // O(1) 
+    }
+    &#x22ee;
+  In analyzing this algorithm, we will assume that the graph is implementing using adjacency lists, and that the inDegree map is implemented using a vector-like structure.  
+  In step 1, therefore, we see that everything in the loop body is O(1). The loop itself goes around once for every vertex in the graph. Following our definition that says that a graph G=(V,E) is a set V of vertices and a set E of edges, we can say that the number of iterations of this loop is |V|, the number of vertices.  
+   bool topologicalSort (const DiGraph&amp; g, list&lt;Vertex&gt;&amp; sorted)
+{
+  // Step 1: get the indegrees of all vertices. Place vertices with
+  // indegree 0 into a queue.
+  hash_map&lt;Vertex, unsigned, VertexHash&gt; inDegree;
+  queue&lt;list&lt;Vertex&gt; &gt; q;
+  for (AllVertices v = g.vbegin(); v != g.vend(); ++v) // O(1) |V|*
+    {
+      unsigned indeg = g.indegree(*v);  // O(1)
+      inDegree[*v] = indeg;             // O(1)
+      if (indeg == 0)                   // O(1) = O(1)
+        q.push(*v);                     // O(1)
+    }
+    &lt;[:]&gt;
+  We therefore conclude that the entire step 1 loop is O(|V|).  
+  (We could also write this as O(g.numVertices()), but |V| is shorter and is the usual way that people describe graphs.)  
+   bool topologicalSort (const DiGraph&amp; g, list&lt;Vertex&gt;&amp; sorted)
+{
+  O(|V|)
+  // Step 2. Take vertices from the q, one at a time, and add to sorted.
+  // As we do, pretend that we have deleted these vertices from the graph,
+  // decreasing the indegree of all adjacent nodes. If any nodes attain an
+  // indegree of 0 because of this, add them to the queue.
+  while (!q.empty())
+    {
+      Vertex v = q.front();
+      q.pop();
+      sorted.push_back(v);
+      for (AllOutgoingEdges e = g.outbegin(v); e != g.outend(v); ++e)
+        {
+          Vertex adjacent = (*e).dest();
+          inDegree[adjacent] = inDegree[adjacent] - 1; 
+          if (inDegree[adjacent] == 0)
+            q.push (adjacent);        
+        }
+    }
+    &#x22ee;  
+  Looking at the inner loop of step 2, we see that everything in the body is O(1).  
+   bool topologicalSort (const DiGraph&amp; g, list&lt;Vertex&gt;&amp; sorted)
+{
+  O(|V|)
+  // Step 2. Take vertices from the q, one at a time, and add to sorted.
+  // As we do, pretend that we have deleted these vertices from the graph,
+  // decreasing the indegree of all adjacent nodes. If any nodes attain an
+  // indegree of 0 because of this, add them to the queue.
+  while (!q.empty())
+    {
+      Vertex v = q.front();  // O(1)
+      q.pop();               // O(1)
+      sorted.push_back(v);   // O(1)
+      for (AllOutgoingEdges e = g.outbegin(v); e != g.outend(v); ++e)  // O(1)
+        {
+          O(1)
+        }
+    }
+    &#x22ee;
+}
+  And the simple statements in the outer loop (everything except for the inner loop) are O(1).  
+   bool topologicalSort (const DiGraph&amp; g, list&lt;Vertex&gt;&amp; sorted)
+{
+  O(|V|)
+  while (!q.empty())
+    {
+      O(1)
+      for (AllOutgoingEdges e = g.outbegin(v); e != g.outend(v); ++e)  // O(1)
+        {
+          O(1)
+        }
+    }
+   &#x22ee;  
+  Now, at this point our normal copy-and-paste approach breaks down. The number of iterations of the inner loop may be different for each vertex visited by the outer loop.  
+  But, let's just stop and think about what's going on here.  
+     Each vertex goes into the queue at most once  
+     So, in a successful sort, the outer loop will execute |V| times, once for each vertex.   
+     The inner loop simply visits the edges emanati

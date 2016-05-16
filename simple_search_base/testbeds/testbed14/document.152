@@ -1,0 +1,141 @@
+﻿OWL 2
+Reasoners
+Name
+Native Profiles
+Semantics
+(Non-) Conformance
+Description
+BaseVISor
+RL
+RDF-based
+A forward-chaining inference engine specialized to handle facts in the form of RDF triples with support for OWL 2 RL
+CB
+EL
+direct
+Lacks support for datatypes/values (coming soon).
+A resolution based reasoner for OWL EL. Superseded in 2011 by ELK (see below).
+CEL
+EL
+direct
+Lacks support for nominals (ObjectHasValue and ObjectOneOf) and datatypes/values.
+CEL is an open-source polynomial-time Classifier for the OWL 2 EL
+profile. It has demonstrated scalability and proved well suited for
+several biomedical ontologies.
+ELK Reasoner
+EL
+direct
+As of Dec 2012, no support for keys, datatype reasoning and limited support for nominals/data; seewebsite for details.
+ELK is a Java-based, open source reasoning for OWL EL that has demonstrated excellent performance on various life science ontologies. See the documentation for details.
+ELLY
+EL, RL
+direct
+OWL profile support under development
+Data-centric implementation of reasoning and query answering based on translating EL/RL to datalog in a way that preserves assertional entailments.
+FaCT++
+DL
+direct
+Fully conformant except for keys and some datatypes (coming soon).
+FaCT++ is an open-source tableaux-based OWL 2 DL reasoner. It is
+implemented in C++ and shows exceptional performance on expressive
+ontologies.
+HermiT
+DL
+direct
+Fully conformant
+Based on a novel "hypertableau" algorithm, HermiT can determine whether or not the input ontology is consistent, identify subsumption relationships between classes, and much more.
+Jena
+RL
+RDF-based/direct
+Complete RL/PR1 support is in the plan
+An experimental OWL 2 RL implementation, based on translating the premise ontology to a set of Jena inference rules, is under development by HP Labs Bristol and Aberdeen University.
+leanCoR
+EL
+direct
+Lacks support of datatypes
+leanCoR is written in Prolog and uses the first-order logics theorem prover leanCoP under the hood.
+Owlgres
+QL
+direct
+Fully conformant
+An open source reasoner for OWL2 QL that is designed to use the PostgreSQL RDBMS.
+OWLIM
+QL, RL
+RDF-based
+1. DisjointObjectProperties and DisjointDataProperties used to infer propertyDisjointWith instead of AllDifferent restriction on values for these properties.
+2. No inference of anonymous unions (containing exactly one class) for all classes.
+3. Disjoint classes do not infer differentFrom for instances. Instead there is a consistency check that checks for membership of disjoint classes.
+4. Datatype reasoning not fully supported.
+OWLIM is a scalable semantic repository with customisable rule-sets and implemented as a storage and inference layer for the Sesame OpenRDF framework. SwiftOWLIM scales to millions of statements on desktop machines. BigOWLIM scales to tens of billions of statements on commodity hardware and supports a wide range of extended features including: clustering, full-text search, ranking and selection.
+Oracle Database 11g OWL Reasoner
+RL
+RDF-based/direct
+Complete RL support is in the plan.
+The native RDFS/OWL inference engine in Oracle Database 11g version 11.1.0.7 (released in Oct. 2008 for Windows 32 bit platform) supports most of the RL/RDF rules. User-defined rules are supported as well.
+OWLRL
+RL
+RDF-Based/direct
+
+Proof of concept implementation from Ivan Herman.
+Pellet
+DL, EL
+direct
+Fully conformant
+Pellet is an open source reasoner for OWL 2 DL in Java. It provides standard and cutting-edge reasoning services for OWL ontologies.
+Quill
+DL (via soundness guaranteed approximation), QL
+direct
+
+Quill (a component of the TrOWL tractable OWL2 infrastructure) is an OWL 2 QL system from Aberdeen University that powers their ONTOSEARCH2 search and query engine.
+QuOnto
+QL
+direct
+
+QuOnto is an ontology-based system that is capable of reasoning over OWL 2 QL ontologies that contain a very large number of individuals.
+RacerPro
+DL
+direct
+
+RacerPro is a commercial (but free for research) OWL reasoner and inference server.
+RDFox
+RL
+direct
+
+RDFox is a highly scalable in-memory RDF triple store that supports shared memory parallel datalog reasoning.
+REL
+DL (via soundness guaranteed approximation), EL
+direct
+
+REL (a component of the TrOWL tractable OWL2 infrastructure) is an approximation-oriented reasoner providing tractable TBox reasoning for OWL 2 DL developed in Aberdeen University. The basic component of REL is an optimized implementation of the CEL algorithm.
+SHER
+DL, EL
+direct
+No support for nominals and role composition. Limited support for datatypes. No support for qualified cardinality restrictions.
+SHER (Scalable Highly Expressive Reasoner) is a breakthrough technology that provides ontology analytics over very large and expressive OWL 2 knowledge bases.
+snorocket
+EL
+direct
+
+An optimised implementation of OWL EL based on the CEL algorithm developed at CSIRO.
+Editors / Development Environments / APIs
+Name
+Description
+Protégé 4
+Protégé 4 supports OWL 2 by reimplementing the familiar Protégé interface on top of the OWL API. It enables users to load and save OWL ontologies, edit and visualize classes and properties, and check the ontology using an OWL reasoner. It was developed at the University of Manchester.
+Swoop
+SWOOP is a tool for creating, editing, and debugging OWL ontologies. It was produced by the MIND lab at University of Maryland, College Park, but is now an open source project with contributors from all over.
+TopBraid Composer
+TopBraid Composer is an enterprise-class modeling environment for developing Semantic Web ontologies and building semantic applications.
+LSW (Lisp Semantic Web)
+LSW is a development environment for developing Semantic Web content such as ontologies and scientific data using Common Lisp. As it uses ABCL it has access to java libraries and so makes uses of common java libraries such as JENA and Pellet
+NeOn Toolkit
+The NeOn Toolkit is an Open Source ontology engineering suite developed in the popular Eclipse environment. Thanks to its modular design and a rich choice of plug-ins, the NeOn Toolkit not only allows editing of ontologies but also provides a variety of leading-edge functionalities, including support for modularization, consistency checking and debugging, alignments and mapping, DB integration, as well as several novel means for visualizing and navigating large ontologies and ontology networks. In addition, it has a unique built-in support for deploying ontology design patterns and for managing ontology development projects, in accordance with the procedures and methods specified in the NeOn Methodology. The NeOn Toolkit runs on all major platforms, including MS Windows, Mac OS X and Linux; support for OWL2 is included from version 2.0 onwards.
+OWL API
+The OWL API is an API for working with OWL 2 ontologies. It comes with a Java based reference implementation. The OWL API reference implementation includes parsers and renderers for RDF/XML, OWL/XML, Turtle, and Manchester OWL Syntax. It provides a standard interface to various OWL reasoners such as Cel, FaCT++, HermiT,Pellet, and Racer Pro.
+RDFSharp
+RDFSharp is a lightweight C# framework designed to ease the creation of .NET applications based on the RDF model, representing a straightforward didactic solution for start playing with RDF and Semantic Web concepts. With RDFSharp it is possible to realize .NET applications capable of modeling, storing and querying RDF data. It also implements an API for modeling, validating and reasoning on OWL-DL ontologies.
+Thea Prolog OWL library
+Thea is a Prolog library that uses SWI-Prolog's RDF library for parsing and serializing OWL2 ontologies. The core model is based on the OWL 2 functional style syntax and provides complete support for processing ontologies directly from within Prolog programs. Thea has a bridge to the java OWL API and offers support for the Semantic Web Rule Language (SWRL) and for translation of ontologies to Description Logic programs.
+OWLlink
+OWLlink is an implementation-neutral protocol for communication between OWL 2 components. It specifies how to manage reasoning engines and their knowledge bases, how to assert axioms, and how to query inference results. OWLlink is extensible and allows to add required functionality to the protocol on demand.
+
+

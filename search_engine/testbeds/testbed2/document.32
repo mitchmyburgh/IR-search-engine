@@ -1,0 +1,44 @@
+Boosting is a machine learning ensemble meta-algorithm for primarily reducing bias, and also variance in supervised learning, and a family of machine learning algorithms which convert weak learners to strong ones. Boosting is based on the question posed by Kearns and Valiant (1988, 1989): Can a set of weak learners create a single strong learner? A weak learner is defined to be a classifier which is only slightly correlated with the true classification (it can label examples better than random guessing). In contrast, a strong learner is a classifier that is arbitrarily well-correlated with the true classification.
+Robert Schapire's affirmative answer in a 1990 paper to the question of Kearns and Valiant has had significant ramifications in machine learning and statistics, most notably leading to the development of boosting.
+When first introduced, the hypothesis boosting problem simply referred to the process of turning a weak learner into a strong learner. "Informally, [the hypothesis boosting] problem asks whether an efficient learning algorithm […] that outputs a hypothesis whose performance is only slightly better than random guessing [i.e. a weak learner] implies the existence of an efficient algorithm that outputs a hypothesis of arbitrary accuracy [i.e. a strong learner]." Algorithms that achieve hypothesis boosting quickly became simply known as "boosting". Freund and Schapire's arcing (Adapt[at]ive Resampling and Combining), as a general technique, is more or less synonymous with boosting.
+
+
+== Boosting algorithms ==
+While boosting is not algorithmically constrained, most boosting algorithms consist of iteratively learning weak classifiers with respect to a distribution and adding them to a final strong classifier. When they are added, they are typically weighted in some way that is usually related to the weak learners' accuracy. After a weak learner is added, the data are reweighted: examples that are misclassified gain weight and examples that are classified correctly lose weight (some boosting algorithms actually decrease the weight of repeatedly misclassified examples, e.g., boost by majority and BrownBoost). Thus, future weak learners focus more on the examples that previous weak learners misclassified.
+There are many boosting algorithms. The original ones, proposed by Robert Schapire (a recursive majority gate formulation) and Yoav Freund (boost by majority), were not adaptive and could not take full advantage of the weak learners. However, Schapire and Freund then developed AdaBoost, an adaptive boosting algorithm that won the prestigious Gödel Prize.
+Only algorithms that are provable boosting algorithms in the probably approximately correct learning formulation can accurately be called boosting algorithms. Other algorithms that are similar in spirit to boosting algorithms are sometimes called "leveraging algorithms", although they are also sometimes incorrectly called boosting algorithms.
+
+
+== Examples of boosting algorithms ==
+The main variation between many boosting algorithms is their method of weighting training data points and hypotheses. AdaBoost is very popular and perhaps the most significant historically as it was the first algorithm that could adapt to the weak learners. However, there are many more recent algorithms such as LPBoost, TotalBoost, BrownBoost,xgboost, MadaBoost, LogitBoost, and others. Many boosting algorithms fit into the AnyBoost framework, which shows that boosting performs gradient descent in function space using a convex cost function.
+
+
+== Criticism ==
+In 2008 Phillip Long (at Google) and Rocco A. Servedio (Columbia University) published a paper at the 25th International Conference for Machine Learning suggesting that many of these algorithms are probably flawed. They conclude that "convex potential boosters cannot withstand random classification noise," thus making the applicability of such algorithms for real world, noisy data sets questionable. The paper shows that if any non-zero fraction of the training data is mis-labeled, the boosting algorithm tries extremely hard to correctly classify these training examples, and fails to produce a model with accuracy better than 1/2. This result does not apply to branching program based boosters but does apply to AdaBoost, LogitBoost, and others.
+
+
+== See also ==
+
+
+== Implementations ==
+Scikit-learn, an open source machine learning library for python
+Orange, a free data mining software suite, module Orange.ensemble
+Weka is a machine learning set of tools that offers variate implementations of boosting algorithms like AdaBoost and LogitBoost
+R package GBM (Generalized Boosted Regression Models) implements extensions to Freund and Schapire's AdaBoost algorithm and Friedman's gradient boosting machine.
+jboost; AdaBoost, LogitBoost, RobustBoost, Boostexter and alternating decision trees
+
+
+== References ==
+
+
+=== Footnotes ===
+
+
+=== Notations ===
+Yoav Freund and Robert E. Schapire (1997); A Decision-Theoretic Generalization of On-line Learning and an Application to Boosting, Journal of Computer and System Sciences, 55(1):119-139
+Robert E. Schapire and Yoram Singer (1999); Improved Boosting Algorithms Using Confidence-Rated Predictors, Machine Learning, 37(3):297-336
+
+
+== External links ==
+Robert E. Schapire (2003); The Boosting Approach to Machine Learning: An Overview, MSRI (Mathematical Sciences Research Institute) Workshop on Nonlinear Estimation and Classification
+Zhou Zhi-Hua (2014) Boosting 25 years, CCL 2014 Keynote.

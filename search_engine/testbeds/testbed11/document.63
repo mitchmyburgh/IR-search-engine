@@ -1,0 +1,44 @@
+A wireless network interface controller (WNIC) is a network interface controller which connects to a radio-based computer network rather than a wire-based network such as Token Ring or Ethernet. A WNIC, just like other NICs, works on the Layer 1 and Layer 2 of the OSI Model. A WNIC is an essential component for wireless desktop computer. This card uses an antenna to communicate through microwaves. A WNIC in a desktop computer usually is connected using the PCI bus. Other connectivity options are USB and PC card. Integrated WNICs are also available, (typically in Mini PCI/PCI Express Mini Card form).
+The term is usually applied to IEEE 802.11 adapters; it may also apply to a NIC using protocols other than 802.11, such as one implementing Bluetooth connections.
+
+
+== Modes of operationEdit ==
+An 802.11 WNIC can operate in two modes known as infrastructure mode and ad hoc mode:
+Infrastructure mode
+In an infrastructure mode network the WNIC needs a wireless access point: all data is transferred using the access point as the central hub. All wireless nodes in an infrastructure mode network connect to an access point. All nodes connecting to the access point must have the same service set identifier (SSID) as the access point, and if the access point is enabled with WEP they must have the same WEP key or other authentication parameters.
+Ad hoc mode
+In an ad hoc mode network the WNIC does not require an access point, but rather can interface with all other wireless nodes directly. All the nodes in an ad hoc network must have the same channel and SSID.
+
+
+== SpecificationsEdit ==
+The IEEE 802.11 standard sets out low-level specifications for how all 802.11 wireless networks operate. Earlier 802.11 interface controllers are usually only compatible with earlier variants of the standard, while newer cards support both current and old standards.
+Specifications commonly used in marketing materials for WNICs include:
+Wireless data transfer rates (measured in Mbit/s); these range from 2 Mbit/s to 54 Mbit/s.
+Wireless transmit power (measured in dBm)
+Wireless network standards (may include standards such as 802.11b, 802.11g, 802.11n, etc.) 802.11g offers data transfer speeds equivalent to 802.11a – up to 54 Mbit/s – and the wider 300-foot (91 m) range of 802.11b, and is backward compatible with 802.11b.
+Most Bluetooth cards do not implement any form of the 802.11 standard.
+
+
+== RangeEdit ==
+Wireless range may be substantially affected by objects in the way of the signal and by the quality of the antenna. Large electrical appliances, such as refrigerators, fuse boxes, metal plumbing, and air conditioning units can impede a wireless network signal. The theoretical maximum range of IEEE 802.11 is only reached under ideal circumstances and true effective range is typically about half of the theoretical range. Specifically, the maximum throughput speed is only achieved at extremely close range (less than 25 feet (7.6 m) or so); at the outer reaches of a device's effective range, speed may decrease to around 1 Mbit/s before it drops out altogether. The reason is that wireless devices dynamically negotiate the top speed at which they can communicate without dropping too many data packets.
+
+
+== FullMAC and SoftMAC devicesEdit ==
+
+In an 802.11 WNIC, the MAC Sublayer Management Entity (MLME) can be implemented either in the NIC's hardware or firmware, or in host-based software that is executed on the main CPU. A WNIC that implements the MLME function in hardware or firmware is called a FullMAC WNIC or a HardMAC NIC and a NIC that implements it in host software is called a SoftMAC NIC.
+A FullMAC device hides the complexity of the 802.11 protocol from the main CPU, instead providing an 802.3 (Ethernet) interface; a SoftMAC design implements only the timing-critical part of the protocol in hardware/firmware and the rest on the host.
+FullMAC chips are typically used in mobile devices because:
+they are easier to integrate in complete products
+power is saved by having a specialized CPU perform the 802.11 processing;
+the chip vendor has tighter control of the MLME.
+Linux kernel's mac80211 framework provides capabilities for SoftMAC devices and additional capabilities (such as mesh networking, which is known as the IEEE 802.11s standard) for devices with limited functionality.
+FreeBSD also supports SoftMAC drivers.
+
+
+== See alsoEdit ==
+
+List of device bandwidths
+Wi-Fi operating system support
+
+
+== ReferencesEdit ==

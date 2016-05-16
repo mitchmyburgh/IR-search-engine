@@ -1,0 +1,39 @@
+In graph theory, a clustering coefficient is a measure of the degree to which nodes in a graph tend to cluster together. Evidence suggests that in most real-world networks, and in particular social networks, nodes tend to create tightly knit groups characterised by a relatively high density of ties; this likelihood tends to be greater than the average probability of a tie randomly established between two nodes (Holland and Leinhardt, 1971; Watts and Strogatz, 1998).
+Two versions of this measure exist: the global and the local. The global version was designed to give an overall indication of the clustering in the network, whereas the local gives an indication of the embeddedness of single nodes.
+
+
+== Global clustering coefficient ==
+The global clustering coefficient is based on triplets of nodes. A triplet consists of three connected nodes. A triangle therefore includes three closed triplets, one centered on each of the nodes (n.b. this means the three triplets in a triangle come from overlapping selections of nodes). The global clustering coefficient is the number of closed triplets (or 3 x triangles) over the total number of triplets (both open and closed). The first attempt to measure it was made by Luce and Perry (1949). This measure gives an indication of the clustering in the whole network (global), and can be applied to both undirected and directed networks (often called transitivity, see Wasserman and Faust, 1994, page 243).
+The global clustering coefficient is defined as:
+
+In this formula, a connected triplet is defined to be a connected subgraph consisting of three vertices and two edges. Thus, each triangle forms three connected triplets, explaining the factor of three in the formula. A generalisation to weighted networks was proposed by Opsahl and Panzarasa (2009), and a redefinition to two-mode networks (both binary and weighted) by Opsahl (2009).
+
+
+== Local clustering coefficient ==
+
+The local clustering coefficient of a vertex (node) in a graph quantifies how close its neighbors are to being a clique (complete graph). Duncan J. Watts and Steven Strogatz introduced the measure in 1998 to determine whether a graph is a small-world network.
+A graph  formally consists of a set of vertices  and a set of edges  between them. An edge  connects vertex  with vertex .
+The neighbourhood  for a vertex  is defined as its immediately connected neighbours as follows:
+
+We define  as the number of vertices, , in the neighbourhood, , of a vertex.
+The local clustering coefficient  for a vertex  is then given by the proportion of links between the vertices within its neighbourhood divided by the number of links that could possibly exist between them. For a directed graph,  is distinct from , and therefore for each neighbourhood  there are  links that could exist among the vertices within the neighbourhood ( is the number of neighbors of a vertex). Thus, the local clustering coefficient for directed graphs is given as 
+
+An undirected graph has the property that  and  are considered identical. Therefore, if a vertex  has  neighbours,  edges could exist among the vertices within the neighbourhood. Thus, the local clustering coefficient for undirected graphs can be defined as
+
+Let  be the number of triangles on  for undirected graph . That is,  is the number of subgraphs of  with 3 edges and 3 vertices, one of which is . Let  be the number of triples on . That is,  is the number of subgraphs (not necessarily induced) with 2 edges and 3 vertices, one of which is  and such that  is incident to both edges. Then we can also define the clustering coefficient as
+
+It is simple to show that the two preceding definitions are the same, since
+
+These measures are 1 if every neighbour connected to  is also connected to every other vertex within the neighbourhood, and 0 if no vertex that is connected to  connects to any other vertex that is connected to .
+
+
+=== Network average clustering coefficient ===
+As an alternative to the global clustering coefficient, the overall level of clustering in a network is measured by Watts and Strogatz as the average of the local clustering coefficients of all the vertices  :
+
+It is worth noting that this metric places more weight on the low degree nodes, while the transitivity ratio places more weight on the high degree nodes. In fact, a weighted average where each local clustering score is weighted by  is identical to the global clustering coefficient.
+A graph is considered small-world, if its average local clustering coefficient  is significantly higher than a random graph constructed on the same vertex set, and if the graph has approximately the same mean-shortest path length as its corresponding random graph.
+A generalisation to weighted networks was proposed by Barrat et al. (2004), and a redefinition to bipartite graphs (also called two-mode networks) by Latapy et al. (2008) and Opsahl (2009).
+This formula is not, by default, defined for graphs with isolated vertices; see Kaiser (2008) and Barmpoutis et al. The networks with the largest possible average clustering coefficient are found to have a modular structure, and at the same time, they have the smallest possible average distance among the different nodes.
+
+
+== References ==

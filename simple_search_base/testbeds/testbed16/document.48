@@ -1,0 +1,19 @@
+Cloud Security – Who is Responsible?
+Matthias Jung / May 9, 2011
+A recent survey among cloud providers (via) raises the question about the responsibility for security between cloud-providers and cloud-users. A large majority of 69% out of the 127 cloud providers asked in this survey rather consider the cloud user responsible for ensuring the security of the cloud services (while 35% of the cloud users see this the same way). 32% of the cloud providers and 32% of the cloud users see security as the cloud providers responsibility, 16% of the cloud providers and 33% of the cloud users see it as a shared responsibility (note: apparently, several choices were possible, the numbers not adding up to 100%).
+
+Those number are alarming, especially together with other findings of the survey:
+
+most cloud providers do not believe their products or services substantially protect and secure the confidential or sensitive information of their customers
+they also say their systems and applications are not always evaluated for security threats prior to deployment to customers
+on average providers of cloud computing technologies allocate10 percent or less of their operational resources to security and most do not have confidence that customers’ security requirements are being met
+the majority of cloud providers in our study admit they do not have dedicated security personnel to oversee the security of cloud applications, infrastructure or platforms.
+While those results indicate a general lack of maturity in this early phase of cloud computing adoption (seems to be a recurring pattern that security is added later in the life-cycle of technologies), there’s another aspect that is completely hidden in this survey and even misleading: it doesn’t discriminate results by delivery model (55% of the participants are SaaS providers, 34% IaaS providers, 11% PaaS providers) although the level of control given to cloud users is a very different for the 3 delivery models – and the level of control is essential with regard to sharing responsibilies between providers and users.
+
+IaaS providers (like Amazon EC2) provide a high-level of control to their users back down to the operating system, while SaaS providers (like Google Apps) don’t even give control of how and where data is stored (PaaS models are somewhere in-between). That is, SaaS users are simply not enabled to carry their supposed responsibility, while IaaS users are and actually do to a large part (e.g. Netflix). The following graphic provided by the Cloud Security Alliance (CSA) well illustrates the relationship between security and control.
+
+
+
+For example, Amazon EC2 encourages a “Design for Failure” model, where cloud users are supposed to replicate components to deal with potential outages. IaaS users have also full control over their databases and can encrypt sensitive data.
+
+Bottom-line: a discussion about the responsibilities of cloud security does not make sense without taking into account the delivery model of the cloud provider – since responsibility is linked to control.

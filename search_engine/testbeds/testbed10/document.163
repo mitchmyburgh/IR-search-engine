@@ -1,0 +1,87 @@
+Correlation-based Feature Selection for
+Machine Learning
+
+Mark A. Hall
+
+Introduction
+We live in the information-age—accumulating data is easy and storing it inexpensive. In
+1991 it was alleged that the amount of stored information doubles every twenty months
+[PSF91]. Unfortunately, as the amount of machine readable information increases, the
+ability to understand and make use of it does not keep pace with its growth. Machine
+learning provides tools by which large quantities of data can be automatically analyzed.
+Fundamental to machine learning is feature selection. Feature selection, by identifying
+the most salient features for learning, focuses a learning algorithm on those aspects of
+the data most useful for analysis and future prediction. The hypothesis explored in this
+thesis is that feature selection for supervised classification tasks can be accomplished
+on the basis of correlation between features, and that such a feature selection process
+can be beneficial to a variety of common machine learning algorithms. A technique for
+correlation-based feature selection, based on ideas from test theory, is developed and
+evaluated using common machine learning algorithms on a variety of natural and artificial
+problems. The feature selector is simple and fast to execute. It eliminates irrelevant and
+redundant data and, in many cases, improvesthe performance of learning algorithms. The
+technique also produces results comparable with a state of the art feature selector from
+the literature, but requires much less computation.
+1.1 Motivation
+Machine learning is the study of algorithms that automatically improve their performance
+with experience. At the heart of performance is prediction. An algorithm that—when presented with data that exemplifies a task—improves its ability to predict key elements
+of the task can be said to have learned. Machine learning algorithms can be broadly
+characterized by the language used to represent learned knowledge. Research has shown
+that no single learning approach is clearly superior in all cases, and in fact, different
+learning algorithms often produce similar results [LS95]. One factor that can have an
+enormous impact on the success of a learning algorithm is the nature of the data used
+to characterize the task to be learned. If the data fails to exhibit the statistical regularity
+that machine learning algorithms exploit, then learning will fail. It is possible that new
+data may be constructed from the old in such a way as to exhibit statistical regularity and
+facilitate learning, but the complexity of this task is such that a fully automatic method is If, however, the data is suitable for machine learning, then the task of discovering regularities
+can be made easier and less time consuming by removing features of the data that
+are irrelevant or redundant with respect to the task to be learned. This process is called
+feature selection. Unlike the process of constructing new input data, feature selection is
+well defined and has the potential to be a fully automatic, computationally tractable process.
+The benefits of feature selection for learning can include a reduction in the amount
+of data needed to achieve learning, improved predictive accuracy, learned knowledge that
+is more compact and easily understood, and reduced execution time. The last two factors
+are of particular importance in the area of commercial and industrial data mining. Data
+mining is a term coined to describe the process of sifting through large databases for interesting
+patterns and relationships. With the declining cost of disk storage, the size of many
+corporate and industrial databases have grown to the point where analysis by anything
+but parallelized machine learning algorithms running on special parallel hardware is infeasible
+[JL96]. Two approaches that enable standard machine learning algorithms to be
+applied to large databases are feature selection and sampling. Both reduce the size of the
+database—feature selection by identifying the most salient features in the data; sampling
+by identifying representative examples [JL96]. This thesis focuses on feature selection—a
+process that can benefit learning algorithms regardless of the amount of data available to
+learn from.
+intractable [Tho92]. Existing feature selection methods for machine learning typically fall into two broad
+categories—those which evaluate the worth of features using the learning algorithm that
+is to ultimately be applied to the data, and those which evaluate the worth of features by
+using heuristics based on general characteristics of the data. The former are referred to
+as wrappers and the latter filters [Koh95b, KJ96]. Within both categories, algorithms can
+be further differentiated by the exact nature of their evaluation function, and by how the
+space of feature subsets is explored.
+Wrappers often give better results (in terms of the final predictive accuracy of a learning
+algorithm) than filters because feature selection is optimized for the particular learning
+algorithm used. However, since a learning algorithm is employed to evaluate each and
+every set of features considered, wrappers are prohibitively expensive to run, and can be
+intractable for large databases containing many features. Furthermore, since the feature
+selection process is tightly coupled with a learning algorithm, wrappers are less general
+than filters and must be re-run when switching from one learning algorithm to another.
+In the author’s opinion, the advantages of filter approaches to feature selection outweigh
+their disadvantages. In general, filters execute many timesfaster than wrappers, and therefore
+stand a much better chance of scaling to databases with a large number of features
+than wrappers do. Filters do not require re-execution for different learning algorithms.
+Filters can provide the same benefits for learning as wrappers do. If improved accuracy
+for a particular learning algorithm is required, a filter can provide an intelligent starting
+feature subset for a wrapper—a process that is likely to result in a shorter, and hence
+faster, search for the wrapper. In a related scenario, a wrapper might be applied to search
+the filtered feature space—that is, the reduced feature space provided by a filter. Both
+methods help scale the wrapper to larger datasets. For these reasons, a filter approach to
+feature selection for machine learning is explored in this thesis.
+Filter algorithms previously described in the machine learning literature have exhibited a
+number of drawbacks. Some algorithms do not handle noise in data, and others require
+that the level of noise be roughly specified by the user a-priori. In some cases, a subset
+of features is not selected explicitly; instead, features are ranked with the final choice left
+to the user. In other cases, the user must specify how many features are required, or must
+3
+manually set a threshold by which feature selection terminates. Some algorithms require
+data to be transformed in a way that actually increases the initial number of features. This
+last case can result in a dramatic increase in the size of the search space.

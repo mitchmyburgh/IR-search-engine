@@ -1,0 +1,131 @@
+In telecommunications and computer networks, a channel access method or multiple access method allows several terminals connected to the same multi-point transmission medium to transmit over it and to share its capacity. Examples of shared physical media are wireless networks, bus networks, ring networks and half-duplex point-to-point links.
+A channel-access scheme is based on a multiplexing method, that allows several data streams or signals to share the same communication channel or physical medium. Multiplexing is in this context provided by the physical layer. Note that multiplexing also may be used in full-duplex point-to-point communication between nodes in a switched network, which should not be considered as multiple access.
+A channel-access scheme is also based on a multiple access protocol and control mechanism, also known as media access control (MAC). This protocol deals with issues such as addressing, assigning multiplex channels to different users, and avoiding collisions. The MAC-layer is a sub-layer in Layer 2 (Data Link Layer) of the OSI model and a component of the Link Layer of the TCP/IP model.
+
+
+== Fundamental types of channel access schemes ==
+These numerous channel access schemes which generally fall into the following categories:
+
+
+=== Frequency Division Multiple Access (FDMA) ===
+The frequency-division multiple access (FDMA) channel-access scheme is based on the frequency-division multiplexing (FDM) scheme, which provides different frequency bands to different data-streams. In the FDMA case, the data streams are allocated to different nodes or devices. An example of FDMA systems were the first-generation (1G) cell-phone systems, where each phone call was assigned to a specific uplink frequency channel, and another downlink frequency channel. Each message signal (each phone call) is modulated on a specific carrier frequency.
+A related technique is wavelength division multiple access (WDMA), based on wavelength-division multiplexing (WDM), where different datastreams get different colors in fiber-optical communications. In the WDMA case, different network nodes in a bus or hub network get a different color.
+An advanced form of FDMA is the orthogonal frequency-division multiple access (OFDMA) scheme, for example used in 4G cellular communication systems. In OFDMA, each node may use several sub-carriers, making it possible to provide different quality of service (different data rates) to different users. The assignment of sub-carriers to users may be changed dynamically, based on the current radio channel conditions and traffic load.
+
+
+=== Time division multiple access (TDMA) ===
+The time division multiple access (TDMA) channel access scheme is based on the time-division multiplexing (TDM) scheme, which provides different time-slots to different data-streams (in the TDMA case to different transmitters) in a cyclically repetitive frame structure. For example, node 1 may use time slot 1, node 2 time slot 2, etc. until the last transmitter. Then it starts all over again, in a repetitive pattern, until a connection is ended and that slot becomes free or assigned to another node. An advanced form is Dynamic TDMA (DTDMA), where a scheduling may give different time sometimes but some times node 1 may use time slot 1 in first frame and use another time slot in next frame.
+As an example, 2G cellular systems are based on a combination of TDMA and FDMA. Each frequency channel is divided into eight timeslots, of which seven are used for seven phone calls, and one for signalling data.
+Statistical time division multiplexing multiple-access is typically also based on time-domain multiplexing, but not in a cyclically repetitive frame structure. Due to its random character it can be categorised as statistical multiplexing methods, making it possible to provide dynamic bandwidth allocation. This requires a media access control (MAC) protocol, i.e. a principle for the nodes to take turns on the channel and to avoid collisions. Common examples are CSMA/CD, used in Ethernet bus networks and hub networks, and CSMA/CA, used in wireless networks such as IEEE 802.11.
+
+
+=== Code division multiple access (CDMA)/Spread spectrum multiple access (SSMA) ===
+The code division multiple access (CDMA) scheme is based on spread spectrum, meaning that a wider radio spectrum in Hertz is used than the data rate of each of the transferred bit streams, and several message signals are transferred simultaneously over the same carrier frequency, utilizing different spreading codes. The wide bandwidth makes it possible to send with a very poor signal-to-noise ratio of much less than 1 (less than 0 dB) according to the Shannon-Heartly formula, meaning that the transmission power can be reduced to a level below the level of the noise and co-channel interference (cross talk) from other message signals sharing the same frequency.
+One form is direct sequence spread spectrum (DS-CDMA), used for example in 3G cell phone systems. Each information bit (or each symbol) is represented by a long code sequence of several pulses, called chips. The sequence is the spreading code, and each message signal (for example each phone call) use different spreading code.
+Another form is frequency-hopping (FH-CDMA), where the channel frequency is changing very rapidly according to a sequence that constitutes the spreading code. As an example, the Bluetooth communication system is based on a combination of frequency-hopping and either CSMA/CA statistical time division multiplexing communication (for data communication applications) or TDMA (for audio transmission). All nodes belonging to the same user (to the same virtual private area network or piconet) use the same frequency hopping sequency synchronously, meaning that they send on the same frequency channel, but CDMA/CA or TDMA is used to avoid collisions within the VPAN. Frequency-hopping is used to reduce the cross-talk and collision probability between nodes in different VPAN:s.
+
+
+=== Space division multiple access (SDMA) ===
+Space-division multiple access (SDMA) transmits different information in different physical areas. Examples include simple cellular radio systems and more advanced cellular systems which use directional antennas and power modulation to refine spatial transmission patterns.
+
+
+== List of channel access methods ==
+
+
+=== Circuit mode and channelization methods ===
+The following are common circuit mode and channelization channel access methods:
+Frequency-division multiple access (FDMA), based on frequency-division multiplexing (FDM)
+Wavelength division multiple access (WDMA)
+Orthogonal frequency-division multiple access (OFDMA), based on Orthogonal frequency-division multiplexing (OFDM)
+Single-carrier FDMA (SC-FDMA), a.k.a. linearly-precoded OFDMA (LP-OFDMA), based on single-carrier frequency-domain-equalization (SC-FDE).
+
+Time-division multiple access (TDMA), based on time-division multiplexing (TDM)
+Multi-Frequency Time Division Multiple Access (MF-TDMA)
+
+Code division multiple access (CDMA), a.k.a. Spread spectrum multiple access (SSMA)
+Direct-sequence CDMA (DS-CDMA), based on Direct-sequence spread spectrum (DSSS)
+Frequency-hopping CDMA (FH-CDMA), based on Frequency-hopping spread spectrum (FHSS)
+Orthogonal frequency-hopping multiple access (OFHMA)
+Multi-carrier code division multiple access (MC-CDMA)
+
+Space-division multiple access (SDMA)
+
+
+=== Packet mode methods ===
+The following are examples of packet mode channel access methods:
+Contention based random multiple access methods
+Aloha
+Slotted Aloha
+Multiple Access with Collision Avoidance (MACA)
+Multiple Access with Collision Avoidance for Wireless (MACAW)
+Carrier sense multiple access (CSMA)
+Carrier sense multiple access with collision detection (CSMA/CD) - suitable for wired networks
+Carrier sense multiple access with collision avoidance (CSMA/CA) - suitable for wireless networks
+Distributed Coordination Function (DCF)
+
+Carrier sense multiple access with collision avoidance and Resolution using Priorities (CSMA/CARP)
+Carrier Sense Multiple Access/Bitwise Arbitration (CSMA/BA) Based on constructive interference (CAN-bus)
+
+Token passing:
+Token ring
+Token bus
+
+Polling
+Resource reservation (scheduled) packet-mode protocols
+Dynamic Time Division Multiple Access (Dynamic TDMA)
+Packet reservation multiple access (PRMA)
+Reservation ALOHA (R-ALOHA)
+
+
+=== Duplexing methods ===
+Where these methods are used for dividing forward and reverse communication channels, they are known as duplexing methods, such as:
+Time division duplex (TDD)
+Frequency division duplex (FDD)
+
+
+== Hybrid channel access scheme application examples ==
+Note that hybrids of these techniques can be - and frequently are - used. Some examples:
+The GSM cellular system combines the use of frequency division duplex (FDD) to prevent interference between outward and return signals, with FDMA and TDMA to allow multiple handsets to work in a single cell.
+GSM with the GPRS packet switched service combines FDD and FDMA with slotted Aloha for reservation inquiries, and a Dynamic TDMA scheme for transferring the actual data.
+Bluetooth packet mode communication combines frequency hopping (for shared channel access among several private area networks in the same room) with CSMA/CA (for shared channel access inside a medium).
+IEEE 802.11b wireless local area networks (WLANs) are based on FDMA and DS-CDMA for avoiding interference among adjacent WLAN cells or access points. This is combined with CSMA/CA for multiple access within the cell.
+HIPERLAN/2 wireless networks combine FDMA with dynamic TDMA, meaning that resource reservation is achieved by packet scheduling.
+G.hn, an ITU-T standard for high-speed networking over home wiring (power lines, phone lines and coaxial cables) employs a combination of TDMA, Token passing and CSMA/CARP to allow multiple devices to share the medium.
+
+
+== Definition within certain application areas ==
+
+
+=== Local and metropolitan area networks ===
+In local area networks (LANs) and metropolitan area networks (MANs), multiple access methods enable bus networks, ring networks, hubbed networks, wireless networks and half duplex point-to-point communication, but are not required in full duplex point-to-point serial lines between network switches and routers, or in switched networks (logical star topology). The most common multiple access method is CSMA/CD, which is used in Ethernet. Although today's Ethernet installations typically are switched, CSMA/CD is utilized anyway to achieve compatibility with hubs.
+
+
+=== Satellite communications ===
+In satellite communications, multiple access is the capability of a communications satellite to function as a portion of a communications link between more than one pair of satellite terminals concurrently. Three types of multiple access presently used with communications satellites are code-division, frequency-division, and time-division multiple access.
+
+
+=== Switching centers ===
+In telecommunication switching centers, multiple access is the connection of a user to two or more switching centers by separate access lines using a single message routing indicator or telephone number.
+
+
+== Classifications in the literature ==
+Several ways of categorizing multiple-access schemes and protocols have been used in the literature. For example, Daniel Minoli (2009) identifies five principal types of multiple-access schemes: FDMA, TDMA, CDMA, SDMA, and Random access. R. Rom and M. Sidi (1990) categorize the protocols into Conflict-free access protocols, Aloha protocols, and Carrier Sensing protocols.
+The Telecommunications Handbook (Terplan and Morreale, 2000) identifies the following MAC categories:
+Fixed assigned: TDMA, FDMA+WDMA, CDMA, SDMA
+Demand assigned (DA)
+Reservation: DA/TDMA, DA/FDMA+DA/WDMA, DA/CDMA, DA/SDMA
+Polling: Generalized polling, Distributed polling, Token Passing, Implicit polling, Slotted access
+
+Random access (RA): Pure RA (ALOHA, GRA), Adaptive RA (TRA), CSMA, CSMA/CD, CSMA/CA
+
+
+== See also ==
+Radio resource management for inter-base station interference control
+Statistical multiplexing
+Dynamic bandwidth allocation
+Diversity scheme
+
+
+== References ==
+
+ This article incorporates public domain material from the General Services Administration document "Federal Standard 1037C" (in support of MIL-STD-188).

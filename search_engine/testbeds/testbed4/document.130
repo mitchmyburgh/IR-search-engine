@@ -1,0 +1,62 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Physically-Based Animation
+It is possible to simulate the physics of the natural world to generate realistic motions, interactions, and deformations. Dynamics rely on the time evolution of a physical system in response to forces.
+Newton's second law of motion states f = ma, where f is force, m is mass, and a is acceleration. If x(t) is the path of an object or point mass, then v(t) = dx(t) dt is velocity and a(t) = dv(t) dt = d2x(t) dt2 is acceleration. Forces and mass combine to determine acceleration, i.e. any change in motion.
+In forward simulation or forward dynamics, we specify the initial values for position and velocity, x(0) and v(0), and the forces. Then we compute a(t), v(t), x(t) where a(t) = f(t) m , v(t) =Rt 0 a(t)dt + v(0), and x(t) =Rt 0 v(t)dt + x(0). Forward simulation has the advantage of being reasonably easy to simulate. However, a simulation is often very sensitive to initial conditions, and it is often dif?cult to predict paths x(t) without running a simulation-in other words, control is hard.
+With inverse dynamics, constraints on a path x(t) are speci?ed. Then we attempt to solve for the forces required to produce the desired path. This technique can be very dif?cult computationally.
+Physically-based animation has the advantages of: • Realism, • Long simulations are easy to create, • Natural secondary effects such as wiggles, bending, and so on-materials behave naturally,
+Copyright c
+2005 David Fleet and Aaron Hertzmann 115
+CSC418 / CSCD18 / CSC2504 Animation
+• Interactions between objects are also natural. The main disadvantage of physically-based animation is the lack of control, which can be critical, for example, when a complicated series of events needs to be modeled or when an artist needs precise control over elements in a scene.
+• Pros: - Very realistic motion • Cons: - Very slow
+- Very dif?cult to control
+- Not expressive • Uses: - Complex physical phenomena
+16.5.1 Single 1D Spring-Mass System
+Spring-mass systems are widely used to model basic physical systems. In a 1D spring, x(t) represents the position of mass, increasing downwards.
+x spring
+mass
+A spring has resting length l and stiffness k. Deformation force is linear in the difference from the resting length. Hence, a spring's internal force, according to Hooke's Law, is fs(t) = k(l-x(t)). The external forces acting on a spring include gravity and the friction of the medium. That is, fg = mg and fd(t) = -?v(t) = -?dx(t) dt , where ? is the damping constant. Hence, the total force acting on a spring is f(t) = fs(t)+fg +fd(t). Then we may use a(t) = f(t) m with initial conditions x(0) = x0 and v(0) = v0 to ?nd the position, velocity, and acceleration of a spring at a given time t.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 116
+CSC418 / CSCD18 / CSC2504 Animation
+16.5.2 3D Spring-Mass Systems
+Mass-spring systems may be used to model approximations to more complicated physical systems. Rope or string may be modeled by placing a number of springs end-to-end, and cloth or rubber sheets may be modeled by placing masses on a grid and connecting adjacent masses by springs.
+...
+Let the ith mass, mi, be at location ¯ pi(t), with elements xi(t), yi(t), zi(t). Let lij denote the resting length and kij the stiffness of the spring between masses i and j.
+The internal force for mass i is
+fs ij(t) = -kijeij
+pi -pj kpi -pjk
+,
+where eij = lij -kpi -pjk. Note: It is the case that fs ji(t) = -fs ij(t).
+The net total internal force on a mass i is then fs i (t) =X j?Ni
+fs ij(t),
+where Ni is the set of indices of neighbors of mass i.
+16.5.3 Simulation and Discretization
+A common approach to discretizing over time in a physical simulation is to use a numerical ordinary differential equation solver, such as the Runge-Kutta method, with ?nite difference approximations to derivatives.
+To ?nd an approximation to a(t), we choose a time increment ?t so the solution is computed at ti = i?t.
+The simplest approach is the use Euler time integration with forward differences:
+Copyright c
+2005 David Fleet and Aaron Hertzmann 117
+CSC418 / CSCD18 / CSC2504 Animation
+• Compute~ai(t) = fi(t)/mi. • Update ~vi(t + ?t) = ~vi(t) + ?t~ai(t). • Update ¯ pi(t + ?t) = ¯ pi(t) + ?t~vi(t).
+16.5.4 Particle Systems
+A particle system fakes passive dynamics to quickly render complex systems such as ?re, ?owing water, and sparks. A particle is a point in space with some associated parameters such as velocity, time to live, color, or whatever else might be appropriate for the given application. During a simulation loop, particles are created by emitters that determine their initial properties, and existing particles are removed if their time to live has been exceeded. The physical rules of the system are then applied to each of the remaining particles, and they are rendered to the display. Particles are usually rendered as ?at textures, but they may be rendered procedurally or with a small mesh as well.
+16.6 Behavioral Animation
+Flocking behaviors
+Particle systems don't have to model physics, since rules may be arbitrarily speci?ed. Individual particles can be assigned rules that depend on their relationship to the world and other particles, effectively giving them behaviors that model group interactions. To create particles that seem to ?ock together, only three rules are necessary to simulate separation between particles, alignment of particle steering direction, and the cohesion of a group of particles.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 118
+CSC418 / CSCD18 / CSC2504 Animation
+Particles that ?ock and steer around obstacles
+More complicated rules of behavior can be designed to control large crowds of detailed characters that would be nearly impossible to manually animate by hand. However, it is dif?cult to program characters to handle all but simple tasks automatically. Such techniques are usually limited to animating background characters in large crowds and characters in games.
+A crowd with rule-based behaviors
+• Pros:
+Copyright c
+2005 David Fleet and Aaron Hertzmann 119
+CSC418 / CSCD18 / CSC2504 Animation
+- Automatic animation
+- Real-time generation • Cons: - Human behavior is dif?cult to program • Uses: - Crowds, ?ocks, game characters

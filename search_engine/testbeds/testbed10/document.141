@@ -1,0 +1,90 @@
+Data clustering: 50 years beyond K-means q
+
+Anil K. Jain 
+
+1. Introduction
+Advances in sensing and storage technology and dramatic
+growth in applications such as Internet search, digital imaging,
+and video surveillance have created many high-volume, highdimensional
+data sets. It is estimated that the digital universe consumed
+approximately 281 exabytes in 2007, and it is projected to
+be 10 times that size by 2011 (1 exabyte is 1018 bytes or
+1,000,000 terabytes) (Gantz, 2008). Most of the data is stored digitally
+in electronic media, thus providing huge potential for the
+development of automatic data analysis, classification, and retrieval
+techniques. In addition to the growth in the amount of data,
+the variety of available data (text, image, and video) has also increased.
+Inexpensive digital and video cameras have made available
+huge archives of images and videos. The prevalence of RFID
+tags or transponders due to their low cost and small size has resulted
+in the deployment of millions of sensors that transmit data
+regularly. E-mails, blogs, transaction data, and billions of Web
+pages create terabytes of new data every day. Many of these data streams are unstructured, adding to the difficulty in analyzing
+them.
+The increase in both the volume and the variety of data requires
+advances in methodology to automatically understand, process,
+and summarize the data. Data analysis techniques can be broadly
+classified into two major types (Tukey, 1977): (i) exploratory or
+descriptive, meaning that the investigator does not have pre-specified
+models or hypotheses but wants to understand the general
+characteristics or structure of the high-dimensional data, and (ii)
+confirmatory or inferential, meaning that the investigator wants
+to confirm the validity of a hypothesis/model or a set of assumptions
+given the available data. Many statistical techniques have
+been proposed to analyze the data, such as analysis of variance,
+linear regression, discriminant analysis, canonical correlation
+analysis, multi-dimensional scaling, factor analysis, principal component
+analysis, and cluster analysis to name a few. A useful
+overview is given in (Tabachnick and Fidell, 2007).
+In pattern recognition, data analysis is concerned with predictive
+modeling: given some training data, we want to predict the
+behavior of the unseen test data. This task is also referred to as
+learning. Often, a clear distinction is made between learning problems
+that are (i) supervised (classification) or (ii) unsupervised
+(clustering), the first involving only labeled data (training patterns
+with known category labels) while the latter involving only unlabeled
+data (Duda et al., 2001). Clustering is a more difficult and challenging problem than classification. There is a growing interest
+in a hybrid setting, called semi-supervised learning (Chapelle et al.,
+2006); in semi-supervised classification, the labels of only a small
+portion of the training data set are available. The unlabeled data,
+instead of being discarded, are also used in the learning process.
+In semi-supervised clustering, instead of specifying the class labels,
+pair-wise constraints are specified, which is a weaker way of
+encoding the prior knowledge. A pair-wise must-link constraint
+corresponds to the requirement that two objects should be assigned
+the same cluster label, whereas the cluster labels of two objects
+participating in a cannot-link constraint should be different.
+Constraints can be particularly beneficial in data clustering (Lange
+et al., 2005; Basu et al., 2008), where precise definitions of underlying
+clusters are absent. In the search for good models, one would
+like to include all the available information, no matter whether it is
+unlabeled data, data with constraints, or labeled data. Fig. 1 illustrates
+this spectrum of different types of learning problems of
+interest in pattern recognition and machine learning.
+
+5. Summary
+Organizing data into sensible groupings arises naturally in
+many scientific fields. It is, therefore, not surprising to see the continued
+popularity of data clustering. It is important to remember
+that cluster analysis is an exploratory tool; the output of clustering
+algorithms only suggest hypotheses. While numerous clustering
+algorithms have been published and new ones continue to appear,
+there is no single clustering algorithm that has been shown to
+dominate other algorithms across all application domains. Most
+algorithms, including the simple K-means, are admissible algorithms.
+With the emergence of new applications, it has become
+increasingly clear that the task of seeking the best clustering principle
+might indeed be futile. As an example, consider the application
+domain of enterprise knowledge management. Given the
+same set of document corpus, different user groups (e.g., legal,
+marketing, management, etc.) may be interested in generating partitions
+of documents based on their respective needs. A clustering
+method that satisfies the requirements for one group of users may
+not satisfy the requirements of another. As mentioned earlier,
+‘‘clustering is in the eye of the beholder” – so indeed data clustering
+must involve the user or application needs.
+Clustering has numerous success stories in data analysis. In
+spite of this, machine learning and pattern recognition communities
+need to address a number of issues to improve our understanding
+of data clustering. Below is a list of problems and research
+directions that are worth focusing in this regard

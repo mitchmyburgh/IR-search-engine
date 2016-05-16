@@ -1,0 +1,23 @@
+Language tools
+	This section needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (July 2014) (Learn how and when to remove this template message)
+
+Tools have been created to help C programmers avoid some of the problems inherent in the language, such as statements with undefined behavior or statements that are not a good practice because they are likely to result in unintended behavior or run-time errors.
+
+Automated source code checking and auditing are beneficial in any language, and for C many such tools exist, such as Lint. A common practice is to use Lint to detect questionable code when a program is first written. Once a program passes Lint, it is then compiled using the C compiler. Also, many compilers can optionally warn about syntactically valid constructs that are likely to actually be errors. MISRA C is a proprietary set of guidelines to avoid such questionable code, developed for embedded systems.[34]
+
+There are also compilers, libraries, and operating system level mechanisms for performing actions that are not a standard part of C, such as array bounds checking, buffer overflow detection, serialization, and automatic garbage collection.
+
+Tools such as Purify or Valgrind and linking with libraries containing special versions of the memory allocation functions can help uncover runtime errors in memory usage.
+Uses
+	This section needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (October 2012) (Learn how and when to remove this template message)
+The TIOBE index graph from 2002 to 2015, showing a comparison of the popularity of various programming languages[35]
+
+C is widely used for "system programming", including implementing operating systems and embedded system applications, due to a combination of desirable characteristics such as code portability and efficiency, ability to access specific hardware addresses, ability to pun types to match externally imposed data access requirements, and low run-time demand on system resources. C can also be used for website programming using CGI as a "gateway" for information between the Web application, the server, and the browser.[36] Some reasons for choosing C over interpreted languages are its speed, stability, and near-universal availability.[37]
+
+One consequence of C's wide availability and efficiency is that compilers, libraries and interpreters of other programming languages are often implemented in C. The primary implementations of Python, Perl 5 and PHP, for example, are all written in C.
+
+Due to its thin layer of abstraction and low overhead, C allows efficient implementations of algorithms and data structures, which is useful for programs that perform a lot of computations. For example, the GNU Multiple Precision Arithmetic Library, the GNU Scientific Library, Mathematica and MATLAB are completely or partially written in C.
+
+C is sometimes used as an intermediate language by implementations of other languages. This approach may be used for portability or convenience; by using C as an intermediate language, it is not necessary to develop machine-specific code generators. C has some features, such as line-number preprocessor directives and optional superfluous commas at the end of initializer lists, which support compilation of generated code. However, some of C's shortcomings have prompted the development of other C-based languages specifically designed for use as intermediate languages, such as C--.
+
+C has also been widely used to implement end-user applications, but much of that development has shifted to newer, higher-level languages.

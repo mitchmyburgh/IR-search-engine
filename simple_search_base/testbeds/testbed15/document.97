@@ -1,0 +1,53 @@
+How does computer animation work?
+Admittedly, it’s quite a long way until one of our TASSEN clips is finished: Aside from conceptualizing the jokes and plot lines and
+the matching sound recordings, we also need to get started by creating a virtual 3D model.  
+Let’s begin with the first step of computer animations: MODELING.  
+
+First of all, you need a design. This design will determine from which basic geometrical shape the character will be virtually modeled.  
+
+Starting from this foundation, more and more lines are added, moved or erased. Meanwhile, we keep an eye on how the results will look in the gray preview version.   This preview is usually called “GL” in our industry, based on the term “Open GL,” the default graphics display setting for graphic processors in computers.  
+
+At this point, the final appearance and desired image quality are not yet an issue.
+Once the MODELING is completed, we begin
+with two processes that run simultaneously:  
+They’re called SHADING and RIGGING.
+ 
+SHADING is all about the shades on the surface of the object. During this process, the surfaces are covered with material surfaces and textures.  
+This step is a major factor for the final look and optical quality of an animation.  
+For instance, porcelain is a rather interesting surface material: It combines the matted, slightly translucent look of porcelain with a highly reflected and also transparent finishing layer.  
+
+At the same time, SHADING is also an important precursor to RENDERING and associated POST-PRODUCTION.  
+
+During the RIGGING process, the grid model is enhanced with an animation skeleton. We literally add the bones along which a character can later be moved.
+ 
+We also add so-called “shapes,” including facial expressions, that can be associated with control panels during RIGGING, allowing for blending different shapes to create a wide range of nuances in the 3D-model. In the next step, the rigged 3D-model is passed on to the person in charge of moving this skeleton: The animator.
+Now, when we speak of ANIMATION, we mean the entire field of ANIMATION – the way in which objects are moved/animated.
+ 
+In the world of computer animation, the animator takes over the role of an actor. He is the one breathing life into the 3D-skeleton, creating a funny or serious character in the process.  
+
+Here at FIFTYEIGHT, we take great care in animation – making sure that the viewer can make an emotional connection to our animated characters. If something is animated without a “soul,” even the highest quality graphical finish becomes useless.  
+
+Once a character is animated and the scene has been properly lit up by the shading artist, it’s time for RENDERING to begin.  
+
+A mere second of finished video requires a multitude of individual frames to create movement.  
+
+This is the process during which multiple computers with manifold processors are calculating away at processing the images in an air-cooled room.  
+
+The current industry standard is at 25 single images per second, also called FRAMES.  
+
+Every individual frame, especially in complex scenes, can consist of up to 10 PASSES.  
+
+Based on these passes, the reflectiveness of certain objects during POST-PRODUCTION can be amplified or toned down by applying maskings. We can also add motion blurs, tweak colors and adjust brightness and contrast etc.
+During POST-PRODUCTION, or “Post” in short,
+all these settings are applied by the director and the shading artist. It is customary for post-production to work closely with the shading artist; in some cases, it’s even the same person.
+
+If a film is entirely shot from one angle, all that
+is still needed is the audio track. In a clip consisting of numerous angles and takes, the sequences of images are joined together and cut appropriately.
+
+These image sequences are called SHOTS that are compiled during the EDITING stages.  
+The editing creates the final cut, which is the basis for transferring the finished move
+to tapes or exporting it for digital upload.  
+
+That’s it. Sounds like a lot of work? That’s because it is!  
+
+But it’s also a whole lot of fun and if we end up getting a great response like for our TASSEN clips, it’s definitely been worth all the effort!

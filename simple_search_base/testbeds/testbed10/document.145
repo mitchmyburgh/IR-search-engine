@@ -1,0 +1,67 @@
+On the emergence of social conventions: modeling, analysis, and simulations ☆
+
+Yoav Shohama, , Moshe Tennenholtz, b
+
+1. Introduction
+In multi-agent systems, be they human societies or distributed computing systems,
+different agents (people in the one case, programs or processes in the other) aim to
+achieve different goals, and yet these agents must interact either directly by sharing
+information and services, or indirectly by sharing system resources. In such distributed
+systems it is crucial that the agents agree on certain rules, in order to decrease conflicts
+among them and promote cooperative behavior. Without such rules even the simplest
+goals might become unattainable by any of the agents, or at least not efficiently attainable
+(just imagine driving in the absence of traflic rules). These rules strike a balance between
+allowing agents sufficient freedom to achieve their goals, and restricting them so that
+they do not interfere too much with one another.
+We have been investigating social rules as a design tool. Some of these rules are
+designed and agreed upon ahead of time (traffic laws are an example) ; in previous work
+[21,25] we investigated some aspects of this off-line design of social laws. However,
+not all rules can be agreed upon in advance. This is either because the characteristics of
+the society are unknown, or because they change over time. In addition, the design of all
+rules in advance might be computationally hard. In such cases, it is often important that
+the society converge on a convention in a dynamic fashion. In human societies this is
+common; this is how (e.g., software) standards emerge long before they are enshrined
+in official regulations.
+How do such conventions emerge? Roughly speaking, the process we aim to study is
+one in which individual agents occasionally interact with one another, and as a result
+gain some new information. Based on its personal accumulated information, each agent
+updates its behavior over time. The complexity of this process derives from its concurrent
+nature: As one agent adapts to the behavior of the agents it has encountered, these
+agents update their behavior in a similar fashion. This tends to result in complex system
+dynamics, reminiscent of those encountered in particle physics, population genetics, and
+other areas. Each of these areas has developed stylized settings in which to carry out
+the investigations; we ourselves will adopt the framework of stochastic games from the
+economics literature.
+In general terms, we will be asking two types of question:
+( 1) Under what condit
+
+(2) How efficiently are these conventions achieved?
+As it turns out, our results on eventual convergence will be primarily analytic, whereas
+the results on efficiency include both analytic lower bounds and empirical results of
+extensive computer simulations.
+Here is the structure of our article, explained at two levels of granularity: a brief,
+jargon-free description, followed by a more detailed description that appeals to gametheoretic
+terminology.
+The brief description of the article is as follows:
+l We give a formal definition of social laws and conventions, which are essentially
+the restriction of choices available to agents.
+l We identify those laws and conventions that might be deemed rational from an
+individual standpoint. 
+
+6. Summary
+We used the framework of stochastic social games in order to investigate the emergence
+of rational social conventions and the efficiency of that process. In particular
+we concentrated on the emergence of rational social conventions in a most basic type
+of coordination problem, and supplied results on the emergence of conventions and its
+efficiency for a class of games.
+Besides the novelty of our work, which we have previously discussed, we believe
+that it also creates a bridge between work in economics and work in machine learning,
+We borrow from the economics literature the model for stochastic interactions among
+agents, which is a most popular and dominant model for agent interactions. On the other
+hand we borrow ideas of reinforcement learning [28] from the AI literature in order
+to capture the fact that agents use local update rules to update their strategies. As a
+result, we get a combined framework where local update rules are used to update an
+agent behavior in a model of global interaction. Since both the local updates [ 11,22,28]
+and the model of global interactions (see [ 151 for a survey) are taken to be of major
+importance to the corresponding communities, we believe that the introduction of our
+framework may lead to additional and fruitful cross-fertilization. 

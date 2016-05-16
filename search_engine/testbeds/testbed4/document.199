@@ -1,0 +1,31 @@
+Introduction to Image Processing
+Fall Semester, 2013
+Course Description
+Digital image processing is the use of computer algorithms to perform image processing on digital images. This course is an introductory course to the fundamentals of digital image processing.
+It emphasizes general principles of image processing, rather than specific applications. We expect to cover topics such as image acquistion and display, properties of the human visual system, color representations, sampling and quantization, point operations, linear image filtering and correlation, transforms and subband decompositions, and nonlinear filtering, contrast and color enhancement, and image restoration, image matching, and simple feature extraction and recognition tasks.to be loaded in the application's process at the same time, so filter writes is suitable for classroom use or self-study. In a straightforward way, the text illustrates how to implement imaging techniques in MATLAB, GNU Octave, and Python. It includes numerous examples and exercises to give students hands-on practice with the material.
+
+Image Pi – Basic image processing
+
+Welcome to Image Pi – A basic image processing course by Edward Jones.
+
+This set of tutorials aims to be an introduction to image processing using the RaspberryPi. The tutorials are aimed at ages 15 and up and assume the reader has basic knowledge of programming. Examples will be given in the Python and C programming languages but I will hopefully describe the algorithms in a language independent way.
+
+The first tutorial in this course will act as a quick introduction to image processing, and it will guide you through the setup of the Raspberry Pi and the Python and C programming environments. Subsequent tutorials will introduce basic ideas and algorithms behind image processing, providing code for examples implementations which you can play and experiment with.
+
+Contents
+0 Requirements
+1 Tutorials
+0 Requirements
+
+The main requirement of this course is to have a ready Raspberry Pi, along with power supply, SD card with Raspbian image on, keyboard, mouse and webcam. You will need your RaspberryPi to be connected to the Internet in order to download the libraries and resources needed by these tutorials. You can get away without using a webcam, using static images instead, however for now you will need to source the images yourself (They need to be in bitmap (.bmp) format for you to be able to load them with the library).
+
+1 Tutorials
+
+Table 1.1 - Tutorials
+Name	Descrption
+0	Introduction and Setup	An introduction to some of the ideas of image processing. Continues on to describe how to set up the Raspberry Pi and the Python and C programming environments for running and experimenting with the examples
+1	The Basics	Goes through the most basic of examples using the library to programmatically read and change the values of individual pixels.
+2	Filtering Colours	Describes an algorithm to filter out a small range of colours from an image.
+3	Edge Detection	Introduces Edge detection using the Sobel Operator to find edges of intensity in an image.
+Creative Commons Licence
+This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.

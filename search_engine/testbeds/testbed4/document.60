@@ -1,0 +1,113 @@
+We assumed optimized generalized triangle strips, with both positions
+and normals represented by floating-point values. This is how
+the “original size” column was calculated. To see the effect of pure 16-
+bit fixed point simple strip representation, we also show the byte count
+for this mode of OpenGL (the average strip length went way down, in
+the range of 2-3). Because few if any commercial products take advantage
+of generalized triangle strips, the potential memory space savings
+are considerably understated by the numbers in the table.
+The earlier columns in the table break down the bit usage by component:
+just position tag/data, just normal tag/data, and everything
+else (overhead). The “quant” columns show the quantization
+thresholds. All results in table 1 are (measured) actual compression,
+with one exception. Because our software compressor does not yet
+implement a full meshifying algorithm, we present estimated mesh
+buffer results in parentheses (always next to actual results). This estimate
+assumes a 42% hit ratio in the mesh buffer.
+While certainly there is statistical variation between objects (with
+respect to compression ratios), we have noted some general trends.
+When compressing using the highest quality setting of the quantization
+knobs (P48/N18), the compression ratios are typically about
+6. When most objects start showing visible quantization artifacts,
+the ratios are nearly 10.
+10 GEOMETRY COMPRESSION SOFTWARE
+So far the focus has been on the justification and description of the
+geometry compression format. This section addresses some of the
+issues that arise when actually performing the compression; the
+next section addresses issues related to hardware and software implementation
+of decompression.
+An important measure for any form of compression is the ratio of the
+time required for compression relative to decompression. Several otherwise
+promising techniques for image compression have failed in the
+marketplace because they require several thousand times more time
+to compress than to decompress. It is acceptable for off-line image
+compression to take 60X more time than decompression, but not too
+much more; for real-time video conferencing the ratio should be 1.
+Geometry compression does not have this real-time requirement.
+Even if geometry is being constructed on the fly, most techniques for
+creating geometry (such as CSG) take orders of magnitude more time
+than displaying geometry. Also, unlike the continuous images found
+in movies, in most applications of geometry compression a compressed
+3D object will be displayed for many sequential frames before
+being discarded. If the 3D object needs to be animated, this is typically
+done with modeling matrices. Indeed for a CD-based game, it is quite
+likely that an object will be decompressed billions of times by customers,
+while compressed only once by the authoring company.
+Like some other compression systems, geometry compression algorithms
+can have a compression-time vs. compression-ratio knob.
+Thus for a given target level of quality, the more time allowed for
+compression, the better the compression ratio that can be achieved
+by a geometry compression system. There is a corresponding knob
+for quality of the resulting compressed 3D object. The lower the
+quality knob, the better the compression ratio achieved.
+We have found an esthetic judgment involved in geometry compression,
+based upon our experiences with the system so far. Some 3D
+objects start to look bad when the target quantization of normals and/
+or positions is reduced even a little, others are visually unchanged
+even with a large amount of quantization. Sometimes the compression
+does cause visible artifacts, but may only make the object look
+different, not necessarily lower in quality. Indeed in one case an elephant
+started looking better (more wrinkled skin) the more we quantized
+his normals! The point is that there is also a subjective compo-
+captured
+the spirit of the original intent in creating the model.
+But once a model has been created and compressed, it can be put
+into a library, to be used as 3D clip-art at the system level.
+Below is an outline of the geometry compression algorithm:
+1. Input explicit bag of triangles to be compressed, along with
+quantization thresholds for positions, normals, and colors.
+2. Topologically analyze connectivity, mark hard edges in normals
+and/or color.
+3. Create vertex traversal order & mesh buffer references.
+4. Histogram position, normal, and color deltas.
+5. Assign variable length Huffman tag codes for deltas, based
+on histograms, separately for positions, normals, colors.
+6. Generate binary output stream by first outputting Huffman
+table initializations, then traversing the vertices in order, outputting
+appropriate tag and delta for all values.
+Implementation status: a compressor of Wavefront OBJ format has
+been implemented. It supports compression of positions and normals,
+and creates full generalized triangle strips, but does not yet
+implement a full meshifying algorithm. The geometry compression
+format supports many more sophisticated compression opportunities
+than our existing compressor utilizes. We hope in the future to
+explore variable precision geometry, and fine structured updates of
+the compression tables. Eventually modelers should generate compressed
+geometry directly; our current compressor spends a lot of
+time figuring out geometric details that the tessellator already knew.
+The current (un-optimized) software can compress ~3K tris/sec.
+11 GEOMETRY DECOMPRESSION HARDWARE
+While many of the techniques employed by geometry compression
+are universal, some of the details were specifically designed to allow-
+cost, high-speed hardware implementations. A geometry compression
+format designed purely for software decompression
+would, of course, be a little different.
+The features that make the geometry compression instruction set
+amenable to hardware implementation include: one pass sequential
+processing, limited local storage requirements, tag look-up rather
+than usual Hamming bit-sequential processing, and most arithmetic
+is comprised of shifts, adds, and look-ups.
+Below is an outline of the geometry decompression algorithm:
+1. Fetch the rest of the next instruction, and the first 8 bits of the
+instruction after that.
+2. Using the tag table, expand any compressed value fields to
+full precision.
+3a.If values are relative, add to current value; otherwise replace.
+3b.If mesh buffer reference, access old values.
+3c.If other command, do housekeeping.
+4. If normal, pass index through ROM table to obtain full
+values.
+5. Output values in generalized triangle strip form to next stage.
+Implementation status: a software decompressor has been implemented,
+and successfully decompresses compressed geometry, at a
+rate of ~10K triangles/second. Hardware designs a

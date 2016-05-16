@@ -1,0 +1,13 @@
+NASA seeks programmer fluent in 60-year-old languages to work on Voyager
+
+After decades with the Voyager program, NASA engineer Larry Zottarelli is retiring. That means there’s a job opening at the storied Jet Propulsion Laboratory, but it won’t be the right fit for just any engineer. Applicants should have a can-do attitude, good communication skills, and extensive knowledge of 60-year-old programming languages.
+
+We’re talking about the Voyager 1 and 2 spacecraft here, which were launched in the 1970s. That’s before the personal computer revolution sent programming languages into overdrive. There was no C, Java, or Python in those days. Instead, Voyager runs on assembly language (about as low level coding as you can get),  as well as higher level languages including Fortran and COBOL, which were created in the late 1950s. You need to understand these archaic programming languages to work on the Voyager spacecrafts as they leave the solar system.
+
+Both COBOL and Fortran are still in use today, but they aren’t exactly popular choices with the younger generations of programmers. They sit at positions 21 and 22 according to the TIOBE index. Assembly language also isn’t something many younger developers would focus on today unless specifically asked to as part of their job, and even if they did, assembly language is different for every computer architecture with each having its quirks.
+
+voyager_heliosphere
+
+The core software running the Voyager probes was last overhauled in 1990, shortly after the Neptune flyby. JPL introduced a number of looping protocols that lets the spacecraft operate more or less autonomously. NASA continues to send up new sequences every three months or so, but it’s getting harder to communicate with the Voyager probes 12 billion miles away. Only the massive Canberra antenna of the Deep Space Network is able to send data to the Voyager probes these days.
+
+Whoever takes over the programming duties on Voyager will have to work on tightening up its energy usage. Both spacecrafts are getting old, but have enough power to run for at least another decade. After that, it will depend on what systems can be optimized and what can be shut down to save power. JPL managers aren’t expecting a young college grad to show up with intimate knowledge of programming languages from 60 years ago, but finding an engineer in their 50s (rather than 70s) who understands assembly languages would be great.

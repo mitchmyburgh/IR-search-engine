@@ -1,0 +1,47 @@
+Secure voice (alternatively secure speech or ciphony) is a term in cryptography for the encryption of voice communication over a range of communication types such as radio, telephone or IP.
+
+
+== History ==
+The implementation of voice encryption dates back to World War II when secure communication was paramount to the US armed forces. During that time, noise was simply added to a voice signal to prevent enemies from listening to the conversations. Noise was added by playing a record of noise in synch with the voice signal and when the voice signal reached the receiver, the noise signal was subtracted out, leaving the original voice signal. In order to subtract out the noise, the receiver need to have exactly the same noise signal and the noise records were only made in pairs; one for the transmitter and one for the receiver. Having only two copies of records made it impossible for the wrong receiver to decrypt the signal. To implement the system, the army contracted Bell Laboratories and they developed a system called SIGSALY. With SIGSALY, ten channels were used to sample the voice frequency spectrum from 250 Hz to 3 kHz and two channels were allocated to sample voice pitch and background hiss. In the time of SIGSALY, the transistor had not been developed and the digital sampling was done by circuits using the model 2051 Thyratron vacuum tube. Each SIGSALY terminal used 40 racks of equipment weighing 55 tons and filled a large room. This equipment included radio transmitters and receivers and large phonograph turntables. The voice was keyed to two 16-inch vinyl phonograph records that contained a Frequency Shift Keying (FSK) audio tone. The records were played on large precise turntables in synch with the voice transmission.
+From the introduction of voice encryption to today, encryption techniques have evolved drastically. Digital technology has effectively replaced old analog methods of voice encryption and by using complex algorithms, voice encryption has become much more secure and efficient. One relatively modern voice encryption method is Sub-band coding. With Sub-band Coding, the voice signal is split into multiple frequency bands, using multiple bandpass filters that cover specific frequency ranges of interest. The output signals from the bandpass filters are then lowpass translated to reduce the bandwidth, which reduces the sampling rate. The lowpass signals are then quantized and encoded using special techniques like, Pulse Code Modulation (PCM). After the encoding stage, the signals are multiplexed and sent out along the communication network. When the signal reaches the receiver, the inverse operations are applied to the signal to get it back to its original state. A speech scrambling system was developed at Bell Laboratories in the 1970s by Subhash Kak and Nikil Jayant. In this system permutation matrices were used to scramble coded representations (such as Pulse Code Modulation and variants) of the speech data. Motorola developed a voice encryption system called Digital Voice Protection (DVP) as part of their first generation of voice encryption techniques. DVP uses a self-synchronizing encryption technique known as cipher feedback (CFB). The basic DVP algorithm is capable of 2.36 x 1021 different "keys" based on a key length of 32 bits." The extremely high number of possible keys associated with the early DVP algorithm, makes the algorithm very robust and gives a high level of security. As with other symmetric keyed encryption systems, the encryption key is required to decrypt the signal with a special decryption algorithm.
+
+
+== Digital ==
+A digital secure voice usually includes two components, a digitizer to convert between speech and digital signals and an encryption system to provide confidentiality. It is difficult in practice to send the encrypted signal over the same voiceband communication circuits used to transmit unencrypted voice, e.g. analog telephone lines or mobile radios, due to bandwidth expansion.
+This has led to the use of Voice Coders (vocoders) to achieve tight bandwidth compression of the speech signals. NSA's STU-III, KY-57 and SCIP are examples of systems that operate over existing voice circuits. The STE system, by contrast, requires wide bandwidth ISDN lines for its normal mode of operation. For encrypting GSM and VoIP, which are digital anyway, the standard protocol ZRTP could be used as an end-to-end encryption technology.
+Secure voice's robustness greatly benefits from having the voice data compressed into very low bit-rates by special component called speech coding, voice compression or voice coder (also known as vocoder). The old secure voice compression standards include (CVSD, CELP, LPC-10e and MELP, where the latest standard is the state of the art MELPe algorithm.
+
+
+== Digital methods using voice compression: MELP or MELPe ==
+The MELPe or enhanced-MELP (Mixed Excitation Linear Prediction) is a United States Department of Defense speech coding standard used mainly in military applications and satellite communications, secure voice, and secure radio devices. Its development was led and supported by NSA, and NATO. The US government's MELPe secure voice standard is also known as MIL-STD-3005, and the NATO's MELPe secure voice standard is also known as STANAG-4591.
+The 2400 bit/s MELP was created by Texas Instruments, and first standardized in 1997 and was known as MIL-STD-3005. Between 1998 and 2001, a new MELP-based vocoder was created at half the rate (i.e. 1200 bit/s) and substantial enhancements were added to the MIL-STD-3005 by SignalCom (later acquired by Microsoft) and AT&T Corporation, which included (a) additional new vocoder at half the rate (i.e. 1200 bit/s), (b) substantially improved encoding (analysis), (c) substantially improved decoding (synthesis), (d) Noise-Preprocessing for removing background noise, (e) transcoding between the 2400 bit/s and 1200 bit/s bitstreams. This fairly significant development was aimed to create a new coder at half the rate and have it interoperable with the old MELP standard.
+This enhanced-MELP (also known as MELPe) was adopted as the new MIL-STD-3005 in 2001 in form of annexes and supplements made to the original MIL-STD-3005. The significant breakthrough of the 1200 bit/s MELPe enables the same quality as the old 2400 bit/s MELP's at half the rate!
+One of the greatest advantages of the new 2400 bit/s MELPe is that it shares the same bit format as MELP, and hence can interoperate with legacy MELP systems, but would deliver better quality at both ends. MELPe provides much better quality than all older military standards, especially in noisy environments such as battlefield and vehicles and aircraft.
+In 2002, the US DoD MELPe was adopted also as NATO standard, known as STANAG-4591. As part of NATO testing for new NATO standard, MELPe was tested against other candidates such as France's HSX (Harmonic Stochastic eXcitation) and Turkey's SB-LPC (Split-Band Linear Predictive Coding), as well as the old secure voice standards such as FS1015 LPC-10e (2.4 kbit/s), FS1016 CELP (4.8 kbit/s) and CVSD (16 kbit/s). Subsequently, the MELPe won also the NATO competition, surpassing the quality of all other candidates as well as the quality of all old secure voice standards (CVSD, CELP and LPC-10e).
+The NATO competition concluded that MELPe substantially improved performance (in terms of speech quality, intelligibility, and noise immunity), while reducing throughput requirements. The NATO testing also included interoperability tests, used over 200 hours of speech data, and was conducted by 3 test laboratories worldwide.
+In 2005, a new 600 bit/s rate MELPe vocoder was added to the NATO standard STANAG-4591 by Thales (France), and there are more advanced efforts to lower the bitrates to 300 bit/s and even 150 bit/s.
+
+
+== Other ==
+In Aleksandr Solzhenitsyn's novel First Circle the character Volodin's recorded phone call is traced to him since it is not properly encrypted. Its decipherment makes use of spectral analysis.
+
+
+== See also ==
+Scrambler
+MELPe
+MELP
+Cryptography
+Crypto phone
+Pseudorandom noise
+SIGSALY
+SCIP
+Secure telephone
+Secure Terminal Equipment
+VINSON
+VoIP VPN
+NSA encryption systems
+ZRTP
+Fishbowl (secure phone)
+
+
+== References ==

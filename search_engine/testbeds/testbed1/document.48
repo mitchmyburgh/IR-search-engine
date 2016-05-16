@@ -1,0 +1,49 @@
+OtherOS
+'''OtherOS''' was a feature available in early versions of the   that allowed other operating systems, such as  or , to be installed on the system. This feature was made unavailable in newer models and removed from the oldest ones through a  by .
+The "Other OS" feature is disabled by firmware version 3.21 but still runs on older consoles that have firmware 3.15 or lower. A  has been filed against Sony for those who wish to pursue legal remedies (see ). The class action lawsuit was dismissed with prejudice in 2011 by a federal judge, stating: "As a legal matter,  plaintiffs have failed to allege facts or articulate a theory on which Sony may be held liable." but this decision was overturned in a 2014 appellate court decision finding that plaintiffs had indeed made clear and sufficiently substantial claims.  
+Any  operating system had access to  6 of the 7 s;  Sony implemented a  restricting access from the .  provided an introduction to programming  applications on the PlayStation 3.
+==History==
+Since 2000, Sony has used the fact that the  can run  in its marketing. They promoted the release of the , which included a Linux-based operating system, a  keyboard and mouse, a  adapter, a PlayStation 2  network adapter, and a 40   (HDD).
+The  does not have Linux pre-installed. However, Sony included an option in the  menu soon after the PlayStation 3 launched that allowed booting into Linux from the hard drive or from a  that the distributor's  would boot. The installation manual for the Yellow Dog Linux version for PS3 stated, "It was fully intended that you, a PS3 owner, could play games, watch movies, view photos, listen to music, and run a full-featured Linux operating system that transforms your PS3 into a home computer."
+When Sony announced the upcoming release of the PS3 Slim in September 2009, they stated that it would not be supporting the OtherOS feature, without offering any explanation for this. In March 2010 Sony announced that the "Other OS" capability of the original PS3 models would be removed due to security concerns in PS3 Firmware 3.21 on April 1, 2010.
+Several methods of bypassing the updating and retaining the ability to sign into PSN have been discovered, most of which involve using third party DNS servers.http://3004.pokemonger.com/showthread.php?tid=21
+ claims to have created custom firmware for the PS3 called 3.21OO that re-enables OtherOS and has published a video of his Custom Firmware as proof. Despite the release of a YouTube video which apparently demonstrates the use of his custom firmware, some in the online community claim that this custom firmware was in fact a hoax. On July 14, 2010, Hotz announced that he would not bring out his custom firmware to the PlayStation 3.
+On April 27, 2010 a class action lawsuit was filed in California. The lawsuit claimed that the removal of the OtherOS feature was "unfair and deceptive" and a "breach of good faith".http://ia331218.us.archive.org/2/items/gov.uscourts.cand.226894/gov.uscourts.cand.226894.1.0.pdf Most of the filing relates to violation of various  laws relating to the removal. Several other lawsuits were also filed and are somewhat similar in nature but are filed by other individuals.
+In January 2011,  and members of failoverflow for their  of the PS3. Charges included violating the , the , , and , and for  (related to the  ), , , and .. Nilay Patel, Engadget (2011-01-12). Retrieved on 2011-02-16.See also 
+In February, 2011, U.S. District Judge Richard Seeborg dismissed most of the class claims with leave to amend, finding the plaintiffs failed to state a claim. Seeborg stated: "While it cannot be concluded as a matter of law at this juncture that Sony could, without legal consequence, force its customers to choose either to forego installing the software update or to lose access to the other OS feature, the present allegations of the complaint largely fail to state a claim. Accordingly, with the exception of one count, the motion to dismiss will be granted, with leave to amend."
+On May 4, 2011, Youness Alaoui from the PS3MFW team announced from Youness Alaoui the release of a modified PS3 firmware that allows running OtherOS. at gitbrew.org
+On December 8, 2011, U.S. District Judge Richard Seeborg dismissed the last remaining count of the class action lawsuit, stating: "As a legal matter,  plaintiffs have failed to allege facts or articulate a theory on which Sony may be held liable."
+As of January 2014  the  U.S. Court of Appeals for the Ninth Circuit partially reversed the dismissal and have sent the case back to the district court.
+==Linux kernel==
+ supported  with version 2.6.21. No patches or modifications are required.
+ A simple Linux add-on CD for the PS3 includes support for  8 and other  that already claim to install natively on the PS3. However, there is currently an issue with the latest kboot boot loader provided by . Once the user selects the default action, the USB ports are de-registered on some systems. A  is available at .
+==Distributions==
+,  8, ,  (10.3 to 11.1), and  run on the PlayStation 3.  for the PlayStation 3 was first released in late 2006.
+===Ubuntu===
+Some versions of  up to the release 10.10 have been  to the PS3 platform. The installer cannot run in Live mode when running in  or  video resolutions, but it offers a text-based installer that installs fully functional Ubuntu. It is possible to mount an external USB hard drive as the home folder during install.
+The LTS release 8.04 (Hardy Heron) of Ubuntu is incompatible with the PS3. However the 8.10 (Intrepid Ibex) release was ported to the PS3 on the same release date as the official main Ubuntu release.
+===Yellow Dog Linux===
+ 5.0 was one of the first Linux distributions to run on 's  platform. It is designed specifically for HDTV so users with SDTV will have to use the commands 'installtext' and 'ydl480i' to install and run. 
+Yellow Dog Linux is based on the / core and relies on the  package manager. Digital audio has been verified to function properly, however, the   is not supported beyond  mode. In addition, some other hardware components will not function properly without modifications to the kernel.  functionality via the Network Manager is also not fully supported and must be entered manually via the Network Configuration tool, or in some cases, through the command shell. A workaround is available to enable wireless to be configured via the Network Manager. 
+===OpenSUSE===
+ 10.3 was the first version of OpenSUSE to run on the   platform. OpenSUSE is a free version of , which is owned by . There are PlayStation 3 specific installation instructions available for OpenSUSE.
+Starting with OpenSUSE 11.2, support for the  (and therefore the PlayStation 3) has been dropped.
+===Fedora===
+ also ran on the . Fedora 7 works on a USB external hard disk but fails to detect the internal disk, Fedora 9 detects the internal disk but not the USB disk, Fedora 8 will not work due to video "card" detection problems. Fedora 10 installs on the internal hard disk without any issues and works fine without having to change any settings.
+Fedora 12 only installs on the PlayStation 3 when running the 64 bit kernel and only when English is the chosen language.
+==RSX Homebrew==
+Linux on the PlayStation 3 allows for a range of  programs to be developed. Although the  performance is more than enough to handle most media requirements or render complex , it does lack the  performance of a contemporary 's texture fetching hardware. For this reason many complex games aren't possible on the PlayStation 3 through Linux, as access to hardware acceleration in the  is restricted by a .
+There have been developments in enabling access to the RSX through the  and the . It's possible to use the RSX memory as swap space. A trick to access some 3D functions was blocked with firmware 2.10.
+==AsbestOS==
+Reverse engineering advancements focused around a recently discovered USB descriptor parsing vulnerability in 3.41 firmware, which allowed running the Linux kernel on 3.41 firmware. The current state of the project is the ability to load the Linux kernel via TFTP and run it with access to all 7 's (requires applying a small patch to the kernel). The rest of the system can run off an NFS share - hard disk access is currently not implemented, as well as some other features.
+Also, since the exploit runs the kernel with game privileges, graphics acceleration is now available, although it requires reworking of the  driver code. 
+==FreeBSD==
+Support for PlayStation 3 was added to  9.0 in summer 2010. This support is limited to machines with OtherOS functionality still intact (firmwares 3.15 and earlier).
+==See also==
+*
+*
+==References==
+==External links==
+*
+*
+*

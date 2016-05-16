@@ -1,0 +1,73 @@
+The security of machine learning
+
+Marco Barreno · Blaine Nelson · Anthony D. Joseph ·
+J.D. Tygar
+
+If we hope to use machine learning as a general tool for computer applications, it is incumbent
+on us to investigate how well machine learning performs under adversarial conditions.
+When a learning algorithm performs well in adversarial conditions, we say it is an algorithm
+for secure learning. This raises the natural question: how do we evaluate the quality
+of a learning system and determine whether it satisfies requirements for secure learning?
+
+Machine learning advocates have proposed learning-based systems for a variety of security
+applications, including spam detection and network intrusion detection. Their vision is
+that machine learning will allow a system to respond to evolving real-world inputs, both hostile
+and benign, and learn to reject undesirable behavior. The danger is that an attacker will
+attempt to exploit the adaptive aspect of a machine learning system to cause it to fail. Failure
+consists of causing the learning system to produce errors: if it misidentifies hostile input
+as benign, hostile input is permitted through the security barrier; if it misidentifies benign
+input as hostile, desired input is rejected. The adversarial opponent has a powerful weapon:
+the ability to design training data that will cause the learning system to produce rules that
+misidentify inputs. If users detect the failure, they may lose confidence in the system and
+abandon it. If users do not detect the failure, then the risks can be even greater.
+It is well established in computer security that evaluating a system involves a continual
+process of first, determining classes of attacks on the system; second, evaluating
+the resilience of the system against those attacks; and third, strengthening the system
+against those classes of attacks. Our paper follows exactly this model in evaluating secure
+learning.
+First, we identify different classes of attacks on machine learning systems (Sect. 2).
+While many researchers have considered particular attacks on machine learning systems,
+previous research has not presented a comprehensive view of attacks. In particular, we show
+that there are at least three interesting dimensions to potential attacks against learning systems:
+(1) they may be Causative in that they alter the training process, or they may be
+Exploratory and exploit existing weaknesses; (2) they may be attacks on Integrity aimed at
+false negatives (allowing hostile input into a system) or they may be attacks on Availability
+aimed at false positives (preventing benign input from entering a system); and (3) they
+may be Targeted at a particular input or they may be Indiscriminate in which inputs fail.
+Each of these dimensions operates independently, so we have at least eight distinct classes
+of attacks on machine learning system. We can view secure learning as a game between
+an attacker and a defender; the taxonomy determines the structure of the game and cost
+model.
+Second, we consider how resilient existing systems are against these attacks (Sect. 3).
+There has been a rich set of work in recent years on secure learning systems, and we evaluate
+many attacks against machine learning systems and proposals for making systems secure
+against attacks. Our analysis describes these attacks in terms of our taxonomy and secure
+learning game, demonstrating that our framework captures the salient aspects of each attack.
+Third, we investigate some potential defenses against these attacks (Sect. 4). Here the
+work is more tentative, and it is clear that much remains to be done, but we discuss a variety
+of techniques that show promise for defending against different types of attacks.
+Finally, we illustrate our different classes of attacks by considering a contemporary machine
+learning application, the SpamBayes spam detection system (Sect. 5). We construct
+realistic, effective attacks by considering different aspects of the threat model according to
+our taxonomy, and we discuss a defense that mitigates some of the attacks.
+This paper provides system designers with a framework for evaluating machine learning
+systems for security applications (illustrated with our evaluation of SpamBayes) and suggests
+directions for developing highly robust secure learning systems. Our research not only
+proposes a common language for thinking and writing about secure learning, but goes beyond
+that to show how our framework works, both in algorithm design and in real system
+evaluation. We present an essential first step if machine learning is to reach its potential as a
+tool for use in real systems in potentially adversarial environments.
+
+7 Conclusion
+We have presented a framework for articulating a comprehensive view of different classes
+of attacks on machine learning systems in terms of three independent dimensions and an
+adversarial learning game. Guided by our framework, we survey relevant prior research
+and explore the effects of different types of learning attacks on systems and their defenses
+against these attacks. We provide a concrete extended example by applying our framework
+to a machine learning-based application, the SpamBayes spam detection system, and show
+how the attacks motivated by our framework can successfully cause SpamBayes to fail.
+We also develop and demonstrate a concrete defense that succeeds against Indiscriminate
+Causative Availability attacks on SpamBayes and has potential for wider applicability. Our
+framework provides a solid foundation for analyzing attacks on machine learning systems
+and developing defenses against them, taking a significant step towards the goal of secure
+learning.

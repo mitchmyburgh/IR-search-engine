@@ -1,0 +1,15 @@
+Wyvern system allows multiple programming languages within one computer program
+
+The web would be a much more secure place if not for the vulnerability built right into a common coding practice: pasted-together strings of database commands (usually for either SQL queries or JavaScript-enabled user interactions), which could be exploited for malicious purposes. But computer scientists at Carnegie Mellon are developing a programming language specifically intended to protect computers and websites from such threats.
+
+Wyvern, as they call it, is something of a meta-language. It allows coders to develop web pages and applications using a variety of specific programming and scripting languages – such as SQL for querying databases or HTML, CSS, and JavaScript for constructing web pages – with the trick being that each language works as it normally would, so there's no need to use awkward and potentially-insecure workarounds in cases where multiple languages are required.
+
+Multiple languages are often required in presenting content on websites. The bulk of the words you read and images you see are coded in HTML and CSS, either on the fly according to PHP queries or as files loaded directly from the server. But the suggestions many search bars display as you type and the instant page loads you sometimes see when clicking through multi-page articles are only possible thanks to JavaScript (usually in combination with Lua, PHP, and/or Python). And the chances are that if you need to go to an account page or perhaps buy something via an online store, you'll be indirectly sending SQL database queries.
+
+Avoiding security problems with the code embedding and translating that these often-complex queries entail takes a lot of care, expertise, and testing, but a special language like Wyvern could take the pain away. It understands and identifies these sublanguages by context and treats data and objects accordingly as literals (fixed values) of a given type in a language appropriate to that type (so to further the example above, an SQLQuery type literal will be dealt with in SQL code rather than as a string of text that needs to be parsed by a special function).
+
+"Wyvern is like a skilled international negotiator who can smoothly switch between languages to get a whole team of people to work together," associate professor Jonathan Aldrich says. "Such a person can be extremely effective and, likewise, I think our new approach can have a big impact on building software systems."
+
+Wyvern is not the only project to tackle the issue of meta-programming and code parsing across languages – others include ProteaJ, Scheme, OJ, and Spoofax, which approach the problem from different angles – but its creators believe Wyvern offers the best balance between composability and expressiveness such that it enables a broad range of embedded languages to be used more or less freely.
+
+It's not yet ready for the prime time, though. Wyvern is at this stage only implemented at a basic level, with many features not fully developed or enforced. Budding contributors or experimenters can dive in at the project's GitHub page, however.

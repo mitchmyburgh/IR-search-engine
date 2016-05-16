@@ -1,0 +1,436 @@
+  
+  
+      * Agenda
+      * Events
+      * Reports
+      * Projects
+      * About
+        * Our Mission
+        * Leadership and Governance
+        * Our Members and Partners
+        * Communities
+        * History
+        * Klaus Schwab
+        * Media
+        * Contact Us
+        * Careers
+        * World Economic Forum USA
+        * Privacy and Terms of Use
+      * Español
+      * 中文
+      * 日本語
+      * Login to TopLink 
+
+      *       * Agenda
+      * Events
+      * Reports
+      * Projects
+      * About
+
+      * Login to TopLink 
+
+      * 中文
+      * 日本語
+      * Global Regional Industry
+
+Commentary and analysis shaping our Global, Regional and Industry agendas
+
+Cyber Security
+
+### Who are the cyberwar superpowers?
+
+Climate Change
+
+### Climate change will cost East Asia 6% of its GDP
+
+Education
+
+### 3 ways to become a learning machine
+
+Population
+
+### Millennials are now officially America's biggest living generation
+
+Europe
+
+### Nearly 90,000 unaccompanied children sought asylum in the EU last year
+
+Africa
+
+### 13 game-changing African infrastructure projects
+
+Chemistry, Advanced Materials and Biotechnology
+
+### Self-healing concrete and sweaty roofs: is this the future of buildings?
+
+Future of the Internet
+
+### As the Bitcoin creator unveils himself, find out more about blockchain
+(video)
+
+Economy
+
+### Why we need to complement, rather than replace, GDP
+
+Read More
+
+Learn more about our events which work to shape the Global, Regional and
+Industry agendas
+
+Upcoming Event
+
+### World Economic Forum on Africa 2016
+
+11-13 May 2016 Kigali, Rwanda
+
+Past events
+
+### World Economic Forum Annual Meeting 2016
+
+20-23 January 2016 Davos-Klosters, Switzerland
+
+### National Strategy Day on India 2015
+
+3-4 November 2015 New Delhi, India
+
+### Summit on the Global Agenda 2015
+
+25-27 October 2015 Abu Dhabi, United Arab Emirates
+
+More events
+
+Read our reports on the broad range of global issues we’re seeking to address
+
+### Shaping the Future of Construction: A Breakthrough in Mindset and
+Technology
+
+4 May 2016
+
+### Mastering Hypergrowth
+
+28 Apr 2016
+
+### The Role of Financial Services in Society: Understanding the impact of
+technology-enabled innovation on financial stability
+
+19 Apr 2016
+
+More reports
+
+Learn about our activities tackling the most significant global challenges
+through public-private collaboration
+
+Global Challenge Initiatives
+
+      * Economic Growth and Social Inclusion
+      * Employment, Skills and Human Capital
+      * Environment and Resource Security
+      * Food Security and Agriculture
+      * Future of Health
+      * Future of the Global Financial System
+      * Future of the Internet
+      * Gender Parity
+      * International Trade and Investment
+      * Long-Term Investing, Infrastructure and Development
+
+Latest activity
+
+### Accelerating Capital Markets Development in Emerging Economies
+
+### Alternative Investments 2020
+
+More projects
+
+Committed to improving the state of the world
+
+About Us
+
+      * Our Mission
+      * Leadership and Governance
+      * Our Members and Partners
+      * Communities
+      * History
+      * Klaus Schwab
+      * Media
+      * Contact Us
+      * Careers
+      * World Economic Forum USA
+      * Privacy and Terms of Use
+
+How to get involved
+
+### Careers
+
+### Our Story
+
+      *       * Emerging Technologies
+      * IT Software and Services
+
+# What can quantum computing do for us?
+
+Written by
+
+Andrew Fursman, Co-founder and CEO, 1QBit
+
+Wednesday 5 August 2015
+
+Written by
+
+Andrew Fursman Co-founder and CEO, 1QBit
+
+Published
+
+Wednesday 5 August 2015
+
+Share
+
+Latest Articles
+
+### Which countries have the highest tax on cigarettes?
+
+Joe Myers 4 May 2016
+
+### Who are the cyberwar superpowers?
+
+Keith Breene 4 May 2016
+
+### Climate change will cost East Asia 6% of its GDP
+
+Emma Luxton 4 May 2016
+
+More on the agenda
+
+_Vancouver-based 1QBit is one of the World Economic Forum's 2015 class of
+Technology Pioneers. The company creates software for quantum processors that
+can address real-world challenges involving difficult computational problems.
+Co-founders Landon Downs and Andrew Fursman discuss what quantum computing can
+do now and where it is headed._
+
+**Can you briefly explain the background of quantum computing?**
+
+People first started thinking in the 1980s that you could build a computer
+that uses the quantum properties of matter to perform calculations much more
+quickly than traditional computers. All computers today work with “bits”,
+which are either on or off. But a quantum equivalent of a bit, a “qubit”,
+could be simultaneously on and off, because of the peculiar way matter behaves
+at the quantum level. Physicists like Richard Feynman and David Deutsch
+theorized that, if you could replace a computer’s bits with qubits, this
+behaviour could be harnessed to make computation orders of magnitude quicker.
+
+However, getting from theory to practice proved depressingly difficult: it
+took years of research to get from creating one qubit up to a system using
+three qubits. And computers have billions of bits. So people started to move
+away from the ambition of using qubits to build a universal computer, and
+instead focus on whether there were other ways to use quantum effects to
+perform a more limited range of specific types of computation.
+
+It’s like the difference between calculators and computers. If you’re old
+enough to remember pocket calculators, they couldn’t do everything your
+smartphone can do now – but they could do a limited number of things very
+well, far better than the alternative of working out with a pencil and paper.
+That’s where we are now – “quantum calculator” would probably be a better
+description than “quantum computer” for the processor on which our software
+runs. Its domains are relatively narrow, but within those domains it enables
+exciting applications.
+
+**What kinds of problems are susceptible to a quantum processing approach?**
+
+In general, problems that involve looking for the best solutions among a vast
+array of possible options. There are two ways you can approach this kind of
+problem. One is to consider all the options in turn, and see which one is
+best. But pretty quickly that becomes impractical. If you imagine just 250
+questions that can be answered with either yes or no, you already have more
+possible combinations than there are atoms in the observable universe.
+
+So the alternative is to use heuristics – tricks and techniques that have
+evolved over hundreds of years for situations when you’re not realistically
+hoping to find the best possible answer, but an acceptably good answer in an
+acceptably short time frame. The quantum behaviour of matter allows these
+processors to quickly arrive at optimal answers through a process known as
+quantum annealing. The aim is to get answers that are closer to what you’d get
+from an exhaustive search, in the same timescale it takes to run heuristics.
+
+**What are some real-world examples of applications that could use this power?**
+
+One example of software we recently built and patented is a tool to compare
+multidimensional structures and decide which are most similar to each other.
+Among the likely applications is drug development – if you have a completely
+new molecule and want to predict what effect it will have on the body, one way
+to do so is to compare it to a database of molecules with known effects. Is it
+more similar to a molecule that’s known to cure cancer or to cause heart
+disease?
+
+But you could just as well apply this software to anything that can be
+conceived of as a collection of nodes and edges – what in mathematics are
+known as graphs. In finance, for example, you could represent various possible
+portfolios as graphs and compare them. Computational finance is an area we’re
+working in because there are obvious benefits to reaching better answers in
+limited time frames about, say, the optimal combination of financial
+instruments for a portfolio.
+
+Graph comparison is only one of a number of software tools we are developing
+that can run on today’s quantum processors. And as those processors get larger
+and larger chips, the applications we build on these kernels of software will
+become more and more powerful.
+
+**What quantum processor does your software run on? **
+
+A system produced by our partner D-Wave. To get quantum behaviour from the
+qubits, the processors are in a vacuum, shielded from the Earth’s magnetic
+field and supercooled close to absolute zero. In terms of the scale of
+equipment required to do this, you can compare it to the first mainframe
+computers from the 1960s rather than the personal computers of today.
+
+**Is the D-Wave the only quantum processor or are there others?**
+
+D-Wave is currently the only commercial entity producing a quantum processor
+you can buy. But there’s nice work being done by lots of groups – in start-
+ups, academia and tech giants like Google, Microsoft and IBM. Some of this
+work is being done on super-conducting systems like the D-Wave, and some is
+much more exotic and experimental.
+
+**To what extent are these different groups able to keep on top of the work the others are doing?**
+
+Research in academia constantly gets published, and we’re involved in various
+working groups – both formal and informal – including a D-Wave users group,
+which includes NASA, Lockheed Martin, Google and the Universities Space
+Research Association. We try to keep abreast of what each other are doing,
+guide each other and understand what looks promising. There’s not much
+competitiveness, as we know that the more momentum the field itself generates,
+the better it is for all of us.
+
+**Is it possible to predict where quantum computing will be in one, five, ten or twenty years?**
+
+Both the short and the long time frame are easier to answer with confidence.
+There’s been a fairly consistent trend of the number of qubits doubling each
+year, and D-Wave has just announced the release of the first processor that
+has more than 1,000 qubits. So, in a year, we’d expect to have a processor
+with over 2,000 qubits. And almost everyone agrees that, in 20 years, we will
+have developed the more general purpose, universal quantum computers envisaged
+by the likes of Richard Feynman back in the 1980s.
+
+What’s uncertain is what happens in the intermediate time frames, because
+there are a million different paths we could take to get there from here. Our
+prediction ‒ and certainly our hope ‒ is that progress is driven by broadening
+access to the technology. In the future, we want to build software for other
+developers to build on, enabling people to play around with quantum processing
+in the same way they now play around with Android phones. When that happens,
+we believe we will see all kinds of exciting new applications develop.
+
+**Full details on all of the Technology Pioneers 2015 can be found here. **
+
+_Authors: Landon Downs and Andrew Fursman, Co-Founders, 1QBit_
+
+_Image: A silicon wafer is pictured during the media presentation of the
+Guardian Angels project in one of the low particle pollution nanofabrication
+clean rooms of the Swiss Federal Institute of Technology (EPFL) in Ecublens,
+near Lausanne May 16, 2011.REUTERS/Valentin Flauraud_
+
+### Share this:
+
+      * Share on Facebook (Opens in new window)
+      * Click to share on Twitter (Opens in new window)
+      * Click to share on LinkedIn (Opens in new window)
+      * Click to share on WhatsApp (Opens in new window)
+      * Share 
+
+Written by
+
+Andrew Fursman, Co-founder and CEO, 1QBit
+
+**Subscribe for updates**
+
+A weekly update of what’s on the Global Agenda
+
+##  Featured: Emerging Technologies  View all
+
+### How geckos inspire a new tool in the fight against dust
+
+William Weir 3 May 2016
+
+### The bottle-sized satellites leading a quiet revolution in space
+
+Peter Platzer 14 Apr 2016
+
+### Will this breakthrough see an electric car in every driveway?
+
+Joe Myers 5 Apr 2016
+
+### Could the Xbox Kinect have medical uses?
+
+Nicola Jones 1 Apr 2016
+
+### Will this discovery revolutionize nanotechnology?
+
+1 Apr 2016
+
+### Could this be the key to understanding how the body heals itself?
+
+Kara Manke 29 Mar 2016
+
+### How nanotechnology can fight superbugs
+
+Prashnat Nagpal 29 Mar 2016
+
+**Subscribe for updates**
+
+A weekly update of what’s on the Global Agenda
+
+Follow Us
+
+About
+
+Our Mission
+
+Leadership and Governance
+
+Our Members and Partners
+
+The Fourth Industrial Revolution
+
+Communities
+
+History
+
+Klaus Schwab
+
+Media
+
+Contact Us
+
+Careers
+
+Open Forum
+
+World Economic Forum USA
+
+Privacy and Terms of Use
+
+Media
+
+News
+
+Accreditation
+
+Subscribe to our news
+
+Members &amp; Partners
+
+Member login to TopLink
+
+Strategic Partners' area
+
+Partner Institutes' area
+
+Global sites
+
+Español
+
+中文
+
+日本語
+
+© 2016 World Economic Forum
+
+Privacy Policy &amp; Terms of Service
+

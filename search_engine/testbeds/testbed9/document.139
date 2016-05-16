@@ -1,0 +1,32 @@
+In the context of IBM mainframe computers, a data set (IBM preferred) or dataset is a computer file having a record organization. Use of this term began with OS/360 and is still used by its successors, including the current z/OS. Documentation for these systems historically preferred this term rather than file.
+A data set is typically stored on a direct access storage device (DASD) or magnetic tape, however unit record devices, such as punch card readers, card punch, and line printers can provide input/output (I/O) for a data set (file).
+Data sets are not unstructured streams of bytes, but rather are organized in various logical record and block structures determined by the DSORG (data set organization), RECFM (record format), and other parameters. These parameters are specified at the time of the data set allocation (creation), for example with Job Control Language DD statements. Inside a job they are stored in the Data Control Block (DCB), which is a data structure used to access data sets, for example using access methods.
+
+
+== Data set organization ==
+For OS/360, the DCB's DSORG parameter specifies how the data set is organized. It may be physically sequential ("PS"), indexed sequential ("IS"), partitioned ("PO"), or Direct Access ("DA"). Data sets on tape may only be DSORG=PS. The choice of organization depends on how the data is to be accessed, and in particular, how it is to be updated.
+Programmers utilize various access methods (such as QSAM or VSAM) in programs for reading and writing data sets. Access method depends on the given data set organization.
+
+
+== Record format (RECFM) ==
+Regardless of organization, the physical structure of each record is essentially the same, and is uniform throughout the data set. This is specified in the DCB RECFM parameter. RECFM=F means that the records are of fixed length, specified via the LRECL parameter, and RECFM=V specifies a variable-length record. V records when stored on media are prefixed by a Record Descriptor Word (RDW) containing the integer length of the record in bytes. With RECFM=FB and RECFM=VB, multiple logical records are grouped together into a single physical block on tape or disk. FB and VB are fixed-blocked, and variable-blocked, respectively. The BLKSIZE parameter specifies the maximum length of the block. RECFM=FBS could be also specified, meaning fixed-blocked standard, meaning all the blocks except the last one were required to be in full BLKSIZE length. RECFM=VBS, or variable-blocked spanned, means a logical record could be spanned across two or more blocks, with flags in the RDW indicating whether a record segment is continued into the next block and/or was continued from the previous one.
+This mechanism eliminates the need for using any "delimiter" byte value to separate records. Thus data can be of any type, including binary integers, floating point, or characters, without introducing a false end-of-record condition. The data set is an abstraction of a collection of records, in contrast to files as unstructured streams of bytes.
+
+
+== Partitioned data sets ==
+A partitioned data set (PDS) is a data set containing multiple members, each of which holds a separate sub-data set, similar to a directory in other types of file systems. This type of data set is often used to hold executable programs (load modules), source program libraries (especially Assembler macro definitions), and Job Control Language. A PDS may be compared to a Zip file or COM Structured Storage.
+A Partitioned Data Set can only allocate on a single volume with the maximum size of 65535 tracks.
+Besides members, a PDS consists also of their directory. Each member can be accessed directly using the directory structure. Once a member is located, the data stored in that member is handled in the same manner as a PS (sequential) data set.
+Whenever a member is deleted, the space it occupied is unusable for storing other data. Likewise, if a member is re-written, it is stored in a new spot at the back of the PDS and leaves wasted “dead” space in the middle. The only way to recover “dead” space is to perform frequent file compression, that moves all members to the front of the data space and leaves free usable space at the back. (Note that in modern parlance, this kind of operation might be called defragmentation or garbage collection; data compression nowadays refers to a different, more complicated concept.) PDS files can only reside on disk in order to use the directory structure to access individual members, not on tape. They are most often used for storing multiple JCL files, utility control statements and executable modules.
+An improvement of this scheme is a Partitioned Data Set Extended (PDSE or PDS/E, sometimes just libraries) introduced with MVS/XA system.
+PDS/E structure is similar to PDS and is used to store the same types of data. However, PDS/E files have a better directory structure which does not require pre-allocation of directory blocks when the PDS/E is defined (and therefore does not run out of directory blocks if not enough were specified). Also, PDS/E automatically stores members in such a way that compression operation is not needed to reclaim "dead" space. PDS/E files can only reside on disk in order to use the directory structure to access individual members.
+
+
+== See also ==
+Volume table of contents (VTOC), a structure describing data sets stored on the disk
+Distributed Data Management Architecture
+
+
+== References ==
+
+Introduction to the New Mainframe: z/OS Basics, Ch. 5, "Working with data sets", March 29, 2011. ISBN 0738435341

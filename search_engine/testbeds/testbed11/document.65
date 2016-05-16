@@ -1,0 +1,28 @@
+Key distribution is an important issue in wireless sensor network (WSN) design. WSNs are networks of small, battery-powered, memory-constraint devices named sensor nodes, which have the capability of wireless communication over a restricted area. Due to memory and power constraints, they need to be well arranged to build a fully functional network.
+
+
+== Key distribution schemes ==
+Key predistribution is the method of distribution of keys onto nodes before deployment. Therefore, the nodes build up the network using their secret keys after deployment, that is, when they reach their target position.
+Key predistribution schemes are various methods that have been developed by academicians for a better maintenance of PEA management in WSNs. Basically a key predistribution scheme has 3 phases:
+Key distribution
+Shared key discovery
+Path-key establishment
+During these phases, secret keys are generated, placed in sensor nodes, and each sensor node searches the area in its communication range to find another node to communicate. A secure link is established when two nodes discover one or more common keys (this differs in each scheme), and communication is done on that link between those two nodes. Afterwards, paths are established connecting these links, to create a connected graph. The result is a wireless communication network functioning in its own way, according to the key predistribution scheme used in creation.
+There are a number of aspects of WSNs on which key predistribution schemes are competing to achieve a better result. The most critical ones are: local and global connectivity, and resiliency.
+Local connectivity means the probability that any two sensor nodes have a common key with which they can establish a secure link to communicate.
+Global connectivity is the fraction of nodes that are in the largest connected graph over the number of all nodes.
+Resiliency is the number of links that cannot be compromised when a number of nodes(therefore keys in them) are compromised. So it is basically the quality of resistance against the attempts to hack the network. Apart from these, two other critical issues in WSN design are computational cost and hardware cost. Computational cost is the amount of computation done during these phases. Hardware cost is generally the cost of the memory and battery in each node.
+Keys may be generated randomly and then the nodes determine mutual connectivity. A structured approach based on matrices that establishes keys in a pair-wise fashion is due to Rolf Blom. Many variations to Blom's scheme exist. Thus the scheme of Du et al. combines Blom’s key pre-distribution scheme with the random key pre-distribution method with it, providing better resiliency.
+
+
+== See also ==
+Wireless sensor networks
+Key distribution
+Blom's scheme
+
+
+== References ==
+
+
+== External links ==
+List of publications for Key Management in WSN

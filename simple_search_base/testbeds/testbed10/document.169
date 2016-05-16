@@ -1,0 +1,63 @@
+Machine Learning for User Modeling
+
+
+GEOFFREY I. WEBB1
+, MICHAEL J. PAZZANI2 and DANIEL BILLSUS2
+
+1. Introduction
+The past decade has seen research into the use of machine learning to support user
+modeling (ML for UM) pass through a period of decline and then resurgence, with
+the research area at the close of the twentieth century more active and vibrant than
+at any previous time. It is tempting to identify the start of the ML for UM winter
+as being marked by the publication of Self's (1988) paper in which he asserted that
+a search problem that appeared to underlie a direct machine learning approach
+to inferring possible cognitive process models for a relatively simple modeling task
+was `clearly intractable'. While the paper did not argue that student modeling
+was intractable per se, the phrase `the intractable problem of student modeling',
+taken from the title of that paper, has been oft repeated, perhaps with less attention
+to the ¢ner detail of the argument within the paper than might be desired. Without
+needing to ascribe causes to the ML for UM winter, it is notable that it was preceded
+by a decade of much activity. Notable examples from this period include the work of
+Brown and Burton (1978), Brown and VanLehn (1980), Gilmore and Self (1988),
+Langley and Ohlsson (1984), Mizoguchi et al. (1987), Reiser et al. (1985), Sleeman
+(1984), VanLehn (1982), and Young and O'Shea (1981), much of it in the area
+of student modeling.* In contrast, the period 1988^1994 saw relatively little activity
+in the area. A strong resurgence is evidenced however by a special issue of this journal devoted to the subject (volume 8, numbers 1^2, 1998) the number of recent
+workshops on the subject (Bauer et al., 1997; Bauer et al., 1999; Joachims et al.,
+1999; Rudstorm et al., 1999; Papatheodorou, 1999), and sessions in major conferences
+(Goettl et al., 1998; Jameson et al., 1997; Kay, 1999; Lajoie and Vivet, 1999.
+It is, perhaps, tempting to equate the start of the thaw with the presentation of
+the best paper award to Martin and VanLehn's (1993) paper on student modeling
+at the 1993 World Conference on Arti¢cial Intelligence in Education.
+While the ¢eld was initially dominated by research on student modeling, the
+demands of electronic commerce and the world-wide-web have led to rapid growth
+in research in the area of information retrieval. With vast quantities of information
+available to all users on the web, the need for technologies to personalize the
+web has arisen.
+This paper provides a brief overview of the application of machine learning for
+user modeling and reviews four critical issues that are currently limiting the real
+world application of user modeling and looks at the current state of attempts to
+overcome them. The four issues addressed are:
+^ the need for large data sets;
+^ the need for labeled data;
+^ concept drift; and
+^ computational complexity.
+
+7. Conclusion
+ML for UM has awoken from the winter of the early nineties with renewed strength
+and vigor, fueled largely by the demands of the internet and other emerging information
+retrieval technologies. However, despite clear potential and demand for
+ML for UM technologies, they remain primarily in the research domain. We are
+yet to witness the widespread appearance of ¢elded applications.
+In this paper we have outlined four major issues that must be overcome before
+widespread application of ML for UM will be possible:
+^ the need for large data sets;
+^ the need for labeled data;
+^ concept drift; and
+^ computational complexity.
+While the dif¢culty of these problems should not be underestimated, as we indicate,
+approaches to overcoming them are being actively pursued and strong progress
+has been made. Looking forward it appears evident that ML for UM is a research
+area on the cusp of coming-of-age and that by the time of the twentieth anniversary
+of this journal, ML for UM will have taken a place as a core technology underlying
+the information economy.

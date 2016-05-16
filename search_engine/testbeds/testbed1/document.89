@@ -1,0 +1,63 @@
+Algorithmic_composition
+'''Algorithmic composition''' is the technique of using s to create .
+Algorithms (or, at the very least, formal sets of rules) have been used to  music for centuries; the procedures used to plot voice-leading in Western , for example, can often be reduced to algorithmic determinacy.  The term is usually reserved, however, for the use of formal procedures to make music without human intervention, either through the introduction of  procedures or the use of .
+Some algorithms or data that have  are used by composers as creative inspiration for their music.  Algorithms such as , s, , and even arbitrary  (e.g.  figures,  coordinates, or  measurements) have been used as source materials.
+==Models for algorithmic composition==
+There is no universal method to sort different compositional algorithms into categories. One way to do this is to look at the way an algorithm takes part in the compositional process. The results of the process can then be divided into 1) music composed by computer and 2) music composed with the aid of computer. Music may be considered composed by computer when the algorithm is able to make choices of its own during the creation process.
+Another way to sort compositional algorithms is to examine the results of their compositional processes. Algorithms can either 1) provide notational information () for other instruments or 2) provide an independent way of  (playing the composition by itself). There are also algorithms creating both notational data and sound synthesis.
+One way to categorize compositional algorithms is by their structure and the way of processing data, as seen in this model of six partly overlapping types:
+* mathematical models
+* knowledge-based systems
+* grammars
+* evolutionary methods
+* 
+* hybrid systems
+===Translational Models===
+This is an approach to music synthesis that involves "translating" information from an existing non-musical medium into a new sound. The translation can either rule-based or .  For example, when translating a picture into sound, a  image of a horizontal line may be interpreted in sound as a constant pitch, while an upwards-slanted line may be an ascending scale. Oftentimes, the software seeks to extract concepts or metaphors from the medium, (such as height or sentiment) and apply the extracted information to generate songs using the ways music theory typically represents those concepts. Another example is the translation of text into music, which can approach composition by extracting sentiment (positive or negative) from the text using  methods like  and represents that sentiment in terms of chord quality such as minor (sad) or major (happy) chords in the musical output generated.    
+===Mathematical models===
+Mathematical models are based on mathematical  and random events. The most common way to create compositions through mathematics is . In stochastic models a piece of music is composed as a result of non- methods. The compositional process is only partially controlled by the composer by weighting the possibilities of random events. Prominent examples of stochastic algorithms are  and various uses of Gaussian distributions. Stochastic algorithms are often used together with other algorithms in various decision-making processes.
+Music has also been composed through natural phenomena. These chaotic models create compositions from the  and inharmonic phenomena of nature. For example, since the 1970s  have been studied also as models for algorithmic composition.
+As an example of deterministic compositions through mathematical models, the  provides an option to play an  as  music.  (It is initially set to convert each integer to a note on an 88-key  by computing the integer  88, at a steady rhythm. Thus 123456, the natural numbers, equals half of a chromatic scale.)
+===Knowledge-based systems===
+One way to create compositions is to isolate the aesthetic code of a certain musical genre and use this code to create new similar compositions. Knowledge-based systems are based on a pre-made set of arguments that can be used to compose new works of the same style or genre. Usually this is accomplished by a set of tests or rules requiring fulfillment for the composition to be complete.
+===Grammars===
+Music can also be examined as a language with a distinctive  set. Compositions are created by first constructing a musical grammar, which is then used to create comprehensible musical pieces. Grammars often include rules for macro-level composing, for instance  and , rather than single notes.
+===Evolutionary methods===
+ are based on . The composition is being built by the means of  process. Through  and , different solutions evolve towards a suitable musical piece. Iterative action of the algorithm cuts out bad solutions and creates new ones from those surviving the process. The results of the process are supervised by the critic, a vital part of the algorithm controlling the quality of created compositions.
+===Evo-Devo approach===
+Evolutionary methods, combined with developmental processes, constitute the  approach for generation and optimization of complex structures. These methods have also been applied to music composition, where the musical structure is obtained by an iterative process that transform a very simple composition (made of a few notes) into a complex fully-fledged piece (be it a score, or a MIDI file).
+===Systems that learn===
+Learning systems are programs that have no given knowledge of the genre of music they are working with. Instead, they collect the learning material by themselves from the example material supplied by the user or programmer. The material is then processed into a piece of music similar to the example material. This method of algorithmic composition is strongly linked to algorithmic modeling of style, machine improvisation, and such studies as  and the study of . Marchini and Purwins  presented a system that learns the structure of an audio recording of a rhythmical percussion fragment using unsupervised clustering and variable length Markov chains and that synthesizes musical variations from it.
+===Hybrid systems===
+Programs based on a single algorithmic model rarely succeed in creating aesthetically satisfying results. For that reason algorithms of different type are often used together to combine the strengths and diminish the weaknesses of these algorithms. Creating hybrid systems for music composition has opened up the field of algorithmic composition and created also many brand new ways to construct compositions algorithmically.  The only major problem with hybrid systems is their growing complexity and the need of resources to combine and test these algorithms.
+==See also==
+*
+*
+*
+* (traditional musical rhythms that are generated by )
+*
+*
+*
+*
+*
+*
+*
+==References==
+==Sources==
+===Articles===
+* by Dr.John Francis. Music algorithmic computer programs representing all styles of music, with C source code,produces midi/wav files.2014
+*  by Martin Supper.  25.1 (2001) 48-53
+*, exploring generative approaches (including algorithmic, systems-based, formalized and procedural) to composition and performance primarily in the context of experimental technologies and music practices of the latter part of the twentieth century.
+*, by Robert Smith, et al. A conference paper describing a machine learning based approach to generating music by training a model on subject pieces and then generating new pieces based on non-musical audio files.
+*  by Michael Edwards. Communications of the ACM, Vol. 54 No. 7, Pages 5867 10.1145/1965724.1965742. From the abstract: "This article outlines the history of algorithmic composition from the pre- and post-digital computer age, concentrating, but not exclusively, on how it developed out of the avant-garde Western classical tradition in the second half of the 20th century. This survey is more illustrative than all-inclusive, presenting examples of particular techniques and some of the music that has been produced with them."
+==Further reading==
+*Phil Winsor and : ''Computer Music in C.'' Windcrest 1990. ISBN 978-1-57441-116-4
+*Curtis Roads: ''The Computer Music Tutorial.'' MIT Press 1996
+*George Papadopoulos: ''AI Methods for Algorithmic Composition : A survey, a Critical View and Future Prospects.'' AISB Symposium on Musical Creativity, 1999.
+*Eduardo Reck Miranda: ''Composing Music with Computers.'' Focal Press 2001
+*: ''Algorithmic Composition.'' in: '''', ed. by N. Collins and J. d'Escrivan, Cambridge University Press 2007. - ISBN 978-0-521-68865-9. - 
+*Gerhard Nierhaus: ''Algorithmic Composition - Paradigms of Automated Music Generation.'' Springer 2008. - ISBN 978-3-211-75539-6
+*Wooller, Rene, Brown, Andrew R, Miranda, Eduardo, Diederich, Joachim, & Berry, Rodney (2005) A framework for comparison of process in algorithmic music systems. In: Generative Arts Practice, 57 December 2005, Sydney, Australia. 
+==External links==
+*  A video introduction to algorithmic composition using the Lisp programming language.
+*  A series of algorithmic composition tutorials.

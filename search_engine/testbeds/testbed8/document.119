@@ -1,0 +1,10 @@
+Verification[edit]
+Sometimes we already have a binary tree, and we need to determine whether it is a BST. This problem has a simple recursive solution.
+The BST property—every node on the right subtree has to be larger than the current node and every node on the left subtree has to be smaller than (or equal to - should not be the case as only unique values should be in the tree - this also poses the question as to if such nodes should be left or right of this parent) the current node—is the key to figuring out whether a tree is a BST or not. The greedy algorithm – simply traverse the tree, at every node check whether the node contains a value larger than the value at the left child and smaller than the value on the right child – does not work for all cases. Consider the following tree:
+     20
+    /  \
+  10    30
+       /  \
+      5    40
+In the tree above, each node meets the condition that the node contains a value larger than its left child and smaller than its right child hold, and yet it is not a BST: the value 5 is on the right subtree of the node containing 20, a violation of the BST property.
+Instead of making a decision based solely on the values of a node and its children, we also need information flowing down from the parent as well. In the case of the tree above, if we could remember about the node containing the value 20, we would see that the node with value 5 is violating the BST property contract.

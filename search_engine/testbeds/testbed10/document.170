@@ -1,0 +1,117 @@
+AI and machine learning techniques for managing complexity,
+changes and uncertainties in manufacturing
+
+
+Laszl ! o Monostori*
+
+1. Introduction
+Growing complexity is one of the most significant
+characteristics of today’s manufacturing, which is
+manifested not only in manufacturing systems, but also
+the products to be manufactured, in the processes, and
+the company structures (Wiendahl and Scholtissek,
+1994). The systems operate in a changing environment
+life with uncertainty.
+The term of Intelligent Manufacturing Systems
+(IMSs) can be attributed to a tentative forecast of
+Hatvany and Nemes (1978). In another landmark paper
+of Hatvany (1983), IMSs were outlined as the next
+generation of manufacturing systems that—utilising the
+results of the Artificial intelligence (AI) research—were
+expected to solve, within certain limits, unprecedented,
+unforeseen problems on the basis of even incomplete
+and imprecise information (Hatvany, 1983).
+The most frequently cited definition of learning comes
+from Simon (1983): ‘‘Learning denotes changes in the
+system that is adaptive in the sense that they enable the
+system to do the same task or tasks drawn from the
+same population more effectively the next time’’. With
+respect to advanced engineering automation, as stated in
+Lu(1990), ‘‘we need new computer technologies that cannot only generate, record, and retrieve information,
+but also digest and synthesise information into knowledge
+and represent this knowledge properly to support
+decision-making’’. It can be emphasised that intelligence
+is strongly connected with learning, and learning ability
+must be an indispensable feature of IMSs (Monostori
+et al., 1996).
+The structure of the paper is as follows. Section 2
+gives a short survey of AI and machine learning (ML)
+techniques available. Approaches to handling changes
+and uncertainties in the process/machine level are
+treated in Section 3. System level issues are addressed
+in Section 4, while Section 5 attempts to draw some
+conclusions and to highlight some future research
+directions. learning techniques to get closer to working IMSs. In
+correspondence with a recently published larger survey
+on ML approaches to manufacturing (Monostori et al.,
+1996), the following main trends can be enumerated:
+* attributable mostly to the results of ANN research—
+in contrast to the situation 8–10 years ago, when they
+were considered as fields hardly manageable with AI
+techniques—the area of process modelling, monitoring
+and control came to the fore;
+* in recent years ANN-based learning is the dominant
+ML technique in manufacturing;
+* ANNs are natural tools at lower levels of IMs where
+abilities of sensor integration, signal processing,
+uncertainty handling, real-time and adaptive functioning
+are required, but
+* ANNs find their applications on nearly every, also on
+non-sensory domains of manufacturing, as general
+information processing blocks with learning abilities;
+* development and routine production of programmable
+ANN chips (e.g., cellular neural networks
+(Roska and Rodriguez-Vazquez, 2000) will give a
+new, spectacular impulse to ANN applications in
+manufacturing, especially with the rapid spread of
+smart sensors;
+* neuro-fuzzy approaches manifest themselves as prospective
+tools of numerous problems in manufacturing
+where real-time nature, learning ability, handling
+of uncertainty and both symbolic and numeric
+information are essential requirements;
+* as the considerable number of projects with multistrategy
+learning methods shows, the future belongs
+to these integrated approaches (Egresits et al., 1998).
+Distributed, holonic-like systems represent viable
+alternatives to hierarchical and heterarchical structures
+and the corresponding reactive scheduling approaches.
+Both of these—apparently distinct—lines can be advantageously
+used in rapidly changing production
+environments, however, none of them can be regarded
+as a universal tool. Even the application of such
+powerful global optimisation techniques as GAs, are
+not appropriate for very large problems, and as
+centralised approaches, are not totally devoid of all
+the known drawbacks of centralised/hierarchical control
+systems (Monostori et al., 1998). The multi-agent
+approach also becomes unrealistic beyond a given
+problem size, first of all due to the rapidly increasing
+communication burden. Consequently, both directions
+crave for some kind of aggregation (Van Brussel et al.,
+1998). There is a scope for temporal or permanent
+hierarchies also in holonic architectures (Bongaerts et al.,
+2000). By this way, the amount of necessary communication
+can be decreased, and the holonic concept can
+be expanded to the level of extended or virtual
+enterprises.
+A fundamental issue in distributed systems is how to
+ensure global performance with selfish agents pursuing
+their own goals (Hatvany, 1985). The integration of
+scheduling agents as a kind of staff holons (Van Brussel
+et al., 1998) into the architecture, can contribute to
+achieving global coherence in distributed systems
+(Monostori et al., 1998).
+The object-oriented simulation framework described
+in the paper, is expected to provide the necessary
+framework for further research addressing such
+fundamental issues of distributed manufacturing as
+agent structures, communication protocols, group formation,
+negotiation, global versus local optima, scalability,
+system tuning, agents’ behaviour, learning at
+system and agent levels (Monostori et al., 1996).
+The further integration of more traditional AI
+and ML techniques with the agent-based approach in
+the field of intelligent machines can be predicted
+resulting in systems with emergent behaviour (Ueda
+et al., 2001).

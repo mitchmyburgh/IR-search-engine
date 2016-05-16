@@ -1,0 +1,7 @@
+CloudyScripts for vCloud
+Matthias Jung / September 19, 2011
+Starting from now, CloudyScripts – our popular open-source library (more than 10000 downloads up to now) that aims at relieving administrators from finicky scripting details to secure and manage cloud infrastructures – now supports the vCloud API in addition to Amazon EC2. vCloud is the cloud stack provided by VMWare and already adopted by around 30 hosting providers worldwide.
+
+The first script we provide retrieves all open internet services for a given vCloud organization/account and checks if a service is actually running on that port. Unused open ports represent a means for attackers to deploy rogue publicly available services and may – in the case of providers like Terremark, who charges explicitly for every publicly available internet service – even be linked to additional costs.
+
+As usual, the script can be executed locally by installing a gem from the open-source library, by using the CloudyScripts web-service, or by starting a DevPay AMI within Amazon EC2. We will be happy for any feedback and open to implement or customize scripts on demand!

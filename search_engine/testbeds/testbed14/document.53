@@ -1,0 +1,56 @@
+World Wide Web
+From Wikipedia, the free encyclopedia
+"WWW" and "The web" redirect here. For other uses of WWW, see WWW (disambiguation). For other uses of web, see Web (disambiguation).
+For the first web software, see WorldWideWeb.
+The World Wide Web (WWW) is an information space where documents and other web resources are identified by URLs, interlinked by hypertext links, and can be accessed via the Internet.[1] The World Wide Web was invented by English scientist Tim Berners-Lee in 1989. He wrote the first web browser in 1990 while employed at CERN in Switzerland.[2][3]
+
+It has become known simply as the Web. The World Wide Web was central to the development of the Information Age and is the primary tool billions of people use to interact on the Internet.[4][5][6]
+
+Web pages are primarily text documents formatted and annotated with Hypertext Markup Language (HTML). In addition to formatted text, web pages may contain images, video, and software components that are rendered in the user's web browser as coherent pages of multimedia content. Embedded hyperlinks permit users to navigate between web pages. Multiple web pages with a common theme, a common domain name, or both, may be called a website. Website content can largely be provided by the publisher, or interactive where users contribute content or the content depends upon the user or their actions. Websites may be mostly informative, primarily for entertainment, or largely for commercial purposes.
+
+History[edit]
+Main article: History of the World Wide Web
+
+The NeXT Computer used by Tim Berners-Lee at CERN.
+
+The corridor where WWW was born. CERN, ground floor of building No.1
+Berners-Lee's vision of a global hyperlinked information system became a possibility by the second half of the 1980s. By 1985, the global Internet began to proliferate in Europe and in the Domain Name System (which the Uniform Resource Locator is built upon) came into being. In 1988 the first direct IP connection between Europe and North America was made and Berners-Lee began to openly discuss the possibility of a web-like system at CERN.[7]
+
+In March 1989 Tim Berners-Lee issued a proposal to the management at CERN for a system called "Mesh" that referenced ENQUIRE, a database and software project he had built in 1980, which used the term "web" and described a more elaborate information management system based on links embedded in readable text: "Imagine, then, the references in this document all being associated with the network address of the thing to which they referred, so that while reading this document you could skip to them with a click of the mouse." Such a system, he explained, could be referred to using one of the existing meanings of the word hypertext, a term that he says was coined in the 1950s. There is no reason, the proposal continues, why such hypertext links could not encompass multimedia documents including graphics, speech and video, so that Berners-Lee goes on to use the term hypermedia.[8]
+
+With help from his colleague and fellow hypertext enthusiast Robert Cailliau he published a more formal proposal on 12 November 1990 to build a "Hypertext project" called "WorldWideWeb" (one word) as a "web" of "hypertext documents" to be viewed by "browsers" using a client–server architecture.[9] At this point HTML and HTTP had already been in development for about two months and the first Web server was about a month from completing its first successful test.
+
+This proposal estimated that a read-only web would be developed within three months and that it would take six months to achieve "the creation of new links and new material by readers, [so that] authorship becomes universal" as well as "the automatic notification of a reader when new material of interest to him/her has become available." While the read-only goal was met, accessible authorship of web content took longer to mature, with the wiki concept, WebDAV, blogs, Web 2.0 and RSS/Atom.[10]
+
+The proposal was modeled after the SGML reader Dynatext by Electronic Book Technology, a spin-off from the Institute for Research in Information and Scholarship at Brown University. The Dynatext system, licensed by CERN, was a key player in the extension of SGML ISO 8879:1986 to Hypermedia within HyTime, but it was considered too expensive and had an inappropriate licensing policy for use in the general high energy physics community, namely a fee for each document and each document alteration.
+
+
+The CERN data center in 2010 housing some WWW servers
+A NeXT Computer was used by Berners-Lee as the world's first web server and also to write the first web browser, WorldWideWeb, in 1990. By Christmas 1990, Berners-Lee had built all the tools necessary for a working Web:[11] the first web browser (which was a web editor as well) and the first web server. The first web site,[12] which described the project itself, was published on 20 December 1990.[13]
+
+The first web page may be lost, but Paul Jones of UNC-Chapel Hill in North Carolina announced in May 2013 that Berners-Lee gave him what he says is the oldest known web page during a 1991 visit to UNC. Jones stored it on a magneto-optical drive and on his NeXT computer.[14]
+
+On 6 August 1991, Berners-Lee published a short summary of the World Wide Web project on the newsgroup alt.hypertext.[15] This date also marked the debut of the Web as a publicly available service on the Internet, although new users only accessed it after 23 August. For this reason this is considered the internaut's day. Several newsmedia have reported that the first photo on the Web was published by Berners-Lee in 1992, an image of the CERN house band Les Horribles Cernettes taken by Silvano de Gennaro; Gennaro has disclaimed this story, writing that media were "totally distorting our words for the sake of cheap sensationalism."[16]
+
+The first server outside Europe was installed at the Stanford Linear Accelerator Center (SLAC) in Palo Alto, California, to host the SPIRES-HEP database. Accounts differ substantially as to the date of this event. The World Wide Web Consortium's timeline says December 1992,[17] whereas SLAC itself claims December 1991,[18][19] as does a W3C document titled A Little History of the World Wide Web.[20]
+
+The underlying concept of hypertext originated in previous projects from the 1960s, such as the Hypertext Editing System (HES) at Brown University, Ted Nelson's Project Xanadu, and Douglas Engelbart's oN-Line System (NLS). Both Nelson and Engelbart were in turn inspired by Vannevar Bush's microfilm-based memex, which was described in the 1945 essay "As We May Think".[21]
+
+Berners-Lee's breakthrough was to marry hypertext to the Internet. In his book Weaving The Web, he explains that he had repeatedly suggested that a marriage between the two technologies was possible to members of both technical communities, but when no one took up his invitation, he finally assumed the project himself. In the process, he developed three essential technologies:
+
+a system of globally unique identifiers for resources on the Web and elsewhere, the universal document identifier (UDI), later known as uniform resource locator (URL) and uniform resource identifier (URI);
+the publishing language HyperText Markup Language (HTML);
+the Hypertext Transfer Protocol (HTTP).[22]
+The World Wide Web had a number of differences from other hypertext systems available at the time. The Web required only unidirectional links rather than bidirectional ones, making it possible for someone to link to another resource without action by the owner of that resource. It also significantly reduced the difficulty of implementing web servers and browsers (in comparison to earlier systems), but in turn presented the chronic problem of link rot.
+
+Unlike predecessors such as HyperCard, the World Wide Web was non-proprietary, making it possible to develop servers and clients independently and to add extensions without licensing restrictions. On 30 April 1993, CERN announced that the World Wide Web would be free to anyone, with no fees due.[23] Coming two months after the announcement that the server implementation of the Gopher protocol was no longer free to use, this produced a rapid shift away from Gopher and towards the Web. An early popular web browser was ViolaWWW for Unix and the X Windowing System.
+
+
+Robert Cailliau, Jean-François Abramatic formerly of INRIA, and Tim Berners-Lee at the 10th anniversary of the World Wide Web Consortium.
+Scholars generally agree that a turning point for the World Wide Web began with the introduction[24] of the Mosaic web browser[25] in 1993, a graphical browser developed by a team at the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign (NCSA-UIUC), led by Marc Andreessen. Funding for Mosaic came from the U.S. High-Performance Computing and Communications Initiative and the High Performance Computing and Communication Act of 1991, one of several computing developments initiated by U.S. Senator Al Gore.[26] Prior to the release of Mosaic, graphics were not commonly mixed with text in web pages and the web's popularity was less than older protocols in use over the Internet, such as Gopher and Wide Area Information Servers (WAIS). Mosaic's graphical user interface allowed the Web to become, by far, the most popular Internet protocol.
+
+The World Wide Web Consortium (W3C) was founded by Tim Berners-Lee after he left the European Organization for Nuclear Research (CERN) in October 1994. It was founded at the Massachusetts Institute of Technology Laboratory for Computer Science (MIT/LCS) with support from the Defense Advanced Research Projects Agency (DARPA), which had pioneered the Internet; a year later, a second site was founded at INRIA (a French national computer research lab) with support from the European Commission DG InfSo; and in 1996, a third continental site was created in Japan at Keio University. By the end of 1994, the total number of websites was still relatively small, but many notable websites were already active that foreshadowed or inspired today's most popular services.
+
+Connected by the existing Internet, other websites were created around the world, adding international standards for domain names and HTML. Since then, Berners-Lee has played an active role in guiding the development of web standards (such as the markup languages to compose web pages in), and has advocated his vision of a Semantic Web. The World Wide Web enabled the spread of information over the Internet through an easy-to-use and flexible format. It thus played an important role in popularizing use of the Internet.[27] Although the two terms are sometimes conflated in popular use, World Wide Web is not synonymous with Internet.[28] The Web is an information space containing hyperlinked documents and other resources, identified by their URIs.[29] It is implemented as both client and server software using Internet protocols such as TCP/IP and HTTP.
+
+Tim Berners-Lee was knighted in 2004 by Queen Elizabeth II for "services to the global development of the Internet".[30][31]

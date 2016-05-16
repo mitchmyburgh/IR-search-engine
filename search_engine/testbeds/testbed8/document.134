@@ -1,0 +1,19 @@
+In computer science, a Cartesian tree is a binary tree derived from a sequence of numbers; it can be uniquely defined from the properties that it is heap-ordered and that a symmetric (in-order) traversal of the tree returns the original sequence. Introduced byVuillemin (1980) in the context of geometric range searching data structures, Cartesian trees have also been used in the definition of the treap and randomized binary search tree data structures for binary search problems. The Cartesian tree for a sequence may be constructed in linear time using a stack-based algorithm for finding all nearest smaller values in a sequence.
+Contents
+  [hide] 
+•	1Definition
+•	2Range searching and lowest common ancestors
+•	3Treaps
+•	4Efficient construction
+•	5Application in sorting
+•	6History
+•	7Notes
+•	8References
+Definition[edit]
+The Cartesian tree for a sequence of distinct numbers can be uniquely defined by the following properties:
+1.	The Cartesian tree for a sequence has one node for each number in the sequence. Each node is associated with a single sequence value.
+2.	A symmetric (in-order) traversal of the tree results in the original sequence. That is, the left subtree consists of the values earlier than the root in the sequence order, while the right subtree consists of the values later than the root, and a similar ordering constraint holds at each lower node of the tree.
+3.	The tree has the heap property: the parent of any non-root node has a smaller value than the node itself.[1]
+Based on the heap property, the root of the tree must be the smallest number in the sequence. From this, the tree itself may also be defined recursively: the root is the minimum value of the sequence, and the left and right subtrees are the Cartesian trees for the subsequences to the left and right of the root value. Therefore, the three properties above uniquely define the Cartesian tree.
+If a sequence of numbers contains repetitions, the Cartesian tree may be defined by determining a consistent tie-breaking rule (for instance, determining that the first of two equal elements is treated as the smaller of the two) before applying the above rules.
+An example of a Cartesian tree is shown in the figure above.

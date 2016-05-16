@@ -1,0 +1,28 @@
+﻿Ontology-driven Natural language Processing (NLP)
+CraigTrim | May 19 2012 | Visits (9236) 
+ 
+1
+
+ 
+inShare3 
+ 
+Ontologies provide semantic context.
+Identifying entities in unstructured text is a picture only half complete. Ontology models complete the picture by showing how these entities relate to other entities, whether in the document or in the wider world.
+
+I realize that this sentence is really marked up and there’s arrows and red text going all over the place. So let’s examine this closely. We’ve only recognized (e.g. annotated) two words in this entire sentence: William Shakespeare as a Playwright and Hamlet as a Play. But look at the depth of the understanding that we have. There’s a model depicted on this image, and we want to examine this more carefully. You’ll notice first of all that there are a total of 6 annotations represented on the diagram with arrows flowing between them. These annotations are produced by the NLP parser, and modeled (here’s the key point), they are modeled in the Ontology. It’s in the Ontology that we specify how a Book is related to a Date, or to a Language, and a Language to a Country to an Author, to a work produced by that Author, and so on.
+Each annotation is backed by a dictionary. The data for that dictionary is generated out of the triple store that conforms to the Ontology. The Ontology shows the relationship of all the annotations to each other.
+The annotation of "William Shakespeare" as an Author is an implicit triple:
+William Shakespeare a Author 
+
+Transitioning to Structured Data (Triple Extraction)
+We are now beginning to transition from unstructured data into the realm of structured data; if we know that William Shakespeare is an Author, we also know that Authors live in Countries; that Authors write books that are published on certain dates and written in certain languages, etc.
+There’s an entire semantic chain of information that can be derived from this sentence - and that’s the point! Further, the Ontology helps us to understand what data we’re missing. If the NLP parser has recognized the author and the title, what hasn’t it recognized? It appears that all books are published on a date. So let’s look for the date - it’s in there. Further, it appears that a language is involved too - we can find that as well.
+To summarize, the Ontology gives us the relations that exist between annotations. It helps us to understand each annotated token in a larger context (the context of a semantic chain and semantic network). It also helps us to understand what information we are missing, and what else we need to look for.
+
+First Steps
+Are you faced with a large corpus of unstructured data? Where do you begin? How do you even know where to start looking and what you should start looking for? A model can help clarify this. The Ontology is your link into the real world. Without an Ontology, the annotations used by the NLP parser can become somewhat random. Who decides what an annotation should be named? Are they making this decision in coordination with what already exists? What modeling discipline exists? In past projects without an Ontology model, the NLP annotations over time had no link to the real world. Some one joining the project wouldn’t know what a "Rem
+Consider the diagram above. We may never annotate the source text for Language, Date or Country. Then again, maybe we would - but we don’t need to. The point is, these concepts still provide value, because they give us the context and domain understanding of the concepts that we do use as annotations in our NLP parser (like Book, Play and Author). This is an important point: Not every Ontology class needs to be associated with an anno
+Also note: There is no constraint toward a single Ontology model. Multiple ontology models can be used. It is likewise not a necessity that Ontology models must be related, either integrated peer-to-peer or via an "Upper Ontology". The need may exist, but it depends on circumstance. Maintaining multiple models, each as a context around a particular annotation, or annotation set, is a valid solution. It may even make collaborative team efforts simpler.
+References
+1. NLP-driven Ontology Modeling 
+

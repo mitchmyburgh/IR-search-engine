@@ -1,0 +1,149 @@
+L. Vera et al. / Computers & Graphics 31 (2007) 649-658
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 5. Button board with all the functionalities.
+
+Computer graphics applications in the education process of people with learning dif?culties Part 2
+
+
+
+Each product in the supermarket has a video associated with this information, trying to provide another tool to work on cognitive skills.
+Another way used in the application to promote social skills in the user was by integrating some virtual characters
+
+? 	Imaginary play: With this functionality it is possible to teach about imaginary play with miniatures of the objects. Again, the content is shown by videos inte- grated in the supermarket and can be associated with the work on cognitive skills. Although the imaginary play shown is individual, it is possible to arouse certain social skills with them, if the teacher tries to promote the same imaginary play but outside the computer and between him/her and the child.
+? 	Imaginary transformations and magic: This is a more abstract concept and tries to take advantages of using Virtual Reality to show information dif?cult to explain and see in the real world. In this case, the user is shown an imaginary transformation of the object selected in the supermarket into another completely different one and with another functionality. This transformation consist of a 3D graphic animation integrated into the virtual
+scene (see	Fig. 6	).
+This attempts to promote the development of certain imagination abilities, considering them as a part of the cognitive skills. As was explained before, the task of the teacher is very important in all the functionalities, since it is possible to promote social skills from the informa- tion contained in these transformations.
+? 	Imaginary use: In this case it is possible to learn about the imaginary usage of each object in a different context.
+
+representing different employees inside the supermarket. The user can listen to how the avatar says hello or other expressions and offers some products.
+The individual has to interact with it and wait for the object that he wants to buy, making it possible to train in another important social skill which is the waiting ability
+(see	Fig. 7	).
+Finally, the session ?nished when the user buys all the products indicated on the list. With all these objects in the trolley, it is necessary to go to the cash desk to pay for them. The user has to interact again with the virtual actor representing the cashier and give her the credit card to pay. After that, the user can exit and the session ?nishes.
+The ideas behind this development are of double value as it is not only an educational game but also a tool for teaching symbolic play. The attraction that people with learning dif?culties show towards computers increases the possibilities that this tool have in their educational process. They ?nd it easy to use the hardware devices (tactile screen or mouse and joystick) and the graphical interface (with the help of the teacher in the ?rst sessions), achieving high levels of interaction with the tool and, what it is more important, increasing their interest in educational contents.
+Relevant results have been published in	[18],where some
+case studies are described and analysed. The results obtained with some children, after near three months of
+
+ ARTICLEINPRESS
+L. Vera et al. / Computers & Graphics 31 (2007) 649-658	655
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 7. Butcher?s employee greeting the user, in the Virtual Supermarket.Fig. 8. General view of the classroom in the Virtual School application. intervention, with sessions of about 20?30min each,
+suggested very high impact on play scores after using the
+tools, measured with the Symbolic Play Test[20],and a
+very good level of generalization of acquired knowledge to
+real settings in those who spontaneously initiate commu-
+nication with others. The information provided by the tool
+to work on cognitive skills and environment understanding
+(such as the functional and imaginary use and play) helped
+them to better understand the usage and how to play with
+most of the objects included in the supermarket. Addition-
+ally, some of them improved their imagination skills and
+generalization to the real world.
+In the near future we would like to add more social
+components to the application, integrating more compli-
+cated interactions between the user and the virtual
+characters. For that, we would simulate different social
+situations in which the user may try to respond in a speci?c
+way to the avatars. Additionally, we would like to make
+the characters more empathic, making them able to
+recognize and predict (from video or voice information
+when possible[21,22])the mood of the user in each
+moment and adapt their behaviour and emotion to it.
+serves as a task index and guides the user?s evolution along
+the session. This timetable can be previously con?gured by
+the teacher, together with other session parameters, and
+selected at the beginning.
+ 
+ ARTICLEINPRESS
+656	L. Vera et al. / Computers & Graphics 31 (2007) 649-658
+ 
+ 
+ 
+ 
+ 
+ 
+Fig.9. Detailoftheuserinterfacecorresponding tothefourmaingroups
+of operation modes in the Virtual School.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 11. Four steps of imaginary transformation of scissors into a train sign, in the Virtual School.
+ 
+ 
+ 
+Adaptability is a very important feature of this applica- tion, referring to the range of disorders it can be used to work with. From the very essentials of design, a require- ment has been the ability to adapt sessions to the concrete user features, including in those features the kind of disorder involved. In this way, the application is being developed to be used with individuals with down syn-
+
+Fig. 10. Example of the generalization information provided by the program.
+ 
+ 
+other hand, inter-object relationships are better ex- plained with real examples, and so are shown to the user
+using sets of photographs (see	Fig. 10	).
+? 	Fantasy: Here the imagination and fantasy features are emphasized. Virtual 3D objects are presented to the user and then transformed into other non-related, different ones. Morphing technology becomes the most suitable option here, because this allows the integration of imagination sequences in the VE itself.
+The ?rst stage begins by working with imagination/ fantasy on single objects, showing individual transfor-
+mations of the object selected (see	Fig. 11	).
+The second, more advanced stage introduces more complex collective fantasy sequences, by transforming awhole group of school objects into a set of inter- related imaginary alter egos, all going around the same theme, to ?nally perform an imaginary animation including all of them.
+? 	Activities: The last group presents different activities intended to work around spatial, timing or social relationships. A ?rst group of generic activities lets the user learn basic spatial relationships and concepts described before, such as the size, quantity or relative position, as well as time-related concepts (such as slow/ fast or before/after).
+Asecond group of activities is intended to work with social relationships, by putting the user in the middle of speci?c situations where interaction with virtual actors is required in order to solve them.
+
+drome, as well as with people with autism spectrum disorders, by simply changing the set of activities programmed for each speci?c session.
+At the moment, the application is under development, with the collaboration of different professionals in the area. Most of the functions described above are completely developed, the 3D objects integrated in the environment have been tested with children to know the level of understanding of these virtual representations of real objects and we are ?nishing the ?rst prototype, for testing the interaction and environment understanding with people with learning dif?culties. Additionally, we would like to integrate virtual characters inside this environment, as school friends and teachers. We are interested in making them able to have an empathic interaction with the user, in order to improve or arouse social skills in them.
+ 
+ 
+5.3. Development
+ 
+ 
+The characteristics of the applications presented before made it necessary to make a decision on the software to use for their development. We decided to use a Real Time Graphic Library (OpenGL Performer) integrated in an Object Oriented Language ðC þþÞ, because of the potential of this kind of libraries for the creation of customized tools and the possibilties of achieving better quality and results than any other methodology. This library provides us with the basic scene graph and graphical control needed to structure and interact with the application in real time. The modularity of all the elements involved in the system allows the reusability for other new environments and the ?exibility to integrate all
+
+ ARTICLEINPRESS
+L. Vera et al. / Computers & Graphics 31 (2007) 649-658	657
+the desired functions. The design and models creation as well as the animations integrated in the environments were developed using well-known graphic tools such as 3D Studio Max and Photoshop. All these components, integrated in a well de?ned and structured system, results in computer graphics applications used for a special group of people, trying to help them in their knowledge development and quality of life.
+ 
+ 
+6.  Conclusions
+The development of graphic applications in Real Time, speci?cally addressed to people with special needs, constitutes an emerging ?eld of work inside the area of computer graphics applied to educational processes, being of special interest due to the learning dif?culties inherent in these individuals.
+This kind of applications offers a wide set of advantages over conventional pedagogical methods. On the user?s side, people with learning dif?culties show a special af?nity towards computers; regarding the technology, Real Time graphics offer a complete control over the environment presented, and facilitate abstract concepts, very dif?cult to represent in real world, to be explained to the user in a visual and intuitive way.
+The tools presented in this paper are good examples of this kind of applications, where technology meets educa- tion to improve the learning experience and, at the end, the quality of life of ?nal users.
+ 
+ 
+7.  Future work
+ 
+ 
+Currently, we are immersed in the development of the Virtual School, in which the previously acquired experience obtained from the Virtual Supermarket?together with the experimental results derived from its use in educational centres?and the availability of new technologies are allowing us to improve educational contents, introduce new learning methods and expand the range of potential users.
+In the near future the authors will end this software development and will face its testing using children with different learning dif?culties, by assessing speci?c variables in order to validate the bene?ts of the Virtual Reality as an educational tool. We hope the referred to tests and subsequent extended use of this tool will show us new directions to aim towards graphic educational work. As we mentioned before, one of this possible directions will lie in adding more social situations and empathic inter- actions between virtual characters and children with learning dif?culties in order to work in improving their social skills.
+ 
+ 
+Acknowledgments
+This work has been done thanks to the funding of the Spanish Ministry of Science and Technology
+
+(PROFIT), the Spanish Ministry of Social Affairs (IDI) and the Regional Government of Valencia, through the projects INMER and APRIL. We want to thank all the team from the ??Artec?? and ??Autism and Learning Dif?culties Group?? of the Robotics Institute at the University of Valencia, the collaboration of the Autism Association of Burgos, the Spanish Autism Confederation, COMUNICA centre of Diagnosis and Intervention, the Down Syndrome Association at Huesca (Spain), the Down Syndrome Association at Burgos, and the knowledge received from Dr. Rita Jordan (University of Birmingham).

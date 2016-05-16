@@ -1,0 +1,74 @@
+﻿Current bottom-up approaches to generating semantics for multimedia entities
+generally all fall into the same information pipeline. In general, this information
+pipeline consists of a number of processing stages, between
+the raw media and
+the semantics, as illustrated in Figure 1.
+Currently, work on the automatic annotation of media has mostly concentrated on the processing stages between the raw media and the
+labelled scene.
+Of course, not all techniques follow the information pipeline shown in Figure 1
+exactly. For example, a number of auto-annotation techniques directly associate
+descriptors with labels, without any concept of objects. The next subsection gives
+an overview of existing auto-annotation techniques, and the following subsection
+describes an alternative technique which we have been developing that avoids
+some of the problems associated with the various auto-annotation approaches.
+2.1 Automatic Annotation
+The first attempt at automatic annotation was perhaps the work of Mori et
+al. [13], which applied a co-occurrence model to keywords an
+d low-level features
+Fig. 1.
+A generalised information pipeline from raw media to semantics.
+of rectangular image regions. The current techniques for auto-annotation generally fall into two categories; those that first segment images into regions, or
+‘blobs’ and those that take a more scene-orientated approach, using global information. The segmentation approach has recently been pursue
+d by a number of
+researchers. Duygulu et al. [14] proposed a method by which a
+machine translation model was applied to translate between keyword annotations and a discrete
+vocabulary of clustered ‘blobs’. The data-set proposed by Duygulu et al. [14] has
+become a popular benchmark of annotation systems in the literature. Jeon et
+al. [15] improved on the results of Duygulu et al. [14] by recasting the problem
+as cross-lingual information retrieval and applying the Cross-Media Relevance
+Model (CMRM) to the annotation task. Jeon et al. [15] also showed that better
+(ranked) retrieval results could be obtained by using probabilistic annotation,
+rather than
+hard
+annotation. Lavrenko et al. [16] used the Continuous-space
+Relevance Model (CRM) to build continuous probability density functions to
+describe the process of generating blob features. The CRM mo
+del was shown to
+outperform the CMRM model significantly. Metzler and Manmatha [17] propose
+an inference network approach to link regions and their annotations; unseen images can be annotated by propagating belief through the network to the nodes
+representing keywords. The models by Monay and Gatica-Perez [18], Feng et
+al. [19] and Jeon et al. [20] use rectangular regions rather than blobs. Monay
+and Gatica-Perez [18] investigate Latent Space models of an
+notation using Latent Semantic Analysis and Probabilistic Latent Semantic Analysis, Feng et
+al. [19] use a multiple Bernoulli distribution to model the relationship between
+the blocks and keywords, whilst Jeon et al. [20] use a machine
+translation approach based on Maximum Entropy. Blei and Jordan [21] describe an extension
+to Latent Dirichlet Allocation [22] which assumes a mixture
+of latent factors
+is used to generate keywords and blob features. This approach is extended to
+multi-modal data in the article by Barnard et al. [23].
+Oliva and Torralba [24, 25] explored a scene oriented approach to annotation in which they showed that basic scene annotations, su
+ch as ‘buildings’
+and ‘street’ could be applied using relevant low-level glob
+al filters. Yavlinsky et
+al. [26] explored the possibility of using simple global features together with robust non-parametric density estimation using the technique of kernel smoothing.
+The results shown by Yavlinsky et al. [26] were comparable with the inference
+network [17] and CRM [16]. Notably, Yavlinsky et al. showed that the Corel
+data-set proposed by Duygulu et al. [14] could be annotated remarkably well by
+just using global colour information.
+Most of the auto-annotation approaches described above per
+form annotations
+in a
+hard
+manner; that is, they explicitly apply some number of annotations to
+an image. A
+hard
+auto-annotator can cause problems in retrieval because it may
+inadvertently annotate with a similar, but wrong label; for
+example, labelling an
+image of a horse with “foal”. Jeon
+et al
+[15] first noted that this was the case
+when they compared the retrieval results from a fixed-length
+hard annotator
+with a probabilistic annotator.

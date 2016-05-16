@@ -1,0 +1,57 @@
+Polygon mesh
+From Wikipedia, the free encyclopedia
+  (Redirected from Polygon meshes)
+
+This article needs additional citations for verification. Relevant discussion may be found on the talk page. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (June 2009) (Learn how and when to remove this template message)
+
+Example of a triangle mesh representing a dolphin.
+A polygon mesh is a collection of vertices, edges and faces that defines the shape of a polyhedral object in 3D computer graphics and solid modeling. The faces usually consist of triangles (triangle mesh), quadrilaterals, or other simple convex polygons, since this simplifies rendering, but may also be composed of more general concave polygons, or polygons with holes.
+
+The study of polygon meshes is a large sub-field of computer graphics and geometric modeling. Different representations of polygon meshes are used for different applications and goals. The variety of operations performed on meshes may include Boolean logic, smoothing, simplification, and many others. Network representations, "streaming" and "progressive" meshes, are used to transmit polygon meshes over a network. Volumetric meshes are distinct from polygon meshes in that they explicitly represent both the surface and volume of a structure, while polygon meshes only explicitly represent the surface (the volume is implicit). As polygonal meshes are extensively used in computer graphics, algorithms also exist for ray tracing, collision detection, and rigid-body dynamics of polygon meshes.
+
+Contents  [hide] 
+1	Elements of mesh modeling
+2	Representations
+2.1	Vertex-vertex meshes
+2.2	Face-vertex meshes
+2.3	Winged-edge meshes
+2.4	Render dynamic meshes
+3	Summary of mesh representation
+4	Other representations
+5	File formats
+6	See also
+7	References
+8	External links
+Elements of mesh modeling[edit]
+Elements of polygonal mesh modeling.
+
+Objects created with polygon meshes must store different types of elements. These include vertices, edges, faces, polygons and surfaces. In many applications, only vertices, edges and either faces or polygons are stored. A renderer may support only 3-sided faces, so polygons must be constructed of many of these, as shown above. However, many renderers either support quads and higher-sided polygons, or are able to convert polygons to triangles on the fly, making it unnecessary to store a mesh in a triangulated form. Also, in certain applications like head modeling, it is desirable to be able to create both 3- and 4-sided polygons.
+
+A vertex is a position along with other information such as color, normal vector and texture coordinates. An edge is a connection between two vertices. A face is a closed set of edges, in which a triangle face has three edges, and a quad face has four edges. A polygon is a coplanar set of faces. In systems that support multi-sided faces, polygons and faces are equivalent. However, most rendering hardware supports only 3- or 4-sided faces, so polygons are represented as multiple faces. Mathematically a polygonal mesh may be considered an unstructured grid, or undirected graph, with additional properties of geometry, shape and topology.
+
+Surfaces, more often called smoothing groups, are useful, but not required to group smooth regions. Consider a cylinder with caps, such as a soda can. For smooth shading of the sides, all surface normals must point horizontally away from the center, while the normals of the caps must point straight up and down. Rendered as a single, Phong-shaded surface, the crease vertices would have incorrect normals. Thus, some way of determining where to cease smoothing is needed to group smooth parts of a mesh, just as polygons group 3-sided faces. As an alternative to providing surfaces/smoothing groups, a mesh may contain other data for calculating the same data, such as a splitting angle (polygons with normals above this threshold are either automatically treated as separate smoothing groups or some technique such as splitting or chamfering is automatically applied to the edge between them). Additionally, very high resolution meshes are less subject to issues that would require smoothing groups, as their polygons are so small as to make the need irrelevant. Further, another alternative exists in the possibility of simply detaching the surfaces themselves from the rest of the mesh. Renderers do not attempt to smooth edges across noncontiguous polygons.
+
+Mesh format may or may not define other useful data. Groups may be defined which define separate elements of the mesh and are useful for determining separate sub-objects for skeletal animation or separate actors for non-skeletal animation. Generally materials will be defined, allowing different portions of the mesh to use different shaders when rendered. Most mesh formats also support some form of UV coordinates which are a separate 2d representation of the mesh "unfolded" to show what portion of a 2-dimensional texture map to apply to different polygons of the mesh.
+
+Representations[edit]
+Polygon meshes may be represented in a variety of ways, using different methods to store the vertex, edge and face data. These include:
+
+Face-vertex meshes: A simple list of vertices, and a set of polygons that point to the vertices it uses.
+Winged-edge meshes, in which each edge points to two vertices, two faces, and the four (clockwise and counterclockwise) edges that touch them. Winged-edge meshes allow constant time traversal of the surface, but with higher storage requirements.
+Half-edge meshes: Similar to winged-edge meshes except that only half the edge traversal information is used. (see OpenMesh)
+Quad-edge meshes, which store edges, half-edges, and vertices without any reference to polygons. The polygons are implicit in the representation, and may be found by traversing the structure. Memory requirements are similar to half-edge meshes.
+Corner-tables, which store vertices in a predefined table, such that traversing the table implicitly defines polygons. This is in essence the triangle fan used in hardware graphics rendering. The representation is more compact, and more efficient to retrieve polygons, but operations to change polygons are slow. Furthermore, corner-tables do not represent meshes completely. Multiple corner-tables (triangle fans) are needed to represent most meshes.
+Vertex-vertex meshes: A "VV" mesh represents only vertices, which point to other vertices. Both the edge and face information is implicit in the representation. However, the simplicity of the representation does not allow for many efficient operations to be performed on meshes.
+Each of the representations above have particular advantages and drawbacks, further discussed in Smith (2006).[1]
+
+The choice of the data structure is governed by the application, the performance required, size of the data, and the operations to be performed. For example, it is easier to deal with triangles than general polygons, especially in computational geometry. For certain operations it is necessary to have a fast access to topological information such as edges or neighboring faces; this requires more complex structures such as the winged-edge representation. For hardware rendering, compact, simple structures are needed; thus the corner-table (triangle fan) is commonly incorporated into low-level rendering APIs such as DirectX and OpenGL.
+
+Vertex-vertex meshes[edit]
+Figure 2. Vertex-vertex meshes
+Vertex-vertex meshes represent an object as a set of vertices connected to other vertices. This is the simplest representation, but not widely used since the face and edge information is implicit. Thus, it is necessary to traverse the data in order to generate a list of faces for rendering. In addition, operations on edges and faces are not easily accomplished.
+
+However, VV meshes benefit from small storage space and efficient morphing of shape. The above figure shows a four-sided box as represented by a VV mesh. Each vertex indexes its neighboring vertices. Notice that the last two vertices, 8 and 9 at the top and bottom center of the "box-cylinder", have four connected vertices rather than five. A general system must be able to handle an arbitrary number of vertices connected to any given vertex.
+
+For a complete description of VV meshes see Smith (2006).[1]
+
+Face-vertex meshes[edit]

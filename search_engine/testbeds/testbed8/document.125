@@ -1,0 +1,11 @@
+Recursive definition[edit]
+ 	This article may need to be rewritten entirely to comply with Wikipedia's quality standards, as section. You can help. Thediscussion page may contain suggestions. (July 2014)
+
+Another way of defining a full binary tree is a recursive definition. A full binary tree is either:[11]
+•	A single vertex.
+•	A graph formed by taking two (full) binary trees, adding a vertex, and adding an edge directed from the new vertex to the root of each binary tree.
+This also does not establish the order of children, but does fix a specific root node.
+To actually define a binary tree in general, we must allow for the possibility that only one of the children may be empty. An artifact, which in some textbooks is called an extended binary tree is needed for that purpose. An extended binary tree is thus recursively defined as:[11]
+•	the empty set is an extended binary tree
+•	if T1 and T2 are extended binary trees, then denote by T1 • T2 the extended binary tree obtained by adding a root r connected to the left to T1 and to the right to T2 by adding edges when these sub-trees are non-empty.
+Another way of imagining this construction (and understanding the terminology) is to consider instead of the empty set a different type of node—for instance square nodes if the regular ones are circles.[12]

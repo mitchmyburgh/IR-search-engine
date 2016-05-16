@@ -1,0 +1,32 @@
+Basic concepts and nomenclature
+
+Each record of a linked list is often called an 'element' or 'node'.
+
+The field of each node that contains the address of the next node is usually called the 'next link' or 'next pointer'. The remaining fields are known as the 'data', 'information', 'value', 'cargo', or 'payload' fields.
+
+The 'head' of a list is its first node. The 'tail' of a list may refer either to the rest of the list after the head, or to the last node in the list. In Lisp and some derived languages, the next node may be called the 'cdr' (pronounced could-er) of the list, while the payload of the head node may be called the 'car'.
+Singly linked list
+
+Singly linked lists contain nodes which have a data field as well as a 'next' field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal.
+Singly-linked-list.svg
+A singly linked list whose nodes contain two fields: an integer value and a link to the next node
+Doubly linked list
+Main article: Doubly linked list
+
+In a 'doubly linked list', each node contains, besides the next-node link, a second link field pointing to the 'previous' node in the sequence. The two links may be called 'forward('s') and 'backwards', or 'next' and 'prev'('previous').
+Doubly-linked-list.svg
+A doubly linked list whose nodes contain three fields: an integer value, the link forward to the next node, and the link backward to the previous node
+
+A technique known as XOR-linking allows a doubly linked list to be implemented using a single link field in each node. However, this technique requires the ability to do bit operations on addresses, and therefore may not be available in some high-level languages.
+
+Many modern operating systems use doubly linked lists to maintain references to active processes, threads, and other dynamic objects.[2] A common strategy for rootkits to evade detection is to unlink themselves from these lists.[3]
+Multiply linked list
+
+In a 'multiply linked list', each node contains two or more link fields, each field being used to connect the same set of data records in a different order (e.g., by name, by department, by date of birth, etc.). While doubly linked lists can be seen as special cases of multiply linked list, the fact that the two orders are opposite to each other leads to simpler and more efficient algorithms, so they are usually treated as a separate case.
+Circular Linked list
+
+In the last node of a list, the link field often contains a null reference, a special value used to indicate the lack of further nodes. A less common convention is to make it point to the first node of the list; in that case the list is said to be 'circular' or 'circularly linked'; otherwise it is said to be 'open' or 'linear'.
+Circularly-linked-list.svg
+A circular linked list
+
+In the case of a circular doubly linked list, the only change that occurs is that the end, or "tail", of the said list is linked back to the front, or "head", of the list and vice versa.

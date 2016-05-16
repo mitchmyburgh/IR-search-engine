@@ -1,0 +1,33 @@
+A sector antenna is a type of directional microwave antenna with a sector-shaped radiation pattern. The word "sector" is used in the geometric sense; some portion of the circumference of a circle measured in degrees of arc. 60°, 90° and 120° designs are typical, often with a few degrees 'extra' to ensure overlap and mounted in multiples when wider or full-circle coverage is required (see photos below). The largest use of these antennas is as antennas for cell phone base-station sites. They are also used for other types of mobile communications, for example in WiFi networks. They are used for limited-range distances of around 4 to 5 km.
+
+
+== Design ==
+
+A typical sector antenna is depicted in the figure on the right. At the bottom, there are RF connectors for coaxial cable (feedline), and adjustment mechanisms. For its outdoor placement, the main reflector screen is produced from aluminum, and all internal parts are housed into a fiberglass radome enclosure to keep its operation stable regardless of weather conditions.
+Grounding is very important for an outdoor antenna so all metal parts are DC-grounded.
+The antenna's long narrow form gives it a fan-shaped radiation pattern, wide in the horizontal direction and relatively narrow in the vertical direction. According to the radiation patterns depicted, typical antennas used in a three-sector base station have 66° of horizontal beamwidth. This means that the signal strength at the ±33° directions is half (3 dB down) from its peak value at the center. At the ±60° directions, it is suggested to be a border of a sector and antenna gain is negligible there.
+Vertical beamwidth is not wider than 15°, meaning 7.5° in each direction. Unlike antennas for commercial broadcasting - AM, FM and television for example - which must achieve line-of-sight over many miles or kilometers, there is usually a downward beam tilt or downtilt so that the base station can more effectively cover its immediate area and not cause RF interference to distant cells.
+The coverage area which is equal to the square of the sector's projection to the ground can be adjusted by changing electrical or mechanical downtilts. Electrical tilt is set by using a special control unit which usually is built into the antenna case, though different remote control devices are widely produced. Mechanical downtilt is set manually by adjusting an antenna fastener.
+
+
+== Use ==
+
+To increase or widen the coverage area, and thus the number of served clients, several sector antennas are installed on the same supporting structure, e.g. tower or mast.
+Such a construction is often called a sectorized antenna, though sometimes for brevity "sector antenna" is used as well. It has several angularly-separated sector antennas as shown on the figures at right.
+Once the antenna unit is attached to a supporting structure, it has to be positioned. Positioning means not only setting a correct direction or azimuth, but setting a correct downtilt as well. By restricting emitted energy to a sub-circular arc and narrow vertical coverage the design makes efficient use of relatively low power transmitter equipment. Though absolute range is limited, this configuration allows for good data rates (digital information transfer measured in bits/second, sometimes given as total minus error-correction overhead), and good signal consistency within the coverage area.
+Prior to positioning, grounding and lightning protection are required. As seen in the pictures, all supporting constructions have lightning rods.
+
+A well-chosen downtilt setting strategy can lower the overall interference in the network. A too-aggressive downtilting strategy will however lead to an overall loss of coverage due to cells not overlapping. Downtilting can be used to solve specific problems, for example local interference problems or cells that are too large. Electrical tilting slightly reduces beam width.
+In a picture on the right, there are two sector antennas with different mechanical downtilts. Note that a more vertical antenna is less visible than a mechanically tilted one - the use of purely electrical tilt with no mechanical tilt is therefore an attractive choice for aesthetic reasons which are very important for operators seeking acceptance of integrated antennas in visible locations.
+
+
+== See also ==
+Antenna
+Radio frequency
+panel antenna, a similar type used in broadcast engineering
+
+
+== External links ==
+Deploying License-Free Wireless Wide-Area Networks by Cisco Press
+Antenna Tilt Control in CDMA Networks
+P-CPICH Power and Antenna Tilt Optimization in UMTS networks

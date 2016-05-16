@@ -1,0 +1,43 @@
+Google's V8 JavaScript engine now backs WebAssembly
+More like this
+
+    browsers chrome firefox internet explorer safari
+    Google, Microsoft, Mozilla preview WebAssembly in their browsers
+    lorimerlite framework structure build construction
+    Beyond jQuery: An expert guide to JavaScript frameworks
+    arrows left parallel
+    Mozilla gives WebAssembly a parallelism boost
+    on IDG Answers
+    What is 'Google dorking' and why is it a security threat?
+
+Google's V8 JavaScript engine now backs WebAssembly
+Credit: Vic Brincat
+Version 5.1 also boosts performance and standardization, and it implements more of the Orinoco garbage collector
+
+Paul Krill By Paul Krill Follow
+
+InfoWorld | Apr 26, 2016
+RELATED TOPICS
+
+    JavaScript Application Development 
+
+Comments
+
+Version 5.1 of Google's open source V8 JavaScript engine accommodates the WebAssembly portable code format and improves standards support, performance, and garbage collection.
+pearl oyster shell treasure jewel gem
+Get to know Perl 6
+
+Perl 6 finally arrived a few weeks ago, carrying a load of new features without losing its free-form
+Read Now
+
+Offered in a beta release this past weekend, Version 5.1 has preliminary support for WebAssembly, a much-heralded attempt to improve Web performance via a bytecode format in browsers. "You can enable it via the flag --expose_wasm in d8. Alternatively, you can try out the WASM demos with Chrome 51, Beta Channel," the Google V8 team said. Google's backing for WebAssembly follows Mozilla's support via its SpiderMonkey JavaScript engine.
+[ Use JavaScript in your dev shop? InfoWorld looks at 17 JavaScript editors and IDEs and 22 JavaScript frameworks ready for adoption. | Keep up with hot topics in programming with InfoWorld's Application Development newsletter. ]
+
+V8 has served as a critical cog in the Node.js server-side JavaScript platform, and V8 5.1 works toward compliance with the ECMAScript 2017 draft specification. Capabilities include iterator closing, in which iterators created as part of a for-of loop or other built-in iteration are checked for "close" method, which is called if a loop terminates early. "This can be used for clean-up duty after the iteration has finished," the V8 team said.
+
+Also, constructors can implement a "Symbol.hasInstance" method to override the default behavior. "Function names inferred for function expressions are now typically made available in the name property of functions, following the ES2015 formalization of these rules," said the team. This may change existing stack traces and provide different names from previous V8 versions. "It also gives useful names to properties and methods with computed property names."
+
+Version 5.1 improves performance in JavaScript features, including Object.assign, for copying values of enumerable own properties from source objects to a target object; Array.prototype.join, for joining elements in an array into a string; and Array.prototype.toString, which returns a string representing an array and its elements.
+
+For garbage collection, V8 5.1 implements more of the Orinoco garbage collector, including parallel young generation evacuation, scalable remembered sets, and black allocation, which is an improvement to the object marking phase of the garbage collector. Orinoco is based on the notion that implementing a mostly parallel and concurrent garbage collector without strict generational boundaries reduces garbage collection junk and memory usage while providing high throughput.
+

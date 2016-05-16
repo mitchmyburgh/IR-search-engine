@@ -1,0 +1,15 @@
+Sometimes, untagged unions are used to perform bit-level conversions between types, called reinterpret casts in C++. Tagged unions are not intended for this purpose; typically a new value is assigned whenever the tag is changed.
+
+Many languages support, to some extent, a universal data type, which is a type that includes every value of every other type, and often a way is provided to test the actual type of a value of the universal type. These are sometimes referred to as variants. While universal data types are comparable to tagged unions in their formal definition, typical tagged unions include a relatively small number of cases, and these cases form different ways of expressing a single coherent concept, such as a data structure node or instruction. Also, there is an expectation that every possible case of a tagged union will be dealt with when it is used. The values of a universal data type are not related and there is no feasible way to deal with them all.
+
+Like option types and exception handling, tagged unions are sometimes used to handle the occurrence of exceptional results. Often these tags are folded into the type as "reserved values", and their occurrence is not consistently checked: this is a fairly common source of programming errors. This use of tagged unions can be formalized as a monad with the following functions:
+
+    \text{return}\colon A \to \left( A + E \right) = a \mapsto \text{value} \, a
+    \text{bind}\colon \left( A + E \right) \to \left(A \to \left(B + E \right) \right) \to \left( B + E \right) = a \mapsto f \mapsto \begin{cases} \text{err} \, e & \text{if} \ a = \text{err} \, e\\ f \, a' & \text{if} \ a = \text{value} \, a' \end{cases}
+
+where "value" and "err" are the constructors of the union type, A and B are valid result types and E is the type of error conditions. Alternately, the same monad may be described by return and two additional functions, fmap and join:
+
+    \text{fmap} \colon (A \to B) \to \left( \left( A + E \right) \to \left( B + E \right) \right) = f \mapsto a \mapsto \begin{cases} \text{err} \, e & \text{if} \ a = \text{err} \, e \\ \text{value} \, f \, a' & \text{if} \ a = \text{value} \, a' \end{cases}
+    \text{join} \colon ((A + E ) + E) \to (A + E) = a \mapsto \begin{cases} \text{err} \, e & \mbox{if} \ a = \text{err} \, e\\ \text{err} \, e & \text{if} \ a = \text{value} \, \text{err} \, e \\ \text{value} \, a' & \text{if} \ a = \text{value} \, \text{value} \, a' \end{cases}
+
+

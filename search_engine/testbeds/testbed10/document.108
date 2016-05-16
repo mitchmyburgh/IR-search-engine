@@ -1,0 +1,67 @@
+Multitask Learning
+
+RICH CARUANA
+
+
+1. Introduction
+1.1. Overview
+Multitask Learning (MTL) is an inductive transfer mechanism whose principle goal is
+to improve generalization performance. MTL improves generalization by leveraging the
+domain-specific information contained in the training signals ofrelated tasks. It does this by
+training tasks in parallel while using a shared representation. In effect, the training signals
+for the extra tasks serve as an inductive bias. Section 1.2 argues that inductive transfer is
+important if we wish to scale tabula rasa learning to complex, real-world tasks. Section 1.3
+presents the simplest method we know for doing multitask inductive transfer, adding extra
+tasks (i.e., extra outputs) to a backpropagation net. Because the MTL net uses a shared
+hidden layer trained in parallel on all the tasks, what is learned for each task can help other
+tasks be learned better. Section 1.4 argues that it is reasonable to view training signals as
+an inductive bias when they are used this way.
+Section 2 demonstrates that MTL works. We compare the performance of single task
+learning (STL—learning just one task at a time) and multitask learning in backpropagation
+on three problems. One of these problems is a real-world problem created by researchers
+other than the author who did not consider using MTL when they collected the data.
+
+that could improve generalization even if the extra tasks’ training signals are not relevant
+to the main task. We present an empirical test that rules out these mechanisms and thus
+ensures that the benefit from MTL is due to the information in the extra tasks. In section
+3.2 we present mechanisms that explain how MTL leverages the information in the extra
+training signals to improve generalization. In section 3.3 we show that MTL in backprop
+nets is able to determine how tasks are related without being given an explicit training signal
+for task relatedness.
+Section 4 may be the most important part of this paper. It shows that there are many
+opportunities for MTL (and for inductive transfer in general) on real-world problems. At
+first glance most of the problems one sees in machine learning today do not look like
+multitask problems. We believe most current problems in machine learning appear to be
+single task because of the way we have been trained. Many—in fact, we believe most—
+real-world problems are multitask problems and performance is being sacrificed when we
+treat them as single task problems.
+Sections 1-4 use the simplest MTL algorithm we know of, a backprop net with multiple
+outputs sharing a single, fully connected hidden layer. But MTL is a collection of ideas,
+techniques, and algorithms, not one algorithm. In Section 5 we present MTL algorithms
+for k-nearest neighbor and decision trees. While these algorithms look rather different
+from MTL in backprop nets, there is strong overlap of mechanisms and issues; all MTL
+algorithms must address essentially the same set of problems, even if the specific mechanism
+in each algorithm is different.
+Inductive transfer is not new, and many backprop nets used multiple outputs before MTL
+came along. Related work is presented in Section 6. Section 7 discusses many issues that
+arise in MTL and briefly mentions future work. Section 8 is a summary.
+
+8. Summary
+Acquiring domain-specific inductive bias is subject to the usual knowledge acquisition
+bottleneck. Multitask learning allows inductive bias to be acquired via the training signals
+for related additional tasks drawn from the same domain. This paper demonstrates that the
+benefit of using extra tasks can be substantial. Through careful experiments, we are able
+to show that the benefits of multitask learning are due to the extra information contained in
+the training signals for the extra tasks, not due to some other property of backpropagation
+72 R. CARUANA
+nets that might be achieved in another way. We are also able to elucidate a number of
+mechanisms that explain how multitask learning improves generalization.
+Most of the work presented in this paper uses multitask learning in backprop nets. We have,
+however, developed algorithms for multitask learning in k-nearest neighbor and decision
+trees. The ability to use multitask learning with inductive methods as different as artificial
+neural nets, decision trees, and k-nearest neighbor speaks to the generality of the basic
+idea. Perhaps more importantly, we have been able to identify a number of situations
+that commonly arise in real-world domains where multitask learning should be applicable.
+This is surprising—few of the standard test problems used in machine learning today are
+multitask problems. We conjecture that as machine learning is applied to unsanitized,
+real-world problems, the opportunities for multitask learning will increase.

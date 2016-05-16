@@ -1,0 +1,47 @@
+Interactive evolutionary computation (IEC) or aesthetic selection is a general term for methods of evolutionary computation that use human evaluation. Usually human evaluation is necessary when the form of fitness function is not known (for example, visual appeal or attractiveness; as in Dawkins, 1986) or the result of optimization should fit a particular user preference (for example, taste of coffee or color set of the user interface).
+
+
+== IEC design issues ==
+The number of evaluations that IEC can receive from one human user is limited by user fatigue which was reported by many researchers as a major problem. In addition, human evaluations are slow and expensive as compared to fitness function computation. Hence, one-user IEC methods should be designed to converge using a small number of evaluations, which necessarily implies very small populations. Several methods were proposed by researchers to speed up convergence, like interactive constrain evolutionary search (user intervention) or fitting user preferences using a convex function. IEC human-computer interfaces should be carefully designed in order to reduce user fatigue. There is also evidence that the addition of computational agents can successfully counteract user fatigue.
+However IEC implementations that can concurrently accept evaluations from many users overcome the limitations described above. An example of this approach is an interactive media installation by Karl Sims that allows one to accept preferences from many visitors by using floor sensors to evolve attractive 3D animated forms. Some of these multi-user IEC implementations serve as collaboration tools, for example HBGA.
+
+
+== IEC types ==
+IEC methods include interactive evolution strategy, interactive genetic algorithm, interactive genetic programming, and human-based genetic algorithm.,
+Synthetic Curriculum Modeling (SCM) and Academic Information Modeling (AIM) are patented proprietary protocols invented by Mr. Timothy Schultz of Chandler Arizona in early 2010. An integration process which converts 3D thermal heat laser scan point clouds into a dynamic environment becomes accessible by way of human in the loop algorithms, produced in real time simulation as part of personal and professional, including commercial, law enforcement, TSA, Armor Car operators, construction Heavy Equipment operators as needed in part for industry specific education and licensing requirements. Utilizing synthetic virtual information relieves risk and expense typically experienced with traditional education methods. Popular online racing (iracing) utilizes similar methods to offer race car drivers and hobbyist the ability experience real world conditions without the cost or risk to man or machine. According to Mr. Schultz, Human In The Loop education has become so advanced, that this method of drivers education and defensive driving has become the most popular form of youth licensing in Arizona.
+
+
+=== IGA ===
+An interactive genetic algorithm (IGA) is defined as a genetic algorithm that uses human evaluation. These algorithms belong to a more general category of Interactive evolutionary computation. The main application of these techniques include domains where it is hard or impossible to design a computational fitness function, for example, evolving images, music, various artistic designs and forms to fit a user's aesthetic preferences. Interactive computation methods can use different representations, both linear (as in traditional genetic algorithms) and tree-like ones (as in genetic programming).
+
+
+== See also ==
+Evolutionary art
+Human-based evolutionary computation
+Human-based genetic algorithm
+Human-computer interaction
+Karl Sims
+Electric Sheep
+SCM-Synthetic Curriculum Modeling
+
+
+== References ==
+
+Banzhaf, W. (1997), Interactive Evolution, Entry C2.9, in: Handbook of Evolutionary Computation, Oxford University Press, ISBN 978-0750308953
+
+
+== External links ==
+"EndlessForms.com, Collaborative interactive evolution allowing you to evolve 3D objects and have them 3D printed". 
+"Art by Evolution on the Web Interactive Art Generator". 
+"Facial composite system using interactive genetic algorithms". 
+"Galapagos by Karl Sims". 
+"E-volver". 
+"SBART, a program to evolve 2D images". 
+"GenJam (Genetic Jammer)". 
+"Evolutionary music". 
+"Darwin poetry". 
+"Takagi Lab at Kyushu University". 
+"Interactive one-max problem allows to compare the performance of interactive and human-based genetic algorithms". .
+"Webpage that uses interactive evolutionary computation with a generative design algorithm to generate 2d images". 
+"Picbreeder service, Collaborative interactive evolution allowing branching from other users' creations that produces pictures like faces and spaceships". 
+"Peer to Peer IGA Using collaborative IGA sessions for floorplanning and document design".

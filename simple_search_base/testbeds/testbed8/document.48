@@ -1,0 +1,22 @@
+Some languages feature other accessibility schemes:
+
+    Instance vs. class accessibility: Ruby supports instance-private and instance-protected access specifiers in lieu of class-private and class-protected, respectively. They differ in that they restrict access based on the instance itself, rather than the instance's class.[14]
+    Friend: C++ supports a mechanism where a function explicitly declared as a friend function of the class may access the members designated as private or protected.[15]
+    Path-based: Java supports restricting access to a member within a Java package, which is the logical path of the file. However, it is a common practice when extending a Java framework to implement classes in the same package as a framework class in order to access protected members. The source file may exist in a completely different location, and may be deployed to a different .jar file, yet still be in the same logical path as far as the JVM is concerned.[10]
+
+Inter-class relationships
+
+In addition to the design of standalone classes, programming languages may support more advanced class design based upon relationships between classes. The inter-class relationship design capabilities commonly provided are compositional and hierarchical.
+Compositional
+
+Classes can be composed of other classes, thereby establishing a compositional relationship between the enclosing class and its embedded classes. Compositional relationship between classes is also commonly known as a has-a relationship.[16] For example, a class "Car" could be composed of and contain a class "Engine". Therefore, a Car has an Engine. One aspect of composition is containment, which is the enclosure of component instances by the instance that has them. If an enclosing object contains component instances by value, the components and their enclosing object have a similar lifetime. If the components are contained by reference, they may not have a similar lifetime.[17] For example, in Objective-C 2.0:
+
+@interface Car : NSObject
+
+@property NSString *name;
+@property Engine *engine
+@property NSArray *tires;
+
+@end
+
+This Car class has an instance of NSString (a string object), Engine, and NSArray (an array object).

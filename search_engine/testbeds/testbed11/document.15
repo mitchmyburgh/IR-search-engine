@@ -1,0 +1,29 @@
+OpenNebula is a cloud computing platform for managing heterogeneous distributed data center infrastructures. The OpenNebula platform manages a data center's virtual infrastructure to build private, public and hybrid implementations of infrastructure as a service. OpenNebula is free and open-source software, subject to the requirements of the Apache License version 2.
+
+
+== Description ==
+OpenNebula orchestrates storage, network, virtualization, monitoring, and security technologies to deploy multi-tier services (e.g. compute clusters) as virtual machines on distributed infrastructures, combining both data center resources and remote cloud resources, according to allocation policies. According to the European Commission's 2010 report "... only few cloud dedicated research projects in the widest sense have been initiated – most prominent amongst them probably OpenNebula ...".
+The toolkit includes features for integration, management, scalability, security and accounting. It also claims standardization, interoperability and portability, providing cloud users and administrators with a choice of several cloud interfaces (Amazon EC2 Query, OGF Open Cloud Computing Interface and vCloud) and hypervisors (Xen, KVM and VMware), and can accommodate multiple hardware and software combinations in a data center.
+OpenNebula was a mentoring organization in Google Summer of Code 2010.
+OpenNebula is sponsored by OpenNebula Systems (formerly C12G).
+OpenNebula is used by hosting providers, telecom operators, IT services providers, supercomputing centers, research labs, and international research projects. Some other cloud solutions use OpenNebula as the cloud engine or kernel service.
+
+
+== See also ==
+
+OpenStack
+CloudStack
+Cloud computing
+Cloud computing comparison
+Ganeti
+openQRM
+oVirt
+
+
+== References ==
+
+
+== External links ==
+OpenNebula Website
+Mark Hinkle (20 January 2010). "Eleven Open Source Cloud Computing Projects to Watch". Socialized Software. Retrieved 27 December 2010. 
+Peter Sempolinski and Douglas Thain, A Comparison and Critique of Eucalyptus, OpenNebula and Nimbus, IEEE International Conference on Cloud Computing Technology and Science, November, 2010.

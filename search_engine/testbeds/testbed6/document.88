@@ -1,0 +1,85 @@
+Topological Sort (Python recipe) by Sam Denton 
+        ActiveState Code (http://code.activestate.com/recipes/578272/) 
+           ▲ 
+           3
+           ▼ 
+          A topological sort (sometimes abbreviated topsort or toposort) or topological ordering of a directed graph is a linear ordering of its vertices such that, for every edge uv, u comes before v in the ordering. For instance, the vertices of the graph may represent tasks to be performed, and the edges may represent constraints that one task must be performed before another; in this application, a topological ordering is just a valid sequence for the tasks. A topological ordering is possible if and only if the graph has no directed cycles, that is, if it is a directed acyclic graph (DAG). 
+            Python, 38 lines 
+             Download
+              Copy to clipboard
+                1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+                 def toposort2(data):
+    """Dependencies are expressed as a dictionary whose keys are items
+and whose values are a set of dependent items. Output is a list of
+sets in topological order. The first set consists of items with no
+dependences, each subsequent set consists of items that depend upon
+items in the preceeding sets.
+&gt;&gt;&gt; print '\\n'.join(repr(sorted(x)) for x in toposort2({
+...     2: set([11]),
+...     9: set([11,8]),
+...     10: set([11,3]),
+...     11: set([7,5]),
+...     8: set([7,3]),
+...     }) )
+[3, 5, 7]
+[8, 11]
+[2, 9, 10]
+"""
+    from functools import reduce
+    # Ignore self dependencies.
+    for k, v in data.items():
+        v.discard(k)
+    # Find all items that don't depend on anything.
+    extra_items_in_deps = reduce(set.union, data.itervalues()) - set(data.iterkeys())
+    # Add empty dependences where needed
+    data.update({item:set() for item in extra_items_in_deps})
+    while True:
+        ordered = set(item for item, dep in data.iteritems() if not dep)
+        if not ordered:
+            break
+        yield ordered
+        data = {item: (dep - ordered)
+                for item, dep in data.iteritems()
+                    if item not in ordered}
+    assert not data, "Cyclic dependencies exist among these items:\n%s" % '\n'.join(repr(x) for x in data.iteritems())
+            This is pretty much a duplicate of this, but in a format that is easier to drop into a program. I've moved the example into a doctest and changed the code so that (a) the input data can be any hashable object, not just strings, and (b) no time is wasted sorting the results. I also commented the code a bit and added a doc-string explaining the input and output formats. 
+            If you are doing a lot of sorts, you may want to move the import statement outside the function; I put it inside to not conflict with any other imports you may already have in your program. 
+          var addthis_config = {services_compact: 'delicious,digg,reddit,twitter,email,favorites,more', username: 'xa-4b4f86a749591ece', data_use_flash: false}; 
+          

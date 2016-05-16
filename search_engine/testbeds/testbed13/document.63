@@ -1,0 +1,629 @@
+Menu
+
+#
+
+Global Website
+
+  * Free Tools
+  * Free Virus Scan
+  * Free Trials
+
+Antivirus Protection &amp; Internet Security Software
+
+###### Americas
+
+  * Canada
+  * United States
+  * México
+  * Caribbean
+  * Caribe
+  * Argentina
+  * Chile
+  * Colombia
+  * Peru
+  * Ecuador
+  * América Latina
+  * Brasil
+
+###### Western Europe
+
+  * Belgique &amp; Luxembourg
+  * Danmark
+  * Deutschland &amp; Schweiz
+  * España
+  * Finland
+  * France &amp; Suisse
+  * Ireland
+  * Italia &amp; Svizzera
+  * ישראל (Israel)
+  * Nederland &amp; België
+  * Norge
+  * Österreich
+  * Portugal
+  * Sverige
+  * United Kingdom
+
+###### Eastern Europe
+
+  * Česká republika
+  * Magyarország
+  * Polska
+  * România
+  * България
+  * Россия
+  * Україна
+  * Белару́сь
+  * Moldova
+  * Srbija
+  * Greece (Ελλάδα)
+  * Türkiye
+
+###### Middle East &amp; Africa
+
+  * اللغة العربية
+  * Middle East
+  * Afrique du Nord
+  * Africa
+  * Nigeria
+
+###### Asia &amp; Pacific
+
+  * Australia
+  * India
+  * New Zealand
+  * Oceania
+  * South-East Asia
+  * Indonesia
+  * Malaysia
+  * Philippines
+  * Singapore
+  * ไทย (Thailand)
+  * Việt Nam (Vietnam)
+  * Asia Pacific
+  * 中国 (China)
+  * 台灣 (Taiwan)
+  * 香港 (Hong Kong)
+  * 日本 (Japan)
+  * 한국 (Korea)
+
+**For all other countries**  
+visit our Global Website
+
+Close
+
+  * PRODUCTS &amp; SERVICES
+
+    * Security for Home
+      * Kaspersky Total Security – Multi-Device
+      * Kaspersky Internet Security – Multi-Device
+      * Kaspersky Internet Security
+      * Kaspersky Anti-Virus
+      * Kaspersky Internet Security for Mac
+      * Kaspersky Internet Security for Android
+      * Kaspersky Password Manager
+      * Kaspersky Virus Scanner Pro for Mac
+      * Kaspersky Virus Scanner for Mac
+      * All Security for Home
+    * For Business 1-50 Employees
+      * Kaspersky Small Office Security
+      * All Security for Small Business
+
+    * For Business 51+ Employees
+      * Endpoint Security for Business | CoreBusiness anti-malware that’s easy to manage
+      * Endpoint Security for Business | SelectProtection and controls across all endpoints
+      * Endpoint Security for Business | AdvancedCombining IT security and IT efficiency
+      * Total Security for BusinessOur ultimate business security solution
+      * Compare products
+      * All Security for Business
+      * All Security Applications
+    * Targeted Security for Business
+      * Kaspersky Targeted Security Solutions
+
+    * For Enterprise 1000+ Employees 
+      * Endpoint Security
+      * Virtualization Security
+      * Mobile Security
+      * Anti Targeted Attack
+      * DDoS Protection
+      * Security Intelligence Services
+      * Security Solutions for Data Centers
+      * Fraud Prevention
+      * Industrial CyberSecurity
+      * All Enterprise Solutions
+    * View Resources
+
+  * ONLINE SHOP
+  * BLOG
+  * TRIALS
+    * Free Downloads &amp; Updates
+      * Home Security Free Trial Downloads
+      * Business Security Free Trial Downloads
+      * Small Office Security Free Trial Downloads
+      * Product Updates
+      * Free Tools
+  * SUPPORT
+  * PARTNERS
+  * ABOUT US
+
+  * For Home
+  * For Business 1-50 Employees
+  * For Business 51+ Employees
+  * For Enterprise 1000+ Employees
+
+  * Home
+  * News
+  * Security
+  * Products
+  * Tips
+  * Malware
+  * Interviews
+  * Projects
+  * Contact
+
+Previous
+
+Next
+
+# Quantum Computers And The End Of Security
+
+October 7, 2013 Serge Malenkovich Featured Post, Security 1 comment
+
+Quantum computing and quantum communications; these concepts were invented
+just 30 years ago, after scientific journals refused to issue earlier
+publications regarding these subjects because it looked more like science-
+fiction. Nowadays, quantum systems really do exist, with some of them reaching
+the stage of commercial sales. Quantum computers raise and answer new
+questions in the security field, primarily in cryptography.
+
+We live in a world of radio waves and electromagnetic signals: Wi-Fi, GSM,
+satellite TV and GPS, FM-tuner and speed camera are just some examples of
+electromagnetic wave usage in our daily lives. Of course, computers are an
+integral part of this ecosystem, be it a mainframe, laptop or a smartphone. A
+very important feature of electromagnetic signals is measurability. It’s quite
+easy to read all the parameters of a signal without introducing changes to it,
+and this is the exact reason why almost every aforementioned technology today
+is equipped with encryption, which protect transmitted information from being
+read or altered by a third party. Typically, communicating parties don’t have
+another channel to talk, and cryptosystem developers brilliantly solved a very
+complicated problem – how to negotiate a secret encryption key when all
+communication might be observed by others. The solution to this problem is the
+foundation for all modern protection systems, and quantum computers might
+break it. Will quantum cryptography become a next-generation security
+solution? Let’s find out.
+
+
+
+## The tagline
+
+The names “Quantum computing” and “Quantum cryptography” are accurate. These
+systems are based on quantum effects like superposition and entanglement of
+micro-particles.
+
+A quantum computer is unusable for most daily tasks, but it’s able to quickly
+solve some mathematical problems for modern encryption algorithms.
+
+The primary difference between ordinary and quantum computers is a data unit.
+While an ordinary computer uses bits and bytes, which are strictly 0 or 1, a
+quantum computer uses qubits (quantum bits), which are able to be in several
+states simultaneously. It sounds confusing, and it’s even more confusing to
+implement, but years of research clearly show that it works. A quantum
+computer is wildly different from an ordinary one and it’s barely possible to
+use it for Tetris, but it performs much better in probability-related or
+optimization-related task solving.  
+The list of tasks, which might be dramatically sped up using quantum
+computing, is quite long: logistic optimizations, DNA sequencing, stock market
+predictions and cryptographic keys brute-forcing. It is worth mentioning that
+everything in the quantum world is complicated and it takes much effort to
+read an “answer” given by a quantum computer. However, each task runs several
+times, and it doesn’t take too long. Therefore, it’s possible to obtain a
+final answer (read: encryption key) by comparing results of these runs.  
+
+
+All quanta are in the white box on the right
+
+**_Deep_****_ _****_dive_****_:_**_ __Modern systems in the core of SSL, HTTPS, __VPN__, etc., are typically encrypted data using a secret key and symmetric algorithm. It’s the same on the sender and receiver sides (hence symmetric), which negotiate a secret key in the beginning of the session using another, asymmetric cryptosystem. Asymmetric algorithm is used just for secret key negotiation because it’s computational-heavy. Security of asymmetrical cryptosystem is based on solving the complexity of some mathematical problem. e.g. integer factorization of very large numbers (RSA algorithm). It takes noticeable time just to multiply or divide such large numbers, to say nothing about trying multiple numbers in order. So the cryptosystem setup assumes that a spy **can** eavesdrop on the connection, but it will take an unreasonable amount of time (from dozens to millions of years depending of key length) to calculate a secret key and decrypt the connection. It turns out that quantum computers might help here. Using Shor’s algorithm, a quantum computer comes to a final state corresponding to solved mathematical problems very quickly, almost as fast, as an ordinary computer multiplying a couple of numbers. Despite some extra issues, like the necessity to run this task several times and complicated results reading with the help of classical computers, a quantum computer might find the required large numbers very quickly, helping an attacker calculate the secret key and decrypting the message._
+
+_By the way, good symmetric algorithms, e.g. AES, don’t have flaws allowing
+that kind of dramatic bruteforcing speedup. By existing estimates,
+bruteforcing 256-bit AES key on quantum computer is equal to bruteforcing
+128-bit AES on a classic computer, so security levels remain very high._  
+
+
+## Where the shoe pinches
+
+Quantum computers don’t reside on the desktop of every other teenage hacker
+wishing to eavesdrop on his classmates’ Facebook sessions for good reason.
+Creation of a full-scale quantum computer involves many engineering challenges
+that some specialists consider to be impossible to accomplish. The main
+challenge is making sure qubits are entangled, because each quantum system
+tends to collapse into a classical state, lacking valuable undetermined
+properties. We can’t avoid mentioning the long-suffering Schrödinger's cat
+here, which eventually can’t stay both dead and alive simultaneously – a
+quantum computer, however, must maintain this miraculous state for a long
+enough time to perform calculation and measure results. Modern prototypes can
+keep this state for milliseconds, and in some cases, a couple of seconds. The
+task becomes more and more complicated when the qubit count rises too. To
+break cryptosystems, computers must have 500-2000 qubits (depending on the
+algorithm and key length), but existing quantum computers operate with 14
+qubits at maximum. That is why today’s quantum computers are not usable for
+breaking your SSL certificate, but the situation may change in 5 years.  
+
+
+Main expositors of science in general and specifically Schrödinger’s cat –
+Penny and Sheldon of “The Big Bang Theory”
+
+## Steps toward quantum goal
+
+Against this background, Canadian company D-Wave brassily claims that it
+produces 512-qubit quantum computers. Moreover, these devices are available
+for sale. Many experts say that the D-Wave computer is not “real,” because it
+utilizes a quantum annealing effect and can’t demonstrate full properties of a
+quantum computer. However, it’s complicated to argue with piles of cash, and
+D-Wave has customers willing to pay $10 million for the device, such as the
+military contractor Lockheed Martin and search giant Google to name a few. In
+spite of existing controversy, the computer solves a specific subset of
+optimization tasks using methods, which are quantum in nature and bring real
+value to customers. Google plans to experiment with machine learning and
+Lockheed Martin believes that a quantum computer is able to find mistakes in
+the source code of software used in F-35 jet fighters. D-Wave scientists admit
+that their computer is unable to solve some other “quantum” tasks, e.g.
+aforementioned integer factorization, so it poses no threat for modern
+cryptoalgorithms. However, there is another threat: real and functional
+quantum computers inspire big companies and governments to invest more in
+quantum development, speeding up the creation of other, cryptography-capable
+computers.
+
+D-Wave Two — quantum computer-annealer
+
+## Quantum cryptography
+
+Quite amusingly, quantum physics might offer the remedy to threats it poses.
+Theoretically speaking, it’s impossible to eavesdrop on a connection if it’s
+based on a single micro-particles transmission – quantum physics laws say that
+to try to measure one parameter of a micro-particle will alter another
+parameter. This phenomenon, known as the observer effect (and often confused
+with the uncertainty principle), should resolve the main issue of “classical”
+communications – the possibility of eavesdropping. Each attempt to spy on a
+communication will alter the transmitted message.
+
+Each attempt to spy on a communication will alter the transmitted message.
+
+In quantum communications, significant interference means that an unwanted
+third party monitors the connection. Of course, you want to prevent
+information leaks, as well as know that it happens. That is one of the reasons
+why modern quantum cryptosystems only use “quantum” communication channels to
+negotiate session encryption keys, which are used to encrypt information
+transmitted via traditional channels. So a potentially intercepted key is
+rejected and parties negotiate a new key until transmission comes unaltered.
+We see that quantum key distribution (QKD) system is being used exactly in the
+same role, as asymmetric cryptoalgorithms, which may fall to quantum attacks
+soon.
+
+Meet Cerberis, commercially available quantum key distribution system
+
+Unlike quantum computers, quantum cryptosystems have been available
+commercially for quite a long time. First scientific research emerged circa
+1980, but practical implementation appeared swiftly. The first lab tests were
+conducted in 1989, and at the end of the century there were commercially
+available systems able to transmit an encryption key over a 30-mile long fiber
+optic. Companies like id Quantique and MagiQ Technologies sell ready out of
+the box QKD systems, which are simple enough to be installed by a network
+technician. In addition to government and military institutions, QKD users are
+multinational corporations, banks and even FIFA.
+
+## Perfect protection?
+
+In theory, quantum communication systems do not allow stealthy eavesdropping,
+but current implementations were demonstrated to have some flaws. First, to
+avoid interference and allow long-distance transmission, the system transmits
+multiple photons. Of course, developers try to keep that at minimum, but there
+is a theoretical possibility to intercept one photon and analyze its state
+without touching others. Second, there is a distance limit (about 100 miles)
+for current systems, which makes their use much more limited. Geographically
+distant branches would not be able to communicate without some “repeater”,
+which becomes an obvious point for man-in-the-middle attacks.
+
+Quantum cryptosystems are invulnerable only in ideal conditions, which is
+impossible to achieve. That’s why it’s too early to dump traditional
+protection measures.
+
+Third, hackers of the physicist world discovered, that by “bliding”
+photodetectors with a powerful laser, they are able to manipulate its
+readings, which enables all kind of data manipulation in QKD systems. All
+these are implementation flaws. However, it clearly demonstrates, that quantum
+systems by no means are silver bullets and protection of transmitted data,
+even if implemented in domain of physics instead of math, still remains a
+problem for decades ahead. And there is one more thing. Unlike existing
+technology, quantum devices will remain niche for many years, you won’t
+encounter dozens of them in each office or apartment as it currently happens
+with Wi-Fi or smartphones. That’s why it’s too early to dismiss math – classic
+cryptosystems, which are able to work over any physical communication channel,
+will remain in high demand for many decades. However, there is a need to pick
+new algorithms, more resistant to quantum computing.
+
+Facebook
+
+Google
+
+LinkedIn
+
+HackerNews
+
+Reddit
+
+Pocket
+
+Twitter
+
+Send to Kindle
+
+encryptionQuantum ComputersscienceTechnology
+
+### About Serge Malenkovich
+
+“Just because you're paranoid doesn't mean they aren't after you” ― Joseph
+Heller
+
+View all posts by Serge Malenkovich -&gt;
+
+###  One thought on "Quantum Computers And The End Of Security"
+
+  1. OmK January 20, 2016 at 2:21 pm - Reply
+
+What exactly is a Quantum Computer?
+
+### Leave a Reply Cancel reply
+
+Your email address will not be published. Required fields are marked *
+
+Comment
+
+Name *
+
+Email *
+
+
+
+### Related Posts
+
+  * ####  How big data and a bit of paranoia made ... 
+
+April 12, 2016
+
+  * ####  Encryption the rage, email missing in co... 
+
+April 7, 2016
+
+  * ####  WhatsApp switches to secure end-to-end e... 
+
+April 6, 2016
+
+  * ####  Privacy on the Internet: the new Baroque... 
+
+March 28, 2016
+
+2908611
+
+Likes
+
+254915
+
+Followers
+
+### @kaspersky
+
+  * Financial loss, regulatory issues as well as legal action from customers could be a result https://t.co/WSO82GsF7L https://t.co/G5HTqfYRYA
+
+4 hours ago
+
+Retweet
+
+  * It's over 25 years since the first virus. What will the next 25 years bring? https://t.co/0HqiQ8QeCp https://t.co/0vpNPIjqHB
+
+5 hours ago
+
+Retweet
+
+  * #IT What you don't know can hurt you... https://t.co/ioTsJuzi5S https://t.co/PskEvtwAee
+
+12 hours ago
+
+Retweet
+
+  * Who is the #Droid you have been looking for? #StarWars #MayThe4thBeWithYou
+
+16 hours ago
+
+Retweet
+
+  * Looking for a #NextGen #endpoint solution? We can help. Learn more: https://t.co/ioTsJuzi5S #IT #infosec https://t.co/mlsPKY348Y
+
+17 hours ago
+
+Retweet
+
+|  
+---|---  
+|  
+  
+### Trending Authors
+
+  * John Snow
+
+4,361 post views
+
+  * Kate Kochetkova
+
+2,902 post views
+
+  * Jake Kenny
+
+1,949 post views
+
+  * Jeffrey Esposito
+
+1,895 post views
+
+  * David Buxton
+
+1,178 post views
+
+### Kaspersky Podcasts
+
+####  How to avoid problems when purchasing security software: study system
+requirements
+
+When you purchase software, you automatically agreed that your device complies
+with systems requirements defined by the software vendor. That’s why you
+should always...
+
+####  Tip of the week: How to protect yourself from online data collection
+
+By tracking your online activities, advertisers adapt their banner adverts and
+ad modules. If you don’t want to be tracked, enable the Private Browsing...
+
+####  Talk Security Podcast: Security at Google I/O, the IRS Data Breach and
+More
+
+Tech journalists Chris Brook and Brian Donohue discuss Google I/O, the IRS and
+Carefirst BlueCross BlueShield Data Breach in this Talk Security podcast.
+
+####  Talk Security: Million Dollar Malware, Github DDoS
+
+Threatpost security reporters Chris Brook and Brian Donohue discuss the Github
+DDoS, Dyre banking malware, privacy threats, hacking and more
+
+####  Talk Security: Kaspersky Lab Security Analyst Summit 2015
+
+Brian Donohue and Chris Brook of Threatpost discuss Kaspersky Lab’s Security
+Analyst Summit, which took place last week in Cancun, Mexico
+
+### Let's save the world together!
+
+### Subscribe to RSS Feeds
+
+Get all latest content delivered to your email a few times a month.
+
+  * 
+
+### Join us in G+
+
+  * ### Products for Home
+
+    * Kaspersky Total Security Multi-Device
+    * Kaspersky Internet Security - Multi-Device
+    * Kaspersky Internet Security 2015
+    * Kaspersky Anti-Virus 2015
+    * Kaspersky Internet Security for Mac
+    * Kaspersky Internet Security for Android
+    * Kaspersky Password Manager
+    * Kaspersky Security Scan FREE
+
+  * ### Products for Enterprise Business
+
+    * Kaspersky Endpoint Security for Business | Advanced
+    * Kaspersky Endpoint Security for Business | Select
+    * Kaspersky Endpoint Security for Business | Core
+    * Kaspersky Total Security for Business
+    * Targeted Security Solutions
+
+  * ### Products for Small Office
+
+    * Kaspersky Small Office Security
+
+  * ### For Software Users
+
+    * Buy online
+    * Renew license
+    * Get updates
+    * Try for free
+
+  * ### Technical Support
+
+    * For home products
+    * For business products
+
+  * ### About Us
+
+    * About Kaspersky Lab
+    * Why Kaspersky?
+    * Press Center
+    * Site Map
+    * Privacy policy
+    * Contact us
+    * Legal
+
+  * ### Blogroll
+
+    * Eugene Kaspersky's Blog
+    * Securelist
+    * Threatpost
+    * Kaspersky Business
+    * Kaspersky Academy
+
+  * © 2016 AO Kaspersky Lab. All Rights Reserved.
+
+39A/3 Leningradskoe shosse  
+Moscow  
+125212  
+Russia
+
+The authors' opinions do not necessarily reflect the official positions of
+Kaspersky Lab.
+
+#
+
+  * PRODUCTS &amp; SERVICES
+    * Security for Home
+      * Kaspersky Total Security – Multi-Device
+      * Kaspersky Internet Security – Multi-Device
+      * Kaspersky Internet Security
+      * Kaspersky Anti-Virus
+      * Kaspersky Internet Security for Mac
+      * Kaspersky Internet Security for Android
+      * Kaspersky Password Manager
+      * Kaspersky Virus Scanner Pro for Mac
+      * Kaspersky Virus Scanner for Mac
+      * All Security for Home
+    * For Business 1-50 Employees
+      * Kaspersky Small Office Security
+      * All Security for Small Business
+    * For Business 51+ Employees
+      * Endpoint Security for Business | CoreBusiness anti-malware that’s easy to manage
+      * Endpoint Security for Business | SelectProtection and controls across all endpoints
+      * Endpoint Security for Business | AdvancedCombining IT security and IT efficiency
+      * Total Security for BusinessOur ultimate business security solution
+      * Compare products
+      * All Security for Business
+      * All Security Applications
+    * Targeted Security for Business
+      * Kaspersky Targeted Security Solutions
+    * For Enterprise 1000+ Employees 
+      * Endpoint Security
+      * Virtualization Security
+      * Mobile Security
+      * Anti-APT
+      * DDoS Protection
+      * Security Intelligence Services
+      * Security Solutions for Data Centers
+      * Fraud Prevention
+      * Industrial CyberSecurity
+      * All Enterprise Solutions
+    * View Resources
+  * ONLINE SHOP
+  * INTERNET SECURITY CENTER
+  * TRIALS
+    * Free Downloads &amp; Updates
+      * Home Security Free Trial Downloads
+      * Business Security Free Trial Downloads
+      * Small Office Security Free Trial Downloads
+      * Product Updates
+      * Free Tools
+  * SUPPORT
+  * PARTNERS
+  * ABOUT US
+
+  * Free Tools
+  * Free Virus Scan
+  * Free Trials
+

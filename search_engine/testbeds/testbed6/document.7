@@ -1,0 +1,178 @@
+  A browser with JavaScript enabled is required for this page to operate properly. 
+    Documentation
+       The Java™ Tutorials 
+      Download Ebooks
+      Download JDK 
+      Search Java Tutorials 
+      Hide TOC 
+   Using Swing Components
+   Using Top-Level Containers
+   The JComponent Class
+   Using Text Components
+   Text Component Features
+   The Text Component API
+   How to Use Various Components
+   How to Make Applets
+   How to Use Buttons, Check Boxes, and Radio Buttons
+   How to Use the ButtonGroup Component
+   How to Use Color Choosers
+   How to Use Combo Boxes
+   How to Make Dialogs
+   How to Use Editor Panes and Text Panes
+   How to Use File Choosers
+   How to Use Formatted Text Fields
+   How to Make Frames (Main Windows)
+   How to Use Internal Frames
+   How to Use Labels
+   How to Use Layered Panes
+   How to Use Lists
+   How to Use Menus
+   How to Use Panels
+   How to Use Password Fields
+   How to Use Progress Bars
+   How to Use Root Panes
+   How to Use Scroll Panes
+   How to Use Separators
+   How to Use Sliders
+   How to Use Spinners
+   How to Use Split Panes
+   How to Use Tabbed Panes
+   How to Use Tables
+   How to Use Text Areas
+   How to Use Text Fields
+   How to Use Tool Bars
+   How to Use Tool Tips
+   How to Use Trees
+   How to Use HTML in Swing Components
+   How to Use Models
+   How to Use Icons
+   How to Use Borders
+   Solving Common Component Problems
+  Trail: Creating a GUI With JFC/Swing 
+  Lesson: Using Swing Components 
+  Section: How to Use Various Components 
+  Home Page &gt; 
+  Creating a GUI With JFC/Swing &gt; 
+  Using Swing Components 
+  «&nbsp;Previous&nbsp;•&nbsp;
+  Trail&nbsp;•&nbsp;
+  Next&nbsp;» 
+  How to Use Trees
+  With the JTree class, you can display hierarchical data. A JTree object does not actually contain your data; it simply provides a view of the data. Like any non-trivial Swing component, the tree gets data by querying its data model. Here is a picture of a tree: 
+  As the preceding figure shows, JTree displays its data vertically. Each row displayed by the tree contains exactly one item of data, which is called a node. Every tree has a root node from which all nodes descend. By default, the tree displays the root node, but you can decree otherwise. A node can either have children or not. We refer to nodes that can have children  whether or not they currently have children  as branch nodes. Nodes that can not have children are leaf nodes. 
+  Branch nodes can have any number of children. Typically, the user can expand and collapse branch nodes  making their children visible or invisible  by clicking them. By default, all branch nodes except the root node start out collapsed. A program can detect changes in branch nodes' expansion state by listening for tree expansion or tree-will-expand events, as described in How to Write a Tree Expansion Listener and How to Write a Tree-Will-Expand Listener. 
+  A specific node in a tree can be identified either by a TreePath, an object that encapsulates a node and all of its ancestors, or by its display row, where each row in the display area displays one node. 
+   An expanded node is a non-leaf node that will display its children when all its ancestors are expanded. 
+   A collapsed node is one which hides them. 
+   A hidden node is one which is under a collapsed ancestor. 
+  The rest of this section discusses the following topics: 
+   Creating a Tree 
+   Responding to Node Selection 
+   Customizing a Tree's Display 
+   Dynamically Changing a Tree 
+   Creating a Data Model 
+   The Tree API 
+   Examples that Use Trees 
+  Creating a Tree 
+  Here is a picture of an application, the top half of which displays a tree in a scroll pane. 
+   Try this:&nbsp;
+    Click the Launch button to run the Tree Demo using Java™ Web Start (download JDK 7 or later). Alternatively, to compile and run the example yourself, consult the example index. 
+      Try this:&nbsp; Run TreeDemo (
+download JDK 7 or later).    Or, to compile and run the example yourself,
+     consult the
+     example index.
+-->  
+    Expand one or more nodes. You can do this by clicking the circle to the left of the item. 
+    Collapse a node. You do this by clicking the circle to the left of an expanded node. 
+  The following code, taken from TreeDemo.java, creates the JTree object and puts it in a scroll pane: 
+//Where instance variables are declared:
+private JTree tree;
+...
+public TreeDemo() {
+    ...
+    DefaultMutableTreeNode top =
+        new DefaultMutableTreeNode("The Java Series");
+    createNodes(top);
+    tree = new JTree(top);
+    ...
+    JScrollPane treeView = new JScrollPane(tree);
+    ...
+}
+  The code creates an instance of DefaultMutableTreeNode to serve as the root node for the tree. It then creates the rest of the nodes in the tree. After that, it creates the tree, specifying the root node as an argument to the JTree constructor. Finally, it puts the tree in a scroll pane, a common tactic because showing the full, expanded tree would otherwise require too much space. 
+  Here is the code that creates the nodes under the root node: 
+private void createNodes(DefaultMutableTreeNode top) {
+    DefaultMutableTreeNode category = null;
+    DefaultMutableTreeNode book = null;
+    category = new DefaultMutableTreeNode("Books for Java Programmers");
+    top.add(category);
+    //original Tutorial
+    book = new DefaultMutableTreeNode(new BookInfo
+        ("The Java Tutorial: A Short Course on the Basics",
+        "tutorial.html"));
+    category.add(book);
+    //Tutorial Continued
+    book = new DefaultMutableTreeNode(new BookInfo
+        ("The Java Tutorial Continued: The Rest of the JDK",
+        "tutorialcont.html"));
+    category.add(book);
+    //Swing Tutorial
+    book = new DefaultMutableTreeNode(new BookInfo
+        ("The Swing Tutorial: A Guide to Constructing GUIs",
+        "swingtutorial.html"));
+    category.add(book);
+    //...add more books for programmers...
+    category = new DefaultMutableTreeNode("Books for Java Implementers");
+    top.add(category);
+    //VM
+    book = new DefaultMutableTreeNode(new BookInfo
+        ("The Java Virtual Machine Specification",
+         "vm.html"));
+    category.add(book);
+    //Language Spec
+    book = new DefaultMutableTreeNode(new BookInfo
+        ("The Java Language Specification",
+         "jls.html"));
+    category.add(book);
+}
+  The argument to the DefaultMutableTreeNode constructor is the user object which is an object that contains or points to the data associated with the tree node. The user object can be a string, or it can be a custom object. If you implement a custom object, you should implement its toString method so that it returns the string to be displayed for that node. JTree, by default, renders each node using the value returned from toString, so it is important that toString returns something meaningful. Sometimes, it is not feasible to override toString; in such a scenario you can override the convertValueToText of JTree to map the object from the model into a string that gets displayed. 
+  For example, the BookInfo class used in the previous code snippet is a custom class that holds two pieces of data: the name of a book, and the URL for an HTML file describing the book. The toString method is implemented to return the book name. Thus, each node associated with a BookInfo object displays a book name. 
+   Note:&nbsp;You can specify text formatting in a tree node by putting HTML tags in the string for the node. See 
+   Using HTML in Swing Components for details. 
+  To summarize, you can create a tree by invoking the JTree constructor, specifying the class that implements TreeNode as an argument. You should probably put the tree inside a scroll pane, so that the tree would not take up too much space. You do not have to do anything to make the tree nodes expand and collapse in response to user clicks. However, you do have to add some code to make the tree respond when the user selects a node  by clicking the node, for example. 
+  Responding to Node Selection 
+  Responding to tree node selections is simple. You implement a tree selection listener and register it on the tree. The following code shows the selection-related code from the TreeDemo program: 
+//Where the tree is initialized:
+    tree.getSelectionModel().setSelectionMode
+            (TreeSelectionModel.SINGLE_TREE_SELECTION);
+    //Listen for when the selection changes.
+    tree.addTreeSelectionListener(this);
+...
+public void valueChanged(TreeSelectionEvent e) {
+//Returns the last path element of the selection.
+//This method is useful only when the selection model allows a single selection.
+    DefaultMutableTreeNode node = (DefaultMutableTreeNode)
+                       tree.getLastSelectedPathComponent();
+    if (node == null)
+    //Nothing is selected.     
+    return;
+    Object nodeInfo = node.getUserObject();
+    if (node.isLeaf()) {
+        BookInfo book = (BookInfo)nodeInfo;
+        displayURL(book.bookURL);
+    } else {
+        displayURL(helpURL); 
+    }
+}
+  The preceding code performs these tasks: 
+   Gets the default TreeSelectionModel for the tree, and then sets it up so that at most one tree node at a time can be selected. 
+   Registers an event handler on the tree. The event handler is an object that implements the TreeSelectionListener interface. 
+   In the event handler, determines which node is selected by invoking the tree's getLastSelectedPathComponent method. 
+   Uses the getUserObject method to get the data associated with the node. 
+  For more details about handling tree selection events, see How to Write a Tree Selection Listener. 
+  Customizing a Tree's Display 
+  Here is a picture of some tree nodes, as drawn by the Java, Windows, and Mac OS look and feel implementations. 
+     Java look and feel 
+     Windows look and feel 
+     Mac OS look and feel 
+  As the preceding figures show, a tree conventionally displays an icon and some text for each node. You can customize these, as we will show shortly. 
+  A tree typica

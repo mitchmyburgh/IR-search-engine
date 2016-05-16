@@ -1,0 +1,31 @@
+Asus_Media_Bus
+The '''Asus Media Bus''' is a proprietary  developed by , which was used on some   in the middle 1990s. It is a combined  and  slot. It was developed to provide a cost-efficient solution to a complete multimedia system. Using Media Bus cards for building a system reduced slot requirements and compatibility problems. Expansion cards supporting this interface were only manufactured by Asus for a very limited time. This bus is now obsolete.
+While similar to  in appearance, the extension contains 4 additional pins (2 on each side) for a total of 68.  The divider between the PCI slot and Media Bus extension is too wide to support a properly-keyed PCI-X card.
+Despite the very short lifespan, there were at least two revisions of Asus Media Bus - revision 1.2 and 2.0. The difference between them is that the latter revision has 72 pins instead of 68 so it does not have to use any PCI slot signals reserved for PCI cards and PCI slot shared with the Media Bus slot becomes standards compliant. The gap between PCI slot and Media Bus extension is 0.32 in. for revision 1.2 (pictured) and 0.4 in. for revision 2.0 so expansion cards designed for two revisions are mutually incompatible.
+Expansion cards designed for this interface included primarily combined  and  cards, but also some combined  and audio cards. The (possibly incomplete) list of Media Bus expansion cards presented here (all cards manufactured by ):
+'''''Media Bus rev. 1.2 cards'''''
+* PCI-AS7870 - Fast/Wide SCSI and audio card (Adaptec AS7870 and Vibra16s (with separate yamaha yfm262-m, WBH))
+* PCI-AV264CT - audio and video card (ATI Mach64 PCI 1MB (up to 2MB) and Vibra16s (with separate yamaha yfm262-m, WBH))
+* PCI-AV868 (pictured) - audio and video card (S3 Vision868 1MB and Vibra16s (with separate yamaha yfm262-m, WBH))
+'''''Media Bus rev. 1.2 motherboards'''''
+* Asus P/I-P55TP4XE
+'''''Media Bus rev. 2.0 cards'''''
+* PCI-AS2940UW - Ultra Fast/Wide SCSI and audio card
+* PCI-AV264CT-N - audio and video card (ATI Mach64 PCI 1MB (up to 2MB) and Vibra16c (with WBH))
+* PCI-AV264VT - audio and video card
+* PCI-AV264GT - audio and video card
+* PCI-AV264GT/Plus - audio and video card (ATI 3D Rage II 2MB (up to 4MB) and Vibra16c (with WBH))
+'''''Media Bus rev. 2.0 motherboards'''''
+Socket 7
+* Asus P/E-P55T2P4D (Dual)
+* Asus P/I-P55T2P4
+* Asus P/I-P55TVP4
+* Asus P/I-XP55T2P4
+* Asus P55TP4N
+* Asus TXP4-X (optional?)
+* Asus TX97
+* Asus TX97-E
+Socket 8
+* Asus P/I-P6NP5
+* Asus P/I-XP6NP5
+* Asus P65UP5 + P6ND CPU Card (Dual)

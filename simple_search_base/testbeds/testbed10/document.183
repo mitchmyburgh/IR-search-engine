@@ -1,0 +1,31 @@
+Machine Learning Techniques in Spam Filtering
+
+Konstantin Tretyakov
+
+It is impossible to tell exactly who was the first one to come upon a simple
+idea that if you send out an advertisement to millions of people, then at least one
+person will react to it no matter what is the proposal. E-mail provides a perfect
+way to send these millions of advertisements at no cost for the sender, and this
+unfortunate fact is nowadays extensively exploited by several organizations. As
+a result, the e-mailboxes of millions of people get cluttered with all this so-called
+unsolicited bulk e-mail also known as “spam” or “junk mail”. Being increadibly
+cheap to send, spam causes a lot of trouble to the Internet community: large
+amounts of spam-traffic between servers cause delays in delivery of legitimate email,
+people with dial-up Internet access have to spend bandwidth downloading
+junk mail. Sorting out the unwanted messages takes time and introduces a
+risk of deleting normal mail by mistake. Finally, there is quite an amount of
+pornographic spam that should not be exposed to children.
+Many ways of fighting spam have been proposed. There are “social” methods
+like legal measures (one example is an anti-spam law introduced in the US
+[21]) and plain personal involvement (never respond to spam, never publish
+your e-mail address on webpages, never forward chain-letters. . . [22]). There are “technological” ways like blocking spammer’s IP-address, and, at last, there is
+e-mail filtering. Unfortunately, no universal and perfect way for eliminating
+spam exists yet, so the amount of junk mail keeps increasing. For example,
+about 50% of the messages coming to my personal mailbox is spam.
+
+5 The Conclusion
+Before I started writing this paper I had a strong opinion, that a good machinelearning
+spam filtering algorithm is not possible, and the only reliable way of
+filtering spam is by creating a set of rules by hand. I have changed my mind a
+bit by now. That is the main result for me. I hope that the reader too could
+find something new for him in this work.

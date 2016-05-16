@@ -1,0 +1,68 @@
+ Home Application Development 
+
+Serdar Yegulalp
+InfoWorld Tech Watch
+
+By Serdar Yegulalp
+Follow
+About |
+
+Informed news analysis every weekday
+New functional programming language can generate C, Python code for apps
+More like this
+
+    13 frameworks for mastering machine learning
+    13 frameworks for mastering machine learning
+    internet speed fast runners running relay race
+    10 hard-core coding tips for faster Python
+    toy 2016 intro center crop
+    InfoWorld's 2016 Technology of the Year Award winners
+    on IDG Answers
+    Can someone else use my mobile data?
+
+New open source language makes GPU programming easier
+Credit: Thinkstock
+The open source Futhark makes it easier to program for GPUs that speed up machine learning and other math-intensive apps
+
+InfoWorld | Apr 25, 2016
+RELATED TOPICS
+
+    Application Development Open Source Development Tools Big Data 
+
+Comments
+
+Researchers at the University of Copenhagen's Department of Computer Science recently unveiled Futhark, an open source functional programming language designed for creating code that runs on GPUs, for use in machine learning and other high-performance applications.
+
+Futhark is meant to be more convenient to use than standard C/C++ frameworks for programming GPUs. It can automatically generate both C and Python code to be integrated with existing apps.
+pearl oyster shell treasure jewel gem
+Get to know Perl 6
+
+Perl 6 finally arrived a few weeks ago, carrying a load of new features without losing its free-form
+Read Now
+[ Get the most out of collaborative programming with InfoWorld's 20 essential pointers for Git and GitHub. | Keep up with hot topics in programming with InfoWorld's Application Development newsletter. ]
+
+Most GPU programming involves using frameworks like OpenCL or CUDA, both of which use variations of C or C++ to generate code that runs on the GPU. Futhark can generate C code, but is its own language, more similar to Haskell or Standard ML than C. (Futhark is itself written in Haskell.)
+
+Futhark's creators claim that the expressiveness of the language makes it easier to describe complex operations that use parallelism. This includes the ability to support nested parallelizations (parallel operations inside other parallel operations). Futhark can do this "despite the complexities of efficiently mapping to the flat parallelism supported by hardware, as a great many programs depend on this feature," say the language's creators.
+
+Preliminary benchmarks pitting Futhark GPU programs against other GPU libraries showed mixed but promising results. For a maximum segment sum test, Futhark was nearly twice as fast as a competing open source project. In other cases, it matched or was only slightly slower than the competition. Futhark's developers attributed this to the newness of the language and its unrefined approach to allocating and reusing memory.
+
+The current Futhark toolchain can generate code capable of running on either the CPU or GPU, with a variety of targets. For the former, it generates C code compiled by the GCC; for the latter, it generates C code that uses the OpenCL platform. Thus, the same code run on whatever hardware is available to support it, in much the same manner GPU-accelerated apps like the MapD database can fall back to using the CPU if needed.
+
+Python users who want a speed boost can generate code with Futhark wrapped automatically in a Python module. The GPU code runs via PyOpenCL, which is a library for interfacing with GPUs. There are examples of this, such as a Futhark-driven GPU implementation of Conway's Game of Life.
+
+Because Futhark is still fundamentally a research project, it is not yet as polished or complete as other languages. The documentation is incomplete, but both docs and language are open source on GitHub.
+How Cloud Technologies Aid Innovation
+
+BrandPost Sponsored by SAP
+
+How Cloud Technologies Aid Innovation
+
+Have you ever tried to maintain a classic car? It’s not easy.
+Previous Post
+
+Ubuntu Snap doesn't have the security issue -- X11 does
+Next Post
+
+CoreOS Stackanetes puts OpenStack in containers for easy management
+

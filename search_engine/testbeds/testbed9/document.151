@@ -1,0 +1,36 @@
+In computer science, a soft heap is a variant on the simple heap data structure that has constant amortized time for 5 types of operations. This is achieved by carefully "corrupting" (increasing) the keys of at most a certain number of values in the heap. The constant time operations are:
+create(S): Create a new soft heap
+insert(S, x): Insert an element into a soft heap
+meld(S, S' ): Combine the contents of two soft heaps into one, destroying both
+delete(S, x): Delete an element from a soft heap
+findmin(S): Get the element with minimum key in the soft heap
+Other heaps such as Fibonacci heaps achieve most of these bounds without any corruption, but cannot provide a constant-time bound on the critical delete operation. The amount of corruption can be controlled by the choice of a parameter ε, but the lower this is set, the more time insertions require (O(log 1/ε) for an error rate of ε).
+More precisely, the guarantee offered by the soft heap is the following: for a fixed value ε between 0 and 1/2, at any point in time there will be at most ε*n corrupted keys in the heap, where n is the number of elements inserted so far. Note that this does not guarantee that only a fixed percentage of the keys currently in the heap are corrupted: in an unlucky sequence of insertions and deletions, it can happen that all elements in the heap will have corrupted keys. Similarly, we have no guarantee that in a sequence of elements extracted from the heap with findmin and delete, only a fixed percentage will have corrupted keys: in an unlucky scenario only corrupted elements are extracted from the heap.
+The soft heap was designed by Bernard Chazelle in 2000. The term "corruption" in the structure is the result of what Chazelle called "carpooling" in a soft heap. Each node in the soft heap contains a linked-list of keys and one common key. The common key is an upper bound on the values of the keys in the linked-list. Once a key is added to the linked-list, it is considered corrupted because its value is never again relevant in any of the soft heap operations: only the common keys are compared. This is what makes soft heaps "soft"; you can't be sure whether or not any particular value you put into it will be corrupted. The purpose of these corruptions is effectively to lower the information entropy of the data, enabling the data structure to break through information-theoretic barriers regarding heaps.
+
+
+== Applications ==
+Despite their limitations and unpredictable nature, soft heaps are useful in the design of deterministic algorithms. They were used to achieve the best complexity to date for finding a minimum spanning tree. They can also be used to easily build an optimal selection algorithm, as well as near-sorting algorithms, which are algorithms that place every element near its final position, a situation in which insertion sort is fast.
+One of the simplest examples is the selection algorithm. Say we want to find the kth largest of a group of n numbers. First, we choose an error rate of 1/3; that is, at most about 33% of the keys we insert will be corrupted. Now, we insert all n elements into the heap — we call the original values the "correct" keys, and the values stored in the heap the "stored" keys. At this point, at most n/3 keys are corrupted, that is, for at most n/3 keys is the "stored" key larger than the "correct" key, for all the others the stored key equals the correct key.
+Next, we delete the minimum element from the heap n/3 times (this is done according to the "stored" key). As the total number of insertions we have made so far is still n, there are still at most n/3 corrupted keys in the heap. Accordingly, at least 2n/3 − n/3 = n/3 of the keys remaining in the heap are not corrupted.
+Let L be the element with the largest correct key among the elements we removed. The stored key of L is possibly larger than its correct key (if L was corrupted), and even this larger value is smaller than all the stored keys of the remaining elements in the heap (as we were removing minimums). Therefore, the correct key of L is smaller than the remaining n/3 uncorrupted elements in the soft heap. Thus, L divides the elements somewhere between 33%/66% and 66%/33%. We then partition the set about L using the partition algorithm from quicksort and apply the same algorithm again to either the set of numbers less than L or the set of numbers greater than L, neither of which can exceed 2n/3 elements. Since each insertion and deletion requires O(1) amortized time, the total deterministic time is T(n) = T(2n/3) + O(n). Using case 3 of the master theorem (with ε=1 and c=2/3), we know that T(n) = Θ(n).
+The final algorithm looks like this:
+
+ function softHeapSelect(a[1..n], k)
+     if k = 1 then return minimum(a[1..n])
+     create(S)
+     for i from 1 to n
+         insert(S, a[i])
+     for i from 1 to n/3
+         x := findmin(S)
+         delete(S, x)
+     xIndex := partition(a, x)  // Returns new index of pivot x
+     if k < xIndex
+         softHeapSelect(a[1..xIndex-1], k)
+     else
+         softHeapSelect(a[xIndex..n], k-xIndex+1)
+
+
+== References ==
+Chazelle, B. 2000. The soft heap: an approximate priority queue with optimal error rate. J. ACM 47, 6 (Nov. 2000), 1012-1027.
+Kaplan, H. and Zwick, U. 2009. A simpler implementation and analysis of Chazelle's soft heaps. In Proceedings of the Nineteenth Annual ACM -SIAM Symposium on Discrete Algorithms (New York, New York, January 4––6, 2009). Symposium on Discrete Algorithms. Society for Industrial and Applied Mathematics, Philadelphia, PA, 477-485.

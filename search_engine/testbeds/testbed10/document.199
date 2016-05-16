@@ -1,0 +1,71 @@
+Machine Learning in Control of Functional Electrical
+Stimulation Systems for Locomotion
+
+
+Aleksandar Kostov, Student Member, ZEEE, Brian J. Andrews, Deian B. Popovic
+
+TO DATE, most clinically applied functional electrical stimulation (FES) systems for restoration of locomotion
+use a manually triggered open-loop control method. These
+assistive systems integrate machine control, which is triggered
+manually (volitionally), and biological control. The biological
+control allows the subject to correct “errors” imposed
+by the imperfections of the machine control and individual
+factors such as muscle fatigue, spasticity, and changes in
+the environmental conditions. Other FES systems use openloop
+control based on the concept of “stored” sequences of
+muscle activation associated with the phases of a normal
+gait cycle. These sequences are based on averaged EMG
+patterns recorded in able-bodied subjects while walking [3].
+A computer control of electrical stimulation was proposed
+[4] emphasizing muscular properties. Some investigators have
+introduced formal modeling to solve global issues such as
+standing stability, control strategies, and feedback design [5].
+To improve performance, several strategies which include
+feedback were tested for FES systems: 
+
+A computer-controlled walking paradigm, incorporating
+A closed-loop, nonanalytical, control method called ArtiA
+rule-based control for hybrid assistive systems
+An interactive principle for controlling a hybrid gait
+Regardless of the technology or control principles utilized,
+the achievements, including practicality, gait speed and endurance,
+efficiency, etc., in subjects with spinal cord injuries
+(SCI) are not substantially different. Bearing in mind that
+it is necessary to integrate machine control with biological
+control, and recent findings on the role of synergy and sensory
+driven movements [19], a rule-based control (RBC) system
+seems to be a promising control technique. The RBC has a
+hierarchical structure, where the upper-level block controls
+processes like stand up, take a step, walk, stop, sit down,
+and receives volitional control from the user (see Fig. 1). A
+lower-level block controls stimulation of the muscles whose
+activity is required to produce different phases of the processes
+controlled. The RBC should be able to function in various
+environmental conditions and in a variety of modes of the
+gait. However, the RBC is a finite state control method;
+thus, it is necessary to include both upper and lower control
+levels in the control-system design and to tune control signals
+in order to provide smooth functional movements. Some of
+the methods to fine-tune movements are digital proportional
+(P) and proportional plus integral (PI) controls which are
+implemented in many control applications. 
+
+V. CONCLUSION
+The results suggest that both algorithms can be used successfully
+in this application but they may require specific
+fine-tuning of the factors that influence their generalization
+on new data, such as the size of the training set and the
+preset training error level. Neither approach is better in all
+circumstances. Most tasks can be done with either algorithm,
+although the amount of work required to do the task may
+differ. Features that are unique to only one technique may be
+the determining factor in deciding which technique to employ
+in a particular design. If the complexity of design will benefit
+from the advantageous features of ALN and if a retraining
+feature is required, then adaptive logic networks are the choice.
+If small understandable decision trees are preferred, then the
+choice is inductive learning technique. In a future work, we
+plan to combine both techniques in order to exploit all of their
+advantages. Inductive learning technique may be very useful for estimation of the relative importance of sensory inputs for
+particular design and ALN may be used in a final control
+system for its better generalization and retraining feature. 

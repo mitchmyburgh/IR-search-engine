@@ -1,0 +1,101 @@
+Skip to content 
+     Personal  
+     Open source  
+     Business  
+     Explore  
+    Sign up 
+    Sign in 
+    Pricing 
+    Blog 
+    Support 
+    Search GitHub 
+      -->
+        This repository
+         Watch   1   
+         Star   1   
+         Fork   1   
+       LeonardoCardoso
+      /
+      Hashing-Algorithms  
+         Code 
+         Issues 0 
+         Pull requests 0 
+        Pulse  
+        Graphs  
+        It's designed to keep insertion, deletion and search with O(1) complexity. http://lab.leocardz.com/hash-table-and-hashing-algorithms/  
+             4  commits   
+             1  branch   
+             0  releases   
+              Fetching contributors  
+             Java 100.0%   
+      Java 
+         New file  
+         Find file  
+          -->
+              HTTPS  
+              Choose a clone URL 
+                 HTTPS (recommended)  
+                 Clone with Git or checkout with SVN using the repository's web address.  
+                   HTTPS  
+                 Learn more about clone URLs 
+          Download ZIP  
+        Branch: master  
+          Switch branches/tags 
+             Branches  
+             Tags  
+              master   
+           Nothing to show
+           Nothing to show
+       New pull request  
+        Fetching latest commit… 
+        Cannot retrieve the latest commit at this time. 
+      Permalink 
+         Failed to load latest commit information. 
+          src  
+          .gitignore  
+          Hashing-Algorithms.iml  
+          LICENSE  
+          README.md  
+        README.md  
+         Hashing Algorithms 
+       Developed by @LeonardoCardoso.  
+       Hash table (also hash map) is a data structure used to implement an associative array, a structure that can map keys to values. Implementally talking, hash table is an array-based data structure, which uses a hash function to compute an index into an array of buckets or slots, from which the correct value can be found. It's designed to keep insertion, deletion and search with O(1) complexity. 
+       This project contains 
+        Open Hashing (Closed Addressing, Separate Chaining) 
+        Open Hashing with AVL 
+        Closed Hashing (Open Addressing) 
+          Linear probing 
+          Quadratic probing 
+          Double hashing 
+          Rehashing 
+            Linear probing 
+            Quadratic probing 
+        Half Open Hashing 
+       For more details and see examples visit http://lab.leocardz.com/hash-table-and-hashing-algorithms/ 
+         License 
+       Copyright 2015 Leonardo Cardoso
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+   http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+   Status 
+   API 
+   Training 
+   Shop 
+   Blog 
+   About 
+   © 2016 GitHub, Inc. 
+   Terms 
+   Privacy 
+   Security 
+   Contact 
+   Help 
+    Something went wrong with that request. Please try again. 
+ You signed in with another tab or window. Reload to refresh your session. 
+ You signed out in another tab or window. Reload to refresh your session. 
+

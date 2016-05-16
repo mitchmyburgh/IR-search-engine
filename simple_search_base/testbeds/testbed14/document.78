@@ -1,0 +1,45 @@
+﻿NLP-driven Ontology Modeling
+CraigTrim | Nov 15 2012 | Visits (12259)
+
+2
+
+
+inShare1
+
+The Mechanics and Value of an Ontology Model
+An Ontology is a "specification of a conceptualization" (Tom Gruber). I still don’t understand what this means. This is a difficult definition, and has done little to further the understanding of Ontologies, and how they can help in the enterprise. A far better definition of an Ontology is “a description of things that exist and how they relate to each other” (Chris Welty). Ontologies and Natural Language Processing (NLP) can often be seen as two sides of the same coin.
+An Ontology Model is:
+the classification of entities and
+modeling the relationships between those entities.
+The purpose of NLP is:
+the identification of entities and
+understanding the relationship between those entities.
+Ontology-driven NLP means we’re using a semantic model to understand what exists in unstructured data. NLP-driven Ontology modeling means we’re using natural language processing techniques to derive semantic models from unstructured data.
+Using Ontologies with NLP allows an enterprise to turn data into knowledge.
+
+In this process diagram we illustrate both Ontology-driven NLP (the use of the semantic layer to drive NLP parsing and insight at runtime) and the use of NLP-driven Ontology modeling (the use of NLP parsing to create and enhance Ontology models).
+Ontology or Relational Database?
+Why would we use an Ontology over a relational database (RDB)? The use of a relational database is to make the following assertion – I understand the data that exists in my domain completely, and that data is relatively static. That is not to say that changes may never happen, but the design of an ERD must remain relatively static for applications to effectively build on top of it. The use of an Ontology model (or models, there is no constraint toward using a single Ontology in an enterprise or industry) is to make the opposite assertion – I do not fully understand the data that exists in my domain, I know that I’ll never understand it completely, and far from being static, the data changes constantly.
+The relational model has relations between entities established through explicit keys (primary, foreign) and, for many-to-many relationships, associative entities. Changing relationships in this case is cumbersome, as it requires changes to the base model structure itself, which can be difficult for a populated database. Querying for this kind of data based on a relational model can also be cumbersome since it can result in very complicated where clauses or significant table joins.
+Hierarchical models have similar limitations when it comes to real world updates andare not very flexible when it comes to trying to traverse the model "horizontally".
+The graph model, which is how semantic models are implemented, makes it much easier to both query and maintain the model once deployed. For example, if a new relationship is needed to be represented that had not been anticipated during design.With a triple store representation that additional representation is easily maintained.A new triple is simply added to the data store. A critical point is the relations are part of the data, not part of the database structure.
+Creating an Ontology Model
+What exactly are semantic models and how are they helpful for this type of operations systems integration? When we talk about operational system integration based on info
+Semantic models allow users to ask questions about what is happening in a modeled system in a more natural way. As an example, an enterprise might consist of five geographic regions, with each region containing three to five drilling platforms, and each drilling platform monitored by several control systems, each having a different purpose. One of those control systems might monitor the temperature of extracted oil, while another might monitor vibration on a pump. A semantic model will allow a user to ask a question like, "What is the temperature of the oil being extracted on Platform 3?", without having to understand details such as,which specific control system monitors that information or which physical sensor is reporting the oil temperature on that platform.
+Therefore, semantic models can be used to relate the physical world, as it is known to control systems engineers in this example, to the real world, as it is known to line-of-business leaders and decision makers. In the physical world, a control point such a valve or temperature sensor, is known by its identifier in a particular control system,possibly through a tag name like 14-WW13. This could be one of several thousand identifiers within any given control system, and there could be many similar control systems across an enterprise. To further complicate the problem of information referencing and aggregation, other data points of interest could be managed through databases, files, applications, or component services with each having its own interface method and naming conventions for data accessing.
+A key value of the semantic model is to provide access of information in context of the real world in a consistent way. Within a semantic model implementation, this information is identified using "triples" of the form "sub
+For example:
+Tank1 hasTemperature Sensor 7
+Tank 1 isPartOf
+Platform 4 isPartOf
+These triples, taken together, make up the ontology for Region 1 and can be stored in a model server, as is described in more detail later in this article. This information, then, can be easily traversed using the model query language to answer questions such as "What is the temperature of tank 1 on Platform 4", much more easily than was the case without a semantic model relating engineering information to the real world.
+Likewise, you can traverse the model from many different perspectives to answer questions that you had not thought of at design time. In contrast, other types of database design might require structural changes to answer new questions that arise after initial implementation.
+Ontologies are fundamental for Natural Language Processing (NLP) and enhancing search through query expansion at runtime and search index creation on the back-end.
+Semantic Search
+Natural Language Processing (NLP) can be used to achieve advanced online question answering services. These services can provide effective access to information to everyone, computer-savvy or not, as interface barriers are eliminated. Answering any type of question is very challenging because it requires knowledge about the world, the user’s task, inference capabilities, user modeling, linguistics knowledge, and knowledge about the pragmatics of discourse and dialog.
+Ontology-driven NLP parses natural language text and transposes it into a representation of its meaning, structured around events and their participants as mentioned in the text and known to the Ontology model. Queries can then be matched to this meaning representation in anticipation of any of the permutations which surface in the text. These permutations centrally include over specification (e.g. not listing all synonyms, which non-semantic search engines require their users to do) and more importantly, under specification. There is almost always an assume context in any statement or query (pulling [pipe] up, tripping [bit] out of hole, etc).
+For the latter case, ambiguity can only be reduced by the process of query expansion, that is, giving the search engine what humans use for disambiguation, namely knowledge of the world as represented in an Ontology.
+Query Expansion
+Using Ontologies to drive the process of query expansion forms a cornerstone of “Semantic Search”.
+Ontology enabled query expansion can take the natural language query “does aspirin cure headaches” and automatically expand upon the query’s meaning to produce a more thorough search. “Aspirin” would trigger a search not just for the word aspirin, but rather for all words linked to its ontology concept, and words linked to that concept’s parent and child concepts – not only “aspirin” but “acetylsalicylic acid” and all of its known brand names, as well as generic words and brand names of conceptually similar drugs – other painkillers in the same family as aspirin. The same would be done for “cure”, bringing up search results for other similar words such as “treat”, “relieve” and “headache”, etc.
+A non-Ontology enabled query would simply use a bag-of-words “keywordese” approach and would search for “aspirin headache” or “cure headache”, and neither would produce all the desired results. Semantic search can attempt to optimize search results by expanding on the query. But in contrast to other applications, it can do so based on the meaning of the query.

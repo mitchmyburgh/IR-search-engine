@@ -1,0 +1,21 @@
+A weak heap is a variation of the a binary heap data structure.
+
+
+== Description ==
+A weak max-heap on a set of n values is defined to be a binary tree with n nodes, one for each value, satisfying the following constraints:
+The root node has no left child
+For every node, the value associated with that node is greater or equal to than the values associated with all nodes in its right subtree.
+The leaves of the tree have heights that are all within one of each other.
+A weak min-heap is similar, but reverses the required order relationship between the value at each node and in its right subtree.
+
+
+== Priority queue operations ==
+In a weak max-heap, the maximum value can be found (in constant time) as the value associated with the root node; similarly, in a weak min-heap, the minimum value can be found at the root.
+As with binary heaps, weak heaps can support the typical operations of a priority queue data structure: insert, delete-min, delete, or decrease-key, in logarithmic time per operation. Variants of the weak heap structure allow constant amortized time insertions and decrease-keys, matching the time for Fibonacci heaps.
+
+
+== History and applications ==
+Weak heaps were introduced by Dutton (1993), as part of a variant heap sort algorithm that (unlike the standard heap sort using binary heaps) could be used to sort n items using only n log2n + O(n) comparisons. They were later investigated as a more generally applicable priority queue data structure.
+
+
+== References ==

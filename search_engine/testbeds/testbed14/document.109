@@ -1,0 +1,132 @@
+﻿Dynamic filtering combines bottom-up and top-down evaluation techniques. The
+top-down part restricts the set of facts which has to be computed to a subset of the
+minimal model. 
+Thus infinite minimal models are also possible, because only this subset
+has to be finite
+.
+9
+The translation of Frame Logic usually results in a logic program with
+only a limited number of predicates, so the resulting program is often not stratified. In
+order to deal with non stratified negation, Ontobroker uses the 
+well-founded model
+Frame-Logic
+Input
+Output
+Ontology
+Instances
+Queries
+Predicate-Logic
+Normal Logic
+Programs
+Fixpoint Procedure
+Lloyd-Topor
+Transformation
+Frame Logic to
+Predicate Logic
+Va r i a b l e
+to Frame Logic
+Substitutions
+Language
+Va r i a b l e
+Substitution
+in F-Logic
+Va r i a b l e
+Substitution
+Rich Language
+Primitives
+Object Modeling
+Restricted Language
+only relations and
+Horn clauses
+Fig. 9 
+Stages and Languages used in the Inference Engine.
+
+
+24
+semantics 
+[Van Gelder et al., 1991] and computes this semantics with an extension of
+dynamic filtering.
+A hyperbolic presentation of the ontology and a tabular interface improve the
+accessibility of Ontobroker. Expecting a normal web user to type queries in a logical
+language and to browse large formal definitions of ontologies is not very realistic.
+Therefore, the structure of the query language is exploited to provide a tabular query
+interface as shown in Figure 10. We also need support for selecting classes and
+9. Syntactical rules that ensure that the subset of minimal model that has to be computed remains
+finite are described in [Fensel et al., 1998b].
+Researcher
+with 
+name
+“
+Fensel
+”
+& 
+Publications
+of this 
+author
+& their 
+abstracts
+Ontobroker found the following:
+V1 = "
+http://www.aifb.uni-karlsruhe.de/WBS/dfe/
+index.html
+"
+V2 = "
+http://www.aifb.uni-karlsruhe.de/WBS/dfe/
+publications97.html#EEF+97
+"
+V3 = "Building knowledge-based systems from
+reusable elements is a key factor in their economic
+development. However, one has to ensure that the
+assumptions and functionality of the reused building
+block fit to each other and the specific circumstances of
+the actual problem and knowledge. We use the
+Karlsruhe Interactive Verifier (KIV) for this purpose.
+We show how the verification of conceptual and formal
+specifications of knowledge-based systems can be done
+with it. KIV was originally developed for the verification
+of procedural programs but it fits well for verifying
+knowledge-based systems. Its specification language is 
+Fig. 10 
+The tabular query interface.
+based on algebraic specification means for the functional specification of components and dynamic logic
+for the algorithmic specification. It provides an interactive theorem prover integrated into a sophisticated
+tool environment supporting aspects like the automatic generation of proof obligations, generation of
+counter examples, proof management, proof reuse etc. Such a support is essential in making verification
+of complex specifications feasible. We provide some examples on how to specify and verify tasks,
+problem-solving methods, and their relationships."
+V1 = "http://www.aifb.uni-karlsruhe.de/WBS/dfe/index.html
+"
+V2 = "http://www.aifb.uni-karlsruhe.de/WBS/dfe/publications97.html#FS97
+"
+V3 = "During the last years, a number of formal specification languages for knowledge-based systems
+have been developed. Characteristic for knowledge-based systems are a complex knowledge base and an
+inference engine which uses this knowledge to solve a given problem. Specification languages for
+knowledge-based systems have to cover both aspects: they have to provide means to specify a complex
+and large amount of knowledge and they have to provide means to specify the dynamic reasoning
+behaviour of a knowledge-based system. This paper will focus on the second aspect, which is an issue
+considered to be unsolved. For this purpose, we have surveyed existing approaches in related areas of
+research. We have taken approaches for the specification of information systems (i.e., Language for
+Conceptual Modelling and Troll), approaches for the specification of database updates and the dynamics
+of logic programs (Transaction Logic and Dynamic Database Logic), and the approach of Evolving
+Algebras. This paper, which is a short version of a longer report, concentrates on the methodology of our
+comparison and on the conclusions we have drawn. The actual comparison between the languages has
+
+
+25
+attributes from the ontology. To allow the selection of classes the ontology has to be
+presented in an appropriate manner. Usually, an ontology can be represented as a large
+hierarchy of concepts. With regard to the handling of this hierarchy a user has at least
+two requirements: first he wants to scan the vicinity of a certain class looking for classes
+better suitable to formulate a certain query. Second a user needs an overview of the
+entire hierarchy to allow for a quick and easy navigation from one class in the hierarchy
+to another class. These requirements are met by a presentation scheme based on
+Hyperbolic Geometry [Lamping et al., 1995], where classes in the center are depicted
+with a large circle and classes at the border of the surrounding circle are only marked
+with a small circle (see Figure 11). The visualization technique allows a quick
+navigation to classes far away from the center as well as a closer examination of classes
+and their vicinity. When a user selects a class from the hyperbolic ontology view, the
+class name appears in the class field of the tabular interface and the user can select one
+of the attributes from the attribute choice menu as the pre-selected class determines the
+possible attributes. Based on these interfaces Ontobroker automatically derives the
+query in textual form and presents the result of the query.
+

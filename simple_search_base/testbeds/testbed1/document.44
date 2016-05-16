@@ -1,0 +1,40 @@
+List_of_Xbox_games_compatible_with_Xbox_360
+When a video game company creates a new console with the ability to play games of an earlier game system, it is mostly planned that the console should be  at launch. But in Microsoft's case, the 's being able to play  games is an afterthought as that was not applied initially. As a result, only a fraction of the games developed compatibility. Also, some of those that are compatible exhibit some artifacts, meaning they may not look the same as on the system they were developed for.
+Below is a list of Xbox games that are compatible with the Xbox 360. Additionally, the manner in which compatibility is achieved and the software errors associated with it are discussed in brief. This list is final as Microsoft ceased adding titles to the list in November 2007 for unknown reasons. It should also be noted that, as of April 2010, original Xbox games no longer can be played online via the Xbox Live service, as it was ended for the original Xbox console. However, online multiplayer still is possible through third-party Lan Tunneling programs that manipulate System Link, such as . Downloadable content for these titles is not available via Xbox Live. This includes the Xbox Originals downloaded on the Xbox 360 and any Xbox game running on the 360.
+==Fluctuations in the list of compatible games over time==
+The original list was composed of 279 games and was unveiled on November 11, 2005, on the Xbox website; however, some games subsequently have been removed due to bugs.
+Six games were removed from the list: '''', '''', '''', '''', '''', and ''''.
+Seven games were removed temporarily, but were added back later: '''', '''', '''', '''', '''', '''', and ''''.
+'''' remains on the list even though the game was never released; it was cancelled by the developer before completion. The Japanese version of the Xbox 360 console initially was compatible with only 12 games, while the European version had 156 games.
+The last update for Xbox 360 backwards compatibility in North America was on November 27, 2007,. Support.xbox.com. Retrieved on 2013-08-23.   raising the total number of Xbox games compatible with the Xbox 360 to 461. Approximately 51% of the original Xbox library is now compatible with Xbox 360 (as of the November 27, 2007, update). The latest European update was in November, 2007, with a total of 476 compatible games. The latest update for Japan was released on November 28, 2007, with 122 working games.
+==How compatibility is achieved==
+According to Microsoft, each game needs an '' profile'' to run. These profiles can be downloaded via the  service or from Xbox.com and burned on  or  recordable media. They also were routinely distributed as part of the content on the  monthly discs (which were discontinued in 2012). The profiles are downloaded as a single bundle, thus only needing to be applied once per update (if doing so offline), or are automatically downloaded the first time a compatible game is inserted.
+The official Xbox 360  is required to play any of the games on this list. The hard disk is used to store the emulation software, and also to store saved games, downloaded content, and to serve as a data  for titles which utilize disk caching. Since games for the original Xbox were designed with the expectation that a hard drive always would be available, most titles rely heavily on its presence.
+An early version of the emulator for playing '''' and '''' offline initially was included with the Xbox 360 hard drive at launch. Xbox 360 hard drives manufactured later included updated emulation profiles which allow a greater range of titles to be played out-of-the-box without updating. Whenever new emulation profiles are released, drives manufactured after that date include the latest update.
+The original Xbox controller is not compatible with Xbox 360 due to a different connector and marginally different button layout. Specifically, there are no white and black buttons on the 360 controller; they were replaced by the "bumpers" found above the left and right triggers. When playing an Xbox game on Xbox 360 (using an Xbox 360 controller), the white button is mapped to the left bumper and the black button to the right.
+==List of compatible titles==
+In the following chart, any Xbox game with a "Yes" will work in that region, and also in others which have "Yes" (although cross-region compatibility is not guaranteed). "Yes" in the 60&nbsp;Hz column indicates that the PAL title supports 60&nbsp;Hz output mode, and thus is compatible with the Xbox 360 VGA cable.
+A game with "Yes" in the  column has '''built-in''' support for widescreen, and will fill s. If the widescreen column is "No",  is used to preserve  on high definition displays (most HDTVs have an option to change or stretch the image to fill the screen). Note that '''all''' compatible games will stretch to widescreen, potentially distorting the aspect ratio, if the Xbox 360 is configured for  ( / ) or  ( / ). Certain games without the widescreen function can be "cheated" into being widescreen by changing the screen resolution to 480p in the Xbox 360 display settings menu. Some games still will have small black over-scan lines on the sides of the screen.
+==Compatibility==
+When an original Xbox game has been emulator patched in accordance to Microsoft instructions it still might refuse to play on the Xbox 360. The following error message displayed on the Xbox 360 dashboard signifies this failure:
+:''"This original Xbox game is not supported on your Xbox 360 console. An update to support this game may be available. For more info, go to www.xbox.com/games. X: 2689.0 B: 1884.0"''
+This message is identical to the one displayed when trying to play an unsupported or unpatched game for the first time. At this time no reference to the significance of the X and B variables can be found on the Microsoft Xbox website. This may be related to international region compatibility; a Microsoft disclaimer notes
+:''"Currently the North American versions of these games are the only ones supported as backward compatible titles on Xbox 360."''
+It should be noted that Microsoft terms the compatibility of Xbox titles on the Xbox 360 consoles as "backward compatibility" or "reverse compatibility", although in fact, it is the console that is being made backward/reverse compatible, and the titles are being made forward compatible.
+Contrary to popular belief, custom soundtracks are still supported while playing Xbox games, though it requires connecting the 360 hard drive to the PC.
+PAL games that do not support PAL-60 can't be played using the VGA HD Cable.. Support.microsoft.com. Retrieved on 2013-08-23.
+Additionally, many listed Xbox titles still contain emulation errors or . These are often minor, but they may include problems with graphics, sound, loading and saving, or gameplay as well. In some cases, Microsoft updated the emulation profiles for individual titles, and the incidence of these issues were reduced or eliminated.
+Occasionally, switching from 720p/1080i/1080p mode to 480p will make a previously unplayable game workable (assuming it's on the BC list). Changing the display setting, usually from widescreen to normal should fix any game on the list.
+Currently, however, the only way to transfer saved files from the original Xbox to the 360 is through a special transfer kit which requires the original system's memory card, or a 'modded' Xbox, but without modding an Xbox, and this also limits saves that can be moved to those that can be stored on a memory card.
+However, some game saves on the original Xbox cannot be moved due to either file restrictions or size limitations.
+Another limitation applies to downloadable content, as no content can be moved between systems.
+After market hard drives can cause compatibility problems that are resolved when using genuine Microsoft hardware.
+==See also==
+* 
+* 
+==References==
+* 
+==External links==
+* 
+*  Article ''''  shows and explains the graphical differences
+* GameSpot Article ''''  explains the technical issues of many of the Xbox games on the Xbox 360

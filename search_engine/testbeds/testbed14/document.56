@@ -1,0 +1,19 @@
+3.5 WordNet Methodology
+WordNet is a lexical database for the English language. It groups English words into sets of
+synonyms called synsets, provides short, general definitions, and records the various semantic
+relations between these synonym sets. The purpose is twofold: to produce a combination of
+dictionary and thesaurus that is more intuitively usable, and to support automatic text analysis and
+artificial intelligence applications.
+The hypernym/hyponym relationships among the noun synsets can be interpreted as
+specialization relations between conceptual categories. In other words, WordNet can be
+interpreted and used as a lexical ontology in the computer science sense. However, such ontology
+should be corrected before being used since it contains hundreds of basic semantic
+inconsistencies such as (i) the existence of common specializations for exclusive categories and
+(ii) redundancies in the specialization hierarchy. Furthermore, transforming WordNet into a
+lexical ontology usable for knowledge representation should normally also involve
+(i) distinguishing the specialization relations into subtypeOf and instanceOf relations, and
+(ii) associating intuitive unique identifiers to each category. WordNet has also been converted to
+a formal specification by means of a hybrid bottom-up top-down methodology to automatically
+extract association relations from WordNet, and interpret these associations in terms of a set of
+conceptual relations, formally defined in the DOLCE foundational ontology [3].
+WordNet is a lexical database for the English language.[1] It groups English words into sets of synonyms called synsets, provides short definitions and usage examples, and records a number of relations among these synonym sets or their members. WordNet can thus be seen as a combination of dictionary and thesaurus. While it is accessible to human users via a web browser,[2] its primary use is in automatic text analysis and artificial intelligence applications. The database and software tools have been released under a BSD style license and are freely available for download from the WordNet website. Both the lexicographic data (lexicographer files) and the compiler (called grind) for producing the distributed database are available.

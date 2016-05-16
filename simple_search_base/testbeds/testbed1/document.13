@@ -1,0 +1,21 @@
+Ajax_Animator
+'''Ajax Animator''' is a free, web-based animation suite. Its development began in March 2006 by Antimatter15, then a sixth grader. Ajax Animator was originally intended to be a  replacement to , but is now a general-purpose animation tool. Contrary to its name, it uses little to no  in its code. Ajax Animator is primarily written using , the  framework, and -related technologies such as . The software can be used either from within a web browser of from an offline installation.
+== History ==
+Ajax Animator began as an ambitious project by Antimatter15, then a 6th grader. Its intended use was to draw stick figures and animation and export them to Flash files, as an alternative to the expensive  desktop program. It was first inspired by the  Flash editing software. Development started around March 2006, based on the  JavaScript library, which allowed for in-browser graphics creation.
+The application was soon rewritten to use the DHTML Suite library from , and finally allowed for exporting  through the  Java library. Development subsequently moved to  on  to ease production.
+Version 1.0 was rewritten to use version 1.0 of Sencha's  library instead. It also added support for  and sharing projects. The next version, 0.20, was a complete rewrite to support version 2.0 of , and used the  library by josep_ssv, which extended RichDraw and was designed specifically for Ajax Animator.
+Later versions used the author's own VectorEditor library, based on the  framework.
+==See also==
+*
+== References ==
+== External links ==
+* 
+* 
+* 
+* 
+* 
+* 
+* Archive of  on Liveswifers
+* 
+* 
+*

@@ -1,0 +1,13 @@
+Benefits
+
+The benefits of organizing software into object classes fall into three categories:[42]
+
+    Rapid development
+    Ease of maintenance
+    Reuse of code and designs
+
+Object classes facilitate rapid development because they lessen the semantic gap between the code and the users. System analysts can talk to both developers and users using essentially the same vocabulary, talking about accounts, customers, bills, etc. Object classes often facilitate rapid development because most object-oriented environments come with powerful debugging and testing tools. Instances of classes can be inspected at run time to verify that the system is performing as expected. Also, rather than get dumps of core memory, most object-oriented environments have interpreted debugging capabilities so that the developer can analyze exactly where in the program the error occurred and can see which methods were called to which arguments and with what arguments.[43]
+
+Object classes facilitate ease of maintenance via encapsulation. When developers need to change the behavior of an object they can localize the change to just that object and its component parts. This reduces the potential for unwanted side effects from maintenance enhancements.
+
+Software re-use is also a major benefit of using Object classes. Classes facilitate re-use via inheritance and interfaces. When a new behavior is required it can often be achieved by creating a new class and having that class inherit the default behaviors and data of its superclass and then tailor some aspect of the behavior or data accordingly. Re-use via interfaces (also known as methods) occurs when another object wants to invoke (rather than create a new kind of) some object class. This method for re-use removes many of the common errors that can make their way into software when one program re-uses code from another.

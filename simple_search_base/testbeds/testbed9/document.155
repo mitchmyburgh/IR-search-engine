@@ -1,0 +1,51 @@
+In computer science, a min-max heap is a double-ended priority queue implemented as a modified version of a binary heap. Like a binary heap, a min-max heap is represented as a complete binary tree. Unlike a binary heap, though, the nodes in this tree do not obey respectively the min-heap or max-heap property; rather they obey the min-max heap property: each node at an even level in the tree is less than all of its descendants, while each node at an odd level in the tree is greater than all of its descendants.
+Like binary heaps, min-max heaps support O(log n) insertion and deletion, can be built in time O(n), and are often represented implicitly in an array. Operations like findmin() and findmax() take constant time.
+
+
+== Min-Max Heap Concepts ==
+
+
+=== Introduction ===
+A min-max heap is a complete binary tree containing alternating min and max levels.
+
+If it is not empty, each element has a data member called key. The root is always present at min level. Let x be any node in a min-max heap. If x is on a min (max) level then the element in x has the minimum (maximum) key from among all elements in the subtree with root x. A node on a min (max) level is called a min (max) node.
+
+
+=== Operations on Min-Max ===
+Inserting an element with an arbitrary key
+Deletion of largest key
+Deletion of smallest key
+
+
+==== Inserting an element with an arbitrary key ====
+To add an element to a Min-Max Heap perform following operations:
+Insert the required key into given Min-Max Heap.
+Compare this key with its parent. If it is found to be smaller (greater) compared to its parent, then it is surely smaller (greater) than all other keys present at nodes at max(min) level that are on the path from the present position of key to the root of heap. Now, just check for nodes on Min(Max) levels.
+If the key added is in correct order then stop otherwise swap that key with its parent.
+Here is one example for inserting an element to a Min-Max Heap.
+Say we have the following min-max heap and want to install a new node with value 6.
+
+Initially, element 6 is inserted at the position indicated by j. Element 6 is less than its parent element. Hence it is smaller than all max levels and we only need to check the min levels. Thus, element 6 gets moved to the root position of the heap and the former root, element 8, gets moved down one step.
+If we want to insert a new node with value 81 in the given heap, we advance similarly. Initially the node is inserted at the position j. Since element 81 is larger than its parent element and the parent element is at min level, it is larger than all elements that are on min levels. Now we only need to check the nodes on max levels.
+
+
+==== Deletion of min element ====
+To delete min element from a Min-Max Heap perform following operations:
+The smallest element is the root element.
+Remove the root node and the node which is at the end of heap. Let it be x.
+Reinsert key of x into the min-max heap
+Reinsertion may have 2 cases -
+If root has no children, then x can be inserted into the root.
+Suppose root has at least one child. Find minimum value ( Let this is be node m). m is in one of the children or grandchildren of the root. The following condition must be considered:
+x.key <= h[m].key: x must be inserted into the root.
+x.key > h[m].key and m is child of the root L: Since m is in max level, it has no descendants. So, the element h[m] is moved to the root and x is inserted into node m.
+x.key > h[m].key and m is grandchild of the root: So, the element h[m] is moved to the root. Let p be parent of m. if x.key > h[p].key then h[p] and x are interchanged.
+Program - to delete the element with minimum key
+
+
+== Extensions ==
+The min-max-median heap is a variant of the min-max heap, suggested in the original publication on the structure, that supports the operations of an order statistic tree.
+
+
+== References ==
+M. D. Atkinson, J.R. Sack, N. Santoro, and T. Strothotte, Communications of the ACM, October, 1986, Min-Max Heaps and Generalized Priority Queues.

@@ -1,0 +1,55 @@
+The huffington post
+THE BLOG
+Co-Founder of the Flatiron School Reveals Which Programming Languages You Should Be Learning
+04/06/2016 12:27 pm ET | Updated Apr 07, 2016
+
+    Quora
+    The best answer to any question
+
+What are the best programming languages to learn today? originally appeared on Quora - the knowledge sharing network where compelling questions are answered by people with unique insights.
+
+Answer by Avi Flombaum, Co-founder and Dean at Flatiron School, on Quora.
+
+That depends entirely on who you are and what your goal is.
+
+Given that you’re asking me, I’m going to assume you’re an informed beginner- meaning you haven’t been writing code professionally and are just looking to pick up a new language, but you also are not in the situation where you’ve never tried it before- maybe you’ve messed around with some online tutorials and are thinking about taking it more seriously.
+
+So for you, informed beginner, the first thing you need to think about is what’s motivating you. Are you looking to get a job? Build an app? Pick up a hobby? Picking how you learn based on that should be the single most important factor in your decision making- not the market, not what’s trendy, and not what a random person tells you is best to start with. The reason for that is simple- learning to code is really, really hard. It will require you to think in brand new ways and deal with tremendous amounts of frustration and self-doubt. If you’re motivated to learn because you want to build an iOS app, start with swift/objective-c. If you’re dying to build an android app, learn Java and Android. If you want to make visualizations on the web, start with Javascript and then the D3.JS framework. While none of these might be the objective “best first language,” the single most important thing you can do is be motivated- and if you have a personal connection to some goal or idea, focus on that- the benefit will outweigh anything else.
+
+I know all that sounds a little hokey, but I truly see my biggest responsibility as an educator as inspiring students to fall in love with code. Hence the Flatiron School homepage (“Learn Love Code”) and the giant quote on the wall on campus-
+
+Now that that’s out of the way, let’s look at some specific options. Assuming you’re not necessarily interested in system programming (like building an operating system), you’ll first want to figure out if you’re interested in the Front-End or Back-End.
+
+On the front-end side your choices are pretty clear- html, css and javascript. Once you have a handle on those you’ll want to start messing around with some front-end frameworks like Ember, Angular, etc...
+
+Regarding back-end languages, you have a few primary choices.
+
+Java- I believe Java is the most common programming language in use today. It’s what the AP uses to teach Computer Science and is the lingua franca at most universities for those considering a CS degree. It’s also the core language needed for Android development.  So, if you’re looking to get a Computer Science degree or build native android apps, you may want to start here.
+
+Python- Python is what’s used at Google and is also being increasingly taught at universities. It’s true strength is in data, so if you’re looking to become a data scientist, you’ll likely need to learn python somewhere along the way. Aside from that, it’s got its own web framework (Django) which makes it a great option for building web applications.
+
+Ruby- My bias will shine through here- I absolutely love Ruby. It was developed in the 90’s and exploded in popularity after the creation of rails, which allowed people to easily build apps for the web. Ruby is very similar to python in a lot of ways, but the small differences are what makes me love it (and make it such a great language for people starting out). First, ruby has a tremendously active and welcoming open source community. One of the core tenants of Ruby is MINSWAN, which means Matz (creator of Ruby) Is Nice So We Are Nice. Additionally, ruby is incredibly expressive. Where in Python it is viewed that there should be one, and only one, right way to do something, rubyists believe that the way we write code is an expression of our values and individuality.
+
+Finally, it’s incredibly readable and expressive.  This is how one would write a simple “Hello World” program in Java-
+
+    public class Main {
+    public static void main(String[] args) {
+    System.out.println(“Hello, World!”);
+    }
+    }
+
+This is “Hello World” in Ruby-
+
+    puts “Hello, World!”
+
+While eventually, it’s important to learn what is abstracted away in ruby, as a beginner, this allows you to focus on the logic rather than the syntax. One question people ask me a lot is whether they should just learn full stack javascript (which means learning Node.js instead of a server-side language like ruby/python/java).
+
+Javascript is a necessary language for anyone looking to develop for the web. But it was not designed to build complex, scalable, web applications. So when people talk about the rise of JS, I think it’s important to separate its use in front-end vs back-end.
+
+Whatever kind of developer you want to be, if you’re working with the web, you’re using javascript on the front-end. For the back-end though, server-side languages like ruby/python/java (and there are more) are still more robust, stable, and popular than Node.js. I’m excited about Node’s potential, especially since it’s growing so fast, but it’s still a small piece of the pie. So for now, I think it’s critical that anyone that wants to be a backend or full stack developer gain a strong foundation in a server-side language.
+
+At Flatiron School, we teach both Full Stack Ruby and Full Stack Javascript (here’s a syllabus you can download). While a portion of our students are excited about getting jobs as front-end developers, and just focusing on javascript for them would suffice, the majority of our students come to learn the full stack - and for that, gaining a strong foundation in programming concepts through ruby before moving on to web frameworks like rails, and then again a strong foundation in JS before moving on to things like Node or front-end frameworks like angular is the best way to prepare students successfully for the future.
+
+Ultimately though the first language will be the hardest. It’s like learning to play guitar for the first time. You have to train your brain to work in an entirely new way. After that, picking up another instrument is relatively trivial.  So focus on whatever’s going to get you fired up and keep you motivated and you’ll do great.
+
+This question originally appeared on Quora. - the knowledge sharing network where compelling questions are answered by people with unique insights. You can follow Quora on Twitter, Facebook, and Google+. More questions:​ 

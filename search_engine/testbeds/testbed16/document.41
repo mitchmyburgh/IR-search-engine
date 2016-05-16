@@ -1,0 +1,20 @@
+Cloud Encryption Tip: Don’t Share Your Encryption Keys
+
+August 7, 2015/in Cloud Security /by Michael Higashi
+cloud encryption tip - don't share encryption keysPicture this scene: You’re shopping for a safe. You know you need one; you want something fireproof and secure, a personal vault in which you plan to store important documents—birth certificates, social security cards, passports, property titles, insurance policies, perhaps a chunk of cash for emergencies. The store you’re visiting has a wide selection and seems promising.
+
+Thing is, in order to use the safes on offer, you’ve got to store a copy of your current address and safe combination with store management.
+
+You Wouldn’t Share Your Safe Combination, So Don’t Share Your Encryption Keys
+
+Would it make you feel secure to know that you were using a safe sold by a business that knew where you lived and how to open the safe? That could, if they chose to or were compelled to, share that information with others, completely outside of your knowledge or consent?
+
+If not, then the majority of current cloud encryption providers may not be for you. In many cases, cloud encryption as a service forces you to share your encryption keys: with the cloud service provider (CSP) that’s hosting your data in some cases, and with the third-party cloud encryption provider in others. By equating encryption keys with safe combinations, you can begin to see the flaws in such schemes. Can your most sensitive documents or data truly be secure if any third party knows how to access it and has the means to share that information if they choose to?
+
+cloud encryption tip - government surveillanceMalice isn’t the only reason to worry, either. In today’s security climate, cybercriminals like those that caused massive data breaches at major retailers like Home Depot and Target are not enterprises’ only concern. They must worry about government agencies’ requests to CSPs for customers’ sensitive cloud data too. In our safe analogy, the worry isn’t just whether the safe store’s staff will share your address and safe combination with burglars, but also whether they’ll share that information with law enforcement agencies should you get caught up in an investigation, even one from which you should have nothing to fear. People are wrongly implicated or accused of involvement in crimes every day, after all.
+
+It’s clear by now that storing sensitive data in plaintext, as Sony sometimes did prior to the Sony hack of 2014, is as careless for an enterprise as storing birth certificates, social security cards, and cash in plain sight would be for a private household. But how you protect your data is as important as whether or not you protect your data.
+
+cloud encryption tip - full control of keysIn order to keep your enterprise data safe, you must choose an encryption provider that enables you to retain full control and exclusive access to your encryption keys. This will enable you to stay in control of who can access your data in the clear no matter where that data is hosted or who hosts it. Should your CSP be hacked and your data stolen, it will remain encrypted and therefore unreadable to any cybercriminals who try to access it, and should your CSP be served with a government request for your data, even government agencies will be unable to read your data without first gaining the encryption keys from you. Anything less than exclusive access to your encryption keys is as safe as telling your safe salesman the combination you’ll be using.
+
+To learn more about best practices for encrypting data in today’s cloud world, watch our free, on-demand webinar, “Demystifying Cloud Encryption with Forrester Research,” today.

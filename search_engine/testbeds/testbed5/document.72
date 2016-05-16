@@ -1,0 +1,45 @@
+Elements
+
+All programming languages have some primitive building blocks for the description of data and the processes or transformations applied to them (like the addition of two numbers or the selection of an item from a collection). These primitives are defined by syntactic and semantic rules which describe their structure and meaning respectively.
+Syntax
+Parse tree of Python code with inset tokenization
+Syntax highlighting is often used to aid programmers in recognizing elements of source code. The language above is Python.
+Main article: Syntax (programming languages)
+
+A programming language's surface form is known as its syntax. Most programming languages are purely textual; they use sequences of text including words, numbers, and punctuation, much like written natural languages. On the other hand, there are some programming languages which are more graphical in nature, using visual relationships between symbols to specify a program.
+
+The syntax of a language describes the possible combinations of symbols that form a syntactically correct program. The meaning given to a combination of symbols is handled by semantics (either formal or hard-coded in a reference implementation). Since most languages are textual, this article discusses textual syntax.
+
+Programming language syntax is usually defined using a combination of regular expressions (for lexical structure) and Backus–Naur Form (for grammatical structure). Below is a simple grammar, based on Lisp:
+
+expression ::= atom | list
+atom       ::= number | symbol
+number     ::= [+-]?['0'-'9']+
+symbol     ::= ['A'-'Z''a'-'z'].*
+list       ::= '(' expression* ')'
+
+This grammar specifies the following:
+
+    an expression is either an atom or a list;
+    an atom is either a number or a symbol;
+    a number is an unbroken sequence of one or more decimal digits, optionally preceded by a plus or minus sign;
+    a symbol is a letter followed by zero or more of any characters (excluding whitespace); and
+    a list is a matched pair of parentheses, with zero or more expressions inside it.
+
+The following are examples of well-formed token sequences in this grammar: 12345, () and (a b c232 (1)).
+
+Not all syntactically correct programs are semantically correct. Many syntactically correct programs are nonetheless ill-formed, per the language's rules; and may (depending on the language specification and the soundness of the implementation) result in an error on translation or execution. In some cases, such programs may exhibit undefined behavior. Even when a program is well-defined within a language, it may still have a meaning that is not intended by the person who wrote it.
+
+Using natural language as an example, it may not be possible to assign a meaning to a grammatically correct sentence or the sentence may be false:
+
+    "Colorless green ideas sleep furiously." is grammatically well-formed but has no generally accepted meaning.
+    "John is a married bachelor." is grammatically well-formed but expresses a meaning that cannot be true.
+
+The following C language fragment is syntactically correct, but performs operations that are not semantically defined (the operation *p >> 4 has no meaning for a value having a complex type and p->im is not defined because the value of p is the null pointer):
+
+complex *p = NULL;
+complex abs_p = sqrt(*p >> 4 + p->im);
+
+If the type declaration on the first line were omitted, the program would trigger an error on compilation, as the variable "p" would not be defined. But the program would still be syntactically correct, since type declarations provide only semantic information.
+
+The grammar needed to specify a programming language can be classified by its position in the Chomsky hierarchy. The syntax of most programming languages can be specified using a Type-2 grammar, i.e., they are context-free grammars.[43] Some languages, including Perl and Lisp, contain constructs that allow execution during the parsing phase. Languages that have constructs that allow the programmer to alter the behavior of the parser make syntax analysis an undecidable problem, and generally blur the distinction between parsing and execution.[44] In contrast to Lisp's macro system and Perl's BEGIN blocks, which may contain general computations, C macros are merely string replacements, and do not require code execution.[45]

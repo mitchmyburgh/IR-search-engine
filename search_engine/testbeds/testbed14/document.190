@@ -1,0 +1,458 @@
+﻿Using First Order Logic
+Enrico Franconi
+franconi@cs.man.ac.uk
+http://www.cs.man.ac.uk/˜franconi
+Department of Computer Science, University of Manchester
+(1/29)
+Reduction to satisfiability
+Just like propositional logic:
+• A formula φ is satisfiable iff there is some interpretation I that satisfies φ (i.e.,
+φ is true under I): I |= φ).
+• Validity, equivalence, and entailment can be reduced to satisfiability:
+• φ is a valid (i.e., a tautology) iff ¬φ is not satisfiable.
+• φ is equivalent to ψ (φ ≡ ψ) iff φ ↔ ψ is valid.
+• φ ≡ ψ iff φ |= ψ and ψ |= φ
+• φ entails ψ (φ |= ψ) iff φ → ψ is valid (deduction theorem).
+• φ |= ψ iff φ ∧ ¬ψ is not satisfiable .
+• We need a sound and complete procedure deciding satisfiability: the tableaux
+method is a decision procedure which checks the existence of a model.
+(2/29)
+Tableaux Calculus
+Just like in propositional logic:
+• The Tableaux Calculus is a decision procedure solving the problem of
+satisfiability.
+• If a formula is satisfiable, the procedure will constructively exhibit a model of
+the formula.
+• The basic idea is to incrementally build the model by looking at the formula,
+by decomposing it in a top/down fashion. The procedure exhaustively looks at
+all the possibilities, so that it can eventually prove that no model could be
+found for unsatisfiable formulas.
+With respect to propositional logic, the notion of model is different.
+(3/29)
+Tableaux Calculus
+Finds a model for a given collection of sentences KB in negation normal form.
+1. Consider the knowledge base KB as the root node of a refutation tree. A
+node in a refutation tree is called tableaux.
+2. Starting from the root, add new formulas to the tableaux, applying the
+completion rules.
+3. Completion rules are either deterministic – they yield a uniquely determined
+successor node – or nondeterministic – yielding several possible alternative
+successor nodes (branches).
+4. Apply the completion rules until either
+(a) an explicit contradiction due to the presence of two opposite ground
+literals in a node (a clash) is generated in each branch, or
+(b) there is a completed branch where no more rule is applicable (but. . .).
+(4/29)
+The Calculus
+The completion rules for the propositional formulas:
+φ ∧ ψ
+φ
+ψ
+If a model satisfies a conjunction, then it also satisfies each of
+the conjuncts
+φ ∨ ψ
+φ ψ
+If a model satisfies a disjunction, then it also satisfies one of
+the disjuncts. It is a non-deterministic rule, and it generates
+two alternative branches of the tableaux.
+(5/29)
+The Calculus
+The completion rules for quantified formulas:
+∀x. φ
+φ{X/t}
+∀x. φ
+If a model satisfies a universal quantified formula, the it also
+satisfies the formula where the quantified variable has been
+substituted with some term. The prescription is to use all the
+terms which appear in the tableaux.
+∃x. φ
+φ{X/a}
+If a model satisfies an existential quantified formula, then it also
+satisfies the formula where the quantified variable has been
+substituted with a fresh new skolem constant.
+(6/29)
+Models
+• The completed branch of the refutation tree gives a model of KB: the KB is
+satisfiable. Since all formulas have been reduced to ground literals (i.e., either
+positive or negative atomic formulas which do not contain variables), it is
+possible to find an interpretation to predicates using the constants, which
+make all the sentences in the branch true.
+• If there is no completed branch (i.e., every branch has a clash), then it is not
+possible to find an interpretation for the predicates making the original KB
+true: the KB is unsatisfiable. In fact, the original formulas from which the tree
+is constructed can not be true simultaneously.
+(7/29)
+Negation Normal Form
+The above set of completion rules work only if the formula has been translated
+into Negation Normal Form, i.e., all the negations have been pushed down.
+Example::
+¬(∃x. [ ∀y. [ P(x) → Q(y) ] ])
+becomes
+∀x. [ ∃y. [ P(x) ∧ ¬Q(y) ] ]
+(Why?)
+(8/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a) q(a)
+< COMPLETED > < CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a) q(a)
+< COMPLETED > < CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a) q(a)
+< COMPLETED > < CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a) q(a)
+< COMPLETED > < CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a) q(a)
+< COMPLETED > < CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a)
+q(a)
+< COMPLETED >
+< CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a) q(a)
+< COMPLETED > < CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+p(a) ∨ q(a)
+p(a) q(a)
+< COMPLETED > < CLASH >
+The formula is satisfiable. The devised model is ∆ = {a}, pI = {a}, qI = ∅.
+(9/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a) q(a)
+< CLASH > < CLASH >
+The formula is unsatisfiable.
+(10/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a) q(a)
+< CLASH > < CLASH >
+The formula is unsatisfiable.
+(10/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a) q(a)
+< CLASH > < CLASH >
+The formula is unsatisfiable.
+(10/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a) q(a)
+< CLASH > < CLASH >
+The formula is unsatisfiable.
+(10/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a) q(a)
+< CLASH > < CLASH >
+The formula is unsatisfiable.
+(10/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a)
+q(a)
+< CLASH >
+< CLASH >
+The formula is unsatisfiable.
+(10/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a) q(a)
+< CLASH > < CLASH >
+The formula is unsatisfiable.
+(10/29)
+Example
+φ ∧ ψ
+φ
+ψ
+φ ∨ ψ
+φ ψ
+∀x. φ
+φ{X/t}
+∃x. φ
+φ{X/a}
+∃y. (p(y) ∧ ¬q(y)) ∧ ∀z.(¬p(z) ∨ q(z))
+∃y. (p(y) ∧ ¬q(y))
+∀z. (¬p(z) ∨ q(z))
+p(a) ∧ ¬q(a)
+p(a)
+¬q(a)
+¬p(a) ∨ q(a)
+¬p(a) q(a)
+< CLASH > < CLASH >
+The formula is unsatisfiable.
+(10/29)
+Other Reasoning Problems
+• Subsumption
+• Γ |= P w Q
+P and Q predicate symbols of the same arity
+• P subsumes Q in Γ
+• Γ |= ∀xˆ. [ Q(xˆ) → P(xˆ) ]
+• Instance Checking
+• The constant a is an instance of the unary predicate P
+• Γ |= P(a)
+(11/29)
+Example
+Given a theory Γ,
+if PERSON w STUDENT in Γ
+and if STUDENT(john) is valid in Γ
+then PERSON(john) is valid in Γ
+(12/29)
+Subsumption
+• Subsumption can be seen as a binary relation in the space of predicates with
+same arity: P/n w Q/n.
+• The subsumption relation is a partial ordering relation in the space of
+predicates of same arity.
+• Exercise: prove it.
+• Hint: a partial ordering relation is a transitive, reflexive, and antisymmetric
+relation.
+

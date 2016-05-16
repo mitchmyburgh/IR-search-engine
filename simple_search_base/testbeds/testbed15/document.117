@@ -1,0 +1,20 @@
+﻿Computer scientists have come up with a new simple, accurate way to simulate the appearance of fabric that could change the way artists and animators in the film and computer game industries go about the business of rendering computer-generated clothing and other materials.
+
+ The method hinges upon the perpendicular arrangement of cylinders (Image: Iman Sadeghi, et. al/Jacobs School of ... Photographs of fabrics with their simulated counterparts below (Image: Iman Sadeghi, et. al/Jacobs School of Engineering/UC ... Photographs of fabrics with their simulated counterparts below (Image: Iman Sadeghi, et. al/Jacobs School of Engineering/UC ... The simulated weaving patterns of, left to right, linen plain, silk crepe de chine and polyester ...
+"The model solves the long standing problem of rendering cloth," says Henrik Wann Jensen, PhD advisor to Iman Sadeghi who developed the method. "Cloth in movies and games often looks wrong, and this model is the first practical way of controlling the appearance of most types of cloth in a realistic way," he adds.
+
+Jensen knows more than a little bit about computer graphics. In 2004 he was a co-recipient of an Oscar for technical achievement following his work on the subsurface scattering of light in translucent materials, now de rigueur for the rendering of realistic skin in film (Gollum in The Lord of the Rings trilogy, for example).
+
+Sadeghi's method tackles the interaction between light and material by modeling the surface of the fabric more realistically. The method involves creating a mesh of perpendicular cylinders arranged similarly to the threads in the material being simulated.
+
+ 
+The simulated weaving patterns of, left to right, linen plain, silk crepe de chine and polyester satin charmeuse (Image: Iman Sadeghi, et. al/Jacobs School of Engineering/UC San Diego)
+The method is an adaptation of a similar process developed by Sadeghi used to render realistic hair, which has since been used in Disney's take on the Rapunzel fairytale, Tangled. The arrangement of cylinders is the crucial difference between the two.
+
+The team discovered that the material's weave was essential when examining fabrics under a microscope. The team also photographed materials and measured light scattering from single threads of material.
+
+Co-researcher Oleg Bisker thinks the technology could have other applications, include the visualization of new fabrics. "We can simulate any combination of weaving pattern and thread types," he says.
+
+As a demonstration of the power of this process, the team simulated linen, crepe de chine and the complexing threading of a polyester charmeuse, which is shiny on one side but not the other.
+
+The method was received with interest at this year's SIGGRAPH computer graphics conference, and the team fully expects the method to be used in many forthcoming productions.

@@ -1,0 +1,38 @@
+Microsoft seeks more programming language support for Windows 8
+
+
+
+While Windows 8 already supports development using a number of programming languages, Microsoft wants developers to bring even more to the new Windows runtime (WinRT) at the heart of the next version of Windows.
+
+Martyn Lovell, Development Manager for the WinRT team, made the pitch for more language support for Windows 8 on April 3, during his Lang.Next conference session at Microsoft.
+
+"Will WinRT be at home in each language?" Lovell rhetorically asked the Lang.Next attendees. "Yes, but never perfectly."
+
+That said, Lovell said Microsoft "wants developers to create languages for the new (WinRT) developer platform."
+
+WinRT already supports development in C++, JavaScript/HTML5, Visual Basic, Visual C# and XAML (a remote cousin of Silverlight). Lovell first publicly outlined Microsoft's plans for WinRT at the Build conference in September 2011.
+
+Today at Lang.Next, Lovell said that almost all of the WinRT design principles he first presented to senior Windows leadership almost two years ago are still in place. A key idea in designing the new runtime was to make native, managed and dynamic languages all first class citizens in WinRT, with JavaScript, C#/VB and C++ as the initial targets.
+
+"Windows Runtime is the whole of Windows," Lovell said. "It's how applications and languages interact" with the Windows core.
+
+When designing WinRT, the team started with a few pieces of COM, Lovell said. In the end, they didn't keep much of it, however, he conceded. They kept things like marshalling and proxy systems, but COM was horrible at Intellisense, support for which is key to WinRT and Windows 8, he said.
+
+Ever since the Build conference, developers have been trying to better understand WinRT and the overall architecture of Windows 8. Lovell outlined it in his own way, noting that Windows Core is at the heart of the platform, with the Windows Runtime core and its application programming interfaces -- things like the user interface, XAML, pickers, storage, controls, network and media -- on top of that.
+
+Here is the core chunk of Lovell's architectural diagram (courtesy of DevExpress):
+
+The latest Windows 8/WinRT architectural diagram I've found helpful comes from @bitcrazed, a k a former Softie and current Appuri co-founder Richard Turner. Check it out:
+
+(click on the diagram above to enlarge)
+
+Chakra (on the left side of the diagram, which is where "Metro-style" apps live) is the JavaScript engine that is at the heart of Internet Explorer 9/10. Trident is the rendering engine used by IE.
+
+Microsoft officials have been encouraging developers to consider HTML5/JavaScript and C++ when writing new Metro-style apps. However, as Development and Platform Evangelist (DPE) Jerry Nixon recently noted, it's the managed languages and .Net that seem to be where most of the Windows 8 developer interest is -- at least when measured in terms of developer questions and comments on the MSDN forums.
+
+Here's what the Windows 8 MSDN developer forum breakout looked like as of March 2012, in terms of number of messages in each topic area, from Nixon's blog post:
+
+Nixon notes his findings are not scientific. Nor was my limited survey of a few independent developers who are writing apps for Windows 8 and prefer XAML and C#/VB. I guess it shouldn't be too surprising, however, that devs prefer using what they already know.
+
+Back to Lovell's request for more programming languages for Metro-Style Windows 8 apps. Developers: What other existing languages would you like to have available for writing Windows 8 apps?
+

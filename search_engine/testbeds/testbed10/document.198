@@ -1,0 +1,29 @@
+Applications of Machine Learning in Cancer Prediction
+and Prognosis
+
+Joseph A. Cruz, David S. Wishart
+
+Introduction
+Machine learning is not new to cancer research. Artificial neural networks (ANNs) and decision trees
+(DTs) have been used in cancer detection and diagnosis for nearly 20 years (Simes 1985; Maclin et al.
+1991; Ciccheti 1992). Today machine learning methods are being used in a wide range of applications
+ranging from detecting and classifying tumors via X-ray and CRT images (Petricoin and Liotta 2004;
+Bocchi et al. 2004) to the classification of malignancies from proteomic and genomic (microarray)
+assays (Zhou et al. 2004; Dettling 2004; Wang et al. 2005). According to the latest PubMed statistics,
+more than 1500 papers have been published on the subject of machine learning and cancer. However,
+the vast majority of these papers are concerned with using machine learning methods to identify, classify,
+detect, or distinguish tumors and other malignancies. In other words machine learning has been used
+primarily as an aid to cancer diagnosis and detection (McCarthy et al. 2004). It has only been relatively
+recently that cancer researchers have attempted to apply machine learning towards cancer prediction
+and prognosis. As a consequence the body of literature in the field of machine learning and cancer
+prediction/prognosis is relatively small (<120 papers).
+The fundamental goals of cancer prediction and prognosis are distinct from the goals of cancer detection
+and diagnosis. In cancer prediction/prognosis one is concerned with three predictive foci: 1) the prediction of
+cancer susceptibility (i.e. risk assessment); 2) the prediction of cancer recurrence and 3) the prediction of
+cancer survivability. In the first case, one is trying to predict the likelihood of developing a type of cancer prior
+to the occurrence of the disease. In the second case one is trying to predict the likelihood of redeveloping
+cancer after to the apparent resolution of the disease. In the third case one is trying to predict an outcome (life
+expectancy, survivability, progression, tumor-drug sensitivity) after the diagnosis of the disease. In the latter
+two situations the success of the prognostic prediction is obviously dependent, in part, on the success or quality
+of the diagnosis. However a disease prognosis can only come after a medical diagnosis and a prognostic
+prediction must take into account more than just a simple diagnosis (Hagerty et al. 2005).

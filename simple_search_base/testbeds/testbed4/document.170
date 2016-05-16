@@ -1,0 +1,19 @@
+Phong Shading !
+
+Phong Shading overcomes some of the disadvantages of Gouraud Shading and specular reflection can be successfully incorporated in the scheme. The first stage in the process is the same as for the Gouraud Shading - for any polygon we evaluate the vertex normals. For each scan line in the polygon we evaluate by linear intrepolation the normal vectors at the end of each line. These two vectors Na and Nb are then used to interpolate Ns. we thus derive a normal vector for each point or pixel on the polygon that is an approximation to the real normal on the curved surface approximated by the polygon. Ns , the interpolated normal vector, is then used in the intensity calculation. The vector interpolation tends to restore the curvature of the original surface that has been approximated by a polygon mesh.
+
+The algorithm is as follows:
+
+1).Compute a normal N for each vertex of the polygon.
+
+2).From bi-linear interpolation compute a normal, Ni for each pixel.
+
+3).From Ni compute an intensity Ii for each pixel of the polygon.
+
+4).Paint pixel to shade corresponding to Ii.
+
+We have:
+
+
+
+These are vector equations that would each be implemented as a set of three equations, one for each of the components of the vectors in world space. This makes the Phong Shading interpolation phase three times as expensive as Gouraud Shading. In addition there is an application of the Phong model intensity equation at every pixel.

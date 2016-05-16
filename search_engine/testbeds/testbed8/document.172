@@ -1,0 +1,16 @@
+Join[edit]
+Given two trees S and T such that all elements of S are smaller than the elements of T, the following steps can be used to join them to a single tree:
+•	Splay the largest item in S. Now this item is in the root of S and has a null right child.
+•	Set the right child of the new root to T.
+Split[edit]
+Given a tree and an element x, return two new trees: one containing all elements less than or equal to x and the other containing all elements greater than x. This can be done in the following way:
+•	Splay x. Now it is in the root so the tree to its left contains all elements smaller than x and the tree to its right contains all element larger than x.
+•	Split the right subtree from the rest of the tree.
+Insertion[edit]
+To insert a value x into a splay tree:
+•	Insert x as with a normal binary search tree.
+•	when an item is inserted, a splay is performed.
+•	As a result, the newly inserted node x becomes the root of the tree.
+ALTERNATIVE:
+•	Use the split operation to split the tree at the value of x to two sub-trees: S and T.
+•	Create a new tree in which x is the root, S is its left sub-tree and T its right sub-tree.

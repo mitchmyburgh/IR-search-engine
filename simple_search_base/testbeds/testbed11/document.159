@@ -1,0 +1,42 @@
+Note: this is not to be confused with the Naccache–Stern knapsack cryptosystem.
+The Naccache–Stern cryptosystem is a homomorphic public-key cryptosystem whose security rests on the higher residuosity problem. The Naccache–Stern cryptosystem was discovered by David Naccache and Jacques Stern in 1998.
+
+
+== Scheme Definition ==
+Like many public key cryptosystems, this scheme works in the group  where n is a product of two large primes. This scheme is homomorphic and hence malleable.
+
+
+=== Key Generation ===
+Pick a family of k small distinct primes p1,...,pk.
+Divide the set in half and set  and .
+Set 
+Choose large primes a and b such that both p = 2au+1 and q=2bv+1 are prime.
+Set n=pq.
+Choose a random g mod n such that g has order φ(n)/4.
+The public key is the numbers σ,n,g and the private key is the pair p,q.
+When k=1 this is essentially the Benaloh cryptosystem.
+
+
+=== Message Encryption ===
+This system allows encryption of a message m in the group .
+Pick a random .
+Calculate 
+Then E(m) is an encryption of the message m.
+
+
+=== Message Decryption ===
+To decrypt, we first find m mod pi for each i, and then we apply the Chinese remainder theorem to calculate m mod .
+Given a ciphertext c, to decrypt, we calculate
+. Thus
+
+where .
+Since pi is chosen to be small, mi can be recovered by exhaustive search, i.e. by comparing  to  for j from 1 to pi-1.
+Once mi is known for each i, m can be recovered by a direct application of the Chinese remainder theorem.
+
+
+== Security ==
+The semantic security of the Naccache–Stern cryptosystem rests on an extension of the quadratic residuosity problem known as the higher residuosity problem.
+
+
+== References ==
+Naccache, David; Stern, Jacques (1998). "A New Public Key Cryptosystem Based on Higher Residues". Proceedings of the 5th ACM Conference on Computer and Communications Security. CCS '98. ACM. pp. 59–66. doi:10.1145/288090.288106. ISBN 1-58113-007-4.

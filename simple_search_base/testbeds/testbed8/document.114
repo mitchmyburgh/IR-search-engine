@@ -1,0 +1,22 @@
+Because in the worst case this algorithm must search from the root of the tree to the leaf farthest from the root, the search operation takes time proportional to the tree's height(see tree terminology). On average, binary search trees with n nodes have O(log n) height.[a] However, in the worst case, binary search trees can have O(n) height, when the unbalanced tree resembles a linked list (degenerate tree).
+Insertion[edit]
+Insertion begins as a search would begin; if the key is not equal to that of the root, we search the left or right subtrees as before. Eventually, we will reach an external node and add the new key-value pair (here encoded as a record 'newNode') as its right or left child, depending on the node's key. In other words, we examine the root and recursively insert the new node to the left subtree if its key is less than that of the root, or the right subtree if its key is greater than or equal to the root.
+Here's how a typical binary search tree insertion might be performed in a binary tree in C++:
+void insert(Node*& root, int key, int value) {
+  if (!root) 
+    root = new Node(key, value);
+  else if (key < root->key)
+    insert(root->left, key, value);
+  else  // key >= root->key
+    insert(root->right, key, value);
+}
+The above destructive procedural variant modifies the tree in place. It uses only constant heap space (and the iterative version uses constant stack space as well), but the prior version of the tree is lost. Alternatively, as in the following Python example, we can reconstruct all ancestors of the inserted node; any reference to the original tree root remains valid, making the tree a persistent data structure:
+ def binary_tree_insert(node, key, value):
+     if node is None:
+         return NodeTree(None, key, value, None)
+     if key == node.key:
+         return NodeTree(node.left, key, value, node.right)
+     if key < node.key:
+         return NodeTree(binary_tree_insert(node.left, key, value), node.key, node.value, node.right)
+     else:
+         return NodeTree(node.left, node.key, node.value, binary_tree_insert(node.right, key, value))

@@ -1,0 +1,84 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Applications of linear transformations
+Introduction
+In this section we will discuss the applications of the linear transformation theory we saw in the previous sections. When doing 3d graphics, the usual situation occurs. We have a description of one or more objects. We have their locations and orientations in space, relative to some point of reference. We move them around, rotate them, usually about their own coordinate system. The camera might also be moving, rotating and such. In that case, it is likely that we have an orientation and position for the camera object itself. We would also like that the eye points in the direction of (0,0,1) in camera space, and that up be (0,1,0) in camera space.
+Orientation and position will be given by an affine transform matrix. The (mij) submatrix gives orientation and the 4th column has the translation vector.
+World space, eye space, object space, outer space
+First off we are going to require a global system of reference for all the objects. This is usually called "World space". An affine transform that describes an object's position and orientation usually does so in relation to world space (this is generally not true for hierarchical structures, as we will see later). This introduces a new concept; a matrix A, representing an affine transform that takes an object from space M to space N (in our example, M is object space and N is world space) is usually noted AN? ?M. This has the natural tendency to make us combine the affine transform from right to left instead of left to right, which is correct.
+The most typical example is as follows. We have an object and its affine transform AWorld?Object. We also have a camera position and orientation given by CWorld? Camera. In that case, the first thing we want to do is invert the transform CWorld? Camera to find the CCamera?World transform. Then you will be transforming the points Pi in the object with CCamera?World×AWorld?Object×Pi=MCamera?Object×Pi.
+As a helper, notice that the little arrows make a lot of sense, as shown below:
+31
+Camera?World, World?Object, which concatenates intuitively to Camera? World?Object or simply Camera?Object. Thus, the above transformation transforms from object space to camera space directly. One merely calculates MCamera?Object=CCamera?World×AWorld?Object and multiplies all Pi's with is.
+Transformations in the hierarchy (or the French revolution)
+It may be useful to express an object A's position and orientation relative not to the world, but to some other object B. This way, if B moves, A moves along with it. In plain words, if we say "The television is resting 2 centimeters above the desk on its four legs", then moving the desk does not require us to change our "2 centimeters above the desk" position - it is still 2 centimeters above the desk as it is moving along with the desk (careful not to drop it). On the other hand, if we had said "The television is 1 meter above the floor" and "The desk is 95 centimeters above the floor", and then proceed to move the desk up 1 meter, then the position of the desk is "1m95 above the floor". Additionally, we have to edit the position of the television and change it to "The television is 2 meters above the floor". Notice the difference between these two examples.
+This can be implemented very easily the following way. Make an affine transform that describes orientation and position of television in relation to the desk. This is called ADesk?Television. Then we have an orientation and position for the desk, given by BWorld?Desk. Notice that this last affine transform is relative to world space. We then of course have the mandatory CWorld?Camera which we invert to find the CCamera ?World transform. We then proceed to transform all points in the television to camera space, and also all points from the desk to camera space. The former is done as follows:
+CCamera?World×BWorld?Desk.×ADesk?Television×Pi.
+Notice again how the arrows concatenate nicely. The points on the desk are transformed with this:
+CCamera?World×BWorld?Desk.×Qi.
+Again, the arrows make all the sense in the world.
+Some pathological matrices
+32
+Rotating a point in 2d is fundamental. In the example above, we wish to rotate (x,y) to (x',y') by an angle of b. The following can be said:
+y'=sin(a+b)r x'=cos(a+b)r
+With the identities sin(a+b)=sin(a)cos(b)+sin(b)cos(a) and cos(a+b)=cos(a)cos(b)sin(a)sin(b), we substitute.
+y'=rsin(a)cos(b)+rcos(a)sin(b)
+x'=rcos(a)cos(b)-rsin(a)sin(b)
+But from figure 3 we know that
+rsin(a)=y and rcos(a)=x
+We now substitute:
+y'=ycos(b)+xsin(b)
+x'=xcos(b)-ysin(b)
+Rotations in 3d are done about one of the axis. The exact rotation used above would rotate about the z axis. In matrix representation, we write the x, y and z axis rotations as follows:
+1
+0
+0
+0
+cos?
+sin?
+0
+sin?
+cos?
+cos ?
+0
+sin?
+0
+1
+0
+sin?
+0
+cos?
+cos?
+sin?
+0
+sin?
+cos ?
+0
+0
+0
+1
+(x axis) (y axis) (z axis)
+These matrices can be extended to 4x4 matrices simply by adding a rightmost column vector of (0,0,0,1) and a bottom row vector of (0,0,0,1) (e.g. the 1 in the bottom right slot is shared by the column and the row vector).
+33
+If you want, you can always specify the orientation of an object using three angles. These are formally referred to the Euler angles. Unfortunately, these angles are not too useful for many reasons. If two angles change with constant speed, the object will definitely not rotate with constant speed. Also, sometimes, a problem known as gimbal lock occurs, where you suddenly lose one degree of freedom (this looks like the object's rotation in a direction stops, to start again in another strange direction). Furthermore, the angles are not relative to object coordinate system nor world coordinate system.
+Thus it is preferable to specify object orientation with an orientation matrix. When rotation about a world axis is desired, the orientation matrix is premultiplied by one of the above rotation matrices, and when a rotation about an object axis is desired, the orientation matrix is postmultiplied by one of the above rotation matrices. Note that it is possible to rotate about an arbitrary vector and/or interpolate between any two given orientations when using quaternions, which is covered in a later chapter..
+34
+Perspective
+Introduction
+Perspective was a novelty of the Renaissance. It existed a long time before but had been forgotten by the western civilizations until that later time. As can be seen from paintings before Renaissance, artists had a very poor grasp of how things should appear on a painting. The edges from tables and desks were not drawn converging to an "escape point", but rather all parallel. This gave these paintings the peculiar feeling they have when compared to more modern, more perspectivecorrect paintings.
+Perspective is the name we give to that strange distortion that happens when you take a real-life 3d scene (your garden) and take a picture of it. The flowers in the foreground appear larger than the barn in the background. This particular effect is sometimes referred to as foreshortening. Other effects come into play, such as focus blur (very likely, you were either focussed on the flowers or the barn; one looks clear, the other is very fuzzy), light attenuation, atmospheric attenuation, etc...
+We know today that light rays probably aren't moving in a straight line at all. Even in the vacuum, they oscillate a bit. When travelling through matter, it is deviated all the time, split, reflected and all sorts of other nonsense. Sometimes it can be useful to model all these nice effects, however, they are not always necessary or desirable. One thing is for sure, a perfect or near-perfect simulation of all that we know about light today would be tremendously CPU-intensive, and would require an incredible amount of work on the software end of the project.
+In normal, day-to-day life, when you're significantly larger than an atom but significantly smaller than a planet, light is usually pretty linear. It travels in straight rays, only bending at discrete points that are more or less easy to calculate, definitely more than the fuzzy way light bends in a prism.
+A further simplification that we can make is that light only reflects diffusely on the objects around you. This is usually the case, unless you come up to a highly polished or metallic surface where you can see your reflection. But the usual desk, bed, snake and starships are pretty dull in appearance, with perhaps a diffuse highlight from where the light is coming from.
+35
+Another simplification we usually make comes from the fact that light bounces off everything and eventually starts coming from about all direction with a low intensity. This is often called the ambient light. Some further optimizations, more hacks than actual physical observations, will make you go faster and still look good.
+A simple perspectively incorrect projection
+The most simple projection is an affine transform from 3d to 2d, sometimes referred to as parallel projection. As an example, the transform (x,y,z)?(x,y) transforms the point (x,y,z) in 3d to the point (x,y) in 2d, is such a transform. Another simple example is the (x,y,z)?(x+z,y+z) transform. The problem with this is, no matter how far or close in z the object is, it always appears the same size on the screen. This, or a variant of this, is true for all of the parallel projections. These projections are called parallel because parallel lines in 3d remain parallel once projected in 2d. The image below is a parallel projected cube:
+The perspective transformation
+36
+The perspective transformation (or perspective projection) is incredibly simple once you know it, but it is often good to know where it comes from. We will put to use some of the assumptions we previously stated.
+The first assumption we made is that light goes in a straight line. This is great because it will allow us to make maximum use of all the linear math we have learnt since high-school.
+What we have to realize is, for the eye to see an object, light has to travel from the object to the eye. Since light travels in a straight line, it has to either go straight to the eye or bounce off a few reflective surfaces before getting there. However, since we are assuming there are no such reflective surfaces in the environment, the only possibility left is that the light comes straight from the object to the eye. This line is formally referred to as a projector.
+Another way doing it is the exact inverse. Starting from the eye, shoot a ray in a direction until it hits something. That is what you are seeing in that direction.
+Obviously, we are not going to shoot an infinite number of rays in all direction, we would never even start generating an image if we did that. The usual approximation is to shoot a finite amount of rays spread over an area in an arbitrary manner.
+There is another matter that needs to be taken care of. In reality, the image will be sent to screen, paper or some other media. This means that, in our model, the light does not reach the eye, it stops at the screen or paper, and that is what we display, so that reality takes over for the rest of the way and carries real light rays from the screen to the real eyes. This poses a problem of finding where the light rays intersect the screen or paper.

@@ -1,0 +1,15 @@
+Here’s How HTC and Samsung’s Fingerprint Scanner Was Hacked
+
+Biometric data left out in the open
+
+The fingerprint scanner has raised questions since its first integration into the modern smartphone: is it secure, is it reliable, who will have access to my fingerprints?
+
+Besides a number of external ways to fool a scanner, researchers at FireEye, a security company, found an internal vulnerability in phones like the HTC One Max and Samsung Galaxy S5 that left fingerprint images vulnerable to being copied by hackers or malware. The vulnerability has since been fixed on all phones that the researchers found to be affected, although it's unclear how the patch was applied.
+
+Before talking about how ridiculously unsecured the fingerprints were, here are a few things to keep in mind about smartphones. A smartphone is just a tiny computer with no keyboard or mouse. Like any computer, smartphones organize their data into folders. As the user, you have access to some folders (like the folder that holds and displays your applications, or the one that holds pictures) while you don’t have access to others. This is meant to prevent accidentally deleting important files. For security, some folders are further only accessible by the phones operating system; regular users and applications can’t get inside. Those kinds of folders are usually where phone makers store fingerprint data.
+
+Samsung and HTC weren’t doing that. Instead, they were putting them in a folder called /data/, which is a very accessibly folder. If you have an Android phone, you can open a file manager and look into that folder right now. (It might seem empty, but only because the files are hidden to you. That can be changed in most file managers’ options page.) The file itself was a common image format (.bmp) and the image only skewed by minimal security. The permission in the phone is actually called “world readable.” So, if a malicious app wanted to take the image of your fingerprint, nothing would stop it. And that's it. No attacks to gain root access or phishing. Just going into an unprotected folder.
+
+At the most conservative estimate, 12 million phones were open to having their fingerprints stolen—that's the last reliable number of Samsung S5's that were sold. Numbers are shaky on the HTC One Max, and if researchers found the same vulnerability on other phones, they didn't mention the names.
+
+In their report, researchers also mentioned that failings in the terminology between authentication and authorization. They call it a “confused authorization attack,” when the user means to only open the phone (authenticating) while a malicious app uses the same fingerprint to authorize a mobile payment. The FIDO Alliance, a security consortium to uphold online security and with members like Microsoft, Samsung and Google, is now working on a specification to properly address these vulnerabilities.

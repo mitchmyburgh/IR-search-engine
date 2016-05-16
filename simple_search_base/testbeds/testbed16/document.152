@@ -1,0 +1,47 @@
+The opportunities for enterprise and SMB cloud open up
+February 22, 2016Tim Crawford
+Companies are getting out of the data center business in droves. While much of this demand is headed toward colocation facilities, there is a growing movement to cloud-based providers. A company’s move to cloud is a journey that spans a number of different modes over a period of time.
+
+DataCenterCloudSpectrum
+
+The workloads of a company do not reside only in one state at a time. They are often spread across most, if not all of the states at the same time. However, the general direction for workloads transits from left to right.
+
+One of the bigger challenges in this journey was a missing piece; namely Private Cloud. Historically, the only way to build a private cloud was to do it yourself. That was easier said than done. The level of complexity compared with the value was simply not there. Fast forward a few years and there are now two core solutions on the market that fill this gap. They are:
+
+IBM’s Blue Box Local
+Microsoft’s Azure Stack
+While there are some similarities at a contextual level, the underlying technology is quite different from a user perspective. Blue Box Local is based on OpenStack while Azure Stack is based on Azure. Even so, both solutions provide continuity between their private cloud versions and their respective larger public cloud offerings.
+
+Now that demand has reached critical mass, the supply side solutions (providers) are finally starting to mature with solutions that solve core needs for most enterprise and small-medium business (SMB) customers. The reality is that most companies are
+
+From the provider perspective, critical mass served as an inhibitor to investment. Data center and cloud-based solutions are expensive to build. Without sufficient demand, providers might be left with assets sitting relatively idle. A costly venture for many considering a move into the cloud provider space.
+
+Today, the economics are quite different. Not only are there a large number of companies moving to colocation and cloud-based but they are looking for solutions that support a varied and ever-changing use-case. As such, the solutions need to provide supportive and flexibility to adapt to this changing climate.
+
+With the recent announcement of Azure Stack’s Technical Preview, a very interesting opportunity opened for MSPs looking to offer a cloud-based solution to customers. At this point, there are really only two companies that truly provide hybrid cloud solutions for both on premise and public cloud. Those are Blue Box/ IBM and Microsoft Azure.
+
+THE MSP MARKET IS HUGE
+
+When discussing cloud, much is discussed about the enterprise and startup/ web-scale markets with little mentioned regarding the Small-Medium Business (SMB) players. Yet, the SMB players make up a significant portion of the market. Why? The further down the scale, the harder it is to reach them. In most cases, SMB clients will leverage Managed Service Providers (MSPs)
+
+For MSPs, the offerings were equally challenging to leverage in a meaningful way. Those days are quickly changing.
+
+FOUR CORE OFFERINGS WITH VARIATIONS
+
+Today, there are four core ways that cloud is offered in the service provider market.
+
+Bare Metal: In this case, the client is essentially leasing hardware that is managed by the service provider. It does provide the client to bring their own software and license. But also brings an added level management requirement.
+OpenStack: OpenStack provide a myriad of different options using an Open Source software platform. The challenge is in the ability for the client to truly support OpenStack. Unlike some may think, Open Source does not equate to free. However, there are solutions (like Blue Box/ IBM) that provide a commercial version for hybrid environments.
+Azure: Azure comes in two flavors today that provide flexibility between requirements for on premise and public cloud. The former is served by Azure Stack while the latter is core Azure.
+VMware: While VMware provides the greatest functionality for existing enterprise environments. In this model, companies are able to move their existing VMs to a providers VMware-based platform. Many of the companies that provide solutions in this space come for the colocation world and include QTS and PhoenixNAP.
+These four categories are a quick simplification of how the different solutions map out. There are many variations of each of these solutions which makes comparison within a single category, let alone across categories, difficult.
+
+TWO DELIVERY MODELS
+
+MSPs looking to deliver cloud-based solutions were relegated to two options: 1) roll your own solution or 2) try to leverage an existing hosting offering and layer your services on top. Neither was particularly appealing to MSPs. Today, there are two core delivery options that are shaping up:
+
+Single Tenant: In this model, a MSP would stand up a cloud solution specifically for a given client. Each client has their own instance that the MSP manages. In many ways, this is really just a simple hosted model of cloud.
+Multi Tenant: In this model, there is a single instance of a cloud solution that the MSP manages. However, it is shared across many clients.
+There are challenges and opportunities to both approaches and they need to match the capabilities of both the MSP and their clients.
+
+As you start to map your cloud journey, the road and onramps are starting to shape up nicely. That is true for both MSPs and enterprise clients alike. There could not be a better time for enterprises to engage with cloud in a holistic way.

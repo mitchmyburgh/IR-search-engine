@@ -1,0 +1,99 @@
+Normal vectors have been used to enhance the visual appearance of (mostly
+polyhedral) geometrical objects in numerous ways ever since the introduction
+of Phong shading. Perhaps the best known example is bump mapping
+(introduced by Blinn [1978]) but also displacement mapping [Cook 1984]
+and environment mapping [Blinn and Newell 1976] may be thought of as
+part of the Phong heritage. With the introduction of refraction in raytracing
+[Whitted 1980], normals not only serve to compute the amount of
+reflected light, but also to compute the direction of the refraction rays.
+Also in modeling, normal vectors play a crucial role: for example, in the
+polyhedron modeling system of Allan et al. [1989] modifications of a
+polygon mesh can be made by shifting vertices in a direction normal to the
+mesh. More recently, with the advent of constraint-based modeling systems
+(e.g., the Mallet system [Mallet 1992]), normal vectors serve as a shaping
+device in that a surface may be required to be perpendicular to a given
+direction in a given point. The use of normal vectors, or rather tangent
+vectors, in specifying tensor product surfaces has been well known since
+the introduction of Hermite patches [Boehm et al. 1984].
+Some authors have questioned the adequacy of the traditional two-fold
+linear interpolation of normal vectors while scan-converting polygons for
+rendering. Shoemake [1985] recommends the use of quaternion rotation,
+rather than linear interpolation for the interpolation for orientations, to
+arrive at a smoother appearance; Duff [1979] notes that the traditional
+two-fold linear interpolation is not affine invariant which causes highlights
+to move in a nonrealistic manner over rotating objects. Duff describes a
+Phong Normal Interpolation • 399
+ACM Transactions on Graphics, Vol. 16, No. 4, October 1997.
+method based on barycentric coordinates for curing this flaw. Also the
+necessity of repeated renormalization of normal vectors has been subject to
+investigation; Bishop and Weimer [1986] give an algorithm that circumvents
+this costly operation.
+3. WHERE THE VERTEX NORMALS ORIGINATE
+For polyhedral models, considered as a stream of polygons, vertex normals
+are often calculated as a process separate from Phong shading. Phong
+shading normally consists of, for every scanline, linear interpolation of
+vertex normals to produce edge normals at the extremes of that scanline,
+and subsequently, for every pixel, interpolating between these edge normals
+to find the normal vector in the pixel. Indeed, providing for normal
+vectors in the vertices can be argued to be part of the modeling process.
+Especially in the case of CSG modeling [Requicha 1980] or other types of
+modeling that are based on assembling a scene from instantiations of a
+limited (parameterized) set of geometrical polyhedral primitives, generating
+the normal vectors together with the locations of the vertices is the
+most obvious thing to do, provided that the geometrical primitives are
+closed shapes. For example, for a sphere, irrespective of the number of
+polygons that is used to approximate its shape, the normal vectors are
+generally all assumed to point in radial directions.
+Even if the geometric model is not assembled from a set of closed
+polyhedra, normal vector assignments can be rather straightforward. Consider,
+for example, a geometrical model that is the isovalue surface of a
+well-chosen potential function (as in Wyvill and Wyvill [1989]). Here it is
+guaranteed that the surface is orientable; moreover, in a polyhedral approximation
+of such a surface, every vertex is completely surrounded by
+polygonal facets that are all part of the surface. Then a normal vector can
+be assigned to every vertex by appropriate averaging [Rogers and Adams
+1976] of the normal vectors of the surrounding facets. (There is, however, a
+problem here: it is not a priori clear what weights should be applied to the
+normals when averaging.)
+Also in the case where the polygons are consistently oriented (all clockwise
+or all counterclockwise), assigning normal vectors is a straightforward
+task, and the standard algorithms such as in Newman and Sproull [1979]
+and Rogers and Adams [1976] are perfectly adequate.
+It is not always possible, however, to guarantee consistent orientation for
+an arbitrary polygon mesh. First of all, if the polygon mesh is not a
+manifold, there may not exist one global consistent orientation; as we
+discuss later, it may be necessary then to identify several subsets of the
+mesh that are manifolds and orient each manifold individually. Second,
+even if the polygon mesh represents one orientable manifold, globally
+consistent orientation may be hard to guarantee a priori, depending on the
+modeling technique used. For instance, in a free-hand 3D geometric design
+environment where a user may add vertices, edges, and polygons in an
+arbitrary order, nothing is known about the relative orientation of these
+400 • C. W. A. M. van Overveld and B. Wyvill
+ACM Transactions on Graphics, Vol. 16, No. 4, October 1997.
+polygons, and achieving a globally consistent orientation requires a separate
+processing step.
+This is the situation we consider in the current section: the geometric
+model studied here consists of a set of vertices and a set of faces; a face is
+just a cyclic list of vertices. This means that nothing is known a priori of
+the topology: an edge of a face may be shared not only by two but also by
+one, three, or more faces.1
+The algorithm suggested here for obtaining vertex-normal vectors consists
+of three passes. These are explained intuitively; a (somewhat more)
+formal definition of the geometry is introduced, and the second and third
+passes of the algorithm are described in terms of the formal definitions.
+3.1 Intuitive Description
+Normal vector interpolation between adjacent faces may only be expected
+to yield an intuitively clear result if these faces share exactly one edge
+where this edge is not shared by any other face. Such a pair of faces, say f1
+and f2 are called good neighbors, abbreviated by f1 ?? f2. The relation ??
+induces a transitive closure ??* . Here f1
+?*? f2 means that either
+f1 ?? f2
+or
+? f3: f1 ?? f3: f3 ?*? f2 .
+In other words, the relation f1
+?*? f2 exists if f1 and f2 are connected
+eventually via a series of ?? relationships. Note that if f1 and f2 share an
+edge, say e, and also f1
+?*? f2, it

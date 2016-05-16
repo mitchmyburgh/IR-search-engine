@@ -1,0 +1,8 @@
+Order relation[edit]
+Binary search requires an order relation by which every element (item) can be compared with every other element in the sense of a total preorder. The part of the element which effectively takes place in the comparison is called its key. Whether duplicates, i.e. different elements with same key, shall be allowed in the tree or not, does not depend on the order relation, but on the application only.
+In the context of binary search trees a total preorder is realized most flexibly by means of a three-way comparison subroutine.
+Operations[edit]
+Binary search trees support three main operations: insertion of elements, deletion of elements, and lookup (checking whether a key is present).
+Searching[edit]
+Searching a binary search tree for a specific key can be a recursive or an iterative process.
+We begin by examining the root node. If the tree is null, the key we are searching for does not exist in the tree. Otherwise, if the key equals that of the root, the search is successful and we return the node. If the key is less than that of the root, we search the left subtree. Similarly, if the key is greater than that of the root, we search the right subtree. This process is repeated until the key is found or the remaining subtree is null. If the searched key is not found before a null subtree is reached, then the key is not present in the tree. This is easily expressed as a recursive algorithm:

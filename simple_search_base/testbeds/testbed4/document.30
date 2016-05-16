@@ -1,0 +1,48 @@
+Visibility using the Z-Buffer can be very inefficient.
+_ Example: Consider rendering a sequence of spheres
+_ All spheres are rendered, but only the closest is visible!
+_ Depth Complexity: the number of times a pixel is overwritten
+_ Real-life examples: rain forest, city models, interior of skyscraper,
+engine block
+_ Occlusion Culling: Methods to avoid these inefficiencies
+ITCS 4010/5010:Game Engine Design 40 Spatial Structures/ Acceleration Algorithms
+Occlusion Culling(OC)
+_ Algorithmic approaches to avoid drawing related inefficiencies.
+_ Optimally, only visible objects are drawn.
+_ Occlusion culling algorithms perform simple tests early on to avoid
+sending objects down the graphics pipeline.
+_ Types of occlusion culling: point-based, cell-based
+_ Point-Based OC: visibility from a single viewing location.
+_ Cell-Based OC: visibility from a region of space
+_ OC based on image(2D), object(3D) or ray space.
+_ Cell based OC is more expensive to compute, but valid for a few
+Frames
+Occluded objects are not processed.
+_ Potentially visible objects: Has to be rendered, added to P, might
+undergo merging (fusion), based on occluding power of the set.
+_ Want to fuse objects that can form the best occluders for incoming
+objects.
+_ Some algorithms cannot merge occluders, some update OR only
+once per frame
+_ Object ordering matters, rough front to back sorting performed by
+some algorithms.
+_ Object distance matters; matchbox can occlude Golden Gate
+Bridge!
+ITCS 4010/5010:Game Engine Design 43 Spatial Structures/ Acceleration Algorithms
+Occlusion Horizons (Wonka,Schmalstieg 1999,
+Downs 2001
+_ Targeted at rendering urban environments.
+_ Objects composed of buildings and ground (2.5D) treated as a
+height field
+_ Occlusion horizon is constructed on the fly and used to cull incoming
+objects (roughly front to back order)
+_ Point Based occlusion culling
+ITCS 4010/5010:Game Engine Design 44 Spatial Structures/ Acceleration Algorithms
+Occlusion Horizons Method
+_ Quadtree of the XY plane of the scene is built
+_ Sweep a plan parallel to near-plane from the viewer, front to back.
+_ Objects to be culled are overestimated with a bounding volume, occluders
+are underestimated with Convex Vertical Prisms (CVP)
+_ Union of CVPs and ground mesh forms a height field, and a conservative
+estimate of occluding power.
+_ Horizon representation: piecewise constant function of

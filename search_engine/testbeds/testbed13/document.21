@@ -1,0 +1,419 @@
+
+
+### current community
+
+  * blog chat
+
+Mathematics
+
+  * Mathematics Meta 
+
+###  your communities
+
+Sign up or log in to customize your list.
+
+### more stack exchange communities
+
+company blog
+
+Stack Exchange Inbox Reputation and Badges
+
+sign up log in tour help
+
+  * Tour  Start here for a quick overview of the site 
+  * Help Center  Detailed answers to any questions you might have 
+  * Meta  Discuss the workings and policies of this site 
+  * About Us  Learn more about Stack Overflow the company 
+  * Business  Learn more about hiring developers or posting ads with us 
+
+  
+
+Mathematics
+
+  * Questions
+  * Tags
+  * Users
+  * Badges
+  * Unanswered
+
+  * Ask Question
+
+_
+
+Mathematics Stack Exchange is a question and answer site for people studying
+math at any level and professionals in related fields. It's 100% free, no
+registration required.  
+  
+Sign up
+
+**Here's how it works:**
+
+  1. Anybody can ask a question 
+  2. Anybody can answer 
+  3. The best answers are voted up and rise to the top 
+
+# What math is used in the theory of quantum computing?
+
+up vote 4 down vote favorite
+
+****
+
+|
+
+I'd like to know what rung of the math ladder one need be on to grasp how a
+quantum computer computes.
+
+I realize this might not be a simple answer, so I'm just looking for an idea
+of the broad topics required.
+
+Thanks.
+
+soft-question physics
+
+|
+
+share|cite|improve this question
+
+|
+
+edited Nov 10 '11 at 3:55
+
+mixedmath♦
+
+57.3k578188
+
+|
+
+asked Nov 10 '11 at 3:47
+
+Aaron Anodide
+
+343111  
+  
+---|---|---  
+  
+|
+
+|  |  1 |  
+---|---  
+  
+Linear algebra gets used a lot in quantum computing. - Srivatsan Nov 10 '11 at
+3:52  
+  
+|  1 |  
+---|---  
+  
+Fourier analysis on groups. - anon Nov 10 '11 at 4:07  
+  
+|     |  
+---|---  
+  
+To all that are interested in Quantum Information: The Quantum Information and
+Foundations proposal is currently in commitment phase. - draks ... May 8 '12
+at 17:48  
+  
+add a comment |  
+  
+##  2 Answers 2
+
+active oldest votes
+
+up vote 2 down vote accepted
+
+|
+
+For the foundation you need to understand linear algebra, projective geometry
+and how to build circuits out of AND, OR, NOT gates. For the algorithms
+themselves, you need to know a little about rational approximations and the
+Fourier transformation. You can start to learn about Quantum Computing from
+here but I also recommend working through the book he wrote.
+
+|
+
+share|cite|improve this answer
+
+|
+
+answered Nov 10 '11 at 4:00
+
+user16697  
+  
+---|---  
+|
+
+| |  
+---|---  
+  
+add a comment |  
+  
+up vote 1 down vote
+
+|
+
+Since all quantum algorithms I know, deal with finite dimensional system,
+knowledge of unitary groups $\text{U}(N)$ is important, because it governs the
+evolution of the finite quantum system without relaxation. For the QA to
+approximate the Jones Polynomial, it doesn't hurt to know something about knot
+theory.
+
+|
+
+share|cite|improve this answer
+
+|
+
+edited Feb 23 '12 at 15:39
+
+|
+
+answered Jan 11 '12 at 18:59
+
+draks ...
+
+11.4k62986  
+  
+---|---|---  
+|
+
+| |  
+---|---  
+  
+add a comment |  
+  
+## Your Answer
+
+
+
+draft saved
+
+draft discarded
+
+### Sign up or log in
+
+Sign up using Google
+
+Sign up using Facebook
+
+Sign up using Email and Password
+
+### Post as a guest
+
+Name
+
+Email  
+  
+---  
+  
+### Post as a guest
+
+Name
+
+Email  
+  
+---  
+  
+discard
+
+By posting your answer, you agree to the privacy policy and terms of service.
+
+##  Not the answer you're looking for? Browse other questions tagged soft-
+question physics or ask your own question.
+
+asked
+
+|
+
+**4 years ago**  
+  
+---|---  
+  
+viewed
+
+|
+
+**1619 times**  
+  
+active
+
+|
+
+**4 years ago**  
+  
+Blog
+
+* * *
+
+Welcoming Stack Overflow’s New CMO – Adrianna Burrows
+
+  
+
+#### Linked
+
+10
+
+What is Fourier Analysis on Groups and does it have "applications" to physics?
+
+#### Related
+
+16
+
+Quantum mechanics for mathematicians
+
+12
+
+Pure maths vs applied
+
+2
+
+Heuristics for definitions of open and closed quantum dynamics
+
+20
+
+What Mathematics questions can be better solved with concepts from Physics?
+
+4
+
+Where do I go from Linear algebra past Calc III to try to learn complex
+physics (relativity and quantum group theory)?
+
+8
+
+What are applications of number theory in physics?
+
+4
+
+What Is The Difference Between The Maths That Physicists Use And The Maths On
+A Typical Mathematics Degree
+
+3
+
+What is the optimal strategy for increasing my 'mathematical maturity'? Depth
+or breadth? Number theory or measure theory?
+
+19
+
+Bad at computations… but not math?
+
+4
+
+Is "mixed math" a useful way to learn math?
+
+####  Hot Network Questions
+
+  * Aside from flavor, is there any benefit to a Monk striking multiple targets? 
+  * Has there ever been an application of dividing by zero? 
+  * What's the adjective from 'emit'? 
+  * Does multiple downsampling have a benefit? 
+  * Parent and children relationships accessible via trigger? 
+  * As a tourist, can I try firearms in California? 
+  * Is insulation around a dryer vent hose safe? 
+  * Are there an infinite number of prime numbers where removing any number of digits leaves a prime? 
+  * Will having a history of depression prevent me from flying? 
+  * Is it plagiarism when copying something that you have written before? 
+  * Counting number of points within a grid 
+  * Tips for background piano playing 
+  * Can I put Association brackets &lt;| … |&gt; in an autocompletion template? 
+  * How to find sequence of digits in pi? 
+  * Is it offensive to "just hike" on a pilgrim's path? 
+  * Proper way to address a very small group that includes both sexes 
+  * Do we know where Ridley Scott got the idea for the xenomorph inner-mouth? 
+  * Finding redundancy between two layers 
+  * My strange hotel room neighbours 
+  * How to answer uncertain question during meeting 
+  * Why don't researchers request payment for refereeing? 
+  * Magento 2: What are `resources.xml` Files Used For? 
+  * Why don't air travel booking sites use the "shopping cart" UI concept? 
+  * How can I explain to my parents that I study programming languages? 
+
+more hot questions
+
+question feed
+
+about us tour help blog chat data legal privacy policy work here advertising
+info mobile **contact us** **feedback**
+
+Technology  |  Life / Arts  |  Culture / Recreation  |  Science  |  Other  
+---|---|---|---|---  
+  
+  1. Stack Overflow
+  2. Server Fault
+  3. Super User
+  4. Web Applications
+  5. Ask Ubuntu
+  6. Webmasters
+  7. Game Development
+  8. TeX - LaTeX
+
+|
+
+  1. Programmers
+  2. Unix &amp; Linux
+  3. Ask Different (Apple)
+  4. WordPress Development
+  5. Geographic Information Systems
+  6. Electrical Engineering
+  7. Android Enthusiasts
+  8. Information Security
+
+|
+
+  1. Database Administrators
+  2. Drupal Answers
+  3. SharePoint
+  4. User Experience
+  5. Mathematica
+  6. Salesforce
+  7. ExpressionEngine® Answers
+  8. more (13) 
+
+|
+
+  1. Photography
+  2. Science Fiction &amp; Fantasy
+  3. Graphic Design
+  4. Movies &amp; TV
+  5. Seasoned Advice (cooking)
+  6. Home Improvement
+  7. Personal Finance &amp; Money
+  8. Academia
+  9. more (9) 
+
+|
+
+  1. English Language &amp; Usage
+  2. Skeptics
+  3. Mi Yodeya (Judaism)
+  4. Travel
+  5. Christianity
+  6. Arqade (gaming)
+  7. Bicycles
+  8. Role-playing Games
+  9. more (21) 
+
+|
+
+  1. Mathematics
+  2. Cross Validated (stats)
+  3. Theoretical Computer Science
+  4. Physics
+  5. MathOverflow
+  6. Chemistry
+  7. Biology
+  8. more (5) 
+
+|
+
+  1. Stack Apps
+  2. Meta Stack Exchange
+  3. Area 51
+  4. Stack Overflow Careers
+
+  
+  
+site design / logo (C) 2016 Stack Exchange Inc; user contributions licensed
+under cc by-sa 3.0 with attribution required
+
+rev 2016.5.4.3542
+
+Mathematics Stack Exchange works best with JavaScript enabled
+

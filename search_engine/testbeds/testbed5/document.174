@@ -1,0 +1,99 @@
+
+
+    Home Application Development 
+
+Matt Asay
+InfoWorld Tech Watch
+
+By Matt Asay
+Follow
+About |
+
+Informed news analysis every weekday
+In data science, the R language is swallowing Python
+More like this
+
+    Executive weighing pros and cons
+    Why R? The pros and cons of the R language
+    young male executive surrounded by flying data
+    Review: Tableau makes sophisticated analysis a snap
+    open source
+    Open source lives! The R project is the real deal
+    on IDG Answers
+    How is data stored and accessed in the cloud?
+
+In data science, the R language is swallowing Python
+Credit: flickr/Torkild Retvedt
+According to a new survey, Python’s data science training wheels increasingly lead to the R language
+
+InfoWorld | Jul 24, 2015
+RELATED TOPICS
+
+    Application Development Data Science Big Data Python 
+
+7Comments
+
+According to a new survey of data professionals, Python remains the No. 1 tool for data science. As the report authors conclude, “Python is definitely top dog when it comes to data.”
+
+There’s reason to believe Python’s dominance won’t last.
+pearl oyster shell treasure jewel gem
+Get to know Perl 6
+
+Perl 6 finally arrived a few weeks ago, carrying a load of new features without losing its free-form
+Read Now
+[ Download the InfoWorld quick guide: Learn to crunch big data with R. | Sign up for InfoWorld's Big Data Report to stay atop all the latest news and developments in the field. ]
+
+Two years ago I argued that Python would rule data science due to its breadth of utility and ease of use. But something interesting has happened. Data science, once the province of PhD propellerheads, has gone mainstream.
+
+As data science has become an essential ingredient for so many businesses, so too has the R language.
+Squeezing Python
+
+It’s always precarious to compare programming languages, given their very different use cases. It’s easy to compare the relative popularity of Swift and C++, for example, but not necessarily very informative.
+
+The same holds true of Python versus R, despite both being used by data science professionals. While R is a language developed by and for statisticians, Python has a more general-purpose existence. As such, there are far more jobs available to Python programmers, given its utility for developing Web applications and beyond.
+
+What's interesting and instructive, however, is to show relative growth in popularity.
+
+According to IEEE Spectrum’s multifaceted ranking, the top five programming languages -- Java, C, C++, Python, and C# -- have stubbornly refused to budge over the past year. Not so R, which has been on a tear. Measured across Google searches, jobs, and more, R leaped from ninth place to sixth place over the course of a year.
+python vs. r
+StackOverflow
+
+On StackOverflow, the number of questions about Python has risen to triple that of the R language.
+
+That’s huge. But as Revolution Analytics’ Andrie de Vries notes, the number of Stack Overflow questions about Python has grown to triple that of R questions.
+
+Move beyond general interest (and general-use cases) and dig into jobs data, however, and highly qualified interest in R has boomed over the past year, even as Python has slipped a place (left column is 2015, right column is 2014).
+
+While Python’s job slip must have multiple causes, R owes its rise to data science -- lots and lots of data science.
+IEEE language ranking
+IEEE Spectrum
+
+In fact, a quick glance at Indeed.com job trends shows “data science” dramatically outpacing both R and Python. You can bet those data scientists are using one or the other language ... or, more likely, both.
+Snacking on Python, feasting on R
+
+Within the burgeoning  big data realm, we’re likely to see a melding of the two tools: Python, the developer-friendly generalist data language, and R, the data expert’s language. The question in my mind is whether we’ll need both long term.
+
+Today, it’s certain that both can be helpful and are often used together, as Revolution Analytics’ David Smith notes:
+David Smith tweet
+Resources
+
+    White Paper
+    Now Network Traffic is Under Control
+    White Paper
+    Citrix NetScaler: A Powerful Defense Against Denial of Service Attacks
+
+See All
+
+But there’s reason to think adoption of R for data science will surpass that of Python. As data science becomes more and more foundational to business, it’s possible that R could actually leap ahead of Python in general popularity, not merely in data science.
+
+As data science has taken off, some developers are using their Python skills to don a data science hat. Martijn Theuwissen of DataCamp puts it this way: “Python is used by programmers that want to delve into data analysis or apply statistical techniques, and by developers that turn to data science.” In short, says Theuwissen, “The closer you are to working in an engineering environment, the more you might prefer Python.”
+
+Think of Python as the on-ramp to data science, but not necessarily the autobahn.
+
+R, by contrast, allows “statistical models [to be] written with only a few lines.” While experienced programmers shouldn’t have too much trouble picking up R, there’s a learning curve associated with it. The effort is worthwhile because it enables the data scientist to powerfully “communicate ideas and concepts through R code and packages,” says Theuwissen. 
+
+But experienced programmers or even established statisticians aren't alone in embracing R. Many people from a nonprogramming statistics or data science background may learn R as their only language, not to mention students picking it up in now omnipresent university courses, including at Johns Hopkins. As Theuwissen puts it, “The closer you are to statistics, research and data science, the more you might prefer R."
+
+Which is exactly where much of the world is going to find itself: closer and closer to data science and, hence, closer and closer to R. While many are undoubtedly starting with Python because it’s the tool they already know from Web development, I suspect we’ll see more developers “graduate” to R when they need to dig deep into data science.
+
+Meanwhile, given the boom in big data -- projected by Ovum to grow 50 percent by 2019 on an already large base -- you can expect increasing numbers of business analysts and other nonprogrammers to arm themselves with the R language as well. That melting pot of R developers will have a huge effect on the future of data science.

@@ -1,0 +1,27 @@
+ Future of programming prediction No. 8: Plug-ins will replace full-fledged programs
+
+Basic Web apps aren't the only ones riding the power of code snippets that can be plugged into a bigger framework. Photoshop used to be the dominant engine for reworking images, in part because of the fertile world of plug-ins. Now the newer apps like MagicHour have made plug-ins even simpler. MagicHour users, for instance, can share filters just like they share photos. Most major platforms offer a good plug-in API, and the ones with the best have fertile ecologies filled with thousands of modules, libraries, and plug-ins.
+
+This burgeoning ecology for code means that programmers will write more snippets and fewer applications. The right bit of glue code can be a million times more powerful than a great, hand-built application with megabytes of binary file. A small snippet can leverage everything in the entire ecology. A big app must do everything on its own.
+
+The savvy programmers will learn to leverage this by creating plug-ins, not programs. They'll learn the APIs for the host systems and string together parts. Very few will ever build anything from scratch. We'll all be part of the emerging Borg.
+
+Future of programming prediction No. 9: Long live the command line
+
+While it has become easier to click your way to a working app, a surprising amount of work is still done in text editors and terminal windows. So, contrary to what you might think, the command line will not be going away. In fact, more and more modern tools will work only with the command line.
+
+The fact is, command lines are too flexible and too universal to be supplanted. Pretty GUIs with clicky interfaces and drag-and-drop widgets may get attention, but the programmers keep reverting to text.
+
+Ease of scripting is at the center of the command lines' continual resurgence. While some companies such as Apple have decent tools for scripting GUIs, they've never been as flexible or as stackable as the command line. How many people write shell scripts for their Macs, and how many write AppleScripts?
+
+The command line will live on because it's simple and extensible. If you have a script, you can easily extend it and glue it into other scripts.
+
+Future of programming prediction No. 10: Dumbing it down will fail
+
+For the past 50 years, programmers have tried to make it easy for people to learn programming, and for 50 years they've succeeded -- but only at teaching the most basic tasks. Ninety-five percent of the world may be able to figure out if-then-else structures, but that's not the same thing as being a programmer.
+
+That won't prevent well-meaning folks from trying to dumb down programming even further so that everyone will be able to do it. Evangelists will sell big dreams of a world where everyone programs, and they'll wheedle big grants with claims that the only way country X can stay ahead of the game is if every citizen in X learns to program Ruby or their VCR.
+
+Alas, true programming means understanding the unseen numbers dancing around in the little box. It means understanding the conventions for creating software and for partitioning responsibility, so the software can run cleanly. Only a few brains seem to be able to handle this work, and it seems unlikely that the proportion of people with this ability will change markedly after 50-plus years of trying. Teaching everyone to grok if-then-else clauses is a nice idea, but it's not the same as creating more programmers.
+
+And no, developing languages whose syntaxes are more "English-like" won't help either.

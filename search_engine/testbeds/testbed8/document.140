@@ -1,0 +1,35 @@
+Order statistic tree
+From Wikipedia, the free encyclopedia
+In computer science, an order statistic tree is a variant of the binary search tree (or more generally, a B-tree[1]) that supports two additional operations beyond insertion, lookup and deletion:
+•	Select(i) — find the i'th smallest element stored in the tree
+•	Rank(x) – find the rank of element x in the tree, i.e. its index in the sorted list of elements of the tree
+Both operations can be performed in O(log n) time in the average case; when a self-balancing tree is used as the base data structure, this bound also applies in the worst case.
+Contents
+  [hide] 
+•	1Augmented search tree implementation
+•	2Other implementations
+•	3References
+•	4External links
+Augmented search tree implementation[edit]
+To turn a regular search tree into an order statistic tree, the nodes of the tree need to store one additional value, which is the size of the subtree rooted at that node (i.e., the number of nodes below it). All operations that modify the tree must adjust this information to preserve the invariant that
+size[x] = size[left[x]] + size[right[x]] + 1
+where size[nil] = 0 by definition. Select can then be implemented as[2]:342
+function Select(t, i)
+    // Returns the i'th element (zero-indexed) of the elements in t
+    r ? size[left[t]]
+    if i = r
+        return key[t]
+    else if i < r
+        return Select(left[t], i)
+    else
+        return Select(right[t], i - (r + 1))
+Rank can be implemented as[3]:342
+function Rank(T, x)
+    // Returns the position of x (one-indexed) in the linear sorted list of elements of the tree T
+    r ? size[left[x]] + 1
+    y ? x
+    while y ? T.root
+         if y = right[y.p]
+              r ? r + size[left[y.p]] + 1
+         y ? y.p
+    return r

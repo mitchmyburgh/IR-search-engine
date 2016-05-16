@@ -1,0 +1,79 @@
+3 Brief History Of The Methodologies
+On the basis of the experience gathered in developing
+the Enterprise Ontology [Usc95] and the TOVE
+(TOronto Virtual Enterprise) project ontology [Grü95]
+(both in the domain of enterprise modelling), the first
+methodological outlines were proposed in 1995 and
+later refined in [Usc96] and [UsG96]. At the 12th
+European Conference for Artificial Intelligence
+(ECAI’96) held in 1996, Bernaras et al. [Ber96]
+presented a method used to build an ontology in the
+domain of electrical networks as part of the Esprit
+KACTUS project. METHONTOLOGY [Góm96]
+appeared at the same time and was extended in later
+papers [Fer97], [Góm98], [Fer99]. In 1997, that is, one
+year later, a methodology was proposed for building
+ontologies based on the SENSUS ontology [Swa97].
+The methodology proposed by Uschold will be
+described in section 5; Grüninger's methodology will be
+discussed in section 6, the methodology proposed by
+Bernaras et al. in section 7, METHONTOLOGY in
+section 8, and finally, the SENSUS methodology in
+section 9.
+4 Criteria For Analysing Methodologies
+The criteria that we have established for analysing each
+methodology are:
+C1. Inheritance from Knowledge Engineering.
+Consideration of the influence of traditional
+Knowledge Engineering on the methodology in
+question.
+C2. Detail of the methodology. Consideration of
+whether the activities and techniques proposed by
+the methodology are exactly specified.
+C3. Recommendations for knowledge formalization.
+Consideration of the formalism or
+formalisms proposed for representing knowledge
+(logic, frames, etc.).
+C4. Strategy for building ontologies. Discussion of
+which of the following strategies are used to
+develop ontologies:
+a. Application-dependent: the ontology is built
+on the basis of an application knowledge base,
+by means of a process of abstraction.
+b. Application-semidependent: possible scenarios
+of ontology use are identified in the
+specification stage.
+c. Application-independent: the process is
+totally independent of the uses to which the
+ontology will be put in knowledge-based
+systems, agents, etc.
+C5. Strategy for identifying concepts. The possible
+strategies are [UsG96]: from the most concrete to
+the most abstract (bottom-up), from the most
+abstract to the most concrete (top-down), or from
+the most relevant to the most abstract and most
+concrete (middle-out).
+C6. Recommended life cycle. Analysis of whether the
+methodology implicitly or explicitly proposes a
+life cycle.
+C7. Differences between the methodology and IEEE
+1074-1995. Discussion of which of the processes
+and activities proposed by the IEEE standard
+1074-1995 are not mentioned in the methodology.
+C8. Recommended techniques. Specification of
+whether particular techniques are proposed for
+performing the different activities of which the
+methodology is composed.
+C9. What ontologies have been developed using the
+methodology and what systems have been built
+using these ontologies. The ontologies and
+systems developed will be listed and briefly
+described.
+Criteria C1, C2, C3, C4 and C5 will show general
+points of the methodologies. The other criteria will
+show the maturity of each methodology. Another
+interesting criterion for analysis would be collaborative
+and distributive construction, that is, to what extent the
+methodologies permit different groups at different sites
+to work together to build ontologies; however, none of
+the publications to date mention what each one contributes in this respect.

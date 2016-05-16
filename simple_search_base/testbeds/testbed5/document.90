@@ -1,0 +1,14 @@
+The D programming language is an object-oriented, imperative, multi-paradigm system programming language created by Walter Bright of Digital Mars and released in 2001. Bright was joined in the design and development effort in 2006 by Andrei Alexandrescu. Though it originated as a re-engineering of C++, D is a distinct language, having redesigned some core C++ features while also taking inspiration from other languages, notably Java, Python, Ruby, C#, and Eiffel.
+
+D's design goals attempt to combine the performance and safety of compiled languages with the expressive power of modern dynamic languages. Idiomatic D code is commonly as fast as equivalent C++ code, while being shorter[citation needed] and memory-safe.[9]
+
+Type inference, automatic memory management and syntactic sugar for common types allow faster development, while bounds checking, design by contract features and a concurrency-aware type system help reduce the occurrence of bugs.[10]
+
+
+Features
+
+D is designed with lessons learned from practical C++ usage rather than from a theoretical perspective. Even though it uses many C/C++ concepts it also discards some, and as such is not compatible with C/C++ source code. D has however been constrained in its design by the rule that any code that is legal in both C and D should behave the same. It adds to the functionality of C++ by also implementing design by contract, unit testing, true modules, garbage collection, first class arrays, associative arrays, dynamic arrays, array slicing, nested functions, inner classes, closures, anonymous functions, compile time function execution, lazy evaluation and has a reengineered template syntax. D retains C++'s ability to do low-level coding, and adds to it with support for an integrated inline assembler. C++ multiple inheritance is replaced by Java style single inheritance with interfaces and mixins. D's declaration, statement and expression syntax closely matches that of C++.
+
+The inline assembler typifies the differences between D and application languages like Java and C#. An inline assembler lets programmers enter machine-specific assembly code within standard D code, a method often used by system programmers to access the low-level features of the processor needed to run programs that interface directly with the underlying hardware, such as operating systems and device drivers.
+
+D has built-in support for documentation comments, allowing automatic documentation generation.

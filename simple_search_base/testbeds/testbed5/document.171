@@ -1,0 +1,158 @@
+
+What’s the Best Programming Language to Learn in 2015?
+Craig Buckler
+August 23, 2015
++105
+Want cutting–edge content?
+Get the best of Front-end plus exclusive deals and freebies in your inbox!
+Success! Subscribed.
+Claim your free ebook!
+
+Get HTML5 and CSS3 for The Real World, 2nd edition when you start a free 14–day SitePoint Premium trial
+Get this deal!
+FacebookTwitter
+
+Was this helpful?
+
+I’ve been following programming language statistics for several years. There are a number of data sources including code repositories, Q&A discussions, job advertisements, social media mentions, tutorial page visits, learning video views, developer surveys and more. Data is published at different times, none can be considered accurate and all have flaws — but they can be useful for spotting industry trends.
+More from this author
+
+    How to Use JSON Data Fields in MySQL Databases
+    Opera VPN: the Future of Private Browsing?
+    How to Create a Static Site with Metalsmith
+
+GitHut
+
+GitHut is a relatively new resource which analyzes 2.2 million active repositories on GitHub. The top ten:
+
+    JavaScript
+    Java
+    Python
+    CSS
+    PHP
+    Ruby
+    C++
+    C
+    Shell
+    C#
+
+Source: GitHut
+
+Source: GitHut
+RedMonk
+
+RedMonk’s language ranking for 2015 determines popularity by analyzing activity on both GitHub and StackOverflow. Their results:
+
+    JavaScript
+    Java
+    PHP
+    Python
+    C#
+    C++
+    Ruby
+    CSS
+    C
+    Objective-C
+
+Credit: RedMonk
+
+Credit: RedMonk
+Jobs Tractor
+
+Jobs Tractor language trends analyzes many thousands of job postings on Twitter. The latest figures from September 2014:
+
+    Java
+    Objective-C
+    PHP
+    SQL
+    Java (Android)
+    C#
+    JavaScript
+    Python
+    Ruby
+    C++
+
+TIOBE Index
+
+The TIOBE Index rates languages on the number of skilled engineers, courses and search engine rankings.
+
+    C
+    Java
+    C++
+    Objective-C
+    C#
+    JavaScript
+    PHP
+    Python
+    VisualBasic.NET
+    Visual Basic
+
+Completely Unscientific Meta-Survey Ranking
+
+If we combine these four surveys, we arrive at this result:
+
+    Java (all)
+    JavaScript
+    PHP
+    Python
+    C / C++
+    C#
+    Objective-C
+    Ruby
+    Visual Basic
+
+I combined C and C++ and ignored CSS and shell scripting. CSS isn’t a programming language as such although preprocessors come close. Shell scripts are useful regardless of whatever technologies you adopt but you won’t find jobs where it’s the only language you need.
+Observations and Caveats
+
+GitHut and RedMonk are similar but that’s to be expected since they use GitHub as a primary source of data. Both analyze public rather than private repositories which could sway results toward open source technologies.
+
+TIOBE is influenced by search engine resources. This is possibly why C tops their chart — the language was developed in 1969 and many historical documents are available. Newer languages such as Ruby and Go inevitably appear further down the chart.
+
+Educational resources are likely to affect results. For example, Python is commonly used to learn programming in schools and colleges. Many thousands of students are asking questions and completing projects but, in my experience, Python jobs are rare compared to PHP or Ruby despite it being higher in several charts. Java has a similar advantage since it has a variety of uses in education, web, desktop and mobile development.
+
+Demand for native app developers remains high especially in the job-related surveys. RedMonk reports that Swift jumped 46 places to number 22 in less than six months. However, app development is a young discipline. There are far more job vacancies in web and desktop programming but they are easier to fill so adverts are possibly removed sooner.
+
+Finally, language use has an impact.
+
+    A single web site or application requires a myriad of technologies which possibly raises them above desktop languages.
+    You can create quick and dirty code examples in a few lines of CSS, JavaScript, PHP, Ruby, Python or shell script. That’s not necessarily the case for languages such as C, C#, Objective-C and Java which tend to be used for fewer larger projects.
+
+Trends
+
+Comparing today’s charts against historical 2014 data from RedMonk and Jobs Tractor, surprisingly little has changed. A few languages have gone up or down a place but there are no new entrants or large leaps into the top ten.
+What Surveys Won’t Tell You
+
+There is no “best” language.
+
+Few developers have the luxury (or tedium?) of working with a single technology.
+
+If you’re considering client-side JavaScript, you won’t get far without a solid understanding of HTML, CSS, image formats, tools and browser quirks. Server-side NodeJS, PHP, Ruby, .NET and Java developers normally require an understanding of web servers, HTTP, SQL/NoSQL databases and data-exchange formats such as XML and JSON. Even those writing a basic native mobile or desktop app on a single platform require web connectivity, data store, IDE and build tool experience.
+
+The more technologies you know, the more you need to know.
+OK, But What Should I Learn?
+
+Surveys are interesting but don’t bet your career on them. If you take nothing else from this article, remember:
+
+    Those who pick a language based on survey data or monetary prospects will fail.
+
+There’s one secret to becoming a great developer:
+
+    Just build stuff.
+
+First, find a problem — especially one which has a personal interest or benefit to you. Perhaps that’s creating a résumé website, organizing your finances, automating your home or sending random tweets to your followers. Ensure the goals are achievable; even the best developers would shudder at the thought of creating a WordPress or Call of Duty clone.
+
+Now choose an appropriate set of technologies. There may be several options but don’t attempt to force a language on the solution. You may be able to create a native mobile app in Perl but resources are rare and it’ll be a frustrating exercise.
+
+Then create your solution. Google, code examples and fellow developers are helpful but don’t expect them to provide all the answers. Your project is (or should be) unique and only one person can teach you to program: you.
+
+Finally, don’t expect to become a coding ninja overnight. Some people have a natural aptitude but they also spent many, many hours honing their skills and are continually learning new technologies and techniques. Even the most junior roles presume several years development experience. If you find you need a hand along the way, there are plenty of online resources, like our very own Learnable, that can help.
+
+In summary, choosing a language to learn for the sake of it is a boring academic exercise: few people succeed. It’s better to learn a language which helps you solve a real problem. Don’t worry if that technology is obsolete or outside the top ten — all languages are conceptually similar and your skills are transferable.
+
+Don’t worry about your choices: just build something.
+
+You may be interested in Craig’s follow-up to this article, Best Programming Languages For Job Demand and Salaries, 2015.
+Tags: languages, popular languages, Trends
+
+Was this helpful?
+

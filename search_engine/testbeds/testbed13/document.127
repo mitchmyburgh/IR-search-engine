@@ -1,0 +1,223 @@
+
+
+Log in / Sign up
+
+  * Follow GizmodoFollowing Gizmodo
+
+  * Related blogs
+  * Sploid
+  * Paleofuture
+  * Toyland
+  * Gizmodo en Español
+  * io9
+
+  * Blogs you may like
+  * Deadspin
+  * Gawker
+  * Gizmodo
+  * Jalopnik
+  * Jezebel
+  * Kotaku
+  * Lifehacker
+
+FollowFollowing
+
+You can skip this ad in 5 seconds.
+
+# The Quantum D-Wave 2 Is 3,600 Times Faster than a Super Computer
+
+Andrew Tarantola
+
+3/04/14 11:40am
+
+Filed to: Monster Machines
+
+  * super computers
+  * quantum computing
+
+1287
+
+  * Edit
+  * Invite manually
+  * Promote
+  * DismissUndismiss
+  * Hide
+  * Share to Kinja
+  * Go to permalink
+
+Quantum computing is being hailed as the future of data processing, with
+promises of performing calculations thousands of times faster than modern
+supercomputers while consuming magnitudes less electricity. And in the span of
+just two years the only commercially available quantum computer, the D-Wave
+One, has already doubled its computational power. Kiss your law goodbye, Mr.
+Moore.
+
+Quantum computing differs from classical computing at its most fundamental
+level. While traditional computers rely on the alternate bit states of 1 and 0
+to store data, quantum computers exploit the fuzzy effects of quantum
+mechanics, allowing its "qubits" to exist as a 1, 0, or both simultaneously,
+a.k.a "superposition." So while a traditional computer will sequentially
+explore the potential solutions to a mathematical optimization problem, the
+quantum system looks at every potential solution simultaneously, known as
+quantum annealing, and returns answers—not just the single "best" but nearly
+10,000 close alternatives as well—in roughly a second. What's more, unlike
+traditional computers which rely on logic gates to manipulate bits, the D-Wave
+system uses an adiabatic, which reads out the ground state of its qubits to
+find a solution.
+
+######  What's Wrong With Quantum Computing  What's Wrong With Quantum
+Computing  What's Wrong With Quantum Computing
+
+You've heard plenty of people by now—including us—banging on about quantum
+computers, and how… Read more Read more
+
+######  D-Wave One Handles All Your Quantum Computing Needs (for $10 Million)
+D-Wave One Handles All Your Quantum Computing Needs (for $10 Million)  D-Wave
+One Handles All Your Quantum Computing Need
+
+There's been a lot of talk lately about how close we are to quantum computing
+for the masses.… Read more Read more
+
+_The 128-qubit array of the DW1_
+
+When the original D-Wave One (DW1) debuted in May, 2011, it utilized a 128
+qubit chip-set, magnitudes faster than existing supercomputer technology, and
+was immediately purchased by research labs and defense contractors such as
+Lockheed, which installed one at USC in LA. However the recently released
+D-Wave Two (DW2), blows its predecessor out of the water using a massive 512
+qubit array.
+
+Advertisement
+
+Each qubit is a small, superconducting processor that exploits quantum
+mechanical effects. These effects are magnified the more qubits that are
+connected to one another. Were every one of the 509 functional qubits in the
+D-Wave Two hooked up to one another, the system would wield processing powers
+100 orders of magnitude more powerful its predecessor. However, since each DW2
+qubit only communicates directly seven other qubits in tightly packed blocks
+or nodes—these nodes are then connected to other 8-qubit nodes in the
+lattice—the DW2 is only about _300,000 times_ more powerful than the D-Wave
+One. So, you know, just a modest spec bump.
+
+Heck, even when the DW2 is only using 439 qubits, as it did when D-Wave
+Systems consultant, Catherine McGeoch, tested it against state of the art
+workstations running top of the line CPLEX optimization algorithms, the DW2
+produced results 3,600 times faster—providing 100 solutions in a half second.
+The workstations required a half hour to produce the same.
+
+But in order to take full advantage quantum effects, the DW2 requires very
+specific, extreme conditions. For one, it operates at 0.02 Kelvin—150 times
+colder than the depths of interstellar space and just two degrees above
+absolute zero—in a vacuum _10 billion times_ lower than standard atmospheric
+pressure and experiences 50,000 times less magnetic interference thanks to its
+heavy shielding. Surprisingly, achieving these temperatures consumes just
+15.5kW and takes up just ten square meters of floor space, compared to the
+thousands of kilowatts and warehouses of space that traditional super
+computers require.
+
+Sponsored
+
+_ _
+
+_A qubit - Ndickson at __en.wikipedia_
+
+Google, NASA, and the Universities Space Research Association all kicked in on
+a DW2 in May of last year—D-Wave Systems won't quote prices though the BBC
+estimates its cost at about $15 million—for machine learning research (which
+would help explain why Google's been snapping up every AI designer and
+robotics company it could get its hands on over the last six months). Quantum
+computing still has a way to go before it's reliable, but between recent
+breakthroughs and kickass hardware, it shouldn't be long before it's ready to
+catapult us into the future. [Wiki 1, 2 \- Extremetech \- BBC \- D-Wave
+Systems \- Nature]
+
+######  Meet Google's Robot Army. It's Growing.  Meet Google's Robot Army.
+It's Growing.  Meet Google's Robot Army. It's Growing.
+
+Google can't stop buying robotics companies. In the past two months, eight of
+the 12 companies … Read more Read more
+
+Reply128 replies
+
+Leave a reply
+
+## **You** may also like
+
+**Two Cents**
+
+#### Eight Things You Can Get for Free on a Flight
+
+Today 10:30am
+
+**io9**
+
+#### Another Important _Game of Thrones_ Character Is Coming Back and It's Not
+Who You Think
+
+Today 12:50pm
+
+**Deadspin**
+
+#### Justice Is Real: The Arizona Dong Teen Will Go Free
+
+23 minutes ago
+
+## **Recent** from Andrew Tarantola
+
+  * 24
+  * 319
+  * 347.3K
+
+**Gizmodo** * Gizmodo Staff
+
+#### The Best Vape for Every Appetite
+
+4/20/16 12:21pm
+
+  * 8
+  * 159
+  * 199.1K
+
+**Gizmodo** * Andrew Tarantola
+
+#### Hey Procrastinators, Here Are the Easiest Ways to File Your Taxes Online
+
+4/15/15 11:05am
+
+  * 9
+  * 88
+  * 18.6K
+
+**Gizmodo** * Andrew Tarantola
+
+#### All the World's Cows on Treadmills Could Power Six Percent of Earth
+
+1/16/15 11:40am
+
+**Deals** * Shep McAllister
+
+#### Add a Bidet to Your Existing Toilet For $20
+
+44 minutes ago
+
+ShareTweet
+
+* * *
+
+* * *
+
+  * About Blog
+  * Need Help?
+  * Content Guide
+
+  * Permissions
+  * Privacy
+  * Terms of Use
+  * Advertising
+  * Jobs
+  * RSS
+
+Kinja is in read-only mode. We are working to restore service.
+
+  *[RSS]: Really Simple Syndication
+

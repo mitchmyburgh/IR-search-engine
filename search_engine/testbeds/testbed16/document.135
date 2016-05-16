@@ -1,0 +1,50 @@
+Software Defined Networking Wakes Up: Analysis of VMware, Nicira, Oracle, Xsigo
+Jul 30, 2012
+First VMware buys Nicira, then Oracle buys Xsigo. What an exciting couple weeks it’s been. These major acquisitions are completely mucking with the established order of the networking industry. It’s about time.
+
+Network virtualization has been going on for about 8 years, but it’s been mostly behind the scenes and unless you were in a small group of companies, you could have easily missed it until the rise of network virtualization, OpenFlow, and Software Defined Networking in the last couple years.
+
+I have been involved with that small group of companies since the start. Here’s my take on why these two deals are important for cloud and the future of networking. These aren’t idle musings; I was VP of Technology & VP Marketing at one of the first networking virtual appliance companies, Zeus Technologies, now a part of Riverbed. I ran strategic planning for the Citrix Virtualization business unit after they acquired NetScaler, a networking company that is now the backbone of Citrix’s cloud network acceleration product. And I was involved with the very early stages of two network virtualization players, Vyatta and 3Leaf (one of Xsigo’s former competitors). My book on cloud networking is due out in about 6 months.
+
+In mid-June, VMware CTO Steve Herrod (who I introduced on stage at the Cloud Security Alliance conference at RSA last year) told CIO Journal that software-defined networking represents  ”the big change needed for virtualizing the data center, which reduces the number of applications running in silos that need to be managed separately.”  This means no more routers and switches a la Juniper and Cisco, but rather applications directing the operations of cloud-based data centers.
+
+In fact, in 2007 on a NetEvents panel in Malta, I said something similar:
+
+My vision of a data center for the future is a really big, really fat, really dumb switch and a whole lot of virtual appliances. That’s going to happen because you can change virtual appliances a lot more quickly than you can change hardware that’s built into switches. When you want to upgrade a virtual appliance well it’s pretty much just do another provisioning cycle and you’ve got a whole new set of network security features built in.
+
+I couldn’t be more pleased that VMware acted quickly to make this investment. The Nicira purchase seemed to indicate that the software defined networking space would be dominated by VMware, until the Oracle/Xsigo news came out. More on that in a minute.
+
+Impact of the Nicira deal
+First, there are a few must-know key takeaways from the VMware acquisition:
+
+One of Nicira’s biggest backers is Ben Horowitz from Andreessen Howorwitz. Not too surprising – Ben cut his teeth at LoudCloud, aka OpsWare. Ben knows the network configuration problem as well as I do – my proto-cloud product at Exodus Communications competed with the LoudCloud proto-cloud service – also based in the Exodus data centers. People who bang their heads long enough against the problem of making networks as flexible as server software will come to the same conclusions!
+VMware’s existing virtual network offerings weren’t complete, and Nicira was the best fit to fix the problem. Big Switch could have also fit the bill, but not as well. Citrix already owns a piece of Vyatta.
+This was a deal for VMware and for Nicira. The company just bought a lot of future market share of the network virtualization market, and it removed a lot of strategic risk. Hypervisors are becoming commoditized; the network is tougher to solve and at least as strategic. Nicira’s investors are dancing a jig.
+Cisco. Missed the boat. Again. Software defined networking is the future. Routers and switches are not. Cisco and Juniper’s shared strategy is, essentially, “Our very expensive hardware switches can be programmed, so please keep buying them and write code on top of them, even though you customers really prefer to run everything on much more affordable commodity servers.”
+What we are seeing unfold this week is truly historic – hardware networking vendor strategies were essentially shredded to bits by VMware.  In fact, I’m not sure the venerated OSI stack for networking (you know, Please Do Not Throw Sausage Pizza Away), is going to work as it currently stands, once we’re done fully virtualizing the network. Who needs layer 6 anyway?
+
+Oracle and Xsigo
+Anyway, on to Oracle and Xsigo. Another deal that will transform the network virtualization space. here. In 2005, I wrote the very first whitepaper for now defunct I/O virtualization vendor 3Leaf, predicting the use case for server I/O virtualization as applied to hypervisors and painting a picture of a future when you’d be able to share processors or memory between physical servers and allocate all I/O to any virtual machine, effectively letting a workload on a single virtual machine grow to be larger than that machine. It’s a fundamentally better way of scaling than the n+1 model we’ve worshipped for nearly 2 decades. But it’s damn hard to do. 3Leaf failed, but it was important enough that the US Dept of Homeland Security didn’t want Huawei to get the assets..
+
+So what the heck is Oracle doing buying a networking virtualization company? Oracle already offers a standard server-virtualization plan, called Oracle VM, but I don’t personally know anyone who built their virtualization platform on Oracle. Sorry guys.
+
+Oracle Marketing BS?
+Xsigo is known for using Infiniband technology to build data centers and isn’t really in the same space as Nicira or even Software Defined Networking. A cynic would look at Oracle’s repeated use of the term “Software Defined Networking” in their announcement of the deal as pure marketing BS.
+
+Except it’s not. What good is software defined networking if a node on the network itself can only access resources from a single server? Hardware network I/O virtualization blurs the bounds of what a physical server can do, letting software defined networks allocate I/O from one server, including networking, storage, and even memory access, to virtual machines on adjacent servers. This ability makes SDN simpler to do and far more powerful.
+
+The reason Oracle did this has more to do with the hardware side of the business derived from the SUN acquisition. SUN engineers intimately understand server resource allocation and the amazing benefits to scale to be had from letting a VM escape from n+1 scaling limitations and instead scale more like a mainframe by borrowing I/O resources from neighboring servers. If Oracle can get Xsigo hardware widely deployed, data centers running it may be orders of magnitude more efficient at running virtualized applications regardless of the underlying hypervisor. That’s huge for Oracle and bad news for VMware.
+
+But to do that, Oracle needs to get wide deployment of Xsigo, and we don’t know if that will happen or not.
+
+EMC & Cisco: Frenemies for Life?
+Most Oracle databases run with EMC storage, which makes EMC deployments a very likely use case for Xsigo technology, but EMC has majority stake in VMware. I believe that VMware’s sugar daddy EMC, is keenly interested in keeping Oracle at bay, despite CTO Chuck Hollis assertions. He writes:
+
+Over the last decade, EMC has dramatically expanded our portfolio.  We diversified into virtualization, content management and — most recently — data warehousing and business analytics. Oracle has diversified as well.  Among other things, they’ve made plays for virtualization, content management, data warehousing and BI — as well as acquiring Sun, which brings storage and related technologies into the mix. Both companies have aspirations to be bigger and more relevant over time.  Both companies have strong personalities at the helm. Neither company is in the habit of backing down from their core strategies and investments just because there’s a little conflict in the mix.
+
+Uh, to me that sounds like, “We used to be friends. Now we’re frenemies.”
+
+Oracle may have an SDN advantage with Xsigo if they can drive adoption fast enough and convince EMC not to use customer relationships to drive Oracle databases on to VMware/Nicira/commodity server platforms.
+
+Wrapping it up
+So that’s it – Vmware scored a big win with Nicira. Oracle may have a huge winner with Xsigo if the ecosystem doesn’t block them. In any case, it’s been an exciting time for software defined networking. It’s also a very exciting time for security vendors – we’re going to have to secure all this. When we’ve fully virtualized everything, spotting a network perimeter will be like spotting a yeti.

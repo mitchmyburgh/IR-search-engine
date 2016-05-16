@@ -1,0 +1,35 @@
+In computer science, a succinct data structure is a data structure which uses an amount of space that is "close" to the information-theoretic lower bound, but (unlike other compressed representations) still allows for efficient query operations. The concept was originally introduced by Jacobson to encode bit vectors, (unlabeled) trees, and planar graphs. Unlike general lossless data compression algorithms, succinct data structures retain the ability to use them in-place, without decompressing them first. A related notion is that of a compressed data structure, in which the size of the data structure depends upon the particular data being represented.
+Suppose that  is the information-theoretical optimal number of bits needed to store some data. A representation of this data is called:
+implicit if it takes  bits of space,
+succinct if it takes  bits of space, and
+compact if it takes  bits of space.
+For example, a data structure that uses  bits of storage is compact,  bits is succinct,  bits is also succinct, and  bits is implicit.
+Implicit structures are thus usually reduced to storing information using some permutation of the input data; the most well-known example of this is the heap.
+
+
+== Succinct dictionaries ==
+Succinct indexable dictionaries, also called rank/select dictionaries, form the basis of a number of succinct representation techniques, including binary trees, -ary trees and multisets, as well as suffix trees and arrays. The basic problem is to store a subset  of a universe , usually represented as a bit array  where  iff . An indexable dictionary supports the usual methods on dictionaries (queries, and insertions/deletions in the dynamic case) as well as the following operations:
+
+for .
+In other words,  returns the number of elements equal to  up to position  while  returns the position of the -th occurrence of .
+There is a simple representation which uses  bits of storage space (the original bit array and an  auxiliary structure) and supports rank and select in constant time. It uses an idea similar to that for range-minimum queries; there are a constant number of recursions before stopping at a subproblem of a limited size. The bit array  is partitioned into large blocks of size  bits and small blocks of size  bits. For each large block, the rank of its first bit is stored in a separate table ; each such entry takes  bits for a total of  bits of storage. Within a large block, another directory  stores the rank of each of the  small blocks it contains. The difference here is that it only needs  bits for each entry, since only the differences from the rank of the first bit in the containing large block need to be stored. Thus, this table takes a total of  bits. A lookup table  can then be used that stores the answer to every possible rank query on a bit string of length  for ; this requires  bits of storage space. Thus, since each of these auxiliary tables take  space, this data structure supports rank queries in  time and  bits of space.
+To answer a query for  in constant time, a constant time algorithm computes:
+
+In practice, the lookup table  can be replaced by bitwise operations and smaller tables to perform find the number of bits set in the small blocks. This is often beneficial, since succinct data structures find their uses in large data sets, in which case cache misses become much more frequent and the chances of the lookup table being evicted from closer CPU caches becomes higher. Select queries can be easily supported by doing a binary search on the same auxiliary structure used for rank; however, this takes  time in the worst case. A more complicated structure using  bits of additional storage can be used to support select in constant time. In practice, many of these solutions have hidden constants in the  notation which dominate before any asymptotic advantage becomes apparent; implementations using broadword operations and word-aligned blocks often perform better in practice.
+
+
+=== Entropy-compressed dictionaries ===
+The  space approach can be improved by noting that there are  distinct -subsets of  (or binary strings of length  with exactly  1’s), and thus  is an information theoretic lower bound on the number of bits needed to store . There is a succinct (static) dictionary which attains this bound, namely using  space. This structure can be extended to support rank and select queries and takes  space. This bound can be reduced to a space/time tradeoff by reducing the storage space of the dictionary to  with queries taking  time.
+
+
+== Examples ==
+A null-terminated string (C string) takes Z + 1 space, and is thus implicit. A string with an arbitrary length (Pascal string) takes Z + log(Z) space, and is thus succinct. If there is a maximum length – which is the case in practice, since 232 = 4 GiB of data is a very long string, and 264 = 16 EiB of data is larger than any string in practice – then a string with a length is also implicit, taking Z + k space, where k is the number of data to represent the maximum length (e.g., bytes in a word).
+When a sequence of variable-length items (such as strings) needs to be encoded, there are various possibilities. A direct approach is to store a length and an item in each record – these can then be placed one after another. This allows efficient next, but not finding the kth item. An alternative is to place the items in order with a delimiter (e.g., null-terminated string). This uses a delimiter instead of a length, and is substantially slower, since the entire sequence must be scanned for delimiters. Both of these are space-efficient. An alternative approach is out-of-band separation: the items can simply be placed one after another, with no delimiters. Item bounds can then be stored as a sequence of length, or better, offsets into this sequence. Alternatively, a separate binary string consisting of 1s in the positions where an item begins, and 0s everywhere else is encoded along with it. Given this string, the  function can quickly determine where each item begins, given its index. This is compact but not succinct, as it takes 2Z space, which is O(Z).
+Another example is the representation of a binary tree: an arbitrary binary tree on  nodes can be represented in  bits while supporting a variety of operations on any node, which includes finding its parent, its left and right child, and returning the size of its subtree, each in constant time. The number of different binary trees on  nodes is . For large , this is about ; thus we need at least about  bits to encode it. A succinct binary tree therefore would occupy only  bits per node.
+
+
+== See also ==
+Minimal perfect hash function
+
+
+== References ==

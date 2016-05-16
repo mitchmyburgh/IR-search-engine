@@ -1,0 +1,81 @@
+This paper introduces the concept of Geometry Compression, allowing
+3D triangle data to be represented with a factor of 6 to 10
+times fewer bits than conventional techniques, with only slight losses
+in object quality. The technique is amenable to rapid decompression
+in both software and hardware implementations; if 3D rendering
+hardware contains a geometry decompression unit, application
+geometry can be stored in memory in compressed format. Geometry
+is first represented as a generalized triangle mesh, a data structure
+that allows each instance of a vertex in a linear stream to specify
+an average of two triangles. Then a variable length compression
+is applied to individual positions, colors, and normals. Delta compression
+followed by a modified Huffman compression is used for
+positions and colors; a novel table-based approach is used for normals.
+The table allows any useful normal to be represented by an
+18-bit index, many normals can be represented with index deltas of
+8 bits or less. Geometry compression is a general space-time tradeoff,
+and offers advantages at every level of the memory/interconnect
+hierarchy: less storage space is needed on disk, less transmission
+time is needed on networks.
+CR Categories and Subject Descriptors: I.3.1 [Computer Graphics]:
+Hardware Architecture; I.3.3 [Computer Graphics]: Picture/
+Image Generation Display algorithms; I.3.7 [Computer Graphics]:
+Three Dimensional Graphics and Realism.
+Additional Keywords and Phrases: 3D graphics hardware, compression,
+geometry compression.
+1 INTRODUCTION
+Modern 3D computer graphics makes extensive use of geometry to
+describe 3D objects. Many graphics techniques are available for such
+use. Complex smooth surfaces can be succinctly represented by high
+level abstractions such as trimmed NURBS. Detailed surface geometry
+can many times be rendered by use of texture maps. But as realism
+is added, more and more raw geometry is required, usually in the
+form of triangles. Position, color, and normal components of these
+triangles are typically represented as floating point numbers; an isolated
+triangle can take on the order of 100 bytes or more of storage to
+describe. To maximize detail while minimizing the number of triangles,
+triangle re-tessellation techniques can be employed. The techniques
+described in the current paper are complementary: for a fixed
+number of triangles, minimize the total bit-size of the representation,
+subject to quality (and implementation) trade-offs.
+While many techniques exist for (lossy and lossless) compression of
+2D pixel images, and at least one exists for 2D geometry [2], no corresponding
+techniques have previously been available for compression
+of 3D triangles. This paper describes a viable algorithm for Geometry
+Compression, which furthermore is suitable for implementation
+in real-time hardware. The availability of a decompression unit
+within rendering hardware means that geometry can be stored and
+transmitted entirely in compressed format. This addresses one of the
+main bottlenecks in current graphics accelerators: input bandwidth.
+It also greatly increases the amount of geometry that can be cached
+in main memory. In distributed networked applications, compression
+can help make shared VR display environments feasible, by greatly
+reducing transmission time. Even low-end video games are going
+true 3D with a vengeance, but without compression even CD-ROMs
+are limited to a few tens of millions of triangles total storage.
+The technique described here can achieve (lossy) compression ratios
+of between 6 and 10 to 1, depending on the original representation
+format and the final quality level desired. The compression
+proceeds in four stages. The first is the conversion of triangle data
+into a generalized triangle mesh form. The second is the quantization
+of individual positions, colors, and normals. Quantization of
+normals includes a novel translation to non-rectilinear representation.
+In the third stage the quantized values are delta encoded between
+neighbors. The final stage performs a Huffman tag-based
+variable-length encoding of these deltas. Decompression is the reverse
+of this process; the decompressed stream of triangle data is
+then passed to a traditional rendering pipeline, where it is processed
+in full floating point accuracy.
+2 REPRESENTATION OF GEOMETRY
+Today, most major MCAD and many animation modeling packages
+allow the use of CSG (constructive solid geometry) and free-form
+NURBS in the construction and representation of geometry. The resulting
+trimmed polynomial surfaces are a high-level representation
+of regions of smooth surfaces. However for hardware rendering,
+these surfaces are typically pre-tessellated in software into triangles
+prior to transmission to the rendering hardware, even on hardware
+that supports some form of hardware NURBS rendering. Furthermore,
+much of the advantage of the NURBS representation of geometry
+is for tasks other than real-time rendering. These non-ren-
+Geometry Compression
+

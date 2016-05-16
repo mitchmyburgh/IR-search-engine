@@ -1,0 +1,34 @@
+Analysis of Running Times for Access/ Search in a List
+Average Case
+
+It can be shown that in the average case, the time required to a search on a self-organizing list of size n is
+
+    Tavg = 1 * p(1) + 2 * p(2) + 3 * p(3) + . . . + n * p(n).
+
+where p(i) is the probability of accessing the ith element in the list, thus also called the access probability. If the access probability of each element is the same (i.e. p(1) = p(2) = p(3) = ... = p(n) = 1/n) then the ordering of the elements is irrelevant and the average time complexity is given by
+
+    T(n) = 1/n + 2/n + 3/n + ... + n/n = (1 + 2 + 3 + ... + n)/n = (n+1)/2
+
+and T(n) does not depend on the individual access probabilities of the elements in the list in this case. However in the case of searches on lists with non uniform record access probabilities (i.e. those lists in which the probability of accessing one element is different from another), the average time complexity can be reduced drastically by proper positioning of the elements contained in the list.
+This is done by pairing smaller i with larger access probabilities so as to reduce the overall average time complexity.
+This may be demonstrated as follows:
+Given List: A(0.1), B(0.1), C(0.3), D(0.1), E(0.4)
+Without rearranging, average search time required is:
+
+    T(n) = 1*0.1 + 2*0.1 + 3*0.3 + 4*0.1 + 5*0.4 = 3.6
+
+Now suppose the nodes are rearranged so that those nodes with highest probability of access are placed closest to the front so that the rearranged list is now:
+E(0.4), C(0.3), D(0.1), A(0.1), B(0.1)
+Here, average search time is:
+
+    T(n) = 1*0.4 + 2*0.3 + 3*0.1 + 4*0.1 + 5*0.1 = 2.2
+
+Thus the average time required for searching in an organized list is (in this case) around 40% less than the time required to search a randomly arranged list.
+This is the concept of the self-organized list in that the average speed of data retrieval is increased by rearranging the nodes according to access frequency.
+
+Worst Case
+
+In the worst case, the element to be located is at the very end of the list be it a normal list or a self-organized one and thus n comparisons must be made to reach it. Therefore the worst case running time of a linear search on the list is O(n) independent of the type of list used. Note that the expression for the average search time in the previous section is a probabilistic one. Keeping the commonly accessed elements at the head of the list simply reduces the probability of the worst case occurring but does not eliminate it completely. Even in a self-organizing list, if a lowest access probability element (obviously located at the end of the list) is to be accessed, the entire list must be traversed completely to retrieve it. This is the worst case search.
+Best Case
+
+In the best case, the node to be searched is one which has been commonly accessed and has thus been identified by the list and kept at the head. This will result in a near constant time operation. In big-oh notation, in the best case, accessing an element is an O(1) operation.

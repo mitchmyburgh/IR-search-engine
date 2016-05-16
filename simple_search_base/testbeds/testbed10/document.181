@@ -1,0 +1,76 @@
+On Neurobiological, Neuro-Fuzzy, Machine
+Learning, and Statistical Pattern
+Recognition Techniques
+
+
+Anupam Joshi, Member, IEEE, Narendran Ramakrishman, Member, IEEE, Elias N. Houstis, and John R. Rice
+
+I. INTRODUCTION, BACKGROUND, AND RELATED WORK
+WE begin this paper, to paraphrase the popular song,
+at the very beginning in consideration of the interdisciplinary
+audience that is the target of this issue. Neural
+networks (NN’s) represent a computational [36] approach to
+intelligence as contrasted with the traditional, more symbolic
+approaches. The idea of such systems is due to the work of the
+psychologist D. Hebb [20] (and after whom a class of learning
+techniques is referred to as Hebbian). Despite the pioneering
+early work of McCullouch and Pitts [39] and Rosenblatt [51],
+the field was largely ignored through most of 1960’s and
+1970’s, with researchers in artificial intelligence (AI) mostly
+concentrating on symbolic techniques. Reasons for this could
+be the lack of appropriate computational hardware or the work
+of Minsky and Papert which showed limitations of a class of
+NN’s (single layer perceptrons) popular then. The failure of
+good old-fashioned AI (GOFAI) [5], the development of very
+large-scale integration (VLSI) and parallel computing revived
+interest in NN’s in the mid 1980’s as an alternate mechanism to
+investigate, understand, and duplicate intelligence. In the past decade, there has been a phenomenal growth in the published
+literature in this field, and a large number of conferences are
+now held in the area [36].
+Some researchers view NN’s as mechanisms to study intelligence
+(e.g., the famous text by McClelland and Rumelhart
+[53]), but most literature in the area sees NN’s as a
+tool to solve problems in science and engineering. Most of
+these problems involve pattern recognition (PR) in one form
+or another—everything from speech recognition to image
+recognition to SAR/Sonar data classification to stock market
+tracking, and so on. The paper by Jain et al. [24] elaborates
+upon this viewpoint. These problems involve both classi-
+fication (supervised learning) and clustering (unsupervised
+learning). Recently, many researchers have investigated the
+links between NN-based techniques and traditional statistical
+pattern recognition techniques. One of the first efforts in this
+direction was the seminal text by Jain and Sethi [57]. Since
+then, this topic has aroused considerable interest and has seen
+many discussions—some acrimonious, between those who feel
+that NN’s are old wine in new bottles, and those who feel
+that they represent a new paradigm. As any follower of the
+news group comp.ai.neural-nets knows, this debate occurs
+there almost every six months, often triggered by an innocent 
+question from a “newbie.”
+
+VII. CONCLUSIONS
+In this paper, we have described two hybrid neuro-fuzzy
+schemes—one for pattern classification and the other for
+clustering. Both these schemes utilize fuzzy hyperboxes to
+represent pattern classes. The clustering scheme is motivated
+by the human visual system. These schemes were extensively compared with traditional, statistical, neural and machine
+learning algorithms by experimenting with real-world data
+sets. The classification algorithm performs as well as some of
+the better algorithms discussed here like—C4.5, IB, OC1, and
+Rprop. Besides, this algorithm has the ability to provide online
+adaptation. The clustering algorithm borrows ideas from
+computer vision to partition the pattern space in a hierarchical
+manner. It has been found that this simple technique yields
+very good results. It was seen that the performance of this
+algorithm is very good on clustering real world data sets.
+We feel that our clustering scheme provides good support
+for pattern recognition applications in real-world domains.
+Our detailed experiments also indicate that regardless of the
+underlying paradigm, the more sophisticated methods tended
+to out perform the simpler ones. Moreover, the best methods
+from each paradigm perform about as well as one another,
+with minor variations depending on the nature of the data.
+Our neuro–fuzzy techniques are important in this respect, since
+they tend to be amongst the best performing methods, and have
+the added advantage of single-pass learning.

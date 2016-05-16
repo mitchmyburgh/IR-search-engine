@@ -1,0 +1,31 @@
+Why Do Some Programming Languages Live and Others Die?
+
+Google wants to change the way the world writes software. In recent years, the search giant has unveiled two new programming languages that seek to improve on some of the most widely used languages on the planet.
+
+With a language called Go, it seeks to give the world a replacement for the venerable languages C and C++, providing a more nimble means of building really big software platforms inside data centers. And with Dart, it hopes to replace JavaScript, improving the way we build software that’s run in our web browsers.
+
+But no matter how impressive these new languages are, you have to wonder how long it will take them to really catch on — if they do at all. After all, new programming languages arrive all the time. But few ever reach a wide audience.
+
+At Princeton and the University of California at Berkeley, two researchers are trying to shed some light on why some programming languages hit the big time but most others don’t. In what they call a “side project,” Leo Meyerovich and Ari Rabkin have polled tens of thousands of programmers, and they’re combing through over 300,000 computing projects at the popular code repository SourceForge — all in an effort to determine why old languages still reign supreme.
+
+“Why have we not been reliably able to improve on C?” Rabkin asks. In the thirty-five years since C was popularized, there have been enormous leaps in the design of software and operating systems, he says. But although C has been beefed up and other new languages have been very successful during that time, C is still a mainstay.
+“Why have we not been reliably able to improve on C?”
+— Ari Rabkin
+
+Part of the problem, he says, is that language designers don’t always have practical objectives. “There’s a tendency in academics of trying to solve a problem when no one actually ever had that problem,” said Rabkin, who recently received his computer science PhD at Berkeley and is now at Princeton working on a post-doc.
+
+He says that academics are so often determined to build a language that stands out from the crowd, without thinking about what’s needed to actually make it useful. In some cases, he says, they fail with the simplest of things, like documentation for their language. In other cases, he says, designers will keep adding new features to a language and effectively overload the engineers who are trying to use it.
+
+“Maybe the solution isn’t entirely technical,” Meyerovich says. “We need to start building more ‘socially aware’ languages.”
+
+Yang Zhang, co-founder of analytics outfit Slice-Data and an MIT PhD dropout, is among that many who have jumped behind a new-age programming language called Scala, but he acknowledges that the language was originally hampered by poor documentation and support from the designers. “I was a much bigger masochist back then,” he says of fighting to learn the language in 2006.
+
+Meyerovich also says the data he and Rabkin are collecting also indicate that programmers aren’t always taking the time to really learn a language when they start using it — and that this trips them up down the road. An example, he says, is ActionScript, an object-oriented language developed by Adobe. According to Meyerovich’s data, programmers see ActionScript as easy to use. But, he says, when they start doing something new with it — moving from, say, media development to game development — they run into problems.
+
+Another issue is complacency. Most programmers learn three to four languages, the researchers say, but then stop. “Over time, you’d expect that as developers get older, they’d get more wisdom; they’d learn more languages,” Meyerovich says. “We’ve found that’s not true. They plateau.”
+
+Part of the problem is that by the time they hit 35 to 40 years old, they’re often moving from hands-on coding to managing other programmers. At that point, there’s little motivation to learn and implement new languages.
+
+Meyerovich believes that the language is an issue that the development community as a whole is still struggling to acknowledge. As he and Rabkin plow through the data — much of which is sortable online — they hope to develop new insights into not only the causes over the problem, but also how to solve it.
+
+“This is a hot-button issue I didn’t even think we’d be looking at when we went through this data,” Meyerovich says.

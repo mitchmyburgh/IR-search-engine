@@ -1,0 +1,17 @@
+A moral graph is a concept in graph theory, used to find the equivalent undirected form of a directed acyclic graph. It is a key step of the junction tree algorithm, used in belief propagation on graphical models.
+
+The moralized counterpart of a directed acyclic graph is formed by adding edges between all pairs of nodes that have a common child, and then making all edges in the graph undirected. Equivalently, a moral graph of a directed acyclic graph G is an undirected graph in which each node of the original G is now connected to its Markov blanket. The name stems from the fact that, in a moral graph, two nodes that have a common child are required to be married by sharing an edge.
+For any vertex v of the directed acyclic graph G, the set of incoming neighbors of v forms a clique in the moralization of G. Therefore, a topological ordering of G is automatically the reverse of a perfect elimination ordering of the moralization. Because the moralization has a perfect elimination ordering, it is necessarily a chordal graph.
+Moralization may also be applied to mixed graphs, called in this context "chain graphs". In a chain graph, a connected component of the undirected subgraph is called a chain. Moralization adds an undirected edge between any two vertices that both have outgoing edges to the same chain, and then forgets the orientation of the directed edges of the graph. For this generalization, the resulting moral graph is not always chordal.
+
+
+== See also ==
+D-separation
+Tree decomposition
+
+
+== References ==
+
+
+== External links ==
+M. Studeny: On mathematical description of probabilistic conditional independence structures

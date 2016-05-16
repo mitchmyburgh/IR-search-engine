@@ -1,0 +1,114 @@
+﻿Towards Ontology-Based Natural Language Processing
+Dominique Estival, Chris Nowak and Andrew Zschorn
+Human Systems Integration Group
+Defence Science and Technology Organisation
+PO Box 1500, Edinburgh SA 5111
+AUSTRALIA
+{Dominique.Estival,Chris.Nowak,Andrew.Zschorn}@dsto
+.defence.gov.au
+Abstract
+Conceptualising a domain has long been
+recognised
+as
+a
+prerequisite
+for
+understanding that domain and processing
+information about it. Ontologies are
+explicit specifications of conceptualisations
+which are now recognised as important
+components of information systems and
+information processing. In this paper, we
+describe a project in which ontologies are
+part of the reasoning process used for
+information management and for the
+presentation
+of
+information.
+Both
+accessing and presenting information are
+mediated via natural language and the
+ontologies are coupled with the lexicon
+used in the natural language component.
+1 Introduction
+Ontologies
+are now being recognised as important
+components
+of
+information
+systems
+and
+information processing. It is commonly accepted
+that an ontology is an
+explicit specification of a
+conceptualisation
+(Gruber, 1995). In the areas of
+knowledge representation and reasoning (KR) and
+of conceptual modelling, it has long been
+recognised that conceptualising a domain is a
+prerequisite for understanding the domain and
+processing
+information
+about
+the
+domain,
+especially in the case of large, non-trivial domain
+s.
+Nowadays, there is no clear-cut border between
+large and small domains, simply because
+information systems are no longer isolated but are
+parts of the
+global information system
+and need to
+be
+interoperable
+. Hence, conceptualisations and
+ontologies are required for all kinds of information 
+systems and information processing. In some
+cases it is not clear yet what functions and
+advantages ontologies can offer, but there is no
+doubt that in
+every
+case ontologies do offer
+something: at the very least they offer a way to
+address
+meaning
+of
+terms
+(
+concepts
+,
+relations
+)
+required for information processing.
+This paper attempts to provide some suggestions
+on how natural language processing can benefit
+from using ontologies. We present a large-scale
+research project in which ontologies are part of th
+e
+reasoning
+process
+used
+for
+information
+management
+and
+for the
+presentation of
+information. Users' access to information and the
+presentation of information to users are both
+mediated via natural language, and the ontologies
+used in the reasoning component are coupled with
+the lexicon used in the natural language
+component.
+In Section 2, we describe the FOCAL (Future
+Operations Centre Analysis Laboratory) project:
+both the ontological processing and the natural
+language processing work presented here are based
+on the relevant aspects of FOCAL. In Section 3,
+we present ontology-related work for FOCAL and
+in Section 4, the NLP-related aspects of FOCAL.
+In Section 5, we show how ontologies and NLP are
+combined. Section 6 summarises the current state
+of this work and indicates directions for future
+research.

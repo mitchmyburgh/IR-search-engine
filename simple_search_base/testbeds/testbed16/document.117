@@ -1,0 +1,489 @@
+OpenStack Cloud Bubble Has Started to Burst
+Jan 21, 20161,375 views12 Likes4 CommentsShare on LinkedInShare on FacebookShare on Twitter
+It was a couple of years ago in march 2014 when we wrote about the small user base and penetration in the market of OpenStack, mostly compared with the investment made by vendors and VCs. At that time we estimated that the investment in OpenStack was approximately $300 million per year. This was quite conservative, there were other estimates above $0.5 billion per year, some reaching to $1 billion per year. These estimates mainly include development cost and marketing of upstream OpenStack community. Additionally, there are other direct costs from many companies also allocating resources to develop their proprietary OpenStack distribution, training or documentation, a big overhead in indirect costs, and of course opportunity costs.
+
+Some months after this post, in September 2014, 451 Research made public a market analysis forecasting that OpenStack market was growing from $883 million in revenue in 2014 to $1.7 billion in 2016, with service providers with clouds enabled by OpenStack representing 73% of that revenue total. This revenue is relatively very small in comparison with the investment being made and the revenue of the market leaders such as VMware ($6 billion in 2014 ), AWS (now close to $7 billion a year) and Red Hat Linux (now close to $2 billion a year). Cumulative investment was disproportionate to any realistic return. It just does not seem feasible that there is room for several vendors to profit from OpenStack. There were sufficient indicators, for those willing to open their eyes, showing that OpenStack was in a bubble.
+
+Although OpenStack is now declining (google trends shows how the buzz in OpenStack is slowing, while other emerging approaches, like Docker, are growing exponentially), it had serious momentum. During the last few years, leveraging its hype, numerous startups focused on OpenStack and got funded. Raising funding for OpenStack startups was so easy. Did these VCs ever get their money back? Let us see what happened to the three main start-ups created around OpenStack:
+
+Nebula ended operations with no notice in April 2015
+Piston Cloud Computing was acquired by CISCO in June 2015, no financial terms were disclosed
+Cloudscaling was acquired by EMC, no financial terms were disclosed
+On the other hand, big companies saw in OpenStack an opportunity to compete with AWS in the public cloud market by building an OpenStack-based public cloud. Did they succeed?:
+
+HP announced in May 2014 an investment of more than $1 billion over the next two years on cloud-related products and services around OpenStack. One year and a half later, in October 2015, HP threw in the towel on public cloud, announcing that HP Helion Cloud is ending operations from 31st January 2016. HP has recently announced partnership agreements with AWS and Microsoft Azure.
+Rackspace, one of the two founders of OpenStack, announced in August 2014 that it was discontinuing its pure Infrastructure as a Service (IaaS) offering, and in October 2015 they announced a partnership with AWS. The results?, the shares of RackSpace have fallen to lowest level in 5+years. Investors don't seem very optimistic with its OpenStack strategy.
+Other players provide commercially supported distributions and services to build clouds.
+
+Red Hat has acquired eNovance, Ceph and Ansible to gain credibility in the cloud market. However, regarding revenue, they caution that it's still largely the early adopters moving to OpenStack in production and it isn't quite mainstream, yet.
+Mirantis may be the only player making revenue with OpenStack and the only plausible winner. Their strategy based on providing services around vanilla OpenStack may be working.   
+And… what happened to the rest of sisters?:
+
+Eucalyptus was acquired by HP in September 2014
+Although CloudStack continues being an Apache Foundation project, Citrix is clearly abandoning the project, obviously not a good enough investment.
+OpenNebula however is in excellent shape with a wide user community that includes industry leaders like Unity Technologies, Akamai, CentOS, BBC, Alcatel-Lucent and BlackBerry, and research leaders like FermiLab, LRZ, ESA and SurfSARA.
+OpenStack Tries to Be All Things to All People
+OpenStack main problem is that it does not offer the main benefits of open-source: low-cost, no lock-in, flexibility and interoperability. And this is not going to change because its governance is driven by vendors. OpenStack is governed by a consortium of competitors, trying to create its own product or to provide compatibility for its particular device. Traditionally, multi-vendor industrial consortiums are the best approach to commoditize a core component in the long term, mainly when there exists solid base software, but not to bring to market a complete enterprise-ready solution from scratch in the short term.
+
+The mixture of vendor motivations and visions makes it increasingly difficult for a foundation to meet both the needs of the project and the monetization goals of each vendor. OpenStack tries to be all things to all people. It was originally created as an open-source effort to compete against Amazon Web Services, and run cloud-native applications, and now it tries to be a “cheaper” alternative to VMware (well, not that cheap according to Red Hat analysis), and support traditional legacy applications. A single technology cannot pursue cloud-native and traditional legacy applications simultaneously. Things are even more complex now, OpenStack also wants to be the virtualized infrastructure management component within Telco NFV environments. However, several Telcos are abandoning OpenStack because it does not fulfill the needs of NFVs. It seems that OpenStack technology always tries to pivot to the latest market hype.
+
+Regarding cost, upstream OpenStack is very complex to integrate and maintain, requiring a dedicated team of sysadmins and engineers. According to one of its former core developers, OpenStack is doomed, being yet another piece of enterprise software laden with technical debt.  Red Hat has recently estimated that the cost per VM and year in a small OpenStack cloud is $16,000... $1.8 per hour, great news for AWS… where is the low cost here?.
+
+Any organization interested in using OpenStack, and requiring commercial support and enterprise maturity, is recommended (by the vendors running the project) to deploy any of the many enterprise distributions. So the organization that chooses OpenStack is actually using proprietary software based on OpenStack, and is locked into that specific distribution given that the vendor only supports its own stack, not the community version. Even worse, there is no way to migrate to another vendor distribution.
+
+OpenStack won the branding and marketing war when it comes to open-source cloud frameworks. With the buzz, many companies considered OpenStack as the best and unique solution to solve almost everything. However, at the end, they are now figuring out that other technologies can be more mature or more adapted for their specific projects. Because a single cloud management platform can not be all things to all people, we will see an open-source cloud space with several offerings focused on different environments and/or industries. This is the natural evolution, same thing happened in other markets like relational databases or the web servers.
+
+Why OpenNebula? Because It Simply Works!
+Since we started the OpenNebula open-source project 8 years ago, we have witnessed the boom and burst of many companies, projects and paradigms. We have a long-term commitment to our users with a focus on solving their needs in innovative ways and their involvement in a fully open-source and vendor-agnostic project.
+
+We are proud to deliver a truly open, vendor-free, user-driven software to build private and hybrid clouds, with design principles that focus on simplicity and flexibility. Our philosophy is not to break with the previous outstanding work in data centers, but rather extending its functionality to take advantage of the cloud computing benefits. This is a unique vision in the field, and OpenNebula is the product of this belief.
+
+You can learn about OpenNebula in one of our upcoming Cloud TechDays worldwide (Kuala Lumpur, Sofia, Dallas, Ede, Nuremberg, Dublin, Toronto, Boston, Madrid, San Francisco...) or in its annual conference that this year will be held in Barcelona in October 25-27.
+
+Openstack
+Cloud Computing
+Ignacio M. Llorente
+Written by
+Ignacio M. LlorenteFollow
+Tim O'Reilly	Tim O'Reilly
+Follow
+14 Years Later, "Piracy is Progressive Taxation" still rings true
+May 3, 201675,897 views219 Likes36 CommentsShare on LinkedInShare on FacebookShare on Twitter
+In December 2002, in the heyday of controversy about Napster and online music file sharing, I wrote a piece about "online piracy" and the future of media. Today, as we celebrate the "Day Against DRM," it seemed worth republishing. Even though many of the references are dated, the central premise still seems absolutely right: that piracy is a kind of "progressive taxation" that, at worst, may chip a few percentage points off the earnings of people who are already famous, but lifts up the visibility of everyone else.
+
+In another post from 2006, Long Tail Evidence from Google Books and Safari, I provided data from Google Book Search and our Safari Books Online that supported this contention. 
+
+Fourteen years later, our business has continued to grow, and the principles I laid out in this 2002 essay have helped to guide our strategy to fuel our success. Even though our original business was publishing, and many of our competitors embraced DRM in hope of preserving their business, we always trusted our customers and distributed our content DRM-free. Instead of trying to protect our content from the people who wanted to use it, we built new business models for carrying out our mission — changing the world by spreading the knowledge of innovators. These include a much larger emphasis on live events and on subscription access to a body of content so large that no one could possibly download it all, constantly updated, and with constant new sources of value.
+
+We are following the same path as Amazon and Netflix (who drive subscription loyalty through original content and ever-increasing value) in adding more and more value to our Safari online subscription platform. Originally an ebook-only library, it now includes thousands of hours of video training, complete video access to our conferences and other events, new kinds of online tutorials combining text, video, and live interactive content, and learning paths designed to help people get from where they are to where they need to be. And we make our content available however people want it. If people want downloadable content, they can buy it by the piece, but always DRM-free.
+
+Here is the original Piracy is Progressive Taxation:
+
+The continuing controversy over online file sharing sparks me to offer a few thoughts as an author and publisher. To be sure, I write and publish neither movies nor music, but books. But I think that some of the lessons of my experience still apply.
+
+Lesson 1: Obscurity is a far greater threat to authors and creative artists than piracy.
+Let me start with book publishing. More than 100,000 books are published each year, with several million books in print, yet fewer than 10,000 of those new books have any significant sales, and only a hundred thousand or so of all the books in print are carried in even the largest stores. Most books have a few months on the shelves of the major chains, and then wait in the darkness of warehouses from which they will move only to the recycling bin. Authors think that getting a publisher will be the realization of their dreams, but for so many, it's just the start of a long disappointment.
+
+Sites like Amazon that create a virtual storefront for all the books in print cast a ray of light into the gloom of those warehouses, and so books that would otherwise have no outlet at all can be discovered and bought. Authors who are fortunate enough to get the rights to their book back from the publisher often put them up freely online, in hopes of finding readers. The web has been a boon for readers, since it makes it easier to spread book recommendations and to purchase the books once you hear about them. But even then, few books survive their first year or two in print. Empty the warehouses and you couldn't give many of them away. Many works linger in deserved obscurity, but so many more suffer simply from the vast differential between supply and demand.
+
+I don't know the exact size of the entire CD catalog, but I imagine that it is similar in scope. Tens of thousands of musicians self-publish their own CDs; a happy few get a recording contract. Of those, fewer still have their records sell in appreciable numbers. The deep backlist of music publishers is lost to consumers because the music just isn't available in stores.
+
+There are fewer films, to be sure, because of the cost of film making, but even there, obscurity is a constant enemy. Thousands of independent film makers are desperate for distribution. A few independent films, like Denmark's Dogme films, get visibility. But for most, visibility is limited to occasional showings at local film festivals. The rise of digital video also promises that film making will soon be as much a garage opportunity as starting a rock band, and as much of a garret opportunity as the great American novel.
+
+Lesson 2: Piracy is progressive taxation
+For all of these creative artists, most laboring in obscurity, being well-enough known to be pirated would be a crowning achievement. Piracy is a kind of progressive taxation, which may shave a few percentage points off the sales of well-known artists (and I say "may" because even that point is not proven), in exchange for massive benefits to the far greater number for whom exposure may lead to increased revenues.
+
+Our current distribution systems for books, music, and movies are skewed heavily in favor of the "haves" against the "have nots." A few high-profile products receive the bulk of the promotional budget and are distributed in large quantities; the majority depend, in the words of Tennessee Williams' character Blanche DuBois, "on the kindness of strangers."
+
+Lowering the barriers to entry in distribution, and the continuous availability of the entire catalog rather than just the most popular works, is good for artists, since it gives them a chance to build their own reputation and visibility, working with entrepreneurs of the new medium who will be the publishers and distributors of tomorrow.
+
+I have watched my 19 year-old daughter and her friends sample countless bands on Napster and Kazaa and, enthusiastic for their music, go out to purchase CDs. My daughter now owns more CDs than I have collected in a lifetime of less exploratory listening. What's more, she has introduced me to her favorite music, and I too have bought CDs as a result. And no, she isn't downloading Britney Spears, but forgotten bands from the 60s, 70s, 80s, and 90s, as well as their musical forebears in other genres. This is music that is difficult to find -- except online -- but, once found, leads to a focused search for CDs, records, and other artifacts. eBay is doing a nice business with much of this material, even if the RIAA fails to see the opportunity.
+
+Lesson 3: Customers want to do the right thing, if they can.
+Piracy is a loaded word, which we used to reserve for wholesale copying and resale of illegitimate product. The music and film industry usage, applying it to peer-to-peer file sharing, is a disservice to honest discussion.
+
+Online file sharing is the work of enthusiasts who are trading their music because there is no legitimate alternative. Piracy is an illegal commercial activity that is typically a substantial problem only in countries without strong enforcement of existing copyright law.
+
+At O'Reilly, we publish many of our books in online form. There are people who take advantage of that fact to redistribute unpaid copies. (The biggest problem, incidentally, is not on file sharing networks, but from copies of our CD Bookshelf product line being put up on public Web servers, or copied wholesale and offered for sale on eBay.) While these pirated copies are annoying, they hardly destroy our business. We've found little or no abatement of sales of printed books that are also available for sale online.
+
+What's more, many of those who do infringe respond to little more than a polite letter asking them to take the materials down. Those servers that ignore our requests are typically in countries where the books are not available for sale or are far too expensive for local consumers to buy.
+
+SALE
+Day Against DRM
+Shop now
+
+
+
+What's even more interesting, though, is that our enforcement activities are customer-driven. We receive thousands of emails from customers letting us know about infringing copies and sites. Why? They value our company and our authors, and they want to see our work continue. They know that there is a legitimate way to pay for online access--our Safari Books Online subscription service (safari.oreilly.com) can be had for as little as $9.95 a month--and accordingly recognize free copies as illegitimate.
+
+A similar data point comes from Jon Schull, the former CTO of Softlock, the company that worked with Stephen King on his eBook experiment, "Riding the Bullet". Softlock, which used a strong DRM scheme, was relying on "superdistribution" to reduce the costs of hosting the content--the idea that customers would redistribute their copies to friends, who would then simply need to download a key to unlock said copy. But most of the copies were downloaded anyway and very few were passed along. Softlock ran a customer survey to find out why there was so little "pass-along" activity. The answer, surprisingly, was that customers didn't understand that redistribution was desired. They didn't do it because they "thought it was wrong."
+
+The simplest way to get customers to stop trading illicit digital copies of music and movies is to give those customers a legitimate alternative, at a fair price.
+
+Lesson 4: Shoplifting is a bigger threat than piracy.
+While few of the people putting books on public web servers seek to profit from the activity, those who are putting up CDs for sale on eBay containing PDF or HTML copies of dozens of books are in fact practicing piracy--organized copying of content for resale.
+
+But even so, we see no need for stronger copyright laws, or strong Digital Rights Management software, because existing law allows us to prosecute the few deliberate pirates.
+
+We don't have a substantial piracy problem in the US and Europe. The fact that its software products have been available for years on warez sites (and now on file trading networks) has not kept Microsoft from becoming one of the world's largest and most successful companies. Estimates of "lost" revenue assume that illicit copies would have been paid for; meanwhile, there is no credit on the other side of the ledger for copies that are sold because of "upgrades" from familiarity bred by illicit copies.
+
+What we have is a problem that is analogous, at best, to shoplifting, an annoying cost of doing business.
+
+And overall, as a book publisher who also makes many of our books available in electronic form, we rate the piracy problem as somewhere below shoplifting as a tax on our revenues. Consistent with my observation that obscurity is a greater danger than piracy, shoplifting of a single copy can lead to lost sales of many more. If a bookstore has only one copy of your book, or a music store one copy of your CD, a shoplifted copy essentially makes it disappear from the next potential buyer's field of possibility. Because the store's inventory control system says the product hasn't been sold, it may not be reordered for weeks or months, perhaps not at all.
+
+I have many times asked a bookstore why they didn't have copies of one of my books, only to be told, after a quick look at the inventory control system: "But we do. It says we still have one copy in stock, and it hasn't sold in months, so we see no need to reorder." It takes some prodding to force the point that perhaps it hasn't sold because it is no longer on the shelf.
+
+Because an online copy is never out of stock, we at least have a chance at a sale, rather than being subject to the enormous inefficiencies and arbitrary choke points in the distribution system.
+
+Lesson 5: File sharing networks don't threaten book, music, or film publishing. They threaten existing publishers.
+The music and film industries like to suggest that file sharing networks will destroy their industries.
+
+Those who make this argument completely fail to understand the nature of publishing. Publishing is not a role that will be undone by any new technology, since its existence is mandated by mathematics. Millions of buyers and millions of sellers cannot find one another without one or more middlemen who, like a kind of step-down transformer, segment the market into more manageable pieces. In fact, there is usually a rich ecology of middlemen. Publishers aggregate authors for retailers. Retailers aggregate customers for publishers. Wholesalers aggregate small publishers for retailers and small retailers for publishers. Specialty distributors find ways into non-standard channels.
+
+Those of us who watched the rise of the Web as a new medium for publishing have seen this ecology evolve within less than a decade. In the Web's early days, rhetoric claimed that we faced an age of disintermediation, that everyone could be his or her own publisher. But before long, individual web site owners were paying others to help them increase their visibility in Yahoo!, Google, and other search engines (the equivalent of Barnes & Noble and Borders for the Web), and Web authors were happily writing for sites like AOL and MSN, or on the technology side, Cnet, Slashdot, O'Reilly Network, and other Web publishers. Meanwhile, authors from Matt Drudge to Dave Winer and Cory Doctorow made their names by publishing for the new medium.
+
+As Jared Diamond points out in his book Guns, Germs, and Steel, mathematics is behind the rise of all complex social organization.
+
+There is nothing in technology that changes the fundamental dynamic by which millions of potentially fungible products reach millions of potential consumers. The means by which aggregation and selection are made may change with technology, but the need for aggregation and selection will not. Google's use of implicit peer recommendation in its page rankings plays much the same role as the large retailers' use of detailed sell-through data to help them select their offerings.
+
+The question before us is not whether technologies such as peer-to-peer file sharing will undermine the role of the creative artist or the publisher, but how creative artists can leverage new technologies to increase the visibility of their work. For publishers, the question is whether they will understand how to perform their role in the new medium before someone else does. Publishing is an ecological niche; new publishers will rush in to fill it if the old ones fail to do so.
+
+If we take the discussion back to first principles, we understand that publishing isn't just about physical aggregation of product but also requires an intangible aggregation and management of "reputation." People go to Google or Yahoo!, Barnes & Noble or Borders, HMV, or MediaPlay, because they believe that they will find what they want there. And they seek out particular publishers, like Knopf or O'Reilly, because we have built a track-record of trust in our ability to find interesting topics and skilled authors.
+
+Now, let's take this discussion over to music file sharing. How do people find songs on Kazaa or any of the other post-Napster file sharing services? First, they may be looking for a song they already know. But such searches for a known artist or song title are fundamentally self-limiting, since they depend on the marketing of a "name space" (artist/song pairs) that is extrinsic to the file sharing service. To truly supplant the existing music distribution system, any replacement must develop its own mechanisms for marketing and recommendation of new music.
+
+And in fact, we already see those mechanisms emerging. File sharing services rely heavily on that most effective of marketing techniques: word of mouth. But over time, anyone who has studied the evolution of previous media will see that searches based on either pre-existing knowledge or word of mouth represent only the low-hanging fruit. As the market matures, paid marketing is added, and step by step, we build up the same rich ecology of middlemen that characterizes existing media marketplaces.
+
+New media have historically not replaced but rather augmented and expanded existing media marketplaces, at least in the short term. Opportunities exist to arbitrage between the new distribution medium and the old, as, for instance, the rise of file sharing networks has helped to fuel the trading of records and CDs (unavailable through normal recording industry channels) on eBay.
+
+Over time, it may be that online music publishing services will replace CDs and other physical distribution media, much as recorded music relegated sheet music publishers to a niche and, for many, made household pianos a nostalgic affectation rather than the home entertainment center. But the role of the artist and the music publisher will remain. The question then, is not the death of book publishing, music publishing, or film production, but rather one of who will be the publishers.
+
+Lesson 6: "Free" is eventually replaced by a higher-quality paid service
+A question for my readers: How many of you still get your email via peer-to-peer UUCP dialups or the old "free" Internet, and how many of you pay $19.95 a month or more to an ISP? How many of you watch "free" television over the airwaves, and how many of you pay $20-$60 a month for cable or satellite television? (Not to mention continue to rent movies on videotape and DVD, and purchasing physical copies of your favorites.)
+
+Services like Kazaa flourish in the absence of competitive alternatives. I confidently predict that once the music industry provides a service that provides access to all the same songs, freedom from onerous copy-restriction, more accurate metadata and other added value, there will be hundreds of millions of paying subscribers. That is, unless they wait too long, in which case, Kazaa itself will start to offer (and charge for) these advantages. (Or would, in the absence of legal challenges.) Much as AOL, MSN, Yahoo!, Cnet, and many others have collectively built a multi-billion dollar media business on the "free" web, "publishers" will evolve on file sharing networks.
+
+Why would you pay for a song that you could get for free? For the same reason that you will buy a book that you could borrow from the public library or buy a DVD of a movie that you could watch on television or rent for the weekend. Convenience, ease-of-use, selection, ability to find what you want, and for enthusiasts, the sheer pleasure of owning something you treasure.
+
+The current experience of online file sharing services is mediocre at best. Students and others with time on their hands may find them adequate. But they leave much to be desired, with redundant copies of uneven quality, intermittent availability of some works, incorrect identification of artist or song, and many other quality problems.
+
+Opponents may argue that the Web demonstrates precisely what they are afraid of, that content on the Web is "free", that advertising is an insufficient revenue model for content providers, and that subscription models have not been successful. However, I will argue that the story is still unfinished.
+
+Subscription sites are on the rise. Computer industry professionals can be seen as the "early adopters" in this market. For example, O'Reilly's Safari Books Online is growing at 30 percent a month, and now represents a multi-million dollar revenue stream for us and other participating publishers.
+
+Most observers also seem to miss the point that the internet is already sold as a subscription service. All we're working on is the development of added-value premium services. What's more, there are already a few vertically-integrated ISPs (notably AOL Time Warner) that provide "basic" connectivity but own vast libraries of premium content.
+
+In looking at online content subscription services, analogies with television are instructive. Free, advertiser-supported television has largely been supplanted--or should I say supplemented (because the advertising remains)--by paid subscriptions to cable TV. What's more, revenue from "basic cable" has been supplemented by various aggregated premium channels. HBO, one of those channels, is now television's most profitable network. Meanwhile, over on the internet, people pay their ISP $19.95/month for the equivalent of "basic cable", and an ideal opportunity for a premium channel, a music download service, has gone begging for lack of vision on the part of existing music publishers.
+
+Another lesson from television is that people prefer subscriptions to pay-per-view, except for very special events. What's more, they prefer subscriptions to larger collections of content, rather than single channels. So, people subscribe to "the movie package," "the sports package" and so on. The recording industry's "per song" trial balloons may work, but I predict that in the long term, an "all-you-can-eat" monthly subscription service (perhaps segmented by musical genre) will prevail in the marketplace.
+
+Lesson 7: There's more than one way to do it.
+A study of other media marketplaces shows, though, that there is no single silver-bullet solution. A smart company maximizes revenue through all its channels, realizing that its real opportunity comes when it serves the customer who ultimately pays its bills.
+
+At O'Reilly, we've been experimenting with online distribution of our books for years. We know that we must offer a compelling online alternative before someone else does. As the Hawaiian proverb says, "No one promised us tomorrow." Competition with free alternatives forces us to explore new distribution media and new forms of publishing.
+
+In addition to the Safari subscription service mentioned above, we publish an extensive network of advertising-supported "free" information sites as the O'Reilly Network (www.oreillynet.com). We have published a number of books under "open publication licenses" where free redistribution is explicitly allowed (oreilly.com/openbook). We do this for several reasons: to build awareness of products that might otherwise be ignored, to build brand loyalty among online communities, or, sometimes, because a product can no longer be economically sold in traditional channels, and we'd rather make it available for free than have it completely disappear from the market.
+
+We have also published many of our books on CD ROM, in a format referred to as the CD Bookshelf, typically a collection of a half dozen or so related books.
+
+And of course, we continue to publish print books. The availability of free online copies is sometimes used to promote a topic or author (as books such as The Cathedral and the Bazaar or The Cluetrain Manifesto became bestsellers in print as a result of the wide exposure it received online). We make available substantial portions of all of our books online, as a way for potential readers to sample what they contain. We've even found ways to integrate our books into the online help system for software products, including Dreamweaver and Microsoft's Visual Studio.
+
+Interestingly, some of our most successful print/online hybrids have come about where we present the same material in different ways for the print and online contexts. For example, much of the content of our bestselling book Programming Perl (more than 600,000 copies in print) is available online as part of the standard Perl documentation. But the entire package--not to mention the convenience of a paper copy, and the aesthetic pleasure of the strongly branded packaging--is only available in print. Multiple ways to present the same information and the same product increase the overall size and richness of the market.
+
+And that's the ultimate lesson. "Give the wookie what he wants!" as Han Solo said so memorably in the first Star Wars movie. Give it to him in as many ways as you can find, at a fair price, and let him choose which works best for him.
+
+Featured In Editor's Picks, Entertainment, Technology, Media
+Tim O'Reilly
+Written by
+Tim O'ReillyFollow
+The Intense Scrutiny on Marissa Mayer Shows Women Leaders Get Way More Flak Than Men 
+Suneil Kamath	Suneil Kamath
+Big Idea Thinker & Doer, Entrepreneur, Writer
+Follow
+The Intense Scrutiny on Marissa Mayer Shows Women Leaders Get Way More Flak Than Men
+May 3, 201631,869 views625 Likes121 CommentsShare on LinkedInShare on FacebookShare on Twitter
+Recently, I’ve read several articles commenting on Marrisa Mayer’s tenure at Yahoo. Many of the articles break down what seems like every single decision Mayer has made as CEO and how those decisions led to Yahoo’s steady decline.
+
+Mayer has made some miscalculations, but when reading these articles, I can’t help but ask, would Mayer receive the same amount of attention and scrutiny if she were a man?
+
+Mayer has been criticized since she first started as CEO when she announced her pregnancy and, a few years later, an NYU professor stated that the only reason Mayer hadn’t been fired from Yahoo was because she was pregnant a second time.
+
+Mayer isn’t the only woman leader who has faced negative attention.
+
+Former Chairperson of Sony Pictures Entertainment Amy Pascal received a tremendous amount of criticism after Sony Pictures was hacked and contents of her embarrassing e-mail were released to the public. The emails revealed insights into the unequal gender pay gap in Hollywood, and Pascal ultimately ended up stepping down from her role at Sony.
+
+What puzzles me, however, is that Sony Pictures Entertainment CEO Michael Lynton remained largely unscathed from the hack. Most journalists did not question him about why women were paid less for films and he still remains CEO today.
+
+Somewhat similarly, in its first quarter, Goldman Sachs profits fell approximately 60%. A majority of the articles commented on the industry and financial trends that led to the decline in profits, and almost none commented on CEO Lloyd Blankfein’s management style or mistakes.
+
+So, why are we harsher on women leaders than men?
+
+While I do think there are ultimately a number of reasons, I believe part of the reason is that we still don’t have many women in leadership positions. Currently, only 4% of CEOs on the Fortune 500 are women. As a result, each decision they make is held to a higher standard and is looked at more closely than their male counterparts. We often take each of their decisions to represent an entire gender, whereas we don’t do the same for men.
+
+Study after study reveals though that more women in the C-suite positively impacts a firm’s bottom line. A research study from Peterson Institute for International Economics, for instance, found that having 30% of women in the c-suite compared to none led to a 15% increase in profitability.
+
+Hence, companies need to do a better job recruiting and supporting women so one day 50% of a company's c-suite positions will be held by women.
+
+Do you think society is harsher on women leaders than men? Why? Let me know in the comments!
+
+To stay up-to-date on my posts, click the follow button at the top of this post and follow me on Twitter.
+
+#StudentVoices #HeforShe
+
+Management
+Women Leaders
+Featured In Leadership & Management, Student Voices, Editor's Picks, Professional Women
+Suneil Kamath
+Written by
+Suneil KamathFollow
+Stop Serving the Feedback Sandwich
+Adam Grant	Adam Grant
+Wharton professor, NYT writer, author of ORIGINALS and GIVE AND TAKE
+Follow
+Stop Serving the Feedback Sandwich
+May 3, 201630,139 views2,372 Likes195 CommentsShare on LinkedInShare on FacebookShare on Twitter
+How do you give feedback to a CEO who’s twice your age? I was 25, a new professor called in as a last-ditch, Hail Mary effort to save a dying company. They had already fired three consultants, so why not try me?
+
+The CEO had been leading longer than I’d been alive. After several weeks of watching him in action, interviewing his senior team, and gathering data from his employees, it was time for me to bring down the hatchet. His company had merged with another firm and he was still trying to figure out where to go. His team desperately needed him to outline a vision.
+
+When I went to colleagues for advice, they all told me the same thing. Put a slice of praise on the top and the bottom, and stick the meat of your criticism in between. It’s the compliment sandwich, as Stewie Griffin called it on Family Guy—a technique for giving feedback that’s popular among leaders and coaches, parents and teachers.
+
+But when I looked at the data, I learned that the feedback sandwich doesn’t taste as good as it looks.
+
+Problem 1: the positives fall on deaf ears. When people hear praise during a feedback conversation, they brace themselves. They’re waiting for the other shoe to drop, and it makes the opening compliment seem insincere. You didn’t really mean it; you were just trying to soften the blow.
+
+Problem 2: if you avoid that risk and manage to be genuine about the positives, they can drown out the negatives. Research shows that primacy and recency effects are powerful: we often remember what happens first and last a conversation, glossing over the middle. When you start and end with positive feedback, it’s all too easy for the criticism to get buried or discounted.
+
+Giving a compliment sandwich might make the giver feel good, but it doesn’t help the receiver.
+
+Instead, try these four steps to make your criticism feel constructive:
+
+1. Explain why you’re giving the feedback
+
+Recently, a team of psychologists was able to make feedback 40% more effective by prefacing it with just 19 words:
+
+“I’m giving you these comments because I have very high expectations and I know that you can reach them.”
+Rather than feeling attacked, now you feel like the person has your back and believes in your future. People are remarkably open to criticism when they believe it’s intended to help them. As Kim Scott observes, people will accept being challenged directly if you show that you care personally.
+
+2. Take yourself off a pedestal
+
+Negative feedback can make people feel inferior. If you level the playing field, it’s a lot less threatening:
+
+“I’ve benefited a lot from people giving me feedback, and I’m trying to pay that forward.”
+“I’ve been studying great managers, and I’ve noticed that they spend a lot of time giving feedback. I’m working on doing more of that.”
+“Now that we’ve been working together for a while, I think it would be great if we gave each other suggestions for how we can be more effective.”
+All of these messages send a clear signal: I’m not perfect. I’m trying to get better too.
+
+3. Ask if the person wants feedback
+
+“I noticed a couple things and wondered if you’re interested in some feedback.”
+
+I’ve opened this way many times, and no one has ever declined. Once people take ownership over the decision to receive feedback, they’re less defensive about it.
+
+4. Have a transparent dialogue, not a manipulative monologue
+
+Organizational psychologist Roger Schwarz suggests a thought experiment. Imagine that you’re about to give feedback to two employees, but you have to be transparent about what you’re trying to accomplish:
+
+“I have some negative feedback to give you. I’ll start with some positive feedback to relax you, and then give you the negative feedback, which is the real purpose of our meeting. I’ll end with more positive feedback so you won’t be so disappointed or angry at me when you leave my office.”
+It sounds ridiculous. Here’s what Schwarz recommends instead:
+
+“The presentation you gave to the senior leadership team this morning may have created confusion about our strategy. Let me tell you how I’d like to approach this meeting and see if it works for you. I want to start by describing what I saw that raised my concerns and see if you saw the same things. After we agree on what happened, I want to say more about my concerns and see if you share them. Then we can decide what, if anything, we need to do going forward. I’m open to the possibility that I may be missing things or that I contributed the concerns I’m raising. How does that work for you?”
+Putting it in Action
+
+When I was preparing for the meeting with the CEO, I learned that all three consultants had tried to compliment him, and he saw right through it. It was time to take the feedback sandwich off the menu and be radically candid.
+
+I started by explaining why I was giving the feedback. “Your senior team all believes you’re the right guy to save this company, and I do too. I hope I’ve seen something that can help you do that.”
+
+Next I took myself off a pedestal. “I see this as a two-way street—there’s a lot I can learn from you about leadership. Who are the leaders who have taught you the most in your career?”
+
+He gave me a few examples, and one was a leader with a clear, compelling vision. I took the opening and asked if he wanted feedback: “Your team actually has some pretty consistent views on how you can deliver your vision. Do you want to hear them?”
+
+He nodded and took out a pen. I shared a few of their observations and asked if he agreed. He did—he needed to clarify the vision. A few weeks later, he stood up and rolled out his vision. It was a triumph.
+
+Later that year the company failed anyway. But if I had given a compliment sandwich, it might have failed even sooner.
+
+***
+
+Adam Grant is a Wharton professor and the #1 New York Times bestselling author of Originals: How Non-Conformists Move the World. His free monthly newsletter on work and psychology is at www.adamgrant.net
+
+Leadership
+Coaching
+Feedback Management
+Featured In Leadership & Management, Best Advice
+Adam Grant
+Written by
+Adam GrantFollow
+LikeCommentShare on LinkedInShare on FacebookShare on Twitter2,372 likes195 comments
+	Add your comment
+
+Add your comment
+Popular
+Kieron Bailey	Kieron Bailey
+Hospitality Consultant at HeadsUp!
+I've always as avoided the feedback sandwich, it can feel disingenuous; most people are smart enough to see through the padding. For me it is as simple as this; Be Honest, Be Open and Be Prepared. Following these 3 rules and more often than not your feedback will be successfully received.
+Like(5)Reply17 hours ago
+Hana Sturmova, Lydie AYME, Su Myat Moe (Helen), +2
+Show More
+Our mounting care crisis impacts us all -- here's how we fix it 
+Sheila Lirio Marcelo	Sheila Lirio Marcelo
+Founder, Chairwoman & CEO
+Follow
+Our mounting care crisis impacts us all -- here's how we fix it
+May 3, 201623,967 views149 Likes17 CommentsShare on LinkedInShare on FacebookShare on Twitter
+Let’s just come right out and say it: Care is one of our biggest local and global challenges today. Solving our care challenges would be akin to preserving the air we breathe. Care touches all our lives and our society and economies depend on care.
+
+And I’m not just saying this as Founder and CEO of Care.com, though my observations over the past 10 years since we started the company and now serve over 18 million members in 16 countries has led me understand that care is so central to our lives that the current events, trends and technologies shaping our society, individually divergent as they may seem, all intertwine in the arena of care.
+
+Take politics, Millennials, the gig economy or any polarizing topic of the day. It’d be easy to think these have nothing to do with care. But it’s near impossible to ignore the connection between care and politics, demographic shifts or consumer technology.
+
+When the Milken Institute asked what are the most pressing issues facing my industry today, it was tempting to say everything. Instead, we’ll focus on three – demographic shifts, the gig economy, and policy changes– and look at the cause and effect relationship each has with the way we care for our loved ones. I’ll focus this piece on trends in the U.S., but we see many other countries around the world experiencing similar issues.
+
+1.) Demographics (Millennials and the Elder Boom)
+Two dramatic demographic shifts are occurring simultaneously. Millennials are becoming parents and Baby Boomers are entering retirement age. Nine out of 10 new American moms is a Millennial, and 10,000 Boomers turn 65 every day. By the year 2050, a conservative estimate says some 27 million Americans will require some form of care assistance. It’s not simply that our largest two generations are increasingly in need of care, but layer on top of that their world views – Boomers want to remain in their homes as long as possible and Millennials expect both parents will work and share domestic responsibilities. Together, these demographic trends are driving the growing need for care and they are influencing the way society perceives care.
+
+For all of the ways we talk about Millennials impacting the workplace, how employers approach work-family issues could wind up being their lasting legacy. Statistics regularly demonstrate a shifting set of values among and illustrate the need for employers to adapt to the realities of today’s workforce. One powerful recent example is Coco-Cola expanding its paid parental leave policy in response to its Millennial Voices employee group. And there’s something we at Care.com affectionately refer to as the Zuckerberg Effect, referring to the way Mark Zuckerberg’s public displays of dad-ness are empowering a generation of fathers to prioritize caregiving as well as financially supporting their families. At a time when absenteeism, lost productivity and other care-related issues costs American businesses more than $20 billion annually, providing family-care benefits is vital to maintaining our standing as a global economic leader.
+
+2.) Gig Economy (the Future of Work)
+When you think of the “gig” economy, what typically comes to mind is consumer technology and urbanites paying a premium for on-demand goods and services. But do you think about the global economic impact? A McKinsey report estimated that online talent platforms could add $2.7 trillion, or 2 percent, to global GDP by 2025, while increasing employment by 72 million full-time-equivalent positions. If you think at all about the workers, it’s likely picturing an anonymous a mass of drivers, errand runners and handymen who find odd-jobs on apps and digital marketplaces. You probably don’t think about nannies, caregivers or devoted senior care providers. But you should. Not only are caregivers the original gig workers, but we believe that they’re one of the largest portions of what I call the Flex Economy. There are more than 8.6 million caregivers on Care.com’s platform alone – we’re the largest online platform for finding and managing care, but that’s only scratching the surface. In fact, data from the Bureau of Labor Statistics indicates that in-home care is one of the largest, fastest-growing job categories in the U.S.
+
+Not only has technology led to the rise of a sharing, gig or flex economy that changed the way caregivers find work and families find care, but it also presents us with a unique opportunity to address job quality for our caregivers. Domestic workers have long been cobbling together different part-time jobs, their job status leaving them in the shadows of formal workplace protections and benefits. A survey by our friends at the National Domestic Workers Alliance found that 65 percent of domestic workers don’t have health insurance, and only 4 percent have employer-provided insurance coverage while fewer than 9 percent pay into Social Security. This kind of instability is not sustainable as Baby Boomers age, millennials become parents and caregivers need care of their own. Without innovative solutions, such as decoupling benefits from employers, who will cover the costs when the millions of contingent workers who fall outside of our social safety net need care of their own?
+
+3.) Policy (Investing in our Care Infrastructure)
+The United States remains the only industrialized nation in the world without a federal policy providing paid leave for new moms after the birth of a child. Currently, only about 12 percent of private sector employees have access to paid parental leave and about 40 percent of Americans are not eligible for the job protections afforded under the Family Medical Leave Act. However, momentum is building in support of a paid family leave as cities, states and employers lead the way. Recently, New York became the fourth state to approve a paid family leave policy and California, which was the first state to adopt a policy more than a decade ago, recently expanded its program to provide more financial support for low-income workers. Leading employers, as we’ve seen with EY and Twitter in recent weeks, have announced expanded and increasingly gender-neutral parental leave policies, believing supporting working caregivers gives them a competitive advantage. Paid leave supports keeping women in the workplace and thus drives organizational performance and overall GDP growth.
+
+In addition to paid family leave, cities and states are realizing the impact of a growing senior care crisis – or what we refer to as the silver tsunami or elder boom, and the growing cost of care for families – and they have taken other significant steps to invest in their care infrastructure. In Hawaii, a long-term care proposal represents an important first step in addressing the rising senior care crisis. New York City recently added caregivers as a protected class under its Human Rights Law. And Illinois is campaigning to become the seventh state to adopt a Domestic Workers Bill of Rights, which would afford basic labor rights, such as minimum wage, payment for all work hours and rest period, to caregivers and other domestic workers. Indivisible from these policies is the importance of care to our families and to our economy. Momentum is building, but whether we’ll able to reach a critical mass and affect change through national policies remains to be seen.
+
+We say often that care is not simply a woman’s issue, but women do more unpaid care work inside the home than men. Melinda Gates has talked about this in terms of “opportunity cost,” meaning that the time women spend doing unpaid work takes away from the time they could spend doing more work. Here is where we can see the issue of care begin to snowball.
+
+A recent survey of Harvard Business School alumni found that 37 percent of Millennial women who aren’t yet moms expect to interrupt their careers for parenting. We know child care is the single biggest budget item for most families, and a Care.com survey found that 70 percent of working parents say the cost of child care affects their career choices. A majority of Sandwich Generation caregivers are forced to make career adjustments – such as turning down promotions, scaling back hours or even leaving jobs – due to care demands.
+
+Our mounting care crisis affects all of us. We have new mothers dropping out of the workforce, senior caregivers scaling back hours and enterprises losing billions in lost productivity costs, such as absenteeism, presenteeism and turnover.
+
+Here in the United States, we can tie all of the income gains of Middle Class families to increased female labor force participation since the 1970s – what if that goes away? For starters, our economy would shrink by $2 trillion, or about 13.5 percent. Now, if we were able to flip that trend? A McKinsey report recently revealed that if women participated in the workforce at the same level as men, we could boost our global GDP by 26 percent – that’s $26 trillion or, roughly the combined GDP of the United States and China.
+
+Something’s happening, and it’s going to be big. We must find creative, long-range, trans-partisan solutions to solve for these issues, because we simply cannot afford to ignore the rising economic crisis that will touch all of us and is starting in our homes.
+
+Read more of our coverage from Milken Global here.
+
+Leadership
+Policy
+Featured In Editor's Picks, Entrepreneurship, Healthcare
+Sheila Lirio Marcelo
+Written by
+Sheila Lirio MarceloFollow
+Welcome To The Post App World
+Tom Goodwin	Tom Goodwin
+Follow
+Welcome To The Post App World
+May 3, 201611,222 views279 Likes30 CommentsShare on LinkedInShare on FacebookShare on Twitter
+See this piece on TechCrunch and join the conversation there. or below 
+We’ve fallen in love with apps. It’s hard to see something so popular fading into the past, but what if that happened? What if apps were simply an iteration of the mobile web, before something better came along?
+
+With the flurry of announcements that occurred around Facebook’s F8 conference, perhaps that time has finally come.
+
+Are we witnessing the rise of the Bots?
+
+Since 2010, “there has been an app for that”. However, such excitement appears to be diminishing. On your own homescreen (the most valuable real estate on earth), what new apps are using that space?
+
+For every iPhone sold, 119 apps have been downloaded. However, we use fewer than a quarter of those apps in any given month. The average app loses 77% of its users within three days after being downloaded. The five apps that we love the most take up 80% of our session time.
+
+Over the past few years, “click to download” display ads have littered feeds. It seemed like every retailers’ mCommerce strategy was to make an iPhone or Watch app. For many who were first to market, it seemed like a gold rush. On reflection, maybe our belief was more concerning the power of technology to change habits than empathizing with consumer needs.
+
+Of course, apps have limitations. Probably the best marketing Apple has ever done is turning the boring notion of a “computer program” into the excitement of an app. They work brilliantly for many uses. Banking or airline apps do a superb job of bubbling up personal, secure information rapidly, a sort of micro-portal to what matters.
+
+That said, again, as instant messaging and voice control takes off, it increasingly seems that apps are not the solution for everything.
+
+Forcing a terrible choice
+
+Apps provide an increasingly lousy way to get to what we want. Apple confidently says the future of TV is apps, which is stupid in the extreme. They merely replicate the false, anachronistic structure of the world of the TV channel.
+
+Do I watch AMC or Breaking Bad? Do I want to see Superbowl or tune into CBS? Modern relationships are with the content, not the curator or the pipe. Can you imagine downloading 20 record label apps in order to get our music, and then needing to switch between them?
+
+It’s the same with communications. Back in 2006, I could either call or text anyone in my contact list: a simple choice to make. Now with Viber, Line, WeChat, Instagram, Facebook Messenger, Twitter and a million other ways to reach someone, I first need to pick the app before I select the person that I want to reach… and then hope that it’s the one which they’re on.
+
+When I want to travel to the airport, I unfailingly want a car to take me there. I don’t want to choose the provider, then the size of the the car, then its destination.
+
+This brings up the first mechanism for the future: aggregation.
+
+Aggregation
+
+My TV is set up with four remotes, and watching John Oliver after broadcast requires me to press nine button via Kafkaesque menus.
+
+I long for a day where a single app can be the gateway to a content type. It would be similar to how I use Spotify to listen to all of the music that I care about, or Twitter to consume all the news I’m likely to need. I see apps that bring what we care about to the front.
+
+Apple TV wants to do this, but Apple doesn’t have the partnerships in place to draw upon all the content providers in the world. If business models can be developed, I see the rise of megaportals with maps as the primary access point for all travel, hotels, events, and places. This would be alongside another portal to access all of my networks and ways to reach them, and additional megaportals for retail and content.
+
+The Internet of apps
+
+I then see our journeys within apps being one of linkage. A consumer may start a conversation on Facebook Messenger discussing movie times, before seeing suggested movies in the feed based on our locations.
+
+Buying and downloading tickets would happen straight to Passbook, with Touch ID and Apple Pay. They then may be offered dinner reservations in Opentable, book a time via in-app IM, and then finally order an Uber to take them there. Each of these experiences will be within an app environment:: seamless, secure and personalized.
+
+The Internet could soon become one totally personalized with apps.
+
+Streaming
+
+We may want to order items from retailers that we don’t care enough to use frequently, or a hotel site that only exists abroad. For this we’ll see app streaming as an emulator of an experience. Our Internet of apps may be formed of those that exist on our phone, but otherwise, we’ll use temporary apps that are streamed to provide such an interface.
+
+New navigation
+
+This is where artificial intelligence and bots come together.
+
+The notification layer might become a key way for us to skim the surface of the web, rather than deeply experiencing and discovering it. Combinations of technology like AI, machine learning, shared data and rich analysis from Google Now, Cortana and Siri could automate many parts of our lives.
+
+We need to think less of the Internet as something we go to, but more in terms of the notification layer as a place for suggested prompts of what our phones think are relevant to us.
+
+The cue to book an Uber as it’s raining and we’re running late; the weather forecast on our notification screen as we wake up; the rarely available 8 o’clock dinner slot from a late cancellation; the late flight departure… all best served to us as a notification.
+
+Voice
+
+We finally need to consider a screenless world. The Echo is an example of such a device, as are some wearables. How do we use sound, haptic feedback or other mechanisms to impart knowledge without large real estate? It’s this challenge that a whole new group of UI designers need to consider.
+
+Apps are here to stay. Bots won’t kill them, but we’re about to move to a hybrid time where some apps become gateways to everything: they will allow us to choose what we want, rather than who gives it to us
+
+User Experience
+Iphone
+Featured In Mobile, Technology, Editor's Picks, Big Ideas & Innovation
+Tom Goodwin
+Written by
+Tom GoodwinFollow
+When your founders let you down
+Dr Malpani	Dr Malpani
+Director at Solidarity Investment Advisors
+Follow
+When your founders let you down
+May 3, 201610,232 views330 Likes30 CommentsShare on LinkedInShare on FacebookShare on Twitter
+
+Just like entrepreneurs need to be hopeful, angel investors have to be optimistic as well. After all, we're taking a bet on an untested founder with an unproven idea. We hope that this is a company which will do well, so we spend a lot of time talking to the founder, and vetting the idea.
+
+No matter how much energy we devote on doing our due diligence, the reality is that most startups fail. We understand this, and can be quite forgiving - after all, that's the nature of the beast ! We do a post-mortem to try to figure out what went wrong, so that we will hopefully become a little smarter and sharper the next time around. Often , the reasons for the failure are outside anyone's control. The startup could just be unlucky and find that it's in the wrong time, at the wrong place. Or it may have to deal with a competitor with deep pockets who is irrational and is willing to burn money in order to blow you out of the water. There's very little which anyone can do about these events. and you then simply need to be philosophical; take your lumps ; and accept the fact that the future is unpredictable and that not every startup which you back will be a winner.
+
+Most angel investors are mature enough to realize this, and over time , as we learn our lessons , we realize that we can't afford to have unrealistic expectations - the number of failures will be far more than the number of successes.
+
+Of course, you try to learn from all the failures. What went right ? what went wrong ? what can you do differently the next time ? Each of these failures teaches important lessons, which can help us to hone our investing thesis and make us a little smarter the next time around. Just like we look for founders who have experienced failure in the past, because this makes them sharper and demonstrates their resilience, smart founders also prefer experienced investors who have seen lots of failures, because they are likely to be more empathetic and understanding.
+
+However, sometimes the company implodes because of problems with the founders. The founders let you down, either because they don't share information with you; they squabble amongst themselves; they burn money without following a well-defined plan, they increase their salaries unilaterally; or they don't bother about corporate governance or filing reports on time. This can be quite depressing, because it curdles the investor's milk of human kindness . We then start looking at all founders with a far more jaundiced view, which is sad, because it introduces a lot of friction in the startup ecosystem.
+
+This is why founders need to understand that investors who have burned their fingers because of bad behaviour on the part of a founder are likely to be quite wary, and this is one of the reasons they insist on including lots of checks and balances in the SHA - this is the only way they feel they can protect their interests .
+
+Angel Investing
+Entrepreneurship
+Start-Ups
+Featured In Entrepreneurship, India in Business
+Dr Malpani
+Written by
+Dr MalpaniFollow
+Getty ImagesIf you think AI isn't a threat to your job, you’re wrong 
+Caroline Fairchild	Caroline Fairchild
+New Economy Editor at LinkedIn
+Follow
+If you think AI isn't a threat to your job, you’re wrong
+May 3, 20166,859 views521 Likes78 CommentsShare on LinkedInShare on FacebookShare on Twitter
+In this series, professionals at the Milken Institute Global Conference debate the most pressing issues facing their industries today. Write your own #MIGlobal post here.
+
+Some 80% of Americans expect that their jobs will remain untouched by artificial intelligence. A panel at Milken Global of leading AI experts proved that some 80% of Americans are wrong. 
+
+It is very early days in the brave new world of artificial intelligence. We have companies like Facebook, Microsoft, Google and more getting a lot of press for early victories with chatbots, driverless cars and other AI-related tech. But to think that AI is only a reality within the tech industry would be a mistake.
+
+To start the panel discussion entitled "Artificial Intelligence: Friend or Foe?" Bloomberg Beta Partner Shivon Zilis showed a slide to demonstrate just how vast the reach of AI already is: 
+
+
+If the slide is overwhelming -- that's by design. What you are looking at is a list of startups that have some sort of machine learning capacity that are impacting industries as diverse as education to agriculture and enterprises as distinct as sales and security. As an investor interested in companies that are impacting the future of work, Zilis keeps an up to date map of all the startups impacting the AI space. The list grows every day and the problems the startups are tackling with machine learning only get bigger, she said. 
+
+"We are in the very first inning of a nine-inning game, and there is no industry that is untouched by machine intelligence today," she said. 
+
+The obvious dooms day conclusion to jump to after digesting Zilis' slide is that it's only a matter of time before a large portion of our labor market is unemployed. If artificial intelligence can automate jobs as diverse as farming fields to filtering spam out of websites, there is arguably no portion of the workforce that won't be touched in some way by these technological advances. 
+
+David Siegel, the co-chairman of tech-assisted hedge fund Two Sigma, says this reality should be top of mind for anyone who touches the labor market. Another panelist argued that this technological upheaval is not unlike the Industrial Revolution. Yet Siegel warned that in fact it is very different because while the Industrial Revolution gave way to millions of new jobs, it is unclear what jobs will be created when machines begin to takeover jobs in transportation, mining and agriculture. 
+
+"Vast numbers of jobs that us humans are doing will be done by algorithms," he said. "One of the big causes for the stagnation of middle class wages is because of clever computer programs."
+
+To focus the machine takeover on blue collar work is missing the larger problem, said Merrick Ventures founder Michael Ferro. The trend he is tracking is how the AI-revolution will impact white collar jobs and the distribution of wealth in the country. Ferro says he knows hundreds of entrepreneurs who are working on everything from sensors on cars to algorithms for training that are going to make them a ton of money.  
+
+"Nobody is susceptible to how AI will shift a thousand billionaires to a group of another thousand billionaires," he said. "If your companies haven't adopted some [AI] strategy, there is some 18 year-old or 28 year-old or 88 year-old who is going to be adopting this technology. It will be a seismic shift." 
+
+So how do we guarantee that the machines don't take over? Stuart Russell, a professor at University of California, Berkeley and vice chair of the World Economic Forum Council on AI and Robotics, put things in perspective by bringing it back to our humanity and happiness. While a majority of the people in the audience at Milken likely enjoy their jobs, that is not a reality for millions of workers around the world, he said. If we can automatize the tedious, routine and unfulfilling tasks to machines to make way for workers to do more advanced work, that's ultimately a trend that leaders should get behind.
+
+What remains to be seen is how exactly the labor market will shift to create new jobs to replace the ones we're giving to machines, warned Siegel of Two Sigma again. 
+
+"Will automation spur growth? We should be optimistic that we will come up with all these high-value things for our labor force to do, but I don't think we can assume it will happen," he said.

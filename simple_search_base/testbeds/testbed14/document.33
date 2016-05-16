@@ -1,0 +1,22 @@
+Reasoning
+
+Reasoning in ontologies and knowledge bases is one of the reasons why a specification needs to be formal one. By reasoning we mean deriving facts that are not expressed in ontology or in knowledge base explicitly. All of the formalisms that were discussed in this section were created with the outlook of automatic processing, but due their properties such as decidability or computational complexity or even due to the level of formality it is not always possible. In this section we will discuss reasoning for description logics only.
+
+Description logics are created with the focus on tractable reasoning. A few examples of tasks required from reasoner are as follows.
+
+Satisfiability of a concept - determine whether a description of the concept is not contradictory, i.e., whether an individual can exist that would be instance of the concept.
+Subsumption of concepts - determine whether concept C subsumes concept D, i.e., whether description of C is more general than the description of D.
+Consistency of ABox with respect to TBox - determine whether individuals in ABox do not violate descriptions and axioms described by TBox.
+Check an individual - check whether the individual is an instance of a concept
+Retrieval of individuals - find all individuals that are instances of a concept
+Realization of an individual - find all concepts which the individual belongs to, especially the most specific ones
+These tasks are not semantically very different. For example, satisfiability can be tested as subsumption of ⊥ - concept is unsatisfiable if no individual can exist that would be instance of the concept. For all tasks, it is enough to be able to check deductive consequence or derive all deductive consequences of a theory. However, there may be special optimized algorithms for different tasks in a reasoner.
+
+The complexity of selected DLs is shown in the table below - all of the logics in the table are decidable. Even when the theoretical complexity seems to be intractable, there are optimized reasoners available that are usable for practical real world cases.
+
+dl complexity
+Examples of description logics complexity [DL complexity navigator]
+
+The algorithms that are used in implemented reasoners to compute subsumption can be divided into two groups - structural and logical. Structural algorithms compare normalized syntactic structure of the two concepts. It can be shown that these algorithms are sound; however, they have problems with completeness, especially when more expressive logics are used. Because of this problem, logical algorithms are used almost exclusively today. Logical algorithms verify subsumption C⊑D by verifying that $C⊓¬D is not satisfiable. There are different approaches how to verify it, including translation of the query to existing predicate logic reasoner. The most dominant approach is tableau algorithm.
+
+Tableau algorithm tries to prove satisfiability of a concept C by constructing a model, an interpretation I in which DI is not empty. A tableau is a graph representing such a model. In the tableau graph nodes correspond to individuals (elements of ΔI) and edges correspond to relationships between individuals (elements of ΔIxΔI). The algorithm starts with an individual satisfying D and applies expansion rules until either no further inferences are possible or until a contradiction has been found. The expansion rules are specific for a particular description logic and consist of two parts. The head of the rule states conditions for applying the rule, and the body of the rule states how to expand the tableau. For details as well as for other techniques for optimizing performance see again The Description Logic Handbook.

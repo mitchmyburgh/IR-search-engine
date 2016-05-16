@@ -1,0 +1,39 @@
+﻿These problems are caused by the fact that most product information is provided in
+natural language, and automatic text recognition is still a research area with significant
+unsolved problems. However, the situation will drastically change in the near future
+when standard representation formalisms for the structure and semantics of data are
+available. Software agents then can 
+understand
+the product information. Meta-on-line
+7. www.amazon.com
+8. www.jango.com
+9. www.excite.com
+
+
+5
+stores can be built with little effort and this technique will also enable complete market
+transparency in the various dimensions of the diverse product properties. The low-level
+programming of wrappers based on text extraction and format heuristics will be
+replaced by XSL specifications, which translate different product descriptions in
+various XML-dialects into each other. An ontology describes the various products and
+can be used to navigate and search automatically for the required information. Section 4
+will go into more details on the role of ontologies in Web Commerce.
+Extranet = Electronic Business (B2B)
+. Electronic Commerce in the business to
+business field (B2B) is not a new phenomena. Initiatives to support electronic data
+exchange in business processes between different companies existed already in the
+sixties. In order to exchange business transactions sender and receiver have to agree on
+a common standard (a protocol for transmitting the content and a language for
+describing the content) A number of standards arose for this purpose. One of them is the
+UN initiative 
+Electronic Data Interchange for Administration, Commerce, and
+Transport (EDIFACT) 
+[EDIFACT]. Figure 2 provides an example for a specification of
+a business transaction in EDIFACT. 
+In general, the automatization of business transactions has not lived up to the
+expectations of its propagandists. This can be explained by some serious shortcomings
+of existing approach like EDIFACT: It is a rather procedural and cumbersome standard,
+making the programming of business transactions expensive, error prone and hard to
+maintain. Finally, the exchange of business data via extranets is not integrated with
+other document exchange processes, i.e., EDIFACT is an isolated standard. 
+

@@ -1,0 +1,64 @@
+﻿Abstract
+In this paper we review and compare the main methodologies, tools and languages for building ontologies that have been reported in the literature, as well as the main relationships among them. Ontology
+technology is nowadays mature enough: many methodologies, tools and languages are already available.
+The future work in this field should be driven towards the creation of a common integrated workbench for
+ontology developers to facilitate ontology development, exchange, evaluation, evolution and management,
+to provide methodological support for these tasks, and translations to and from different ontology languages. This workbench should not be created from scratch, but instead integrating the technology components that are currently available.
+
+2002 Elsevier Science B.V. All rights reserved.
+Keywords:
+Ontology; Ontology methodology; Ontology language; Ontology tool
+1. Introduction
+In the last decade, the word ‘‘ontology’’ has become a fashionable word inside the Knowledge
+Engineering Community. We have seen many definitions about what an ontology is and we have
+also seen how such definitions have changed and evolved over the time.
+*
+Corresponding author. Tel.: +34-913367439; fax: +34-913524819.
+E-mail addresses:
+ocorcho@fi.upm.es
+(O. Corcho), mfernandez@fi.upm.es (M. Fern
+
+a
+andez-L
+
+o
+opez), asun@fi.upm.es
+(A. G
+
+o
+omez-P
+
+e
+erez).
+1
+Tel.: +34-913366604.
+2
+Tel.: +34-913366605.
+0169-023X/03/$ - see front matter
+
+2002 Elsevier Science B.V. All rights reserved.
+doi:10.1016/S0169-023X(02)00195-7
+Data & Knowledge Engineering 46 (2003) 41–64
+www.elsevier.com/locate/datak
+
+
+When a new ontology is going to be built, several basic questions arise related to the methodologies, tools and languages to be used in its development process:
+•
+Which methods and methodologies can I use for building ontologies, either from scratch, or
+reusing other ontologies already available on ontology servers? Which activities are performed
+when building ontologies with a methodology? Does any methodology support building ontologies cooperatively? Which is the life-cycle of an ontology that is developed with a specific
+methodology?
+•
+Which tool(s) give/s support to the ontology development process? How are the ontologies
+stored (in databases or files)? Does the tool have an inference engine? Do tools have translators
+for different ontology languages or formats? What is the quality of the translations? How can applications interoperate with ontology servers and/or use the ontologies that we have developed?
+•
+Which language(s) should I use to implement my ontology? What expressiveness has an ontology language? What are the inference mechanisms attached to an ontology language? Does any
+ontology development tool support the language? Is the language chosen appropriate for exchanging information between different applications? Does the language ease the integration
+of the ontology in an application? Is the language compatible with other languages used to represent knowledge and information on the Web? Does my application require having implemented the ontology in different languages? Does my application require integrating existing
+ontologies that were already implemented in different languages? Are there translators that
+transform the ontology implemented in a source language in a target language? and finally,
+how do such translators minimize the loss of knowledge in the translation process?
+Along this paper, we will present the main characteristics of methodologies, tools and languages, which can help practitioners and researchers in this field to obtain answers to the previous
+questions. That is, we will provide guidelines that help selecting the most appropriate methodologies, tools and languages for building an ontology in a specific domain. First, we will briefly
+comment on some definitions of the term ontology.

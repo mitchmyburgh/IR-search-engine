@@ -1,0 +1,26 @@
+Encodings[edit]
+Succinct encodings[edit]
+A succinct data structure is one which occupies close to minimum possible space, as established by information theoretical lower bounds. The number of different binary trees on   nodes is  , the  th Catalan number (assuming we view trees with identical structure as identical). For large  , this is about  ; thus we need at least about  bits to encode it. A succinct binary tree therefore would occupy   bits.
+One simple representation which meets this bound is to visit the nodes of the tree in preorder, outputting "1" for an internal node and "0" for a leaf. [1] If the tree contains data, we can simply simultaneously store it in a consecutive array in preorder. This function accomplishes this:
+function EncodeSuccinct(node n, bitstring structure, array data) {
+    if n = nil then
+        append 0 to structure;
+    else
+        append 1 to structure;
+        append n.data to data;
+        EncodeSuccinct(n.left, structure, data);
+        EncodeSuccinct(n.right, structure, data);
+}
+The string structure has only   bits in the end, where   is the number of (internal) nodes; we don't even have to store its length. To show that no information is lost, we can convert the output back to the original tree like this:
+function DecodeSuccinct(bitstring structure, array data) {
+    remove first bit of structure and put it in b
+    if b = 1 then
+        create a new node n
+        remove first element of data and put it in n.data
+        n.left = DecodeSuccinct(structure, data)
+        n.right = DecodeSuccinct(structure, data)
+        return n
+    else
+        return nil
+}
+More sophisticated succinct representations allow not only compact storage of trees but even useful operations on those trees directly while they're still in their succinct form.

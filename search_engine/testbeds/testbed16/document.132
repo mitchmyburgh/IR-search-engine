@@ -1,0 +1,13 @@
+Server Virtualization
+
+Server virtualization can be defined as the conversion of one physical server into several individual & isolated virtual spaces that can be taken up by multiple users as per their respective requirements. This virtualization is attained through a software application, thereby screening the actual numbers and identity of physical servers. The age-old concept has found a revival in the recent times due to a need for space consolidation, efficiency in usage of server capabilities, and introduction of associated notions like cloud computing, and Software as a Service (SaaS).
+
+TYPES OF SERVER VIRTUALIZATION
+
+There are three methods of virtualizing the server: complete virtualization, para-virtualization and Operating System (OS) virtualization. While all the three modes have one physical server acting as host and the virtual servers as guests, each of the methods allocates server resources differently to the virtual space.
+
+Complete virtualization is done using the hypervisor software that directly uses the physical server’s CPU and hard disk storage space. However, the guests can use their respective versions and types of OS, as the hypervisor keeps the virtual servers separate and independent of each other. Whereas in para-virtualization, the guests are aware about all the existing virtual servers, and work cohesively as a unit. The hypervisor in this case keeps their OS independent, while making them aware of the load put on the physical server by all the virtual creations. At the OS-level virtualization, no hypervisor is required and the host’s OS is the controller, thereby necessitating the usage of the same OS on all the guest users’ systems. But this homogenous environment still maintains the individual identity and independence of virtual servers.
+
+SIGNIFICANCE OF SERVER VIRTUALIZATION
+
+Modern times have seen virtualization as a rapidly emerging plateau of enhanced efficiency & performance, and this is amplified in the case of server spaces. Server virtualization leads to space consolidation, and efficient & effective usage of server resources & capabilities. Moreover, the redundancy practice of running one application on multiple systems is a boon for commercial sector and software programmers. Also, the assistance offered in disaster recovery, server administration, and system upgrading are all supporting factors in server virtualization.

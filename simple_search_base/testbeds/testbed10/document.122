@@ -1,0 +1,93 @@
+Machine Learning that Matters
+
+Kiri L. Wagstaf
+
+1. Introduction
+At one time or another, we all encounter a friend,
+spouse, parent, child, or concerned citizen who, upon
+learning that we work in machine learning, wonders
+“What’s it good for?” The question may be phrased
+more subtly or elegantly, but no matter its form, it gets
+at the motivational underpinnings of the work that we
+do. Why do we invest years of our professional lives
+in machine learning research? What difference does it
+make, to ourselves and to the world at large?
+Much of machine learning (ML) research is inspired
+by weighty problems from biology, medicine, finance,
+astronomy, etc. The growing area of computational
+sustainability (Gomes, 2009) seeks to connect ML advances
+to real-world challenges in the environment,
+economy, and society. The CALO (Cognitive Assistant
+that Learns and Organizes) project aimed to integrate
+learning and reasoning into a desktop assistant, potentially
+impacting everyone who uses a computer (SRI
+International, 2003–2009). Machine learning has effectively solved spam email detection (Zdziarski, 2005)
+and machine translation (Koehn et al., 2003), two
+problems of global import. And so on.
+And yet we still observe a proliferation of published
+ML papers that evaluate new algorithms on a handful
+of isolated benchmark data sets. Their “real world”
+experiments may operate on data that originated in
+the real world, but the results are rarely communicated
+back to the origin. Quantitative improvements in performance
+are rarely accompanied by an assessment of
+whether those gains matter to the world outside of
+machine learning research.
+This phenomenon occurs because there is no
+widespread emphasis, in the training of graduate student
+researchers or in the review process for submitted
+papers, on connecting ML advances back to the larger
+world. Even the rich assortment of applications-driven
+ML research often fails to take the final step to translate
+results into impact.
+Many machine learning problems are phrased in terms
+of an objective function to be optimized. It is time for
+us to ask a question of larger scope: what is the field’s
+objective function? Do we seek to maximize performance
+on isolated data sets? Or can we characterize
+progress in a more meaningful way that measures the
+concrete impact of machine learning innovations?
+This short position paper argues for a change in how
+we view the relationship between machine learning and
+science (and the rest of society). This paper does not
+contain any algorithms, theorems, experiments, or results.
+Instead it seeks to stimulate creative thought
+and research into a large but relatively unaddressed issue
+that underlies much of the machine learning field.
+The contributions of this work are 1) the clear identifi-
+cation and description of a fundamental problem: the
+frequent lack of connection between machine learning
+research and the larger world of scientific inquiry and
+humanity, 2) suggested first steps towards addressing
+this gap, 3) the issuance of relevant Impact Challenges
+to the machine learning community, and 4) the identification
+of several key obstacles to machine learning
+impact, as an aid for focusing future research efforts.
+Whether or not the reader agrees with all statements
+in this paper, if it inspires thought and discussion, then
+its purpose has been achieved.
+
+6. Conclusions
+Machine learning offers a cornucopia of useful ways to
+approach problems that otherwise defy manual solution.
+However, much current ML research suffers from
+a growing detachment from those real problems. Many
+investigators withdraw into their private studies with
+a copy of the data set and work in isolation to perfect
+algorithmic performance. Publishing results to the ML
+community is the end of the process. Successes usually
+are not communicated back to the original problem
+setting, or not in a form that can be used.
+Yet these opportunities for real impact are widespread.
+The worlds of law, finance, politics, medicine, education,
+and more stand to benefit from systems that
+can analyze, adapt, and take (or at least recommend)
+action. This paper identifies six examples of Impact
+Challenges and several real obstacles in the hope of
+inspiring a lively discussion of how ML can best make
+a difference. Aiming for real impact does not just
+increase our job satisfaction (though it may well do
+that); it is the only way to get the rest of the world to
+notice, recognize, value, and adopt ML solutions.
+
+

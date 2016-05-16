@@ -1,0 +1,38 @@
+Google Announces Cloud Infrastructure Service: Google Compute Engine
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+Image representing Google as depicted in Crunc...
+ 
+Google has entered the busy ‘Infrastructure as a service’ (IaaS) arena today with its new Google Compute Engine service. The cloud service, which Google describes as in a ‘Limited Preview Release,’ allows users to  run large-scale computing workloads on Linux virtual machines hosted on Google’s infrastructure.
+
+The IaaS service is very similar to Amazon’s EC2 service which it launched back in 2006.  Like Amazon, Google’s IaaS  provides scalable, pay-as-you-go compute capacity. Google is certainly not alone in the space. There are a variety of competitors including AT&T, Verizon, Rackspace, Virtustream, GoGrid, Softlayer, as well as just about every company who offers web hosting having some sort of cloud offering.
+
+Pricing is competitive starting at $0.145 for 1 core, 3.75GB RAM virtual machine.
+
+The service focuses on a few key areas.
+
+Batch processing
+Execute batch processing jobs like video transcoding and rendering on Google Compute Engine
+
+Data processing
+Analyze massive amounts of data in the cloud using frameworks like Hadoop
+
+High-Performance Computing
+Run high-performance and grid computing workloads using Google Compute Engine
+
+From a more technical side, the service provides all resources via the Google APIs Console project.  The Google APIs console is designed to be a one-stop shop for you to create and manage multiple API “projects” at once. Each project is a collection of services and resources with a common set of team members and billing information. A project can have instances, firewalls, and other resources, as you specify. Every time you interact with Google Compute Engine, you need to specify the project of the resource for which you’re performing the action. For example, if you want to create a new instance, you need to specify the project that instance will belong to.Each project is a totally compartmentalized world; projects do not share resources, can have different owners and users, are billed separately, and are not any more accessible to each other than your home computer is accessible to your neighbor’s computer.
+
+Recommended by Forbes
+The Sky Is The Limit For Latest Platform-as-a-Service Offerings
+MOST POPULAR Photos: The Most Expensive Home Listing in Every State 2016
++80,526 VIEWS Eleven Signs You've Stayed In Your Job Too Long
+MOST POPULAR Photos: The Cities With The Most Billionaires
+
+Instances (virtual machine instances) are the heart of Google Compute Engine. A Google Compute Engine instance is a virtual machine running on a Linux configuration. You can choose to customize as little or as much of your instances as you would like, including customizing the hardware, OS, disk, and other configuration options. You can start and customize instances individually with very few restrictions and you have root privileges on any instance that you start. An instance is a member of a single project and cannot be shared across projects. It is possible for projects to have many instances but an instance can only belong to one project.
+
+Continued from page 1
+
+A project has one or more Network resources that define how instances communicate with each other and with other networks or the outside world. Each instance belongs to a single network and any communication between instances in different networks must be through a public IP address.

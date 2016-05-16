@@ -1,0 +1,45 @@
+Latest Language Ranking: Objective-C Swiftly Falling from Favor
+
+    By David Ramel
+    10/14/2015
+
+Apple's new Swift programming language continued its assault on the venerable Objective-C, inexorably marching -- as the company planned -- to become the defacto standard for iOS and Mac development, according to the new TIOBE Index.
+
+In the new October report, TIOBE, which maintains a ranking of the most popular programming languages, noted that Objective-C, long the mainstay of Apple developers, had fallen out of its top 10.
+
+"It was a matter of time," TIOBE said. "Soon after Apple announced to switch from Objective-C to Swift, Objective-C went into free fall. This month Objective-C dropped out of the TIOBE index top 10."
+
+However, while enjoying a big percentage increase, Swift is still one step below Objective-C, which fell from being No. 3 last October to No. 14 in the new ranking. Ruby, Visual Basic.NET and JavaScript moved into the top 10.
+Advertisement
+
+The October PYPL PopularitY of Programming Language report shows much the same thing, with Swift climbing to No. 9 (exhibiting a 0.6 percent uptick), just one notch below Objective-C (falling 1 percent). If the trend continues, Objective-C is likely to soon fall out of the top 10 in the PYPL ranking, also.
+Swift Closing on Objective-C
+[Click on image for larger view.]
+Swift Closing on Objective-C (source: TIOBE)
+
+It wasn't that long ago -- before Swift's debut in June of last year -- that Objective-C was near the top of such language indices. In the 2013 Transparent Language Popularity Index, for example, it trailed only C and Java.
+Swift Closing on Objective-C
+[Click on image for larger view.]
+The PYPL Index (source: Pierre Carbonnelle)
+
+So why did Apple proffer Swift as an Objective-C replacement? A question posed on the developer-centric Quora Web site explored the pros and cons of developing with Swift rather than Objective-C, which poster Amit Burstein described as "a notoriously difficult language":
+
+    Swift brings a lot of advantages over Objective-C. Perhaps the most important to existing iOS/OS X developers is the new features it brings like better type safety, better memory management, multiple return values, and a bunch of functional paradigms. All these features mean that seasoned developers will not have to spend as long coding. Apple also boasts increased performance over Objective-C (and they even compared it to Python since it can act like a scripting language).
+
+Another Quora question further discussed the drawbacks of Objective-C, including just the fact that it was based on C.
+
+Meanwhile, according to Apple:
+
+    Swift is a powerful and intuitive programming language for iOS, OS X, and watchOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and apps run lightning-fast. Swift is ready for your next project -- or addition into your current app -- because Swift code works side-by-side with Objective-C.
+
+In June, Apple released Swift 2.0, boasting "better performance, a new error handling API, and first-class support for availability checking."
+
+But the big news then was the planned open sourcing of the language.
+
+"We think Swift is the next big programming language," Apple exec Craig Federighi said at the time, as reported here on ADTmag by John K. Waters. "The one we will be doing application and systems programming on for 20 years to come. And we think Swift should be everywhere and used by everyone. So today, we're doing something really big: We're making Swift open source." Apple plans to release it under an OSI-approved permissive license.
+
+With open community involvement, the new language is likely to increase its accolades, such as being named the 2014 "Programming Language of the Year" by PYPL.
+
+About the Author
+
+David Ramel is an editor and writer for 1105 Media.

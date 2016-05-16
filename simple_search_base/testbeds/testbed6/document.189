@@ -1,0 +1,11 @@
+Data structure is a particular way of storing and organizing information  in a computer  so that it can be retrieved and used most productively.
+Different kinds of data structures are meant  for different kinds of applications, and some are highly specialized to specific tasks.
+
+Data structures are important for the following reasons:
+1.Data structures are used in almost every program or software system.
+2.Specific data structures are essential ingredients of many efficient algorithms, and make possible the management of huge amounts of data, such as large integrated collection of databases.
+3.Some programming languages emphasize data structures, rather than algorithms, as the key organizing factor in software design.
+
+One important point about data structures is that they are universal and timeless, at least for practical purposes. Anyone who's been a developer in the last 30 years should know basic data structures like single/double linked lists, binary trees or graphs. If you ask two developers about them, you can compare the developers' knowledge by their answers. This can hardly be said for frameworks or even languages: If you ask two developers about Rails, and one knows a lot more than the other, what does that tell you, really? As you say in the question, a smart developer can learn a new framework quickly enough, so testing their current knowledge doesn't make much sense.
+
+

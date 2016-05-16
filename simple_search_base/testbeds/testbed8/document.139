@@ -1,0 +1,11 @@
+Application in sorting[edit]
+ 
+Pairs of consecutive sequence values (shown as the thick red edges) that bracket a sequence value x(the darker blue point). The cost of including x in the sorted order produced by the Levcopoulos–Petersson algorithm is proportional to the logarithm of this number of bracketing pairs.
+Levcopoulos & Petersson (1989) describe a sorting algorithm based on Cartesian trees. They describe the algorithm as based on a tree with the maximum at the root, but it may be modified straightforwardly to support a Cartesian tree with the convention that the minimum value is at the root. For consistency, it is this modified version of the algorithm that is described below.
+The Levcopoulos–Petersson algorithm can be viewed as a version of selection sort or heap sort that maintains a priority queue of candidate minima, and that at each step finds and removes the minimum value in this queue, moving this value to the end of an output sequence. In their algorithm, the priority queue consists only of elements whose parent in the Cartesian tree has already been found and removed. Thus, the algorithm consists of the following steps:
+1.	Construct a Cartesian tree for the input sequence
+2.	Initialize a priority queue, initially containing only the tree root
+3.	While the priority queue is non-empty:
+•	Find and remove the minimum value x in the priority queue
+•	Add x to the output sequence
+•	Add the Cartesian tree children of x to the priority queue

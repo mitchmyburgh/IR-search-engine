@@ -1,0 +1,64 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Back-face culling
+Back-face culling exploits the observation that a face in a closed polyhedron always has two sides. One faces inside, and can never be seen by an observer outside the polyhedron (rather obviously since the polyhedron is closed), the other faces outside and can be seen. However, if it is determined that the side facing the eye is the inside of the face, that face will assuredly not be seen, because it is impossible to see a face from the inside.
+75
+The side that faces the eye can be determined easily with dot product. Take a vector V from the eye to any point within the polygon (for example, from the eye to a vertex). Let A be the normal of the polygon, assuming that A points outwards of the polyhedron. Then, compute V•A. If it is positive, the inside of the face is towards the camera, do not display or transform the face. If it is negative, the face is facing the camera and might be seen (though this is not guaranteed).
+Back-face culling is generally not sufficient for visible surface determination. It is merely used to remove faces that assuredly cannot be seen. However, it will do nothing for faces that are only obscured by faces that are closer. Also, back-face removal assumes that the objects are closed polyhedra, and that faces are opaque. If this is not the case, back-face culling can not be applied.
+Note that if the only thing displayed is a convex object, back-face culling is sufficient for visible surface determination (it will only leave the faces that are actually visible).
+Also note that back-face removal should be done in object space, not in world or eye space. That's because, in order to do it in world space, one has to transform all plane normals before doing the dot product, which is rather expensive. However, if performing the culling in object space, one only needs the location of the eye in object space, and normals need not be transformed.
+It can be shown that back-face culling is expected to cull roughly half of the number of vertices, faces and edges in a scene, except for special scenes that are made to be viewed from a particular angle or somesuch.
+Sorting
+With the painter's algorithm, one has to assign a z-value to all primitives. Then, the primitives are sorted according these values of z, and the resulting image is drawn back-to-front. Several sorting algorithms can be used for this purpose, and even though basic algorithms is not the subject of this document, we will discuss two simple sorting schemes now.
+The simplest sorting algorithm, and a frightfully slow algorithm in most cases, is the bubble sort. Here follows pseudocode for the bubble sort.
+Let z[1..n] be the array of n values to sort Let f be a flag
+Repeat Clear f For i varying from 1 to n-1 If z[i]>z[i+1] then Set f
+76
+Exchange z[i] and z[i+1] End if End for Until f is clear
+As can be seen, the algorithm is exceedingly simple. For small values of n (say, n<10), this algorithm can be used and will be close to optimal. However, if the list is very badly ordered initially, the sort could take up to n2 iterations before finishing.
+Small improvements can be made to the algorithm. For one thing, instead of always scanning in the same direction (from the first element to the last), one alternates directions, sorting an already close to sorted list is very efficient. The loop will execute roughly n times (actually, it would execute k times n, where k is some small constant). In the worse case though, it still executes in n2 iterations.
+A second, more clever algorithm that works well on numbers, is the radix sort. This sort can be done in any base (useful bases for a computer would be 2, 16 or 256, because they're powers of two). However, for the sake of simplicity in this example, we will use base 10.
+Using base n, n buckets are created (in our example, 10 buckets), labeled 0 through n-1 (0-9 in our example). Then, the numbers to be sorted are put in the bucket that corresponds to their lower digit. The buckets are concatenated, and the step is repeated for the next lower digit. An so on, until we get to the highest digit, at which point we stop. The result is a sorted list. Pseudocode is given below for base n. Note that the ith digit of base n number z is (z div ni)%n where div stands for integer division, truncating off any fractions, and % is the modulo operator, or remainder after division by n (a value from 0 to n-1 inclusive).
+Let b[0..n-1] be n buckets, labeled 0 through n-1 Let z[1..m] be the m numbers to sort Let D be the largest number of digits used
+For foo varying from 0 to D-1 inclusive, do For i varying from 1 to m inclusive, do Put z[i] into its bucket, namely b[(z[i]/nfoo)%n] End for Concatenate all buckets, in order from 0 to n-1, back into z End for
+Note that division and modulo operations, when done with base two divisors, can be implemented strictly with bit shifts.
+This algorithm can be implemented with lists or arrays. Lists ensure that no unnecessary copying is done, and allow buckets to grow dynamically. This is not so easily accomplished with arrays, but the pseudocode below essentially does that. It only needs to be repeated for every byte in the numbers to be sorted.
+Let i[0..256] be 257 indices, initialized to 0
+77
+Let z[1..m] be the m numbers to sort Then o[1..m] will be the m numbers once concatenated
+Comment: The first step we take is to count the elements that will go into each bucket
+For j varying from 1 to m inclusive, do Let foo be the bucket to which z[j] belongs Increment i[foo+1] End for
+Comment: now compute the index at which buckets start
+For j varying from 1 to 255 inclusive, do Add i[j-1] to i[j] End for
+Comment: lastly, put the numbers into the bucket and concatenate
+For j varying from 1 to m inclusive, do Let foo be the bucket to which z[j] belongs Put z[j] into o[i[foo]] Increment i[foo] End for
+Other sorting algorithms that might be of interest include the quick sort, heap sort, insertion sort and merge sort. These will not be discussed here, they each have their advantages and drawbacks (for a full discussion, see [2]).
+Painter's algorithm and depth sorting
+As was previously mentioned, painter's algorithm assigns a z value to each primitive, then sorts them, then draws them from back to front. Objects that lie behind are then written over by objects that lie in front of them. Note that, no matter the scheme used to select the z value for an object, primitives that have overlap in z may be incorrectly ordered. But there is worse. Note the pathological case below, where it is impossible to generate a proper ordering for the three triangles:
+78
+In this case, it is necessary to cut one triangle into two parts and sort the parts individually.
+A way of handling all cases is as follows. Assign a z value to all polygons equal to the vertex belonging to the polygon that has the largest z coordinate value in eye space. Then sort as per painter's algorithm. Before actually drawing, we need to do a postsort stage to make sure the ordering is correct for polygons that have z overlap.
+Assuming we sorted in increasing values of z, it means that we need only to compare the last polygon with the consecutive previous polygons for which the furthest point is in the last polygon's z span. Once the last polygon is processed, we will not touch it anymore (unless the last polygon is moved to some other position in the list). Thus, we just consider the list to be one element shorter and recurse the algorithm.
+The steps that should be taken are as follow (P and Q are the polygons we are comparing).
+1- Check whether the polygons x and y extent overlap on screen. If they do not, there is no need to compare the polygons. Otherwise, we are undecided (go to 2)
+2- Check on what side of P's plane the eye lies. If Q lies entirely on that side of P's plane, Q is considered to be in front of P. If Q lies entirely on the opposite side of the eye in relation to P's plane, then P is in front of Q. If Q crosses P's plane, we are still undecided.
+3- Repeat 2 above, but with Q and P inverted.
+4- Check if the polygons overlap on screen (find whether the edges of the polygons intersect)
+Once a polygon has been moved in the list, mark it so that it is not moved again. If one of the above steps would say that a polygon that has already been moved in the list should be moved again, then you will have to use the last resort, clipping. Cutting up the triangle into pieces (clipping) will be described later.
+Of course, one needs not to perform all these tests if they are deemed to be more expensive than clipping. For instance, the only tests one could do is test for overlap in z, then x and y on screen, then check for step 2 and if it is still unresolved, simply clip the polygons and put the pieces where they belong.
+When polygon ordering can not be resolved, pick one of the two polygons for clipping plane and clip the other polygon with it. Then, insert the two pieces at the appropriate positions in the list.
+79
+A very nice way of doing all these tests is as follows. Calculate bounding boxes for z value in 3d, and u,v in 2d (screen space, after perspective transform) of the polygon. Then, sort the bounding boxes in x, u and v. This can be done in linear time using the radix sort algorithm (or by exploiting coherence in a comparison sort algorithm). Then, only the polygons for which the bounding boxes overlap in all three axis need to be checked further.
+Z-Buffering
+This algorithm tends to be slightly slower than painter's algorithm for low number of polygons (less than 5000). It would appear that it would gain as the number of polygons increases though.
+The idea is to make an array of z or 1/z values, one for each pixel. As you draw a polygon, compute the z or 1/z value at a pixel, compare it with the current value for the pixel, and if closer, draw, otherwise, do not draw.
+This algorithm has the advantage that it requires no sorting whatsoever. However, the algorithm performs one comparison per pixel, which tends to be a bit expensive. Also, memory requirements tend to be bigger than other algorithms. Nevertheless, the simplicity of the implementation makes it very attractive.
+As a side note on evaluating z or 1/z, the latter can be shown to be linear while the former is not (we did this in the perspective chapter). Thus, it will likely be preferable to store 1/z values instead of z, because they can typically be computed much more quickly. The mathematics of that are shown below.
+Let Ax+By+Cz=D be the plane equation for the polygon in eye space. Let (u,v) denote the pixel on screen, and let the perspective projection equation be u=px/z and v=qy/z for some constants p and q. This can be rewritten as:
+x=uz/p y=vz/q
+Auz/p+Bvz/q+Cz=D
+z(Au/p+Bv/q+C)=D
+And then, depending whether we are interested in z or 1/z, we get:
+z=D/(Au/p+Bv/q+C)
+or
+1/z=A/(Dp)u+B/(Dq)v+C/D

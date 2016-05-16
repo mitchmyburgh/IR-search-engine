@@ -1,0 +1,23 @@
+This book is about the creation and analysis of efficient data structures. It covers: 
+the primitive node structure; 
+asymptotic notation for mathematically discussing performance characteristics; 
+built-in arrays; 
+list structures built from either nodes or arrays; 
+iterators as an abstract model of enumerating the items in a sequence; 
+stacks and queues for computing with last-in/first-out and first-in/first-out orderings; 
+binary and general tree structures for searching or representing hierarchical relationships; 
+min and max heaps for representing ordering based on priorities; 
+graph structures for representing more general relationships between data elements; 
+hash tables for the efficient retrieval of strings and other objects; and finally 
+trade-offs between the structures, and strategies for picking the most appropriate ones. 
+To understand the material in this book you should be comfortable enough in a programming language to be able to work with and write your own variables, arithmetic expressions, if-else conditions, loops, subroutines (also known as functions), pointers (also known as references or object handles), structures (also known as records or classes), simple input and output, and simple recursion. 
+Because many different languages approach the construction of data structures differently, we use pseudo-code so that you can translate the code into your own language. 
+Types of data structures. 
+Arrays  
+List Structures and Iterators  
+Stacks and Queues  
+Trees  
+Min and Max Heaps  
+Graphs  
+Hash Tables  
+Sets  

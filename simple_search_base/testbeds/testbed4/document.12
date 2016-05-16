@@ -1,0 +1,128 @@
+Texture mapping is good for changing the surface color of an object, but we often want to do more.
+For example, if we take a picture of an orange, and map it onto a sphere, we find that the resulting object does
+not look realistic. The reason is that there is an interplay between the bumpiness of the orange’s peel and the
+light source. As we move our viewpoint from side to side, the specular reflections from the bumps should move
+as well. However, texture mapping alone cannot model this sort of effect. Rather than just mapping colors, we
+should consider mapping whatever properties affect local illumination. One such example is that of mapping
+surface normals, and this is what bump mapping is all about.
+What is the underlying reason for this effect? The bumps are too small to be noticed through perspective depth.
+It is the subtle variations in surface normals that causes this effect. At first it seems that just displacing the
+surface normals would produce a rather artificial effect (for example, the outer edge of the object’s boundary
+will still appear to be perfectly smooth). But in fact, bump mapping produces remarkably realistic bumpiness
+effects.
+Here is an overview of how bump mapping is performed. As with texture mapping we are presented with an
+image that encodes the bumpiness. Think of this as a monochrome (gray-scale) image, where a large (white)
+value is the top of a bump and a small (black) value is a valley between bumps. (An alternative, and more direct
+way of representing bumps would be to give a normal map in which each pixel stores the (x; y; z) coordinates
+of a normal vector. One reason for using gray-valued bump maps is that they are often easier to compute and
+involve less storage space.) As with texture mapping, it will be more elegant to think of this discrete image
+as an encoding of a continuous 2-dimensional bump space, with coordinates s and t. The gray-scale values
+encode a function called the bump displacement function b(s; t), which maps a point (s; t) in bump space to its
+(scalar-valued) height. As with texture mapping, there is an inverse wrapping function IW, which maps a point
+(u; v) in the object’s surface parameter space to (s; t) in bump space.
+Perturbing normal vectors: Let us think of our surface as a parametric function in the parameters u and v. That is,
+each point P(u; v) is given by three coordinate functions x(u; v), y(u; v), and z(u; v). Consider a point P(u; v)
+on the surface of the object (which we will just call P). Let ~n denote the surface normal vector at this point.
+Let (s; t) = IW(u; v), so that b(s; t) is the corresponding bump value. The question is, what is the perturbed
+normal ~n0 for the point P according to the influence of the bump map? Once we know this normal, we just use
+it in place of the true normal in our Phong illumination computations.
+Here is a method for computing the perturbed normal vector. The idea is to imagine that the bumpy surface
+has been wrapped around the object. The question is how do these bumps affect the surface normals? This is
+illustrated in the figure below.
+(Perturbed normal)
+(True normal)
+Bump space
+N’
+P’
+b(s,t) P
+N
+Fig. 53: Bump mapping.
+Since P is a function of u and v, let Pu denote the partial derivative of P with respect to u and define Pv
+similarly with respect to v. Since P has three coordinates, Pu and Pv can be thought of as three dimensional
+vectors. Intuitively, Pu and Pv are tangent vectors to the surface at point P. It follows that the normal vector ~n
+Lecture Notes 75 CMSC 427
+is (up to a scale factor) given by
+~n = Pu  Pv =
+0
+@
+@x=@u
+@y=@u
+@z=@u
+1
+A 
+0
+@
+@x=@v
+@y=@v
+@z=@v
+1
+A:
+(NOTE: In spite of the notational similarity, this is quite different from the gradient of an implicit function,
+which gives the normal. These derivatives produce two tangent vectors to the surface at the point P. Thus,
+their cross product is the normal.) Since ~n may not generally be of unit length, we define ^n = ~n=j~nj to be the
+normalized normal.
+If we apply our bump at point P, it will be elevated by an amount b = b(u; v) in the direction of the normal. So
+we have
+P
+0 = P + b^n;
+is the elevated point. Note that just like P, the perturbed point P0 is really a function of u and v. We want to
+know what the (perturbed) surface normal should be at P0. But this requires that we know its partial derivatives
+with respect to u and v. Letting ~n0 denote this perturbed normal we have
+~n
+0 = P
+0
+u
+ P
+0
+v;
+where P0
+u and P0
+v are the partials of P0 with respect to u and v, respectively. Thus we have
+P
+0
+u = @
+@u
+(P + b^n) = Pu+bu^n+b^nu;
+where bu and ^nu denote the partial derivatives of b and^b with respect to u. An analogous formula applies for
+P0
+v. Assuming that the height of the bump b is small but its rate of change bu and bv may be high, we can neglect
+the last term, and write these as
+P
+0
+u
+ Pu + bu^n P
+0
+v
+Pv+bv^n:
+Taking the cross product (and recalling that cross product distributes over vector addition) we have
+~n
+0  (Pu + bu^n)  (Pv + bv ^n)
+ (Pu  Pv) + bv(Pu  ^n) + bu(^n  Pv) + bubv(^n  ^n):
+Since ^n  ^n = 0 and (Pu  ^n) = -(^n  Pu) we have
+~n
+0  ~n + bu(^n  Pv) - bv(^n  Pu):
+The partial derivatives bu and bv depend on the particular parameterization of the object’s surface. If we assume
+that the object’s parameterization has been constructed in common alignment with the image, then we have the
+following formula
+~n
+0  ~n + bs(^n  Pv) - bt(^n  Pu):
+If we have an explicit representation for P(u; v) and b(s; t), then these partial derivatives can be computed by
+calculus. If the surface a polygonal, then Pu and Pv are constant vectors over the entire surface, and are easily
+computed. Typically we store b(s; t) in an image, and so do not have an explicit representation, but we can
+approximate the derivatives by taking finite differences.
+In summary, for each point P on the surface with (smooth) surface normal ~n we apply the above formula to
+compute the perturbed normal ~n0. Now we proceed as we would in any normal lighting computation, but instead
+of using ~n as our normal vector, we use ~n0 instead. As far as I know, OpenGl does not support bump mapping.
+Lecture Notes 76 CMSC 427
+Environment Mapping: Next we consider another method of applying surface detail to model reflective objects.
+Suppose that you are looking at a shiny waxed floor, or a metallic sphere. We have seen that we can model
+the shininess by setting a high coefficient of specular reflection in the Phong model, but this will mean that
+the only light sources will be reflected (as bright spots). Suppose that we want the surfaces to actually reflect
+the surrounding environment. This sort of reflection of the environment is often used in commercial computer
+graphics. The shiny reflective lettering and logos that you see on television, the reflection of light off of water,
+the shiny reflective look of a automobile’s body, are all examples.
+The most accurate way for modeling this sort of reflective effect is through ray-tracing (which we will discuss
+later in the semester). Unfortunately, ray-tracing is a computationally intensive technique. To achieve fast
+rendering times at the cost of some accuracy, it is common to apply an alternative method called environment
+mapping (also called reflection mapping).
+What distinguishes

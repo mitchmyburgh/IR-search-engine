@@ -1,0 +1,32 @@
+
+2015's Most Popular Programming Language Was Good Old Java
+Written by
+Michael Byrne
+Editor
+
+January 9, 2016 // 02:11 PM EST
+Copy This URL
+
+Java is about the least buzzworthy programming language going. It is reviled by many, and rumors have swirled that its corporate parent, Oracle, isn't especially interested in the language's future.
+
+And yet, according to the TIOBE index's popularity ranking system, Java sits comfortably as the most popular programming language in all of the land. Not only that, but it's only become more popular, gaining about 6 percent share since 2014 and unseating C from the most-popular throne. The similar PYPL index also places Java at the top, but followed by Python instead of C.
+
+The ranking represents a Java resurgence. In the early-00s, the language held the top spot quite comfortably, only to be unseated in 2011 by C. From TIOBE:
+
+    At first sight, it might seem surprising that an old language like Java wins this award. Especially if you take into consideration that Java won the same award exactly 10 years ago. On second thought, Java is currently number one in the enterprise back-end market and number one in the still growing mobile application development market (Android). Moreover, Java has become a language that integrates modern language features such as lambda expressions and streams. The future looks bright for Java.
+
+The TIOBE rankings are based on simple search engine statistics. 25 of the most popular search engines receive this query:
+
++"<language> programming"
+
+The rankings are assigned based on the number of hits each language returns. Simple enough.
+
+The PYPL index is a bit different. It's based on searches for programming language tutorials. The more a programming language tutorial is searched for, the more popular the language is taken to be. Again, simple enough.
+
+No other language even came close to Java in the TIOBE ranking growth-wise. Python, Visual Basic, and a Java-platform language called Groovy all increased by more than a single percentage point, but that's it. The only comparable change occurred in the other direction with a 5 percent fall in popularity for Objective-C, Apple's pre-Swift language for OSX and iOS development. This makes good sense as Objective-C has now been effectively replaced.
+
+So, is this a sign that you should be learning Java instead of Swift or JavaScript? Probably not, or at least not as your number-one learning focus. I can say that if you already know a general-purpose programming language like C++, you're more than halfway there. And Java is still taught as an introductory language at a lot of schools. I'm no Java expert, but I'm glad to have enough working knowledge that I could ease into it fairly painlessly.
+
+Topics: programming, code, Java, javascript, Oracle, programming languages	
+Contact the author by email or Twitter.
+You can reach us at letters@motherboard.tv. Want to see other people talking about Motherboard? Check out our letters to the editor.

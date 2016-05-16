@@ -1,0 +1,28 @@
+What role does open source play in cloud computing innovation?
+
+Ignacio M. Llorente Sep 22, 2012 - 10:30 AM PDT
+
+4	Comments
+
+Credit: Flickr /Peverus
+How can open-source cloud management tools like Eucalyptus, CloudStack, OpenStack and OpenNebula (the European open-source cloud effort of which I am director) impact the adoption of cloud technology?
+
+I see it happening in a few broad ways.
+
+Lowering the barrier to entry
+First, most organizations adopt cloud to optimize their IT investment, to improve existing services or to support new business and service models. In this scenario, open-source lowers the barriers for new organizations to build their private cloud. Many organizations have adopted OpenNebula to build their private cloud. Some are very small clouds with tens of hosts, some are very large infrastructures composed of several data centers. In many of these cases, paying license fees for commercial software was simply not an option. In such cases, the choice comes down to open source cloud or no cloud at all.
+
+Facilitating custom clouds
+Second, many organizations like the fact that open source allows great customization to meet individual requirements. They can build a differentiated cloud service to meet customers needs. Two good examples in the public sector are the Dutch Supercomputing Center SARA with its HPC Cloud facility and FermiLab’s FermiCloud infrastructure. Hosting companies and telcos use open source to offer new cloud provision models for a specific market segment or geography. In OpenNebula’s case, two examples are AlterWay with its H2O Cloud and China Mobile with its Big Cloud that will support more than 600 million customers.
+
+Open-source clouds beget more clouds
+Third, open-source also encourages and supports innovation in the development of new cloud products. We have seen many examples of how its use lowers the barriers for new ICT players to create their own cloud offerings. Here, CloudWeavers one-click cloud solution and HederaTech’s cloud management stack are examples.. We could also include here the aforementioned integrators that use open source technology because it lets them innovate and customize them as needed.
+
+User-supplier collaboration makes a better cloud
+Finally, collaboration between technology providers and users is a huge advantage in the open source arena. As technology spin-off of the flagship European Union project in cloud computing, OpenNebula works with the main EU-funded cloud research and infrastructure projects and can offer unique features developed to address the requirements of the most advanced cloud deployments. For example, we work on initiatives like BonFIRE, EGI or Helix Nebula that are building pan-European multi-cloud infrastructures. Industry, standards bodies and researchers are working together to build an open interoperable cloud ecosystem, one of the aims of the European Cloud Computing Strategy.
+
+We think that the only way to innovate is to have a direct contact with users. In open source projects, the actual project roadmap is driven by user needs. That means features will meet real end-user — as opposed to vendor — needs.
+
+Llorente, who is co-founder, CEO and director of OpenNebula, will participate in a panel discussion on the transformative power of cloud computing in Europe at GigaOM’s Structure Europe event next month in Amsterdam.
+
+Feature photo courtesy of Flickr user Peverus

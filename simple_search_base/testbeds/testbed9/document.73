@@ -1,0 +1,35 @@
+A triangle mesh is a type of polygon mesh in computer graphics. It comprises a set of triangles (typically in three dimensions) that are connected by their common edges or corners.
+Many graphics software packages and hardware devices can operate more efficiently on triangles that are grouped into meshes than on a similar number of triangles that are presented individually. This is typically because computer graphics do operations on the vertices at the corners of triangles. With individual triangles, the system has to operate on three vertices for every triangle. In a large mesh, there could be eight or more triangles meeting at a single vertex - by processing those vertices just once, it is possible to do a fraction of the work and achieve an identical effect. In many computer graphics applications it is necessary to manage a mesh of triangles. The mesh components are vertices, edges, and triangles. An application might require knowledge of the various connections between the mesh components. These connections can be managed independently of the actual vertex positions. This document describes a simple data structure that is convenient for managing the connections. This is not the only possible data structure. Many other types exist and have support for various queries about meshes.
+
+
+== Representation ==
+Various methods of storing and working with a mesh in computer memory are possible. With the OpenGL and DirectX APIs there are two primary ways of passing a triangle mesh to the graphics hardware, triangle strips and index arrays.
+
+
+=== Triangle strip ===
+One way of sharing vertex data between triangles is the triangle strip. With strips of triangles each triangle shares one complete edge with one neighbour and another with the next. Another way is the triangle fan which is a set of connected triangles sharing one central vertex. With these methods vertices are dealt with efficiently resulting in the need to only process N+2 vertices in order to draw N triangles.
+Triangle strips are efficient, however the drawback is that it may not be obvious how or convenient to translate an arbitrary triangle mesh into strips.
+
+
+=== The Data Structure ===
+The data structure representing the mesh provides support for two basic operations, inserting triangles and removing triangles. It also supports an edge collapse operation that is useful in triangle decimation schemes. The structure provides no support for the vertex positions, but it does assume that each vertex is assigned a unique integer identifier, typically the index of that vertex in an array of contiguous vertex positions. A mesh vertex is defined by a single integer and is denoted by hvi. A mesh edge is defined by a pair of integers hv0,v1i, each integer corresponding to an end point of the edge. To support edge maps, the edges are stored so that v0 = min(v0,v1). A triangle component is defined by a triple of integers hv0,v1,v2i, each integer corresponding to a vertex of the triangle. To support triangle maps, the triangles are stored so that v0 = min(v0,v1,v2). Observe that hv0,v1,v2i and hv0,v2,v1i are treated as different triangles. An application requiring double–sided triangles must insert both triples into the data structure. For the sake of avoiding constant reminders about order of indices, in the remainder of the document the pair/triple information does not imply the vertices are ordering in any way (although the implementation does handle the ordering). Connectivity between the components is completely determined by the set of triples representing the triangles. A triangle t = hv0,v1,v2i has vertices v0, v1, and v2. It has edges e0 = hv0,v1i, e1 = hv1,v2i, and e2 = hv2,v0i. The inverse connections are also known. Vertex v0 is adjacent to edges e0 and e2 and to triangle t. Vertex v1 is adjacent to edges e0 and e1 and to triangle t. Vertex v2 is adjacent to edges e1 and e2 and to triangle t. All three edges e0, e1, and e2 are adjacent to t. How much of this information a data structure stores is dependent on the needs of an application. Moreover, the application might want to have additional information stored at the components. The information stored at a vertex, edge, or triangle is referred to as the vertex attribute, edge attribute, or triangle attribute. The abstract representations of these for the simple data structure described here are
+
+The maps support the standard insertion and removal functions for a hash table. Insertion occurs only if the item does not already exist. Removal occurs only if the item does exist.
+
+
+=== Edge Collapse ===
+This operation involves identifying an edge hvk,vti where vk is called the keep vertex and vt is called the throw vertex. The triangles that share this edge are removed from the mesh. The vertex vt is also removed from the mesh. Any triangles that shared vt have that vertex replaced by vk. Figure 1 shows a triangle mesh and a sequence of three edge collapses applied to the mesh.
+
+
+=== Index array ===
+
+With index arrays, a mesh is represented by two separate arrays, one array holding the vertices, and another holding sets of three indices into that array which define a triangle. The graphics system processes the vertices first and renders the triangles afterwards, using the index sets working on the transformed data. In OpenGL, this is supported by the glDrawElements() primitive when using Vertex Buffer Object (VBO).
+With this method, any arbitrary set of triangles sharing any arbitrary number of vertices can be stored, manipulated, and passed to the graphics API, without any intermediary processing.
+
+
+== See also ==
+Polygon mesh
+Nonobtuse mesh
+Nonuniform rational B-spline
+Point cloud
+Möller-Trumbore algorithm for ray-triangle intersection

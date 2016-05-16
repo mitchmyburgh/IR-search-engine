@@ -1,0 +1,39 @@
+DPAPI (Data Protection Application Programming Interface) is a simple cryptographic application programming interface available as a built-in component in Windows 2000 and later versions of Microsoft Windows operating systems. In theory the Data Protection API can enable symmetric encryption of any kind of data; in practice, its primary use in the Windows operating system is to perform symmetric encryption of asymmetric private keys, using a user or system secret as a significant contribution of entropy.
+For nearly all cryptosystems, one of the most difficult challenges is "key management" - in part, how to securely store the decryption key. If the key is stored in plain text, then any user that can access the key can access the encrypted data. If the key is to be encrypted, another key is needed, and so on. DPAPI allows developers to encrypt keys using a symmetric key derived from the user's logon secrets, or in the case of system encryption, using the system's domain authentication secrets.
+The DPAPI keys used for encrypting the user's RSA keys are stored under "%APPDATA%\Microsoft\Protect\{SID}", where {SID} is the security identifier of that user. The DPAPI key is stored in the same file as the master key that protects the users private keys. It usually is 64 bytes of random data.
+In 2010 Elie Bursztein and Jean-Michel Picod presented an analysis of the protocol titled Reversing DPAPI and Stealing Windows Secrets Offline at Black Hat DC 2010. In addition to their briefing, Bursztein and Picod released DPAPIck which allows offline decryption of data encrypted with DPAPI. In 2012 Passcape Software published in their blog more detailed article on DPAPI internal logic and presented a tool for fully DPAPI offline decryption and analysis. Unlike previous one, the tool utilizes some old Windows bugs (for example, you can decrypt Windows 2000 DPAPI blobs without knowing the owner logon password) and is fully compatible with Windows 8 DPAPI data structure. In Windows 8 Microsoft changed the way the DPAPI logic works. Now multiple user keys can be used to derive an encryption key to decrypt the user masterkey which is used then to decode a single DPAPI blob.
+
+
+== Security properties ==
+DPAPI doesn't store any persistent data for itself; instead, it simply receives plaintext and returns ciphertext (or vice versa).
+DPAPI security relies upon the Windows operating system's ability to protect the Master Key and RSA private keys from compromise, which in most attack scenarios is most highly reliant on the security of the end user's credentials. A main encryption/decryption key is derived from user's password by PBKDF2 function. Particular data binary large objects can be encrypted in a way that salt is added and/or an external user-prompted password (aka "Strong Key Protection") is required. The use of a salt is a per-implementation option - i.e. under the control of the application developer - and is not controllable by the end user or system administrator.
+Delegated access can be given to keys through the use of a COM+ object. This enables IIS web servers to use DPAPI.
+
+
+== Use of DPAPI by Microsoft software ==
+While not universally implemented in all Microsoft products, the use of DPAPI by Microsoft products has increased with each successive version of Windows. However, many applications from Microsoft and third-party developers still prefer to use their own protection approach or have only recently switched to use DPAPI. For example, Internet Explorer versions 4.0-6.0, Outlook Express and MSN Explorer used the older Protected Storage (PStore) API to store saved credentials such as passwords etc. Internet Explorer 7 now protects stored user credentials using DPAPI.
+Picture password, PIN and fingerprint in Windows 8
+Encrypting File System in Windows 2000 and later
+SQL Server Transparent Data Encryption (TDE) Service Master Key encryption
+Internet Explorer 7, both in the standalone version available for Windows XP and in the integrated versions available in Windows Vista and Windows Server 2008
+Windows Mail and Windows Live Mail
+Outlook for S/MIME
+Internet Information Services for SSL/TLS
+Windows Rights Management Services client v1.1 and later
+Windows 2000 and later for EAP/TLS (VPN authentication) and 802.1x (WiFi authentication)
+Windows XP and later for Stored User Names and Passwords (aka Credential Manager)
+.NET Framework 2.0 and later for System.Security.Cryptography.ProtectedData
+Microsoft.Owin (Katana) cookie authentication (when self hosting)
+
+
+== References ==
+
+
+== External links ==
+Windows Data Protection API (DPAPI) white paper by NAI Labs
+Data encryption with DPAPI
+Use DPAPI to encrypt and decrypt data
+How To: Use DPAPI (User Store) from ASP.NET 1.1 with Enterprise Services
+System.Security.Cryptography.ProtectedData in .NET Framework 2.0 and later
+Discussion of the use of MS BackupKey Remote Protocol by DPAPI to protect user secrets
+The Windows PStore

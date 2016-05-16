@@ -1,0 +1,85 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Pseudodepth
+After dividing by its last element, ˆ x* has its ?rst two elements as image plane coordinates, and its third element is f. We would like to be able to alter the homogeneous perspective matrix ˆ Mp so that the third element of pc z f ˆ x* encodes depth while keeping the transformation linear.
+Idea: Let ˆ x* =? ? ? ?
+1 0 0 0 0 1 0 0 0 0 a b 0 0 1/f 0
+? ? ? ?
+ˆ pc, so z* = f pc z
+(apc z + b).
+What should a and b be? We would like to have the following two constraints: z* =-1 when pc z = f 1 when pc z = F , where f gives us the position of the near plane, and F gives us the z coordinate of the far plane.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 40
+CSC418 / CSCD18 / CSC2504 Camera Models
+So-1 = af + b and 1 = af + b f F . Then 2 = b f F -b = bf F -1, and we can ?nd b = 2F f -F . Substituting this value for b back in, we get-1 = af + 2F f-F , and we can solve for a:
+a = -
+1 f 2F f -F
++ 1
+= -
+1 f 2F f -F
++
+f -F f -F
+= -
+1 ff + F f -F. These values of a and b give us a function z*(pc z) that increases monotonically as pc z decreases (since pc z is negative for objects in front of the camera). Hence, z* can be used to sort points by depth.
+Why did we choose these values for a and b? Mathematically, the speci?c choices do not matter, but they are convenient for implementation. These are also the values that OpenGL uses.
+What is the meaning of the near and far planes? Again, for convenience of implementation, we will say that only objects between the near and far planes are visible. Objects in front of the near plane are behind the camera, and objects behind the far plane are too far away to be visible. Of course, this is only a loose approximation to the real geometry of the world, but it is very convenient for implementation. The range of values between the near and far plane has a number of subtle implications for rendering in practice. For example, if you set the near and far plane to be very far apart in OpenGL, then Z-buffering (discussed later in the course) will be very inaccurate due to numerical precision problems. On the other hand, moving them too close will make distant objects disappear. However, these issues will generally not affect rendering simple scenes. (For homework assignments, we will usually provide some code that avoids these problems).
+6.9 Projecting a Triangle
+Let's review the steps necessary to project a triangle from object space to the image plane.
+1. A triangle is given as three vertices in an object-based coordinate frame: ¯ po 1, ¯ po 2, ¯ po 3.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 41
+CSC418 / CSCD18 / CSC2504 Camera Models
+y
+z
+x
+p1
+p2
+p3
+A triangle in object coordinates.
+2. Transform to world coordinates based on the object's transformation: ˆ pw 1 , ˆ pw 2 , ˆ pw 3 , where ˆ pw i = ˆ Mowˆ po i.
+y
+z
+x
+p1 w
+p3 w
+p2 w
+c
+The triangle projected to world coordinates, with a camera at ¯ c.
+3. Transform from world to camera coordinates: ˆ pc i = ˆ Mwcˆ pw i .
+Copyright c
+2005 David Fleet and Aaron Hertzmann 42
+CSC418 / CSCD18 / CSC2504 Camera Models
+y
+z
+x
+p1 c
+p3 c
+p2 c
+The triangle projected from world to camera coordinates.
+4. Homogeneous perspective transformation: ˆ x* i = ˆ Mpˆ pc i, where
+ˆ Mp =? ? ? ?
+1 0 0 0 0 1 0 0 0 0 a b 0 0 1/f 0
+? ? ? ?
+, so ˆ x* i =? ? ? ?
+pc x pc y apc z + b pc z f
+? ? ? ?
+.
+5. Divide by the last component:
+? ?
+x* y* z* ? ?= f
+? ? ?
+pc x pc z pc y pc z apc z+b pc z
+? ? ?
+.
+p1 *
+p3 *
+p2 *
+(-1, -1, -1)
+(1, 1, 1)
+The triangle in normalized device coordinates after perspective division.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 43
+CSC418 / CSCD18 / CSC2504 Camera Models
+Now (x*,y*) is an image plane coordinate, and z* is pseudodepth for each vertex of the triangle.

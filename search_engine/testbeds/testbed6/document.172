@@ -1,0 +1,38 @@
+TREE TRAVERSAL
+
+Tree traversal is a process of moving through a tree in a specified order to
+process each of the nodes.   Each of the nodes is processed only once
+(although it may be visited more than once).  Usually, the traversal process
+is used to print out the tree. 
+
+Traversal is like searching the tree except that in traversal the goal is to
+move through the tree in some particular order.  In addition, all nodes are
+processed in the traversal but searches cease when the required node is
+found. 
+
+If the order of traversal is not specified and the tree contains n nodes,
+then the number of paths that could be taken through the n nodes would be n
+factorial and therefore the information in the tree would be presented in
+some format determined by the path.  Since there are many different paths,
+no real uniformity would exist in the presentation of information. 
+
+Therefore, three different orders are specified for tree traversals.  These
+are called: 
+
+  *  pre-order
+  *  in-order
+  *  post-order
+
+The traversals considered here are for a binary tree or a binary search
+tree.   
+
+Because the definition of a binary tree is recursive and defined in terms of
+the left and right subtrees and the root node, the choices for traversals
+can also be defined from this definition.  In pre-order traversals, each
+node is processed before (pre) either of its sub-trees. In in-order, each
+node is processed after all the nodes in its left sub-tree but before any of
+the nodes in its right subtree (they are done in order from left to right).
+In post-order, each node is processed after (post) all nodes in both of its
+sub-trees. 
+
+Each order has different applications and yields different results.

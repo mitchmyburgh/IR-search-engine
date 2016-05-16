@@ -1,0 +1,67 @@
+Why Are Data Structures So Important?
+
+You may wonder why we pay so much attention to data structures and why we review them in such a great details. The reason is we aim to make out of you thinking software engineers. Without knowing the basic data structures and computer algorithms in programming well, you cannot be good developers and risk to stay an amateur. Whoever knows data structures and algorithms well and starts thinking about their correct use has big chance to become a professional – one that analyzes the problems in depth and proposes efficient solutions.
+
+Algorithm Complexity
+
+We cannot talk about efficiency of algorithms and data structures without explaining the term "algorithm complexity", which we have already mentioned several times in one form or another. We will avoid the mathematical definitions and we are going to give a simple explanation of what the term means.
+Algorithm complexity is a measure which evaluates the order of the count of operations, performed by a given or algorithm as a function of the size of the input data.
+
+Complexity and Execution Time
+The execution speed of a program depends on the complexity of the algorithm, which is executed. If this complexity is low, the program will execute fast even for a big number of elements. If the complexity is high, the program will execute slowly or will not even work (it will hang) for a big number of elements.
+
+Comparison between Basic Data Structures
+
+After you have been introduced to the term algorithm complexity, we are now ready to make a comparison between the basic data structures, which we know from the last few chapters, and to estimate with what complexity each of them performs the basic operations like addition, searching, deletion and access by index (when applicable). In that way we could easily judge according to the operations we expect to need, which structure would be the most appropriate. The complexities of the basic operations on the basic data structures, which we have reviewed in the previous chapters, are given below in a format of:
+
+Data structure
+Addition
+Search
+Deletion
+Access by index
+
+Array (T[])
+O(N)
+O(N)
+O(N)
+O(1)
+
+Linked list (LinkedList<T>)
+O(1)
+O(N)
+O(N)
+O(N)
+
+Dynamic array (List<T>)
+O(1)
+O(N)
+O(N)
+O(1)
+
+Stack (Stack<T>)
+O(1)
+O(1)
+
+Queue (Queue<T>)
+O(1)
+O(1)
+
+Dictionary, implemented with a hash-table (Dictionary<K, T>)
+O(1)
+O(1)
+O(1)
+
+Dictionary, implemented with a balanced search tree (SortedDictionary<K, T>)
+O(log(N))
+O(log(N))
+O(log(N))
+
+Set, implemented with a hash-table (HashSet<T>)
+O(1)
+O(1)
+O(1)
+
+Set, implemented with a balanced search tree (SortedSet<T>)
+O(log(N))
+O(log(N))
+O(log(N))

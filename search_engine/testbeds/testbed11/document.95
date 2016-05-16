@@ -1,0 +1,18 @@
+A shared mesh (also known as ‘traditional’ or ‘best effort’ mesh) is a wireless mesh network that uses a single radio to communicate via mesh backhaul links to all the neighboring nodes in the mesh. This is a first generation mesh where the total available bandwidth of the radio channel is ‘shared’ between all the neighboring nodes in the mesh. The capacity of the channel is further consumed by traffic being forwarded from one node to the next in the mesh – reducing the end to end traffic that can be passed. Because bandwidth is shared amongst all nodes in the mesh, and because every link in the mesh uses additional capacity, this type of network offers much lower end to end transmission rates than a switched mesh and degrades in capacity as nodes are added to the mesh.
+Wireless mesh nodes typically include both mesh backhaul links and client access. A dual radio shared mesh node uses separate access and mesh backhaul radios. Only the mesh backhaul radio is shared. In a single radio mesh node, access and mesh backhaul are collapsed onto a single radio. Now the available bandwidth is shared between both the mesh links and client access, further reducing the end to end traffic available.
+
+
+== See also ==
+Wireless mesh network
+IEEE 802.11
+Mesh networking
+Switched mesh
+Wi-Fi
+Wireless LAN
+802.16
+
+
+== External links ==
+White Paper: Capacity of Wireless Mesh Networks Understanding single radio, dual radio and multi radio wireless mesh networks.
+What is Third Generation Mesh? Review of three generation of mesh networking architectures.
+Ugly Truths About Mesh Networks Performance issues of First and Second Generation Mesh products.

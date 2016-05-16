@@ -1,0 +1,15 @@
+Why Apple Should Release iFurnace Powered by iCloud: Another Case for Ambient Clouds
+Jul 27, 2011
+Media_httpwwwpopscico_dyfzo
+via popsci.com
+Check out the linked article from popsci.com. It reviews how researchers at Microsoft propose using servers installed in office buildings and apartments as “data furnaces” to keep people warm, effectively using what is today waste heat. This kind of thinking can help to prevent implementing “Super Cool Biz” programs in your city, as documented by John Hamalka, the CIO of Harvard Medical Center, who is attending Trend Micro’s Direction Conference in Japan. (I was planning to be there as well but my physician – not from Harvard – grounded me for a week or two.)
+
+This is yet another reason to start building ambient clouds instead of centralized clouds whenever possible. I’ve made the case in many posts here that there is not enough data center capacity and power to create centralized cloud services to support everyone on the planet having access to the cloud.
+
+But there’s more than enough compute and power capacity already, if we can only spread the load across existing servers and PCs. For that, we need a new way of thinking about the cloud, following a simple rule:
+
+Decentralize when you can, centralize when you must, and encrypt everything.
+
+Trend Micro uses a much smaller data footprint because it is build on an ambient cloud, the Smart Protection Network. It uses a few centralized, replicated data centers, surrounded by 50,000 CDN servers on the internet, connected to 100 million + endpoints, each of which acts as a sensor node to power a threat correlation network that handles more transactions each day than (we think) Google handles search queries in any day.
+
+Another large cloud vendor to do this is Apple, as I outlined in this post. Now all we need to do is get Apple to offer the iFurnace powered by iCloud to keep your bedroom warm. And then they need to secure it properly so your hacker neighbors don’t overheat your house. :)

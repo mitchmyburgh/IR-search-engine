@@ -1,0 +1,86 @@
+Learning the Kernel Function via Regularization
+
+Charles A. Micchelli
+
+Massimiliano Pontil
+
+We study the problem of finding an optimal kernel from a prescribed convex set of kernels K for
+learning a real-valued function by regularization. We establish for a wide variety of regularization
+functionals that this leads to a convex optimization problem and, for square loss regularization, we
+characterize the solution of this problem. We show that, although K may be an uncountable set, the
+optimal kernel is always obtained as a convex combination of at most m+2 basic kernels, where m
+is the number of data examples. In particular, our results apply to learning the optimal radial kernel
+or the optimal dot product kernel.
+
+A widely used approach to estimate a function from empirical data consists in minimizing a regularization
+functional in a Hilbert space H of real–valued functions f : X → IR, where X is a set.
+Specifically, regularization estimates f as a minimizer of the functional
+Q(Ix(f)) +µΩ(f)
+where µ is a positive parameter, Ix(f) = (f(xj) : j ∈ INm) is the vector of values of f on the set
+x = {xj
+: j ∈ INm} and INm = {1,...,m}. This functional trades off empirical error, measured by the
+function Q : IRm → IR+, with smoothness of the solution, measured by the functional Ω : H → IR+.
+The empirical error depends upon a finite set {(xj
+, yj) : j ∈ INm} ⊂ X ×IR of input-output examples
+and the function Q depends on y but we suppress it in our notation since it is fixed throughout our
+discussion. In particular, one often considers the case that Q is defined, for v = (vj
+: j ∈ INm) ∈ IRm,
+as Q(v) = ∑j∈INm
+V(vj
+, yj) where V : IR×IR → IR+ is a prescribed loss function.
+In this paper we assume that H is a reproducing kernel Hilbert space (RKHS) HK with kernel
+K and choose Ω(f) = hf, fi, where h·,·i is the inner product in HK, although some of the ideas we
+develop may be relevant in other circumstances. This leads us to study the variational problem.
+
+We recall that an RKHS is a Hilbert space of real-valued functions everywhere defined on X such
+that, for every x ∈ X, the point evaluation functional defined, for f ∈ H , by Lx(f) := f(x) is continuous
+on H (Aronszajn, 1950). This implies that H admits a reproducing kernel K : X ×X → IR
+such that, for every x ∈ X, K(x,·) ∈ H and f(x) = hf,K(x,·)i. In particular, for x,t ∈ X, K(x,t) =
+hK(x,·),K(t,·)i implying that the m×m matrix Kx := (K(xi
+, xj) : i, j ∈ INm) is symmetric and positive
+semi-definite for any set of inputs x ⊆ X.
+Often RKHS’s are introduced through the notion of feature map Φ : X → W , where W is a
+Hilbert space with inner product denoted by (·,·). A feature map gives rise to the linear space of all
+functions f : X → IR which are a linear combination of features whose norm is taken to be the norm
+of its coefficients. That is, for w ∈ W , f = (w,Φ) and hf, fi = (w,w). This space is an RKHS with
+kernel K defined, for x,t ∈ X, as K(x,t) = (Φ(x),Φ(t)). Using these equations, the regularization
+functional in (1) can be rewritten as a functional of w.
+
+If Q is convex, the unique minimizer of problem (1) can be found by replacing f by the right
+hand side of equation (2) in equation (1) and then optimizing with respect to the vector c. For
+example, when Q is the square error defined for v = (vj
+: j ∈ INm) ∈ IRm as Q(v) = ∑j∈INm
+(vj −yj)
+2
+the functional in the right hand side of (1) is a quadratic in the vector c and its minimizer is obtained
+by solving a linear system of equations.
+Because of their simplicity and generality, kernels and associated RKHS’s play an increasingly
+important role in Machine Learning, Pattern Recognition and their applications. This was initiated
+with the introduction of support vector machines (see, for example, Vapnik, 1998), and continued
+with the development of many other kernel-based learning algorithms (see, for example, Scholkopf ¨
+and Smola, 2002; Shawe-Taylor and Cristianini, 2004, and references therein). As kernels can
+be defined on any input space, kernel-based methods have been successfully applied to learning
+functions defined on complex data structures, ranging from images, text data, speech data, biological
+data, among others.
+Despite this great success, there still remain important problems to be addressed concerning
+kernel methods in Machine Learning. When the kernel is fixed, an immediate concern with problem
+(1) is the choice of the regularization parameter µ. This is typically solved by means of cross
+validation or generalized cross validation (see, for example, Hastie, Tibshirani and Friedman, 2002;
+Wahba, 1990) or by means of regularization path methods (see, for example, Bach, Thibaux and
+Jordan, 2004; Hastie et al., 2004; Pontil and Verri, 1998). But, how is the kernel chosen? Indeed,
+a challenging and central problem is the choice of the kernel itself. As we said before.
+
+5. Conclusion
+The intent of this paper is to enlarge the theoretical understanding of the study of optimal kernels
+via the minimization of a regularization functional. Our analysis of this problem builds upon and
+extends the work of Lanckriet et al. (2004) and Lin and Zhang (2003). In contrast to the point
+of view of these papers, our setting applies to convex combinations of kernels parameterized by a
+compact set. Our analysis establishes that the regularization functional Qµ is convex in K and that
+any optimizing kernel can be expressed as the convex combination of at most m+2 basic kernels.
+We have also provided a detailed characterization of the resulting minimax problem for square loss
+regularization. We have only marginally addressed at this stage implementation and algorithms for
+the search of optimal kernels. Since the proofs provided in Theorems 19 and 20 are constructive it
+should be possible to make use of them to derive practical algorithms for learning an optimal kernel
+such as a mixture of Gaussians, see (Argyriou, Micchelli and Pontil, 2005) for some recent results
+in this direction. Finally, an important direction which has not been explored in this paper is that of
+deriving error bounds, see (Micchelli et al., 2005) for some very recent progress on this.

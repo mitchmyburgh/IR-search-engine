@@ -1,0 +1,69 @@
+MACHINE LEARNING TECHNIQUES FOR BRAIN-COMPUTER INTERFACES
+
+K.-R. Müller1,2, M. Krauledat1,2, G. Dornhege1
+, G. Curio3
+, B. Blankertz1
+
+1. INTRODUCTION
+Brain-Computer Interfacing is an interesting, active and highly
+interdisciplinary research topic ([3, 4, 5, 6]) at the interface
+between medicine, psychology, neurology, rehabilitation
+engineering, man-machine interaction, machine learning
+and signal processing. A BCI could, e.g., allow a paralyzed
+patient to convey her/his intentions to a computer
+application. From the perspective of man-machine interaction
+research, the communication channel from a healthy
+human’s brain to a computer has not yet been subject to intensive
+exploration, however it has potential, e.g., to speed
+up reaction times, cf. [7] or to supply a better understanding
+of a human operator’s mental states.
+Classical BCI technology has been mainly relying on
+the adaptability of the human brain to biofeedback, i.e., a
+subject learns the mental states required to be understood
+by the machines, an endeavour that can take months until it
+reliably works [8, 9].
+The Berlin Brain-Computer Interface (BBCI) pursues
+another objective in this respect, i.e., to impose the main
+load of the learning task on the ’learning machine’, which
+also holds the potential of adapting to specific tasks and
+changing environments given that suitable machine learning
+(e.g. [2]) and adaptive signal processing (e.g. [10]) algorithms
+are used. Short training times, however, imply
+the challenge that only few data samples are available for learning to characterize the individual brain states to be distinguished.
+In particular when dealing with few samples
+of data (trials of the training session) in a high-dimensional
+feature space (multi-channel EEG, typically several features
+per channel), overfitting needs to be avoided. It is in this
+high dimensional – small sample statistics scenario where
+modern machine learning can prove its strength.
+The present review introduces basic concepts of machine
+learning, which includes a discussion of common linear
+classification and the idea of classifying in kernel feature
+spaces. Classification is linked to the interesting task
+of robust feature selection. Finally, we briefly describe our
+BBCI activities where some of the discussed machine learning
+ideas come to an application and conclude. Note that
+we do not attempt a full treatment of all available literature,
+rather, we present a somewhat biased point of view illustrating
+the main ideas by drawing mainly from the work of
+the authors and providing – to the best of our knowledge –
+reference to related work for further reading. We hope that
+it nevertheless will be useful for the reader.
+
+7. CONCLUSION
+After a brief review of general linear and non-linear machine
+learning techniques, this paper discussed variable selection
+methods and their application to EEG data. These
+techniques are a salient ingredient of the BBCI online feedback
+system. Note that although machine learning algorithms
+were initially always tested offline, it is the mastery
+of choosing the ’right’ complexity for a learning problem
+that makes the resulting classifiers generalize and thus renders
+them useful in real BCI feedback experiments. In particular
+the paradigm shift away from subject training to individualization
+and adaptation (’let the machines that learn’)
+of the signal processing and classification algorithm to the
+specific brain ’under study’ holds the key to the success of
+the BBCI. Being able to use (B)BCI for untrained subjects
+dramatically enhances and broadens the spectrum of practical
+applications in human-computer interfacing.

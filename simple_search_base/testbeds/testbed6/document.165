@@ -1,0 +1,16 @@
+When to use Preorder, Postorder, and Inorder Binary Search Tree Traversal strategies?
+
+I realized recently that while having used BST's plenty in my life, I've never even contemplated using anything but Inorder traversal (while I am aware of and know how easy it is to adapt a program to use pre/post-order traversal).
+Upon realizing this, I pulled out some of my old data-structures textbooks and looked for reasoning behind the usefulness of pre-order and post-order traversals - they didn't say much though.
+What are some examples of when to use preorder/postorder practically? When does it make more sense than in-order?
+
+Answer.
+The traversal strategy the programmer selects depends on the specific needs of the algorithm being designed. The goal is 
+speed, so pick the strategy that brings you the nodes you require the fastest.
+
+1.)If you know you need to explore the roots before inspecting any leaves, you pick pre-order because you will encounter all the roots before all of the leaves.
+
+2.)If you know you need to explore all the leaves before any nodes, you select post-order because you don't waste any time inspecting roots in search for leaves.
+
+3.)If you know that the tree has an inherent sequence in the nodes, and you want to flatten the tree back into its original sequence, than an in-order traversal should be used. The tree would be flattened in the same way it was created. A pre-order or post-order traversal might not unwind the tree back into the sequence which was used to create it.
+

@@ -1,0 +1,14 @@
+﻿ALGORITHM ENGINEERING FOR PROBLEMS IN COMPUTER GRAPHICS
+
+This project deals with algorithm engineering problems of computer graphics. It covers the issue of modelling graphics hardware and 3D-scenes as well as the development, analysis, implementation and experimental evaluation of rendering algorithms. The project is part of the research cluster Algorithm Engineering and is funded by the German Research Foundation (Deutsche Forschungsgemeinschaft, DFG).
+
+Project description
+
+Algorithm Engineering – development of adequate models of hardware and realistic input, to couple the theoretic design and analysis of algorithms closer to implementation and experimental evaluation – in computer graphics is a challenging task.
+
+Computer graphic algorithms are strongly supported by the used graphics hardware. This makes it necessary to integrate the properties of the graphics card into the model of the hardware.
+Depending on their field of application, "typical" 3D-scenes show very different characteristics, like density, overlapping factor or fill rate.
+As consequence, an analysis of the running time solemnly depending on scene parameters is not very meaningful; running time has to be expressed by a function of several parameters which describe both, the scene and hardware characteristics.
+Objective
+
+The intention of this project is to develop, analyse and implement rendering algorithms for virtual 3D-scenes and to evaluate them experimentally. Therefore we want to combine theoretical and experimental development and analysis as described above. We aim to gain detailed methods for running time estimation, which allow reliable efficiency comparisons between different algorithms. We will particularly concentrate on occlusion-culling techniques (computation of hidden parts of a scenes), as their efficiency does highly depend on hardware and scene characteristics. This makes them especially applicable for our analysis. As a long-term goal we consider the development of algorithms which are adaptive in sense of autonomous adapting to the characteristics of the available hardware and a given scene

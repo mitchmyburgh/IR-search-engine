@@ -1,0 +1,100 @@
+Salted Password Hashing - Doing it Right
+
+If you're a web developer, you've probably had to make a user account system. The most important aspect of a user account system is how user passwords are protected. User account databases are hacked frequently, so you absolutely must do something to protect your users' passwords if your website is ever breached. The best way to protect passwords is to employ salted password hashing. This page will explain why it's done the way it is.
+
+There are a lot of conflicting ideas and misconceptions on how to do password hashing properly, probably due to the abundance of misinformation on the web. Password hashing is one of those things that's so simple, but yet so many people get wrong. With this page, I hope to explain not only the correct way to do it, but why it should be done that way.
+
+IMPORTANT WARNING: If you are thinking of writing your own password hashing code, please don't!. It's too easy to screw up. No, that cryptography course you took in university doesn't make you exempt from this warning. This applies to everyone: DO NOT WRITE YOUR OWN CRYPTO! The problem of storing passwords has already been solved. Use either use either phpass, the PHP, C#, Java, and Ruby implementations in defuse/password-hashing, or libsodium.
+If for some reason you missed that big red warning note, please go read it now. Really, this guide is not meant to walk you through the process of writing your own storage system, it's to explain the reasons why passwords should be stored a certain way.
+
+You may use the following links to jump to the different sections of this page.
+
+1. What is password hashing?
+2. How Hashes are Cracked
+3. Adding Salt
+4. Ineffective Hashing Methods
+5. How to hash properly
+6. Frequently Asked Questions
+What is password hashing?
+
+hash("hello") = 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+hash("hbllo") = 58756879c05c68dfac9866712fad6a93f8146f337a69afe7dd238f3364946366
+hash("waltz") = c0e81794384491161f1777c232bc6bd9ec38f616560b120fda8e90f383853542
+Hash algorithms are one way functions. They turn any amount of data into a fixed-length "fingerprint" that cannot be reversed. They also have the property that if the input changes by even a tiny bit, the resulting hash is completely different (see the example above). This is great for protecting passwords, because we want to store passwords in a form that protects them even if the password file itself is compromised, but at the same time, we need to be able to verify that a user's password is correct.
+
+The general workflow for account registration and authentication in a hash-based account system is as follows:
+
+The user creates an account.
+Their password is hashed and stored in the database. At no point is the plain-text (unencrypted) password ever written to the hard drive.
+When the user attempts to login, the hash of the password they entered is checked against the hash of their real password (retrieved from the database).
+If the hashes match, the user is granted access. If not, the user is told they entered invalid login credentials.
+Steps 3 and 4 repeat everytime someone tries to login to their account.
+In step 4, never tell the user if it was the username or password they got wrong. Always display a generic message like "Invalid username or password." This prevents attackers from enumerating valid usernames without knowing their passwords.
+
+It should be noted that the hash functions used to protect passwords are not the same as the hash functions you may have seen in a data structures course. The hash functions used to implement data structures such as hash tables are designed to be fast, not secure. Only cryptographic hash functions may be used to implement password hashing. Hash functions like SHA256, SHA512, RipeMD, and WHIRLPOOL are cryptographic hash functions.
+
+It is easy to think that all you have to do is run the password through a cryptographic hash function and your users' passwords will be secure. This is far from the truth. There are many ways to recover passwords from plain hashes very quickly. There are several easy-to-implement techniques that make these "attacks" much less effective. To motivate the need for these techniques, consider this very website. On the front page, you can submit a list of hashes to be cracked, and receive results in less than a second. Clearly, simply hashing the password does not meet our needs for security.
+
+The next section will discuss some of the common attacks used to crack plain password hashes.
+
+How Hashes are Cracked
+
+Dictionary and Brute Force Attacks
+
+Dictionary Attack
+
+Trying apple        : failed
+Trying blueberry    : failed
+Trying justinbeiber : failed
+...
+Trying letmein      : failed
+Trying s3cr3t       : success!
+Brute Force Attack
+
+Trying aaaa : failed
+Trying aaab : failed
+Trying aaac : failed
+...
+Trying acdb : failed
+Trying acdc : success!
+The simplest way to crack a hash is to try to guess the password, hashing each guess, and checking if the guess's hash equals the hash being cracked. If the hashes are equal, the guess is the password. The two most common ways of guessing passwords are dictionary attacks and brute-force attacks.
+
+A dictionary attack uses a file containing words, phrases, common passwords, and other strings that are likely to be used as a password. Each word in the file is hashed, and its hash is compared to the password hash. If they match, that word is the password. These dictionary files are constructed by extracting words from large bodies of text, and even from real databases of passwords. Further processing is often applied to dictionary files, such as replacing words with their "leet speak" equivalents ("hello" becomes "h3110"), to make them more effective.
+
+A brute-force attack tries every possible combination of characters up to a given length. These attacks are very computationally expensive, and are usually the least efficient in terms of hashes cracked per processor time, but they will always eventually find the password. Passwords should be long enough that searching through all possible character strings to find it will take too long to be worthwhile.
+
+There is no way to prevent dictionary attacks or brute force attacks. They can be made less effective, but there isn't a way to prevent them altogether. If your password hashing system is secure, the only way to crack the hashes will be to run a dictionary or brute-force attack on each hash.
+
+Lookup Tables
+
+Searching: 5f4dcc3b5aa765d61d8327deb882cf99: FOUND: password5
+Searching: 6cbe615c106f422d23669b610b564800:  not in database
+Searching: 630bf032efe4507f2c57b280995925a9: FOUND: letMEin12 
+Searching: 386f43fab5d096a7a66d67c8f213e5ec: FOUND: mcd0nalds
+Searching: d5ec75d5fe70d428685510fae36492d9: FOUND: p@ssw0rd!
+Lookup tables are an extremely effective method for cracking many hashes of the same type very quickly. The general idea is to pre-compute the hashes of the passwords in a password dictionary and store them, and their corresponding password, in a lookup table data structure. A good implementation of a lookup table can process hundreds of hash lookups per second, even when they contain many billions of hashes.
+
+If you want a better idea of how fast lookup tables can be, try cracking the following sha256 hashes with CrackStation's free hash cracker.
+
+c11083b4b0a7743af748c85d343dfee9fbb8b2576c05f3a7f0d632b0926aadfc
+08eac03b80adc33dc7d8fbe44b7c7b05d3a2c511166bdb43fcb710b03ba919e7
+e4ba5cbd251c98e6cd1c23f126a3b81d8d8328abc95387229850952b3ef9f904
+5206b8b8a996cf5320cb12ca91c7b790fba9f030408efe83ebb83548dc3007bd
+Reverse Lookup Tables
+
+Searching for hash(apple) in users' hash list...     : Matches [alice3, 0bob0, charles8]
+Searching for hash(blueberry) in users' hash list... : Matches [usr10101, timmy, john91]
+Searching for hash(letmein) in users' hash list...   : Matches [wilson10, dragonslayerX, joe1984]
+Searching for hash(s3cr3t) in users' hash list...    : Matches [bruce19, knuth1337, john87]
+Searching for hash(z@29hjja) in users' hash list...  : No users used this password
+This attack allows an attacker to apply a dictionary or brute-force attack to many hashes at the same time, without having to pre-compute a lookup table.
+
+First, the attacker creates a lookup table that maps each password hash from the compromised user account database to a list of users who had that hash. The attacker then hashes each password guess and uses the lookup table to get a list of users whose password was the attacker's guess. This attack is especially effective because it is common for many users to have the same password.
+
+Rainbow Tables
+
+Rainbow tables are a time-memory trade-off technique. They are like lookup tables, except that they sacrifice hash cracking speed to make the lookup tables smaller. Because they are smaller, the solutions to more hashes can be stored in the same amount of space, making them more effective. Rainbow tables that can crack any md5 hash of a password up to 8 characters long exist.
+
+Next, we'll look at a technique called salting, which makes it impossible to use lookup tables and rainbow tables to crack a hash.
+
+

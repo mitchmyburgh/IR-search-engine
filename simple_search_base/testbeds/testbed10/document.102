@@ -1,0 +1,105 @@
+Statistical downscaling of daily precipitation using support vector machines
+and multivariate analysis
+
+
+Shien-Tsung Chen, Pao-Shan Yu *, Yi-Hsuan Tang
+
+Introduction
+Climate change and its impacts on water resources have gained
+significant attention in hydrology. General circulation models
+(GCMs) provide reasonable simulations of weather variables at global
+scales for climate change study, but cannot generate local climate
+details for impact studies of water resources at a drainage
+basin. Accordingly, downscaling methods have been developed to
+link GCM outputs at coarse resolutions with surface weather variables
+at finer resolutions. Downscaling methods are commonly
+classified as statistical downscaling and dynamic downscaling. Statistical
+downscaling methods construct a statistical relationship
+between large-scale GCM outputs and local weather variables,
+and dynamic downscaling methods employ high-resolution regional
+climate models nested in a GCM to obtain local weather variables.
+Although both statistical and dynamic downscaling
+methods have their own advantages, statistical downscaling is
+more widely adopted in hydrological studies because it is less computationally
+demanding.
+Statistical downscaling can be roughly grouped into four
+categories, weather typing method (e.g., Bárdossy and Plate,
+1992; von Storch et al., 1993; Bárdossy, 1997), stochastic weather generators (e.g., Selker and Haith, 1990; Tung and Haith, 1995; Yu
+et al., 2002), resampling methods (e.g., Murphy, 2000; Buishand
+and Brandsma, 2001; Palutikof et al., 2002) and regression methods.
+A regression method constructs a linear or non-linear empirical
+function between local-scale variables and large-scale GCM
+variables, and is preferred among statistical downscaling methods
+because it is easy to implement. The downscaling regression function
+is derived by artificial neural networks (Hewitson and Crane,
+1996; Olsson et al., 2001; Dibike and Coulibaly, 2006), canonical
+correlation analysis (Kaas et al., 1996; Landman et al., 2001), principal
+components (Burger, 1996; Menzel and Burger, 2002; Chu
+et al., 2008) or support vector machines (Tripathi et al., 2006;
+Anandhi et al., 2008).
+Various downscaling models and software have been developed.
+One popularly used model is the statistical downscaling
+model (SDSM) (Wilby et al., 2002). For example, Wilby et al.
+(2006) combined SDSM with a conceptual water balance model
+and a mass-balance water quality model to investigate climate
+change impact assessment and uncertainty in river flow and water
+quality. Additionally, SDSM is often compared with statistical
+downscaling models. Harpham and Wilby (2005) compared SDSM
+with two artificial neural networks (ANNs), and concluded that
+SDSM yields better daily precipitation quantiles and inter-site
+correlation than the ANNs. Khan et al. (2006) compared SDSM, a
+weather generator model and an ANN model to assess thuncertainty of downscaling results, and concluded that SDSM
+reproduces the best statistical characteristics of observed data.
+Research of climate change impacts on water resources often
+requires downscaling daily precipitation. This study proposes a
+two-step statistical downscaling method for daily precipitation
+projection. The first step is to classify the day as dry or wet, and
+the second is regression to calculate daily precipitation amount if
+the day is classified as wet. The proposed statistical downscaling
+method is based on two methodologies, namely support vector
+machines (SVMs), including support vector classification (SVC)
+and support vector regression (SVR), and multivariate analysis,
+including discriminant analysis (for classification) and multiple
+regression. These methodologies are described in detail in Section
+‘‘Methodologies”. Section ‘‘Study Area and Data” describes the local
+daily precipitation data and the large-scale predictors from reanalysis
+and GCM data. Section ‘‘Results and Discussion” presents
+downscaling model development and results by SVM and multivariate
+model. Comparison is also made with the SDSM downscaling
+results. Finally, projected daily precipitations in the study area
+are presented.
+
+Conclusions and future work
+This work proposes a daily precipitation downscaling method
+consisting of classification and regression. The proposed method
+was developed using SVM and multivariate analysis, and was compared
+with the SDSM. Downscaled results reveal that the SVM produced
+more accurate daily precipitation than the SDSM and the
+multivariate model. Downscaled daily precipitation by the SVM
+presented comparable quantile precipitations to observations,
+and showed good agreement with the extreme events. The SDSM
+was reported to outperform other models in some works (e.g.,
+Harpham and Wilby, 2005; Khan et al., 2006), but did not perform
+very well for downscaling daily precipitation in this study area.
+Although the SDSM performed better than other models in relation
+to small daily precipitation, it underestimated the quantile
+precipitations.
+Daily precipitation was divided into two categories, dry-day and
+wet-day. Regression was then applied on the wet-day class to obtain
+the precipitation amount. Future study could categorize wet
+days more finely, for example, by considering days of light, medium
+and heavy rain, and then construct different regression models
+for each class. This approach could improve estimation of precipitation
+amount on wet days, and reduce the number of negative values
+calculated by the regression model. Moreover, this work
+adopted large-scale weather factors at only the nearest GCM data
+grid to develop the downscaling model, and used A2 and B2 scenario
+data projected by HadCM3. Future work should consider
+large-scale weather factors from a region covering more grids in
+order to select the predictors and then to construct the downscaling
+model. Also, season separation accounting for the date of onset
+and duration in each year (e.g., Tripathi et al., 2006; Anandhi et al.,
+2008) can be adopted rather than the ‘‘hard” separation in wet and
+dry season by the months. Furthermore, additional GCM models,
+and their updated projection data, could be used to investigate
+the possible change in future daily precipitation in the study area.

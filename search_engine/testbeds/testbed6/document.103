@@ -1,0 +1,24 @@
+Topological Sort 
+Suppose we are given a directed graph that models the precedence relation between tasks in a project. Some tasks must be performed in a specific order, where others are independent. The precedence contraints create a partial order among the tasks, specifying the order only between dependent tasks. Topological sort (topsort) creates a total order from a precedence graph, which specifies an order for all tasks which satisfies the precedence constraints. Each vertex is assigned a topological number (topnum) which specifies its position in the total order. 
+Topological sort can only be performed on a directed acyclic graph (DAG). This topsort algorithm is based on depth first search. Topnums are assigned in descending order. Each vertex is assigned its topnum when the DFS backs out of the vertex. This ensures that all vertices reachable from a vertex V are assigned topnums before V, and since topnums are assigned in descending order, all vertices reachable from V (which come after V in the partial order) will have topnums greater than that of V. 
+  DFSTopsortDriver(G) {
+     topnum = n (number of vertices in G)
+     for each vertex v in G {
+        if v is not visited {
+           DFSTopsort(v,topnum)
+        }
+     }
+  }
+  DFSTopsort(v,topnum) {
+     visit v and mark v as visited
+     for each neighbor w of v {
+        if w not visited {
+           DFSTopsort(w,topnum)
+        }
+     }
+     number v with topnum
+     topnum--
+  }
+Here is a sample DAG: 
+If DFSTopsortDriver starts at vertex A, and vertices are visited in alphabetical order, then the topsort proceeeds A -&gt; B -&gt; C, and since C has no successors it is assigned topnum 7. The topsort backs up and proceeds B -&gt; E -&gt; F, and since F has no successors it is assigned topnum 6. The topsort backs up to E, assigns topnum 5 since E has no other successors, and backs up to B. B has no other successors so it is assigned topnum 4 and the topsort backs up to A and proceeds A -&gt; D. D is assigned topnum 3 since its successor has been visited and the topsort backs up to A. A is assigned topnum 2 since all its successors have been visited. The driver starts again at vertex G, which is assigned topnum 1 since its successor has been visited. All vertices have been visited so the algorithm terminates. The topological order is G A D B E F C. 
+  Email Me | Office Hours | My Home Page | Department Home | MCC Home Page  © Copyright Emmi Schatz 2010  

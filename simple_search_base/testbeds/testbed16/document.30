@@ -1,0 +1,51 @@
+Cloud App Security: A Market Overview
+Ajmal blog pic
+By Ajmal Kohgadai
+As one of the top technology trends identified by Gartner for six straight years, cloud adoption continues to experience major growth in the enterprise. From enterprises to small/medium sized businesses, organizations of all sizes across all industries see the cloud as a scalable and efficient way to growth their businesses. Between 2011 and 2014, there was a mind-boggling 5x increase in the rate of cloud adoption in the enterprise.
+
+According to a recent International Data Corp announcement, worldwide expenditure on public cloud is expected to double between 2015 and 2019, going from $70 billion to $141 billion. Forrester is even more bullish, expecting the public cloud market to reach $191 billion by 2020.
+
+Limited Time Offer: Free Gartner Report
+
+Download Gartner's detailed recommendations for evaluating and deploying Cloud Access Security Brokers
+
+DOWNLOAD NOW
+
+
+Despite the meteoric growth, cloud security continues to be a major reason why many enterprises haven’t adopted it. To address security concerns of data moving to the cloud, a new breed of IT security solution has been born.
+
+The Rise and Rise of the Cloud App Security Market
+
+Ever since IBM introduced the first mainframe computer in the 1960s, IT security has evolved hand-in-hand with information technology. As information has moved from centralized systems (mainframe) to distributed computers and networks, new technologies have been introduced to meet its security needs. Companies used firewalls, proxies, antivirus and antimalware, data loss prevention solutions, and rights management solutions to protect their data. Whether it’s called a Cloud Access Security Broker (CASB) or cloud app security solution, the basic idea is to offer these same capabilities for the cloud.
+
+Not surprisingly, Gartner considers this it to be a ”required technology” for organizations using cloud services.
+
+By 2020, 85% of large enterprises will use a cloud access security broker solution for their cloud services, which is up from fewer than 5% in 2015.
+
+– Gartner, How to Evaluate and Operate a Cloud Access Security Broker
+
+Given the exponential growth of cloud adoption, the need for a cloud app security solution is obvious. While business units within enterprises are driving a lot of the cloud service procurement, an even larger number of individuals use cloud services without going through the IT department. According to recent Skyhigh research, the average organization uses a dizzying 1,154 unique cloud services. IT security teams need cloud app security solutions as a central control point for cloud services to understand which cloud services are being used and how, in order to implement data security policies across all cloud services in use. This type of visibility isn’t possible with existing security products like web application firewalls (WAFs), secure web gateways (SWGs) and enterprise firewalls.
+
+Why do organizations use a cloud app security product?
+
+There are several reasons why companies use a cloud app security solution. Employees are increasingly using mobile devices (often unmanaged ones) to transfer corporate data to the cloud. This type of activity is a black box for IT departments. Secondly, as companies adopt cloud services, the need to evaluate the security of the services arises naturally and security shortcomings are discovered. Lastly, as the largest software companies, like Microsoft or Oracle, move their product offering to the cloud, their enterprise customers increasingly look for ways to secure their data in its new location.
+
+And though a lot of the enterprise ready cloud providers have robust security and compliance controls, most companies need a central control point that provides security across all cloud services. Especially since the vast majority of cloud security failures will eventually be caused by the customer, according to Gartner.
+
+Through 2020, 95% of cloud security failures will be the customer’s fault.
+
+– Gartner, Market Guide for Cloud Access Security Brokers
+
+How to select the right cloud app security solution?
+
+Cloud app security solutions come in multiple forms, each with its own strengths and weaknesses. Some vendors have mature products that provide extensive security capabilities across a vast number of cloud applications that address common cloud security use cases across industries.
+
+Here are some considerations to keep in mind when evaluating a cloud app security solution:
+
+Is the solution API-only or is it multimode (API and forward/reverse proxy)?
+Evaluate your Shadow IT footprint to know what’s currently being used before enforcing policies
+Ensure the solution you select supports both the largest number of cloud services as while providing a wide range of capabilities for each specific application, including those that you may onboard within the next 18 months
+Consider whether the solution’s deployment method can integrate well with your current network landscape and security stack such as IAM, firewalls, proxies and SIEMs.
+Deployment architecture of cloud app security solution
+
+The way a cloud app security solution is deployed can greatly impact its ability to protect data in the cloud. There is the SaaS solution and then there is the on-premises virtual or physical appliance. Up to now, the SaaS form factor has proven to be more popular and easier to use in large part due to the advantages of using cloud based services. The other consideration is whether the technology is deployed via inline forward proxy, reverse proxy, or API integration. To achieve the widest range of security functions, all three should be utilized when appropriate. For example, certain functionalities such as encryption, real-time data loss prevention and access control isn’t feasible with an API-only deployment architecture. Lastly, the solution should be deployed in a way that supports integration with existing security solutions so that a singular set of policies are being enforced across premises and cloud based systems

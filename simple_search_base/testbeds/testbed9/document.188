@@ -1,0 +1,30 @@
+DWARF is a widely used, standardized debugging data format. DWARF was originally designed along with Executable and Linkable Format (ELF), although it is independent of object file formats. The name is a medieval fantasy complement to "ELF" that has no official meaning, although the backronym 'Debugging With Attributed Record Formats' was later proposed.
+
+
+== History ==
+The first version of DWARF proved to use excessive amounts of storage, and an incompatible successor, DWARF-2, superseded it and added various encoding schemes to reduce data size. DWARF did not immediately gain universal acceptance; for instance, when Sun Microsystems adopted ELF as part of their move to Solaris, they opted to continue using stabs, in an embedding known as "stabs-in-elf". Linux followed suit, and DWARF-2 did not become the default until the late 1990s.
+The DWARF Workgroup of the Free Standards Group released DWARF version 3 in January 2006, adding (among other things) support for C++ namespaces, Fortran 90 allocatable data and additional compiler optimization techniques.
+The DWARF committee published version 4 of DWARF, which offers "improved data compression, better description of optimized code, and support for new language features in C++", in 2010.
+
+
+== Structure ==
+DWARF uses a data structure called a Debugging Information Entry (DIE) to represent each variable, type, procedure, etc. A DIE has a tag (e.g., DW_TAG_variable, DW_TAG_pointer_type, DW_TAG_subprogram) and attributes (key-value pairs). A DIE can have nested (child) DIEs, forming a tree structure. A DIE attribute can refer to another DIE anywhere in the tree—for instance, a DIE representing a variable would have a DW_AT_type entry pointing to the DIE describing the variable's type.
+To save space, two large tables needed by symbolic debuggers are represented as byte-coded instructions for simple, special-purpose finite state machines. The Line Number Table, which maps code locations to source code locations and vice versa, also specifies which instructions are part of function prologues and epilogues. The Call Frame Information table allows debuggers to locate frames on the call stack.
+
+
+== Further reading ==
+Michael Eager, chair of the DWARF Standards Committee, has written an introduction to debugging formats and DWARF 3, Introduction to the DWARF Debugging Format.
+
+
+== See also ==
+stabs - Symbol TABle Strings debugging format
+
+
+== References ==
+
+
+== External links ==
+Official website
+Libdwarf, a C library intended to simplify reading (and writing) applications using DWARF2, DWARF3.
+How debuggers work: Part 3 - Debugging information
+Debugging formats DWARF and STAB

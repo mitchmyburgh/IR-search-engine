@@ -1,0 +1,51 @@
+A metropolitan-area Ethernet, Ethernet MAN, or metro Ethernet network is a metropolitan area network (MAN) that is based on Ethernet standards. It is commonly used to connect subscribers to a larger service network or the Internet. Businesses can also use metropolitan-area Ethernet to connect their own offices to each other.
+An Ethernet interface is much cheaper than a SONET/SDH (Synchronous Digital Hierarchy) or PDH (Plesiochronous Digital Hierarchy) interface of the same bandwidth. Another distinct advantage of an Ethernet-based access network is that it can be easily connected to the customer network, due to the prevalent use of Ethernet in corporate and, more recently, residential networks. A typical service provider's network is a collection of switches and routers connected through optical fiber. The topology could be a ring, hub-and-spoke (star), or full or partial mesh. The network will also have a hierarchy: core, distribution (aggregation), and access. The core in most cases is an existing IP/MPLS backbone but may migrate to newer forms of Ethernet transport in the form of 10Gbit/s, 40Gbit/s, or 100Gbit/s speeds or even possibly 400Gbit/s to Terabit Ethernet network in the future.
+Ethernet on the MAN can be used as pure Ethernet, Ethernet over SDH, Ethernet over MPLS, or Ethernet over DWDM. Pure Ethernet-based deployments are cheaper but less reliable and scalable and thus are usually limited to small scale or experimental deployments. SDH-based deployments are useful when there is an existing SDH infrastructure already in place, its main shortcoming being the loss of flexibility in bandwidth management due to the rigid hierarchy imposed by the SDH network. MPLS-based deployments are costly but highly reliable and scalable and are typically used by large service providers.
+
+
+== Metropolitan area network (MAN) topology ==
+Familiar network domains are likely to exist regardless of the transport technology chosen to implement Metropolitan area networks: Access, aggregation/distribution, and core.
+Access devices normally exist at a customer's premises, unit, or wireless base station. This is the network that connects customer equipment, and may include ONT and/or Residential gateway, or office router.
+Aggregation occurs on a distribution network such as an ODN segment. Often Passive Optical Network, microwave or Digital Subscriber Line technologies are employed, but some of them using point-to-point Ethernet over "home-run" direct fibre. This part of the network includes nodes such as Multi Tenanted Unit switches, Optical line terminals in an outside plant or central office cabinet, Ethernet in the First Mile equipment, or provider bridges.
+A MAN may include the transport technologies MPLS, PBB-TE and T-MPLS, each with its own resiliency and management solutions.
+A core network often uses IP-MPLS to connect different MANs together.
+Much of the functionality of Ethernet MANs such as virtual private lines or virtual private networks is implemented by the use of Ethernet VLAN tags that allow differentiation of each part of the network. Logical differentiation of the physical network helps to identify the rights that the traffic has and to ease the management of hosts' access rights with respect to other users and networks.
+
+
+== MPLS-based Ethernet MANs ==
+An MPLS based Metro Ethernet network uses MPLS in the service provider's network. The subscriber will get an Ethernet interface on copper (for example, 100BASE-TX) or fiber (such as 100BASE-FX). The customer's Ethernet packet is transported over MPLS and the service provider network uses Ethernet again as the underlying technology to transport MPLS. So, it is Ethernet over MPLS over Ethernet.
+Label Distribution Protocol (LDP) signaling can be used as site to site signaling for the inner label (VC label) and Resource reSerVation Protocol-Traffic Engineering (RSVP-TE) or LDP may be used as Network signaling for the outer label.
+One restoration mechanism used in an MPLS based Metro Ethernet Networks is Fast ReRoute (FRR) to achieve sub-50ms convergence of MPLS local protection. For each deployment situation the benefit versus cost of MPLS must be weighed carefully, so if not implemented on a carrier's distribution network there might be more benefit for MPLS the core network. In some situations the cost may not warrant the benefits, particularly if sub 50ms convergence time is already being achieved with pure Ethernet.
+A comparison of MPLS-based Metro Ethernet against a pure Ethernet MAN:
+Scalability: In a properly designed Ethernet VLAN network, each switched path can have 4094 single tag VLANs. Some aggregation and core switches can classify traffic by two VLANs using IEEE 802.1ad VLAN stacking, so with such aggregation devices properly placed in the center of a network, end segments and rings of single tag devices can receive only the traffic that they need. When using MPLS, Ethernet VLANs have local meaning only (like Frame Relay PVC). Same scalability considerations apply to the MAC addresses where in a pure Layer 2 Ethernet MAN all MAC addresses are being shared across the network, although this issue can be managed by smart network design and choosing switches with MAC tables sufficient for the size of network segments.
+Resiliency: pure Ethernet network resiliency relies on Spanning Tree Protocols STP, IEEE 802.1w RSTP or IEEE 802.1s MSTP (30 to sub 50 ms convergence depending on network design) while MPLS-based MANs use mechanisms such as MPLS Fast Reroute to achieve SDH-like (50 ms) convergence times. Metro Ethernet can also utilise Link aggregation or Resilient Packet Ring where appropriate to add link redundancy and recovery in distribution networks. Some Ethernet vendors' RSTP convergence is also sub-50 ms, but this convergence time may vary from vendor to vendor. Ethernet protection switching is also standardized in ITU G.8031.
+Multiprotocol convergence: with the maturity on pseudowires standards (ATM Virtual Leased Line VLL, FR VLL, etc.) an MPLS-based Metro Ethernet can backhaul IP/Ethernet traffic together with virtually any type of traffic coming from customer or other access networks (i.e. ATM aggregation for UMTS or TDM aggregation for GSM), while this could be more challenging in a pure Ethernet scenario.
+End to End OAM: MPLS-based MAN offers a wide set of troubleshooting and OAM MPLS-based tools which enrich Service Providers ability to effectively troubleshoot and diagnose network problems. These include for example, MAC ping, MAC traceroute, LSP ping etc. However, there are now Ethernet OAM tools defined in IEEE 802.1ab, IEEE 802.1ag and Ethernet in the First Mile (IEEE 802.3ah) for monitoring and troubleshooting Ethernet networks. EOAM (Ethernet Operations, Administration, and Maintenance) is a protocol for installing, monitoring, and troubleshooting MANs and WANs.
+
+
+== Ethernet over wireless ==
+Some service providers deployed Metro Ethernet networks using Fixed Wireless technology. These networks commonly are engineered with a majority of the network traffic using a mesh of multi-point and point-to-point microwave links. Carriers have more recently been referred to as Metro Wireless in many cases. Metro Wireless providers in many cases are able to produce shorter installation times due to less permitting and procedure necessary. Many consumers now rely on this type of technology to allow internet access in areas where local telephone companies and cable companies do not or will no longer service due to copper theft or other business reasons. Metro Wireless is also commonly used as a true redundant path to the internet for Metro Ethernet diversity as a growing portion of US businesses are investing in fixed wireless circuits for redundancy.
+
+
+== Metro-E carriers ==
+In late September 2007 Verizon Business announced that it is implementing a Metro Ethernet solution across Asia-Pacific including Australia, Singapore, Japan and Hong Kong using Nortel equipment.
+In May 2011, Comcast announced that it was launching its own Metro Ethernet line of services to business customers in the United States.
+Also specialized SMEs such as Metro Optic provide Metro Ethernet solutions alternative to large carriers.
+
+
+== See also ==
+Carrier Ethernet
+
+
+== References ==
+
+
+== Further reading ==
+Halabi, Sam (2003). Metro Ethernet. Cisco Press. ISBN 1-58705-096-X. 
+
+
+== External links ==
+Metro Ethernet Forum (MEF)
+"Ethernet Academy". Peer Reviewed Carrier Ethernet papers and discussion groups. 
+The Challenges of Ethernet Access
+"Carrier Ethernet Forum". discussion group web site. Retrieved August 6, 2011.

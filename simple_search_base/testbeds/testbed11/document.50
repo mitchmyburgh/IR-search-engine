@@ -1,0 +1,39 @@
+The Open Grid Forum (OGF) is a community of users, developers, and vendors for standardization of grid computing. It was formed in 2006 in a merger of the Global Grid Forum and the Enterprise Grid Alliance. The OGF models its process on the Internet Engineering Task Force (IETF), and produces documents with many acronyms such as OGSA, OGSI, and JSDL.
+
+
+== Organization ==
+The OGF has two principal functions plus an administrative function: being the standards organization for grid computing, and building communities within the overall grid community (including extending it within both academia and industry). Each of these function areas is then divided into groups of three types: working groups with a generally tightly defined role (usually producing a standard), research groups with a looser role bringing together people to discuss developments within their field and generate use cases and spawn working groups, and community groups (restricted to community functions).
+Three meetings are organized per year, divided (approximately evenly after averaging over a number of years) between North America, Europe and East Asia. Many working groups organize face-to-face meetings in the interim.
+
+
+== History ==
+The concept of a forum to bring together developers, practitioners, and users of distributed computing (known as grid computing at the time) was discussed at a "Birds of a Feather" session in November 1998 at the SC98 supercomputing conference. Based on response to the idea during this BOF, Ian Foster and Bill Johnston convened the first Grid Forum meeting at NASA Ames Research Center in June 1999, drawing roughly 100 people, mostly from the US. A group of organizers nominated Charlie Catlett (from Argonne National Laboratory and the University of Chicago) to serve as the initial chair, confirmed via a plenary vote was held at the 2nd Grid Forum meeting in Chicago in October 1999. With advice and assistance from the Internet Engineering Task Force (IETF), OGF established a process based on the IETF. OGF is managed by a steering group.
+During 1998, groups similar to Grid Forum began to organize in Europe (called eGrid) and Japan. Discussions among leaders of these groups resulted in combining to form the Global Grid Forum which met for the first time in Amsterdam in March 2001. GGF-1 in Amsterdam followed five Grid Forum meetings. Catlett served as GGF Chair for two 3-year terms and was succeeded by Mark Linesch (from Hewlett Packard) in September 2004. The Enterprise Grid Alliance (EGA), formed in 2004, was more focused on large data center businesses such as EMC Corporation, NetApp, and Oracle Corporation. At GGF-18 (the 23rd gathering of the forum, counting the first five GF meetings) in September 2006, GGF became Open Grid Forum (OGF) based on a merger with EGA. In September 2007, Craig Lee of the Aerospace Corporation became chair.
+
+
+== Technologies ==
+Some technologies specified by OGF include:
+GridFTP: Extensions to the File Transfer Protocol for high-speed, secure, and reliable data transfer.
+The Grid Laboratory Uniform Environment (GLUE), is an information model, similar to a database schema, for a uniform representation of grid computing resources. It was originally developed as part of the Enabling Grids for E-sciencE (EGEE) project in Europe, which had worked on a grid information system using tools such as the Globus Toolkit through about 2004. The working group was formed on 28 January 2007. A GLUE schema version 1.3 was published as a draft in February 2007 and final form in August 2008. A 2.0 document was published in March 2009. The abstract schema can be mapped into specific data models using Extensible Markup Language (XML), Lightweight Directory Access Protocol (LDAP), or Structured Query Language (SQL).
+SAGA: The Simple API for Grid Applications describes an interface for high-level grid application programming.
+Open Grid Services Architecture (OGSA) describes a service-oriented architecture grid computing environment for business and scientific use.
+DRMAA: Distributed Resource Management Application API is a high-level application programming interface specification for the submission and control of jobs to one or more Distributed Resource Management Systems (DRMS) within a grid computing architecture.
+Job Submission Description Language: An extensible XML specification for the description of simple tasks to non-interactive computer execution systems. The specification focuses on the description of computational task submissions to traditional high-performance computer systems like batch schedulers.
+CDDLM: Configuration Description, Deployment, and Lifecycle Management Specification is a standard for the management, deployment and configuration of grid service lifecycles or inter-organization resources.
+GridRPC: Grid Remote Procedure Call designs OGF recommendations for a grid-enabled, remote procedure call (RPC) mechanism.
+Data Format Description Language (DFDL), for modeling of general text and binary data.
+Virtual Organization Membership Service (VOMS): - Automated machine-queriable management of virtual organization membership attributes.
+In addition to technical standards, the OGF published community-developed informational and experimental documents.
+The first version of the DRMAA API was implemented in Sun's Grid engine and also in the University of Wisconsin-Madison's program Condor cycle scavenger. The separate Globus Alliance maintains an implementation of some of these standards through the Globus Toolkit. A release of UNICORE is based on the OGSA architecture and JSDL.
+
+
+== See also ==
+Open Cloud Computing Interface
+Open Grid Services Infrastructure
+
+
+== References ==
+
+
+== External links ==
+Official website

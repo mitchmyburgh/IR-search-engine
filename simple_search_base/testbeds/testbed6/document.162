@@ -1,0 +1,71 @@
+An Application of Binary Trees: Huffman Code Construction
+Binary Trees 
+Definition: A binary tree is either empty or consists of a node called the root together with two binary trees called the 
+left subtree and the right subtree. 
+If h = height of a binary tree, 
+max # of leaves = 2h 
+max # of nodes =  2h + 1 - 1 
+A binary tree with height h and  
+2h + 1 - 1 nodes (or 2h leaves) is called a full binary tree 
+ 
+  The nodes of a binary tree can be numbered in a natural way, level by level, left to right.  
+  A binary tree with n nodes is said to be complete if it contains all the first n nodes of the above numbering scheme. Figure 4.6 shows examples of complete and incomplete binary trees. 
+  Total number of binary trees having n nodes 
+ = number of stack-realizable permutations of length n 
+ = number of well-formed parentheses (with n left parentheses and n right parentheses) 
+ =  
+Binary Tree Traversal: 
+   1.
+Preorder
+Visit root, visit left subtree in preorder, visit right subtree in preorder 
+   2.
+Postorder
+Visit left subtree in postorder, right subtree in postorder, then the root 
+   3.
+Inorder
+Visit left subtree in inorder, then the root, then the right subtree in inorder
+We can construct a binary tree uniquely from preorder and inorder or postorder and inorder but not preorder and postorder. 
+Data Structures for Binary Trees: 
+   1.
+  Arrays, especially suited for complete and full binary trees
+   2.
+  Pointer-based
+ Pointer-based Implementation: 
+typedef struct node-tag { 
+                       item-type info   
+                 struct node-tag * left   
+                 struct node-tag * right   
+       } node-type   
+node-type * root   /* pointer to root */ 
+node-type * p   /* temporary pointer */ 
+void preorder(node-type * root) 
+       { 
+                       if (root) { 
+                       visit (root)   
+               preorder (root  
+   left)   
+               preorder (root  
+   right)   
+       } 
+} 
+void inorder (node-type * root) 
+{ 
+                       if (root) { 
+                       inorder (root  
+   left)   
+                               visit (root)   
+                       inorder (root  
+   right)   
+             } } 
+void postorder (node-type * root) 
+{ 
+               if (root) { 
+                               postorder (root  
+   left)   
+                               postorder (root  
+   right)   
+                                               visit (root)   
+               } 
+}    
+
+ eEL,CSA_Dept,IISc,Bangalore

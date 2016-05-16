@@ -1,0 +1,35 @@
+Google Inbox Will Start Using A.I. To Answer Emails For You
+
+The automation of you
+Google Inbox's Smart Reply feature will be able to suggest responses to emails, using artificial intelligence.
+
+Google's mobile software is inching closer to becoming a true personal assistant, with the coming integration of an upcoming feature called Smart Reply.
+
+Google's Inbox email app will soon be able to answer your emails, by suggesting a few short replies based on the content of the email you received, Google announced today in a blog post. The responses aren't complex (yet), mainly consisting of phrases like "We'll be there" or "I'll check on it."
+The neural net really wanted to tell everyone "I love you."
+
+Smart Reply uses deep learning, a stab at artificial intelligence. Over time, the machine will learn more and more about language, and how you like to respond to emails. So how does this all work? (Warning: it's about to get computer science-y.)
+
+A main tenet of artificial intelligence today is called machine learning. Machine learning can be simple statistics, or vast arrays of mathematical functions called artificial neural networks.
+
+There are a bunch of different kinds of artificial neural networks, that are good at different things. Convolutional neural networks are good at processing images, for instance. They were invented by Yann LeCunn, who now works at Facebook, and can produce the kinds of trippy nightmare-scapes that became popular earlier this year when Google publicly released its code for DeepDream, an A.I. program used in Google Image Search. On the other hand, researchers favor recurrent neural networks for things like text and understanding language, because they easily incorporate new information into the system when they recur. ("_Recur_rent neural nets.")
+
+These neural networks are just clusters of mathematical equations that can deal with certain inputs and outputs, all linked together. When an individual cluster, or "neuron" is done processing a piece of information, they pass it along to the next "neuron" down the line. The constellation of neurons begins to break down information into known quantities called vectors, and from understanding relationships between vectors they can compare to other relationships and make sense of data.
+
+Google Inbox uses two of these recurrent neural networks: one to process the information in the email you received, and another to generate possible responses.
+
+The first step is to understand the situation, so the first neural net "reads" your email for you. It scans word by word—recurring, like we discussed earlier. Instead of understanding the syntax of the sentence, the neural net goes straight for meaning. The sentence "Are you free tomorrow?" has a similar vector to "Does tomorrow work for you?" according to Greg Corrado, who wrote the blog post explaining the upcoming feature.
+
+The second takes that vector, or idea, and formulates a response by predicting which word should come next, grammatically and logically, and then outputting that word. It's a lot like the game where a group of people have to tell a story one word at a time. Except it's only one person, and that person is a machine.
+
+Google
+
+Inbox's Smart Reply feature relies on two recurrent neural networks to read and respond to emails.
+
+Like that game metaphor, sometimes things can go awry, although one issue Google had was surprisingly pleasant. The neural net really wanted to tell everyone "I love you." Corrado explains that this is because responses like "I love you" and "sounds good" are very common, and the more the network sees something, the more important it thinks that phrase is. In the end, they modified the response generator to gauge the tone of the email that was received, and match it in the response.
+
+Since privacy is an issue, no humans will ever be able to read your email to verify the accuracy of the neural network. Corrado says that this was "like trying to solve a puzzle while blindfolded."
+
+The Smart Reply feature will be able to generate around 20,000 responses, according to Wired, that will vary between three and six words.
+
+Google Inbox will receive an update later this week with the Smart Reply feature on iOS and Android.

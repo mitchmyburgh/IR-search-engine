@@ -1,0 +1,15 @@
+Metaclasses
+Main article: Metaclass
+
+Metaclasses are classes whose instances are classes.[33] A metaclass describes a common structure of a collection of classes and can implement a design pattern or describe particular kinds of classes. Metaclasses are often used to describe frameworks.[citation needed]
+
+In some languages, such as Python, Ruby or Smalltalk, a class is also an object; thus each class is an instance of a unique metaclass which is built into the language. [5] [34] [35] The Common Lisp Object System (CLOS) provides metaobject protocols (MOPs) to implement those classes and metaclasses. [36]
+Non-subclassable
+
+Non-subclassable classes allow programmers to design classes and hierarchies of classes which at some level in the hierarchy, further derivation is prohibited. (A stand-alone class may be also designated as non-subclassable, preventing the formation of any hierarchy). Contrast this to abstract classes, which imply, encourage, and require derivation in order to be used at all. A non-subclassable class is implicitly concrete.
+
+A non-subclassable class is created by declaring the class as sealed in C# or as final in Java or PHP.[37][38][39]
+
+For example, Java's String class is designated as final.[40]
+
+Non-subclassable classes may allow a compiler (in compiled languages) to perform optimizations that are not available for subclassable classes

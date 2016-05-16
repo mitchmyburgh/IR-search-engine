@@ -1,0 +1,58 @@
+Stochastic optimization (SO) methods are optimization methods that generate and use random variables. For stochastic problems, the random variables appear in the formulation of the optimization problem itself, which involve random objective functions or random constraints, for example. Stochastic optimization methods also include methods with random iterates. Some stochastic optimization methods use random iterates to solve stochastic problems, combining both meanings of stochastic optimization. Stochastic optimization methods generalize deterministic methods for deterministic problems.
+
+
+== Methods for stochastic functions ==
+Partly random input data arise in such areas as real-time estimation and control, simulation-based optimization where Monte Carlo simulations are run as estimates of an actual system,  and problems where there is experimental (random) error in the measurements of the criterion. In such cases, knowledge that the function values are contaminated by random "noise" leads naturally to algorithms that use statistical inference tools to estimate the "true" values of the function and/or make statistically optimal decisions about the next steps. Methods of this class include
+stochastic approximation (SA), by Robbins and Monro (1951)stochastic gradient descent
+finite-difference SA by Kiefer and Wolfowitz (1952)
+simultaneous perturbation SA by Spall (1992)
+scenario optimization
+
+
+== Randomized search methods ==
+
+On the other hand, even when the data set consists of precise measurements, some methods introduce randomness into the search-process to accelerate progress. Such randomness can also make the method less sensitive to modeling errors. Further, the injected randomness may enable the method to escape a local optimum and eventually to approach a global optimum. Indeed, this randomization principle is known to be a simple and effective way to obtain algorithms with almost certain good performance uniformly across many data sets, for many sorts of problems. Stochastic optimization methods of this kind include:
+simulated annealing by S. Kirkpatrick, C. D. Gelatt and M. P. Vecchi (1983)
+quantum annealing
+Probability Collectives by D.H. Wolpert, S.R. Bieniawski and D.G. Rajnarayan (2011)
+reactive search optimization (RSO) by Roberto Battiti, G. Tecchiolli (1994), recently reviewed in the reference book 
+cross-entropy method by Rubinstein and Kroese (2004)
+random search by Anatoly Zhigljavsky (1991)
+Informational search 
+stochastic tunneling
+parallel tempering a.k.a. replica exchange
+stochastic hill climbing
+swarm algorithms
+evolutionary algorithms
+genetic algorithms by Holland (1975)
+evolution strategies
+
+
+== See also ==
+Global optimization
+Machine learning
+Scenario optimization
+Gaussian process
+State Space Model
+Model predictive control
+Nonlinear programming
+Stochastic control
+
+
+== References ==
+
+
+== Further reading ==
+Michalewicz, Z. and Fogel, D. B. (2000), How to Solve It: Modern Heuristics, Springer-Verlag, New York.
+
+
+== External links ==
+COSP
+
+
+=== Software ===
+AIMMS (AIMMS), commercial
+FortSP solver (FortSP), commercial
+FuncDesigner - free software that has commercial add-on for stochastic programming and optimization
+SPInE, commercial
+XPRESS-SP, commercial

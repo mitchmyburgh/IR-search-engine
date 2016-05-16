@@ -1,0 +1,338 @@
+# _Ars_Technica
+
+  * Ars Technica
+  * Ars Technica UK
+
+Register Log in
+
+  * Home
+  * Main Menu
+
+    * Information Technology Technology Lab
+    * Product News &amp; Reviews Gear &amp; Gadgets
+    * Business of Technology Ministry of Innovation
+    * Security &amp; Hacktivism Risk Assessment
+    * Civilization &amp; Discontents Law &amp; Disorder
+    * The Apple Ecosystem Infinite Loop
+    * Gaming &amp; Entertainment Opposable Thumbs
+    * Science &amp; Exploration The Scientific Method
+    * All Things Automotive Cars Technica
+
+Feature Report Series The Rise of Specialized Databases
+
+Layout:
+
+    * Grid View
+    * Article View
+    * Unified View
+
+## Site Theme
+
+    * Dark on light
+    * Light on dark
+
+## Explore Ars
+
+    * Reviews
+    * Video
+    * Staff Blogs
+    * Feature Archive
+    * Staff Directory
+    * Contact Us
+
+  * My Stories: 0
+
+## New Since Last Visit
+
+See more news stories
+
+## We Recommend
+
+## My Discussions
+
+Log in to track your discussions.
+
+  * Forums
+  * Subscribe
+  * Jobs
+  * 
+
+#  Scientific Method /  Science &amp; Exploration
+
+# Black hole catches qubits, spits them back out again
+
+## Theoretical physicists tell us how to rescue quantum information from black
+hole.
+
+by Chris Lee \- Jan 18, 2016 3:38 pm UTC
+
+  * Share
+  * Tweet
+  * Email
+  * Google
+  * Reddit
+
+37
+
+Did you drop something in that AGAIN?
+
+NASA
+
+Very occasionally, my imagination gets the better of me. When I encountered a
+paper entitled "How to Recover a Qubit That Has Fallen into a Black Hole," I
+envisioned a typical lab experiment. One student, having been given a precious
+quantum state, accidentally drops it into a black hole—"accidentally" in the
+same way that you accidentally break into the chemistry supplies cupboard and
+mix everything together under a fume hood just to see what will happen. Never
+mind, says the clearly annoyed lab instructor, who then performs some arcane
+maneuvers and recovers the carelessly handled qubit.
+
+Reality has fewer students dropping quantum states into black holes but makes
+up for it with an excess of equally amusing theoretical physicists. The idea
+behind studying how to recover a qubit from a black hole is not to help future
+students avert a lab disaster but to understand the quantum state of a black
+hole.
+
+Black holes are rather coy about what they have under their event horizons.
+Nothing that we send into a black hole is coming back, so the only information
+that comes directly from a black hole is the Hawking radiation it emits.
+
+## A short history of Hawking radiation
+
+Hawking radiation is emitted at a black hole's event horizon—the radius at
+which the gravitational pull is sufficient to prevent light from escaping. One
+way in which Hawking radiation is thought to be generated is through vacuum
+fluctuations. The vacuum is not empty; it teams with virtual particles that
+are continuously created in pairs. One in the pair has a positive energy, the
+other a negative energy. These pairs never escape the vicinity of their
+creation before they collide and annihilate each other.
+
+At the event horizon of a black hole, the particle with negative energy can
+fall into the black hole, while its positive-energy partner doesn’t. As a
+result, the mass of the black hole falls slightly, and we observe some
+radiation.
+
+The important thing about Hawking radiation for the purposes of this
+discussion is that pairs of particles generated through vacuum fluctuations
+are entangled in many different ways.
+
+During creation, the total energy, momentum, and angular momentum must be
+conserved. (We often refer to the intrinsic angular momentum of a particle as
+spin, and it has just two values: spin-up or spin-down.) The vacuum these
+particles came from has no average energy, momentum, or angular momentum, so
+the particles can’t either. Since there are two of them, the sum of their
+energies has to be zero, and so on. And since the particles don’t come with
+labels saying which particle got what values, we must treat them as a single,
+extended object.
+
+For spin, the total should be zero, meaning that both particles should be in a
+superposition of spin-up and spin-down—the particle that falls into the black
+hole is in both spin-up and spin-down states, while the particle that exits
+the black hole is also in both spin-up and spin-down states. When we measure
+the spin of one, we automatically set the spin of both.
+
+It's not the case that the spin was really set beforehand, and the only reason
+we didn’t know is that we hadn’t measured it yet. When we attempt to predict
+the behavior of the particle _before_ the measurement, we only succeed if we
+consider the particle to be in both spin states simultaneously, which we call
+a superposition state. It really is a case of being both here and there at the
+same time.
+
+## Let’s get all the actors on stage
+
+Here's the scene: we have a student who is going to accidentally-on-purpose
+drop a qubit into a black hole. The qubit is in a superposition state—until we
+measure it, it must be treated like it is in both spin-up and spin-down
+states.
+
+We have a friendly black hole that has some angular momentum, and every now
+and again, it emits some Hawking radiation. The Hawking radiation is not just
+in a superposition state (like the qubit), but is also entangled. And because
+one of the pair particles is falling into the black hole, it will modify the
+angular momentum of the black hole. Here's the key part: because that particle
+was entangled, the change in angular momentum can be entangled with the spin
+of the Hawking radiation, provided the right set of measurements are
+performed. If we do this, when we measure the Hawking radiation’s spin, we
+also set the change in the spin of the black hole.
+
+Finally, we have our intrepid lab instructor, who is prepared to save our
+hapless lab student from disaster.
+
+## Getting prepared
+
+Every good lab instructor is prepared for disaster, and our hero is no
+exception. Anticipating disaster, the instructor measures the angular momentum
+of the black hole. This process involves flying the black hole between the
+poles of a magnet and measuring how far and in which direction the magnet
+deflects it. Or, since the black hole might prove to be rather massive, it
+could be easier to measure the deflection of the magnetic poles as they fly
+past the black hole. Lab instructors get to play with the coolest equipment
+sometimes.
+
+Once that's done, the instructor collects a single photon of Hawking radiation
+from the black hole and performs the right measurements to set up an entangled
+spin state between it and the black hole.
+
+This display of technical prowess so awes the student that they drop their
+qubit, which falls into the black hole. The lab instructor, after much eye
+rolling, measures the total angular momentum of the black hole once again.
+
+Depending on the measurement, there are several possible outcomes, one of
+which is that the measurement tells the instructor that the Hawking radiation
+collected earlier is now in the same state as the qubit that was dropped into
+the hole. In this case, the instructor can simply pass the Hawking radiation
+to the student (with an admonishment to be more careful with this one).
+
+The other outcomes require more work on the lab instructor's part: typically,
+creating a new entangled state and tossing one of the entangled particles into
+the black hole or additional measurements of the black hole’s angular
+momentum. But in two-thirds of the cases, the Hawking radiation ends up in the
+qubit’s state.
+
+In the remaining cases, the qubit cannot be recovered. But a sufficiently
+well-prepared lab instructor can avoid this as well. When performing the
+measurement on the Hawking radiation to create the right entangled state, the
+result of the measurement also predicts success. At this point, the lab
+instructor can throw away the Hawking radiation and start again.
+
+## Well, that seems doable, doesn’t it?
+
+Apart from the all the practical problems, how realistic is it to deliberately
+throw qubits into a black hole to learn something about it? One issue is that
+the time it takes to emit Hawking radiation has to be faster than the time it
+takes a qubit to be scrambled by the black hole. Both of these terms depend on
+the mass of the black hole. The authors estimate that a black hole without
+much angular momentum would have to be larger than the observable Universe for
+this to be satisfied. So, this can only work with black holes that have a huge
+amount of angular momentum.
+
+What do we learn about the internal quantum state of a black hole? Nothing, at
+least not yet. The idea here is that the qubit has entered the black hole, and
+we have recovered that information after it has passed the event
+horizon—something we couldn’t do before. At the moment, we only get out what
+we put in, but maybe some additional cleverness will allow other information
+to be extracted.
+
+_Physical Review Letters_, 2015, DOI: 10.1103/PhysRevLett.115.261302
+
+Expand full story
+
+Reader comments 37
+
+You must login or create an account to comment.
+
+  * Share
+
+-
+
+  * Tweet
+  * Email
+  * Google
+
+-
+
+  * Reddit
+
+-
+
+Chris Lee / Chris writes for Ars Technica's science section. A physicist by
+day and science writer by night, he specializes in quantum physics and optics.
+He lives and works in Eindhoven, the Netherlands.
+
+@exMamaku on Twitter  &lt;- Older Story |  Newer Story -&gt;
+
+## You May Also Like
+
+  * 
+
+## Latest Feature Story
+
+  * ## Feature Story (2 pages)
+
+# Death by GPS
+
+Why do we follow digital maps into dodgy places?
+
+## Watch Ars Video
+
+# We stuffed a VR wand down our pants (for a good reason!)
+
+"RIPmotion" trick looks silly but works great, particularly in cutting out
+nausea.
+
+  * ## Stay in the know with
+
+    *     *     *     *     * ## Latest News
+
+    1. ## Catch this creep
+
+# Disturbing Twitch recording may trigger site’s proactive police-report
+policy
+
+    2. # Tesla “hell-bent on being the world’s best manufacturer“ after $283 million loss
+
+    3. ## RTFM
+
+# Microsoft unveils new effort to make its developer, IT documentation great
+again
+
+    4. ## to protect and serve
+
+# Cops to public: Stop calling alleged drug dealer’s phone, we need to search
+it
+
+    5. # Bad drivers don’t think they’re bad: What Twitter tells us about road rage
+
+    6. # Huge number of sites imperiled by critical image-processing vulnerability [Updated]
+
+  * 
+
+## Site Links
+
+  * About Us
+  * Advertise with us
+  * Contact Us
+  * Reprints
+
+## Subscriptions
+
+  * Subscribe to Ars
+
+## More Reading
+
+  * RSS Feeds
+  * Newsletters
+
+Visit Ars Technica UK
+
+## Conde Nast Sites
+
+  * Reddit
+  * Wired
+  * Vanity Fair
+  * Style
+  * Details
+
+Visit our sister sites \- - - - - - - - - - - - - - GQ Concierge Epicurious
+Men.Style.com Style.com Wired.com Lipstick.com NutritionData Allure
+Architectural Digest Bon Appetit Brides Conde Nast Portfolio Glamour Golf
+Digest Golf World Lucky Self Teen Vogue The New Yorker Vanity Fair W Subscribe
+to a magazine View All Titles \- - - - - - - - - - - - - - Allure
+Architectural Digest Bon Appetit Brides Conde Nast Portfolio Conde Nast
+Traveler Details Elegant Bride Glamour Golf Digest Golf World GQ Lucky Modern
+Bride Self Teen Vogue The New Yorker Vanity Fair Vogue W Wired
+
+## View Mobile Site
+
+WIRED Media: Ars Technica and WIRED  
+© 2016 Condé Nast. All rights reserved  
+Use of this Site constitutes acceptance of our User Agreement (effective
+1/2/14) and Privacy Policy (effective 1/2/14), and Ars Technica Addendum
+(effective 5/17/2012)  
+Your California Privacy Rights  
+The material on this site may not be reproduced, distributed, transmitted,
+cached or otherwise used, except with the prior written permission of Condé
+Nast.  
+  
+Ad Choices
+

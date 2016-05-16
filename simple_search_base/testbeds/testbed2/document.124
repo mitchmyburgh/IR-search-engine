@@ -1,0 +1,40 @@
+Google DeepMind is a British artificial intelligence company founded in September 2010 as DeepMind Technologies. It was renamed when it was acquired by Google in 2014. The company has created a neural network that learns how to play video games in a fashion similar to that of humans, as well as a neural network that may be able to access an external memory like a conventional Turing machine, resulting in a computer that mimics the short-term memory of the human brain. The company made headlines in 2016 after its AlphaGo program beat a human professional Go player for the first time.
+
+
+== History ==
+
+
+=== 2010 to 2014 ===
+In 2010 the start-up was founded by Demis Hassabis, Shane Legg and Mustafa Suleyman. Hassabis and Legg first met at University College London's Gatsby Computational Neuroscience Unit.
+Since then major venture capital firms Horizons Ventures and Founders Fund have invested in the company, as well as entrepreneurs Scott Banister and Elon Musk. Jaan Tallinn was an early investor and an advisor to the company. In 2014, DeepMind received the "Company of the Year" award by Cambridge Computer Laboratory.
+
+
+=== Acquisition by Google ===
+On 26 January 2014, Google announced that it had agreed to take over DeepMind Technologies. The sale reportedly took place after Facebook ended negotiations with DeepMind Technologies in 2013. The company was then renamed Google DeepMind.
+Google acquired Deepmind in 2014 for $500 million
+One of DeepMind's conditions for Google was that they establish an AI Ethics board.
+
+
+== AlphaGo ==
+
+In October 2015, a computer Go program called AlphaGo, powered by DeepMind, beat the European Go champion Fan Hui, a 2 dan (out of 9 dan possible) professional, five to zero. This is the first time an artificial intelligence (AI) defeated a professional player. Previously, computers were only known to have played Go at "amateur" level. Go is considered much more difficult for computers to win compared to other games like chess, due to the much larger number of possibilities, making it prohibitively difficult for traditional AI methods such as brute-force. The announcement of the news was delayed until 27 January 2016 to coincide with the publication of a paper in the journal Nature describing the algorithms used. In March 2016 it beat Lee Sedol - a 9th dan Go player and one of the highest ranked players in the world - 4-1 in a five-game match.
+
+
+== Research ==
+DeepMind Technologies's goal is to "solve intelligence", which they are trying to achieve by combining "the best techniques from machine learning and systems neuroscience to build powerful general-purpose learning algorithms". They are trying to formalize intelligence in order to not only implement it into machines, but also understand the human brain, as Demis Hassabis explains:
+
+[...] attempting to distil intelligence into an algorithmic construct may prove to be the best path to understanding some of the enduring mysteries of our minds.
+
+Currently the company's focus is on publishing research on computer systems that are able to play games, and developing these systems, ranging from strategy games such as Go to arcade games. According to Shane Legg human-level machine intelligence can be achieved "when a machine can learn to play a really wide range of games from perceptual stream input and output, and transfer understanding across games[...]." Research describing an AI playing seven different Atari video games (Pong, Breakout, Space Invaders, Seaquest, Beamrider, Enduro, and Q*bert) reportedly led to their acquisition by Google. Hassabis has mentioned the popular e-sport game StarCraft as a possible future challenge, since it requires a high level of strategic thinking and handling imperfect information.
+
+
+=== Deep reinforcement learning ===
+As opposed to other AIs, such as IBM's Deep Blue or Watson, which were developed for a pre-defined purpose and only function within its scope, DeepMind claims that their system is not pre-programmed: it learns from experience, using only raw pixels as data input. Technically it uses deep learning on a convolutional neural network, with a novel form of Q-learning, a form of model-free reinforcement learning. They test the system on video games, notably early arcade games, such as Space Invaders or Breakout. Without altering the code, the AI begins to understand how to play the game, and after some time plays, for a few games (most notably Breakout), a more efficient game than any human ever could. For most games though (Space Invaders, Ms Pacman, Q*Bert for example), DeepMind plays well below the current World Record. The application of DeepMind's AI to video games is currently for games made in the 1970s and 1980s, with work being done on more complex 3D games such as Doom, which first appeared in the early 1990s.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Google DeepMind channel on YouTube

@@ -1,0 +1,151 @@
+Demand forecasting methods in a supply chain:
+Smoothing and denoising
+
+
+Liljana Ferbar, David Cˇ reslovnik, Blazˇ Mojsˇkerc, Martin Rajgelj 
+
+1. Introduction
+Many investigations (e.g., Chen et al., 2000; Fransoo
+and Wouters, 2000; Lee et al., 1997a, b; Metters, 1997;
+Simchi-Levi et al., 2000) have shown that providing the
+supplier upstream with centralized data can significantly
+reduce costs in the supply chain. Such information
+prevents all kinds of information distortions in a supply
+chain. In addition, these investigations have shown that
+the difference between the variability in centralized and
+decentralized supply chains increases as we move up the
+supply chain, i.e., as we move from the first link to the
+higher links of the supply chain.
+In this paper we use the following notation:
+Pl
+t production of link l at time period t
+ISl
+t initial stock of link l at time period t
+Dl
+t demand of link l at time period t
+
+Dbt forecasted external demand for time period t
+DDt denoised demand at time period t
+Cl
+t inventory or penalty costs of link l at time
+period t
+In our model we set the following assumptions for
+each link (l) in the supply chain (t—time period):
+1. At the time of initial observation the production, P0,
+and the stock, IS0, of all links in the supply chain are
+balanced.
+2. The information in the supply chain is centralized—all
+links in the supply chain are instantly aware of the
+demand change in the market.
+3. The production and the stock are nonnegative ðPtX0,
+IStX0Þ.
+4. The production and the change in production are not
+bounded (except by nonnegativity in the previous
+item).
+5. Batches ordered at the time period t are available at the
+beginning of the time period t þ 1 (lead times are
+assumed to be 1 period).
+6. Insufficiency of the stock level provokes the missing
+amount of the products to be supplied from marketplace (assuming that a perfect substitute for our
+product exists), which causes penalty costs.
+7. Production ðPtÞþInitial stock ðIStÞ¼ðInternalÞ Demand
+ðDtÞþ Final stock ðIStþ1Þ.
+The costs of the supply chain are defined as the sum of
+the inventory costs and the penalty costs for all links. We
+assume the penalty costs to be higher than the inventory
+costs, which is expressed by introducing a weight, a, that
+is larger than 1. In other words, using the common
+notation Xþ ¼ maxðX; 0Þ, the supply chain costs at the
+time period t are expressed as (l—level of the supply chain
+increasing from the manufacturer (l ¼ 1) towards suppliers;
+n—total number of links in the supply chain; a41)
+Ct ¼ Xn
+l¼1
+Cl
+t ¼ Xn
+l¼1
+ððISl
+t  Dl
+tÞ
+þ þ aðDl
+t  ISl
+tÞ
+þÞ. (1)
+We set this equation as a measure of the forecasting
+efficiency.
+In the sequel we consider a centralized supply chain
+with a manufacturer and one supplier (n ¼ 2), and with
+weight, a, that causes penalty costs to be twice as high as
+inventory costs (a ¼ 2).
+A typical approach to the manufacturing process is an
+orientation towards production. A decision making process
+is based on some standard methods of forecasting
+external demand. When estimates of predicted demand
+are obtained, production levels for the following period t
+are determined through a postulation: production levels
+equal predicted external demand, i.e.,
+Pl
+t ¼ Dbt; l ¼ 1; 2. (2)
+Then we have
+IStþ1 ¼ ðPl
+t þ ISl
+t  Dl
+tÞ
+þ; l ¼ 1; 2, (3)
+where D1
+t stands for external demand and D2
+t for internal
+demand.
+The second approach is inventory-oriented approach
+(see Ferbar et al., in press (a)), which will be used in the
+simulation that follows in this paper. To minimize
+inventory costs, instead of determining production levels,
+we determine inventory levels in such a manner that they
+equal predicted external demand. The production levels
+are adapted in order to accommodate these constraints.
+Therefore, the initial condition for every period is
+ISl
+t ¼ Dbt; l ¼ 1; 2 (4)
+from which we derive the following decision rules for
+production:
+Pl
+t ¼ ðDbtþ1 þ Dl
+t  ISl
+tÞ
+þ  ðDl
+t  ISl
+tÞ
+þ; l ¼ 1; 2. (5)
+Theoretically, in this case it is possible for the initial stock
+of a certain period to fall below zero. Since this is not a
+permissible condition, we introduce the concept of perfect
+substitutes for a certain product, which is very common in
+many real-world cases, e.g., engine oils, standard batteries
+for home electronics, medical drugs and their generic
+counterparts. When perfect substitutes take effect penalties
+for this replacement are paid and are shown in
+cumulative costs.
+
+
+In the remaining part of the paper we present wavelet
+denoising analysis in order to compare two different
+demand forecasting models: the exponential smoothing
+model and the wavelet denoising model.
+
+5. Conclusion
+In this paper a new approach to demand forecasting is
+introduced, i.e., the wavelet denoising model. Our analysis
+has shown that the use of wavelet denoising has an edge over the widely used exponential smoothing method costwise.
+If the smoothing coefficient b is chosen wisely, the
+difference between the two is minimal. However, because
+there is no efficient way to find the optimal b in advance
+and the wavelet denoising model works well in all cases,
+the latter has a serious advantage over the exponential
+smoothing model. The results can even be improved if the
+chosen wavelet, the wavelet decomposition level and the
+type of thresholding are chosen appropriately for given
+data. Yet, the method of choosing these parameters
+remains open to our future research.
+
+
+

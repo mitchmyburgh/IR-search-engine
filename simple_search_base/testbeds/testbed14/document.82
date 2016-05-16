@@ -1,0 +1,83 @@
+﻿Ontologies are concerned with the 
+meaning
+of 
+terms. It is therefore appropriate when selecting 
+an 
+ontological language
+to choose a language which 
+is equipped with a formal semantics. This 
+requirement excludes XML from the list of 
+possible candidates, as XML does not offer 
+semantics, but only syntax. RDF provides some 
+semantics, but proper, formal semantics requires 
+languages based on logics. Description logics 
+(DL) provide some frameworks, and several 
+languages used for building and processing 
+ontologies are DL-based, e.g. DAML and 
+DAML+OIL languages, including such languages 
+as SHF and SHIQ, and the OWL language 
+(Horrocks et al., 2003). 
+A commonly used view of an architecture for 
+the Semantic Web is a layered architecture, with 
+XML as the bottom layer, RDF as the middle 
+layer, and logic (e.g. DL) as the top layer 
+(sometimes the top layer distinguishes ontological 
+vocabulary, logic, proof; on top of the logic layer 
+a trust layer is sometimes placed). The logic layer 
+is a necessary component if the Semantic Web is to 
+be equipped with a formal semantics; this logic 
+layer can be based on a description logic (such as 
+SHIQ or OWL), on first-order logics, KIF or 
+CycL, and whichever logic is used determines the 
+expressibility and tractability of the framework, 
+but in every case a formal semantics is added. 
+Frameworks based on DL (description logics) are 
+most successful, because they provide expressive 
+languages with practical tractability. SHIQ is one
+such language, another is the closely related 
+language OWL 
+The ontological language chosen for FOCAL is 
+SHIQ, a DL language of the DAML+OIL project 
+(
+http://www.daml.org/
+), a successor of the OIL 
+project 
+(
+http://www.ontoknowledge,org/oil/
+). 
+FaCT (
+http://www.cs.man.ac.uk/~horrocks/FaCT/
+) 
+is a reasoner for the SHIQ logic employed in the 
+OilEd ontology editor (
+http://oiled.man.ac.uk/
+). 
+The logic SHIQ has also been implemented in the 
+(
+www.cs.concordia.ca/~faculty/haarslev/racer/
+) 
+RACER project. 
+SHIQ is closely related to OWL (Horrocks et 
+al., 2003). In fact, there are a few variants of 
+OWL, namely OWL Lite, OWL DL and OWL 
+Full. OWL Lite is similar to a description logic 
+SHIF(D), while OWL DL is similar to a 
+description logic SHOIN(D). The language 
+implemented in the RACER framework is a 
+version 
+of 
+SHIQ, 
+which 
+provides 
+some 
+functionalities for dealing with individuals, and 
+dealing with concrete domains; this makes the 
+RACER’s version of SHIQ very close to OWL 
+Lite. A proper discussion on these languages is 
+beyond the scope of the paper, but clearly the 
+RACER language is an implemented language and 
+reasoner for a logic very close to OWL DL. 
+References related to OWL, SHIQ and OIL include 
+(Horrocks et al., 2003), (Bechhofer and Horrocks, 
+2003) and (Horrocks, Sattler and Tobies, 2000). 
+

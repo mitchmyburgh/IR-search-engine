@@ -1,0 +1,240 @@
+
+
+  * Subscribe
+  * Search
+
+# Gizmag
+
+  * Lifestyle
+  * Science
+  * Technology
+  * Transport
+  * Features
+  * Reviews
+
+More top stories »
+
+  * # "World’s smallest engine" to power microscopic robots
+
+  * # Journey toward Milky Way's dark heart in new Hubble video
+
+  * # These boots were made for flying: A chat with France's very own jet-powered fly boy, Franky Zapata
+
+  * # VR Comparison Guide
+
+Advertisement
+
+Computers
+
+# D-Wave quantum computer matches the tenth ranked supercomputer for speed
+
+Brian Dodson May 13, 2013
+
+4 pictures
+
+D-Wave's 512-Qubit Vesuvius quantum computing chip can match it with massively
+parallel supercomputers (Photo: D-Wave). View gallery (4 images)
+
+There have been years of controversy about whether the superconducting quantum
+annealing computers manufactured by D-Wave are a) quantum computers; and b)
+fast enough for a) to matter. Now a test of the 512-qubit Vesuvius chip
+establishes at least that computing based on quantum annealing is, in the
+words of a computer science professor at Amherst College, "in some cases,
+really, really fast."
+
+## Comparing apples and fish
+
+Professor Catherine McGeoch is an expert on the sometimes obscure difficulties
+that crop up when evaluating and comparing different types of computing
+performance. To prepare a study that would compare the performance of a
+classical computer against that of a quantum computer, McGeoch had to learn
+the principles, quirks, and foibles of adiabatic quantum computing, of which
+quantum annealing is a special form.
+
+"It’s such a whole different approach to computation that you have to wrap
+your head around this new way of doing things in order to decide how to
+evaluate it." said Prof. McGeoch. "It’s like comparing apples and oranges, or
+apples and fish, and the difficulty was coming up with experiments and
+analyses that allowed you to say you’d compared things properly. It definitely
+was the oddest set of problems I've ever coped with.”
+
+McGeoch was testing a D-Wave Vesuvius chip about the size of a thumbnail
+possessing 512 qubits (439 of which were operational – not too bad for the
+fifth chip of this type.) The D-Wave chip operates at only 20 milliKelvin
+above absolute zero – the low operating temperature is required to avoid
+having thermal fluctuations swamp quantum processing (and could limit its mass
+market appeal).
+
+The basic structure of the chip is designed to model Ising spin models. This
+is a particularly simple choice operationally, and offers the advantage that a
+huge number of interesting problems can be mapped onto an Ising spin model.
+
+The classical computer used for most tests was powered by a cluster of seven
+Intel Xeon E5-2609 processors running at 2.4 GHz. Comparing to Linpack
+benchmark results from massively parallel computers using similar processors,
+the D-Wave Vesuvius chip obtained a (very approximate) Linpack rating of 420
+GFlops.
+
+## Put to the test
+
+Three fundamentally hard computational problems were chosen to test the speed
+of the D-Wave computer, which all have similarities to the Traveling Salesman
+Problem (TSP).
+
+The Travelling Salesman Problem for a 15 city trip around Germany
+
+The TSP involves a salesman who has a number of cities where he must sell his
+goods. Being an efficient sort, he wants to plan his sales trip so that he
+only goes to each city once, and also wants to drive as few miles as possible.
+Planning the sales trip is the TSP. It is an NP-complete (nondeterministic
+polynomial time) problem, meaning that there is no simple way of generating an
+optimum solution. On classical computers, rather simple sets of cities can
+require billions or trillions of hours of computation to find the true minimum
+solution. However, the TSP is a natural to be solved by quantum annealing.
+
+How did the D-Wave computer do on the tests? On the largest problem sizes
+tested, the V5 chip found optimal solutions in less than half a second, while
+the best classical software solver required 30 minutes to find those same
+solutions. This makes the D-Wave computer over 3,600 times faster than the
+classical computer in these tests.
+
+This puts the effective speed of the D-Wave quantum computer on this class of
+problems at roughly the same as the tenth ranked supercomputer in the world as
+per the November 2012 Top500 list – the IBM/DARPS Trial Subset, with 63,360
+64-bit cores that produce a maximum floating point performance of 1.5
+petaFlops. The comparison shouldn't be taken too seriously, but suggests that
+the 439 qubits of the D-Wave computer can solve such problems as quickly as do
+huge massively parallel supercomputers.
+
+Prof. McGeoch has also done some preliminary tests on the sixth Vesuvius chip
+(having 503 good qubits), and is finding performance figures of about 5
+petaFlops, which is about three times the computational speed of the 439 good
+qubits chip. This would push the D-Wave up to fifth position.
+
+The question remains, just how useful is D-Wave's chip? Its current approach
+to quantum computing is focused tightly on problems that map nicely onto an
+Ising model. However, it is known that adiabatic quantum computing can
+efficiently reproduce any computation of which a more conventional quantum
+gate computer is capable. Such reproduction is not trivial, but offers some
+hope that the D-Wave approach may in time address wider applications.
+
+The video below provides a close look at the structure of the D-Wave chips and
+how the number of qubits on a chip is outpacing Moore's Law.
+
+Source: Amherst College and D-Wave Systems
+
+View gallery (4 images)
+
+## Tags
+
+  * #Quantum Computing
+  * #Computers
+  * #Processor
+  * #Supercomputer
+  * #Chip
+  * #D-Wave
+
+## Share this article
+
+  *   *   *   *   *   * 
+
+Show 7 comments
+
+## Latest in Computers
+
+  * # Head-tracking mouse designed for people with disabilities
+
+  * # Training dogs by computer and "smart harness"
+
+  * # Resolution and quality bump for RasPi camera
+
+  * # Thunderbolt SSDs satisfy the need for speed
+
+  * # YouTube immerses viewers in 360-degree live video 
+
+  * # LaCie goes big and roomy with 96 TB hard drive
+
+  * # Meeting notes live streamed to remote workers from any whiteboard
+
+  * # Microsoft Captionbot will tell you what's in your photos
+
+  * # Tech demo of Mozilla's Servo browser engine coming in June
+
+  * # Review: Vpedal vP-4 MkII makes transcription work less painful
+
+  * # Nvidia goes deep with new DGX-1 supercomputer
+
+  * # Facebook is now using AI to describe photos to the blind
+
+## Editors Choice
+
+  * # Greenest of the green: This year's top sustainable buildings
+
+  * # Compare the latest tech gear
+
+  * # Koenigsegg winds down the Agera era and begins the Regera era 
+
+  * # HTC 10 review: A stellar phone that's greater than the sum of its (already impressive) parts
+
+  * # China's LeEco gives a first look at its semi-autonomous Tesla fighter
+
+  * # Pictorial: Top Marques Monaco 2016
+
+  * # Comparing the five current iPads: iPad Pro 12.9 vs. Pro 9.7, Air 2, mini 4 and mini 2
+
+  * # China rising: Highlights from the 2016 Beijing Auto Show
+
+  * # Review: 2016 Toyota RAV4 Hybrid offers surprisingly good efficiency
+
+  * # Behind the scenes at GE's future-forward factory
+
+  * # Journey to the Shire: The very best hobbit holes
+
+  * # Gizmag jobs – Mobile Technology Writer
+
+
+
+## Over 245,000 people receive our email newsletter
+
+See the stories that matter in your inbox every morning
+
+Your Email
+
+Advertisement
+
+Advertisement
+
+Advertisement
+
+Advertisement
+
+Advertisement
+
+unused
+
+### Over 245,000 people receive our email newsletter
+
+See the stories that matter in your inbox every morning
+
+Email address
+
+  * Top
+  * Home
+  * About
+  * Contact
+  * Privacy
+  * Terms &amp; Conditions
+  * Advertise
+
+All content copyright (C) Gizmag 2016
+
+  * Twitter
+  * Facebook
+  * StumbleUpon
+  * Youtube
+  * RSS
+
+Advertisement
+
+  *[RSS]: Really Simple Syndication
+

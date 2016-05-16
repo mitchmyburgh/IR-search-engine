@@ -1,0 +1,7 @@
+Back-side_bus
+In   architecture, a '''back-side bus''' ('''BSB'''), or '''backside bus''', is a  used to connect the  to , usually L2. If a design utilizes it along with a  (FSB), it is said to use a '''dual-bus architecture''', or in 's terminology '''' (DIB) architecture.
+==History==
+BSB is an improvement over the older practice of using a single , because a single bus typically became a severe  as CPUs and memory speeds increased. Due to its dedicated nature, the back-side bus can be optimized for communication with cache, thus eliminating protocol overheads and additional signals that are required on a general-purpose bus.  Furthermore, since a BSB operates over a shorter distance, it can typically operate at higher clock speeds, increasing the computer's overall performance.
+Cache connected with a BSB was initially external to the microprocessor , but now is usually on-die. In the latter case, the BSB  frequency is typically equal to the processor's, and the back-side bus can also be made much wider (256-bit, 512-bit) than either off-chip or on-chip FSB.
+The dual-bus architecture was used in a number of designs, including the  and  (formerly the semiconductor division of )  processors (certain PowerPC  models, the  family, and the Freescale  line), as well as the   processor, 
+which used it to access their L2 cache (earlier Intel processors accessed the L2 cache over the FSB, while later processors moved it on-chip).

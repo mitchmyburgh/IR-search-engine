@@ -1,0 +1,54 @@
+Occlusion tests using small, independent occluders,
+such as geometry polygons or view-dependent planar
+occluders, are inefficient because an object may be
+partially hidden by two or more occluders and
+therefore not discarded, but totally hidden by the joint
+surface that the occluders may produce (Fig. 2). To
+address this, fusion algorithms have been proposed
+by many authors, as in [Sch00a] and [Kol00a]. These
+methods try to combine the resulting frusta (in 3D
+space) or produce aggregate footprints (in image
+space) of the occluders in order to maximize the
+culling effectiveness of closely packed but otherwise
+unrelated occluders. Joining either the viewdependent
+occluders or the resulting frusta or
+projected polygons (image-space footprints) involves
+expensive operations that have to be performed at
+each frame. Furthermore, containment tests with nonconvex
+(or multiple) frusta or non-convex polygons
+that are generated from the joint projected occluders
+are inherently more complex and time consuming
+when compared to simple individual convex occluder
+tests. Joining and visibility testing can be simplified
+by generating approximate convex aggregations of
+occluder clusters but in this case, an error is
+introduced which may become intolerable, especially
+when the viewer comes close to the occluders.
+The method for occlusion culling presented here
+relies on the use of convex solid occluder shapes in a
+scene to block away geometry fragments (or
+hierarchies of objects) from arbitrary view points. It
+extends the work of Hudson et al [Hud97a] for
+occlusion culling using shadow frusta to address the
+inefficiency of partial visibility discussed above,
+while avoiding the expensive joining calculations.
+Shadow frustum culling uses – usually convex -
+planar occluder polygons, which can be part of the
+visible scene geometry or dummy (proxy) occluders,
+in order to create semi-infinite conical frusta with
+edges emanating from the viewpoint and passing
+through the polygon’s vertices (Fig. 1). A geometrical
+entity, which can be anything from a simple polygon
+to a scene-graph hierarchy of complex objects, is
+blocked if its bounding volume is completely
+contained within the frustum. In the case of a
+hierarchy of objects, if it cannot be safely discarded
+as a whole due to partial containment into the shadow
+frustum, the tree is traversed in search of a potentially
+fully hidden sub-tree. Hudson et. al. [Hud97a]
+proposed a dynamic occluder selection mechanism
+which maintains a small list of most efficient
+occluders for each frame, selected among the full set
+of planar occluders using proximity, alignment and
+area coverage criteria. More about this selection
+mechanism and

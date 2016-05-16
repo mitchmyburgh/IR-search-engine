@@ -1,0 +1,19 @@
+7 programming languages on the rise
+
+In the world of enterprise programming, the mainstream is broad and deep. Code is written predominantly in one of a few major languages. For some shops, this means Java; for others, it's C# or PHP. Sometimes, enterprise coders will dabble in C++ or another common language used for high-performance tasks such as game programming, all of which turn around and speak SQL to the database.
+
+Programmers looking for work in enterprise shops would be foolish not to learn the languages that underlie this paradigm, yet a surprising number of niche languages are fast beginning to thrive in the enterprise. Look beyond the mainstays, and you'll find several languages that are beginning to provide solutions to increasingly common problems, as well as old-guard niche languages that continue to occupy redoubts. All offer capabilities compelling enough to justify learning a new way to juggle brackets, braces, and other punctuation marks.
+
+[ Keep up on key application development insights with the Fatal Exception blog and Developer World newsletter. | See how the latest Python IDEs and PHP tools fared in our recent InfoWorld Test Center reviews. ]
+
+While the following seven niche languages offer features that can't be found in the dominant languages, many rely on the dominant languages to exist. Some run on top of the Java Virtual Machine, essentially taking advantage of the Java team's engineering. And when Microsoft built C#, it explicitly aimed to make the virtual machine open to other languages. That detail may help make deployment easier, but it doesn't matter much to the programmer at creation time.
+
+Either way, these seven languages are quickly gaining converts in the enterprise. Perhaps it's time to start investigating their merits.
+
+Programming languages on the rise: Python
+
+There seems to be two sorts of people who love Python: those who hate brackets, and scientists. The former helped create the language by building a version of Perl that is easier to read and not as chock-full of opening and closing brackets as a C descendant. Fast-forward several years, and the solution was good enough to be the first language available on Google's AppEngine -- a clear indication Python has the kind of structure that makes it easy to scale in the cloud, one of the biggest challenges for enterprise-grade computing.
+
+[ For a look at the wide-ranging flock of Python IDEs, see "InfoWorld review: Nine fine Python development tools." ]
+
+Python's popularity in scientific labs is a bit hard to explain, given that, unlike Stephen Wolfram's Mathematica for mathematicians, the language never offered any data structures or elements explicitly tuned to meet the needs of scientists. Python creator Guido von Rossum believes Python caught on in the labs because "scientists often need to improvise when trying to interpret results, so they are drawn to dynamic languages which allow them to work very quickly and see results almost immediately."

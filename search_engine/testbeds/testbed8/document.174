@@ -1,0 +1,30 @@
+Analysis[edit]
+A simple amortized analysis of static splay trees can be carried out using the potential method. Define:
+•	size(r) - the number of nodes in the sub-tree rooted at node r (including r).
+•	rank(r) = log2(size(r)).
+•	F = the sum of the ranks of all the nodes in the tree.
+F will tend to be high for poorly balanced trees and low for well-balanced trees.
+To apply the potential method, we first calculate ?F - the change in the potential caused by a splay operation. We check each case separately. Denote by rank' the rank function after the operation. x, p and g are the nodes affected by the rotation operation (see figures above).
+Zig step:
+?F = rank'(p) - rank(p) + rank'(x) - rank(x) [since only p and x change ranks]
+= rank'(p) - rank(x) [since rank'(x)=rank(p)]
+= rank'(x) - rank(x) [since rank'(p)<rank'(x)]
+Zig-Zig step:
+?F = rank'(g) - rank(g) + rank'(p) - rank(p) + rank'(x) - rank(x)
+= rank'(g) + rank'(p) - rank(p) - rank(x) [since rank'(x)=rank(g)]
+= rank'(g) + rank'(x) - 2 rank(x) [since rank(x)<rank(p) and rank'(x)>rank'(p)]
+= 3(rank'(x)-rank(x)) - 2 [due to the convexity of the log function]
+Zig-Zag step:
+?F = rank'(g) - rank(g) + rank'(p) - rank(p) + rank'(x) - rank(x)
+= rank'(g) + rank'(p) - 2 rank(x) [since rank'(x)=rank(g) and rank(x)<rank(p)]
+= 2(rank'(x)-rank(x)) - 2 [due to the convexity of the log function]
+The amortized cost of any operation is ?F plus the actual cost. The actual cost of any zig-zig or zig-zag operation is 2 since there are two rotations to make. Hence:
+amortized-cost = cost + ?F
+= 3(rank'(x)-rank(x))
+When summed over the entire splay operation, this telescopes to 3(rank(root)-rank(x)) which is O(log n). The Zig operation adds an amortized cost of 1, but there's at most one such operation.
+So now we know that the total amortized time for a sequence of m operations is:
+ 
+To go from the amortized time to the actual time, we must add the decrease in potential from the initial state before any operation is done (Fi) to the final state after all operations are completed (Ff).
+ 
+where the last inequality comes from the fact that for every node x, the minimum rank is 0 and the maximum rank is log(n).
+Now we can finally bound the actual time:

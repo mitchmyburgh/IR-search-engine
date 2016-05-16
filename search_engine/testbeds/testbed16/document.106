@@ -1,0 +1,55 @@
+Move Management to the Cloud First – Cisco & Meraki
+Oct 31, 2013
+If you still believe that your systems management consoles should be running on servers in your data center, you’re definitely from the pre-cloud era. Even if you believe your systems management and security consoles should be running on infrastructure as a service instances you control, you’re also out of date.
+
+The evidence is in, and your control systems should absolutely reside in the cloud, even if the systems they control are not in the cloud. Cisco’s recent acquisitions are a reminder, and so is this week’s launch of Trend Micro’s new Deep Security as a Service that secures AWS instances.
+
+Cisco just provided a reminder about the growth of cloud management in the enterprise earlier this year, in their second quarter fiscal 2013 earnings, which showed a massive push to grow their data center business. One of the unique highlights of that quarter for Cisco was their $1.2 billion acquisition of midmarket networking vendor Meraki (they build cloud managed wireless and wired access points as well as provide network acceleration and security capabilities) which was first announced in November of 2012.
+
+ 
+
+Meraki developed an incredibly compelling cloud managed networking solution – enough to be named a Gartner Magic Quadrant Visionary – that will greatly aid Cisco in its exit from the home networking market and intention to increase its presence in the networking midmarket. With Meraki’s product, an enterprise has the ability to centrally manage everything related to their network in the cloud from a single portal. This gives the enterprise complete control over all users, applications, and devices and means that there is no longer any controller hardware or management software to install and maintain. This secure cloud infrastructure can scale to million-user deployments and eliminates the need for administrators to configure devices by logging in to each one directly.
+
+ 
+
+If a trend is big enough to be worth a billion dollar acquisition, it’s beyond the early days. Since I joined Trend Micro almost 3 years ago as it’s cloud technology evangelist, I’ve been pushing the idea that control systems are safer and higher availability when you put them in the cloud, compared to where most of them sit today in enterprises. This is doubly true for security systems.
+
+ 
+
+That’s why I’m incredibly excited that this week Trend Micro is formally Deep Security as a Service. It protects Amazon Web Services instances with a security console that is hosted, managed, and updated in real-time by Trend Micro.
+
+ 
+
+Security and management control systems work exceptionally well in the cloud, as we have heard for years, and with Cisco’s Meraki deal and Trend Micro’s announcement, we are seeing the next stage of the evolution.
+
+ 
+
+Remote management is something, you may recall, that Cisco had some very significant, and very public issues with – the company’s customer base erupted when Cisco chose to update its home Wi-Fi routers to use a web-based service, which in turn stoked privacy fears. People revolted because Cisco owned the portal and gave its users no local option to update the firmware.
+
+ 
+
+Unwarranted cloud fear, I say. Cisco just didn’t handle the communication very well. Had they explained to end-users that they would get a faster, more responsive, and better service, people would have adopted the service in droves. The very same people who complained about managing their routers from the clouds are already using email that runs in the cloud, which represents a much greater privacy risk.
+
+ 
+
+This was such an issue that it gave Cisco cause to pull back and reevaluate just how they were going to deploy their cloud based service that integrated into its residential/home routers. Obviously, bringing Meraki into the fold has been part of the strategy to not only be a major player in the enterprise business market, but also have the technology and capability in house to prevent such fiascos in the future.
+
+ 
+
+Furthermore, Meraki’s technology far transcends just a plug for Cisco. The new acquisition has been transformed into Cisco’s new Cloud Networking Group and will serve as the foundation for the its planned, larger cloud networking offers, and an aid to ‘cloudify’ numerous products already in Cisco’s enterprise networking portfolio.
+
+ 
+
+There is no question in my mind that in the very near future, we will see Software as a Service networking management tools like Meraki’s, and security tools like Trend Micro’s, quickly evolve into the only way we manage our networks and security. Yes. The only. It just makes too much sense from every perspective of systems management.
+
+ 
+
+Management systems for devices are subject to release cycles that are slow, whereas Software as a Service offerings deliver weekly release cycles. By deploying a SaaS service in your enterprise, you are assured to get a regularly updated system, and your networking and security vendors will deploy their development assets to their core functions, rather than supporting ancient versions of their management tools on random platforms.
+
+ 
+
+Meraki’s (now Cisco’s) tools are transformative in how they will revolutionize the work of the network administrator. The new Deep Security as a Service offering will revolutionize the work of securing the cloud.
+
+ 
+
+As an IT professional, you should be deploying your time and attention to maintaining and securing systems in the cloud, not to maintaining and securing the control systems for systems in the cloud. It is not worth your time, and it significantly slows your vendors ability to create responsive systems that actually protect your assets in the cloud.

@@ -1,0 +1,102 @@
+ Project Nayuki
+  Navigation
+   Recent
+   Programming
+   Math
+   Random
+   About/Contact
+   GitHub
+   AVL tree list 
+  Lists (or sequences) are a ubiquitous abstract data type in computer science. The two classic ways to implement a list are the array and the linked list. While each one has its own advantages, each has some operations with the slow O(n) time complexity. 
+  In most applications, it’s possible to use the appropriate data structure so that you only need to use the operations that have the fast O(1) time complexity and avoid the ones that take O(n) time. But in applications that require both fast random access and insertion/removal of elements anywhere in the list (especially in the middle), neither the array nor the linked list is appropriate. 
+  By using self-balancing trees – such as AVL trees, red-black trees, or B-trees – it is possible to implement a list data structure that can access and modify single elements in just O(log n) time, where n is the current size of the list. 
+  Here is a summary of the trade-offs in time complexity: 
+     Data structure 
+     Insert/removeat beginning 
+     Insert/removeat middle 
+     Insert/removeat end 
+     Get/setat middle 
+     Array 
+     O(n) 
+     O(n) 
+     O(1) 
+     O(1) 
+     Linked list 
+     O(1) 
+     O(n) 
+     O(1) 
+     O(n) 
+     Balanced tree 
+     O(log n) 
+     O(log n) 
+     O(log n) 
+     O(log n) 
+  Notes about the table: 
+   This assumes the best implementation for a linked list, which would be a circular doubly linked list. A singly linked list with access only from the head would perform worse than what the table shows. 
+   Array insertion at the end is O(1) if the array is pre-allocated with enough capacity. Otherwise it’s amortized O(1) if it’s a dynamic array that needs to expand. 
+   The time complexities for the balanced tree data structures are for the worst case per operation (not probabilistic or amortized) – this is good compared to the expected O(log n) time complexity of skip lists. 
+  Benchmark 
+  To demonstrate the power of the AVL tree list, we test a scenario that works badly for a dynamic array. We pick a size n, start with an empty list, and repeatedly insert an element into the current middle of the list n times. In Java code it would look like this: 
+  List&lt;Object&gt; list = new AvlTreeList&lt;&gt;();
+for (int i = 0; i &lt; n; i++)
+    list.add(i / 2, null); 
+  The AVL tree list takes O(n log n) time to build up this list of n elements, whereas an array-based list takes a terrible O(n2) time to do the same task. 
+    Java timings 
+    JavaScript timings 
+  Note: Java benchmarking was performed on Oracle Java 1.8.0 Update 45 (64-bit). JavaScript benchmarking was performed on Mozilla Firefox 43.0.3 (32-bit). The CPU was Intel Core i5-4690 (Haswell) 3.50 GHz and the OS was Windows 8.1 Pro (64-bit). 
+  Source code  
+    Java
+     AvlTreeList.java 
+     AvlTreeListTest.java (JUnit) 
+    The class AvlTreeList implements java.util.List. You can use it as a drop-in replacement anywhere you use a List – though only rare situations need to use an AvlTreeList instead of the commonly used ArrayList. 
+    The iterator is not fail-fast unlike the ones in the Java collections framework. Take care to not modify the list when iterating over it. 
+    Python
+     avltreelist.py 
+     avltreelisttest.py 
+    This implementation has an interface that mimics the built-in list type. Compatible with Python 2 and 3. 
+    C++
+     AvlTreeList.hpp 
+     AvlTreeListTest.cpp 
+    The class AvlTreeList has an interface similar to std::vector. Currently no iterator is implemented. Requires C++11. 
+    JavaScript
+     AvlTreeList.js 
+     AvlTreeListTest.js 
+     AvlTreeListTest.html 
+    The class AvlTreeList has some methods that are idiosyncratic and some that imitate the native Array class. The full set of methods is: length, get(), set(), insert(), remove(), clear(), iterator(), toArray(), push(), shift(), pop(), slice(), splice(), forEach(). 
+  License: MIT (open source) 
+  One application idea for the AVL tree list is to be the backing store for a scrollable graphical user interface that displays many thousands of items and allows the user to insert/edit/remove any item in the list (kind of like Windows Explorer or a big photo collection organizer). 
+  Notes 
+   This topic is covered in Introduction to Algorithms (the CLRS textbook), in the chapter “Augmenting Data Structures”, in the section on dynamic order statistics and retrieval by rank. 
+   The O(log n) time complexity for single-element operations can also be achieved in the average case using skip lists, but this is a probabilistic data structure compared to the absolute guarantees provided by balanced trees. 
+   All 3 classes of data structures in the table require O(n) time to search for a value to find its index in the list, but the tree structures can be augmented to do search in O(log n) time in a complicated way: Add a second balanced tree that is sorted by value and contains pointers to nodes in the primary tree; add parent pointers to each node in the primary tree so that when given a node, it’s possible to compute the node’s index in the list. 
+   This discussion is about the time complexity of single-element operations on a list ADT. It’s not clear how to insert a whole list into a list or remove a whole range in logarithmic time and also be able to access random elements in logarithmic time. This can be a research or implementation exercise for the reader. 
+   Because the balanced tree only updates O(log n) nodes on every operation and the nodes don’t have parent pointers, it is possible to implement this in a pure functional programming language like Haskell; similarly in imperative languages it is possible to make a copy-on-write implementation so that no nodes are ever modified in place. 
+   The Python package blist implements lists as balanced trees, just like my AVL tree list here. 
+   The Apache Commons Collections library provides a TreeList class that achieves the same goals as my Java implementation. 
+  More info 
+   Wikipedia: AVL tree 
+    Categories: Programming, Java, Python, C/C++ 
+    Last updated: 2016-01-05 
+   Related / browse 
+    Binary array set 
+    Binomial heap 
+    Disjoint-set data structure 
+    國內 doesn’t mean domestic 
+    Angles in elastic two-body collisions 
+  Sidebar 
+  Recent 
+     Knuth’s -yllion number notation
+     QR Code generator library
+     Overview of Project Nayuki software licenses
+     Free small FFT in multiple languages
+     Decent feedback from readers
+     (more)
+  Random 
+     RollerCoaster Tycoon saved games
+     Boolean algebra laws
+     Knuth-Morris-Pratt string matching
+     (more)
+ Feedback: Question/comment? Contact me 
+  ProjectNayuki: Like, comment, follow updates on Facebook 
+ Copyright © 2016 Project Nayuki 
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create','UA-23532931-1','auto'); ga('send','pageview'); 

@@ -1,0 +1,198 @@
+  
+  
+  * Home
+  * Contact Us
+  * Sitemap
+
+  * About ›
+    * History ›
+    * Organization ›
+    * Facilities ›
+    * Field Sites ›
+    * Lincoln Laboratory/ MIT Interactions ›
+    * Technology Transfer ›
+    * Professional Society Fellows ›
+    * Guidance for Sponsors/Customers Utilizing the Air Force Contract ›
+    * Small Business Office ›
+    * Visitor Information / Directions ›
+    * Laboratory Status ›
+  * Mission Areas ›
+    * Space Control ›
+    * Air, Missile, &amp; Maritime Defense Technology ›
+    * Communication Systems ›
+    * Cyber Security and Information Sciences ›
+    * ISR Systems and Technology ›
+    * Advanced Technology ›
+    * Tactical Systems ›
+    * Homeland Protection ›
+    * Air Traffic Control ›
+    * Engineering ›
+  * Employment ›
+    * Employment Opportunities ›
+    * Professional Development ›
+    * Staff Profiles ›
+    * Benefits ›
+    * Work-Life Balance ›
+    * Diversity and Inclusion ›
+    * Organization of Technical Divisions ›
+  * College Recruiting ›
+    * Search for On-Campus Activities ›
+    * Recruitment Calendar ›
+    * Summer Research Program ›
+    * Student Programs ›
+    * Military Fellowship Program ›
+    * Organization of Technical Divisions ›
+    * Technical Seminar Series ›
+  * News ›
+    * Awards ›
+    * Lincoln Laboratory in the News ›
+  * Publications ›
+    * Annual Report ›
+    * Lincoln Laboratory Journal ›
+    * Lab Notes ›
+    * Tech Notes ›
+    * MIT Lincoln Laboratory Facts ›
+    * Discover Your Mission ›
+    * Lincoln Laboratory Community Involvement Report ›
+    * Lincoln Laboratory History Book › 
+  * Outreach ›
+    * Support STEM Programs ›
+    * Educational Outreach ›
+    * Community Service and Giving ›
+    * Retiree Information ›
+    * Marshallese Community Outreach ›
+  * Workshops/Education ›
+
+Home  ›   Mission Areas ›  Advanced Technology  ›  Quantum Information and
+Integrated Nanosystems  ›  Quantum Information Science  ›  Superconducting
+Qubits
+
+# Quantum Information and Integrated Nanosystems
+
+  * Advanced Technology Mission Area Home ›
+  * Core Technology and Capabilities ›
+  * Advanced Imager Technology ›
+  * Chemical, Microsystem, and Nanoscale Technologies ›
+  * Laser Technology and Applications ›
+  * Quantum Information and Integrated Nanosystems ›
+    * **Quantum Information   
+Science ›**
+
+      * Superconducting Qubits ›
+      * Trapped-Ion   
+Qubits ›
+
+      * Quantum Sensing ›
+    * Integrated Photonics ›
+    * CMOS Technology ›
+    * Beyond CMOS Technology ›
+    * Biographies ›
+    * Publications ›
+    * Patents ›
+  * RF Technology ›
+  * Biographies ›
+  * Publications ›
+  * Patents ›
+  * How to work with us ›
+
+Related Publications
+
+Principal Investigators
+
+## Superconducting Qubits
+
+### Technical Overview
+
+Superconducting qubits are electronic circuits comprising lithographically
+defined Josephson tunnel junctions, inductors, capacitors, and interconnects.
+When cooled to dilution refrigerator temperatures (~20 mK), these circuits
+behave as quantum mechanical "artificial atoms," exhibiting quantized states
+of electronic charge, magnetic flux, or junction phase, depending on the
+design parameters of the constituent circuit elements. Their potential for
+lithographic scalability, compatibility with microwave control, and
+operability at nanosecond time scales place superconducting qubits among the
+leading modalities being considered for quantum information science and
+technology applications.
+
+Lincoln Laboratory has a comprehensive research and development program in the
+superconducting qubit area. Our efforts span
+
+  * Materials growth and characterization
+  * Fabrication
+  * Design and simulation
+  * Measurement and control
+  * Qubits and quantum-limited amplifiers
+  * Classical and cryogenic control electronics
+
+We collaborate closely with the Superconducting Circuits and Quantum
+Computation Group (formerly called the Orlando Group for its principal
+investigator, Prof. Terry P. Orlando) at MIT campus, as well as several
+academic and industrial groups worldwide.
+
+### Program Goals
+
+Superconducting qubit technology development is now moving into a "bigger-
+science" phase. Over the coming decade, engineering infrastructure will play
+an increasingly enabling role as this technology transitions from a laboratory
+setting to more realistic systems demonstrations. Lincoln Laboratory has the
+fundamental know-how and the vertically integrated infrastructure to
+facilitate this transition. Our program goals include the following:
+
+  * High-coherence materials and scalable qubit fabrication 
+  * Advanced control, error detection, and error mitigation
+  * Classical, high-performance control electronics (room temperature and cryogenic) for use with superconducting qubits
+  * Integrated approach to the quantum-to-classical transition
+  * Scalable subsystems and systems demonstrations
+
+### Research Highlights
+
+Over the past decade, Lincoln Laboratory made several important (in many
+cases, unique) contributions to the development of superconducting qubits,
+resulting in more than 30 peer-reviewed publications. Today, the qubit group
+is at the forefront of superconducting qubit development. We highlight a few
+accomplishments below.
+
+
+
+Figure 1. Superconducting qubit coherence time T2 over the past decade has
+improved more than five orders of magnitude. Lincoln Laboratory (blue markers)
+has contributed to this remarkable progression across several qubit modalities
+(flux, 2D transmon, 3D transmon). An example of the 2D transmon is shown on
+the right, including the chip design and coherence decay measurement.  
+(Click on image to view larger version.)
+
+
+
+  * **High-coherence qubits (Figures 1 and 2):** Superconducting qubit coherence times have improved more than five orders of magnitude over the past 15 years (Figure 1). Lincoln Laboratory has contributed to these improvements across several modalities (flux qubit, C-shunt flux qubit, 2D transmon, 3D transmon) with both niobium and aluminum junctions. Today, qubits fabricated and measured at the Laboratory exhibit T1,2  &gt; 100 μs in 3D geometries, T1,2 &gt; 30 μs in 2D geometries (Figure 2).   
+  
+
+Figure 2. Materials and fabrication of superconducting qubit circuits. (Click
+on image for larger version with a more detailed caption.)
+
+  
+  
+
+  * **Advanced control at avoided crossings (Figures 3a and 3b): **In collaboration with MIT campus, Lincoln Laboratory has developed advanced control techniques such as Landau-Zener-Stueckelberg interferometry (Figure 3a) at avoided crossings, a common techniques used in single and two-qubit conditional gates. Using this approach, we demonstrated an ultra-broadband spectroscopy technique spanning DC - 120 GHz called "amplitude spectroscopy," which scans driving field amplitude rather than frequency (Figure 3b). 
+
+  * **Qubit cooling (Figure 3c): **We have demonstrated qubit cooling of a superconducting qubit using an analog of optical pumping. By driving thermal population in state 1 to state 2, followed by rapid relaxation to the ground state 0, we achieved an effective qubit temperature of 3 mK, colder than the dilution refrigerator. Cooling, also called entropy removal, is an important enabler for rapid state initialization and quantum error-correction protocols. 
+
+  * **Dynamical decoupling and error mitigation (Figure 3d): **In collaboration with MIT campus, and using a device fabricated at NEC Japan, we applied Carr-Purcell-Meiboom-Gill (CPMG) dynamical decoupling pulse sequences comprising up to 200 pulses to a flux qubit. This was the first demonstration of a superconducting qubit breaking the 10-μs barrier (T1 = 12 μs, T2E = 23 μs). These and related pulse sequences form a family of open-loop control techniques that can be described in terms of filter functions and thereby designed to filter undesirable noise. These sequences improve coherence times dramatically, reducing error rates to levels more appropriate for quantum error correction.  
+  
+
+Figure 3. Demonstrations of qubit control. (Click on image to view larger
+version with a more detailed caption.)
+
+  * **Noise spectroscopy during free and driven evolution: **On the basis of the filter-function concept of the CPMG pulse sequence, we developed a bandpass filter approach to "sampling" the noise spectrum seen by the qubit. Using this and related approaches, we measured the flux noise power spectral density over a range of 0.1 mH to 200 MHz. We have also devised pulse sequencing techniques to investigate noise during both free-evolution (no pulse applied to the qubit) and driven-evolution (pulse applied to the qubit).
+
+
+
+top of page
+
+(C) 2016 Lincoln Laboratory, Massachusetts Institute of Technology  |
+Diversity  |  Terms of Use  |  contact: llwebmaster@ll.mit.edu
+
+  *[v]: View this template
+  *[e]: Edit this template
+  *[t]: Discuss this template
+  *[RSS]: Really Simple Syndication
+

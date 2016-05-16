@@ -1,0 +1,41 @@
+
+     Summary: This article kicks off a six-part series that focuses on important data structures and their use in application development. We'll examine both built-in data structures present in the .NET Framework, as well as essential data structures we'll have to build ourselves. This first installment focuses on defining what data structures are, how the efficiency of data structures is analyzed, and why this analysis is important. In this article, we'll also examine the Array and ArrayList, two of the most commonly used data structures present in the .NET Framework. (12 printed pages) 
+     Contents 
+     Introduction Analyzing the Performance of Data Structures Everyone's Favorite Linear, Direct Access, Homogeneous Data Structure The ArrayList: a Heterogeneous, Self-Redimensioning Array Conclusion 
+     Introduction 
+     Welcome to the first in a six-part series on using data structures in .NET. Throughout this article series we will be examining a variety of data structures, some of which are included in the .NET Framework Base Class Library and others that we'll build ourselves. If you're unfamiliar with the term, data structures are abstract structures, or classes, that are used to organize data and provide various operations upon their data. The most common and likely well-known data structure is the array, which contains a contiguous collection of data items that can be accessed by an ordinal index. 
+     Before jumping into the content for this article, let's first take a quick peek at the roadmap for this six-part article series, so that you can see what lies ahead. If there are any topics you think are missing from this outline, I invite you to e-mail me at mitchell@4guysfromrolla.com and share your thoughts. Space permitting, I'll be happy to add your suggestions to the appropriate installment or, if needed, add a seventh part to the series. 
+     In this first part of the six-part series, we'll look at why data structures are important, and their effect on the performance of an algorithm. To determine a data structure's effect on performance, we'll need to examine how the various operations performed by a data structure can be rigorously analyzed. Finally, we'll turn our attention to two data structures present in the .NET Framework—the Array and ArrayList. Chances are you've used both of these data structures in past projects. In this article, we'll examine what operations they provide and the efficiency of these operations. 
+     In Part 2, we'll explore the ArrayList class in more detail and examine its counterparts, the Queue class and Stack class. Like the ArrayList, both the Queue and Stack classes store a contiguous collection of data and are data structures available in the .NET Framework Base Class Library. However, unlike an ArrayList from which you can retrieve any data item, Queues and Stacks only allow data to be accessed in a predetermined sequential order. We'll examine some applications of Queues and Stacks, and see how to implement both of these classes by extending the ArrayList class. After examining Queues and Stacks, we'll look at HashTables, which allow for direct access like an ArrayList, but store data indexed by a string key. 
+     While ArrayLists are ideal for directly accessing and storing contents, they are suboptimal candidates when the data needs to be searched. In Part 3, we'll examine the binary search tree data structure, which provides a much more efficient means for searching than the ArrayList. The .NET Framework does not include any built-in binary search tree data structures, so we will have to build our own. 
+     The efficiency of searching a binary search trees is sensitive to the order with which the data was inserted into the tree. If the data was inserted in sorted or near-sorted order, the binary search tree loses virtually all of its efficiency advantages over the ArrayList. To combat this issue, in Part 4 we'll examine an interesting randomized data structure—the SkipList. SkipLists provide the efficiency of searching a binary search tree, but without the sensitivity to the order with which data is entered. 
+     In Part 5 we'll turn our attention to data structures that can be used to represent graphs. A graph is a collection of nodes, with a set of edges connecting the various nodes. For example, a map can be visualized as a graph, with cities as nodes and the highways between them as edged between the nodes. Many real-world problems can be abstractly defined in terms of graphs, thereby making graphs an often-used data structure.  
+     Finally, in Part 6 we'll look at data structures to represent sets and disjoint sets. A set is an unordered collection of items. Disjoint sets are a collection of sets that have no elements in common with one another. Both sets and disjoint sets have many uses in everyday programs, which we'll examine in detail in this final part. 
+     Analyzing the Performance of Data Structures 
+     When thinking about a particular application or programming problem, many developers (myself included) find themselves most interested in writing the algorithm to tackle the problem at hand, or adding cool features to the application to enhance the user's experience. Rarely, if ever, will you hear someone excited about what type of data structure they are using. However, the data structures used for a particular algorithm can greatly impact its performance. A common example is finding an element in a data structure. With an array, this process takes time proportional to the number of elements in the array. With binary search trees or SkipLists, the time required is sub-linear. When searching large amounts of data, the data structure chosen can make a difference in the application's performance that can be visibly measured in seconds or even minutes. 
+     Since the data structure used by an algorithm can greatly affect the algorithm's performance, it is important that there exists a rigorous method by which to compare the efficiency of various data structures. What we, as developers utilizing a data structure, are primarily interested in is how the data structures performance changes as the amount of data stored increases. That is, for each new element stored by the data structure, how are the running times of the data structure's operations effected? 
+     Consider a scenario in which you have a program that uses the System.IO.Directory.GetFiles(path) method to return the list of the files in a specified directory as a string array. Now, imagine that you wanted to search through the array to determine if an XML file existed in the list of files (namely one whose extension was .xml). One approach to do this would be to scan through the array and set some flag once an XML file was encountered. The code might look like so: 
+         Copy 
+using System;
+using System.Collections;
+using System.IO;
+public class MyClass
+{
+   public static void Main()
+   {
+      string [] fs = Directory.GetFiles(@"C:\Inetpub\wwwroot");
+      bool foundXML = false;
+      int i = 0;
+      for (i = 0; i &lt; fs.Length; i++)
+         if (String.Compare(Path.GetExtension(fs[i]), ".xml", true) == 0)
+         {
+            foundXML = true;
+            break;
+         }
+     if (foundXML)
+        Console.WriteLine("XML file found - " + fs[i]);
+     else
+        Console.WriteLine("No XML files found.");
+   }
+}
+     Here we see that in the worst-case, when there is no XML file or the XML file is the last file in the list, we have to search through each element of the array exactly once. To analyze the array

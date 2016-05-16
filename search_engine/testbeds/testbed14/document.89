@@ -1,0 +1,93 @@
+﻿We present Natural
+owl
+, a natural language generation system that produces texts
+describing individuals or classes of
+owl
+ontologies. Unlike simpler
+owl
+verbalizers, which
+typically express a single axiom at a time in controlled, often not entirely uent natural
+language primarily for the bene t of domain experts, we aim to generate uent and coherent multi-sentence texts for end-users. With a system like Natural
+owl
+, one can publish
+information in
+owl
+on the Web, along with automatically produced corresponding texts
+in multiple languages, making the information accessible not only to computer programs
+and domain experts, but also end-users. We discuss the processing stages of Natural
+owl
+,
+the optional domain-dependent linguistic resources that the system can use at each stage,
+and why they are useful. We also present trials showing that when the domain-dependent
+linguistic resources are available, Natural
+owl
+produces significantly better texts compared
+to a simpler verbalizer, and that the resources can be created with relatively light e ort.
+Journal of Artificial Intelligence Research 48 (2013) 671-715
+Submitted 04/13; published 11/13
+Generating Natural Language Descriptions from OWL
+Ontologies: the NaturalOWL System
+Ion Androutsopoulos
+ion@aueb.gr
+Department of Informatics,
+Athens University of Economics and Business, Greece
+Digital Curation Unit { Institute for the Management of Information Systems,
+Research Centre \Athena", Athens, Greece
+Gerasimos Lampouras
+lampouras06@aueb.gr
+Department of Informatics,
+Athens University of Economics and Business, Greece
+Dimitrios Galanis
+galanisd@aueb.gr
+Department of Informatics,
+Athens University of Economics and Business, Greece
+Institute for Language and Speech Processing,
+Research Centre \Athena", Athens, Greece
+Abstract
+We present Natural
+owl
+, a natural language generation system that produces texts
+describing individuals or classes of
+owl
+ontologies. Unlike simpler
+owl
+verbalizers, which
+typically express a single axiom at a time in controlled, often not entirely uent natural
+language primarily for the bene t of domain experts, we aim to generate uent and coherent multi-sentence texts for end-users. With a system like Natural
+owl
+, one can publish
+information in
+owl
+on the Web, along with automatically produced corresponding texts
+in multiple languages, making the information accessible not only to computer programs
+and domain experts, but also end-users. We discuss the processing stages of Natural
+owl
+,
+the optional domain-dependent linguistic resources that the system can use at each stage,
+and why they are useful. We also present trials showing that when the domain-dependent
+linguistic resources are available, Natural
+owl
+produces significantly better texts compared
+to a simpler verbalizer, and that the resources can be created with relatively light e ort.
+1. Introduction
+Ontologies play a central role in the Semantic Web (Berners-Lee, Hendler, & Lassila, 2001;
+Shadbolt, Berners-Lee, & Hall, 2006). Each ontology provides a conceptualization of a
+knowledge domain (e.g., consumer electronics) by defining the classes and subclasses of the
+individuals (entities) in the domain, the types of possible relations between them etc. The
+current standard to specify Semantic Web ontologies is
+owl
+(Horrocks, Patel-Schneider,
+& van Harmelen, 2003), a formal language based on description logics (Baader, Calvanese,
+McGuinness, Nardi, & Patel-Schneider, 2002),
+rdf
+, and
+rdf schema
+(Antoniou & van
+Harmelen, 2008), with
+owl2
+being the latest version of
+owl
+(Grau, Horrocks, Motik, Parc
+2013 AI Access Foundation. All rights reserved.
+Androutsopoulos, Lampouras, & Galanis
+sia, Patel-Schneider, & Sattler, 2008).

@@ -1,0 +1,30 @@
+﻿Foundational Ontology
+
+
+A foundational ontology is an artefact of the top-down ontology development methodology approach. The foundational ontologies typically include generic principals for modelling ontologies. The use of foundational ontologies will help prevent having to reinvent the wheel and help with the process of adding axioms easier. Some examples of foundational ontologies are DOLCE, BFO, and GFO. 
+When considering a top-down approach to developing ontologies it is highly relevant to reflect upon some philosophy in order to decide what should be included in the ontology. For example, there is the conflict between the 3D and 4D view of the world: Where the 3D or endurantist view sees things as persisting in time; and the 4D or perdurantist view sees things as changing - space time worms. A 4D view would believe that you after reading this sentence is different from the you before reading this sentence. Another important thing to consider is whether you believe in abstract entities - i.e. that there are objects that are not in space/time. 
+But if you prefer not to think about this, it is possible to take someone else’s design decisions and use that in the development of ontologies. These design decisions are available in foundational ontologies. Different design decisions will result in different foundational ontologies. 
+
+Contents
+1 Content of foundational ontologies 
+1.1 Class hierarchy 
+1.2 Relations 
+1.3 Attributions 
+2 Types of foundational ontologies 
+3 Discussion of usefulness of foundational ontologies 
+Content of foundational ontologies
+Typical content of foundational ontologies are high-level categorisations about things you normally want to represent in your ontology, relations that are useful across subject domains and how to represent attributes. 
+Class hierarchy
+Foundational ontologies have the same hierarchy in the ’TBox’ as other regular OWL ontologies, but they do not contain subject domain classes. They contain categories of kinds of things, or ‘conceptual containers’. Some examples of these categories in DOLCE are physical object, non-physical object, social object, accomplishment and state. 
+Relations
+While relations in a Domain ontology are specific to a subject domain, relations in foundational ontologies are subject domain-independent. Notable relations are part-of, participates-in, constituted-of and dependency. These relations are associated with categories, such as participate-in applies only between an endurant (wholly presented in time) and a perdurant (those things that unfold in time). One of the most essential relations is the Part-whole relation. 
+Attributions
+Representing attributes is done by general, recurring, principles of attributions. Foundational ontologies can represent attributes as unaries somewhere in the class hierarchy of the OWL ontology (For example, Colour could be a subclass of Quality in DOLCE, or could be represented as a dependent continuant in BFO). 
+Types of foundational ontologies
+Types of foundational ontologies have been mentioned above and are DOLCE, BFO, General Formal Ontology (GFO), natural language focused GUM, and SUMO. 
+DOLCE and GFO have rich axiomatisation with many object properties. GFO allows you to represent universals and individuals in the same ontology and BFO claims a realist approach. A significant difference between DOLCE and BFO is that while DOLCE contains many relations, BFO-in-OWL separates the taxonomy from the Relation Ontology. The latter was so that several ontologies could use the same set of agreed-upon defined relations and is meant to assist users in using the ontology for annotations. 
+A tool has been created, called ONSET, which helps you to decide which foundational ontology to use for your Domain ontology based on your user requirements. 
+Discussion of usefulness of foundational ontologies
+Top-down development of ontologies assume that by using a foundational ontology, the development will be more effective and the quality of the ontology will increase. While opponents of the use of foundational ontologies believes that the time it takes to understand abstract, comprehensive foundational ontologies is not worth it, especially when only creating ‘simple’ ontologies. 
+In an experiment performed by Maria Keet, she discovered that the ‘cost’ incurred in spending time getting acquainted with a foundational ontology (casu, DOLCE and a taxonomy of part-whole relations) compared to starting from scratch was more than made up for in size, understandability and interoperability. 
+

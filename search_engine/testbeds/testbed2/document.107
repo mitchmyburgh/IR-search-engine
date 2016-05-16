@@ -1,0 +1,81 @@
+Fuzzy clustering (also referred to as soft clustering) is a form of clustering in which each data point can belong to more than one cluster or partition.
+Clustering or cluster analysis involves assigning data points to clusters (also called buckets, bins, or classes), or homogeneous classes, such that items in the same class or cluster are as similar as possible, while items belonging to different classes are as dissimilar as possible. Clusters are identified via similarity measures. These similarity measures include distance, connectivity, and intensity. Different similarity measures may be chosen based on the data or the application.
+
+
+== Comparison to Hard Clustering ==
+In non-fuzzy clustering (also known as hard clustering), data is divided into distinct clusters, where each data point can only belong to exactly one cluster. In fuzzy clustering, data points can potentially belong to multiple clusters.
+
+
+== Membership ==
+Membership grades are assigned to each of the data points. These membership grades indicate the degree to which data points belong to each cluster. Thus, points on the edge of a cluster, with lower membership grades, may be in the cluster to a lesser degree than points in the center of cluster.
+
+
+== Fuzzy C-means Clustering ==
+One of the most widely used fuzzy clustering algorithms is the Fuzzy C-Means (FCM) Algorithm.
+
+
+=== History ===
+Fuzzy c-means (FCM) clustering was developed by J.C. Dunn in 1973, and improved by J.C. Bezdek in 1981.
+
+
+=== General Description ===
+The fuzzy c-means algorithm is very similar to the k-means algorithm:
+Choose a number of clusters.
+Assign randomly to each point coefficients for being in the clusters.
+Repeat until the algorithm has converged (that is, the coefficients' change between two iterations is no more than , the given sensitivity threshold) :
+Compute the centroid for each cluster (shown below).
+For each point, compute its coefficients of being in the clusters.
+
+
+=== Centroid ===
+Any point x has a set of coefficients giving the degree of being in the kth cluster wk(x). With fuzzy c-means, the centroid of a cluster is the mean of all points, weighted by their degree of belonging to the cluster:
+
+
+=== Algorithm ===
+The FCM algorithm attempts to partition a finite collection of  elements  into a collection of c fuzzy clusters with respect to some given criterion.
+Given a finite set of data, the algorithm returns a list of  cluster centres  and a partition matrix
+, where each element,  , tells the degree to which element, , belongs to cluster .
+The FCM aims to minimize an objective function:
+
+where:
+
+
+=== Comparison to K-means Clustering ===
+K-means clustering also attempts to minimize the objective function shown above. This method differs from the k-means objective function by the addition of the membership values  and the fuzzifier,  , with . The fuzzifier  determines the level of cluster fuzziness. A large  results in smaller membership values, , and hence, fuzzier clusters. In the limit , the memberships,  , converge to 0 or 1, which implies a crisp partitioning. In the absence of experimentation or domain knowledge,  is commonly set to 2. The algorithm minimizes intra-cluster variance as well, but has the same problems as k-means; the minimum is a local minimum, and the results depend on the initial choice of weights.
+
+
+== Related Algorithms ==
+Using a mixture of Gaussians along with the expectation-maximization algorithm is a more statistically formalized method which includes some of these ideas: partial membership in classes.
+Another algorithm closely related to Fuzzy C-Means is Soft K-means.
+
+
+== Applications ==
+Clustering problems have applications in biology, medicine, psychology, economics, and many other disciplines.
+
+
+=== Bioinformatics ===
+In the field of bioinformatics, clustering is used for a number of applications. One use is as a pattern recognition technique to analyze gene expression data from microarrays or other technology. In this case, genes with similar expression patterns are grouped into the same cluster, and different clusters display distinct, well-separated patterns of expression. Use of clustering can provide insight into gene function and regulation. Because fuzzy clustering allows genes to belong to more than one cluster, it allows for the identification of genes that are conditionally co-regulated or co-expressed. For example, one gene may be acted on by more than one Transcription factor, and one gene may encode a protein that has more than one function. Thus, fuzzy clustering is more appropriate than hard clustering.
+
+
+=== Image Analysis ===
+Fuzzy c-means has been a very important tool for image processing in clustering objects in an image. In the 70's, mathematicians introduced the spatial term into the FCM algorithm to improve the accuracy of clustering under noise.
+
+
+=== Marketing ===
+In marketing, customers can be grouped into fuzzy clusters based on their needs, brand choices, psycho-graphic profiles, or other marketing related partitions.
+
+
+== See also ==
+FLAME Clustering
+Cluster Analysis
+Expectation-maximization algorithm (a similar, but more statistically formalized method)
+
+
+== References ==
+
+
+== External links ==
+Fuzzy Clustering in Wolfram Research
+Extended Fuzzy Clustering Algorithms by Kaymak, U. and Setnes, M.
+Fuzzy Clustering in C++ and Boost by Antonio Gulli
+Concise description with examples

@@ -1,0 +1,39 @@
+Semantic hashing
+
+Ruslan Salakhutdinov, , Geoffrey Hinton 
+
+
+We show how to learn a deep graphical model of the word-count vectors obtained from a large set of documents. The values of the latent variables in the deepest layer are easy to infer and give a much better representation of each document than Latent Semantic Analysis. When the deepest layer is forced to use a small number of binary variables (e.g. 32), the graphical model performs “semantic hashing”: Documents are mapped to memory addresses in such a way that semantically similar documents are located at nearby addresses. Documents similar to a query document can then be found by simply accessing all the addresses that differ by only a few bits from the address of the query document. This way of extending the efficiency of hash-coding to approximate matching is much faster than locality sensitive hashing, which is the fastest current method. By using semantic hashing to filter the documents given to TF-IDF, we achieve higher accuracy than applying TF-IDF to the entire document set.
+
+Experimental results
+To evaluate performance of our model on an information retrieval task we use Precision–Recall curves where we define:
+Recall ¼ Number of retrieved relevant documents
+Total number of all relevant documents ;
+Precision ¼ Number of relevant retrieved documents
+Total number of retrieved documents :
+To decide whether a retrieved document is relevant to the query document, we simply look to see if they have the same
+class label. This is the only time that the class labels are used. It is not a particularly good measure of relevance, but it is the
+same for all the methods we compare.
+Results of [8] show that pLSA and LDA models do not generally outperform LSA and TF-IDF. Therefore for comparison we
+only used LSA and TF-IDF as benchmark methods. For LSA each word-count, ci, was replaced by log(1 + ci) before the SVD
+decomposition, which slightly improved performance. For both these methods we used the cosine of the angle between
+two vectors as a measure of their similarity.
+4.1. Description of the text corpora
+In this section we present experimental results for document retrieval on two text datasets: 20-newsgroups and Reuters
+Corpus Volume I (RCV1-v2) [14].
+The 20-newsgroups corpus contains 18,845 postings taken from the Usenet newsgroup collection. The corpus is partitioned
+fairly evenly into 20 different newsgroups, each corresponding to a separate topic.4 The data was split by date into
+11,314 training and 7531 test articles, so the training and test sets were separated in time. The training set was further randomly
+split into 8,314 training and 3000 validation documents. Newsgroups such as soc.religion.christian and talk.religion.misc
+are very closely related to each other, while newsgroups such as comp.graphics and rec.sport.hockey are very different (see
+Fig. 5) We further preprocessed the data by removing common stopwords, stemming, and then only considering the 2000 most
+frequent words in the training dataset. As a result, each posting was represented as a vector containing 2000 word-counts. No
+other preprocessing was done.
+The Reuters Corpus Volume I is an archive of 804,414 newswire stories5 that have been manually categorized into 103 topics.
+The corpus covers four major groups: corporate/industrial, economics, government/social, and markets. Sample topics are
+displayed in Fig. 5. The topic classes form a tree which is typically of depth 3. For this dataset, we define the relevance of one
+document to another to be the fraction of the topic labels that agree on the two paths from the root to the two documents.
+The data was randomly split into 402,207 training and 402,207 test articles. The training set was further randomly split
+into 302,207 training and 100,000 validation documents. The available data was already in the preprocessed format, where
+common stopwords were removed and all documents were stemmed. We again only considered the 2000 most frequent
+words in the training dataset.

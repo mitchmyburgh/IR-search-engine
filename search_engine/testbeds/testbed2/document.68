@@ -1,0 +1,21 @@
+Blondie24 is an artificial intelligence checkers-playing computer program named after the screen name used by a team led by David B. Fogel. The purpose was to determine the effectiveness of an artificial intelligence checkers-playing computer program.
+The screen name was used on The Zone, an internet boardgaming site in 1999. During this time, Blondie24 played against some 165 human opponents and was shown to achieve a rating of 2048, or better than 99.61% of the playing population of that web site.
+The design of Blondie24 is based on a minimax algorithm of the checkers game tree in which the evaluation function is an artificial neural network. The neural net receives as input a vector representation of the checkerboard positions and returns a single value which is passed on to the minimax algorithm.
+The weights of the neural network were obtained by an evolutionary algorithm (an approach now called neuroevolution). In this case, a population of Blondie24-like programs played each other in checkers, and those were eliminated that performed relatively poorly. Performance was measured by a points system: Each program earned one point for a win, none for a draw, and two points were subtracted for a loss. After the poor programs were eliminated, the process was repeated with a new population derived from the winners. In this way, the result was an evolutionary process that selected programs that played better checkers games.
+The significance of the Blondie24 program is that its ability to play checkers did not rely on any human expertise of the game. Rather, it came solely from the total points earned by each player and the evolutionary process itself. The evolving players did not even know which individual games ended in a win, loss, or draw.
+David Fogel, along with his colleague Kumar Chellapilla, documented their experiment in several publications. Fogel also authored a book on the development of Blondie24, and the experiences he and his team had while running Blondie24 in on-line checkers games, and eventually in obtaining a victory against a dumbed-down version of Chinook.
+
+
+== References ==
+
+
+=== Further reading ===
+Chellapilla, Kumar; Fogel, David B. (September 1999). "Evolution, Neural Networks, Games, and Intelligence" (PDF). Proceedings of the IEEE 87 (9): 1471–1496. doi:10.1109/5.784222. CiteSeerX: 10.1.1.99.979. 
+Chellapilla, Kumar; Fogel, David B. (1999). "Evolving Neural Networks to Play Checkers without Expert Knowledge" (PDF). IEEE Transactions on Neural Networks 10 (6): 1382–1391. doi:10.1109/72.809083. 
+Chellapilla, Kumar; Fogel, David B. (2001). "Evolving an Expert Checkers Playing Program without Using Human Expertise" (PDF). IEEE Transactions on Evolutionary Computation 5 (4): 422–428. doi:10.1109/4235.942536. 
+Fogel, David B. (2002). Blondie24: Playing at the Edge of AI. San Francisco, CA.: Morgan Kaufmann Publishers. ISBN 1-55860-783-8. 
+
+
+== See also ==
+Portal:Artificial intelligence
+Genetic Programming

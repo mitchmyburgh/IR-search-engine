@@ -1,0 +1,73 @@
+A metadata repository is a database created to store metadata. Metadata is information about the structures that contain the actual data. Metadata is often said to be "data about data", but this is misleading. Data profiles are an example of actual "data about data". Metadata is one layer of abstraction removed from this – it is data about the structures that contain data. Metadata may describe the structure of any data, of any subject, stored in any format.
+A well-designed metadata repository typically contains data far beyond simple definitions of the various data structures. Typical repositories store dozens to hundreds of separate pieces of information about each data structure.
+Comparing the metadata of a couple data items - one digital and one physical - will help one understand what metadata really is:
+First, digital: for data stored in a database one may have a table called "Patient" with many columns, each containing data which describes a different attribute of each patient. One of these columns may be named "Patient_Last_Name". What is some of the metadata about the column that contains the actual surnames of patients in the database? We have already used two items: the name of the column that contains the data (Patient_Last_Name) and the name of the table that contains the column (Patient). Other metadata might include the maximum length of last name that may be entered, whether or not last name is required (can we have a patient without Patient_Last_Name?), and whether the database converts any surnames entered in lower case to upper case. Metadata of a security nature may show the restrictions which limit who may view these names.
+Second, physical: for data stored in a brick and mortar library, one have many volumes and may have various media, including books. Metadata about books would include ISBN, Binding_Type, Page_Count, Author, etc. Within Binding_Type, metadata would include possible bindings, material, etc.
+This contextual information of business data include meaning and content, policies that govern, technical attributes, specifications that transform, and programs that manipulate.
+
+
+== Definition ==
+The metadata repository is responsible for physically storing and cataloging metadata. Data in a metadata repository should be generic, integrated, current, and historical. Generic : meta model should store the metadata by generic terms instead of storing it by an applications-specific defined way, so that if your data base standard changes from one product to another the physical meta model of the metadata repository would not need to change. Integration of the metadata repository allows all business areas metadata in an integrated fashion covering all domains and subject areas of the organization The metadata repository should have accessible current and historical metadata. Metadata repositories used to be referred to as a data dictionary.
+With the transition of needs for the metadata usage for business intelligence has increased so is the scope of the metadata repository increased. Earlier data dictionaries are the closest place to interact technology with business. Data dictionaries are the universe of metadata repository in the initial stages but as the scope increased Business glossary and their tags to variety of status flags emerged in the business side while consumption of the technology metadata, their lineage and linkages made the repository, the source for valuable reports to bring business and technology together and helped data management decisions easier as well as assess the cost of the changes.
+Metadata repository explores the enterprise wide data governance , data quality and master data management (includes master data and reference data) and integrates this wealth of information with integrated metadata across the organization to provide decision support system for data structures, even though it only reflects the structures consumed from various systems.
+
+
+== Repository vs. registry ==
+
+Repository has additional functionalities compared with registry. Metadata repository not only stores metadata like Metadata registry but also adds relationships with related metadata types. Metadata when related in a flow from its point of entry into organization up to the deliverables is considered as the lineage of that data point. Metadata when related across other related metadata types is called linkages. By providing the relationships to all the metadata points across the organization and maintaining its integrity with an architecture to handle the changes , metadata repository provides the basic material for understanding the complete data flow and their definitions and their impact. Also the important feature is to maintain the version control though this statement for contrasting is open for discussion. These definitions are still evolving, so the accuracy of the definitions needs refinement.
+Purpose of registry is to define the metadata element and maintained across the organization. and data models and other data management teams refers to the registry for any changes to follow. While Metadata repository sources metadata from various metadata systems in the organizations and reflects what is in the upstream. Repository never acts as an upstream while registry is used as an upstream for metadata changes.
+
+
+== Reason for use ==
+Metadata repository enables all the structure of the organizations data containers to one integrated place. This opens plethora of resourceful information for making calculated business decisions. This tool uses one generic form of data model to integrate all the models thus brings all the applications and programs of the organization into one format. And on top of it applying the business definitions and business processes brings the business and technology closer that will help organizations make reliable roadmaps with definite goals. With one stop information, business will have more control on the changes, and can do impact analysis of the tool. Usually business spends lots of time and money to make decisions based on discovery and research on impacts to make changes or to add new data structures or remove structures in data management of the organization. With a structured and well maintained repository, moving the product from ideation to delivery takes the least amount of time (considering other variables are constant). To sum it up:
+Integration of the metadata across the organization.
+Build relationship between various metadata types
+Build relationship between various disparate systems.
+Define business golden copy of definitions.
+Version control of the changes at structure level.
+interaction with Reference data
+link view to master data.
+automatic synchronization with various authorized metadata source systems.
+More control to business decisions.
+validate the structures by overlapping the models
+discovering discrepancies, gaps, lineage, metrics at data structure level.
+Each database management system (DBMS) and database tools have their own language for the metadata components within. Database applications already have their own repositories or registries that are expected to provide all of the necessary functionality to access the data stored within. Vendors do not want other companies to be capable of easily migrating data away from their products and into competitors products, so they are proprietary with the way they handle metadata. CASE tools, DBMS dictionaries, ETL tools, data-cleansing tools, OLAP tools, and data mining tools all handle and store metadata differently. Only a metadata repository can be designed to store the metadata components from all of these tools.
+
+
+== Design ==
+Metadata repositories should store metadata in four classifications: ownership, descriptive characteristics, rules and policies, and physical characteristics. Ownership, showing the data owner and the application owner. The descriptive characteristics, define the names, types and lengths, and definitions describing business data or business processes. Rules and policies, will define security, data cleanliness, timelines for data, and relationships. Physical characteristics define the origin or source, and physical location. Like building a logical data model for creating a database, a logical meta model can help identify the metadata requirements for business data. The metadata repository will be centralized, decentralized, or distributed. A centralized design means that there is one database for the metadata repository that stores metadata for all applications business wide. A centralized metadata repository has the same advantages and disadvantages of a centralized database. Easier to manage because all the data is in one database, but the disadvantage is that bottlenecks may occur.
+A decentralized metadata repository stores metadata in multiple databases, either separated by location and or departments of the business. This makes management of the repository more involved than a centralized metadata repository, but the advantage is that the metadata can be broken down into individual departments.
+A distributed metadata repository uses a decentralized method, but unlike a decentralized metadata repository the metadata remains in its original application. An XML gateway is created that acts as a directory for accessing the metadata within each different application. The advantages and disadvantages for a distributed metadata repository mirror that of a distributed database.
+Design of information model should include various layers of metadata types to be overlapped to create an integrated view of the data. Various metadata types should be stitched with related metadata elements in a top down model linking to business glossary.
+Layers of Metadata:
+Business Glossary : contains recursive relationship to Business terms.
+Business tags: Contains various affiliation to that term or terms.
+Data Dictionary: contains information from data model tools for the definition of metadata elements and their technical definitions provided by data or enterprise architecture.
+Conceptual data models:
+Logical data models
+Physical data models
+Databases
+validation rules and data quality rules
+ETL, business rules and their relationship to attributes and entities
+Reports
+Source to target mapping artifacts (relationships)
+Reporting requirements (relationships)
+business processes and their relationship to technology
+people hierarchy and their relationship
+owner relationship
+
+
+=== Entity-Relationship/Object-Oriented ===
+Metadata repositories can be designed as either an Entity-relationship model, or an Object-oriented design.
+
+
+== See also ==
+Metadata
+Metadata registry
+Metadata standards
+ISO/IEC 11179
+Data dictionary
+Data modeling
+
+
+== References ==

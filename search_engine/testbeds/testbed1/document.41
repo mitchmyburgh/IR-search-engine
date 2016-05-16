@@ -1,0 +1,60 @@
+AMD_690_chipset_series
+The '''AMD 690 chipset series''' is an integrated graphics  family which was developed and manufactured by  subsidiary  for both AMD and Intel platforms focusing on both desktop and mobile computing markets. The corresponding chipset for the  platform has a marketing name of ''Radeon Xpress 1200 series''.
+The chipsets production began in late 2006 with codenames ''RS690'' and ''RS600'', where both of them share similar internal chip design, targeting at the desktop market. Mobile versions of both chipsets have codenames ''RS690M'' and ''RS600M''. The marketing name for this chipset on the Intel platform is the ''Radeon Xpress 1200 series'' (Radeon Xpress 1200 to Radeon Xpress 1270) while the name for the chipset on the AMD platform is ''690G''.
+Both the 690G and Radeon Xpress 1200 chipsets include an integrated graphics processing unit (IGP) based on the ATI Radeon X700 series GPUs with  technology included for hardware video acceleration. Mobile versions have reduced power consumption  with adaptive power management features (). The 690G and Radeon Xpress 1250 chipsets are direct successors to  integrated graphics chipsets (codenamed ''RS480'' and ''RS400'').
+Starting in late 2006, mobile versions of the 690 chipset (''RS690M'') were being rolled out in mass by major notebook computer manufacturers, including HP, Asus, Dell, Toshiba, Acer, and others. For some s (including Dell and Acer), the M690 series chipset was going to replace the Radeon Xpress 1150 (codenamed ''RS485M'') on the mobile platform, and desktop variants of the 690 chipset were announced in February 2007.
+The 690 chipset series consists of three members: 690G, 690V and M690T. The planned "''RD690''" enthusiast chipset was canceled in the official roadmap without explanation and no release date was given for the "''RX690''" chipset which has no IGP and only one PCI-E x16 slot. , the ASIC part number for RD690 presents but being labelled as "deleted"
+After ATI was acquired by AMD in July 2006, plans for the Radeon Xpress 1250 chipset for the Intel platform were canceled while the 690G/M690 chipsets for the AMD platform became the main production target. AMD released the chipsets to only two vendors, Abit and AsRock. Abit signed on prior to the AMD acquisition and AsRock was given the remaining inventory of RS600 chips for the Chinese market.
+On AMD Technology Analyst Day 2007, AMD announced that 4 million units of 690 chipsets had been shipped to customers, calling it a commercial success. With that in mind, AMD announced on January 21, 2008 that the series will be further extended to s with the last member, the AMD M690E chipset.
+==Lineup==
+The chipset has several variants, they are summarized below, sorted by their  codename.
+The first one is the ''RS690'' which is the basic chipset and implemented now as 690G. The second one is the ''RS690C'' which is a simplified version of 690G and without  support and named as 690V. The third one in the series is the ''RS690M'' for mobile platforms, named M690. The fourth one is the ''RS690MC'', a simplified version of M690 and without  support, called M690V. Another one in the lineup is the ''RS690T'', another variant to the M690 chipset with a local frame buffer (see ). A member for the embedded systems, the M690E, is basically a M690T with different display output configurations.
+==Key features==
+===IGP General features===
+Chipset models in the series (excluding RD690 and RX690) feature an  (IGP) which is incorporated into the northbridge and manufactured on an 80&nbsp;nm fabrication process. The IGP's 3D architecture is based on  and contains 4 pixel pipelines capable of  with  and  compatibility but lacks hardware vertex processing. It uses a , meaning system RAM is shared with the IGP. The IGP was the first chip in ATI's integrated lineup that included  capabilities (also seen in the ), and is therefore capable of decoding videos of resolution up to / in hardware.Gasior, Geoff. , Tech Report, February 28, 2007.
+Both chipsets in this family are fully compatible with the  interface and are  Premium certified. Also supported by the chipset are  slots,  7.1 channel audio and .
+The northbridge has a  of 13.8 s or an average of 8 s,  and is pin compatible with  . The northbridge supports  2.0 at 1&nbsp;GHz, and an additional 3  x1 slots. The northbridge and southbridge () are connected via "ALink II". This is in reality 4 PCIe lanes, providing 2 GB/s bandwidth.
+===690G===
+For 690G, the IGP was named "Radeon X1250", operating at 400&nbsp;MHz clock frequency, with ,  and dual link  output with  support for single link transmission and  support for HDMI output. (however a DVI to D-sub adapter will not work and is not compatible with DVI-D interface due to the lack of the four analog pins of DVI-A and DVI-I) One HDMI output can be active at the DVI/HDMI interface or at the TMDS interface.  support is limited to only one of those interfaces at any time. The chipset also supports '' and '' -or- '' and '' dual output simultaneously, to achieve a maximum of two active out of three attached monitor outputs, called "", and up to four independent, active displays with an additional video card.
+The 690G chipset also supports a maximum of 24 additional  lanes and a  x16 expansion slot, and the chipset mixes audio and video signals and output through the HDMI interface. The mobile version of the chipset is the M690 chipset (codenamed ''RS690M'').
+AMD dropped support for Windows and Linux drivers made for Radeon X1250 graphics integrated in the 690G chipset, stating that users should use the open-source graphics drivers instead. The latest available proprietary AMD Linux driver for the 690G chipset is  version 9.3, which is outdated and no more compatible with current Linux distributions.
+The free and opensource driver for AMD graphics in the linux kernel supports both 3D acceleration and hardware decoders as of kernel 3.12,http://xorg.freedesktop.org/wiki/RadeonFeature/ and is unlikely to drop support of this (or any AMD graphics it already supports) in the foreseeable future. Being part of the kernel, no installation/configuration is needed.
+===690V===
+For 690V, "Radeon X1200" was the name of the IGP, with clock frequency of 350&nbsp;MHz. The major differences between the 690G and 690V chipsets is that the 690V chipset lacks support for  and HDMI output,and is therefore limited to  or  output only. The mobile version of the chipset is the M690V chipset (codenamed ''RS690MC'').
+===M690T===
+Originally codenamed "RS690T", the chipset is for mobile platforms only. Featuring an optional 16-bit  side-port memory with maximum 128   capacity as local frame buffer. Sources revealed that the RS690T chipset may pair with   and named as the "trevally" platform focusing the mobile market.  It is worth to note that the RS690T chipset has been added to AMD "longevity programme", that is AMD committed to supply the chipset for at least five years after general availability. However, currently, M690T chipset was coupled with SB600 southbridge. The chipset was officially referred as "M690T chipset with Radeon X1270 graphics". (Page 5): AMD M690T with ATI Radeon X1270 Graphics
+===M690E===
+Announced on January 21, 2008, the M690E chipset as the suffix "E" suggests, is solely for s, providing the same feature sets as the , but with the analog TV output interface replaced with a secondary  output interface, providing a total of two / outputs with  support limited to one of those interfaces at any time.
+===Radeon Xpress 1250===
+Intel counterpart of the 690G chipset, supports all of 690G features and Intel processors, codenamed ''RS600'', replaced the HyperTransport controller with   controller together with DDR2 memory controller on the Northbridge. IGP ran at 500&nbsp;MHz clock frequency instead of 400&nbsp;MHz in other 690 chipset counterparts.
+Since Intel has not given the 1333&nbsp;MHz FSB license to  after the company was purchased by , the Radeon Xpress 1250 only comes with official support of 1066&nbsp;MHz  (FSB). However, supporting 1333&nbsp;MHz FSB was obviously given higher priorities when RS600 was being developed, resulting Xpress 1250 motherboards actually have the support for 1333&nbsp;MHz FSB via , and support all 1333&nbsp;MHz FSB  microprocessors .
+Only  has released a motherboard with this chipset as a result of signed agreement before the AMD-ATI merger, while ASRock was reported to have purchased all of the remaining inventory of RS600 resulting from a strategic move of AMD to clear all RS600 inventories,, retrieved July 14, 2007 thus making Abit and AsRock the only RS600 motherboard manufacturers.
+==Northbridge issues (690G, M690, 690V, M690V, M690T, M690E)==
+AMD does not provide any RS690 errata publicly (AMD document ER_RS690A5 for Revision A11 & ER_RS690B4 and its addendum for Revision A12). Most OSes require patches in order to work reliably.
+*Windows platform:
+** error 0x000000EA might be rarely encountered due to an internal hardware optimization on revision A12 northbridges (related to AMD Errata Addendum of ER_RS690B4). AMD will release a new driver in 2010 to fix it.
+==Southbridge issues(SB600)==
+AMD does not provide any SB600 errata publicly (AMD document ER_IXP600AB7 for Revision A12, ER_IXP600AC33 for Revision A13 and ER_SB600AD12 for Revision A21). Most OSes require patches in order to work reliably.
+*Windows platform:
+** Microsoft KB982091 
+** Microsoft KB931369 
+** Microsoft KB924051 
+*Linux platform:
+**  freeze when multiple devices are connected through hub (related to AMD Product Advisory PA_SB600AL1)
+** SATA soft reset fails when  is enabled and devices will be not detected (does not apply to A11 and A12 revisions)
+** SATA internal errors are ignored because SATA will set Serial ATA port Error when it should not
+** SATA commands in AHCI mode are limited to 255 sectors per command because of NCQ problems
+** SATA controller does not support 
+==List of mainboards using 690 chipset==
+The lineup and output features comparison for 690 chipset series motherboards are summarized below.
+''Note'': data below does not include RS690M and RS600M - mobile editions of RS690 and RS600 chipsets. 
+==See also==
+*
+*
+*
+==References==
+==External links==
+*
+*
+*
+*

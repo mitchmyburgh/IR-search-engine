@@ -1,0 +1,40 @@
+﻿DESCRIPTION LOGIC REASONERS
+
+Please check out the new list: this one is no longer maintained, outdated, and will eventually disappear!
+
+
+This page contains two lists(*) of Description Logic reasoners, together with a description of their capabilities and links to their web page. The first list is about reasoners which are currently being enhanced, maintained, and worked on. The second list is about reasoners which are possibly still available, yet have not been modified for a longer period of time. It is maintained by Uli Sattler. If you want your reasoner to be added to this web page or want to update or modify one of the entries, please send me an email.
+The descriptions given for the reasoners reflect my view of what they do, and are kept very short so as to provide an overview: to learn more about their full capabilities, please visit the corresponding web page.
+A list of implementations around OWL 2 (including reasoners, APIs, editors...) can be found at OWL 2's implementation site.
+
+Current DESCRIPTION LOGIC REASONERS
+CEL is a free (for non-commercial use) LISP-based reasoner for EL+. It implements a refined version of a known polynomial-time classification algorithm and supports new features like module extraction and axiom pinpointing. Currently, it accepts inputs in a small extension of the KRSS syntax and supports the DIG interface.
+Cerebra Engine is a commercial C++-based reasoner. It implements a tableau-based decision procedure for general TBoxes (subsumption, satisfiability, classification) and ABoxes (retrieval, tree-conjunctive query answering using a XQuery-like syntax). It supports the OWL-API and comes with numerous other features.
+FaCT++ is a free (GPL/LGPL) open-source C++-based reasoner for SROIQ with simple datatypes (i.e., for OWL 2). It implements a tableau-based decision procedure for general TBoxes (subsumption, satisfiability, classification) and ABoxes (retrieval). It supports the OWL-API, the lisp-API and the DIG interface.
+fuzzyDL is a free Java/C++ based reasoner for fuzzy SHIF with concrete fuzzy concepts (explicit definition of fuzzy sets + modifiers). It implements a tableau + Mixed Integer Linear Programming optimization decision procedure to compute the maximal degree of subsumption and instance checking w.r.t. a general TBox and Abox. It supports Zadeh semantics, Lukasiewicz semantics and is backward compatible with classical description logic reasoning.
+HermiT HermiT is a free (under LGPL license) Java reasoner for OWL 2/SROIQ with OWL 2 datatype support and support for description graphs. It implements a hypertableau-based decision procedure, uses the OWL API 3.0, and is compatible with the OWLReasoner interface of the OWL API.
+KAON2 is a free (free for non-commercial usage) Java reasoner for SHIQ extended with the DL-safe fragment of SWRL. It implements a resolution-based decision procedure for general TBoxes (subsumption, satisfiability, classification) and ABoxes (retrieval, conjunctive query answering). It comes with its own, Java-based interface, and supports the DIG interface.
+MSPASS is a free open-source C reasoner for numerous description logics. It implements a resolution-based decision procedure for extensions of ALB (which is ALC with inverse and Boolean operators on roles) with general TBoxes (satisfiability, subsumption) and ABoxes (instance checking, retrieval). It is an extension of the theorem prover SPASS, and can thus also be used to reason about arbitrary first-order statements.
+Pellet is a free open-source Java-based reasoner for SROIQ with simple datatypes (i.e., for OWL 1.1). It implements a tableau-based decision procedure for general TBoxes (subsumption, satisfiability, classification) and ABoxes (retrieval, conjunctive query answering). It supports the OWL-API, the DIG interface, and the Jena interface and comes with numerous other features.
+QuOnto is a free (for non-commercial use) Java-based reasoner for DL-lite with GCIs. It implements a query rewriting algorithm for both consistency checking and query answering for unions of conjunctive queries over DL-Lite knowledge bases, whose ABox is managed through relational database technology. It comes with its own Java-based interface.
+RacerPro is a commercial (free trials and research licenses are available) lisp-based reasoner for SHIQ with simple datatypes (i.e., for OWL-DL with qualified number restrictions, but without nominals). It implements a tableau-based decision procedure for general TBoxes (subsumption, satisfiability, classification) and ABoxes (retrieval, nRQL query answering). It supports theOWL-API and the DIG interface and comes with numerous other features.
+SHER is a commercial (free for academic use) Java-based reasoner for SHIN. It is based on Pellet and uses database technology to reason about SHIN TBoxes and ABoxes (retrieval, conjunctive query answering).
+SoftFacts is a free Java-based reasoner for fuzzy DLR-lite. It implements a query rewriting approach to answer conjunctive queries over a DLR-lite TBox, where the data is stored in a database (MySQL, Postgres and RankSQL). It also supports top-k retrieval (find top-k scored tuples satisfying a query). 
+TrOWL is a free (for non-commercial use) open-source Tractable reasoning infrastructure for OWL 2. It implements approximate reasoning for standard TBox and ABox reasoning, as well as conjunctive query answering for QL, EL and DL. It supports OWL-API and comes with numerous other features (such as forgetting).
+
+DESCRIPTION LOGIC REASONERS which are no longer actively supported
+BACK
+CLASSIC
+CICLOP
+CRACK
+DLP
+FaCT
+FLEX
+HAM-ALC
+K-REP
+KRIS
+LOOM
+*SAT
+YAK
+
+

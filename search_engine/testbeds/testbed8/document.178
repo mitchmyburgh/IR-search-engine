@@ -1,0 +1,12 @@
+A tango tree is a type of binary search tree proposed by Erik D. Demaine, Dion Harmon, John Iacono, and Mihai Patrascu in 2004.[1]
+It is an online binary search tree that achieves an   competitive ratio relative to the optimal offline binary search tree, while only using   additional bits of memory per node. This improved upon the previous best known competitive ratio, which was  .
+
+Structure[edit]
+Tango trees work by partitioning a binary search tree into a set of preferred paths, which are themselves stored in auxiliary trees (so the tango tree is represented as a tree of trees).
+Reference Tree[edit]
+To construct a tango tree, we simulate a complete binary search tree called the reference tree, which is simply a traditional binary search tree containing all the elements. This tree never shows up in the actual implementation, but is the conceptual basis behind the following pieces of a tango tree.
+Preferred Paths[edit]
+First, we define for each node its preferred child, which informally is the most-recently touched child by a traditional binary search tree lookup. More formally, consider a subtreeT, rooted at p, with children l (left) and r (right). We set r as the preferred child of p if the most recently accessed node in T is in the subtree rooted at r, and l as the preferred child otherwise. Note that if the most recently accessed node of T is p itself, then l is the preferred child by definition.
+A preferred path is defined by starting at the root and following the preferred children until reaching a leaf node. Removing the nodes on this path partitions the remainder of the tree into a number of subtrees, and we recurse on each subtree (forming a preferred path from its root, which partitions the subtree into more subtrees).
+Auxiliary Trees[edit]
+To represent a preferred path, we store its nodes in a balanced binary search tree, specifically a red-black tree. For each non-leaf node n in a preferred path P, it has a non-preferred child c, which is the root of a new auxiliary tree. We attach this other auxiliary tree's root (c) to n in P, thus linking the auxiliary trees together. We also augment the auxiliary tree by storing at each node the minimum and maximum depth (depth in the reference tree, that is) of nodes in the subtree under that node.

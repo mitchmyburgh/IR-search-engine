@@ -1,0 +1,42 @@
+A survey of kernel and spectral methods for clustering
+
+
+Maurizio Filipponea,∗, Francesco Camastrab, Francesco Masullia, Stefano RovettaaUnsupervised data analysis using clustering algorithms provides
+a useful tool to explore data structures. Clustering methods
+[1,2] have been addressed in many contexts and disciplines
+such as data mining, document retrieval, image segmentation
+and pattern classification. The aim of clustering methods is to
+group patterns on the basis of a similarity (or dissimilarity)
+criteria where groups (or clusters) are set of similar patterns.
+Crucial aspects in clustering are pattern representation and the
+similarity measure. Each pattern is usually represented by a
+set of features of the system under study. It is very important
+to notice that a good choice of representation of patterns can
+lead to improvements in clustering performance. Whether it is
+possible to choose an appropriate set of features depends on the
+system under study. Once a representation is fixed it is possible to choose an appropriate similarity measure among patterns.
+The most popular dissimilarity measure for metric representations
+is the distance, for instance the Euclidean one [3].
+Clustering techniques can be roughly divided into two categories:
+• hierarchical;
+• partitioning.
+Hierarchical clustering techniques [1,4,5] are able to find structures
+which can be further divided in substructures and so on recursively.
+The result is a hierarchical structure of groups known
+as dendrogram.
+
+6. Conclusions
+Clustering is a classical problem in pattern recognition. Recently
+spectral and kernel methods for clustering have provided
+new ideas and interpretations to the solution of this problem.
+In this paper spectral and kernel methods for clustering have
+been reviewed paying attention to fuzzy kernel methods for
+clustering and to the connection between kernel and spectral
+approaches. Unlike classical partitioning clustering algorithms
+they are able to produce nonlinear separating hypersurfaces
+among data since they construct an adjacency structure from
+data. These methods have been successfully tested on several
+benchmarks, but we can find few applications to real world
+problem due to the high computational cost. Therefore an extensive
+validation on real world applications remains a big challenge
+for kernel and spectral clustering methods.

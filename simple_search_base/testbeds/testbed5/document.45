@@ -1,0 +1,51 @@
+Why do most programming languages only return a single value from a function?
+
+Is there a reason why functions in most(?) programming languages are designed to support any number of input parameters but only one return value?
+
+In most languages, it is possible to "work around" that limitation, e.g. by using out-parameters, returning pointers or by defining/returning structs/classes. But it seems strange that programming languages were not designed to support multiple return values in a more "natural" way.
+
+Is there an explanation for this?
+
+See the original question here.
+It’s math
+
+Telastyn answers (37 votes):
+
+Because functions are mathematical constructs which perform a calculation and return a result. Indeed, much of the stuff "under the hood" of not a few programming languages focus solely on one input and one output, with multiple inputs being a thin wrapper around the inputs.
+
+This has not changed because programmers have found out parameters to be awkward constructs that are useful in only a limited set of scenarios. Like with many other things, the support isn't there because the need/demand isn't there.
+
+Related: "Why do old programming languages continue to be revised?"
+Think data structure
+
+Steve Evers answers (23 votes):
+
+In mathematics, a "well-defined" function is one where there is only 1 output for a given input (as a side note, you can have only single input functions, and still semantically get multiple inputs using currying).
+
+For multi-valued functions (eg. squared root of a positive integer, for example), it's sufficient to return a collection or sequence of values.
+
+For the types of functions you're talking about (ie. functions that return multiple values, of different types) I see it slightly differently than you seem to: I see the need/use of out params as a workaround for better design or a more useful data structure. For example, I'd prefer if *.TryParse(...) methods returned a Maybe monad instead of using an out param. Think of this code in F#:
+
+let s = "1"
+match tryParse s with
+| Some(i) -> // do whatever with i
+| None -> // failed to parse
+
+Compiler/IDE/analysis support is very good for these constructs. This would solve much of the "need" for out params. To be completely honest, I can't think of any other methods off-hand where this wouldn't be the solution.
+
+For other scenarios—the ones I can't remember—a simple Tuple suffices.
+Speak my language
+
+BlueRaja - Danny Pflughoeft answers (17 votes):
+
+Some languages, like Python, support multiple return values natively, while some languages, like C#, support them via their base libraries.
+
+But in general, even in languages that support them, multiple return values are not used often because they're sloppy:
+
+    Functions that return multiple values are hard to name clearly.
+    It's easy to mistake the order of the return values.
+    (password, username) = GetUsernameAndPassword()
+    (For this same reason, many people avoid having too many parameters to a function; some even take it as far as to say a function should never have two parameters of the same type!)
+    OOP languages already have a better alternative to multiple return-values: classes. They're more strongly-typed, they keep the return values grouped as one logical unit, and they keep the names of (properties of) the return values consistent across all uses.
+
+The one place they are pretty convenient is in languages (like Python) where multiple return values from one function can be used as multiple input parameters to another. But, the use-cases where this is a better design than using a class are pretty slim.

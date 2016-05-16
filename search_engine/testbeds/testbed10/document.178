@@ -1,0 +1,33 @@
+An interpretable classification rule mining algorithm
+
+
+Alberto Cano, Amelia Zafra, Sebastián Ventura 
+
+1. Introduction
+Discovering knowledge in large amounts of data collected over the last decades has become significantly challenging and
+difficult, especially in large-scale databases. Data mining (DM) [60] involves the use of data analysis tools to discover
+previously unknown, valid patterns and relationships in large data sets. Classification and regression are two forms of data
+analysis which can be used to extract models describing important data classes or to predict future data trends. Classification
+predicts categorical labels whereas regression models predict continuous-valued functions.
+The data analysis tools used for DM include statistical models, mathematical methods, and machine learning algorithms.
+Classification is a common task in supervised machine learning with the search for algorithms that learn from training
+examples to produce predictions about future examples.
+Classification has been successfully solved using several approaches [26]. On the one hand, there are approaches such as
+artificial neural networks (ANN) [46], support vector machines (SVM) [16], and instance-based learning methods [2]. These
+approaches obtain accurate classification models but they must be regarded as black boxes, i.e., they are opaque to the user.
+Opaque predictive models prevent the user from tracing the logic behind a prediction and obtaining interesting knowledge
+previously unknown from the model. These classifiers do not permit human understanding and inspection, they are not
+directly interpretable by an expert and it is not possible to discover which are the relevant attributes to predict the class
+of an example. This opacity prevents them from being used in many real-life knowledge discovery applications where both
+accuracy and comprehensibility are required, such as medical diagnosis [55], credit risk evaluation [42], and decision support
+systems [6], since the prediction model must explain the reasons for 6. Conclusion
+In this paper we have proposed an interpretable classification rule mining (ICRM) algorithm, which is an interpretable
+and efficient rule-based evolutionary programming classification algorithm. The algorithm solves the cooperation–competition
+problem by dealing with the interaction among the rules during the evolutionary process. The proposal minimizes the
+number of rules, the number of conditions per rule, and the number of conditions of the classifier, increasing the interpretability
+of the solutions. The algorithm does not explore already explored search spaces. Once one rule has no better conditions
+to be appended, the rule is marked as unbeatable and no more searches are performed over that rule, saving
+computational resources. Moreover, the algorithm stops when all the individuals are marked as unbeatable, i.e., there is
+no possibility of improving any individual, saving further generations. The population size and the maximum number of generations
+are equal to the number of features. Thus, it is not necessary to configure or optimize these parameters; it is selfadapting
+to the problem complexity. classification.

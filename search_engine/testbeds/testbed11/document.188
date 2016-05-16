@@ -1,0 +1,13 @@
+The swIPe IP Security Protocol (swIPe) is an experimental Internet Protocol (IP) security protocol that was specified in 1993. It operates at the Internet Layer of the Internet Protocol Suite.
+
+
+== Purpose ==
+swIPe provides confidentiality, integrity, and authentication of network traffic, and can be used to provide both end-to-end and intermediate-hop security. swIPe is concerned only with security mechanisms. The protocol does not handle policy and key management, which are handled outside the protocol. It works by augmenting each packet with a cryptographically-strong authenticator and/or encrypting the data to be sent.
+
+
+== Protocol description ==
+swIPe encapsulates each IP datagram to be secured inside a swIPe packet. A swIPe packet is an IP packet of protocol type 53. A swIPe packet starts with a header, which contains identifying data and authentication information; the header is followed by the original IP datagram, which in turn is followed by any padding required by the security processing. Depending on the negotiated policy, the sensitive part of the swIPe packet (the authentication information and the original IP datagram) may be encrypted.
+Cisco routers and switches running IOS have been found vulnerable to Denial of Service (DoS) attacks which may result from processing packets with IP Protocol 53.
+
+
+== References ==

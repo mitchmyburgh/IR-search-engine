@@ -1,0 +1,76 @@
+Thumbs up? Sentiment Classification using Machine Learning
+Techniques
+
+
+Bo Pang and Lillian Lee
+
+Shivakumar Vaithyanathan
+
+1 Introduction
+Today, very large amounts of information are available
+in on-line documents. As part of the effort to
+better organize this information for users, researchers
+have been actively investigating the problem of automatic
+text categorization.
+The bulk of such work has focused on topical categorization,
+attempting to sort documents according
+to their subject matter (e.g., sports vs. politics).
+However, recent years have seen rapid growth
+in on-line discussion groups and review sites (e.g.,
+the New York Times’ Books web page) where a crucial
+characteristic of the posted articles is their sentiment,
+or overall opinion towards the subject matter
+— for example, whether a product review is positive
+or negative. Labeling these articles with their
+sentiment would provide succinct summaries to readers;
+indeed, these labels are part of the appeal and
+value-add of such sites as www.rottentomatoes.com,
+which both labels movie reviews that do not contain
+explicit rating indicators and normalizes the
+different rating schemes that individual reviewers use. Sentiment classification would also be helpful in
+business intelligence applications (e.g. MindfulEye’s
+Lexant system1
+) and recommender systems (e.g.,
+Terveen et al. (1997), Tatemura (2000)), where user
+input and feedback could be quickly summarized; indeed,
+in general, free-form survey responses given in
+natural language format could be processed using
+sentiment categorization. Moreover, there are also
+potential applications to message filtering; for example,
+one might be able to use sentiment information
+to recognize and discard “flames”(Spertus, 1997).
+In this paper, we examine the effectiveness of applying
+machine learning techniques to the sentiment
+classification problem. A challenging aspect of this
+problem that seems to distinguish it from traditional
+topic-based classification is that while topics are often
+identifiable by keywords alone, sentiment can be
+expressed in a more subtle manner. For example, the
+sentence “How could anyone sit through this movie?”
+contains no single word that is obviously negative.
+(See Section 7 for more examples). Thus, sentiment
+seems to require more understanding than the usual
+topic-based classification. So, apart from presenting
+our results obtained via machine learning techniques,
+we also analyze the problem to gain a better understanding
+of how difficult it is.
+
+7 Discussion
+The results produced via machine learning techniques
+are quite good in comparison to the humangenerated
+baselines discussed in Section 4. In terms
+of relative performance, Naive Bayes tends to do the
+worst and SVMs tend to do the best, although theniques than our positional feature mentioned above),
+or at least some way of determining the focus of each
+sentence, so that one can decide when the author is
+talking about the film itself. (Turney (2002) makes
+a similar point, noting that for reviews, “the whole
+is not necessarily the sum of the parts”.) Furthermore,
+it seems likely that this thwarted-expectations
+rhetorical device will appear in many types of texts
+(e.g., editorials) devoted to expressing an overall
+opinion about some topic. Hence, we believe that an
+important next step is the identification of features
+indicating whether sentences are on-topic (which is
+a kind of co-reference problem); we look forward to
+addressing this challenge in future work.

@@ -1,0 +1,12 @@
+Common operations[edit]
+ 
+Tree rotations are very common internal operations on self-balancing binary trees.
+There are a variety of different operations that can be performed on binary trees. Some are mutator operations, while others simply return useful information about the tree.
+Insertion[edit]
+Nodes can be inserted into binary trees in between two other nodes or added after a leaf node. In binary trees, a node that is inserted is specified as to which child it is.
+Leaf nodes[edit]
+To add a new node after leaf node A, A assigns the new node as one of its children and the new node assigns node A as its parent.
+Internal nodes[edit]
+ 
+The process of inserting a node into a binary tree
+Insertion on internal nodes is slightly more complex than on leaf nodes. Say that the internal node is node A and that node B is the child of A. (If the insertion is to insert a right child, then B is the right child of A, and similarly with a left child insertion.) A assigns its child to the new node and the new node assigns its parent to A. Then the new node assigns its child to B and B assigns its parent as the new node.

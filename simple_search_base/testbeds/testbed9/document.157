@@ -1,0 +1,19 @@
+In databases an index is a data structure, part of the database, used by a database system to effectively navigate access to user data. Index data are system data distinct from user data, and consist primarily of pointers. Changes in a database (by insert, delete, or modify operations), may require indexes to be updated to maintain accurate user data accesses. Index locking is a technique used to maintain index integrity. A portion of an index is locked during a database transaction when this portion is being accessed by the transaction as a result of attempt to access related user data. Additionally, special database system transactions (not user-invoked transactions) may be invoked to maintain and modify an index, as part of a system's self-maintenance activities. When a portion of an index is locked by a transaction, other transactions may be blocked from accessing this index portion (blocked from modifying, and even from reading it, depending on lock type and needed operation). Index Locking Protocol guarantees that Phantom Phenomenon won't occur. Index locking protocol states:
+Every relation must have at least one index.
+A transaction can access tuples only after finding them through one or more indices on the relation
+A transaction Ti that performs a lookup must lock all the index leaf nodes that it accesses, in S-mode, even if the leaf node does not contain any tuple satisfying the index lookup (e.g. for a range query, no tuple in a leaf is in the range)
+A transaction Ti that inserts, updates or deletes a tuple ti in a relation r must update all indices to r and it must obtain exclusive locks on all index leaf nodes affected by the insert/update/delete
+The rules of the two-phase locking protocol must be observed.
+
+Specialized concurrency control techniques exist for accessing indexes. These techniques depend on the index type, and take advantage of its structure. They are typically much more effective than applying to indexes common concurrency control methods applied to user data. Notable and widely researched are specialized techniques for B-trees (B-Tree concurrency control) which are regularly used as database indexes.
+Index locks are used to coordinate threads accessing indexes concurrently, and typically shorter-lived than the common transaction locks on user data. In professional literature, they are often called latches.
+
+
+== See also ==
+Database index
+Concurrency control
+Lock (database)
+B-Tree concurrency control
+
+
+== References ==

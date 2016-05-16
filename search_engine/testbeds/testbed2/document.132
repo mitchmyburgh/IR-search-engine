@@ -1,0 +1,44 @@
+Torch is an open source machine learning library, a scientific computing framework, and a script language based on the Lua programming language. It provides a wide range of algorithms for deep machine learning, and uses an extremely fast scripting language LuaJIT, and an underlying C implementation.
+
+
+== torch ==
+The core package of Torch is torch. It provides a flexible N-dimensional array or Tensor, which supports basic routines for indexing, slicing, transposing, type-casting, resizing, sharing storage and cloning. This object is used by most other packages and thus forms the core object of the library. The Tensor also supports mathematical operations like max, min, sum, statistical distributions like uniform, normal and multinomial, and BLAS operations like dot product, matrix-vector multiplication, matrix-matrix multiplication, matrix-vector product and matrix product.
+The following exemplifies using torch via its REPL interpreter:
+
+The torch package also simplifies object oriented programming and serialization by providing various convenience functions which are used throughout its packages. The torch.class(classname, parentclass) function can be used to create object factories (classes). When the constructor is called, torch initializes and sets a Lua table with the user-defined metatable, which makes the table an object.
+Objects created with the torch factory can also be serialized, as long as they do not contain references to objects that cannot be serialized, such as Lua coroutines, and Lua userdata. However, userdata can be serialized if it is wrapped by a table (or metatable) that provides read() and write() methods.
+
+
+== nn ==
+The nn package is used for building neural networks. It is divided into modular objects that share a common Module interface. Modules have a forward() and backward() method that allow them to feedforward and backpropagate, respectively. Modules can be joined together using module composites, like Sequential, Parallel and Concat to create complex task-tailored graphs. Simpler modules like Linear, Tanh and Max make up the basic component modules. This modular interface provides first-order automatic gradient differentiation. What follows is an example use-case for building a multilayer perceptron using Modules:
+
+Loss functions are implemented as sub-classes of Criterion, which has a similar interface to Module. It also has forward() and backward methods for computing the loss and backpropagating gradients, respectively. Criteria are helpful to train neural network on classical tasks. Common criteria are the Mean Squared Error criterion implemented in MSECriterion and the cross-entropy criterion implemented in ClassNLLCriterion. What follows is an example of a Lua function that can be iteratively called to train an mlp Module on input Tensor x, target Tensor y with a scalar learningRate:
+
+It also has StochasticGradient class for training a neural network using Stochastic gradient descent, although the Optim package provides much more options in this respect, like momentum and weight decay regularization.
+
+
+== Other packages ==
+Many packages other than the above official packages are used with Torch. These are listed in the torch cheatsheet. These extra packages provide a wide range of utilities such as parallelism, asynchronous input/output, image processing, and so on.
+
+
+== Applications ==
+Torch is used by Google DeepMind, the Facebook AI Research Group, IBM, Yandex and the Idiap Research Institute. Torch has been extended for use on Android and iOS. It has been used to build hardware implementations for data flows like those found in neural networks.
+Facebook has released a set of extension modules as open source software.
+
+
+== Related libraries ==
+Deeplearning4j, an open source deep learning library written for Java and Scala.
+OpenNN, an open source neural networks library written in C++ for deep learning.
+Theano, an open source deep learning library for Python.
+
+
+== See also ==
+Comparison of deep learning frameworks
+
+
+== References ==
+
+
+== External links ==
+Official website
+"Torch". Repository (7 ed.). GitHub.

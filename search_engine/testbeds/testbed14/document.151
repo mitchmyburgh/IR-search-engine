@@ -1,0 +1,12 @@
+﻿OWL 2
+
+
+
+The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web that became a W3C Recommendation on Oct 27 2009. OWL 2 is compatible with the OWL standard of 2004 (now referred to as "OWL 1") which it supersedes. Like in OWL 1, the main syntactic form of OWL 2 ontologies is based on anRDF serialization, although various alternative syntactic forms are available too.
+A detailed introduction for users of the standard is given in the OWL 2 Primer. In a nutshell, OWL 2 ontology documents describe information in terms of classes, properties, individuals, and data values the relationships of which can be described by a number of features. Ontologies are stored as machine readable documents that can be based on a number of official syntactic variants. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents. OWL 2 is a compatible of the prior OWL 1 ontology language.
+An overview of the documents of the OWL 2 specification can be found in the OWL 2 Overview.
+References
+W3C OWL Working Group: OWL 2 Web Ontology Language: Document Overview. W3C Recommendation, October 27 2009. Available athttp://www.w3.org/TR/owl2-overview/.
+Pascal Hitzler, Markus Krötzsch, Bijan Parsia, Peter F. Patel-Schneider, Sebastian Rudolph (editors): OWL 2 Web Ontology Language: Primer. W3C Recommendation, October 27 2009. Available at http://www.w3.org/TR/owl2-primer/.
+Pascal Hitzler, Markus Krötzsch, Sebastian Rudolph: Foundations of Semantic Web Technologies. Chapman & Hall/CRC. 2009. Textbook introduction to semantic technologies, including OWL 2; see homepage.
+

@@ -1,0 +1,39 @@
+Small Business
+Cloud Computing vs. Virtualization: The Differences and Benefits
+
+Jeff Beckham - October 4, 2011 - 3 Comments 
+
+Both solutions can help maximize your current resources and technology dollars
+
+Like many technologies that were once available only to large organizations, virtualization and cloud computing are being scaled down for small business use. The two technologies are often mentioned in the same breath as though they’re interchangeable—they’re not. Here’s where the two technologies overlap: Virtualization is one of the fundamental technologies that makes cloud computing work. However, virtualization is not cloud computing.
+
+In enterprise networks, virtualization and cloud computing are often used together to build a private cloud infrastructure. For most small businesses, however, each technology will be deployed separately to gain measurable benefits. In different ways, virtualization and cloud computing can help you keep your equipment spending to a minimum and get the best possible use from the equipment you already have.
+
+First, you need to understand what virtualization and cloud computing are. Virtualization software allows one physical server to run several individual computing environments. In practice, it’s like getting multiple servers for each physical server you buy.  This technology is fundamental to cloud computing.  Cloud providers have large data centers full of servers to power their cloud offerings, but they aren’t able to devote a single server to each customer. Thus, they virtually partition the data on the server, enabling each client to work with a separate “virtual” instance of the same software.
+
+Cloud computing, is an umbrella term that encompasses virtualization. It gives your company access to complex applications and massive computing resources via the Internet. Small businesses are most likely to adopt cloud computing by subscribing to a cloud-based service, such as Cisco WebEx, than to build their own cloud infrastructure on their networks.
+
+Now that you know how virtualization and cloud computing differ, you can begin to understand how to implement these technologies in your small business to get the most out of your IT investment.
+
+Virtualization on a small scale
+
+With virtualization, you can purchase and maintain fewer servers, and you can get more use out of the servers you already have. A virtualized server makes better use of the server’s available capacity than a non-virtualized server. In addition, you can run more applications on each virtualized server.
+
+Virtualization software lets you divvy up the resources of a single physical server to create several separate virtual environments, called virtual machines. Each virtual machine can run its own operating system as well as any business applications your company needs.
+
+Virtualization can also be applied to storage hardware. Like server virtualization, storage virtualization can help you get more out of your existing hardware by increasing its utilization, anywhere from 20 to 80 percent. Storage virtualization pools all of your computing resources from various storage devices into a single, shared virtual storage repository that is available to everyone on the network, no matter where they’re located.
+
+When your servers and storage devices are running at their true capacity, you don’t need to purchase new hardware as often. That can result in significant cost savings for your small business.
+
+Cloud computing for big applications
+
+For most small companies, cloud computing is a technology you’ll access using the Internet rather than implementing it on your own network. You can choose from a variety of cloud computing providers and cloud-based services all designed to meet small business needs.
+
+With cloud computing, you can implement an enterprise-grade application, such as customer relationship management (CRM), or service, like hosted voice over IP (VoIP), or off-site storage—the cost for which would typically exceed most small business budgets if it weren’t delivered using the cloud. Whether you choose an application or a service, it’s hosted on the cloud provider‘s servers and your employees access it using a web browser.
+
+Many small businesses are already using cloud computing. In fact, 75 percent of respondents in a Cisco survey are using a cloud-based service. Cloud computing offers small companies some pretty compelling advantages, including easier installation of applications and hardware; access to sophisticated software; and the ability to try software before purchasing it. If you’ve built your network with an eye toward supporting future business needs and have a fast, reliable connection to the Internet, cloud computing will require a very minimal technology investment.
+
+Both virtualization and cloud computing operate on a one-to-many model. Virtualization can make one computer perform like many separate computers, and cloud computing allows many different companies to access one application. The difference is in the way your small business implements them: virtualization is employed locally, while cloud computing is accessed as a service. How will your small business leverage these technologies?
+
+Tags:
+Cloud Computingcloud servicesright networksmall businessvirtualization

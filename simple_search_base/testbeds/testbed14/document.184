@@ -1,0 +1,206 @@
+﻿3.17 Semantic Tableaux for First-Order Logic
+There are two ways to extend the tableau calculus to quantified formulas:
+• using ground instantiation
+• using free variables
+Tableaux with Ground Instantiation
+Classification of quantified formulas:
+universal existential
+γ γ(t) δ δ(t)
+∀xF F{x 7→ t} ∃xF F{x 7→ t}
+¬∃xF ¬F{x 7→ t} ¬∀xF ¬F{x 7→ t}
+Idea:
+Replace universally quantified formulas by appropriate ground instances.
+γ-expansion
+γ
+γ(t)
+where t is some ground term
+δ-expansion
+δ
+δ(c)
+where c is a new Skolem constant
+Skolemization becomes part of the calculus and needs not necessarily be applied in a
+preprocessing step. Of course, one could do Skolemization beforehand, and then the
+δ-rule would not be needed.
+Note:
+Skolem constants are sufficient:
+In a δ-formula ∃x F, ∃ is the outermost quantifier and x is the only free variable in F.
+Problems:
+Having to guess ground terms is unpractical.
+Even worse, we may have to guess several ground instances, as strictness for γ is
+incomplete. For instance, constructing a closed tableau for
+{∀x (P(x) → P(f(x))), P(b), ¬P(f(f(b)))}
+is impossible without applying γ-expansion twice on one path.
+85
+Free-Variable Tableaux
+An alternative approach:
+Delay the instantiation of universally quantified variables.
+Replace universally quantified variables by new free variables.
+Intuitively, the free variables are universally quantified outside of the entire tableau.
+γ-expansion
+γ
+γ(x)
+where x is a new free variable
+δ-expansion
+δ
+δ(f(x1, . . . , xn))
+where f is a new Skolem function, and the xi are the free variables in δ
+Application of expansion rules has to be supplemented by a substitution rule:
+(iii) If T is a tableau for {F1, . . . , Fn} and if σ is a substitution, then T σ is also a tableau for {F1, . . . , Fn}.
+The substitution rule may, potentially, modify all the formulas of a tableau. This feature
+is what is makes the tableau method a global proof method. (Resolution, by comparison,
+is a local method.)
+One can show that it is sufficient to consider substitutions σ for which there is a path in
+T containing two literals ¬A and B such that σ = mgu(A, B). Such tableaux are called
+AMGU-Tableaux.
+86
+Example
+1. ¬[∃w∀x p(x, w, f(x, w)) → ∃w∀x∃y p(x, w, y)]
+2. ∃w∀x p(x, w, f(x, w)) 11 [α]
+3. ¬∃w∀x∃y p(x, w, y) 12 [α]
+4. ∀x p(x, c, f(x, c)) 2(c) [δ]
+5. ¬∀x∃y p(x, v1, y) 3(v1) [γ]
+6. ¬∃y p(b(v1), v1, y) 5(b(v1)) [δ]
+7. p(v2, c, f(v2, c)) 4(v2) [γ]
+8. ¬p(b(v1), v1, v3) 6(v3) [γ]
+7. and 8. are complementary (modulo unification):
+v2
+.= b(v1), c
+.= v1, f(v2, c)
+.= v3
+is solvable with an mgu σ = {v1 7→ c, v2 7→ b(c), v3 7→ f(b(c), c)}, and hence, T σ is a
+closed (linear) tableau for the formula in 1.
+Problem:
+Strictness for γ is still incomplete. For instance, constructing a closed tableau for
+{∀x (P(x) → P(f(x))), P(b), ¬P(f(f(b)))}
+is impossible without applying γ-expansion twice on one path.
+Semantic Tableaux vs. Resolution
+• Tableaux: global, goal-oriented, “backward”.
+• Resolution: local, “forward”.
+• Goal-orientation is a clear advantage if only a small subset of a large set of formulas
+is necessary for a proof. (Note that resolution provers saturate also those parts of
+the clause set that are irrelevant for proving the goal.)
+• Resolution can be combined with more powerful redundancy elimination methods;
+because of its global nature this is more difficult for the tableau method.
+• Resolution can be refined to work well with equality; for tableaux this seems to be
+impossible.
+• On the other hand tableau calculi can be easily extended to other logics; in particular
+tableau provers are very successful in modal and description logics.
+87
+3.18 Other Inference Systems
+• Instantiation-based methods
+Resolution-based instance generation
+Disconnection calculus
+. . .
+• Natural deduction
+• Sequent calculus/Gentzen calculus
+• Hilbert calculus
+Instantiation-Based Methods for FOL
+Idea:
+Overlaps of complementary literals produce instantiations (as in resolution);
+However, contrary to resolution, clauses are not recombined.
+Instead: treat remaining variables as constant and use efficient propositional proof
+methods, such as DPLL.
+There are both saturation-based variants, such as partial instantiation [Hooker et
+al.] or resolution-based instance generation (Inst-Gen) [Ganzinger and Korovin], and
+tableau-style variants, such as the disconnection calculus [Billon; Letz and Stenz].
+Natural Deduction
+Natural deduction (Prawitz):
+Models the concept of proofs from assumptions as humans do it (cf. Fitting or Huth/Ryan).
+Sequent Calculus
+Sequent calculus (Gentzen):
+Assumptions internalized into the data structure of sequents
+F1, . . . , Fm ⊢ G1, . . . , Gk
+meaning
+F1 ∧ · · · ∧ Fm → G1 ∨ · · · ∨ Gk
+A kind of mixture between natural deduction and semantic tableaux.
+88
+Inferences rules, e.g.:
+Γ ⊢ ∆
+Γ, F ⊢ ∆
+(W L)
+Γ, F ⊢ ∆ Σ, G ⊢ Π
+Γ, Σ, F ∨ G ⊢ ∆, Π
+(∨L)
+Γ ⊢ ∆
+Γ ⊢ F, ∆
+(W R)
+Γ ⊢ F, ∆ Σ ⊢ G, Π
+Γ, Σ ⊢ F ∧ G, ∆, Π
+(∧R)
+Perfect symmetry between the handling of assumptions and their consequences.
+Can be used both backwards and forwards.
+Hilbert Calculus
+Hilbert calculus:
+Direct proof method (proves a theorem from axioms, rather than refuting its negation)
+Axiom schemes, e. g.,
+F → (G → F)
+(F → (G → H)) → ((F → G) → (F → H))
+plus Modus ponens:
+F F → G
+G
+Unsuitable for finding or reading proofs, but sometimes used for specifying (e.g. modal)
+logics.
+89
+4 First-Order Logic with Equality
+Equality is the most important relation in mathematics and functional programming.
+In principle, problems in first-order logic with equality can be handled by any prover for
+first-order logic without equality:
+4.1 Handling Equality Naively
+Proposition 4.1 Let F be a closed first-order formula with equality. Let ∼ ∈/ Π be a
+new predicate symbol. The set Eq(Σ) contains the formulas
+∀x (x ∼ x)
+∀x, y (x ∼ y → y ∼ x)
+∀x, y, z (x ∼ y ∧ y ∼ z → x ∼ z)
+∀~x, ~y (x1 ∼ y1 ∧ · · · ∧ xn ∼ yn → f(x1, . . . , xn) ∼ f(y1, . . . , yn))
+∀~x, ~y (x1 ∼ y1 ∧ · · · ∧ xm ∼ ym ∧ p(x1, . . . , xm) → p(y1, . . . , ym))
+for every f ∈ Ω and p ∈ Π. Let F˜ be the formula that one obtains from F if every
+occurrence of ≈ is replaced by ∼. Then F is satisfiable if and only if Eq(Σ) ∪ {F˜} is
+satisfiable.
+Proof. Let Σ = (Ω, Π), let Σ1 = (Ω, Π ∪ {∼}).
+For the “only if” part assume that F is satisfiable and let A be a Σ-model of F. Then
+we define a Σ1-algebra B in such a way that B and A have the same universe, fB = fA
+for every f ∈ Ω, pB = pA for every p ∈ Π, and ∼B is the identity relation on the universe.
+It is easy to check that B is a model of both F˜ and of Eq(Σ).
+The proof of the “if” part consists of two steps.
+Assume that the Σ1-algebra B = (UB, (fB : U
+n → U)f∈Ω, (pB ⊆ U
+m
+B
+)p∈Π∪{∼}) is a model
+of Eq(Σ) ∪ {F˜}. In the first step, we can show that the interpretation ∼B of ∼ in B is a
+congruence relation. We will prove this for the symmetry property, the other properties
+of congruence relations, that is, reflexivity, transitivity, and congruence with respect to
+functions and predicates are shown analogously. Let a, a′ ∈ UB such that a ∼B a
+′
+. We
+have to show that a
+′ ∼B a. Since B is a model of Eq(Σ), B(β)(∀x, y (x ∼ y → y ∼ x)) = 1
+for every β, hence B(β[x 7→ b1, y 7→ b2])(x ∼ y → y ∼ x) = 1 for every β and every
+b1, b2 ∈ UB. Set b1 = a and b2 = a
+′
+, then 1 = B(β[x 7→ a, y 7→ a
+′
+])(x ∼ y → y ∼ x) =
+max(1 − B(β[x 7→ a, y 7→ a
+′
+])(x ∼ y), B(β[x 7→ a, y 7→ a
+′
+])(y ∼ x)), and since a ∼B a
+′
+holds by assumption, a
+′ ∼B a must also hold.
+In the second step, we will now construct a Σ-algebra A from B and the congruence
+relation ∼B. Let [a] be the congruence class of an element a ∈ UB with respect to ∼B. The
+universe UA of A is the set { [a] | a ∈ UB } of congruence classes of the universe of B. For a
+90
+function symbol f ∈ Ω, we define fA([a1], . . . , [an]) = [fB(a1, . . . , an)], and for a predicate
+symbol p ∈ Π, we define ([a1], . . . , [an]) ∈ pA if and only if (a1, . . . , an) ∈ pB. Observe
+that this is well-defined: If we take different representatives of the same congruence
+class, we get the same result by congruence of ∼B. Now for every Σ-term t and every Bassignment
+β, [B(β)(t)] = A(γ)(t), where γ is the A-assignment that maps every variable
+x to [β(x)], and analogously for every Σ-formula G, B(β)(G˜) = A(γ)(G). Both properties
+can easily shown by structural induction. Consequently, A is a model of F. ✷
+By giving the equality axioms explicitly, first-order problems with equality can in principle
+be solved by a standard resolution or tableaux prover.
+But this is unfortunately not efficient (mainly due to the transitivity and congruence
+axioms).

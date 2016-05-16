@@ -1,0 +1,316 @@
+  
+  
+  * Twitter
+  * Facebook
+
+Toggle Navigation
+
+  * Home
+  * Lists ****
+    * November 2015
+    * June 2015
+    * November 2014
+    * June 2014
+    * November 2013
+    * June 2013
+    * November 2012
+    * June 2012
+    * November 2011
+    * June 2011
+    * November 2010
+    * June 2010
+    * November 2009
+    * June 2009
+    * November 2008
+    * June 2008
+    * November 2007
+    * June 2007
+    * November 2006
+    * June 2006
+    * November 2005
+    * June 2005
+  * Statistics ****
+    * Sublist Generator
+    * List Statistics
+    * Development over Time
+    * Treemaps
+    * Efficiency, Power, Cores...
+    * Performance Development
+  * Features ****
+    * TOP500 Timeline
+    * TOP #1 Systems
+    * Videos
+  * Resources ****
+    * TOP500 Certificates
+    * Posters and other Materials
+    * Frequently Asked Questions
+    * Media Kit and Editorial Submissions
+    * TOP500 Logo Usage
+  * About ****
+    * Introduction and Objectives
+    * The Linpack Benchmark
+    * TOP500 Description 
+    * Call for Participation in the TOP500 List 
+    * TOP500 Authors
+
+  * # TOP500 Supercomputing Sites 
+
+  *   *   * 
+
+  * Home
+  * What is the use of quantum computing without pictures or conversations?
+
+#  What is the use of quantum computing without pictures or conversations?
+
+######  Feature Article
+
+######  Posted 2 months ago
+
+Peter ffoulkes, OrionX.net
+
+The world of quantum computing frequently seems as bizarre as the alternate
+realities created in Lewis Carroll’s masterpieces “Alice’s Adventures in
+Wonderland” and “Through the Looking-Glass”. Carroll (Charles Lutwidge
+Dodgson) was a well-respected mathematician and logician in addition to being
+a photographer and enigmatic author.
+
+**  
+**
+
+**Has quantum computing’s time actually come or are we just chasing rabbits?**
+
+That is probably a twenty million dollar question by the time a D-Wave 2X™
+System has been installed and is in use by a team of researchers. Publicly
+disclosed installations currently include Lockheed Martin, NASA's Ames
+Research Center and Los Alamos National Laboratory.
+
+Hosted at NASA’s Ames Research Center in California, the Quantum Artificial
+Intelligence Laboratory (QuAIL) supports a collaborative effort among NASA,
+Google and the Universities Space Research Association (USRA) to explore the
+potential for quantum computers to tackle optimization problems that are
+difficult or impossible for traditional supercomputers to handle. Researchers
+on NASA’s QuAIL team are using the system to investigate areas where quantum
+algorithms might someday dramatically improve the agency's ability to solve
+difficult optimization problems in aeronautics, Earth and space sciences, and
+space exploration.  For Google the goal is to study how quantum computing
+might advance machine learning. The USRA manages access for researchers from
+around the world to share time on the system.
+
+**  
+**
+
+**Using quantum annealing to solve optimization problems**
+
+D-Wave's quantum annealing technology addresses optimization and probabilistic
+sampling problems by framing them as energy minimization problems and
+exploiting the properties of quantum physics to identify the most likely
+outcomes or as a probabilistic map of the solution landscape.
+
+Quantum annealer dynamics are dominated by paths through the mean field energy
+landscape that have the highest transition probabilities. Figure 1 shows a
+path that connects local minimum A to local minimum D.
+
+Figure 2 shows the effect of quantum tunneling (in blue) to reduce the thermal
+activation energy needed to overcome the barriers between the local minima
+with the greatest advantage observed from A to B and B to C, and a negligible
+gain from C to D. The principle and benefits are explained in detail in the
+paper “What is the Computational Value of Finite Range Tunneling?”
+
+**  
+**
+
+**The D-Wave 2X: Interstellar Overdrive – How cool is that?**
+
+As a research area, quantum computing is highly competitive, but if you want
+to buy a quantum computer then D-Wave Systems, founded in 1999, is the only
+game in town. Quantum computing is as promising as it is unproven. Quantum
+computing goes beyond Moore’s law since every quantum bit (qubit) doubles the
+computational power, similar to the famous wheat and chessboard problem. So
+the payoff is huge, even though it is expensive, unproven, and difficult to
+program.
+
+The advantage of quantum annealing machines is they are much simpler to build
+than gate-model quantum computing machines. The latest D-Wave machine (the
+D-Wave 2X), installed at NASA Ames, is approximately twice as powerful as the
+previous model at over 1,000 qubits (1,097). This compares with roughly 10
+cubits for current gate-model quantum systems, so two orders of magnitude.
+It’s a question of scale, no simple task, and a unique achievement. Although
+quantum researchers initially questioned whether the D-Wave system even
+qualified as a quantum computer, albeit a subset of quantum computing
+architectures, that argument seems mostly settled and it is now generally
+accepted that quantum characteristics have been adequately demonstrated.
+
+In a D-Wave system, a coupled pair of qubits (quantum bits) demonstrate
+quantum entanglement (they influence each other), so that the entangled pair
+can be in any one of four states resulting from how the coupling and energy
+biases are programmed. By representing the problem to be addressed as an
+energy map the most likely outcomes can be derived by identifying the lowest
+energy states.
+
+A lattice of approximately 1,000 tiny superconducting circuits (the qubits) is
+chilled close to absolute zero to deliver quantum effects. A user models a
+problem into a search for the lowest point in a vast energy landscape. The
+processor considers all possibilities simultaneously to determine the lowest
+energy required to form those relationships. Multiple solutions are returned
+to the user, scaled to show optimal answers, in an execution time of around 20
+microseconds, practically instantaneously for all intents and purposes.
+
+The D-wave system cabinet – “The Fridge”– is a closed cycle dilution
+refrigerator. The superconducting processor itself generates no heat, but to
+operate reliably must be cooled to about 180 times colder than interstellar
+space, approximately 0.015° Kelvin.
+
+**  
+**
+
+**Environmental considerations: Green is the color**
+
+To function reliably, quantum computing systems require environments that are
+not only shielded from the Earth’s natural environment, but would be
+considered inhospitable to any known life form. A high vacuum is required, a
+pressure 10 billion times lower than atmospheric pressure, and shielded to
+50,000 times less than Earth’s magnetic field. Not exactly a normal office,
+datacenter, or HPC facility environment.
+
+On the other hand, the self-contained “Fridge" and servers consume just 25kW
+of power (approximately the power draw of a single heavily populated standard
+rack) and about three orders of magnitude (1000 times) less power than the
+current number one system on the TOP500, including its cooling system. Perhaps
+a more significant consideration is that power demand is not anticipated to
+increase significantly as it scales to several thousands of qubits and beyond.
+
+In addition to doubling the number of qubits compared with the prior D-Wave
+system, the D-Wave 2X delivers lower noise in qubits and couples, delivering
+greater confidence in achieved results.
+
+**  
+**
+
+**So much for the pictures, what about the conversations?**
+
+Now that we have largely moved beyond the debate of whether a D-Wave system is
+actually a quantum machine or not, then the question “OK, so what now?” could
+bring us back to chasing rabbits, although this time inspired by the classic
+Jefferson Airplane song, “White Rabbit”:
+
+“One algorithm makes you larger  
+And another makes you small  
+But do the ones a D-Wave processes  
+Do anything at all?”
+
+That of course, is where the conversations begin. It may depend upon the
+definition of “useful” and also a comparison between “conventional” systems
+and quantum computing approaches. Even the fastest supercomputer we can build
+using the most advanced traditional technologies can still only perform
+analysis by examining each possible solution serially, one solution at a time.
+This makes optimizing complex problems with a large number of variables and
+large data sets a very time consuming business. By comparison, once a problem
+has been suitably constructed for a quantum computer it can explore all the
+possible solutions at once and instantly identify the most likely outcomes.
+
+If we consider relative performance then we begin to have a simplistic basis
+for comparison, at least for execution times. The QuAIL system was benchmarked
+for the time required to find the optimal solution with 99% probability for
+different problem sizes up to 945 variables. Simulated Annealing (SA), Quantum
+Monte Carlo (QMC) and the D-Wave 2X were compared. Full details are available
+in the paper referenced previously. Shown in the chart are the 50th, 75th and
+85th percentiles over a set of 100 instances. The error bars represent 95%
+confidence intervals from bootstrapping.
+
+This experiment occupied millions of processor cores for several days to tune
+and run the classical algorithms for these benchmarks. The runtimes for the
+higher quantiles for the larger problem sizes for QMC were not computed
+because the computational cost was too high.  
+
+The results demonstrate a performance advantage to the quantum annealing
+approach by a factor of 100 million compared with simulated annealing running
+on a single state of the art processor core. By comparison the current leading
+system on the TOP500 has fewer than 6 million cores of any kind, implying a
+clear performance advantage for quantum annealing based on execution time.
+
+The challenge and the next step is to explore the mapping of real world
+problems to quantum machines and to improve the programming environments,
+which will no doubt take a significant amount of work and many conversations.
+New players will become more visible, early use cases and gaps will become
+better defined, new use cases will be identified, and a short stack will
+emerge to ease programming. This is reminiscent of the early days of computing
+or space flight.
+
+**  
+**
+
+**A quantum of solace for the TOP500: Size still matters.**
+
+Even though we don’t expect to see viable exascale systems this decade, and
+quite likely not before the middle of the next, we won’t be seeing a
+Quantum500 anytime soon either. NASA talks about putting humans on Mars
+sometime in the 2030s and it isn’t unrealistic to think about practical
+quantum computing as being on a similar trajectory. Recent research at the
+University of New South Wales (UNSW) in Sidney, Australia demonstrated that it
+may be possible to create quantum computer chips that could store thousands,
+even millions of qubits on a single silicon processor chip leveraging
+conventional computer technology.
+
+Although the current D-Wave 2X system is a singular achievement it is still
+regarded as being relatively small to handle real world problems, and would
+benefit from getting beyond pairwise connectivity, but that isn’t really the
+point.  It plays a significant role in research into areas such as vision
+systems, artificial intelligence and machine learning alongside its
+optimization capabilities.
+
+In the near term, we’ve got enough information and evidence to get the
+picture. It will be the conversations that become paramount with both
+conventional and quantum computing systems working together to develop better
+algorithms and expand the boundaries of knowledge and achievement.
+
+**  
+**
+
+**References and attributions:**
+
+Paper on What is the Computational Value of Finite Range Tunneling?
+http://arxiv.org/pdf/1512.02206v4.pdf
+
+Paper on Benchmarking a quantum annealing processor with the time-to-target
+metric: http://www.dwavesys.com/sites/default/files/ttt_arxiv.pdf
+
+White rabbit from Sir John Tenniel’s illustrations of “Alice’s Adventures in
+Wonderland” by Lewis Carroll
+
+“White Rabbit” Lyrics copyright Jefferson Airplane/ Grace Slick  
+  
+
+Current rating: 4.3
+
+  *     * 1
+    * 2
+    * 3
+    * 4
+    * 5
+
+Share on Twitter Share on Facebook
+
+  * &lt;- How To Kill A Supercomputer: Dirty Power, Cosmic Rays, and Bad Solder
+  * Watson Upgrades His Emotional IQ; Stanford HPC Advisory Council Workshop -&gt;
+
+|  
+  
+---|---  
+  
+Tweets by @top500supercomp
+
+### Recent Posts
+
+  * Thinktank Advocates US HPC Leadership and DOE Refines Exascale Timeline
+  * Intel Omni-Path Builds Bridges at Pittsburgh Supercomputing Center
+  * Shape the Future with Deep Learning and Intel® Scalable System Framework
+  * Intel Cuts Ten Percent of Work Force and REleases Knights Landing Developer Platform
+  * HPC4Mfg shows why supercomputing matters to industry and consumers
+
+### Feeds
+
+RSS / Atom
+
+Imprint Contact Log in Sign up  
+Copyright 1993-2015 TOP500.org (c)
+

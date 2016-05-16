@@ -1,0 +1,57 @@
+Apache_Click
+'''Apache Click''' is a page and component oriented  for the  and is built on top of the  .
+It is a free and  project distributed under the  and runs on any  installation (1.5 or later).
+Click graduated into an  top-level project in November 2009. The project was  in May 2014.
+==Overview==
+The main design goals are simplicity, ease of use, performance and scalability. To achieve these goals Click leverages an intuitive page and component oriented design.
+Pages and components provide good encapsulation of web concepts and enables rapid application development.
+Click takes a pragmatic approach and expose few abstractions to learn and understand. The   is fully exposed to the developer which eases the upgrade path from an action based framework to a component based one.
+Pages and components are developed in  while templates can be written in ,  or . Components know how to draw themselves alleviating developers from maintaining redundant markup.
+A major difference between Click and other component oriented web frameworks is that Click is stateless by design, although stateful pages are supported.
+==Competing frameworks==
+There are a number of other component oriented frameworks available for Java such as , , ,  and .
+Some developers prefer the more traditional action-based web frameworks including , , and .
+== Example ==
+A  Click application, with four files:
+; hello-world.htm
+: The default template engine for Click is , the htm file will be similar to a normal, static  page. 
+  
+    $message
+  
+; HelloWorld.java
+: The page model that will be bound to the template.  
+package org.wikipedia.click;
+import org.apache.click.Page;
+public class HelloWorld extends Page 
+; click.xml
+: The heart of a Click application is the click.xml configuration file. This file specifies the application pages, headers, the format object and the applications mode.
+: Click is smart enough to figure out that the HelloWorld page class maps to the template hello-world.htm. We only have to inform Click of the package of the HelloWorld class, in this case org.wikipedia.click. We do that through the click.xml configuration file which allows Click to map hello-world.htm requests to the org.wikipedia.click.HelloWorld page class.
+: By default the ClickServlet will attempt to load the application configuration file using the path: /WEB-INF/click.xml
+  
+; web.xml
+: The  application definition.
+    Click Example
+    
+       click-servlet
+       org.apache.click.ClickServlet
+       0
+    
+    
+       click-servlet
+       *.htm
+    
+ 
+==Bibliography==
+* 
+==See also==
+*
+==References==
+==External links==
+* (Click user guide)
+*
+*
+*
+*
+*
+*
+*

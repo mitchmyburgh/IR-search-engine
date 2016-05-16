@@ -1,0 +1,38 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+The Scene Signature
+The scene signature is a simple way to test geometry intersection methods. • Create an image in which pixel (i,j) has intensity k if object k is ?rst object hit from ray through (i,j). • Each object gets one unique color.
+Note: Pseudo-Code: Scene Signature < Construct scene model ={obj, (A,~ t), objID} > sig: array[nc, nr] of objID for j = 0 to nr-1 (loop over rows) for i = 0 to nc-1 (loop over columns) < Construct ray~ rij(?) = ¯ pij + ?(¯ pij -¯ e) through pixel ¯ pij > ?i,j ?8 loop over all objects in scene, with object identi?ers objIDk < ?nd ?* for the closest intersection of the ray~ rij(?) and the object > if ?* > 0 and ?* < ?i,j then ?i,j ? ?* sig[i,j].objID ? objIDk end if end loop end for end for
+11.5 Ef?ciency
+Intersection tests are expensive when there are large numbers of objects, and when the objects are quite complex! Fortunately, data structures can be used to avoid testing intersections with objects that are not likely to be signi?cant.
+Example: We could bound a 3D mesh or object with a simple bounding volume (e.g. sphere or cube). Then we would only test intersections with objects if there exists a positive intersection with the bounding volume.
+Example: We could project the extent onto the image plane so you don't need to cast rays to determine potential for intersections.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 69
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+11.6 Surface Normals at Intersection Points
+Once we ?nd intersections of rays and scene surfaces, and we select the ?rst surface hit by the ray, we want to compute the shading of the surface as seen from the ray. That is, we cast a ray out from a pixel and ?nd the ?rst surface hit, and then we want to know how much light leave the surface along the same ray but in the reverse direction, back to the camera. Toward this end, one critical property of the surface geometry that we need to compute is the surface normal at the hit point. • For mesh surfaces, we might interpolate smoothly from face normals (like we did to get normals at a vertex). This assumes the underlying surface is smooth. • Otherwise we can just use the face normal. • For smooth surfaces (e.g. with implicit forms f(¯ p) = 0 or parametric forms s(a,ß)), either take ~n = ?f(¯ p) ||?f(¯ p)|| or
+~n =
+?s ?a × ?s ?ß ||?s ?a × ?s ?ß||
+.
+11.6.1 Af?nely-deformed surfaces.
+Let f(¯ p) = 0 be an implicit surface, and let Q(¯ p) = A¯ p +~ t be an af?ne transformation, where A is invertible. The af?nely-deformed surface is
+F(¯ q) = f(Q-1(¯ p)) = f(A-1(¯ p-~ t)) = 0 (42)
+A normal of F at a point ¯ q is given by
+A-T~n ||A-T~n||
+(43)
+where A-T = (A-1)T and ~n is the normal of f at ¯ p = Q-1(¯ q).
+Derivation: Let ¯ s = ¯ r(?*) be the intersection point, and let (¯ p- ¯ s)·~n = 0 be the tangent plane at the intersection point. We can also write this as:
+(¯ p-¯ s)T~n = 0 (44)
+Substituting in ¯ q = A¯ p +~ t and solving gives:
+(¯ p-¯ s)T~n = (A-1(¯ q-~ t)-¯ s)T~n (45)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 70
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+= (¯ q-(A¯ s +~ t))TA-T~n (46) In other words, the tangent plane at the transformed point has normal A-T~n and passes through point (A¯ s +~ t). preserved so the tangent plane on the deformed surface is given by (A-1(¯ q-~ t))T~n = D.
+This is the equation of a plane with unit normal A-T~n ||A-T~n||.
+11.7 Shading
+Once we have cast a ray through pixel ¯ pi,j in the direction ~ di,j, and we've found the closest hit point ¯ p with surface normal ~n, we wish to determine how much light leaves the surface at ¯ p into the direction -~ di,j (i.e., back towards the camera pixel). Further we want re?ect both the light from light sources that directly illuminate the surface as well as secondary illumination, where light from other surfaces shines on the surface at ¯ p. This is a complex task since it involves all of the ways in which light could illuminate the surface from all different directions, and the myriad ways such light interacts with the surface and it then emitted or re?ected by the surface. Here we will deal ?rst with the simplest case, known widely as Whitted Ray Tracing.
+Aside: First, note that if we were to ignore all secondary re?ection, then we could just compute the Phong re?ectance model at ¯ p and then color the pixel with that value. Such scenes would look similar to those that we have rendered using shading techniques seen earlier in the course. The main differences from earlier rendering techniques are the way in which hidden surfaces are handled and the lack of interpolation.

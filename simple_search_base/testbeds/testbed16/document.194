@@ -1,0 +1,31 @@
+Why I like (and use) CloudFlare as part of my cloud infrastructure
+Dec 9, 2011
+
+
+Check this  interview with Michelle Zatlyn, co-founder of CloudFlare.
+
+I am a big fan of Cloud Flare. This is a really hot cloud infrastructure startup you probably haven’t heard of. There were only established in September of 2010 and they are already providing acceleration, spam protection, and protection from denial of service attacks for 20 billion page views from 390 million people every month.
+
+That’s right – no social networking, no viral growth, no friending, and no business models exploiting kids. Just good old fashioned cloud infrastructure services.
+
+To see how shockingly amazing those numbers are, that’s more than Twitter, Amazon, Wikipedia, and cloudywords.com combined. And in only slightly more than a year!
+
+There are a couple reasons I am a fan of Cloudflare.
+
+The first is that these guys actually understand the CDN business. I spent about seven years in the content distribution networking (CDN)  industry, first at Exodus communications, then as senior director of product management at Speedera Networks, which was acquired by Akamai for about $600 million, so this is a part of the cloud I know and love. Instead of going the commodity route of “yet another acceleration service” CloudFlare’s founders made two key decisions. They made the product easy-to-use and priced for small businesses, and they decided to offer security services for websites on top of the acceleration core.
+
+The second reason I’m a fan is that I’m a customer. When cloudywords.com and my very popular bulletproofexecutive.com site had awful page load times using WordPress on Dreamhost’s most excellent hosting service, my first thought was that I needed CDN. My second thought was that I had absolutely no interest in dealing with for paying for “enterprise grade” CDN services from a company like Akamai or Level 3.
+
+So I discovered CloudFlare a few months after they were founded and signed up over the web using my credit card. The experience was painless and simple and my page load times got about 80% faster. I was stoked to get reports about the number of threats blocked as well.
+
+Neither of my sites needs to be hosted on IaaS like Amazon AWS and frankly I wouldn’t want to waste my time administering that. But if the sites were large enough to justify being on AWS, I would go for a full security virtual appliance from Trend Micro. CloudFlare is a great middle ground for security.
+
+However, CloudFlare doesn’t block all Web threats – there was one instance where someone exploited a vulnerability in WordPress plug-ins and CloudFlare did not catch it. To be fair, they do not claim to catch every vulnerability, and they do a great job of reducing the number of attacks. See the screenshot below for an example. That attack got through but I detected it using another security service and it did not harm the site.
+
+Check out the sweet interface. I’m embarrassed to say that the CDN products I managed were never anywhere near this cool from a user interface perspective. Also note that the analytics from CloudFlare are more accurate than Google’s! You can see here that in the last month, it blocked more than 40,000 threats.
+
+
+
+I’m glad that VCs are paying attention to cloud infrastructure services – there was a time a couple years ago that they wouldn’t touch this type of thing with a 10 foot pole because it’s not Groupon or Zynga. CloudFlare chose a good VC, New Enterprise Associates, and they got Scott Sandell on their board. Nice choice: Scott knows the business and sits on the boards of Fusion-io and Bloom Energy, among others.
+
+I predict NEA and CloudFlare are going to do very, very well in the CDN business.

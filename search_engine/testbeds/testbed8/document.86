@@ -1,0 +1,12 @@
+Introduction
+
+The simplest implementation of a self-organizing list is as a linked list and thus while being efficient in random node inserting and memory allocation, suffers from inefficient accesses to random nodes. A self-organizing list reduces the inefficiency by dynamically rearranging the nodes in the list based on access frequency.
+Inefficiency of linked list traversals
+
+If a particular node is to be searched for in the list, each node in the list must be sequentially compared till the desired node is reached. In a linked list, retrieving the nth element is an O(n) operation. This is highly inefficient when compared to an array for example, where accessing the nth element is an O(1) operation.
+Efficiency of self-organizing lists
+
+A self organizing list rearranges the nodes keeping the most frequently accessed ones at the head of the list. Generally, in a particular query, the chances of accessing a node which has been accessed many times before are higher than the chances of accessing a node which historically has not been so frequently accessed. As a result, keeping the commonly accessed nodes at the head of the list results in reducing the number of comparisons required in an average case to reach the desired node. This leads to better efficiency and generally reduced query times.
+Implementation of a self-organizing list
+
+The implementation and methods of a self-organizing list are identical to the those for a standard linked list. The linked list and the self-organizing list differ only in terms of the organization of the nodes; the interface remains the same.

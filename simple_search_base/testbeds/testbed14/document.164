@@ -1,0 +1,40 @@
+﻿Set-labeled tableau[edit]
+A variant of tableau is to label nodes with sets of formulae rather than single formulae. In this case, the initial tableau is a single node labeled with the set to be proved satisfiable. The formulae in a set are therefore considered to be in conjunction.
+The rules of expansion of the tableau can now work on the leaves of the tableau, ignoring all internal nodes. For conjunction, the rule is based on the equivalence of a set containing a conjunction A \wedge B with the set containing both A and B in place of it. In particular, if a leaf is labeled with X \cup \{A \wedge B\}, a node can be appended to it with label X \cup \{A, B\}:
+(\wedge) \frac{X \cup \{A \wedge B\}}{X \cup \{A, B\}}
+For disjunction, a set X \cup \{A \vee B\} is equivalent to the disjunction of the two sets X \cup \{A\} and X \cup \{B\}. As a result, if the first set labels a leaf, two children can be appended to it, labeled with the latter two formulae.
+(\vee) \frac{X \cup \{A \vee B\}}{X \cup \{A\}|X \cup \{B\}}
+Finally, if a set contains both a literal and its negation, this branch can be closed:
+(id) \frac{X \cup \{p, \neg p\}}{closed}
+A tableau for a given finite set X is a finite (upside down) tree with root X in which all child nodes are obtained by applying the tableau rules to their parents. A branch in such a tableau is closed if its leaf node contains "closed". A tableau is closed if all its branches are closed. A tableau is open if at least one branch is not closed.
+Here are two closed tableaux for the set X = {r0 & ~r0, p0 & ((~p0 ∨ q0) & ~q0)} with each rule application marked at the right hand side (& and ~ stand for \wedge and \neg, respectively)
+ {r0 & ~r0, p0 & ((~p0 v q0) & ~q0)}                                    {r0 & ~r0, p0 & ((~p0 v q0) & ~q0)}
+--------------------------------------(&)                        ------------------------------------------------------------(&)
+ {r0, ~r0, p0 & ((~p0 v q0) & ~q0)}                                    {r0 & ~r0, p0, ((~p0 v q0) & ~q0)}
+ -------------------------------------(id)                         ----------------------------------------------------------(&)
+            closed                                                      {r0 & ~r0, p0,  (~p0 v q0),  ~q0} 
+                                                                -------------------------------------------------------------(v)
+                                                                  {r0 & ~r0, p0, ~p0, ~q0}       |   {r0 & ~r0, p0, q0, ~q0}
+                                                                 -------------------------- (id)     ----------------------  (id)
+                                                                          closed                            closed
+The left hand tableau closes after only one rule application while the right hand one misses the mark and takes a lot longer to close. Clearly, we would prefer to always find the shortest closed tableaux but it can be shown that one single algorithm that finds the shortest closed tableaux for all input sets of formulae cannot exist.
+The three rules (\wedge), (\vee) and (id) given above are then enough to decide if a given set X' of formulae in negated normal form are jointly satisfiable:
+Just apply all possible rules in all possible orders until we find a closed tableau for X' or until we exhaust all possibilities and conclude that every tableau for X' is open.
+In the first case, X' is jointly unsatisfiable and in the second the case the leaf node of the open branch gives an assignment to the atomic formulae and negated atomic formulae which makes X' jointly satisfiable. Classical logic actually has the rather nice property that we need to investigate only (any) one tableau completely: if it closes then X' is unsatisfiable and if it is open then X' is satisfiable. But this property is not generally enjoyed by other logics.
+These rules suffice for all of classical logic by taking an initial set of formulae X and replacing each member C by its logically equivalent negated normal form C' giving a set of formulae X' . We know that X is satisfiable if and only if X' is satisfiable, so it suffices to search for a closed tableau for X' using the procedure outlined above.
+By setting X = \{\neg A\} we can test whether the formula A is a tautology of classical logic:
+If the tableau for \{\neg A\} closes then \neg A is unsatisfiable and so A is a tautology since no assignment of truth values will ever make A false. Otherwise any open leaf of any open branch of any open tableau for \{\neg A\} gives an assignment that falsifies A.
+Conditional[edit]
+Classical propositional logic usually has a connective to denote material implication. If we write this connective as ⇒, then the formula A ⇒ B stands for "if A then B". It is possible to give a tableau rule for breaking down A ⇒ B into its constituent formulae. Similarly, we can give one rule each for breaking down each of ¬(A ∧ B), ¬(A ∨ B), ¬(¬A), and ¬(A ⇒ B). Together these rules would give a terminating procedure for deciding whether a given set of formulae is simultaneously satisfiable in classical logic since each rule breaks down one formula into its constituents but no rule builds larger formulae out of smaller constituents. Thus we must eventually reach a node that contains only atoms and negations of atoms. If this last node matches (id) then we can close the branch, otherwise it remains open.
+But note that the following equivalences hold in classical logic where (...) = (...) means that the left hand side formula is logically equivalent to the right hand side formula:
+
+\begin{array}{lcl}
+\neg (A \and B)            & = & \neg A \or \neg B \\
+\neg (A \or B)             & = & \neg A \and \neg B \\
+\neg (\neg A)              & = & A \\
+\neg (A \Rightarrow B)     & = & A \and \neg B \\
+A \Rightarrow B            & = & \neg A \or B \\
+A \Leftrightarrow B        & = & (A \and B) \or (\neg A \and \neg B) \\
+\neg (A \Leftrightarrow B) & = & (A \and \neg B) \or (\neg A \and B)
+\end{array}
+If we start with an arbitrary formula C of classical logic, and apply these equivalences repeatedly to replace the left hand sides with the right hand sides in C, then we will obtain a formula C' which is logically equivalent to C but which has the property that C' contains no implications, and ¬ appears in front of atomic formulae only. Such a formula is said to be in negation normal form and it is possible to prove formally that every formula C of classical logic has a logically equivalent formula C' in negation normal form. That is, C is satisfiable if and only if C' is satisfiable.

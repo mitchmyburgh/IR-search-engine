@@ -1,0 +1,59 @@
+Forward Models:
+Supervised Learning with a Distal Teacher
+MICHAELI.JORDAN 
+
+Recent work on learning algorithms for connectionist networks has seen a
+progressive weakening of the assumptions made about the relationship
+between the learner and the environment. Classical supervised learning
+algorithms such as the perceptron (Rosenblatt, 1962) and the LMS algorithm
+(Widrow & Hoff, 1960) made two strong assumptions: (1) The output units
+are the only adaptive units in the network, and (2) there is a “teacher” that
+provides desired states for all of the output units. Early in the development
+of such algorithms it was recognized that more powerful supervised learning
+algorithms could be realized by weakening the first assumption and incorporating
+internal units that adaptively recode the input representation provided
+by the environment (Rosenblatt, 1962). The subsequent development of algorithms such as Boltzmann learning (Hinton & Sejnowski, 1986) and
+backpropagation (LeCun, 1985; Parker, 1985; Rumelhart, Hinton, &
+Williams, 1986, Werbos, 1974) have provided the means for training networks
+with adaptive nonlinear internal units. The second assumption has
+also been weakened: Learning algorithms that require no explicit teacher
+have been developed (Becker & Hinton, 1989; Grossberg, 1987; Kohonen,
+1982; Linsker, 1988; Rumelhart & Zipser, 1986). Such “unsupervised” learning
+algorithms generally perform some sort of clustering or feature extraction
+on the input data and are based on assumptions about the statistical or
+topological properties of the input ensemble.
+In this article we examine in some detail the notion of the “teacher” in
+the supervised learning paradigm. We argue that the teacher is less of a
+liability than has commonly been assumed and that the assumption that the
+environment provides desired states for the output of the network can be
+weakened significantly without abandoning the supervised learning
+paradigm altogether. Indeed, we believe that an appropriate interpretation
+of the role of the teacher is crucial in appreciating the range of problems to
+which the paradigm can be applied. issue we wish to address is best illustrated by way of an example.
+Consider a skill-learning task such as that faced by a basketball player learning
+to shoot baskets. The problem for the learner is to find the appropriate
+muscle commands to propel the ball toward the goal. Different commands
+are appropriate for different locations of the goal in the visual scene; thus, a
+mapping from visual scenes to muscle commands is required. What learning
+algorithm might underlie the acquisition of such a mapping? Clearly, clustering
+or feature extraction on the visual input is not sufficient. Moreover, it
+is difficult to see how to apply classical supervised algorithms to this problem,
+because there is no teacher to provide muscle commands as targets to
+the learner. The only target information provided to the learner is in terms
+of the outcome of the movement, that is, the sights and sounds of a ball
+passing through the goal.
+The general scenario suggested by the example is shown in Figure 1.
+Intentions are provided as inputs to the learning system. The learner transforms
+intentions into actions, which are transformed by the environment
+into outcomes. Actions are proximal variables, that is, variables the learner
+controls directly, whereas outcomes are distal variables, variables the learner
+controls indirectly through the intermediary of the proximal variables.
+During the learning process, target values are assumed to be available for
+the distal variables but not for the proximal variables. Therefore, from a
+point of view outside the learning system, a “distal supervised learning
+task” is a mapping from intentions to desired outcomes. From the point of
+view of the learner, however, the problem is to find a mapping from intentions
+to actions that can be composed with the environment to yield desire
+Theistal outcomes. The learner must discover how to vary the components of
+the proximal action vector so as to minimize the components of the distal
+error. 

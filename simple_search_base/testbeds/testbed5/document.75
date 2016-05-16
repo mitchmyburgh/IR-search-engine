@@ -1,0 +1,21 @@
+Specification
+Main article: Programming language specification
+
+The specification of a programming language is an artifact that the language users and the implementors can use to agree upon whether a piece of source code is a valid program in that language, and if so what its behavior shall be.
+
+A programming language specification can take several forms, including the following:
+
+    An explicit definition of the syntax, static semantics, and execution semantics of the language. While syntax is commonly specified using a formal grammar, semantic definitions may be written in natural language (e.g., as in the C language), or a formal semantics (e.g., as in Standard ML[58] and Scheme[59] specifications).
+    A description of the behavior of a translator for the language (e.g., the C++ and Fortran specifications). The syntax and semantics of the language have to be inferred from this description, which may be written in natural or a formal language.
+    A reference or model implementation, sometimes written in the language being specified (e.g., Prolog or ANSI REXX[60]). The syntax and semantics of the language are explicit in the behavior of the reference implementation.
+
+Implementation
+Main article: Programming language implementation
+
+An implementation of a programming language provides a way to write programs in that language and execute them on one or more configurations of hardware and software. There are, broadly, two approaches to programming language implementation: compilation and interpretation. It is generally possible to implement a language using either technique.
+
+The output of a compiler may be executed by hardware or a program called an interpreter. In some implementations that make use of the interpreter approach there is no distinct boundary between compiling and interpreting. For instance, some implementations of BASIC compile and then execute the source a line at a time.
+
+Programs that are executed directly on the hardware usually run several orders of magnitude faster than those that are interpreted in software.[citation needed]
+
+One technique for improving the performance of interpreted programs is just-in-time compilation. Here the virtual machine, just before execution, translates the blocks of bytecode which are going to be used to machine code, for direct execution on the hardware.

@@ -1,0 +1,24 @@
+When Do You Need a CASB (Cloud Access Security Broker)?
+
+October 29, 2015/in CASB, EU Safe Harbor /by Willy Leichter
+When_Need_CASB_featured
+
+More and more businesses are evaluating Cloud Access Security Brokers (CASB) and trying to decide whether they are critical to security or redundant with what cloud providers offer. CASB vendors have pioneered the process of letting businesses encrypt their own data before it goes into the cloud. Now, in the post-Snowden world, several cloud providers are also adding encryption of customer data in the cloud – so what’s the difference? Here are a few problems that can only be addressed by CASBs – not individual cloud providers:
+
+Forced government disclosure
+As the Snowden revelations made clear, government surveillance of individuals’ and enterprises’ electronic communications and activities is very real and much more widespread than previously thought. But it’s not just secret surveillance that businesses worry about – Microsoft is engaged in a protracted cross-Atlantic legal dispute after a US criminal court demanded that they hand over customer data, even though the data in question was stored in Ireland. No business wants a third-party making decisions for them on what data to turn over to the government, but few CSPs can lawfully reject subpoenas or forced government disclosure. And when data crosses national boundaries, this issue quickly becomes a big problem – government access by one country in most cases violates privacy laws of another. This issue is front and center with the recent ruling by the European Court of Justice (ECJ) invalidating the US-EU Safe Harbor agreement.
+
+Encryption or tokenization of sensitive data by a CASB can address these challenges. They both provide an effective way to anonymize sensitive data and prevent its access by anyone other than business that owns the data.
+
+Account hijacking
+The best cloud providers deliver excellent and robust physical and infrastructure security – better than most businesses can afford. However, these measures can be bypassed if a hacker steals account credentials through phishing, malware, or social engineering. When business applications are run outside your network, you lose visibility and lack the security controls to detect suspicious activity. A CASB provides a control point, separate from the cloud that allows you to monitor activity and be sure only the right users are access the application. And if a hacker bypasses your controls and goes directly to the cloud the encrypted data is useless without the keys, which are never available to the CSP.
+
+Insider and third-party threats
+The Cloud Security Alliance (CSA) compiles lists of the top threats to cloud applications and customer data. In addition to forced disclosure and account hijacking, top threats include malicious insiders, insecure APIs, shared technology, and accidental data breaches. Even the best cloud providers can have malicious insiders and even well meaning humans make mistakes. Plus many enterprise clouds are inter-connected with other clouds, third-party tools, and external data sources, which multiplies insider risks.
+
+At the end of the day, your business is legally responsible for sensitive and regulated data, and this responsibility is not shared with the CSP. CASBs provide a reasonable security separation that keeps you in direct control over sensitive data.
+
+Multi-cloud protection
+Perhaps the most important reason to have a separate CASB layer is to provide consistent visibility, security and policy controls across multiple clouds. Enterprises need to avoid security silos and managing multiple and differing security functions for each cloud application can be cumbersome and leave significant gaps in security and visibility blind spots.
+
+To learn more about cloud encryption, watch our on-demand webinar, “Demystifying Cloud Encryption with Forrester Research,” today.

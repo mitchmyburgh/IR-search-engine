@@ -1,0 +1,114 @@
+Ample_SDK
+'''Ample SDK''' is a pre-release stage lightweight  intended to simplify  web application development. Although Ample SDK allows you to do  in a very similar way as  and many other JavaScript libraries, its main purpose is to enable development of declarative GUI's for s rather than enhancing HTML pages. The last release of Ample SDK was in December 2012 although work continues on  along with developers responding to issues and multiple active forks.
+Because its documentation is still sparse and the examples lack clear explanation, the Ample SDK is not suited for beginners. For the experienced web developer however, it offers many features, listed below.
+== Features ==
+The features of Ample include:
+* Full implementation of the core level of the  W3C technologies.
+* Every major web-browser is supported.
+* Cross-browser XUL (supporting a desktop-like UI), the   developed by the .
+* Styleable HTML5 forms elements.
+* SVG in all supported browsers, including Internet Explorer 5.5-8.0
+* An optional API similar to jQuery.
+* Good run-time performance.
+* Extensible architecture.
+=== Runtime ===
+The runtime is the core module of the Ample SDK framework. It contains implementations for:
+==== Scripting APIs ====
+* 
+* 
+* 
+* 
+* Other APIs: DOMParser, XMLSerializer, XSLTProcessor, XMLHttpRequest, JSON
+* jQuery APIs: As of release 0.9.3 Ample SDK supports most of the jQuery APIs
+* Globalization module
+==== XML technologies ====
+* 
+* 
+* 
+* 
+* 
+==== UI Managers ====
+* Drag & Drop
+* Resize
+* Focus
+* Capture
+* Selection
+=== UI Markup Languages ===
+The UI Markup Languages are implemented in JavaScript independently on each other:
+* 
+*  1.1
+*  (in development)
+*  1.1 (in development)
+*  1.1
+* Charts
+=== Plugins ===
+There is a jQuery-like plugin system in Ample SDK, some of the plugins coming with version 0.9.3:
+* Forms (unlike jQuery, in Ample SDK this module doesn't belong to the core technologies)
+* Cookie
+* Store
+* XPath
+* XSLT
+== Hello Ample! Example ==
+The Ample web page is an HTML document with decorations. To use the Ample framework you would include the runtime library in the head section of the HTML document and in addition the library for one or more GUI languages. 
+Here is an example which includes the runtime and XHTML as a GUI language:
+  
+  
+  
+We also included a CSS style sheet for the XHTML library. 
+A further note to make is that the document should contain namespace declarations for the GUI languages used, which is most conveniently placed in the HTML tag:
+ ... 
+If you would like to introduce dynamic behavior, you can include JavaScript functions, in a very similar way as most JavaScript libraries allow you to include behavior: as body of a document ''ready'' function:
+    ample.ready(function() )
+This script says something like: for every  element in the part of the document that is controlled by Ample, there will be an alert with showing the nodeValue of the firstChild of the element.
+On purpose we were talking about ''part'' of the document, because you can designate a number of sections within the body of an HTML document to be processed by Ample and the rest of the document will remain untouched:
+ample.open()
+     Hello, World!
+ample.close()
+ 
+Therefore, if the HTML document would contain more  elements outside the Ample sections, the alert would not occur when you would click on it.
+== Standards-based web-development ==
+So far, we have shown nothing that could not be done slightly more easily in a JavaScript library like jQuery. The power of declarative GUI development will become clear with the next example, showing a table with a rich interface. You should contrast the source code shown in the example below, with similar functionality in a jQuery plugin, where you probably would see only a  on a page and where you would have to guess what the final appearance of the element would be from looking at the JavaScript code.
+=== User Interface ===
+In the next example we will use XUL as the GUI language. XUL is an XML Markup Language, developed by Mozilla and used for example for the Firefox browser. Ample offers a full implementation of XUL.
+    
+        
+            
+            
+            
+            
+        
+        
+            
+                
+                
+                
+                
+            
+            
+                
+                
+                
+                
+            
+        
+    
+=== Logic ===
+The Application Logic of your client web application is written in JavaScript. For example:
+function onListBoxSelect(oEvent) 
+=== Style ===
+The styling  of your application is done in CSS, for example:
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+.test 
+xul|listitem:selected 
+From the XUL code it is easy to see what the layout of the table will be. The assumption is that for web-designers it is much easier to look at a declarative page that uses familiar, HTML like tags. The application developers can concentrate on specifying the behavior for the GUI elements. There is also a good separation between layout, styling and processing.
+== Componentization model ==
+Although there is a set of pre-defined UI Markup Languages (including XUL, XHTML, SVG and HTML5) it is easy to extend the base (to adjust it to certain application needs) and create new languages and UI components. This is done by either prototyping objects in JavaScript and registering them with the framework, or by implementing these components in XBL2. The UI Languages that are currently present in Ample are prototype implementations.
+==Related links==
+* 
+* 
+* 
+* 
+==Notes==
+== External links ==
+* 
+*

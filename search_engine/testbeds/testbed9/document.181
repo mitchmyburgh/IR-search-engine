@@ -1,0 +1,50 @@
+BSON /ˈbiːsɒn/ is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database. It is a binary form for representing simple data structures and associative arrays (called objects or documents in MongoDB). The name "BSON" is based on the term JSON and stands for "Binary JSON".
+
+
+== Data types and syntax ==
+BSON documents (objects) consist of an ordered list of elements. Each element consists of a field name, a type, and a value. Field names are strings. Types include:
+string
+integer (32- or 64-bit)
+double (64-bit IEEE 754 floating point number)
+date (integer number of milliseconds since the Unix epoch)
+byte array (binary data)
+boolean (true and false)
+null
+BSON object
+BSON array
+
+BSON types are nominally a superset of JSON types (JSON does not have a date or a byte array type, for example), with one exception of not having a universal "number" type as JSON does.
+
+
+== Efficiency ==
+Compared to JSON, BSON is designed to be efficient both in storage space and scan-speed. Large elements in a BSON document are prefixed with a length field to facilitate scanning. In some cases, BSON will use more space than JSON due to the length prefixes and explicit array indices.
+
+
+== Example ==
+A document such as {"hello":"world"} will be stored as:
+
+
+== See also ==
+JSON
+Smile (binary JSON)
+UBJSON
+Protocol Buffers
+Action Message Format
+Apache Thrift
+MessagePack
+Document-oriented database
+MongoDB
+
+Abstract Syntax Notation One (ASN.1)
+Wireless Binary XML (WBXML)
+Efficient XML Interchange
+Sereal
+
+
+== References ==
+
+
+== External links ==
+BSON Specification
+BSON documentation on the MongoDB website
+bsondump tool included with MongoDB

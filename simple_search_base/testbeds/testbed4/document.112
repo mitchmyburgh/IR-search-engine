@@ -1,0 +1,36 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Intersections
+In this section, we denote a ray as ¯ r(?) = ¯ a + ?~ d, ? > 0.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 65
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+11.3.1 Triangles
+De?ne a triangle with three points, ¯ p1, ¯ p2, and ¯ p3. Here are two ways to solve for the ray-triangle intersection. • Intersect ¯ r(?) with the plane (¯ p- ¯ p1)·~n = 0 for ~n = (¯ p2 - ¯ p1)×(¯ p3 - ¯ p1) by substituting ¯ r(?) for ¯ p and solving for ?. Then test the half-planes for constraints. For example:
+(¯ a + ?~ d- ¯ p1)·~n = 0
+?* =
+(¯ p1 -¯ a)·~n ~ d·~n
+What does it mean when ~ d·~n = 0? What does it mean when ~ d·~n = 0 and (¯ p1-¯ a)·~n = 0? • Solve for a and ß where ¯ p(a,ß)¯ p1 + a(¯ p2 - ¯ p1) + ß(¯ p3 - ¯ p1), i.e. ¯ r(?) = ¯ a + ?~ d = ¯ p1 + a(¯ p2 - ¯ p1) + ß(¯ p3 - ¯ p1). This leads to the 3x3 system ? ? | | | -(¯ p2 - ¯ p1) -(¯ p3 - ¯ p1) ~ d | | | ? ? ? ? a ß ? ? ?= (¯ p1 -¯ a) Invert the matrix and solve for a, ß, and ?. The intersection is in the triangle when the following conditions are all true: a = 0 ß = 0a + ß = 1
+11.3.2 General Planar Polygons
+For general planar polygons, solve for the intersection with the plane. Then form a ray s(t) in the plane, starting at the intersection ¯ p(?*). Measure the number of intersections with the polygon sides for t > 0. If there is an even number of intersections, the intersection is inside. If the number of intersection is odd, it is outside.
+Aside: This is a consequence of the Jordan Curve Theorem. As related to this problem, it states that two points are both inside or both outside when the number of intersections on a line between them is even.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 66
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+11.3.3 Spheres
+De?ne the unit sphere centered at ¯ c by||¯ p-¯ c||2 = 1. Substitute a point on the ray ¯ r(?) into this equation:
+(¯ a + ?~ d-¯ c)·(¯ a + ?~ d-¯ c)-1 = 0 Expand this equation and write it in terms of the quadratic form: A?2 + 2B? + C = 0 A = ~ d· ~ d B = (¯ a-¯ c)· ~ d C = (¯ a-¯ c)·(¯ a-¯ c)-1 The solution is then: ? = -2B ±v4B2 -4AC 2A = - B A ± vD A ,D = B2 -AC If D < 0, there are no intersections. If D = 0, there is one intersection; the ray grazes the sphere. If D > 0, there are two intersections with two values for ?, ?1 and ?2.
+When D > 0, three cases of interest exist: • ?1 < 0 and ?2 < 0. Both intersections are behind the view-plane, and are not visible. • ?1 > 0 and ?2 < 0. The ¯ p(?1) is a visible intersection, but ¯ p(?1) is not. • ?1 > ?2 and ?2 > 0. Both intersections are in front of the view-plane. ¯ p(?2) is the closest intersection.
+11.3.4 Af?nely Deformed Objects
+Proposition: Given an intersection method for an object, it is easy to intersect rays with af?nely deformed versions of the object. We assume here that the af?ne transformation is invertible. • Let F(¯ y) = 0 be the deformed version of f(¯ x) = 0, where ¯ y = A¯ x +~ t. i.e. F(¯ y) = f(A-1(¯ y-~ t)) = 0, so F(¯ y) = 0 iff f(¯ x) = 0. • Given an intersection method for f(¯ x) = 0, ?nd the intersection of ¯ r(?) = ¯ a + ?~ d and F(¯ y) = 0, where ? > 0. • Solution: Substitute ¯ r(?) into the implicit equation f = F(¯ y): F (¯ r(?)) = fA-1¯ r(?)-~ t= f(A-1(¯ a + ?~ d-~ t)) = f(¯ a' + ?~ d') = f(¯ r'(?))
+Copyright c
+2005 David Fleet and Aaron Hertzmann 67
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+where
+¯ a' = A-1(¯ a-~ t) ~ d' = A-1~ d
+i.e. intersecting F(¯ y) with ¯ r(?) is like intersecting f(x) with ¯ r'(?) = ¯ a' + ?~ d' where ? > 0. The value of ? found is the same in both cases. • Exercise: Verify that, at the solution ?*, with an af?ne deformation ¯ y = A¯ x + ~ t, that ¯ r(?*) = A¯ r'(?*) +~ t.
+11.3.5 Cylinders and Cones A right-circular cylinder may be de?ned by x2 + y2 = 1 for |z| = 1. A cone may be de?ned by x2 + y2 - 1 4(1-z2) = 0 for 0 = z = 1. • Find intersection with "quadratic wall," ignoring constraints on z, e.g. using x2 + y2 = 1 or x2 + y2 - 1 4(1-z2) = 0. Then test the z component of ¯ p(?*) against the constraint on z, e.g. z = 1 or z < 1. • Intersect the ray with the planes containing the base or cap (e.g. z = 1 for the cylinder). Then test the x and y components of ¯ p(?*) to see if they satisfy interior constraints (e.g. x2 + y2 < 1 for the cylinder). • If there are multiple intersections, then take the intersection with the smallest positive ? (i.e., closest to the start of the ray).
+Copyright c
+2005 David Fleet and Aaron Hertzmann

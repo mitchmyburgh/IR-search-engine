@@ -1,0 +1,32 @@
+﻿ABSTRACT
+Motivation:
+The importance of extracting biomedical information from scientific publications is well recognized. A number of
+information extraction systems for the biomedical domain have
+been reported, but none of them have become widely used
+in practical applications. Most proposals to date make rather
+simplistic assumptions about the syntactic aspect of natural
+language. There is an urgent need for a system that has broad
+coverage and performs well in real-text applications.
+Results:
+We present a general biomedical domain-oriented
+NLP engine called MedScan that efficiently processes sentences from MEDLINE abstracts and produces a set of
+regularized logical structures representing the meaning of
+each sentence. The engine utilizes a specially developed
+context-free grammar and lexicon. Preliminary evaluation of
+the system’s performance, accuracy, and coverage exhibited
+encouraging results. Further approaches for increasing the
+coverage and reducing parsing ambiguity of the engine, as
+well as its application for information extraction are discussed.
+Availability:
+MedScan is available for commercial licensing
+from Ariadne Genomics, Inc.
+Contact:
+nikolai@ariadnegenomics.com
+INTRODUCTION
+The need for automated data retrieval from biomedical publications is well recognized, given their exponentially increasing
+volume. Due to easy access and availability, the most widely
+used sources of scientific information are abstracts of scientific publications, accessed primarily through MEDLINE.
+Abstracts contain a concise description of the information
+within the paper and provide the best combination of availability, information density and brevity. Many approaches
+have been proposed for information extraction (IE) from scientific publications, ranging from simple statistical methods
+to advanced natural language processing (NLP) systems.

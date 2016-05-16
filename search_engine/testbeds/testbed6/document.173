@@ -1,0 +1,13 @@
+In-order traversal
+
+In an inorder traversal, if a given node is the parent of some other node(s) then we traverse to the left child. If there is no left child, then go to the right child, and traverse the subtree of the right child until you encounter the leftmost node in that subtree. Then process that left child. And then you process the current parent node. And then, the traversal pattern is repeated.
+
+So, it looks like each sub-tree within the larger tree is being traversed in the same pattern – which should make you start thinking in terms of breaking this problem down into sub-trees. And anytime a problem is broken down into smaller problems that keep repeating, you should immediately start thinking in recursion to find the most efficient solution. So, let’s take a look at the 2 largest sub-trees and see if we can come up with an appropriate algorithm. You can see in the figure above that the sub-trees of 7 and 5 (child nodes of the root at 2) are the 2 largest subtrees.
+
+1.  Go the left subtree, and perform an inorder traversal 
+on that node.
+
+2.  Print out the value of the current node.
+
+3.  Go to the right child node, and then perform 
+an inorder traversal on that right child node's subtree.

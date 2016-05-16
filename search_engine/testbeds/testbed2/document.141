@@ -1,0 +1,40 @@
+Numenta is a machine intelligence company that has developed a cohesive theory, core software, technology and applications based on the principles of the neocortex. The company was founded on February 4, 2005 by Palm founder Jeff Hawkins with his longtime business partner Donna Dubinsky and Stanford graduate student Dileep George. Numenta is headquartered in Redwood City, California and is privately funded.
+Numenta has developed a number of applications to demonstrate the applicability of its technology. Its first commercial product, Grok, offers anomaly detection for IT analytics, giving insight into IT systems to identify unusual behavior and reduce business downtime. Other applications include Rogue Behavior Detection and Geospatial Tracking.
+In addition, Numenta has created NuPIC (Numenta Platform for Intelligent Computing) as an open source project.
+The company name comes from the Latin mentis (“pertaining to the mind”) genitive of mēns (“mind”). The word Grok is a term that was coined by Robert A. Heinlein in his 1961 novel Stranger in a Strange Land.
+
+
+== Technology ==
+Numenta's machine intelligence technology is called hierarchical temporal memory (HTM), and is a computational theory of the neocortex. This theory was first described in the book On Intelligence, written in 2004 by Jeff Hawkins and co-author Sandra Blakeslee. At the core of HTM are time-based learning algorithms that store and recall temporal patterns. The HTM algorithms are documented and available through its open source project, NuPIC.
+The HTM technology is suited to address a number of problems, particularly those with the following characteristics: streaming data, underlying patterns in data change over time, subtle patterns, time-based patterns.
+
+
+== Products ==
+Grok for IT Analytics enables insights into IT systems. Grok uses learning algorithms based on HTM to identify complex patterns in data and detect anomalies. As the patterns in data change, Grok continuously learns and adapts. On August 19, 2015, Numenta announced a partnership with Avik Partners. As part of the deal, Numenta licensed the Grok product and name to Avik Partners. Avik intends to commercialize the product.
+
+
+== Legacy, research products ==
+The Numenta Platform for Intelligent Computing (NuPIC) is a set of tools and a runtime engine, including embedded learning algorithms, that enables self-training and pattern recognition based on the theories of hierarchical temporal memory.
+The Research Release of NuPIC was announced on March 5, 2007.
+A version for the Microsoft Windows operating system was announced on August 29, 2007.
+
+
+== The NuPIC Open Source Project ==
+Numenta announced in June 2013 that it would open-source its HTM technology, the core of its software and algorithms. This was accompanied by the new Numenta.org website and a mailing list for community members. A number of contributors from around the world have since joined, and topics on the mailing list have included both discussions of the HTM theory as well as details of development of the software. The mission of NuPIC is to build and support a community, that is interested in machine learning and machine intelligence based on modeling the neocortex and its principles.
+NuPIC has hosted a series of hackathons, the first one in 2013, to bring community members together to collaborate on NuPIC and its applications.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Gigaom Article on Numenta's Approach to AI
+VentureBeat article "After Nine Years of Research Numenta Finally has Apps that Mimic the Way the Brain Works'
+Numenta Formed by Jeff Hawkins to Apply Neuroscience Research to Computing Problems
+Gartner Fellows Interview with Jeff Hawkins Founder of Numenta on 2 March 2006
+Wired magazine article underlying details and giving background information on Numenta.
+Guardian Newspaper 10 April 2008 article providing a general introduction to Numenta.
+"The Brainy Learning Algorithms of Numenta" December 2010 article in Technology Review
+NuPIC Open Source Project
+HTM White Paper

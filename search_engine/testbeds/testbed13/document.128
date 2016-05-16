@@ -1,0 +1,351 @@
+
+
+This page may be out of date. Save your draft before refreshing this
+page.Submit any pending changes before refreshing this page.
+
+Hide this message.
+
+Quora
+
+****
+
+Sign In
+
+Quantum Computation
+
+Quantum Mechanics
+
+Computer Science Education
+
+Computers
+
+# What's the difference between a quantum computer and a super computer?
+
+UpdateCancel
+
+### Answer Wiki
+
+6 Answers
+
+John Gustafson, Computational scientist, CEO and CTO of computer companies,
+Professor of CS
+
+2.4k Views •
+
+John has 30+ answers in
+
+Computers.
+
+Quantum computers_ are_ one type of supercomputer: They are expensive, hard to
+use, tricky to operate, and can solve problems that you cannot solve in
+reasonable time by any other means. Those are the defining qualities of
+supercomputers and have been since the vector mainframes of the 1980s.
+Contrary to the answer of Justin Eiler, quantum computers exist and are
+shipping commercially from D-Wave:  
+  
+Home  
+  
+That site has some great explanations about how quantum computers work. You
+might also check out the excellent work being done at (shameless plug for my
+university, here, but it _is_ the first entry that comes up with a Google
+search) the National University of Singapore:  
+  
+Centre for Quantum Technologies  
+  
+I think you are asking how quantum computers differ from conventional
+computers. Here is one way to think about it. _Analog_ computers were all the
+rage up to about the 1950s because they could mimic arithmetic operations with
+real physical phenomena, and that was much, much faster than the early digital
+computers. But analog computers had the huge drawback of being very
+approximate, with answers limited to two or three decimal places in most
+cases. They also required considerable cleverness in figuring out what
+physical phenomenon would best mimic a math operation like a divide or a
+square root or a cosine or whatever. If you could find that analog between a
+physical phenomenon and what you wanted to calculate, and did not mind that
+the result was a continuously varying value that you could only measure to two
+or three decimals, then you could compute very quickly indeed. Because digital
+computers were always higher precision and easier to program, and eventually
+became fast, most people forgot about analog computing.  
+  
+Fast-forward 65 years.  
+  
+Quantum computers are like those old physical analog computers, but **without
+the limitation of providing results that are continuous variables and
+approximate**. They use nature's own "digitized" states! So _if_ you can find
+a mapping between quantum mechanical and something you want to calculate, then
+using the physical analogy is ungodly fast and as precisely discrete as a
+digital answer. It takes a lot of cleverness to find that mapping, and one of
+the most important ones that has been found is Shor's algorithm for integer
+factorization. That's is the one that gives the NSA and other institutions the
+jitters, because it could bring down our current Diffie-Hellman systems for
+encrypting digital data even when the public encryption keys are quite large.
+We are gradually adding to the body of knowledge of how to map quantum
+mechanical effects to computations we want done.  
+  
+The other thing that's tricky about quantum computing at present is that it's
+a tough engineering task to maintain a quantum bit, or "qubit." It takes
+temperatures near absolute zero, and the darn things just don't stay put for
+more than a few minutes. But D-Wave's flagship product has 1000 qubits, which
+in principle means it could be programmed to solve problems where there are 2
+to the 1000th power possible states to be examined, simultaneously. But these
+are the early days of the technology, and the fact that it has gotten as far
+as it has suggests that quantum computing will be one form of supercomputing
+(not the only one) in the future.
+
+Written Aug 29, 2015 • View Upvotes • Answer requested by
+
+Samuel Carraway
+
+#### Related Questions
+
+More Answers Below
+
+  * What is the difference between quantum physics and quantum computing?
+
+  * What is the difference between a quantum annealing computer and a general-purpose quantum computer?
+
+  * What are the major differences between normal computer architecture and quantum computer architecture?
+
+  * Are our brains a super quantum computer?
+
+  * What is the difference between quantum computing and hypercomputation?
+
+John Bailey, Studied @ Moore School where Eniac was enshrined. Knew the RCA
+Bizmac as well.
+
+552 Views •
+
+John has 150+ answers in
+
+Quantum Mechanics.
+
+John is a Most Viewed Writer in
+
+Quantum Computation.
+
+Supercomputers use the same general techniques as more familiar personal
+computers. The difference is their massive parallelism.  In this case
+parallelism means that if a problem can be divided correctly, the
+supercomputer can work on the multiple components simultaneously.  Problems
+such as weather, structures analysis, aerodynamics,... lend themselves to
+being treated as a lattice and can be solved much faster that with a single
+processor.  In addition, being a centralized processor lends itself to much
+more aggressive refrigeration.  The result is the elements can be operated a
+higher power levels leading to additional speed.  
+  
+There are two varieties of quantum based computers--adiabatic computers and
+quantum gate based architectures.  
+  
+Adiabatic quantum computers use quantum effects to solve fairly specific
+optimization problems as encountered in operations research, engineering, and
+machine learning.  They have limited use but for their specific areas of
+application they are likely faster than supercomputers.  
+  
+Quantum gate based computers are to a large extent theoretical.  No  examples
+exist.  Not even feasibility prototypes.  In theory Quantum gate based quantum
+computers can solve some problems with speeds that surpass any currently
+available processor.  In a special sense they are massively parallel.  The
+special sense is because they depend on quantum phenomena they also exhibit
+quantum quirks.  Answers developed cannot always be read out simply.  They
+require special procedures which rely on the statistics of their parallel
+answers to produce a  numerical answer usable by external clients.  Also their
+quantum data is extremely fragile, requiring much of their computer power to
+be used for error detection and correction.  
+  
+Because gate based quantum computers could break cryptographic codes used
+today by banks and other financial institutions in minutes vs decades for the
+fastest conventional supercomputer and because they could perform tabular
+searches in a fraction of the time needed today, they will be important when
+developed.  Like other significant advances, seeing how they will impact
+technology when they arrive requires a lot of imagination.
+
+Updated Sep 2, 2015 • View Upvotes • Answer requested by
+
+Samuel Carraway
+
+Malcolm Shute, Still studying Computer Engineering (since 1975)
+
+305 Views
+
+There is no rigid definition of what constitutes a supercomputer. In general,
+it is a term that is used to designate the most powerful (and expensive)
+computers that happen to be around at the particular time.  
+  
+Thus, the term is relative, and an 1980s supercomputer has little relation to
+a 2010s supercomputer.  
+  
+However, that said, I do like Quora User's answer. Since the 1980s,
+supercomputers have all been multiprocessor machines, to achieve parallelism
+in the program execution, and what he says is spot on, in that context.
+
+Written Aug 31, 2015 • Answer requested by
+
+Samuel Carraway
+
+Quora User, Four semesters of Physics! Passed all of them! Even the quantum
+physics one!
+
+928 Views • Quora User has 220+ answers in
+
+Quantum Mechanics.
+
+A quantum computer can in theory work out problems in parallel as it can
+juggle 2^n possibilities at a time.  A super computer needs all 2^n
+processors.  So that's a huge advantage for the quantum computer.  But it's
+hard to get n quanta up n the air and keep them long enough to get an answer.
+
+Written Aug 30, 2015 • View Upvotes • Answer requested by
+
+Samuel Carraway
+
+Justin Eiler, There are 10 types of people in the world--those who have heard
+this joke alr...
+
+307 Views
+
+Supercomputers are regular (digital) computers with large computational
+capcity compared to "regular" computers--but their computations are still
+binary.  
+  
+Quantum computers are a hypothetical (as in, they have not been built)
+computer that take advantage of quantum-mechanical states such as
+superposition or entanglement. Instead of binary calculations, where any
+particular transistor can only be in two states, "Off" or "On," a quantum
+computer can theoretically have transistors that are in indeterminate
+superimposed states--functionally, any particular quantum bit could be 1, or
+0, or simultaneously 1 and 0. Computationally, this is supposed to allow for
+greater computational power--however, as no quantum computer has ever been
+built, this supposition has never been tested.
+
+Written Aug 29, 2015
+
+More
+
+#### Related Questions
+
+  * What is the difference between a standard computer and a quantum computer?
+
+  * What are the differences between the model of computation that a quantum computer uses and Turing model?
+
+  * What is the difference between computer science, computer engineering, and software engineering?
+
+  * What is the difference between a quantum and a classical computer?
+
+  * What is the relation between quantum computing and quantum mechanics?
+
+  * What is a quantum computer?
+
+  * Do NASA super computers run on quantum computation? If not why are they so "super"?
+
+  * What is the difference between quantum computers and nondeterministic finite automaton?
+
+  * What's the relationship between neural networks and quantum computation?
+
+  * Is quantum computing real?
+
+  * How different will be the operating system on quantum computer?
+
+  * What's the difference between computer scientists and computer/software engineers?
+
+  * What is the difference between computer architecture and computer organization?
+
+  * What is the difference between having two processors working independantly on the same task and quantum parallel computing?
+
+  * How intelligent may quantum computer based A.I.'s grow, considering the mathematical complexities of the different A.I. problems?
+
+### Related Questions
+
+  * What is the difference between quantum physics and quantum computing?
+
+  * What is the difference between a quantum annealing computer and a general-purpose quantum computer?
+
+  * What are the major differences between normal computer architecture and quantum computer architecture?
+
+  * Are our brains a super quantum computer?
+
+  * What is the difference between quantum computing and hypercomputation?
+
+  * What is the difference between a standard computer and a quantum computer?
+
+  * What are the differences between the model of computation that a quantum computer uses and Turing model?
+
+  * What is the difference between computer science, computer engineering, and software engineering?
+
+  * What is the difference between a quantum and a classical computer?
+
+  * What is the relation between quantum computing and quantum mechanics?
+
+Top Stories
+
+Read More
+
+I'm 13. My height is 5ft. How do I maximise my growth and reach 5'10 by
+adulthood?
+
+Craig Good, Teller of stories, many of which are true.
+
+10.5k Views •
+
+Craig is a Most Viewed Writer in
+
+Nutrition.
+
+Three things, in about this order, affect your height:
+
+  1. Genetics
+  2. Diet
+  3. Sleep
+
+Many forget about #3, but your body only grows while you're asleep. Eat a
+healthy diet: Varied, mostly plants, not too much or too little. Get good
+sleep. Get exercise. That's the limit of what you can do.
+
+There are no superfoods, and no food will "make you taller", so reject anybody
+who claims otherwise.
+
+Read More
+
+What is the most American thing ever?
+
+David Stewart, Teacher from Australia.
+
+21.9k Views • Upvoted by
+
+Jasmine Adamson, Natural Born US Citizen
+
+  
+Semi Automatic Rifles painted pink so they can be marketed specifically at
+women.  
+  
+The gun itself would be illegal in many nations on earth but I think I'm right
+in saying only America has tried to come up with a colour scheme which will
+make high powered weaponry appeal to a specific demographic.
+
+Read More
+
+How is it that Hillary has more votes despite Bernie Sanders being the most
+popular on the Internet?
+
+Ozgur Zeren, Since 94
+
+16.9k Views
+
+The penetration of Internet is not yet as high as TV.
+
+Obama was similarly strong on Internet, yet he wasn't doing fine (worse than
+Bernie, actually) until TVs ended up having to cover him into the race.
+
+There are 3 corporations who consolidated media and news in US. All of these
+are fundamentally opposed to Sanders due to the fact that they will actually
+end up having to pay their taxes when San...
+
+Sitemap
+
+#
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+About \- Careers \- Privacy \- Terms \- Contact
+
+  *[RSS]: Really Simple Syndication
+

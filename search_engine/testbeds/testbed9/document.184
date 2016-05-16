@@ -1,0 +1,40 @@
+In computer science, a multimap (sometimes also multihash) is a generalization of a map or associative array abstract data type in which more than one value may be associated with and returned for a given key. Both map and multimap are particular cases of containers (for example, see C++ Standard Template Library containers). Often the multimap is implemented as a map with lists or sets as the map values.
+
+
+== Examples ==
+In a student enrollment system, where students may be enrolled in multiple classes simultaneously, there might be an association for each enrollment of a student in a course, where the key is the student ID and the value is the course ID. If a student is enrolled in three courses, there will be three associations containing the same key.
+The index of a book may report any number of references for a given index term, and thus may be coded as a multimap from index terms to any number of reference locations.
+Querystrings may have multiple values associated with a single field. This is commonly generated when a web form allows multiple check boxes or selections to be chosen in response to a single form element.
+
+
+== Language support ==
+
+
+=== C++ ===
+C++'s Standard Template Library provides the multimap container for the sorted multimap using a self-balancing binary search tree, and SGI's STL extension provides the hash_multimap container, which implements a multimap using a hash table.
+
+
+=== Dart ===
+Quiver provides a Multimap for Dart.
+
+
+=== Java ===
+Apache Commons Collections provides a MultiMap interface for Java. It also provides a MultiValueMap implementing class that makes a MultiMap out of a Map object and a type of Collection.
+Google Guava provides an interface Multimap and implementations. 
+
+
+=== OCaml ===
+OCaml's standard library module Hashtbl implements a hash table where it's possible to store multiple values for a key.
+
+
+=== Scala ===
+The Scala programming language's API also provides Multimap and implementations
+
+
+== See also ==
+Abstract data type for the concept of type in general
+Associative array for the more fundamental abstract data type
+Multiset for the case where same item can appear several times
+
+
+== References ==

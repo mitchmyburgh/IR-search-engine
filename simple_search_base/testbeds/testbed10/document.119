@@ -1,0 +1,102 @@
+Predictive mapping of reef fish species richness, diversity and biomass in Zanzibar
+using IKONOS imagery and machine-learning techniques
+
+Anders Knudby ⁎, Ellsworth LeDrew, Alexander Brenning
+
+1. Introduction
+Local communities of coral reef fishes are influenced by a complex mix
+of global biogeographic patterns (Harrison & Cornell, 2008), stochastic
+recruitment pulses (Sale, 1977), and interactions between the fishes and
+their habitat operating at a range of spatial scales. This multi-scale
+complexity presents a challenge for the development of spatially explicit
+predictive models of the fish community, which could greatly aid spatial
+planning and conservation management of coral reef environments
+(Mellin et al., 2009; Pittman et al., 2009). Despite the complexity, field
+studies have established statistical relationships between several aspects
+of the local habitat and its fish community. The structural complexity of
+the substrate positively correlates with fish species richness, abundance
+and biomass, while live coral cover influencesfish abundance, particularly of species directly dependent on the corals for food or shelter (Jones et al.,
+2004). Depth influences the composition and abundance of the fish
+community (Lara & González, 1998), and habitat complexity positively
+correlates with species richness (Pittman et al., 2007a; Purkis et al., 2008).
+In addition, location influences the fish community through factors such
+as proximity to the reef edge or nearby rivers (Friedlander & Parrish,
+1998) and proximity to nursery habitat such as seagrass beds and
+mangrove stands (Dorenbosch et al., 2005; Mumby et al., 2004a). The
+strength of the specific statistical relationships varies between studies, as
+does the spatial scale at which the relationships are strongest (Mellin
+et al., 2009). Nevertheless, the existing body of field studies suggests a list
+of habitat variables that, if estimated by remote sensing instruments,
+would enable the development of spatially explicit predictive models of
+fish communities (Knudby et al., 2007). Five of these variables deserve
+further attention as they are as possible to map with remote sensing:
+depth, structural complexity, substrate type, habitat diversity, and live
+coral cover. Methods for deriving water depth from both passive optical
+(Lyzenga, 1978; Maritorena et al., 1994; Stumpf et al., 2003) and lidar remote sensing (Guenther, 2001) are well established, although the
+maximum depths at which both methods can be applied are limited by
+water turbidity. Digital elevation models can be created from such
+spatially distributed depth measurements (Storlazzi et al., 2003), and
+measures of structural complexity can be derived (Pittman et al., 2009).
+Such measures of structural complexity have already been used to
+produce spatial predictive models of fish species richness (Pittman et al.,
+2007b). Substrate maps are the standard products from remote sensing of
+coral reefs (Mumby et al., 1997), and have been combined with depth to
+produce spatial predictions of fish community variables, both on coral
+reefs (Mellin et al., 2007) and elsewhere (Herold et al., 2007). Habitat
+diversity measures are straight-forward to calculate from substrate maps,
+but their relationship with fish community variables has been little
+explored. One study has found a significant relationship with fish species
+richness (Purkis et al., 2008), while others have found the same
+relationship to be non-significant (Pittman et al., 2004, 2007b). Live
+coral cover has been more difficult to map with remote sensing, because
+of sub-pixel heterogeneity and high spectral similarity between corals
+and other substrate types such as algae and seagrass (Hochberg et al.,
+2003). This causes live coral cover estimates to be highly dependent on
+conditions such as water depth, turbidity, and the presence/absence of
+spectrally similar substrate types (Hochberg & Atkinson, 2003; Mumby
+et al., 2004b). Nevertheless, a few studies have had some success with
+mapping live coral cover empirically, using either spectral indices (Joyce,
+2004) or classification schemes based on the percentage of live coral cover
+(Isoun et al., 2003; Newman et al., 2007). Despite field studies having
+demonstrated relationships between live coral cover and fish community
+variables, remotely sensed live coral cover has not yet been used for
+predictive mapping of fish community variables. In this study, we derive remotely sensed estimates of depth,
+structural complexity, habitat diversity and live coral cover. We derive
+these estimates at a range of spatial scales and use them, along with a
+substrate classification, a map of geomorphological reef zones, and a
+map of boundaries of a local marine protected area, to develop spatial
+predictive models for fish species richness, diversity, and biomass. We
+compare the predictive performance (error) of six statistical and
+machine-learning techniques used to model the fish–habitat relationships,
+and we assess the influence of each predictor variable, and its
+spatial scale, on model predictions. Finally, we use the best overall
+model type to produce maps of each fish community variable, and
+discuss the application of such maps for marine spatial planning.
+
+5. Conclusion
+The use of remote sensing allows predictive models of the fish
+community to become spatially explicit and to cover large areas. In
+addition, the spatial extent of IKONOS data allows users to derive
+variables such as rugosity at coarse spatial scales not accessible with
+traditional field-based methods, and to calculate entirely new
+variables such as habitat diversity. However, the combination of
+already weak statistical relationships between habitat variables and
+the fish community and imperfect estimates of those variables using
+IKONOS data causes noise in the spatially distributed predictions of
+fish community variables. We have shown that models based on
+habitat variables derived from IKONOS data can produce spatially
+explicit predictions of fish species richness, biomass, and diversity,
+and we have illustrated the improved predictive performance that
+machine-learning algorithms such as the tree-based ensemble
+techniques can achieve, compared to the less flexible linear models.
+We have used the spatially explicit predictions to produce maps of the
+fish community that, based on our knowledge of the area, reflect the
+actual spatial distribution of the fish community. To our knowledge,
+this is the first study to use satellite data to create predictive maps of
+reef fish species richness, diversity, and biomass. The affordability of
+satellite data allows such maps to be produced by organizations in
+both developed and developing countries, where they can help
+expand the scientific basis for decision-making in conservationoriented
+marine spatial planning and potenti
+
+

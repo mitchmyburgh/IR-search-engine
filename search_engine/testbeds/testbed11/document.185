@@ -1,0 +1,59 @@
+The Link Layer Discovery Protocol (LLDP) is a vendor-neutral link layer protocol in the Internet Protocol Suite used by network devices for advertising their identity, capabilities, and neighbors on an IEEE 802 local area network, principally wired Ethernet. The protocol is formally referred to by the IEEE as Station and Media Access Control Connectivity Discovery specified in standards document IEEE 802.1AB.
+LLDP performs functions similar to several proprietary protocols, such as the Cisco Discovery Protocol (CDP), Extreme Discovery Protocol, Foundry Discovery Protocol (FDP), Nortel Discovery Protocol (also known as SONMP), and Microsoft's Link Layer Topology Discovery (LLTD).
+
+
+== Frame structure ==
+LLDP information is sent by devices from each of their interfaces at a fixed interval, in the form of an Ethernet frame. Each frame contains one LLDP Data Unit (LLDPDU). Each LLDPDU is a sequence of type-length-value (TLV) structures.
+The Ethernet frame used in LLDP has its destination MAC address typically set to a special multicast address that 802.1D-compliant bridges do not forward. Other multicast and unicast destination addresses are permitted. The EtherType field is set to 0x88cc.
+Each LLDP frame starts with the following mandatory TLVs: Chassis ID, Port ID, and Time-to-Live. The mandatory TLVs are followed by any number of optional TLVs. The frame ends with a special TLV, named end of LLDPDU in which both the type and length fields are 0.
+Accordingly, an Ethernet frame containing an LLDPDU has the following structure:
+Each of the TLV components has the following basic structure:
+Custom TLVs are supported via a TLV type 127. The value of a custom TLV starts with a 24-bit organizationally unique identifier and a 1 byte organizationally specific subtype followed by data. The basic format for an organizationally specific TLV is shown below:
+According to IEEE Std 802.1AB, §9.6.1.3, "The Organizationally Unique Identifier shall contain the organization's OUI as defined in IEEE Std 802-2001." Each organization is responsible for managing their subtypes.
+
+
+== Information gathered ==
+Information gathered with LLDP is stored in the device as a management information database (MIB) and can be queried with the Simple Network Management Protocol (SNMP) as specified in RFC 2922. The topology of an LLDP-enabled network can be discovered by crawling the hosts and querying this database. Information that may be retrieved include:
+System name and description
+Port name and description
+VLAN name
+IP management address
+System capabilities (switching, routing, etc.)
+MAC/PHY information
+MDI power
+Link aggregation
+
+
+== Media endpoint discovery extension ==
+Media Endpoint Discovery is an enhancement of LLDP, known as LLDP-MED, that provides the following facilities:
+Auto-discovery of LAN policies (such as VLAN, Layer 2 Priority and Differentiated services (Diffserv) settings) enabling plug and play networking.
+Device location discovery to allow creation of location databases and, in the case of Voice over Internet Protocol (VoIP), Enhanced 911 services.
+Extended and automated power management of Power over Ethernet (PoE) end points.
+Inventory management, allowing network administrators to track their network devices, and determine their characteristics (manufacturer, software and hardware versions, serial or asset number).
+The LLDP-MED protocol extension was formally approved and published as the standard ANSI/TIA-1057 by the Telecommunications Industry Association (TIA) in April 2006.
+
+
+== Applications ==
+The Link Layer Discovery Protocol may be used as a component in network management and monitoring applications. One such example is its use in data center bridging requirements.
+The Data Center Bridging Capabilities Exchange Protocol (DCBX) is a discovery and capability exchange protocol that is used for conveying capabilities and configuration of the above features between neighbors to ensure consistent configuration across the network.
+
+
+== See also ==
+OpenLLDP
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+IEEE 802.1AB (LLDP) Specification
+Tutorial on LLDP
+IEEE standard 802.1AB document history
+The Wireshark Wiki LLDP Page
+LLDPD, Open Source LLDP Project
+lldpad, Open Source agent/daemon for Intel network connections
+ladvd, Open Source LLDP Project
+Comparison of LLDP daemons

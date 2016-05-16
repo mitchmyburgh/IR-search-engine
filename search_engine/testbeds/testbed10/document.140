@@ -1,0 +1,88 @@
+b Mining Research: A Survey 
+
+k Blockeel
+
+
+ymond Kosala
+
+NTRODUCTION
+The World Wide Web (Web) is a popular and interactive
+medium to disseminate information today. The Web is huge,
+diverse, and dynamic and thus raises the scaiability, multimedia
+data, and temporal issues respectively. Due to those
+situations, we are currently drowning in information and
+facing information overload [86]. Information users could
+encounter, among others, the following problems when interacting
+with the Web:
+a. Finding relevant information: People either browse or
+use the search service when they want to find specific information
+on the Web. When a user uses search service he
+or she usually inputs a simple keyword query and the query
+response is the list of pages ranked based on their similarity
+to the query. However today's search tools have the following
+problems [23]. The first problem is low precision, which
+is due to the irrelevance of many of the search results. This
+results in a difficulty finding the relevant information. The
+second problem is low recall, which is due to the inability
+to index all the information available on the Web. This results
+in a difficulty finding the unindexed information that
+is relevant. See [81] for some other search engine problems.
+b. Creating new knowledge out of the information available
+on the Web: Actually this problem could be regarded as a
+sub-problem of the problem above. While the problem above
+is usually a query-triggered process (retrieval oriented), this
+problem is a data-triggered process that presumes that we
+already have a collection of Web data and we want to extract
+potentially useful knowledge out of it (data mining
+oriented). Recent research [34; 85; 29] focuses on utilizing
+the Web as a knowledge base for decision making.
+c. Personalization of the information: This problem is often
+associated with the type and presentation of information,
+since it is likely that people differ in the contents and presentations
+they prefer while interacting with the Web.
+On the other hand, the information providers could encounter
+these problems, among others, when trying to achieve
+their goals on the Web:
+d. Learning about consumers or individual users: This is
+a problem that specifically deals with the problem c above,
+which is about knowing what the customers do and want.
+Inside this problem, there are sub-problems such as mass
+customizing the information to the intended consumers or
+even to personalize it to individual user, problems related to
+effective Web site design and management, problems related
+to marketing, etc.
+Web mining techniques could be used to solve the information
+overload problems above directly or indirectly. However,
+we do not claim that Web mining techniques are the
+only tools to solve those problems. Other techniques and
+works from different research areas, such as database (DB),
+information retrieval (IR), natural language processing (NLP)
+and the Web document community, could also be used. By
+the direct approach we mean that the application of the Web
+mining techniques directly addresses the above problems.
+For example, a Newsgroup agent that classifies whether the
+news is relevant to the user. By the indirect approach we
+mean that the Web mining techniques are used as a part
+of a bigger application that addresses the above problems.
+For example, Web mining techniques could be used to create
+index terms for the Web search services.
+The Web mining research is a converging research area from
+several research communities, such as database, IR, and AI
+research communities especially from machine learning and
+NLP. This paper is an attempt to put the research done in
+a more structured way from the machine learning point of
+view. However, the methods of the research that we survey
+do not necessarily use well-known machine learning algorithms. Since this is a huge, interdisciplinary, and very
+dynamic research area, there are undoubtedly some omissions
+in our coverage.
+This paper is structured as follows. In section 2 we give
+an overview of Web mining, describe some confusions in the
+usage of the term Web mining, provide a classification, and
+relate this classification to the agent paradigm. In section 3,
+4 and 5 we describe some research that represent the range
+of the research in their respective categories. In section 6 we
+discuss some related work and finally we conclude in section
+7. 
+
+
+

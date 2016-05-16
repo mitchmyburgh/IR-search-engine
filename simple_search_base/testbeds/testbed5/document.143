@@ -1,0 +1,132 @@
+    9to5Google
+    9to5Toys
+    Electrek
+    Community
+    About
+    Tips/Contact
+
+Search
+
+    Mac
+    iOS
+    AAPL
+    Guides
+    Reviews
+    Apps
+    Community
+    Cashback/Fix
+
+April 8
+
+AAPL: 108.66
+0.12
+Google reportedly considering possibility of Swift as programming language for Android
+
+Greg Barbosa
+
+- 3 weeks ago
+
+@gregbarbosa
+
+Developers iOS
+Comments (14)
+
+    FacebookTwitterGooglePinterestReddit
+
+Apple’s recently open-sourced programming language, Swift, may be seeing itself get adopted into Google’s Android platform in the future. Sources have told The Next Web that Google is “considering making Swift a ‘first class’ language for Android”.
+
+Google’s mobile platform currently runs off of Java as its main language, and the inclusion of Swift isn’t seen as to replace Java initially. With Swift being open-source, Google could toy with Swift as it evolves to discover if it would even be a good fit for the Android platform, according to the report.
+
+Some have speculated that an app written in Swift would then be able to run on both Android and iOS, although that isn’t quite accurate. Android and iOS may share the same language in the future, but platform-specific API differences between the two means that apps on either won’t magically run on the other. Though, it would make developing between both platforms easier in the sense that developers wouldn’t have to develop across two different programming languages.
+
+The report also notes that some low-level Android APIs are written in C++, something which Swift can’t currently bridge too. This would require some finessing on Google’s part to make compatible.
+
+We’ve seen some big players come out with support for Swift, most notably IBM with their Kitura framework.
+
+    presslee - 4 weeks ago
+    Reply
+
+    Android Carmel Apple
+    IOS 131.0.5.21
+
+    Like
+    taoprophet420 - 4 weeks ago
+    Reply
+
+    I am surprised Android has been able to run off Java this long. Java needs to die almost as equally as much as Flash.
+
+    Liked by 3 people
+        Jake Becker - 4 weeks ago
+        Reply
+
+        Yep.
+
+        Like
+            Ahamad_Sayed (@ISNot_Available) - 3 weeks ago
+
+            Java is very user friendly and allows for multi platform portability not mention javascript for which internet works
+
+            Like
+            tcb13 - 3 weeks ago
+
+            @ISNot_Available: Do some reading before you speak. Java and Javascript are not related in any way. And Java is not “user friendly”.
+
+            Like
+            realgurahamu - 3 weeks ago
+
+            Ahmad_Sayed Java is a long dying platform which is both slow, unstable and insecure. Every single Java update patches some critical security flaw. Chrome already blocks Java now and refuses to allow applet loads because of the 3 reasons already mentioned, and even Jagex who make Runescape are releasing a new client which was programmed in C++ instead of Java because of performance reasons.
+
+            Java cannot and will not continue into the future, and Google switching (even if slowly) to Swift is only a good thing for Android users who will see a huge performance increase across all supported devices, even low budget and older ones which get trashed by Android in it’s current state
+
+            Like
+        Yaroslav Nechaev - 3 weeks ago
+        Reply
+
+        You obviously don’t know what you are talking about. Java is a nice language.
+
+        Like
+            Dasun Sameera Weerasinghe - 3 weeks ago
+
+            Java is a beautiful language but not it’s implementation:)
+
+            Liked by 1 person
+        Mark Lane - 3 weeks ago
+        Reply
+
+        I think you are confused. The security issues with Java stem mostly from running Java Applets in the Browser. Java Applets may need to die but Java as a whole is very popular programming language in Enterprise Computing ans is going no where.
+
+        Like
+    Shameer Mulji (@shameermulji) - 4 weeks ago
+    Reply
+
+    IF Google does this, it is game over. Swift will become the de facto choice for mobile developers.
+
+    Like
+        Robbie Catto-Smith - 4 weeks ago
+        Reply
+
+        Why is that a bad thing?
+
+        Liked by 1 person
+            Robert Oze (@4diRobert) - 3 weeks ago
+
+            It is not a good choice for professionals because of performance and cross-platform issues. What about C++?
+
+            Like
+    Dan Beaulieu - 2 weeks ago
+    Reply
+
+    You can interoperate with C++ easily by writing an Objectice-C++ wrapper and calling the wrapper from Swift.
+
+    Like
+    trparky - 1 week ago
+    Reply
+
+    The real reason that Google is considering this is because of their lawsuit with Oracle over Java. Oracle sued Google over their use of their Java-like language in which Oracle claimed that Google copied much of Java’s API. The settle the lawsuit Google had to agree to replace much of the stuff that’s under the hood that powers Android with OpenJDK.
+
+    Adopting Swift to replace Java would be a good idea in the sense that Google would escape the clutches of Oracle and their evil evilness.
+
+    Like
+
+Powered by WordPress.com VIP	
+:)

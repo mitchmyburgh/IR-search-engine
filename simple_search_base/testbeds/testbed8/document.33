@@ -1,0 +1,11 @@
+Algol 68's distributive field selection
+
+In Algol 68, if Pts was an array of records, each with integer fields X and Y, one could write Pts.Y to obtain an array of integers, consisting of the Y fields of all the elements of Pts. As a result, the statements Pts[3].Y := 7 and Pts.Y[3] := 7 would have the same effect.
+Pascal's "with" statement
+
+In the Pascal programming language, the command with R do S would execute the command sequence S as if all the fields of record R had been declared as variables. So, instead of writing Pt.X := 5; Pt.Y := Pt.X + 3 one could write with Pt do begin X := 5; Y := X + 3 end.
+Representation in memory
+
+The representation of records in memory varies depending on the programming languages. Usually the fields are stored in consecutive positions in memory, in the same order as they are declared in the record type. This may result in two or more fields stored into the same word of memory; indeed, this feature is often used in systems programming to access specific bits of a word. On the other hand, most compilers will add padding fields, mostly invisible to the programmer, in order to comply with alignment constraints imposed by the machine—say, that a floating point field must occupy a single word.
+
+Some languages may implement a record as an array of addresses pointing to the fields (and, possibly, to their names and/or types). Objects in object-oriented languages are often implemented in rather complicated ways, especially in languages that allow multiple class inheritance.

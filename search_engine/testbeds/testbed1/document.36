@@ -1,0 +1,133 @@
+AutoIt
+'''AutoIt'''  is a    for . In its earliest release, the software was primarily intended to create  automation scripts (sometimes called ) for Microsoft Windows programs but has since grown to include enhancements in both programming language design and overall functionality.
+While the scripting language in AutoIt 1 and 2 was statement-driven, designed primarily for simulating user interaction, from version 3 onwards the AutoIt syntax is similar to that found in the  family of languages. In this form, AutoIt is a general-purpose,  with a classical data model and a  that can store several types of data, including arrays. While version 1 and 2 were compatible with Windows , , , , , , , , , support for operating systems older than  was discontinued with the release of v3.3.0 in December 2008). Currently AutoIt is compatibile also with , , , , and minimal requirment is .
+An AutoIt automation script can be converted into a compressed, stand-alone executable which can be run on computers that do not have the AutoIt interpreter installed.  A wide range of function libraries (known as UDFs, or "User Defined Functions")https://www.autoitscript.com/wiki/User_Defined_Functions are also included as standard or are available from the website to add specialized functionality.  AutoIt is also distributed with an  based on the free  editor. The compiler and help text are fully integrated and provide a de facto standard environment for developers using AutoIt.
+==Features==
+* Scripting language with BASIC-like structure for Windows Desktop Environment.
+* Add-on libraries and modules for specific applications.
+* On-line support forum for AutoIt users and developers.
+* Supports  and  protocols.
+* Supports COM (ling) objects.
+* Call functions in .
+* Run console applications and access the .
+* Include files in the compiled file to be extracted when run.
+* Create  interfaces, including message and input boxes.
+* Play sounds, pause, resume, stop, seek, get the current position of the sound and get the length of the sound.
+* Simulate  movements.
+* Manipulate windows and processes.
+* Automate sending user input and keystrokes to applications, as well as to individual controls within an application.
+* Scripts can be compiled into standalone executables.
+* Unicode support from version 3.2.4.0.
+* 64-bit code support from version 3.2.10.0.
+* Supports .
+* Works with 's .
+* Object oriented design through a library
+==Usage==
+AutoIt is typically used to produce  for  and to automate routine tasks, such as systems management, monitoring, maintenance, or software installation. It is also used to simulate user interaction, whereby an application is "driven" (via automated form entry, keypresses, mouse clicks, and so on) to do things by an AutoIt script.
+==Examples==
+===Hello world===
+; Make available a library of constant values.
+#include 
+; Displays "Hello, world!" in a messagebox.
+MsgBox($MB_SYSTEMMODAL, "Title", "Hello, world!")
+===Automating the Windows Calculator===
+; Make available a library of constant values.
+#include 
+; Display a message box with a timeout of 6 seconds.
+MsgBox($MB_OK, "Attention", "Avoid touching the keyboard or mouse during automation.", 6)
+; Run the Windows Calculator.
+Run("calc.exe")
+; Wait for the calculator to become active with a timeout of 10 seconds.
+WinWaitActive("", "", 10)
+; If the calculator did not appear after 10 seconds then exit the script.
+If WinExists("") = 0 Then Exit
+; Automatically type the current year into the calculator.
+Send(@YEAR)
+; Let's slow the script down a bit so we can see what's going on.
+Sleep(600)
+; Automatically type in 'divide by 4', and then sleep 600 ms.
+Send("/4")
+Sleep(600)
+; Hit the return key to display the result, and sleep 600 ms.
+Send("")
+Sleep(600)
+; Copy the result to the clipboard using the Windows shortcut Ctrl+C.
+Send("^c")
+; Declare, and assign the contents of the clipboard to, a variable.
+Local $fResult = ClipGet()
+; Check to see if the variable contains a decimal point or not.
+If StringInStr($fResult, ".") Then
+    ; Display a message box with a timeout of 5 seconds.
+    MsgBox($MB_OK, "Leap Year", @YEAR & " is not a leap year.", 5)
+Else
+    ; This message will only display if the current year is a leap year.
+    MsgBox($MB_OK, "Leap Year", @YEAR & " is a leap year.", 5)
+EndIf
+; Close the Windows calculator - always tidy up afterwards.
+WinClose("")
+===Find average===
+; Find Average by JohnOne, modified by czardas
+#include 
+_Example() ; Run the example.
+Func _Example()
+    ; Display an input box and ask the user to enter some numbers separated by commas.
+    Local $sInput = InputBox("Find Average", "Enter some numbers separated by commas: 1,2,42,100,3")
+	; If an error occurred then exit the script.
+	If @error Then Exit
+    ; Populate an array with the user's input.
+    Local $aSplit = StringSplit($sInput, ",")
+    ; Pass the array to the function _Find_Average() and then check for errors.
+    Local $fAverage = _Find_Average($aSplit)
+    If @error Then Exit
+    ; Display the result in a message box.
+    MsgBox($MB_OK, "Find Average", "Result: " & $fAverage)
+EndFunc   ;==>_Example
+Func _Find_Average($aArray)
+    ; If the input is not of the correct type (an array), then return an error along with the details.
+    If Not IsArray($aArray) Then Return SetError(1, 0, VarGetType($aArray))
+	; More detailed checks are possible, but for brevity just one is performed here.
+    ; Declare a variable to store the sum of the numbers.
+    Local $iArraySum = 0
+    ; Loop through the array.
+    For $i = 1 To $aArray
+        ; Increment the sum by the number in each array element.
+        $iArraySum += Number($aArray)
+    Next
+    ; Return the average rounded to 2 decimal places.
+    Return Round($iArraySum / $aArray, 2)
+EndFunc   ;==>_Find_Average
+==History==
+* January 1999 - First AutoIt Version (1.0)
+* August 1999 - AutoIt v2 and AutoItX
+* September 1999 - First AutoIt version with Compiler
+* December 2002 - AutoIt v3 (Public Beta)
+* February 2004 - AutoIt v3 (Stable)
+* September 2006 - Auto3Lib started
+* November 2007 - AutoIt v3.2.10.0 released, Auto3Lib incorporated into AutoIt v3
+* May 2008 - AutoIt v3.2.12.0 released, incorporating added GUI functionality
+* December 2008 - AutoIt (and AutoItX) v3.3.0.0 released
+* December 2009 - AutoIt v3.3.2.0 released
+* January 2010 - AutoIt v3.3.4.0 released
+* March 2010 - AutoIt v3.3.6.0 released
+* April 2010 - AutoIt v3.3.6.1 released
+* December 2011 - AutoIt v3.3.8.0 released
+* January 2012 - AutoIt v3.3.8.1 released
+* December 2013 - AutoIt v3.3.10.0 released
+* June 2014 - AutoIt v3.3.12.0 released
+* July 2015 - AutoIt v3.3.14.0 and v3.3.14.1 released
+* September 2015 - AutoIt v3.3.14.2 released
+The developers of AutoIt originally released the source code under the , but the practice was discontinued beginning with version 3.2.0 in August 2006. Following the terms of the GPL, some of the code from version 3.1 was used to create a fork by the  project, where the community is continuing to develop and release the code under the GPL.
+==See also==
+* 
+* 
+*  (for Macintosh)
+*  (for Macintosh)
+* 
+* 
+* 
+* 
+* 
+* 
+==References==
+==External links==
+*

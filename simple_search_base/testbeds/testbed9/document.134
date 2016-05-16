@@ -1,0 +1,50 @@
+Enfilades are a class of tree data structures used in Project Xanadu "Green" designs of the 1970s and 1980s. Enfilades allow quick editing, versioning, retrieval and inter-comparison operations in a large, cross-linked hypertext database. The Xanadu "Gold" design starting in the 1990s used a related data structure called the Ent.
+
+
+== Structure and properties ==
+Although the principles of enfilades can be applied to any tree data structure, the particular structure used in the Xanadu system was much like a B-Tree. What distinguishes enfilades is the use of dsps and wids in the indexing information within tree nodes.
+Dsps are displacements, offsets or relative keys. A dsp is the difference in key between a containing node and that of a subtree or leaf. For instance, the leaf for a grid square in a map might have a certain longitude and latitude offset relative to the larger grid represented by the subtree the leaf is part of. The key of any leaf of an enfilade is found by combining all the dsps on the path down the tree to that leaf. Dsps can also be used for other context information that is imposed top-down on entire subtrees or ranges of content at once.
+Wids are widths, ranges, or bounding boxes. A wid is relative to the key of a subtree or leaf, but specifies a range of addresses covering all items within the subtree. Wids identify the interesting parts of sparsely populated address spaces. In some enfilades, the wids of subtrees under a given node can overlap, and in any case, a search for data within a range of addresses must visit any subtrees whose wids intersect the search range. Wids are combined from the leaves of the tree, upward through all layers to the root (although they are maintained incrementally). Wids can also contain other summaries such as totals or maxima of data.
+The relative nature of wids and dsps allows subtrees to be rearranged within an enfilade. By changing the dsp at the top of a subtree, the keys of all the data underneath are implicitly changed. Edit operations in enfilades are performed by "cutting," or splitting the tree down relevant access paths, inserting, deleting or rearranging subtrees, and splicing the pieces back together. The cost of cutting and splicing operations is generally log-like in 1-D trees and between log-like and square-root-like in 2-D trees.
+Subtrees can also be shared between trees, or be linked from multiple places within a tree. This makes the enfilade a fully persistent data structure with virtual copying and versioning of content. Each use of a subtree inherits a different context from the chain of dsps down to it. Changes to a copy create new nodes only along the cut paths, and leave the entire original in place. The overhead for a version is very small, a new version's tree is balanced and fast, and its storage cost is related only to changes from the original.
+One-dimensional enfilades are intermediate between arrays' direct addressability and linked lists' ease of insertion, deletion and rearrangement. Multidimensional enfilades resemble loose, rearrangeable, versionable Quad trees, Oct trees or k-d trees.
+
+
+== Types of enfilades in Xanadu ==
+The Model-T enfilade, used in Xanadu designs before 1979, is a data structure very much like the Rope. It stores linear sequences of characters, with easy insertion, deletion, rearrangement and versioning, but not with links or easy comparison between versions. Text is stored directly in the leaves of the enfilade.
+Later Xanadu designs are more indirect: a growing pool of sharable content pieces, called the istream (invariant stream) is organized into the documents, links and versions—all with virtual addresses—that the users see and work on. A collection of enfilade types manages the bi-directional mapping between virtual and istream addresses. Tracing correspondences and links between documents is made possible by mapping from virtual, to invariant, and back to virtual addresses. Storing documents using shared content pieces that remember their identities and can trace back to all their appearances, is called Transclusion.
+The POOMfilade (permutation of order matrix) is a 2D enfilade representing a Permutation matrix. This maps virtual position in a document to istream positions in the pooled content that the document is built from. The POOM starts out an identity matrix, then each edit to the document slices and rearranges horizontal strips of the map. The POOM can be queried in the V->I or I->V directions by searching in squat, wide address ranges or tall, narrow ones.
+The Spanfilade collects the union of all spans of istream content used by a document or set of documents. Taking the intersection of span-sets from two documents or versions of a document speeds up the comparison of documents. This same mechanism is used to find links from or to a document.
+The Granfilade organizes the storage of all this information on disks and a network of servers.
+
+
+== Trade Secret until 1999 ==
+Enfilades (internal data structures) and istream addresses are not exposed to Xanadu's external interfaces. Enfilades were trade-secret information until the Xanadu code was made open-source in 1999, and were mentioned but not explained in some publications before that point, e.g.
+Client-server communications in the Xanadu system use vstream addresses in a format called tumblers.
+Hence the term Enfilade is not mentioned explicitly in the FeBe (Front end - Back end protocol) document, but is instead noted indirectly in Xanalogical Structure and several other documents. In the aforementioned document, it is noted that xu88 was based on "General Enfilade Theory".
+
+
+== History ==
+In 1972, xu72 introduced the concept of the Enfilade. This was called the "Model T Enfilade", and was used in a word-processing type interface. In 1976, xu76 implemented the "tightly coupled enfilade". In 1980, the xu80 system introduced the "ent", described as a versioning enfilade. In 1988, the xu88 system utilized the concept of "General Enfilade Theory" of Mark S. Miller, Stuart Greene and Roger Gregory, described as "generating data management trees with an upwardly propagating search property and simultaneously a downwardly imposable structural property". The xu88 also extended the concept of the Enfilade over a distributed network, introduced two-dimensional Enfilades, and implemented an algorithm for searching the entire docuverse for overlapping Enfilade spans. In 1992, xu92 implemented the modern concept of the ent.
+
+
+== See also ==
+Project Xanadu
+Hypertext
+Hypermedia
+Ted Nelson
+Generalized Search Tree
+
+
+== References ==
+
+
+== External links ==
+Introduction to Enfilades
+Xanadu Technologies: an introduction
+http://xanadu.com
+http://udanax.com
+http://hyperworlds.com
+The Cartoon History of Cyberspace
+Papers on the Ent
+Xanalogical Structure (mirror)

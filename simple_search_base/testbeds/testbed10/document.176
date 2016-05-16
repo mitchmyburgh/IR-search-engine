@@ -1,0 +1,83 @@
+ARTIFICIAL NEURAL NETWORKS (THE MULTILAYER
+PERCEPTRON)—A REVIEW OF APPLICATIONS IN THE
+ATMOSPHERIC SCIENCES
+
+
+M. W. GARDNER* and S. R. DORLING
+
+1. INTRODUCTION
+Neural networks, or more precisely artificial neural
+networks, are a branch of artificial intelligence. Multilayer
+perceptrons form one type of neural network as
+illustrated in the taxonomy in Fig. 1. This article only
+considers the multilayer perceptron since a growing
+number of articles are appearing in the atmospheric
+literature that cite its use. Many of these papers describe
+the benefits that neural networks offer when
+compared to more traditional statistical modelling
+techniques. Most of the papers briefly describe the
+workings of neural networks and provide references,
+to books and papers, from which the reader may
+obtain further information. This review is aimed at
+readers with little or no understanding of neural networks
+and is designed to act as a guide through the
+literature so that they may better appreciate this tool.
+This review is divided into several sections, beginning
+with a brief introduction to the multilayer perceptron
+followed by a description of the most basic
+algorithm for training a multilayer perceptron, known
+as backpropagation. A review of some of the recent
+applications of the multilayer perceptron to atmospheric
+problems will be presented followed by a discussion
+of some of the common practical problems and
+limitations associated with a neural network approach. most suitable approach depends on the complexity of
+the problem being addressed and the degree to which
+the problem is understood. Assuming adequate data
+and computing resources and if a strong theoretical
+understanding of the problem is available then a full
+numerical model is perhaps the most desirable solution.
+However, in general, as the complexity of a problem
+increases the theoretical understanding decreases
+(due to ill-defined interactions between systems) and
+statistical approaches are required. Recently, the use
+of neural networks, and in particular the multilayer
+perceptron, have been shown to be effective alternatives
+to more traditional statistical techniques
+(Schalkoff, 1992). Primarily it has been shown
+(Hornik et al., 1989) that the multilayer perceptron
+can be trained to approximate virtually any smooth,
+measurable function. Unlike other statistical techniques
+the multilayer perceptron makes no prior assumptions
+concerning the data distribution. It can
+model highly non-linear functions and can be trained
+to accurately generalise when presented with new,
+unseen data. These features of the multilayer perceptron
+make it an attractive alternative to developing
+numerical models, and also when choosing between
+statistical approaches. As will be seen the multilayer
+perceptron has many applications in the atmospheric
+sciences.
+
+7. CONCLUSION
+The multilayer perceptron has been shown to be
+a useful tool for prediction, function approximation
+and classification. The practical benefits of a modelling
+system that can accurately reproduce any
+measurable relationship is huge. The benefits of the
+multilayer perceptron approach are particularly apparent
+in applications where a full theoretical model
+cannot be constructed, and especially when dealing
+with non-linear systems. The numerous difficulties in
+implementing, training and interpreting the multilayer
+perceptron must be balanced against the performance
+benefits when compared to more traditional,
+and often inappropriate, techniques.
+There are many commercially and freely available
+software packages that enable users to implement
+neural networks relatively easily (Sarle, 1997). Such
+software is increasingly allowing neural networks to
+be implemented in a similar manner to regression or
+discriminant analysis, shielding the user from difficult
+parameter selection. Unfortunately, most packages
+provide only a limited number of training algorithms,
+which cannot be adjusted or adapted by the user.

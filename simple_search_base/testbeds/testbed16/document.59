@@ -1,0 +1,34 @@
+Containers in the Enterprise
+June 25, 2015Tim Crawford
+Containers are all the rage right now, but are they ready for enterprise consumption? It depends on whom you ask, but here’s my take. Enterprises should absolutely be considering container architectures as part of their strategy…but there are some considerations before heading down the path.
+
+Container conferences
+
+Talking with attendees at Docker’s DockerCon conference and Redhat’s Summit this week, you hear a number of proponents and live enterprise users. For those that are not familiar with containers, the fundamental concept is a fully encapsulated environment that supports application services. Containers should not be confused with virtualization. In addition, containers are not to be confused with Micro Services, which can leverage containers, but do not require them.
+
+A quick rundown
+
+Here are some quick points:
+
+Ecosystem: I’ve written before about the importance of a new technology’s ecosystem here. In the case of containers, the ecosystem is rich and building quickly.
+Architecture: Containers allow applications to break apart into smaller components. Each of the components can then spin up/ down and scale as needed. Of course automation and orchestration comes into play.
+Automation/ Orchestration: Unlike typical enterprise applications that are installed once and run 24×7, the best architectures for containers spin up/ down and scale as needed. Realistically, the only way to efficiently do this is with automation and orchestration.
+Security: There is quite a bit of concern about container security. With potentially thousands or tens of thousands of containers running, a compromise might have significant consequences. If containers are architected to be ephemeral, the risk footprint shrinks exponentially.
+DevOps: Container-based architectures can run without a DevOps approach with limited success. DevOps brings a different methodology that works hand-in-hand with containers.
+Management: There are concerns the short lifespan of a container creates challenges for audit trails. Using traditional audit approaches, this would be true. Using newer methods provides real-time audit capability.
+Stability: The $64k question: Are containers stable enough for enterprise use? Absolutely! The reality is that legacy architecture applications would not move directly to containers. Only those applications that are significantly modified or re-written would leverage containers. New applications are able to leverage containers without increasing the risk.
+Cloud-First, Container-First
+
+Companies are looking to move faster and faster. In order to do so, the problem needs reduction into smaller components. As those smaller components become micro services (vs. large monolithic applications), containers start to make sense.
+
+Containers represent an elegant way to leverage smaller building blocks. Some have equated containers to the Lego building blocks of the enterprise application architecture. The days of large, monolithic enterprise applications are past. Today’s applications may be complex in sum, but are a culmination of much smaller building blocks. These smaller blocks provide the nimble and fast speed that enterprises are clamoring for today.
+
+Containers are more than Technology
+
+More than containers, there are other components needed for success. Containers represent the technology building blocks. Culture and process are needed to support the change in technology. DevOps provides the fluid that lubricates the integration of the three components.
+
+Changing the perspective
+
+As with the newer technologies coming, other aspects of the IT organization must change too. Whether you are a CIO, IT leader, developer or operations team, the very fundamentals in which we function must change in order to truly embrace and adopt these newer methodologies.
+
+Containers are ready for the enterprise…if the other aspects are considered as well.

@@ -1,0 +1,28 @@
+Incremental resizing
+
+Some hash table implementations, notably in real-time systems, cannot pay the price of enlarging the hash table all at once, because it may interrupt time-critical operations. If one cannot avoid dynamic resizing, a solution is to perform the resizing gradually:
+
+    During the resize, allocate the new hash table, but keep the old table unchanged.
+    In each lookup or delete operation, check both tables.
+    Perform insertion operations only in the new table.
+    At each insertion also move r elements from the old table to the new table.
+    When all elements are removed from the old table, deallocate it.
+
+To ensure that the old table is completely copied over before the new table itself needs to be enlarged, it is necessary to increase the size of the table by a factor of at least (r + 1)/r during resizing.
+
+Disk-based hash tables almost always use some scheme of incremental resizing, since the cost of rebuilding the entire table on disk would be too high.
+Monotonic keys
+
+If it is known that key values will always increase (or decrease) monotonically, then a variation of consistent hashing can be achieved by keeping a list of the single most recent key value at each hash table resize operation. Upon lookup, keys that fall in the ranges defined by these list entries are directed to the appropriate hash function—and indeed hash table—both of which can be different for each range. Since it is common to grow the overall number of entries by doubling, there will only be O(lg(N)) ranges to check, and binary search time for the redirection would be O(lg(lg(N))). As with consistent hashing, this approach guarantees that any key's hash, once issued, will never change, even when the hash table is later grown.
+Other solutions
+
+Linear hashing[21] is a hash table algorithm that permits incremental hash table expansion. It is implemented using a single hash table, but with two possible look-up functions.
+
+Another way to decrease the cost of table resizing is to choose a hash function in such a way that the hashes of most values do not change when the table is resized. This approach, called consistent hashing, is prevalent in disk-based and distributed hash tables, where rehashing is prohibitively costly.
+Performance analysis
+
+In the simplest model, the hash function is completely unspecified and the table does not resize. For the best possible choice of hash function, a table of size k with open addressing has no collisions and holds up to k elements, with a single comparison for successful lookup, and a table of size k with chaining and n keys has the minimum max(0, n-k) collisions and O(1 + n/k) comparisons for lookup. For the worst choice of hash function, every insertion causes a collision, and hash tables degenerate to linear search, with Ω(n) amortized comparisons per insertion and up to n comparisons for a successful lookup.
+
+Adding rehashing to this model is straightforward. As in a dynamic array, geometric resizing by a factor of b implies that only n/bi keys are inserted i or more times, so that the total number of insertions is bounded above by bn/(b-1), which is O(n). By using rehashing to maintain n < k, tables using both chaining and open addressing can have unlimited elements and perform successful lookup in a single comparison for the best choice of hash function.
+
+In more realistic models, the hash function is a random variable over a probability distribution of hash functions, and performance is computed on average over the choice of hash function. When this distribution is uniform, the assumption is called "simple uniform hashing" and it can be shown that hashing with chaining requires Θ(1 + n/k) comparisons on average for an unsuccessful lookup, and hashing with open addressing requires Θ(1/(1 – n/k)).[22] Both these bounds are constant, if we maintain n/k < c using table resizing, where c is a fixed constant less than 1.

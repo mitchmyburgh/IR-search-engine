@@ -1,0 +1,88 @@
+A machine learning approach to sentiment analysis
+in multilingual Web texts
+Erik Boiy Æ Marie-Francine Moens
+
+
+1 Introduction
+Automatic sentiment analysis regards the extraction of a sentiment from an unstructured
+source such as text, images or audio. The recognized sentiments can be classified as
+positive or negative, or a more fine grained sentiment classification scheme can be used.
+Sentiment analysis of text, also called opinion mining, only recently received a large
+interest from the academic community and commercial companies. What people write on
+persons, products or institutions has an important value in our society and the World Wide
+Web is an excellent source of such information.
+The automatic analysis of sentiments on data found on the World Wide Web is useful
+for any company or institution caring about quality control. For the moment, getting user
+feedback means bothering him or her with surveys on every aspect the company is
+interested in. Making a survey for each product or feature, designing the format, distribution
+and timing of the survey (sending a form right after purchase might not be very
+informative), and the reliance on the goodwill of people to take the survey are expensive
+and time-consuming tasks, yielding not always accurate results. Surveying by means of
+questionnaires can be made obsolete by gathering such information automatically from the
+World Wide Web. One of the sources are blogs (short for ‘‘web logs’’), a medium through
+which the blog owner makes commentaries about a certain subject or talks about his or her
+personal experiences, inviting readers to provide their own comments. Other sources are
+customer review sites and electronic discussion boards or forums, where people can discuss
+all kinds of topics, or ask for other people’s opinions.
+There are several additional advantages to automated sentiment analysis. First, the
+people who share their views usually have more pronounced opinions than average. These
+opinions are additionally influencing others reading them, leading to so-called word-ofmouth
+marketing. Extracting these opinions is thus extra valuable. Second, opinions are
+extracted in real-time, allowing for quicker response times to market changes and for
+detailed time-based statistics that make it possible to plot trends over time. Last, but not
+least in information retrieval opinion mining assists in discriminating opinionated documents
+from documents that present the information in a neutral way.
+This article presents our experiments with regard to sentiment analysis in blog, review
+and forum texts found on the World Wide Web and written in English, Dutch and French.
+We are interested in the feelings that people express with regard to certain consumption
+products. We learn several classification models from a set of examples that are manually
+annotated, more specifically, from sentences that are annotated as positive, negative or
+neutral with regard to a certain entity of interest. We define an entity as the non-abstract
+subject matter of a conversation or discussion, e.g., a movie or a new car model, towards
+which the writer can express his or her views. The classification models can be configured
+in a cascaded pipeline. We have to deal with several problems, such as the noisy character
+of the input texts, the attribution of the sentiment to a particular entity, and the small size of
+the training set. In addition, we study problems of the portability of the learned models
+across domains and languages.
+This article is organized as follows. We start with a section on related research, which
+allows us to more sharply define our problem definition and research focus. Then, we
+discuss our methodology including feature selection, particularities of each language
+considered, machine learning, cascaded and aggregated learners, and finally active learning.
+The next sections regard our experiments. We describe our corpora, the evaluation
+measures used, the results, and their discussion. The two last sections respectively give
+ideas for future research and the main conclusions.
+
+8 Conclusions
+We performed a large number of experiments to gain insights into sentiment classification
+of sentences or statements in blogs, consumer reviews and news forums, written in English,
+Dutch and French. The problem was to accurately classify the sentences according to the
+sentiment classes ‘‘positive’’, ‘‘negative’’ and ‘‘neutral’’ that is expressed with regard to an
+entity of interest in a setting where a rather limited number of annotated training examples
+are available and the texts are often not well-formed. The integrated approach combining
+methods from information retrieval, natural language processing and machine learning
+yielded good results given the difficulty of the task.
+It was found that unigram features augmented with a limited number of languagespecific
+features yield accuracy results of ca. 83, 70 and 68% when classifying the English,
+Dutch and French Web data, respectively, according to sentiment, and slightly improve a
+baseline classification which only uses unigrams. A cascaded approach that reserves the
+computation of expensive features to a subset of the sentences further down in the cascade
+on its turn could only slightly positively influence accuracy and F-measures, but allowed to
+test a number of hypotheses. Among them, we found that the performance is increased by
+first filtering neutral sentences when sufficient training examples are available, before
+applying the sentiment classification algorithms. In the literature this first filtering was
+found useful when classifying complete review documents, and our tests confirm this
+finding for classifying individual sentences. Incorporating a layer in the cascade where
+expensive parse features are used, improved the performance for classifying sentences in
+which sentiments are expressed towards different entities.
+Sparsity of training examples was an important cause of errors, which is especially
+severe in case the language of the sentences diverges largely from formal language (as is
+the case for French blogs). Labeling training examples is a tedious task, but techniques of
+active learning can certainly contribute here. Active learning, especially when combining
+several methods, provides a small, but noticeable improvement in average F-measures over
+randomly selecting examples for labeling. This makes it possible to arrive to similar results
+while annotating less examples, or to obtain better results when labeling the same amount.
+Another beneficial property of active learning is the reduction in the selection of redundant
+examples and the search for examples of a specific sentiment class. We observed that data
+that was crawled from the Web contains many duplicate or near-duplicate examples. As
+the sentiment analysis might be extended to include new domains and different languages,
+even a small benefit here is very valuable.

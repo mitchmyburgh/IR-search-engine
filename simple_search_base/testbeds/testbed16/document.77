@@ -1,0 +1,17 @@
+GETTING READY FOR THE CLOUD
+
+by Ben Grubin
+
+Whether you have a handful of applications of thousands of them, if some are not already running the cloud the idea has likely been discussed. Most people agree there are large numbers of applications that should be relatively easy to migrate to cloud infrastructure, yet most still haven’t made the jump to cloud. Why?
+
+A few years ago, I remember writing about the immaturity of public cloud services. My thinking then was that building a private cloud and migrating your applications to it internally would build institutional knowledge (capabilities, policies, experience, etc) necessary for migrating and operating applications in the a public cloud while radically simplifying storage and network issues. These days most companies still haven’t made it that far even though the maturity of public cloud has grown by leaps and bounds. In fact, public cloud maturity has come so far that the question has become not whether to migrate applications to the public cloud, but how many and to which cloud?
+
+In hindsight, it’s pretty easy to see that leaping into cloud (private OR public) a few years ago was a pretty risky and expensive proposition. Most enterprises made the right choice when they elected to sit tight, leverage virtualization to reduce wasted hardware and consolidate data centers (or at least reduce the growth of hardware), and keep a weather eye on this “cloudy” stuff. But now, with a maturing IaaS cloud market, is it time to jump in?
+
+Sorta.
+
+While public clouds are maturing, the question of which public cloud can be tricky. Yes, Amazon AWS currently has the lion’s share of the market, but the lower left corner of the Gartner Magic Quadrant for IaaS is very crowded, with new entrants daily. Furthermore, some IT behemoths are just piling into this market: see Tuesday’s announcement that Oracle is launching the Oracle Compute Cloud, intended as a competitive platform to AWS.
+
+The answer may be to optimize your application for IaaS portability, rather than for a specific cloud environment. For example, decoupling services from the core application both helps an application become easier to scale horizontally, and frees you to change out underlying technologies in those services (like moving from sending your own email to using Amazon’s Simple Email Service).
+
+Making your applications ready for the cloud now positions you to take greater advantage of the growing diversity of the public cloud ecosystem. Tackling changes today will make it a lot easier to move your apps when the time is right.

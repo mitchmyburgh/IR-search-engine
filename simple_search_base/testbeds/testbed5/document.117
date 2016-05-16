@@ -1,0 +1,54 @@
+Embeddable languages[edit]
+In source code[edit]
+Source embeddable languages embed small pieces of executable code inside a piece of free-form text, often a web page.
+
+Client-side embedded languages are limited by the abilities of the browser or intended client. They aim to provide dynamism to web pages without the need to recontact the server.
+
+Server-side embedded languages are much more flexible, since almost any language can be built into a server. The aim of having fragments of server-side code embedded in a web page is to generate additional markup dynamically; the code itself disappears when the page is served, to be replaced by its output.
+
+Server side[edit]
+PHP
+VBScript
+SMX – dedicated to web pages
+WebDNA – dedicated to database-driven websites
+The above examples are particularly dedicated to this purpose. A large number of other languages, such as Erlang, Scala, Perl and Ruby can be adapted (for instance, by being made into Apache modules).
+
+Client side[edit]
+ActionScript
+Java
+JavaScript
+ECMAScript
+JScript
+VBScript (Windows only)
+In object code[edit]
+A wide variety of dynamic or scripting languages can be embedded in compiled executable code. Basically, object code for the language's interpreter needs to be linked into the executable. Source code fragments for the embedded language can then be passed to an evaluation function as strings. Application control languages can be implemented this way, if the source code is input by the user. Languages with small interpreters are preferred.
+
+AngelScript
+Ch
+EEL
+Io
+Julia
+Lua
+MiniD
+Python
+Ruby (via mruby)
+Squirrel
+Tcl
+Educational languages[edit]
+Main article: List of educational programming languages
+Languages developed primarily for the purpose of teaching and learning of programming.
+
+Alice
+Blockly
+Blue
+COMAL
+Elan
+Logo
+KTurtle
+Modula-2
+Pascal
+Scheme
+Scratch
+Snap!
+Turing
+Wolfram Language

@@ -1,0 +1,17 @@
+Proof of asymptotic bounds[edit]
+A red black tree which contains n internal nodes has a height of O(log n).
+Definitions:
+•	h(v) = height of subtree rooted at node v
+•	bh(v) = the number of black nodes (not counting v if it is black) from v to any leaf in the subtree (called the black-height).
+Lemma: A subtree rooted at node v has at least   internal nodes.
+Proof of Lemma (by induction height):
+Basis: h(v) = 0
+If v has a height of zero then it must be null, therefore bh(v) = 0. So:
+ 
+Inductive Step: v such that h(v) = k, has at least   internal nodes implies that   such that h( ) = k+1 has at least   internal nodes.
+Since   has h( ) > 0 it is an internal node. As such it has two children each of which have a black-height of either bh( ) or bh( )-1 (depending on whether the child is red or black, respectively). By the inductive hypothesis each child has at least   internal nodes, so   has at least:
+ 
+internal nodes.
+Using this lemma we can now show that the height of the tree is logarithmic. Since at least half of the nodes on any path from the root to a leaf are black (property 4 of a red–black tree), the black-height of the root is at least h(root)/2. By the lemma we get:
+ 
+Therefore, the height of the root is O(log n).

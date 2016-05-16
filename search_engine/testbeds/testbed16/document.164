@@ -1,0 +1,48 @@
+Transforming into a Mobile Cloud Services Provider
+
+
+750pts
+
+Dan Kurschner - February 21, 2016 - 0 Comments 
+
+Mobile network operators face interesting challenges today. Their customers have fully embraced the digital world, and that digital world keeps expanding. Most individuals have multiple devices, and more “things” are getting connected each day. However, for the most part, revenues for the Mobile operator remain flat. Many of the applications and services used are provided by over the top (OTT) cloud services providers. Many of these OTT services are content heavy which require the mobile operator to continue building out the network – without increasing (you guessed it) revenue. Not the best business model. However, Mobile operators are run by smart people. They know that to increase revenue and profit margins they need to expand into new markets and compete with the cloud services providers.
+
+12
+
+But here is another conundrum; Mobile operators must provide Telco-grade (that’s 99.999% up time) networks with connectivity everywhere. The big cloud service companies have a different model. They build data centers – or lease rack space – close to their major customers. These data centers only need to provide 99.9% up time. You do the math. In addition, the cloud providers are very agile and flexible. There customers can make changes to their services every few weeks – no problem. Not so easy in the Mobile operator environment.
+
+So how can a Mobile network operator strike a balance between Telco-grade networks with Cloud-like efficiencies? I am so glad you asked.
+
+Introducing Cisco Ultra Services Platform
+
+Cisco Ultra Services Platform is a reinvention of what we may call the Services Core; that is those functions of the Evolved Packet Core (EPC), the Gi-LAN, Policy management, and services. Cisco Ultra Services Platform is open, fully virtualized and automated. But the real news is that Cisco Ultra enables the industry’s first Distributed SDN Architecture. Let me explain. While there are virtualized (NFV) packet cores and such they don’t truly embrace the full capabilities of SDN. Cisco took their industry leading StarOS and modified it so that you have your Control Plane (MME, SAEGW-Control, Policy, etc.) in a centralized data center and we really modified the user plane. The user plane is now an SDN forwarding function that can handle the 3GPP GTP protocols and IP. This is tied with dynamic service chaining and the services. This user plane can all be implemented in remote data centers closer to your customers. Like the cloud providers, the remote data centers can be operator-owned, leased Rackspace, or even positioned in their enterprise customer’s data center.
+
+3
+
+What about managing the complexities of a fully virtualized platform and services you ask. Cisco provides the automation. Cisco Ultra acts as a single Virtual Network Function (VNF) and we have created a special element management system (EMS) with a Graphical User Interface (GUI). The operator simple clicks on the functions and services required and clicks the implement button. The system creates, tests, verifies and activates the new service in minutes.
+
+Cisco Ultra also supports Network Slicing, so the operator can create customized network services for their customers. Enterprise, MVNO, IoT, special events all can have special network and service constructs created in minutes.
+
+Additionally, Cisco Ultra has the ability to maintain telco-grade reliability in this SDN distributed architecture. We leverage our industry leading fast-failover from StarOS (no dropped sessions), our Network Services Load Balancer (NSLB) and Policy manager. The result is that if a remote data center fails, the system can quickly and intelligently balance the traffic over the other data centers – without user experience impact.
+
+The many benefits of this unique platform is that the mobile operator can have the efficiency, agility and flexibility like a cloud provider while still delivering telco-grade reliability.   TCO can be reduce by up to 53%, backhaul by up to 50%, new services created in minutes with the click of your mouse button.
+
+4
+
+And last but not least, Cisco Ultra is 5G ready – today. This is important because 5G is only a few years away and any new platform you implement today had better be able to support those requirements. Industry 5G requirements that Cisco Ultra supports include:
+
+5
+
+Cisco Ultra Services Platform is the industry’s first fully virtualized, SDN Services Core. Cisco can help you transform your business into a Mobile Cloud Services Provider. You can learn more about Cisco Ultra Services Platform by visiting our site.
+
+Also, please come and see us at Mobile World Congress in Barcelona (February 22 to 25) in Hall 3 at stand #3E30. We will have a live demonstration of Cisco Ultra and many other solutions.
+
+You can also see Cisco Ultra Services Platform at Deutsche Telekom’s booth as they demonstrate SDN-enabled distributed architectures and ultra-high availability, with auto-failover between remote data centers. Stand #3K30.
+
+And please visit our SKT as they demonstrate Cisco Ultra Services Platform illustrating Gi-LAN functionality within a software-defined mobility architecture. The demo includes intelligent traffic detection and steering at minimal cost-per-session. Stand #3H10.
+
+And don’t miss as Orange opens the door to their Proof of Concept lab to unveil advanced virtualization built with solutions from multiple vendors, including the new Cisco Ultra Services Platform providing a transformational cloud services environment – including Ultra-high reliability.  Stand #5A61.
+
+Tags:
+5Gcisco ultraEMSIoTmwcnetwork slicingNFVSDNService Providerultra services platformvirtual network functionvirtualization
+Leave a comment

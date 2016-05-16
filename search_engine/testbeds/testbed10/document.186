@@ -1,0 +1,91 @@
+Support Vector Machine for Classification
+of Voltage Disturbances
+
+Peter G. V. Axelberg, Irene Yu-Hua Gu, Senior Member, IEEE, and Math H. J. Bollen
+
+I. INTRODUCTION
+OVER the past two decades utilities worldwide have gone
+through radical changes. One big change is the deregulation
+of the energy market that has taken place in a number of
+countries worldwide. Another change is that today’s customers
+are more demanding than customers in the past. These changes
+have forced the utilities to become even more customer-oriented
+where high network reliability and good power quality
+have been increasingly important to keep customers satisfied.
+Therefore, recording and analyzing voltage disturbances (also
+referred to as voltage events) and power quality abnormalities
+have become a vital issue in order to better understand the
+behavior of the power network. Disturbance data and power
+quality data have become important information both for statistical
+purposes and as a decision-making document in mitigation
+projects. Reliable disturbance and power quality information
+also open up for proactive maintenance approach with focus on
+increasing the power network reliability. Today most of the disturbance
+data is analyzed manually by specialists. However, a
+lot of time could be saved if unimportant or minor disturbances could be removed or classified automatically. Thereby, the specialists
+could focus on solving more sophisticated disturbance
+problems. This requires the development of robust automatic
+classification systems. A number of works based on different
+techniques for detection and classification of power quality phenomena
+have been published over the past years. Theoretical
+foundations of voltage disturbances are for example described
+in [1], [2]. Classification methods of power quality disturbances
+based on wavelet analysis are reported in [3] and [4], based
+on the statistical maximum-likelihood method in [5] and a
+rule-based expert system in [6]. Another powerful technique
+is based on artificial intelligence (AI) and machine learning.
+Examples of work related to this subject and implementations
+based on neural-networks are described in [7]–[10]. During the
+last few years yet another classification method—the support
+vector machine (SVM)—has been increasingly popular due
+to its interesting theoretical and practical characteristics. The
+SVM which is based on statistical learning theory is a general
+classification method and its theoretical foundation is described
+in [11] and [12]. Applications within power delivery and power
+systems using SVM are for example reported in [13]–[15].
+However before the SVM algorithm (or any other classification
+method) becomes attractive to implement commercially it
+must be able to be pretrained from factory and fed with global
+settings. It is not realistic that the customer itself should be
+responsible to train the SVM before it can be used.
+Motivated by this, the aim of this work was to investigate
+the performance of a SVM classifier used for classification of
+the most common voltage disturbances when training data and
+testing data originate from different sources. Data originating
+both from real power networks and from synthetic data were
+used in the experiments. The remaining part of the paper is organized as follows.
+Section II gives a brief overview of the theory of support vector
+machines. Section III discusses power network disturbances
+and feature extraction philosophies used to characterize different
+disturbance types. Section IV describes the proposed
+SVM-based classification system. In Section V, the conducted
+experiments are described and the results evaluated. Finally,
+conclusions are given in Section VI.  
+
+
+VI. CONCLUSION
+This paper proposes a novel method based on the SVM algorithm
+for classification of common types of voltage disturbances.
+The results from the conducted experiments have shown
+high classification accuracy, implying that the SVM classification
+technique is an attractive choice for classification of this
+type of data.
+The accuracy of the proposed method is also dependent on the
+selected features used for the classifier. The work described in
+this paper has shown that by using features extracted both from
+time-domain and frequency-domain, the SVM classifier yields
+high performance. The proposed classifier is shown to be effective
+by using individually trained SVMs as nodes in a binary
+decision tree for multiple class classification. The advantage is that it is straight forward to extend the system when new types
+of disturbances are added to the classifier.
+In this work, data were used from two different power networks
+as well as synthetic data in order to evaluate the performance
+of the SVM classifier. High performance was achieved
+when the training data were originated from the power network
+and slightly less accuracy was achieved when the classifier was
+trained on synthetic data. However, by adding training data originated
+from a real power network to the synthetic training data
+set, the classification performance increased significantly. From
+an implementation standpoint, it is highly demanded that the
+classifier is based purely on synthetic data since synthetic data
+are easier to obtain as compared to real data

@@ -1,0 +1,25 @@
+﻿NLP Techniques for Term Extraction and
+Ontology Population
+Diana MAYNARD
+1
+, Yaoyong LI and Wim PETERS
+Dept. of Computer Science, University of Sheffield, UK
+Abstract.
+This chapter investigates NLP techniques for ontology population, using a combination of rule-based approaches and machine learning. We describe a method for
+term recognition using linguistic and statistical techniques, making use of contextual information to bootstrap learning. We then investigate how term recognition
+techniques can be useful for the wider task of information extraction, making use
+of similarity metrics and contextual information. We describe two tools we have
+developed which make use of contextual information to help the development of
+rules for named entity recognition. Finally, we evaluate our ontology-based information extraction results using a novel technique we have developed which makes
+use of similarity-based metrics first developed for term recognition.
+Keywords.
+information extraction, ontology population, term recognition,
+1. Introduction
+In semantic web applications, ontology development and population are tasks of
+paramount importance. The manual performance of these tasks is labour- and therefore
+cost-intensive, and would profit from a maximum level of automation. For this purpose,
+the identification and extraction of terms that play an important role in the domain under
+consideration, is a vital first step.
+Automatic term recognition (also known as term extraction) is a crucial component
+of many knowledge-based applications such as automatic indexing, knowledge discovery, terminology mining and monitoring, knowledge management and so on. It is particularly important in the healthcare and biomedical domains, where new terms are emerging
+constantly.

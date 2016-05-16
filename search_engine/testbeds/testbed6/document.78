@@ -1,0 +1,52 @@
+19.5 Topological Sort
+A topological ordering of a directed graph G is a total order ≺ on the vertices such that u ≺ v
+for every edge uv. Less formally, a topological ordering arranges the vertices along a horizontal
+line so that all edges point from left to right. A topological ordering is clearly impossible if the
+graph G has a directed cycle—the rightmost vertex of the cycle would have an edge pointing to
+the left! On the other hand, every dag has a topological order, which can be computed by either
+of the following algorithms.
+4
+Algorithms Lecture 19: Depth-First Search [Fa’14]
+TopologicalSort(G) :
+n ← |V|
+for i ← 1 to n
+v ← any source in G
+S[i] ← v
+delete v and all edges leaving v
+return S[1 .. n]
+TopologicalSort(G) :
+n ← |V|
+for i ← n down to 1
+v ← any sink in G
+S[1] ← v
+delete v and all edges entering v
+return S[1 .. n]
+The correctness of these algorithms follow inductively from the observation that deleting a
+vertex cannot create a cycle.
+This simple algorithm has two major disadvantages. First, the algorithm actually destroys the
+input graph. This destruction can be avoided by simply marking the “deleted” vertices, instead
+of actually deleting them, and defining a vertex to be a source (sink) if none of its incoming
+(outgoing) edges come from (lead to) an unmarked vertex. The more serious problem is that
+finding a source vertex seems to require Θ(V) time in the worst case, which makes the running
+time of this algorithm Θ(V
+2
+). In fact, a careful implementation of this algorithm computes a
+topological ordering in O(V + E) time without removing any edges.
+But there is a simpler linear-time algorithm based on our earlier algorithm for deciding
+whether a directed graph is acyclic. The new algorithm is based on the following observation:
+Lemma 3. For any directed acyclic graph G, the first vertex marked Done by IsAcyclic(G) must be
+a sink.
+Proof: Let v be the first vertex marked Done during an execution of IsAcyclic. For the sake of
+argument, suppose v has an outgoing edge vw. When IsAcyclicDFS first considers the edge
+vw, there are three cases to consider.
+• If status(w) = Done, then w is marked Done before v, which contradicts the definition of
+v.
+• If status(w) = New, the algorithm calls TopoSortDFS(w), which (among other computation)
+marks w Done. Thus, w is marked Done before v, which contradicts the definition of
+v.
+• If status(w) = Active, then G has a directed cycle, contradicting our assumption that G is
+acyclic.
+In all three cases, we have a contradiction, so v must be a sink. 
+Thus, to topologically sort a dag G, it suffice to list the vertices in the reverse order of being
+marked Done. For example, we could push each vertex onto a stack when we mark it Done, and
+then pop every vertex off the stack.

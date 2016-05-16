@@ -1,0 +1,61 @@
+A database engine (or storage engine) is the underlying software component that a database management system (DBMS) uses to create, read, update and delete (CRUD) data from a database. Most database management systems include their own application programming interface (API) that allows the user to interact with their underlying engine without going through the user interface of the DBMS.
+The term "database engine" is frequently used interchangeably with "database server" or "database management system". A 'database instance' refers to the processes and memory structures of the running database engine.
+
+
+== Storage engines ==
+Many of the modern DBMS support multiple storage engines within the same database. For example, MySQL supports InnoDB as well as MyISAM.
+Some storage engines are transactional.
+Additional engine types include:
+Embedded database engines
+In-memory database engines
+
+
+== Design considerations ==
+Database bits are laid out in storage in data structures and groupings that can take advantage of both known effective algorithms to retrieve and manipulate them and the storage own properties. Typically the storage itself is designed to meet requirements of various areas that extensively utilize storage, including databases. A DBMS in operation always simultaneously utilizes several storage types (e.g., memory, and external storage), with respective layout methods.
+In principle the database storage can be viewed as a linear address space, where every bit of data has its unique address in this address space. In practice, only a very small percentage of addresses are kept as initial reference points (which also requires storage); most data is accessed by indirection using displacement calculations (distance in bits from the reference points) and data structures which define access paths (using pointers) to all needed data in an effective manner, optimized for the needed data access operations.
+
+
+=== Database storage hierarchy ===
+A database, while in operation, resides simultaneously in several types of storage, forming a storage hierarchy. By the nature of contemporary computers most of the database part inside a computer that hosts the DBMS resides (partially replicated) in volatile storage. Data (pieces of the database) that are being processed/manipulated reside inside a processor, possibly in processor's caches. These data are being read from/written to memory, typically through a computer bus (so far typically volatile storage components). Computer memory is communicating data (transferred to/from) external storage, typically through standard storage interfaces or networks (e.g., fibre channel, iSCSI). A storage array, a common external storage unit, typically has storage hierarchy of it own, from a fast cache, typically consisting of (volatile and fast) DRAM, which is connected (again via standard interfaces) to drives, possibly with different speeds, like flash drives and magnetic disk drives (non-volatile). The drives may be connected to magnetic tapes, on which typically the least active parts of a large database may reside, or database backup generations.
+Typically a correlation exists currently between storage speed and price, while the faster storage is typically volatile.
+
+
+=== Data structures ===
+
+A data structure is an abstract construct that embeds data in a well defined manner. An efficient data structure allows to manipulate the data in efficient ways. The data manipulation may include data insertion, deletion, updating and retrieval in various modes. A certain data structure type may be very effective in certain operations, and very ineffective in others. A data structure type is selected upon DBMS development to best meet the operations needed for the types of data it contains. Type of data structure selected for a certain task typically also takes into consideration the type of storage it resides in (e.g., speed of access, minimal size of storage chunk accessed, etc.). In some DBMSs database administrators have the flexibility to select among options of data structures to contain user data for performance reasons. Sometimes the data structures have selectable parameters to tune the database performance.
+Databases may store data in many data structure types. Common examples are the following:
+ordered/unordered flat files
+hash tables
+B+ trees
+ISAM
+heaps
+
+
+=== Data orientation and clustering ===
+In contrast to conventional row-orientation, relational databases can also be column-oriented or correlational in the way they store data in any particular structure.
+In general, substantial performance improvement is gained if different types of database objects that are usually utilized together are laid in storage in proximity, being "clustered". This usually allows to retrieve needed related objects from storage in minimum number of input operations (each sometimes substantially time consuming). Even for in-memory databases clustering provides performance advantage due to common utilization of large caches for input-output operations in memory, with similar resulting behavior.
+For example it may be beneficial to cluster a record of an "item" in stock with all its respective "order" records. The decision of whether to cluster certain objects or not depends on the objects' utilization statistics, object sizes, caches sizes, storage types, etc.
+
+
+=== Database indexing ===
+
+Indexing is a technique some storage engines use for improving database performance. The many types of indexes share the common property that they reduce the need to examine every entry when running a query. In large databases, this can reduce query time/cost by orders of magnitude. The simplest form of index is a sorted list of values that can be searched using a binary search with an adjacent reference to the location of the entry, analogous to the index in the back of a book. The same data can have multiple indexes (an employee database could be indexed by last name and hire date).
+Indexes affect performance, but not results. Database designers can add or remove indexes without changing application logic, reducing maintenance costs as the database grows and database usage evolves. Indexes can speed up data access, but they consume space in the database, and must be updated each time the data is altered. Indexes therefore can speed data access but slow data maintenance. These two properties determine whether a given index is worth the cost.
+
+
+== See also ==
+Btrieve's Micro-Kernel Database Engine
+Berkeley DB
+c-treeACE Database Engine
+FLAIM Database Engine
+Microsoft Jet Database Engine
+MySQL Cluster, on the NDB storage engine of MySQL
+NuoDB
+
+
+== References ==
+
+
+== External links ==
+http://dev.mysql.com/tech-resources/articles/storage-engine/part_3.html
+MySQL Administrator's Bible Chapter 11 "Storage Engines"

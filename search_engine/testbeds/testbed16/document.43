@@ -1,0 +1,58 @@
+Cloud File Sharing: Big Rewards — and Big Risks
+
+February 17, 2016/in CASB /by Sundaram Lakshmanan
+Nearly every business runs 24×7 these days. Employees Cloud_file_sharing_risks_rewardsneed to be able to access corporate documents even when they’re not at the office. Projects can’t succeed without a collaborative effort across internal and external participants.
+
+So companies need ways to make file sharing both easy and safe. Cloud collaboration is easy, and employees love it: they can access files from anywhere, apps provide intuitive interfaces for mobile access, and the sign-on process is simple. From the enterprise perspective, though, the benefits experienced by employees are countered by the risks of human error whether posting sensitive files to public folders or applying permissions to a file incorrectly. And enterprises have an overarching concern that cloud-based services are now both a target for attackers and vector for spreading malware into an organization.
+
+Cloud Access Security Brokers (CASB) Can Help
+
+Cloud access security brokers (CASBs) allow companies to apply corporate security policies to file sharing in the cloud. Employees will adopt cloud-based file sharing with or without IT approval so it is important to review why traditional approaches don’t safeguard corporate data in the cloud.
+
+Conventional Security Focuses on Keeping Data Safe Inside the Network
+
+Traditional security products focus on protection and control within the corporate network. Let’s review the issues:
+
+Best of breed products like Secure Web Gateways (SWG) and Next Generation Firewalls (NGFW) don’t have visibility into all traffic, all the time
+SWG and NGFW don’t have the ability to enforce controls on traffic that does not traverse the companies network
+Conventional approaches can’t monitor what is happening in the cloud when providers use certificate pinning or mutual certificate authentication to encrypt traffic between the client app and the cloud — this makes it impossible for the enterprise to inspect this traffic
+Most importantly, files can be shared anytime after they are moved to the cloud. No controls within the corporate network can enforce file sharing rules once the content resides in the cloud.
+
+In addition, traditional data loss prevention (DLP) tools are limited, lacking the visibility and controls required for cloud-based file sharing and:
+
+Traditional DLP lacks visibility into encrypted traffic
+Traditional DLP can be intrusive and limited — typically they only support blocking sensitive data from leaving the network or deleting these files if found
+Traditional DLP doesn’t support secure collaboration controls — enforcing rules after the file is allowed into the cloud
+Files are passed around to many users once they’ve been uploaded to the cloud. An authorized external user may pass a file to a vendor they work with but the company that owns the information will not be able to control the external user.
+
+Ultimately, there’s no way for an enterprise to know where the shared file ends up or who has access to it using traditional approaches.
+
+CASB Focuses on Keeping Data Safe and Supporting Collaboration – Here’s How
+
+CASBs address the limitations of traditional SWG, NGFW and DLP, enabling users to work with files securely in the cloud and providing protection even when shared after initially sending files to the cloud.
+
+Deep Visibility and Monitoring
+A CASB should monitor activity in the cloud continuously. This includes continuous and deep monitoring of:
+
+Cloud user activity including login patterns and devices used
+Privileged activities of cloud application administrators
+Content activity including sharing and access permissions
+Changes in security settings for all aspects of the cloud application
+CASBs monitor the sharing permissions assigned to a file stored in the cloud and take action if settings are altered inappropriately.
+
+Policy-Based Data Security and Compliance
+
+Protecting sensitive files with strong encryption is a critical capability that should be supported within a CASB, but applying encryption wholesale only interferes with the user’s ability to collaborate. CASBs should approach protecting sensitive data by:
+
+Carefully monitoring users and content, applying compliance scanning for data loss prevention and then offer…
+Multiple options for remediation of compliance violations like file replacement, blocking, quarantine, self-remediation and file deletion and then…
+Encrypt files that are authorized to remain in the cloud but require the highest levels of protection
+Finally, ensuring that encryption keys remain within the enterprise and not shared with third parties ensures that even if a file gets into unauthorized hands the file can’t be read.
+
+And with continuous monitoring of cloud usage, CASBs also provide a full audit trail across clouds, which is required for effective corporate governance and compliance with government regulations and industry standards.
+
+ Threat Protection
+
+CASBs monitor files for malware, but threats go beyond malware. CASBs observe how the data is used and can identify unusual usage patterns that might indicate a threat. These threats don’t just originate from external sources; an employee planning to leave can take corporate data with them by transferring large numbers of files out of the cloud. CASBs alert the company to anomalous behaviors and can take actions to prevent data theft.
+
+The controls offered by a CASB are so critical that Gartner predicts that 85 percent of companies will use a CASB by 2020. Through using a CASB, companies gain a full spectrum of data protection, including visibility, policy-driven data security and threat protection. CASBs allow corporate policies to be applied consistently against data wherever it is located. To learn more about how a CASB can support safe file sharing in your organization, register for the on-demand webinar, “3 Steps to Making CASB Work for You”.

@@ -1,0 +1,34 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Numerical integration
+We begin by considering the general problem of computing an integral in 1D. Suppose we wish to integrate a function f(x) from 0 to D: S =Z D 0 f(x)dx (93) Visually, this corresponds to computing the area under a curve. Recall the de?nition of the integral. We can break the real line into a set of intervals centered at uniformly-spaced points x1,...,xN. We can then de?ne one rectangle on each interval, each width D/N and height f(xi). The total area
+Copyright c
+2005 David Fleet and Aaron Hertzmann 93
+CSC418 / CSCD18 / CSC2504 Distribution Ray Tracing
+of these rectangles will be approximately the same as the area under the curve. The area of each rectangle is f(xi)D/N, and thus the total area of all rectangles together is:
+SN =
+D NX i
+f(xi) (94)
+Hence, we can use SN as an approximation to S. Moreover, we will get more accuracy as we increase the number of points: lim N?8 SN = S (95) There are two problems with using uniformly-spaced samples for numerical integration: • Some parts of the function may be much more "important" than others. For example, we don't want to have to evaluate f(x) in areas where it is almost zero. Hence, you need to generate many, many xi values, which can be extremely slow. • Uniformly-spaced samples can lead to aliasing artifacts. These are especially noticable when the scene or textures contain repeated (periodic) patterns. In ray-tracing, each evaluation of f(x) requires performing a ray-casting operation and a recursive call to the shading procedure, and is thus very, very expensive. Hence, we would like to design integration procedures that use as few evaluations of f(x) as possible.
+To address these problems, randomized techniques known as Monte Carlo integration can be used.
+13.3 Simple Monte Carlo integration
+Simple Monte Carlo addresses the problem of aliasing, and works as follows. We randomly sample N values xi in the interval [0,D], and then evaluate the same sum just as before:
+SN =
+D NX i
+f(xi) (96)
+It turns out that, if we have enough samples, we will get just as accurate a result as before; moreover, aliasing problems will be reduced.
+Aside: Formally, it can be shown that the expected value of SN is S. Moreover, the variance of SN is proportional to N, i.e., more samples leads to better estimates of the integral. In the C programming language, the random sampling can be computed as rand() * D.
+Aside: Monte Carlo is a city near France and Italy famous for a big casino. Hence, the name of the Monte Carlo algorithm, since you randomly sample some points and gamble that they are representative of the function.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 94
+CSC418 / CSCD18 / CSC2504 Distribution Ray Tracing
+13.4 Integration at a pixel
+To compute the intensity of an individual pixel, we need to evaluate Equation 92). This is a 2D integral, so we need to determine K 2D points (ai,ßi), and compute:
+Fi,j ˜
+(amax -amin)(ßmax -ßmin) K
+K X i=1
+H(ai,ßi) (97)
+In other words, we pick N points withnin the pixel, cast a ray through each point, and then average the intensities of the rays (scaled by the pixel's area (amax -amin)(ßmax -ßmin). These samples can be chosen randomly, or uniformly-spaced.
+Example: The simplest way to compute this is by uniformly-spaced samples (am,ßn): am = (m-1)?a, ?a = (amax -amin)/M (98) ßn = (n-1)?ß, ?ß = (ßmax -ßmin)/N (99) and then sum: Fi,j ˜ ?a?ß M X m=1 N X n=1 H(am,ßn) (100) However, Monte Carlo sampling - in which the samples are randomly-spaced - will usually give better results.

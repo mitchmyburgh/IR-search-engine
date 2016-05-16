@@ -1,0 +1,7 @@
+Examples of applications[edit]
+Some examples shall illustrate the use of above basic building blocks.
+Sort[edit]
+Main article: Tree sort
+A binary search tree can be used to implement a simple sorting algorithm. Similar to heapsort, we insert all the values we wish to sort into a new ordered data structure—in this case a binary search tree—and then traverse it in order.
+The worst-case time of build_binary_tree is O(n2)—if you feed it a sorted list of values, it chains them into a linked list with no left subtrees. For example,build_binary_tree([1, 2, 3, 4, 5]) yields the tree (1 (2 (3 (4 (5))))).
+There are several schemes for overcoming this flaw with simple binary trees; the most common is the self-balancing binary search tree. If this same procedure is done using such a tree, the overall worst-case time is O(n log n), which is asymptotically optimal for a comparison sort. In practice, the added overhead in time and space for a tree-based sort (particularly for node allocation) make it inferior to other asymptotically optimal sorts such as heapsort for static list sorting. On the other hand, it is one of the most efficient methods of incremental sorting, adding items to a list over time while keeping the list sorted at all times.

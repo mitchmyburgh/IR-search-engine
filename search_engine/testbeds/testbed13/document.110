@@ -1,0 +1,298 @@
+
+
+  *   *   *     * Computing
+    * Mobile
+    * Internet
+    * Gaming
+    * Electronics
+    * Extreme
+    * Deep Dives
+    * Deals
+    * About ExtremeTech
+    * ET Forums
+    * Contact ExtremeTech
+    * Terms of Use
+    * Privacy Policy
+    * Ziff Davis
+
+  * Home
+  * Computing
+  * Quantum computer finally proves its faster than a conventional PC, but only just
+
+# Quantum computer finally proves its faster than a conventional PC, but only
+just
+
+  * By Sebastian Anthony on May 9, 2013 at 7:35 am
+  * Comment
+
+A computer scientist at Amherst College has performed the first ever head-to-
+head speed test between a conventional and quantum computer -- and, you'll be
+glad to hear that the quantum computer won. But only just -- and against a
+conventional computer that's 6,000 times cheaper.
+
+The quantum computer being tested was the D-Wave Two, which packs 439 quantum
+bits (qubits). Ever since D-Wave launched the first commercial quantum
+computer in 2011 -- the 128-qubit, $10 million D-Wave One -- the company has
+faced a lot of criticism from quantum physicists and computer scientists, who
+claim that D-Wave's qubits aren't actually quantum. Over the last year or so,
+thanks to peer-reviewed studies that have explored the D-Wave One's inner
+workings, this criticism has faded.
+
+This new study, from Catherine McGeoch of Amherst College, goes some way to
+confirming the D-Wave Two's quantumness -- but at the same time, her research
+shows that the D-Wave Two is nothing like the real, general-purpose quantum
+computers that should revolutionize the world we live in. D-Wave's quantum
+computers use quantum annealing (a type of adiabatic quantum computation) to
+solve optimization problems -- and really, _only_ optimization problems. A
+true quantum computer, however, should use quantum entanglement.
+
+The D-Wave Two's cryogenic cooling system. There's a qubit chip in there,
+somewhere.
+
+As you probably know, quantum entanglement is incredibly finicky. The current
+state of the art doesn't allow us to harness more than one or two entangled
+qubits for a few microseconds. Quantum annealing, however, can be performed
+with much noisier, lower-quality qubits -- which is why D-Wave has managed to
+produce a 439-qubit system that works outside the lab, in a normal office
+setting. D-Wave's qubit chips still need to be cooled to near-absolute-zero
+(0.02K, -273.13C), though, and the qubits (loops of niobium) are still so
+fickle (affected by external electromagnetic radiation) that each calculation
+is carried out 1,000 times to ensure its accuracy. Despite all this, there's
+still no guarantee that the final solution will be optimal (but it usually
+is).
+
+To perform the quantum vs. conventional computer speed test, three NP-hard
+optimization problems were carried out on a variety of systems: A D-Wave Two
+system containing a Vesuvius 5 chip (439 qubits), Blackbox (a Vesuvius
+5/software hybrid), and three software solvers (CPLEX, METSlib Tabu, Akmaxsat)
+running on an Intel Xeon E5-2690 CPU (under Ubuntu Linux 12.04). The best
+example of NP-hard optimization is the traveling salesman problem, where you
+must devise the shortest route between a given number of destinations. Such
+optimization is computationally very difficult, but it's theorized that
+quantum computers should be able to solve these problems much faster.
+
+The results showed that, where the NP-hard problems could be executed directly
+on the hardware, the D-Wave system is around 4,000 times faster. When Blackbox
+had to be used, to break problems down into chunks that Vesuvius can
+understand, performance tied or bettered the software solvers. The study also
+briefly tested D-Wave's newest chip, the Vesuvius 6, and found that it would
+be around 10,000 times faster than the software solvers.
+
+These results probably pose more questions than they answer, though. We're
+still not entirely sure how D-Wave's chips actually work, and so we have no
+idea if we're using them optimally. We also don't know how the D-Wave chips
+compare to software solvers that use highly optimized simulated quantum
+annealing -- it's possible that the software would be just as fast as the
+hardware. Finally, we must remember that the software was running on a ~$1500
+workstation, while the D-Wave Two, which was recently purchased by Lockheed
+Martin, has a price tag somewhere in the $10+ million range (6666 times more
+expensive). You could build a petaflop-class supercomputer for $10 million --
+and not only would it be faster than the D-Wave Two at NP-hard problems, but
+you could run normal software on it, too!
+
+For more information on the testing methodology, and some (mostly) human
+readable background on what quantum annealing actually is, check out McGeoch's
+research paper [PDF]. McGeoch will present "Experimental Evaluation of an
+Adiabiatic Quantum System for Combinatorial Optimization" at the Association
+for Computing Machinery (ACM) International Conference on Computing Frontiers
+next week, in Italy.
+
+Now read: Chinese physicists measure speed of Einstein’s ‘spooky action at a
+distance’: At least 10,000 times faster than light
+
+### Tagged In
+
+  * hardware
+  * science
+  * components
+  * physics
+  * quantum
+  * quantum computing
+  * qubit
+  * d-wave
+  * quantum annealing
+  * d-wave two
+  * amherst college
+  * adiabatic quantum computation
+
+### Post a Comment Comment
+
+  * Elijah Thomas
+
+And to think that they had me sitting here thinking that a quantum computer
+that did anything awesome, was coming to my office. Ha! I'd be better off
+buying 6,000 PCs because then I wouldn't need liquid nitrogen to cool it.
+
+    * jeremy
+
+Just like mainframes PC's, it will take a while before they get from the full
+room size to the PC size. And also 1000x cheaper.
+
+      * Fromens1987
+
+Just like mainframes PC's, it will take a while before they get from the full
+room size to the PC size. And also 1000x cheaper.
+
+        * Dark Cyberian Knight
+
+You've just shown me how few people actually understand how progress really
+works.
+
+    * https://roamingaroundatrandom.wordpress.com/ Natanael L
+
+With that many computers packed in the same office, you *will* need nitrogen
+cooling.
+
+    * Guest
+
+I suppose both you guys are right.
+
+    * Elijah Thomas
+
+Yeah, you guys are right.
+
+    * http://www.facebook.com/andrew.s.hodge Andrew Steven Hodge
+
+Not liquid nitrogen. That isn't anywhere near cold enough. You need almost
+absolute zero for this to work; waaaayyyy colder than liquid Nitrogen.
+
+    * Marko
+
+You can argue about speed up, benchmarks, or if we have sufficient  
+equipment to accurately test the d-wave. All spin aside, NASA now has  
+an A. I. that is directly experiencing the Multiverse. Exciting times  
+for science for sure.  
+Contacts:  
+Essay writing blog for college students: http://www.buyessayshere.com/  
+FB: https://www.facebook.com/writingcom
+
+  * leonffs
+
+I don't think anyone expects this technology to be readily available nor cost
+effective for quite some time. It took decades for conventional computers to
+make their way from being unwieldly room-sized operations that required teams
+of technicians to single user workstations. It will take more time and way
+more research and funding.
+
+  * jeremy
+
+D-wave can double the number of qubits every year. That makes it MUCH faster
+every year, not just "twice as fast" like in normal PC's. So every year,
+D-wave's quantum computer will be getting orders of magnitude faster - at
+least for that particular task.
+
+    * y666
+
+Unless it runs on "normal" technology. ;)
+
+After all - if they used simple PCs and LM bought one of their products, then
+everything already paid off. It would be sort of hilarious, but not so
+unexpected.
+
+  * http://www.facebook.com/alexander.gromov.984 Alexander Gromov
+
+The future is here. Yet we might as well be living in the past. It could very
+well be 1982 outside - everything of today is already outdated in our minds..
+
+  * y666
+
+Eh, quantum computing… I still put my money on it being bullshit, on behalf
+how it is supposed to magically resolve lot of our NP-hard problems.
+
+Btw, does people in this paper even try to measure scaling of theirs new
+wonder tool? If its really quantum, then it should scale differently with size
+of the problem. Brutal force salesman problem has an exponential scaling,
+scaling of D-Wave solution should be lower. If it isnt, then well… ;)
+
+PS. To those, who thing LM buying this thing means it must be true - nope. LM
+has a ton of cash and dont give a f**k for few million bucks. Their bought it,
+because it _MIGHT_ be true. Now their are disassembling it to see if it works.
+If it does, D-Wave guys are going to be like billions of dollars rich (since
+their baby can break encryption pretty much everyone will try to buy it) or
+dead. If it doesnt, no-one will say a word.
+
+    * edek
+
+For that computer scaling of NP problems is +1 (nearly, there are some
+limitations on qbits number), since it performs calculations on all states
+simultaneously. Standard computers do tasks by recurence, adding one state to
+a task exponentially enlarges the area of calculations.
+
+  * Jewy McJew
+
+It's slow now, but thanks to the nature of quantum mechanics, it's speed
+increases exponentially and in a few years, it could be faster than all the
+computers in the universe combined…
+
+…assuming everything is kosher!
+
+  * Will Dwinnell
+
+"Quantum computer finally proves its faster than a conventional PC, but only
+just"
+
+I wonder how well quantum computing works for grammar checking?
+
+  * Mark
+
+Misleading title. The article says that the new chip is 10,000 times faster on
+the problems it was designed to solve.
+
+  * irenitemi Agbejule
+
+Yeah but can it run windows 8
+
+    * bluelightzero
+
+No
+
+  * Randy McQueef
+
+21st Century snake oil.
+
+  * Mktwice Mktwice
+
+beter nade someth like skynet and neuro connection by iobybyte net cable at
+every house all home's pcs online with neuro software will eat quantum for the
+breakfast
+
+  * Florentin Szomoru
+
+This is only the beginning of quantum technology. More will follow for sure.
+Let's speak again about this in 15 years :)
+
+### ExtremeTech Newsletter
+
+Subscribe Today to get the latest ExtremeTech news delivered right to your
+inbox.
+
+Subscribing to a newsletter indicates your consent to our Terms of Use and
+Privacy Policy.
+
+### More Articles
+
+  * NOAA scientists are exploring the Mariana Trench, and you can watch it live here  _May 4_
+  * Researchers identify autism-linked receptor that initiates synaptic pruning  _May 4_
+  * How Intel lost the mobile market, part 2: the rise and neglect of Atom  _May 4_
+  * Followup to Kickstarter success 3Doodler pen now available for preorder  _May 4_
+  * ET deals: Dell Inspiron 15 5000 15.6-inch 1080p laptop for $699  _May 4_
+
+  * About ExtremeTech
+  * Advertising
+  * Contact ExtremeTech
+
+  * Terms of Use
+  * Privacy Policy
+  * Ziff Davis
+
+  * AdChoices 
+  * 
+
+Use of this site is governed by our Terms of Use and Privacy Policy. Copyright
+1996-2016 Ziff Davis, LLC.PCMag Digital Group All Rights Reserved. ExtremeTech
+is a registered trademark of Ziff Davis, LLC. Reproduction in whole or in part
+in any form or medium without express written permission of Ziff Davis, LLC.
+is prohibited.
+
+unused
+

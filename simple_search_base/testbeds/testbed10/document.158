@@ -1,0 +1,101 @@
+A Comparison of Machine Learning Techniques for
+Phishing Detection
+
+
+Saeed Abu-Nimeh1
+, Dario Nappa2
+, Xinlei Wang2
+, and Suku Nair1
+
+1. INTRODUCTION
+There is no agreed upon definition for phishing. However,
+most definitions agree that the goal of a phishing scam is to
+steal individuals’ personal confidential information [3, 11,
+17]. The media of the attack may vary depending on the
+attack setup. For instance, Pharming is a type of phishing,
+where the attacker misdirects users to fraudulent sites
+or proxy servers, typically through Domain Name System
+(DNS) hijacking or poisoning [3]. In this case an attacker can
+steal victims’ information by acquiring a domain name for
+a website and redirecting that website’s traffic to phishing
+website without sending forged emails. Nevertheless, email
+remains the most favorable vehicle for phishing. The abundance
+of off-the-shelf bulk mailing tools (dubbed as mailers)
+simplifies the job of phishers and help in delivering a huge
+number of emails to a large number of victims.
+Studies show a steady increase in phishing activities as well as the related cost. In 2003 direct phishing-related loss
+to US banks and credit card issuers was estimated by $1.2
+billion which grew to $2 billion in 2005. In January 2007,
+the total number of unique phishing reports submitted to the
+Anti-Phishing Working Group (APWG) was 29, 930. This
+is the highest number of reports recorded by the APWG [3].
+Compared to the previous peak in June 2006, the number of
+submitted reports increased by 5%. Even though there are
+several solutions proposed and implemented for detection
+and prevention of phishing attacks most of them suffer from
+unacceptable levels of false positives or missed detection.
+The contribution of this study is to compare the predictive
+accuracy of six classifiers on a phishing data set. The
+classifiers include Logistic Regression (LR), Classification
+and Regression Trees (CART), Bayesian Additive Regression
+Trees (BART), Support Vector Machines (SVM), Random
+Forests (RF), and Neural Networks (NNet). A data
+set is constructed from 1171 raw phishing emails and 1718
+legitimate emails. In addition, 43 features (variables) are
+used in training and testing the classifiers.
+The rest of the paper is organized as follows: in Section
+2 we discuss related work. In Section 3 we illustrate the
+classification methods used in the study. In Section 4 we
+discuss the data set construction, evaluation metrics, and
+the preliminary setup. In Section 5 we demonstrate our experimental
+studies. The results are presented in Section 6
+and discussed in Section 7. We draw conclusions and motivate
+for future work in Section 8.
+
+8. CONCLUSIONS AND FUTURE WORK
+In the present study we investigated the predictive accuracy
+of six classifiers on a phishing data set. The classifiers
+included Logistic Regression (LR), Classification and Regression
+Trees (CART), Bayesian Additive Regression Trees
+(BART), Support Vector Machines (SVM), Random Forests
+(RF), and Neural Networks (NNet). We constructed a data
+set from 1171 raw phishing emails and 1718 legitimate emails,
+where 43 features were trained and tested to predict phishing
+emails. During training and testing we used 10-foldcross-validation
+and averaged the estimates of all 10 folds
+(sub-samples) to evaluate the mean error rate for all classi-
+fiers.
+The results showed that, when legitimate and phishing
+emails are weighted equally, RF outperforms all other classifiers
+with an error rate of 07.72%, followed by CART, LR,
+BART, SVM, and NNet respectively. NNet achieved the
+worst error rate of 10.73%. Although RF outperformed all
+classifiers, it achieved the worst false positive rate of 08.29%.
+LR had the minimum false positive rate of 4.89%. When
+applying cost-sensitive measures, i.e. penalizing false positives
+9 times more than false negatives, LR outperformed
+all classifiers achieving the minimum weighted error rate of
+03.82% followed by BART, NNet, CART, SVM, and RF respectively.
+However, RF had the worst weighted error rate
+of 05.78% when λ = 9. Further, we compared the area under
+the ROC curve (AUC) for all classifiers. NNet had the
+highest AUC of 0.9448, followed by RF, SVM, LR, BART,
+and CART respectively. Furthermore, we compared false
+negative, precision, recall and f-1 rates for all classifiers.
+We argued that the error rate solely (i.e. penalizing phishing
+and legitimate emails equally) does not provide insight
+into false positives. Also, applying the AUC as a measure by itself might be inefficient to study predictive accuracy of
+a classifier. We suggested using cost-sensitive measures to
+provide more conclusive results about the predictive accuracy
+of classifiers.
+The results motivate future work to explore inclusion of
+additional variables to the data set, which might improve
+the predictive accuracy of classifiers. For instance, analyzing
+email headers has proved to improve the prediction capability
+and decrease the misclassification rate of classifiers
+[24]. Further, we will explore adding the features used in
+[7] and [13] to our data set and will study their effect on
+classifiers’ performance. In addition, we will explore developing
+an automated mechanism to extract new features from
+raw phishing emails in order to keep up with new trends in
+phishing attacks.

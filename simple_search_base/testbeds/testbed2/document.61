@@ -1,0 +1,28 @@
+NEAT Particles is an Interactive evolutionary computation program that enables users to evolve particle systems intended for use as special effects in video games or movie graphics. Rather than being hand-coded like typical particle systems, the behaviors of NEAT Particle effects are evolved by user preference. Therefore, non-programmer, non-artist users may evolve complex and unique special effects in real time. NEAT Particles is meant to augment and assist the time-consuming computer graphics content generation process.
+
+
+== Method ==
+In NEAT Particles, each particle system is controlled by a Compositional pattern-producing network (CPPN), a type of artificial neural network, or ANN. In other words, the usually hand-coded 'rules' of a particle system are replaced by automatically generated CPPNs. The CPPNs are evolved and complexified by NeuroEvolution of Augmenting Topologies (NEAT). A simple, interactive evolutionary computation (IEC) interface enables user guided evolution. In this manner increasingly complex particle system effects are evolved by user preference.
+
+
+== Benefit ==
+The main benefit of NEAT Particles is to decouple particle system creation from programming, allowing unique and interesting effects to be quickly evolved by users without programming or artistic skill. Additionally, it provides a way for content developers to explore the range of possible effects. And finally, it can act as a concept art tool or idea generator, in which novel and useful effects are easily discovered.
+
+
+== Implications ==
+The methodology of NEAT Particles can be applied to generation of other types of content, such as 3D models or programmable shader effects. The most significant implication of NEAT Particles and other Interactive evolutionary computation applications, is the possibility of automated content generation within a game itself, while it is played.
+
+
+== Bibliography ==
+
+
+== See also ==
+Particle system
+NeuroEvolution of Augmenting Topologies
+Interactive evolutionary computation
+Evolutionary art
+
+
+== External links ==
+"Evolutionary Complexity Research Group at UCF" - home of NEAT Particles and other evolutionary complexity research projects
+"NEAT Particles" - latest source code and executable

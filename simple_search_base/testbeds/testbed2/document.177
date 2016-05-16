@@ -1,0 +1,50 @@
+In mathematics, a piecewise linear function is a real-valued function defined on the real numbers or a segment thereof, whose graph is composed of straight-line sections. It is a piecewise-defined function, each of whose pieces is an affine function.
+Usually – but not always – the function is assumed to be continuous; in that case, its graph is a polygonal curve.
+
+
+== Examples ==
+
+The function defined by:
+
+is piecewise linear with four pieces. (The graph of this function is shown to the right.) Since the graph of a linear function is a line, the graph of a piecewise linear function consists of line segments and rays.
+Other examples of piecewise linear functions include the absolute value function, the square wave, the sawtooth function, and the floor function.
+
+
+== Fitting to a curve ==
+
+An approximation to a known curve can be found by sampling the curve and interpolating linearly between the points. An algorithm for computing the most significant points subject to a given error tolerance has been published.
+
+
+== Fitting to data ==
+
+If partitions are already known, linear regression can be performed independently on these partitions. However, continuity is not preserved in that case. A stable algorithm with this case has been derived.
+If partitions are not known, the residual sum of squares can be used to choose optimal separation points.
+A variant of decision tree learning called model trees learns piecewise linear functions.
+
+
+== Notation ==
+
+The notion of a piecewise linear function makes sense in several different contexts. Piecewise linear functions may be defined on n-dimensional Euclidean space, or more generally any vector space or affine space, as well as on piecewise linear manifolds, simplicial complexes, and so forth. In each case, the function may be real-valued, or it may take values from a vector space, an affine space, a piecewise-linear manifold, or a simplicial complex. (In these contexts, the term “linear” does not refer solely to linear transformations, but to more general affine linear functions.)
+In dimensions higher than one, it is common to require the domain of each piece to be a polygon or polytope. This guarantees that the graph of the function will be composed of polygonal or polytopal pieces.
+Important sub-classes of piecewise linear functions include the continuous piecewise linear functions and the convex piecewise linear functions. In general, for every n dimensional continuous piecewise linear function , there is a
+
+such that:
+
+If  is convex as well as continuous, then there is a
+
+such that:
+
+Splines generalize piecewise linear functions to higher-order polynomials, which are in turn contained in the category of piecewise-differentiable functions, PDIFF .
+
+
+== See also ==
+Linear interpolation
+Spline interpolation
+Tropical geometry
+
+
+== Further reading ==
+Apps, P., Long, N., & Rees, R. (2014). Optimal piecewise linear income taxation. Journal of Public Economic Theory, 16(4), 523-545.
+
+
+== References ==

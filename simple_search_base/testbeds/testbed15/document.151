@@ -1,0 +1,69 @@
+﻿
+FROM THE GROUND UP 
+
+In 1985 you didn't purchase CGI software, you wrote it. Abel had a software department with some 25 programmers and they pushed the envelope of CGI software for each and every spot they worked on. 
+
+Some of his programming team later went on to found Wavefront Technologies, the first company to sell off-the-shelf 3D software for the production world. Wavefront was acquired by Silicon Graphics in 1994, and integrated with code from a former competitor, becoming Alias|Wavefront in the process. 
+
+All of the early players in the CGI game were producing spots for broadcast. They offered a unique juxtaposition of forces, as illustrated by the sexy robot story. Television commercials had very high production budgets, as much as a million dollars for a 30 second spot - outrageous at the time - combined with an insatiable thirst for ever more stunning visuals. CGI was the new thing that could deliver these stunning visuals. 
+
+But why would anybody spend $1 million for a television commercial? Because they are going to spend $25 million or more on the air time! Who in their right mind would want to lower the commercial's impact to save a few bucks? 
+
+These outrageous costs subsidized a large software development department that wrote the new software required for each commercial. The previously written software was developed just enough to produce the last commercial, so it always needed to be enhanced for the next. 
+
+There were two problems with this approach: first, it took months to produce a 30 second spot; second, the software was not general purpose. Software was written specifically for a single commercial, and was therefore limited and incomplete. 
+
+These two issues prevented early CGI from being useful for feature films and kept it relegated to the rarified atmosphere of high-end commercials. 
+
+CGI Commercials
+Above and below: Images taken from one of the earliest CGI commercials, "Brilliance" by Ketcham Advertising, 1984.
+CGI Commercials 
+
+
+SUPERCOMPUTERS 
+
+There was another major obstacle to feature film work, and that was the rendering time. At Abel's, the computer room harbored two "super- mini" computers, each with a 1 Megahertz CPU, with 10 megabytes of RAM and a 500 megabyte hard drive. Wow! 
+
+The video resolution images were rendered in upwards of one hour per frame. They were then sent to a RasterTech frame buffer over Ethernet for viewing on a monitor. 
+
+To lay off to videotape, a 1" reel-to-reel videotape machine was rented for the weekend. It was connected to a Lyon-Lamb animation controller that allowed it to lay down one frame of video at a time. 
+
+Since videotape has to be moving to lay down a frame, the Lyon-Lamb controller commanded the tape deck to back up, pre-roll, then do an insert edit for each frame, one frame at a time, for the 900 frames of a 30 second spot. It took almost three hours to lay a 30 second spot off to tape. 
+
+Today, of course, the "Brilliance" spot could be done by a part-time high-school student on a desktop computer in a week. 
+
+From The Last Starfighter
+The Last Starfighter, ©1984 Lorimar Film Entertainment 
+
+
+FROM TV COMMERCIALS TO THE MOVIE SCREEN 
+
+There were some early efforts to use CGI for feature films, but these were mostly brief "cameo" appearances. One of the earliest was the title sequence for "The Black Hole" (1979, Disney) - done by Robert Abel - featuring a wild ride down the throat of a green wireframe black hole. 
+
+Early 3D animations used vectors instead of bitmapped graphics to save rendering time. The Evans and Sutherland PS-300 vector graphics display could play back a wireframe animation in real time, with one limitation: the monitor was monochrome.
+
+To make colored vector graphics, the vectors were separated into color groups - all the red vectors in this file, the green vectors in that file, etc. Then a 35mm camera was parked in front of the PS-300 monitor to film off of it. Add a color wheel with colored gels, and you're ready to go. 
+
+Start at the beginning of the shot, put up the vectors that are to be red, rotate the red gel in front of the camera lens, then shoot the entire shot one frame at a time. 
+
+When done, back the film up to the first frame, call up the green vectors and the green gel, and repeat. 
+
+It worked surprisingly well and several color vector graphic projects were done this way until raster graphics became more practical. 
+
+The first major use of CGI in a feature film was "The Last Starfighter" (1984) by Digital Productions. To render the high resolution images required by a feature film in a reasonable amount of time, Digital Productions used a Cray X-MP supercomputer (cost: $15 million) and used only phong shading - no texture maps. The resulting shiny metal appearance worked well for the shots of spaceships in outer space, which was the only place it was used. It's a marvelous example of working within the limits of the technology. 
+
+Other cameos followed. Examples that come to mind are the stained glass knight in "Young Sherlock Holmes" (1985, Lucasfilm), a brief morph shot in "Willow" (1988, Lucasfilm), and the water weenie in "The Abyss" (1989, ILM). 
+
+CGI Commercials
+A few of the images and commercials created by Robert Abel and Associates at the dawn of CGI 
+
+
+BULLET-TIME: AHEAD OF ITS TIME 
+
+Around 1994 I had another "bolt upright" moment. In this spot a man was leisurely hosing off the side of his car, when suddenly the scene froze and the camera whipped around to the front of the car. 
+
+What I couldn't figure out was how could the water freeze in mid-air like that? If it was CGI, how could it match the camera move? This was years before motion tracking. 
+
+Little did I know it at the time but I had just been dazzled by my first "bullet- time" shot, years before The Matrix made it famous. 
+
+

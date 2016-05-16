@@ -1,0 +1,15 @@
+Interesting Results and Applications[edit]
+A number of interesting applications originally implemented by other methods have been easily implemented using the top tree's interface. Some of them include
+•	([SLEATOR AND TARJAN 1983]). We can maintain a dynamic collection of weighted trees in   time per link and cut, supporting queries about the maximum edge weight between any two vertices in   time.
+•	Proof outline: It involves maintaining at each node the maximum weight (max_wt) on its cluster path, if it is a point cluster then max_wt( ) is initialsed as   When a cluster is a union of two clusters then it is the maximum value of the two merged clusters. If we have to find the max wt between   and   then we do   Expose  and report max_wt 
+•	([SLEATOR AND TARJAN 1983]). In the scenario of the above application we can also add a common weight   to all edges on a given path   · · ·  in   time.
+•	Proof outline: We introduce a weight called extra( ) to be added to all the edges in   Which is maintained appropriately ; split( ) requires that, for each path child  of   we set max_wt(A) := max_wt( ) + extra( ) and extra( ) := extra( ) + extra( ). For   := join(   ), we set max_wt( ) := max {max_wt( ), max_wt( )} and extra( ) := 0. Finally, to find the maximum weight on the path   · · ·  we set   := Expose  and return max_wt( ).
+•	([GOLDBERG ET AL. 1991]). We can ask for the maximum weight in the underlying tree containing a given vertex   in   time.
+•	Proof outline: This requires maintaining additional information about the maximum weight non cluster path edge in a cluster under the Merge and Split operations.
+•	The distance between two vertices   and   can be found in   time as length(Expose ).
+•	Proof outline:We will maintain the length length( ) of the cluster path. The length is maintained as the maximum weight except that, if   is created by a join(Merge), length( ) is the sum of lengths stored with its path children.
+•	Queries regarding diameter of a tree and its subsequent maintenance takes   time.
+•	The Center and Median can me maintained under Link(Merge) and Cut(Split) operations and queried by non local search in   time.
+•	The graph could be maintained allowing to update the edge set and ask queries on edge 2-connectivity. Amortized complexity of updates is  . Queries could be implemented even faster. The algorithm is not trivial,   uses   space ([HOLM, LICHTENBERG, THORUP 2000]).
+•	The graph could be maintained allowing to update the edge set and ask queries on vertex 2-connectivity. Amortized complexity of updates is  . Queries could be implemented even faster. The algorithm is not trivial,   uses   space ([HOLM, LICHTENBERG, THORUP 2001]).
+•	Top trees can be used to compress trees in a way that is never much worse than DAG compression, but may be exponentially better. 

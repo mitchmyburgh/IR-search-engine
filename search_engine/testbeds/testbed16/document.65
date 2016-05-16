@@ -1,0 +1,34 @@
+Different Types of Virtualization
+written by: Chris Orr•edited by: Jean Scheid•updated: 3/30/2011
+Virtualization is the ability of a server to run multiple instances of an operating system simultaneously. Each OS is unaware of the existence of the other guest operating sytems and runs as if it had sole access to the hardware. There are different types of virtualization depending on requirements.
+
+Introduction to Virtualization
+Virtualization helps consolidate many servers into one.
+ 
+Data centers filled with servers generate a tremendous amount of heat and consume massive amounts of power. Virtualization is the running of several operating systems on a single host server. The host server runs special software that sits between the server and the guest operating systems and parcels out resources as needed. The guest operating systems are unaware that they are virtualized. Virtualization provides multiple benefits.
+
+First it reduces the amount of hardware running in the data center. A properly sized host server can run dozens if not hundreds of virtual servers. Every server that is virtualized is one less physical server consuming power and generating heat. In addition, virtualization reduces the overall footprint of the data center. Where hundreds of servers may have sprawled across the floor, only a few host machines may sit. There are different types of virtualization from several different vendors.
+
+Operating System Virtualization
+Operating System (OS) virtualization loads a specialized layer of software on top of a base operating system running on a physical server. This software layer divides the system into containers each with its own file system, process tables, authorized users and networking. The containers have a set of software interfaces that appear to applications to be an entire operating system environment. However, unlike other forms of virtualization, the containers and applications must use the same operating system as the base system. Sun's Solaris 10 operating system with containers and logical domains is an example of operating system virtualization.
+
+Hardware Emulation
+Hardware emulation allows entire operating systems to be installed on a physical server and run simultaneously. A software layer known as a hypervisor intercepts operating system calls to the hardware and allocates resources accordingly. Each operating system, also called a guest, runs as if it were the only OS running on the server. Where container based virtualization requires the base OS and container OS to be the same, hardware emulation will run any operating system that supports the hardware itself. Linux, Microsoft Windows and Sun Solaris x86 for example can operate side by side on a single server.
+
+One vendor that provides hardware emulation is VMware. Their software known as vSphere runs directly on a physical server and hosts as many guests as the hardware can support. Microsoft has a different type of hardware emulation known as Hyper-v. Hyper-v runs on top of Windows 2008 R2 but can support non-Windows guests.
+
+Paravirtualization
+Paravirtualization is a blend of operating system virtualization and hardware emulation. A hypervisor layer sits at the physical hardware layer but an additional layer of tools and drivers are present. The guest operating system depending on the system call at the time can either directly address the hardware saving any potential performance hit, or it uses the drivers of the virtualization software.
+
+Xen is an open source version of paravirtualization. It is often bundled with various distributions of Linux. XenSource and was acquired by Citrix in 2007. It offers a commercially supported version of Xen.
+
+References
+Golden, Bernard, Virtualization for Dummies, Wiley Publishing, Inc., 2008
+
+Oracle.com: Solaris Operating System, http://www.sun.com/software/solaris/ds/containers.jsp
+
+VMware.com: Virtualization Basics, http://www.vmware.com/virtualization/what-is-virtualization.html
+
+Microsoft.com, Hyper-V Server, http://www.microsoft.com/hyper-v-server/en/us/default.aspx
+
+Citrix.com; XenServer, http://www.citrix.com/English/ps2/products/product.asp?contentID=683148&ntref=prod_top

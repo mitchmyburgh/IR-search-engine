@@ -1,0 +1,27 @@
+How CarrierIQ is Using the Cloud to Make Spying-as-a-Service for Mobile Devices
+Dec 1, 2011
+Some pretty shocking news came out last week about mobile phone carriers running “legal” spyware on millions of phones. See David Kravets’ excellent piece in Wired about it, or watch the video below to see two different types of clouds being used for spying on a massive scale.
+
+My personal thanks to the EFF for defending the Trevor Eckhart, the Android developer who made this video. Forward to about 8:30 to see exactly how your mobile carrier is watching every button you press and every key you press, without telling you and letting you opt out, and without a privacy policy. Even while you’re just using WiFi.
+
+But it’s ok. It’s for our own good, and Carrier IQ is a “Mission critical tool for improving quality.” It says so right in the press release. Snicker.
+
+I will explain the cloud architectures involved here after the video:
+
+
+
+The first cloud architecture is obvious – the CarrierIQ data collection system is running in the cloud. I have no idea if it’s on top of IaaS, but it wouldn’t surprise me. I couldn’t complete a tracert to their domain to confirm. But we’ve been using cloud-based data collection for more than ten years now, before some marketing guy made up the word “cloud computing.”
+
+I’m pretty sure that the CarrierIQ solution qualifies as an “Exploit-as-a-Service” type of cloud too.
+
+In the security business, we have a name for cloud-resident spyware management systems. We call them “command and control” systems. In fact, my employer Trend Micro just helped Operation Ghostclick, the take down a C&C system controlling a botnet with 5 million infected PCs, the largest in history.
+
+The second cloud architecture that really makes this an interesting Spying-as-a-Service story is the ambient cloud story. Think about it. CarrierIQ has at least 141 million tablet and smart phones all sending info back to a single system. Wow. They are running a cloud with 141 million spying nodes that watch what everyone types and does with their phone, including where people are.
+
+I’m pretty sure even the NSA is jealous of CarrierIQ, after wasting all that money wiring up AT&T’s switching rooms.
+
+That makes this an ambient cloud with 141 million nodes, with a combined network bandwidth (and probably storage) larger than any centralized cloud you can name, including Amazon. We’re lucky that in this case, it looks like CarrierIQ can’t push updates directly to mobile devices, or we’d be calling it malware. But it’s dangerously close, since CarrierIQ spreads by distributing its software to carriers, who then build it into OS updates for the afflicted mobile devices.
+
+This whole thing kind of reminds me of the good old pre-cloud days when Sony installed a rootkit on the music CDs it sold. The backlash was swift even then, and consumers are far more aware of cloud security and privacy now than they were back then. I don’t think this is going to end well for CarrierIQ or for Android in general.
+
+No one would dispute a carrier’s need to know how devices are performing, but your eyebrows should go up when you hear carriers have deployed an ambient cloud (botnet) architecture across 141 million devices so they can know. There are safe, above-board, opt-in, statistical monitoring tools that work just fine and are much more appropriate than this blatant privacy and security nightmare.

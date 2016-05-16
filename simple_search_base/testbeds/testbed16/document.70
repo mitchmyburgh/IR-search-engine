@@ -1,0 +1,37 @@
+Elastic Vulnerability Assessment (EVA) Credentials for AWS EC2 and VPC
+Sergio Loureiro / July 23, 2013
+One of the major obstacles to Elastic Detector adoption is the step where infrastructure API credentials are asked. Security guys do not easily give their keys to strangers.
+
+We fully understand that, so we have proposed two solutions:
+
+Virtual appliance, such as an AMI on the AWS marketplace. We provide VMware (vmdk) and KVM versions as well. In this case you loose the managed side of SaaS, but you gain complete control of your infrastructure and credentials. We at SecludIT have no access to the virtual appliance and the only connexion required is to push updates (outbound HTTPS).
+Restricted credentials, applying a least privilege principle. We have written about how to configure ready only credentials to use with Elastic Detector. In this case we need an IaaS API that supports Identity and Access Management, such as AWS IAM.
+However, we have added Elastic Vulnerability Assessment (EVA) to Elastic Detector, on top of the continuous security monitoring, emails alerts and audit trails. In order to avoid performance impact on production servers, Elastic Detector does a clone of each production server and thoroughly analyses the clone, giving you a detailed report about the vulnerabilities of the OS packages and configuration and applications. Therefore, Elastic Detector needs a bit more of privileges to do so. In AWS IAM terms this means:
+
+{
+    "Statement":[{
+    "Effect":"Allow",
+    "Action":["ec2:DescribeSecurityGroups",
+              "ec2:CreateSecurityGroup",
+              "ec2:AuthorizeSecurityGroupIngress",
+              "ec2:DescribeKeyPairs",
+              "ec2:ImportKeyPair",
+              "ec2:CreateImage",
+              "ec2:DescribeImages",
+              "ec2:RunInstances",
+              "ec2:DescribeInstances",
+              "ec2:CreateTags",
+              "ec2:TerminateInstances",
+              "ec2:DeregisterImage",
+              "ec2:DescribeImages",
+              "ec2:DeleteSnapshot",
+              "ec2:DescribeSnapshots"],
+    "Resource":"*"
+    }
+  ]
+  }
+This is a first shot, which is easy to understand. We are working on how to optimize this policy, and I’ll get back to you soon with more details!
+
+Cheers
+
+Sergio

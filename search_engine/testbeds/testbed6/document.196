@@ -1,0 +1,29 @@
+Data structures play a central role in modern computer science.
+You interact with data structures even more often than with algorithms (think Google, your mail server, and even your network routers). In addition, data structures are essential building blocks in obtaining efficient algorithms. This course covers major results and current directions of research in data structures:
+
+Time Travel
+We can remember the past efficiently (a technique called persistence), but in general it's difficult to change the past and see the outcomes on the present (retroactivity). So alas, Back To The Future isn't really possible.
+
+Geometry
+When data has more than one dimension (e.g. maps, database tables).
+
+Dynamic Optimality
+Is there one binary search tree that's as good as all others? We still don't know, but we're close.
+
+Memory Hierarchy
+Real computers have multiple levels of caches. We can optimize the number of cache misses, often without even knowing the size of the cache.
+
+Hashing
+Hashing is the most used data structure in computer science. And it's still an active area of research.
+
+Integers
+Logarithmic time is too easy. By careful analysis of the information you're dealing with, you can often reduce the operation times substantially, sometimes even to constant. We will also cover lower bounds that illustrate when this is not possible.
+
+Dynamic Graphs
+A network link went down, or you just added or deleted a friend in a social network. We can still maintain essential information about the connectivity as it changes.
+
+Strings
+Searching for phrases in giant text (think Google or DNA).
+
+Succinct
+Most "linear size" data structures you know are much larger than they need to be, often by an order of magnitude. Some data structures require almost no space beyond the raw data but are still fast (think heaps, but much cooler).

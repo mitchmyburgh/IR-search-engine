@@ -1,0 +1,179 @@
+﻿Lexicon for NLP
+As described above, language processing is
+performed by the Nuance/Regulus grammar.
+Regulus is an Open Source environment which
+compiles typed unification grammars into context-
+free grammar language models compatible with the 
+Nuance Toolkit.
+4
+The lexicon for Regulus 2 is of the form shown
+in (2) and (3), where the macro in (2) defines the
+properties of a noun class, and the instances in (3
+)
+specify the lexical items belonging to that class,
+in
+this case
+result, results, outcome, outcomes
+.
+(2) macro defining noun class
+macro(noun_like_result(Words,Sem),
+@noun(Words, [sem= @noun_sem(abstract, Sem),
+sem_n_type=abstract, takes_det_type=def\/nu
+ll,
+n_of_mod_type=_])).
+(3) examples of nouns for that class:
+@noun_like_result([result, results], result).
+@noun_like_result([outcome, outcomes], result).
+4.3 Meaning representation
+The Meaning Representation produced by the NLP
+component, and passed on by the Speech Input
+agent, is translated into an ATTITUDE
+expression.
+For example, if a user can ask the question given
+in (4.a), it will first be translated into the
+(simplified) list of attribute value pairs given
+in
+(4.b) and sent to the Speech Input agent. Speech
+Input then translates these attribute value pairs into
+the (simplified) ATTITUDE
+expression given in
+(4.c) and forwards it on to the Input Fuser agent.
+(4)
+a. What is our relationship with PNG?
+b.
+(question whquestion concept relationship obj1
+Australia obj2 Papua_New_Guinea)
+c.
+(comm_act
+(?relationship
+Australia
+Papua_New_Guinea) from speaker type whquestion )
+5 Natural Language & Ontological Processing
+for FOCAL
+There are at least two ways that ontologies can
+facilitate language processing. Firstly, an ontology
+can be used directly when building the lexicon,
+defining the
+terms
+(
+concepts
+and
+relations
+) for
+content words. Secondly, an ontology is a
+knowledge base (KB), expressed in a formal
+language, and therefore it provides (formally
+4
+Regulus is described in detail in (Rayner et al., 2
+001).
+expressed)
+knowledge
+for more complex language
+processing.
+5.1 Ontology and the lexicon
+We view an ontology as a knowledge base,
+consisting of a structured list of concepts, relations
+and individuals. The ontology provides partial
+definitions for these, through the taxonomy
+relation between the terms and the properties
+specified for them. An example of how a fragment
+of a lexicon, for the content words in the domain,
+can be obtained from an ontology is presented
+below.
+We give in (6) an ontology fragment, where
+every concept is listed in the format shown in (5).
+(5)
+( concept_n
+list-of-parents_of_concept_n
+list-of-children_of_concept_n )
+(6)
+( ( |ship|
+(|platform|)
+(|frigate|) )
+( |platform|
+(|asset|)
+(|aircraft| |ship|) )
+( |frigate|
+(|ship|)
+(|ffg|) ) )
+For completeness, we give in Figure 1 the actual
+OWL format for this fragment.
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<owls:Ontology xmlns:owls=
+http://www.w3.org/2002/OWL-
+XMLSchema
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instanc
+e"
+xsi:schemaLocation="http://www.w3.org/2002/OWL-
+XMLSchema
+http://potato.cs.man.ac.uk/owl/schemas/owl1-dl.xsd"
+>
+<owls:Class owls:complete="false"
+owls:name="file:/D:/ontology/focal.daml#platform">
+<owls:Class
+owls:name="file:/D:/ontology/focal.daml#asset"/>
+</owls:Class> <owls:Class owls:complete="false"
+owls:name="file:/D:/ontology/focal.daml#ffg">
+<owls:Class
+owls:name="file:/D:/ontology/focal.daml#frigate"/>
+</owls:Class>
+<owls:Class owls:complete="false"
+owls:name="file:/D:/ontology/focal.daml#ship">
+<owls:Class
+owls:name="file:/D:/ontology/focal.daml#platform"/>
+</owls:Class>
+<owls:Class owls:complete="false"
+owls:name="file:/D:/ontology/focal.daml#frigate">
+<owls:Class owls:name="file:/D:/ontology/focal.daml
+#ship"/>
+</owls:Class>
+<owls:Class owls:complete="false"
+owls:name="file:/D:/ontology/focal.daml#aircraft">
+<owls:Class
+owls:name="file:/D:/ontology/focal.daml#platform"/>
+</owls:Class>
+<owls:Class owls:complete="false"
+owls:name="file:/D:/ontology/focal.daml#asset"/>
+</owls:Ontology>
+Fig. 1: FOCAL ontology fragment in OWL format
+Simplified lexical entries for the words
+aircraft
+,
+airplane
+,
+airplanes
+,
+plane
+,
+planes
+,
+ship
+,
+ships
+,
+frigate
+,
+frigates
+and
+FFG
+are shown in (7) and (8).
+(7) macro for noun class "platform":
+macro(noun_like_platform(Words,Sem),
+@noun(Words, [sem= @noun_sem(platform, Sem),
+sem_n_type=platform, takes_det_type=def\/nu
+ll,
+n_of_mod_type=_])).
+(8) examples of nouns for class "platform":
+@noun_like_platform([frigate, frigates], ship).
+@noun_like_platform([ffg], ship).
+@noun_like_platform([ship, ships], ship).
+@noun_like_platform([airplane,airplanes,plane,plane
+s],
+aircraft).
+@noun_like_platform([aircraft], aircraft).
+This example shows how synonyms are handled
+in our system, with the same semantic
+interpretation, and the same parent class, given to
+a
+number of lexical items.

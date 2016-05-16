@@ -1,0 +1,162 @@
+ ARTICLEINPRESS
+ 
+ 
+ 
+ 
+ 
+ 
+Computers & Graphics 31 (2007) 649?658
+www.elsevier.com/locate/cag
+ 
+ 
+ 
+Computer graphics applications in the education process of people with learning dif?culties Part 1
+Lucia Vera
+Robotics Institute, University of Valencia, P.O. Box 2085, 46071 Valencia, Spain
+Received 8 March 2007; accepted 23 March 2007
+ 
+ 
+ 
+ 
+Abstract
+This paper describes the use of Real Time graphic applications as educational tools, speci?cally oriented to working with people who have certain learning dif?culties. We ?rst focus on identifying the most relevant traits (from a psychological point of view) of those disorders, then we continue by analysing the advantages of graphics in Real Time in this context, and how they can be used to complement the conventional teaching methods. Finally, we review the main characteristics of two applications belonging to this category, which serve as a practical example of this encounter between education and technology.
+r	2007 Elsevier Ltd. All rights reserved.
+PACS: 01.50.?i; 01.50.H; 01.50.ht
+Keywords: Learning dif?culties; Virtual reality; Special education; Computer graphics
+ 
+ 
+ 
+
+1.  Introduction
+Nowadays, the area of computer graphics is widely used in a variety of applications for speci?c purposes. We can ?nd information about virtual simulators for training in driving vehicles, like cars, buses or trains; 3D representa- tions of future buildings or houses most of the times only with the objective of visualization; computer and console games with high-quality graphics, where the player can live adifferent experience inside the virtual world; or ?lm scenes and characters that are generated using computer graphics. Simulation, training, visualization and entertain- ment are environments where the use of computer graphics is very popular.
+In this context, the possibilities of using computer graphics applications for education are opening an important research area. The technology is every day nearer to children, not only at home but also at school.
+
+There are scholarly subjects only related to technology and there is a common interest in all schools to introduce new computer-based programs and applications, for teaching speci?c concepts included in the school curriculum.
+In the area of people with special needs, the application of new technologies is starting to produce good results in the education and intervention process. The idea of creating useful applications for teaching and training speci?c concepts (such as academic, social or commu- nicative skills) seems to be of interest to all associations and special schools. There are efforts to describe the character- istics and possibilities of the use of new technologies (TIC)
+in the education of students with especial needs	[1].The
+idea of TIC is de?ned as ??technological instruments for the compensation and help in the intervention of students with
+special needs??	[2].
+This paper is based on the idea of using new technologies, in our case, computer graphics applications, for people with special needs. The projects described in this
+
+Corresponding author. Tel.: +34963453580; fax: +34963543550.	paper try to promote the use of computer graphics to
+
+E-mail addresses:	Lucia.Vera@uv.es (L. Vera)	,	Ruben.Campos@
+
+create helping tools for teachers and professionals in special education, in their intervention and educational
+
+robotica.uv.es (R. Campos)	,	Gerardo.Herrera@uv.es (G. Herrera)	,
+
+cris@robotica.uv.es (C. Romero).
+0097-8493/$-see front matter	r	2007 Elsevier Ltd. All rights reserved.
+doi:10.1016/j.cag.2007.03.003
+
+process for people with special needs. In our context,
+
+ ARTICLEINPRESS
+650	L. Vera et al. / Computers & Graphics 31 (2007) 649-658
+
+??intervention process?? can be understand as the daily work with people with learning dif?culties developed by profes- sionals in psychology and special education, to work on the speci?c skills in which these people have dif?culties.
+In the following sections we describe the group of people to whom the graphic applications developed are addressed, the state of the art in computer graphics for education, advantages of the use of computer graphics applications as educational tools and the description of the two projects developed in this area. Finally, we present a conclusion and the possible future work.
+2.  Learning dif?culties
+ 
+ 
+Concepts like special education and people with special needs are very general and in most of the cases it is dif?cult to structure a tool that is useful for every kind of disability. It is important to specify the public to whom each of the applications to be created is oriented.
+First of all, we want to introduce the concept of ??learning dif?culties??, that in our case, describes the group of potential ?nal users of our applications. We speak about ??learning dif?culties?? to make reference to those whose origin stems from a biological impairment rather than socio-environmental factors.
+Learning dif?culties are impairments that limit develop- ment and put into practise communicative and/or academic and/or social abilities. The degree of development in this set of abilities is intimately related to the degree of autonomy and community integration (social, educational, labour) that the individual reaches, and it is also related to their quality of life.
+The kind of condition referred to here ?ts well with what is named ??mental retardation?? (MR), formally de?ned in the Diagnostic and Statistical Manual of Mental Disorders
+of the American Psychiatric Association	[3]	as a develop-
+mental disability that ?rst appears in children under the age of 18. In this manual, it is de?ned as an intellectual functioning level (as measured by standard tests for intellectual quotient) that is well below average and signi?cant limitations in daily living skills (adaptive functioning) are present.
+Acloser de?nition and concept for the subject of this paper is one of ??learning disability??, de?ned in the ??Individuals with Disabilities Education Act (IDEA)?? of the United States as a ??disorder in one or more of the basic psychological processes involved in understanding or in using spoken or written language, which may manifest itself in an imperfect ability to listen, think, speak, read, write, spell or to do mathematical calculations.?? (Public Law 101-476, IDEA, USA).
+Among all the ??labels?? mentioned above for this condition, we prefer that of ??learning dif?culties??, as it is not pejorative and it is the most positive one in the sense that it transmits the idea that ??very much can be done to overcome these dif?culties??, from an educational point of view.
+
+Down syndrome is an example of this condition. These people present de?cits in attention, perception (with better visual perception than auditory), language and in different cognitive aspects.
+Another condition often associated with learning dif?- culties are autism spectrum disorders (hereafter referenced as ??autism??), as three out of every four individuals with autism show mild?severe learning dif?culties (MR). The American Psychiatric Association de?nes this disorder as the presence of a triad of impairments in social interaction, communication and restrictive, repetitive and stereotypic patterns of behaviour, interests, and activities (see DSM-
+IV, 1994 for more details and	[4]).
+The enormous attraction that people with learning dif?culties (down syndrome and autism) feel towards computers has been one of the sources of many develop- ments in this ?eld.
+ 
+ 
+3.  State of the art in computer graphics for people with special needs
+ 
+ 
+The most popular software and tools available for special and mainstream education are based on 2D graphics and web pages, with interactive content organized depending on the speci?c area of knowledge to work with. Most of these applications have interactive games to work in most of the areas included in the school curriculum. In most of them you can ?nd contents in these four topics:
+? 	Tools to work on social skills: In this area it is possible to ?nd games or interactive lessons to learn about personal cleanliness, products for personal cleanliness, external appearance, clothes, kitchen utensils and the rules and usage of kitchen utensils.
+? 	Tools to work on cognitive skills: In this area there are applications to learn about colours, shapes, basic concepts, objects classi?cation, order, likenesses and differences.
+? 	Tools to work on written language.
+? 	Tools to work on numeric skills: Where you can ?nd concepts like decimal numeration, addition and sub- traction.
+ 
+ 
+Some examples of these kinds of applications are SEDEA Program, a computer application for the inter- vention process in the development of the hearing and
+language of children	[5]	(see	Fig. 1	); PEAPO, a web site
+with an easy to use resource that tries to promote the communication and autonomy capabilities in people with
+Austism Spectrum Disorders (ASD)	[6];EDU356, a web
+site with multimedia activities oriented to promoting and reinforcing the educative contents for children of different
+ages	[7];Hola Amigo, an educational graphic interface for
+learning non-verbal communication using the language of SPC (or Pictographic Symbols System for non-verbal
+communication)	[8].
+
+ ARTICLEINPRESS
+L. Vera et al. / Computers & Graphics 31 (2007) 649-658	651
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 2. Virtual environment used in the software developed by the
+VIRART Group.
+ 
+ 
+ 
+ 
+ 
+Fig. 1. Snapshot of the interface used in the SEDEA program.
+ 
+ 
+ 
+ 
+But if we pay attention to the state of the art of computer graphics applications and speci?cally 3D graphics, there are not many research projects developed in the area of education for people with learning dif?culties. We can highlight the developments done by two main groups, the VIRART Group at Nottingham University and the Artec and Autism and Learning Dif?culties Groups of the Robotics Institute at the University of Valencia, whose
+members are authors of this paper.
+The VIRART Group, using the author tool named Superscape (from Dimension International) has developed some software aimed both at people with learning
+
+dif?culties and autism	[9].Their software includes a set of
+
+virtual environments (VEs) (see	Fig. 2	)with the graphics
+
+Fig. 3. General view of the Virtual Supermarket application.
+
+quality and degree of adaptability to speci?c needs that this author tool allows (which are much lower than low-level Real Time Graphics Libraries, such as those that we mention further on). This software can be downloaded for free from the project web site and is only available in English. Within those environments, it is possible to work
+on a wide variety of abilities	[10].Whether or not
+individuals with autism adhere to particular social conven- tions in VEs was assessed. Different degrees of success were
+found	[11],with results suggesting that some individuals
+with an ASD, low verbal IQ and weak executive ability require the most support to complete tasks successfully in the VE.
+At the University of Valencia we have developed a Virtual Supermarket for teaching environmental under-
+standing and for training in imagination (see	Fig. 3	). This
+tool is freely distributed in Spanish, with a demonstration version in English, with the complete version being under
+development	[12].We are also developing another applica-
+tion, a Virtual School oriented to working on the social, cognitive and imagination skills for children with autism
+and down syndrome	[13].We will explain the main ideas of
+both applications in Section 5.
+
+Even though these groups have done the largest amount of research into those aspects of learning dif?culties related to this paper, other groups and studies also exist whose focus is slightly different from this subject. This is the case of the Virtual Environment Laboratory at the University of Southern California (USC), with an immersive virtual reality environment (a classroom) for the assessment (non-
+educational) of attention de?cits	[14]	or the University of
+Texas Medical branch, which developed a virtual reality meal preparation for the treatment of mental de?cits due to
+traumatic brain injury	[15].
+ 
+ 
+ 
+4.  Computer graphics applications as educational tools
+ 
+ 
+Computer graphics is a very wide discipline, so we want to focus our attention on one type of these kinds of applications, the Real Time ones. Their main character- istics are, the use of 3D graphics, a very important degree of interaction, a realistic answer to the user actions and immersive possibilities, depending on the equipment used. Due to the kind of people who are going to use our tools, all of them are non-immersive Real Time applications,
+
+ ARTICLEINPRESS
+

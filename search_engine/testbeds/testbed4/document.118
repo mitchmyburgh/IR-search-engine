@@ -1,0 +1,37 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Radiance
+Of course the light emitted or received by an object depends on visual direction as well as surface position. For example, objects are often illuminated more from above (the sky) than below (the ground). As a consequence, when the direction of light propagation is important, we will express ?ux as a function of visual direction. This leads to the central quantity in radiometry, namely, radiance. Radiance is a measure of the rate at which light energy is emitted from a surface in a particular direction. It is a function of position and direction, and it is often denoted by L (or L(¯ p, ~ d)). Formally, it is de?ned as power per steradian per surface area (W·sr-1·m-2), where the surface area is de?ned with respect to a surface patch at ¯ p that is perpendicular to the direction ~ d.
+Normally, one might think of radiance as a measure of the light emitted from a particular surface location into a particular direction. The de?nition above is more general however. It allows us to talk about the light travelling in a particular direction through an arbitrary point in space. In this case we are measuring surface area with respect to a virtual surface, but we can talk about surface area nonetheless.
+When we talk about the light (radiance) emitted from a particular surface into a particular emittant direction ~ de we have to be a little more careful because radiance is de?ned with respect to a surface perpendicular to the emittant direction, which is usually not the same orientation as the actual real surface in question. Accordingly, often radiance is de?ned as power per unit foreshortened surface area per solid angle to make explicit the fact that we are using a virtual surface and not the real surface to measure area. That is, we are measuring surface area as seen by someone looking at the surface from somewhere along a ray in the emittant direction.
+?
+dA dA =  cos ? s
+dAs
+de
+n
+dAs
+d?
+de
+Note: Computing radiant exitance (radiosity): As mentioned above, radiant exitance is the total amount of ?ux leaving a surface into the entire hemisphere of emittant di
+Copyright c
+2005 David Fleet and Aaron Hertzmann 83
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+rections, as a function of surface position. Intuitively, it is the integral of surface radiance, but we have to be careful; radiance is de?ned with respect to unit area on a surface perpendicular to the emittant direction rather than unit area on the real surface of interest. Before we can integrate radiance we need to specify all radiance quantities in terms of unit surface area on the real surface. To do this one needs to multiply radiance for emittant direction ~ de by the ratio of the surface area normal to ~ de (i.e., dA), to the real surface area, denoted dAs. As discussed above, for an in?nitesimal patch the ratio of these areas is just the foreshortening factor, i.e., dA = cos?dAs = ~n· ~ de dAs , (67) where ? is the angle between the unit vectors ~n and ~ de.
+Taking this foreshortening factor into account, the relation between radiant exitance E(¯ p) and radiance L(¯ p, ~ d) is given by
+E(¯ p) =Z~ d??e
+L(¯ p, ~ d) ~n· ~d d? (68)
+The domain of integration, ?e, is the hemisphere of possible emittant directions.
+Note: Computing Irradiance: Above we showed that the irradiance on an in?nitesimal surface patch S at point ¯ p owing to a point light source at ¯ q with radiant intensity I is given by
+H =
+I cos? r2
+(69)
+where r = ||¯ q - ¯ p|| is the distance between the light source and the surface patch, and ? is the angle between the surface normal and the direction of the light source from the surface patch, ¯ q- ¯ p. In this case, the radiance at ¯ p from the point light source direction ~ d = ¯ p- ¯q/r, i.e., L(¯ p, ~ d), is simply I/r2. The factor cos? is the foreshortening factor to convert from area perpendicular to the direction ~ d to area on the surface S. Accordingly, if we consider radiance at ¯ p from the entire hemisphere of possible incident directions, then the total irradiance at ¯ p is given by
+H(¯ p) =Z~ d??i
+L(¯ p,-~ d) ~n· ~d d? (70)
+(Note that incident directions here are outward facing from ¯ p.)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 84
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+Note: Radiance vs. Irradiance. Radiance and irradiance are very similar concepts - both describe an amount of light transmitted in space - but it is important to recognize the distinctions between them. There are several ways of thinking about the difference: • Radiance is a function of direction; it is power per foreshortened surface area per steradian in a speci?c direction. Irradiance is incident power per surface area (not foreshortened); it is not a directional quantity. • Radiance (W·sr-1 ·m-2) and irradiance (W·m-2) have different units. • Radiance describes light emitted from a surface. Irradiance describes light incident on a surface. Indeed, from the radiance emitted from one surface we can compute the incident irradiance at a nearby surface.

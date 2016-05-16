@@ -1,0 +1,17 @@
+Salient features of BSP: BSP based trees or VSD algorithms are the following: Identify surfaces that are inside or different. These words are used interchangeably inside front and outside back. So you can use inside outside or front and back as complimentary partitions. Either you can use inside same meaning as front or vice versa, outside or back will be used interchangeably. We will keep the word front and back but you can also used inside or outside. You remember the inside and outside for
+p
+front and back or inside outside are used interchangeably. So coming back to this sentence again, identify surfaces that are an inside front as and outside back with respect to the partitioning plane at each space of sub division relative to the viewing direction. I repeat again, identify the surfaces that are in front and the back
+o
+direction. And start with any plane and find one set of objects behind and rest in the front.
+Now, we talked of this previous example as an imaginary plane P1 and other imaginary plane P2. But nobody stops you from taking one of the n polygons in the 3D scene as your imaginary plane at the plane which you are using as your root node and split the entire 3D space into two parts and after you have classified or categorized or grouped the remaining planes the n minus 1 planes into two halves you use one more plane each from each of these categories to split into further subdivisions to construct this binary space tree or binary tree as it is called. So the imaginary plane may not exist in the focus and that will add to the computation. You have to actually come up with equation for the planar surface so why you do n
+th
+one set of objects which are behind that is one category and the rest is the another category which is in the front. In the tree the objects are represented as terminal loads with front object as left branches and back ob
+a
+left sub tree will contain all the polygonal phases which are in the front with respect to that plane. We are talking of a sub space now. It could be the entire 3D space or a small sub space in object space and you have taken that small sub space which could be a spherical structure or a rectangular parallelepiped or anything you can visualize in this case. But of course it will come as a rectangular parallelepiped here, we are doing like an area subdivision in 3D by splitting into two parts and we have some planes on the front side and some planes on the back side with respect to a clipping surface either at the root node or any other node which had children and then what you have on the left branch of the left sub tree of that particular node you have the polygons, this will be your left child and this will be your right c
+si
+represented as terminal no
+b
+C
+ontinuing with the points of BSP tree, the BS
+those to be displayed. Yome that is later on when you are further subdi
+tithe existing polygons and the BSP’s tree root

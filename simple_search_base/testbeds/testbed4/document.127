@@ -1,0 +1,73 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Control Point Coef?cients
+Given a sequence of points ¯ p0, ¯ p1, ..., ¯ pn, we can directly evaluate the coef?cient of each point. For a class of curves known as B´ezier curves, the coef?cients are de?ned by the Bernstein polynomials:
+¯ pn 0(t) =
+n X i=0 n i (1-t)n-iti¯ pi =
+n X i=0
+Bn i (t)¯ pi (138)
+where
+Bn i (t) =n i(1-t)n-iti (139) are called the Bernstein basis functions.
+For example, cubic B´ezier curves have the following coef?cients:
+B3 0(t) = (1-t)3 (140) B3 1(t) = 3(1-t)2t (141) B3 2(t) = 3(1-t)t2 (142) B3 3(t) = t3 (143)
+Figure 13 is an illustration of the cubic Bernstein basis functions.
+Similarly, we de?ne basis functions for a linear curve, which is equivalent to the interpolation ¯ p(t) = ¯ p0(1-t) + ¯ p1t. These are shown in Figure 3.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 105
+CSC418 / CSCD18 / CSC2504 Parametric Curves And Surfaces
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+Figure 13: Degree three basis functions for B´ezier curves. B3 0(t) (dark blue), B3 1(t) (green), B3 2(t) (red), and B3 3(t) (light blue).
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+Figure 14: Degree one basis functions for B´ezier curves. B1 0(t) (green) and B1 1(t) (blue).
+15.4 B´ezier Curve Properties • Convexity of the basis functions. For all values of t ? [0...1], the basis functions sum to 1: n X i=0 Bn i (t) = 1 (144) In the cubic case, this can be shown as follows: ((1-t) + t)3 = (1-t)3 + 3(1-t)2t + 3(1-t)t2 + t3 = 1 (145) In the general case, we have:
+((1-t) + t)n =
+n X i=0n i(1-t)n-iti = 1 (146) Similarly, it is easy to show that the basis functions are always non-negative: Bn i (t) = 0.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 106
+CSC418 / CSCD18 / CSC2504 Parametric Curves And Surfaces
+• Af?ne Invariance What happens if we apply an af?ne transformation to a B´ezier curve?
+Let ¯ c(t) =Pn j=0 ¯ pjBn j (t), and let F(¯ p) = A¯ p+ ~ d be an af?ne transformation. Then we have the following: F(¯ c(t)) = A¯ c(t) + ~ d (147) = AX¯ pjBn j (t)+ ~ d (148) = X(A¯ pj)Bn j (t) + ~ d (149) = XA¯ pj + ~ dBn j (t) (150) = XBn j (t)¯ qj (151) ¯ qj = A¯ pj + ~ d denotes the transformed points. This illustrates that the transformed curve we get is the same as what we get by transforming the control points. (The third statement follows from the fact thatPn j=0 Bn j (t) = 1. ) • Convex Hull Property Since BN i (t) = 0, ¯ p(t) is a convex combination of the control points. Thus, B´ezier curves always lie within the convex hull of the control points. • Linear Precision When the control points lie on a straight line, then the corresponding B´ezier curve will also be a straight line. This follows from the convex hull property. • Variation Diminishing No straight line can have more intersections with the B´ezier curve than it has with the control polygon. (The control polygon is de?ned as the line segments pjpj+1.)
+• Derivative Evaluation Letting ¯ c(t) =PN j=0 ¯ pjBN j (t), we want to ?nd the following: ¯ c'(t) = d¯ c(t) dt =dx(t) dt , dy(t) dt  (152) Letting ~ dj = ¯ pj+1 - ¯ pj, it can be shown that:
+t(t) =
+d dt
+¯ c(t) =
+d dt
+N X j=0
+¯ pjBN j (t) = N
+N-1 X j=0
+~ dBN-1 j (t) (153)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 107
+CSC418 / CSCD18 / CSC2504 Parametric Curves And Surfaces
+Figure 15: The line (green) will always intersect the curve less often than or as many times as the control polygon.
+Thus, ¯ c(t) is a convex sum of the points ¯ pj and is a point itself. t(t) is a convex sum of vectors and is a vector.
+Example: What is t(0) when N = 3, given (¯ p0, ¯ p1, ¯ p2, ¯ p3)?
+Since B3 j(0) = 0 for all j 6= 0 and B3 0(0) = 1, t(0) = NX~ djBN-1 j (t) = 3~ dj = 3(¯ p1 - ¯ p0) (154) Therefore, the tangent vector at the endpoint is parallel to the vector from the endpoint to the adjacent point. • Global vs. Local Control B´ezier curves that approximate a long sequence of points produce high-degree polynomials. They have global basis functions; that is, modifying any point changes the entire curve. This results in curves that can be hard to control.
+15.5 Rendering Parametric Curves Given a parameter range t ? [0,1], sample t by some partition ?t, and draw a line connecting each pair of adjacent samples. • This is an expensive algorithm. • This does not adapt to regions of a curve that do not require as many samples. • It's dif?cult to determine a suf?cient number of samples to render the curve such that it appears smooth.
+There are faster algorithms based on adaptive re?nement and subdivision.
+Copyright c
+2005 David Fleet and Aaron Hertzmann

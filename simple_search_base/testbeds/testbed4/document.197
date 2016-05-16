@@ -1,0 +1,180 @@
+Matrices
+  
+
+Matrices are a fundemental concept in computer graphics/games these days. A matrix can represent many different things, rotation, transformation, scaling, shearing e.t.c. However, the matrices I’m going to be discussing here are assumed to be orthonormal and therefore can only be used for rotation and transformation.
+The simplest matrix is the identity matrix which I have mentioned in the rotation section.
+
+The rows of our matrix represent the basis vectors I talked about in the last section (up, right and so on), since I am assuming you have read that section I’m going to move onto talking about rotation matrices directly.
+
+
+Multiplying two matrices A and B
+
+Multiplying two matrices together results in another matrix, the general rule for multiplying matrices is “multiply row into coloumn and sum”:
+
+A*B = C
+
+
+
+Here A is transformed by B to yeild C.
+
+
+Rotating a matrix from world space into object space
+
+Here we are going to rotate the first matrix A into the space of the second, B.
+
+A*BT= C
+
+A has basis vectors U and V and B has S and T.
+
+
+
+You will notice that B (consisting of Sx Sy,Tx Ty) has been transposed (the T indicates this) so that the rows and columns are swapped – this is because we want to arrange the maths so that we are performing the same projection operation as was discussed in the last section (i.e. projection onto the axis) because we must multiply row into coloumn.
+
+The same operation expressed in terms of vectors looks like this:
+
+
+
+You can see that the result is the same, we are still projecting the axis of A (i.e. U and V) onto the axis of B (S and T) to yield a new matrix which is A in terms ofB. I.e. we now have a set of weights which describe a linear combination of the basis vectors of B (S and T).
+
+
+Rotating a matrix from object space into world space
+
+Now, just as when we were dealing with vectors we can use our set of weights (which is our matrix in the space of another matrix) to form a linear combination and resolve back into world space:
+
+C*B = A
+
+C is our matrix of weights, B is as before and it yields the result A which we started out with in the last example. There is no need for the transpose function this time because we already have our weights and we just want to recombine them with our basis matrix B.
+
+As an illustration of basis vectors and what I mean by linear combination of basis, here is an example of how to draw a rotated semi circle without knowing the rotation angle:
+
+You will be used to using the sine and cosine functions in order to draw circles/semi circles in 2d;
+
+x = cos(a)
+y = sin(a)
+-PI< a < PI
+
+But what about when we are given avector V and we want to have our semi circle perpendicular to this vector?
+
+First we need to find our basis. We already have our up vector which is simply U = V / ||V|| and get can get our right vector using the perp operator R = perp(U).
+
+Now we have our basis, sin and cos become our weights and we can find the rotated semi circle thus:
+
+P = cos(a)*R + sin(a)*U
+
+ 
+
+Transformation matrices
+
+So far we have been talking about rotation matrices but more often than not we actually end up dealing with transformation matrices when programming, since our objects have positions as well as rotations. A transformation matrix is one which contains this positional component “tacked” onto the end of the matrix after the rotational part as an additonal row. When we deal with transformation matrices we must also deal with points instead of vectors since a vector doesn’t have a position, it only has a direction and magnitude. In 2d a trasformation matrix looks like this:
+
+
+
+
+Points
+
+A point is simply a position in space. It is represented, again, as a linear combination of the local basis (in 3d):
+
+P = aX, bY, cZ, 1
+
+We store the a,b,c part and ignore the X Y Z because its implicit and refers to the local basis vectors X Y Z. Although a point and a vector look very similar, they are not the same and should be treated differently.
+
+You will have noticed that the point has a 1 as it’s last component; this is called the homogenus component and it ensures that the matrix multiply works with our transformation matrix which has another row tacked onto the bottom of it (in 2d):
+
+P*M = P’
+
+expanded out:
+
+
+
+You may choose not to store this homogenus component and simply assume it when you actually come to implement the maths.
+
+
+Points cannot be rotated into the space of a matrix like vectors could, they must instead be transformed and we cannot use the transpose of a matrix to do this (like we could for a vector), we must instead use the inverse. However, we can use a trick to do the job for us; if we first convert our point into a vector we can then rotate by the transpose of the matrix to get the same result:
+
+
+
+In the diagram, you can see where P is in world space (the intersection of P with the green world space axis x and y), and you can see where we need the result to be in object space (the blue intersection points on the red object space axis).
+
+P = point to transform
+T = origin of transformation matrix M
+MR = rotational part of transformation matrix M (composed of red U and R axis)
+Pobject = MR*(P-T)
+
+which is the same as saying
+
+Pobject = (P-T)*MRT
+
+We have converted our point into a vector pointing from origin of the matrix M to our point and then rotated this vector into object space MR to yield the new point Pobject.
+
+This is the same operation as if we were to compute the inverse of the matrix M and transform P by it (assuming orthonormality).
+
+
+If we want to do the oposite and take a point in object space and transform it into world space we can use the same thinking and keep the rotational part of the matrix separate from the translational part, but it turns out exactly the same in this case, due to the internals of the transformation matrix (you can see how in the section on multiplying two matrices above):
+
+Pworld = (P*MR) + T
+=
+Pworld = P*MR
+
+
+
+The diagram shows P in local space (the blue intersection with the red axis), and where P would incorrectly end up if we just used its values directly (P’).
+
+Pworld is computed by saying, go Plocal x units along object space R vector and then Plocal y units along object space U vector and then move to point T.
+
+
+Inverse of a matrix
+
+All the matrices we have talked about have been orthonormalised which means that computing the inverse is fairly simple. You just transpose the rotational part of the matrix and then rotate the translational part into the space of it and negate:
+
+Matrix M with rotational component R and tranlastional component T:
+
+R-1 = RT
+T-1 = -T*RT
+
+To form M simply tack the translational part onto the rotational as before. Then when you come to transform your points by this matrix, the resulting maths is the same as the trick I showed above for transforming vectors by the inverse of a matrix implictly (which is reassuring):
+
+The inverse of a transformation matrix is much more useful when it comes to operating on other transformation matrices; for example in a game what you actually pass to the hardware when you want to draw a model is a matrix which transforms from object space into view space, which involves inverting the camera matrix and multiplying the object’s matrix by it (and also the perspective matrix depending on platform). Skeletal animation and skinning is also something which makes use of the inverse – often you would like to transform things into and out of “bone” space in order to deform the vertices of a mesh correctly.
+
+
+Orthonormal
+
+A set of vectors is orthogonal when each one is at 90o to the others. A basis which is like this and in which the vectors are unit length is said to be orthonormal. This is also extremely important because it means transformations do not skew or scale in unwanted directions and it means that rotation can work as expected.
+
+You can ensure that a matrix is orthonormal using a series of vector normalisation and cross product operations:
+
+Matrix formed of vectors STQ
+
+S /= ||S||
+Q=TxS
+Q /= ||Q||
+T = SxQ
+
+The cross products ensure orthogonality and the normalisations ensure unit length; the two requirements for orthonormalaity.
+
+ 
+The green axis in this demo are orthonormal
+
+
+Determinant
+
+The determinant always used to mistify me until I learned that really it just represents the area or volume contained by the basis vectors of the matrix (STQ here):
+
+det = (SxT) . Q
+
+For a 3×3 matrix, the determinant is found using the scalar tripple product - which gives the signed volume of the parellelipiped formed by the basis vectors. You can also use the wedge product in 3d with 3 vectors, which is equivalent.
+
+For a 2×2 matrix, the determinant is simply the wedge product of the axis vectors.
+
+Obviously if this is 0 then the matrix does not form a basis and cannot be inverted (you will have seen matrix inversion code check this before it goes any further), since if the volume is 0 then one or more basis vectors must be coincident.
+
+ 
+Above is a visualisation of the determinant of a matrix formed by vectors A and B.
+
+2 Responses to Matrices
+Prince Merluza says:
+December 31, 2012 at 5:21 am
+Wow this is a huge jump for my brain, can’t really understand everything written but still a great reference and tutorial. :)
+Reply
+Derek says:
+May 21, 2014 at 11:56 pm
+Great tutorial. But it would be nice if some of the equations were shown how they are used. Like actually applying some numbers to it so that we can see this stuff in action. It would drive the point home.

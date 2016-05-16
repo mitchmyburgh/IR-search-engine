@@ -1,0 +1,35 @@
+Components of A Description Logic
+Description logics model a domain of interest by defining a set of domain specific axioms. The axioms are formally described using concepts, binary relations and individual names. Concepts denote sets of individuals - grouping instances into class or type - and are analogous to unary predicates in first order logic. Individual names are the specific instances in the domain defined by the concepts. In first order logic individual names are modelled by constants. Binary relations formalise a connection between two entities at the instance and conceptual level. A binary relation is specified between two concepts but is instantiated between two instances. In first order logic binary relations are modelled as binary predicates.
+
+Once concepts, binary relations and instance names have been defined they can be used to define the axioms of the domain of interest. Axioms are broken up into three groups: assertional, terminological and relational axioms. Ontologies, in general, only capture partial knowledge under the Open World Assumption that asserted axioms are not exhaustive in describing the physical situation that it models in its entirety. There may be states that are consistent with the axioms asserted that are not explicitly asserted or even known.
+
+Basic Components
+ABox Axioms
+Assertional (ABox) axioms specify domain knowledge known about named individuals using the lexicon of the Description Logic. The type of facts ABox axioms can specify include the class of an instance, relations between instances and equivalences between instances. Description logics do not make the unique name assumption for named individuals, i.e. instances, and named individuals may be considered as the same individual unless otherwise stated or asserted.
+
+TBox Axioms
+Terminological (TBox) axioms describe the relationships between concepts within a domain. The type of conceptual relations defined by TBox axioms include concept inclusion (subsumption or defining one concept to belong to a subset of another) or equivalence. Additional concept expressions can be used with inclusion and equivalence to describe more complex situations like disjointness - concepts exclusively not sharing instances. Equality or inequality can be asserted when the same individual may carry different names and differently named individuals may not be considered the same individual respectively.
+
+RBox Axioms
+Relational (RBox) axioms model properties of binary relations. For example, RBox axioms specify relations such as role inclusion or complex role inclusion between the binary relations of a Description Logic. Complex role inclusion specifies the inclusion of the composition of two binary relations. These may also be used to specify disjointness. RBox axioms also define role characteristics such as reflexivity, symmetry and transitivity of binary relations. Role composition is restricted in description logics when it is specified how a collection of such axioms may be used in an ontology.
+
+Constructors for Concepts and Roles
+The basic components are limited in expressivity and accuracy. Description logics make provision for other constructors to increase this.
+
+Concept Constructors
+Boolean Constructors
+Boolean constructors allow for familiar Boolean operations. In first order logic, these resemble principles of conjunction, disjunction and complement or negation of sets. These allow users of a description logic to express more complex situations by expressing more than equivalence or inclusion.
+
+Role Restrictions
+Role restrictions create a link between defined concepts and relationships. Namely, these are existential and universal restrictions. These are equivalent to quantifiers in first order logic. The existential restriction describes the situation where there exists at least one instance for which the relationship or specified role exists between that instance and the concept specified. The universal restriction describes the situation where the relation property or role exists for all instances in the relationship domain. Additionally, description logics allow for number restrictions to allow for statements concerning at least, at most or exactly restrictions for some number on these roles.
+
+Nominals
+Nominals are concepts with exactly one named instance and the allow other concepts to be defined. Description logics do not support definition of a concept by enumerating its instances as might be desired but instead offers nominals to act as concepts and therefore simulate this enumeration of instances with, instead, named concepts with exactly one instance.
+
+Role Constructors
+Description logics have fewer constructors for roles than concepts. In addition to role inclusion, disjointness and composition provided by RBox axioms, these constructors include: conjunction, disjunction, negation, transitive closure and, most prominently, inverse (Baader, F., 2003, p. 95).
+
+Reasoning using Description Logics
+Reasoning (inferring implicit information in an ontology from its defined concepts and object properties) is an important feature in formalised Description Logics over First Order Logics which may not be decidable. (Baader, F., 2003, p. 47) Automated reasoning, made possible by the decidable fragments of First Order Logics that constitute Description Logics, automates the ability to make these inferences which makes reasoning (a primary feature of logics) scaleable. The unambiguous semantics of Description Logics are necessary for reasoning services to be employed. (Keet, C. M., 2015)
+
+Often there is a trade-off between expressivity of the description logic and the complexity of the reasoning algorithm or the ease of which the logic can be reasoned over. With reasoning as an important goal of description logics, many different description logics exist to balance the complexity and performance of the algorithm being used with what can be expressed with the logic.

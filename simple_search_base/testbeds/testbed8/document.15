@@ -1,0 +1,14 @@
+Operations
+
+In an associative array, the association between a key and a value is often known as a "binding", and the same word "binding" may also be used to refer to the process of creating a new association.
+
+The operations that are usually defined for an associative array are:[1][2]
+
+    Add or insert: add a new (key, value) pair to the collection, binding the new key to its new value. The arguments to this operation are the key and the value.
+    Reassign: replace the value in one of the (key, value) pairs that are already in the collection, binding an old key to a new value. As with an insertion, the arguments to this operation are the key and the value.
+    Remove or delete: remove a (key, value) pair from the collection, unbinding a given key from its value. The argument to this operation is the key.
+    Lookup: find the value (if any) that is bound to a given key. The argument to this operation is the key, and the value is returned from the operation. If no value is found, some associative array implementations raise an exception.
+
+In addition, associative arrays may also include other operations such as determining the number of bindings or constructing an iterator to loop over all the bindings. Usually, for such an operation, the order in which the bindings are returned may be arbitrary.
+
+A multimap generalizes an associative array by allowing multiple values to be associated with a single key.[6] A bidirectional map is a related abstract data type in which the bindings operate in both directions: each value must be associated with a unique key, and a second lookup operation takes a value as argument and looks up the key associated with that value.

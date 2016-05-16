@@ -1,0 +1,21 @@
+The Base One Foundation Component Library (BFC) is a rapid application development toolkit for building secure, fault-tolerant, database applications on Windows and ASP.NET. In conjunction with Microsoft's Visual Studio integrated development environment, BFC provides a general-purpose web application framework for working with databases from Microsoft, Oracle, IBM, Sybase, and MySQL, running under either Windows or Unix/Linux. BFC also includes facilities for distributed computing, batch processing, queuing, and database command scripting.
+
+
+== Design ==
+BFC is based on a database-centric architecture whose cross-DBMS data dictionary plays a central role in supporting data security, validation, optimization, and maintainability features. Base One holds a number of U.S. patents on its core technologies, with additional patents pending. Developers can incorporate BFC components into Windows applications written in any of the major Microsoft programming languages (Visual C++, C#, VB.NET, ASP.NET) and using a variety of technologies, including COM/ActiveX, MFC, Crystal Reports, and AJAX. BFC works with both managed and unmanaged code, and it can be used to construct either thin client or rich client applications, with or without browser-based interfaces.
+
+
+== History ==
+The development of BFC originally was funded by projects done for Marsh & McLennan and Deutsche Bank that started in the mid-1990s. The securities custody system built by Deutsche Bank with BFC is one of the earliest successful examples of commercial grid computing.  The name "BFC" was a play on Microsoft's MFC, which (starting with Visual C++ 1.5) BFC extended through class libraries to facilitate the development of large-scale, client/server database applications.
+With the release of Visual C++ 2.0, BFC provided a way to upgrade from 16-bit Windows 3.1 and NT to true 32-bit Windows MFC applications. Under Visual C++ 4.0, BFC added Base One's Internet Server, enabling transparent database access across the Internet for distributed rich client and grid computing applications.
+Starting with Visual C++ 6.0, BFC added COM support, so that VB and ASP programmers could use BFC's database components, including ActiveX grid (table), combo, and edit controls. With the advent of VisualStudio .NET 2002, BFC was extended to support the .NET languages, C#, VB.NET, and ASP.NET.
+
+
+== References ==
+
+
+== External links ==
+Base One. Introduction to BFC
+Business Wire. IDC Reviews Base One's Grid Computing as "Pragmatic, Scalable and Extensible"; Base One Granted Additional US Patent for Grid/Cluster Database Technology, September 29, 2004. Accessed March 5, 2008.
+Business Wire. Base One Launches High Performance Information Sharing for Grid Computing; IDC Reports Base One Positioned to Address Data Access and Sharing Across Grids, May 23, 2005. Accessed March 5, 2008.
+ITJungle. Base One Update Brings Grids of Clusters, June 14, 2005. Accessed April 9, 2008.

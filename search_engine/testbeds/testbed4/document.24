@@ -1,0 +1,42 @@
+The quality measure used for evaluating the shape of
+polygonal mesh faces is based on the condition number
+shape measure [20]. This measure is derived from the
+Jacobian matrix of an element mapping as described
+below.
+Consider a vertex, Vi, connected to a set of edges,
+EðViÞ, and faces, FðViÞ, as shown in Fig. 2. Assume that
+one of the faces, Fj 2 FðViÞ, has edges Ep 2 EðViÞ and
+Eq 2 EðViÞ connected to vertex Vi. The triangle formed
+by edges Ep and Eq can always be mapped to a rightangled
+triangle in 2D space with Vi mapped to the origin,
+a unit vector, e¢p, representing Ep along the x-axis
+and a unit vector, e¢q, representing Eq along the y-axis in
+2D space. Then, the Jacobian matrix, Jji, of the mapping
+of the triangle to the right-angled triangle in 2D space
+evaluated at vertex Vi, is given by Jji ¼ ½ ep eq  where,
+ep and eq are 3D edge vectors, of lengths lp and lq, representing
+edges Ep and Eq, respectively. The condition
+number of the Jacobian matrix is defined as
+
+jF is the Frobenius norm
+of its matrix operand.
+Since Jji is a 3·2 matrix for a triangle in 3D, its
+inverse does not exist in the usual sense and a pseudoinverse
+has to be calculated by singular value decomposition
+methods. On the other hand, the Jacobian
+matrix of a triangle in 2D space is a 2·2 matrix whose
+condition number can be calculated more easily as:
+This is the first stage of the RJM optimization strategy.
+In this step, the locally optimal position of each mesh
+vertex is computed with respect to the fixed position of
+its neighbors. The objective function for optimization is
+the local condition number function, ~w
+ci
+, described in
+Eq. 5, in the section titled ‘‘Condition number based
+optimization’’. However, in this step, the vertex is not
+moved to its locally optimal position. Rather, the optimal
+position of each vertex, described by a base face and
+the parametric coordinates of the vertex in the base face,
+is stored as a virtual position for use in the second stage
+of the mesh improvement procedure.

@@ -1,0 +1,31 @@
+Active_Scripting
+'''Active Scripting''' (formerly known as '''ActiveX Scripting''') is the technology used in  to implement component-based scripting support. It is based on  (part of ) and allows installation of additional scripting engines in the form of COM modules.
+==Uses and history==
+The Active Scripting technologies were first released in 1996, with the release of the  (August 1996) and  3.0 products (December 1996). 
+Usual applications of Active Scripting include  (ASP) , , and  (WSH) scripts automating routine tasks, including use for login scripts,  manipulation, and the like. Other administrative uses include  and  Service Interfaces. Active Scripting can also be used for general-purpose scripting, such as database programming, text-processing, rapid prototyping, and application macro/scripting programming; some applications use Active Scripting as the main automation method, others do not have a macro facility but the components are available for use via the API; or one may opt to add a language and/or tool not available by default, like programming  in  or  rather than  (VBA) or transferring data from a  to  by way of a  when they have dissimilar macro tools or none at all.
+For many of the above uses, Active Scripting is an addition to Windows that is similar to the functionality of Unix shell scripts, as well as an incremental improvement upon batch files (command.com), Windows NT style shell scripts (cmd.exe) and, by way of , the replacement for , which was last available on the supplementary disc for Windows 95. The majority of the languages used for Active Scripting mentioned below are s, with  being the most commonly used third-party script engine.
+The interfaces to Active Scripting engines are public, so any developer can create applications that are programmable in Active Scripting languages as well as engines for additional languages. 
+== Implementations ==
+Active Scripting engines are available for several languages. Some of the most popular include:
+* VBScript and  engines are included with the default installation of Windows versions after , and are an optional install with .
+* Visual Basic for Applications (VBA) is a third default scripting engine and is part of the Windows installation and therefore present even if there is not an installation of , , or other software packages that are VBA-programmable.
+* A  engine provided as part of the  distribution.
+* A  engine provided as part of the  extension.
+* The standard  installation for Windows includes an engine known as ActivePHP and PHPScript in various versions.
+* .
+* REXX (multiple versions).
+* .
+* .
+* .
+* .
+* .
+* 
+* The DCL-based scripting language XLNT comes with a scripting engine as well.
+In Windows,  at the command line and  running in the GUI are the main means of implementation of installed Active Script languages. Clicking on an icon or running from the command line, a script, the Run dialogue, etc. will by default run a plain text file containing the code. A  (.wsf) is an  file that can contain more than one script in more than one language in addition to other elements, and are executed by the Windows Script Host.
+The third-party shell  can, as of version 10, be configured for direct interoperability with the script host and its installed engines; a WSH engine based on the Take Command language is reportedly now in development.
+Some software such as  use the WSH functionality to allow automation by means of any installed scripting engine.
+The script host, related components, and engines are able to be integrated into and called from Windows applications just like any other component.
+== Current Status ==
+Active scripting is regarded complete, and no longer under active development by Microsoft. However, the technology is still being supported by Microsoft's ''Sustaining Engineering Team'', which is responsible for bug fixes and security enhancements. Furthermore, scripting engines will continue to be shipped with future releases of Microsoft Windows and IIS., on Eric Lippert's Blog ''Fabulous Adventures In Coding'' on MSDN (April 09, 2004).
+Originally, the .NET Framework had a scripting technology of its own and a separate scripting IDE called ''Visual Studio for Applications'' (VSA),, article by Andrew Clinick of Microsoft Corporation, in Scripting Clinic on MSDN (July 25, 2001)., by Scott Bekker on Redmondmag.com (January 16, 2001). and the interfaces to the technology were also available via Active Scripting, allowing even .NET-unaware applications to be scripted using .NET languages. VSA was also meant to replace Visual Basic for Applications., by Mark Belles on The Code Project. However, that entire technology was deprecated in version 2.0 of the .NET Framework, leaving no clear upgrade path for applications desiring Active Scripting support (although "scripts" can be created in , VBScript, , and other .NET languages, which can be  and executed at run-time via  installed as part of the standard .NET runtime).
+Microsoft has also introduced , which can expose applications via PowerShell cmdlets or PowerShell providers.

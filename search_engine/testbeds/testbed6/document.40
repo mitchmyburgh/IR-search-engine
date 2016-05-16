@@ -1,0 +1,49 @@
+AVL Tree Traversal 
+Algorithm description 
+The following algorithm traverses an AVL tree to find a node with a given key. The AVL tree is the oldest and most well-known data structure for balanced trees, which has the property that the heights of the two subtrees of each node differ by at most one. 
+This traversal can be used both in the insertion and in the searching function. By inserting a new node, the AVL condition can be violated, in which case we have to fix the heights of some nodes using rotations. These rotations are not implemented in the code fragment below because they would not make use of discrete loops. 
+Algorithm implementation 
+ 1  function avl_search (root: node_type; key: key_type) return node_type
+ 2  is
+ 3      node_pointer: node_type;
+ 4
+ 5      function max_height_avl (N: natural) return natural
+ 6      is
+ 7      begin
+ 8          return floor (1.44 * ld (N)) + 1;
+ 9      end max_height_avl;
+10
+11  begin
+12      discrete node_pointer := root
+13              new node_pointer := node_pointer.left | node_pointer.right
+14          with h := max_height_avl (N) + 1
+15                                         -- for null-case
+16              new h = h - 1
+17      loop
+18          if node_pointer = NULL then
+19              return NULL;
+20          elsif key (node_pointer) = key_to_search then
+21              return node_pointer;
+22          elsif key (node_pointer) &lt; key_to_search then
+23              node_pointer := node_pointer.left;
+24          else
+25              node_pointer := node_pointer.right;
+26          end if;
+27      end loop;
+28  end avl_search;
+Notes on design 
+The implementation is nearly identical to the (natural) binary tree with the exception that the remainder function is bound by a lower value (implicated by the strict AVL tree condition). 
+For a binary tree that fullfills the AVL condition, the following condition holds: 
+height &lt;= 1.44 * ld (N) + 1. 
+This upper bound is used for the remainder function of the discrete loop (lines 8 and 14, respectively). As with the (natural) binary tree, we had to add 1 to support also empty trees, in wich case the loop body is executed exactly once. 
+Worst Case Performance 
+The following figure shows minimal binary trees which fullfill the AVL condition for height 2, 3 and 4, respectively. 
+Because of the AVL condition, the trees keep balanced even in the case of inserting nodes with ascending or descending keys. We can again make use of the condition 
+height &lt;= 1.44 * ld (N) + 1 &nbsp;&nbsp;where&nbsp;&nbsp; ld e = 1/(ln 2) = 1.44 
+which yields to predicted (worst case) executions of the loop body of our sample trees of 2 (N&nbsp;=&nbsp;2), 3 (N&nbsp;=&nbsp;4), and 5 (N&nbsp;=&nbsp;7) respectively. 
+So only by imposing the AVL condition, we get
+O( ld N ) 
+for the worst case of searching an element in a binary tree, instead of O(N) without balancing condition. 
+Selected Bibliography 
+ [AHU83, p. 196] [Meh84, p. 309] [Ott93, p. 298] [Sed88, p. 229] [Wyk88, p. 195]  
+[ Samples Overview | Bibliography | WOOP Project ]

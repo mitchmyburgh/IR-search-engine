@@ -1,0 +1,14 @@
+Barrier_(computer_science)
+In , a '''barrier''' is a type of  method. A barrier for a group of threads or processes in the source code means any thread/process must stop at this point and cannot proceed until all other threads/processes reach this barrier.
+Many collective routines and directive-based parallel languages impose implicit barriers. For example, a parallel ''do'' loop in   with  will not be allowed to continue on any thread until the last iteration is completed. This is in case the program relies on the result of the loop immediately after its completion. In , any global communication (such as reduction or scatter) may imply a barrier.
+==Dynamic barriers==
+Classic barrier constructs define the set of participating processes/threads statically. This is usually done either at program startup or when a barrier like the  barrier is instantiated. This restricts the possible applications for which barriers can be used.
+To support more dynamic programming paradigms like fork/join parallelism, the sets of participants have to be dynamic. Thus, the set of processes/threads participating in a barrier operation needs to be able to change over time.  introduced the concept of ''clocks'' for that purpose, which provide a dynamic barrier semantic. Building on clocks, ''phasers'' have been proposed to add even more flexibility to barrier synchronization. With phasers it is possible to express data dependencies between the participating processes explicitly to avoid unnecessary over-synchronization.
+==Processor and compiler barriers==
+'''''' is a class of instructions which cause a  to enforce an ordering constraint on memory operations issued before and after the barrier instruction.
+A '''barrier''' can also be a high-level programming language statement which prevents the  from reordering other operations over the barrier statement during optimization passes. Such statements can potentially generate processor barrier instructions. Different classes of barrier exist and may apply to a specific set of operations only.
+==See also==
+* 
+* 
+==References==
+http://blogs.sourceallies.com/2012/03/parallel-programming-with-barrier-synchronization

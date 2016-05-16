@@ -1,0 +1,7 @@
+BESYS
+'''BESYS''' ('''Bell Operating System''') was an early computing environment originally implemented as a  operating system in 1957 at  for the  computer. The initial version of the system  was created by George Mealy and Gwen Hansen with Wanda Lee Mammel under the guidance of  and utilized IBM's FORTRAN and 's symbolic assembly program (SAP) programming languages. It was designed to efficiently deal with a large number of jobs originating on s and producing results suitable for printing on paper and punched cards. The system also provided processing capabilities for data stored on s and  storage units. Typically punched card and print processing was handled off line by peripheral ,  computers and eventually direct coupled computers.
+==Internal use==
+BESYS was used extensively by many departments of Bell Labs for over a decade. It was made available through the  organization to others without charge or formal technical support.
+==BESYS versions==
+Versions of the BESYS environment (BESYS3, BESYS4, BESYS5, BESYS7 and BE90) were implemented as the underlying computers transitioned through the  family and  computers. Throughout this period the head of the BESYS development project was . In the 1960s, when Bell Labs sought to transition to a more advanced  environment, principles and experience from this project loosely influenced the development of .
+==References==

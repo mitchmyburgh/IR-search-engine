@@ -1,0 +1,106 @@
+
+Computer graphics applications in the education process of people with learning dif?culties Part 2
+
+
+
+
+
+652	L. Vera et al. / Computers & Graphics 31 (2007) 649-658
+
+which only need a computer (with screen, keyboard, mouse and joystick) to use and interact with the tool easily. This option was selected in front of other more immersive versions (like using head mounted displays, cyber globes or caves installations) because it is cheaper and accessible for all the schools, associations and special centres, it is less invasive than other elements, the user can interact with the application easily almost without previous training and it allows for collaborative work between the teacher and the child. Some tests were done with the same version of the tool but one using immersive equipment (head mounted display and cyber globes) and another using tactile screen and joystick. The answer of the participants (all of them with learning dif?culties) suggested higher levels of acceptance and interaction in the non-immersive version, easier adaptability to the interfaces used with less previous training and better interaction between the child and the teacher.
+When the type of application to be used is clear, it is necessary, during the design process of any tool, to specify the characteristics of the ?nal group of people who are going to use it. In our case, it is important to know the speci?c pro?le of individuals with learning dif?culties and to determine the content that the application may have to satisfy in the areas of knowledge that are necessary for their intervention and educational process.
+For that reason, before de?ning the possibilities of using this kind of software to help people with learning dif?culties, we want to de?ne in more detail the group of people to whom these tools are addressed.
+ 
+ 
+ 
+4.1. Learning dif?culties characteristics
+People suffering from learning dif?culties not only show adelay in their mental development, but also have a speci?c learning pro?le that includes both strong and weak points.
+Professionals who are experienced in giving attention to these people indicate the attraction that these individuals show towards visual contents, such as those of videos and computers, and highlight this attraction as a way of improving attention patterns, which is more dif?cult when other conventional resources are used, as they tend to be more diffuse and less intensive.
+People with learning dif?culties show de?cits in atten- tion, perception, memory and a lack of interest in educational contents. They ?nd it dif?cult to cope with abstract concepts and to generalize and apply acquired knowledge to other environments, and also have a different cognitive style, with differences in their cognitive processes and strategies (such as poor private language and dif?culties when thinking for and about themselves). Those people with down syndrome show, in addition to their learning dif?culties, a weakness in their auditory channel. They also ?nd it easier to manage with written language than with spoken language. These facts increase the importance of the visual channel in their educational intervention.
+Among the preferences or strong points of people with learning dif?culties, together with their preference for the visual channel, they also show great curiosity for the objects of their environment. We can also ?nd a preference for simultaneous processing rather than sequential and good imitation abilities, with these two points being different in autism. The interaction of both conditions in those who suffer from autism as well as learning dif?culties limits both their development and the effectiveness of intervention, with additional adaptations required in those
+cases	[16].
+Therefore, the use of computers and the development of graphic tools that strengthen these strong points to work on the speci?c skills in which this group of people have de?cits, could be of great interest in helping with their education.
+ 
+ 
+4.2. Use of Virtual Reality for people with learning dif?culties
+ 
+ 
+After the speci?cation of the ?nal users, it is important to de?ne the contents of the Virtual Reality applications. For that, it is necessary to describe the concepts that may be potentially treated thanks to the use of computer graphics. Virtual Reality, as occurs with other computer-based programs, has been claimed to provide a particularly facilitatory environment for people with learning dif?cul- ties in that it also offers structure, opportunities for repetition, affective (emotional) engagement and, addition- ally, control of the learning environment. Virtual Reality shares the advantages of computer-based learning, and has the additional advantage of making it more likely that the results can be generalized to real-world settings in that it is
+asimulation of them	[17].
+From a more accurate pedagogical point of view, VR offers advantages for the following areas:
+ 
+ 
+4.2.1. Environment understanding
+Spatial concepts understanding: As it is possible to manipulate the height and the width of virtual objects at will, it is also possible to do it in order to illustrate the concept of size, including distinction between narrow and wide. The same advantage can be found when talking about concepts of relative position: in front/at the back, on top/below, ?rst one/last one, put together/move apart, inside/out.
+Quantity concepts understanding: It is possible to change in real time the number of objects that can be seen in a VE, as well as being possible to change other variables for illustrating a lot/a few, everything/nothing, more/less, full/ empty.
+Visual concepts and adaptation to visual pro?les: The sensory pro?le of people with learning dif?culties may be
+very different to the typical one	[16].As it is possible to
+change the colours, shapes, texture and luminance of any
+
+ ARTICLEINPRESS
+
+L. Vera et al. / Computers & Graphics 31 (2007) 649-658
+
+653
+
+component at will, it is possible to adapt any VE for the convenience of the sensory pro?le of a given individual with learning dif?culties and/or autism. This possibility also allows teaching on recognizing colours, lights and differences among a variety of things.
+VEs are also an ideal setting for working on those abilities that would be potentially hazardous when trained in reality, such as crossing the road, ?re practice or how to face personal injuries.
+Another abstract concept is time, and it is also another thing that can be manipulated through programming. For example, it is possible to play with time in order to show the changes that occur between two different seasons, or to show the growing of a plant, or to teach concepts such as before/after or quick/slow.
+ 
+ 
+4.2.2. From literality to symbolism
+Children?s play evolves from simple manipulation of immediate reality to include more and more issues of a symbolic nature. As an example, at the beginning, the child starts playing functionally with realistic toys and later starts to make imaginary substitutions of some objects for others. Pretence itself offers a framework for the child to become familiarized with non-literal language.
+Within a VE, it is possible to teach the preferred cultural use of each object (by showing virtual actors doing this use) and then teaching how an object can become or act as if it
+were a different thing (as in	[18]). The possibility of
+participating in ?rst person in such processes is something that, a priori, would lead to a better learning (at least in those who have dif?culties with imitation, as occurs with people with autism).
+ 
+ 
+4.2.3. Social abilities
+People with learning dif?culties often have problems in understanding people and themselves, what people think or feel and their expression of emotions.
+It is hard to isolate and teach all these cognitive ideas in real-life situations due to competing and confusing stimulation from the social and environmental context. In reality, everything occurs very fast, with it being dif?cult to highlight subtle but relevant details that lead individuals to behave in a given way.
+As another way of manipulating time, in virtual reality it is possible to ??freeze?? people?s interaction?s and then carefully explain all the variables involved to those who ?nd it dif?cult to understand or manage it socially. Taking all these aspects into account, it is possible to create a complete tool which can help professionals in special education, to teach basic concepts and a variety of skills, most of them dif?cult to explain and show in the real world. Moreover, most of the concepts that can be integrated in the application are part of the school curriculum, thus being of special interest in the educational process of children, who can learn while they are playing (very important in making the system more appealing).
+5. 
+ Case study: two different Virtual Reality applications
+ 
+ 
+With all the previously described concepts in mind, we can review in more detail two of our computer graphics applications developed for people with learning dif?culties. As we mentioned before, the ?rst case is a Virtual Supermarket and the second one is a Virtual School, this one still under development. Both environments were selected because of their familiarity to almost everybody. For that reason, entering in these places can be easier and more relaxed than in others, and the knowledge acquired in them can be generalized to the real world.
+ 
+ 
+5.1. Virtual Supermarket
+ 
+ 
+This application consists of a 3D supermarket with a variety of products, virtual actors representing different employees and different functionalities available. The basic task in this tool is to do the shopping. The user has to move inside the supermarket searching for the products speci?ed
+in a shopping list (see	Fig. 4	). This shopping list is selected
+at the beginning and contains the objects to work with in each session. The teacher needs to organize each session to determine which lists they are going to use depending on the objects selected to work with.
+Navigation inside the environment is done by using a joystick or the keyboard arrows. The use of a joystick facilitates the interaction for all users because it is more intuitive and easy to use than the keyboard. Location inside the supermarket is subjectively represented by a virtual trolley that moves with the user. This trolley also has the functionality of a real trolley in a supermarket, that is, it works as a container for the products that are necessary to buy to complete the list.
+For selecting objects or interactive elements in the virtual setting, is possible to use the mouse or a tactile screen. Both
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 4. Picking a product into the virtual trolley with the shopping list spread out, in the Virtual Supermarket.
+
+ ARTICLEINPRESS
+
+654
+L. 
+ 

@@ -1,0 +1,86 @@
+﻿OWL
+The World Wide Web Consortium's (W3C) Web Ontology Language (OWL) is a Semantic Web language that is used to publish and share ontologies on the World Wide Web as defined by W3C. OWL is a computational logic based (such as Description Logics) which consequently specifies a computer-processable serialization of an ontology and knowledge base. (Keet, C. M., 2015).
+
+Contents [hide] 
+1 History
+1.1 OWL1
+1.1.1 Expressivity of OWL1 DL
+1.2 OWL 2
+1.2.1 Expressivity of OWL 2 DL
+1.2.2 OWL Syntax Variants
+2 Structure
+History[edit]
+There are two OWL standards, OWL and OWL 2 ([see overview]). (Uploading images doesn't work)
+
+OWL1[edit]
+This language has been the W3C recommendation since 2004. OWL1 exists in different flavors: OWL1 Lite, OWL1 DL (Description Logics), OWL1 Full. The latter is comes from the or union between OWL1 DL and RDFS, this means that OWL1 Full is RDFS compatible. The dialects are organized in the following manner:
+
+OWL Lite ⊆ OWL1 DL ⊆ OWL1 Full. (See figure X).
+
+OWL1 DL is based on a special description logic called SHOIN(D). All these letters denote special constructors (see complete list in Description Logics). These constructors are the building blocks for creating axioms:
+
+Expressivity of OWL1 DL[edit]
+Terminological axioms (TBox):
+
+Here there can be subclass relationships and subclass inclusion C ⊑ D (H - Class Hierarchy).
+
+Relational axioms (RBox):
+
+This is sometimes part of the TBox, and here properties are constructed. It can contain sub property relationships R ⊑ S (H), inverse properties Rˉ (I) and you can define that properties might be transitive ⊑⁺ (S).
+
+Assertional axioms (ABox)
+
+Here you can construct facts like class membership C(a), property membership R(a, b) (That a is related to b via property R), equality a=b or difference a≠b.
+
+Class constructors: With class constructors you can define complex classes by binding one or more simpler classes with constructors. OWL1 have the following constructors:
+
+Conjunctions C⊓D, disjunctions C⊔D and negations ¬C.
+Property restrictions with universal ∀R.C quantifiers (also called strict binding) and existential ∃R.C quantifiers (also called loose binding).
+Number restrictions (N): To define a class with number restrictions means that the individuals of the class are all connected via a relation R at least (≥n R), or at most (≤n R) times.
+Nominals (closed classes): You define a class explicitly by enumerating all its constituents and all its members.
+Datatypes (D)
+
+OWL 2[edit]
+This language has been the W3C recommendation since 2009. This ontology language is a bit more complex than OWL1, and has more profiles: OWL EL, OWL RL and OWL QL, OWL2 DL and OWL2 Full:
+
+OWL EL, OWL RL, OWL QL ⊆ OWL2 DL ⊆ OWL2 Full (See figure X).
+
+As you can see, the three first ones are sub dialects of OWL2 DL. These have different restrictions and not all constructors available simply to make the algorithms you need for reasoning, more efficient. They are designed to fit different needs, and to ensure compatibility with legacy systems of knowledge representations, database systems and rule based systems. OWL 2 DL implements a special Description Logics called SHROIQ(D). As with OLW1 Full, OWL2 Full is nothing more than the union of OWL2 DL and RDFS, and hence is compatible with RDFS.
+
+Expressivity of OWL 2 DL[edit]
+Class Expressions
+
+Class names (A,B), Conjunction (C ⊓ D), Disjunctions (C ⊔ D), Negations (¬C), Existential property restriction (∃R.C), Universal property restriction (∀R.C), Self (∃S.Self), Greater-than (≥n S.C), Less-than (≤n S.C) and Enumerated classes {a}
+
+Properties
+
+Property names (R,S,T), Simple properties (S,T), Inverse properties (Rˉ), Universal property (U)
+
+TBox (Class axioms)
+
+Inclusion (C ⊑ D), Equivalence (C ≣ D)
+
+RBox (Property axioms)
+
+Inclusion (R1 ⊑ R2), General Inclusion, Transitivity, Symmetry , Reflexivity, Irreflexivity, Disjunctiveness
+
+ABox (Facts)
+
+Class membership (C(a)), Property relation (R(a,b)), Negated property relation (¬S(a, b)), Equality (a = b), Inequality (≠)
+
+OWL Syntax Variants[edit]
+OWL2 can be represented in different syntax variants:
+
+Functional Syntax: Substitutes abstract syntax of OWL1. Compact, easy to define and has no restriction to RDF.
+RDF-Syntax: Extension of existing OWL/RDF. Is important for compatibility issues.
+XML-Syntax: Independent XML serialization
+Manchester-Syntax: Machine readable syntax (especially for ontology editors like Protégé)
+Turtle: Simple, efficient and easy to define.
+Structure[edit]
+An OWL ontology consists, like in Description Logics (DL) of classes, properties(which is called roles in DL) and individuals (instances of classes). The so called Open World Assumption (OWA) holds. This means that the absence of information must not be valued as negative information. So if something is not stated explicitly - we cannot say it is not possible. E.g. given the property:
+
+sitsNextTo(PersonA, PersonB
+
+PersonA may also sit next to another person. This information is not excluded from the knowledge base.
+
+Another property that holds is the No Unique Name Assumption. This means that difference between two entities or classes must be be expressed explicitly. Otherwise it might be that PersonA denotes the same individual as PersonB. So you have to denote that PersonB is something different from PersonA.

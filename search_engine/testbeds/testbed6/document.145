@@ -1,0 +1,110 @@
+ Binary Trees in C++  
+(Translated from the Java Verstion, see http://math.hws.edu/javanotes/c9/s4.html) 
+ WE HAVE SEEN how objects can be linked into lists. When an object contains two pointers to objects of the same type, 
+ structures can be created that are much more complicated than linked lists. In this section, we'll look at one of the
+ most basic and useful structures of this type: binary trees. Each of the objects in a binary tree contains two pointers,
+ typically called left and right. In addition to these pointers, of course, the nodes can contain other types of data. For 
+ example, a binary tree of integers could be made up of objects of the following type: 
+ struct TreeNode {
+    int item;         // The data in this node.
+    TreeNode *left;   // Pointer to the left subtree.
+    TreeNode *right;  // Pointer to the right subtree.
+ }
+ The left and right pointers in a TreeNode can be NULL or can point to other objects of type TreeNode. A node that points
+ to another node is said to be the parent of that node, and the node it points to is called a child. In the picture at the 
+ right, for example, node 3 is the parent of node 6, and nodes 4 and 5 are children of node 2. Not every linked structure
+ made up of tree nodes is a binary tree. A binary tree must have the following properties: There is exactly one node in the
+ tree which has no parent. This node is called the root of the tree. Every other node in the tree has exactly one parent. 
+ Finally, there can be no loops in a binary tree. That is, it is not possible to follow a chain of pointers starting at some
+ node and arriving back at the same node. 
+ A node that has no children is called a leaf. A leaf node can be recognized by the fact that both the left and right pointers 
+ in the node are NULL. In the standard picture of a binary tree, the root node is shown at the top and the leaf nodes at the 
+ bottom -- which doesn't show much respect with the analogy to real trees. But at least you can see the branching, tree-like 
+ structure that gives a binary tree its name. 
+ Consider any node in a binary tree. Look at that node together with all its descendents (that is, its children, the children
+ of its children, and so on). This set of nodes forms a binary tree, which is called a subtree of the original tree. For example,
+ in the picture, nodes 2, 4, and 5 form a subtree. This subtree is called the left subtree of the root. Similarly, nodes 3 and 6
+ make up the right subtree of the root. We can consider any non-empty binary tree to be made up of a root node, a left subtree, 
+ and a right subtree. Either or both of the subtrees can be empty. This is a recursive definition, matching the recursive definition
+ of the TreeNode class. So it should not be a surprise that recursive functions are often used to process trees. 
+ Consider the problem of counting the nodes in a binary tree. As an exercise, you might try to come up with a non-recursive algorithm 
+ to do the counting. The heart of problem is keeping track of which nodes remain to be counted. It's not so easy to do this, and 
+ in fact it's not even possible without using an auxiliary data structure. With recursion, however, the algorithm is almost trivial.
+ Either the tree is empty or it consists of a root and two subtrees. If the tree is empty, the number of nodes is zero. 
+ (This is the base case of the recursion.) Otherwise, use recursion to count the nodes in each subtree. Add the results from the 
+ subtrees together, and add one to count the root. This gives the total number of nodes in the tree. Written out in C++: 
+      int countNodes( TreeNode *root ) {
+           // Count the nodes in the binary tree to which
+           // root points, and return the answer.
+        if ( root == NULL )
+           return 0;  // The tree is empty.  It contains no nodes.
+        else {
+           int count = 1;   // Start by counting the root.
+           count += countNodes(root-&gt;left);  // Add the number of nodes
+                                            //     in the left subtree.
+           count += countNodes(root-&gt;right); // Add the number of nodes
+                                            //    in the right subtree.
+           return count;  // Return the total.
+        }
+     } // end countNodes()
+ Or, consider the problem of printing the items in a binary tree. If the tree is empty, there is nothing to do. If the tree is non-empty, then it consists of a root and two subtrees. Print the item in the root and use recursion to print the items in the subtrees. Here is a function that prints all the items on one line of output: 
+      void preorderPrint( TreeNode *root ) {
+           // Print all the items in the tree to which root points.
+           // The item in the root is printed first, followed by the
+           // items in the left subtree and then the items in the
+           // right subtree.
+        if ( root != NULL ) {  // (Otherwise, there's nothing to print.)
+           cout &lt;&lt; root-&gt;item &lt;&lt; " ";      // Print the root item.
+           preorderPrint( root-&gt;left );    // Print items in left subtree.
+           preorderPrint( root-&gt;right );   // Print items in right subtree.
+        }
+     } // end preorderPrint()
+ This routine is called "preorderPrint" because it uses a preorder traversal of the tree. In a preorder traversal, the root node of the tree is processed first, then the left subtree is traversed, then the right subtree. In a postorder traversal, the left subtree is traversed, then the right subtree, and then the root node is processed. And in an inorder traversal, the left subtree is traversed first, then the root node is processed, then the right subtree is traversed. Printing functions that use postorder and inorder traversal differ from preorderPrint only in the placement of the statement that outputs the root item: 
+     void postorderPrint( TreeNode *root ) {
+           // Print all the items in the tree to which root points.
+           // The items in the left subtree are printed first, followed 
+           // by the items in the right subtree and then the item in the
+           // root node.
+        if ( root != NULL ) {  // (Otherwise, there's nothing to print.)
+           postorderPrint( root-&gt;left );    // Print items in left subtree.
+           postorderPrint( root-&gt;right );   // Print items in right subtree.
+           cout &lt;&lt; root-&gt;item &lt;&lt; " ";       // Print the root item.
+        }
+     } // end postorderPrint()
+     void inorderPrint( TreeNode *root ) {
+           // Print all the items in the tree to which root points.
+           // The items in the left subtree are printed first, followed 
+           // by the item in the root node, followed by the items in
+           // the right subtree.
+        if ( root != NULL ) {  // (Otherwise, there's nothing to print.)
+           inorderPrint( root-&gt;left );    // Print items in left subtree.
+           cout &lt;&lt; root-&gt;item &lt;&lt; " ";     // Print the root item.
+           inorderPrint( root-&gt;right );   // Print items in right subtree.
+        }
+     } // end inorderPrint()
+ Each of these functions can be applied to the binary tree shown in the illustration at the beginning of this section. The order in which the items are printed differs in each case: 
+          preorderPrint outputs:   1  2  4  5  3  6
+          postorderPrint outputs:  4  5  2  6  3  1
+          inorderPrint outputs:    4  2  5  1  3  6
+ In preorderPrint, for example, the item at the root of the tree, 1, is output before anything else. 
+ But the preorder printing also applies to each of the subtrees of the root. The root item of the left subtree, 2, is
+ printed before the other items in that subtree, 4 and 5. As for the right subtree of the root, 3 is output before 6. 
+ A preorder traversal applies at all levels in the tree. The other two traversal orders can be analyzed similarly. 
+ Binary Sort Trees 
+ One of our examples using a list was a linked list of strings, in which the strings were kept in increasing order.
+ While a linked list works well for a small number of strings, it becomes inefficient for a large number of items. 
+ When inserting an item into the list, searching for that item's position requires looking at, on average, half the
+ items in the list. Finding an item in the list requires a similar amount of time. If the strings are stored in a sorted 
+ array instead of in a linked list, then searching becomes more efficient because binary search can be used. However, 
+ inserting a new item into the array is still inefficient since it means moving, on average, half of the items in the 
+ array to make a space for the new item. A binary tree can be used to store an ordered list of strings, or other items,
+ in a way that makes both searching and insertion efficient. A binary tree used in this way is called a binary sort tree. 
+ A binary sort tree is a binary tree with the following property: For every node in the tree, the item in that node is 
+ greater than every item in the left subtree of that node, and it is less than or equal to all the items in the right 
+ subtree of that node. Here for example is a binary sort tree containing items of type string. (In this picture, I haven't
+ bothered to draw all the pointer variables. Non-NULL pointers are shown as arrows.) 
+ Binary sort trees have this useful property: An inorder traversal of the tree will process the items in increasing order.
+ In fact, this is really just another way of expressing the definition. For example, if an inorder traversal is used to 
+ print the items in the tree shown above, then the items will be in alphabetical order. The definition of an inorder 
+ traversal guarantees that all the items in the left subtree of "judy" are printed before "judy", and all the items in
+ the right subtree of "judy" are printed after "judy".

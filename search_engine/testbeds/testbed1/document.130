@@ -1,0 +1,73 @@
+Apache_Harmony
+'''Apache Harmony''' is a retired , , developed by the . It was announced in early May 2005 and on October 25, 2006, the Board of Directors voted to make Apache Harmony a top-level project. The Harmony project achieved (as of February 2011) 99% completeness for , and 97% for . The  operating system is a major user of Harmony, but its next version uses  libraries gaining, e.g. some features of  (that is, excluding its ).
+On October 29, 2011 a vote was started by the project lead Tim Ellison whether to retire the project. The outcome was 20 to 2 in favor, and the project was retired on November 16, 2011.
+== History ==
+=== Initiation ===
+The Harmony project was initially conceived as an effort to unite all developers of the . Many  expected that it would be the project above the ,  and other communities. GNU developers were invited into and participated during the initial, preparatory planning.
+=== Incompatibility with GNU Classpath ===
+Despite the impression given by the preparatory planning, it was decided not to use the code from , and that Harmony would use an incompatible license; therefore blocking the collaboration between Harmony and existing free Java projects. Apache developers would then  and expect necessary large code donations from . Various misunderstandings at the start of the project, and the fact that major companies like  proposed to give large amount of existing code, created some confusion in the free Java community about the real objectives of the project.
+One major point of incompatibility between the GNU Classpath and Apache Harmony projects was their incompatible licenses: Classpath's  with the  versus Harmony's .
+=== Difficulties to obtain a TCK license from Sun ===
+On April 10, 2007, the  sent an  to  ,  regarding their inability to acquire an acceptable license for the Java SE 5  (TCK), a test kit needed by the project to demonstrate compatibility with the Java SE 5 specification, as needed by the  specification license for Java SE 5. What makes the license unacceptable for  is the fact that it imposes rights restrictions through limits on the "field of use" available to users of Harmony, not compliant with the  rules.According to ASF, 1) a specification lead cannot ''impose any contractual condition or covenant that would limit or restrict the right of any licensee to create or distribute such Independent Implementations'' (section 5.C.III), and 2) ''a specification lead must license all necessary IP royalty-free to any compatible implementation of a specification'' (section 5.B).
+Sun answered on a company bloghttp://blogs.sun.com/ontherecord/http://java.sys-con.com/read/360602.htm that it intended to create an open source implementation of the Java platform under , including the TCK, but that their current priority was to make the  accessible to the  community under  as quickly as possible.
+This answer triggered some reactions, either criticizing  for not responding "in a sufficiently open manner" to an open letter,http://ianskerrett.wordpress.com/2007/04/16/the-silence-from-an-open-sun/ or rather ; some think that ASF acted unwisely to aggressively demand something they could have obtained with more diplomacy from Sun, especially considering the timescale of the opening class library.http://gnu.wildebeest.org/diary/2007/04/21/openjck/
+Since Sun's release of ,  has released a specific license to allow to run the TCK in the OpenJDK context for any  implementation deriving substantially from OpenJDK.
+On December 9, 2010, the Apache Software Foundation resigned from the Java Community Process Executive Committee, in protest over the difficulty in obtaining a license acceptable to Apache for use with the Harmony project.
+=== Use in Android SDK ===
+, the virtual machine that was used in 's  platform up to version 4.4 (and  (ART), that followed), uses a subset of Harmony for the core of its . However, Dalvik does not align to  nor   profiles (for example  classes,  and  are not supported).
+In December 2015, Google announced that the next version of Android would use  libraries instead.
+=== Disengagement from IBM ===
+On October 11, 2010, , by far the biggest participant in the project, decided to join  on the  project, effectively shifting its efforts from Harmony to the  reference implementation. Bob Sutor, IBM's head of Linux and open source, blogged that "IBM will be shifting its development effort from the Apache Project Harmony to OpenJDK".
+On March 2011, 's Tim Ellison announced that he resigned as Project Management Chair for Harmony, a move which brought questions about the future of the project. Since the beginning of 2011, there has been almost no more development on the project, nor discussions on the mailing list.
+=== End of the project ===
+On October 29, 2011, a poll was started on the harmony-dev mailing list by the project lead Tim Ellison whether to retire the project. The outcome on November 3, was 20 to 2 in favor of retirement.  On November 16, 2011, the Apache Software Foundation board of directors passed a motion to terminate the project.   One director,  , cast a "no" vote, based on the timing rather than the merits of the proposal; it was otherwise unanimous.  The project was retired on November 16, 2011.
+== Development team ==
+At the start, Apache Harmony received some large code contributions from several companies. Development discussions have taken place on open mailing lists.  Later, the Apache Software foundation mentors put a lot of effort
+into bringing the development process more in line with "the Apache way," and it seemed that their efforts were successful.
+== Last development status ==
+Apache Harmony was accepted among the official Apache projects on October 29, 2006.
+=== Architecture ===
+The Dynamic Runtime Layer virtual machine consists of the following components:
+#'''The VM core:''' with its subcomponents concentrates most of the JVM control functions.
+#'''The porting layer''': hides platform-specific details from other VM components behind a single interface and is based on the  layer.
+#'''The ''': allocates Java objects in the heap memory and reclaims unreachable objects using various algorithms
+#'''Execution Manager''': selects the execution engine for compiling a method, handles profiles and the dynamic recompilation logic.
+#'''Class Library''':  is a Java standard library.
+#'''The thread manager''' that handle operating system threading
+#'''The execution engine:''' consists of the following:
+##The  for compilation and execution of method code.
+##The  for easier debugging.
+=== Support platform and operating system ===
+The project provided a portable implementation that ease development on many platforms and operating systems. The main focus was on  and  operating systems on x86 and x86-64 architectures.
+=== Class library coverage ===
+The expected donations from software companies were actually received. The Apache Harmony now contains the working code, including the ,  and  code which were contributed by .
+The Harmony project currently achieve (as of February 2011)  99% completeness for , and 97% for .
+The progress of the Apache Harmony project can be tracked against J2SE 1.4 and Java SE 5.0. Also, there is a branch for Harmony v6.0 in development for Java SE 6.0.
+Apache Harmony developers integrate several existing, field-tested open-source projects to meet their goal (not ). Many of these projects are mature and well known and other parts of the library needed to be written from scratch.
+This is a list of existing open source components that are used in the Apache Harmony project; some of them were in use before the project started.
+=== Documentation ===
+Harmony is currently less documented than the alternative free Java implementations. For instance, in GNU Classpath every method of the central  class (ORB) has the explaining comment both in the standard abstract API classhttp://cvs.savannah.gnu.org/viewcvs/*checkout*/classpath/org/omg/CORBA/ORB.java?rev=1.2.2.12&root=classpath and implementation.http://cvs.savannah.gnu.org/viewcvs/*checkout*/classpath/gnu/CORBA/OrbFunctional.java?rev=1.6&root=classpath In the  project, used by Harmony,http://www.mail-archive.com/yoko-dev@incubator.apache.org/msg01428.html most methods both in the standard declarationhttp://svn.apache.org/repos/asf/incubator/yoko/trunk/yoko-spec-corba/src/main/java/org/omg/CORBA/ORB.java and implementing classhttp://svn.apache.org/repos/asf/incubator/yoko/trunk/core/src/main/java/org/apache/yoko/orb/OBCORBA/ORB_impl.java were undocumented at the end of October 2006. Also, GNU Classpath supported both older and current CORBA features (same as Sun's implementation). Harmony, differently, left the central method of the older standard (ORB.connect(Object)) fully unimplemented.
+=== Tools ===
+A complete implementation of the Java platform also needs a  that translates Java source code into s, a program that manages , a , and an  viewer and  , to name a few. Harmony currently has the , , jarsigner, javah, javap, , policytool, and  .
+=== Virtual machine support ===
+Harmony currently has seven  implementations that run Harmony Class Library, all of which were donations by external groups:
+* JC Harmony Edition VM, "JCHEVM," based on the  , contributed by the author, Archie Cobbs.
+* BootJVM, a simple  virtual machine, contributed by Daniel Lydick.
+* , an advanced, portable interpreter, contributed by authors from the ; and the Dynamic Runtime Layer Virtual Machine.
+* , a  contributed by .
+* BEA announced the availability of an evaluation version of JRockit VM running Apache Harmony Class Library.
+* , an open-source  JVM that use the Apache Harmony Class Library.
+* , an open source project providing a Java 5 JDK (class libraries, tools, etc.) that run on the  CLR. Ja.NET SE is based on the Apache Harmony Class Libraries.
+In the end of November 2006, the language support provided by these virtual machine was still incomplete, and the build instructions recommended to use 's  J9 instead to run the class library test suite. However, this is not necessary anymore (as of July 2007).
+As for the rest of the project, DRLVM  development has now stalled (as of May 2011).
+==Application status==
+Since its conception, Harmony grew in its ability to execute non-trivial Java applications.http://wiki.apache.org/harmony/Application_Status , supported applications include:
+* : 99.3% of the 36000  (RI) test pass on Harmony's DRLVM + class library.http://wiki.apache.org/harmony/Eclipse_Unit_Tests_Pass_on_DRLVM#PassRate_2007
+* : 100% of the RI tests pass.http://wiki.apache.org/harmony/Apache_Tomcat
+* : 100% of the RI tests pass.http://wiki.apache.org/harmony/JUnit
+* : 97% of the RI tests pass.http://wiki.apache.org/harmony/Apache_Ant
+* Other applications pass with a high success rate, such as , , , , , , and .
+However, Harmony's incomplete library prevented it from launching some other applications:
+* : because it needs a  implementation, which was still unavailable in Harmony.
+*  runs on Apache Harmony with some issues and workarounds.
+* , formerly Azureus, because of unimplemented security classes.

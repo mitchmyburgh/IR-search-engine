@@ -1,0 +1,29 @@
+Genevestigator is an innovative online platform enabling researchers to globally explore public and proprietary expression data for research and clinical applications. It's a web-based application developed for biologists and medical researchers to rapidly find out how genes are expressed in different tissues, stimuli, drug treatments, diseases, or genetic modifications. Results are processed from a large database of manually curated and quality-controlled microarrays and RNAseq samples from a large variety of tissues and conditions. Currently, data is available for human, mouse, rat, pig, drosophila, arabidopsis, barley, rice, wheat, tomato, tobacco, moss and soybean.
+Genevestigator was started in January 2004 by scientists from ETH Zurich and is currently developed and commercialized by Nebion AG.
+
+
+== Tool for biologists and medical researchers ==
+Genevestigator is currently serving a community of 44,000 registered users (mostly biologists) from the animal and plant research fields. Its tools have been used in molecular biology, toxicogenomics, and biomarker discovery/validation.
+As of May 2014, its original articles have been cited more than 2,500 times by researchers using the tools.
+Three tool sets, each containing several tools, are available:
+CONDITION SEARCH tools: find conditions that are relevant for your genes of interest
+GENE SEARCH tools: find genes that are specifically expressed in conditions of interest
+SIMILARITY SEARCH tools: find genes that are similar within a data space.
+Underlying most of the tools is the concept of "meta-profiles". Meta-profiles are representative vectors of expression for a given type of condition. For example, for a gene of interest, its anatomy meta-profile is the vector of expression values across all anatomy categories that are available in the database for this gene and organism. In simple terms, it shows how strongly a gene is expressed in different anatomy parts. This holds true also for stages of development or perturbations, which are also summarized into representative expression responses.
+The concept of meta-profiles has been used in Genevestigator to characterize expression across anatomy, development, stimuli (drug treatments, diseases, stimuli) and mutations.
+
+
+== See also ==
+Spatiotemporal gene expression
+
+
+== References ==
+Prasad A, Suresh Kumar S, Dessimoz C, Bleuler S, Laule O, Hruz T, Gruissem W, and P Zimmermann (2013) Global regulatory architecture of human, mouse and rat tissue transcriptomes. BMC Genomics 2013, 14:716.
+Hruz T, Wyss M, Lucas C, Laule O, von Rohr P, Zimmermann P, and S Bleuler (2013) A Multilevel Gamma-Clustering Layout Algorithm for Visualization of Biological Networks. Advances in Bioinformatics, vol. 2013, Article ID 920325, 10 pages, 2013. doi:10.1155/2013/920325.
+Hruz T, Wyss M, Docquier M, Pfaffl MW, Masanetz S, Borghi L, Verbrugge P, Kalaydjieva L, Bleuler S, Laule O, Descombes P, Gruissem W and P Zimmermann (2011) RefGenes: identification of reliable and condition specific reference genes for RT-qPCR data normalization. BMC Genomics 2011, 12:156.
+Hruz T, Laule O, Szabo G, Wessendorp F, Bleuler S, Oertle L, Widmayer P, Gruissem W and P Zimmermann (2008) Genevestigator V3: a reference expression database for the meta-analysis of transcriptomes. Advances in Bioinformatics 2008, 420747
+Grennan AK (2006) Genevestigator. Facilitating web-based gene-expression analysis. Plant Physiology 141(4):1164-6
+Laule O, Hirsch-Hoffmann M, Hruz T, Gruissem W, and P Zimmermann (2006) Web-based analysis of the mouse transcriptome using Genevestigator. BMC Bioinformatics 7:311
+Zimmermann P, Hennig L and W Gruissem (2005) Gene expression analysis and network discovery using Genevestigator. Trends in Plant Science 9 10, 407-409
+Zimmermann P, Hirsch-Hoffmann M, Hennig L and W Gruissem (2004) GENEVESTIGATOR: Arabidopsis Microarray Database and Analysis Toolbox. Plant Physiology 136 1, 2621-2632
+Zimmermann P, Schildknecht B, Garcia-Hernandez M, Gruissem W, Craigon D, Mukherjee G, May S, Parkinson H, Rhee S, Wagner U and L Hennig (2006) MIAME/Plant - adding value to plant microarray experiments. Plant Methods 2, 1

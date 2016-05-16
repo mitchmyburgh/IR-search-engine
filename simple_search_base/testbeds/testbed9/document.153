@@ -1,0 +1,19 @@
+A Kinetic Priority Queue is an abstract kinetic data structure. It is a variant of a priority queue designed to maintain the maximum (or minimum) priority element (key-value pair) when the priority of every element is changing as a continuous function of time. Kinetic priority queues have been used as components of several kinetic data structures, as well as to solve some important non-kinetic problems such as the k-set problem and the connected red blue segments intersection problem.
+
+
+== Implementations ==
+The operations supported are:
+create-queue(q): create an empty kinetic priority queue q
+find-max(q, t) (or find-min): - return the max (or min for a min-queue) value stored in the queue q at the current virtual time t.
+insert(X, fX, t): - insert a key X into the kinetic queue at the current virtual timet, whose value changes as a continuous function fX(t) of time t.
+delete(X, t) - delete a key at the current virtual time t.
+There are several variants of kinetic priority queues, which support the same basic operations but have different performance guarantees. Some of the most common implementations are kinetic heaps which are simple to implement but don't have tight theoretical performance bounds, and their randomized variants - kinetic heaters and kinetic hangers - which are easier to analyze. There is also a heap-like structure based on the dynamic convex hull data structure which achieves better performance for affine motion of the priorities, but doesn't support curved trajectories. The kinetic tournament is another commonly used implementation. It achieves, deterministically, the same performance bounds as the heater or hanger, however it is less local and responsive than the heap-based data-structures.
+Here,  denotes the inverse Ackermann function.-intersecting curves refer to curves where each pair has at most  intersections, and  refers to a term in the Davenport-Schinzel sequence, which gives the maximum size of the upper envelope of  intersecting curves.  is the largest number of elements in the queue at any given time, while  refers to the total number of elements that are ever in the queue.
+
+
+== Applications ==
+Kinetic priority queues are used as part of other kinetic data structures/algorithms such as kinetic closest pair, kinetic max-cut or kinetic clustering.
+They can also be used to solve problems such as broadcast scheduling or the connected red blue segments intersection problem.
+
+
+== References ==

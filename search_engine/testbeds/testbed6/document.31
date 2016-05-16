@@ -1,0 +1,136 @@
+				googletag.display('div-gpt-ad-942957474691236830-1');
+				googletag.display('div-gpt-ad-942957474691236830-30');
+				googletag.display('div-gpt-ad-942957474691236830-2');
+		#login, #login a, #login strong { color: white;  font-weight: bold; font-size:12px;} 
+      Subscribe 
+      Newsletters 
+      Digital Library 
+      RSS 
+      Search: 
+      Site 
+      Source Code 
+       Home
+       Articles
+       News
+       Blogs
+       Source Code
+       Dobb's TV
+       Webinars &amp; Events 
+	Go Parallel
+    --> 
+     Sections&nbsp;▼ 
+      Home
+      Articles
+      News
+      Blogs
+      Source Code
+      Dobb's TV
+      Webinars &amp; Events 
+    //events listing in universal header    
+	$("div#h-nav_mainSection-mobile").hover(function() {
+        $("div#h-nav_mainSection-mobile").children('ul').slideDown(200);        
+	}, function() {
+        $("div#h-nav_mainSection-mobile").children('ul').fadeOut(100);        
+	}); 
+var eventKey = "tw_dev2013";
+var eventValue = "01";
+document.write('');
+     Cloud
+     Mobile
+     Parallel
+     .NET
+     JVM Languages
+     C/C++
+     Tools
+     Design
+     Testing
+     Web Dev
+     Jolt Awards 
+  Channels&nbsp;▼ 
+   Cloud
+   Mobile
+   Parallel
+   .NET
+   JVM Languages
+   C/C++
+   Tools
+   Design
+   Testing
+   Web Dev
+   Jolt Awards 
+    //events listing in universal header    
+	$("div#h-nav2_mainSection-mobile").hover(function() {
+        $("div#h-nav2_mainSection-mobile").children('ul').slideDown(200);        
+	}, function() {
+        $("div#h-nav2_mainSection-mobile").children('ul').fadeOut(100);        
+	}); 
+				googletag.display('div-gpt-ad-942957474691236830-3');
+    --> 
+   var ngGatedContentPage = '1'; 
+syntaxhighlighter {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 450px;
+}
+    Database 
+       Tweet
+       window.twttr = (function (d,s,id) {var t, js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });}(document, "script", "twitter-wjs"));
+twttr.ready(function (twttr) {
+	twttr.events.bind('tweet', function(event) {
+		var tweet_id = event.data.tweet_id;
+		var user_id = event.data.user_id;
+		var screen_name = event.data.screen_name;
+		var s=s_gi('cmpglobalvista');
+		s.evar33=tweet_id;
+		s.evar34='Twitter '+screen_name+' | '+user_id;
+		s.events='event10';
+		s.tl(this,'o','Twitter Tweet Submitted by User');
+	});
+	twttr.events.bind('follow', function(event) {
+		var followed_user_id = event.data.user_id;
+		var followed_screen_name = event.data.screen_name;
+		var s=s_gi('cmpglobalvista');
+		s.evar34='Twitter '+followed_screen_name+'| '+followed_user_id ;
+		s.events='event11';
+		s.tl(this,'o','Twitter Account Followed by User');
+	});
+});
+				( function(d, s, id) {
+					  var js, fjs = d.getElementsByTagName(s)[0];
+					  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+					  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+					  fjs.parentNode.insertBefore(js, fjs);
+				}
+				(document, 'script', 'facebook-jssdk')); 
+       Permalink 
+      var addthis_config = {"data_track_clickback":true}; 
+function emailLauncher(filePath,storyURL) {	
+	uri = filePath + encodeURIComponent(storyURL);
+	window.open(uri,"","toolbar=no,scrollbars=auto,location=no,status=no,width=733,height=590,resizable=1");
+}
+     AVL Trees 
+      By Timothy Rolfe, December 01, 2000 
+      Source Code Accompanies This Article. Download It Now. 
+        aa0012.txt  
+     If you need fast searching capabilities, AVL trees might just be what you're looking for.
+      Dec00: Algorithm Alley  
+        Timothy is an associate professor of computer science at Eastern Washington University. He can be contacted at trolfe@ ewu.edu. 
+       The binary search tree (BST) is a data structure for holding information that allows rapid access according to some ordering key. As the name indicates, it is a tree structure in which the nodes containing information can be connected to two subtrees (hence the "binary"). The search condition is met by requiring that all information to the left of a node comes before the node itself, and that all information to the right of the node comes after the node itself. If you want to allow equal comparisons, you choose which side to put them on. 
+       Searching for an item within such a data structure is simply a matter of examining each node (starting from the beginning, called the "root" of the tree). If the value desired is found within that node, you're finished. If not, you can see how your desired value compares with the node value: If the desired value is less than the node value, you can ignore the entire right subtree and just move down the left subtree, repeating the same operation. If the desired value is greater than the node, then ignore the left subtree and move down the right. 
+        Insertion into a BST involves searching for the value to be inserted, then putting it in exactly at the spot where it wasn't found. 
+        Deletion is a bit more of a problem. The more elegant solution is to find a replacement node from farther down in the tree that can replace the deleted node and still retain the BST condition. In other words, replace the node with a node in the tree that, in the key order generating the tree, comes immediately before or after that node. 
+        If the BST is most densely organized, you can, within a path of length k, access one piece of information among 2k+1 pieces of information. The extremely careful would want that written as 2 k+1 -1, though the -1 makes little difference as k becomes large. Starting from the top, every level of the tree is fully populated, and the number of levels in the tree of N nodes is approximately 3.3 log10 N -- in other words, the base-2 logarithm of N, written as lg(N). 
+        However, the BST has a significant problem. When the tree is at its lowest density, the path of length k only chooses from among k+1 pieces of information. This happens when every node in the tree has just one subtree; perhaps at every level there is no left subtree, but only a right subtree (referred to as a degenerate tree because it really is nothing but a linked list). This is exactly what happens if you build the BST with values that are already in order. 
+        With random data, the number of levels in the tree tends to be almost 3 lg(N), and on average you go down a bit over 1 1/3 lg(N) levels to find a value. 
+        People who want faster access have devised schemes that guarantee that the BST is denser than that (which would certainly avoid the degenerate tree case), regardless of the order of operations on the tree. The first one was proposed by Adel'son-Velskii and Landis, and is called the "AVL tree" in their honor (see G.M. Adel'son-Velskii and Y.M. Landis, "An Algorithm For The Organization Of Information," Soviet Math Dockl., 1962). 
+        Every node in a tree has what is called its "height" -- the number of links in the longest path from that node down to what is called a "leaf node" (one with no children) at the bottom of the tree. (A memory aid for this is to remember that height tells you how far up you are.) The AVL condition for a BST is that, for every node, the heights of its two children differ at most by one. (You can see that you have to allow a difference of one just by looking at a two-node tree.) 
+        The operations in a BST that affect the height are insertion and deletion. I will focus on deletion as effectively removing the node that becomes the replacement for the deleted node. On an insertion, there are obviously no nodes below the point of insertion since there's nothing there. With the way we are focusing for deletion, there are also no changes in height for nodes in the subtree below the node removed. Consequently, the adjustments to enforce the AVL condition must be performed in the nodes from the point of the operation back up to the root of the tree. This might appear to be a problem, but it really isn't. To see why, we will have to get into explicit programming, and we will use C++ as its basis (C++ because I depend on having a pointer as a reference parameter). I will explicitly discuss insertion, but also include the deletion function in the accompanying code. 
+        Insertion is most easily handled as a recursive function: recurse to the point of failure, then change the pointer (and, because of the reference parameter, the pointer in the calling routine) to reference the newly created node. Written for a BST without regard to the AVL condition, this function (see Listing One) is particularly simple. Assume a class BST for the tree itself, a class or struct BSTnode for the nodes of the tree, and a class, struct, or type Data for the data portion of the BSTnode (for which the relational operator "&lt;" is defined). To keep the logic simple, I'll omit validation of the pointer returned by the new operator. 
+        Because of the recursion, the entire path back up to the root of the tree is available as the function goes through its returns. Thus, you can easily do the correction for the AVL condition simply by putting the appropriate code after the if/else-if/else structure in Listing One.  
+        Obviously, you need to get at the height of each tree node easily for an AVL tree. This means that you will have a small expense in space within each AVL node to retain that information. While there are strategies for retaining the necessary AVL information in just a couple of bits, the logic is more easily seen if you simply store the height, and unless you get into bit fields, you'll probably end up using a default int anyway. 
+        When checking the AVL condition, you test whether the two subtrees

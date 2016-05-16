@@ -1,0 +1,91 @@
+     Search CSRC: 
+  NIST, Computer Security Resource Center 
+   contact 
+   site map 
+    CSRC Home 
+    About 
+					Cryptographic Technology
+					Secure Systems and Applications
+					Security Components and Mechanisms					
+					Security Outreach and Integration
+					Security Testing, Validation, and Measurement
+-->  
+     Projects / Research 
+      Cryptographic Technology 
+      Education &amp; Outreach 
+      FISMA &amp; Cybersecurity Initiatives 
+      Identity Management &amp;Access Control 
+      Security Automation &amp;Vulnerability Management 
+      Systems &amp; Emerging Technologies 
+      Validation Programs &amp;Testing 
+      A-Z List of Projects
+      Past Projects 
+    publications 
+      Draft Publications 
+      FIPS Publications 
+      NIST Special Publications (SPs) 
+      NISTIRs 
+      ITL Bulletins 
+      By Topic/Project 
+      By Security Control Family 
+      By Legal Requirement 
+      Journal Articles and Other Papers 
+      Early Computer Security Papers (1970-1985) 
+      Other Historical Papers 
+    news &amp; events 
+      Federal Register Notices 
+      Federal Register Notices Archives 
+      News 
+      News Archive 
+      Events 
+      Events Archive 
+      CRYPTOGRAPHIC TOOLKIT 
+      Block Ciphers 
+      Block Cipher Modes 
+      Digital Signatures 
+      Entity Authentication 
+      Implementation Guideline 
+      Key Derivation Functions 
+      Key Management 
+      Message Authentication 
+      Random Number Generation 
+      Secure Hashing 
+        Approved Algorithms 
+        Testing / Products  
+        Related Special Publications  
+        Additional Information  
+      Algorithm Examples 
+     CSRC Home &gt;  
+     Groups &gt;  
+     ST &gt;  
+     Cryptographic Toolkit 
+    Secure Hashing 
+    Approved Algorithms 
+    Approved hash algorithms for generating a condensed representation of a message (message digest) are specified in two Federal Information Processing Standards: FIPS 180-4, Secure Hash Standard and FIPS 202, SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions. 
+    &nbsp;FIPS 180-4 specifies seven hash algorithms: 
+       SHA-1 (Secure Hash Algorithm-1), and the 
+       SHA-2 family of hash algorithms: SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256.  
+    FIPS 202 specifies the new SHA-3 family of permutation-based functions based on Keccak as a result of the &#x201c;SHA-3&#x201d; Cryptographic Hash Algorithm Competition. FIPS 202 specifies: 
+       Four fixed-length hash algorithms: SHA3-224, SHA3-256, SHA3-384, and SHA3-512; and 
+       Two closely related, &#x201c;extendable-output&#x201d; functions (XOFs): SHAKE128 and SHAKE256.  
+    Currently only the four fixed-length SHA-3 algorithms are approved hash algorithms, providing alternatives to the SHA-2 family of hash functions. The XOFs can be specialized to hash functions, subject to additional security considerations. Guideline for using the XOFs will be provided in the future. 
+    NIST&#x2019;s policy on these hash algorithms is available here. 
+    Examples with intermediate values for SHA-1, SHA-2 and SHA-3 families of hash algorithms are available here. 
+    Related Special Publications 
+    Special Publication 800-106, Randomized Hashing for Digital Signatures provides recommendation for randomizing the hash input messages prior to signature generation to strengthen the security of the digital signatures being generated. 
+     Special Publication 800-107, Revision 1, Recommendation for Using Approved Hash Algorithms provides security guidelines for achieving the required or desired security strengths when using cryptographic applications that employ the approved hash functions. These include applications such as digital signatures, Keyed-hash Message Authentication Codes (HMACs) and Hash-based Key Derivation Functions (Hash-based KDFs).  
+    Back to Top 
+    Testing Products 
+    Testing requirements and validation lists are available from the Cryptographic Algorithm Validation Program (CAVP). 
+    Back to Top 
+    Additional Information 
+    NIST maintains a Cryptographic Hash Project web page that details the SHA-3 development process. 
+   CryptoToolkit Webmaster, 
+   Disclaimer Notice &amp; 
+   Privacy Policy
+   NIST is an Agency of the 
+   U.S. Department of Commerce 
+    Last updated: 
+   August 6, 2015
+    Page created: December 21, 2000 
+

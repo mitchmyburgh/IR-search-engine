@@ -1,0 +1,23 @@
+The device tree is a data structure for describing hardware, which originated from Open Firmware. The data structure can hold any kind of data as internally it is a tree of named nodes and properties. Nodes contain properties and child nodes, while properties are name–value pairs.
+As an example, Das U-Boot and kexec include support for device trees.
+
+
+== Usage in Linux ==
+Given the correct device tree, the same compiled kernel can support different hardware configurations within a wider architecture family. The Linux kernel can read device tree information in the ARM, x86, MicroBlaze, PowerPC, and SPARC architectures. For ARM, use of device trees has become mandatory for all new SoCs. This can be seen as a remedy to the vast number of forks (of Linux and Das U-boot) that has historically been created to support (marginally) different ARM boards. Allegedly, the purpose is to move a significant part of the hardware description out of the kernel binary, and into the compiled device tree blob, which is handed to the kernel by the boot loader, replacing a range of board-specific C source files and compile-time options in the kernel.
+It has been customary of ARM-based Linux distributions to include a boot loader, that necessarily was customised for specific boards, for example Raspberry Pi or Hackberry A10. This has created problems for the creators of Linux distributions as some part of the operating system must be compiled specifically for every board variant, or updated to support new boards. However, some modern SoCs (for example, Freescale i.MX6) have a vendor-provided boot loader with device tree on a separate chip from the operating system.
+A proprietary configuration file format used for similar purposes, the FEX file format, is a de facto standard among Allwinner SoCs.
+
+
+== See also ==
+
+Differentiated System Description Table –  part of ACPI firmware that describes power events to an OS.
+
+
+== References ==
+
+
+== External links ==
+Flattened Device Tree (FDT) Wiki
+Device Tree –  eLinux.org
+Device Tree –  OMAPpedia
+Embedded Power Architecture Platform Requirements (ePAPR)

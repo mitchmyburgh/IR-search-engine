@@ -1,0 +1,19 @@
+
+PSA: Siri-lock screen flaw leaves your contacts and photos vulnerable (iOS 9.3.1) 
+POST YOUR COMMENT
+COMMENTS (54)
+
+Ricky, 05 April, 2016 iOS Apple
+Siri isn’t exactly the most loved feature of the iPhone among many users. She/He sometimes doesn’t hear you correctly, and often infuriates users who try to use Siri and end up disabling it altogether.
+
+Now here is where 3D Touch comes in. It wasn’t included in the iPhone SE, so we still don’t know if it’s because Apple intends to phase it out in the future, or if the iPhone SE was meant to be an inferior model to the iPhone 6S and iPhone 6S+
+
+3D touch enables a serious flaw present in iOS 9.3.1 on the iPhones 6S and 6S+ that lets anybody who can get their hands on your iPhone to access your contacts and your photos. The “Siri-D Touch” (See what I did there?) hack bypasses the lock screen by first activating Siri from the lock screen, next, ask Siri to do a search on Twitter. Then, find a result that displays an email address.
+
+
+
+The offender can then 3D Touch this email address and choose to “add to a contact”. When the offender chooses to add to an existing contact, the phone’s entire contact list is revealed. Once here, the contact can be opened and the iPhone will allow the selection of a photo to be used for such contact. Hereby, granting the operator access to the entire gallery.
+
+In order for said hack to work, the victim's phone would need to have 3D Touch enabled, as well as Siri enabled from the lock screen, and there should be a Twitter account logged in on the phone
+
+Apple will surely patch this flaw in an incremental update, but in the meantime, if you would like to take precautions with your iPhone 6S(+), you can change the setting that allows Siri's access to Twitter, or you can also disable either 3D touch, or Siri’s access to the lock screen.

@@ -1,0 +1,23 @@
+The MOEA Framework is an open-source evolutionary computation library for Java that specializes in multi-objective optimization. It supports a variety of multiobjective evolutionary algorithms (MOEAs), including genetic algorithms, genetic programming, grammatical evolution, differential evolution, and particle swarm optimization. As a result, it has been used to conduct numerous comparative studies to assess the efficiency, reliability, and controllability of state-of-the-art MOEAs.
+
+
+== Features ==
+The MOEA Framework is an extensible framework for rapidly designing, developing, executing, and statistically testing multiobjective evolutionary algorithms (MOEAs). It features 25 different state-of-the-art MOEAs and over 80 analytical test problems. It supports NSGA-II, it's recently introduced successor NSGA-III epsilon-MOEA, GDE3., and MOEA/D. natively. In addition, it integrates with the JMetal, Platform and Programming Language Independent Interface for Search Algorithms (PISA), and Borg MOEA libraries to provide access to all popular MOEAs. Additionally, using Java's service provider interface (SPI), new MOEAs and problems can be introduced into the framework. This supports the use of the MOEA Framework in scientific studies, allowing new MOEAs to be tested against a suite of state-of-the-art algorithms across a large collection of test problems.
+New problems are defined in the MOEA Framework using one or more decision variables of a varying type. This includes common representations such as binary strings, real-valued numbers, and permutations. It additionally supports evolving grammars in Backus–Naur Form and programs using an internal Turing complete programming language. Once the problem is defined, the user can optimize the problem using any of supported MOEAs.
+
+
+== Sensitivity analysis ==
+The MOEA Framework is the only known framework for evolutionary computation that provides support for sensitivity analysis. Sensitivity analysis in this context studies how an MOEA's parameters impact its output (i.e., the quality of the results). Alternatively, sensitivity analysis measures the robustness of an MOEA to changes in its parameters. An MOEA whose behavior is sensitive to its paramterization will not be easily controllable; conversely, an MOEA that is insensitive to its parameters is controllable. By measuring the sensitivities of each MOEA, the MOEA Framework can identify the controlling parameters for each MOEA and provide guidance for fine-tuning the parameters. Additionally, MOEAs that are consistently insensitive to parameter changes across an array of problem domains are regarded highly due to their robust ability to solve optimization problems.
+
+
+== See also ==
+
+ECJ, a toolkit to implement evolutionary algorithms
+Paradiseo, a metaheuristics framework
+
+
+== References ==
+
+
+== External links ==
+Official site

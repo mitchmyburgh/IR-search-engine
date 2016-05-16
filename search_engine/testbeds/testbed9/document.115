@@ -1,0 +1,12 @@
+The minimum-cost flow problem (MCFP) is to find the cheapest possible way of sending a certain amount of flow through a flow network. A typical application of this problem involves finding the best delivery route from a factory to a warehouse where the road network has some capacity and cost associated. The minimum cost flow problem is one of the most fundamental among all flow and circulation problems because most other such problems can be cast as a minimum cost flow problem and also that it can be solved very efficiently using the network simplex algorithm.
+
+A variation of this problem is to find a flow which is maximum, but has the lowest cost among the maximum flow solutions. This could be called a minimum-cost maximum-flow problem and is useful for finding minimum cost maximum matchings.
+
+With some solutions, finding the minimum cost maximum flow instead is straightforward. If not, one can find the maximum flow by performing a binary search on d.
+
+A related problem is the minimum cost circulation problem, which can be used for solving minimum cost flow. This is achieved by setting the lower bound on all edges to zero, and then making an extra edge from the sink t to the source s, with capacity c(t,s)=d and lower bound l(t,s)=d, forcing the total flow from s to t to also be d.
+
+The problem can be specialized into two other problems?
+
+if the capacity constraint is removed, the problem is reduced to the shortest path problem,
+if the costs are all set equal to zero, the problem is reduced to the maximum flow problem.

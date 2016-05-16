@@ -1,0 +1,85 @@
+Syntax and Example
+
+In C and C++, the syntax is:
+
+union <name>
+{
+    <datatype>  <1st variable name>;
+    <datatype>  <2nd variable name>;
+    .
+    .
+    .
+    <datatype>  <nth variable name>;
+} <union variable name>;
+
+A structure can also be a member of a union, as the following example shows:
+
+union name1
+{
+    struct name2
+    {  
+        int     a;
+        float   b;
+        char    c;
+    } svar;
+    int     d;
+} uvar;
+
+This example defines a variable uvar as a union (tagged as name1), which contains two members, a structure (tagged as name2) named svar (which in turn contains three members), and an integer variable named d.
+
+Unions may occur within structures and arrays, and vice versa:
+
+struct
+{  
+    int flags;
+    char *name;
+    int utype;
+    union {
+        int ival;
+        float fval;
+        char *sval;
+    } u;
+} symtab[NSYM];
+
+The number ival is referred to as symtab[i].u.ival and the first character of string sval by either of *symtab[i].u.sval or symtab[i].u.sval[0].
+Difference between Union and Structure
+
+A union is a class all of whose data members are mapped to the same address within its object. The size of an object of a union is, therefore, the size of its largest data member.
+
+In a structure, all of its data members are stored in contiguous memory locations. The size of an object of a struct is, therefore, the size of the sum of all its data members.
+
+This gain in space efficiency, while valuable in certain circumstances, comes at a great cost of safety: the program logic must ensure that it only reads the field most recently written along all possible execution paths. The exception is when unions are used for type conversion: in this case, a certain field is written and the subsequently read field is deliberately different.
+
+An example illustrating this point is:
+
+                                  +-----+-----+
+struct { int a; float b; }  gives |  a  |  b  |
+                                  +-----+-----+
+                                     ^     ^
+                                     |     |
+                  memory location:  150   154
+                                     |
+                                     ˇ
+                                  +-----+
+union { int a; float b; }  gives  |  a  |
+                                  |  b  |
+                                  +-----+
+
+Structures are used where an "object" is composed of other objects, like a point object consisting of two integers, those being the x and y coordinates:
+
+typedef struct {
+    int x;           // x and y are separate
+    int y;
+} tPoint;
+
+Unions are typically used in situation where an object can be one of many things but only one at a time, such as a type-less storage system:
+
+typedef enum { STR, INT } tType;
+typedef struct {
+    tType typ;          // typ is separate.
+    union {
+        int ival;       // ival and sval occupy same memory.
+        char *sval;
+    };
+} tVal;
+

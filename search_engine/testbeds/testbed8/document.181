@@ -1,0 +1,6 @@
+Searching trees[edit]
+To see that the searching (not updating) fits in this bound, simply note that every time an auxiliary tree search is unsuccessful and we have to move to the next auxiliary tree, that results in a preferred child switch (since the parent preferred path now switches directions to join the child preferred path). Since all auxiliary tree searches are unsuccessful except the last one (we stop once a search is successful, naturally), we search   auxiliary trees. Each search takes  , because an auxiliary tree's size is bounded by  , the height of the reference tree.
+Updating trees[edit]
+The update cost fits within this bound as well, because we only have to perform one cut and one join for every visited auxiliary tree. A single cut or join operation takes only a constant number of searches, splits, and concatenates, each of which takes logarithmic time in the size of the auxiliary tree, so our update cost is  .
+Competitive Ratio[edit]
+Tango trees are  -competitive, because the work done by the optimal offline binary search tree is at least linear in k (the total number of preferred child switches), and the work done by the tango tree is at most  .

@@ -1,0 +1,37 @@
+In mathematics, in particular probability theory and related fields, the softmax function, or normalized exponential, is a generalization of the logistic function that "squashes" a K-dimensional vector  of arbitrary real values to a K-dimensional vector  of real values in the range (0, 1) that add up to 1. The function is given by
+    for j = 1, ..., K.
+The softmax function is the gradient-log-normalizer of the categorical probability distribution. For this reason, the softmax function is used in various probabilistic multiclass classification methods including multinomial logistic regression, multiclass linear discriminant analysis, naive Bayes classifiers and artificial neural networks. Specifically, in multinomial logistic regression and linear discriminant analysis, the input to the function is the result of K distinct linear functions, and the predicted probability for the j'th class given a sample vector x is:
+
+This can be seen as the composition of K linear functions  and the softmax function (where  denotes the inner product of  and ).
+
+
+== Artificial neural networks ==
+In neural network simulations, the softmax function is often implemented at the final layer of a network used for classification. Such networks are then trained under a log loss (or cross-entropy) regime, giving a non-linear variant of multinomial logistic regression.
+Since the function maps a vector and a specific index i to a real value, the derivative needs to take the index into account:
+
+Here, the Kronecker delta is used for simplicity (cf. the derivative of a sigmoid function, being expressed via the function itself).
+See Multinomial logit for a probability model which uses the softmax activation function.
+
+
+== Reinforcement learning ==
+In the field of reinforcement learning, a softmax function can be used to convert values into action probabilities. The function commonly used is:
+
+where the action value  corresponds to the expected reward of following action a and  is called a temperature parameter (in allusion to statistical mechanics). For high temperatures (), all actions have nearly the same probability and the lower the temperature, the more expected rewards affect the probability. For a low temperature (), the probability of the action with the highest expected reward tends to 1.
+
+
+== Softmax Normalization ==
+Sigmoidal or Softmax normalization is a way of reducing the influence of extreme values or outliers in the data without removing them from the dataset. It is useful given outlier data, which we wish to include in the dataset while still preserving the significance of data within a standard deviation of the mean. The data are nonlinearly transformed using one of the sigmoidal functions.
+The logistic sigmoid function:
+
+The hyperbolic tangent function, tanh:
+
+The sigmoid function limits the range of the normalized data to values between 0 and 1. The sigmoid function is almost linear near the mean and has smooth nonlinearity at both extremes, ensuring that all data points are within a limited range. This maintains the resolution of most values within a standard deviation of the mean.
+The hyperbolic tangent function, tanh, limits the range of the normalized data to values between -1 and 1. The hyperbolic tangent function is almost linear near the mean, but has a slope of half that of the sigmoid function. Like sigmoid, it has smooth, monotonic nonlinearity at both extremes. Also, like the sigmoid function, it remains differentiable everywhere and the sign of the derivative (slope) is unaffected by the normalization. This ensures that optimization and numerical integration algorithms can continue to rely on the derivative to estimate changes to the output (normalized value) that will be produced by changes to the input in the region near any linearisation point.
+
+
+== References ==
+
+
+== See also ==
+Softplus
+Multinomial logistic regression

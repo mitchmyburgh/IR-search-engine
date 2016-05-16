@@ -1,0 +1,271 @@
+
+
+This site uses cookies. By continuing to use this site you agree to our use of
+cookies. To find out more, see our Privacy and Cookies policy.
+
+Skip to the content
+
+**Physics World** - the member magazine of the Institute of Physics 
+
+  * Sign in
+  * Forgotten your password?
+  * Sign up
+  * Contact us
+
+physicsworld.com
+
+Search
+
+Filter by topic Please select… Astronomy, astrophysics &amp; cosmology Atomic,
+molecular &amp; optical physics Biological &amp; medical physics Condensed
+matter Culture, history &amp; society Geophysics &amp; environmental physics
+Instrumentation &amp; measurement Nuclear &amp; particle physics Plasma &amp;
+fusion Statistical, mathematical &amp; computational physics
+
+  * Home
+  * News
+  * Blog
+  * Multimedia
+  * In depth
+  * Events
+
+  *   * 
+
+## News archive
+
+  * 2016
+    * May 2016
+    * April 2016
+    * March 2016
+    * February 2016
+    * January 2016
+  * 2015
+  * 2014
+  * 2013
+  * 2012
+  * 2011
+  * 2010
+  * 2009
+  * 2008
+  * 2007
+  * 2006
+  * 2005
+  * 2004
+  * 2003
+  * 2002
+  * 2001
+  * 2000
+  * 1999
+  * 1998
+  * 1997
+
+At all stages of your career - whether you're an undergraduate, graduate,
+researcher or industry professional - **brightrecruits.com** can help find the
+job for you.
+
+**Find your perfect job**
+
+Are you looking for a supplier? **Physics Connect** lists thousands of
+scientific companies, businesses, non-profit organizations, institutions and
+experts worldwide.
+
+**Start your search today**
+
+## Latest webinar
+
+**Geometry optimization with COMSOL Multiphysics**
+
+Sponsored by COMSOL
+
+**Register for this free webinar**
+
+## Featured video
+
+The optimization of medical accelerators is the goal of a new network within
+the FP7 Marie Curie Initial Training Network scheme. Watch this video to learn
+more about the early-stage researcher opportunities available.
+
+## Key suppliers
+
+## Corporate partners
+
+Contact us for advertising information
+
+## Share this
+
+  * E-mail to a friend
+  * StumbleUpon
+  * Twitter
+  * Facebook
+  * CiteUlike
+  * 
+
+## Related stories
+
+  * Light-based quantum computers will come at a great cost
+
+## Related links
+
+  * _Science_ **351** 1068
+  * Isaac Chuang
+  * Thomas Monz
+  * Alexei Kitaev
+  * Barry Sanders
+  * Peter Shor
+
+## Related products
+
+### OWIS® new catalogue available – with numerous new products
+
+OWIS GmbH  
+May 03, 2016
+
+### Ultrafast optical sampling oscilloscope
+
+Laser Quantum Ltd  
+May 03, 2016
+
+### ESO’s latest facility upgrade features four new TOPTICA guide star lasers
+on Cerro Paranal
+
+TOPTICA Photonics AG  
+Apr 29, 2016
+
+# Shor's algorithm is implemented using five trapped ions
+
+Mar 4, 2016 2 comments
+
+  
+Quantum factor: the Paul trap used by Monz and colleagues
+
+A quantum computer made of five trapped ions has been used by physicists in
+Austria and the US to implement Shor's factoring algorithm. While the system
+performed the trivial task of factoring the number 15, the researchers say
+that it could be scaled-up to factor much larger numbers. It is the first
+implementation of Shor's algorithm in which prior knowledge of the factors was
+not used to simplify the computational procedure.
+
+Finding the integer factors of a large odd number is a very time-consuming
+problem. While some numbers are easier to factor than others, there is no
+known algorithm that can factor all numbers efficiently. As a result, large
+numbers and their factors are used in some cryptography systems - and this
+makes such systems vulnerable to anyone who can come up with an efficient
+factoring algorithm.
+
+### Periodic problem
+
+In 1994, Peter Shor realized that a quantum computer could be much more
+efficient at factoring large numbers than a conventional computer. Shor's
+factoring algorithm begins by using mathematics to transform the problem of
+factoring a large number into the problem of finding the period of a function
+that describes a sequence of numbers. Then a quantum computer calculates the
+period using a quantum Fourier transform. Mathematics is then used to convert
+this period into the two factors.
+
+In Shor's original scheme, a quantum computer with 12 quantum bits (qubits) is
+needed to factor the number 15. While this might not seem like many, creating
+a functioning quantum computer with this many qubits is beyond the current
+capability of physicists. However, in 1995, Alexei Kitaev pointed out that the
+algorithm can be run with fewer qubits (five qubits when factoring 15) if the
+answer is output one qubit at a time.
+
+This latest work was done by  Thomas Monz and colleagues at the University of
+Innsbruck, and Isaac Chuang and team at the Massachusetts Institute of
+Technology. Using five trapped calcium-40 ions as qubits, the collaboration
+used Kitaev's version of Shor's algorithm to factor the number 15.
+
+### Laser addressing
+
+Their quantum computer comprises a linear Paul trap in which an electric field
+holds the five ions in a row. The ions are separated by 5 μm, and each ion can
+be in one of two spin states, which correspond to qubit values of "0" and "1".
+Each ion can be addressed individually using a laser with a spot width of just
+1 μm.
+
+The quantum calculation begins by loading the periodic function into four
+qubits of the quantum computer. Then the quantum Fourier transform is done by
+firing sequences of laser pulses at individual ions. Four qubits are used to
+perform the quantum calculation, while the fifth is used to transfer
+information within the computer and also to output the result one qubit at a
+time.
+
+Although the output of a single calculation was not perfect, it did allow the
+user to deduce the factors of the number. However, if a calculation is
+repeated eight times, the uncertainty in the result drops to below 1%.
+
+### Scalable computer
+
+Monz told _physicsworld.com_ that all of the processes used in their
+implementation of Shor's algorithm can be scaled-up to factor larger numbers.
+However, this would require a scalable quantum computer. "Our current linear
+Paul trap would need to be replaced with a segmented trap," he explains. "We
+have those in the lab already, but they are (despite being scalable) harder to
+control and at an earlier stage of development than our linear Paul trap."
+
+Indeed, Monz says that the team is now focussing on improving the fidelity of
+its quantum computer by using better lasers, reducing background noise and
+gaining better control over magnetic fields.
+
+Barry Sanders of the University of Calgary in Canada believes that the
+importance of this work by Monz and colleagues is that they did not exploit
+prior knowledge of the factors of 15 in designing their computational
+procedure. "Previous experiments used such knowledge and thereby
+oversimplified the circuit," he explains.
+
+The calculations are described in _Science_.
+
+  * Peter Shor explains how his eponymous algorithm works in this 100 Second Science Video 
+
+### About the author
+
+Hamish Johnston is editor of _physicsworld.com_
+
+## 2 comments
+
+Comments on this article are now closed.
+
+  * 1
+
+reader01 Mar 5, 2016 9:39 AM
+
+### What is the smallest number of trapped ions
+
+> that is needed for Shors algorithm for example for the smallest compounded
+number 4?
+
+    * Offensive? Unsuitable? Notify Editor
+  * 2
+
+trixie40 Mar 7, 2016 2:40 PM
+
+> How can you possibly validate sieve progression without an opposing
+regression of perpetual inversion relative to mass population within a vacuum
+state? Offset prime!!
+
+Edited by trixie40 on Mar 7, 2016 2:43 PM.
+
+    * Offensive? Unsuitable? Notify Editor
+
+  * Copyright
+  * Privacy and Cookies Policy
+  * Disclaimer
+  * Terms
+  * IOP Group
+  * Environmental Policy
+
+  * Home
+  * News
+  * Blog
+  * Multimedia
+  * In depth
+  * Events
+
+  * All content RSS feed
+  * News RSS feed
+  * Blog RSS feed
+  * In depth RSS feed
+  * Multimedia RSS feed
+  * Events RSS feed
+
+  *   * 
+

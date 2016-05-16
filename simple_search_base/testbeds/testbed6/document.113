@@ -1,0 +1,22 @@
+ To use Google Groups Discussions, please enable JavaScript in your browser settings and then refresh this page.
+plaintext{display:none} 
+     (function(){
+    try{
+        var win=this;
+        while(""){
+           if(win.parent==win)
+              break;
+           win.frameElement.src.substr(0,1);
+           win=win.parent;
+        }
+        if(win.frameElement!=null)throw 'busted';
+        document.write("\x3Cxmp style\x3Ddisplay:none\x3E");
+    }catch(e){
+        try{
+            if(!open(location,'_top'))
+               alert('This content cannot be framed.');
+       top.location=location;
+        }catch(e){}
+    }
+    })();
+&lt;xmp&gt;.&lt;/xmp&gt; &lt;div style="display:none" id="__top_header"&gt;&lt;div id=gbar&gt;&lt;nobr&gt;&lt;a target=_blank class=gb1 href="https://www.google.co.za/webhp?tab=gw"&gt;Search&lt;/a&gt; &lt;a target=_blank class=gb1 href="http://www.google.co.za/imghp?hl=en-GB&amp;tab=gi"&gt;Images&lt;/a&gt; &lt;a target=_blank class=gb1 href="https://maps.google.co.za/maps?hl=en-GB&amp;tab=gl"&gt;Maps&lt;/a&gt; &lt;a target=_blank class=gb1 href="https://play.google.com/?hl=en-GB&amp;tab=g8"&gt;Play&lt;/a&gt; &lt;a target=_blank class=gb1 href="https://www.youtube.com/?tab=g1"&gt;YouTube&lt;/a&gt; &lt;a target=_blank class=gb1 href="https://mail.google.com/mail/?tab=gm"&gt;Gmail&lt;/a&gt; &lt;a target=_blank class=gb1 href="https://drive.google.com/?tab=go"&gt;Drive&lt;/a&gt; &lt;a target=_blank class=gb1 href="https://www.google.com/calendar?tab=gc"&gt;Calendar&lt;/a&gt; &lt;a target=_blank class=gb1 style="text-decoration:none" href="https://www.google.co.za/intl/en-GB/options/"&gt;&lt;u&gt;More&lt;/u&gt; &amp;raquo;&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div id=guser width=100%&gt;&lt;nobr&gt;&lt;span id=gbn class=gbi&gt;&lt;/span&gt;&lt;span id=gbf class=gbf&gt;&lt;/span&gt;&lt;span id=gbe&gt;&lt;a target="_blank" href="http://support.google.com/groups/bin/answer.py?answer=46601" class=gb4&gt;Help&lt;/a&gt; | &lt;a href="javascript:fb();" class=gb4&gt;Report an issue about Google Groups&lt;/a&gt; | &lt;a href="javascript:showKeyboardShortcutPopup();" class=gb4&gt;Keyboard shortcuts&lt;/a&gt; | &lt;/span&gt;&lt;a target=_top id=gb_70 href="https://www.google.com/a/UniversalLogin?continue=https://groups.google.com/forum/&amp;hl=en-GB&amp;service=groups2&amp;hd=default" class=gb4&gt;Sign in&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div class=gbh style=left:0&gt;&lt;/div&gt;&lt;div class=gbh style=right:0&gt;&lt;/div&gt; &lt;div style="clear:both"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;

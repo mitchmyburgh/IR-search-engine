@@ -1,0 +1,419 @@
+  * IEEE.org
+  * |
+  * IEEE _Xplore_ Digital Library
+  * |
+  * IEEE Standards
+  * |
+  * IEEE Spectrum
+  * |
+  * More Sites
+
+Follow on:
+
+  *   *   *   *   * 
+
+Advertisement
+
+  * Engineering Topics 
+  * Special Reports 
+  * Blogs 
+  * Multimedia 
+  * The Magazine 
+  * Professional Resources 
+  * Search 
+
+  * Podcasts
+  * Computing
+  * Hardware
+
+# D-Wave Aims to Bring Quantum Computing to the Cloud
+
+## Vern Brownell, D-Wave’s CEO, talks about the company’s ongoing efforts to
+prove the potential of its hardware and its plans for the future
+
+By Rachel Courtland
+
+Posted 9 Apr 2014 | 14:00 GMT
+
+Loading the podcast player...
+
+Download Podcast Subscribe to Podcast
+
+* * *
+
+**Rachel Courtland:** Hi, this is Rachel Courtland for _IEEE Spectrum'_s "Techwise Conversations." Twenty years ago, the mathematician Peter Shor found what might be called quantum computing's killer app: the ability to factor very large numbers far, far faster than a conventional computer.
+
+Since then, research into building quantum computers has really taken off.
+Although it's been rather slow going. It's still a big deal when a new quantum
+system manages to perform what seem like pretty basic operations, such as
+factoring the number 15 into the numbers 3 and 5.
+
+D-Wave, a company based in Burnaby, British Columbia, has been trying to speed
+things up. But it hasn't entirely been smooth sailing. In 2010, in a special
+issue profiling the previous year's biggest winning and losing technology
+projects, we put D-Wave squarely in the loser category. At the time, outside
+experts told us that it was unclear exactly how quantum D-Wave systems really
+were, and how big they could get.
+
+Since then, D-Wave's managed to have a pretty remarkable streak of wins. In
+2011, the company sold its first system to aerospace giant Lockheed Martin for
+$10 million. Last year, Lockheed chipped in to buy another one, and so did a
+Google-led consortium. Google's machine is now installed in NASA's Ames
+Research Center, in Moffett Field, California. Outside researchers now have
+unprecedented access and can test the D-Wave machines themselves.
+
+But there's still a lot of debate over their quantum properties and how well
+they can compete with really good conventional computer algorithms. So how far
+has the company come? And where are they headed next? To get D-Wave's
+perspective on the state of things, we're sitting down today with the
+company's CEO, Vern Brownell. Mr. Brownell is ordinarily headquartered in the
+company's offices in Canada, but he's joining me today in the _IEEE Spectrum_
+studio in New York City. Vern, welcome to the podcast.
+
+**Vern Brownell:** Thanks, Rachel. It's great to be here.
+
+**Rachel Courtland:** So to start off, I was wondering if you could bring us up to speed: D-Wave's approach to quantum computing is a bit different from than what's been pursued in a lot of research labs around the world. Could you break down the basic differences for us?
+
+**Vern Brownell:** Sure, absolutely. Most of quantum computing, and you talked about Shor's algorithm, has been based around a thing called "gate-model," or "circuit-model" quantum computing. Most of the research that's been done--I'd say 90 percent of the research that's been done in the field--has been in that model of computing.
+
+But there are very different ways to build quantum computers. One of the
+original founding precepts of our company is that we decided to use a model
+called "adiabatic" quantum computing, the theory for which was developed at
+MIT in, I believe it was about 2000, they published a seminal paper that
+described the theory behind that. And effectively, what we've done is
+implement that architecture. So it's very different than gate-model. It's not
+designed to solve Shor's algorithm directly, and it uses a completely
+different type of algorithm, so some of the controversy, perhaps, is that this
+model is less well understood than gate-model or some of the other models of
+quantum computing.
+
+**Rachel Courtland:** And what kind of problems are you hoping to tackle with this?
+
+**Vern Brownell:** So our machine is well suited for, we think, about three main categories of software applications and algorithms today. So the ones that we're focusing on are roughly characterized as sampling, which is basically drawing from a probability distribution. Most notably you'll recall Monte Carlo simulation, which is used a lot in finance and modeling of risk, and things like that. The second category is in optimization. It turns out that the architecture for the machine is natively an optimization problem. So optimization problems like traveling salesperson problems or logistic problems, things like that, are well suited for the architecture, and then the third category is in the broad area of machine learning, which we think is one of the most exciting things going on in computer science today. Things like deep learning, and techniques like that, are ripe for exploration in that space.
+
+**Rachel Courtland:** So D-Wave's computers have now been on the market for nearly three years. What have the purchases by Lockheed-Martin and Google meant for the company?
+
+**Vern Brownell:** Well, first off, they're great partners. You can't ask for better first customers than Lockheed-Martin and Google and NASA and so on. So we're very proud and honored to be working with them. Lockheed, being our first customer, their motivation, and what they intend for primary use of the machine, is around software verification and validation, particularly of complex systems and flight control systems, in particular. So that's the primary area of exploration at Lockheed, although we're doing a lot more in those other categories that we talked about.
+
+And then Google, of course, we just mentioned, is machine learning. So that's
+their primary use case and an example of an application, a toy application, we
+put together with Google a few years ago, which can basically recognize a car
+in an image. It used learning techniques to do that.
+
+**Rachel Courtland:** It seems like there's still a great amount of debate over the nature of your quantum computers. One open question is how fast they are and whether they are faster than the best classical algorithms. Would you say that it still needs to be proven that D-Wave's computers offer a speed advantage?
+
+**Vern Brownell:** Well, we're at a cusp. If you think about what we're doing, we actually have some algorithms that perform as well, or maybe slightly better than, the best-known algorithms for that same task, using classical computers. And when I say classical I mean all of the rest of the computing industry and so on. If you think about what that means in comparison, there's been 60 years of great hardware development since John von Neumann in 1948 with ENIAC, and all the hardware advances, and all the software advances, all the algorithm work, and all those things that happened, the trillion dollars of investment over, say, 60 years. We've built this computer that in the course of 10 years, since we started developing it in 2004, performs almost as well, or maybe slightly better in certain narrow cases, than that entire ecosystem.
+
+And we think that's an important result. And our next-generation machine, we
+believe, will outperform any algorithm for some benchmark cases. So we're on
+this cusp of a very historic result, I think, in computer science, coming up
+with a completely different mechanism and orthogonal path, if you will, in the
+computer business, that performs as well as that entire ecosystem.
+
+**Rachel Courtland:** Another open question, it seems, is the question of scale. At the moment, you've sold computers with 512 quantum bits, or qubits. How big are you hoping to make these computers eventually, and what do you need to do to get there?
+
+**Vern Brownell:** Well, it's our intent to basically every couple of years come out with a new processor that effectively will quadruple the number of qubits. And the fundamental building block for our machine is, we've decided to use semiconductor processes, so this is a wafer that's fabbed in a commercial fab, diced up, and put into our apparatus, and it's how the machine works. In 2010, we released a 128-qubit machine. In early 2013, we did a 512-qubit machine. And we intend later this year to do a 1000-qubit processor.
+
+So it's a constant set of iterative developments, both in the fab process and
+learning that we get from developing the processor, and interacting with our
+customers. Those feedbacks are incorporated into future designs, and we build
+better and better, and faster and faster processors. That's our road map, and
+we see no limit in terms of how many qubits we can build to. There may be
+physical limits that we run across, but our philosophy is we'll just continue
+to build, and if we find problems along the way, we'll work around those and
+continue.
+
+**Rachel Courtland:** My understanding is that one of the key ingredients you need in order to be able to scale up the number of qubits enough to have a quantum machine, is that all of the qubits be entangled with one another so that they share the same quantum state. I know there's been some debate over how entangled D-Wave's qubits are. Where do you think the research stands now, and how are you responding to that criticism?
+
+**Vern Brownell:** It's a good question. First off, I'm not a physicist, Rachel, as you know. I'm an engineer by background, but as I understand it through osmosis, and working with a lot of physicists over the years, I think it's safe to say that it's not clear what the role of entanglement is in these quantum computations that we do. It's certainly a useful indicator of whether, at its basic level, this is a quantum computer or not. It's one of the checklist item things that scientists look at, and to that end we developed a series of experiments earlier last year that demonstrated entanglement at the 8-qubit level.
+
+We have, as I said, both the objective of engaging with the scientific
+community and moving that forward, but also developing commercially useful
+processors. So it becomes more and more difficult as you scale up, because the
+models that are necessary to model the performance, or the projected
+performance, of a processor become more and more computationally complex and
+difficult to do. Sometimes it's beyond the capability of what you can do with
+classical computers to model what the quantum computer's actually doing. But
+we continue to make those investments, and it's pretty clear that entanglement
+is going on at the 8-qubit level and beyond. We'll continue to work with the
+community and try to continue to prove that at larger scales.
+
+**Rachel Courtland:** Where do you hope D-Wave will be in the next few years?
+
+**Vern Brownell:** Well, as I said, our ostensible road map is basically to make these processors more and more powerful. It's interesting: When you do these benchmarks, and benchmarks are always suspect and hard to do when you're comparing even two classical systems, but comparing a classical system to a quantum system is quite difficult. But I think in the next few years, we will have very clear differentiation against any classical system. So our processors will grow in capability. We'll have more and more software tools. We intend to offer this as a cloud service that people can use without having to purchase a large D-Wave machine and install it in their data center, or have it hosted at our data center.
+
+I think one of the things that I try to stress at D-Wave, and D-Wave has as
+part of its DNA, is the twin objectives of both moving science forward, but
+translating science into technology, and doing that in as best a way possible.
+It's really hard to do, but I think it's enormously valuable, and we'll
+continue down that path.
+
+**Rachel Courtland:** Well, Vern, thank you so much for joining us today.
+
+**Vern Brownell:** Thanks, Rachel.
+
+**Rachel Courtland:** We've been speaking with Vern Brownell, the CEO of D-Wave, about his company's work in quantum computing. For _IEEE Spectrum'_s "Techwise Conversations," I'm Rachel Courtland.
+
+_This interview was recorded Wednesday, 20 March 2014._
+
+_Audio engineer: Francesco Ferorelli_
+
+_Photos: D-Wave Systems_
+
+_Read more "Techwise Conversations" or find us on iTunes._
+
+_NOTE: Transcripts are created for the convenience of our readers and
+listeners and may not perfectly match their associated interviews __and
+narratives. The authoritative record of _IEEE Spectrum'_s audio __programming
+is the audio version._
+
+_This podcast and transcript were corrected on 9 April 2014._
+
+##### Learn More
+
+D-wave aerospace computing quantum computing
+
+###### Comments
+
+Comment Policy
+
+Please enable JavaScript to view the &lt;a
+href="http://disqus.com/?ref_noscript"&gt;comments powered by
+Disqus.&lt;/a&gt; Comments powered by Disqus
+
+Advertisement
+
+
+
+Telecom
+
+### Bell Labs Looks at Claude Shannon’s Legacy and the Future of Information
+Age
+
+Tech luminaries celebrate one of the greatest electrical engineering heroes of
+all time 4 May
+
+
+
+
+
+Green Tech
+
+### High-Tech Eavesdropping on the Ganges River Dolphin
+
+Sonar signals hold clues that could save an endangered species 4 May
+
+
+
+Gadgets
+
+### Do Police Body Cameras Really Work?
+
+Sometimes police body cameras accomplish their intended purpose, but other
+times they backfire. And nobody knows why 4 May
+
+
+
+Robotics
+
+### Autonomous Robot Surgeon Bests Humans in World First
+
+In a tricky surgical procedure on pigs, independent robotic surgery produced
+better outcomes 4 May
+
+Advertisement
+
+
+
+Robotics
+
+### NASA's Valkyrie Humanoid Upgraded, Delivered to Robotics Labs in U.S. and
+Europe
+
+The NASA humanoid is ready to start training for simulated Mars missions 4 May
+
+
+
+Computing
+
+### IBM Puts a Quantum Processor in the Cloud
+
+The company hopes access to the five-qubit chip will help people learn to
+"think quantum" 4 May
+
+
+
+Semiconductors
+
+### Shining a Light on Phosphorene's Crystal Structure
+
+A measurement method's poor performance leads to a new technique that exploits
+that failure 3 May
+
+
+
+Transportation
+
+### Meet NextEV, the Biggest EV Startup You’ve Never Heard Of
+
+Founded less than two years ago, the company is already building factories and
+spending $1 billion on research 3 May
+
+
+
+Transportation
+
+### Autonomous Driving Experts Weigh 5G Cellular Network Against Dedicated
+Short Range Communications
+
+The future of how self-driving cars talk to each other is up for grabs 3 May
+
+
+
+Robotics
+
+### Google's Project Wing Needs More Moonshot
+
+We're still looking for the delivery drone magic from Google's Moonshot
+Factory 3 May
+
+
+
+Biomedical
+
+### The Pocket-Sized Lab's Killer App: Analyzing Illegal and Semi-Legal Drugs
+
+High-tech answers to pressing questions: What's in your marijuana? How pure is
+your ecstasy? 2 May
+
+
+
+Semiconductors
+
+### DNA Creates Tiniest Thermometer Yet
+
+Researchers program DNA to respond at different temperature ranges 29 Apr
+
+
+
+Geek Life
+
+### How to Bend a Vintage Casio Keyboard
+
+An ’80s synthesizer is reborn as an avant-garde instrument 29 Apr
+
+
+
+Robotics
+
+### Video Friday: iCub Does Yoga, Wooden Walking Robot, and Wind Tunnel for
+Drones
+
+Your weekly selection of awesome robot videos 29 Apr
+
+
+
+Geek Life
+
+### Review: A Beautiful Planet Takes Full Advantage of IMAX’s Switch to
+Digital
+
+Replacing bulky film cameras allowed astronauts to become filmmakers 29 Apr
+
+
+
+Geek Life
+
+### The Ferranti Mark 1: World’s First Commercially Available General-Purpose
+Computer
+
+It stored data in cathode-ray tubes and a rotating magnetic drum 29 Apr
+
+
+
+Computing
+
+### Movidius Puts Neural Network on a USB Stick
+
+Movidius puts a 1-watt neural network accelerator in a mobile friendly form 29
+Apr
+
+
+
+Semiconductors
+
+### Indium Tin Oxide Might Be the Material Photonics Has Been Waiting For
+
+Indium tin oxide is surprisingly adept at interacting with photons 28 Apr
+
+
+
+Biomedical
+
+### Creating a Prosthetic Hand That Can Feel
+
+DARPA’s HAPTIX program aims to develop a prosthetic hand that’s just as
+capable as the original 28 Apr
+
+
+
+Semiconductors
+
+### Plasmonics Make Electrochromic Polymers Fast Enough for Video
+
+Electrochromic polymers are not just for darkening windows anymore thanks to
+plasmonics 28 Apr
+
+#### Topics
+
+  * Aerospace
+  * At Work
+  * Biomedical
+  * Computing
+  * Energy
+  * Gadgets
+  * Geek Life
+  * Green Tech
+  * Robotics
+  * Semiconductors
+  * Telecom
+  * Transportation
+
+#### Connect
+
+  * Facebook
+  * Twitter
+  * LinkedIn
+  * Google+
+  * RSS
+
+#### IEEE Spectrum
+
+  * Contact Us
+  * About
+  * Newsletters
+  * Mobile Site
+  * Reprints &amp; Permissions
+
+#### IEEE Partners
+
+  * Advertising &amp; Media Center
+  * IEEE Job Site
+  * Buyer's Guide
+
+#### The Magazine
+
+  *   * Subscribe Now
+  * Digital Download
+
+  * (C) Copyright 2016 IEEE Spectrum
+  * Terms &amp; Conditions | Privacy &amp; Opting Out of Cookies | Accessibility | Nondiscrimination Policy
+
+  * About IEEE
+  * Conferences &amp; Events
+  * Education &amp; Careers
+
+  * Membership &amp; Services
+  * Publications and Standards
+  * Societies &amp; Communities
+

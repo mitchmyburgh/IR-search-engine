@@ -1,0 +1,22 @@
+﻿During the kick-off and refinement phase one might distinguish in general two concurrent approaches for modeling, in
+particular for
+knowledge extraction
+from relevant knowledge sources: top-down and bottom-up. In a
+top-down approach for modeling the domain one starts by modeling
+concepts and relationships on a very generic level. Subsequently these items are refined. This approach is typically
+done manually and leads to a high-quality engineered ontology.  Available top-level ontologies may here be reused
+and serve as a starting point to develop new ontologies.
+In our example scenrio we encountered a middle-out approach, i.e. to identify the most important concepts which
+will then be used to obtain the remainder of the hierarchy by generalization and specialization.  However, with
+the support of an automatic document analysis, a typical
+bottom-up
+-approach may be applied. There, relevant concepts are extracted semi-automatically from available documents. Based on the assumption that most concepts and
+conceptual structures of the domain as well the company terminology are described in documents, applying knowledge
+acquisition from text for ontology design helps building ontologies automatically.
+
+To
+formalize
+the initial semi-formal description of the ontology ontology engineers firstly form a taxonomy out of the
+semi-formal description of the ontology and add relations
+other than the “is-a” relation which forms the taxonomical
+structure.

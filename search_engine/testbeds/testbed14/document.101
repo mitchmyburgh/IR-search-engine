@@ -1,0 +1,25 @@
+﻿A foundational ontology
+is also used with, among others, top-level domain ontologies, such as BioTop
+[9], in the coordination of lightweight ontologies and thesauri in KOKO [10],
+and with domain ontologies, e.g., [11, 12]. The underlying assumptions of the
+proponents of the use of a foundational ontology are that ontology developers,
+once introduced to foundational ontologies, naturally will use it, be it right from
+the start or to align their ontology with one of them, because
+i. it facilitates ontology development because one does not have to reinvent the
+wheel concerning basic categories and relations, and
+ii. using a foundational ontology improves overall quality and interoperability.
+On the other hand, such foundational ontologies are criticised as being too abstract, too expressive, too comprehensive for `simple' or domain ontologies, and it
+takes too much time to understand them in suficient detail. In addition, expressivity issues and the difference between a foundational ontology's take on how to
+represent attributes (e.g.,with qualities and qualia), and OWL's data properties
+with `application ontologies' (
+de facto
+, OWLized formal conceptual data models) for ontology-driven information systems increases the perceived gap further
+[13]. Trying to answer whether the former or the latter stance holds cannot be
+carried out by simply collecting all ontologies on the web through, e.g., Swoogle
+or the TONES repository and counting the inclusion of a foundational ontology,
+because a substantial amount of them are experimental or tutorial ontologies
+or OWLized non-ontological resources (e.g., thesauri), one cannot always assess
+their quality regarding correct representation of the subject domain, the choice
+why a foundational ontology was used or not is unknown, and it is unknown
+how much resources went into developing the ontologies; hence, with this much
+uncertain parameters, one cannot draw any conclusions.

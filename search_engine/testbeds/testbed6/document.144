@@ -1,0 +1,39 @@
+Chapter 4 Binary Trees 
+A binary tree is an important type of structure which occurs very often. It is characterized by the fact that any node can have at most two branches, i.e.,
+there is no node with degree greater than two. For binary trees we distinguish between the subtree on the left and on the right, whereas for trees the 
+order of the subtreewas irrelevant. Also a binary tree may have zero nodes. Thus a binary tree is really a different object than a tree. 
+Definition: A binary tree is a finite set of nodes which is either empty or consists of a root and two disjoint binary trees called the left subtree and 
+the right subtree. 
+
+A full binary tree of depth k is a binary tree of depth k having pow(2,k)-1 nodes. This is the maximum number of the nodes such a binary tree can have. 
+A very elegant sequential representation for such binary trees results from sequentially numbering the nodes, starting with nodes on level 1, then those 
+on level 2 and so on. Nodes on any level are numbered from left to right. This numbering scheme gives us the definition of a complete binary tree. A binary
+tree with n nodes and a depth k is complete iff its nodes correspond to the nodes which are numbered one to n in the full binary tree of depth k. The nodes
+may now be stored in a one dimensional array tree, with the node numbered i being stored in tree[i]. 
+If a complete binary tree with n nodes (i.e., depth=[LOG2N]+1) is represented sequentially as above then for any node with index i, 1
+(i) parent(i) is at [i/2] if is not equal to 1. When i=1, i is the root and has no parent. 
+(ii) lchild(i) is at 2i if 2i n, then i has no left child. 
+(iii) rchild(i) is at 2i+1 if 2i+1n, then i has no right child.
+ 
+Proof: We prove (ii). (iii) is an immediate consequence of (ii) and the numbering of nodes on the same level from left to right. (i) follows from (ii) and (iii).
+We prove (ii) by induction on i. For i=1, clearly the left child is at 2 in which case 1 has no left child. Now assume that for all j, 1
+n in which case i+1 has no left child. This representation can clearly be used for all binary trees though in most cases there will be a lot of unutilized 
+space. For complete binary trees the representation is ideal as no space is wasted. In the worst case a skewed tree of k will require pow(2,k)-1 spaces. Of
+these only k will be occupied. 
+While the above representation appears to be good for complete binary trees it is wasteful for many other binary trees. In addition, the representation 
+suffers from the general inadequacies of sequential representations. Insertion or deletion of nodes from the middle of a tree requires the movement of 
+potentially many nodes to reflect the change in level number of these nodes. These problems can be easily overcome through the use of a linked representation. 
+Each node will have three fields leftchild, data and rightchild and is defined in Pascal as type treepointer = ^treerecord; treerecord = record leftchild : 
+treepointer; data : char; rightchild : treepointer; end; 
+
+Binary Tree Traversal 
+There are many operations that we often want to perform on trees. One notion that arises frequently is the idea of traversing a tree or visiting each 
+node in the three exactly once. A full traversal produces a linear order for the information in a tree. This linear order may be familiar and useful. 
+When traversing a binary tree we want treat each node and its subtrees in the same fashion. If we let L, D, R stand for moving left, printing the data,
+and moving right when at a node then there are six possible combinations of traversal: LDR, LRD, DLR, DRL, RDL, and RLD. If we adopt the convention 
+that we traverse left before right then only three traversals remain: LDR, LRD, and DLR. To these we assign the names inorder, postorder and preorder 
+because there is a natural correspondence between these traversals and producing the infix, postfix and prefix forms of an expression.
+
+Inorder Traversal: informally this calls for moving down the tree towards the left untilyou can go no farther. 
+Then you "visit" the node, move one node to the right and continue again. If you cannot move to the right, go back one more node. A precise way of 
+describing this traversal is to write it as a recursive procedure.  Recursion is an elegant device for describing this traversal. 

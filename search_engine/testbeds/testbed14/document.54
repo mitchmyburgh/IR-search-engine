@@ -1,0 +1,25 @@
+3. ONTOLOGY METHODOLOGY: A SURVEY
+Basically, a series of approaches have been reported for developing ontologies. In 1990, Lenat
+and Guha published the general steps and some interesting points about the Cyc development.
+Initially, the Enterprise Ontology and the TOVE (TOronto Virtual Enterprise) project ontology
+had been proposed in the domain of enterprise modeling. Bernaras et al. presented a method used
+to build ontology in the domain of electrical networks as part of the Esprit KACTUS project. The
+methodology METHONTOLOGY appeared at the same time. In 1997, a new method was
+proposed for building ontologies based on the SENSUS ontology. Some years later, the On-ToKnowledge
+methodology appeared as a result of the project with the same name. However, all
+these methods and methodologies do not consider collaborative and distributed construction of
+ontologies. In this paper, we are describing some of the methodologies for building ontologies [1].
+3.2 Gruninger And Fox Methodology
+Gruninger and Fox proposed a methodology that is inspired on the development of knowledge based
+systems using first order logic. This methodology has been suggested as TOVE project
+ontology within domain of business processes and activities modeling. This represents logical
+model of knowledge. The steps are: 1) Capture the motivating scenarios. 2) Formulation of
+informal competency questions, where the scope of the ontology can be decided. 3) Formulation
+International Journal of Database Management Systems ( IJDMS ) Vol.2, No.3, August 2010
+ 15
+of formal competency questions, which specify the terminology with definition and constraints.
+4) Specification of axioms and definition within the formal language. 5) Finally, specify the
+conditions under which the solutions to the questions are complete. In this methodology, the
+ontology can be built by using questions and answers for motivating scenarios, which represents
+main concepts, properties, relations and axioms on the ontology [1][2]. The methodology will
+extend the scope but the procedure is complex.

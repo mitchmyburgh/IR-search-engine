@@ -1,0 +1,187 @@
+AWS Free Tier
+The Amazon Web Services (AWS) Free Tier is designed to enable you to get hands-on experience with AWS Cloud Services. The AWS Free Tier includes services with a free tier available for 12 months following your AWS sign-up date, as well as additional service offers that do not automatically expire at the end of your 12 month AWS Free Tier term.
+
+After creating your AWS account you can use any of the products and services, listed below, for free within certain usage limits.
+You can start today and automatically take advantage of the AWS Free Tier by following the steps below:
+Sign up for an AWS account.
+Enter your billing address and credit card information. You will not be charged unless your usage exceeds the free tier limits.
+Start using AWS Cloud services, choosing from any of the products listed below.
+Get Started with AWS for Free. Pay only for what you use.
+
+Create a Free Account
+Sort by:
+
+Featured Products
+
+ aws-icons_06_amazon-ec2
+Amazon EC2
+Resizable compute capacity in the Cloud.
+Learn More »
+750 hours per month of Linux, RHEL, or SLES t2.micro instance usage
+750 hours per month of Windows t2.micro instance usage
+ For example, run 1 instance x 1 month or 2 instances x half a month
+ Expires 12 months after sign-up.
+ aws-icons_15_amazon-s3
+Amazon S3
+Highly scalable, reliable, and low-latency data storage infrastructure.
+Learn More »
+5 GB of Standard Storage
+20,000 Get Requests 
+2,000 Put Requests 
+ Expires 12 months after sign-up.
+ aws-icons_09_amazon-rds
+Amazon RDS
+Managed Relational Database Service for MySQL, PostgreSQL, MariaDB, Oracle BYOL, or SQL Server.
+Learn More »
+750 Hours of Amazon RDS Single-AZ db.t2.micro Instance usage
+20 GB of DB Storage: any combination of General Purpose (SSD) or Magnetic
+20 GB for Backups (with RDS Magnetic storage; I/Os on General Purpose [SSD] are not seperately billed)
+10,000,000 I/Os 
+Expires 12 months after sign-up.
+ IoT
+AWS IoT
+New AWS Free Tier Offer
+Connect devices to the cloud
+Learn More »
+250,000 Messages (published or delivered) per month
+ Expires 12 months after sign-up.
+ simple-icon_ec2container_2
+Amazon EC2 Container Registry
+New AWS Free Tier Offer
+Store and retrieve Docker images
+Learn More »
+500 MB-month of Storage
+ Expires 12 months after sign-up.
+ Show all products
+AWS Free Tier Eligible Software
+AWS Marketplace offers more than 700 free and paid software products that run on the AWS Free Tier. If you qualify for the AWS Free Tier, you can use these products on an Amazon EC2 t2.micro instance for up to 750 hours per month and pay no additional charges for the Amazon EC2 instance (during the 12 months).  Software charges may still apply for paid software.
+Free software Paid software
+Infrastructure Software
+ 
+centos-logo
+CentOS
+$0.00/hr
+ 
+lamp
+LAMP Stack
+$0.00/hr
+ 
+couchbase
+Couchbase
+$0.00/hr
+See All Infrastructure Software (300+)
+Developer Tools
+ 
+git-logo
+Git
+$0.00/hr
+ 
+bugzilla-logo
+Bugzilla
+$0.00/hr
+ 
+appdynamics-logo
+AppDynamics
+$0.00/hr
+See All Developer Tools Software (25+)
+
+Business Software
+ 
+wordpress-logo-notext-rgb
+WordPress
+$0.00/hr
+ 
+magento_logo_002
+Magento
+$0.00/hr
+ 
+logo-sugarcrm-new
+SugarCRM
+$0.00/hr
+See All Business Software (100+)
+AWS Free Tier (Non-expiring Offers):
+These free tier offers do not automatically expire at the end of your 12 month AWS Free Tier term and are available to all AWS customers.
+
+Amazon DynamoDB
+25 GB of Storage, 25 Units of Read Capacity and 25 Units of Write Capacity – enough to handle up to 200M requests per month with Amazon DynamoDB.**
+Amazon Cognito
+The Your User Pool feature has a free tier of 50,000 MAUs each month**
+The Federated Identities feature for authenticating users and generating unique identifiers is always free with Amazon Cognito**
+Cognito also includes:
+
+10 GB of cloud sync storage. Expires 12 months after signup
+1,000,000 sync operations per month. Expires 12 months after signup
+The Your User Pool feature is currently in Beta and you will not be charged for sending SMS messages for Multi-Factor Authentication (MFA) and phone verification. However, separate pricing for sending SMS messages will apply after the conclusion of Beta period.
+
+ 
+
+AWS CodeCommit
+5 active users per month**
+50 GB-month of storage per month**
+10,000 Git requests per month**
+Amazon CloudWatch
+10 Amazon Cloudwatch custom metrics, 10 alarms, and 1,000,000 API requests**
+5 GB of Log Data Ingestion**
+5 GB of Log Data Archive**
+3 Dashboards with up to 50 metrics each per month**
+Amazon Mobile Analytics
+100 million free events per month**
+Amazon Simple Workflow Service (SWF)
+1,000 Amazon SWF workflow executions and a total of 10,000 activity tasks, signals, timers and markers, and 30,000 workflow-days.**
+Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS)
+1,000,000 Requests of Amazon Simple Queue Service**
+1,000,000 Requests, 100,000 HTTP notifications and 1,000 email notifications for Amazon Simple Notification Service**
+Amazon Elastic Transcoder
+20 minutes of SD transcoding or 10 minutes of HD transcoding**
+AWS Key Management Service
+20,000 free requests per month**
+AWS Lambda
+1,000,000 free requests per month**
+Up to 3.2 million seconds of compute time per month**
+AWS CodePipeline
+1 active pipeline per month**
+AWS Device Farm
+Free one-time trial of 250 device minutes
+Amazon SES
+62,000 Outbound Messages per month to any recipient when you call Amazon SES from an Amazon EC2 instance directly or through AWS Elastic Beanstalk.**
+1,000 Inbound Messages per month.**
+AWS Free Tier (12 Month Introductory Period):
+These free tier offers are only available to new AWS customers, and are available for 12 months following your AWS sign-up date. When your 12 month free usage term expires or if your application use exceeds the tiers, you simply pay standard, pay-as-you-go service rates (see each service page for full pricing details). Restrictions apply; see offer terms for more details.
+Elastic Compute Cloud (EC2)
+750 hours of Amazon EC2 Linux t2.micro instance usage (1 GiB of memory and 32-bit and 64-bit platform support) – enough hours to run continuously each month*
+750 hours of Amazon EC2 Microsoft Windows Server† t2.micro instance usage (1 GiB of memory and 32-bit and 64-bit platform support) – enough hours to run continuously each month*
+750 hours of an Elastic Load Balancer plus 15 GB data processing*
+30 GB of Amazon Elastic Block Storage in any combination of General Purpose (SSD) or Magnetic, plus 2 million I/Os (with EBS Magnetic) and 1 GB of snapshot storage*
+500 MB-month of Amazon EC2 Container Registry storage for new customers*
+Amazon Simple Storage Service (S3)
+5 GB of Amazon S3 standard storage, 20,000 Get Requests, and 2,000 Put Requests*
+Amazon Relational Database Service (RDS)
+750 hours of Amazon RDS Single-AZ db.t2.micro Instances,for running MySQL, PostgreSQL, MariaDB, Oracle BYOL or SQL Server (running SQL Server Express Edition) – enough hours to run a DB Instance continuously each month*
+20 GB of database storage, in any combination of RDS General Purpose (SSD) or Magnetic storage
+10 million I/Os (for use with RDS Magnetic storage; I/Os on RDS General Purpose (SSD) storage are not separately billed)
+20 GB of backup storage for your automated database backups and any user-initiated DB Snapshots
+Data Transfer
+15 GB of bandwidth out aggregated across all AWS services*
+Amazon Data Pipeline
+3 low frequency preconditions running on AWS per month*
+5 low frequency activities running on AWS per month*
+Amazon ElastiCache
+750 hours of Amazon ElastiCache cache.t2micro Node usage - enough hours to run continuously each month.*
+Amazon CloudFront
+50 GB Data Transfer Out, 2,000,000 HTTP and HTTPS Requests of Amazon CloudFront*
+Amazon AppStream
+20 free hours per month*
+Amazon API Gateway
+1 Million API Calls per month*
+Amazon Elasticsearch Service
+750 hours per month of a single-AZ t2.micro.elasticsearch instance*
+10GB per month of optional EBS storage (Magnetic or General Purpose)*
+AWS IoT
+250,000 messages (published or delivered) per month*
+* These free tier offers are only available to new AWS customers, and are available for 12 months following your AWS sign-up date. When your 12 month free usage term expires or if your application use exceeds the tiers, you simply pay standard, pay-as-you-go service rates (see each service page for full pricing details). Restrictions apply; see offer terms for more details.
+** These free tier offers do not automatically expire at the end of your 12 month AWS Free Tier term, but are available to both existing and new AWS customers indefinitely.
+
+† The following Windows variants are not eligible for the free tier: Microsoft Windows Server 2008 R2 with SQL Server Web, Microsoft Windows Server 2008 R2 with SQL Server Standard, Microsoft Windows 2008 R2 64-bit for Cluster Instances and Microsoft Windows 2008 R2 SQL Server 64-bit for Cluster Instances.
+
+The Amazon AWS Free Tier applies to participating services across the following AWS regions: US East (Northern Virginia), US West (Oregon), US West (Northern California), EU (Ireland), EU (Frankfurt), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Tokyo), Asia Pacific (Sydney), and South America (Sao Paulo). Your free usage under the AWS Free Tier is calculated each month across all regions and automatically applied to your bill – free usage does not accumulate.
+

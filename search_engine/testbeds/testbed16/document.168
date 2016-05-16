@@ -1,0 +1,19 @@
+Understanding Amazon Storage – and Encrypting It
+Oct 12, 2011
+At my Interop presentation last week, a few people asked me about how secure storage on Amazon AWS can be. Here’s my take.
+
+First off, you’d have to say which type of storage you’re thinking of using before you figure out how secure you can make it. There are 3 different kinds of storage within Amazon:
+
+Instance storage – This is storage which comes included with your Server instance when you start it up in AWS. Think of this as your normal C: drive. The storage is specific only to that instance and does not persist when the instance is terminated. This storage is just about as secure as your Amazon instance itself is.
+
+Raw block storage – known as Elastic Block Storage (EBS). Provides a fast, persistent raw data store which is retained independent of the server (AMI) instances. Think of this as your disk drives in the cloud. When server(s) want to access this storage, they “mount” a file system on top of these raw blocks and then proceed to I/O. This is the only way AWS offers block storage today and, coincidentally, this is also where our Secure Cloud encryption key management service works by encrypting the EBS blocks and then providing access control when a server image tries to gain access. (We partner with Amazon Web Services on this service.)
+
+Simple Storage Service (S3) – This is an independent, persistent, cloud storage service offered by AWS which is accessible “only” via a well defined HTTP based web API. Customers can store and retrieve large blobs of data in S3 by using this Web service and most typically use this to store Amazon Machine Images (i.e. templates for instantiating active server instances). AWS does not impose any structure on the stored data and does not disclose how the data is stored in the backend. Some 3rd parties have come up with solutions which layer file systems etc on S3, but by and large, these are still in infancy due to various limitations. To allay customers concerns about storing sensitive data in S3, AWS recommends customers utilize a encryption library, which has to be designed into the application that the customer is using to store the data on S3 and then manage the encryption keys separately. Amazon recently announced the launch of S3 Server Side Encryption for Data at Rest, along with a diagram of how it works.
+
+
+
+With this new announcement, Amazon provides for an option for customers to use encryption hosted by AWS to encrypt/decrypt S3 data – which in turn provides some relief to S3 customers who do not want to rewrite their applications to use the client library.
+
+One significant limitation is that there is no external key management provided with this solution – the keys are associated with your S3 credentials and if those credentials are hacked, everything is accessible. The best use case as far as I can tell for this is to satisfy compliance policies for storing data in S3, or possibly someone hacking/breaking into AWS and stealing S3 stores without using your account credentials. (this last example is highly unlikely…)
+
+I hope this helped you to clarify the different security techniques for storage on Amazon. Comments welcome and appreciated!

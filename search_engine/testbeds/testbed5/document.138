@@ -1,0 +1,40 @@
+
+Researchers have invented a programming language to hack living cells
+
+The genetic code just got digital.
+JOSH HRALA
+10 APR 2016
+Facebook Icon
+10.4k Twitter Icon
+
+Thanks to different programming languages, we can do a lot of really great things with technology that people in the past would have considered impossible. Imagine someone from the late-1800s looking at an iPhone.
+
+While the most transformative applications for text-based programming languages have been in various modern gadgets and digital computing, we might have made a leap towards hacking actual life, with researchers from MIT announcing that they’ve created a programming language that allows them to create DNA-encoded circuits and control cells. 
+
+Yup, scientists have developed a text-based programming language that can "rapidly design complex, DNA-encoded circuits that give new functions to living cells". This means that, through the power of programming, researchers could create DNA sequences for immediate use inside living things such as bacteria and viruses.
+
+"It is literally a programming language for bacteria," said one of the researchers, Christopher Voigt. "You use a text-based language, just like you’re programming a computer. Then you take that text and you compile it and it turns it into a DNA sequence that you put into the cell, and the circuit runs inside the cell."
+
+Though designing and implementing human-made genetic parts has been around for about the last 15 years or so, making these parts has been an extremely long and labour-intensive process that required researchers to have a full understanding of genetic engineering.
+
+The new language effectively eliminates that need and allows anyone, even those with no background in genetics, to create circuits on the fly. In essence, the language takes the text and churns out DNA sequences. 
+
+To pull this off, the team based their new language on a pre-existing one called Verilog, which is primarily used inside computer chips. With that as a core, they assigned different computer elements to different DNA parts.
+
+So far, the language is designed specifically for E. coli, but the team is working towards many more types of bacteria as well. This would allow a single language to compile DNA sequences instantly for many different common types of bacteria - a process that would have taken ages if done the traditional way. 
+
+While all of this may sound a bit super-villainy, the researchers behind the code have their eyes set on conquering some of the biggest problems in science, offering up solutions such as "bacteria that can be swallowed to aid in digestion of lactose; bacteria that can live on plant roots and produce insecticide if they sense the plant is under attack; and yeast that can be engineered to shut off when they are producing too many toxic by-products in a fermentation reactor," they report. 
+
+There’s no word yet on whether someone could create, say, a super-virus using this tool. While that's obviously a worst-case scenario, it isn’t a stretch to imagine something like that happening.
+
+But the language is still in its infancy, and has a long road ahead of it before we start questioning whether or not it has the ability to turn our world into an apocalyptic sci-fi novel, so we're going to hope that it lives up to its potential as something that could fundamentally change the way we deliver medication and break down waste. 
+
+You can read the team’s full report in Science. 
+
+Read these next:
+
+    CRISPR gene editing tool used to treat genetic disease in an animal for the first time
+    Scientists are using gene editing to repair a mutation that causes blindness
+    A programmer almost broke the Internet last week by deleting 11 lines of code
+
+

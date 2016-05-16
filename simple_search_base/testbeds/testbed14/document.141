@@ -1,0 +1,99 @@
+﻿5.1 Classes
+Classes can be understood as sets of individuals.
+Class := IRI
+The classes with the IRIs owl:Thing and owl:Nothing are available in OWL 2 as built-in classes with a predefined semantics:
+The class with IRI owl:Thing represents the set of all individuals. (In the DL literature this is often called the top concept.)
+The class with IRI owl:Nothing represents the empty set. (In the DL literature this is often called the bottom concept.)
+IRIs from the reserved vocabulary other than owl:Thing and owl:Nothing must not be used to identify classes in an OWL 2 DL ontology.
+Classes a:Child and a:Person can be used to represent the set of all children and persons, respectively, in the application domain, and they can be used in an axiom such as the following one:
+SubClassOf( a:Child a:Person )
+Each child is a person.
+5.2 Datatypes
+Datatypes are entities that refer to sets of data values. Thus, datatypes are analogous to classes, the main difference being that the former contain data values such as strings and numbers, rather than individuals. Datatypes are a kind of data range, which allows them to be used in restrictions. As explained in Section 7, each data range is associated with an arity; for datatypes, the arity is always one. The built-in datatype rdfs:Literal denotes any set of data values that contains the union of the value spaces of all datatypes.
+An IRI used to identify a datatype in an OWL 2 DL ontology must
+be rdfs:Literal, or
+identify a datatype in the OWL 2 datatype map (see Section 4), or
+not be in the reserved vocabulary of OWL 2 (see Section 2.4).
+The conditions from the previous paragraph and the restrictions on datatypes in Section 11.2 require each datatype in an OWL 2 DL ontology to be rdfs:Literal, one of the datatypes from Section 4, or a datatype defined by means of a datatype definition (see Section 2.4).
+Datatype := IRI
+The datatype xsd:integer denotes the set of all integers. It can be used in axioms such as the following one:
+DataPropertyRange( a:hasAge xsd:integer )
+The range of the a:hasAge data property is xsd:integer.
+5.3 Object Properties
+Object properties connect pairs of individuals.
+ObjectProperty := IRI
+The object properties with the IRIs owl:topObjectProperty and owl:bottomObjectProperty are available in OWL 2 as built-in object properties with a predefined semantics:
+The object property with IRI owl:topObjectProperty connects all possible pairs of individuals.
+The object property with IRI owl:bottomObjectProperty does not connect any pair of individuals.
+IRIs from the reserved vocabulary other than owl:topObjectProperty and owl:bottomObjectProperty must not be used to identify object properties in an OWL 2 DL ontology.
+The object property a:parentOf can be used to represent the parenthood relationship between individuals. It can be used in axioms such as the following one:
+ObjectPropertyAssertion( a:parentOf a:Peter a:Chris )
+Peter is a parent of Chris.
+5.4 Data Properties
+Data properties connect individuals with literals. In some knowledge representation systems, functional data properties are called attributes.
+DataProperty := IRI
+The data properties with the IRIs owl:topDataProperty and owl:bottomDataProperty are available in OWL 2 as built-in data properties with a predefined semantics:
+The data property with IRI owl:topDataProperty connects all possible individuals with all literals.
+The data property with IRI owl:bottomDataProperty does not connect any individual with a literal.
+IRIs from the reserved vocabulary other than owl:topDataProperty and owl:bottomDataProperty must not be used to identify data properties in an OWL 2 DL ontology.
+The data property a:hasName can be used to associate a name with each person. It can be used in axioms such as the following one:
+DataPropertyAssertion( a:hasName a:Peter "Peter Griffin" )
+Peter's name is "Peter Griffin".
+5.5 Annotation Properties
+Annotation properties can be used to provide an annotation for an ontology, axiom, or an IRI. The structure of annotations is further described in Section 10.
+AnnotationProperty := IRI
+The data properties with the IRIs listed below are available in OWL 2 as built-in data properties with a predefined semantics:
+The rdfs:label annotation property can be used to provide an IRI with a human-readable label.
+The rdfs:comment annotation property can be used to provide an IRI with a human-readable comment.
+The rdfs:seeAlso annotation property can be used to provide an IRI with another IRI such that the latter provides additional information about the former.
+The rdfs:isDefinedBy annotation property can be used to provide an IRI with another IRI such that the latter provides information about the definition of the former; the way in which this information is provided is not described by this specification.
+An annotation with the owl:deprecated annotation property and the value equal to "true"^^xsd:boolean can be used to specify that an IRI is deprecated.
+The owl:versionInfo annotation property can be used to provide an IRI with a string that describes the IRI's version.
+The owl:priorVersion annotation property is described in more detail in Section 3.5.
+The owl:backwardCompatibleWith annotation property is described in more detail in Section 3.5.
+The owl:incompatibleWith annotation property is described in more detail in Section 3.5.
+IRIs from the reserved vocabulary other than the ones listed above must not be used to identify annotation properties in an OWL 2 DL ontology.
+The comment provided by the following annotation assertion axiom might, for example, be used by an OWL 2 tool to display additional information about the IRIa:Peter.
+AnnotationAssertion( rdfs:comment a:Peter "The father of the Griffin family from Quahog." )
+This axiom provides a comment for the IRI a:Peter.
+5.6 Individuals
+Individuals in the OWL 2 syntax represent actual objects from the domain. There are two types of individuals in the syntax of OWL 2. Named individuals are given an explicit name that can be used in any ontology to refer to the same object. Anonymous individuals do not have a global name and are thus local to the ontology they are contained in.
+Individual := NamedIndividual | AnonymousIndividual
+5.6.1 Named Individuals
+Named individuals are identified using an IRI. Since they are given an IRI, named individuals are entities.
+IRIs from the reserved vocabulary must not be used to identify named individuals in an OWL 2 DL ontology.
+NamedIndividual := IRI
+The individual a:Peter can be used to represent a particular person. It can be used in axioms such as the following one:
+ClassAssertion( a:Person a:Peter )
+Peter is a person.
+5.6.2 Anonymous Individuals
+If an individual is not expected to be used outside an ontology, one can use an anonymous individual, which is identified by a local node ID rather than a global IRI. Anonymous individuals are analogous to blank nodes in RDF [RDF Concepts].
+AnonymousIndividual := nodeID
+Anonymous individuals can be used, for example, to represent objects whose identity is of no relevance, such as the address of a person.
+ObjectPropertyAssertion( a:livesAt a:Peter _:a1 )
+Peter lives at some (unknown) address.
+ObjectPropertyAssertion( a:city _:a1 a:Quahog )
+This unknown address is in the city of Quahog and...
+ObjectPropertyAssertion( a:state _:a1 a:RI )
+...in the state of Rhode Island.
+Special treatment is required in case anonymous individuals with the same node ID occur in two different ontologies. In particular, these two individuals are structurally equivalent (because they have the same node ID); however, they are not treated as identical in the semantics of OWL 2 (because anonymous individuals are local to an ontology they are used in). The latter is achieved by standardizing anonymous individuals apart when constructing the axiom closure of an ontology O: if anonymous individuals with the same node ID occur in two different ontologies in the import closure of O, then one of these individuals must be replaced in the axiom closure of O with a fresh anonymous individual (i.e., an anonymous individual whose node ID is unique in the import closure of O).
+Assume that ontologies O1 and O2 both use _:a5, and that O1 imports O2. Although they both use the same local node ID, the individual _:a5 in O1 may be different from the individual _:a5 in O2.
+At the level of the structural specification, individual _:a5 in O1 is structurally equivalent to individual _:a5 in O2. This might be important, for example, for tools that use structural equivalence to define the semantics of axiom retraction.
+In order to ensure that these individuals are treated differently by the semantics they are standardized apart when computing the axiom closure of O1 — either _:a5 inO1 is replaced with a fresh anonymous individual, or this is done for _:a5 in O2.
+5.7 Literals
+Literals represent data values such as particular strings or integers. They are analogous to typed RDF literals [RDF Concepts] and can also be understood as individuals denoting data values. Each literal consists of a lexical form, which is a string, and a datatype; the datatypes supported in OWL 2 are described in more detail in Section 4. A literal consisting of a lexical form "abc" and a datatype identified by the IRI datatypeIRI is written as "abc"^^datatypeIRI. Furthermore, literals whose datatype isrdf:PlainLiteral can be abbreviated in functional-style syntax ontology documents as plain RDF literals [RDF Concepts]. These abbreviations are purely syntactic shortcuts and are thus not reflected in the structural specification of OWL 2. The observable behavior of OWL 2 implementation must be as if these shortcuts were expanded during parsing.
+Literals of the form "abc@"^^rdf:PlainLiteral should be abbreviated in functional-style syntax ontology documents to "abc" whenever possible.
+Literals of the form "abc@langTag"^^rdf:PlainLiteral where "langTag" is not empty should be abbreviated in functional-style syntax documents to "abc"@langTagwhenever possible.
+The lexical form of each literal occurring in an OWL 2 DL ontology must belong to the lexical space of the literal's datatype.
+Literal := typedLiteral | stringLiteralNoLanguage | stringLiteralWithLanguage
+typedLiteral := lexicalForm '^^' Datatype
+lexicalForm := quotedString
+stringLiteralNoLanguage := quotedString
+stringLiteralWithLanguage := quotedString languageTag
+"1"^^xsd:integer is a literal that represents the integer 1.
+"Family Guy" is an abbreviation for "Family Guy@"^^rdf:PlainLiteral — a literal with the lexical form "Family Guy@" and the datatype rdf:PlainLiteral — which denotes a string "Family Guy" without a language tag.
+Furthermore, "Padre de familia"@es is an abbreviation for the literal "Padre de familia@es"^^rdf:PlainLiteral, which denotes a pair consisting of the string "Padre de familia" and the language tag es.
+Two literals are structurally equivalent if and only if both the lexical form and the datatype are structurally equivalent; that is, literals denoting the same data value are structurally different if either their lexical form or the datatype is different.
+Even though literals "1"^^xsd:integer and "+1"^^xsd:integer are interpreted as the integer 1, these two literals are not structurally equivalent because their lexical forms are not identical. Similarly, "1"^^xsd:integer and "1"^^xsd:positiveInteger are not structurally equivalent because their datatypes are not identical.
+
+

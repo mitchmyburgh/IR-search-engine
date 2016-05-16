@@ -1,0 +1,53 @@
+APNG
+The '''Animated Portable Network Graphics''' ('''APNG''')  is an extension to the  (PNG) specification. It allows for  PNG files that work similarly to animated  files, while supporting 24-bit images and 8-bit transparency not available for GIFs. It also retains  with non-animated PNG files.
+The first  of an APNG file is stored as a normal PNG stream, so most standard PNG decoders are able to display the first frame of an APNG file. The frame speed data and extra animation frames are stored in extra chunks (as provided for by the original PNG specification).
+APNG competes with  (MNG), a comprehensive format for bitmapped animations created by the same team as PNG. APNG's advantage is the smaller library size and compatibility with older PNG implementations.
+== History ==
+The APNG specification was created in 2004 by Stuart Parmenter and  of the  to allow for storing the animations needed for interfaces such as s. In May 2003, Mozilla had scrapped support for  animations, which provides a superset of APNG functionality, citing concerns about the large file size required for the expansive MNG decoder library (300 KB); the APNG decoder, built on the back of the PNG decoder, was a much smaller component.
+Among users and maintainers of the PNG and MNG formats, APNG had a lukewarm reception. In particular, PNG was conceived to be a single-image format. APNG hides the subsequent frames in PNG ancillary chunks in such a way that APNG-unaware applications would ignore them, but there are otherwise no changes to the format to allow software to distinguish between animated and non-animated images. Some of the main concerns arising from this were the inability of applications to negotiate for PNG and APNG, or distinguish between PNG and APNG once received, or for legacy software to even inform users that there are additional frames. Glenn Randers-Pehrson spearheaded efforts to reconcile the PNG purists' position with that of APNG proponents by recommending changes to APNG's format and proposing the use of a unique  (e.g., video/png), but Mozilla rejected these proposals in favor of full backward compatibility.
+The PNG group officially rejected APNG as an official extension on April 20, 2007. There have been several subsequent proposals for a simple animated graphics format based on PNG using several different approaches.
+ added support for APNG in  trunk builds on March 23, 2007. However, because libpng is the PNG Group's  of the official specification, APNG support can never be supported in the main libpng distribution so long as it remains unratified by the Group.  supports APNG by using Mozilla's unofficial variant of libpng.
+In 2008  adopted APNG as a backward compatible extension to enable animation as part of the MOT SlideShow user application for Digital Radio. "APNG 1.0 Specification - Animated Portable Network Graphics" is included as normative Annex A in the  standard TS 101 499 V2.2.1. In 2010 Commercial Radio Broadcasters in Sydney began to include APNG animations in DAB+ digital radio broadcasts. These APNG animations are carried by the "MOT slideshow" application which accompanies the audio services. It is expected that other cities in Australia will follow in early 2011.
+Mozilla's role in extending the PNG format to APNG echoes 's much earlier role in popularizing s.
+==Support==
+A server-side library exists that allows web browsers that support the , but do not support APNG, to display APNGs. Examples of such browsers include Google Chrome and Internet Explorer 9.
+For image processing software that doesn't export to APNG, users can use a program called APNG Assembler. It creates highly optimized Animated PNG files from PNG/TGA image sequences.
+==Technical details==
+A PNG file consists of the  (8 special bytes), followed by a series of . A chunk consists of four parts: Length (4 bytes), Chunk type (4 bytes), Chunk data (length bytes) and CRC (Cyclic Redundancy Code / Checksum, 4 bytes).
+There are about 20 different , but for a minimal PNG, only 3 are required: The  (image header) chunk, one or more  (image data) chunks and the  (image end) chunk.
+The next graphic shows the contents of such a minimal PNG file, representing just one red pixel. The PNG signature bytes and the individual chunks are marked with colors. On the left side, the byte values are shown in , on the right side as their equivalent characters from  with unrecognized and control characters replaced with periods. This dual display is common for s. Note that the chunks are easy to identify because of their human readable 4-byte type names (in this example IHDR, IDAT & IEND).
+The  introduces three new chunks: The animation control chunk (), the frame control chunk () and the frame data chunk (). The animation control chunk is a kind of "marker" chunk, telling the parser that this is an animated png. It contains information about how many frames the animation consists of and how many times the animation should play before coming to rest. The frame control chunk contains several bits of information, the most important of which is the display time of the following frame. The frame data chunks have the same structure as the IDAT chunks, except preceded by a sequence number.  Sequence numbers apply to both frame control and frame data chunks, which together follow a common sequence, thus enabling the order and timing of frames to be recovered (APNG spec) should an APNG-unaware PNG editor re-order them as allowed by PNG chunk ordering rules. (PNG 1.2 spec)
+A program wanting to assemble several individual PNG files to an animated PNG could proceed as follows: 
+# Take all chunks of the first PNG file as a building basis.
+#Insert an animation control chunk (acTL) after the image header chunk (IHDR).
+#If the first PNG is to be part of the animation, insert a frame control chunk (fcTL) before the image data chunk (IDAT).
+#For each of the remaining frames, add a frame control chunk (fcTL) and a frame data chunk (fdAT).  Then add the image end chunk (IEND). The content for the frame data chunks (fdAT) is taken from the image data chunks (IDAT) of their respective source images.
+The next diagram illustrates this process.
+The  was designed with future extensions in mind. An application reading a PNG file is supposed to simply ignore any chunks which it does not understand. This is the reason why APNG is . Existing applications just recognize the first frame and ignore the additional animation chunks.
+==Alternatives==
+=== Raster formats ===
+The  file format is a more powerful alternative to APNG, although it's a more complex format and has less  support.
+The  file format has better application and browser support than APNG, but it is limited to 256 colors per frame and supports only index , by mapping one of the palette colors to transparent.
+, a video format, has been adopted by some sites such as  as an alternative to other animated formats, including APNG. WebM  supports both lossy and lossless compression, but no .
+=== Vector formats ===
+ combined with scripting or  can animate vector graphics and can incorporate raster graphics. (See .)
+=== Scripting and other methods ===
+Dynamic graphics created with the   Object can also be animated. The APNG addon for Google Chrome uses this technique to display APNG images.
+ is a proposed module for  that allows for the  of  elements using .
+An alternative method for animations in web pages is to use conventional static images and animate them using  or  based technologies like ,  and .
+== References ==
+== External links ==
+*  at s 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+*

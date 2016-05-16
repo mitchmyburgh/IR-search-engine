@@ -1,0 +1,87 @@
+Efficient binary tree traversal with two pointers without using a stack
+
+In this article, we will be discussing about space complexity optimized binary tree traversal techniques.  Four modes of traversals are used quite often in a binary tree. They are pre-order walk, in-order walk, post-order walk and level first walk. Except the level first traversal, all the others are recursive and hence require a stack for traversal. We would talk here about in-order traversal. Our analysis can be applied to the other two traversal procedures as well.
+
+Let us first talk about the simplest method for traversal involving recursion. The method actually is a representation of the way we actually visualize the procedure in our mind. So, it s very easily comprehendible but involves a lot of storage space because of the use of implicit stack by the compiler. The method is summarized below:
+
+In-Order-Walk(Tree t) {
+          if (t == NULL)
+                   return;
+          In-Order-Walk(t->left);
+          print(t->info);
+          In-Order-Walk(t->right);
+}
+
+Assuming that we have two pointer fields in the tree node structure which contains the addresses of the left and right sons respectively, the above method prints out the information value of the nodes in in-order fashion (i.e. in left->root->right order).
+The worst case space complexity of the procedure is O(n). Imagine a tree of n nodes such that the right child of each tree node is empty. So, the tree is a chain of left sons. There would be n calls of In-Order-Walk(t->left) and thus the stack depth is n.
+Moreover, this procedure has drawbacks in terms of time complexity as well because the very process of pushing the entire activation block onto the stack and later on popping it off and restoring register values has considerable overheads. So, we see that this procedure is not very effective.
+The need to keep a stack is to know the way of traversing way up the tree, after traversing in the downward direction first. To avoid the necessity of keeping any extra storage space, we need to store some extra information in each node which would enable us to traverse in the upward direction. That s why we can keep a father field for each node which stores the address of the father node. But this method may also seem inefficient to you for the simple reason that it takes one extra unit of information to be maintained for each node. And if the tree is of considerably large size, it can be a waste of memory space. Can we get around this problem with some amount of indigenousness on our part  Yes, we can with a little bit of insight in the matter. If we perform bitwise xor operation on the father and left field and store this value in a field named fLeft and do the same for the right son as well, we have stored all the three information in an encoded way and this can be easily decoded if the either the father or the left(right) field is known. The fLeft and the fRight fields of the root node contain the actual addresses of the left and right sons and so do the leaf nodes contain the addresses of theirs father nodes. This can be of particular help for iterative tree traversal.
+We can readily write down the routines for obtaining either the father or the left (right) son s address given the other value. We give a portion of our code here to explain the details. 
+
+inline Node* Node::left(Node* father) {
+       // Given the father node's address, calculate
+       // left son's address by XORing with our fLeft field
+       return reinterpret_cast<Node*>(this->fLeft ^ father->addressValue());
+}
+
+inline Node* Node::right(Node* father) {
+       // Given the father node's address, calculate
+       // left son's address by XORing with our fLeft field
+       return reinterpret_cast<Node*>(this->fRight ^ father->addressValue());
+}
+
+ inline Node* Node::father(Node* son, bool isLeft) {
+       // Given the father node's address, calculate
+       // left son's address by XORing with our fLeft field
+       if (son == NULL) {
+           return (isLeft)  reinterpret_cast<Node*>(this->fLeft) : reinterpret_cast<Node*>(this->fRight);
+}
+
+unsigned fatherAddress = (son->isLeft)  
+       this->fLeft ^ son->addressValue():
+       this->fRight ^ son->addressValue();
+       return reinterpret_cast<Node*>(fatherAddress);
+}
+
+The first and the second functions are responsible for returning either the left or the right son s address given the father node s address. The third function takes a parameter that which indicates whether that particular node on which the function is going to act is a left child of it s father or a right one. It does the XOR accordingly. The isLeft field has to be stored for each node.
+
+Now, let s turn our attention to the coding of the actual traversal routine with this data structure. For inorder traversal, we go on traversing down the left branch until we reach a leaf node. The condition for a leaf node can be tested by equivalence of the fLeft field of a particular left child with the address of it s father. We traverse in the upward direction until we find a left child. At this point we are at the node of a subtree whose left edges have been traversed. Now we have to repeat the entire logical steps for this subtree. This is being done in the external do-while loop.
+
+ void BinaryTree::inOrderWalk() {
+       Node *p=root, *q=NULL, *r=NULL;
+       do {
+           while (p->fLeft != q->addressValue()) {
+               r = p;  // save the value of p
+               p = p->left(q);
+               q = r;
+           }
+           if (p) {
+               cout<<p->data<<" ";
+               r = p;
+               p = p->right(q);
+               q = r;
+           }
+
+           // Continue in this loop until a right branch for a
+           // node is found out.
+           while (q && !p) {
+               do {
+                   // p has no right son. Backup until a left
+                   // son or the root is encountered
+                   r = p;
+                   p = q;
+                   q = q->father(r,false);
+               } while (!p->isLeft && q!=NULL);
+
+               if (q) {
+                   // p is the right son of a subtree whose
+                   // left edges have been traversed
+                   cout<<q->data<<" ";
+                   r = q->father(p);
+                   p = q->right(r);
+               }
+           }
+       } while (q);
+ }
+
+A good exercise for you would be to write down the preorder and postorder traversal routines.

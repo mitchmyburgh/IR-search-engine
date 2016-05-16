@@ -1,0 +1,80 @@
+RCFile (Record Columnar File) is a data placement structure that determines how to store relational tables on computer clusters. It is designed for systems using the MapReduce framework. The RCFile structure is a systematic combination of multiple components including data storage format, data compression approach, and optimization techniques for data reading. It is able to meet all the four requirements of data placement: (1) fast data loading, (2) fast query processing, (3) highly efficient storage space utilization, and (4) a strong adaptivity to dynamic data access patterns.
+RCFile is a result of basic research with collaborative efforts from Facebook, Ohio State University, and Institute of Computing Technology, Chinese Academy of Sciences. A research paper entitled “RCFile: a Fast and Space-efficient Data Placement Structure in MapReduce-based Warehouse systems” was published and presented in ICDE’ 11. The data placement structure and its implementation presented in the paper have been widely adopted in the open source community, big data analytics industries, and application users. See the section of Impacts.
+
+
+== Summary ==
+
+
+=== Data storage format ===
+For example, a table in a database consists of 4 columns (c1 to c4):
+To serialize the table, RCFile partitions this table first horizontally and then vertically, instead of only partitioning the table horizontally like the row-oriented DBMS (row-store). The horizontal partitioning will first partition the table into multiple row groups based on the row-group size, which is a user-specified value determining the size of each row group. For example, the table mentioned above can be partitioned to two row groups if the user specifies three rows as the size of each row group.
+
+Then, in every row group, RCFile partitions the data vertically like column-store. Thus, the table will be serialized as:
+
+      Row Group 1   Row Group 2 
+      11, 21, 31;     41, 51;
+      12, 22, 32;     42, 52;
+      13, 23, 33;     43, 53;
+      14, 24, 34;     44, 54;
+
+
+=== Column data compression ===
+Within each row group, columns are compressed to reduce storage space usage. Since data of a column are stored adjacently, the pattern of a column can be detected and thus the suitable compression algorithm can be selected for a high compression ratio.
+
+
+=== Performance Benefits ===
+Column-store is more efficient when a query only requires a subset of columns, because column-store only read necessary columns from disks but row-store will read an entire row.
+RCFile combines merits of row-store and column-store via horizontal-vertical partitioning. With horizontal partitioning, RCFile places all columns of a row in a single machine and thus can eliminate the extra network costs when constructing a row. With vertical partitioning, for a query, RCFile will only read necessary columns from disks and thus can eliminate the unnecessary local I/O costs. Moreover, in every row group, data compression can be done by using compression algorithms used in column-store.
+For example, a database might have this table:
+This simple table includes an employee identifier (EmpId), name fields (Lastname and Firstname) and a salary (Salary). This two-dimensional format exists only in theory, in practice, storage hardware requires the data to be serialized into one form or another.
+In MapReduce-based systems, data is normally stored on a distributed system, such as Hadoop Distributed File System (HDFS), and different data blocks might be stored in different machines. Thus, for column-store on MapReduce, different groups of columns might be stored on different machines, which introduces extra network costs when a query projects columns placed on different machines. For MapReduce-based systems, the merit of row-store is that there is no extra network costs to construct a row in query processing, and the merit of column-store is that there is no unnecessary local I/O costs when read data from disks.
+
+
+=== Row-oriented systems ===
+The common solution to the storage problem is to serialize each row of data, like this;
+
+001:10,Smith,Joe,40000;002:12,Jones,Mary,50000;003:11,Johnson,Cathy,44000;004:22,Jones,Bob,55000;
+
+Row-based systems are designed to efficiently return data for an entire row, or an entire record, in as few operations as possible. This matches use-cases where the system is attempting to retrieve all the information about a particular object, say the full information about one contact in a rolodex system, or the complete information about one product in an online shopping system.
+Row-based systems are not efficient at performing operations that apply to the entire data set, as opposed to a specific record. For instance, in order to find all the records in the example table that have salaries between 40,000 and 50,000, the row-based system would have to seek through the entire data set looking for matching records. While the example table shown above may fit in a single disk block, a table with even a few hundred rows would not, therefore multiple disk operations would be needed to retrieve the data.
+
+
+=== Column-oriented systems ===
+A column-oriented system serializes all of the values of a column together, then the values of the next column. For our example table, the data would be stored in this fashion;
+
+10:001,12:002,11:003,22:004;Smith:001,Jones:002,Johnson:003,Jones:004;Joe:001,Mary:002,Cathy:003,Bob:004;40000:001,50000:002,44000:003,55000:004;
+
+The difference can be more clearly seen in this common modification:
+
+…;Smith:001,Jones:002,004,Johnson:003;…
+
+Two of the records store the same value, "Jones", therefore it is now possible to store this in the column-oriented system only once instead of twice. For many common searches, like "find all the people with the last name Jones", the answer can now be retrieved in a single operation.
+Whether or not a column-oriented system will be more efficient in operation depends heavily on the operations being automated. Operations that retrieve data for objects would be slower, requiring numerous disk operations to assemble data from different columns to build up a whole-row record. However, such whole-row operations are generally rare. In the majority of cases, only a limited subset of data is retrieved. In a rolodex application, for instance, operations collecting the first names and last names from many rows in order to build a list of contacts is far more common than operations reading the data for home address.
+
+
+== Impacts ==
+RCFile has been adopted in major real-world systems for big data analytics. Here is a list of representative examples.
+RCFile has become the default data placement structure in Facebook's production Hadoop cluster. This is so far the world's largest Hadoop cluster, where 40 terabytes compressed data sets are added every day. In addition, all the data sets stored in HDFS before RCFile have also been transformed to use the RCFile structure.
+RCFile has been adopted in Apache Hive (since v0.4), which is an open source data store system running on top of Hadoop and is being widely used in various companies around the world, including several major Internet services, such as Facebook, Taobao, and Netflix.
+RCFile has been adopted in Apache Pig (since v0.7), which is another open source data processing system being widely used in many organizations, including several major Web service providers, such as Twitter, Yahoo, Linkedin, AOL, and Salesforce.com.
+RCFile has become the de facto standard data storage structure in Hadoop software environment supported by HCatalog project (formerly known as Howl) that is the table and storage management service for Hadoop. RCFile is also supported by the open source Elephant Bird library that is used in production in Twitter for daily data analytics.
+
+
+== See also ==
+Column (data store)
+Column-oriented DBMS
+MapReduce
+Hadoop
+Apache Hive
+Big data
+ORC File
+
+
+== References ==
+
+
+== External links ==
+RCFile APIs
+Source Code
+Hive website
+Hive page on Hadoop Wiki

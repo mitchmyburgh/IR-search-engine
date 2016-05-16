@@ -1,0 +1,82 @@
+﻿An ontology language is a formal language used to encode the ontology. There are a number of such languages for ontologies, both proprietary and standards-based:
+Common Algebraic Specification Language is a general logic-based specification language developed within the IFIP working group 1.3 "Foundations of System Specifications" and functions as a de facto standard in the area of software specifications. It is now being applied to ontology specifications in order to provide modularity and structuring mechanisms.
+Common logic is ISO standard 24707, a specification for a family of ontology languages that can be accurately translated into each other.
+The Cyc project has its own ontology language called CycL, based on first-order predicate calculus with some higher-order extensions.
+DOGMA (Developing Ontology-Grounded Methods and Applications) adopts the fact-oriented modeling approach to provide a higher level of semantic stability.
+The Gellish language includes rules for its own extension and thus integrates an ontology with an ontology language.
+IDEF5 is a software engineering method to develop and maintain usable, accurate, domain ontologies.
+KIF is a syntax for first-order logic that is based on S-expressions. SUO-KIF is a derivative version supporting the Suggested Upper Merged Ontology.
+MOF and UML are standards of the OMG
+Olog is a category theoretic approach to ontologies, emphasizing translations between ontologies using functors.
+OBO, a language used for biological and biomedical ontologies.
+OntoUML is an ontologically well-founded profile of UML for conceptual modeling of domain ontologies.
+OWL is a language for making ontological statements, developed as a follow-on from RDF and RDFS, as well as earlier ontology language projects including OIL, DAML, and DAML+OIL. OWL is intended to be used over the World Wide Web, and all its elements (classes, properties and individuals) are defined as RDF resources, and identified by URIs.
+Rule Interchange Format (RIF) and F-Logic combine ontologies and rules.
+Semantic Application Design Language (SADL)[23] captures a subset of the expressiveness of OWL, using an English-like language entered via an Eclipse Plug-in.
+SBVR (Semantics of Business Vocabularies and Rules) is an OMG standard adopted in industry to build ontologies.
+TOVE Project, TOronto Virtual Enterprise project
+Published examples[edit]
+AURUM - Information Security Ontology,[24] An ontology for information security knowledge sharing, enabling users to collaboratively understand and extend the domain knowledge body. It may serve as a basis for automated information security risk and compliance management.
+BabelNet, a very large multilingual semantic network and ontology, lexicalized in many languages
+Basic Formal Ontology,[25] a formal upper ontology designed to support scientific research
+BioPAX,[26] an ontology for the exchange and interoperability of biological pathway (cellular processes) data
+BMO,[27] an e-Business Model Ontology based on a review of enterprise ontologies and business model literature
+CCO and GexKB,[28] Application Ontologies (APO) that integrate diverse types of knowledge with the Cell Cycle Ontology (CCO) and the Gene Expression Knowledge Base (GexKB)
+CContology (Customer Complaint Ontology),[29] an e-business ontology to support online customer complaint management
+CIDOC Conceptual Reference Model, an ontology for cultural heritage[30]
+COSMO,[31] a Foundation Ontology (current version in OWL) that is designed to contain representations of all of the primitive concepts needed to logically specify the meanings of any domain entity. It is intended to serve as a basic ontology that can be used to translate among the representations in other ontologies or databases. It started as a merger of the basic elements of the OpenCyc and SUMO ontologies, and has been supplemented with other ontology elements (types, relations) so as to include representations of all of the words in the Longman dictionary defining vocabulary.
+Cyc, a large Foundation Ontology for formal representation of the universe of discourse
+Disease Ontology,[32] designed to facilitate the mapping of diseases and associated conditions to particular medical codes
+DOLCE, a Descriptive Ontology for Linguistic and Cognitive Engineering[14][15]
+Dublin Core, a simple ontology for documents and publishing
+Foundational, Core and Linguistic Ontologies[33]
+Foundational Model of Anatomy,[34] an ontology for human anatomy
+Friend of a Friend, an ontology for describing persons, their activities and their relations to other people and objects
+Gene Ontology for genomics
+Gellish English dictionary, an ontology that includes a dictionary and taxonomy that includes an upper ontology and a lower ontology that focusses on industrial and business applications in engineering, technology and procurement. See also Gellish as Open Source project on SourceForge.
+Geopolitical ontology, an ontology describing geopolitical information created by Food and Agriculture Organization(FAO). The geopolitical ontology includes names in multiple languages (English, French, Spanish, Arabic, Chinese, Russian and Italian); maps standard coding systems (UN, ISO, FAOSTAT, AGROVOC, etc.); provides relations among territories (land borders, group membership, etc.); and tracks historical changes. In addition, FAO provides web services <http://www.fao.org/countryprofiles/webservices.asp?lang=en> of geopolitical ontology and a module maker <http://www.fao.org/countryprofiles/geoinfo/modulemaker/index.html> to download modules of the geopolitical ontology into different formats (RDF, XML, and EXCEL). See more information on the FAO Country Profiles geopolitical ontology web page <http://www.fao.org/countryprofiles/geoinfo.asp?lang=en>.
+GOLD,[35] General Ontology for Linguistic Description
+GUM (Generalized Upper Model),[36] a linguistically motivated ontology for mediating between clients systems and natural language technology
+IDEAS Group,[37] a formal ontology for enterprise architecture being developed by the Australian, Canadian, UK and U.S. Defence Depts.
+Linkbase,[38] a formal representation of the biomedical domain, founded upon Basic Formal Ontology.
+LPL, Lawson Pattern Language
+NCBO Bioportal,[39] biological and biomedical ontologies and associated tools to search, browse and visualise
+NIFSTD Ontologies from the Neuroscience Information Framework: a modular set of ontologies for the neuroscience domain. See http://neuinfo.org
+OBO-Edit,[40] an ontology browser for most of the Open Biological and Biomedical Ontologies
+OBO Foundry,[41] a suite of interoperable reference ontologies in biology and biomedicine
+OMNIBUS Ontology,[42] an ontology of learning, instruction, and instructional design
+Ontology for Biomedical Investigations, an open access, integrated ontology for the description of biological and clinical investigations
+ONSTR,[43] Ontology for Newborn Screening Follow-up and Translational Research [4], Newborn Screening Follow-up Data Integration Collaborative, Emory University, Atlanta, GA. See also https://nbsdc.org/projectmission.php
+Plant Ontology[44] for plant structures and growth/development stages, etc.
+POPE, Purdue Ontology for Pharmaceutical Engineering
+PRO,[45] the Protein Ontology of the Protein Information Resource, Georgetown University
+Program abstraction taxonomy program abstraction taxonomy
+Protein Ontology[46] for proteomics
+RXNO Ontology, for name reactions in chemistry
+SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms)
+Suggested Upper Merged Ontology, a formal upper ontology
+Systems Biology Ontology (SBO), for computational models in biology
+SWEET,[47] Semantic Web for Earth and Environmental Terminology
+ThoughtTreasure ontology
+TIME-ITEM, Topics for Indexing Medical Education
+Uberon,[48] representing animal anatomical structures
+UMBEL, a lightweight reference structure of 20,000 subject concept classes and their relationships derived from OpenCyc
+WordNet, a lexical reference system
+YAMATO,[49] Yet Another More Advanced Top-level Ontology
+The W3C Linking Open Data community project coordinates attempts to converge different ontologies into worldwide Semantic Web.
+Libraries[edit]
+The development of ontologies for the Web has led to the emergence of services providing lists or directories of ontologies with search facility. Such directories have been called ontology libraries.
+The following are libraries of human-selected ontologies.
+COLORE[50] is an open repository of first-order ontologies in Common Logic with formal links between ontologies in the repository.
+DAML Ontology Library[51] maintains a legacy of ontologies in DAML.
+Ontology Design Patterns portal[52] is a wiki repository of reusable components and practices for ontology design, and also maintains a list of exemplary ontologies. Started within the NeOn EU project.
+Protégé Ontology Library[53] contains a set of OWL, Frame-based and other format ontologies.
+SchemaWeb[54] is a directory of RDF schemata expressed in RDFS, OWL and DAML+OIL.
+The following are both directories and search engines. They include crawlers searching the Web for well-formed ontologies.
+OBO Foundry is a suite of interoperable reference ontologies in biology and biomedicine.[55][56]
+Bioportal (ontology repository of NCBO)
+OntoSelect[57] Ontology Library offers similar services for RDF/S, DAML and OWL ontologies.
+Ontaria[58] is a "searchable and browsable directory of semantic web data" with a focus on RDF vocabularies with OWL ontologies. (NB Project "on hold" since 2004).
+Swoogle is a directory and search engine for all RDF resources available on the Web, including ontologies.
+OOR - the Open Ontology Repository initiative - http://oor.net
+ROMULUS is a foundational ontology repository aimed at improving semantic interoperability. Currently there are three foundational ontologies in the repository: DOLCE, BFO and GFO.

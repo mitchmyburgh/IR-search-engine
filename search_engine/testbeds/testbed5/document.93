@@ -1,0 +1,38 @@
+History
+
+Walter Bright decided to start working on a new language in 1999. D was first released in December 2001,[1] and reached version 1.0 in January 2007.[15] The first version of the language (D1) concentrated on the imperative, object oriented and metaprogramming paradigms,[16] similar to C++.
+
+Dissatisfied with Phobos, D's official runtime and standard library, members of the D community created an alternative runtime and standard library named Tango. The first public Tango announcement came within days of D 1.0's release.[17] Tango adopted a different programming style, embracing OOP and high modularity. Being a community-led project, Tango was more open to contributions, which allowed it to progress faster than the official standard library. At that time, Tango and Phobos were incompatible due to different runtime support APIs (the garbage collector, threading support, etc.). This made it impossible to use both libraries in the same project. The existence of two libraries, both widely in use, has led to significant dispute due to some packages using Phobos and others using Tango.[18]
+
+In June 2007, the first version of D2 was released.[2] The beginning of D2's development signalled the stabilization of D1; the first version of the language has been placed in maintenance, only receiving corrections and implementation bugfixes. D2 was to introduce breaking changes to the language, beginning with its first experimental const system. D2 later added numerous other language features, such as closures, purity, and support for the functional and concurrent programming paradigms. D2 also solved standard library problems by separating the runtime from the standard library. The completion of a D2 Tango port was announced in February 2012.[19]
+
+The release of Andrei Alexandrescu's book The D Programming Language on June 12, 2010 marked the stabilization of D2, which today is commonly referred to as just "D".
+
+In January 2011, D development moved from a bugtracker / patch-submission basis to GitHub. This has led to a significant increase in contributions to the compiler, runtime and standard library.[20]
+
+In December 2011, Andrei Alexandrescu announced that D1, the first version of the language, would be discontinued on December 31, 2012.[21] The final D1 release, D v1.076, was on December 31, 2012.[22]
+Implementations
+
+Most current D implementations compile directly into machine code for efficient execution.
+
+    DMD – The Digital Mars D compiler is the official D compiler by Walter Bright. The front-end is licensed under the Boost Software License.[4] The back-end source code is available but not under an open source license,[5] because it was partially developed at Symantec and cannot be relicensed as open source.[23]
+    GDC – A front-end for the GCC back-end, built using the open DMD compiler source code.[24]
+    LDC – A compiler based on the DMD front-end that uses LLVM as its compiler back-end. The first release-quality version was published on January 9, 2009.[25] It supports version 2.0.[26]
+    D Compiler for .NET – A back-end for the D programming language 2.0 compiler.[27][28] It compiles the code to Common Intermediate Language (CIL) bytecode rather than to machine code. The CIL can then be run via a Common Language Infrastructure (CLR) virtual machine.
+    SDC – A D compiler using a custom front-end and LLVM as its compiler back-end. It is written in D and uses a scheduler to handle symbol resolution in order to elegantly handle the compile-time features of D. This compiler currently supports a limited subset of the language.[29][30]
+
+Development tools
+
+Editors and integrated development environments (IDEs) supporting D include Eclipse, Microsoft Visual Studio, SlickEdit, Emacs, vim, SciTE, Smultron, TextMate, MonoDevelop, Zeus,[31] and Geany among others.[32]
+
+    Eclipse plug-ins for D include: DDT,[33] and Descent (dead project).[34]
+    Visual Studio integration is provided by VisualD.[35]
+    Vim supports both syntax highlighting and code completion (through patched Ctags).
+    A bundle is available for TextMate, and the Code::Blocks IDE includes partial support for the language. However, standard IDE features such as code completion or refactoring are not yet available, though they do work partially in Code::Blocks (due to D's similarity to C).
+    A plugin for Xcode 3 is available, D for Xcode, to enable D-based projects and development.[36]
+    An AddIn for MonoDevelop is available, named Mono-D.[37]
+    KDevelop (as well as its text editor backend, Kate) autocompletion plugin is available.[38]
+
+Open source D IDEs for Windows exist, some written in D, such as Poseidon,[39] D-IDE,[40] and Entice Designer.[41]
+
+D applications can be debugged using any C/C++ debugger, like GDB or WinDbg, although support for various D-specific language features is extremely limited. On Windows, D programs can be debugged using Ddbg, or Microsoft debugging tools (WinDBG and Visual Studio), after having converted the debug information using cv2pdb. The ZeroBUGS debugger for Linux has experimental support for the D language. Ddbg can be used with various IDEs or from the command line; ZeroBUGS has its own graphical user interface (GUI).

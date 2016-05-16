@@ -1,0 +1,18 @@
+﻿The eyes are the window to the soul -- unless that eye belongs to a CGI animated character.
+Until now, that is. The scientists over at Disney Research Zurich are trying to make things a little easier for animators who want to create photorealistic eyes. By using "multiple cameras and varied lighting," they've developed a technique that captures not only the shape, texture, refraction, and coloring of the white sclera, cornea, iris, and pupil, but also the change of the pupil when it dilates and contracts.
+
+
+Computer animation has come a long way since the revelatory experience that was Toy Story back in '95, but creating anything photorealistic is still an incredible challenge. The problem is variation -- no two eyes, hands, gaits, smiles are exactly alike, because humans are precious snowflakes, I guess -- but attempting to create individual features for every single character that shows up on screen will not only require a lot of time and hard work, but lots and lots of money.
+
+Not only that, but the scientists at Disney Researched realized that part of the reason why it's so difficult for animators to create realistic eyes is because they're often designed 1.) en masse generically, and 2.) without the qualities of human eyes that make them unique, like asymmetry, microscopic surface details, and imperfections.
+
+
+This is what Pascal Bérard, a Ph.D. student in computer graphics at Disney Research Zurich and ETH Zurich, says about why the team's research is so important to animation:
+
+Creating a photo-realistic digital human is one of the grand challenges of computer graphics, but despite intense research on capturing actors’ faces, especially for reconstruction of the skin surface and features such as hair, little attention to date has been given to the eye, particularly its shape.Generically modeled eyes may be sufficient for background characters, but it now takes significant effort to manually create realistic eyes for heroes and other leading characters. Our reconstruction technique can greatly reduce the time spent and help increase the realism of the eye.
+
+So, how is all of this done? Essentially, the subject lies under the capture setup, which consists of six Canon 650D cameras fitted with 100mm macro lenses, a "modified flash," and 9 RGB LED lights. A series of photos are then taken of the subject's eye in various poses and pupil dilations. The whole data acquisition process takes about 20 minutes. However, there is a lot more that goes into the reconstruction process, so if you're interested, check out Disney Research's abstract.
+
+There are a few exciting possibilities if this process of reconstructing human eyes is used for animation in the future. Not only will we start seeing some truly lifelike characters in animated movies, TV shows, and gaming (which can add new depth to the performances of talented voice actors), but Disney Research also mentions how it'll make creating digital doubles of actors a whole lot easier, too.
+
+Maybe one day we won't even need human actors. Maybe one day -- we won't even need humans. (V folds hands into the Roger Smith finger pyramid of evil contemplation.) 

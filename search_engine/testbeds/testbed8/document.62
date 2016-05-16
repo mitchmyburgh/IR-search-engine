@@ -1,0 +1,16 @@
+Compression
+
+A bit array is the densest storage for "random" bits, that is, where each bit is equally likely to be 0 or 1, and each one is independent. But most data is not random, so it may be possible to store it more compactly. For example, the data of a typical fax image is not random and can be compressed. Run-length encoding is commonly used to compress these long streams. However, most compressed data formats are not so easy to access randomly; also by compressing bit arrays too aggressively we run the risk of losing the benefits due to bit-level parallelism (vectorization). Thus, instead of compressing bit arrays as streams of bits, we might compress them as streams of bytes or words (see Bitmap index (compression)).
+Advantages and disadvantages
+
+Bit arrays, despite their simplicity, have a number of marked advantages over other data structures for the same problems:
+
+    They are extremely compact; few other data structures can store n independent pieces of data in n/w words.
+    They allow small arrays of bits to be stored and manipulated in the register set for long periods of time with no memory accesses.
+    Because of their ability to exploit bit-level parallelism, limit memory access, and maximally use the data cache, they often outperform many other data structures on practical data sets, even those that are more asymptotically efficient.
+
+However, bit arrays aren't the solution to everything. In particular:
+
+    Without compression, they are wasteful set data structures for sparse sets (those with few elements compared to their range) in both time and space. For such applications, compressed bit arrays, Judy arrays, tries, or even Bloom filters should be considered instead.
+    Accessing individual elements can be expensive and difficult to express in some languages. If random access is more common than sequential and the array is relatively small, a byte array may be preferable on a machine with byte addressing. A word array, however, is probably not justified due to the huge space overhead and additional cache misses it causes, unless the machine only has word addressing.
+

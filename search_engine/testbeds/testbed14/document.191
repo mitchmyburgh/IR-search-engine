@@ -1,0 +1,144 @@
+﻿Abstract. While many higher-order interactive theorem provers include
+a choice operator, higher-order automated theorem provers currently do
+not. As a step towards supporting automated reasoning in the presence
+of a choice operator, we present a cut-free ground tableau calculus for
+Church’s simple type theory with choice. The tableau calculus is designed
+with automated search in mind. In particular, the rules only operate on
+the top level structure of formulas. Additionally, we restrict the instantiation
+terms for quantifiers to a universe that depends on the current
+branch. At base types the universe of instantiations is finite. We prove
+completeness of the tableau calculus relative to Henkin models.
+1 Introduction
+Interactive theorem provers based on classical higher-order logic (e.g., IsabelleHOL
+[16], HOL [12] and the successors of the HOL system) build in the axiom of
+choice by including a form of Hilbert’s ε binder and appropriate rules. Church’s
+formulation of the simple theory of types [11] included a choice operator (called
+ι) and an axiom of choice at each type. Henkin defined a general notion of a
+model of Church’s type theory with choice and proved completeness [13]. A
+higher-order version of the TPTP has been under development the past few
+years [18]. In 2009 it was decided that Henkin models with choice would be the
+default semantics of the higher-order TPTP.
+Automated theorem provers for classical higher-order logic (e.g., TPS [3] and
+LEO-II [7]) do not currently build in the axiom of choice. Completeness of such
+calculi is judged with respect to a variant of Henkin’s models without choice [2,
+6]. What would be involved in adding support for choice? Assume a new logical
+constant εσ of type (σ → o) → σ at each type σ is added to the syntax. We need
+new rules corresponding to this constant. The fundamental property εσ should
+satisfy is expressed by the formula
+∀pσ→oxσ.px → p(εσp)
+Our purpose in this paper is to give a complete analytic tableau calculus
+for higher-order logic with choice that forms a basis for automated reasoning
+in the logic. Mints [15] has given a sequent calculus for relational higher-order
+logic with an ε-operator and proves completeness. Mints’ calculus does not include
+arbitrary function types and the corresponding simply typed λ-terms. We
+2
+adapt Mints’ rules for a simply typed formulation in the style of Church. We
+obtain tighter restrictions on when Mints’ main choice rule (the ε-rule) needs
+to be applied. Furthermore, we show we can omit Mints’ ε-extensionality rule
+altogether. These results are important for automated reasoning because these
+two rules would be highly branching in practice. In addition to including cutfree
+rules for the ε-operator, we give strong restrictions on the instantiation of
+universal quantifiers over base types analogous to those reported in [9].
+In Section 2 we give a quick presentation of the syntax and semantics of
+simple type theory with choice. In Section 3 we present the tableau calculus. In
+Section 4 we define the notion of an evident set and prove that every evident
+set has a Henkin model. We define a notion of abstract consistency and use it
+to prove completeness of the tableau calculus in Section 5. We discuss related
+work and conclude in Sections 6 and 7. For reasons of space several proofs are
+omitted. Detailed proofs are available in [5].
+2 Preliminaries
+We start by giving the syntax for simple type theory with a choice operator in
+the style of Church [11]. Types (σ, τ, µ) are given inductively by the base type
+o (of truth values), ι (of individuals) and σ → τ (of functions from σ to τ). For
+brevity, we will omit the arrow and write στ for σ → τ. Omitted parenthesis in
+types associate to the right: στµ means σ(τµ). The results in the paper generalize
+to the case where there are arbitrarily many base types of individuals. We use
+β to range over the base types o and ι.
+For each type σ we assume a countably infinite set Vσ of variables of type σ.
+For each type σ we have logical constants =σ of type σσo, ∀σ of type (σo)o and
+εσ (the choice operator) of type (σo)σ. Furthermore, we have logical constants
+for disjunction ∨ of type ooo, negation ¬ of type oo, false ⊥ of type o and for a
+default individual ∗ of type ι. (The default individual is included only to act as
+an instantiation when no other instantiation of type ι is allowed by our calculus.)
+We use x, y to range over variables and c to range over logical constants. A name
+is either a variable or a logical constant. We use ν to range over names. Variables
+x and choice operators εσ are called decomposable names. We use δ to range over
+decomposable names.
+The family of sets Λσ of terms of type σ are inductively defined. If ν is a name
+of type σ, then ν ∈ Λσ. If t ∈ Λστ and s ∈ Λσ, then we have an application term
+ts ∈ Λτ . If x ∈ Vσ and t ∈ Λτ , then we have an abstraction term λx.s ∈ Λστ . A
+formula is a term s ∈ Λo.
+Application associates to the left, so that stu means (st)u, with the exception
+that ¬tu always means ¬(tu). We use infix notation and write s =σ t (or s = t)
+for =σ st and write s ∨ t for ∨st. We write s 6=σ t (or s 6= t) for ¬(s =σ t). We
+also use binder notation to write ∀x.s for ∀σλx.s and write εx.s for εσλx.s.
+The set Vt of free variables of t is defined as usual. For a set of variables X
+we write Λ
+X
+σ
+for the set of all terms t ∈ Λσ such that Vt ⊆ X.
+3
+An elimination context (E) is a term with a hole []σ defined inductively as
+follows. []σ is an elimination context of type σ. If E is an elimination context of
+type τµ and s ∈ Λτ then Es is an elimination context of type µ.
+Let E be an elimination context of type σ which has a hole of type τ. We can
+apply E to a term t ∈ Λτ to get a term of type σ: [ ][t] = t and (E s)[t] = E[t] s.
+An accessibility context (C) is a term with a hole []σ of the form E, ¬E, E 6=ι s
+or s 6=ι E where E is an elimination context. We can apply an accessibility context
+C with a hole of type σ to a term t ∈ Λσ to get a term of type o in the obvious
+way. A term s is accessible in a set A of formulas iff there is an accessibility
+context C such that C[s] ∈ A.
+Let A be a set of formulas. A term s is discriminating in A iff there is a
+term t such that s 6=ι t ∈ A or t 6=ι s ∈ A. A discriminant ∆ of A is a maximal
+set of discriminating terms such that there is no s, t ∈ ∆ with s 6=ι t ∈ A.
+(Discriminants first appeared in [10].)
+
+Table 1. Properties of values of logical constants
+For each logical constant c of type σ we define a corresponding property Lc(a)
+of elements a ∈ Dσ in Table 1. Essentially Lc(a) holds iff a is an appropriate
+interpretation of c. An assignment I into D is logical if Lc(Ic) holds for each
+logical constant c. A logical assignment I must map ⊥ to 0, ¬ to the negation
+function, and so on. There is no restriction on the value of I∗ in Dι. The most
+interesting case to consider is the choice function εσ. For an assignment to be
+logical, Iεσ must be a function in D(σo)σ such that f((Iεσ)f) = 1 for every
+f ∈ Dσo except when f is the constant 0 function. There may be many different
+elements in D(σo)σ satisfying this condition. (Of course, there may also be no
+element satisfying the condition.)
+We now turn to the interpretation of all typed terms. To do this we use
+induction on terms to lift each assignment I to a partial function Iˆ on terms:
+
+3 Tableau Calculus
+A branch is a finite set of normal formulas. A step is an n+1-tuple hA, A1, . . . , Ani
+of branches where n ≥ 1, ⊥ ∈/ A and A ⊂ Ai for each i ∈ {1, . . . , n}. The branch
+A is the head of the step hA, A1, . . . , Ani and each Ai
+is an alternative. A rule
+is a set of steps, and is usually indicated by a schema. For example, the schema
+indicates the set of steps hA, A1, A2i where s 6=o t is in A, ⊥ ∈/ A, {s, ¬t} 6⊆ A1,
+{¬s, t} 6⊆ A1, A1 = A ∪ {s, ¬t} and A2 = A ∪ {¬s, t}. We say a rule applies to a
+branch A if some step in the rule has A as its head. A tableau calculus is also a is a set of steps, and is usually indicated by a schema. For example, the schema
+set of steps. Our tableau calculus T is given as the union of the rules in Figure 1.
+
+Fig. 1. Tableau rules
+In the rules Tmat (the mating rule) and Tdec (the decomposition rule) δ ranges
+over decomposable names (variables and choice operators). In the rule T∀ the
+6
+instantiation term t must belong to the set U
+A
+σ where A is the head of the step.
+In the rule T¬∀ the variable x must be fresh in the sense that it is not in VA
+where A is the head of the step. We restrict the T¬∀ to apply only in the case
+where there is no variable y ∈ Vσ such that ¬[sy] is in the head A. In the context
+of an automated prover, this restriction implies there is no need to apply the
+T¬∀ rule to a formula ¬∀s more than once.
+We explain the choice rule Tε. Whenever we must consider εs, either s corresponds
+to the empty set and hence ∀x.¬(sx) holds, or s represents a set containing
+at least one element and s(εs) holds. Note that we obtain a complete calculus
+even though we only apply the choice rule when εs occurs on the branch in the
+form C[εs] for some accessibility context C. That is, the choice rule only applies
+using εs when the branch contains a formula of the form εst1 · · ·tn, ¬(εst1 · · ·tn),
+(εst1 · · ·tn) 6=ι u or u 6=ι (εst1 · · ·tn). This is a tighter restriction than the one
+given for the choice rule in [15].
+The set of refutable branches is defined inductively as follows. If ⊥ ∈ A,
+then A is refutable. If hA, A1, . . . , Ani is a step in T and every alternative Ai
+is
+refutable, then A is refutable.

@@ -1,0 +1,90 @@
+Platforms and popularity
+
+The primary platform of Clojure is the JVM,[6][43] but other target implementations exist. The most notable of these are ClojureScript,[8] which compiles to JavaScript, and ClojureCLR,[62] a full port to the Common Language Runtime, interoperable with the .NET ecosystem. A survey of the Clojure community with 1,060 respondents conducted in 2013[63] found that 47% of respondents used both Clojure and ClojureScript when working with Clojure. In 2014 this number had increased to 55%.[64] Popular ClojureScript projects include implementations of the React library such as Reagent and Om.[65]
+
+Clojure has also been used for creative computing, including visual art, music, games, and poetry.[66]
+
+Variant implementations of the Clojure language have been developed for platforms other than the above:
+
+    las3r,[67] a subset of Clojure that runs on the ActionScript Virtual Machine (the Adobe Flash Player platform)
+    clojure-py,[68] Clojure in pure Python
+    rouge,[69] Clojure atop YARV in Ruby
+    CljPerl,[70] Clojure atop Perl
+    Pixie, Clojure-inspired Lisp dialect written in RPython
+
+Examples
+
+Hello world:
+
+(println "Hello world!")
+
+Defining a function:
+
+(defn square [x]
+  (* x x))
+
+GUI "Hello world" by calling the Java Swing library:
+
+(javax.swing.JOptionPane/showMessageDialog nil "Hello World" )
+
+Using Unicode (Hello 世 ("World") using the CJK code point for that word):
+
+(println (str "Hello, " \u4e16)) ; to the console
+(javax.swing.JOptionPane/showMessageDialog nil (str "Hello, " \u4e16 "!")); using Java GUI
+
+A thread-safe generator of unique serial numbers (though, like many other Lisp dialects, Clojure has a built-in gensym function that it uses internally):
+
+(let [i (atom 0)]
+  (defn generate-unique-id
+    "Returns a distinct numeric ID for each call."
+    []
+    (swap! i inc)))
+
+An anonymous subclass of java.io.Writer that doesn't write to anything, and a macro using it to silence all prints within it:
+
+(def bit-bucket-writer
+  (proxy [java.io.Writer] []
+    (write [buf] nil)
+    (close []    nil)
+    (flush []    nil)))
+
+(defmacro noprint
+  "Evaluates the given expressions with all printing to *out* silenced."
+  [& forms]
+  `(binding [*out* bit-bucket-writer]
+     ~@forms))
+
+(noprint
+  (println "Hello, nobody!"))
+
+10 threads manipulating one shared data structure, which consists of 100 vectors each one containing 10 (initially sequential) unique numbers. Each thread then repeatedly selects two random positions in two random vectors and swaps them. All changes to the vectors occur in transactions by making use of Clojure's software transactional memory system.
+
+(defn run [nvecs nitems nthreads niters]
+  (let [vec-refs (->> (range (* nvecs nitems)) (partition nitems) (map (comp ref vec)) vec)
+        swap #(let [v1 (rand-int nvecs)
+                    v2 (rand-int nvecs)
+                    i1 (rand-int nitems)
+                    i2 (rand-int nitems)]
+                (dosync
+                 (let [tmp (nth @(vec-refs v1) i1)]
+                   (alter (vec-refs v1) assoc i1 (nth @(vec-refs v2) i2))
+                   (alter (vec-refs v2) assoc i2 tmp))))
+        report #(let [derefed (map deref vec-refs)]
+                  (prn derefed)
+                  (println "Distinct:" (->> derefed (apply concat) distinct count)))]
+    (report)
+    (dorun (apply pcalls (repeat nthreads #(dotimes [_ niters] (swap)))))
+    (report)))
+
+(run 100 10 10 100000)
+
+Output of prior example:
+
+([0 1 2 3 4 5 6 7 8 9] [10 11 12 13 14 15 16 17 18 19] ...
+[990 991 992 993 994 995 996 997 998 999])
+Distinct: 1000
+
+([382 318 466 963 619 22 21 273 45 596] [808 639 804 471 394 904 952 75 289 778] ...
+[484 216 622 139 651 592 379 228 242 355])
+Distinct: 1000
+

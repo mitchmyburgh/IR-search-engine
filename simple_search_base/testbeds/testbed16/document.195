@@ -1,0 +1,28 @@
+Why is Europe Behind the US on Cloud Computing?
+I have decided to write this post after receiving several emails from different people asking me about the reasons for the slower adoption of cloud computing in Europe. In comparison to the US, it is clear that EU is some years behind in size and maturity of cloud infrastructure provision and adoption.
+
+In my view, this delay is mostly due to different factors:
+
+A. From the supply side
+Most of the main providers of cloud services are US, and although they are building data centers in Europe, they initially focused on the US market. Only Amazon reaches almost a 60% market share of the IaaS Market according to the 451 Group 
+Europe does not have large suppliers who may compete in public provision with the major US suppliers. Only the European Telecoms are big and powerful enough to compete, but they still have to become big players in this space
+European ICT industry is mostly formed by innovative SMEs. More than 99% of all European businesses are SMEs
+Main skills of European ICT industry are in provision of software services, so working at a level of abstraction higher than the provision of infrastructure as a service. A trait of the European software industry is its focus on applications as opposed to development tools, middleware, and system infrastructure software
+
+B. From the demand side, and according to the study Quantitative Estimates of the Demand for Cloud Computing in Europe and the Likely Barriers to Take-Up by IDC
+EU organizations are more conservative, being slower in the adoption of new services and technologies
+Small organizations are usually the most reluctant adopters 
+
+C. Last, but not least, market fragmentation
+Europe does not have a single digital market, and the main concerns about cloud services are security, data location and legal jurisdiction over data. So there is a clear need for a legal framework for international data protection and privacy to overcome fragmentation and allow to trade across borders
+
+In my view the US has currently a better developed cloud infrastructure and Europe runs a high risk of becoming dependent on non-European providers, and this is critical if we consider cloud as the next utility. However, Europe has many advantages and strengths that can lead to opportunities in a cloud market which is about to rapidly accelerate:
+A strong Telecom industry with operators that are starting to leverage their unique advantages
+Many hosting and small cloud providers developing innovative cloud offerings 
+EU-funded research projects and infrastructures, and open source technologies that are bringing innovation to the market and helping create an open interoperable cloud ecosystem 
+The Commission is preparing the European Cloud Computing Strategy considering demand and supply side concerns in order to make Europe not only cloud-friendly but cloud active. This Strategy seeks to
+Harmonize the legal framework for cloud
+Raise awareness & promote uptake of Cloud computing, mostly among SMEs and public authorities
+Promote interoperability, portability and open-source to create an open interoperable cloud ecosystem 
+Support research on critical issues to create better cloud 
+Work has started with the publication of a report that a select industry group has prepared with key recommendations to the European Commission on the orientation of a Cloud computing strategy for Europe, and the report on Advances in Clouds - Research in Future Cloud Computing prepared by the EC Group of Experts in Cloud Computing that includes a state-of-the-art view on cloud computing technologies, its position in and its relevance for Europe.

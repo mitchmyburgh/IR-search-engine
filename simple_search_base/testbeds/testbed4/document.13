@@ -1,0 +1,50 @@
+Here is a sketch of how environment mapping can be implemented. The first
+thing you need to do is to compute the environment map. First off remove the reflective object from your
+environment. Place a small sphere or cube about the center of the object. It should be small enough that it
+does not intersect any of the surrounding objects. (You may actually use any convex object for this purpose.
+Spheres and cubes each have advantages and disadvantages. We will assume the case of a cube in the rest of
+the discussion.) Project the entire environment onto the six faces of the cube, using the center of the cube as
+the center of projection. That is, take six separate pictures which together form a complete panoramic picture
+of the surrounding environment, and store the results in six image files. It may take some time to compute these
+images, but once they have been computed they can be used to compute reflections from all different viewing
+positions.
+By the way, an accurate representation of the environment is not always necessary. For example, to simulate a
+shiny chrome-finished surface, a map with varying light and dark regions is probably good enough to fool the
+eye. This is called chrome mapping. But if you really want to simulate a mirrored surface, a reasonably accurate
+environment map is necessary.
+Now suppose that we want to compute the color reflected from some point on the object. As in the Phong model
+we compute the usual vectors: normal vector ~n, view vector ~v, etc. We compute the view reflection vector ~rv
+from these two. (This is not the same as the light reflection vector, ~r, which we discussed in the Phong model,
+but it is the counterpart where the reflection is taken with respect to the viewer rather than the light source.)
+To determine the reflected color, we imagine that the view reflection vector ~rv is shot from the center of the
+cube and determine the point on the cube which is hit by this ray. We use the color of this point to color the
+corresponding point on the surface. (We will leave as an exercise the problem of mapping a vector to a point on
+the surface of the cube.) The process is illustrated below.
+viewer
+Building the map Using the map
+v
+n
+True reflection by
+ray tracing
+final color
+rv
+rv
+Fig. 55: Environment mapping.
+Note that the final color returned by the environment map is a function of the contents of the environment image
+and ~rv (and hence of ~v and ~n). In particular, it is not a function of the location of the point on the surface.
+Wouldn’t taking this location into account produce more accurate results? Perhaps, but by our assumption that
+objects in the environment are far away, the directional vector is the most important parameter in determining
+the result. (If you really want accuracy, then use ray tracing instead.)
+Reflection mapping through texture mapping: OpenGL does not support environment mapping directly, but there
+is a reasonably good way to “fake it” using texture mapping. Consider a polygonal face to which you want to
+apply an environment map. They key question is how to compute the point in the environment map to use in
+Lecture Notes 78 CMSC 427
+computing colors. The solution is to compute this quantities yourself for each vertex on your polygon. That
+is, for each vertex on the polygon, based on the location of the viewer (which you know), and the location of
+the vertex (which you know) and the polygon’s surface normal (which you can compute), determine the view
+reflection vector. Use this vector to determine the corresponding point in the environment map. Repeat this for
+each of the vertices in your polygon. Now, just treat the environment map as though it were a texture map.
+What makes the approach work is that when the viewer shifts positions, you will change the texture coordinates
+of your vertices. In normal texture mapping, these coordinates would be fixed, independent of the viewer’s
+position.
+Lecture 18:

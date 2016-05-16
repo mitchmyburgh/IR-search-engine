@@ -1,0 +1,92 @@
+Interactive Astronomy Using 3D Computer Graphics (MA2288 UROPS)
+Wu ChengYuan
+Supervisor: Associate Professor Helmer Aslakse
+
+Introduction
+Understanding spherical astronomy requires good spatial visualization. It is therefore very helpful to be able to draw good illustrations. Unfortunately, it is very hard to make good three dimensional (3D) illustrations and many illustrations from standard textbooks are in fact incorrect [1]. In addition, when drawing the celestial sphere, it is necessary to cheat in some ways, since on one hand the Earth is supposed to be a small dot in the middle of the sphere, while at the same time we are supposed to be able to see the gnomon (the stick of the sundial) and the path of the shadow. In this project we will use various programs to draw pictures related to spherical astronomy. We will use them inside TEX documents, and we want to be able to recycle the code to see how the pictures depend on various parameters, so we have not considered free hand drawing programs, but only programmatic drawing programs. We have also not used computer algebra software (CAS). There are several such programs that could easily have created these pictures, but we decide to not include them in this round. One reason being that the most popular CAS programs are commercial. We decided to use the following four programs:
+1. MetaPost
+2. Asymptote
+3. PSTricks (using the pst-solides3d package)
+4. Sketch
+We would also have liked to test PGF/TikZ, but we ran out of time. We would like to include that at a later stage. Our intention was not to present a comprehensive survey of the 3D capabilities of these programs. If we were to do a fair comparison, we would
+3
+have had to consider a wide range of test pictures. Instead we just picked pictures that we needed to draw for our own purposes. We are not experts, and our goal is simply to show what two newbies can create in two months time. Experts could obviously have done a much better job. However, we hope that some of our experiences can be of interest to other people. All the four programs are excellent, and we would like to thank all the people who have helped create them.
+1.1 Advantages of programmatic drawing programs
+There are many advantages of using programmatic drawing programs. Firstly, recycling and portability. For instance, to change the point of view, we just have to change a few parameters in the code, as opposed to drawing a new diagram from scratch. Secondly, programmatic drawing programs are de?nitely more accurate than drawing by hand or using ordinary graphical tools like MS Paint. This is vital to produce accurate diagrams for books and other printed publications.
+1.2 Evaluation criteria
+We shall endeavour to compare the programs using the following criteria: • 3D (is the program inherently 3D or 2D?) • Dashing of hidden lines • Computation of intersections • Usability (ease of installation/usage/learning the language) • E?ciency of code (measured by approximate length of code required) • Speed (measured by compile time) • Drawing of cones and other 3D objects The ?rst diagram we wish to draw using the four programs is shown in Figure 1.1. This diagram illustrates the equator and the ecliptic. It also draws the poles and the meridians. The inclination of the lunar orbit has intentionally been magni?ed.
+4
+O
+?
+N
+S
+N*
+S*
+?
+?
+L1
+L2
+L3
+equator
+ecliptic
+lunar orbit
+Figure 1.1: Denis Roegel, TUGboat, Vol. 30 (2009), No. 1 pg. 85 (drawn using MetaPost)
+The second diagram we wish to draw is a picture from an honours thesis [10]. The diagram (Figure 1.2) shows the solar path and the shadow of a gnomon in the tropics. Other than the above two pictures, we will also include other pictures for the reader's reference.
+5
+Figure 1.2: Diagram from the honours thesis by Lee, Sim and Yang
+6
+Chapter 2
+MetaPost
+MetaPost is described as follows on Wikipedia.
+MetaPost refers to both a programming language and the interpreter of the MetaPost programming language. Both are derived from Donald Knuth's Metafont language and interpreter. MetaPost excels at producing diagrams in the PostScript programming language from a geometric/algebraic description. The language shares Metafont's elegant declarative syntax for manipulating lines, curves, points and geometric transformations [2].
+The Metafont interpreter was written by Donald Knuth under an open source license, allowing John D. Hobby to adapt the interpreter to his own ends, giving us MetaPost. For this project, our starting point was to closely examine a nicely drawn MetaPost picture by Denis Roegel [1]. Part of the code was included in the article, and some of the code was kindly given to us by the author. We started our project by trying to reproduce this picture using the other programs. His approach is to use the method of orthogonal projections to project a threedimensional vector onto a plane. Before performing the projection, the sphere is oriented in space. For the ?gures created by Roegel, the values ? = 70 and f = -15 were chosen, where ? is the angle by which~ i is rotated around ~ k and f is the angle by which ~ k is rotated around the rotated~ i axis. The result is that the sphere is oriented in space as shown in Fig. 2.1. This corresponds to a viewpoint of (1,-0.342,0.259).
+
+Input/Output
+There are various ways of including MetaPost code or ?gures into documents.
+1. We can include MetaPost ?gures in L ATEX by using the graphicx package and then the \includegraphics command. After that, we need to declare that we are using MetaPost ?gures in L ATEX: \DeclareGraphicsRule{*}{mps}{*}{}. The point of \DeclareGraphicsRule{*}{mps}{*}{} is to tell pdfL ATEX that unknown ?le extensions (in this case numbers) should be treated as MPS ?les.
+2. We can rename the MetaPost ?gures manually, giving them a .mps extension. This way, we do not need to use the \DeclareGraphicsRule command.
+3. We can tell MetaPost to use .mps extensions for ?gures that it outputs. The way to do this is to de?ne the outputtemplate in the MetaPost code itself [3, pg. 5].
+4. We can embed MetaPost code directly in L ATEX documents by using the EMP package.
+MetaPost produces encapsulated postscript output (EPS). The EPS ?les produced by MetaPost typically have names like example.1, example.2. MetaPost's PostScript output is a low-featured dialect of the Postscript language, called puri?ed EPS, that can be converted into the Portable Document
+8
+Format (PDF) language on-the-?y. For that reason, MetaPost graphics can be handled by both engines, the traditional TEX with an external output driver and the newer pdfTEX, that contains a built-in PDF output driver [3, pg. 6].
+2.2 3D
+MetaPost is inherently 2D in nature, and does not have any 3D vector type. However, a clever workaround is to use its color type with three numerical components which can be disguised as a vector [1]. Functions like the dot product, vector product, projection, rotation of vectors can then be de?ned.
+2.3 Dashing of hidden lines
+In MetaPost, there is no simple way of automatically dashing the hidden lines. In his paper, Roegel only discussed the case of determining the limits of visibility of the parallels to the equator [1, pg. 86]. The limits of visibility are determined by the intersection between the plane orthogonal to the viewing direction, and the circle representing the parallel. This intersection can consist in zero points (the parallel is then totally visible, or totally hidden), two points (there is both a hidden and a visible part), or one point (this is the limit case between the two previous cases). Once the intersections are obtained in space, the two arcs are drawn separately. The hidden arc is drawn with dashed lines, while the visible arc is drawn with solid lines.
+2.4 Computation of intersections
+MetaPost has two built-in operators for calculation of points of intersections, namely intersectionpoint and intersectiontimes. These two operators are essentially 2D, but are still useful as we can ?nd the points of intersection after projecting the relevant curves onto a 2D plane. intersectiontimes gives the parametric locations on both paths, i.e., the values of the parameter t. intersectionpoint, as its name implies, gives the point of intersection between two paths.
+9
+2.5 Usability
+MetaPost is fairly easy to use and learn. The main di?culty arises when trying to use MetaPost to draw 3D diagrams, as users will inevitably have to write their own code to deal with 3D vector projection.
+2.6 E?ciency of code
+To draw Fig. 1.1, approximately 443 lines of code are needed. A signi?cant part of it (294 lines) are due to de?nitions and writing of macros to overcome the 3D limitations of MetaPost. The number of lines of code is just a rough estimate of the code e?ciency, since it can vary in many ways by changing the layout and presentation of the code (writing a lot of code in one single line, for instance).
+2.7 Speed
+Compile time is no issue with MetaPost. It took less than a second to compile the .mp ?le for Figure 1.1 on a very ordinary Dell Inspiron I1420 laptop.
+2.8 Drawing of cones and other 3D objects
+MetaPost is inherently a 2D program, so in order to draw more general 3D objects like cones in MetaPost, we need to either design them from scratch, the way Roegel did it for spheres [1], or use a 3D MetaPost package like m3D by Anthony Phan [11]. However, using m3D to draw cones is not easy. We would need to use the revolution function de?ned in m3Dplain.mp. The package m3D is still in progress, and the manual is still incomplete (only 12 pages). Hence, mastering the m3D package would only be possible for advanced MetaPost users who are able to learn directly from the m3Dplain.mp source code. Unfortunately, we did not have time to try this further.
+2.9 Code references
+For MetaPost, we referred to the TUGboat article by Roegel [1] and additional code obtained from Roegel through e-mail. The article is comprehensive, and we learnt a lot from it. We also referred to the MetaPost manual [3] to learn more about MetaPost syntax.
+10
+2.10 Diagrams
+O
+?
+N
+S
+?
+?0
+equator
+ecliptic
+Figure 2.2: Denis Roegel, TUGboat, Vol. 30 (2009), No. 1 pg. 82
+11
+Chapter 3
+Asymptote
+Asymptote is described as follows on Wikipedia.
+Asymptote is a descriptive vector graphics language, developed by Andy Hammerlindl, John C. Bowman (University of Alberta), and Tom Prince, that provides a natural coordinate-based framework for technical drawing. It is inspired by MetaPost, but has a C++-like syntax. It is mathematically oriented (e.g. rotation of vectors by complex multiplication). Asymptote fully generalizes MetaPost path construction algorithms to three dimensions. It also appears to be the ?rst software package to lift TeX into three dimensions [4].
+3.1 Input/Output
+There are several ways of inputting Asymptote code.
+1. Drawing in batch mode: create a text ?le test.asy containing Asymptote code and compile using the Asymptote program. This method, known as batch mode, outputs a PostScript ?le test.eps [6, documentation section 10]. This EPS ?le can then be included in the TEX ?le.
+2. Include Asymptote code in L ATEX documents. We use the Asymptote package: \usepackage{asymptote}, and we can include the Asymptote code itself within the \begin{asy} ... \end{asy} environment. The advantage of using this method is that we can tell Asymptote to output PDF ?les. For ?rst-time users, this can prove to be tricky to set up, so we refer you to an excellent website for more details [13].
+12
+3. There is a third way, drawing in interactive mode, where Asymptote reads individual commands as they are entered by the user. Generally, this is not an e?cient way to compile Asymptote code, as it involves line by line execution of commands. As stated above, Asymptote can produce ?gures in either .eps or .pdf format. While using method two above to compile Asymptote code, we noticed that Asymptote produces three PDF ?les. 
+

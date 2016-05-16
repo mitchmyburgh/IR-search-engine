@@ -1,0 +1,53 @@
+A method used to iterate over the elements in a tree set and output it in an ascending order using the java programming language.
+
+java.util.TreeSet.iterator() Method
+ 
+Description
+The iterator() method is used to return an iterator over the elements in this set in ascending order.
+
+Declaration
+Following is the declaration for java.util.TreeSet.iterator() method:
+public Iterator<E> iterator()
+
+Parameters
+No parameters
+
+Return Value
+The method call returns an iterator over the elements in this set in ascending order.
+
+Exception
+N/A
+
+An example of an implementation in java.
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+   public static void main(String[] args) {
+   // creating a TreeSet 
+   TreeSet <Integer>treeadd = new TreeSet<Integer>();
+     
+   // adding in the tree set
+   treeadd.add(1);
+   treeadd.add(13);
+   treeadd.add(17);
+   treeadd.add(2);
+     
+   // create ascending iterator
+   Iterator iterator;
+   iterator = treeadd.iterator();
+     
+   // displaying the Tree set data
+   System.out.println("Tree set data in ascending order: ");     
+   while (iterator.hasNext()){
+   System.out.println(iterator.next() + " ");
+   }
+   }     
+}
+
+When we compile and run the above program, it will produce the following result.
+Tree set data in ascending order: 
+1 
+2 
+13 
+17 

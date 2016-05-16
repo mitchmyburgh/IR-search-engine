@@ -1,0 +1,88 @@
+ELKI (for Environment for DeveLoping KDD-Applications Supported by Index-Structures) is a knowledge discovery in databases (KDD, "data mining") software framework developed for use in research and teaching by the database systems research unit of Professor Hans-Peter Kriegel at the Ludwig Maximilian University of Munich, Germany. It aims at allowing the development and evaluation of advanced data mining algorithms and their interaction with database index structures.
+
+
+== Description ==
+The ELKI framework is written in Java and built around a modular architecture. Most currently included algorithms belong to clustering, outlier detection and database indexes. A key concept of ELKI is to allow the combination of arbitrary algorithms, data types, distance functions and indexes and evaluate these combinations. When developing new algorithms or index structures, the existing components can be reused and combined.
+
+
+== Objectives ==
+The university project is developed for use in teaching and research. The source code is written with extensibility, readability and reusability in mind, but is also well-optimized for performance. Since the experimental evaluation of algorithms depends on many environmental factors, ELKI aims at providing a shared codebase with comparable implementations of many algorithms.
+As research project, it currently does not offer integration with business intelligence applications or an interface to common database management systems via SQL. The copyleft (AGPL) license may also be a hindrance to commercial usage. Furthermore, the application of the algorithms requires knowledge about their usage, parameters, and study of original literature. The audience are students, researchers and software engineers.
+
+
+== Architecture ==
+ELKI is modeled around a database core, which uses a vertical data layout that stores data in column groups (similar to column families in NoSQL databases). This database core provides nearest neighbor search, range/radius search, and distance query functionality with index acceleration for a wide range of dissimilarity measures. Algorithms based on such queries (e.g. k-nearest-neighbor algorithm, local outlier factor and DBSCAN) can be implemented easily and benefit from the index acceleration. The database core also provides fast and memory efficient collections for object collections and associative structures such as nearest neighbor lists.
+ELKI makes extensive use of Java interfaces, so that it can be extended easily in many places. For example, custom data types, distance functions, index structures, algorithms, input parsers, and output modules can be added and combined without modifying the existing code. This includes the possibility of defining a custom distance function and using existing indexes for acceleration.
+ELKI uses a service loader architecture to allow publishing extensions as separate jar files.
+
+
+== Visualization ==
+The visualization module uses SVG for scalable graphics output, and Apache Batik for rendering of the user interface as well as lossless export into PostScript and PDF for easy inclusion in scientific publications in LaTeX. Exported files can be edited with SVG editors such as Inkscape. Since cascading style sheets are used, the graphics design can be restyled easily. Unfortunately, Batik is rather slow and memory intensive, so the visualizations are not very scalable to large data sets.
+
+
+== Awards ==
+Version 0.4, presented at the "Symposium on Spatial and Temporal Databases" 2011, which included various methods for spatial outlier detection, won the conference's "best demonstration paper award".
+
+
+== Included algorithms ==
+Select included algorithms:
+Cluster analysis:
+K-means clustering
+K-medians clustering
+Expectation-maximization algorithm
+Hierarchical clustering (including SLINK and CLINK)
+Single-linkage clustering
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise, with full index acceleration for arbitrary distance functions)
+OPTICS (Ordering Points To Identify the Clustering Structure), including the extensions OPTICS-OF, DeLi-Clu, HiSC, HiCO and DiSH
+SUBCLU (Density-Connected Subspace Clustering for High-Dimensional Data)
+Canopy clustering algorithm
+
+Anomaly detection:
+LOF (Local outlier factor)
+OPTICS-OF
+DB-Outlier (Distance-Based Outliers)
+LOCI (Local Correlation Integral)
+LDOF (Local Distance-Based Outlier Factor)
+EM-Outlier
+
+Spatial index structures:
+R-tree
+R*-tree
+M-tree
+k-d tree
+Locality sensitive hashing
+
+Evaluation:
+Receiver operating characteristic (ROC curve)
+Scatter plot
+Histogram
+Parallel coordinates (also in 3D, using OpenGL)
+
+Other:
+Apriori algorithm
+Dynamic time warping
+Principal component analysis
+Multidimensional scaling
+
+
+== Version history ==
+Version 0.1 (July 2008) contained several Algorithms from cluster analysis and anomaly detection, as well as some index structures such as the R*-tree. The focus of the first release was on subspace clustering and correlation clustering algorithms.
+Version 0.2 (July 2009) added functionality for time series analysis, in particular distance functions for time series.
+Version 0.3 (March 2010) extended the choice of anomaly detection algorithms and visualization modules.
+Version 0.4 (September 2011) added algorithms for geo data mining and support for multi-relational database and index structures.
+Version 0.5 (April 2012) focuses on the evaluation of cluster analysis results, adding new visualizations and some new algorithms.
+Version 0.6 (June 2013) introduces a new 3D adaption of parallel coordinates for data visualization, apart from the usual additions of algorithms and index structures.
+Version 0.7 (August 2015) adds support for uncertain data types, and algorithms for the analysis of uncertain data.
+
+
+== Related applications ==
+Weka: A similar project by the University of Waikato, with a focus on classification algorithms.
+RapidMiner: An application available commercially (an old version is available as open-source, too) with a focus on machine learning.
+KNIME: An open source platform which integrates various components for machine learning and data mining.
+
+
+== External links ==
+Official web page of ELKI with download and documentation.
+
+
+== References ==

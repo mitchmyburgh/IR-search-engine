@@ -1,0 +1,67 @@
+In computer science, a fusion tree is a type of tree data structure that implements an associative array on w-bit integers. When operating on a collection of n key–value pairs, it uses O(n) space and performs searches in O(logw n) time, which is asymptotically faster than a traditional self-balancing binary search tree, and also better than the van Emde Boas tree for large values of w. It achieves this speed by exploiting certain constant-time operations that can be done on a machine word. Fusion trees were invented in 1990 by Michael Fredman and Dan Willard.
+Several advances have been made since Fredman and Willard's original 1990 paper. In 1999 it was shown how to implement fusion trees under a model of computation in which all of the underlying operations of the algorithm belong to AC0, a model of circuit complexity that allows addition and bitwise Boolean operations but disallows the multiplication operations used in the original fusion tree algorithm. A dynamic version of fusion trees using hash tables was proposed in 1996 which matched the original structure's O(logw n) runtime in expectation. Another dynamic version using exponential tree was proposed in 2007 which yields worst-case runtimes of O(logw n + log log u) per operation, where u is the size of the largest key. It remains open whether dynamic fusion trees can achieve O(logw n) per operation with high probability.
+
+
+== How it works ==
+A fusion tree is essentially a B-tree with branching factor of w1/5 (any small exponent is also possible), which gives it a height of O(logw n). To achieve the desired runtimes for updates and queries, the fusion tree must be able to search a node containing up to w1/5 keys in constant time. This is done by compressing ("sketching") the keys so that all can fit into one machine word, which in turn allows comparisons to be done in parallel.
+
+
+=== Sketching ===
+Sketching is the method by which each w-bit key at a node containing k keys is compressed into only k − 1 bits. Each key x may be thought of as a path in the full binary tree of height w starting at the root and ending at the leaf corresponding to x. To distinguish two paths, it suffices to look at their branching point (the first bit where the two keys differ). All k paths together have k − 1 branching points, so at most k − 1 bits are needed to distinguish any two of the k keys.
+
+An important property of the sketch function is that it preserves the order of the keys. That is, sketch(x) < sketch(y) for any two keys x < y.
+
+
+=== Approximating the sketch ===
+If the locations of the sketch bits are b1 < b2 < ··· < br, then the sketch of the key xw-1···x1x0 is the r-bit integer .
+With only standard word operations, such as those of the C programming language, it is difficult to directly compute the sketch of a key in constant time. Instead, the sketch bits can be packed into a range of size at most r4, using bitwise AND and multiplication. The bitwise AND operation serves to clear all non-sketch bits from the key, while the multiplication shifts the sketch bits into a small range. Like the "perfect" sketch, the approximate sketch preserves the order of the keys.
+Some preprocessing is needed to determine the correct multiplication constant. Each sketch bit in location bi will get shifted to bi + mi via a multiplication by m =  2mi. For the approximate sketch to work, the following three properties must hold:
+bi + mj are distinct for all pairs (i, j). This will ensure that the sketch bits are uncorrupted by the multiplication.
+bi + mj is a strictly increasing function of i. That is, the order of the sketch bits is preserved.
+(br + mr) - (b1 - m1) ≤ r4. That is, the sketch bits are packed into a range of size at most r4.
+An inductive argument shows how the mi can be constructed. Let m1 = w − b1. Suppose that 1 < t ≤ r and that m1, m2... mt-1 have already been chosen. Then pick the smallest integer mt such that both properties (1) and (2) are satisfied. Property (1) requires that mt ≠ bi − bj + ml for all 1 ≤ i, j ≤ r and 1 ≤ l ≤ t-1. Thus, there are less than tr2 ≤ r3 values that mt must avoid. Since mt is chosen to be minimal, (bt + mt) ≤ (bt-1 + mt-1) + r3. This implies Property (3).
+The approximate sketch is thus computed as follows:
+Mask out all but the sketch bits with a bitwise AND.
+Multiply the key by the predetermined constant m. This operation actually requires two machine words, but this can still by done in constant time.
+Mask out all but the shifted sketch bits. These are now contained in a contiguous block of at most r4 < w4/5 bits.
+
+
+=== Parallel comparison ===
+The purpose of the compression achieved by sketching is to allow all of the keys to be stored in one w-bit word. Let the node sketch of a node be the bit string
+1sketch(x1)1sketch(x2)...1sketch(xk)
+We can assume that the sketch function uses exactly b ≤ r4 bits. Then each block uses 1 + b ≤ w4/5 bits, and since k ≤ w1/5, the total number of bits in the node sketch is at most w.
+A brief notational aside: for a bit string s and nonnegative integer m, let sm denote the concatenation of s to itself m times. If t is also a bit string st denotes the concatenation of t to s.
+The node sketch makes it possible to search the keys for any b-bit integer y. Let z = (0y)k, which can be computed in constant time (multiply y by the constant (0b1)k). Note that 1sketch(xi) - 0y is always positive, but preserves its leading 1 iff sketch(xi) ≥ y. We can thus compute the smallest index i such that sketch(xi) ≥ y as follows:
+Subtract z from the node sketch.
+Take the bitwise AND of the difference and the constant (10b)k. This clears all but the leading bit of each block.
+Find the most significant bit of the result.
+Compute i, using the fact that the leading bit of the i-th block has index i(b+1).
+
+
+=== Desketching ===
+For an arbitrary query q, parallel comparison computes the index i such that
+sketch(xi-1) ≤ sketch(q) ≤ sketch(xi)
+Unfortunately, the sketch function is not in general order-preserving outside the set of keys, so it is not necessarily the case that xi-1 ≤ q ≤ xi. What is true is that, among all of the keys, either xi-1 or xi has the longest common prefix with q. This is because any key y with a longer common prefix with q would also have more sketch bits in common with q, and thus sketch(y) would be closer to sketch(q) than any sketch(xj).
+The length longest common prefix between two w-bit integers a and b can be computed in constant time by finding the most significant bit of the bitwise XOR between a and b. This can then be used to mask out all but the longest common prefix.
+Note that p identifies exactly where q branches off from the set of keys. If the next bit of q is 0, then the successor of q is contained in the p1 subtree, and if the next bit of q is 1, then the predecessor of q is contained in the p0 subtree. This suggests the following algorithm:
+Use parallel comparison to find the index i such that sketch(xi-1) ≤ sketch(q) ≤ sketch(xi).
+Compute the longest common prefix p of q and either xi-1 or xi (taking the longer of the two).
+Let l-1 be the length of the longest common prefix p.
+If the l-th bit of q is 0, let e = p10w-l. Use parallel comparison to search for the successor of sketch(e). This is the actual predecessor of q.
+If the l-th bit of q is 1, let e = p01w-l. Use parallel comparison to search for the predecessor of sketch(e). This is the actual successor of q.
+
+Once either the predecessor or successor of q is found, the exact position of q among the set of keys is determined.
+
+
+== Fusion hashing ==
+An application of fusion trees to hash tables was given by Willard, who describes a data structure for hashing in which an outer-level hash table with hash chaining is combined with a fusion tree representing each hash chain. In hash chaining, in a hash table with a constant load factor, the average size of a chain is constant, but additionally with high probability all chains have size O(log n / log log n), where n is the number of hashed items. This chain size is small enough that a fusion tree can handle searches and updates within it in constant time per operation. Therefore, the time for all operations in the data structure is constant with high probability. More precisely, with this data structure, for every inverse-quasipolynomial probability p(n) = exp((log n)O(1)), there is a constant C such that the probability that there exists an operation that exceeds time C is at most p(n).
+
+
+== References ==
+
+
+== External links ==
+MIT CS 6.897: Advanced Data Structures: Lecture 4, Fusion Trees, Prof. Erik Demaine (Spring 2003)
+MIT CS 6.897: Advanced Data Structures: Lecture 5, More fusion trees; self-organizing data structures, move-to-front, static optimality, Prof. Erik Demaine (Spring 2003)
+MIT CS 6.851: Advanced Data Structures: Lecture 13, Fusion Tree notes, Prof. Erik Demaine (Spring 2007)
+MIT CS 6.851: Advanced Data Structures: Lecture 12, Fusion Tree notes, Prof. Erik Demaine (Spring 2012)

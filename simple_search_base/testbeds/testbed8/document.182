@@ -1,0 +1,12 @@
+Top trees are used for maintaining a Dynamic forest (set of trees) under link and cut operations.
+The basic idea is to maintain a balanced Binary tree   of logarithmic height in the number of nodes in the original tree  ( i.e. in   time) ; the top tree essentially represents the recursive subdivision of the original tree   into clusters.
+In general the tree   may have weight on its edges.
+There is a one to one correspondence with the edges of the original tree   and the leaf nodes of the top tree   and each internal node of   represents a cluster that is formed due to the union of the clusters that are its children.
+The top tree data structure can be initialized in   time.
+Therefore the top tree   over (   ) is a binary tree such that
+•	The nodes of   are clusters of (    );
+•	The leaves of   are the edges of  
+•	Sibling clusters are neighbours in the sense that they intersect in a single vertex, and then their parent cluster is their union.
+•	Root of   is the tree   itself, with a set of at most two External Boundary Vertices.
+A tree with a single vertex has an empty top tree, and one with just an edge is just a single node.
+These trees are freely augmentable allowing the user a wide variety of flexibility and productivity without going into the details of the internal workings of the data structure, something which is also referred to as the Black Box.

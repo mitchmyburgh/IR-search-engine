@@ -1,0 +1,27 @@
+﻿Ontologies are developed to provide a machine-processable semantics of information
+sources that can be communicated between different agents (software and humans).
+Many definitions of ontologies have been given in the last decade, but one that, in our
+opinion, best characterizes the essence of an ontology is based on the related definitions
+in [Gruber, 1993]: 
+An ontology is a formal, explicit specification of a shared
+conceptualisation. 
+A ‘conceptualisation’
+refers to an abstract model of some
+phenomenon in the world which identifies the relevant concepts of that phenomenon.
+‘Explicit’
+means that the type of concepts used and the constraints on their use are
+explicitly defined. 
+‘Formal’
+refers to the fact that the ontology should be machine
+readable. Hereby different degrees of formality are possible. Large ontologies like
+WordNet provide a thesaurus for over 100,000 natural language terms explained in
+natural language (see also [Meersman, 1999] for a discussion of this issue). On the other
+end of the spectrum is CYC, that provides formal axiomating theories for many aspect
+of common sense knowledge. 
+‘Shared’
+reflects the notion that an ontology captures
+consensual knowledge, that is, it is not restricted to some individual, but accepted by a
+group. Basically, the role of ontologies in the knowledge engineering process is to
+facilitate the construction of a domain model. An ontology provides a vocabulary of
+terms and relations with which to model the domain.
+

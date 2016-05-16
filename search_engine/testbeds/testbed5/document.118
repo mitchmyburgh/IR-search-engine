@@ -1,0 +1,49 @@
+Data-oriented languages[edit]
+Data-oriented languages provide powerful ways of searching and manipulating the relations that have been described as entity relationship tables which map one set of things into other sets. Examples of data-oriented languages include:
+
+Clarion
+Clipper
+dBase a relational database access language
+MUMPS (an ANSI standard general purpose language with specializations for database work)
+Caché (similar to MUMPS)
+RDQL
+SPARQL
+SQL
+Tutorial D – see also The Third Manifesto
+Visual FoxPro – a native RDBMS engine, object-oriented, RAD
+WebDNA
+WebQL
+Wolfram Language
+Data-structured languages[edit]
+See also: Category:Data-structured programming languages
+Data-structured languages are those where logic is structured in ways similar to their data. Such languages are generally well suited to reflection and introspection. There are three main types:
+
+Array-based
+List-based
+Stack-based
+Assembly languages that statically link data inline with instructions can also be considered data-structured, in the most primitive way.
+
+Decision table languages[edit]
+Decision tables can be used as an aid to clarifying the logic before writing a program in any language, but in the 1960s a number of languages were developed where the main logic is expressed directly in the form of a decision table, including:
+
+Filetab
+Declarative languages[edit]
+See also: Category:Declarative programming languages
+Declarative languages describe a problem rather than defining a solution. Declarative programming stands in contrast to imperative programming via imperative programming languages, where serial orders (imperatives) are given to a computer. In addition to the examples given just below, all (pure) functional and logic-based programming languages are also declarative. In fact, "functional" and "logical" constitute the usual subcategories of the declarative category.
+
+Analytica
+Ant (partially declarative languages, partially imperative programming)
+DASL (partially declarative languages, partially imperative programming)
+Lustre
+Mercury
+MetaPost
+Modelica
+Prolog
+Oz
+RDQL
+SequenceL – purely functional, automatically parallelizing and race-free
+SPARQL
+SQL
+Wolfram Language
+xBase
+XSL Transformations

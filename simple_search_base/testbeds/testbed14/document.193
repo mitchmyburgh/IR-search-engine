@@ -1,0 +1,152 @@
+﻿13 Related Work
+Comparison with tableau reasoning for (fragments of ) FOL The present calculus for DFOL can be viewed as a more dynamic version of tableau style reasoning for FOL and for modal fragments of FOL. Instead of just checking for valid consequence and constructing counterexamples from open tableau branches, our open tableau branches yield computed answer bindings as an extra. The connection with tableau reasoning for FOL is also evident in the proof method of our completeness theorems. Our calculus can be used for FOL reasoning via the following translation of FOL into DFOL:
+(Pt
+¯)
+• := Pt
+¯
+(¬φ)
+• := ¬φ•
+(φ ∧ ψ)
+• := φ•; ψ•
+(φ ∨ ψ)
+• := φ• ∪ ψ•
+(∃xφ)
+• := ((∃x; φ•))
+(∀xφ)
+• := ¬(∃x; ¬φ•)
+It is easy to check that for every FOL formula φ it holds that φ• = φ•
+, i.e., all FOL translations are DFOL tests. Moreover, the translation is adequate in the sense that for every FOL formula φ over signature Σ, every Σ-model M, every valuation s for M it holds that M |=s φ iff s[[φ•]]Ms .
+13. RELATED WORK 439 Connection with Logic Programming The close connection between tableau reasoning for DFOL and Logic Programming can be seen by developing a DFOL tableau for the following formula set:
+∀xA([], x, x), ∀x∀y∀z∀i(A(x, y, z) → A([i|x], y, [i|z])), ¬∃xA([a|[b|[]], [c|[]], x).
+This will give a tableau for the append relation, with a MGU substitution {x 7→
+[a|[b|c|[]]]} that closes the tableau, where x is the universal tableau variable used in the application of the γ rule to ¬∃xA([a|[b|[]], [c|[]], x). The example may serve as a hint to the unifying perspective on logic programming and imperative programming provided by tableau reasoning for DFOL. In future work, we hope to elaborate the further connections between our delayed substitution rules and constraint logic programming, and between our computational handling of equality and equational reasoning in logic programs.
+Comparison with other Calculi for DFOL and for DRT The calculus developed in
+[12] uses swap rules for moving quantifiers to the front of formulas. The key idea of the present calculus is entirely different: encode dynamic binding in explicit bindings and protect outside environments from dynamic side effects by means of block operations.
+In a sense, the present calculus offers a full account of the phenomenon of local variable use in DFOL.
+Kohlhase [22] gives a tableau calculus for DRT (Discourse Representation Theory,
+see [21]) that has essentially the same scope as the [12] calculus for DPL: the version of DRT disjunction that is treated is externally static, and the DRT analogue of ∪ is not treated.
+The Kohlhase calculus follows an old DRT tradition in relying on an implicit translation to standard FOL: see [27] for an earlier example of this. Kohlhase motivates his calculus with the need for (minimal) model generation in dynamic NL semantics.
+In order to make his calculus generate minimal models, he replaces the rule
+for existential quantification by a ‘scratchpaper’ version (well-known from textbook treatments of tableau reasoning; see [20] for further background, and for discussion of non-monotonic consequence based on minimal models generated with this rule):
+first try out if you can avoid closure with a term already available at the node. If all these attempts result in closure, it does not follow from this that the information at the node is inconsistent, for it may just be that we have ‘overburdened’ the available terms with demands. So in this case, and only in this case, introduce a new individual.
+This ‘exhaustion of existing terms’ approach has the virtue that it generates ‘small’ models when they exist, whereas the more general procedure ‘always introduce a fresh variable and postpone instantiation’ may generate infinite models where finite models exist. Note, however, that the strategy only makes sense for a signature without function symbols, and for a tableau calculus without free tableau variables.
+Kohlhase discusses applications in NL processing, where it often makes sense to
+construct a minimal model for a text, and where the assumption of minimality can
+be used to facilitate issues of anaphora resolution and presupposition handling.
+Comparison with Apt and Bezem’s Executable FOL Apt and Bezem present what
+can be viewed as an exciting new mix of tableau style reasoning and model checking for FOL. Our treatment of equality uses a generalization of a stratagem from their [3]: in the context of a partial variable map θ, they call v .
+= t a θ assignment if v /∈ dom(θ), and all variables occurring in t are in dom(θ). We generalize this on two 440 Tableau Reasoning and Programming with Dynamic First Order Logic
+counts:
+• Because our computation results are bindings (term maps) rather than maps to
+objects in the domain of some model, we allow computation of non-ground terms
+as values.
+• Because our bindings are total, in our calculus execution of t1
+.
+= t2 atoms never
+gives rise to an error condition.
+It should be noted for the record that the first of these points is addressed in [2]. Apt and Bezem present their work as an underpinning for Alma-0, a language that infuses Modula style imperative programming with features from logic programming (see [4]).
+In a similar way, the present calculus provides logical underpinnings for Dynamo, a language for programming with an extension of DFOL. For a detailed comparison of Alma-0 and Dynamo we refer the reader to [11].
+Connection with WHILE, GCL It is easy to give an explicit binding semantics for
+WHILE, the favorite toy language of imperative programming from the textbooks (see e.g., [23]), or for GCL, the non-deterministic variation on this proposed by Dijkstra (see, e.g. [9]). DFOL is in fact quite closely related to these, and it is not hard to see that DFOL∗ has the same expressive power as GCL. Our tableau calculus for DFOL∗
+can therefore be regarded as an execution engine cum reasoning engine for WHILE
+or GCL. 
+Connection with PDL, QDL There is also a close connection between DFOL∗ on one
+hand and propositional dynamic logic (PDL) and quantified dynamic logic (QDL) on
+the other. QDL is a language proposed in [25] to analyze imperative programming,
+and PDL is its propositional version. See [28, 24] for complete axiomatizations of PDL, [15] for an exposition of both PDL and QDL, and for a complete (but infinitary) axiomatization of QDL, [19] for an overview, and [18] for a a study of QDL and various extensions. In PDL/QDL, programs are treated as modalities and assertions about programs are formulas in which the programs occur as modal operators. Thus, if A is a program, hAiφ asserts that A has a successful termination ending in a state satisfying φ. As is well-known, this cannot be expressed without further ado in Hoare logic.
+The main difference between DFOL∗ and PDL/QDL is that in DFOL∗ the distinction
+between formulas and programs is abolished. Everything is a program, and
+assertions about programs are test programs that are executed along the way, but
+with their dynamic effects blocked. To express that A has a successful termination ending in a φ state, we can just say ((A; φ)). To check whether A has a successful termination ending in a φ state, try to refute the statement by constructing a tableau for ¬(A; φ).
+To illustrate the connection with QDL and PDL, consider MIX, the first of the two PDL axioms for ∗:
+[A∗]φ → φ ∧ [A][A∗]φ. (13.1)
+Writing this with hAi, ¬, ∧, ∨, and replacing ¬φ by φ, we get:
+¬(¬hA∗iφ ∧ (φ ∨ hAihA∗iφ)). (13.2)
+This has the following DFOL∗ counterpart:
+¬(¬(A∗; φ); (φ ∪ (A; A∗; φ))). (13.3)
+13. RELATED WORK 441
+For a refutation proof of (13.3), we leave out the outermost negation.
+¬(A∗; φ); (φ ∪ (A; A∗; φ))
+¬(A∗; φ)
+(φ ∪ (A; A∗; φ))
+¬φ
+¬(A; A∗; φ) ❳❳❳❳ ✘✘ ✘✘
+φ
+×
+(A; A∗; φ)
+×
+The tableau closes, so we have proved that (13.3) is a DFOL∗ theorem (and thus,
+a DFOL∗ validity).
+We will also derive the validity of the DFOL∗ counterpart to IND, the other PDL
+axiom for ∗:
+(φ ∧ [A∗](φ → [A]φ)) → [A∗]φ. (13.4)
+Equivalently, this can be written with only hAi, ¬, ∧, ∨, as follows:
+¬(φ ∧ ¬hA∗i(φ ∧ hAi¬φ) ∧ hA∗i¬φ). (13.5)
+The DFOL∗ counterpart of (13.5) is:
+¬(φ; ¬(A∗; φ; A; ¬φ); A∗; ¬φ). (13.6)
+We will give a refutation proof of (13.6) in two stages. First, we show that (13.7) can
+be refuted for any n ≥ 0, and next, we use this for the proof of (13.6).
+φ; ¬(A∗; φ; A; ¬φ); An; ¬φ. (13.7)
+Here is the case of (13.7) with n = 0:
+φ; ¬(A∗; φ; A; ¬φ); ¬φ
+φ
+¬(A∗; φ; A; ¬φ)
+¬φ
+×
+Bearing in mind that A is a dynamic action and φ is a test, we can apply the rule of
+Negation Splitting to formulas of the form ¬(An; φ; A; ¬φ), as follows:
+¬(An; φ; A; ¬φ) ❛❛❛ ✦✦ ✦
+((An; ¬φ)) ¬(An+1; ¬φ)
+Note that ¬(An; φ; A; ¬φ) can be derived from ¬(A∗; φ; A; ¬φ) by n applications of
+the α∗ rule. Using this, we get the following refutation tableau for the case of (13.7)
+with n = k + 1:
+442 Tableau Reasoning and Programming with Dynamic First Order Logic
+φ; ¬(A∗; φ; A; ¬φ); Ak+1; ¬φ
+φ
+¬(A∗; φ; A; ¬φ)
+Ak+1; ¬φ
+.
+.
+.
+¬(Ak; φ; A; ¬φ) PPPP ✏✏ ✏✏
+((Ak; ¬φ))
+×
+¬(Ak+1; ¬φ)
+×
+The left-hand branch closes because of the refutation of φ; ¬(A∗; φ; A; ¬φ); Ak; ¬φ,
+which is given by the induction hypothesis.
+Next, use these refutations of ¬φ, A; ¬φ, A2; ¬φ, . . . , to prove (13.6) by means
+of a refutation in the limit, as follows:
+φ; ¬(A∗; φ; A; ¬φ); A∗; ¬φ
+φ
+¬(A∗; φ; A; ¬φ)
+A∗; ¬φ PPPP ✏✏ ✏✏
+¬φ
+×
+A; A∗; ¬φ PPPPP ✏✏
+✏✏✏
+A; ¬φ
+×
+A2; A∗; ¬φ PPPP ✏✏ ✏✏
+A2; ¬φ
+×
+A3; A∗; ¬φ
+❜❜ ✧✧
+A3; ¬φ ...
+This closed tableau establishes (13.6) as a DFOL∗ theorem. That closure in the
+limit is needed to establish the DFOL∗ induction principle is not surprising. The
+DFOL ∗ rules express that ∗ computes a fix-point, while the fact that this fix-point
+is a least fix-point is captured by the stipulation about closure in the limit. The
+induction principle (13.6) hinges on the fact that ∗ computes a least fix-point.
+Goldblatt [14, 15] develops an infinitary proof system for QDL with the following
+key rule of inference:
+If φ → [A1; An
+2 ]ψ is a theorem for every n ∈ N, then φ → [A1; A∗
+2]ψ is a theorem.
+(13.8)
+To see how this is related to the present calculus, assume that one attempts to refute
+φ → [A1; A∗
+2]ψ, or rather, its DFOL∗ counterpart ¬(φ; A1; A∗
+2; ¬ψ), on the assumption
+that for any n ∈ N there exists a refutation of φ; A1; 
+

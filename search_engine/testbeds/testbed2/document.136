@@ -1,0 +1,32 @@
+TensorFlow is an open source software library for machine learning in various kinds of perceptual and language understanding tasks. It is a second-generation API which is currently used for both research and production by 50 different teams in dozens of commercial Google products, such as speech recognition, Gmail, Google Photos, and Search. These teams had previously used DistBelief, a first-generation API. TensorFlow was originally developed by the Google Brain team for Google's research and production purposes and later released under the Apache 2.0 open source license on November 9, 2015.
+
+
+== History ==
+
+
+=== DistBelief ===
+Starting in 2011, Google Brain built DistBelief as their first-generation, proprietary, machine learning system. More than 50 teams at Google and other Alphabet companies have deployed DistBelief's deep learning neural networks in Google's commercial products, including Google Search, Google Voice Search, advertising, Google Photos, Google Maps, Google Street View, Google Translate, and YouTube. Google assigned computer scientists, such as Dr. Geoffrey Hinton and Dr. Jeff Dean, to simplify and refactor the codebase of DistBelief into a faster, more robust application-grade library, which became TensorFlow. In 2009, the team led by Hinton was able to reduce the amount of errors in neural networks which used DistBelief, by a substantial amount; this breakthrough was made possible by Hinton's scientific breakthroughs in generalized backpropagation. Most notably, Hinton's breakthrough directly led to reducing errors in Google’s speech recognition software by at least 25 percent.
+
+
+=== TensorFlow ===
+TensorFlow is Google Brain's second generation machine learning system, with a reference implementation released as open source software on November 9, 2015. While the reference implementation runs on single devices, TensorFlow can run on multiple CPUs and GPUs  (with optional CUDA extensions for general-purpose computing on graphics processing units). It runs on 64-bit Linux or Mac OS X desktop or server systems, as well as on mobile computing platforms, including Android and Apple's iOS. TensorFlow computations are expressed as stateful dataflow graphs. Many teams at Google have migrated from DistBelief to TensorFlow for research and production uses. This library of algorithms originated from Google's need to instruct computer systems, known as neural networks, to learn and reason similarly to how humans do, so that new applications can be derived which are able to assume roles and functions previously reserved only for capable humans; the name TensorFlow itself derives from the operations which such neural networks perform on multidimensional data arrays. These multidimensional arrays are referred to as "tensors" but this concept is not identical to the mathematical concept of tensors. The purpose is to train neural networks to detect and decipher patterns and correlations.
+
+
+== Features ==
+TensorFlow provides a Python API, as well as a less documented C/C++ API.
+
+
+== Applications ==
+Among the broad spectrum of applications TensorFlow is the foundation for, it has been successfully implemented in automated image captioning software, such as DeepDream. Google officially implemented RankBrain on 26 October 2015, backed by TensorFlow, RankBrain now handles a substantial number of search queries, replacing and supplementing traditional static algorithm based search results.
+
+
+== See also ==
+Comparison of deep learning frameworks
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official source code repository

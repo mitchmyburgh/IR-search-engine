@@ -1,0 +1,30 @@
+PaaS Examples: Options to Consider
+
+
+In the modern business environment, there is a growing emphasis on customer-friendly web applications and services. Many businesses today wish to provide a greater level of customer care and support to their clientele using web-developed applications and solutions. But all too often they find the costs of developing and deploying these apps prohibitive.
+
+In recent years, several service providers have sprouted up to mitigate those costs and offer affordable application development. The most prominent among the services offered by these providers is the Platform-as-a-Service (PaaS) model, which provides businesses with an independently maintained platform upon which their web applications can be built, refined and deployed.
+
+There are two prominent types of PaaS:
+
+Public PaaS is delivered by a services provider for building applications. Examples include Salesforce Heroku, AWS Elastic Beanstalk, Microsoft Azure, and Engine Yard.
+Enterprise PaaS is delivered by central IT within an organization to developers and possibly partners and business customers. Enterprise PaaS sits on top of public IaaS, on-premise bare metal, and on-premise virtual machines. Some technology analysts make a distinction between the actual service that central IT is delivering (PaaS) and the software used to deliver that service. For example, Gartner uses the term “cloud-enabled application platform” or CEAP. Examples include Apprenda, VMware- and EMC-owned Pivotal, and Red Hat OpenShift.
+You May Also Like: Platform-as-a-Service (PaaS) Comparison Guide
+
+COMPARING PAAS VENDORS
+
+PaaS software provides a stable online platform, independent of on-site computing resources, allowing businesses to save large amounts of money by streamlining the structure of their web applications. As with all business decisions, however, choosing a PaaS vendor that meets the needs of your business in terms of freedom, costs, and risk exposure is paramount to ensuring the successful and cost-effective development of web applications and their accessibility to your customer base.
+
+APPRENDA
+
+Apprenda’s enterprise Platform as a Service (PaaS) for Java and .NET delivers significant cost savings and massive improvements in productivity by freeing app development teams from internal infrastructure and IT. Apprenda modernizes existing applications for the cloud and lets developers build cloud native applications faster.
+
+Applications on Apprenda inherit cloud characteristics such as scalability, multi-tenancy, elasticity, high availability, SaaS enablement, and more.
+
+PIVOTAL CF™
+
+Pivotal is a big data and application enterprise PaaS vendor that is owned by VMware, EMC, and others. Pivotal CF™ is a proprietary enterprise PaaS based on Cloud Foundry. For a comparison of Apprenda and Pivotal please see this Enterprise PaaS Comparison.
+
+RED HAT OPENSHIFT
+
+Red Hat OpenShift is an open-source enterprise PaaS (CEAP) that is not based on Cloud Foundry, the more prominent open-source option. Red Hat has its own public PaaS version of OpenShift. Red Hat has added OpenShift on top of its Red Hat Enterprise Linux (RHEL), JBoss, and OpenStack stack. For a comparison of Apprenda and OpenShift please see this Enterprise PaaS Comparison.

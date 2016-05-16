@@ -1,0 +1,14 @@
+Hierarchical
+
+Classes can be derived from one or more existing classes, thereby establishing a hierarchical relationship between the derived-from classes (base classes, parent classes or superclasses) and the derived class (child class or subclass) . The relationship of the derived class to the derived-from classes is commonly known as an is-a relationship.[18] For example, a class 'Button' could be derived from a class 'Control'. Therefore, a Button is a Control. Structural and behavioral members of the parent classes are inherited by the child class. Derived classes can define additional structural members (data fields) and behavioral members (methods) in addition to those that they inherit and are therefore specializations of their superclasses. Also, derived classes can override inherited methods if the language allows.
+
+Not all languages support multiple inheritance. For example, Java allows a class to implement multiple interfaces, but only inherit from one class.[19] If multiple inheritance is allowed, the hierarchy is a directed acyclic graph (or DAG for short), otherwise it is a tree. The hierarchy has classes as nodes and inheritance relationships as links. Classes in the same level are more likely to be associated than classes in different levels. The levels of this hierarchy are called layers or levels of abstraction.
+
+Example (Simplified Objective-C 2.0 code, from iPhone SDK):
+
+@interface UIResponder : NSObject //...
+@interface UIView : UIResponder //...
+@interface UIScrollView : UIView //...
+@interface UITableView : UIScrollView //...
+
+In this example, a UITableView is a UIScrollView is a UIView is a UIResponder is an NSObject.

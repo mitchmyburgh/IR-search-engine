@@ -1,0 +1,31 @@
+Algorithms and data structures every programmer should know about
+
+1. Sort Algorithms
+Sorting is the most heavily studied concept in Computer Science. Idea is to arrange the items of a list in a specific order. Though every major programming language has built-in sorting libraries, it comes in handy if you know how they work. Depending upon requirement you may want to use any of these.
+    Merge Sort
+    Quick Sort
+    Bucket Sort
+    Heap Sort
+    Counting Sort
+
+More importantly one should know when and where to use them. Some examples where you can find direct application of sorting techniques include:
+    Sorting by price, popularity etc in e-commerce websites
+    Sorting by score in HackerEarth contest leaderboard
+
+2. Search Algorithms
+Binary Search (in linear data structures)
+Binary search is used to perform a very efficient search on sorted dataset. The time complexity is O(log2N). Idea is to repeatedly divide in half the portion of the list that could contain the item, until we narrow it down to one possible item. Some applications are:
+    When you search for a name of song in a sorted list of songs, it performs binary search and string-matching to quickly return the results.
+    Used to debug in git through git bisect
+Depth/Breadth First Search (in Graph data structures)
+DFS and BFS are tree/graph traversing and searching data structures. We wouldn’t go deep into how DFS/BFS work but will see how they are different through following animation.
+
+3. Hashing
+Hash lookup is currently the most widely used technique to find appropriate data by key or ID. We access data by its index. Previously we relied on Sorting+Binary Search to look for index whereas now we use hashing.
+The data structure is referred as Hash-Map or Hash-Table or Dictionary that maps keys to values, efficiently. We can perform value lookups using keys. Idea is to use an appropriate hash function which does the key -> value mapping. Choosing a good hash function depends upon the scenario.
+Applications:
+    In routers, to store IP address -> Path pair for routing mechanisms
+    To perform the check if a value already exists in a list. Linear search would be expensive. We can also use Set data structure for this operation.
+
+4. Dynamic Programming
+Dynamic programming (DP) is a method for solving a complex problem by breaking it down into simpler subproblems. We solve the subproblems, remember their results and using them we make our way to solve the complex problem, quickly.

@@ -1,0 +1,18 @@
+Harnessing the power of big data: infusing the scientific method with machine learning to transform ecology
+
+
+Authors
+Debra P. C. Peters,
+Kris M. Havstad,
+Judy Cushing,
+Craig Tweedie,
+Olac Fuentes,
+Natalia Villanueva-Rosales
+
+Introduction
+
+The data deluge—the large quantity of multifarious and validated data and information moving at faster rates—undoubtedly provides opportunities for the greatest scientific and technological advances of the early 21st Century (e.g., Ginsberg et al. 2009, Brumfiel 2011, King 2011, Manyika et al. 2011). These “big data” include both legacy data that are increasingly being rescued and captured digitally, and new data that are being acquired through autonomous or manual methods (Michener and Jones 2012, Peters et al. 2013). In ecology and related environmental sciences, datasets are growing in size, complexity, and type as a result of technological advances in sensor and sensor platform technologies (space-, air-, land-, aquatic-, marine-, and organismal-based), computational and analytical improvements in simulation models, and improved methodologies for probing samples, such as genome sequencing and the generation of ‘omics' data (Drake et al. 2006, Hart and Martinez 2006, Cohen et al. 2009, Luo et al. 2011, Pfeifer et al. 2012, Porter et al. 2012). Research and development into using this data deluge have focused on cyber-infrastructure (CI) hardware and software constraints, the discovery and access to “dark data” and “deep web” information, and cultural concerns about sharing data (Price and Sherman 2001, Heidorn 2008, Trelles et al. 2011, Michener and Jones 2012, Parr et al. 2012, Peters et al. 2014a) that lead to calls for open science (Wolkovich et al. 2012, Hamilton et al. 2013). In spite of these advances in data acquisition and publishing, however, the use and re-use of data are not fully exploited. 
+
+Surprisingly, a key challenge has not been effectively addressed: big data are not readily accepted or utilized by most ecologists as an integral part of their research because the traditional scientific method is not scalable to large, complex datasets. In fact, only a small fraction of current data is actually reused by scientists (Reichman et al. 2011), and most data that are used (ca. 50%) are from relatively small, locally collected and stored datasets (Science Staff 2011). Even though there is overwhelming evidence of the importance of existing and emerging large datasets to fields as diverse as medicine, biology, and earth science (Garrett et al. 2006, Delaney and Barga 2009, Robinson et al. 2010, Hay et al. 2013), we believe that few ecologists will take advantage of these data even if the technological and cultural challenges are met.
+
+Typically, the scientific method focuses on a small set of high quality data that are often collected, maintained, and analyzed locally by an individual investigator with a bias towards acquiring new data. Long time lags (i.e., years) often occur between individual discoveries and leaps in knowledge. These lags are associated with the time required for publication of results and for others to recreate the analyses and findings even when the data and metadata are readily accessible. Thus, serious consequences can result when a “small data” approach is used to address complex scientific problems (Hamilton et al. 2013).

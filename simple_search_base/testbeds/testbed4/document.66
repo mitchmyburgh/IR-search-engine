@@ -1,0 +1,81 @@
+Recent progress in acquiring shape from range data permits the acquisition
+of seamless million-polygon meshes from physical models.
+In this paper, we present an algorithm and system for converting
+dense irregular polygon meshes of arbitrary topology into tensor
+product B-spline surface patches with accompanying displacement
+maps. This choice of representation yields a coarse but efficient
+model suitable for animation and a fine but more expensive
+model suitable for rendering.
+The first step in our process consists of interactively painting
+patch boundaries over a rendering of the mesh. In many applications,
+interactive placement of patch boundaries is considered part
+of the creative process and is not amenable to automation. The next
+step is gridded resampling of each boundedsection of the mesh. Our
+resampling algorithm lays a grid of springs across the polygon mesh,
+then iterates between relaxing this grid and subdividing it. This grid
+provides a parameterization for the mesh section, which is initially
+unparameterized. Finally, we fit a tensor product B-spline surface to
+the grid. We also output a displacement map for each mesh section,
+which represents the error between our fitted surface and the spring
+grid. These displacement maps are images; hence this representation
+facilitates the use of image processing operators for manipulating
+the geometric detail of an object. They are also compatible with
+modern photo-realistic rendering systems.
+Our resampling and fitting steps are fast enough to surface a million
+polygon mesh in under 10 minutes - important for an interactive
+system.
+CR Categories: I.3.5 [Computer Graphics]: Computational Geometry
+and Object Modeling —curve, surface and object representations;
+I.3.7[Computer Graphics]:Three-Dimensional Graphics and
+Realism—texture; J.6[Computer-Aided Engineering]:Computer-
+Aided Design (CAD); G.1.2[Approximation]:Spline Approximation
+Additional Key Words: Surface fitting, Parameterization, Dense
+polygon meshes, B-spline surfaces, Displacement maps
+Authors’ Address: Department of Computer Science, Stanford University,
+Stanford, CA 94305
+E-mail: venkat,levoy@cs.stanford.edu
+World Wide Web: http://www-graphics.stanford.edu/_venkat, _levoy
+1 Introduction
+Advances in range image acquisition and integration allow us to
+compute geometrical models from complex physical models [9, 36].
+The output of these technologies is a dense, seamless (i.e. manifold)
+irregular polygon mesh of arbitrary topology. For example,
+the model in figure 12, generated from 75 scans of an action figure
+using a Cyberware laser range scanner, contains 350,000 polygons.
+Models like this offer new opportunities to modelers and animators
+in the CAD and entertainment industries.
+Dense polygon meshes are an adequate representation for some
+applications. Several commercial animation houses employ polygon
+meshes almost exclusively. However, for reasons of compactness,
+control, manufacturability, or appearance, many users prefer
+smooth surface representations. To satisfy these users, techniques
+are needed for fitting surfaces to dense meshes of arbitrary topology.
+A notable property of these new acquisition techniques is their
+ability to capture fine surface detail. Whatever fitting technique we
+employ should strive to retain this fine detail. Surprisingly, a unified
+surface representationmaynot be the best approach. First, the heavy
+machinery of most smooth surface representations (for example Bsplines)
+makes them an inefficient way to represent fine geometric
+detail. Second and perhaps more important, although geometric detail
+is useful at the rendering stage of an animation pipeline, it may
+not be of interest to either the modeler or the animator. Moreover,
+its presence may degrade the time or memory performance of the
+modeling system. For these reasons, we believe it is advantageous
+to separate the representations of coarse geometry and fine surface
+detail.
+Within this framework, we may choose from among many representations
+for these two components. For representing coarse
+geometry, modelers in the entertainment and CAD industry have
+long used NURBS [14] and in particular uniform tensor product Bsplines.
+Such models typically consist of control meshes stitched
+together to the level of continuity desired for an application. In order
+to address their needs we have chosen uniform tensor product
+B-splines as our surface representation.
+For representing surface detail, we propose using displacement
+maps. Each pixel in such a map gives an offset from a point on
+a fitted surface to a point on a gridded resampling of the original
+polygon mesh. The principal advantageof this representation is that
+displacement maps are essentially images. As such, they can be
+processed, retouched, compressed, and otherwise manipulated using
+simple image processing tools. Some of the effects shown in
+figures 11 and 13 were achieved using Adobe Photoshop, a c

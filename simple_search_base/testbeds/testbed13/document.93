@@ -1,0 +1,290 @@
+Log in / Sign up
+
+  * Follow GizmodoFollowing Gizmodo
+
+  * Related blogs
+  * Sploid
+  * Paleofuture
+  * Toyland
+  * Gizmodo en Español
+  * io9
+
+  * Blogs you may like
+  * Deadspin
+  * Gawker
+  * Gizmodo
+  * Jalopnik
+  * Jezebel
+  * Kotaku
+  * Lifehacker
+
+FollowFollowing
+
+You can skip this ad in 5 seconds.
+
+# What's Wrong With Quantum Computing
+
+Jamie Condliffe
+
+10/25/13 11:00am
+
+Filed to: science
+
+  * computing
+  * quantum computing
+  * engineering
+  * physics
+  * math
+  * quantum
+  * shutterstock
+
+7413
+
+  * Edit
+  * Invite manually
+  * Promote
+  * DismissUndismiss
+  * Hide
+  * Share to Kinja
+  * Go to permalink
+
+You've heard plenty of people by now—including us—banging on about quantum
+computers, and how they’re the future of high-performance computing. Quantum
+computing, we're meant to understand, is set to change the world. But despite
+its promise, it's neither widely available nor particularly useful yet. Here's
+why not.
+
+### Basic Bits
+
+First things first, a quick reminder of exactly what a quantum computer is.
+Essentially, they’re computers that make use of quantum physics. Unlike a
+normal digital systems which rely on data encoded into binary digits
+(bits)—that can only ever take the form of 0 or 1—quantum computation uses
+quantum properties to represent data and perform operations.
+
+######  How the Hell Does a Quantum Computer Work?  How the Hell Does a
+Quantum Computer Work?  How the Hell Does a Quantum Computer Work?
+
+You've probably heard people—including us—banging on about quantum computers
+for a long… Read more Read more
+
+A quantum computer, then, uses not bits but qubits (quantum bits). Each of its
+qubits can represent a 0, a 1, or—crucially—anything in between.
+
+Advertisement
+
+Imagine a table covered in coins. In a classical computer, each one is either
+showing a head or tail; in a quantum computer, a coin could be showing 25
+percent head and 75 percent tail, or any other position between the two
+possible states. Once measured, of course—and we have Schroedinger to thank
+for this—it assumes one of the two states, heads or tails.
+
+Because each qubit can assume such a wide range of values, a modest number of
+them can hold an insane quantity of information; this is what lends quantum
+computers their theoretical grunt. Just 100 qubits can store
+1,267,650,600,228,229,401,496,703,205,375 different numbers—many trillion
+times the storage capacity of all computers _ever made_. In other words, 100
+qubits can simultaneously represent all possible 100-bit numbers in their huge
+quantum state, as opposed to a classical 100-bit computer, which can represent
+just one.
+
+Sponsored
+
+It’s that vast ability to assume many states at once that—in theory—means that
+quantum computers can provide untold power, many times faster than any
+classical computer. In practice, it's rather more difficult.
+
+### Building Blocks
+
+First off, building a quantum computer is no mean feat. While the technology
+required to create computers full of traditional bits is well established,
+manufacturing qubits is far from straightforward.
+
+For starters, no one is quite sure what the best way to make one is. Some
+techniques involve trapping ions, electrons or other tiny little particles;
+some propose using superconductors to create microscopic quantum circuits;
+others suggest it might be possible to use photons and complex optical
+apparatus to achieve a similar goal. What these techniques all have in common,
+however, is the fact that they’re currently plausible on the small scale but
+incredibly difficult to realize on the large. Essentially, that limits quantum
+computers to research machines, at least for now.
+
+The scaling problem itself is a result of quantum decoherence—or, rather,
+wanting to eliminate it. The problem is that, as good ol’ Schroedinger was
+only too keen to point out, quantum systems need to be isolated from the rest
+of world in order to work. Interactions with the external world cause the
+system to decohere, collapsing down and taking a binary state, just like a
+normal computer.
+
+Advertisement
+
+But the very guts of a quantum computer—quantum gates, lattice vibrations,
+background nuclear spin of the qubits—can all introduce decoherence effects,
+too. The solution? Decide on an error rate—the amount of dechorence you’re
+happy for the system to put up with—and design for that.
+
+Even that's an imperfect solution, though; to have an error rate small enough
+that you're still getting the benefits of a respectable quantum computer,
+you’d need a weighty bump in the number of qubits to provider error
+correction, and those qubits are extremely difficult to produce in the first
+place, which… well, you can see where that goes.
+
+### You’re a User, Baby
+
+Let's say, though, that you're able to build a functional quantum computer
+(not surprisingly, Google's on it). While you might think that having all that
+raw, pulsating computational power at your fingertips might be a dream come
+true, in reality using the damn thing is close to nightmarish.
+
+First, there’s the question of knowing if it’s even working in the first
+place. A widely known tenet of quantum mechanics is that merely observing the
+phenomenon changes the outcome of an event. So, watch a quantum particle, or a
+qubit, or anything quantum for that matter, and you change its behavior. That
+means that it’s actually very difficult to tell if a quantum computer is
+behaving in the way we’d expect or need it to.
+
+In fact, the currently available so-called quantum computers aren’t actually
+verified to be working the way they're supposed to. They’re simply based on
+the right theory, some fingers crossing, and judged by their output.
+
+That raises a whole other set of issues. Specifically, actually attaining that
+output is a mess. Coding a quantum computer is no mean feat; by their very
+nature, they give answers that are necessarily probabilistic, not concrete.
+For many solutions, that means that the answer isn’t necessarily bang on at
+first attempt; instead, the same calculation has to be repeated a number of
+times before the obvious correct answer emerges. In turn this means that,
+depending on the type of problem, there isn’t necessarily a huge amount of
+advantage in using a quantum computer compared to a regular one.
+
+######  Why Programming a Quantum Computer Is So Damn Hard  Why Programming a
+Quantum Computer Is So Damn Hard  Why Programming a Quantum Computer Is So
+Damn Hard
+
+Someday, somehow, quantum computing is going to change the world as we know
+it. Even the lamest… Read more Read more
+
+It's possible to exploit some of the mystical magical power of quantum
+mechanics to improve the speed with which solutions are reached, but so far
+researchers have only managed to do it for a very small set of problems, like
+finding the prime factors of very large numbers. That’s neat—and, it turns
+out, useful for cryptography—but it’s certainly limited.
+
+### Two Wrongs Don’t Make a Right
+
+Here’s the real kicker, though. Despite all that computational grunt, all the
+blood, sweat, and tears building and coding the damn thing, it’s not even
+necessarily possible to tell if a quantum computer produces the right answer
+in the end. Say what?
+
+A quantum computer could, in theory, be used to calculate solutions in days,
+maybe even hours, that would take a normal computer thousands of years to
+produce. While some of the answers its spits out are verifiable—a complex
+cryptographic key generated by a quantum computer is testable by using it and
+checking it by encrypting and decrypting a message, for instance—there are
+others that can’t be tested. Simply put, quantum computers are often used to
+solve the types of problems for which we have no other confirmation mechanism.
+We often can't double check their work.
+
+There may, however, be a way around this. A team of scientists from the
+University of Vienna have developed a technique call “blind quantum computing”
+that it believes could help. The idea’s quite straightforward; it involves
+mathematical traps, essentially intermediate steps in a calculation, which
+humans—or at least other computers—definitely _can_ work out in advance. If
+those answers come out incorrect, then the overall answer must contain an
+error, too. Instead of checking the final solution, it keeps an eye out for
+problem spots along the way.
+
+In Nature Physics, the researchers have demonstrated that the technique can at
+least work on a small scale, using a four-qubit quantum computer as a verifier
+to test against a second quantum computer. They even claims that it’s
+scalable, and could be used on computers with hundreds of qubits. But, like
+all things in quantum computing, there’s a snag. "Like almost all current
+quantum computing experiments, this currently has the status of a fun
+demonstration proof of concept, rather than anything that's directly useful
+yet,” explained computer scientist Scott Aaronson at the Massachusetts
+Institute of Technology, to Science.
+
+And that, right there, demonstrates why quantum computing remains little more
+than a lusty dream. At least for now.
+
+_Image by welcomia/Shutterstock_
+
+Reply74 replies
+
+Leave a reply
+
+## **You** may also like
+
+**Jezebel**
+
+#### Redditor Wants to Know If We Think Her Fiance Is Doing Incest
+
+2/21/16 7:00pm
+
+**Adequate Man**
+
+#### How To Be A Radiohead Fan Without Being A Dipshit About It
+
+41 minutes ago
+
+**Adequate Man**
+
+#### I Was Catfished By ABC's _What Would You Do?_
+
+Yesterday 12:46pm
+
+## **Recent** from Jamie Condliffe
+
+  * 10
+  * 6.6K
+
+**Gizmodo** * Jamie Condliffe
+
+#### Report: LAPD Unlocked an iPhone 5S While the FBI Was Fighting Apple
+
+Today 7:41am
+
+  * 5
+  * 3.5K
+
+**Gizmodo** * Jamie Condliffe
+
+#### A Robot's Stitched Up a Pig Gut All By Itself
+
+Today 6:26am
+
+  * 2
+  * 5
+  * 2.8K
+
+**Gizmodo** * Jamie Condliffe
+
+#### Listen to How the Billboard Chart Changed Week-by-Week Since 1956
+
+Today 5:42am
+
+**Deals** * Shep McAllister
+
+#### Double Your iPhone's Battery Life With This $26 Case
+
+16 minutes ago
+
+ShareTweet
+
+* * *
+
+* * *
+
+  * About Blog
+  * Need Help?
+  * Content Guide
+
+  * Permissions
+  * Privacy
+  * Terms of Use
+  * Advertising
+  * Jobs
+  * RSS
+
+Kinja is in read-only mode. We are working to restore service.
+

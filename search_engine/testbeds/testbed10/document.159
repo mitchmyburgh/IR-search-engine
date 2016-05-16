@@ -1,0 +1,120 @@
+Improve Computer-Aided Diagnosis With Machine
+Learning Techniques Using Undiagnosed Samples
+
+Ming Li and Zhi-Hua Zhou, Senior Member, IEEE
+
+I. INTRODUCTION
+MACHINE learning techniques have been successfully
+applied to computer-aided diagnosis (CAD) systems
+[20], [35], [42]. These methods learn hypotheses from a large
+amount of diagnosed samples, i.e., the data collected from
+a number of necessary medical examinations along with the
+corresponding diagnoses made by medical experts, to assist the
+medical experts in making a diagnosis in the future.
+To make the CAD systems perform well, a large amount
+of samples with diagnosis are required for learning. Usually,
+these samples can be easily collected from routine medical
+examinations. However, making a diagnosis for such a large
+amount of cases one by one places a heavy burden on medical experts. For instance, to construct a CAD system for breast
+cancer diagnosis, radiologists have to label every focus in a
+huge amount of easily obtained high-resolution mammograms.
+This process is usually quite time consuming and inefficient.
+One possible solution is to learn a hypothesis from a small
+amount of samples that are carefully diagnosed by medical
+experts (the labeled data) and then utilize a large amount of
+readily available undiagnosed samples (the unlabeled data) to
+enhance the performance of the learned hypothesis. In machine
+learning, this technique is called learning with labeled and
+unlabeled data.
+An effective way to enhance the performance of the learned
+hypothesis by using the labeled and unlabeled data together
+is known as semisupervised learning [8], [32], [46], where an
+initial hypothesis is usually learned from labeled data and then
+refined with the information that is derived from the unlabeled
+ones. Co-training [4] is an attractive semisupervised learning
+paradigm, which trains two classifiers through letting them
+label the unlabeled examples for each other. In co-training,
+the data should be described by two sufficient and redundant
+attribute subsets, each of which is sufficient for learning and
+independent to the other given class label.
+Although co-training has been already successfully applied
+to some fields [4], [25], [30], the requirement on two sufficient
+and redundant attribute subsets is too strong to be met in many
+real-world applications. Goldman and Zhou [17] extended cotraining
+by replacing the requirement on two sufficient and redundant
+attribute subsets with the requirement on two different
+supervised learning algorithms whose hypotheses partition the
+instance space into a set of equivalence classes. Tenfold cross
+validation is frequently applied to find the confident examples
+to label in every training iteration and produce the final hypothesis,
+which makes the learning process and prediction time
+consuming.
+In this paper, a new co-training-style algorithm named
+Co-Forest, i.e., CO-trained Random FOREST, is proposed.
+It extends the co-training paradigm by incorporating a wellknown
+ensemble learning [13] algorithm named Random Forest
+[7] to tackle the problems of how to determine the most confi-
+dent examples to label and how to produce the final hypothesis.
+Since ensemble learning has been successfully applied to many
+medical problems [35], [41], [42], the particular setting enables
+Co-Forest to exploit the power of ensemble for better performance
+of the learned hypothesis in semisupervised learning.
+Since Co-Forest requires neither that the data be described by
+sufficient and redundant attribute subsets nor special learning
+algorithms which frequently employ time-consuming cross validation
+in learning, it could be easily applied in CAD systems.
+Experiments on University of California, Irvine (UCI) data sets verify the effectiveness of the proposed algorithm. Case studies
+on three medical diagnosis tasks and a successful application
+to microcalcification cluster detection in digital mammograms
+show that the undiagnosed samples are beneficial, and the
+hypothesis learned by Co-Forest achieves remarkable performance,
+although it is learned from a large amount of undiagnosed
+samples in addition to only a small amount of diagnosed
+ones. Hence, constructing CAD system with Co-Forest may
+release the burden on medical experts for diagnosing a large
+number of samples.
+The rest of this paper is organized as follows. Section II
+briefly reviews semisupervised learning and ensemble learning.
+Section III presents Co-Forest. Section IV reports the experimental
+results on UCI data sets and case studies on three
+medical diagnosis data sets. Section V describes the application
+to microcalcification cluster detection in digital mammograms.
+Finally, Section VI concludes this paper.
+
+VI. CONCLUSION
+In a computer-aided medical diagnosis, diagnosing the samples
+for training a well-performed CAD system places heavy
+burden on medical experts. Such burden could be released if
+the learning algorithm could use unlabeled data to help in
+learning. In this paper, the Co-Forest algorithm is proposed,
+which can use undiagnosed samples to boost the performance
+of the system that is trained from the diagnosed samples.
+By extending the co-training paradigm, it exploits the power
+of Random Forest, a well-known ensemble method, to tackle
+the problem of selecting confident undiagnosed samples to
+label and producing the final hypothesis. Experiments on UCI
+data sets verify the effectiveness of Co-Forest. Case studies
+on three medical data sets and a successful application to
+microcalcification cluster detection for breast cancer diagnosis
+show that the undiagnosed samples are beneficial in building
+CAD systems, and Co-Forest is able to enhance the performance
+of the hypothesis learned simply on a small amount
+of diagnosed samples by exploiting the undiagnosed samples.
+Since Co-Forest tends to underestimate the error rates of the
+concomitant ensembles, finding an efficient method to properly
+estimate the error rates of these ensembles will be done in the
+future, which is anticipated to make Co-Forest perform better.
+Another interesting future work is to enhance the performance
+of Co-Forest by incorporating Query by Committee [33], an active learning [9] mechanism, such that more helpful information
+can be provided by the diagnosis from medical experts
+on certain undiagnosed samples. Such an idea of combining
+semisupervised learning with active learning in co-training
+paradigm has been applied for content-based image retrieval
+[40]. Furthermore, it is noteworthy that the diversity between
+component classifiers is maintained based on the randomness
+provided by Random Forest. This places constraints to the base
+learner of Co-Forest and the scale of ensemble. In the future,
+exploring a method to maintain the diversity of component
+classifiers in any ensembles during the semisupervised learning
+process will extend the idea of Co-Forest to more general cases,
+such that it can be applied in more practical applications.

@@ -1,0 +1,27 @@
+Cloud Predictions for 2011
+Matthias Jung / December 29, 2010
+The end of the year is the time for predictions (by the way, does anybody have a look at the predictions from last year?). A quite complete and profound list of predictions was published by Forbes’ CIO Central blog. Instead having a look into my own crystal ball, some remarks and questions from my side on those predictions that refer to general trends in the cloud market and the cloud infrastructure part:
+
+Replace most new procurement with cloud strategies: CFOs will sing the praise of cloud IT? Why didn’t they do this already in 2010 – what has changed in the meantime? The blog cites preferences in deployment solutions and lack of innovative on-premises options – which are a bit weak arguments unless major infrastructure investments are necessary and planned for 2011.
+
+Start with private clouds as a stepping stone to public clouds: private clouds are not a stepping stone for public clouds, but rather a different choice in my opinion. Why would anybody make this huge investment in creating a private cloud when he is willing to switch to a public cloud short time later? Building a private cloud also requires new hardware (since transforming an existing machine park is hardly possible without deconnecting machines temporarily). However, I could very well imagine hybrid scenarios as stepping stone: think of companies like CloudSwitch, Amazon’s VPC, and the recently announced feature of importing VMWare images into EC2 – and you can see that the efforts of playing around with hybrid clouds have become rather small. Certain usecases – like handling temporary peak demand – will also drive hybrid clouds.
+
+Get real about security: for the majority of the early adopters of cloud computing, security concerns were less important than the benefits (OPEX instead CAPEX, scaling, pay-per-use). I expect the next wave of adopters to be more fastidious when it comes to security. That’s by the way is the reason why we believe in software like Elastic Detector that automates monitoring and security for cloud infrastructures.
+
+Move to private clouds as a back up to public clouds: replace “private” by “hybrid” and I agree. Data integration and security are the key competencies needed for migrating (part of) the internal infrastructure of an enterprise to the cloud.
+
+Begin the transition from best of breed purpose built solutions to cloud mega stacks: it seems very clear to me that once enterprises go for SaaS solutions, they also need the customization facilities provided by PaaS platforms. Salesforce with force.com and it’s acquisition of Heroku point clearly into this direction.
+
+Leverage apps market places and ecosystems for the last mile: this prediction is a logical evolution from the need of customization. I fully agree.
+
+Superior user experience and scale won’t be mutually exclusive: while ease-of-use and scale are not mutually exclusive, this is very well the case for ease-of-use and the need for customization and integration. The ease-of-use of SaaS solutions is to a large degree due to its restriction to a minimum and the concentration of specific usecases.
+
+Shift all new custom app development to the cloud: yes, the development and deployment of new projects are a major driver of cloud computing solutions.
+
+Expect DaaS and PaaS to merge in 2011: yes, customization requires both data related and programming logic related facilities. Merging them in a common platform makes perfectly sense.
+
+Demand better virtualization: virtualization will evolve, tools will be more powerful, virtualization technology more efficient. However, this is a process that is ongoing since several years now and I don’t see an important acceleration here. Even more important I consider standardization and compatibility between different virtualization technologies that I guess will play a much more important role in the next couple of months.
+
+Simplify the overall technology landscape: I rather expect that different technologies – cloud and non-cloud technology – will co-exist during a transition phase that may take quite some time. Thus, I rather expect a more heterogeneous and thus also more complicated technology landscape in large organizations. Things are surely different for small organizations that are willing to adopt the public cloud and thus restructure their IT from scratch.
+
+Conclusions: Cloud Computing is no longer a question of “if” or “when”, but a question of “how”. Companies are convinced about the financial benefits of cloud computing. I thus expect them to push for interoperability, standardization, customization, and integration. They will also ask for security, management, and monitoring solutions that deal with the elastic character of cloud computing. When SaaS providers offer more and more customization facilities – and IaaS providers more and more additional services on top of their basic infrastructure offer, they both seem to merge into something that resembles PaaS. If you look for a bottom-line for he predictions, here it is: 2011 could be the year of PaaS.

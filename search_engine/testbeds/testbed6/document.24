@@ -1,0 +1,269 @@
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-25734021-1', 'auto');
+  ga('send', 'pageview');
+          Home 
+          About 
+          Courses | Fees | Dates 
+          College-Projects 
+          Testimonials 
+          Internship 
+          Developers 
+          Jobs 
+          Contact 
+        Questions &amp; Answers 
+         C Interview Questions
+         C++ Questions
+         Linux MCQs
+         C# Quiz
+         Java MCQs
+         JavaScript MCQs
+         SAN Questions
+         PHP Questions
+         Python Quiz
+        Computer Science Questions 
+         Operating System Quiz
+         Computer Architecture MCQs
+         Software Architecture MCQs
+         Software Engineering MCQs
+         Artificial Intelligence MCQs
+         LISP Programming MCQs
+         Database Management MCQs
+         Computer Network MCQs
+         Microprocessor MCQs
+        C Programming Examples 
+         Simple C Programs
+         C - Arrays
+         C - Matrix
+         C - Strings
+         C - Bitwise Operations
+         C - Linked Lists
+         C - Stacks &amp; Queues
+         C - Searching &amp; Sorting
+         C - Trees
+         C - Strings
+         C - File Handling
+         C - Mathematical Functions
+         C - Puzzles &amp; Games
+         C Programs - Recursion
+         C Programs - No Recursion
+        Java Algorithms 
+         Java - Numerical Problems
+         Java - Combinatorial Problems
+         Java - Graph Problems
+         Java - Hard Graph Problems
+         Java - Computation Geometry
+         Java - Sets &amp; Strings
+         Java - Data-Structures
+         Java - Collection API Problems
+        C++ Algorithms 
+         C++ - Numerical Problems
+         C++ - Combinatorial Problems
+         C++ - Graph Problems
+         C++ - Hard Graph Problems
+         C++ - Computation Geometry
+         C++ - Sets &amp; Strings
+         C++ - Data-Structures
+         C++ - STL Library
+        C Algorithms 
+         C - Numerical Problems
+         C - Combinatorial Problems
+         C - Graph Problems
+         C - Hard Graph Problems
+         C - Computation Geometry
+         C - Sets &amp; Strings
+         C - Data-Structures
+        C++ Program to Implement AVL Trees  
+         Posted on 
+         August 28, 2013 
+         by  Manish   
+         This C++ Program demonstrates operations on AVL Trees.
+        Here is source code of the C++ Program to demonstrate AVL Trees. The C++ program is successfully compiled and run on a Linux system. The program output is also shown below. 
+               /*
+               &nbsp;* C++ program to Implement AVL Tree
+               &nbsp;*/
+               #include&lt;iostream&gt;
+               #include&lt;cstdio&gt;
+               #include&lt;sstream&gt;
+               #include&lt;algorithm&gt;
+               #define pow2(n) (1 &lt;&lt; (n))
+               using namespace std;
+               &nbsp;
+               /*
+               &nbsp;* Node Declaration
+               &nbsp;*/
+               struct avl_node
+               {
+                   int data;
+                   struct avl_node *left;
+                   struct avl_node *right;
+               }*root;
+               &nbsp;
+               /*
+               &nbsp;* Class Declaration
+               &nbsp;*/
+               class avlTree
+               {
+                   public:
+                       int height(avl_node *);
+                       int diff(avl_node *);
+                       avl_node *rr_rotation(avl_node *);
+                       avl_node *ll_rotation(avl_node *);
+                       avl_node *lr_rotation(avl_node *);
+                       avl_node *rl_rotation(avl_node *);
+                       avl_node* balance(avl_node *);
+                       avl_node* insert(avl_node *, int );
+                       void display(avl_node *, int);
+                       void inorder(avl_node *);
+                       void preorder(avl_node *);
+                       void postorder(avl_node *);
+                       avlTree()
+                       {
+                           root = NULL;
+                       }
+               };
+               &nbsp;
+               /*
+               &nbsp;* Main Contains Menu
+               &nbsp;*/
+               int main()
+               {
+                   int choice, item;
+                   avlTree avl;
+                   while (1)
+                   {
+                       cout&lt;&lt;"\n---------------------"&lt;&lt;endl;
+                       cout&lt;&lt;"AVL Tree Implementation"&lt;&lt;endl;
+                       cout&lt;&lt;"\n---------------------"&lt;&lt;endl;
+                       cout&lt;&lt;"1.Insert Element into the tree"&lt;&lt;endl;
+                       cout&lt;&lt;"2.Display Balanced AVL Tree"&lt;&lt;endl;
+                       cout&lt;&lt;"3.InOrder traversal"&lt;&lt;endl;
+                       cout&lt;&lt;"4.PreOrder traversal"&lt;&lt;endl;
+                       cout&lt;&lt;"5.PostOrder traversal"&lt;&lt;endl;
+                       cout&lt;&lt;"6.Exit"&lt;&lt;endl;
+                       cout&lt;&lt;"Enter your Choice: ";
+                       cin&gt;&gt;choice;
+                       switch(choice)
+                       {
+                       case 1:
+                           cout&lt;&lt;"Enter value to be inserted: ";
+                           cin&gt;&gt;item;
+                           root = avl.insert(root, item);
+                           break;
+                       case 2:
+                           if (root == NULL)
+                           {
+                               cout&lt;&lt;"Tree is Empty"&lt;&lt;endl;
+                               continue;
+                           }
+                           cout&lt;&lt;"Balanced AVL Tree:"&lt;&lt;endl;
+                           avl.display(root, 1);
+                           break;
+                       case 3:
+                           cout&lt;&lt;"Inorder Traversal:"&lt;&lt;endl;
+                           avl.inorder(root);
+                           cout&lt;&lt;endl;
+                           break;
+                       case 4:
+                           cout&lt;&lt;"Preorder Traversal:"&lt;&lt;endl;
+                           avl.preorder(root);
+                           cout&lt;&lt;endl;
+                           break;
+                       case 5:
+                           cout&lt;&lt;"Postorder Traversal:"&lt;&lt;endl;
+                           avl.postorder(root);    
+                           cout&lt;&lt;endl;
+                           break;
+                       case 6:
+                           exit(1);    
+                           break;
+                       default:
+                           cout&lt;&lt;"Wrong Choice"&lt;&lt;endl;
+                       }
+                   }
+                   return 0;
+               }
+               &nbsp;
+               /*
+               &nbsp;* Height of AVL Tree
+               &nbsp;*/
+               int avlTree::height(avl_node *temp)
+               {
+                   int h = 0;
+                   if (temp != NULL)
+                   {
+                       int l_height = height (temp-&gt;left);
+                       int r_height = height (temp-&gt;right);
+                       int max_height = max (l_height, r_height);
+                       h = max_height + 1;
+                   }
+                   return h;
+               }
+               &nbsp;
+               /*
+               &nbsp;* Height Difference 
+               &nbsp;*/
+               int avlTree::diff(avl_node *temp)
+               {
+                   int l_height = height (temp-&gt;left);
+                   int r_height = height (temp-&gt;right);
+                   int b_factor= l_height - r_height;
+                   return b_factor;
+               }
+               &nbsp;
+               /*
+               &nbsp;* Right- Right Rotation
+               &nbsp;*/
+               avl_node *avlTree::rr_rotation(avl_node *parent)
+               {
+                   avl_node *temp;
+                   temp = parent-&gt;right;
+                   parent-&gt;right = temp-&gt;left;
+                   temp-&gt;left = parent;
+                   return temp;
+               }
+               /*
+               &nbsp;* Left- Left Rotation
+               &nbsp;*/
+               avl_node *avlTree::ll_rotation(avl_node *parent)
+               {
+                   avl_node *temp;
+                   temp = parent-&gt;left;
+                   parent-&gt;left = temp-&gt;right;
+                   temp-&gt;right = parent;
+                   return temp;
+               }
+               &nbsp;
+               /*
+               &nbsp;* Left - Right Rotation
+               &nbsp;*/
+               avl_node *avlTree::lr_rotation(avl_node *parent)
+               {
+                   avl_node *temp;
+                   temp = parent-&gt;left;
+                   parent-&gt;left = rr_rotation (temp);
+                   return ll_rotation (parent);
+               }
+               &nbsp;
+               /*
+               &nbsp;* Right- Left Rotation
+               &nbsp;*/
+               avl_node *avlTree::rl_rotation(avl_node *parent)
+               {
+                   avl_node *temp;
+                   temp = parent-&gt;right;
+                   parent-&gt;right = ll_rotation (temp);
+                   return rr_rotation (parent);
+               }
+               &nbsp;
+               /*
+               &nbsp;* Balancing AVL Tree
+               &nbsp;*/
+               avl_node *avlTree::balance(avl_node *temp)
+               {
+                   int bal_factor = diff (temp);
+                   if (bal_factor &gt; 1)
+                   {
+                       if (diff (temp

@@ -1,0 +1,18 @@
+Hash table
+
+Hash table (or hash map) is one of the possible implementions of dictionary ADT. Hence, basically it maps unique keys to associated values. In the view of implementation, hash table is an array-based data structure, which uses hash function to convert the key into the index of an array element, where associated value is to be sought.
+
+Hash function
+
+Hash function is very important part of hash table design. Hash function is considered to be good, if it provides uniform distribution of hash values. Other hash function's properties, required for quality hashing will be examined in detail later. The reason, why hash function is a subject to the principal concern, is that poor hash functions cause collisions and some other unwanted effects, which badly affect hash table overall performance.
+
+Hash table and load factor
+
+Basic underlying data strucutre used to store hash table is an array. The load factor is the ratio between the number of stored items and array's size. Hash table can whether be of a constant size or being dynamically resized, when load factor exceeds some threshold. Resizing is done before the table becomes full to keep the number of collisions under certain amount and prevent performance degradation.
+
+Collisions
+
+What happens, if hash function returns the same hash value for different keys? It yields an effect, called collision. Collisions are practically unavoidable and should be considered when one implements hash table. Due to collisions, keys are also stored in the table, so one can distinguish between key-value pairs having the same hash. There are various ways of collision resolution. Basically, there are two different strategies:
+
+Closed addressing (open hashing). Each slot of the hash table contains a link to another data structure (i.e. linked list), which stores key-value pairs with the same hash. When collision occures, this data structure is searched for key-value pair, which matches the key.
+Open addressing (closed hashing). Each slot actually contains a key-value pair. When collision occurs, open addressing algorithm calculates another location (i.e. next one) to locate a free slot. Hash tables, based on open addressing strategy experience drastic performance decrease, when table is tightly filled (load factor is 0.7 or more).

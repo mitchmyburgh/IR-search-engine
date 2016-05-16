@@ -1,0 +1,74 @@
+Next_Unit_of_Computing
+'''Next Unit of Computing''' ('''NUC''') is a   designed by . Its first generation is based on the Sandy Bridge Celeron CPU. Its second-generation  (CPU) is based on the   and Core i5 processors. Its third generation is based on the  architecture. Its  measures .
+The  consist of the board, in a plastic case with a fan, an external power supply and .Intel NUC product specifications , accessed 2013-06-10. Intel does offer for sale just the NUC motherboards, which have a built-in CPU, although () the price of a NUC motherboard is very close to the corresponding cased kit; third-party cases for the NUC boards are also available.
+== Models ==
+These tables show some of the key differences between the models of the Intel NUC.
+=== First generation (Sandy Bridge) ===
+This  motherboard and system kit are codenamed ''Ski Lake'' (DCP847SK) and ''Deep Canyon'' (DCCP847DY) respectively.
+=== Second generation (Ivy Bridge) ===
+The base UCFF motherboard and kit without Thunderbolt or USB 3 are codenamed ''Golden Lake'' (D33217GK) and ''Ice Canyon'' (DC3217IY) respectively. The Thunderbolt capable UCFF motherboard and kit are  codenamed ''Campers Lake'' (D33217CK) and ''Box Canyon'' (DC3217BY) respectively. The USB 3 capable UCFF motherboard and kit are codenamed ''Rend Lake'' (D53427RK) and ''Horse Canyon'' (DC53427HY) respectively.
+The stripped-down DC3217BY model has a signature red top cover and no Ethernet. This model, while stocks were still available, generally sold for a deep discount. The absence of Ethernet may be mitigated by using a USB 2.0 to 10/100 fast Ethernet dongle based upon the Kawasaki LSI one-chip adapter (KL5KUSB102, for example), or a similar dongle based upon a Realtek chip; the Kawasaki Logic dongle requires a proprietary driver for MacOS X, whereas the driver for the Realtek dongle is built into MacOS X. The DC3217BY runs MacOS X (10.9, and any of its updates) flawlessly as the processor's HD4000 is fully supported by MacOS X. Of the two video ports, Thunderbolt/Display Port and HDMI, mDP is the most dependable for MacOS X. Sound is not provided by the basic chassis, but may be provided by a generic USB dongle, C-Media, for example. mDP to SVGA or HDMI to SVGA adapters with ''integral'' audio output jack can be made to work for audio output with the appropriate updates to the DSDT
+=== Third generation (Bay Trail-M) ===
+This UCFF motherboard (DN2820FYB) and system kit (DN2820FYKH) model are based on ''Forest Canyon''. The DN2820FYKH product itself is mis-marked DN2820FYK, but the retail package, all retail documentation, and Intel's web site correctly identify this product as DN2820FYKH. The "H" indicates support for internal 2.5" media, SSD or HD. There is no "non-H" version of this product as it does not include an on-board mSATA connector, hence media which is external to the board is mandatory, and hence the "H" version.
+This product introduces for the first time a new 12 volt, 3 ampere "wall wart", in place of the traditional 19 volt, 3.42 ampere power brick and its "Mickey Mouse" AC power cord. Four region-specific plug-on adapters, including North America and three overseas countries, are included in the retail package.
+This model is shipped with the BIOS at revision 13, but revision 13 will not recognize most low voltage SO-DIMMs (these are seen as having zero GB capacity) and keyboard escapes to get into the various BIOS functions can be problematic. Also, legacy booting is not supported, and only  booting is supported and even that is problematic. BIOS revision 48 is available and this solves all current problems, certainly including proper recognition of most low voltage SO-DIMMs, keyboard escapes and legacy booting.
+=== Bay Trail-I ===
+This UCFF motherboard (DE3815TYB) and system kit (DE3815TYK) models based on ''Thin Canyon''.
+=== Fourth generation (Haswell) ===
+UCFF motherboard  (D34010WYB and D54250WYB) and system kit (D34010WYK/D34010WYKH and D54250WYK/D54250WYKH) models based on ''Wilson Canyon'' containing  processors were revealed in June 2013.Tom's Hardware Guide, , 2013-06-07, accessed 2013-06-10.
+=== Fifth generation (Broadwell-U) ===
+In early 2015 a new generation of NUCs, powered by 5th generation Intel processors was released and in Q2 2015 the first NUC with Core i7 processor (NUC5i7RYH) will become available. The currently available collection of 5th generation of NUCs include adaptive/smart performance technology and Turbo Boost Technology 2.0.
+UCFF motherboard (NUC5i3RYB, NUC5i5RYB and NUC5i7RYB) and system kit (NUC5i5RYK/NUC5i3RYH, NUC5i5RYK/NUC5i5RYH and NUC5i7RYH) models are based on the ''Rock Canyon'' architecture. UCFF motherboard (NUC5i3MYBE and NUC5i5MYBE) and system kit (NUC5i3MYHE and NUC5i5MYHE) models are based on the ''Maple Canyon'' architecture.
+All models include:
+* Dual-channel DDR3L , 1.35&nbsp;V, 1333/1600&nbsp;MHz, 16 GB maximum
+* One  port
+* Internal support for M.2 (either B-Keyed ''Maple Canyon'' or M-Keyed ''Rock Canyon'') 22x42, 22x60, and 2280 SSD card supporting PCIe 2.0 (x1, x2 and x4) and SATA 6 Gbit/s
+* Two  connectors on back panel
+* Two USB 3.0 connectors on front panel
+* Two internal  ports via header
+* Up to 7.1 surround audio via mini HDMI and mini DisplayPort
+* Headphone/microphone jack on the front panel
+1. Version 1.4a
+2. Version 1.2
+=== Braswell ===
+This UCFF system kit (NUC5CPYH and NUC5PPYH) models based on 5th generation  and -branded  14&nbsp;nm processor family formerly known as .
+All models include:
+* One memory channel   (204-pin), 1.35&nbsp;V, 1333/1600&nbsp;MHz, 8&nbsp;GB maximum
+* One  port
+*   (Intel Wireless-AC 3165) and 
+* Internal support for  (E-Keyed) 2230 wireless card supporting  1, and USB 2.0
+* Two  connectors on back panel
+* Two USB 3.0 connectors on front panel
+* Two internal  ports via header
+* Up to 7.1 surround audio via 
+* Headphone/microphone jack on the front panel
+* Headphone/ jack on the rear panel
+*  slot with UHS-I support on the side
+*  Sensor
+* According to the Intel Technical Product Specification, these models have fans.
+=== Sixth generation (Skylake-U) ===
+UCFF system kit (NUC6i3SYK/NUC6i3SYH and NUC6i5SYK/NUC6i5SYH) models are based on ''Swift Canyon'' containing  processors.
+All models include:
+* Dual-channel DDR4 , 1.2&nbsp;V, 2133&nbsp;MHz, 32 GB maximum
+* One  port
+* Intel Dual Band Wireless-AC 8260 (802.11ac), 1x1, up to 867 Mbit/s
+* Internal support for M.2 M-Keyed ''Rock Canyon'' 22x42 and 2280 SSD card supporting PCIe 2.0 (x1, x2 and x4) and SATA 6 Gbit/s
+*  slot with UHS-I support on the side
+* Intel HD Graphics 520 video
+* Up to 7.1 surround audio via full-sized HDMI and mini DisplayPort
+* Dual-mode Bluetooth 4.1
+* Intel Wireless Display (Intel WiDi)
+== Reception and ecosystem ==
+The NUC was seen by some reviewers as Intel's response to (or adoption of) the Apple  format, although it is actually smaller, physically. Given its kit nature, other reviewers have seen it as a more powerful , particularly since the NUC boards could be bought without a case.
+Most of the third generation NUCs come in two case sizes, one with room for a 2.5-inch drive, and one without. The smaller cases lacking room for a 2.5" drive still have an internal  connector (including SATA power). Some larger third-party cases have appeared that can fit such drives.
+The Intel case is actively cooled with a fan. Silent PC Review notes that The original Intel NUC had "the distinction of being the quietest fan-cooled mini-computer we've come across." The NUC D54250WYK , with the same cooling system, sounds exactly the same. In normal use, you can't hear the fan until your ear is inches from the unit. Nevertheless, passively cooled third-party cases have appeared on the market as well.
+Larger or metallic third-party cases provide lower operating temperatures as well.
+A review by  of the pre-production 2012-vintage NUC found that the NUC would seize up after a few gigabytes were transferred over wireless, and that the problem could be alleviated by better cooling of the NUC case. Intel later increased the default fan speed for production machines through a BIOS update (downloadable from Intel's web site for "early adopters").
+Regarding power consumption, in their review of the D54250WYK with a Haswell i5-4250, Silent PC Review concluded that "An idle power level of just 6&nbsp;W and typical use power barely into two digits is very impressive in one sense; in another sense, it's what you find in current s using similar components."
+Other companies have subsequently adopted a form factor similar, but not identical, to Intel's NUC. For example,  launched their BRIX series, which attempts to differentiate itself using more powerful components, up to the  processor, which embeds .
+=== Operating system support ===
+NUCs support , as well as many distributions of . Additionally, they have become popular for virtualization with  ; multiple NUCs can be used together to create a home lab for learning purposes. 
+NUCs have also become very popular in the  scene. The pre-Haswell Core i3 and Core i5 NUCs will run  flawlessly. However, certain features, notably audio, are not supported by any available drivers on current models.
+== References ==
+== External links ==
+* Intel: "", accessed 2013-01-20.

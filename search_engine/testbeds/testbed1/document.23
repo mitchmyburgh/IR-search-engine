@@ -1,0 +1,130 @@
+ALGOL_60
+'''ALGOL 60''' (short for '''ALGO'''rithmic '''L'''anguage 19'''60''') is a member of the  family of computer programming languages. It followed on from  which had introduced  and the begin and end pairs for delimiting them.  ALGOL 60 was the first language implementing  definitions with .  It gave rise to many other programming languages, including , , , ,  and .
+ based his own  on ALGOL 60 before moving to develop . Algol-W was intended to be the next generation ALGOL but the  committee decided on a design that was more complex and advanced rather than a cleaned simplified ALGOL 60. The official ALGOL versions are named after the year they were first published. Algol 68 is substantially different from Algol 60 and was criticised partially for being so, so that in general "Algol" refers to dialects of Algol 60.
+==Standardization==
+ALGOL 60  with   were the first languages to seek standardization.
+*  Programming languages  Algol 60 (stabilized)
+*  Hardware representation of ALGOL basic symbols ... (now withdrawn)
+==History==
+ALGOL 60 was used mostly by research computer scientists in the United States and in Europe. Its use in commercial applications was hindered by the absence of standard input/output facilities in its description and the lack of interest in the language by large computer vendors. ALGOL 60 did however become the standard for the publication of algorithms and had a profound effect on future language development.
+ developed the  method of describing programming languages specifically for ALGOL 58. It was revised and expanded by  for ALGOL 60, and at 's suggestion renamed .
+Peter Naur: "As editor of the ALGOL Bulletin I was drawn into the international discussions of the language and was selected to be member of the European language design group in November 1959. In this capacity I was the editor of the ALGOL 60 report, produced as the result of the ALGOL 60 meeting in Paris in January 1960.", 2005
+The following people attended the meeting in Paris (from January 11 to 16):
+* , , , , , , and  (from Europe)
+* , , , , , and  (from the USA).
+Alan Perlis gave a vivid description of the meeting: "The meetings were exhausting, interminable, and exhilarating. One became aggravated when one's good ideas were discarded along with the bad ones of others. Nevertheless, diligence persisted during the entire period. The chemistry of the 13 was excellent."
+ALGOL 60 inspired many languages that followed it.  remarked: "Here is a language so far ahead of its time that it was not only an improvement on its predecessors but also on nearly all its successors." (This statement is sometimes erroneously attributed to , also involved in implementing the first ALGOL 60 .)  The  programming language, a variant of  that adopted the block structure and lexical scope of ALGOL, also adopted the wording "Revised Report on the Algorithmic Language Scheme" for its standards documents in homage to ALGOL.
+===ALGOL 60 implementations timeline===
+To date there have been at least 70 augmentations, extensions, derivations and sublanguages of Algol 60.
+The Burroughs dialects included special Bootstrapping dialects such as  and .
+==Properties==
+ALGOL 60 as officially defined had no I/O facilities; implementations defined their own in ways that were rarely compatible with each other. In contrast, ALGOL 68 offered an extensive library of ''transput'' (ALGOL 68 parlance for Input/Output) facilities.
+ALGOL 60 allowed for two  for  passing: the common , and . Call-by-name has certain effects in contrast to . For example, without specifying the parameters as ''value'' or ''reference'', it is impossible to develop a procedure that will swap the values of two parameters if the actual parameters that are passed in are an integer variable and an array that is indexed by that same integer variable., Section 7.5, and references therein Think of passing a pointer to swap(i, A) in to a function. Now that every time swap is referenced, it's reevaluated. Say i := 1 and A := 2, so every time swap is referenced it'll return the other combination of the values (, ,  and so on). A similar situation occurs with a random function passed as actual argument.
+Call-by-name is known by many compiler designers for the interesting "s" that are used to implement it.  devised the "" to separate compilers that correctly implemented " and non-local references." This test contains an example of call-by-name.
+===ALGOL 60 Reserved words and restricted identifiers===
+There are 35 such reserved words in the standard  sub-language:
+There are 71 such restricted identifiers in the standard Burroughs large systems sub-language: 
+and also the names of all the intrinsic functions.
+====Standard Operators====
+==Examples and portability issues==
+===Code sample comparisons===
+====ALGOL 60====
+ '''procedure''' Absmax(a) Size:(n, m) Result:(y) Subscripts:(i, k);
+     '''value''' n, m; '''array''' a; '''integer''' n, m, i, k; '''real''' y;
+ '''comment''' The absolute greatest element of the matrix a, of size n by m,
+     is transferred to y, and the subscripts of this element to i and k;
+ '''begin'''
+     '''integer''' p, q;
+     y := 0; i := k := 1;
+     '''for''' p := 1 '''step''' 1 '''until''' n '''do'''
+         '''for''' q := 1 '''step''' 1 '''until''' m '''do'''
+             '''if''' abs(a) > y '''then'''
+                 '''begin''' y := abs(a);
+                     i := p; k := q
+                 '''end'''
+ '''end''' Absmax
+Implementations differ in how the text in bold must be written.  The word 'INTEGER', including the quotation marks, must be used in some implementations in place of '''integer''', above, thereby  it as a special keyword.
+Following is an example of how to produce a table using  ALGOL:, the manual for  ALGOL
+  FLOATING POINT ALGOL TEST'
+  BEGIN REAL A,B,C,D'
+ 
+  READ D'
+ 
+  FOR A:= 0.0 STEP D UNTIL 6.3 DO
+  BEGIN
+    PRINT ,L??'
+    B := SIN(A)'
+    C := COS(A)'
+    PRINT ,,,A,B,C'
+  END'
+  END'
+====ALGOL 60 family====
+Since ALGOL 60 had no I/O facilities, there is no portable  in ALGOL.  The following program could (and still will) compile and run on an ALGOL implementation for a Unisys A-Series mainframe, and is a straightforward simplification of code taken from  at the -Dearborn Computer and Information
+Science Department .
+ BEGIN
+   FILE F(KIND=REMOTE);
+    ARRAY E;
+   REPLACE E BY "HELLO WORLD!";
+   WRITE(F, *, E);
+ END.
+A simpler program using an inline format:
+ BEGIN
+   FILE F(KIND=REMOTE);
+   WRITE(F, );
+ END.
+An even simpler program using the Display statement:
+ BEGIN DISPLAY("HELLO WORLD!") END.
+An alternative example, using Elliott Algol I/O is as follows.  Elliott Algol used different characters for "open-string-quote" and "close-string-quote", represented here by  and .
+  '''program''' HiFolks;
+  '''begin'''
+     '''print''' 
+  '''end''';
+Here's a version for the Elliott 803 Algol (A104) The standard Elliott 803 used 5 hole paper tape and thus only had upper case.  The code lacked any quote characters so  (UK Pound Sign) was used for open quote and  (Question Mark) for close quote.  Special sequences were placed in double quotes (e.g. L?? produced a new line on the teleprinter).
+   HIFOLKS'
+   BEGIN
+      PRINT HELLO WORLDL'
+   END'
+The  Algol I/O version allowed input from paper tape or punched card.  Paper tape 'full' mode allowed lower case.  Output was to a line printer. Note use of '(',')' and %.
+   'PROGRAM' (HELLO)
+   'BEGIN'
+      'COMMENT' OPEN QUOTE IS '(', CLOSE IS ')', PRINTABLE SPACE HAS TO
+                BE WRITTEN AS % BECAUSE SPACES ARE IGNORED;
+      WRITE TEXT('('HELLO%WORLD')');
+   'END'
+   'FINISH'
+==See also==
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+==References==
+==Further reading==
+* 
+*  The design of the '''Whetstone Compiler'''. One of the early published descriptions of implementing a compiler. See the related papers: , and  by B. Randell
+==External links==
+*  by Peter Naur, et al. ALGOL definition
+* A BNF  of ALGOL 60
+* &nbsp; Hoare's 1980 ACM Turing Award speech, which discusses ALGOL history and his involvement
+* , a free Algol-to-C translator
+*  Discussion of some implementation issues.
+* 
+* Edinburgh University wrote compilers for Algol60 (later updated for Algol60M) based on their Atlas Autocode compilers initially bootstrapped from the Atlas to the KDF-9. The Edinburgh compilers generated code for the ICL1900, the ICL4/75 (an IBM360 clone), and the ICL2900. Here is the  and the , , and  including  Also there is a rather superficial .
+* 's , among others a link to the NASE Algol-60 interpreter written in C.
+* 
+* Stories of the B5000 and People Who Were There: a dedicated ALGOL computer , 
+* Structure and Use of ALGOL 60, Hermann Bottenbruch 
+*  A Library of Numerical Procedures in ALGOL 60 developed at The Stichting Centrum Wiskunde & Informatica (legal successor of Stichting Mathematisch Centrum) .
+*
