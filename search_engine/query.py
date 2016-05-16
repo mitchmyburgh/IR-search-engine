@@ -76,6 +76,8 @@ def query(query, collection, i):
 
 	# print top ten results
 	result = sorted (accum, key=accum.__getitem__, reverse=True)
-	return result
+	final_result = []
 	for i in range (min (len (result), 10)):
-	   print ("{0:10.8f} {1:5} {2}".format (accum[result[i]], result[i], titles[result[i]]))
+	   #print ("{0:10.8f} {1:5} {2}".format (accum[result[i]], result[i], titles[result[i]]))
+	   final_result.append([accum[result[i]], result[i]])
+	return final_result
