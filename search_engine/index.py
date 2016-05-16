@@ -1,3 +1,7 @@
+# Modified from code provided by Hussein Suleman
+# Search engine indexing code
+# 16 May 2016
+
 import os
 import re
 import sys
@@ -23,7 +27,7 @@ def index(folder_name, i):
 			for line in f.readlines():
 				document += line+" "
 		if (document != ''):
-			data["document."+str(j)] = document 
+			data[str(j)] = document 
 		f.close()
 
 	# document length/title file

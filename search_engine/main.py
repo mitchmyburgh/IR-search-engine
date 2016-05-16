@@ -19,7 +19,10 @@ def create_index():
 
 def run_queries():
 	for i in range(1, 17):
-		index("query", "testbeds/testbed"+str(i), i)
+		for j in range(1, 6):
+			f = open ("testbeds/testbed"+str(i)+"/query."+str(j))
+			query(f.read().replace("\n", ""), "testbed"+str(i), i)
+			f.close()
 
 if __name__ == '__main__':
 	if len(sys.argv)==1:
@@ -28,4 +31,4 @@ if __name__ == '__main__':
 	if (sys.argv[1] == "index"):
 		create_index()
 	elif (sys.argv[1] == "query"):
-		print("query")
+		run_queries()
