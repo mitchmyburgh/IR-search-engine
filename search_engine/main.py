@@ -18,11 +18,25 @@ def create_index():
 	print ("Time taken: "+str(datetime.now() - startTime))
 
 def run_queries():
+	try:
+		os.mkdir ("output")
+	except:
+		pass
 	for i in range(1, 17):
 		for j in range(1, 6):
 			f = open ("testbeds/testbed"+str(i)+"/query."+str(j))
-			query(f.read().replace("\n", ""), "testbed"+str(i), i)
+			result = query(f.read().replace("\n", ""), "testbed"+str(i), i)
 			f.close()
+			f = open ("testbeds/testbed"+str(i)+"/relevance."+str(j))
+			relevance = f.readlines()
+			f.close()
+			while (len(relevance) != 0 and relevance[len(relevance)-1] =="\n"):
+				del relevance[len(relevance)-1]
+			if (len(relevance) != 200):
+				print("That's disapointing. Testbed "+str(i)+" failed for query "+str(j))
+			#for i in range (min (len (result), 10)):
+
+
 
 if __name__ == '__main__':
 	if len(sys.argv)==1:

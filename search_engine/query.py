@@ -12,7 +12,6 @@ import porter
 import parameters
 
 def query(query, collection, i):
-	print(collection+" , "+query)
 	# clean query
 	if parameters.case_folding:
 	   query = query.lower ()
@@ -77,6 +76,6 @@ def query(query, collection, i):
 
 	# print top ten results
 	result = sorted (accum, key=accum.__getitem__, reverse=True)
-	print(result)
+	return result
 	for i in range (min (len (result), 10)):
 	   print ("{0:10.8f} {1:5} {2}".format (accum[result[i]], result[i], titles[result[i]]))
