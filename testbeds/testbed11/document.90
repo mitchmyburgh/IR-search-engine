@@ -1,0 +1,13 @@
+A switched mesh is a wireless mesh network that uses multiple radios to communicate via dedicated mesh backhaul links to each neighboring node in the mesh. Here all of the available bandwidth of each separate radio channel is dedicated to the link to the neighboring node. The total available bandwidth is the sum of the bandwidth of each of the links. Each dedicated mesh link is on a separate channel, ensuring that forwarded traffic does not use any bandwidth from any other link in the mesh. As a result, a switched mesh is capable of much higher capacities and transmission rates than a shared mesh and grows in capacity as nodes are added to the mesh.
+A switched mesh node uses separate access and multiple mesh backhaul radios.
+There are three distinct types of configuration of wireless mesh networking products in the market today. In the first type one radio provides both backhaul (packet relaying) and client services (access to a laptop). In the second type one radio relays packets over multiple hops while another provides client access. This significantly improves backhaul bandwidth and latency. The third type uses two or more radios for the backhaul for higher bandwidth and low latency. Third generation wireless mesh networking products are replacing previous generation products as more demanding applications like voice and video need to be relayed over many hops of the mesh network.
+
+
+== See also ==
+Shared mesh
+Mesh networking
+Wireless mesh networking
+IEEE 802.11
+802.16
+Wireless LAN
+Wi-Fi

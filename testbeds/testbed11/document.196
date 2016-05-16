@@ -1,0 +1,43 @@
+TCP/IP stack fingerprinting is the passive collection of configuration attributes from a remote device during standard layer 4 network communications. The combination of parameters may then be used to infer the remote machine's operating system (aka, OS fingerprinting), or incorporated into a device fingerprint.
+
+
+== TCP/IP Fingerprint Specifics ==
+Certain parameters within the TCP protocol definition are left up to the implementation. Different operating systems, and different versions of the same operating system, set different defaults for these values. By collecting and examining these values, one may differentiate among various operating systems, and implementations of TCP/IP. The TCP/IP fields that may vary include the following:
+Initial packet size (16 bits)
+Initial TTL (8 bits)
+Window size (16 bits)
+Max segment size (16 bits)
+Window scaling value (8 bits)
+"don't fragment" flag (1 bit)
+"sackOK" flag (1 bit)
+"nop" flag (1 bit)
+These values may be combined to form a 67-bit signature, or fingerprint, for the target machine. Just inspecting the Initial TTL and window size fields is often enough in order to successfully identify an operating system, which eases the task of performing manual OS fingerprinting.
+
+
+== Protection against and detecting fingerprinting ==
+Protection against the fingerprint doorway to attack is achieved by limiting the type and amount of traffic a defensive system responds to. Examples include blocking address masks and timestamps from outgoing ICMP control-message traffic, and blocking ICMP echo replies. A security tool can alert to potential fingerprinting: it can match another machine as having a fingerprinter configuration by detecting its fingerprint.
+Disallowing TCP/IP fingerprinting provides protection from vulnerability scanners looking to target machines running a certain operating system. Fingerprinting facilitates attacks. Blocking those ICMP messages is only one of an array of defenses required for full protection against attacks.
+Targeting the ICMP datagram, an obfuscator running on top of IP in the internet layer acts as a "scrubbing tool" to confuse the TCP/IP fingerprinting data. These exist for MS Windows, Linux and FreeBSD,.
+
+
+== Fingerprinting tools ==
+A list of TCP/OS Fingerprinting Tools
+Ettercap – passive TCP/IP stack fingerprinting.
+NetworkMiner – passive DHCP and TCP/IP stack fingerprinting (combines p0f, Ettercap and Satori databases)
+Nmap – comprehensive active stack fingerprinting.
+p0f – comprehensive passive TCP/IP stack fingerprinting.
+NetSleuth – free passive fingerprinting and analysis tool
+PacketFence – open source NAC with passive DHCP fingerprinting.
+PRADS – Passive comprehensive TCP/IP stack fingerprinting and service detection
+Satori – passive CDP, DHCP, ICMP, HPSP, HTTP, TCP/IP and other stack fingerprinting.
+SinFP – single-port active/passive fingerprinting.
+XProbe2 – active TCP/IP stack fingerprinting.
+Device Fingerprint Website - Displays the passive TCP SYN fingerprint of your browser's computer (or intermediate proxy)
+queso - well-known tool from the late 1990s which is no longer being updated for modern operating systems
+
+
+== References ==
+
+
+== External links ==
+Remote OS detection via TCP/IP Stack FingerPrinting (2nd Generation)

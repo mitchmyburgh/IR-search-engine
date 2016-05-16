@@ -1,0 +1,23 @@
+A directory information tree (DIT) is data represented in a hierarchical tree-like structure consisting of the Distinguished Names (DNs) of directory service entries.
+Both the X.500 protocols and the Lightweight Directory Access Protocol (LDAP) use directory information trees as their fundamental data structure.
+Typically, an X.500 or LDAP deployment for a single organization will have a directory information tree that consists of two parts:
+a top level name structure for the name of the organization itself
+a representation of the data model structure within the organization
+
+
+== Top level naming ==
+The top level of a directory information tree frequently represent political and geographic divisions.
+The original assumption of X.500 was that all directory servers would be interconnected to form a single, global namespace. The entries at the top level of the tree corresponded to countries, identified by their ISO 3166 two letter country code. The entries subordinate to a country's entry would correspond to states or provinces, and national organizations. The naming system for a particular country was determined by that country's national standards body or telecommunications provider.
+A limitation of the original directory information tree structure was the assumption that applications searching for an entry in a particular organization would navigate the directory tree by first browsing to the particular country where that organization was based, then to the region where that organization was based, then locate the entry for the organization itself, and then search within that organization for the entry in question. The desire to support searching more broadly for an individual person when all the particulars of that person's location or organization were not known led to experiments in directory deployment and interconnection, such as the Common Indexing Protocol.
+Today, most LDAP deployments, and in particular Active Directory deployments, are not interconnected into a single global naming space, and do not use national country codes as the basis for naming. Instead, these deployments follow a directory structure which at the top level mirrors that of the Domain Name System, as described by RFC 2247. For example, the entry for an organization with domain name "example.com" would have a distinguished name of "dc=example, dc=com", and all entries in that organization's directory information tree would contain that distinguished name suffix.
+
+
+== Organizational structure ==
+The elements of an organization represented in the directory (e.g., people, roles, or devices) in a DIT may be modeled by a variety of techniques. The determining factors include:
+requirements of the applications which will be searching and updating the directory
+the requirement to provide a unique name for each entry
+the desire for stability of the directory structure
+the desire for human-readability of the Distinguished Names of entries in the directory
+the ease of importing data into the directory from existing databases and other directories
+Early deployments of X.500 within corporations and institutions with entries representing the employees of those organizations often used a DIT structure which mirrored the organizational structure, with organizational unit entries corresponding to departments or divisions of the organization. The relative distinguished names of the entries for employees were often formed from the common names of the individual employees. An example DN of an early X.500/LDAP deployment might be "cn=Joe Bloggs, ou=Marketing, ou=Operations, o=Example Corporation, st=CA, c=US". The disadvantage of this approach is that it when the organizational structure is changed, or if employees change their legal name, it can require the moving or renaming of entries in the directory, which adds both complexity and overhead and can also upset applications not designed to deal gracefully with such moves.
+Today, many large deployments of X.500 or LDAP use a single, flat namespace for the entries, and choose to name the entries for individuals based on a relative distinguished name that is an organizationally-assigned identifier, such as a username or an employee number. Today, a DN might resemble "uid=00003,ou=People, dc=example, dc=com". The advantage of this structure is that entries need not be moved even when employees change their name, or are transferred to different departments. These changes can be effected through just an attribute modification, and applications which may be using the DN as a unique identifier (e.g. in a database) do not need to be touched.

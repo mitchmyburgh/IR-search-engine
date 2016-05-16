@@ -1,0 +1,354 @@
+
+
+# Nanotechnology Now
+
+  * About Us
+    * Advertising
+    * Our Mission
+    * Our Team
+    * Comments
+    * Friends
+    * Contact
+  * Nanotechnology
+  * News
+    * Current News
+    * Press Releases
+    * Submit Press
+    * Press kit
+    * Interviews
+  * Columns
+  * Products
+    * Our Products
+    * Books
+    * Featured Books
+  * Directories
+    * Companies/Academic
+    * Events
+    * Glossary
+    * Best Of
+  * Career Center
+  * Nano-Social Network
+  * Nano Consulting
+  * My Account
+
+**Our NanoNews Digest Sponsors**   
+  
+  
+  
+  
+  
+  
+
+  
+
+Home &gt; Press &gt; Advance may make quantum computing more practical:
+Feedback technique used on diamond 'qubits' could make quantum computing more
+practical  
+  
+---  
+**Instead of having a classical controller to implement the feedback, we now use a quantum controller, Paola Cappellaro (pictured) explains. Because the controller is quantum, I dont need to do a measurement to know whats going on.   
+  
+Photo: Jose Mandojana**  
+  
+**Abstract:**  
+Quantum computers are largely hypothetical devices that could perform some
+calculations much more rapidly than conventional computers can. They exploit a
+property called superposition, which describes a quantum particle's
+counterintuitive ability to, in some sense, inhabit more than one physical
+state at the same time.
+
+## Advance may make quantum computing more practical: Feedback technique used
+on diamond 'qubits' could make quantum computing more practical
+
+Cambridge, MA | Posted on April 7th, 2016
+
+But superposition is fragile, and finding ways to preserve it is one of the
+chief obstacles to developing large, general-purpose quantum computers. In
+today's Nature, MIT researchers describe a new approach to preserving
+superposition in a class of quantum devices built from synthetic diamonds. The
+work could ultimately prove an important step toward reliable quantum
+computers.  
+  
+In most engineering fields, the best way to maintain the stability of a
+physical system is feedback control. You make a measurement -- the current
+trajectory of an airplane, or the temperature of an engine -- and on that
+basis produce a control signal that nudges the system back toward its desired
+state.  
+  
+The problem with using this technique to stabilize a quantum system is that
+measurement destroys superposition. So quantum-computing researchers have
+traditionally had to do without feedback.  
+  
+"Typically, what people do is to use what's called open-loop control," says
+Paola Cappellaro, the Esther and Harold Edgerton Associate Professor of
+Nuclear Science and Engineering at MIT and senior author on the new paper.
+"You decide a priori how to control your system and then apply your controller
+and hope for the best -- that you knew enough about your system that the
+control you applied will do what you thought it should. Feedback should be
+more robust, because it lets you adapt to what's going wrong."  
+  
+In the Nature paper, Cappellaro and her former PhD student Masashi Hirose, who
+graduated last year and is now with McKinsey and Company in Tokyo, describe a
+feedback-control system for maintaining quantum superposition that requires no
+measurement. "Instead of having a classical controller to implement the
+feedback, we now use a quantum controller," Cappellaro explains. "Because the
+controller is quantum, I don't need to do a measurement to know what's going
+on."  
+  
+Vacant expression  
+  
+Cappellaro and Hirose's system uses a so-called nitrogen-vacancy center in
+diamond. A pure diamond consists of carbon atoms arranged in a regular
+latticework structure. If a carbon nucleus is missing from the lattice where
+one would be expected, that's a vacancy. If a nitrogen atom takes the place of
+a carbon atom in the lattice, and it happens to be adjacent to a vacancy,
+that's a nitrogen-vacancy (NV) center.  
+  
+Associated with every NV center is a group of electrons from the adjacent
+atoms, which, like all electrons, have a property called spin that describes
+their magnetic orientation. When subjected to a strong magnetic field -- from,
+say, a permanent magnet positioned above the diamond -- an NV center's
+electronic spin can be up, down, or a quantum superposition of the two. It can
+thus represent a quantum bit, or "qubit," which differs from an ordinary
+computer bit in its ability to take on not just the values 1 or 0, but both at
+the same time.  
+  
+NV centers have several advantages over other candidate qubits. They're an
+intrinsic feature of a physical structure, so they dispense with the complex
+hardware for trapping ions or atoms that other approaches require. And NV
+centers are natural light emitters, which makes it relatively easy to read
+information from them. Indeed, the light particles emitted by an NV center may
+themselves be in superposition, so they provide a way to move quantum
+information around.  
+  
+Local control  
+  
+Like electrons, atomic nuclei have spin, and Cappellaro and Hirose use the
+spin state of the nitrogen nucleus to control the NV center's electronic spin.
+First, a dose of microwaves puts the electronic spin into superposition. Then
+a burst of radio-frequency radiation puts the nitrogen nucleus into a
+specified spin state.  
+  
+A second, lower-power dose of microwaves "entangles" the spins of the nitrogen
+nucleus and the NV center, so that they become dependent on each other. At
+this point, the NV qubit could, together with other qubits, be enlisted to
+perform a computation. But in their experiments, Cappellaro and Hirose were
+evaluating a single qubit, so they could test only the most rudimentary
+computational operation: the not gate, which flips a bit's value.  
+  
+Because the spins of the nitrogen nucleus and the NV center are entangled, if
+anything goes wrong during the computation, it will be reflected in the spin
+of the nitrogen nucleus.  
+  
+After the computation is performed, a third dose of microwaves -- whose
+polarization is rotated relative to that of the second -- disentangles the
+nucleus and the NV center. The researchers then subject the system to a final
+sequence of microwave exposures. Those exposures are calibrated, however, so
+that their effect on the NV center depends on the state of the nitrogen
+nucleus. If an error crept in during the computation, the microwaves will
+correct it; if not, they'll leave the NV center's state unaltered.  
+  
+In experiments, the researchers found that, with their feedback-control
+system, an NV-center quantum bit would stay in superposition about 1,000 times
+as long as it would without it.
+
+####
+
+**For more information, please click here**
+
+**Contacts:**  
+Abby Abazorius  
+  
+617-253-2709
+
+Copyright (C) Massachusetts Institute of Technology
+
+If you have a comment, please Contact us.
+
+Issuers of news releases, not 7th Wave, Inc. or Nanotechnology Now, are solely
+responsible for the accuracy of the content.
+
+**Bookmark:**  
+
+**Related News Press**  
+---  
+  
+**News and information**
+
+Engineers create a better way to boil water -- with industrial, electronics
+applications May 5th, 2016
+
+Clues on the path to a new lithium battery technology: Charging produces
+highly reactive singlet oxygen in lithium air batteries May 5th, 2016
+
+Unique nano-capsules promise the targeted drug delivery: Russian scientists
+created unique nano-capsules for the targeted drug delivery May 5th, 2016
+
+Molybdenum disulfide holds promise for light absorption: Rice researchers
+probe light-capturing properties of atomically thin MoS2 May 5th, 2016
+
+**Quantum Physics**
+
+A compact, efficient single photon source that operates at ambient
+temperatures on a chip: Highly directional single photon source concept is
+expected to lead to a significant progress in producing compact, cheap, and
+efficient sources of quantum information bits for future appls May 3rd, 2016
+
+An Experiment Seeks to Make Quantum Physics Visible to the Naked Eye May 3rd,
+2016
+
+Quantum sensors for high-precision magnetometry of superconductors May 3rd,
+2016
+
+**Physics**
+
+An Experiment Seeks to Make Quantum Physics Visible to the Naked Eye May 3rd,
+2016
+
+Quantum sensors for high-precision magnetometry of superconductors May 3rd,
+2016
+
+**Possible Futures**
+
+Engineers create a better way to boil water -- with industrial, electronics
+applications May 5th, 2016
+
+Clues on the path to a new lithium battery technology: Charging produces
+highly reactive singlet oxygen in lithium air batteries May 5th, 2016
+
+Unique nano-capsules promise the targeted drug delivery: Russian scientists
+created unique nano-capsules for the targeted drug delivery May 5th, 2016
+
+Molybdenum disulfide holds promise for light absorption: Rice researchers
+probe light-capturing properties of atomically thin MoS2 May 5th, 2016
+
+**Chip Technology**
+
+Engineers create a better way to boil water -- with industrial, electronics
+applications May 5th, 2016
+
+Molybdenum disulfide holds promise for light absorption: Rice researchers
+probe light-capturing properties of atomically thin MoS2 May 5th, 2016
+
+A compact, efficient single photon source that operates at ambient
+temperatures on a chip: Highly directional single photon source concept is
+expected to lead to a significant progress in producing compact, cheap, and
+efficient sources of quantum information bits for future appls May 3rd, 2016
+
+Spintronics for future information technologies: Spin currents in topological
+insulators controlled May 2nd, 2016
+
+**Quantum Computing**
+
+A compact, efficient single photon source that operates at ambient
+temperatures on a chip: Highly directional single photon source concept is
+expected to lead to a significant progress in producing compact, cheap, and
+efficient sources of quantum information bits for future appls May 3rd, 2016
+
+Spintronics for future information technologies: Spin currents in topological
+insulators controlled May 2nd, 2016
+
+Researchers create a first frequency comb of time-bin entangled qubits:
+Discovery is a significant step toward multi-channel quantum communication and
+higher capacity quantum computers April 28th, 2016
+
+Superfast light source made from artificial atom April 28th, 2016
+
+**Discoveries**
+
+Engineers create a better way to boil water -- with industrial, electronics
+applications May 5th, 2016
+
+Unique nano-capsules promise the targeted drug delivery: Russian scientists
+created unique nano-capsules for the targeted drug delivery May 5th, 2016
+
+Molybdenum disulfide holds promise for light absorption: Rice researchers
+probe light-capturing properties of atomically thin MoS2 May 5th, 2016
+
+The intermediates in a chemical reaction photographed 'red-handed' Researchers
+at the UPV/EHU-University of the Basque Country have for the first time
+succeeded in imaging all the steps in a complex organic reaction and have
+resolved the mechanisms that explain it May 4th, 2016
+
+**Announcements**
+
+Engineers create a better way to boil water -- with industrial, electronics
+applications May 5th, 2016
+
+Clues on the path to a new lithium battery technology: Charging produces
+highly reactive singlet oxygen in lithium air batteries May 5th, 2016
+
+Unique nano-capsules promise the targeted drug delivery: Russian scientists
+created unique nano-capsules for the targeted drug delivery May 5th, 2016
+
+Molybdenum disulfide holds promise for light absorption: Rice researchers
+probe light-capturing properties of atomically thin MoS2 May 5th, 2016
+
+**Interviews/Book Reviews/Essays/Reports/Podcasts/Journals/White papers**
+
+Engineers create a better way to boil water -- with industrial, electronics
+applications May 5th, 2016
+
+Clues on the path to a new lithium battery technology: Charging produces
+highly reactive singlet oxygen in lithium air batteries May 5th, 2016
+
+Unique nano-capsules promise the targeted drug delivery: Russian scientists
+created unique nano-capsules for the targeted drug delivery May 5th, 2016
+
+Molybdenum disulfide holds promise for light absorption: Rice researchers
+probe light-capturing properties of atomically thin MoS2 May 5th, 2016  
+  
+---  
+|  The latest news from around the world, FREE  
+|  
+  
+  
+
+  
+  
+---  
+**  Premium Products**  
+|  Only the news you want to read!  
+ Learn More |  
+|  University Technology Transfer & Patents  
+ Learn More |  
+|  Full-service, expert consulting  
+ Learn More |  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+Nanotechnology Now Featured Books  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+(C) Copyright 1999-2015 7th Wave, Inc. All Rights Reserved
+
+PRIVACY POLICY :: CONTACT US :: STATS :: SITE MAP :: **ADVERTISE**  
+
+  
+  
+

@@ -1,0 +1,335 @@
+Marquis de Geek
+
+  * Home
+  * Projects Categories
+    * Lego
+    * Magic
+    * Maker
+    * Words
+    * Games
+    * HTML5
+    * Code Libraries
+    * iOS Work
+    * Random Geek Out
+    *     * Major Projects
+  * External Projects
+    * Minerva Home Automation
+    * SGX Game Engine
+    * Code With Bolt
+    * Simply 121
+    * The Beer Crate
+    * LEGO Punk
+    * James Merlin
+    * Em.ulat.es
+  * See me on...
+    * Twitter
+    * Instructables
+    * Flickr
+    * Freecode
+    * GitHub
+    * LinkedIn
+    * IMDB
+    * iTunes
+    * YouTube
+  * Contact
+    * T: @MarquisdeGeek
+    * e: marquisdegeek@gmail.com
+  * 
+
+# CodingQuBit (2001)
+
+### QuBit is a library to support Quantum Superpositions in C++. This allows
+each _CQuBit_ variable to hold a number of different values _at the same
+time_. Normal mathematical operations can be performed on a QuBit, but they
+affect every value in the QuBit, _at the same time_. Binary Operations on two
+QuBits cause a result based on _every_ possible outcome.
+
+  
+
+##  Watch the lecture at FOSDEM 2010
+
+  
+
+##  Example of QuBit
+
+a = { 1, 2, 3 };| b = a + 10;| b = { 11, 12, 13 };  
+---|---|---  
+a = { 2, 4, 6 }; b = { 10 ,100 ,1000 };| c = a * b;| c = { 20, 40, 60, 200,
+400, 600, 2000, 4000, 6000 };  
+_This is pseudo-code for demonstrative purposes only! The C++ comes later!_
+
+Each value can only exist in a QuBit once. There is no 'weighting' applied if
+a value is added several times.
+
+Comparisons with a QuBit also occur with all the values _at the same time_.
+This means a search is simply,
+
+` qb = (1,2,3,4,5);  
+if qb eq 5 print "There's a '5' in the QuBit, somewhere!"  
+`
+
+  
+
+##  Quantum Stuff
+
+The above examples demonstrate the basic functionality of QuBit. It's not
+significantly more complex than 'sets'. However, there are a few functions
+that take the extra step into 'gaga' land!
+
+A QuBit can be in three possible states:
+
+  * Disjunctive
+  * Conjunctive
+  * Collapsed
+
+  
+
+###  Disjunctive
+
+All states are considered when performing arithmetic (at the same time,
+remember!), but this not necessarily true of comparisons. A disjunctive QuBit
+will consider that if _any_ of the individual comparisons evaluate to 'true',
+the whole expression will evaluate to 'true'. In psuedo-code:
+
+if any{10,15,20,25} < 20 then print "At least one of these numbers is lower
+than 20"  
+  
+
+###  Conjunctive
+
+Here, a comparison will evaluate to 'true' if _all_ it's individual values
+evaluate to 'true'. In psuedo-code:
+
+if all{10,15,20,25} < 20 then print "All of these numbers are lower than 20"  
+  
+
+###  Collapsed
+
+This occurs ofter a comparison has been made. The QuBit has exhausted all it's
+superpositions to produce the result, and is consequently empty. It does,
+however, contain a 'true' or 'false' value, dependent on the result. (You'll
+see how this boolean result is obtained later)
+
+  
+
+###  Eigenstates
+
+A collapsed quantum state is useful - but not that useful! It might be useful
+to know that there is (at least) one number less than 20 in a particular case,
+but it would be _more_ useful to know _which_ numbers are less than 20. To
+find this information, we use the eigenstates of the QuBit. Pseudo-code,
+anyone?
+
+v = any{10,15,20,25} < 20  
+if v then print "Those numbers less than 20 are " eigenstates(v)  
+  
+
+##  Declaring and Using a QuBit
+
+We now turn to the actual C++ code require to perform these Quantum miracles!
+QuBit is, itself, a template and is therefore created with:
+
+`CQuBit<float> q;`  
+
+This declares a Quantum superposition called 'q', consisting of floating point
+numbers. To add or remove values to this variable, you may use the following
+functions:
+
+`  q.Add(10); // Add '10'  
+ q.Add(2); // Add '2'  
+ q.AddRange(100,200); // Add every number from '100' to '200', inclusive  
+ q.AddRange(10,11,0.1f); // Add every number from '10' to '11' in steps of
+'0.1'  
+ q.Remove(10.5f); // Remove the number '10.5'  
+  
+` You can also construct a QuBit, using the ranged constructor,  
+`CQuBit<float> q(100,200); // exactly the same as example three above`  
+
+Use of QuBit is the same as any other variable. Since all (see note below)
+operators are overloaded you can write natural looking code, such as 'a+b', or
+'a/=2'. You can use binary operations (such as additional or multiplication)
+with either one CQuBit and one float, or two CQuBits, as you see fit. Note
+restrictions.
+
+  
+
+##  Quantum-Orientated Member Functions
+
+Having created a quantum superposition (with either `Add` or `AddRange`), it
+is now time to use it. Looking at the examples above, we can find if any value
+is less than 20 with this code.
+
+` CQuBit<float> q(10,25,5);  
+CQuBit<float> ans;  
+  
+ ans = q.Any() < 20;  
+ if (ans.GetBoolResult()) cout << "At least one of these numbers is lower than
+20";  
+`
+
+The QuBit can also be treated as a disjunctive with the code `q.Any();`,
+allowing you to re-write the above thus:
+
+` CQuBit<float> q(10,25,5);  
+CQuBit<float> ans;  
+  
+ q.Any();  
+ ans = q < 20;  
+ if (ans.GetBoolResult()) cout << "At least one of these numbers is lower than
+20";  
+`
+
+Although the results of the comparison (i.e. q < 20) is boolean, the C++
+version of the library forces the result type to be a CQuBit. You then
+determine whether it collapsed to 'true' or 'false' with the 'GetBoolResult()'
+member function. This is to allow retrieval of the eigenstates (if only a bool
+were returned this information would get lost). Using eigenstatees to find
+those values less than 20, one can use:
+
+` CQuBit<float> q(10,25,5);  
+CQuBit<float> ans;  
+  
+ q.Any();  
+ ans = q < 20;  
+ if (ans.GetBoolResult()) cout << "These numbers are lower than 20: " <<
+ans.Eigenstates();  
+`
+
+The `Eigenstates` function returns a QuBit itself, so could be applied to
+further calculations.
+
+_Note:_Eigenstates could have been implemented in a similar fashion to PERL,
+with a cache storing the result of the last comparison operation. However, as
+it didn't feel very 'C' to be using global variables in this manner, so I
+adopted a QuBit return type, and 'GetBoolResult' to retrieve the comparisons'
+result. (Technically speaking this might also be considered storing a global!)
+
+`All` is used in exactly the same manner as above. Only the results differ
+(obviously!).
+
+` CQuBit<float> q(10,25,5);  
+CQuBit<float> ans;  
+  
+ q.All();  
+ ans = q < 20;  
+ if (ans.GetBoolResult()) cout << "All of these numbers are lower than 20: ";  
+`  
+_Streams_
+
+The output stream produces space delimitted list of the states, enclosed in
+braces.
+
+` CQuBit<float> q;  
+ q.AddRange(15,20);  
+ cout << q;  
+` _produces_ { 15 16 17 18 19 20 }  
+
+The input stream, will read this format into the QuBit, and leave the stream
+pointer immediately after the closing brace.
+
+  
+  
+
+##  Set-Orientated Member Functions
+
+The `Any` and `All` methods have another function: set manipulation. Recall
+that QuBits is basically an implementation of set handling. Also recall, that
+`Any` is disjunctive. So, if _any_ of {1,2,3} is combined with _any_ of
+{4,5,6}, the result is a union; {1,2,3,4,5,6}. Written in code, this would be:
+
+` CQuBit<float> q1(1,3);  
+CQuBit<float> q2(4,6);  
+CQuBit<float> ans;  
+  
+ ans.Any(q1, q2); // The result is {1,2,3,4,5,6}  
+`
+
+_Note:_ QuBit ignores the type of original quantum states. So in this case,
+`q1` and `q2` could be conjunctive or disjunctive, the answer would be
+identical in both cases. All collapsed QuBits are ignored
+
+Well, `Any` is union, it should be obvious what `All` (the conjunctive state)
+should be! One brownie point to everyone who said 'intersection'. The
+resultant QuBit features only those values present in _both_ of the original
+superpositions.
+
+` CQuBit<float> q1(1,6);  
+CQuBit<float> q2(4,5);  
+CQuBit<float> ans;  
+  
+ ans.All(q1, q2); // The result is {4,5}  
+`
+
+  
+
+##  Sample Code
+
+Here are a number of small examples (all available for download in the zip
+file below). I have given the PERL code also, to show linage, as well as to
+provide a parallel for those familar with the language, or the
+Quantum::Superpositions library available.
+
+Function| PERL| C++ (using QuBit)  
+---|---|---  
+min| `eigenstates(any() <= all())`| `(ql.Any() <= ql.All()).Eigenstates()`  
+max| `eigenstates(any() >= all())`| `(ql.Any() >= ql.All()).Eigenstates()`  
+IsPrime| `==2 || % all(2..sqrt()+1) != 0`|  ` if (i==2) return true;  
+prime.AddRange(2, sqrt(i)+1);  
+ans = (i % prime.All()) != 0;  
+return ans.GetBoolResult();`  
+  
+factor| ` = / any(2..-1);  
+eigenstates(floor()==);`| `CQuBit<float> n, q;`  
+  
+` n.AddRange(2, i-1);  
+q = i/n.Any();  
+q = q.Floor()==q;  
+return q.Eigenstates();`  
+  
+  
+  
+
+##  Limitations
+
+QuBits are only concerned with values. Therefore, the return value from post
+and pre decrement operators are identical. i.e. _a++_ and _++a_, are the same
+as _a++_. This **doesn't** mean that _a++_ and _++a_ are different, just that
+the return type from _a++_ is a value (as it should be), but _++a_ is **not**
+a reference to the _a_ variable, as you might expect.
+
+a = {1,2,3}| b = a++;| a = {2,3,4}; b = {1,2,3};  
+---|---|---  
+a = {1,2,3}| b = ++a;| a = {2,3,4}; b = {2,3,4};  
+  
+Some compilers (noticable Microsoft's!) refuse to compile this code as is. To
+help those poor unfortunates, I've removed a couple of the friend functions
+with an _#if 0_. Namely,
+
+  * friend CQuBit<_T> operator+(const _T &amp;a;, const CQuBit<_T> &amp;b;)
+  * friend CQuBit<_T> operator*(const _T &amp;a;, const CQuBit<_T> &amp;b;)
+  * friend CQuBit<_T> operator-(const _T &amp;a;, const CQuBit<_T> &amp;b;)
+
+These prevent compilation of code such as, _q2 = 5 * q1_. This means you'll
+have to re-write your code by swapping the arguments over, or by creating a
+QuBit containing one entry. The code works, however.
+
+The set of operators catered for are:
+
+!| ~| -| %| %=| &| &=| &&|  
+---|---|---|---|---|---|---|---|---  
+*| *=| +| +=| -| -=| /| /=| &lt;&lt;  
+&lt;&lt;=| &gt;&gt;| &gt;&gt;=| =| ^| ^=| || |=| ||  
+++ (pre and post)| \-- (pre and post)| &lt;| &lt;=| &gt;| &gt;=| ==| !=|  
+Notes: &gt;&gt; &amp; &lt;&lt; are also handled for streams.  
+The array operator ([]) is overloaded to retrieve individual state values,
+i.e. if a={10,20,30}, then a[0]=10, a[1]=20 and a[2]=30.  
+
+  
+
+##  Download
+
+The full source to QuBit is still available!
+
+Sitemap. All site content is Copyright 2013-2015 by Steven Goodwin. Design
+elements are 2012, Metro UI CSS (C) by Sergey Pimenov
+

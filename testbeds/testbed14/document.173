@@ -1,0 +1,116 @@
+Introduction
+Description logics (DLs) are a family of knowledge representation formalisms suitable
+for representing the terminological knowledge in a wide range of applications
+[BCM+03]. The Tableaux algorithm [BS01] is a general technique for deciding the
+concept satisfiability problems in description logics. Historically, the tableaux algorithm
+provides an algorithmic framework that is parametric with respect to language
+constructors and is useful for studying both correctness and complexity of concrete
+decision procedures [DLNS96, BHLW03].
+1.1 Background
+Description logics were designed as an extension to frames [Min85] and semantic
+networks [LL00], which were criticized as “not equipped with logic-based semantics”
+[BCM+03]. Description logics were given their current name in late 1980s. Prior to
+this they were called, among others, terminological systems and concept languages.
+The research about finding the right “fragments” that are both expressive for applications and “practical” for computation can be found in [Baa90, DLNS94, Sat96,
+BCM+03]. The computational properties of various description formalisms have been
+thoroughly investigated in the literature, e.g., [DLNN91]. The name description logic,
+on the one hand, refers to concept descriptions used to describe a domain and, on
+the other hand, to the logic-based semantics which can be given by a translation into
+first-order predicate logic [BCM+03]. Notably, today description logic has become a
+cornerstone of several areas for its use in the design of ontologies, e.g., the Semantic
+Web, the DL-based software information system (SIS), practical software engineering,
+etc.
+There are various implemented DL systems based on tableaux algorithms, offering
+a palette of description formalisms with different expressive power. In the history,
+the first DL-like system was KL-ONE [BS85]. KRIS [BHNP94] is one of the first
+description logic reasoners that implemented a highly optimized tableaux algorithm.
+A worst-case optimal tableau-based procedure for the concept satisfiability problem
+of the DL ALC was first given in [DM00] in details. The proposed global sub-tableaux
+caching technique is quite influential on practical tableau-based DL systems. Dozens
+of different tableau-based DL systems1, with sophisticated optimization techniques,
+have been implemented since the mid-1980s.
+1.2 Syntax and Semantics
+The fundamental representation unit of description logics is the so-called concept description.
+In the literature, a concept description is also called a concept expression
+1A list of DL reasoners is maintained at http://www.cs.man.ac.uk/˜sattler/reasoners.html.
+2
+or a concept formula, but the most common name is its abbreviation concept. Concepts
+are built from atomic concept names (and individual names called nominals)
+using certain constructors, e.g., the common boolean operators2 such as  (for “conjunction”),
+and  (for “disjunction”), and ¬ (for “negation”), and others with more
+description logic flavor. Concepts can be used at the conceptual level for describing
+terminological knowledge, e.g., the terminological axioms of a Tbox. Concepts can
+also be used at the assertional level for describing knowledge of individuals. In Section
+1.3.2, we will introduce the notion of Abox individuals.
+In the following, we review the DL SHOIQ proposed in [HS05, HS07]. Formally,
+concepts are inductively defined through a set of concept constructors, starting with
+a set NC of concept names (and with a special nominal set NO) and a set NR of role
+names. The available concept constructors determine the expressiveness of the DL.
+Definition 1. (Concept) Let NC, NO, and NR be pair-wise disjoint sets of concept
+names, nominals, and role names. Atoms are defined as the union of NC and NO,
+i.e., NAtom = NC ∪ NO. NR ∪ {R−|R ∈ NR} is the set of roles. R− stands for the
+inverse of a role name R. The set of (well-formed) SHOIQ concepts is the set such
+that:
+• each A ∈ NAtom is a SHOIQ-concept; and
+• if C and D are SHOIQ-concept formulae, R a role, and n a non-negative integer
+number, then ¬C, C  D, C  D, ∃R.C, ∀R.C, (∃≥n R.C) and (∃≤n R.C) are
+also SHOIQ-concepts.
+2A DL that provides all the boolean operators is called propositionally closed. DLs that are not
+propositionally closed are called sub-boolean DLs (e.g., the EL-family [BBL05] DLs).
+3
+∃R.C is called the existential restriction, ∀R.C the universal restriction, (∃≥n R.C)
+the at-least restriction, and (∃≤n R.C) the at-most restriction. They are generally
+called modal constraints. We use  for denoting A  ¬A, and ⊥ for A  ¬A.
+The semantics of description logics is defined by interpreting concepts as sets of individuals
+and roles as sets of pairs of individuals.
+Definition 2. (Interpretation) An interpretation I = (ΔI, .I) consists of a nonempty
+set ΔI, called the interpretation domain, and a mapping .
+I which associates
+with each A ∈ NAtom a set AI ⊆ ΔI, and with each role name R a binary relation
+RI ⊆ ΔI × ΔI. The interpretation is defined as follows:
+• (C  D)I = CI ∩ DI
+• (C  D)I = CI ∪ DI
+• ¬CI = ΔI \ CI
+• (∃R.C)I = {d ∈ ΔI|∃e ∈ ΔI with (d, e) ∈ RI and e ∈ CI}
+• (∀R.C)I = {d ∈ ΔI| for all e ∈ ΔI, if (d, e) ∈ RI then e ∈ CI}
+• (∃≥n R.C)I = {d ∈ ΔI|{e ∈ CI|(d, e) ∈ RI} ≥ n}
+• (∃≤n R.C)I = {d ∈ ΔI|{e ∈ CI|(d, e) ∈ RI} ≤ n}
+• for o ∈ NO, oI = {o ∈ ΔI} and {o ∈ ΔI} = 1
+• for a role R, (a, b) ∈ RI iff (b, a) ∈ (R−)I
+• for a transitive role S, (a, b) ∈ SI ∧ (b, c) ∈ SI ⇒ (a, c) ∈ SI
+4
+An element d ∈ CI is called an instance of concept C. For two elements d and e, if
+(d, e) ∈ RI, then e is called an R-neighbor of d, and d is called an R−-neighbor of e.
+Note that a nominal is interpreted as a singleton set (i.e., its cardinality is 1).
+Definition 3. (Satisfiability, Subsumption, Equivalence, Disjointness) A concept
+description D subsumes a concept description C (written C  D) iff CI ⊆ DI
+for all interpretations I. We say that C is satisfiable iff there exists an interpretation
+I such that CI = ∅; C and D are equivalent iff CI ⊆ DI and DI ⊆ CI for each I;
+C and D are disjoint iff CI ∩ DI = ∅ for all I.
+As stated in [BCM+03], we have the following three propositions.
+Proposition 4. (Reduction to Subsumption) For concepts C and D:
+• C is unsatisfiable ⇔ C  ⊥;
+• C and D are equivalent ⇔ C  D and D  C;
+• C and D are disjoint ⇔ C  D  ⊥.
+Proposition 5. (Reduction to Unsatisfiability) For concepts C and D:
+• C is subsumed by D ⇔ C  ¬D is unsatisfiable;
+• C and D are equivalent ⇔ both (C  ¬D) and (¬C  D) are unsatisfiable;
+• C and D are disjoint ⇔ C  D is unsatisfiable.
+Proposition 6. (Reducing Unsatisfiability) Let C be a concept. Then the following
+are equivalent:
+5
+• C is unsatisfiable;
+• C is subsumed by ⊥;
+• C and ⊥ are equivalent;
+• C and  are disjoint;
+The concept satisfiability (subsumption, equivalence and disjointness) problem defined
+above is commonly called the pure concept satisfiability (subsumption, equivalence
+and disjointness) problem because no Tbox is taken into consideration3.
+Figure 1.1: Description Logics and Their Language Elements
+Figure 1.1 lists the description logics that will be discussed in this report.
+3For description logics such as ALCOI or SH, it is known that these logics are so expressive that
+a whole Tbox can be “internalized” as a single concept expression [BCM+03]. For these description
+logics, the pure concept satisfiability problem is as general as the concept satisfiability problem in
+a Tbox because the Tbox itself can be expressed in a concept description. For description logics
+such as ALCHI, it is impossible to “internalize” a whole Tbox, therefore we need to differentiate
+the case of the pure satisfiability problem and the case of the satisfiability problem in a Tbox.

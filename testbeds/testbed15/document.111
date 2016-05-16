@@ -1,0 +1,15 @@
+﻿I would say one of the biggest improvement has come from computer technology and clever algorithms making pathtracing more feasible.
+
+The older way of CGI was to shoot rays from the camera in the direction of the pixel, and bounce off all objects depending on their surface characteristics, and accumulate the colour. This led to nice images with detailed optical effects, like reflection and refraction, but still looked pretty fake, especially by today's standards. 
+
+But path tracing bounces light all around the scene and given enough time, it converges on the rendering equation which is a proper representation of real light, not a hack as before. It allows for much more realistic images with things like true global illumination and true caustics.
+
+Comparison between whitted-style raytracing (left) and pathtracing (right)
+
+The image on the right seems a bit noisy, but that's how it works, it just takes more time to generate more samples, to get a better quality. Also, there are many clever algorithms that can speed it up.
+
+Notice the bright caustic on the ground, the light reaching into shadowed areas to make them warmer and the green and red influence on other objects from light bleeding. It is far more realistic.
+
+Here is an image that has been rendering longer, converging on the true rendering equation:
+
+This allows for some very realistic CGI these days.

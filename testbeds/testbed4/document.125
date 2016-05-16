@@ -1,0 +1,54 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Distribution Ray Tracer
+for each pixel (i,j) < choose N points ¯ xk within the pixel's area > for each sample k < compute ray~ rk(?) = ~ pk + ?~ dk where ~ dk = ~ pk -~ e > Ik = rayTrace( ~ pk, ~ dk, 1) end for setpixel(i, j, ?i?jPk Ik/N)end for
+The rayTrace and ?ndFirstHit procedures are the same as for Basic Ray Tracing. However, the new shading procedure uses numerical integration:
+distRtShade(OBJ, ~ p, ~ n, ~ de, depth) < choose N directions (fk,?k) on the hemisphere > for each direction k Ik = rayTrace(~ p, ~ dk, depth+1) end for return ???fPk ?(~ de, ~ di(fk,?k))Ik sin?k
+Copyright c
+2005 David Fleet and Aaron Hertzmann 98
+CSC418 / CSCD18 / CSC2504 Interpolation
+14 Interpolation
+14.1 Interpolation Basics
+Goal: We would like to be able to de?ne curves in a way that meets the following criteria:
+1. Interaction should be natural and intuitive.
+2. Smoothness should be controllable.
+3. Analytic derivatives should exist and be easy to compute.
+4. Representation should be compact.
+Interpolation is when a curve passes through a set of "control points."
+Figure 9: * Interpolation
+Approximation is when a curve approximates but doesn't necessarily contain its control points.
+Figure 10: * Approximation
+Extrapolation is extending a curve beyond the domain of its control points.
+Continuity - A curve is is Cn when it is continuous in up to its nth-order derivatives. For example, a curve is in C1 if it is continuous and its ?rst derivative is also continuous.
+Consider a cubic interpolant - a 2D curve, ¯ c(t) = x(t) y(t) wherex (t) = a0 + a1t + a2t2 + a3t3, (107) y(t) = b0 + b1t + b2t2 + b3t3, (108)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 99
+CSC418 / CSCD18 / CSC2504 Interpolation
+Figure 11: * Extrapolation
+so
+x(t) =
+3 X i=0
+aiti = 1 t t2 t3 
+? ? ? ?
+a0 a1 a2 a3
+? ? ? ?
+= ~ tT~a. (109)
+Here, ~ t is the basis and ~a is the coef?cient vector. Hence, ¯ c(t) = ~ tTh~a ~ b i. (Note: Th~a ~ b iisa 4×2 matrix). There are eight unknowns, four ai values and four bi values. The constraints are the values of ¯ c(t) at known values of t.
+Example: For t ? (0,1), suppose we know ¯ cj = ¯ c(tj) for tj = 0, 1 3, 2 3,1 as j = 1,2,3,4. That is,
+¯ c1 = x1 y1  =  x(0) y(0) , (110) ¯ c2 = x2 y2  =  x(1/3) y(1/3) , (111) ¯ c3 = x3 y3  =  x(2/3) y(2/3) , (112) ¯ c4 = x4 y4  =  x(1) y(1) . (113)So we have the following linear system, ? ? ? ? x1 y1 x2 y2 x3 y3 x4 y4 ? ? ? ? = ? ? ? ? 1 0 0 0 1 1/3 (1/3)2 (1/3)3 1 2/3 (2/3)2 (2/3)3 1 1 1 1 ? ? ? ?h~a ~ b i, (114) or more compactly,~x ~y = Ch~a ~ b i. Then,h~a ~ b i= C-1~x ~y . Fromthis we can ?nd ~a and ~ b, to calculate the cubic curve that passes through the given points.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 100
+CSC418 / CSCD18 / CSC2504 Interpolation
+We can also place derivative constraints on interpolant curves. Let
+~t(t) =
+d¯ c(t) dt
+=
+d dt 1 t t2 t3 h~a ~ b i (115) =  0 1 t t2 h~a ~ b i, (116) that is, a different basis with the same coef?cients.
+Example: Suppose we are given three points, tj = 0, 1 2,1, and the derivative at a point, ~t2(1 2). So we can write this as ? ? ? ? x1 y1 x2 y2 x3 y3 x' 2 y' 2 ? ? ? ? = ? ? ? ? 1 0 0 0 1 1/2 (1/2)2 (1/2)3 1 1 1 1 0 1 2(1/2) 3(1/2)2 ? ? ? ?h~a ~ b i, (117) and ? ? ? ? ¯ c1 ¯ c2 ¯ c3 ~t2 ? ? ? ? = Ch~a ~ b i, (118) which we can use to ?nd~a and~ b:
+h~a ~ b i = C-1? ? ? ?
+¯ c1 ¯ c2 ¯ c3 ~t2
+? ? ? ?
+. (119)
+Unfortunately, polynomial interpolation yields unintuitive results when interpolating large numbers of control points; you can easily get curves that pass through the control points, but oscillate in very unexpected ways. Hence, direct polynomial interpolation is rarely used except in combination with other techniques.

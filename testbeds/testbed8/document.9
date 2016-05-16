@@ -1,0 +1,9 @@
+Memory-wise, arrays are compact data structures with no per-element overhead. There may be a per-array overhead, e.g. to store index bounds, but this is language-dependent. It can also happen that elements stored in an array require less memory than the same elements stored in individual variables, because several array elements can be stored in a single word; such arrays are often called packed arrays. An extreme (but commonly used) case is the bit array, where every bit represents a single element. A single octet can thus hold up to 256 different combinations of up to 8 different conditions, in the most compact form.
+
+Array accesses with statically predictable access patterns are a major source of data parallelism.
+
+Growable arrays are similar to arrays but add the ability to insert and delete elements; adding and deleting at the end is particularly efficient. However, they reserve linear (Θ(n)) additional storage, whereas arrays do not reserve additional storage.
+
+Associative arrays provide a mechanism for array-like functionality without huge storage overheads when the index values are sparse. For example, an array that contains values only at indexes 1 and 2 billion may benefit from using such a structure. Specialized associative arrays with integer keys include Patricia tries, Judy arrays, and van Emde Boas trees.
+
+Balanced trees require O(log n) time for indexed access, but also permit inserting or deleting elements in O(log n) time,[15] whereas growable arrays require linear (Θ(n)) time to insert or delete elements at an arbitrary position.

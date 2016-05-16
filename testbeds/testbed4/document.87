@@ -1,0 +1,64 @@
+Zed3D - A compact reference for 3d computer graphics programming
+Frequently used uniform cubic splines
+A certain number of uniform cubic splines very useful for various reasons, mostly modelling curves. Some of these will be described here. The Hermite spline is defined by four two control points P1 and P2 and 2 slopes vector S1 and S2. B閦ier splines are defined by 4 control points P1 through P4 and uniform nonrational B-splines are also defined by 4 control points, with different constraints however.
+A few general notes before we dive into the main material. These splines are cubics, hence they are of the form y=Ax3+Bx2+Cx+D and the derivative of such a cubic is y'=3Ax2+2Bx+C. Often, constraints will be put on y(x) or y'(x) for some x, which will then be used to figure out the basis matrix for the spline.
+Hermite splines
+The hermite spline is defined by two control points P1 and P2, and two slopes s1 and s2 as follows:
+1- The spline interpolates through P1
+2- The spline interpolates through P2
+3- The slope at P1 is s1
+4- The slope at P2 is s2
+Since the spline is uniform, P1=(0,y1) and P2=(1,y2). The geometry vector G is (y1,y2,s1,s2). We re-write the four constraints using that:
+Convex hull
+The convex hull of a set S is the smallest convex set C such that S?C. At this point, we need a strict definition of convex sets, then we can prove existence and uniqueness of convex hulls.
+We assume a definition of line segment between x and y, such a definition can be made strict in the context of vector spaces over the reals. Then, L is defined simply as
+L(x,y)={tx+(1-t)y|t?[0,1]}
+The "natral definition" of "L is the shortest path between x and y" works well when the integral is well defined only.
+Definition: A set C is said to be convex if, for ALL x,y in C, L(x,y)?C. (Ie, C is convex if, for all pair of points, the line segment between them is contained in C.)
+Definition: arbitrary intersection D=ni?ISi. D is the set such that d?D??i?I, d?Si. Given Si and a non-empty I, D is unique. (Proof: assume that D1=ni?ISi, D2=ni?ISi, D1?D2. Assume without loss of generality that d is in D1 but not in D2. Since d is in D1, then d is in all Si. Therefore, d has to be in D2, contradiction. QED.) Such a set is minimal in the sense that D?Si for all i in I.
+63
+Definition: Convex hull. First assume the universe U is convex (this is true for Rn). Then, the convex hull C of an arbitrary set S is defined as nCa, where K={Ca} is the set of all convex supersets of S. Since S is in U and U is convex, U is an element of K, thus the intersection exists and is unique. It is also minimal. All we have to prove is that C is convex. But this is trivial, as we are about to show. Take an arbitrary pair of points x, y in C. We have to prove that L(x,y) is a subset of C. Since x and y are in C, x and y have to be in Ca for all a. Since Ca is convex, this means that L(x,y) is in Ca for all a. Therefore, L(x,y) is in C. This is true for any x,y in C, thus C is convex.
+As an example, a triangle is its own convex hull. For a concave polygon, the convex hull is the smallest convex polygon that completely includes the concave polygon.
+Now on to convex sums. A convex sum is a weighted sum ?1=i=nwiyi such that ?1=i=nwiyi=1 and wi is non-negative. A convex sum is so called because the resulting sum is in the convex hull of its control points yi, as we are about to prove. We will here use a proof  by induction. Let us first articulate the proposition we are about to prove.
+Pi="The sum Si =?1=j=iwjyj where the weights wj are positive and sum to 1 lies within the convex hull of the control points yj."
+P1 translates into w1y1, where w1 is positive and w1=1, is in the convex hull of y1, which  trivially true.
+The next step is to demonstrate that Pi?Pi+1. Now let us examine Pi+1. ?1=j=i+1wjyj=?1=j=iwjyj+wi+1yi+1. Let K=?1=j=iwj. We know that K<1 since all weights are positive and add up to 1. We can scale up Si by 1/K (call that Q). Then, by hypothesis of Pi, Q is in the convex hull of the y1 through yi. However, Si+1=KQ+wi+1yi+1 and K+ wi+1=1. Thus Si+1 is on the line between Q and yi+1. Since both Q and yi+1 are in the convex hull of y1 through yi+1, the line between Q and yi+1 is in the convex hull. Thus Si+1 is in the convex hull. By induction, Pi is true for all i, which completes the proof.
+Bernstein polynomials
+The nth degree Bernstein polynomial, Bn(x) is defined by n+1 control points y0, y1, y2, ..., yn as follows:
+Bn(x)=?0=i=nC(i,n)xi(1-x)n-iyi where C(i,n)=n!/[i!(n-i)!]
+n! is the factorial of n, is 1󫎿�4�...譶. As an example, 6!=720. As per the definition above, C(3,5), for example, would be 5!/(3!2!)=10.
+64
+At this point in time, it is useful to view the spline as a weighted sum of its control points. Looking at Bn(x) as above, we can see that for a fixed x, we are in effect taking a weighted sum of the yi's: ?0=i=n wiyi. Let us now examine the weights.
+A weight wi=C(i,n)xi(1-x)n-i as above can be interpreted probabilistically using the binomial distribution. If we are repeating an experiment n (independant) times, each time with probability of success x, then wi is the probability of the experiment succeding exactly i times. Then, it becomes obvious that ?0=i=n wi =1 (the sum is simply the sum of the probabilities of all possible outcomes, which has to be one).
+Going back to Bn(x), we can now say that the Bernstein polynomial is a convex sum of its control points. A convex sum is when the sum of the weights is one ad each weight is positive (as is the case here). It is so called because then the result will be in the convex hull of the control points. Of particular interest to us is the B3(x) polynomial. It can be written down as follows:
+B3(x) =y0(1-x)3+y13x(1-x)2+y23x2(1-x)+y3x3
+=y0(1-3x+3x2-x3)+y1(3x-6x2+3x3)+y2(3x2-3x3)+y3x3
+=x3(-y0+3y1-3y2+y3)+x2(3y0-6y1+3y2)+x(-3y0+3y1)+y0.
+It is obvious from this last form that we have just found an equivalent definition to the B閦ier spline. With the work we have just accomplished, we have demonstrated that a B閦ier spline lies within the convex hull of its control points, which is an important property, as we will see later.
+Uniform nonrational B-spline
+The uniform nonrational B-spline is defined as a cubic polynomial spline which has C2 continuity everywhere even when several B-spline segments are put in sequence. The term nonrational refers to the fact that we are dealing here with a conventional polynomial, as opposed to a quotient of polynomials. A rational spline is defined by the quotient of two polynomials.
+The B-spline is defined by 4 control points P1, P2, P3, P4. However, let us examine exactly how we should use these to make certain that consecutive Bsplines are C0, C1 and C2 continuous. That is, say we have 6 points P0, P1, P2, P3, P4 and P5. Then, the B-spline defined by P1, P2, P3 and P4 is the one we are interested in, let's call it segment S2. However, there is a spline segment defined by P0, P1, P2, P3, which we will call S1. We want S1 and S2 to have C0, C1 and C2 continuity at their joint. Furthermore, there is a spline defined by P2, P3, P4 and P5, which we name S3, and we want S2 and S3 to have C0, C1 and C2 continuity at their joint.
+This section in progress, I can't find a justification for the B-spline basis matrix.
+65
+Catmull-Rom splines: a non-uniform type of spline
+This spline type is defined as follows (given four control points P0 through P3 (x0,y0), (x1,y1), (x2,y2) and (x3,y3), xi are increasing):
+1- The spline interpolates through (x1,y1).
+2- The spline interpolates through (x2,y2).
+3- The spline's slope at x0 (the second control point) is whatever slope the line from the first to the third control point is.
+4- The spline's slope at x1 (the third control point) is whatever slope the line from the second to the fourth control point is.
+The spline segment thus defined is for the [x1,x2] segment. If a similar spline is defined with the control points P1, P2, P3, P4, then they will join at P2 and their first derivative will agree, giving it a smooth appearance. Writing the restrictions expressly in equation form, we get:
+1- y1=Ax13+Bx12+Cx1+D.
+2- y2=Ax23+Bx22+Cx2+D.
+3- y'(x1)=3Ax12+2Bx1+C=(y2-y0)/(x2-x0).
+4- y'(x2)=3Ax22+2Bx2+C=(y3-y1)/(x3-x1).
+66
+Rendering
+Introduction
+Rendering is the phase where we do the actual drawing. There is a general tendency to download this particular task to a slave graphics processor and leave the CPU to do better things. However, it will always be useful for everyone to have a general understanding of how things work. And also likely is the fact that we're going to need software renderers for a while more. And one last fact is that people have to write the software for the slave processor.
+We will first study the drawing of a point, which will be used to draw other primitives. Then we will study lines and polygons. Curved surfaces can also be supported but will not be discussed. The curved primitive that tend to be faster in drawing are conics and polynomials. However, some other forms of curved primitives definitions are often preferred, mainly splines.
+The point
+A geometric point is a 0 dimensional object. It could also be defined very strictly with neighborhoods and somesuch. However, this is not particularly useful to the computer graphics specialist. One thing that we must remember, though, is that it is impossible to display a point on any medium. Quite simply, a point has a size of zero, no matter if the definition of size is length, area or volume. It cannot be seen under any magnification.
+What the computer graphics expert usually refers to as the point is the smallest entity that can be displayed on the display device. These are not necessarily circular or rectangular things - and more often than not, they are slightly blurred.
+We will refer to this point as a pixel. We will also need to make a few basic assumptions. Generally speaking, pixels are of an arbitrary shape (often rectangular-like), and are aligned in a very structured way on the display device. Note that some devices do not use this method of displaying things, these are commonly referred to as vector devices. There was an old Star Wars (trademark of LucasArts I believe) game made with one of these.
+67
+We will also very much like pixel to be aligned in a cartesian plane like manner. We generally assign pixels integer position, and what's not exactly on a pixel has a noninteger position. But what is the position of the pixel? That's another entirely arbitrary matter. Generally speaking, we might want to simplify the pixel's location to its centroid. Also, there is the problem of axis orientation. For a combination of arbitrary and historical reasons, the screen coordinates origin is very usually centered on the upper left corner and goes positively down and right in hardware. Operating sometimes hide that from the user application and use a coordinate system centered on the lower left corner, and go positively up and right, just like the usual cartesian plane.

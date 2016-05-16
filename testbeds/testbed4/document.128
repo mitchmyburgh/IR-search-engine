@@ -1,0 +1,17 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+Animation
+16.1 Overview
+Motion can bring the simplest of characters to life. Even simple polygonal shapes can convey a number of human qualities when animated: identity, character, gender, mood, intention, emotion, and so on.
+Very simple characters (image by Ken Perlin)
+A movie is a sequence of frames of still images. For video, the frame rate is typically 24 frames per second. For ?lm, this is 30 frames per second.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 110
+CSC418 / CSCD18 / CSC2504 Animation
+In general, animation may be achieved by specifying a model with n parameters that identify degrees of freedom that an animator may be interested in such as • polygon vertices, • spline control, • joint angles, • muscle contraction, • camera parameters, or • color. With n parameters, this results in a vector ~q in n-dimensional state space. Parameters may be varied to generate animation. A model's motion is a trajectory through its state space or a set of motion curves for each parameter over time, i.e. ~q(t), where t is the time of the current frame. Every animation technique reduces to specifying the state space trajectory.
+The basic animation algorithm is then: for t=t1 to tend: render(~ q(t)).
+Modeling and animation are loosely coupled. Modeling describes control values and their actions. Animation describes how to vary the control values. There are a number of animation techniques, including the following: • User driven animation - Keyframing
+- Motion capture • Procedural animation - Physical simulation
+- Particle systems
+- Crowd behaviors • Data-driven animation

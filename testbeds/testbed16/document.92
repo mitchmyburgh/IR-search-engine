@@ -1,0 +1,39 @@
+IaaS, PaaS, SaaS (Explained and Compared)
+
+
+
+SAAS: SOFTWARE AS A SERVICE
+
+Cloud application services, or Software as a Service (SaaS), represent the largest cloud market and are still growing quickly. SaaS uses the web to deliver applications that are managed by a third-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can be run directly from a web browser without any downloads or installations required, although some require plugins.
+
+Because of the web delivery model, SaaS eliminates the need to install and run applications on individual computers. With SaaS, it’s easy for enterprises to streamline their maintenance and support, because everything can be managed by vendors: applications, runtime, data, middleware, OSes, virtualization, servers, storage and networking.
+
+Popular SaaS offering types include email and collaboration, customer relationship management, and healthcare-related applications. Some large enterprises that are not traditionally thought of as software vendors have started building SaaS as an additional source of revenue in order to gain a competitive advantage.
+
+You May Also Like: Platform-as-a-Service (PaaS) Comparison Guide
+
+SaaS Examples: Google Apps, Salesforce, Workday, Concur, Citrix GoToMeeting, Cisco WebEx
+Common SaaS Use-Case: Replaces traditional on-device software
+Technology Analyst Examples: Bill Pray (Gartner), Amy DeMartine (Forrester)
+
+PAAS: PLATFORM AS A SERVICE
+
+Cloud platform services, or Platform as a Service (PaaS), are used for applications, and other development, while providing cloud components to software. What developers gain with PaaS is a framework they can build upon to develop or customize applications. PaaS makes the development, testing, and deployment of applications quick, simple, and cost-effective. With this technology, enterprise operations, or a third-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS software itself. Developers, however, manage the applications.
+
+Enterprise PaaS provides line-of-business software developers a self-service portal for managing computing infrastructure from centralized IT operations and the platforms that are installed on top of the hardware. The enterprise PaaS can be delivered through a hybrid model that uses both public IaaS and on-premise infrastructure or as a pure private PaaS that only uses the latter.
+
+Similar to the way in which you might create macros in Excel, PaaS allows you to create applications using software components that are built into the PaaS (middleware). Applications using PaaS inherit cloud characteristic such as scalability, high-availability, multi-tenancy, SaaS enablement, and more. Enterprises benefit from PaaS because it reduces the amount of coding necessary, automates business policy, and helps migrate apps to hybrid model. For the needs of enterprises and other organizations, Apprenda is one provider of a private cloud PaaS for .NET and Java.
+
+Enterprise PaaS Examples: Apprenda
+Common PaaS Use-Case: Increases developer productivity and utilization rates while also decreasing an application’s time-to-market
+Technology Analyst Examples: Richard Watson (Gartner), Eric Knipp (Gartner), Yefim Natis (Gartner), Stefan Ried (Forrester), John Rymer (Forrester)
+
+IAAS: INFRASTRUCTURE AS A SERVICE
+
+Cloud infrastructure services, known as Infrastructure as a Service (IaaS), are self-service models for accessing, monitoring, and managing remote datacenter infrastructures, such as compute (virtualized or bare metal), storage, networking, and networking services (e.g. firewalls). Instead of having to purchase hardware outright, users can purchase IaaS based on consumption, similar to electricity or other utility billing.
+
+Compared to SaaS and PaaS, IaaS users are responsible for managing applications, data, runtime, middleware, and OSes. Providers still manage virtualization, servers, hard drives, storage, and networking. Many IaaS providers now offer databases, messaging queues, and other services above the virtualization layer as well. Some tech analysts draw a distinction here and use the IaaS+ moniker for these other options. What users gain with IaaS is infrastructure on top of which they can install any required platform. Users are responsible for updating these if new versions are released.
+
+IaaS Examples: Amazon Web Services (AWS), Cisco Metapod, Microsoft Azure, Google Compute Engine (GCE), Joyent
+Common IaaS Use-Case: Extends current data center infrastructure for temporary workloads (e.g. increased Christmas holiday site traffic)
+Technology Analyst Examples: Kyle Hilgendorf (Gartner), Drue Reeves (Gartner), Lydia Leong (Gartner), Doug Toombs (Gartner), Gregor Petri (Gartner EU), Tiny Haynes (Gartner EU), Jeffery Hammond (Forrester), James Staten (Forrester)

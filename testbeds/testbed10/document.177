@@ -1,0 +1,47 @@
+Extraction of similarity based fuzzy rules from artificial neural networks
+
+C.J. Mantasa, , , J.M. Puchea, J.M. Mantasb
+
+Artificial neural networks (ANNs) [1–3] are learning models that have been successfully
+used in many areas such as automatic control, weather forecasting, etc. However, they are
+black boxes and consequently, it is very difficult to understand how an ANN has solved a
+problem. There are a comprehensive literature about the extraction of knowledge from
+learning models based on black boxes [4–14].  The principle of Zadeh’s incompatibility [15] established ‘‘the complexity of a system and
+the precision with which it can be analyzed bear a roughly inverse relation to one another’’.
+This principle can be applied to the ANNs . They are systems with high complexity which
+can achieve a good approximation to the solution of a problem. However, it is very diffi-
+cult to analyze their performance. According to this principle, the methods to understand
+the action carried out by a trained ANN can be included in one of the two following
+groups:
+• To obtain a comprehensible system that approximates the behavior of the ANN (more
+comprehension ! less complexity ! less accuracy). In this case, any rule extraction
+method in [5,9–12] can be used.
+• To describe the exact action of the ANN as understandably as possible (same complexity
+! same accuracy ! same comprehension, but with other words). In this case, the
+methods presented in [6,8,13,14] can be used.
+In [14] a fuzzy rule based system (FRBS) with 2m fuzzy rules, where m is the number of
+hidden neurons, equivalent to an ANN is presented. This fact involves that the FRBS
+obtained is very complex. Therefore it is very difficult to discern knowledge from it.
+On the other hand, the FRBS presented in this work is also equivalent to the corresponding
+ANN and it has only 2 rules with straightforward antecedents. Other equivalent FRBS is proposed in [6,13]. It has m fuzzy rules, where m is also the
+number of hidden neurons of the ANN. The antecedents of these rules use the same
+inputs which are used in the ANN. Therefore, each antecedent has n fuzzy propositions
+aggregated with the i-or operator. Thus, the FRBS has m · n propositions. This number
+of propositions makes the comprehension of the fuzzy system complex. In this paper, the
+method proposed obtains antecedents with only m fuzzy propositions. Hence, the number
+of propositions in the fuzzy system is equal to 2 · m. This reduced number makes the
+extraction of knowledge from the FRBS easier. 
+
+8. Conclusions
+A method to extract FRBSs from trained ANNs has been proposed. It carries out the
+same classification as the original ANN.
+To classify new data, the fuzzy rules of the system evaluate the similarity between the
+input sample and the weight vectors. As a result, they are highly understandable.
+Once the FRBS has been built, a simple analysis of the weight vectors is necessary to
+understand the action of the network. Thus, classification problem knowledge can be
+discovered using ANNs. This method of knowledge discovery has been illustrated by means
+of classification problems. The knowledge extracted from the trained ANNs to solve the former
+problems is coherent with the standard knowledge avalaible about the problem
+considered.
+
+

@@ -1,0 +1,63 @@
+AviSynth
+'''AviSynth''' is a  program for  developed by Ben Rudiak-Gould, Edwin van Eggelen, Klaus Post, Richard Berg, Ian Brabham and others. It is  under  license.
+== Scripting video editor ==
+AviSynth acts as a  controlled entirely by  (without a ). It stands as an intermediary between a  source, like an  or  file, and a  receiving program, which is typically a , , or an .
+AviSynth communicates with any program that supports  through the  system by acting as a "fake" AVI file. It can apply a large variety of editing and processing functions (called filters) to a video stream before passing along the results as if it were a legitimate file being read. Filter capabilities include trimming, cropping, , inverse , loading and splicing still s, doing color corrections, , and many other things.
+Technically, it acts as a  for ''AviSynth scripts'', which represent s in the form of text files written in the .  The scripting language can be extended through the use of external  (as opposed to internal plugins, which are included with AviSynth itself). An external plugin list is maintained at .
+AviSynth filters work in several s including ,  and  (Also YV16, YV24, YV411 and Y8 in Avisynth 2.6). This is necessary to allow all kinds of video input and output. Certain functions only work on specific color spaces, requiring conversion beforehand.
+For example, say the script "myAvi.avs" (just a plain text-file saved with the extension "avs") contains the following:
+ AviSource("myAvi.avi")
+ Crop(0, 0, 320, 240)
+ Blur(0.1)
+This script file can be opened in most media players (such as ). The program will play the video file "myAvi.avi" cropped down to its top-left 320  by 240 pixels and blurred by a small amount. Operations occur in sequential order, so the cropping occurs first, then the blurring.
+==AviSynth scripting language==
+The scripting language is an  language, lacking most program flow control structures, but containing many features familiar to programmers, including , distinct s, conditionals, and complex .
+The language deals primarily with the video ''clip'' as a primitive data type. A typical script loads a video as input, applies processing to it, and then "returns" that video in the same way functions return values. The returned video is the output of the script, which is seen as the video by the program running the script.
+The language also has several other more standard data types: ''int'', ''float'', ''bool'' and ''string''. These can be used to perform calculations, decisions, and write text such as subtitles to the video.
+The processing work is largely done by video  . These can be combined in infinite ways by user-defined ''functions'' (s that return a value). Most functions take a video stream as an argument and make changes to this stream; there is also a support library of math functions, string functions and so on.
+Programmers may be unaware that they are constantly passing video streams into functions, since convention suggests that the video is not explicitly passed. If no video is passed into a function, it simply takes the last video used.
+Additional functions/filters are available through . The use of plugins is encouraged to extend the capabilities of AviSynth. (See AviSynth Filter Collection link for a list of plugins).
+==="Hello World"===
+This example is a  - it simply creates a video containing the words "Hello, world!".
+ BlankClip()
+ Subtitle("Hello, world!")
+The BlankClip function creates a new video, which then has a subtitle displayed on top of it. The parentheses at the end of the word are optional, since no arguments are being passed, but are given in this case to indicate it is a function and not a variable.
+The Subtitle function draws the words "Hello, world!" on top of the previously-created blank video.
+Although the BlankClip and Subtitle functions both accept many more arguments (for example, controlling the size and length of the video, and the positioning, font, and color of the subtitle), this example leaves them out, so the functions use built-in defaults.
+If the above text is entered into a .avs file, it can be opened in  or any of the other programs in the list below, and a video containing the text will be displayed.
+===Video-processing===
+This example takes an actual video, applies some simple processing, and returns it to the output.
+ AviSource("C:\Example.avi")
+ ReduceBy2()
+ GreyScale()
+The AviSource function is used to load a video from a real location. The DirectShowSource function could also be used. ReduceBy2 divides the vertical and horizontal size of the video in half, and GreyScale forces the video to  colors.
+Again, the above script can be entered into a .avs file and opened in a video player or editor. Assuming C:\Example.avi exists, it will play a copy of that file, except that it will be half the size and .
+===User defined===
+The AviSynth scripting language allows for users to define their own functions.
+This is an example of a function that allows you to dissolve from one clip to another without damaging interlacing lines. 
+  clip1 = AVISource("video1.avi")
+  clip2 = AVISource("video2.avi")
+  interlaced_dissolve(clip1, clip2, 30)              # dissolve from clip1 to clip2 over 30 frames
+  
+  
+  function interlaced_dissolve(clip clip1, clip clip2, int iter)  
+==AviSynth 3.0 code rewrite ==
+AviSynth 3.0 was a  of AviSynth 2.x, and aimed to overcome the limitations of AviSynth 2.x.
+Adding improvements such as an abstracted  model, in which new color spaces (including two with 45-bit depth) could be supported through a plug-in mechanism, better cache management for better performance, and using  rather than the homegrown language employed in current versions.
+AviSynth 3.0 was to be available for other operating systems than , instead relying on , extending support to platforms such as ,  and .
+Development has been stalled since August 2007.
+==AviSynth for non-Windows operating systems==
+AviSynth 2.xx may be used under operating systems other than Windows through the use of . To work on scripts / can be used as on Windows. To interface between AviSynth under Wine and for example  running on a Linux host,  can be used. Avs2YUV is a  command line program that is run under Wine and renders the output of an AviSynth script to  that is then piped to FFmpeg. Avs2YUV also supports writing to a .
+AvxSynth is a Linux port of AviSynth.  More details can be found here: 
+==AviSynth compatible programs==
+In addition, several programs have now been created which accept ''only'' AviSynth scripts as input - thereby simplifying the programs themselves but giving users the full power of AviSynth for input.
+There are also several batch encoding applications that tie together AviSynth with command line audio and video encoders and muxers to provide an all-in-one, modular, customizable video encoding application.  is an example of this kind of application.
+Although AviSynth scripts are meant to be easily opened in simple text editing programs, there are several editors meant especially for editing AviSynth scripts such as .
+==See also==
+*
+==References==
+==External links==
+* AviSynth home page:   
+* 
+* 
+*

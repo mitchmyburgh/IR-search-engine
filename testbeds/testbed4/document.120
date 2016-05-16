@@ -1,0 +1,39 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Extended Light Sources
+Many light sources are not in?nitesimal point sources. Rather, in the general case we need to be able to work with extended light sources for which the incident light is a continuous function of incident direction. One way to think of this is to let the number of discrete light sources go to in?nity so that the sum in Eqn (74) becomes an integral.
+Here we take a slightly different, but equivalent approach. As discussed above, radiance can be used to express the light energy transport through any point in space, in any direction of interest. Thus, given a point ¯ p on a surface with unit normal ~n, we can express the radiance through ¯ p along the hemisphere of possible incident directions as L(¯ p, ~ di) for ~ di ? ?i where ?i denotes the domain of plausible incident directions at ¯ p.
+Note: As above, we can erect a spherical coordinate system at ¯ p. Toward this end, let ?i denote an angle measured from the surface normal, and let fi be an angle in the surface tangent plane about the normal relative to some Cartesian x-y coordinate system in the plane. Then all directions
+~ di = (sin?i cosfi, sin?i sinfi, cos?i)T (75) contained in ?i satisfy ?i ? [0,p/2] and fi ? [-p,p).
+One problem with radiance is the fact that it expresses the light ?ux in terms of power per unit area on a surface perpendicular to the direction of interest. Thus, for each incident direction we are using a different plane orientation. In our case we want to express the power per unit area on our surface S, and therefore we need to rescale the radiance in direction ~ di by the ratio of foreshortened surface area to surface area. One can show that this is accomplished by multiplying L(¯ p, ~ di) by cos?i = ~ di · ~n, for normal ~n. The result is now the incident power per unit surface area (not foreshortened) per solid angle. We multiply this by solid angle d? to obtain irradiance:
+H = L(¯ p,-~ di) cos?i d?i (76) Therefore, the resulting surface radiance in the direction of the camera due to this irradiance is just
+?(~ de, ~ di)L(¯ p,-~ di) cos?i d?i If we then accumulate the total radiance from the incident illumination over the entire hemisphere of possible incident directions we obtain
+L(~ de) =Z~ di??i
+?(~ de, ~ di)L(¯ p,-~ di) cos?i d?i (77)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 87
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+where, as above, the in?nitesimal solid angle is d?i = sin?i d?i dfi.
+Light sources vary greatly from scene to scene. In effect, when you take a photograph you are measuring irradiance at the image plane of the camera for a limited ?eld of view (angular extent). This shows how complex illumination sources can be.
+Note: The ideal point light source can also be cast in the framework of a continuous, extended source. To do this we assume that the distribution of incident light can be modeled by a scaled Dirac delta function. A Dirac delta function d(x) is de?ned by: d(x) = 0 for x 6= 0 , and Zx d(x)f(x)dx = f(0) (78) With the light source de?ned as a delta function, Eqn (77) reduces to Eqn (73).
+12.5 Idealized Lighting and Re?ectance Models
+We now consider several important special instances of BRDF models. In particular, we are interested in combinations of lighting and BRDF models that facilitate ef?cient shading algorithms. We discuss how diffuse and specular surfaces can be represented as BRDFs.
+12.5.1 Diffuse Re?ection
+A diffuse (or matte) surface is one for which the pattern of shading over the surface appears the same from different viewpoints. The ideal diffusely re?ecting surface is known as a perfect Lambertian surface. Its radiance is independent of the emittant direction, its BRDF is a constant, and it re?ects all of the incident light (i.e., it absorbs zero power). The only factor that determines the appearance (radiance) of a Lambertian surface is therefore the irradiance (the incident light). In this case, with the BRDF constant, ?(~ de, ~ di) = ?0, the (constant) radiance Le has the form:
+Ld(¯ p, ~ de) = ?0 Z~ di??i
+L(¯ p,-~ di) cos?i d?i (79)
+Note: A perfect Lambertian surface re?ects all incident light, absorbing none. Therefore, the total irradiance over the hemisphere of incident directions must equal the radiant exitance. Setting these quantities to be equal, one can show that ?0 = 1/p. The BRDF for any diffuse surface must therefore have a value between 0 and 1/p.
+Despite the simplicity of the BRDF, it is not that simple to compute the radiance because we still have an integral over the hemisphere of incident directions. So let's simplify the model further.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 88
+CSC418 / CSCD18 / CSC2504 Radiometry and Re?ection
+Let's assume a single point light source with intensity I at location ¯ l. This gives us
+Ld(¯ p, ~ de) = ?0 I
+~n· ~ di r2
+(80)
+where r = ||¯ l- ¯ p||is the distance to the light source from ¯ p, and ~ di = (¯ l- ¯ p)/r is the direction of the source from ¯ p. Of course, the surface normal ~n also changes with ¯ p.
+Eqn (80) is much easier to compute, but we can actually make the computation even easier. Let's assume that the point source is suf?ciently far away that r and ~ di do not change much with points ¯ p on the object surface. That is, let's treat them as constant. Then we can simplify Eqn (80) to
+Ld(¯ p) = rd I ~s·~n (81) where rd is often called the diffuse re?ection coef?cient, and ~s is the direction of the source. Then the only quantity that depends on surface position ¯ p is the surface normal ~n.
+Note: The value ~s·~n should actually be max(0,~s·~n). Why? Consider the relationship of the light source and surface when this dot product is negative.

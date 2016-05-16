@@ -1,0 +1,18 @@
+Natural Language Processing
+In this class, you will learn fundamental algorithms and mathematical models for processing natural language, and how these can be used to solve practical problems.
+
+About the Course
+This course covers a broad range of topics in natural language processing, including word and sentence tokenization, text classification and sentiment analysis, spelling correction, information extraction, parsing, meaning extraction, and question answering, We will also introduce the underlying theory from probability, statistics, and machine learning that are crucial for the field, and cover fundamental algorithms like n-gram language modeling, naive bayes and maxent classifiers, sequence models like Hidden Markov Models, probabilistic dependency and constituent parsing, and vector-space models of meaning.
+
+We are offering this course on Natural Language Processing free and online to students worldwide, continuing Stanford's exciting forays into large scale online instruction. Students have access to screencast lecture videos, are given quiz questions, assignments and exams, receive regular feedback on progress, and can participate in a discussion forum. Those who successfully complete the course will receive a statement of accomplishment. Taught by Professors Jurafsky and Manning, the curriculum draws from Stanford's courses in Natural Language Processing. You will need a decent internet connection for accessing course materials, but should be able to watch the videos on your smartphone.
+
+Course Syllabus
+The following topics will be covered in the first two weeks:
+
+Introduction and Overview:
+Basic Text Processing: J+M Chapters 2.1, 3.9; MR+S Chapters 2.1-2.2
+Minimum Edit Distance: J+M Chapter 3.11
+Language Modeling: J+M Chapter 4
+Spelling Correction: J+M Chapters 5.9, Peter Norvig (2007) How to Write a Spelling Corrector
+Recommended Background
+No background in natural language processing is required. Students will be expected to know a bit of basic probability (know Bayes rule), a bit about vectors and vector spaces (could length normalize a vector), a bit of calculus (know that the derivative of a function is zero at a maximum or minimum of a function), but we will review these concepts as we first use them. You should have reasonable programming ability (know about hash tables and graph data structures), be able to write programs in Java or Python, and have a computer (Windows, Mac or Linux) with internet access.

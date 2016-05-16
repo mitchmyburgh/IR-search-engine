@@ -1,0 +1,26 @@
+PCI Compliance Checklist
+
+July 28, 2015/in Banking/Financial Services, Compliance /by Michael Higashi
+PCI compliance checklist
+
+The larger the organization, the more difficult it can be to ensure PCI compliance. This is particularly true when organizations’ data is distributed across multiple public cloud applications, as many are in today’s cloud-dominated business world. If you’re in charge of overseeing PCI compliance in such an environment, use our checklist to begin unifying your PCI compliance efforts.
+
+pci compliance checklist - data discovery
+
+ 
+
+PCI Compliance Checklist for the Cloud-Enabled Enterprise
+Do we know exactly what kinds of data our third-party cloud applications can handle?
+As always, data discovery and classification are the first steps towards PCI compliance in multi-cloud environments. As cloud deployments grow and more employees adopt cloud computing, it can be all too easy for pieces of sensitive data to slip through the cracks, leaving the enterprise perimeter and entering third party clouds in noncompliant ways. Invest the necessary time and resources into discovering and classifying all data assets used in cloud applications, prioritizing them based on factors such as compliance requirements and the potential impact of exposure.
+
+pci compliance checklist-cloud application discovery
+
+Do we know all the cloud applications our employees use?
+Along with data discovery comes cloud application discovery. PCI compliance would be relatively easy in an enterprise environment in which all cloud applications used are known and sanctioned by the IT department, but the reality is that in almost all organizations, at least some employees are using applications without the permission of IT—probably more employees than the organization realizes. Shadow IT can quickly put a business out of compliance without anyone knowing. Discovering your employees’ use of shadow IT is critical to making sure that a well-meaning information worker doesn’t endanger your PCI compliance strategy.
+
+pci compliance checklist - data protection
+
+Are we able to protect all data that falls under the scope of PCI in the most efficient way?
+PCI compliance requirements stipulate different levels of protection for different types of data. Organizations will be tasked with handling customer payment card numbers differently from customer address data fields such as zip codes, for example, while some customer financial information cannot be transmitted outside the perimeter at all. Is your cloud data protection solution optimal for maintaining PCI compliance in a multi-cloud environment? Do you have the tools to encrypt some data—at varying levels of encryption strengths—tokenize others, maintainwhite-paper-best-practices-financial-services-3d-web visibility into and reporting on data access and user activity in your cloud applications, and detect potential PCI compliance violations in time to stop them before they happen? If not, now is the time to begin exploring alternative solutions that can achieve all those things through the enforcement of policies at a granular, data field level.
+
+PCI compliance continues to remain an important goal for organizations across many industries and verticals. The cloud creates new PCI compliance challenges even as it saves organizations time and money. Don’t get caught in a state of noncompliance. Learn more about how CipherCloud can help you ensure PCI compliance by downloading our free white paper, “Best Practices for Cloud Information Protection in Financial Services,” today.

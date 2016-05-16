@@ -1,0 +1,248 @@
+					(function(g){g.__ATA.initAd({sectionId:56243082, width:728, height:90});})(window);
+    Knowledge Junk 
+     All of The Knowledge to Store Outside My Head
+    Home 
+    About 
+    Authors 
+    Site Index 
+//
+     Home &gt; 
+     data structure, 
+     Information Technology, 
+     programming &gt; AVLTree: JAVA Source&nbsp;Code 
+     AVLTree: JAVA Source&nbsp;Code 
+      November 9, 2010 
+      kazasou 
+      Leave a comment 
+      Go to comments 
+      In&nbsp;computer science, an&nbsp;AVL tree is a&nbsp;self-balancing binary search tree, and it was the first such&nbsp;data structure to be invented.[1] In an AVL tree, the&nbsp;heights of the two&nbsp;child subtrees of any node differ by at most one; therefore, it is also said to be&nbsp;height-balanced. Lookup, insertion, and deletion all take&nbsp;O(log&nbsp;n) time in both the average and worst cases, where n is the number of nodes in the tree prior to the operation. Insertions and deletions may require the tree to be rebalanced by one or more&nbsp;tree rotations. 
+      The AVL tree is named after its two inventors,&nbsp;G.M. Adelson-Velskii and&nbsp;E.M. Landis, who published it in their 1962 paper “An algorithm for the organization of information.”[2] 
+      The&nbsp;balance factor of a node is the height of its left subtree minus the height of its right subtree (sometimes opposite) and a node with balance factor 1, 0, or −1 is considered balanced. A node with any other balance factor is considered unbalanced and requires rebalancing the tree. The balance factor is either stored directly at each node or computed from the heights of the subtrees. 
+      AVL trees are often compared with&nbsp;red-black trees because they support the same set of operations and because red-black trees also take&nbsp;O(log&nbsp;n) time for the basic operations. AVL trees perform better than red-black trees for lookup-intensive applications.[3] The AVL tree balancing algorithm appears in many computer science curricula. 
+      more on Wikipedia 
+      AVLTree.java 
+       public class AvlTree { 
+       AvlNode position; 
+       AvlNode avlTree; 
+       public AvlNode makeEmpty(AvlNode t) { 
+       if(t != null) { 
+       makeEmpty(t.getLeft()); 
+       makeEmpty(t.getRight()); 
+       t = null; 
+       } 
+       return null; 
+       } 
+       public AvlNode find(int value, AvlNode t) { 
+       if (t == null) { 
+       return null; 
+       } 
+       if (value &lt; t.getValue()) { 
+       return find(value, t.getLeft()); 
+       } 
+       else if(value &gt; t.getValue()) { 
+       return find(value, t.getRight()); 
+       } 
+       else 
+       return t; 
+       } 
+       public AvlNode findMin(AvlNode t) { 
+       if (t == null) { 
+       return null; 
+       } 
+       else&nbsp; if(t.getLeft() == null) 
+       return t; 
+       else 
+       return findMin(t.getLeft()); 
+       } 
+       public AvlNode findMax(AvlNode t) { 
+       if(t != null) 
+       while(t.getRight() != null) 
+       t = t.getRight(); 
+       return t; 
+       } 
+       public static int getHeight (AvlNode position) { 
+       if (position == null) 
+       return -1; 
+       else 
+       return position.getHeight(); 
+       } 
+       public static int max (int lhs, int rhs) { 
+       return lhs &gt; rhs ? lhs : rhs; 
+       } 
+       public static AvlNode singleRotateWithLeft (AvlNode k2) { 
+       AvlNode k1; 
+       k1 = k2.getLeft(); 
+       k2.setLeft(k1.getRight()); 
+       k1.setRight(k2); 
+       k2.setHeight(max(getHeight(k2.getLeft()), getHeight(k2.getRight()))+1); 
+       k1.setHeight(max(getHeight(k1.getLeft()),k2.getHeight())+1); 
+       return k1; 
+       } 
+       public static AvlNode singleRotateWithRight (AvlNode k1) { 
+       AvlNode k2; 
+       k2 = k1.getRight(); 
+       k1.setRight(k2.getLeft()); 
+       k2.setLeft(k1); 
+       k1.setHeight(max(getHeight(k1.getLeft()), getHeight(k1.getRight()))+1); 
+       k2.setHeight(max(getHeight(k2.getRight()),k1.getHeight())+1); 
+       return k2; 
+       } 
+       public static AvlNode doubleRotateWithLeft (AvlNode k3) { 
+       k3.setLeft(singleRotateWithRight(k3.getLeft())); 
+       return singleRotateWithLeft(k3); 
+       } 
+       public static AvlNode doubleRotateWithRight (AvlNode k1) { 
+       k1.setRight(singleRotateWithLeft(k1.getRight())); 
+       return singleRotateWithRight(k1); 
+       } 
+       public AvlNode insert (int value, AvlNode t) { 
+       if(t == null) { 
+       t = new AvlNode(value); 
+       } 
+       else if(value &lt; t.getValue()) { 
+       t.setLeft(insert(value,t.getLeft())); 
+       if(getHeight(t.getLeft())-getHeight(t.getRight()) == 2) 
+       if(value &lt; t.getLeft().getValue()) 
+       t = singleRotateWithLeft(t); 
+       else 
+       t = doubleRotateWithLeft(t); 
+       } 
+       else&nbsp; if(value &gt; t.getValue()) { 
+       t.setRight(insert(value,t.getRight())); 
+       if(getHeight(t.getRight())-getHeight(t.getLeft()) == 2) 
+       if(value &gt; t.getRight().getValue()) 
+       t = singleRotateWithRight(t); 
+       else 
+       t = doubleRotateWithRight(t); 
+       } 
+       t.setHeight(max(getHeight(t.getLeft()), getHeight(t.getRight()))+1); 
+       return t; 
+       } 
+       public int retrieve (AvlNode t) { 
+       return t.getValue(); 
+       } 
+       public void preOrder(AvlNode t) { 
+       System.out.println(t.getValue()); 
+       if(t.getLeft() != null) { 
+       preOrder(t.getLeft()); 
+       } 
+       if(t.getRight() != null) { 
+       preOrder(t.getRight()); 
+       } 
+       } 
+       public static void main(String[] args) { 
+       AvlTree at = new AvlTree(); 
+       AvlNode t; 
+       AvlNode position; 
+       int i; 
+       int j = 0; 
+       t = at.makeEmpty(null); 
+       for(i=0; i&lt;50; i++, j = (j+7)%50) 
+       t = at.insert(j,t); 
+       for(i=0; i&lt;50; i++) 
+       if((position = at.find(i,t)) == null || at.retrieve(position) != i) 
+       System.out.println(“Error at “+i); 
+       System.out.println(“Min is “+at.retrieve(at.findMin(t))+ ” Max is “+at.retrieve(at.findMax(t))); at.preOrder(t); 
+       } 
+       } 
+      AVLNode.java 
+       public class AvlNode { 
+       private int value; 
+       private AvlNode left; 
+       private AvlNode right; 
+       private int height; 
+       public AvlNode(int value) { 
+       this.value = value; 
+       left = null; 
+       right = null; 
+       height = 0; 
+       } 
+       public int getValue() { 
+       return value; 
+       } 
+       public void setValue(int value) { 
+       this.value = value; 
+       } public AvlNode getLeft() { 
+       return left; 
+       } public void setLeft(AvlNode left) { 
+       this.left = left; 
+       } public AvlNode getRight() { 
+       return right; 
+       } public void setRight(AvlNode right) { 
+       this.right = right; 
+       } public int getHeight() { 
+       return height; 
+       } public void setHeight(int height) { 
+       this.height = height; 
+       } 
+       } 
+       -6.161517 
+       106.652710 
+					(function(g){g.__ATA.initAd({sectionId:56243081, width:300, height:250});})(window);
+         Share this:
+           Print
+           Email
+           Twitter
+           Facebook
+        Like this:
+         Like 
+         Loading...
+        Related 
+      Categories: data structure, Information Technology, programming 
+      Tags: avl, code, JAVA, source, tree 
+       Comments (12)  
+       Trackbacks (1)  
+      Leave a comment 
+      Trackback 
+           ab 
+           March 27, 2011 at 9:24 pm 
+          Reply 
+           Wat abt the deletion? 
+           acgpz 
+           April 4, 2011 at 8:11 pm 
+          Reply 
+           good post!!!!!! 
+           Jables 
+           December 13, 2011 at 11:55 pm 
+          Reply 
+           public static AvlNode doubleRotateWithLeft (AvlNode k3) { 
+           k3.setLeft(singleRotateWithRight(k3.getLeft())); 
+           return singleRotateWithLeft(k3); 
+           } 
+           public static AvlNode doubleRotateWithRight (AvlNode k1) { 
+           k1.setRight(singleRotateWithLeft(k1.getRight())); 
+           return singleRotateWithRight(k1); 
+           } 
+           I don’t understand why you did k3.setLeft and k1.setRight instead of just leaving it like this: 
+           public static AvlNode doubleRotateWithLeft (AvlNode k3) { 
+           singleRotateWithRight(k3.getLeft())) 
+           return singleRotateWithLeft(k3); 
+           } 
+           public static AvlNode doubleRotateWithRight (AvlNode k1) { 
+           singleRotateWithLeft(k1.getRight()); 
+           return singleRotateWithRight(k1); 
+           } 
+           What exactly happens in k3.setLeft and k1.setRight? 
+           nandhini 
+           December 14, 2012 at 7:06 am 
+          Reply 
+           how to run this program please help me pleaase 
+            kazasou 
+             February 6, 2013 at 11:03 am 
+            Reply 
+             Wait, you don’t know how to run a JAVA program yet you search for a JAVA program. Why don’t you google it first? 
+           dito26 
+           May 12, 2013 at 12:29 am 
+          Reply 
+           what about the deletion??  
+           I almost done all the step, just need delete method 
+          kasun abaywardana 
+           October 3, 2013 at 4:43 pm 
+          Reply 
+           Very nice post.It ids very helpful for my College assignment!!! 
+           Jaypee 
+           February 26, 2014 at 2:20 am 
+          Reply 
+           It is a succes when i compile it but when i run it .. it Displays : 
+           Usage: java [-options] class [args…] (to execute a class) or java [-options] -jar jarfile [args…] (to execute a jar file) where options include: -d32 use a 32-bit data model if available -d64 use a 64-bit data model if available -client to select the “client” VM -server to select the “server” VM -hotspot is a synonym for the “client” VM [deprecated] The default VM is client. 
+            -cp -classpath A ; separated list of directories, JAR archives, and ZIP archives to search for class files. -D= set a system property -verbose:[cl

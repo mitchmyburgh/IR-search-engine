@@ -1,0 +1,30 @@
+In computing, an algorithm, data structure, or programming language is called purely functional if they guarantee the (weak) equivalence of call-by-name, call-by-value and call-by-need evaluation strategies. One typical approach to achieve this is by excluding destructive modifications (updates) of entities in the program's running environment. According to this restriction, variables are used in a mathematical sense, with identifiers referring to immutable, persistent values.
+To represent computations that perform side-effects in a purely functional programming language, one can use Monads, as proposed by Philip Wadler.
+Haskell is one of the most famous modern examples of a pure functional programming language.
+Purely functional data structures are often represented in a different way than their imperative counterparts.
+
+
+== Benefits and applications ==
+The persistence property of purely functional data structures can be advantageous in the development of many applications that deal with multiple versions of an object.
+For example, consider a comprehensive web-based thesaurus service that uses a large red-black tree to store its list of synonym relationships, and that allows each user to add their own custom words to their personal thesaurus. One way to do this is to make a copy of the tree for each user, and then add their custom words to it; however, this duplication is wasteful, both of space and of time.
+A better approach is to store the words in an immutable (and therefore purely functional) red-black tree. Then, one can simply take the original version and produce a new tree based on it for each set of custom words. Because these new trees share large amounts of structure with the main tree, the space overhead for each additional user is at most , where  is the number of custom nodes. With a single mutable red-black tree, this approach would not work, since changes to the main tree would affect all users.
+Besides their efficiency benefits, the inherent referential transparency of functional data structures tends to make purely functional computation more amenable to analysis and optimization, both formal and informal.
+
+
+== See also ==
+Pure function
+Persistent data structure
+VList
+Identity (object-oriented programming)
+List of Pure functional programming languages
+
+
+== Bibliography ==
+
+
+== External links ==
+Purely Functional Data Structures thesis by Chris Okasaki (PDF format)
+Making Data-Structures Persistent by James R. Driscoll, Neil Sarnak, Daniel D. Sleator, Robert E. Tarjan (PDF)
+Fully Persistent Lists with Catenation by James R. Driscoll, Daniel D. Sleator, Robert E. Tarjan (PDF)
+Persistent Data Structures from MIT open course Advanced Algorithms
+What's new in purely functional data structures since Okasaki? on Theoretical Computer Science StackExchange

@@ -1,0 +1,81 @@
+Our first step is an interactive boundary curve painting phase
+wherein a modeler defines the boundaries of a number of
+patches. This is accomplished with tools that allow the painting
+of curves directly on the surface of the unparameterized
+polygonal model. Here, the connectivity of the polygon mesh
+allows the use of local graph search algorithms to make curve
+painting operations rapid. This property is useful when a
+modeler wishes to experiment with different boundary curve
+configurations for the same model. Each region of the mesh
+that a B-spline surface must be fit to is called a polygonal
+patch. Since patch boundaries have been placed for artistic
+reasons, polygonal patches are not constrained to be height
+fields. Our only assumptions about them are that each is a
+rectangularly parameterizable piece of the surface that has no
+holes.
+2. In the next step we generate a gridded resampling for each
+polygonal patch. This is accomplished by an automatic
+coarse-to-fine resampling of the patch, producing a regular
+grid that is constrained to lie on the polygonal surface. We
+call this grid the spring mesh. Its purpose is to establish
+a parameterization for the unparameterized surface. Our
+resampling algorithm is a combination of relaxation and
+subdivision steps that iteratively refine the spring mesh at a
+given resolution to obtain a better sampling of the underlying
+polygonal patch. This refinement is explicitly directed by
+distortion metrics relevant to the spline fit. The output of this
+step is a fine gridding of each polygonal patch in the model.
+3. We now use standard gridded data fitting techniques to fit a Bspline
+surface to the spring mesh corresponding to each polygonal
+patch. The output of this step is a set of B-spline patches
+that represent the coarse geometry of the polygonal model. To
+represent fine detail, we also compute a displacement map for
+each patch as a gridded resampling of the difference between
+the spring mesh and the B-spline surface. This regular sampling
+can conveniently be represented as a vector (rgb) image
+which stores a 3-valued displacement at each sample location.
+Each of these displacements represents a perturbation in the
+local coordinate frame of the spline surface. This image representation
+lends itself to a variety of interesting image processing
+operations such as compositing, painting, edge detection
+and compression. An issue in our technique, or in any technique
+for fitting multiple patches to data is ensuring continuity
+between the patches. We use a combination of knot line
+matching and a stitching post-process which together give us
+G1 continuity everywhere. This solution is widely used in the
+entertainment industry.
+The remainder of this paper is organized as follows. Section
+2 reviews relevant previous work. Section 3 describes our techniques
+for painting boundary curves over polygonal meshes. Section
+4 presents our coarse-to-fine, polygonal patch resampling algorithm
+and the surface fitting process. Section 5 describes our strategy
+for extracting displacement maps and some interesting applications
+thereof. Section 6, discusses techniques for dealing with continuity
+across patch boundaries. Finally, section 7 concludes by discussing
+future work.
+Throughout this paper we will draw on examples from the entertainment
+industry. However, our techniques are generally applicable.
+2 Previous work
+There is a large literature on surface fitting techniques in the CAD,
+computer vision and approximation theory fields. We focus here on
+only those techniques from these areas that use dense (scanned) data
+of arbitrary topology to produce smooth surfaces. We can classify
+such surface fitting techniques as manual, semi-automated and automated.
+2.1 Manual techniques
+Manual approachescan be divided into two categories. The first category
+includes all methods for digitizing a physical model directly.
+For example, using a touch probe, one can acquire only data that is
+relevant to the final surface model. Catalogues of computer models
+published by ViewPoint Data Labs and the work of Pixar’s animation
+group [24, 28] exemplify these methods. These methods involve
+human intervention throughout the data acquisition process
+and are hence time-consuming, especially if the model is complex
+or the data set required is large. In contrast, our pipeline employs
+automatic data acquisition methods [9].
+The second category uses scanned data as a template to assist
+in the model construction process. Point cloud or triangulated data
+is typically imported into a conventional modeling system. A user
+then manually projects isolated points to this data as a means of determining
+the locations of control points (or edit points [15]) for
+smooth parametric surfaces. These methods require less human intervention
+than those in the first category but complex models may

@@ -1,0 +1,302 @@
+# reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js)
+
+A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
+
+reveal.js comes with a broad range of features including [nested slides](https://github.com/hakimel/reveal.js#markup), [Markdown contents](https://github.com/hakimel/reveal.js#markdown), [PDF export](https://github.com/hakimel/reveal.js#pdf-export), [speaker notes](https://github.com/hakimel/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/hakimel/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com).
+
+## Table of contents
+- [Online Editor](#online-editor)
+- [Instructions](#instructions)
+  - [Markup](#markup)
+  - [Markdown](#markdown)
+  - [Element Attributes](#element-attributes)
+  - [Slide Attributes](#slide-attributes)
+- [Configuration](#configuration)
+- [Presentation Size](#presentation-size)
+- [Dependencies](#dependencies)
+- [Ready Event](#ready-event)
+- [Auto-sliding](#auto-sliding)
+- [Keyboard Bindings](#keyboard-bindings)
+- [Touch Navigation](#touch-navigation)
+- [Lazy Loading](#lazy-loading)
+- [API](#api)
+  - [Slide Changed Event](#slide-changed-event)
+  - [Presentation State](#presentation-state)
+  - [Slide States](#slide-states)
+  - [Slide Backgrounds](#slide-backgrounds)
+  - [Parallax Background](#parallax-background)
+  - [Slide Transitions](#slide-transitions)
+  - [Internal links](#internal-links)
+  - [Fragments](#fragments)
+  - [Fragment events](#fragment-events)
+  - [Code syntax highlighting](#code-syntax-highlighting)
+  - [Slide number](#slide-number)
+  - [Overview mode](#overview-mode)
+  - [Fullscreen mode](#fullscreen-mode)
+  - [Embedded media](#embedded-media)
+  - [Stretching elements](#stretching-elements)
+  - [postMessage API](#postmessage-api)
+- [PDF Export](#pdf-export)
+- [Theming](#theming)
+- [Speaker Notes](#speaker-notes)
+  - [Share and Print Speaker Notes](#share-and-print-speaker-notes)
+  - [Server Side Speaker Notes](#server-side-speaker-notes)
+- [Multiplexing](#multiplexing)
+  - [Master presentation](#master-presentation)
+  - [Client presentation](#client-presentation)
+  - [Socket.io server](#socketio-server)
+- [MathJax](#mathjax)
+- [Installation](#installation)
+  - [Basic setup](#basic-setup)
+  - [Full setup](#full-setup)
+  - [Folder Structure](#folder-structure)
+- [License](#license)
+
+#### More reading
+- [Changelog](https://github.com/hakimel/reveal.js/releases): Up-to-date version history.
+- [Examples](https://github.com/hakimel/reveal.js/wiki/Example-Presentations): Presentations created with reveal.js, add your own!
+- [Browser Support](https://github.com/hakimel/reveal.js/wiki/Browser-Support): Explanation of browser support and fallbacks.
+- [Plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware): A list of plugins that can be used to extend reveal.js.
+
+## Online Editor
+
+Presentations are written using HTML or Markdown but there's also an online editor for those of you who prefer a graphical interface. Give it a try at [http://slides.com](http://slides.com?ref=github).
+
+
+## Instructions
+
+### Markup
+
+Here's a barebones example of a fully working reveal.js presentation:
+```html
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Slide 1</section>
+				<section>Slide 2</section>
+			</div>
+		</div>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize();
+		</script>
+	</body>
+</html>
+```
+
+The presentation markup hierarchy needs to be `.reveal > .slides > section` where the `section` represents one slide and can be repeated indefinitely. If you place multiple `section` elements inside of another `section` they will be shown as vertical slides. The first of the vertical slides is the "root" of the others (at the top), and will be included in the horizontal sequence. For example:
+
+```html
+<div class="reveal">
+	<div class="slides">
+		<section>Single Horizontal Slide</section>
+		<section>
+			<section>Vertical Slide 1</section>
+			<section>Vertical Slide 2</section>
+		</section>
+	</div>
+</div>
+```
+
+### Markdown
+
+It's possible to write your slides using Markdown. To enable Markdown, add the ```data-markdown``` attribute to your ```<section>``` elements and wrap the contents in a ```<script type="text/template">``` like the example below.
+
+This is based on [data-markdown](https://gist.github.com/1343518) from [Paul Irish](https://github.com/paulirish) modified to use [marked](https://github.com/chjj/marked) to support [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown). Sensitive to indentation (avoid mixing tabs and spaces) and line breaks (avoid consecutive breaks).
+
+```html
+<section data-markdown>
+	<script type="text/template">
+		## Page title
+
+		A paragraph with some text and a [link](http://hakim.se).
+	</script>
+</section>
+```
+
+#### External Markdown
+
+You can write your content as a separate file and have reveal.js load it at runtime. Note the separator arguments which determine how slides are delimited in the external file. The ```data-charset``` attribute is optional and specifies which charset to use when loading the external file.
+
+When used locally, this feature requires that reveal.js [runs from a local web server](#full-setup).
+
+```html
+<section data-markdown="example.md"
+         data-separator="^\n\n\n"
+         data-separator-vertical="^\n\n"
+         data-separator-notes="^Note:"
+         data-charset="iso-8859-15">
+</section>
+```
+
+#### Element Attributes
+
+Special syntax (in html comment) is available for adding attributes to Markdown elements. This is useful for fragments, amongst other things.
+
+```html
+<section data-markdown>
+	<script type="text/template">
+		- Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+		- Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+	</script>
+</section>
+```
+
+#### Slide Attributes
+
+Special syntax (in html comment) is available for adding attributes to the slide `<section>` elements generated by your Markdown.
+
+```html
+<section data-markdown>
+	<script type="text/template">
+	<!-- .slide: data-background="#ff0000" -->
+		Markdown content
+	</script>
+</section>
+```
+
+
+### Configuration
+
+At the end of your page you need to initialize reveal by running the following code. Note that all config values are optional and will default as specified below.
+
+```javascript
+Reveal.initialize({
+
+	// Display controls in the bottom right corner
+	controls: true,
+
+	// Display a presentation progress bar
+	progress: true,
+
+	// Display the page number of the current slide
+	slideNumber: false,
+
+	// Push each slide change to the browser history
+	history: false,
+
+	// Enable keyboard shortcuts for navigation
+	keyboard: true,
+
+	// Enable the slide overview mode
+	overview: true,
+
+	// Vertical centering of slides
+	center: true,
+
+	// Enables touch navigation on devices with touch input
+	touch: true,
+
+	// Loop the presentation
+	loop: false,
+
+	// Change the presentation direction to be RTL
+	rtl: false,
+
+	// Randomizes the order of slides each time the presentation loads
+	shuffle: false,
+
+	// Turns fragments on and off globally
+	fragments: true,
+
+	// Flags if the presentation is running in an embedded mode,
+	// i.e. contained within a limited portion of the screen
+	embedded: false,
+
+	// Flags if we should show a help overlay when the questionmark
+	// key is pressed
+	help: true,
+
+	// Flags if speaker notes should be visible to all viewers
+	showNotes: false,
+
+	// Number of milliseconds between automatically proceeding to the
+	// next slide, disabled when set to 0, this value can be overwritten
+	// by using a data-autoslide attribute on your slides
+	autoSlide: 0,
+
+	// Stop auto-sliding after user input
+	autoSlideStoppable: true,
+
+	// Use this method for navigation when auto-sliding
+	autoSlideMethod: Reveal.navigateNext,
+
+	// Enable slide navigation via mouse wheel
+	mouseWheel: false,
+
+	// Hides the address bar on mobile devices
+	hideAddressBar: true,
+
+	// Opens links in an iframe preview overlay
+	previewLinks: false,
+
+	// Transition style
+	transition: 'default', // none/fade/slide/convex/concave/zoom
+
+	// Transition speed
+	transitionSpeed: 'default', // default/fast/slow
+
+	// Transition style for full page slide backgrounds
+	backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+	// Number of slides away from the current that are visible
+	viewDistance: 3,
+
+	// Parallax background image
+	parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+	// Parallax background size
+	parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+	// Number of pixels to move the parallax background per slide
+	// - Calculated automatically unless specified
+	// - Set to 0 to disable movement along an axis
+	parallaxBackgroundHorizontal: null,
+	parallaxBackgroundVertical: null
+
+});
+```
+
+
+The configuration can be updated after initialization using the ```configure``` method:
+
+```javascript
+// Turn autoSlide off
+Reveal.configure({ autoSlide: 0 });
+
+// Start auto-sliding every 5s
+Reveal.configure({ autoSlide: 5000 });
+```
+
+
+### Presentation Size
+
+All presentations have a normal size, that is the resolution at which they are authored. The framework will automatically scale presentations uniformly based on this size to ensure that everything fits on any given display or viewport.
+
+See below for a list of configuration options related to sizing, including default values:
+
+```javascript
+Reveal.initialize({
+
+	...
+
+	// The "normal" size of the presentation, aspect ratio will be preserved
+	// when the presentation is scaled to fit different resolutions. Can be
+	// specified using percentage units.
+	width: 960,
+	height: 700,
+
+	// Factor of the display size that should remain empty around the content
+	margin: 0.1,
+
+	// Bounds for smallest/largest possible scale to apply to content
+	minScale: 0.2,
+	maxScale: 1.5
+
+});
+```

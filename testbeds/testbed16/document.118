@@ -1,0 +1,54 @@
+OpenStack, CloudStack, Eucalyptus and OpenNebula: Which Cloud Platform is the Most Open?	
+
+March 13, 2013/24 Comments/in Project /by Ignacio M. Llorente
+We described in a previous post our experience about the different types of cloud models, and our view about how the main open-source Cloud Management Platforms (CMPs) are targeting their needs. Our aim was to demonstrate that we will see an open-source cloud space with several offerings focused on different environments and/or industries, due to the fact that no single CMP can be all things to all people. The four open-source CMPs will coexist and, in some cases, work together in a broad open cloud ecosystem.
+
+This article tries to answer another quite common question in open-source cloud computing discussions and presentations… which CMP is the most open? Of course such analysis should go beyond just considering the openness of the code (which as far as we know is fully open-source in the four projects) and the development process to additionally address the perspectives of the consumers and the builders of the cloud infrastructure.
+
+OPENSTACK	CLOUDSTACK	EUCALYPTUS	OPENNEBULA
+Source Code	Fully open-source, Apache v2.0	Fully open-source, Apache v2.0	Fully open-source, GPL v3.0	Fully open-source, Apache v2.0
+In this comparison we refer to the version of the software that is available for download directly from the respective project web sites. As in our previous post, we have tried to be as neutral as possible.
+
+The Perspective of the Developer
+
+What is “open” and how can we measure project openness under the perspective of a corporation interested in contributing to code development?. We would suggest to use the following measures:
+
+Development Model: Is the code developed over the Internet in view of the public?
+Developer Engagement: Is the development open to external contributions?
+Governance Model: How are the decisions about roadmap made?
+OPENSTACK	CLOUDSTACK	EUCALYPTUS	OPENNEBULA
+Development Model	Public development	Public development	Public development	Public development
+Developer Engagement	Contributor license agreement	Contributor license agreement	Contributor license agreement	Contributor license agreement
+Governance Model	Foundation	Technical meritocracy	Benevolent dictator	Benevolent dictator
+The four CMPs are fully open-source software, accept contributions under similar license agreements, and are publicly developed over the Internet. However, there is a difference in their governance models. While OpenStack follows a foundation approach with a Board of Directors providing strategic oversight and CloudStack follows the Apache meritocracy rules, Eucalyptus and OpenNebula are managed by a single organization that focuses on the interest of the project and strategically leads it to ensure that it meets the needs of the users and the community. Benevolent dictator governance is the model followed by other successful projects like Android or Linux Kernel, and, in our view, it is the most effective way to focus on engineering quality, to be responsive to the users, and to ensure long term support.
+
+The Perspective of the User
+
+Let us now evaluate openness under the perspective of the user. In this case, we should consider both the perspective of the user of the cloud (consumer) and the perspective of the user of the technology (builder).
+
+From the perspective of the cloud consumer, “open cloud” is all about APIs and data formats. Common API’s give freedom to run anywhere, being this freedom supported or not by open source. This provides the ability for the user to compare cloud offerings, select the offer that best suits his needs, and change providers if he is unsatisfied with the service or finds a more competitive offering.
+From the perspective of the cloud builder, “open cloud” means that the community open-source software is enterprise-grade and commercially supported without having to install a vendor enhanced distribution (which would be much closer to an “open core model”). This is where technology buyers and users can evaluate openness for themselves.
+From the perspective of the user, we would suggest to use the following measures:
+
+API Ecosystem: Is the software supporting a de-facto standard with a broad ecosystem?
+Production Readiness: Is the open-source software ready for enterprise use and commercially supported?
+OPENSTACK	CLOUDSTACK	EUCALYPTUS	OPENNEBULA
+API Ecosystem	OpenStack API	Amazon API	Amazon API	Amazon API
+Production Readiness	No, only available through any of the several vendor specific “stacks”	Enterprise-ready and direct support from developers	Enterprise-ready and direct support from developers	Enterprise-ready and direct support from developers
+No much more to say about cloud API ecosystems, we do not want to start a new discussion about which of the cloud APIs is a de-facto standard and which ecosystem is bigger and growing faster  (please see addendum 2). Production Readiness is a very interesting aspect which deserves a detailed discussion. Independently of whether the software is being used for development or for production purposes, it is understood that a corporation needs the open-source cloud management platform to be enterprise ready, which means to be stable, long-term commercially supported, and with a clear upgrade process.
+
+From this perspective, it is clear that Eucalyptus and OpenNebula are more open. Both projects provide an enterprise-ready open-source cloud solution. Any organization can use the open-source distribution to build a production cloud, and receive best-effort support through a community mailing list. Additionally, any organization can purchase commercial support directly from the developers. The important aspect is that these projects do not deliver enterprise editions of their software, they commercially support the community software. In other words, the community versions of Eucalyptus and OpenNebula are not limited editions of enterprise versions. CloudStack could be also included in this group, given that Citrix CloudPlatform is basically an enterprise distribution that (as far as we know) does not provide extended features.
+
+On the other side, any organization interested in using OpenStack, and requiring commercial support and enterprise maturity, is recommended (please see addendum 1) to deploy any of the several enterprise distributions that are being released by the vendors contributing to the project. These enterprise-grade distributions incorporate different versions of the OpenStack components with extended features, custom enhancements and integrations that may make difficult their compatibility and interoperability. Moreover many of them include proprietary components and exhibit significant differences in the implementation of critical underlying functionality. So the organization is finally using proprietary software based on OpenStack and is locked to that specific distribution given that the vendor only supports its own stack, not the community version, and there is no way to migrate to another vendor distribution.
+
+
+
+Looking to the Future
+
+We have not prepared this article to try to demonstrate that one of the CMPs is more open than the others. We have tried to show how the four open source projects have different cultures and drivers, and these differences are reflected in the different dimensions of openness. For example, the four CMPs implement different governance models because they are addressing different needs. While Eucalyptus and OpenNebula serve the needs of the users, CloudStack better serves the needs of the developers, and OpenStack serves the needs of the vendors, so they have a technology base and a marketing brand to build their own cloud stacks.
+
+Which is the most important measure of openness in cloud computing? Do the cloud users really care about this? Users mainly want a solution that meets their functional needs, and are interested in open-source as a way to enhance flexibility, lower costs and avoid lock-in. However, in our experience, most of these benefits are only available when an open-source software can be used in production environments without the addition of proprietary components.
+
+Addendum 1 (14:41 PDT, March 14, 2013): This is not a personal recommendation. This is a recommendation made by several of the companies involved in OpenStack that have released, or are planing to release in the short term, an enterprise-ready OpenStack distribution. According to their different announcements, these vendor specific distributions bring production-grade features like upgrade services, scalability, performance, or stability.
+
+Addendum 2 (23:23 PDT, March 14, 2013): I forgot to include some words about the support of the four open-source cloud management stacks to existing de-jure standards addressing interoperability and portability issues surrounding cloud infrastructures. Although they do not have a broad ecosystem now, they will be critical in future cloud interoperability and portability. The OpenNebula main distribution provides an implementation of OGF OCCI and in its ecosystem there are implementations of DMTF CIMI and OVF, and SNIA CDMI, and OpenStack also offers an experimental implementation of OGF OCCI.

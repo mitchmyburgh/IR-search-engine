@@ -1,0 +1,38 @@
+Adaptive resonance theory (ART) is a theory developed by Stephen Grossberg and Gail Carpenter on aspects of how the brain processes information. It describes a number of neural network models which use supervised and unsupervised learning methods, and address problems such as pattern recognition and prediction.
+
+
+== Overview ==
+The primary intuition behind the ART model is that object identification and recognition generally occur as a result of the interaction of 'top-down' observer expectations with 'bottom-up' sensory information. The model postulates that 'top-down' expectations take the form of a memory template or prototype that is then compared with the actual features of an object as detected by the senses. This comparison gives rise to a measure of category belongingness. As long as this difference between sensation and expectation does not exceed a set threshold called the 'vigilance parameter', the sensed object will be considered a member of the expected class. The system thus offers a solution to the 'plasticity/stability' problem, i.e. the problem of acquiring new knowledge without disrupting existing knowledge.
+
+
+== Learning model ==
+
+The basic ART system is an unsupervised learning model. It typically consists of a comparison field and a recognition field composed of neurons, a vigilance parameter (threshold of recognition), and a reset module. The comparison field takes an input vector (a one-dimensional array of values) and transfers it to its best match in the recognition field. Its best match is the single neuron whose set of weights (weight vector) most closely matches the input vector. Each recognition field neuron outputs a negative signal (proportional to that neuron’s quality of match to the input vector) to each of the other recognition field neurons and thus inhibits their output. In this way the recognition field exhibits lateral inhibition, allowing each neuron in it to represent a category to which input vectors are classified.
+After the input vector is classified, the reset module compares the strength of the recognition match to the vigilance parameter. If the vigilance parameter is overcome (i.e. the input vector is within the normal range seen on previous input vectors), training commences: the weights of the winning recognition neuron are adjusted towards the features of the input vector. Otherwise, if the match level is below the vigilance parameter (i.e. the input vector's match is outside the normal expected range for that neuron) the winning recognition neuron is inhibited and a search procedure is carried out. In this search procedure, recognition neurons are disabled one by one by the reset function until the vigilance parameter is overcome by a recognition match. In particular, at each cycle of the search procedure the most active recognition neuron is selected and then switched off if its activation is below the vigilance parameter (note that it thus releases the remaining recognition neurons from its inhibition). If no committed recognition neuron’s match overcomes the vigilance parameter, then an uncommitted neuron is committed and its weights are adjusted towards matching the input vector. The vigilance parameter has considerable influence on the system: higher vigilance produces highly detailed memories (many, fine-grained categories), while lower vigilance results in more general memories (fewer, more-general categories).
+
+
+== Training ==
+There are two basic methods of training ART-based neural networks: slow and fast. In the slow learning method, the degree of training of the recognition neuron’s weights towards the input vector is calculated to continuous values with differential equations and is thus dependent on the length of time the input vector is presented. With fast learning, algebraic equations are used to calculate degree of weight adjustments to be made, and binary values are used. While fast learning is effective and efficient for a variety of tasks, the slow learning method is more biologically plausible and can be used with continuous-time networks (i.e. when the input vector can vary continuously).
+
+
+== Types of ART ==
+ART 1 is the simplest variety of ART networks, accepting only binary inputs. ART 2 extends network capabilities to support continuous inputs. ART 2-A is a streamlined form of ART-2 with a drastically accelerated runtime, and with qualitative results being only rarely inferior to the full ART-2 implementation. ART 3 builds on ART-2 by simulating rudimentary neurotransmitter regulation of synaptic activity by incorporating simulated sodium (Na+) and calcium (Ca2+) ion concentrations into the system’s equations, which results in a more physiologically realistic means of partially inhibiting categories that trigger mismatch resets.
+Fuzzy ART implements fuzzy logic into ART’s pattern recognition, thus enhancing generalizability. An optional (and very useful) feature of fuzzy ART is complement coding, a means of incorporating the absence of features into pattern classifications, which goes a long way towards preventing inefficient and unnecessary category proliferation.
+
+ARTMAP, also known as Predictive ART, combines two slightly modified ART-1 or ART-2 units into a supervised learning structure where the first unit takes the input data and the second unit takes the correct output data, then used to make the minimum possible adjustment of the vigilance parameter in the first unit in order to make the correct classification.
+Fuzzy ARTMAP is merely ARTMAP using fuzzy ART units, resulting in a corresponding increase in efficacy.
+
+
+== Criticism ==
+It has been noted that results of Fuzzy ART and ART 1 depend critically upon the order in which the training data are processed. The effect can be reduced to some extent by using a slower learning rate, but is present regardless of the size of the input data set. Hence Fuzzy ART and ART 1 estimates do not possess the statistical property of consistency.
+
+
+== References ==
+
+Wasserman, Philip D. (1989), Neural computing: theory and practice, New York: Van Nostrand Reinhold, ISBN 0-442-20743-3
+
+
+== External links ==
+Stephen Grossberg's website.
+ART's implementation for unsupervised learning (ART 1, ART 2A, ART 2A-C and ART distance) can be found at https://web.archive.org/web/20120109162743/http://users.visualserver.org/xhudik/art
+[1] Summary of the ART algorithm

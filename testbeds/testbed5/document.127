@@ -1,0 +1,192 @@
+Comparison of multi-paradigm programming languages
+From Wikipedia, the free encyclopedia
+
+This article possibly contains original research. Please improve it by verifying the claims made and adding inline citations. Statements consisting only of original research should be removed. (August 2009)
+Programming paradigms
+Action
+Agent-oriented
+Array-oriented
+Automata-based
+Concurrent computing
+Relativistic programming
+Data-driven
+Declarative (contrast: Imperative)
+Constraint
+Constraint logic
+Concurrent constraint logic
+Dataflow
+Flow-based
+Cell-oriented (spreadsheets)
+Reactive
+Functional
+Functional logic
+Purely functional
+Logic
+Abductive logic
+Answer set
+Concurrent logic
+Functional logic
+Inductive logic
+Dynamic
+End-user programming
+Event-driven
+Service-oriented
+Time-driven
+Expression-oriented
+Feature-oriented
+Function-level (contrast: Value-level)
+Generic
+Imperative (contrast: Declarative)
+Literate
+Procedural
+Inductive programming
+Language-oriented
+Natural language programming
+Discipline-specific
+Domain-specific
+Grammar-oriented
+Dialecting
+Intentional
+Metaprogramming
+Automatic
+Reflective
+Attribute-oriented
+Homoiconic
+Template
+Policy-based
+Non-structured (contrast: Structured)
+Array
+Nondeterministic
+Parallel computing
+Process-oriented
+Point-free style
+Concatenative
+Semantic
+Structured (contrast: Non-structured)
+Block-structured
+Modular (contrast: Monolithic)
+Object-oriented
+Actor-based
+Class-based
+Concurrent
+Prototype-based
+By separation of concerns:
+Aspect-oriented
+Role-oriented
+Subject-oriented
+Recursive
+Value-level (contrast: Function-level)
+Probabilistic
+Concept
+v t e
+Programming languages can be grouped by the number and types of paradigms supported.
+
+Contents  [hide] 
+1	Paradigm summaries
+2	Language overview
+3	See also
+4	References
+Paradigm summaries[edit]
+A concise reference for the programming paradigms listed in this article.
+
+Concurrent programming – have language constructs for concurrency, these may involve multi-threading, support for distributed computing, message passing, shared resources (including shared memory), or futures
+Actor programming – concurrent computation with actors that make local decisions in response to the environment (capable of selfish or competitive behavior)
+Constraint programming – relations between variables are expressed as constraints (or constraint networks), directing allowable solutions (uses constraint satisfaction or simplex algorithm)
+Dataflow programming – forced recalculation of formulas when data values change (e.g. spreadsheets)
+Declarative programming – describes actions (e.g. HTML describes a page but not how to actually display it)
+Distributed programming – have support for multiple autonomous computers that communicate via computer networks
+Functional programming – uses evaluation of mathematical functions and avoids state and mutable data
+Generic programming – uses algorithms written in terms of to-be-specified-later types that are then instantiated as needed for specific types provided as parameters
+Imperative programming – explicit statements that change a program state
+Logic programming – uses explicit mathematical logic for programming
+Metaprogramming – writing programs that write or manipulate other programs (or themselves) as their data, or that do part of the work at compile time that would otherwise be done at runtime
+Template metaprogramming – metaprogramming methods in which templates are used by a compiler to generate temporary source code, which is merged by the compiler with the rest of the source code and then compiled
+Reflective programming – metaprogramming methods in which a program modifies or extends itself
+Object-oriented programming – uses data structures consisting of data fields and methods together with their interactions (objects) to design programs
+Class-based – object-oriented programming in which inheritance is achieved by defining classes of objects, versus the objects themselves
+Prototype-based – object-oriented programming that avoids classes and implements inheritance via cloning of instances
+Pipeline programming – a simple syntax change to add syntax to nest function calls to language originally designed with none
+Rule-based programming – a network of rules of thumb that comprise a knowledge base and can be used for expert systems and problem deduction & resolution
+Visual programming – manipulating program elements graphically rather than by specifying them textually (e.g. Simulink); also termed diagrammatic programming[1]
+Language overview[edit]
+List of multi-paradigm programming languages
+Lan­guage	Num­ber of Para­digms	Con­cur­rent	Con­straints	Data­flow	De­clar­at­ive	Dis­trib­uted	Func­tion­al	Meta­pro­gram­ming	Gen­er­ic	Im­per­at­ive	Lo­gic	Re­flec­tion	Ob­ject-ori­ented	Pipe­lines	Visu­al	Rule-based	Oth­er para­digms
+Ada[2][3][4][5][6]	5	Yes[a 1]	No	No	No	Yes	No	No	Yes	Yes	No	No	Yes[a 2]	No	No	No	No
+ALF	2	No	No	No	No	No	Yes	No	No	No	Yes	No	No	No	No	No	No
+AmigaE[citation needed]	2	No	No	No	No	No	No	No	No	Yes	No	No	Yes[a 2]	No	No	No	No
+APL	2	No	No	No	No	No	Yes	No	No	Yes	No	No	No	No	No	No	No
+BETA[citation needed]	3	No	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 2]	No	No	No	No
+C++	7 (13)	Yes[7][8][9]	Library[10]	Library[11][12]	Library[13][14]	Library[15][16]	Yes	Yes[17]	Yes[a 3]	Yes	Library[18][19]	Library[20]	Yes[a 2]	Yes[21]	No	Library[22]	No
+C#	6 (7)	Yes	No	Library[a 4]	No	No	Yes[a 5]	No	Yes	Yes	No	Yes	Yes[a 2]	No	No	No	reactive[a 6]
+ChucK[citation needed]	3	Yes	No	No	No	No	No	No	No	Yes	No	No	Yes[a 2]	No	No	No	No
+Claire	2	No	No	No	No	No	Yes	No	No	No	No	No	Yes[a 2]	No	No	No	No
+Common Lisp (some other paradigms are implemented as libraries)[citation needed]	5	No	No	No	No	No	Yes	Yes	No	Yes	No	Yes	Yes[a 2]	No	No	No	No
+Curl	5	No	No	No	No	No	Yes	No	Yes[a 3]	Yes	No	Yes	Yes[a 2]	No	No	No	No
+Curry	4	Yes	Yes	No	No	No	Yes	No	No	No	Yes	No	No	No	No	No	No
+D (version 2.0)[23][24]	6	Yes[a 7]	No	No	No	No	Yes	Yes[25][a 3]	Yes[a 3]	Yes	No	No	Yes[a 2]	No	No	No	No
+Dylan[citation needed]	2	No	No	No	No	No	Yes	No	No	No	No	Yes	Yes[a 2]	No	No	No	No
+E	3	Yes	No	No	No	Yes	No	No	No	No	No	No	Yes[a 2]	No	No	No	No
+ECMAScript[26][27] (ActionScript, E4X, JavaScript, JScript)	3	No	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 8]	No	No	No	No
+Embarcadero Delphi	3	No	No	No	No	No	No	No	Yes[a 3]	Yes	No	No	Yes[a 2]	No	No	No	No
+Erlang	3	Yes	No	No	No	Yes	Yes	No	No	No	No	No	No	No	No	No	No
+Elixir	4	Yes	No	No	No	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No
+Elm	42	Yes	No	Yes	Yes	No	Yes	No	Yes	No	No	No	No	Yes	No	No	reactive
+F#	7 (8)	Yes[a 7]	No	Library[a 4]	Yes	No	Yes	No	Yes	Yes	No	Yes	Yes[a 2]	No	No	No	reactive[a 6]
+Falcon	4	No	No	No	No	No	Yes	Yes	No	No	No	Yes	Yes[a 2]	No	No	No	No
+Fortran	4	Yes	No	No	No	No	Yes[a 9]	No	Yes[a 10]	No	No	No	Yes[a 2]	No	No	No	No
+Io	4	Yes[a 7]	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 8]	No	No	No	No
+J[citation needed]	3	No	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 2]	No	No	No	No
+Java	6	Yes	No	No	No	No	Yes	No	Yes	Yes	No	Yes	Yes[a 2]	No	No	No	No
+Julia	9	Yes	No	No	No	Yes	Yes	Yes	Yes	Yes	No	No	Yes "multiple dispatch"	Yes	No	No	Multiple dispatch
+and Array
+LabVIEW	2	Yes	No	Yes	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No
+Lava	2	No	No	No	No	No	No	No	No	No	No	No	Yes[a 2]	No	Yes	No	No
+Leda	4	No	No	No	No	No	Yes	No	No	Yes	Yes	No	Yes[a 2]	No	No	No	No
+LispWorks (version 6.0 with support for symmetric multi-processing, rules, logic (Prolog), CORBA)	9	Yes	No	No	No	Yes	Yes	Yes	No	Yes	Yes	Yes	Yes[a 2]	No	No	Yes	No
+Lua[citation needed]	3	No	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 8]	No	No	No	No
+MATLAB	9	Yes[28]	Yes[29]	Yes[30]	No	Yes[31]	No	Yes[32]	Yes[33]	No	No	Yes[34]	Yes[35]	No	Yes[36]	No	Array
+Nemerle	7	Yes	No	No	No	No	Yes	Yes	Yes	Yes	No	Yes	Yes[a 2]	No	No	No	No
+Object Pascal	4	Yes	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 2]	No	No	No	No
+OCaml	4	No	No	No	No	No	Yes	No	Yes	Yes	No	No	Yes[a 2]	No	No	No	No
+Oz	9	Yes	Yes	Yes	No	Yes	Yes	No	No	Yes	Yes	No	Yes[a 2]	No	No	Yes	No
+Perl[citation needed]	8 (9)	Yes[37]	Library[38]	Yes[39]	No	No	Yes	Yes	No	Yes	No	Yes[a 2]	Yes[a 2]	Yes	No	No	No
+PHP[40][41][42]	4	No	No	No	No	No	Yes	No	No	Yes	No	Yes	Yes[a 2]	No	No	No	No
+Picat[43]	9	No	Yes	No	Yes	No	Yes	No	Yes	Yes	Yes	No	No	Yes	No	Yes	Yes
+Pliant[citation needed]	3	No	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 2]	No	No	No	No
+PointDragon	3	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	Yes	No	No
+Poplog	3	No	No	No	No	No	Yes	No	No	Yes	Yes	No	No	No	No	No	No
+Prograph	3	No	No	Yes	No	No	No	No	No	No	No	No	Yes[a 2]	No	Yes	No	No
+Python[citation needed]	4	Library	No	No	No	No	Partial	Yes	No	Yes	No	Yes	Yes[a 2]	No	No	No	No
+R	5	No	No	No	No	No	Yes	No	No	Yes	No	Yes	Yes	No	No	No	Array
+Racket	6	No	No	No	No	No	Yes	Yes	No	Yes	Yes	Yes	Yes	No	No	No	No
+ROOP	3	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	Yes	No
+Ruby	4	No	No	No	No	No	Yes	No	No	Yes	No	Yes	Yes[a 2]	No	No	No	No
+Rust (version 1.0.0-alpha)	8	Yes[a 7]	No	No	No	No	Yes	Yes[44][45]	Yes[46]	Yes	No	No	Yes	No	No	No	linear, affline, and ownership types
+Sather[citation needed]	2	No	No	No	No	No	Yes	No	No	No	No	No	Yes[a 2]	No	No	No	No
+Scala[47][48]	9	Yes[a 7]	No	Yes [a 11]	Yes	No	Yes	Yes	Yes	Yes	No	Yes	Yes[a 2]	No	No	No	No
+Simula[citation needed]	2	No	No	No	No	No	No	No	No	Yes	No	No	Yes[a 2]	No	No	No	No
+SISAL	3	Yes	No	Yes	No	No	Yes	No	No	No	No	No	No	No	No	No	No
+Spreadsheets	2	No	No	No	No	No	Yes	No	No	No	No	No	No	No	Yes	No	No
+Swift	4	No	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 2]	No	No	No	block-structured
+Tcl with Snit extension[citation needed]	3	No	No	No	No	No	Yes	No	No	Yes	No	No	Yes[a 8]	No	No	No	No
+Visual Basic .NET	6 (7)	Yes	No	Library[a 4]	No	No	Yes	No	Yes	Yes	No	Yes	Yes[a 2]	No	No	No	reactive[a 6]
+Windows PowerShell	6	No	No	No	No	No	Yes	No	Yes	Yes	No	Yes	Yes[a 2]	Yes	No	No	No
+Wolfram Language & Mathematica	14[49]	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No	No	Yes	Knowledge Based
+Jump up ^ rendezvous and monitor-like based
+^ Jump up to: a b c d e f g h i j k l m n o p q r s t u v w x y z aa ab ac ad ae af ag ah ai aj ak al Class-based
+^ Jump up to: a b c d e Template metaprogramming
+^ Jump up to: a b c using TPL Dataflow
+Jump up ^ only lambda support (lazy functional programming)
+^ Jump up to: a b c using Reactive Extensions (Rx)
+^ Jump up to: a b c d e actor programming
+^ Jump up to: a b c d Prototype-based
+Jump up ^ purely functional
+Jump up ^ parameterized classes
+Jump up ^ Akka
+
+
+See also[edit]
+Programming paradigm
+Categorical list of programming languages
+Domain-specific programming language
+Domain-specific multimodeling

@@ -1,0 +1,48 @@
+Automatic_programming
+In , the term '''automatic programming'''Ricardo Aler Mur, "", ''ICML 2006 Tutorial''. June 2006. identifies a type of  in which some mechanism generates a  to allow human s to write the code at a higher abstraction level.
+There has been little agreement on the precise definition of automatic programming, mostly because its meaning has changed over time. , tracing the history of "automatic programming" in published research, noted that in the 1940s it described automation of the manual process of punching . Later it referred to translation of s like  and . In fact, one of the earliest programs identifiable as a  was called .  concluded that "automatic programming has always been a  for programming in a higher-level language than was then available to the programmer."D. L. Parnas. "." ''American Scientist''. November 1985.
+==Origin==
+Mildred Koss, an early  programmer, explains: "Writing machine code involved several tedious stepsbreaking down a process into discrete instructions, assigning specific memory locations to all the commands, and managing the I/O buffers. After following these steps to implement mathematical routines, a sub-routine library, and sorting programs, our task was to look at the larger programming process. We needed to understand how we might reuse tested code and have the machine help in programming. As we programmed, we examined the process and tried to think of ways to abstract these steps to incorporate them into higher-level language. This led to the development of interpreters, assemblers, compilers, and generatorsprograms designed to operate on or produce other programs, that is, ''automatic programming''."Chun, Wendy. "On Software, or the Persistence of Visual Knowledge." Grey Room 18. Boston: 2004, pg. 30.
+==Generative programming ==
+''Generative programming'' is a style of  that uses automated  creation through  , , , s, s, and s to improve  productivity.James Wilcox, "", March 2011. It is often related to code-reuse topics such as  and .
+==Source code generation==
+''Source code generation'' is the process of generating source code based on an  model such as a template and is accomplished with a  such as a  or an  (IDE). These tools allow the generation of  through any of various means.   A  processor, such as the , which replaces patterns in source code according to relatively simple rules, is a simple form of source code generator.
+===Implementations===
+Some s for Java and other languages have more advanced forms of source code generation, with which the programmer can interactively select and customize "s" of source code. Program "s", which allow the programmer to design s interactively while the compiler invisibly generates the corresponding source code, are another common form of source code generation.  This may be contrasted with, for example, s, which define user interfaces .
+Besides the generation of code from a wizard or template, IDEs can also generate and manipulate code to automate code ings that would require multiple (error prone) manual steps, thereby improving developer productivity. Examples of such features in IDEs are the refactoring class browsers for  and those found in Java IDEs like  .
+A specialized alternative involves the generation of '''' code for quantities defined mathematically within a  (CAS).  Compiler optimization consisting of finding common intermediates of a vector of size  n  requires a complexity of O(n^2) or O(n^3) operations whereas the very design of a computer algebra system requires only O(n) operations.C. Gomez and T.C. Scott, ''Maple Programs for Generating Efficient FORTRAN Code for Serial and Vectorized Machines'',  '''115''', pp. 548-562, 1998 .T.C. Scott and Wenxing Zhang, ''Efficient hybrid-symbolic methods for quantum mechanical calculations'',  '''191''', pp. 221-234, 2015 .T.C. Scott, , M.B. Monagan and V.R. Saunders, ''Numerical Computation of Molecular Integrals via optimized (vectorized) FORTRAN code'', Proceedings of the Fifth International Workshop on New computing Techniques in Physics Research (Software Engineering, Neural Nets, Genetic Algorithms, Expert Systems, Symbolic Algebra, Automatic Calculations), held in Lausanne (Switzerland),  '''389''', A, pp. 117-120, 1997 .  These facilities can be used as pre-optimizer before processing by the compiler.  This option has been used for handling mathematically large expressions in e.g. .
+Examples: 
+*  is an open source code generator for  used to generate any textual language (Java, PHP, Python, etc.) from  models defined from any metamodel (, , etc.).
+*  is a plugin for  that allows graphical modelling and model-based code generation using custom templates.
+*   is a graphical data mapping, conversion, and integration tool capable of generating application code in Java, C#, or C++ for executing recurrent transformations.
+*  from  is a graphical tool integrated into Microsoft Visual Studio that generates .NET source code, in C# or Visual Basic.
+*  is a system for defining arbitrary s and translating them to other languages.
+*  (from MNB Technologies, Inc) is an artificial intelligence-based software development tool with a Virtual Whiteboard human interface.  Language and technology agnostic, the tool's development was funded by the US Air Force to solve the problem of code generation for systems targeting mixed processor technologies.
+*  is an  active code generator for  based  applications. It uses   to provide  during round-trip maintenance.
+*  is a free information modeling suite for system development using  or . Database code generation for ,  and . Persistence code generation for  (.NET) and  including both  and  style s and  proxy code.
+* The  computer algebra system offers code generators optimizers with Fortran, MATLAB, C and Java.  (), and  have comparable interfaces.
+* Screen Sculptor, SoftCode, UI Programmer, and Genifer are examples of pioneering program generators that arose during the mid-1980s through the early 1990s. They developed and advanced the technology of extendable, template based source code generators on a mass market scale.
+*  is a Cross-Platform, knowledge representation-based, development tool, mainly oriented to enterprise-class applications for Web applications, smart devices and the Microsoft Windows platform. A developer describes an application in a high-level, mostly declarative language, from which native code is generated for multiple environments.
+*  is an  project for code generation and data transformation.
+==See also==
+* 
+* 
+*  (MDE)
+*  (MDA)
+*  (DSM)
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+*  (LOP)
+==References==
+*''Generative Programming: Methods, Tools, and Applications'' by Krzysztof Czarnecki and Ulrich W. Eisenecker, Addison Wesley, 2000.
+==External links==
+* ''''''''''
+*
+*

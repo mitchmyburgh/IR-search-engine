@@ -1,0 +1,13 @@
+Memory management
+
+Memory is usually managed with garbage collection, but specific objects can be finalized immediately when they go out of scope. Explicit memory management is possible using the overloaded operators new and delete, and by simply calling C's malloc and free directly. Garbage collection can be controlled: programmers can add and exclude memory ranges from being observed by the collector, can disable and enable the collector and force a generational or a full collection cycle.[12] The manual gives many examples of how to implement different highly optimized memory management schemes for when garbage collection is inadequate in a program.[13]
+SafeD
+
+SafeD[14] is the name given to the subset of D that can be guaranteed to be memory safe (no writes to memory that were not allocated or that have already been recycled). Functions marked @safe are checked at compile time to ensure that they do not use any features that could result in corruption of memory, such as pointer arithmetic and unchecked casts, and any other functions called must also be marked as @safe or @trusted. Functions can be marked @trusted for the cases where the compiler cannot distinguish between safe use of a feature that is disabled in SafeD and a potential case of memory corruption.
+Interaction with other systems
+
+C's application binary interface (ABI) is supported as well as all of C's fundamental and derived types, enabling direct access to existing C code and libraries. D bindings are available for many popular C libraries. C's standard library is part of standard D.
+
+Because C++ does not have a single standard ABI, D can only fully access C++ code that is written to the C ABI. The D parser understands an extern (C++) calling convention for limited linking to C++ objects.
+
+On Microsoft Windows, D can access Component Object Model (COM) code.

@@ -1,0 +1,75 @@
+IEEE 802.20 or Mobile Broadband Wireless Access (MBWA) is a specification by the standard association of the Institute of Electrical and Electronics Engineers (IEEE) for mobile wireless Internet access networks. The main standard was published in 2008. MBWA is no longer being actively developed.
+This wireless broadband technology is also known and promoted as iBurst (or HC-SDMA, High Capacity Spatial Division Multiple Access). It was originally developed by ArrayComm and optimizes the use of its bandwidth with the help of smart antennas. Kyocera is the manufacturer of iBurst devices.
+
+
+== Description ==
+iBurst is a mobile broadband wireless access system that was first developed by ArrayComm, and announced with partner Sony in April 2000. It was adopted as the High Capacity – Spatial Division Multiple Access (HC-SDMA) radio interface standard (ATIS-0700004-2005) by the Alliance for Telecommunications Industry Solutions (ATIS). The standard was prepared by ATIS’ Wireless Technology and Systems Committee’s Wireless Wideband Internet Access subcommittee and accepted as an American National Standard in 2005.
+HC-SDMA was announced as considered by ISO TC204 WG16 for the continuous communications standards architecture, known as Communications, Air-interface, Long and Medium range (CALM), which ISO is developing for intelligent transport systems (ITS). ITS may include applications for public safety, network congestion management during traffic incidents, automatic toll booths, and more. An official liaison was established between WTSC and ISO TC204 WG16 for this in 2005.
+The HC-SDMA interface provides wide-area broadband wireless data-connectivity for fixed, portable and mobile computing devices and appliances. The protocol is designed to be implemented with smart antenna array techniques (called MIMO for multiple-input multiple-output) to substantially improve the radio frequency (RF) coverage, capacity and performance for the system. In January 2006, the IEEE 802.20 Mobile Broadband Wireless Access Working Group adopted a technology proposal that included the use of the HC-SDMA standard for the 625kHz Multi-Carrier time division duplex (TDD) mode of the standard. One Canadian vendor operates at 1.8 GHz.
+
+
+== Technical description ==
+The HC-SDMA interface operates on a similar premise as cellular phones, with hand-offs between HC-SDMA cells repeatedly providing the user with a seamless wireless Internet access even when moving at the speed of a car or train.
+The standard's proposed benefits:
+IP roaming & handoff (at more than 1 Mbit/s)
+New MAC and PHY with IP and adaptive antennas
+Optimized for full mobility up to vehicular speeds of 250 km/h
+Operates in Licensed Bands (below 3.5 GHz)
+Utilizes Packet Architecture
+Low Latency
+Some technical details were:
+Bandwidths of 5, 10, and 20 MHz.
+Peak data rates of 80 Mbit/s.
+Spectral efficiency above 1 bit/sec/Hz using multiple input/multiple output technology (MIMO).
+Layered frequency hopping allocates OFDM carriers to near, middle, and far-away handsets, improving SNR (works best for SISO handsets.)
+Supports low-bit rates efficiently, carrying up to 100 phone calls per MHz.
+Hybrid ARQ with up to 6 transmissions and several choices for interleaving.
+Basic slot period of 913 microseconds carrying 8 OFDM symbols.
+One of the first standards to support both TDM (FL,RL) and separate-frequency (FL, RL) deployments.
+The protocol:
+specifies base station and client device RF characteristics, including output power levels, transmit frequencies and timing error, pulse shaping, in-band and out-of band spurious emissions, receiver sensitivity and selectivity;
+defines associated frame structures for the various burst types including standard uplink and downlink traffic, paging and broadcast burst types;
+specifies the modulation, forward error correction, interleaving and scrambling for various burst types;
+describes the various logical channels (broadcast, paging, random access, configuration and traffic channels) and their roles in establishing communication over the radio link; and
+specifies procedures for error recovery and retry.
+The protocol also supports Layer 3 (L3) mechanisms for creating and controlling logical connections (sessions) between client device and base including registration, stream start, power control, handover, link adaptation, and stream closure, as well as L3 mechanisms for client device authentication and secure transmission on the data links. Currently deployed iBurst systems allow connectivity up to 2 Mbit/s for each subscriber equipment. Apparently there will be future firmware upgrade possibilities to increase these speeds up to 5 Mbit/s, consistent with HC-SDMA protocol.
+
+
+== History ==
+The 802.20 working group was proposed in response to products using technology originally developed by ArrayComm marketed under the iBurst brand name. The Alliance for Telecommunications Industry Solutions adopted iBurst as ATIS-0700004-2005. The Mobile Broadband Wireless Access (MBWA) Working Group was approved by IEEE Standards Board on December 11, 2002 to prepare a formal specification for a packet-based air interface designed for Internet Protocol-based services. At its height, the group had 175 participants.
+On June 8, 2006, the IEEE-SA Standards Board directed that all activities of the 802.20 Working Group be temporarily suspended until October 1, 2006. The decision came from complaints of a lack of transparency, and that the group's chair, Jerry Upton, was favoring Qualcomm. The unprecedented step came after other working groups had also been subject to related allegations of large companies undermining the standard process. Intel and Motorola had filed appeals, claiming they were not given time to prepare proposals. These claims were cited in a 2007 lawsuit filed by Broadcom against Qualcomm.
+On September 15, 2006, the IEEE-SA Standards Board approved a plan to enable the working group to move towards completion and approval by reorganizing. The chair at the November 2006 meeting was Arnold Greenspan. On July 17, 2007, the IEEE 802 Executive Committee along with its 802.20 Oversight Committee approved a change to voting in the 802.20 working group. Instead of a vote per attending individual, each entity would have a single vote.
+On June 12, 2008, the IEEE approved the base standard to be published. Additional supporting standards included IEEE 802.20.2-2010, a protocol conformance statement, 802.20.3-2010, minimum performance characteristics, an amendment 802.20a-2010 for a Management Information Base and some corrections, and amendment 802.20b-2010 to support bridging.
+802.20 standard was put to hibernation on March 2011 due to lack of activity.
+In 2004 another wireless standard group had been formed as IEEE 802.22, for wireless regional networks using unused television station frequencies. Trials such as those in the Netherlands by T-Mobile International in 2004 were announced as "Pre-standard 802.20". These were based on an orthogonal frequency-division multiplexing technology known as FLASH-OFDM developed by Flarion (since 2006 owned by Qualcomm). However, other service providers soon adopted 802.16e (the mobile version of WiMAX).
+In September 2008, the Association of Radio Industries and Businesses in Japan adopted the 802.20-2008 standard as ARIB STD-T97. Kyocera markets products supporting the standard under the iBurst name. As of March 2011, Kyocera claimed 15 operators offered service in 12 countries.
+
+
+== Commercial use ==
+Various options are already commercially available using:
+Desktop modem with USB and Ethernet ports (with external power supply)
+Portable USB modem (using USB power supply)
+Laptop modem (PC card)
+Wireless Residential Gateway
+Mobile Broadband Router
+iBurst was commercially available in twelve countries in 2011 including Azerbaijan, Lebanon, and USA.
+iBurst (Pty) Ltd started operation in South Africa in 2005.
+iBurst Africa International provided the service in Ghana in 2007, and then later in Mozambique, Democratic Republic of the Congo and Kenya.
+MoBif Wireless Broadband Sdn Bhd, started service in Malaysia in 2007, changing its name to iZZinet. The provider ceased operations in March 2011.
+In Australia, Veritel and Personal Broadband Australia (a subsidiary of Commander Australia Limited), offered iBurst services however both have since been shut down after the increase of 3.5G and 4G mobile data services. BigAir acquired Veritel's iBurst customers in 2006, and shut down the service in 2009. Personal Broadband Australia's iBurst service was shut down in December 2008.
+
+
+== See also ==
+Broadband Wireless Access
+Satellite internet
+
+
+== References ==
+
+
+== External links ==
+"IEEE 802.20: Mobile Broadband Wireless Access (MBWA)". Official web site. Retrieved August 20, 2011. 
+IEEE Standard for Local and metropolitan area networks — Part 20: Air Interface for Mobile Broadband Wireless Access Systems Supporting Vehicular Mobility — Physical and Media Access Control Layer Specification (PDF). Official standard document (IEEE Standards Association). August 29, 2008. ISBN 978-0-7381-5766-5. 
+Experiment and Simulation Results of Adaptive Antenna Array System at Base and Mobile Stations in Mobile Environment - IEICE Transactions
+Kyocera website
+iBurst Association

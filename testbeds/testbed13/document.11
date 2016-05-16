@@ -1,0 +1,294 @@
+Skip to main Skip to footer
+
+University of Waterloo
+
+Search search scope all sites this site
+
+  * Admissions
+  * About Waterloo
+  * Faculties &amp; academics
+  * Offices &amp; services
+  * Support Waterloo
+
+  * Institute for Quantum Computing home
+  * About Institute for Quantum Computing
+  * Our people
+  * Available positions
+  * Research
+  * Programs
+  * Outreach
+  * News
+  * Events
+  * Blog
+
+## Information for
+
+  * Researchers
+  * Students
+  * Visitors
+  * Media
+
+## You are here
+
+Institute for Quantum Computing »
+
+#  Quantum computing 101
+
+Although quantum information has been around for a long time, we're starting
+to see more about it in the media. We hope to give you a quickstart guide on:
+
+  * What is quantum computing?
+  * Superposition and entanglement
+  * Why do quantum effects matter?
+  * What can a quantum computer do that a classical computer can't?
+  * But I don't want to factor very large numbers
+  * A quantum computer can hack into my private data?
+  * How can quantum mechanics create ultra-secret keys?
+  * What else can we do with quantum mechanics?
+  * Where can I get a quantum computer?
+  * What is required to build a quantum computer?
+  * When will there be a real quantum computer?
+  * Is quantum technology still years away?
+
+## What is quantum computing?
+
+Quantum computing is essentially harnessing and exploiting the amazing laws of
+quantum mechanics to process information. A traditional computer uses long
+strings of “bits,” which encode either a zero or a one. A quantum computer, on
+the other hand, uses quantum bits, or qubits. What's the difference? Well a
+qubit is a quantum system that encodes the zero and the one into two
+distinguishable quantum states. But, because qubits behave quantumly, we can
+capitalize on the phenomena of "superposition" and "entanglement."
+
+## Superposition and entanglement? Pardon?
+
+It’s OK to be a bit baffled by these concepts, since we don’t experience them
+in our day-to-day lives. It’s only when you look at the tiniest quantum
+particles – atoms, electrons, photons and the like – that you see intriguing
+things like superposition and entanglement.
+
+Superposition is essentially the ability of a quantum system to be in multiple
+states at the same time — that is, something can be “here” and “there,” or
+“up” and “down” at the same time.
+
+Entanglement is an extremely strong correlation that exists between quantum
+particles — so strong, in fact, that two or more quantum particles can be
+inextricably linked in perfect unison, even if separated by great distances.
+The particles remain perfectly correlated even if separated by great
+distances. The particles are so intrinsically connected, they can be said to
+“dance” in instantaneous, perfect unison, even when placed at opposite ends of
+the universe. This seemingly impossible connection inspired Einstein to
+describe entanglement as “spooky action at a distance.”
+
+## Why do these quantum effects matter?
+
+First of all, they’re fascinating. Even better, they’ll be extremely useful to
+the future of computing and communications technology.
+
+Thanks to superposition and entanglement, a quantum computer can process a
+vast number of calculations simultaneously. Think of it this way: whereas a
+classical computer works with ones and zeros, a quantum computer will have the
+advantage of using ones, zeros and “superpositions” of ones and zeros. Certain
+difficult tasks that have long been thought impossible (or “intractable”) for
+classical computers will be achieved quickly and efficiently by a quantum
+computer.
+
+## What can a quantum computer do that a classical computer can’t?
+
+Factoring large numbers, for starters. Multiplying two large numbers is easy
+for any computer. But calculating the factors of a very large (say, 500-digit)
+number, on the other hand, is considered impossible for any classical
+computer. In 1994, a mathematician from the Massachusetts Institute of
+Technology (MIT) Peter Shor, who was working at AT&amp;T at the time, unveiled
+that if a fully working quantum computer was available, it could factor large
+numbers easily.
+
+## But I don’t want to factor very large numbers…
+
+Nobody wants to factor very large numbers! That’s because it’s so difficult –
+even for the best computers in the world today. In fact, the difficulty of
+factoring big numbers is the basis for much of our present day cryptography.
+It’s based on math problems that are too tough to solve. RSA encryption, the
+method used to encrypt your credit card number when you’re shopping online,
+relies completely on the factoring problem. The website you want to purchase
+from gives you a large "public" key (which anyone can access) to encode your
+credit card information.
+
+This key actually is the product of two very large prime numbers, known only
+to the seller. The only way anyone could  intercept your information is to
+know those two prime numbers that multiply to create the key. Since factoring
+is very hard, no eavesdropper will be able to access your credit card number
+and your bank account is safe. Unless, that is, somebody has built a quantum
+computer and is running Peter Shor's algorithm!
+
+## Wait… so a quantum computer will be able to hack into my private data?
+That’s not good.
+
+Don’t worry — classical cryptography is not completely jeopardized. Although
+certain aspects of classical cryptography would be jeopardized by quantum
+computing,  quantum mechanics also allows for a new type of highly secure
+cryptography.
+
+Let’s look at a common cryptographic protocol called the one-time pad: Say
+party A and party B (let's call them Alice and Bob) share a long string of
+random zeros and ones — the secret key. As long as they only use this key once
+and they are the only ones who know this key, they can transmit a secret
+message such that no eavesdropper (we’ll call her Eve) will be able to
+decipher the message. The main difficulty with the one-time pad is the actual
+distribution of the secret key. In the past, governments sent people to
+exchange books full of random data to be used as keys. That, of course, is
+impractical and imperfect. This is where quantum mechanics comes in very handy
+once again: Quantum Key Distribution (QKD) allows for the distribution of
+completely random keys at a distance.
+
+## How can quantum mechanics create these ultra-secret keys?
+
+Quantum key distribution relies on another interesting property of quantum
+mechanics: any attempt to observe or measure a quantum system will disturb it.
+
+The Institute for Quantum Computing (IQC) is home of one of the few QKD
+prototypes in the world. “Alice,” a device located at IQC headquarters,
+receives half of the entangled (highly correlated) one of the photons
+generated by a laser on the roof of a building at the University of Waterloo.
+“Bob” is housed at the nearby Perimeter Institute, and receives the other half
+of the entangled photons.
+
+Photons have a unique measurable property called polarization (which should
+sound familiar to any connoisseur of sunglasses).
+
+Since the polarization of each individual photon is random, there’s no way of
+knowing the unique properties of each photon in advance. But here is where
+entanglement becomes interesting: if Alice and Bob measure the polarization of
+the entangled photons they receive, their results will be the same (remember,
+“entangled” means the particles are highly correlated with each other, even at
+great distances). Depending on the polarization of each photon, Alice and Bob
+ascribe either a “one” or a “zero” to each photon they receive. Therefore, if
+Alice gets a string like 010110, Bob also gets a 010110. Unless, that is, an
+eavesdropper has been attempting to spy on the signal. This will disturb the
+system, and Alice and Bob will instantly notice that their keys don’t match.
+
+Alice and Bob keep receiving photons until their identical keys are long and
+identical enough and, presto, they’ve got ultra-secure keys for encrypting
+communications.
+
+## So harnessing the quantum world can break and make codes. Anything else?
+
+Plenty. For example, quantum computers will be able to efficiently simulate
+quantum systems, which is what famous physicist Richard Feynman proposed in
+1982, effectively kick-starting the field. Simulation of quantum systems has
+been said to be a "holy grail" of quantum computing: it will allow us to
+study, in remarkable detail, the interactions between atoms and molecules.
+This could help us design new drugs and new materials, such as superconductors
+that work at room temperature. Another of the many tasks for which the quantum
+computer is inherently faster than a classical computer is at searching
+through a space of potential solutions for the best solution. Researchers are
+constantly working on new quantum algorithms and  applications. But the true
+potential of quantum computers likely hasn’t even been imagined yet. The
+inventors of the laser surely didn’t envision supermarket checkout scanners,
+CD players and eye surgery. Similarly, the future uses of quantum computers
+are bound only by imagination.
+
+## Sounds great! Where can I get a quantum computer?
+
+Not so fast. While quantum computers have been theoretically demonstrated to
+have incredible potential, and scientists are working at IQC and around the
+world to realize that potential, there is much work to be done before quantum
+computers hit the market.
+
+## What is required to build a quantum computer?
+
+Simply put: we need qubits that behave the way we want them to. These qubits
+could be made of photons, atoms, electrons, molecules or perhaps something
+else. Scientists at IQC are researching a large array of them as potential
+bases for quantum computers. But qubits are notoriously tricky to manipulate,
+since any disturbance causes them to fall out of their quantum state (or
+“decohere”). Decoherence is the Achilles heel of quantum computing, but it is
+not insurmountable. The field of quantum error correction examines how to
+stave off decoherence and combat other errors. Every day, researchers at IQC
+and around the world are discovering new ways to make qubits cooperate.
+
+## So when will there be a real quantum computer?
+
+It depends on your definition. There are quantum computers already, but not of
+sufficient power to replace classical computers. A team of researchers from
+IQC and MIT hold the current world record for the most number of qubits used
+in an experiment (12). While practical quantum technologies are already
+emerging — including highly effective sensors, actuators and other devices — a
+true quantum computer that outperforms a classical computer is still years
+away. Theorists are continually figuring out better ways to overcome
+decoherence, while experimentalists are gaining more and more control over the
+quantum world through various technologies and instruments. The pioneering
+work being done today is paving the way for the coming quantum era.
+
+## So quantum technology is still years away?
+
+No, quantum technologies are already in use! QKD is already commercially
+available, and will greatly benefit from new research (scientists at IQC are
+currently pursuing quantum encryption through free space via satellite).
+Although a fully functioning quantum computer is a longer-term goal, many
+fundamental and practical discoveries have been made in the name of quantum
+computing. Quantum sensors and actuators will allow scientists to navigate the
+nano-scale world with remarkable precision and sensitivity. Such tools will be
+invaluable to the development of true quantum information processors. The
+quantum revolution is already under way, and the possibilities that lie ahead
+are limitless.
+
+  *   *   *   *   * 
+
+## Educational programs
+
+##
+
+## Contact us
+
+Institute for Quantum Computing  
+University of Waterloo  
+200 University Ave. West  
+Waterloo, Ontario, Canada  
+N2L 3G1
+
+## Visit us
+
+Mike &amp; Ophelia Lazaridis QNC  
+RAC 1 &amp; RAC 2  
+University of Waterloo  
+Phone: 519-888-4021  
+Fax: 519-888-7610
+
+### Connect with us
+
+
+
+## For internal users
+
+Quatrium
+
+University of Waterloo
+
+University of Waterloo
+
+43.471468
+
+-80.544205
+
+200 University Avenue West
+
+Waterloo, ON, Canada  N2L 3G1
+
++1 519 888 4567
+
+  * Contact Waterloo
+  * Maps &amp; Directions
+  * Employment
+
+  * Media
+  * Accessibility
+  * Feedback
+
+  * Privacy
+  * Copyright
+
+  * University of Waterloo social media directory
+
+Log in
+

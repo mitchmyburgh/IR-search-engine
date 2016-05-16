@@ -1,0 +1,43 @@
+Open Systems Interconnection (OSI) is an effort to standardize computer networking that was started in 1977 by the International Organization for Standardization (ISO), along with the ITU-T.
+
+
+== History ==
+Prior to OSI, networking was largely either government-sponsored (ARPANET in the US, CYCLADES in France) or vendor-developed and proprietary standards (such as the System network architecture (SNA) of IBM and DECnet of Digital Equipment Corporation). A Experimental Packet Switched system in the UK circa 1973, also identified the need to define higher level protocols. The NCC (UK) publication 'Why Distributed Computing' which came from considerable research into future configurations for computer systems, resulted in the UK presenting the case for an international standards committee to cover this area at the ISO meeting in Sydney in March 1977. OSI was hence an industry effort, attempting to get industry participants to agree on common network standards to provide multi-vendor interoperability. It was common for large networks to support multiple network protocol suites, with many devices unable to interoperate with other devices because of a lack of common protocols. However, while OSI developed its networking standards, TCP/IP came into widespread use on multivendor networks for internetworking, while on the local network level both Ethernet and token ring gained prominence.
+The OSI reference model was a major advance in the teaching of network concepts. It promoted the idea of a consistent model of protocol layers, defining interoperability between network devices and software. The OSI model was defined in raw form in Washington, DC in February 1978 by Hubert Zimmermann of France and the refined standard was published by the ISO in 1984.
+
+
+== Criticism ==
+The OSI protocol suite that was specified as part of the project was considered by many, such as computer scientist Andrew S. Tanenbaum, to be too complicated and inefficient, and to a large extent unimplementable. Taking the "forklift upgrade" approach to networking, it specified eliminating all existing protocols and replacing them with new ones at all layers of the stack. This made implementation difficult, and was resisted by many vendors and users with significant investments in other network technologies. In addition, the protocols included so many optional features that many vendors' implementations were not interoperable.
+Although the OSI model is often still referred to, the Internet's TCP/IP protocol suite is used in lieu of the OSI protocols. TCP/IP's pragmatic approach to computer networking and two independent implementations of simplified protocols made it a practical standard. Some protocols and specifications in the OSI stack remain in use, one example being IS-IS, which was specified for OSI as ISO/IEC 10589:2002 and adapted for Internet use (with TCP/IP) as RFC 1142.
+
+
+== ISO/IEC 7498 ==
+The standard ISO/IEC 7498 consists of the following parts:
+ISO/IEC 7498-1 The Basic Model
+ISO 7498-2 Security Architecture
+ISO/IEC 7498-3 Naming and addressing
+ISO/IEC 7498-4 Management framework
+
+
+== See also ==
+OSI model
+OSI protocols
+Common Management Information Service (CMIS)
+GOSIP, the (U.S.) Government Open Systems Interconnection Profile
+
+
+== References ==
+
+
+== Furher reading ==
+John Day, "Patterns in Network Architecture: A Return to Fundamentals" (Prentice Hall 2007, ISBN 978-0-13-225242-3)
+Marshall Rose, The Open Book (Prentice-Hall, Englewood Cliffs, 1990)
+David M. Piscitello, A. Lyman Chapin, Open Systems Networking (Addison-Wesley, Reading, 1993)
+Andrew S. Tanenbaum, Computer Networks, 4th Edition, (Prentice-Hall, 2002) ISBN 0-13-066102-3
+Gary Dickson; Alan Lloyd (July 1992). Open Systems Interconnection/Computer Communications Standards and Gossip Explained. Prentice-Hall. ISBN 978-0136401117. 
+
+
+== External links ==
+ISO/IEC 7498-1:1994, Information technology—Open Systems Interconnection—Basic Reference Model: The Basic Model
+ITU-T Recommendation X.200 (11/93) [ISO/IEC 7498-1:1994], Open Systems Interconnection - Basic Reference Model.
+Open System Interconnection

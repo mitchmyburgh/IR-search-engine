@@ -1,0 +1,71 @@
+The Globus Toolkit is an open source toolkit for grid computing developed and provided by the Globus Alliance.
+
+
+== Standards implementation ==
+The Globus Toolkit adheres to or provides implementations of the following standards:
+Open Grid Services Architecture (OGSA)
+Open Grid Services Infrastructure (OGSI), originally intended to form the basic “plumbing” layer for OGSA, but has been superseded by WSRF and WS-Management.
+Web Services Resource Framework (WSRF)
+Job Submission Description Language (JSDL)
+Distributed Resource Management Application API (DRMAA)
+WS-Management
+WS-BaseNotification
+SOAP
+Web Services Description Language
+Grid Security Infrastructure (GSI)
+
+The Globus Toolkit has implementations of the OGF-defined protocols to provide:
+Resource management: Grid Resource Allocation & Management Protocol (GRAM)
+Information Services: Monitoring and Discovery Service (MDS)
+Security Services: Grid Security Infrastructure (GSI)
+Data Movement and Management: Global Access to Secondary Storage (GASS) and GridFTP
+The following Globus Toolkit components are supported by the OGF-defined SAGA C++/Python API:
+GRAM (2 and 5) via the SAGA job API
+GridFTP via the SAGA filesystem API
+Replica Location Service via the SAGA replica API
+
+
+== Compatible third-party software ==
+A number of tools can function with Globus Toolkit, including:
+SAGA C++ Reference Implementation - The Simple API for Grid Applications
+WebCom and WebCom-G [1]
+Nimrod tools for meta-scheduling and parametric computing
+Gridbus Grid Service Broker
+Grid Portal Software such as GridPort, OGCE, GridSphere and P-GRADE Portal
+Grid Packaging Toolkit (GPT)
+MPICH-G2 (Grid Enabled MPI)
+Network Weather Service (NWS) (Quality-of-Service monitoring and statistics)
+HTCondor (CPU Cycle Scavenging) and Condor-G (Job Submission)
+HPC4U Middleware (Fault Tolerant and SLA aware Grid Middleware)
+GridWay metascheduler
+XML-based web services offer a way to access the diverse services and applications in a distributed environment.
+In 2004, Univa Corporation began providing commercial support for the Globus Toolkit using a business model similar to that of Red Hat.
+
+
+=== Job schedulers ===
+GRAM (Grid Resource Allocation Manager), a component of the Globus Toolkit, officially supports the following job schedulers or batch-queuing systems:
+Portable Batch System, a computer software job scheduler that allocates network resources to batch jobs.
+Condor High-Throughput Computing System, a software framework for coarse-grained distributed parallelization of computationally intensive tasks.
+Platform LSF, a commercial computer software job scheduler.
+Unofficial job schedulers that can be used with the Globus Toolkit:
+Sun Grid Engine, an open source batch-queuing system, supported by Sun Microsystems. Globus does not officially support SGE, but third parties offer methods to integrate it:
+The London e-Science Center has created a "Transfer-queue over Globus (TOG)" package and provides instructions on how to configure a Globus Toolkit 2 or 3 or a Globus Toolkit 4 server so that it can submit jobs for execution on a local Sun Grid Engine installation.
+
+Simple Linux Utility for Resource Management (SLURM), an open source batch-queuing system originally developed at LLNL and currently managed by SchedMD. Globus can be used with SLURM via shell wrappers.
+
+
+== Development plans ==
+The Globus Alliance announced a release of Globus Toolkit version 5 (GT5) in late 2009.[2][3] A major change will be abandoning GRAM4 (although continuing support at least through December, 2010) in favor of an enhanced GRAM2, called GRAM5, which will solve scalability issues and add features. The Reliable File Transfer (RFT) service will be replaced by a new Globus.org service. Globus.org is an online, hosted service (i.e., Software-as-a-Service) that provides higher-level, end-to-end Grid capabilities, initially concentrating on reliable, high-performance, fire-and-forget data transfer. To retain the Web-Service functionality without technology and standards now considered obsolete, a new project called Globus Crux [4] has been started, which expects to release an alpha version by the end of 2009. The monitoring and discovery tasks currently performed by MDS will be taken up by a new, Crux-based Integrated Information Services (IIS). No releases of the IIS are planned until sometime in 2010.
+The release of GT 5.0.2 was announced on 19 July 2010. GT 5.0.3 is reported due for release in February 2011.
+
+
+== Use ==
+caGrid is layered on Globus Java WS Core
+Advanced Resource Connector, open source grid middleware introduced by NorduGrid
+
+
+== References ==
+
+
+== External links ==
+Globus Toolkit homepage

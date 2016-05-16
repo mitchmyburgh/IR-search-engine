@@ -1,0 +1,148 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Parametric Surfaces
+5.4.1 Bilinear Patch
+A bilinear patch is de?ned by four points, no three of which are colinear.
+a
+ß
+p01 p11
+p00
+p10
+l1(a)
+l0(a)
+Given ¯ p00, ¯ p01, ¯ p10, ¯ p11, de?ne
+¯ l0(a) = (1-a)¯ p00 + a¯ p10, ¯ l1(a) = (1-a)¯ p01 + a¯ p11.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 24
+CSC418 / CSCD18 / CSC2504 3D Objects
+Then connect ¯ l0(a) and ¯ l1(a) with a line:
+¯ p(a,ß) = (1-ß)¯ l0(a) + ß¯ l1(a),
+for 0 = a = 1 and 0 = ß = 1. Question: when is a bilinear patch not equivalent to a planar patch? Hint: a planar patch is de?ned by 3 points, but a bilinear patch is de?ned by 4.
+5.4.2 Cylinder
+A cylinder is constructed by moving a point on a line l along a planar curve p0(a) such that the direction of the line is held constant.
+If the direction of the line l is ~ d, the cylinder is de?ned as
+¯ p(a,ß) = p0(a) + ß~ d.
+A right cylinder has ~ d perpendicular to the plane containing p0(a).
+A circular cylinder is a cylinder where p0(a) is a circle.
+Example: A right circular cylinder can be de?ned by p0(a) = (rcos(a),rsin(a),0), for 0 = a < 2p, and ~ d = (0,0,1).
+So p0(a,ß) = (rcos(a),rsin(a),ß), for 0 = ß = 1. To ?nd the normal at a point on this cylinder, we can use the implicit form f(x,y,z) = x2 + y2 -r2 = 0 to ?nd?f = 2(x,y,0). Using the parametric form directly to ?nd the normal, we have
+?¯ p ?a
+= r(-sin(a),cos(a),0), and
+?¯ p ?ß
+= (0,0,1), so
+?¯ p ?a ×
+?¯ p ?ß
+= (rcos(a)rsin(a),0).
+Note: The cross product of two vectors~a = (a1,a2,a3) and~ b = (b1,b2,b3) can
+Copyright c
+2005 David Fleet and Aaron Hertzmann 25
+CSC418 / CSCD18 / CSC2504 3D Objects
+be found by taking the determinant of the matrix, ? ? i j k a1 a2 a3 b1 b2 b3 ? ?.
+5.4.3 Surface of Revolution
+To form a surface of revolution, we revolve a curve in the x-z plane, ¯ c(ß) = (x(ß),0,z(ß)), about the z-axis.
+Hence, each point on ¯ c traces out a circle parallel to the x-y plane with radius|x(ß)|. Circles then have the form (rcos(a),rsin(a)), where a is the parameter of revolution. So the rotated surface has the parametric form
+¯ s(a,ß) = (x(ß)cos(a),x(ß)sin(a),z(ß)).
+Example: If ¯ c(ß) is a line perpendicular to the x-axis, we have a right circular cylinder.
+A torus is a surface of revolution:
+¯ c(ß) = (d + rcos(ß),0,rsin(ß)).
+5.4.4 Quadric
+A quadric is a generalization of a conic section to 3D. The implicit form of a quadric in the standard position is
+ax2 + by2 + cz2 + d = 0, ax2 + by2 + ez = 0,
+for a,b,c,d,e ? R. There are six basic types of quadric surfaces, which depend on the signs of the parameters. They are the ellipsoid, hyperboloid of one sheet, hyperboloid of two sheets, elliptic cone, elliptic paraboloid, and hyperbolic paraboloid (saddle). All but the hyperbolic paraboloid may be expressed as a surface of revolution.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 26
+CSC418 / CSCD18 / CSC2504 3D Objects
+Example: An ellipsoid has the implicit form
+x2 a2
++
+y2 b2
++
+z2 c2 -1 = 0.
+In parametric form, this is
+¯ s(a,ß) = (asin(ß)cos(a),bsin(ß)sin(a),ccos(ß)),
+for ß ? [0,p] and a ? (-p,p].
+5.4.5 Polygonal Mesh
+A polygonal mesh is a collection of polygons (vertices, edges, and faces). As polygons may be used to approximate curves, a polygonal mesh may be used to approximate a surface.
+vertex
+edge
+face
+A polyhedron is a closed, connected polygonal mesh. Each edge must be shared by two faces.
+A face refers to a planar polygonal patch within a mesh.
+A mesh is simple when its topology is equivalent to that of a sphere. That is, it has no holes.
+Given a parametric surface, ¯ s(a,ß), we can sample values of a and ß to generate a polygonal mesh approximating ¯ s.
+5.5 3D Af?ne Transformations
+Three dimensional transformations are used for many different purposes, such as coordinate transforms, shape modeling, animation, and camera modeling.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 27
+CSC418 / CSCD18 / CSC2504 3D Objects
+An af?ne transform in 3D looks the same as in 2D: F(¯ p) = A¯ p +~ t for A ? R3×3, ¯ p,~ t ? R3. A homogeneous af?ne transformation is
+ˆ F(ˆ p) = ˆ Mˆ p, where ˆ p = ¯ p 1 , ˆ M = A ~ t ~ 0T 1 .
+Translation: A = I,~ t = (tx,ty,tz).
+Scaling: A = diag(sx,sy,sz),~ t =~ 0.
+Rotation: A = R,~ t =~ 0, and det(R) = 1.
+3D rotations are much more complex than 2D rotations, so we will consider only elementary rotations about the x, y, and z axes.
+For a rotation about the z-axis, the z coordinate remains unchanged, and the rotation occurs in the x-y plane. So if ¯ q = R¯ p, then qz = pz. That is,  qx qy = cos(?) -sin(?) sin(?) cos(?)  px py . Including the z coordinate, this becomes Rz(?) =? ? cos(?) -sin(?) 0 sin(?) cos(?) 0 0 0 1 ? ?. Similarly, rotation about the x-axis is Rx(?) =? ? 1 0 0 0 cos(?) -sin(?) 0 sin(?) cos(?) ? ?. For rotation about the y-axis, Ry(?) =? ? cos(?) 0 sin(?) 0 1 0 -sin(?) 0 cos(?) ? ?.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 28
+CSC418 / CSCD18 / CSC2504 3D Objects
+5.6 Spherical Coordinates
+Any three dimensional vector ~u = (ux,uy,uz) may be represented in spherical coordinates. By computing a polar angle f counterclockwise about the y-axis from the z-axis and an azimuthal angle ? counterclockwise about the z-axis from the x-axis, we can de?ne a vector in the appropriate direction. Then it is only a matter of scaling this vector to the correct length (u2 x +u2 y +u2 z)-1/2 to match ~u.
+x
+y
+z
+u
+uxy
+?
+f
+Given angles f and ?, we can ?nd a unit vector as ~u = (cos(?)sin(f),sin(?)sin(f),cos(f)). Given a vector ~u, its azimuthal angle is given by ? = arctanuy uxand its polar angle is f =arctan (u2 x+u2 y)1/2 uz . This formula does not require that ~u be a unit vector. 5.6.1 Rotation of a Point About a Line
+Spherical coordinates are useful in ?nding the rotation of a point about an arbitrary line. Let ¯ l(?) = ?~u with k~uk = 1, and ~u having azimuthal angle ? and polar angle f. We may compose elementary rotations to get the effect of rotating a point ¯ p about ¯ l(?) by a counterclockwise angle ?:
+1. Align ~u with the z-axis. • Rotate by-? about the z-axis so ~u goes to the xz-plane. • Rotate up to the z-axis by rotating by-f about the y-axis. Hence, ¯ q = Ry(-f)Rz(-?)¯ p 2. Apply a rotation by ? about the z-axis: Rz(?).
+Copyright c
+2005 David Fleet and Aaron Hertzmann 29
+CSC418 / CSCD18 / CSC2504 3D Objects
+3. Invert the ?rst step to move the z-axis back to ~u: Rz(?)Ry(f) = (Ry(-f)Rz(-?))-1. Finally, our formula is ¯ q = R~u(?)¯ p = Rz(?)Ry(f)Rz(?)Ry(-f)Rz(-?)¯ p.
+5.7 Nonlinear Transformations
+Af?ne transformations are a ?rst-order model of shape deformation. With af?ne transformations, scaling and shear are the simplest nonrigid deformations. Common higher-order deformations include tapering, twisting, and bending.
+Example: To create a nonlinear taper, instead of constantly scaling in x and y for all z, as in
+¯ q =? ?
+a 0 0 0 b 0 0 0 1
+? ?¯ p,
+let a and b be functions of z, so
+¯ q =? ?
+a(¯ pz) 0 0 0 b(¯ pz) 0 0 0 1
+? ?¯ p.
+A linear taper looks like a(z) = a0 + a1z. A quadratic taper would be a(z) = a0 + a1z + a2z2.
+x
+y
+z
+(c) Linear taper
+x
+y
+z
+(d) Nonlinear taper
+5.8 Representing Triangle Meshes
+A triangle mesh is often represented with a list of vertices and a list of triangle faces. Each vertex consists of three ?oating point values for the x, y, and z positions, and a face consists of three
+Copyright c
+2005 David Fleet and Aaron Hertzmann 30
+CSC418 / CSCD18 / CSC2504 3D Objects
+indices of vertices in the vertex list. Representing a mesh this way reduces memory use, since each vertex needs to be stored once, rather than once for every face it is on; and this gives us connectivity information, since it is possible to determine which faces share a common vertex. This can easily be extended to represent polygons with an arbitrary number of vertices, but any polygon can be decomposed into triangles. A tetrahedron can be represented with the following lists:
+Vertex index x y z 0 0 0 0 1 1 0 0 2 0 1 0 3 0 0 1
+Face index Vertices 0 0, 1, 2 1 0, 3, 1 2 1, 3, 2 3 2, 3, 0
+Notice that vertices are speci?ed in a counter-clockwise order, so that the front of the face and back can be distinguished. This is the default behavior for OpenGL, although it can also be set to take face vertices in clockwise order. Lists of normals and texture coordinates can also be speci?ed, with each face then associated with a list of vertices and corresponding normals and texture coordinates.
+5.9 Generating Triangle Meshes
+As stated earlier, a parametric surface can be sampled to generate a polygonal mesh. Consider the surface of revolution ¯ S(a,ß) = [x(a)cosß,x(a)sinß,z(a)]T with the pro?le ¯ C(a) = [x(a),0,z(a)]T and ß ? [0,2p]. To take a uniform sampling, we can use
+?a =
+a1 -a0 m
+, and ?ß =
+2p n
+,
+where m is the number of patches to take along the z-axis, and n is the number of patches to take around the z-axis.
+Each patch would consist of four vertices as follows: Sij =? ? ? ? ¯ S(i?a,j?ß) ¯ S((i + 1)?a,j?ß) ¯ S((i + 1)?a,(j + 1)?ß) ¯ S(i?a,(j + 1)?ß) ? ? ? ? =? ? ? ?
+¯ Si,j ¯ Si+1,j ¯ Si+1,j+1 ¯ Si,j+1
+? ? ? ?
+, for
+i ? [0,m-1], j ? [0,n-1]
+To render this as a triangle mesh, we must tesselate the sampled quads into triangles. This is accomplished by de?ning triangles Pij and Qij given Sij as follows:
+Pij = (¯ Si,j, ¯ Si+1,j, ¯ Si+1,j+1), and Qij = (¯ Si,j, ¯ Si+1,j+1, ¯ Si,j+1)

@@ -1,0 +1,15 @@
+The haXe syntax is C-like, with a rich feature set. Its chief advantage is that it negates problems inherent in each of the platforms it targets. For example, haXe has strict typing where JavaScript does not; it adds generics and type inference to ActionScript; and it obviates the poorly designed, haphazard syntax of PHP entirely.
+
+Although still under development, haXe is used commercially by its creator, the gaming studio Motion Twin, so it's no toy. It's available for Linux, Mac OS X, and Windows under a combination of open source licenses.
+
+Experimental programming language No. 10: Chapel
+
+In the world of high-performance computing, few names loom larger than Cray. It should come as no surprise, then, that Chapel, Cray's first original programming language, was designed with supercomputing and clustering in mind.
+
+Chapel is part of Cray's Cascade Program, an ambitious high-performance computing initiative funded in part by the U.S. Defense Advanced Research Project Agency (DARPA). Among its goals are abstracting parallel algorithms from the underlying hardware, improving their performance on architectures, and making parallel programs more portable.
+
+Chapel's syntax draws from numerous sources. In addition to the usual suspects (C, C++, Java), it borrows concepts from scientific programming languages such as Fortran and Matlab. Its parallel-processing features are influenced by ZPL and High-Performance Fortran, as well as earlier Cray projects.
+
+One of Chapel's more compelling features is its support for "multi-resolution programming," which allows developers to prototype applications with highly abstract code and fill in details as the implementation becomes more fully defined.
+
+Work on Chapel is ongoing. At present, it can run on Cray supercomputers and various high-performance clusters, but it's portable to most Unix-style systems (including Mac OS X and Windows with Cygwin). The source code is available under a BSD-style open source license.

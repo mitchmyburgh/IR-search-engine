@@ -1,0 +1,14 @@
+Dynamic Operations[edit]
+The following three are the user allowable Forest Updates.
+•	Link(v, w): Where   and   are vertices in different trees  1 and  2. It returns a single top tree representing  v  w 
+•	Cut(v, w): Removes the edge   from a tree   with top tree   thereby turning it into two trees  v and  w and returning two top trees  v and  w.
+•	Expose(S): Is called as a subroutine for implementing most of the queries on a top tree.   contains at most 2 vertices. It makes original external vertices to be normal vertices and makes vertices from   the new External Boundary Vertices of the top tree. If   is nonempty it returns the new Root cluster   with   Expose({v,w}) fails if the vertices are from different trees.
+Internal Operations[edit]
+The Forest updates are all carried out by a sequence of at most   Internal Operations, the sequence of which is computed in further   time. It may happen that during a tree update, a leaf cluster may change to a path cluster and the converse. Updates to top tree are done exclusively by these internal operations.
+The   is updated by calling a user defined function associated with each internal operation.
+•	Merge  Here   and   are Mergeable Clusters, it returns   as the parent cluster of   and   and with boundary vertices as the boundary vertices of  Computes   using   and  
+•	Split  Here   is the root cluster   It updates   and   using   and than it deletes the cluster   from  .
+Split is usually implemented using Clean  method which calls user method for updates of   and   using   and updates   such that it's known there is no pending update needed in its children. Than the   is discarded without calling user defined functions. Clean is often required for queries without need to Split. If Split does not use Clean subroutine, and Clean is required, its effect could be achieved with overhead by combining Merge and Split.
+The next two functions are analogous to the above two and are used for base clusters.
+•	Create  Creates a cluster   for the edge   Sets      is computed from scratch.
+•	Eradicate    is the edge cluster   User defined function is called to process   and than the cluster   is deleted from the top tree.

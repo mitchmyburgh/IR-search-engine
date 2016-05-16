@@ -1,0 +1,31 @@
+Once you've created a binary tree, you can use one of three standard methods for traversing the tree.  
+Inorder Traversal 
+To traverse a tree using inorder traversal, you must visit the left subtree, then the root node, and then the right subtree. When visiting the subtrees, you take the same steps. 
+
+inorder(node)
+  if (node = null)
+    return
+  inorder(node.left)
+  visit(node)
+  inorder(node.right)
+
+Preorder Traversal 
+Using preorder traversal, you first visit the root node, then the left subtree, and then the right subtree. Using this method, you'll always print out the root value and then the values of the 
+left and right children. 
+
+preorder(node)
+  if (node = null)
+    return
+  visit(node)
+  preorder(node.left)
+  preorder(node.right)
+
+Postorder Traversal 
+Using postorder traversal, you visit the left subtree, then the right subtree, and finally, the root node.
+
+postorder(node)
+  if (node = null)
+    return
+  postorder(node.left)
+  postorder(node.right)
+  visit(node)

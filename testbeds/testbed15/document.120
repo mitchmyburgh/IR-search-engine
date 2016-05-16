@@ -1,0 +1,13 @@
+﻿ANIMATORS will soon be able to construct startlingly realistic sylvan beauty in movies and video games with a new system for generating 3D virtual trees.
+
+At the moment, computer-generated images (CGI) of trees are either drawn manually on a computer and then animated, or someone has to shoot video of a tree moving in the wind. This is digitally transformed into a CGI copy of the original. Either process takes days – and you can only produce one size and shape of tree, says Chuan Li, a computer animator at the University of Bath in the UK.
+
+To solve this problem, Li and colleagues have developed software that generates realistic-looking 3D animated trees of any size and shape based on a rough 2D sketch. The trees even blow in the wind like their woody counterparts, and can be whipped around just by piping in a soundtrack of a blustery day.
+
+The system can start with just a 2D sketch of a tree’s leafless branches, and an outline of what the tree’s shape will be once it is in full leaf. The 2D sketch is then copied and rotated 90 degrees into 3D space. From there, an algorithm “grows” additional branches for the tree until a 3D skeleton is complete.
+
+The software contains a model of how real tree branches move in both light and strong winds, based on video footage the team shot. The system applies this model to the tree skeleton to work out how the branch structure would move large clusters of leaves as they billow in the breeze. Each virtual branch in the skeleton is then broken into six segments. “By rotating each segment independently we can get the right magnitude of tree movement for the wind speed,” says Li. Once they have captured a tree’s 3D skeleton, they can scale it up or down for trees of different shapes and sizes, from a short wispy cherry to a dense, tall oak. The team’s work was published in December in the journal ACM Transactions on Graphics (DOI: 10.1145/2070781.2024161).
+
+This means that any sketch of a tree skeleton can be used to generate a 3D model that moves like a real tree. Better still, the trees automatically respond to the sound level of the wind in a soundtrack, measured in decibels, without adding physical parameters like wind speed. So as noise increases from a light breeze to a howling gale, tree branches go from swaying peacefully to flailing wildly.
+
+“When I saw this my jaw was on the floor,” says Jordi Bares, 3D creative director at London animation studio The Mill, who marvelled at the package’s simplicity and speed, and adds he hopes it will be commercialised soon. “It’s a game changer that could save us the huge chunk of our time we currently spend creating natural 3D assets like trees.”

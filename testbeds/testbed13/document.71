@@ -1,0 +1,879 @@
+
+
+  * Trending:
+  * Trim your app portfolio for savings
+  * Sign up for Computerworld's newsletters
+  * Resources/White Papers
+
+  * _Search_
+
+  * __
+  * __
+  * __
+  * __
+  * __
+  * __
+
+__ computerworld
+
+Sign In | Register
+
+Hi! Here are the latest Insider stories.
+
+  * Report: CIOs face 'massive gap' in talent acquisition
+  * More PowerShell: Hash tables
+  * Review: HPE’s machine learning cloud overpromises, underdelivers
+  * How to perform a risk assessment
+
+More Insider Sign Out
+
+Search for
+
+Suggestions for you
+
+Insider email
+
+  * Cloud Computing
+    * All Cloud Computing
+    * Cloud Security
+    * Cloud Storage
+    * Hybrid Cloud
+    * Private Cloud
+    * Public Cloud
+  * Computer Hardware
+    * All Computer Hardware
+    * Apple Mac
+    * Chromebooks
+    * Computer Peripherals
+    * Computer Processors
+    * Solid State Drives
+    * Windows PCs
+  * Consumerization of IT
+    * All Consumerization of IT
+    * Bring Your Own Device (BYOD)
+    * Gamification
+    * Home Tech
+    * Location-Based Services
+    * Personal Technology
+  * Data Center
+    * All Data Center
+    * Data Storage
+    * Disaster Recovery
+    * High-Performance Computing (HPC)
+    * Infrastructure Management
+    * Sustainable IT
+    * Virtualization
+  * Emerging Technology
+    * All Emerging Technology
+    * 3D Printing
+    * Car Tech
+    * Environment
+    * Internet of Things
+    * Robotics
+    * Space Technology
+    * Wearables
+  * Enterprise Applications
+    * All Enterprise Applications
+    * Application Development
+    * Big Data
+    * Business Intelligence (BI)
+    * Business Process Management (BPM)
+    * CRM
+    * Collaboration
+    * Content/Document Management
+    * Data Analytics
+    * Database Management
+    * Desktop Apps
+    * Enterprise Architecture
+    * Enterprise Resource Planning (ERP)
+    * Java Development
+    * Open Source
+    * Social Business
+    * Software Integration
+    * Software as a Service (SaaS)
+    * Unified Communications (UC)
+  * IT Management
+    * All IT Management
+    * Digital Transformation
+    * H-1B
+    * IT Careers
+    * IT Industry
+    * IT Outsourcing
+    * IT Project Management
+    * IT Skills &amp; Training
+    * Technology Law &amp; Regulation
+  * Internet
+    * All Internet
+    * E-commerce
+    * Search
+    * Social Media
+    * Web Apps
+    * Web Browsers
+  * Mobile &amp; Wireless
+    * All Mobile &amp; Wireless
+    * Android
+    * Apple iOS
+    * BlackBerry
+    * Mobile Apps
+    * Mobile Device Management
+    * Mobile Payments
+    * Mobile Security
+    * Smartphones
+    * Tablets
+    * Windows 10 Mobile
+    * Wireless Carriers
+  * Networking
+    * All Networking
+    * Network Security
+    * Servers
+    * Wireless Networking
+  * Operating Systems
+    * All Operating Systems
+    * Chrome OS
+    * Linux
+    * Mac OS X
+    * Windows 10
+  * Security
+    * All Security
+    * Application Security
+    * Cyberattacks
+    * Cybercrime &amp; Hacking
+    * Data Privacy
+    * Data Security
+    * Encryption
+    * Endpoint Security
+    * Malware &amp; Vulnerabilities
+  * Vertical IT
+    * All Vertical IT
+    * Financial IT
+    * Government IT
+    * Healthcare IT
+    * Retail IT
+    * Small Enterprise IT
+
+  * All Topics
+  * News
+  * Features
+  * Reviews
+  * Blogs
+  * Opinions
+  * Insider
+  * Shark Tank
+  * Slideshows
+  * Video
+  * Digital Magazine
+  * Newsletters
+  * Computerworld Events
+  * IT Job Search
+  * Resources/White Papers
+
+×
+
+Close
+
+  * Home
+  * Security
+
+Feature
+
+# The Clock Is Ticking for Encryption
+
+More like this
+
+  * The clock is ticking on encryption
+
+  * Can data stored on an SSD be secured?
+
+  * Review: 3 encryption apps keep your data safe
+
+  * on IDG **Answers** __
+
+What type of user security does a NAS have?
+
+## The tidy world of cryptography may be upended by the arrival of quantum
+computers.
+
+  * __
+  *   *   *   *   *   *   *   *   * 
+
+__
+
+### Email a friend
+
+#### To
+
+Use commas to separate multiple email addresses
+
+* * *
+
+#### From
+
+* * *
+
+  
+
+* * *
+
+Privacy Policy
+
+__
+
+### Thank you
+
+Your message has been sent.
+
+__
+
+### Sorry
+
+There was an error emailing this page.
+
+Comments
+
+By Lamont Wood
+
+Computerworld | Mar 21, 2011 7:00 AM PT
+
+RELATED TOPICS
+
+  * Security
+  * Endpoint Security
+  * Data Security
+
+Comments
+
+$(function() { var debug = false; var topImuHeight = 250; try { topImuHeight =
+getTallestNoScroll(); } catch (e) { console.log(e); } var setInt =
+setInterval(checkHeight, 100); var count = 0; function checkHeight() { if
+((topImuHeight > 0 && count > 10) || count > 50) { if (!topImuHeight > 0 ) {
+try { topImuHeight = getTallestWithScroll(); } catch (e) { console.log(e); } }
+if (! topImuHeight > 0 || topImuHeight > 1200) { if (debug) {
+console.log("topimuheight is out of range so manually set to 250"); }
+topImuHeight = 250; } clearInterval(setInt); executeDRR(topImuHeight); } else
+{ if (debug) { console.log("have to check height again and counter is: " +
+count); } try { topImuHeight = getTallestNoScroll(); } catch (e) {
+console.log(e); } count++; } } function getTallestNoScroll() { var bodyOffset
+= 0; var htmlHeight = 0; var htmlOffset = 0; if ($('#topimu div
+iframe').length) { var body = document.getElementById('topimu').getElementsByT
+agName('iframe')[0].contentWindow.document.body; var html = document.getElemen
+tById('topimu').getElementsByTagName('iframe')[0].contentWindow.document.docum
+entElement; if (body != null) { bodyOffset = body.offsetHeight; } if (html !=
+null) { htmlHeight = html.clientHeight; htmlOffset = html.offsetHeight; } if
+(debug) { console.log("in getTallestNoScroll"); if (body != null &&
+body.offsetHeight != null) { console.log("offsetHeight is " +
+body.offsetHeight); } if (body != null && body.scrollHeight != null) {
+console.log("scrollHeight is " + body.scrollHeight); } if (html != null &&
+html.clientHeight != null) { console.log("htmlClientHeight is " +
+html.clientHeight); } if (html != null && html.scrollHeight != null) {
+console.log("htmlScrollHeight is " + html.scrollHeight); } if (html != null &&
+html.offsetHeight != null) { console.log("htmlOffsetHeight is " +
+html.offsetHeight); } } } return Math.max(bodyOffset, htmlHeight, htmlOffset);
+} function getTallestWithScroll() { var bodyOffset = 0; var bodyScroll = 0;
+var htmlHeight = 0; var htmlOffset = 0; var htmlScroll = 0; if ($('#topimu div
+iframe').length) { var body = document.getElementById('topimu').getElementsByT
+agName('iframe')[0].contentWindow.document.body; var html = document.getElemen
+tById('topimu').getElementsByTagName('iframe')[0].contentWindow.document.docum
+entElement; if (body != null) { bodyOffset = body.offsetHeight; bodyScroll =
+body.scrollHeight; } if (html != null) { htmlHeight = html.clientHeight;
+htmlOffset = html.offsetHeight; htmlScroll = html.scrollHeight; } if (debug) {
+if (body != null && body.offsetHeight != null) { console.log("offsetHeight is
+" + body.offsetHeight); } if (body != null && body.scrollHeight != null) {
+console.log("scrollHeight is " + body.scrollHeight); } if (html != null &&
+html.clientHeight != null) { console.log("htmlClientHeight is " +
+html.clientHeight); } if (html != null && html.scrollHeight != null) {
+console.log("htmlScrollHeight is " + html.scrollHeight); } if (html != null &&
+html.offsetHeight != null) { console.log("htmlOffsetHeight is " +
+html.offsetHeight); } } } return Math.max(bodyOffset, bodyScroll, htmlHeight,
+htmlOffset, htmlScroll); } }); function executeDRR(imuHeight) { var debug =
+false; var topImuHeight = (imuHeight != null && imuHeight > 0) ? imuHeight :
+250; var socialPages = ['facebook', 'twitter', 'reddit', 'tumblr']; // Set the
+calls to module content for right rail var articleDRRModuleList = ["most.popul
+ar.articles","module.resources","module.epo","module.answers.promo"]; var
+resourceLibraryUrl = ""; var moduleUrls = []; for (var i=0;
+i<articleDRRModuleList.length; i++) { var articleDRRModuleName =
+articleDRRModuleList[i]; if (articleDRRModuleName == "module.epo") {
+articleDRRModuleName = getEpoParams(); } if (articleDRRModuleName ==
+"module.resources") { if (false) { continue; } articleDRRModuleName =
+"module.resources&pageSize=2&catId=2206"; if (resourceLibraryUrl != null) {
+articleDRRModuleName += "&titleLink=" + resourceLibraryUrl; } } if
+(articleDRRModuleName == "module.category.articles") { if (true) {
+articleDRRModuleName = "module.category.articles&catId=2206"; } } if
+(articleDRRModuleName.indexOf("module.resources")>=0) {
+moduleUrls.push("/napi/tile?def=" + articleDRRModuleName); } else if
+(articleDRRModuleName == "module.answers.promo") {
+moduleUrls.push("/napi/tile?def=module.answers.promo&catId=2206"); } else {
+moduleUrls.push("/napi/tile?def=" + articleDRRModuleName +
+"&excludeCurrentArticle=true&excludeIds=2550008"); } } var leftModuleUrl =
+"/napi/tile?def=insider.item"; var leftModuleElementId = "drr-left"; //
+Constants var interModuleHeight = 400; var grafHeight = 25; var
+moduleHeightBuffer = 350; var adHeightBuffer = 350; var mobileBreak = 768; //
+Width at which design becomes one column at top of article var leftPixelWindow
+= 700; // Need at least this much space to place left rail module near end of
+article var rightPixelWindow = 300; if (debug) { var topImu =
+$("#topimu").height(); // not using this one anymore console.log("old topImu
+height would have used this " + topImu); } var tagHeight =
+$(".tags").height(); var cumulativeHeight = 0; var loopCounter = 0; var
+placementTarget = topImuHeight + moduleHeightBuffer + grafHeight +
+interModuleHeight; if ($(window).width() > mobileBreak) { // Desktop view if
+($("figure.hero-img").height()) { cumulativeHeight += $("figure.hero-
+img").height(); } } else { // Mobile View if ($("figure.hero-img").height()) {
+placementTarget += $("figure.hero-img").height(); } // Add heights of all
+elements up through read these next (which is placed after eigth p tag) var
+firstModIndex = $("#drr-container > p:eq(7)").index(); $("#drr-
+container").children().slice(0, firstModIndex).each(function() {
+placementTarget += $(this).height(); }); // Define first mobile ad here so imu
+counter shows imu1 first imu2 second, etc. var firstMobileAdHtml =
+getLazyLoadAdHtml(); } var modules = []; var placementIndex = []; var
+moduleCounter = 0; var originalModuleUrlLength = moduleUrls.length; //
+Ordering should be [ad, module, module, ad, ad, ad, module, ad, ad, ad,
+module] per CSOB-445, IDGMPM-6788 var adPositions = new Array(0,3,4,5,7,8,9);
+// Place Right-rail div containers $("#drr-
+container").children().each(function(index,value) { //ignore any hidden
+elements in the body, like the mobile-only "read this next" module if
+($(this).is(':visible')) { if (debug) { console.log($(this)); } if
+(cumulativeHeight >= placementTarget) { console.log("cumulatievHeight >=
+placementTarget and cumulativeHeight is " + cumulativeHeight + " and
+placementTarget is " + placementTarget); var placementDiff = 0; if
+($.inArray(loopCounter, adPositions) != -1) { IDG.GPT.addExtIMU(); if (true) {
+var adDivString = getLazyLoadAdHtml(); } else { IDG.GPT.IMUCounter =
+IDG.GPT.IMUCounter + 1; var slotName = IDG.GPT.getIMUSlotName();
+IDG.GPT.defineGoogleTagSlot(slotName ,[[320,50],[300,250],[300,50]]); var
+adString = "<div id='" + slotName + "'></div><script>$('#" + slotName +
+"').responsiveAd({screenSize:'971 1115', scriptTags: []});if
+(Object.keys(IDG.GPT.companions).length > 0) {IDG.GPT.refreshAd('" + slotName
++ "');}<\/script>"; var adDivString = "<div class='apart ad'>" + adString +
+"</div>"; } placementDiff = applyInsert($(this), adDivString); if (debug) {
+console.log("Just placed an ad and the placementDiff is: " + placementDiff); }
+placementTarget = cumulativeHeight + placementDiff + interModuleHeight +
+adHeightBuffer; } else { var moduleDivString = ""; var elementId = "drr-
+mod-"+moduleCounter; moduleDivString = "<div id=\"" + elementId + "\" />";
+modules.push(elementId); placementDiff = applyInsert($(this),
+moduleDivString); if (debug) { console.log("Just placed a module and the
+placementDiff is: " + placementDiff); } placementTarget = cumulativeHeight +
+placementDiff + interModuleHeight + moduleHeightBuffer; moduleCounter++; }
+loopCounter++; } // Avoid placing elements too soon due to non-large figures
+inflating the cumulative height if ($(this).is("figure") &&
+!$(this).is("figure.large")) { cumulativeHeight += grafHeight; } else {
+cumulativeHeight += $(this).height() + grafHeight; } } }); // clone Related
+Stories module to come in after eighth para in article body for mobile
+breakpoint display var $relatedStories = $('.related-promo-wrapper'); if
+($relatedStories.length) { var $relatedStoriesClone = $relatedStories.clone();
+$relatedStoriesClone.insertAfter( "#drr-container > p:eq(7)"); } // For mobile
+only, place ad after second paragraph. if (firstMobileAdHtml) {
+$(firstMobileAdHtml).insertAfter("#drr-container > p:eq(1)"); } var
+$insiderPromo = $('.insider-promo-wrapper'); if ($insiderPromo.length) { var
+$insiderPromoClone = $insiderPromo.clone(); $insiderPromoClone.insertAfter(
+"#drr-container > p:eq(1)"); } //place left side element cumulativeHeight = 0;
+var leftPlacementTarget = tagHeight < 100 ? 100 : tagHeight; var
+leftPlacementLookaheadStart = null; var leftIntervalHeight = 650; var
+leftPlacementIndex = null; var $leftPlacementElement; // Only place left
+module if not a sponsored article and not on greenbot if (!false && true) {
+$("#drr-container").children().each(function(index,value) { if (debug) {
+console.log("leftRailProcessor iterate. index "+ index); console.log($(this));
+} //ignore any hidden elements in the body, like the mobile-only "read this
+next" module if($(this).is(':visible')) { if (cumulativeHeight >=
+leftPlacementTarget) { if (debug) { console.log("congratulations... we've
+passed the initial start point"); } if (leftPlacementIndex == null) { //it's
+not good enough to not be a left avoid - it also shouldn't be a <p> with an
+immediately preceding small or medium image left avoid. if
+(!isLeftAvoid($(this)) && noPrevFigures($(this)) ) { leftPlacementIndex =
+$(this).index(); $leftPlacementElement = $(this); leftPlacementLookaheadStart
+= cumulativeHeight; if (debug) { console.log("is not a left avoid and no prev
+figures. ########## set placementIndex ("+leftPlacementIndex+") and
+lookaheadStart ("+leftPlacementLookaheadStart+") ##########"); } } else { if
+(debug) { console.log("is a left avoid or has previous figures. continue"); }
+} } else { if (debug) { console.log("#### leftPlacementIndex already set to
+"+leftPlacementIndex+". looking ahead..."); } //not null; has been set if
+((cumulativeHeight - leftPlacementLookaheadStart) > leftIntervalHeight) { if
+(debug) { console.log("###### THRESHOLD REACHED. LOOKAHEAD COMPLETE. END
+###### (cumulativeHeight - leftPlacementLookaheadStart) ("+(cumulativeHeight-
+leftPlacementLookaheadStart)+") > leftIntervalHeight
+("+leftIntervalHeight+")."); } return false; } else { if (debug) {
+console.log("threshold not reached: (cumulativeHeight -
+leftPlacementLookaheadStart) ("+(cumulativeHeight-
+leftPlacementLookaheadStart)+") < leftIntervalHeight
+("+leftIntervalHeight+")"); } if (isLeftAvoid($(this))) { if (debug) {
+console.log("This element is left avoid. #RESET, CONTINUE#"); }
+leftPlacementIndex = null; leftPlacementLookaheadStart = null; } } } } //we
+shouldn't be counting small or medium figures towards height since their
+heights are reflected in the following <p> tags if (!(isLeftAvoid($(this)) &&
+($(this).hasClass('small') || $(this).hasClass('inline-small') ||
+$(this).hasClass('medium') || $(this).hasClass('inline-medium') ||
+$(this).hasClass('apart') ))) { cumulativeHeight += $(this).height() +
+grafHeight; } if (debug) { console.log("-------------------- set
+cumulativeHeight("+cumulativeHeight+") ---------------"); console.log(""); } }
+}); } if (leftPlacementIndex != null &&
+elementNotNearEnd($leftPlacementElement, leftPixelWindow)) { if (debug) {
+console.log(" insert into index "+leftPlacementIndex); } $("#drr-
+container").children().eq(leftPlacementIndex).before("<div
+id=\""+leftModuleElementId+"\" />"); } IDG.GPT.trackOmniture(); // Add Right
+rail module content for (var i=0; i<modules.length; i++) { if (moduleUrls[i]
+!== undefined) { $.get( moduleUrls[i]+"&divId="+modules[i], function( data ) {
+var placementId = $(data).attr("data-placement-id"); $( "#"+placementId
+).html( data ); }); } } // Add Left rail module content, if not on a
+collection/package page if (leftPlacementIndex != null &&
+elementNotNearEnd($leftPlacementElement, leftPixelWindow)) { $.get(
+leftModuleUrl+"&divId="+leftModuleElementId, function( data ) { var
+placementId = $(data).attr("data-placement-id"); $( "#"+placementId ).html(
+data ); }); } //this needs to run once all of the modules are placed to make
+sure that any modules placed after page load are slated to be lazy-loaded
+$("div.lazyload_ad_article").lazyLoadAd({ threshold : 0, // You can set
+threshold on how close to the edge ad should come before it is loaded. Default
+is 0 (when it is visible). forceLoad : false, // Ad is loaded even if not
+visible. Default is false. onLoad : false, // Callback function on call ad
+loading onComplete : false, // Callback function when load is loaded timeout :
+1500, // Timeout ad load debug : false, // For debug use : draw colors border
+depends on load status xray : false // For debug use : display a complete page
+view with ad placements }) ; /* * Increments imu counter and generates a
+'name' based on count like imu2, imu3, etc. * Returns the html and code script
+needed for the lazy load ad js. */ function getLazyLoadAdHtml() { var adString
+= IDG.GPT.getLazyAdCode(); return "<div class=\"apart ad
+lazyload_ad_article\">" + adString + "</div>"; } function getEpoParams() { var
+parts = document.referrer.replace(/^https?:\/\//, '').split('/'); var
+defaultCatId = 3029; var defaultTypeId = 2; var epoParams = "module.epo";
+parts.shift(); // From HOMEPAGE; show default typeId articles if
+(parts.join('/') == "" && document.referrer.indexOf(document.domain)) {
+epoParams += "&displayId=11&referrer=home"; } // From ARTICLE: Show articles w
+referrer catId else if (document.referrer != undefined &&
+document.referrer.indexOf('article') >= 0) { var a =
+document.createElement('a'); a.href = document.referrer; var uriParts =
+a.pathname.split('/'); a = ''; if (typeof uriParts[3] == 'undefined') {
+epoParams += "&typeId=" + defaultTypeId + "&referrer=home"; // default is
+'home' behavior } else { var refCatSlug = uriParts[3]; epoParams +=
+"&catSlug=" + refCatSlug + "&referrer=article"; } } // From SEARCH: Show
+article with catId same as current article else if
+(document.referrer.indexOf("google") >= 0 ||
+document.referrer.indexOf("yahoo") >= 0 || document.referrer.indexOf("bing")
+>= 0) { var categories = [2206, 3857, 3678]; if (categories instanceof Array
+&& categories.length > 0) { var primaryCatId = categories[0]; epoParams +=
+"&catId=" + primaryCatId + "&referrer=search"; } else { epoParams +=
+"&typeId=" + defaultTypeId + "&referrer=home"; // default is 'home' behavior }
+} // Default is to show like coming from homepage else { epoParams +=
+"&displayId=11&referrer=home"; // default is 'home' behavior } return
+epoParams; } /** * @param jqo Original jquery object target * @param divString
+The div to be inserted. * @return Difference in height between original
+placement target and final target. * Checks first 6 elements for an allowable
+placement (600 pixel window). * If none, check nearby for elements that are
+not right avoids. * If none, place element before current target. */ function
+applyInsert(jqo, divString) { if (debug) { console.log("applyInsert at top and
+jqo index is: " + jqo.index()); } for (var i=0; i<=6; i++) { $thisElement =
+jqo.nextAll().andSelf().slice(i, i+1); if (debug) { console.log("Checking
+first six and i is: " + i + " and this element index is " +
+$thisElement.index() ); } if ($thisElement.index() < 0) { break; } if
+(allowPlacement($thisElement)) { return addElement(jqo, $thisElement,
+divString); } } // If got here, no good place to put it.. just put it before
+one that is not right avoid! var $allowElement = null; if (($allowElement =
+findNearbyAllow(jqo)) != null) { return addElement(jqo, $allowElement,
+divString); } else { // nothing good so put in first spot that is not
+rightReject and not followed by reject. if (debug) { console.log("No nearby
+allows so just place in first spot that is not rightReject."); } var
+numElements = jqo.nextAll().length; var startIndex = jqo.index(); for (var
+i=startIndex; i<=numElements; i++) { var $element = $("#drr-
+container").children().eq(i); // This element is eligible when not null, not
+in placement index, and not a rightReject nor is next element if ($element !=
+null && (placementIndex == null || placementIndex.indexOf(i) == -1)) { if
+(!isRightReject($element) && !isRightReject($element.next())) { return
+addElement(jqo, $element, divString); } } } if (debug) { console.log("Not
+going to place element: return 0."); } return 0; } } /** * @param jqo Original
+jquery object * @param allowElement Element that is good placement for
+module/ad * @param divString The div to be inserted before the good element *
+@return placementHeightDiff Diff in height between original placement target
+and current target. * * If element is not too close to the end the insert the
+div before allowable element. * Add element index to placementIndex to keep
+track of which elements already have placements */ function addElement(jqo,
+allowElement, divString) { var offset = allowElement.index() - jqo.index(); if
+(debug) { console.log("addElement: jqo index is " + jqo.index() + "
+allowElement index is " + allowElement.index()); } if
+(elementNotNearEnd(allowElement, rightPixelWindow)) {
+allowElement.before(divString); if (debug) { console.log("addElement: Adding "
++ allowElement.index() + " to placementIndex."); }
+placementIndex.push(allowElement.index()); if (offset == 0) { return 0; } else
+{ return getHeightDifference(jqo,allowElement); } } else { if (debug) {
+console.log("addElement: Near the end so do NOT add."); } return 0; } }
+function getHeightDifference(jqo,allowElement) { var offset =
+allowElement.index() - jqo.index(); var height = 0; var children = null; if
+(offset > 0) { children = $("#drr-container").children().slice(jqo.index(),
+allowElement.index() ); } else { children = $("#drr-
+container").children().slice(allowElement.index(), jqo.index()); } if
+(children != null) { children.each(function(i) { if (debug) {
+console.log("About to add this element's height to heigh diff offset");
+console.log($(this)); } height += $(this).height() + grafHeight; }); } if
+(offset < 0) { height *= -1; } if (debug) { console.log("getHeightDifference:
+offset was " + offset + " and height diff is : " + height); } return height; }
+/** * Return true if next 550 pixels do not include a right avoid; false
+otherwise. */ function allowPlacement(jqo) { $testElement = jqo; var height =
+0; while (height < 550) { if ($testElement != null &&
+!isRightAvoid($testElement)) { if (debug) { console.log("allowPlacement: this
+element height is " + $testElement.height() + " and index is: " +
+$testElement.index()); } height += $testElement.height() + grafHeight; } else
+{ return false; } $testElement = $testElement.next(); } return true; } /** *
+Look ahead and back for element that is not rightAvoid * Return the index of
+the closest allowable element or null if none found. */ function
+findNearbyAllow(jqo) { if (debug) { console.log("In nearby allow so could not
+find 600 px window."); } // Check current element first if (!isRightAvoid(jqo)
+&& !isRightAvoid(jqo.next())) { return jqo; } for (var i=1; i<=2; i++) { if
+(!isRightAvoid(jqo.nextAll().slice(i-1, i)) &&
+!isRightAvoid(jqo.nextAll().slice(i, i+1)) ) { return jqo.nextAll().slice(i-1,
+i); } if (!isRightAvoid(jqo.prevAll().slice(i-1, i)) &&
+!isRightAvoid(jqo.prevAll().slice(i, i+1)) ) { return jqo.prevAll().slice(i,
+i+1); } } return null; } /** * Return true if this is avoid element or already
+has module/ad placed near it */ function isRightAvoid(jqo) { if
+(placementIndex == null || placementIndex.indexOf(parseInt(jqo.index())) ==
+-1) { if (jqo.is("pre") && jqo.height() > 300) { if (debug) {
+console.log("isRightAvoid: found pre. return true"); } return true; } if
+(jqo.is("figure") && jqo.hasClass('large')) { if (debug) {
+console.log("isRightAvoid: found figure.large return true"); } return true; }
+if (jqo.is("figure") && jqo.hasClass('medium') && jqo.hasClass('inline')) { if
+(debug) { console.log("isRightAvoid: found figure has class medium and
+inline."); } return true; } if (jqo.is('div') && jqo.hasClass('table-
+wrapper')) { if (debug) { console.log("isRightAvoid: found div with class
+table-wrapper"); } return true; } if (jqo.is('aside')) { if
+(jqo.hasClass('sidebar') && !jqo.hasClass('medium')) { if (debug) {
+console.log("isRightAvoid: found aside with class sidebar, without class
+medium"); } return true; } if (jqo.hasClass('statsTable')) { if (debug) {
+console.log("isRightAvoid: found aside with class statsTable"); } return true;
+} } if (jqo.hasClass('download-asset')) { if (debug) {
+console.log("isRightAvoid: found class download-asset return true"); } return
+true; } if (jqo.hasClass('tableLarge')) { if (debug) {
+console.log("isRightAvoid: found class tableLarge return true"); } return
+true; } if (jqo.hasClass('reject')) { if (debug) { console.log("isRightAvoid:
+found class reject. return true"); } return true; } if (jqo.is('table') &&
+jqo.hasClass('scorecard')) { if (debug) { console.log("isRightAvoid: found div
+with class scorecard"); } return true; } } return false; } // Return true if
+element has class 'reject': will not place drr modules/ads next to these
+elements function isRightReject(jqo) { console.log("in isRightReject"); if
+(jqo != null) { if (jqo.hasClass("reject")) { if (debug) {
+console.log("isRightReject: found 'reject' class"); } return true; } return
+false; } return false; } // Returns true if height of all elements after this
+one is more than 500; false otherwise function elementNotNearEnd(element,
+pixelWindow) { if (pixelWindow == null) { pixelWindow = 500; } if (element ==
+null) { return false; } var remainingHeight = 0; var children = $("#drr-
+container").children().slice(element.index()); if (children == null) { return
+false; } children.each(function(i){ remainingHeight += $(this).height(); });
+if ( remainingHeight > pixelWindow) { return true; } else { if (debug) {
+console.log("Element too close to end. Remaining height is: " +
+remainingHeight + " and window is " + pixelWindow); } return false; } } /** *
+Return true if need to avoid this element when placing left module. */
+function isLeftAvoid(jqo) { if (jqo.is("figure")) { if (debug) {
+console.log("isLeftAvoid: found figure. return true"); } return true; } if
+(jqo.is("aside.pullquote")) { if (debug) { console.log("isLeftAvoid: found
+pullquote. return true"); } return true; } if (jqo.is("pre")) { if (debug) {
+console.log("isLeftAvoid: found pre. return true"); } return true; } if
+(jqo.is("div.gist")) { if (debug) { console.log("isLeftAvoid: found github
+code block. return true"); } return true; } if (jqo.is("aside") &&
+jqo.hasClass("sidebar") && jqo.hasClass("medium")) { if (debug) {
+console.log("isLeftAvoid: found medium sidebar. return true"); } return true;
+} if (jqo.hasClass("statsTable")) { if (debug) { console.log("isLeftAvoid:
+found class statsTable. return true"); } return true; } return false; } /** *
+return true if there are no figures before the target placement that might
+bleed down into placement element */ function noPrevFigures($originalTarget) {
+var targetIndex = $originalTarget.index(); var numElementsLookBack = 5; var
+figureIndex = null; var figureHeight = null; var startIndex = targetIndex -
+numElementsLookBack < 0 ? 0 : targetIndex - numElementsLookBack; $("#drr-
+container").children().slice(startIndex, targetIndex).each(function(index,
+value) { if ($(this).is(':visible')) { if (($(this).is("figure") &&
+!$(this).hasClass("large")) || $(this).hasClass("statsTable")) { figureIndex =
+$(this).index(); figureHeight = $(this).height(); if (debug) {
+console.log("noPrevFigures: Found a figure and it's index is: " + figureIndex
++ " it's height is: " + figureHeight); } } } }); if (figureIndex != null) {
+startIndex = figureIndex+1; var heightDiff = 0; $("#drr-
+container").children().slice(startIndex, targetIndex).each(function(index,
+value) { if ($(this).is(':visible')) { heightDiff += $(this).height(); } });
+if ( heightDiff < figureHeight) { if (debug) { console.log("noPrevFigures:
+figureHeight is: " + figureHeight + " and heightDiff is " + heightDiff + " so
+return false."); } return false; } } return true; } }
+$(document).ready(function(){ $('.pagination .page-link').click(function(e){
+oClickTrack("Article Detail:Pagination"); }); });
+
+var mode = "alternating-thumbnails-b"; var container = "taboola-below-article-
+thumbnails"; var placement = "Below Article Thumbnails" if ($thm.isMobile()) {
+$("#taboola-below-article-thumbnails").hide(); mode = "thumbnails-a";
+container = "taboola-mobile-below-article-thumbnails"; placement = "Mobile
+Below Article Thumbnails"; } window._taboola = window._taboola || [];
+_taboola.push({ mode: mode, container: container, placement: placement,
+target_type: 'mix' });  function disableCommentBox() { var nodeList =
+document.querySelectorAll("textarea.gig-composebox-textarea"); for (var i = 0,
+length = nodeList.length; i < length; i++) { nodeList[i].innerHTML = "Please
+sign in before writing your comment"; } var sbutton =
+document.getElementById("submitButton"); sbutton.style="display: inherit;"; }
+function disableGlogin() { var nodeList = document.querySelectorAll(".gig-
+composebox-login"); for (var i = 0, length = nodeList.length; i < length;
+i++){ nodeList[i].style="display: none;"; } }
+
+function onSiteLoginHandler(event) { // Site Login button clicked
+NarfUser.showLogin(); } function GigyaLogouthandle(eventObj) { logout(); }
+function commentsLoadedHandler(e) { gigya.comments.getComments({ categoryID:
+'cw', streamID: '2550008', callback: function(response) { if (typeof
+response.commentCount !== 'undefined' && response.commentCount > 0) {
+$('.firstToComment').hide(); } } }); } function
+commentSubmittedHandler(eventObj) { var aid = eventObj.streamID; var brand =
+"ctw"; $thm.logPlEvent({"b":brand,"e":"comment","t":"article","id":aid}); }
+function commentVotedHandler(e) { var voteType = e.vote; if(voteType == 'pos')
+$thm.logPlEvent({"b":"ctw","e":"upcomment","t":"article","id":"2550008"});
+else if(voteType == 'neg')
+$thm.logPlEvent({"b":"ctw","e":"downcomment","t":"article","id":"2550008"}); }
+function gigyaErrorHandler(e) { console.log(">> Gigya initialization failed
+<<"); console.log("errorCode: " + e.errorCode); console.log("errorMessage: " +
+e.errorMessage); console.log("errorDetails: " + e.errorDetails);
+console.log("category: cw"); console.log("gigyaKey: 3_TYfXTakOryyA7satF-
+DrNB1wPrA_8UWylhhyVwBxS4xSvy0UagSyxzmn7uP0E3we"); console.log(">> -- <<"); }
+gigya.socialize.addEventHandlers({ onLogout:GigyaLogouthandle }); var params =
+{ categoryID: 'cw', streamID: '2550008', containerID: 'commentsDiv',
+useSiteLogin: true, onSiteLoginClicked: onSiteLoginHandler, cid:'', width:
+'100%', enabledShareProviders: 'facebook,twitter,yahoo,linkedin',
+showLoginBar: true, version:2, onLoad:commentsLoadedHandler,
+onCommentSubmitted:commentSubmittedHandler,
+onCommentVoted:commentVotedHandler, onError: gigyaErrorHandler }
+gigya.comments.showCommentsUI(params); $(document).ready(function(){
+$(".timeago").timeago(); });
+
+IDG.GPT.addDisplayedAd("gpt-overlay", "true"); IDG.GPT.displayGoogleTagSlot
+('gpt-overlay');
+
+IDG.GPT.addDisplayedAd("catfish", "true");
+$('#catfish').responsiveAd({screenSize:'971 1115', scriptTags: []});
+
+IDG.GPT.addDisplayedAd("gpt-skin", "true"); IDG.GPT.displayGoogleTagSlot('gpt-
+skin');
+
+IDG.GPT.addDisplayedAd("mobilewelcomead", "true");
+$('#mobilewelcomead').responsiveAd({screenSize:'971 1115', scriptTags: []});
+$(document).ready(function(){ var listItems = $('#scrollable ul li'); var
+listWidth = 0; for (var i=0;i < listItems.length; i++) { listWidth = listWidth
++ $(listItems[i]).outerWidth(); } $('#scrollable ul').width(listWidth+100);
+//adding an extra 100px of buffer //we need to disable this for IE10 for now -
+link clicks don't work! var trackPointerEvents =
+window.navigator.msPointerEnabled; if (!trackPointerEvents) { //set up the FT
+Scroller for the topics var scroller = new
+FTScroller(document.getElementById('scrollable'), { scrollingY: false,
+bouncing: false, updateOnWindowResize: true, scrollbars: false }); } });
+$(document).ready(function() { $("table.tablesorter").tablesorter({ widgets:
+['zebra'] }); $("table.tablesorter tbody tr").hover(function() {
+$(this).toggleClass("selected"); }); $("table.tablesorter thead tr
+th").each(function(){ if ($(this).find('.ss-icon').length < 1) {
+$(this).append('<i class="ss-icon"></i>'); } }); }); var _sf_startpt=(new
+Date()).getTime() var _sf_async_config={}; _sf_async_config.uid = 29363;
+_sf_async_config.path = "/article/2550008/security0/the-clock-is-ticking-for-
+encryption.html"; _sf_async_config.title = "The Clock Is Ticking for
+Encryption | Computerworld"; _sf_async_config.domain = "computerworld.com";
+if(window.location.href.indexOf("video")&&true) {
+_sf_async_config.playerdomain= _sf_async_config.domain.replace("www.",""); }
+_sf_async_config.useCanonical = true; _sf_async_config.sections = "security";
+_sf_async_config.authors="Lamont Wood"; (function(){ function loadChartbeat()
+{ window._sf_endpt=(new Date()).getTime(); var e =
+document.createElement("script"); e.setAttribute("language", "javascript");
+e.setAttribute("type", "text/javascript"); e.setAttribute("src", (("https:" ==
+document.location.protocol) ?
+"https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" :
+"http://static.chartbeat.com/") + ((window.location.href.indexOf("video")) ?
+"js/chartbeat_video.js" : "js/chartbeat.js")); document.body.appendChild(e); }
+var oldonload = window.onload; window.onload = (typeof window.onload !=
+"function") ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+})();  var blueKaiId=14339; var blueKaiPort=10; var brandCode = "ctw"; var
+regUrl="http://regdev.idge.int/api/" var daysToRefresh=30; var
+bk_debug_log=false; regUrl="http://reg.idgenterprise.com/api/";
+daysToRefresh=30; if ( typeof(s) != 'undefined' ) { bk_addPageCtx("pageType",
+(typeof(s.pageType)!='undefined')?s.pageType:''); } //CMS-Specific
+bk_addPageCtx("cmscatids", "[2206,3857,3678]"); bk_addPageCtx("cmpy", "[]");
+bk_addPageCtx('tid', '6'); // Add the list name and email address hash params
+to bluekai tracking // If the user came from a newsletter clickthru, also set
+the isnl pagectx params = getUrlParams('phint'); if(Object.keys(params).length
+> 0) { bk_addPageCtx("idg_eid", params['idg_eid']); bk_addPageCtx("newt",
+params['newt']); bk_addPageCtx("isnl", "1"); } try{ IDG.bkCoreApi.start(); }
+catch(e){ //alert("Triggering catch") bk_doJSTag(blueKaiId ,blueKaiPort); if
+(window.console && window.console.log){ window.console.log("Error Occured
+While Processing Profile Siubmission") } }  (function () { var d = new
+Image(1, 1); d.onerror = d.onload = function () { d.onerror = d.onload = null;
+}; d.src = ["http://secure-us.imrworldwide.com/cgi-bin/m?ci=us-
+203426h&cg=0&cc=1&si=", escape(window.location.href), "&rp=",
+escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join();
+})();  // -- Load Lazy Advertisement placement as deferred
+$("div.lazyload_ad").lazyLoadAd({ threshold : 500, // You can set threshold on
+how close to the edge ad should come before it is loaded. Default is 0 (when
+it is visible). forceLoad : false, // Ad is loaded even if not visible.
+Default is false. onLoad : false, // Callback function on call ad loading
+onComplete : false, // Callback function when load is loaded timeout : 1500,
+// Timeout ad load debug : false, // For debug use : draw colors border
+depends on load status xray : false // For debug use : display a complete page
+view with ad placements }) ;  g_arrModules[''] = true; g_arrModules['Article
+Detail:Top:Breadcrumb'] = true; g_arrModules['Article Detail:Social Sharing
+Vertical'] = true; g_arrModules[''] = true; window._taboola = window._taboola
+|| []; _taboola.push({flush: true}); $(window).load(function() { var
+commentsHeight = $(".gig-comments-comments").height(); var commentNumber =
+$(".gig-comments-count").html(); if (commentsHeight < 400) { $('.gig-comments-
+comments').height('auto').addClass('open'); $(".gig-comments-
+more").css("display","none"); } if (commentsHeight > 400) { $(".gig-comments-
+more").css("display","inline-block"); $(".gig-comments-more").html("View All "
++ commentNumber); $('.gig-comments-comments').css("height","400px"); $(".gig-
+comments-more").click(function() { $('.gig-comments-
+comments').height('auto').addClass('open'); $(".gig-comments-
+more").css("display","none"); }); } $(".gig-comment-
+replyLink").click(function() { $('.gig-comments-
+comments').height('auto').addClass('open'); $(".gig-comments-
+more").css("display","none"); }); $(".gig-composebox-
+textarea").click(function() { $('.gig-comments-
+comments').height('auto').addClass('open'); $(".gig-comments-
+more").css("display","none"); }); //behavior for comments call-to-action -
+added per IDGMPM-8760 if (commentNumber != "0 Comments") { $("#comment-cta-
+txt").text(commentNumber); } var commentCount = parseInt(commentNumber); if
+(commentCount>0) { $(".comment-count-bubble").text(commentCount); } else {
+$(".comment-count-bubble").text(""); //no number if zero per IDGMPM-9441
+comments } if (commentCount==1) { $(".comment-text-bubble").text("Comment"); }
+else { $(".comment-text-bubble").text("Comments"); } var reposition = 0; if
+($("body").hasClass("insider-plus")) reposition = 50; //for fixed header on
+IDGE Insider sites $(".comments-cta, .comments-bubble-cta").click(function(e)
+{ e.preventDefault(); $(".gig-comments-more").click(); //emulate clicking
+Gigya comments-more button $('html,body').animate({ scrollTop:
+$("#comments").offset().top - reposition }, 600); }); });
+g_arrModules['Article Detail:Funnel:Popular Articles'] = true;
+g_arrModules[''] = true; g_arrModules['Article Detail:Funnel:Sponsored Blog
+Posts'] = true; g_arrModules['Article Detail:Funnel:Module Resources'] = true;
+g_arrModules['Article Detail:Funnel:Homepage Top Story'] = true;
+g_arrModules['Article Detail:Funnel:Funnel Crawl'] = true; $('#resources-
+sponsored-links').addClass('show');  var omniture_account="computerworldcom";
+var omniture_trackingServer = "idgenterprise.d1.sc.omtrdc.net";
+g_sOmnitureReportSuite = "computerworldcom"; $(document).ready(function(){ if
+(!!$('.sharing-tools').length || !!$('#ss-share').length ||
+(!!$('#sharer').length && !!!$('#sharer.sidecar').length)){ Socialite.load();
+Socialite.setup({ twitter: { lang : 'en', onclick : function(e)
+{socialTrack("Article","Twitter","Click");}, ontweet : function(e) {
+socialTrack("Article","Twitter","Tweet");
+$thm.logPlEvent({"b":"ctw","e":"twshare","t":"article","id":"2550008"}); },
+onretweet : function(e) {socialTrack("Article","Twitter","Retweet");},
+onfavorite: function(e) {socialTrack("Article","Twitter","Favorite");},
+onfollow : function(e)
+{socialTrack("Article","Twitter","Follow");followTrack();} }, facebook: { lang
+: 'en_US', appId : '196366870381968', onlike : function(url){
+socialTrack("Article","Facebook","Like");
+$thm.logPlEvent({"b":"ctw","e":"fblike","t":"article","id":"2550008"}); },
+onunlike: function(url){socialTrack("Article","Facebook","Unlike");}, xfbml :
+true, version : 'v2.1' }, googleplus: { lang : 'en-US', callback: function(el,
+e) { socialTrack("Article","Googleplus","Click");
+$thm.logPlEvent({"b":"ctw","e":"googplus","t":"article","id":"2550008"}); } }
+}); //$('.sharing-tools').show(); $('#ss-share').show(); } $('a.pinterest-
+pinit').click(function(e){ socialTrack('Article','Pinterest','share'); });
+$('li.redditShare').click(function(e) {
+socialTrack('Article','Reddit','share'); });
+$('li.stumbleUponShare').click(function(e) {
+socialTrack('Article','StumbleUpon','share'); }); $('.banner-
+tw').click(function(e){ brandFollowTrack("twitter"); }); $('.banner-
+fb').click(function(e){ brandFollowTrack("facebook"); }); $('.mediaresource
+#download-asset').click(function(e){
+Analytics.logAssetDownload($(this).data('id')); }); if
+(typeof(FB)!='undefined') { FB.Event.subscribe('edge.create',
+function(response){ s = s_gi(g_sOmnitureReportSuite); s.linkTrackEvents =
+s.events = "event36"; s.prop48="facebook share"; s.linkTrackVars =
+"prop48,events"; s.tl(true, 'o', 'Social Media share'); }); } if
+(typeof(digMag) != 'undefined'){ if(typeof(digLogin) != 'undefined'){
+DigAnalytics.logSignIn(digLogin); } } }); var Analytics = new Object();
+Analytics.logArticleComment = function(){ s = s_gi(g_sOmnitureReportSuite);
+s.linkTrackVars="prop25,eVar25,events"; s.linkTrackEvents="event19";
+s.events="event19"; s.prop25 = 'Article Comment'; s.tl(this,'o','Article
+Comments'); }; Analytics.logSocialSignin = function(provider){ s =
+s_gi(g_sOmnitureReportSuite); s.linkTrackEvents = s.events = "event32";
+s.prop19=provider; s.linkTrackVars = "prop19,events"; s.tl(true, 'o',
+provider); }; Analytics.logInternalSignin = function(){ s =
+s_gi(g_sOmnitureReportSuite); s.linkTrackEvents = s.events = "event32";
+s.prop19="Internal Login"; s.linkTrackVars = "prop19,events"; s.tl(true, 'o',
+'Login'); }; Analytics.logAssetDownload = function(assetname){ s =
+s_gi(g_sOmnitureReportSuite); s.linkTrackVars="prop52,eVar37,events";
+s.linkTrackEvents="event49"; s.pagename = 'filetype:'+s.pagename;
+s.events="event49"; s.prop52 = 'asset:'+assetname; eVar37= s.prop52;
+s.tl(this,'o','Asset Download'); } /** * Trigger Omniture and Google Analytics
+tracking code * loc - Home, Footer, Header, Article * network - Facebook,
+Twitter, LinkedIn, Googleplus * socialAction - Like, Unlike, Share, Follow,
+Tweet, Retweet, Favorite, Click */ function
+socialTrack(loc,network,socialAction) { //Omniture var trackString = network +
+":" + loc + ":" + socialAction; console.log("socialTrack() "+trackString);
+s.prop48 = trackString; s.eVar27 = "D=c48"; s.event36 = trackString;
+s.linkTrackEvents=s.events="event36"; s.linkTrackVars =
+"prop48,eVar27,events"; s.tl(true, 'o', 'Social media'); } function
+linkedInTrack() { socialTrack("Article","LinkedIn","Share"); }; function
+followTrack() { console.log("followTrack()"); s =
+s_gi(g_sOmnitureReportSuite); s.linkTrackEvents = s.events = "event37";
+s.prop49="social media"; s.linkTrackVars = "prop49,events"; s.tl(true, 'o',
+'Social media follow'); } function brandFollowTrack(network){
+console.log("brandFollowTrack()"); s = s_gi(g_sOmnitureReportSuite);
+s.eVar16="followed on:"+network; s.linkTrackEvents = s.events = "event37";
+s.prop49="social media"; s.linkTrackVars = "prop49,eVar16,events"; s.tl(true,
+'o', 'Social media brand follow'); if (typeof IDG.Eloqua != "undefined") {
+IDG.Eloqua.invoke_flash("social-" + network); } } function sharingTrack(type,
+pixelLogString) { s = s_gi(g_sOmnitureReportSuite); s.eVar16="Sharing on: " +
+type; s.linkTrackEvents = s.events = "event37"; s.prop49="social media
+sharing"; s.linkTrackVars = "prop49,eVar16,events"; s.tl(true, 'o', 'Social
+Media Sharing'); if (typeof IDG.Eloqua != "undefined") {
+IDG.Eloqua.invoke_flash("social-" + type); } // Record Social Event in pixel
+logger if (pixelLogString !== undefined) {
+$thm.logPlEvent({"b":"ctw","e":pixelLogString,"t":"article","id":"2550008"});
+} } function moduleTrack(moduleName,loc) { console.log("moduleTrack()"); s =
+s_gi(g_sOmnitureReportSuite); s.eVar42=moduleName; s.eVar44=loc;
+s.linkTrackEvents=s.events='event31'; s.list3=s.prop42+","+s.eVar42;
+s.tl(true, 'o', 'Module click'); } function trackSlideshow(articleId,
+slideTitle, slideNumber) { s = s_gi(g_sOmnitureReportSuite); s.prop15="page
+number:" + slideNumber; s.eVar15="D=c15"; s.tl(true, 'o', 'Track Slideshow:
+articleId:' + articleId + ' title:' + slideTitle + " Slide No.:" +
+slideNumber); } function oClickTrack(key) { // test for empty key and don't
+log if empty if (typeof(key) != 'undefined' && key.length > 0){ s =
+s_gi(g_sOmnitureReportSuite); s.linkTrackVars="eVar42,events";
+s.events="event49"; s.linkTrackEvents="event49"; s.eVar42 = key;
+s.list3=s.prop42+","+s.eVar42; s.tl(true,'o','module click'); } }; <!--
+g_sOmnitureReportSuite = typeof g_sOmnitureReportSuite != 'undefined' &&
+g_sOmnitureReportSuite ? g_sOmnitureReportSuite : "computerworldcom"; /* You
+may give each page an identifying name, server, and channel on the next lines.
+*/ //BEGIN OMNITURE VARS
+s.pageName="Computerworld:article:feature:Security:2550008:The Clock Is
+Ticking for Encryption"; s.pageType=""; if (typeof omnitureChannel !=
+'undefined'){ s.channel=omnitureChannel; }
+s.prop1="source:computerworld";s.eVar1="D=c1"; s.prop2="content
+type:feature";s.eVar2="D=c2"; s.prop3="display
+type:article:feature";s.eVar3="D=c3"; s.prop4="1871 days";s.eVar4="D=c4";
+s.prop6=""; s.prop7="";s.eVar7="D=c7";
+s.prop9="category:security";s.eVar9="D=c9";
+s.prop11="published:21-Mar-11";s.eVar11="D=c11";
+s.prop12="aid:2550008";s.eVar12="D=c12"; s.prop13="";s.eVar13="D=c13";
+s.prop14="author:lamont wood";s.eVar14="D=c14"; s.prop15="page
+number:1";s.eVar15="D=c15"; s.prop17="uri:/article/2550008/security0/the-
+clock-is-ticking-for-encryption.html";s.eVar17="D=c17";
+s.prop18="";s.eVar18="D=c18";
+s.prop24=getLoginStatusForOmniture();s.eVar24="D=c24";
+s.prop28=getTrackingToken('tk') ? "tokens:"+getTrackingToken('tk') :
+"";s.eVar28="D=c28";
+s.prop37="rpn:ctw:feature:computerworld:article:feature:security:2550008:the
+clock is ticking for encryption"; s.eVar37="D=c37";
+s.prop39="";s.eVar39="D=c39"; s.prop40="";
+s.prop41=IDG.GPT.getDisplayedAds(',') + ',' + IDG.GPT.getOtherAds(',');
+s.prop42=IDG.GPT.getModules(',');s.eVar42="D=c42";
+s.prop53="2206";s.eVar53="D=c53"; s.prop54="security,endpoint security,data
+security";s.eVar30="D=c54";
+s.eVar33=s.prop55="2206,3857,3678";s.eVar33="D=c55";
+s.prop56="";s.eVar40="D=c56"; s.prop61="";s.eVar10="D=c61";
+s.prop74="security";s.eVar58="D=c74"; s.prop75="security";s.eVar60="D=c75";
+s.prop58="security:security";s.eVar59="D=c58"; //module tracking var sModules
+= ''; for(var i in g_arrModules){ if(g_arrModules[i] && i != ''){ sModules +=
+i+','; } } sModules = sModules.replace(/,$/,''); s.prop42 = sModules;
+s.eVar42="D=c42"; //now set events s.events=""; //article view
+s.events=s.apl(s.events,'event33',','); s.eVar41="21-Mar-11";
+s.list3=s.prop42+","+s.eVar42; //force all values to lower case for reporting
+consistency for(var p in s){ if(s[p] && p.match(/^(prop|ceVar)\d+$/)){
+//console.log(p+": "+s[p]); s[p] = s[p].toLowerCase(); //console.log(p+":
+"+s[p]); } } //END OMNITURE VARS /* Conversion Variables */
+s.campaign=getTrackingToken('tk') ? "tokens:"+getTrackingToken('tk') : "";
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/ var
+s_code=s.t();if(s_code)document.write(s_code)//--><!-- if(navigator.appVersion
+.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\\!-'+'-') //-->
+$thm.logPlEvent({"b":"ctw","e":"view","t":"article","id":"2550008"});
+
+(function(){ function loadHorizon(){ var s = document.createElement('script');
+s.type = 'text/javascript'; s.async = true; s.src = location.protocol + '//ak
+.sail-horizon.com/horizon/v1.js'; var x =
+document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }
+loadHorizon(); var oldOnLoad = window.onload; window.onload = function(){ if
+(typeof oldOnLoad === 'function'){ oldOnLoad(); } Sailthru.setup({ domain:
+'horizon.computerworld.com', useStoredTags: false }); };
+if(console!=undefined){ console.log('SAIL-23 fired Horizon'); } })();
+
+  *[NPG]: Nature Publishing Group
+  *[doi]: Digital Object Identifier
+  *[ISSN]: International Standard Serial Number
+  *[EISSN]: Electronic International Standard Serial Number
+

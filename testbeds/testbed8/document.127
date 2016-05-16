@@ -1,0 +1,26 @@
+Types of binary trees[edit]
+Tree terminology is not well-standardized and so varies in the literature.
+•	A rooted binary tree has a root node and every node has at most two children.
+•	A full binary tree (sometimes referred to as a proper[15] or plane binary tree)[16][17] is a tree in which every node in the tree has either 0 or 2 children.
+ 
+A full binary tree
+ 
+An ancestry chart which maps to a perfect depth-4 binary tree.
+•	A perfect binary tree is a binary tree in which all interior nodes have two children and all leaves have the same depth or same level.[18](This is ambiguously also called a complete binary tree.[19]) An example of a perfect binary tree is the ancestry chart of a person to a given depth, as each person has exactly two biological parents (one mother and one father).
+•	In a complete binary tree every level, except possibly the last, is completely filled, and all nodes in the last level are as far left as possible. It can have between 1 and 2h nodes at the last level h.[19] An alternative definition is a perfect tree whose rightmost leaves (perhaps all) have been removed. Some authors use the term complete to refer instead to a perfect binary tree as defined above, in which case they call this type of tree an almost complete binary tree or nearly complete binary tree.[20][21] A complete binary tree can be efficiently represented using an array.[19]
+ 
+A complete binary tree
+•	In the infinite complete binary tree, every node has two children (and so the set of levels is countably infinite). The set of all nodes is countably infinite, but the set of all infinite paths from the root is uncountable, having the cardinality of the continuum. These paths correspond by an order-preserving bijection to the points of the Cantor set, or (using the example of a Stern–Brocot tree) to the set of positive irrational numbers.
+•	A balanced binary tree has the minimum possible maximum height (a.k.a. depth) for the leaf nodes, because for any given number of leaf nodes the leaf nodes are placed at the greatest height possible.[clarification needed]
+ h      Balanced      Unbalanced, h = (n + 1)/2 - 1
+ 0:      ABCDE               ABCDE
+        /     \             /     \
+ 1:    ABCD   E             ABCD   E
+      /    \               /    \
+ 2:  AB    CD             ABC     D
+    /  \  /  \           /   \
+ 3: A  B  C  D          AB   C
+                       /  \
+ 4:                   A   B
+One common balanced tree structure is a binary tree structure in which the left and right subtrees of every node differ in height by no more than 1.[22] One may also consider binary trees where no leaf is much farther away from the root than any other leaf. (Different balancing schemes allow different definitions of "much farther".[23])
+•	A degenerate (or pathological) tree is where each parent node has only one associated child node.[citation needed] This means that performance-wise[clarification needed], the tree will behave like a linked list data structure.

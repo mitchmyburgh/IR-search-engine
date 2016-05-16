@@ -1,0 +1,146 @@
+
+
+#  QuAIL
+
+  * Home
+  * Research
+  * Team
+  * Publications
+  * Computer
+  * Contact
+
+# Quantum Artificial Intelligence Laboratory
+
+  * Algorithms
+  * Quantum Noise
+  * Quantum Metrology
+  * Potential Applications
+
+# Research Areas
+
+NASA's Quantum Artificial Intelligence Laboratory supports an array of
+fundamental and experimental studies that could lead to ground-breaking
+research, resulting in revolutionary advances to the state-of-the-art in
+quantum computing.
+
+## Algorithms
+
+One of the central open questions in the field of quantum computing is the
+existence of efficient quantum heuristic algorithms for solving classically
+intractable instances of combinatorial optimization problems that are found at
+the core of many of NASA's missions. Classical heuristic algorithms have been
+developed over the years to solve or approximate solutions to practical
+instances of hard problems, and the search for improved heuristics remains an
+active research area. The efficacy of these approaches is generally determined
+by running them on benchmark sets of problem instances. Such empirical testing
+for quantum algorithms requires the availability of quantum hardware. As that
+hardware becomes available, NASA's QuAIL team will, beginning with the D-Wave
+Two™ quantum-annealing machine, design and evaluate quantum approaches to
+challenging combinatorial optimization problems.
+
+Initial efforts will focus on theoretical and empirical analysis of quantum
+annealing approaches to difficult optimization problems. The team's work
+includes the development of quantum AI algorithms, problem decomposition and
+hardware embedding techniques, and quantum-classical hybrid algorithms.
+
+## Quantum Noise
+
+One main area of focus is adiabatic quantum computation. The team is
+particularly interested in understanding how the effects of noise, imprecision
+in the Hamiltonian coefficients, and thermal processes affect adiabatic
+quantum computation and measurement precision. Particularly for high-
+dimensional optimization problems, where the optimal solution is represented
+by the lowest point on a highly featured landscape of hills and valleys,
+researchers are exploring how the shape of the landscape affects how quickly
+that lowest point may be found using quantum annealing algorithms.
+
+## Quantum Metrology
+
+Metrology is the science of measurement. It encompasses time and clock
+standards, distance measurements, orientation and navigation, electromagnetic
+and gravitational field detection, and determination of physical constants.
+This research is of fundamental importance to the field of physics, since it
+involves the scrutiny of exactly how we observe and interact with nature. It
+is also of great significance for NASA, as quantum metrology has implications
+for improved space sensors and telescopes, and superior inertial navigation
+for future spacecraft.
+
+Quantum metrology is concerned with harnessing quantum many-body correlations
+and entanglement for the purposes of enhancing measurement sensitivity past
+the classical bounds. This classical bound is easily defined for a many-body
+system containing N particles: In this case the precision sensitivity (the
+variance on any estimate of the parameter being investigated) scales with the
+inverse square root of the particle number. This is exactly the precision
+limit resulting from making N independent single particle measurements of the
+parameter. So any greater sensitivity implies that the device is operating
+beyond this classical limit, and that the particles are behaving in a quantum-
+correlated fashion.
+
+The QuAIL team aims to model real quantum measurement devices and to explore
+in a realistic setting what sort of quantum probe states of light, spin
+systems or atom ensembles may access this new domain of parameter super-
+sensitivity.
+
+## Potential Applications
+
+NASA is exploring the potential of quantum computing--and quantum annealing
+algorithms in particular--to aid in the many challenging computational
+problems involved in NASA missions.
+
+One initial target application area the QuAIL team will be exploring is
+related to the NASA Kepler mission's search for habitable, Earth-sized
+planets. The complex computational task of identifying and validating the
+transit signals of smaller planets as they orbit their host stars is currently
+based on heuristic algorithms (designed to find approximate solutions when
+classic methods don't find exact solutions), implying that some planets could
+remain undiscovered due to this computational limitation. Using a quantum
+computer to perform Kepler's data-intensive search for transiting planets
+among the more than 150,000 stars in the spacecraft's field of view has the
+potential to provide a unique, complementary approach to the task of
+discovering potential new Earth-like exoplanets.
+
+Another early target application area the team will explore is in the area of
+planning and scheduling. Determining the very best use of limited resources
+during space missions--such as time and power--can require hours, days or even
+weeks to solve with classical algorithms. Automated planners have their
+origins in robotics and have been used extensively in space applications.
+Examples of such applications developed at NASA Ames include automated
+planners for the ongoing Mars Curiosity mission and software that helps
+optimize operations of the International Space Station's solar arrays. NASA
+researchers are mapping planning problems from a variety of areas, including
+planetary rover exploration, to forms suitable to be run on quantum computing
+systems.
+
+### About Us
+
+The Quantum Artificial Intelligence Laboratory (QuAIL), led by Andre Petukhov,
+is comprised of members of the Intelligent Systems Division and the Advanced
+Supercomputing Division (NAS). The D-wave quantum computer is housed and
+maintained by NAS personnel. The QuAIL team works in close collaboration with
+researchers from USRA and Google.
+
+  * __ www.nas.nasa.gov
+  * __ support@nas.nasa.gov
+  * __ @NASA_NAS
+
+### Partners
+
+QuAIL supports a quantum computing collaboration among NASA and its partners:
+
+  * __Universities Space Research Association Quantum Computing at USRA
+
+  * __Google  Google Research Blog Entry
+
+QuAIL is a node of the SQuInT Network.
+
+### Colophon
+
+  * Editor: Robert Duffy
+  * Webmaster: Matthew Helt
+  * NASA Official: Rupak Biswas
+  * Last Updated: March 30, 2016
+
+  * __ Ames Website
+  * __ NASA Website
+  * __ NASA Privacy, Security, Notices
+

@@ -1,0 +1,43 @@
+In the second case study presented here (Fig. 6), a
+camera navigates through a model city, viewing the
+scene from a wide range of angles and locations. In
+order to keep the number of occluders low, each
+building is associated with a single though suboptimal
+occluder. Using three box occluders instead
+of one, would have resulted in a more tight fitting of
+the geometry and therefore better culling results. The
+scene complexity of modeled environment is very
+balanced with regard to the view-direction due to the
+uniform distribution of three-dimensional models in
+space. As can be verified by the measured visible
+primitives at each path location, in this dense
+environment, there is an almost constant performance
+ratio between the solid and the planar occlusion
+culling method.
+Apart from the computational cost of the geometry frustum
+containment test, which is common to both
+planar and solid occluder methods, the overhead
+Figure 5. Sparse environment test case – Ancient Olympia. Solid occluders offer a significant culling
+performance improvement when the camera is moving near structures or when inspecting objects.
+introduced by the solid occluders comes from the
+determination of the visible edges of a convex solid,
+at each frame (see statistics in Table 1 and 2). In
+practice, this overhead is negligible because the
+silhouette is computed for very few and simple solid
+objects. This is ensured by the selection mechanism
+discussed in section 3.
+The solid occluders culling method is an approximate
+algorithm, whose accuracy, compared to exact
+visibility calculation methods, depends on the
+selection of the occluders. In general, as occluders
+are enclosed in the shell of the actual geometric
+entities, the method is conservative, i.e. visibility is
+overestimated.
+5. CONCLUSION
+Even though the speed of today’s graphics cards is
+increasing at a phenomenal rate, it will always be the
+case that researchers and game developers alike
+would like to push more geometry through the
+graphics pipeline than the card can handle at
+acceptable frame rates. Removing non-visible
+geometry before it reaches the pipeline 

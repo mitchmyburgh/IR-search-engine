@@ -1,0 +1,77 @@
+OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at real-time computer vision, originally developed by Intel's research center in Nizhny Novgorod (Russia), later supported by Willow Garage and now maintained by Itseez. The library is cross-platform and free for use under the open-source BSD license.
+
+
+== History ==
+Officially launched in 1999, the OpenCV project was initially an Intel Research initiative to advance CPU-intensive applications, part of a series of projects including real-time ray tracing and 3D display walls. The main contributors to the project included a number of optimization experts in Intel Russia, as well as Intel’s Performance Library Team. In the early days of OpenCV, the goals of the project were described as:
+
+Advance vision research by providing not only open but also optimized code for basic vision infrastructure. No more reinventing the wheel.
+Disseminate vision knowledge by providing a common infrastructure that developers could build on, so that code would be more readily readable and transferable.
+Advance vision-based commercial applications by making portable, performance-optimized code available for free—with a license that did not require to be open or free themselves.
+
+The first alpha version of OpenCV was released to the public at the IEEE Conference on Computer Vision and Pattern Recognition in 2000, and five betas were released between 2001 and 2005. The first 1.0 version was released in 2006. In mid-2008, OpenCV obtained corporate support from Willow Garage, and is now again under active development. A version 1.1 "pre-release" was released in October 2008.
+The second major release of the OpenCV was on October 2009. OpenCV 2 includes major changes to the C++ interface, aiming at easier, more type-safe patterns, new functions, and better implementations for existing ones in terms of performance (especially on multi-core systems). Official releases now occur every six months and development is now done by an independent Russian team supported by commercial corporations.
+In August 2012, support for OpenCV was taken over by a non-profit foundation OpenCV.org, which maintains a developer and user site.
+
+
+== Applications ==
+
+OpenCV's application areas include:
+2D and 3D feature toolkits
+Egomotion estimation
+Facial recognition system
+Gesture recognition
+Human–computer interaction (HCI)
+Mobile robotics
+Motion understanding
+Object identification
+Segmentation and recognition
+Stereopsis stereo vision: depth perception from 2 cameras
+Structure from motion (SFM)
+Motion tracking
+Augmented reality
+To support some of the above areas, OpenCV includes a statistical machine learning library that contains:
+Boosting
+Decision tree learning
+Gradient boosting trees
+Expectation-maximization algorithm
+k-nearest neighbor algorithm
+Naive Bayes classifier
+Artificial neural networks
+Random forest
+Support vector machine (SVM)
+
+
+== Programming language ==
+OpenCV is written in C++ and its primary interface is in C++, but it still retains a less comprehensive though extensive older C interface. There are bindings in Python, Java and MATLAB/OCTAVE. The API for these interfaces can be found in the online documentation. Wrappers in other languages such as C#, Perl, Ch, and Ruby have been developed to encourage adoption by a wider audience.
+All of the new developments and algorithms in OpenCV are now developed in the C++ interface.
+
+
+== Hardware Acceleration ==
+If the library finds Intel's Integrated Performance Primitives on the system, it will use these proprietary optimized routines to accelerate itself.
+A CUDA-based GPU interface has been in progress since September 2010.
+An OpenCL-based GPU interface has been in progress since October 2012, documentation for version 2.4.9.0 can be found at docs.opencv.org.
+
+
+== OS support ==
+OpenCV runs on a variety of platforms. Desktop: Windows, Linux, OS X, FreeBSD, NetBSD, OpenBSD; Mobile: Android, iOS, Maemo, BlackBerry 10. The user can get official releases from SourceForge or take the latest sources from GitHub. OpenCV uses CMake.
+
+
+== See also ==
+
+AForge.NET, a computer vision library for the Common Language Runtime (.NET Framework and Mono).
+ROS (Robot Operating System). OpenCV is used as the primary vision package in ROS.
+VXL, an alternative library written in C++.
+Integrating Vision Toolkit (IVT), a fast and easy-to-use C++ library with an optional interface to OpenCV.
+CVIPtools, a complete GUI-based computer-vision and image-processing software environment, with C function libraries, a COM-based DLL, along with two utility programs for algorithm development and batch processing.
+OpenNN, an open-source neural networks library written in C++.
+
+
+== References ==
+
+
+== External links ==
+OpenCV on SourceForge.net
+Documentation of OpenCV
+Introduction to programming with OpenCV
+A list of other open source computer vision codes and libraries
+Chroma Key Background Subtraction - OpenCV

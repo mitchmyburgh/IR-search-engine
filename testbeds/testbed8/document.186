@@ -1,0 +1,10 @@
+Implementation[edit]
+Top trees have been implemented in a variety of ways, some of them include implementation using a Multilevel Partition (Top-trees and dynamic graph algorithms Jacob Holm and Kristian de Lichtenberg. Technical Report), and even by using Sleator-Tarjan s-t trees (typically with amortized time bounds), Frederickson's Topology Trees (with worst case time bounds) (Alstrup et al. Maintaining Information in Fully Dynamic Trees with Top Trees).
+Amortized implementations are more simple, and with small multiplicative factors in time complexity. On the contrary the worst case implementations allow speeding up queries by switching off unneeded info updates during the query (implemented by persistence techniques). After the query is answered the original state of the top tree is used and the query version is discarded.
+Using Multilevel Partitioning[edit]
+Any partitioning of clusters of a tree   can be represented by a Cluster Partition Tree CPT  by replacing each cluster in the tree   by an edge. If we use a strategy P for partitioning   then the CPT would be CPTP  This is done recursively till only one edge remains.
+We would notice that all the nodes of the corresponding top tree   are uniquely mapped into the edges of this multilevel partition. There may be some edges in the multilevel partition that do not correspond to any node in the top tree, these are the edges which represent only a single child in the level below it, i.e. a simple cluster. Only the edges that correspond to composite clusters correspond to nodes in the top tree  
+A partitioning strategy is important while we partition the Tree   into clusters. Only a careful strategy ensures that we end up in an   height Multilevel Partition ( and therefore the top tree).
+•	The number of edges in subsequent levels should decrease by a constant factor.
+•	If a lower level is changed by an update then we should be able to update the one immediately above it using at most a constant number of insertions and deletions.
+The above partitioning strategy ensures the maintenance of the top tree in   time.

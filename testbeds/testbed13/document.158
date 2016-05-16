@@ -1,0 +1,280 @@
+
+
+  * Subscribe
+  * Search
+
+# Gizmag
+
+  * Lifestyle
+  * Science
+  * Technology
+  * Transport
+  * Features
+  * Reviews
+
+More top stories »
+
+  * # "World’s smallest engine" to power microscopic robots
+
+  * # Journey toward Milky Way's dark heart in new Hubble video
+
+  * # These boots were made for flying: A chat with France's very own jet-powered fly boy, Franky Zapata
+
+  * # VR Comparison Guide
+
+Advertisement
+
+Quantum Computing
+
+# Quantum computing breakthrough: Qubits made from standard silicon
+transistors
+
+Dario Borghino October 6, 2015
+
+6 pictures
+
+Australian researchers have managed to create a CNOT quantum logic gate, the
+basic building block of a quantum computer, by modifying a standard silicon
+transistor (Credit: UNSW). View gallery (6 images)
+
+In what is likely a major breakthrough for quantum computing, researchers from
+the University of New South Wales (UNSW) in Australia have managed for the
+first time to build the fundamental blocks of a quantum computer in silicon.
+The device was created using standard manufacturing techniques, by modifying
+current-generation silicon transistors, and the technology could scale up to
+include thousands, even millions of entangled quantum bits on a single chip.
+Gizmag spoke to the lead researchers to find out more.
+
+  *   *   *   * 
+
+## What are quantum computers for?
+
+Quantum computers are a peculiar beast. Though the machines we've been
+building since the 50s have been aiming to be as deterministic and reliable as
+possible _–_ so a certain input will always result in the same output _–_ in a
+quantum computer, this dynamic is turned on its head, and predictability is
+sacrificed for (sometimes) incredible speedups.
+
+A quantum bit, or _qubit_, has two awesome and confusing properties. First, it
+can set itself to both 0 and 1 at the same time. And second, it can commune
+(or _entangle_) with other qubits to compound this ability. This means five
+entangled qubits can store and process as much information as 32 (two to the
+power of five) classical bits; 10 qubits can do as much as 1,000 classical
+bits; and 300 fully entangled qubits can manipulate as many classical bits of
+information as there are atoms in the Universe.
+
+You might think this would lead to much faster number-crunching over a regular
+computer –_ _and you'd be right, to a point. A quantum computer can perform
+any operation a classical computer can, but its exponential speedups only take
+effect when a quantum algorithm can process data in a massively parallel
+fashion, such as searching through a very large database, virtually designing
+a new drug by choosing among quadrillions of possible combinations, or
+simulating the behavior of every single atom in your right toe. However, if
+the bulk of operations has to be performed in a sequential order, flowchart-
+style, then no real quantum speedups are possible.
+
+The downside to these significant speedups is that due to quantum effects, the
+results returned by a quantum algorithm are not deterministic. That is, even
+in the best of cases, a quantum computer is never guaranteed to return the
+correct result.
+
+This usually means that a quantum algorithm must be run several times in
+succession to confirm that the solution is correct. So, in practice, classical
+computers will probably be faster and more practical than quantum computers
+for day-to-day operations, and quantum computers will only come in useful
+where massive parallelism is involved. When they are let loose, though, their
+speed will be spectacular.
+
+## Quantum CMOS
+
+Most of the prototype quantum computers developed so far feature a limited
+number of entangled qubits made from exotic and expensive materials like
+cesium or diamonds and which, in order to reduce external interference, need
+to be nearly frozen at temperatures just a few thousandths of a degree above
+absolute zero.
+
+However, researchers at UNSW are focusing on the potentially revolutionary
+approach of building quantum computers out of silicon, a material that is
+cheap, well-known by the industry, and which could ultimately pave the way for
+quantum computers with not 300 but thousands, even millions of fully entangled
+qubits.
+
+Last year, UNSW scientists were able to create single "CMOS type" qubits that
+leveraged current transistor technology and silicon-28, a very common isotope
+of silicon, to achieve a very high fidelity of 99.6 percent for quantum
+operations. Now, the researchers have built on this to create what's known as
+a _CNOT quantum logic gate_. Together with a single controllable qubit, this
+is the basic building block of a quantum computer, and paves the way to
+quantum chips that can perform just about any operation.
+
+The scientists built this logic gate by taking two standard transistors, next
+to each other, and reconfiguring them so they would only hold a single
+electron each. The spin of the electron sets a code of 0 or 1, and an external
+current and microwave field control the qubits and make them interact as
+needed.
+
+"A CNOT gate is a [...] two-qubit gate [that] flips the state of the target
+qubit depending on the state of the control qubit," lead author of the paper
+Menno Veldhorst told Gizmag. "In our case, the target qubit flips its spin if
+the control qubit is pointing down. If the control qubit is pointing up, the
+target qubit will remain in the same state.
+
+"This two-qubit gate is most essential for a quantum computer and together
+with single qubit operations, which we have already demonstrated with very
+high fidelity, provides what is called a universal gate set. This means that
+any gate set can be constructed out of [it]."
+
+Although their quantum computers wouldn't work at room temperature, this
+approach lets the researchers operate their device at approximately 1 Kelvin
+(-272° C, -458° F). That may not seem like much of an improvement over
+previous designs, but, the researchers told us, recent advances in cooling
+technology have resulted in fridges that can easily be operated at these
+temperatures.
+
+## Applications
+
+The real power of this breakthrough is not in a slightly higher operational
+temperature, but in the fact that these basic building blocks of quantum
+computers were built by doing simple modifications to current-generation
+silicon transistors. The researchers say they have worked out a way to extend
+this technique to a much larger number of qubits, even numbering in the
+thousands of millions, all reported to be fully entangled.
+
+"Our team is looking for industrial partners to construct a chip that would
+contain between tens and hundreds of qubits, and which uses the silicon-CMOS
+technology used today for most computer processor chips," lead researcher
+Andrew Dzurak told us. "This prototype manufacture would be done in a Si-CMOS
+foundry with wafer-scale manufacture, so that we can demonstrate a
+manufacturing process that can be scaled up to the thousands or millions of
+qubits.
+
+"I believe that a Si-CMOS qubit prototype containing between tens and hundreds
+of qubits could be made within five years, provided we have the right level of
+investment and the right industry partners. Our main aim is to develop a
+prototype that can demonstrate that it is possible to go all the way with
+'Quantum CMOS' and make a full-scale quantum processor. That final stage is
+likely to take 10-20 years."  
+
+Such a powerful quantum computer would have major implications for the
+finance, data security, and health industry. But perhaps one of the most
+interesting applications of all, and the one advanced by Richard Feynman
+decades ago as he first proposed the idea of a quantum computer, would be to
+conduct virtual experiments simulating the behavior of atoms and particles in
+unusual conditions, such as at the very high energies we can only recreate in
+the Large Hadron Collider, without actually performing the experiment.  
+
+The advance was published today in the journal _Nature_. Dzurak and Veldhorst
+further comment on the implications of this breakthrough in the video below.
+
+Source: UNSW
+
+View gallery (6 images)
+
+## Tags
+
+  * #University of New South Wales
+  * #Quantum Simulators
+  * #Quantum Computing
+
+## Share this article
+
+  *   *   *   *   *   * 
+
+Show 7 comments
+
+## Latest in Quantum Computing
+
+  * # "Quantum data bus" can relocate quantum information
+
+  * # New chip paves the way for optical quantum technology in laptops and smartphones
+
+  * # Quantum computers inch closer to reality thanks to entangled qubits in silicon
+
+  * # Atom-thin 2D laser promises advanced photonics for quantum computing
+
+  * # Quantum computing breakthrough: Qubits made from standard silicon transistors
+
+  * # New dimensions of quantum information added through hyperentanglement
+
+  * # Quantum leap: IBM scientists lay the foundations for a practical, scalable quantum computer
+
+  * # New micro-ring resonator creates quantum entanglement on a silicon chip 
+
+  * # Scientists create prototype quantum hard drive
+
+  * # New records bring super-powerful quantum computers closer to reality
+
+  * # Nanodiamond levitated in free space with lasers could further quantum computing
+
+  * # All-optical transistor could be a big leap for quantum computing
+
+## Editors Choice
+
+  * # Greenest of the green: This year's top sustainable buildings
+
+  * # Compare the latest tech gear
+
+  * # Koenigsegg winds down the Agera era and begins the Regera era 
+
+  * # HTC 10 review: A stellar phone that's greater than the sum of its (already impressive) parts
+
+  * # China's LeEco gives a first look at its semi-autonomous Tesla fighter
+
+  * # Pictorial: Top Marques Monaco 2016
+
+  * # Comparing the five current iPads: iPad Pro 12.9 vs. Pro 9.7, Air 2, mini 4 and mini 2
+
+  * # China rising: Highlights from the 2016 Beijing Auto Show
+
+  * # Review: 2016 Toyota RAV4 Hybrid offers surprisingly good efficiency
+
+  * # Behind the scenes at GE's future-forward factory
+
+  * # Journey to the Shire: The very best hobbit holes
+
+  * # Gizmag jobs – Mobile Technology Writer
+
+
+
+## Over 245,000 people receive our email newsletter
+
+See the stories that matter in your inbox every morning
+
+Your Email
+
+Advertisement
+
+Advertisement
+
+Advertisement
+
+Advertisement
+
+Advertisement
+
+unused
+
+### Over 245,000 people receive our email newsletter
+
+See the stories that matter in your inbox every morning
+
+Email address
+
+  * Top
+  * Home
+  * About
+  * Contact
+  * Privacy
+  * Terms &amp; Conditions
+  * Advertise
+
+All content copyright (C) Gizmag 2016
+
+  * Twitter
+  * Facebook
+  * StumbleUpon
+  * Youtube
+  * RSS
+
+Advertisement
+

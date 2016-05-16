@@ -1,0 +1,73 @@
+6. Relationship to OWL
+The OWL Web Ontology Language is a knowledge representation language standardised
+by the World Wide Web Consortium (W3C). OWL is one of the most important applications
+of description logics today. In this section, we briefly outline the relationship of
+the two languages. A comprehensive treatment is beyond the scope of this paper; see
+Section 7 for pointers to further reading. The current version of the OWL specification is
+OWL 2 as standardised in 2009. This supersedes the earlier OWL 1 standard of 2004.
+The main building blocks of OWL are indeed very similar to those of DLs, with
+the main difference that concepts are called classes and roles are called properties. It is
+therefore not surprising that description logics have had a major influence on the development
+of OWL and the expressive features that it provides. Historically, however, OWL
+has also been conceived as an extension to RDF, a Web data modelling language whose
+expressivity is comparable to DL ABoxes. The formal semantics of RDF is subtly different
+from that of DLs, even though both lead to the same consequences in many common
+cases. Extending the RDF semantics to the expressive features of OWL improves the
+compatibility between the two, but it also makes reasoning undecidable. Therefore, it has
+been decided to specify both styles of formal semantics for OWL: the Direct Semantics
+based on DLs and the RDF-based Semantics.
+In this section, we are therefore mainly interested in the Direct Semantics of OWL.
+This semantics is only defined for OWL ontologies that abide by certain syntactic restrictions
+(essentially the restriction that the OWL axioms can be read as SROIQ axioms
+for which the structural restrictions of Section 3 are satisfied). This syntactic fragment
+of OWL is called OWL DL.
+7 Under the Direct Semantics, large parts of OWL DL
+can indeed be considered as a syntactic variant of SROIQ. For example, the axiom
+Mother ≡ Female ⊓ Parent would be written as follows in OWL:
+EquivalentClasses( Mother ObjectIntersectionOf( Female Parent ) )
+where the symbols Mother, Female and Parent would be identifier strings that conform
+to the OWL specification.8 The above example illustrates the close relationship between
+the syntax of SROIQ and that of OWL. In many cases, it is indeed enough to translate
+an operator symbol of SROIQ into the corresponding operator name in OWL, which is
+then written in prefix notation like a function. This is also why the above form of syntax
+is called Functional-Style Syntax. The OWL standard provides a number of syntactic
+forms that can be used to express OWL ontologies. The most prominent among these
+is the RDF/XML serialisation since it is the only format that all conforming OWL tools
+7
+In contrast, the OWL language without any syntactic constraints is called OWL Full. It comprises ontologies
+that can only be interpreted under the RDF-based Semantics.
+8Entity names in OWL are generally based on Uniform Resource Identifiers (URIs). The details are not
+relevant here.
+14
+need to understand. On the other hand, it is more difficult for humans to read and we do
+not present it here.
+It is interesting to note that there are still a few differences between OWL DL under
+the Direct Semantics and SROIQ. On a syntactic level, OWL provides a lot more operators
+that, though logically redundant, can be convenient as shortcuts for compound DL
+axioms. For example, OWL has special constructs for specifying domain and range of
+a property, even though these could equally well be expressed as in Section 2.2. These
+kinds of features also include the empty (bottom) property, which can easily be defined
+but is not included as a language feature in DLs.
+However, OWL also includes some expressive features that we did not include in
+our treatment of SROIQ above. Most notably, this includes support for datatypes and
+datatype literals. These behave like classes and individual names but come with a fixed,
+pre-defined interpretation. For example, the datatype for Boolean values has exactly two
+elements – true and false – in any interpretation. This can also be introduced in DLs
+by so-called concrete domains, i.e., pre-defined interpretation domains. Both DLs and
+OWL in this case strictly distinguish roles/properties that relate to “abstract” individuals
+from those that relate to values from some datatype. In OWL, the constructs that relate to
+datatypes include “Data” in their name while constructs that relate to abstract individuals
+include “Object.” For example, OWL distinguishes ObjectIntersectionOf (used
+above) from DataIntersectionOf (the intersection of datatypes).
+The only other logical feature that is missing in DLs are so-called Keys. These are
+special forms of rules that can be used for data integration. Roughly speaking, a key specifies
+that two named individuals are entailed to be equal if they agree on certain property
+values and class memberships, similar to key constraints in databases. For example, the
+combination of nationality and registration number might be treated as a key for (i.e.,
+sufficient to uniquely identify) motor vehicles.
+Besides the logical features, OWL also includes a number of other aspects that are
+not considered in description logics at all. For example, it includes means of naming
+an ontology and of importing ontological axioms from one ontology into another. Further
+extra-logical features include a simple form of meta-modelling called punning, nonlogical
+axioms to declare identifiers, and the possibility to add annotations to arbitrary
+axioms and entities similar to comments in a programming language.

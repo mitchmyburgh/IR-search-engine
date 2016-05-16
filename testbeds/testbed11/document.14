@@ -1,0 +1,40 @@
+Mobile Cloud Computing (MCC) is the combination of cloud computing, mobile computing and wireless networks to bring rich computational resources to mobile users, network operators, as well as cloud computing providers. The ultimate goal of MCC is to enable execution of rich mobile applications on a plethora of mobile devices, with a rich user experience. MCC provides business opportunities for mobile network operators as well as cloud providers. More comprehensively, MCC can be defined as "a rich mobile computing technology that leverages uniﬁed elastic resources of varied clouds and network technologies toward unrestricted functionality, storage, and mobility to serve a multitude of mobile devices anywhere, anytime through the channel of Ethernet or Internet regardless of heterogeneous environments and platforms based on the pay-as-you-use principle."
+
+
+== Architecture ==
+
+MCC uses computational augmentation approaches by which resource-constraint mobile devices can utilize computational resources of varied cloud-based resources. In MCC, there are four types of cloud-based resources, namely distant immobile clouds, proximate immobile computing entities, proximate mobile computing entities, and hybrid (combination of the other three model). Giant clouds such as Amazon EC2 are in the distant immobile groups whereas cloudlet or surrogates are member of proximate immobile computing entities. Smartphones, tablets, handheld devices, and wearable computing devices are part of the third group of cloud-based resources which is proximate mobile computing entities.
+Vodafone, Orange and Verizon have started to offer cloud computing services for companies.
+
+
+=== Challenges ===
+In the MCC landscape, an amalgam of mobile computing, cloud computing, and communication networks (to augment smartphones) creates several complex challenges such as Mobile Computation Offloading, Seamless Connectivity, Long WAN Latency, Mobility Management, Context-Processing, Energy Constraint, Vendor/data Lock-in, Security and Privacy, Elasticity that hinder MCC success and adoption.
+
+
+=== Open research issues ===
+Although significant research and development in MCC is available in the literature, efforts in the following domains is still lacking:
+Architectural issues: A reference architecture for heterogeneous MCC environment is a crucial requirement for unleashing the power of mobile computing towards unrestricted ubiquitous computing.
+Energy-efficient transmission: MCC requires frequent transmissions between cloud platform and mobile devices, due to the stochastic nature of wireless networks, the transmission protocol should be carefully designed.
+Context-awareness issues: Context-aware and socially-aware computing are inseparable traits of contemporary handheld computers. To achieve the vision of mobile computing among heterogeneous converged networks and computing devices, designing resource-efﬁcient environment-aware applications is an essential need.
+Live VM migration issues: Executing resource-intensive mobile application via Virtual Machine (VM) migration-based application ofﬂoading involves encapsulation of application in VM instance and migrating it to the cloud, which is a challenging task due to additional overhead of deploying and managing VM on mobile devices.
+Mobile communication congestion issues: Mobile data trafﬁc is tremendously hiking by ever increasing mobile user demands for exploiting cloud resources which impact on mobile network operators and demand future efforts to enable smooth communication between mobile and cloud endpoints.
+Trust, security, and privacy issues: Trust is an essential factor for the success of the burgeoning MCC paradigm.
+
+
+== MCC research groups ==
+Several academic and industrial research groups in MCC have been emerging since last few years. Some of the MCC research groups in academia with large number of researchers and publications include:
+MobCC lab, Faculty of Computer Science and Information Technology, University Malaya. The lab was established in 2010 under the High Impact Research Grant, Ministry of Higher Education, Malaysia. It has 17 researchers and has track of 22 published articles in international conference and peer reviewed CS journals.
+ICCLAB, Zürich University of Applied Sciences has a segment working on MCC. The InIT Cloud Computing Lab is a research lab within the Institute of Applied Information Technology (InIT) of Zürich University of Applied Sciences (ZHAW). It covers topic areas across the entire cloud computing technology stack.
+Mobile & Cloud Lab, Institute of Computer Science, University of Tartu. Mobile & Cloud Lab conducts research and teaching in the mobile computing and cloud computing domains. The research topics of the group include cloud computing, mobile application development, mobile cloud, mobile web services and migrating scientific computing and enterprise applications to the cloud.
+SmartLab, Data Management Systems Laboratory, Department of Computer Science, University of Cyprus. SmartLab is a first-of-a-kind open cloud of smartphones that enables a new line of systems-oriented mobile computing research.
+
+
+== See also ==
+Cloudlet
+Cloud computing
+Cloud collaboration
+Mobile collaboration
+Crowd computing
+
+
+== References ==

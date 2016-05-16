@@ -1,0 +1,142 @@
+﻿Ontology languages
+At the beginning of the 1990s, a set of AI-based ontology implementation languages was
+created. Basically, the KR paradigm underlying such ontology languages was based on first order
+logic (i.e. KIF), on frames combined with first order logic (i.e. Ontolingua, OCML and FLogic) or
+on DL (i.e. Loom).
+KIF
+[24] is a language based on first order logic created in 1992 as an interchange format for
+diverse KR systems.
+Ontolingua
+[18,32], which builds on KIF, was developed in 1992 by the KSL
+at Stanford University. It combines the KR paradigms of frames and first order predicate calculus
+(KIF). It is the most expressive of all the languages that have been used for representing ontologies, allowing the representation of concepts, taxonomies of concepts, n-ary relations, functions,
+axioms, instances and procedures. Its high expressiveness led to difficulties in building reasoning
+mechanisms for it. Hence, no reasoning support is provided with the language.
+Loom
+[54] was developed simultaneously with Ontolingua at the Information Science Institute
+(ISI) at the University of South California. Initially, it was not meant for implementing ontologies, but for general KBs. Loom is based on DLs and production rules, and provides automatic
+classifications of concepts. The following ontology components can be represented with this
+language: concepts, concept taxonomies, n-ary relations, functions, axioms and production rules.
+OCML
+[56] was developed later, in 1993, at the KMI at the Open University. It was created
+as a kind of ‘‘operational Ontolingua’’. In fact, most of the definitions that can be expressed in
+OCML are similar to the corresponding definitions in Ontolingua, and some additional components can be defined: deductive and production rules, and operational definitions for functions. OCML was built for developing executable ontologies and models in problem solving
+methods.
+FLogic
+[46] was developed in 1995 at the Karlsruhe University. FLogic (
+Frame Logic
+) combines
+frames and first order logic, allowing to represent concepts, concept taxonomies, binary relations,
+functions, instances, axioms and deductive rules. FLogic is the only of the previous languages that
+do not have Lisp-like syntax. Its inference engine, Ontobroker [14], can be used for constraint
+checking and deducting new information.
+In Spring 1997, the High Performance Knowledge Base program (HPKB) started. This research program was sponsored by DARPA, and its objective was to solve many of the problems
+that usually appear when dealing with large KBs (concerning efficiency, content creation, integration of the content available in different systems, etc.). One of the results of this program was
+the development of the
+OKBC
+(
+Open Knowledge Base Connectivity
+) protocol [10]. This protocol
+allows accessing KBs stored in different knowledge representation systems (KRSs). Of the systems
+presented before, Ontolingua and LOOM are OKBC compliant.
+The boom of the Internet led to the creation of ontology languages that exploited
+the characteristics of the Web. Such languages are usually called
+web-based ontology languages
+or
+ontology markup languages
+. These languages are still in a development phase: they
+are continuously evolving. These languages and the relationships among them are shown in
+Fig. 2.
+SHOE
+[53] was built in 1996 as an extension of HTML, in the University of Maryland. It uses
+tags different from those of the HTML specification, thus it allows the insertion of ontologies in
+HTML documents. SHOE combines frames and rules. SHOE just allows representing concepts,
+54
+O. Corcho et al. / Data & Knowledge Engineering 46 (2003) 41–64
+their taxonomies, n-ary relations, instances and deduction rules, which are used by its inference
+engine to obtain new knowledge.
+Then,
+XML
+[7] was created and widely adopted as a standard language for exchanging information on the Web. As a consequence, SHOE syntax was modified to use XML and then,
+other ontology languages were built on the XML syntax.
+XOL
+[43] was developed by the AI center of SRI international, in 1999, as a XMLization of a
+small subset of primitives from the OKBC protocol, called OKBC-Lite. It is a very restricted
+language where only concepts, concept taxonomies and binary relations can be specified. No
+inference mechanisms are attached to it, as it was mainly designed for the exchange of ontologies
+in the biomedical domain.
+RDF
+[50] was developed by the W3C (the World Wide Web Consortium) as a semantic-network based language to describe Web resources.
+RDF Schema
+[8] was built by the W3C as an
+extension to RDF with frame-based primitives. The combination of both RDF and RDF Schema
+is normally known as
+RDF
+(
+S
+). RDF(S) is not very expressive, just allowing the representation of
+concepts, concept taxonomies and binary relations. Some inference engines have been created for
+this language, mainly for constraint checking.
+These languages have established the foundations of the Semantic Web.
+6
+In this context, three
+more languages have been developed as extensions to RDF(S): OIL, DAML
+þ
+OIL and OWL.
+OIL
+[38] was developed in the framework of the European IST project On-To-Knowledge. It
+adds frame-based KR primitives to RDF(S), and its formal semantics is based on DLs. The FaCT
+classifier is used to perform automatic classifications of concepts.
+DAML
+
+ONT
+specification was released some time later in the context of the DARPA initiative DAML (DARPA Agent Markup Language). On December 2000, it was upgraded to
+DAML
+þ
+OIL
+[40], which was created by a joint committee from the US and the EU in the
+context of the DARPA project DAML. DAML
+þ
+OIL also adds DL-based KR primitives to
+RDF(S). Both OIL and DAML
+þ
+OIL allow representing concepts, taxonomies, binary relations,
+functions and instances. Many efforts are being put to provide reasoning mechanisms for
+DAML
+þ
+OIL.
+Finally, in 2001, the W3C formed a working group called Web-Ontology (WebOnt) Working
+Group.
+7
+The aim of this group was to make a new ontology markup language for the Semantic
+Web, called
+OWL
+(Web Ontology Language). They have already defined a list of main use cases
+XML
+RDF
+OIL
+DAML+OIL
+XOL
+SHOE
+(XML)
+HTML
+SHOE
+(HTML)
+RDFS
+OWL
+Fig. 2. The stack of ontology markup languages.
+6
+www.sciam.com/2001/0501issue/0501berners-lee.html
+.
+7
+http://www.w3.org/2001/sw/WebOnt/
+.
+O. Corcho et al. / Data & Knowledge Engineering 46 (2003) 41–64
+55
+
+
+for the Semantic Web, have taken DAML
+þ
+OIL features as the main input for developing OWL
+and have proposed the first specification of this language [13]. OWL is divided in two layers:
+OWLlite and OWL.

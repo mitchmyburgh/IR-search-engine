@@ -1,0 +1,50 @@
+Although a significant speedup was achieved compared to
+the naïve approach, two major problems were not solved.
+The first problem is that each occlusion query needs some
+time, so if too many of them are wasted, the performance is
+reduced compared to view frustum culling alone. The main
+source of wasted queries is the fact that all visible leaf nodes
+need to be queried to determine the visibility state of all
+nodes in the hierarchy. In addition, many queries that are performed
+for inner nodes which were frustum culled in the previous
+frame are wasted as well. Assuming that these nodes
+are visible is however even worse, since then all of their
+leaves would be rendered with an additional query for each.
+The second problem is that the performance gain of occlusions
+is delayed by one frame, since previously visible leaf
+nodes are directly rendered and the query results are only
+used in the next frame. The first problem was already partially
+addressed by Staneker et al. [SBS04] who proposed a
+method to save queries for objects that are certainly visible.
+A variety of software tests, like occupancy maps or software
+occlusion tests with reduced resolution, are used to determine
+if the object covers screen areas that are still empty.
+However, when using current graphics hardware these relatively
+costly software tests are unfortunately almost always
+slower than the hardware occlusion query itself.
+2.2. Graphics hardware parametrization
+To achieve a given constant frame rate in scenes with highly
+varying complexity, several methods to estimate the rendering
+time have been proposed starting with the work of
+Funkhouser and Séquin [FS93]. Considering the fact that
+an upper bound of the rendering time is required for a constant
+frame rate,Wimmer andWonka [WW03] modified this
+method and also adapted it to the characteristics of current
+
+c The Eurographics Association 2006.
+M. Guthe, Á. Balázs, & R. Klein / Near Optimal Hierarchical Culling
+graphics hardware. Although their method is very efficient
+in achieving a constant frame rate, it cannot be used to guide
+the decision of whether rendering with occlusion culling is
+better than rendering without occlusion culling, as in this
+case an approximate time is required rather than an upper
+bound. In addition, neither of the above mentioned two algorithms
+is able to give time estimations for hardware occlusion
+queries which are different from those for the rendering
+of the bounding box.
+3. Analytical Models
+To achieve a near optimal scheduling of occlusion queries,
+both the outcome of each query and the times required for
+rendering and for performing the query itself must be estimated.
+This estimation is based on two analytical models
+which we derive in the follo

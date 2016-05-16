@@ -1,0 +1,35 @@
+Putting the “S” in CASB ­­­­­— Safeguarding Cloud File Sharing
+
+April 11, 2016/in CASB /by David Berman
+As we have discussed in a recent blog post Cloud File Sharing has big rewards and big risks. Driven by workforce trends that have teams spread across the globe both internal users and external partners need to share information anytime, anywhere to be effective.
+
+safeguarding file sharing in cloud
+
+Understanding the Risks
+It is inevitable that users will turn to file sharing clouds like Box, Drop Box or Office 365 to enhance productivity without an awareness of the risks posed to sensitive data. Let’s review three major areas of risks that organizations need to address:
+
+Loss of visibility and control – Studies show that, on average, a file uploaded to the cloud is shared 5 or 6 times. Even if the original sharing request is appropriate the organization has no visibility into who has access to the document once it leaves their network.
+Collaboration over public networks and shared computers – Users may not know that uploading or accessing files over public Wi-Fi or on shared computers can lead to range of risk including malware attack, data theft and accidental exposure of sensitive data.
+Compliance violations – Some files contain data that should not be shared outside a defined list of users or should not be shared at all. Government and industry mandates require strict control over patient health information, financial data and personal information. Organizations need to prevent unauthorized access to this data or risk legal actions or fines.
+Since employees and partners have many collaboration clouds to choose from, understanding how to safeguard users and the content they share across multiple clouds has become a major concern for enterprises that want to mitigate the risks of cloud-based file sharing but don’t want to block business (also see: “Here’s How: CASB Helps Ethical Firewalls Reach the Cloud“)
+
+So Where to Start?
+First, organizations need to develop policies that classify content according to sensitivity of the information for the business with the cloud in mind. Most enterprises already have security classifications so refining content policies for the cloud starts with breaking down which types of content:
+
+Can never be shared in the cloud
+Can be shared in cloud with the appropriate controls and protections
+Can be freely shared in the cloud
+Any secure file sharing initiative needs to focus on how to apply the appropriate controls and protections based on users, groups, content and the compliance mandates and actions required when a violation occurs.
+
+Enter the Cloud Access Security Broker
+Just blocking access to file sharing clouds is a traditional approach to user driven adoption of the cloud. This has several downsides for organizations that need to increase productivity and support geographically distributed users, partners and suppliers. To take advantage of the cost and productivity gains that file sharing clouds provide organizations are turning to Cloud Access Security Brokers (CASB).
+
+A CASB can allow the enterprise to adopt several collaboration clouds that meet the needs of different business users and partner firms while providing the visibility and control required from IT security staff and auditors.   Using a CASB allows the enterprise to apply consistent policies for data loss prevention, collaboration controls and remediation across multiple clouds. A complete CASB will also provide visibility into user activity, file usage trends and detection of anomalous behavior (like excessive data downloads or suspicious logins).
+
+And the best CASB platforms offer robust data security with policy-based encryption, which ensures unauthorized users or former employees (departing with content on their mobile devices) can’t access sensitive files.
+
+A CASB platform can provide the security and compliance organizations require while giving employees the tools to effectively collaborate with colleagues and partners globally.
+
+Next Steps
+Learn more about how to protect your files in the cloud using our Cloud Security Broker.
+Register for a Free Trial of CipherCloud Cloud Security Broker. CipherCloud Cloud Security Broker adds complete visibility and protection for file-sharing tools ― Office 365 SharePoint, OneDrive, Box, Salesforce, Dropbox and more

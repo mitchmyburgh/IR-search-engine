@@ -1,0 +1,143 @@
+﻿According to the vision introduced above, we do
+not
+intend DOLCE as a
+candidate for
+a “universal” standard ontology. Rather, it is intended to act as starting point
+for
+comparing and elucidating
+the relationships with other
+future modules of the library, and
+also for clarifying the hidden assumptions underlying existing ontologies or linguistic
+resources such as WordNet.
+As reflected by its acronym, DOLCE has a clear
+cognitive bias
+, in the sense that it
+aims at capturing the ontological
+categories underlying natural language
+and
+human
+commonsense. We believe that such bias is
+very important for the Semantic Web
+(especially if we recognize
+its intrinsic social
+nature [3]). We do
+not commit to a
+strictly referentialist metaphysics related to the intrinsic nature of the world: rather, the
+categories we introduce here are thought of as cognitive artifacts
+ultimately
+depending
+on human perception, cultural imprints
+and
+social conventions (a sort of
+“cognitive”
+metaphysics). We
+draw
+inspiration
+here
+from Searle’s
+notion of
+“deep background”
+[18], which
+represents
+the set of skills,
+tendencies
+and
+habits
+shared by
+humans because of
+their peculiar
+biological make
+up,
+and
+their
+evolved
+ability to
+interact
+with
+their ecological niches [9]. The
+consequences of
+this
+approach are
+that our
+categories
+are at
+the
+so-called
+mesoscopic
+level,
+and
+they do not claim any special robustness
+against the state of the art in scientific
+knowledge:
+they
+are
+just
+descriptive
+notions
+[21] that assist in making
+already
+formed
+conceptualizations
+explicit. They do not
+provide therefore a
+prescriptive
+(or “revisionary”
+[21, 15])
+framework to conceptualize
+entities. In other
+words, our
+categories
+describe
+entities in a post-hoc way,
+reflecting
+more ore less the surface structure of language and cognition.
+DOLCE is an ontology of
+particulars
+, in the sense that
+its
+domain of discourse is
+restricted to
+them. The
+fundamental
+ontological distinction
+between
+universals
+and
+particulars
+can be
+informally
+understood by
+taking the relation of
+instantiation
+as a
+primitive: particulars are entities which have no instances
+2
+; universals
+are
+entities that
+do have
+instances. Properties
+and
+relations
+(corresponding to predicates in a
+logical
+language) are usually considered as
+universals. We take the ontology of universals as
+formally separated from
+that of particulars. Of course, universals
+do
+appear in an ontology of particulars, insofar they 
+are used to
+organize
+and characterize
+them:
+simply,
+since they are not in the domain of discourse, they are not themselves subject to being
+organized and characterized
+(e.g., by means of
+metaproperties
+). An ontology of
+unary
+universals has been presented in [12]. In this paper, we shall occasionally use
+notions
+(e.g., rigidity) taken from such work in our meta-language

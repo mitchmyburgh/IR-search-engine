@@ -1,0 +1,71 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Transformations
+3.1 2D Transformations
+Given a point cloud, polygon, or sampled parametric curve, we can use transformations for several purposes:
+1. Change coordinate frames (world, window, viewport, device, etc).
+2. Compose objects of simple parts with local scale/position/orientation of one part de?ned with regard to other parts. For example, for articulated objects.
+3. Use deformation to create new shapes.
+4. Useful for animation.
+There are three basic classes of transformations:
+1. Rigid body - Preserves distance and angles. • Examples: translation and rotation. 2. Conformal - Preserves angles. • Examples: translation, rotation, and uniform scaling. 3. Af?ne - Preserves parallelism. Lines remain lines. • Examples: translation, rotation, scaling, shear, and re?ection.
+Examples of transformations: • Translation by vector~ t: ¯ p1 = ¯ p0 +~ t.
+• Rotation counterclockwise by ?: ¯ p1 = cos(?) -sin(?) sin(?) cos(?) ¯ p0.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 10
+CSC418 / CSCD18 / CSC2504 Transformations
+• Uniform scaling by scalar a: ¯ p1 = a 0 0 a ¯ p0.
+• Nonuniform scaling by a and b: ¯ p1 = a 0 0 b ¯ p0.
+• Shear by scalar h: ¯ p1 = 1 h 0 1 ¯ p0.
+• Re?ection about the y-axis: ¯ p1 =-1 0 0 1 ¯ p0.
+3.2 Af?ne Transformations
+An af?ne transformation takes a point ¯ p to ¯ q according to ¯ q = F(¯ p) = A¯ p +~ t, a linear transformation followed by a translation. You should understand the following proofs.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 11
+CSC418 / CSCD18 / CSC2504 Transformations
+• The inverse of an af?ne transformation is also af?ne, assuming it exists. Proof: Let ¯ q = A¯ p +~ t and assume A-1 exists, i.e. det(A) 6= 0. Then A¯ p = ¯ q -~ t, so ¯ p = A-1¯ q -A-1~ t. This can be rewritten as ¯ p = B¯ q + ~ d, where B = A-1 and ~ d = -A-1~ t.
+Note: The inverse of a 2D linear transformation is A-1 = a b c d -1 = 1 ad-bc d -b -c a .
+• Lines and parallelism are preserved under af?ne transformations. Proof: To prove lines are preserved, we must show that ¯ q(?) = F(¯ l(?)) is a line, where F(¯ p) = A¯ p +~ t and ¯ l(?) = ¯ p0 + ?~ d.
+¯ q(?) = A¯ l(?) +~ t = A(¯ p0 + ?~ d) +~ t = (A¯ p0 +~ t) + ?A~ d
+This is a parametric form of a line through A¯ p0 +~ t with direction A~ d.
+• Given a closed region, the area under an af?ne transformation A¯ p +~ t is scaled by det(A). Note:
+- Rotations and translations have det(A) = 1. - Scaling A = a 0 0 b has det(A) = ab. - Singularities have det(A) = 0.
+Example: The matrix A = 1 0 0 0 maps all points to the x-axis, so the area of any closed region will become zero. We have det(A) = 0, which veri?es that any closed region's area will be scaled by zero.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 12
+CSC418 / CSCD18 / CSC2504 Transformations
+• A composition of af?ne transformations is still af?ne. Proof: Let F1(¯ p) = A1¯ p +~ t1 and F2(¯ p) = A2¯ p +~ t2. Then,
+F(¯ p) = F2(F1(¯ p)) = A2(A1¯ p +~ t1) +~ t2 = A2A1¯ p + (A2~ t1 +~ t2).
+Letting A = A2A1 and ~ t = A2~ t1 +~ t2, we have F(¯ p) = A¯ p +~ t, and this is an af?ne transformation.
+3.3 Homogeneous Coordinates
+Homogeneous coordinates are another way to represent points to simplify the way in which we express af?ne transformations. Normally, bookkeeping would become tedious when af?ne transformations of the form A¯ p +~ t are composed. With homogeneous coordinates, af?ne transformations become matrices, and composition of transformations is as simple as matrix multiplication. In future sections of the course we exploit this in much more powerful ways.
+With homogeneous coordinates, a point ¯ p is augmented with a 1, to form ˆ p = ¯ p 1 . All points (a¯p,a) represent the same point ¯ p for real a 6= 0. Given ˆ p in homogeneous coordinates, to get ¯ p, we divide ˆ p by its last component and discard the last component.
+Example: The homogeneous points (2,4,2) and (1,2,1) both represent the Cartesian point (1,2). It's the orientation of ˆ p that matters, not its length.
+Many transformations become linear in homogeneous coordinates, including af?ne transformations:  qx qy  =  a b c d  px py + tx ty  =  a b tx c d ty ? ? px py 1 ? ?=  A ~ t ˆ p Copyright c
+2005 David Fleet and Aaron Hertzmann 13
+CSC418 / CSCD18 / CSC2504 Transformations
+To produce ˆ q rather than ¯ q, we can add a row to the matrix:
+ˆ q = A ~ t ~ 0T 1 ˆ p =? ?
+a b tx c d ty 0 0 1
+? ?ˆ p. This is linear! Bookkeeping becomes simple under composition.
+Example: F3(F2(F1(¯ p))), where Fi(¯ p) = Ai(¯ p) + ~ ti becomes M3M2M1¯ p, where Mi =  Ai ~ ti ~ 0T 1 .
+With homogeneous coordinates, the following properties of af?ne transformations become apparent: • Af?ne transformations are associative. For af?ne transformations F1, F2, and F3, (F3 ?F2)?F1 = F3 ?(F2 ?F1). • Af?ne transformations are not commutative. For af?ne transformations F1 and F2, F2 ?F1 6= F1 ?F2.
+3.4 Uses and Abuses of Homogeneous Coordinates
+Homogeneous coordinates provide a different representation for Cartesian coordinates, and cannot be treated in quite the same way. For example, consider the midpoint between two points ¯ p1 = (1,1) and ¯ p2 = (5,5). The midpoint is (¯ p1 + ¯ p2)/2 = (3,3). We can represent these points in homogeneous coordinates as ˆ p1 = (1,1,1) and ˆ p2 = (5,5,1). Directly applying the same computation as above gives the same resulting point: (3,3,1). However, we can also represent these points as ˆ p' 1 = (2,2,2) and ˆ p' 2 = (5,5,1). We then have (ˆ p' 1 + ˆ p' 2)/2 = (7/2,7/2,3/2), which cooresponds to the Cartesian point (7/3,7/3). This is a different point, and illustrates that we cannot blindly apply geometric operations to homogeneous coordinates. The simplest solution is to always convert homogeneous coordinates to Cartesian coordinates. That said, there are several important operations that can be performed correctly in terms of homogeneous coordinates, as follows.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 14
+CSC418 / CSCD18 / CSC2504 Transformations
+Af?ne transformations. An important case in the previous section is applying an af?ne transformation to a point in homogeneous coordinates:
+¯ q = F(¯ p) = A¯ p +~ t (5) ˆ q = ˆ Aˆ p = (x',y',1)T (6)
+It is easy to see that this operation is correct, since rescaling ˆ p does not change the result:
+ˆ A(aˆ p) = a( ˆ Aˆ p) = aˆ q = (ax',ay',a)T (7)
+which is the same geometric point as ˆ q = (x',y',1)T
+Vectors. We can represent a vector ~v = (x,y) in homogeneous coordinates by setting the last element of the vector to be zero: ˆ v = (x,y,0). However, when adding a vector to a point, the point must have the third component be 1.
+ˆ q = ˆ p + ˆ v (8) (x',y',1)T = (xp,yp,1) + (x,y,0) (9)
+The result is clearly incorrect if the third component of the vector is not 0.
+Aside: Homogeneous coordinates are a representation of points in projective geometry.
+3.5 Hierarchical Transformations
+It is often convenient to model objects as hierarchically connected parts. For example, a robot arm might be made up of an upper arm, forearm, palm, and ?ngers. Rotating at the shoulder on the upper arm would affect all of the rest of the arm, but rotating the forearm at the elbow would affect the palm and ?ngers, but not the upper arm. A reasonable hierarchy, then, would have the upper arm at the root, with the forearm as its only child, which in turn connects only to the palm, and the palm would be the parent to all of the ?ngers.
+Each part in the hierarchy can be modeled in its own local coordinates, independent of the other parts. For a robot, a simple square might be used to model each of the upper arm, forearm, and so on. Rigid body transformations are then applied to each part relative to its parent to achieve the proper alignment and pose of the object. For example, the ?ngers are positioned to be in the appropriate places in the palm coordinates, the ?ngers and palm together are positioned in forearm coordinates, and the process continues up the hierarchy. Then a transformation applied to upper arm coordinates is also applied to all parts down the hierarchy.

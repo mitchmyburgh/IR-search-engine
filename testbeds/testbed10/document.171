@@ -1,0 +1,221 @@
+A comparison of machine-learning algorithms for dynamic scheduling
+of flexible manufacturing systems
+
+
+Paolo Priore, David de la Fuente, Javier Puente, Jose´ Parren˜o
+
+
+1. Introduction
+The different approaches available to solve the problem
+of flexible manufacturing system (FMS) scheduling can be
+divided into the following categories: the analytical, the
+heuristic, the simulation-based and the artificial intelligence-based
+approaches. The analytical approach considers
+an FMS scheduling problem as an optimisation model
+with an objective function and explicit constraints. An
+appropriate algorithm resolves the model (see for example,
+Stecke, 1983; Kimemia and Gershwin, 1985; Shanker and
+Tzen, 1985; Lashkari et al., 1987; Han et al., 1989;
+Hutchison et al., 1989; Shanker and Rajamarthandan,
+1989; Wilson, 1989). In general, these problems are of a
+NP-complete type (Garey and Johnson, 1979), so heuristic
+and off-line type algorithms are usually used (Cho and Wysk, 1993; Chen and Yih, 1996). The problem is that
+these analytical models include simplifications that are not
+always valid in practice. Moreover, they are not efficient
+for reasonably large-scale problems.
+These difficulties led to research into many heuristic
+approaches, which are usually dispatching rules. These
+heuristics employ different priority schemes to order the
+diverse jobs competing for the use of a machine. A priority
+index is assigned to each job and the one with the lowest
+index is selected first. Many researchers (see for example,
+Panwalkar and Iskander, 1977; Blackstone et al., 1982;
+Baker, 1984; Russel et al., 1987; Vepsalainen and Morton,
+1987; Ramasesh, 1990; Kim, 1990) have assessed the
+performance of these dispatching rules on manufacturing
+systems using simulation, concluding that performance
+depends on several factors, such as the due date tightness
+(Baker, 1984), the system’s configuration, the workload,
+and so on (Cho and Wysk, 1993). FMSs led to many
+studies evaluating the performance of dispatching rules in these systems (see for example, Stecke and Solberg, 1981;
+Egbelu and Tanchoco, 1984; Denzler and Boe, 1987; Choi
+and Malstrom, 1988; Henneke and Choi, 1990; Montazeri
+and Wassenhove, 1990; Tang et al., 1993).
+Given the variable performance of dispatching rules, it
+would be interesting to change these rules dynamically and
+at the right moment according to the system’s conditions.
+Basically, there are two approaches to modifying dispatching
+rules dynamically in the literature. Firstly, the rule is
+chosen at the right moment by simulating a set of preestablished
+dispatching rules and selecting the one that
+gives the best performance (see for example, Wu and Wysk,
+1989; Ishii and Talavage, 1991; Kim and Kim, 1994; Jeong
+and Kim, 1998). The second approach, from the field of
+artificial intelligence, employs a set of earlier system
+simulations (training examples) to determine what the best
+rule is for each possible system state. These training cases
+are used to train a machine-learning algorithm (Michalski
+et al., 1983) to acquire knowledge about the manufacturing
+system. Intelligent decisions are then made in real time,
+based on this knowledge (see for example, Nakasuka and
+Yoshida, 1992; Shaw et al., 1992; Kim et al., 1998; Min et
+al., 1998). A set of control attributes need to be established
+which identify the manufacturing system’s state at each
+particular moment in time in order to generate training
+examples. Aytug et al. (1994) and Priore et al. (2001)
+provide a review in which machine learning is applied to
+solving scheduling problems. Finally, it has to be noted
+that many works take benefit from a combination of two or
+more approaches (see for example, Glover et al., 1999;
+Flanagan and Walsh, 2003).
+Machine learning solves problems by using knowledge
+acquired while solving earlier problems in the past similar
+in nature to the problem at hand. The main algorithm
+types in the field of machine learning are case-based
+reasoning (CBR), neural networks and inductive learning.
+The right training examples and machine-learning algorithm
+must be selected if this scheduling approach based on
+machine learning is to work properly. However, there are
+hardly any studies in the literature dealing with this
+problem. This paper thus aims to compare three of the
+above-mentioned machine-learning algorithms. In an
+attempt to improve the manufacturing system’s performance,
+a new approach is also proposed whereby new
+control attributes that are arithmetical combinations of the
+original attributes can be determined.
+The rest of this paper is organised as follows. Machinelearning
+algorithms used in this paper are first described.
+An approach to scheduling jobs that employs machine
+learning is then presented. The experimental study describing
+a new approach to determining new control attributes
+from the original ones now follows, along with a
+comparison of the machine-learning algorithms. The
+proposed scheduling approach is then compared with the
+alternative of using a combination of dispatching rules
+constantly. A summary of the results obtained rounds the
+paper off.
+2. Machine learning
+According to Quinlan (1993), machine-learning algorithms
+can be classified into the following categories: CBR,
+neural networks and inductive learning. A brief description
+of the machine-learning algorithms applied in this work
+will be provided next. The most commonly used CBR
+algorithm is the nearest neighbour algorithm (Aha, 1992).
+The formulation of this algorithm, called NN, or k-NN in
+the more sophisticated version, is very simple. The starting
+point is a metric, d, amongst examples, and a set of training
+examples, E. When a new case x occurs, its solution or class
+is determined as follows:
+ClassðxÞ ¼ classðnnÞ;
+where nn (nearest neighbour) satisfies:
+dðx; nnÞ ¼ Minimumfdðx; eÞ : e 2 Eg.
+This means that the case’s class coincides with that of the
+nearest example or neighbour. This initial scheme can be
+fine tuned by including an integer value, k (kX1), which
+determines the k nearest neighbours in E for x. The class of
+x is therefore a function of the class of the majority of the k
+neighbours.
+As regards neural networks, those that will be used in
+this work are ‘backpropagation neural networks (BPNs)’,
+or multilayer perceptron (Rumelhart et al., 1986). These
+are one of the most well-known and widely used as pattern
+classifiers and function approximators (Lippman, 1987;
+Freeman and Skapura, 1991). Fig. 1 gives an overview of a
+neural network of this type. As can be seen, there is a single
+hidden layer and there are no connections between neurons
+in the same layer in this particular case.
+The backpropagation training algorithm is the one that
+is used in this type of neural networks. There are several
+versions of this algorithm, and the standard one (Rumelhart
+et al., 1986; Freeman and Skapura, 1991) will next be
+commented on. We will assume a network with an input
+layer of n1 neurons, a hidden layer of n2 neurons, and an
+output layer of n3 neurons. The outputs of the input,
+hidden and output layers are called xi, yj and zk,
+respectively. The weights of the connections that connect
+ARTICLE IN PRESS
+
+
+
+Fig. 1. An overview of a backpropagation neural network.
+248 P. Priore et al. / Engineering Applications of Artificial Intelligence 19 (2006) 247–255
+the first two layers and the thresholds of the second layer
+neurons are called wij and uj, respectively. Similarly, w0
+jk
+and u0
+k are the weights of the connections between the two
+latter layers and the thresholds of the third layer neurons.
+The training algorithm is iterative, and employs the
+gradient algorithm to minimise a function that measures
+the difference between the network output (z
+m
+k) and the
+desired one (om
+k). This algorithm has two phases, one
+‘forward’ and the other ‘backward’. The former calculates
+the difference between the network output and the desired
+
+p is the number of training examples.
+This function—called the cost, target, error or energy
+function—measures how appropriate the weights of the
+connections are, and approaches zero when the network
+output approximates to the desired output. Once this
+function has been calculated, the backward phase follows.
+In this phase, by applying the gradient algorithm, the
+weights and thresholds are modified so that error is
+reduced. This process is iterated until the error is reduced
+to the desired amount.
+Finally, inductive learning algorithms generate a decision
+tree from a set of training examples. The original idea
+sprung from the works of Hoveland and Hunt at the end of
+the 1950s, culminating in the following decade in concept
+learning systems (Hunt et al., 1966). The idea is to
+recursively divide the initial set of training examples into
+subsets composed of single-class collections of examples.
+Other researchers discovered the same or similar methods
+independently, and Friedman (1977) established the
+fundamentals of the CART system, which shared some
+elements with ID3 (Quinlan, 1979, 1983, 1986), PLS
+(Rendell, 1983) and ASSISTANT 86 (Cestnik et al.,
+1987). The C4.5 algorithm (Quinlan, 1993) is the most
+widely used of the inductive learning algorithms. Besides
+the decision tree that is generated, this algorithm also
+produces a set of decision rules out of the decision tree,
+whereby the class of new cases can be determined.
+3. Scheduling using machine learning
+An overview of a scheduling system that employs
+machine learning is shown in Fig. 2. A simulation model
+is used by the example generator to create different
+manufacturing system states and choose the best dispatching
+rule for each particular state. The machine-learning
+algorithm acquires the knowledge that is necessary to make
+future scheduling decisions from the training examples.
+The real time control system using the ‘scheduling knowledge’,
+the manufacturing system’s state and performance,
+determines the best dispatching rule for job scheduling. The
+knowledge may need to be refined, depending on the
+manufacturing system’s performance, by generating further
+training examples.
+Finally, it must be remembered that there may be at least
+four reasons why a machine learning-based approach
+might perform worse than the best rules used individually:
+1. The training set is a sub-set of all possible cases.
+However, situations in which the scheduling system does
+not work properly can always be added as training
+examples.
+2. The system’s performance depends on the number and
+range of control attributes used in the design of the
+training examples.
+3. A rule may perform well in a simulation over a long time
+period for a set of given attributes, but will perform
+poorly when applied dynamically.
+4. The system can be prone to inadequate generalisations
+in extremely imprecise situations.
+4. Experimental study
+4.1. The proposed FMS
+The selected FMS consists of a loading station, an
+unloading station, four machines and a material-handling
+system. It is assumed that material-handling system has a
+global maximal capacity of 30 parts and the transportation
+times between two machines are negligible. Two types of
+ART

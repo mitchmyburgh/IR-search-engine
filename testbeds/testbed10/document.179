@@ -1,0 +1,69 @@
+Imputation of missing data using machine learning techniques
+
+
+Kamakshi Lakshminarayan, Steven A. Harp, Robert Goldman and Tariq Samad
+
+Introduction
+We have experimented with using various machine
+learning techniques for completing industrial maintenanee
+databases. These databases are usually (in
+our experience, always) incomplete and contaminated
+with erroneous data. Tools for completing partial data
+based on past experience would be useful both as preprocessing
+for further analysis and to provide assistance
+to people performing data entry. We have experimented
+with Autoclass, a Bayesian unsupervised
+learning method and C4.5, a decision-tree based supervised
+learning method. We describe our experiments,
+describe the results and draw conclusions. Both offer
+viable imputation and may be used in combination.
+Structure of this paper
+The organization of this paper is as follows. The first
+section describes the magnitude of the missing dataproblem in the type of industrial data bases maintained
+by Honeywell and its divisions. The next section introduces
+the two machine learning techniques which we
+have explored as potential data completion approaches,
+and describes how they could be used for data completion.
+The first of these two techniques, Autoclass, is
+an unsupervised clustering strategy due to Cheeseman
+et al. (1988) which uses a Bayesian approach to cluster
+the data into classes. The classes so obtained are
+then used to predict multiple choices for the attribute
+of interest. The second technique involves modelling
+missing variables by supervised induction of a decision
+tree-based classifier, C4.5, due to Quinlan (1993). This
+predicts the most likely value for the attribute of interest.
+The next section then presents empirical results
+from applying these two machine learning techniques
+for predicting missing data. The last two sections discusse
+potential applications of the procedures we are
+developing, related work in statistics respectively. he Missing data problem
+Like many businesses involved in the manufacture and
+service of complex equipment, tIoneywell and its customers
+compile vast amounts of maintenance data. For
+a number of reasons, this data is plagued with errors
+and lacunae. We discuss the type of data with which
+we are working in this section.
+Honeywell and its customers routinely compile maintenance
+information for plant and building equipment
+installed in various locations. Entry in these data bases
+is carried out by field personnel, and for various reasons
+is plagued by a high proportion of missing data
+fields. In addition, the entered data is sometimes erroneous,
+or is in a non-standard format and frequently
+has spelling errors.
+The magnitude of the problem for a typical industrial
+process maintainence data base studied by one of
+Honeywell’s business units, Honeywell Loveland Controls,
+is shown in Figure 1. This data base contains
+maintainence information from process control devices.
+Values for 82 variables or features are recorded in this
+data base. Some of these variables are symbolic and
+others are numeric. The variables measure properties of the devices such aa the manufacturer and model of
+the device, aa well aa states of the devices at various
+times such as calibration error, and paas/fail results of
+testing. Of the 4383 records in this data base, none of
+the records were complete and only 41 variables out of
+82 have more than 50% of the records complete. This
+level of incompleteness of the data base seriously limits
+its usefulness to both analysts and field personnel.

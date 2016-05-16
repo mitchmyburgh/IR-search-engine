@@ -1,0 +1,217 @@
+This is a list of network protocols, categorized by their nearest Open Systems Interconnection (OSI) model layers. This list is not exclusive to only the OSI protocol family. Many of these protocols are originally based on the Internet Protocol Suite (TCP/IP) and other models and they often do not fit neatly into OSI layers.
+
+
+== Layer 1 (Physical Layer) ==
+Telephone network modems
+IRDA physical layer
+USB physical layer
+EIA RS-232, EIA-422, EIA-423, RS-449, RS-485
+Ethernet physical layer 10BASE-T, 10BASE2, 10BASE5, 100BASE-TX, 100BASE-FX, 100BASE-T, 1000BASE-T, 1000BASE-SX and other varieties
+Varieties of 802.11 Wi-Fi physical layers
+DSL
+ISDN
+T1 and other T-carrier links, and E1 and other E-carrier links
+SONET/SDH
+Optical Transport Network (OTN)
+GSM Um air interface physical layer
+Bluetooth physical layer
+ITU Recommendations: see ITU-T
+IEEE 1394 interface
+TransferJet
+Etherloop
+ARINC 818 Avionics Digital Video Bus
+G.hn/G.9960 physical layer
+CAN bus (controller area network) physical layer
+Mobile Industry Processor Interface physical layer
+
+
+== Layer 2 (Data Link Layer) ==
+ARCnet　Attached Resource Computer NETwork
+CDP Cisco Discovery Protocol
+DCAP Data Link Switching Client Access Protocol
+Distributed Multi-Link Trunking
+Distributed Split Multi-Link Trunking
+Dynamic Trunking Protocol
+Econet
+Ethernet
+FDDI Fiber Distributed Data Interface
+Frame Relay
+ITU-T G.hn Data Link Layer
+HDLC High-Level Data Link Control
+IEEE 802.11 WiFi
+IEEE 802.16 WiMAX
+LACP Link Aggregation Control Protocol
+LattisNet
+LocalTalk
+L2F Layer 2 Forwarding Protocol
+L2TP Layer 2 Tunneling Protocol
+LAPD Link Access Procedures on the D channel
+LLDP Link Layer Discovery Protocol
+LLDP-MED Link Layer Discovery Protocol - Media Endpoint Discovery
+PAgP - Cisco Systems proprietary link aggregation protocol
+PPP Point-to-Point Protocol
+PPTP Point-to-Point Tunneling Protocol
+Q.710 Simplified Message Transfer Part
+Multi-link trunking Protocol
+RPR IEEE 802.17 Resilient Packet Ring
+SLIP Serial Line Internet Protocol (obsolete)
+StarLAN
+STP Spanning Tree Protocol
+Split multi-link trunking Protocol
+Token ring a protocol developed by IBM; the name can also be used to describe the token passing ring logical topology that it popularized.
+VTP VLAN Trunking Protocol
+VLAN Virtual Local Area Network
+
+
+== Network Topology ==
+Address Resolution Protocol (ARP)
+RARP Reverse Address Resolution Protocol
+Asynchronous Transfer Mode (ATM)
+Frame relay, a simplified version of X.25
+IS-IS, Intermediate System - Intermediate System (OSI)
+SPB Shortest Path Bridging
+X.25
+MTP Message Transfer Part
+NSP Network Service Part
+
+
+== Layer 3 (Network Layer) ==
+CLNP Connectionless Networking Protocol
+EGP Exterior Gateway Protocol
+EIGRP Enhanced Interior Gateway Routing Protocol
+ICMP Internet Control Message Protocol
+IGMP Internet Group Management Protocol
+IGRP Interior Gateway Routing Protocol
+IPv4 Internet Protocol version 4
+IPv6 Internet Protocol version 6
+IPSec Internet Protocol Security
+IPX Internetwork Packet Exchange
+Routed-SMLT
+SCCP Signalling Connection Control Part
+AppleTalk DDP
+GRE Generic Routing Encapsulation for tunneling
+OSPF Open Shortest Path First
+
+
+== Layer 2.5 ==
+MPLS Multiprotocol Label Switching
+
+
+== Layer 3+4 (protocol suites) ==
+AppleTalk
+DECnet
+IPX/SPX
+Internet Protocol Suite
+Xerox Network Systems
+
+
+== Layer 4 (Transport Layer) ==
+AH Authentication Header over IP or IPSec
+ESP Encapsulating Security Payload over IP or IPSec
+IL Originally developed as transport layer for 9P
+SCTP Stream Control Transmission Protocol
+Sinec H1 for telecontrol
+SPX Sequenced Packet Exchange
+TCP Transmission Control Protocol
+UDP User Datagram Protocol
+DCCP Datagram Congestion Control Protocol
+
+
+== Layer 5 (Session Layer) ==
+9P Distributed file system protocol developed originally as part of Plan 9
+NetBIOS, File Sharing and Name Resolution protocol - the basis of file sharing with Windows.
+NetBEUI, NetBIOS Enhanced User Interface
+NCP NetWare Core Protocol
+NFS Network File System
+SMB Server Message Block
+SOCKS "SOCKetS"
+
+
+== Layer 6 (Presentation Layer) ==
+This layer, session layer and application layer are combined in TCP/IP model.
+TLS Transport Layer Security
+
+
+== Layer 7 (Application Layer) ==
+ADC, A peer-to-peer file sharing protocol
+AFP, Apple Filing Protocol
+BACnet, Building Automation and Control Network protocol
+BitTorrent, A peer-to-peer file sharing protocol
+BGP Border Gateway Protocol
+BOOTP, Bootstrap Protocol
+CAMEL, an SS7 protocol tool for the home operator
+Diameter, an authentication, authorization and accounting protocol
+DICOM includes a network protocol definition
+DICT, Dictionary protocol
+DNS, Domain Name System
+DSM-CC Digital Storage Media Command and Control
+DSNP, Distributed Social Networking Protocol
+DHCP, Dynamic Host Configuration Protocol
+ED2K, A peer-to-peer file sharing protocol
+Finger, which gives user profile information
+FTP, File Transfer Protocol
+Gnutella, a peer-to-peer file-swapping protocol
+Gopher, a hierarchical hyperlinkable protocol
+HTTP, Hypertext Transfer Protocol
+HTTPS, Hypertext Transfer Protocol Secure
+IMAP, Internet Message Access Protocol
+IRC, Internet Relay Chat
+ISUP, ISDN User Part
+LDAP Lightweight Directory Access Protocol
+MIME, Multipurpose Internet Mail Extensions
+MSNP, Microsoft Notification Protocol (used by Windows Live Messenger)
+MAP, Mobile Application Part
+Mosh, Mobile Shell
+MQTT, Publish-Subscribe Messaging protocol
+NNTP, Network News Transfer Protocol
+NTP, Network Time Protocol
+NTCIP, National Transportation Communications for Intelligent Transportation System Protocol
+OpenADR Open Automated Demand Response; protocol to manage electricity consuming/controlling devices
+POP3 Post Office Protocol Version 3
+RADIUS, an authentication, authorization and accounting protocol
+RDP, Remote Desktop Protocol
+Rlogin, a UNIX remote login protocol
+rsync, a file transfer protocol for backups, copying and mirroring
+RTP, Real-time Transport Protocol
+RTSP, Real-time Transport Streaming Protocol
+SSH, Secure Shell
+SISNAPI, Siebel Internet Session Network API
+SIP, Session Initiation Protocol, a signaling protocol
+SMTP, Simple Mail Transfer Protocol
+SNMP, Simple Network Management Protocol
+SOAP, Simple Object Access Protocol
+SMB, Microsoft Server Message Block Protocol
+Simple Service Discovery Protocol, A discovery protocol employed by UPnP
+STUN, Session Traversal Utilities for NAT
+TUP, Telephone User Part
+Telnet, a remote terminal access protocol
+TCAP, Transaction Capabilities Application Part
+TFTP, Trivial File Transfer Protocol, a simple file transfer protocol
+Universal Plug and Play
+WebDAV, Web Distributed Authoring and Versioning
+Extensible Messaging and Presence Protocol (XMPP)
+
+
+== Other protocols ==
+Controller Area Network
+
+
+== Protocol description languages ==
+Abstract Syntax Notation One (ASN.1)
+
+
+== See also ==
+
+List of automation protocols
+Systems Network Architecture (SNA) developed by IBM
+Distributed Systems Architecture (DSA) developed by Honeywell-Bull
+Distributed System Security Architecture (DSSA)
+
+
+== Further reading ==
+Network Protocols Handbook. Javvin Technologies. 2005. ISBN 978-0-9740945-2-6. 
+
+
+== External links ==
+Protocol Encapsulation Chart - A PDF file illustrating the relationship between common protocols and the OSI Reference Model.
+Network Protocols Acronyms and Abbreviations - list of network protocols with abbreviations order by index.

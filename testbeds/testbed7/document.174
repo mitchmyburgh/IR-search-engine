@@ -1,0 +1,30 @@
+Apple iOS 9.3: activation lock and web link crashes plague users
+After hundreds complain of bugs and crashes, one gets fixed by Apple and the other is isolated to Booking.com’s app
+ iphone booting up, with small white apple logo in centre of dark screen
+ Apple’s Universal Links feature allows apps to own certain web links: the Booking.com app had a file that listed every link on its website. Photograph: Samuel Gibbs for the Guardian
+Samuel Gibbs
+Tuesday 29 March 2016 12.32 BST Last modified on Tuesday 29 March 2016 15.56 BST
+Share on Pinterest Share on LinkedIn Share on Google+  This article is 1 month old
+Shares
+0
+ Save for later
+Hundreds of iPhone and iPad users have been hit by multiple bugs locking their devices or causing them to crash since the release of Apple’s latest operating software, iOS 9.3.
+
+Users of the iPhone 5S or earlier, or the iPad Air and earlier, found that updating to iOS 9.3 would require their Apple ID password after installation and lock their devices in an unusable state if they couldn’t remember it.
+
+Apple released a second edition of the iOS 9.3 update for these older devices, which allows users to skip the Apple ID check before the device is activated and boot it up, as is normally the case with iOS updates. Those users locked out of their iPhones and iPads could plug the device into their computer and apply the updated iOS 9.3 to unbrick them.
+
+Booking.com bug
+Now another bug has been revealed to be caused by Apple’s Universal Links feature, which allows apps to claim ownership of particular web links, opening in say the Guardian app rather than theguardian.com in mobile Safari.
+
+Although the bug – which causes apps including Mail, Messages and Safari to crash when a link is tapped – is not confined to iOS 9.3, users began to complain in larger numbers after the update.
+
+Developers isolated the problem to the Booking.com app. Steve Troughton-Smith and Ben Collier discovered that the app had a 2.3MB Universal Links essentially listing every link on the Booking.com site. The file appears to cause issues via its sheer size as well as within iOS’s Shared Web Credentials system, sending the iPhone or iPad into a crash loop causing it to become unresponsive and drain its batteries faster than normal.
+
+Apps typically use wildcards to indicate that any link with a certain domain, such as Booking.com, will be opened by the dedicated app, rather than listing every link individually, with Universal Links files being only a few kilobytes in size. The Booking.com app has been updated to change the problem file, which will prevent new users from being caught out by the bug, but those who have already been hit by the bug appear still to be affected after the update.
+
+Several users have suggested various reboot tricks to try to recover phones, which require rather elaborate series of steps.
+
+A Booking.com spokesperson said: “We’ve uncovered some issues with the universal linking framework, which appear to be an issue specific to Apple iOS 9.3. We understand they are in the process of correcting, and we’re offering any help we can to help them expedite a resolution.”
+
+Apple said it was aware of the problem. A permanent fix for users will probably require an update to iOS to correct the error and limit further damage caused by other apps doing a similar thing.

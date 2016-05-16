@@ -1,0 +1,15 @@
+Application Lifecycle Management
+
+Application Life cycle Management is the continuous process of managing the life of an application. Although some people equate the application lifecycle with the software development lifecycle, it comprises much more. In fact, an application’s lifecycle includes the entire time during which an organization spends money on it, from the initial idea to the end of the application’s life.
+
+THE THREE ASPECTS OF APPLICATION LIFECYCLE MANAGEMENT
+
+Application Life cycle Management can be divided into three distinct areas: Governance, Development, and Operations.
+
+An application’s life cycle begins with its creation, proceeds to deployment and production, and ends in removal from service when the application no longer has business value. Governance, which encompasses all of the decision making and project management for the application, extends over this entire time. The purpose of Governance is to make sure the application always provides what the business needs and to ensure an ongoing understanding of the application’s benefits and costs. Because good Governance allows businesses to maximize the value of their applications, in many ways, it’s the most important aspect of Application Life cycle Management.
+
+Development, the process of actually creating the application, happens between creation and deployment. For most applications, the Development process reappears several more times in the application’s lifetime, both for upgrades and for wholly new versions. Note that for some applications, the money spent on these updates and new versions can significantly exceed the original development costs. Modern software development can typically be thought of as a series of iterations. Each iteration contains some requirements definition, some design, some development, and some testing. (This iterative style of development isn’t always appropriate”? more traditional methods are better for some projects”?but it’s becoming the norm in many areas.)
+
+Every deployed application must be monitored and managed. Operations, the work required to run and manage the application, typically begins shortly before deployment and runs continuously until the application is removed from service.
+
+The three aspects of Application Lifecycle Management are tightly connected, and any organization that aspires to maximize the business value of custom software will have to do all three well. A number of vendors, such as Apprenda, provide tools that can make this easier.

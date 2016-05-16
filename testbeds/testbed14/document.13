@@ -1,0 +1,39 @@
+Parallelizing Tableaux-Based
+Description Logic Reasoning
+Thorsten Liebig and Felix M¨uller
+Inst. of AI, University of Ulm, D-89069 Ulm, Germany
+thorsten.liebig@uni-ulm.de,
+felix.mueller@uni-ulm.de
+Abstract. Practical scalability of Description Logic (DL) reasoning is
+an important premise for the adoption of OWL in a real-world setting.
+Many highly efficient optimizations for the DL tableau calculus have
+been invented over the last decades. None of them aimed at parallelizing
+the tableau algorithm itself. This paper describes our approach for
+concurrent computation of the nondeterministic choices inherent to the
+standard tableau procedure. We discuss how this interrelates with the
+well-known optimization techniques and present first promising performance
+results when benchmarking our prototypical reasoner UUPR (Ulm
+University Parallel Reasoner) with a selection of established DL systems.
+1 Motivation
+Tableaux-based algorithms have shown to be an adequate method in order to
+implement Description Logic (DL) reasoning services for many practical usecases
+of moderate size. However, scalability of OWL reasoning is still an actual
+challenge of DL research [6]. Recent optimizations have shown significant increase
+in speed for answering queries with respect to large volumes of individual data
+under specific conditions. Unfortunately, almost all optimizations typically do
+come with some restriction in expressivity and end-users have to take care which
+approach to choose for a particular language fragment.
+On the other hand, current processor families typically pool more than one processing
+unit on a single chip. Recent consumer desktops even have two quad-core
+processors on board. Today’s reasoning engines unfortunately do not distribute
+their work load in such a setting. This is an unnecessary waste of computing power.
+Clearly, parallel computation can only reduce processing time by a factor which is
+limited by the available processing units but has the potential of being applicable
+without any restriction especially to the most “costly” cases.
+This paper describes how to parallelize the well-known tableau algorithm as
+utilized sequentially within reasoning systems such as RacerPro, FaCT++, or
+Pellet. Our approach aims at parallelizing the tableau procedure itself rather
+than executing various instances of this procedure in parallel. The latter is a
+naive kind of parallelization whose synchronization may create some problems.
+This is because an optimized computation of the concept hierarchy does not
+consist of independent tasks as it will exploit previous subsumption results.

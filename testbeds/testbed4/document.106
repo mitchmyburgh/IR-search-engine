@@ -1,0 +1,58 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Basic Lighting and Re?ection
+Up to this point, we have considered only the geometry of how objects are transformed and projected to images. We now discuss the shading of objects: how the appearance of objects depends, among other things, on the lighting that illuminates the scene, and on the interaction of light with the objects in the scene. Some of the basic qualitative properties of lighting and object re?ectance that we need to be able to model include:
+Light source - There are different types of sources of light, such as point sources (e.g., a small light at a distance), extended sources (e.g., the sky on a cloudy day), and secondary re?ections (e.g., light that bounces from one surface to another).
+Re?ectance - Different objects re?ect light in different ways. For example, diffuse surfaces appear the same when viewed from different directions, whereas a mirror looks very different from different points of view.
+In this chapter, we will develop simpli?ed model of lighting that is easy to implement and fast to compute, and used in many real-time systems such as OpenGL. This model will be an approximation and does not fully capture all of the effects we observe in the real world. In later chapters, we will discuss more sophisticated and realistic models.
+8.1 Simple Re?ection Models
+8.1.1 Diffuse Re?ection
+We begin with the diffuse re?ectance model. A diffuse surface is one that appears similarly bright from all viewing directions. That is, the emitted light appears independent of the viewing location. Let ¯ p be a point on a diffuse surface with normal ~n, light by a point light source in direction ~s from the surface. The re?ected intensity of light is given by:
+Ld(¯ p) = rd I max(0,~s·~n) (34) where I is the intensity of the light source, rd is the diffuse re?ectance (or albedo) of the surface, and ~s is the direction of the light source. This equation requires the vectors to be normalized, i.e., ||~s|| = 1,||~n = 1||. The ~s·~n term is called the foreshortening term. When a light source projects light obliquely at a surface, that light is spread over a large area, and less of the light hits any speci?c point. For example, imagine pointing a ?ashlight directly at a wall versus in a direction nearly parallel: in the latter case, the light from the ?ashlight will spread over a greater area, and individual points on the wall will not be as bright.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 51
+CSC418 / CSCD18 / CSC2504 Basic Lighting and Re?ection
+For color rendering, we would specify the re?ectance in color (as (rd,R,rd,G,rd,B)), and specify the light source in color as well (IR,IG,IB). The re?ected color of the surface is then:
+Ld,R(¯ p) = rd,R IR max(0,~s·~n) (35) Ld,G(¯ p) = rd,G IG max(0,~s·~n) (36) Ld,B(¯ p) = rd,B IB max(0,~s·~n) (37)
+8.1.2 Perfect Specular Re?ection For pure specular (mirror) surfaces, the incident light from each incident direction ~ di is re?ected toward a unique emittant direction ~ de. The emittant direction lies in the same plane as the incident direction ~ di and the surface normal~n, and the angle between~n and ~ de is equal to that between~n and ~ di. One can show that the emittant direction is given by ~ de = 2(~n· ~ di)~n- ~ di. (The derivation was
+ded i
+n
+covered in class). In perfect specular re?ection, the light emitted in direction ~ de can be computed by re?ecting ~ de across the normal (as 2(~n· ~ de)~n- ~ de), and determining the incoming light in this direction. (Again, all vectors are required to be normalized in these equations).
+8.1.3 General Specular Re?ection
+Many materials exhibit a signi?cant specular component in their re?ectance. But few are perfect mirrors. First, most specular surfaces do not re?ect all light, and that is easily handled by introducing a scalar constant to attenuate intensity. Second, most specular surfaces exhibit some form of off-axis specular re?ection. That is, many polished and shiny surfaces (like plastics and metals) emit light in the perfect mirror direction and in some nearby directions as well. These off-axis specularities look a little blurred. Good examples are highlights on plastics and metals.
+More precisely, the light from a distant point source in the direction of ~s is re?ected into a range of directions about the perfect mirror directions m~ = 2(~n·~s)~n-~s. One common model for this is the following: Ls(~ de) = rsI max(0,m~· ~ de)a, (38) where rs is called the specular re?ection coef?cient I is the incident power from the point source, and a = 0 is a constant that determines the width of the specular highlights. As a increases, the effective width of the specular re?ection decreases. In the limit as a increases, this becomes a mirror.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 52
+CSC418 / CSCD18 / CSC2504 Basic Lighting and Re?ection
+-2 -1.5 -1 -0.5 0 0.5 1 1.5 2 0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+Specularity as a function of a and f
+f
+max(0,cosf)a
+a = .1 a = .5 a = 1 a = 2 a = 10
+Figure 3: Plot of specular intensity as a function of viewing angle f.
+The intensity of the specular region is proportional to max(0,cosf)a, where f is the angle between m~ and ~ de. One way to understand the nature of specular re?ection is to plot this function, see Figure 3.
+8.1.4 Ambient Illumination
+The diffuse and specular shading models are easy to compute, but often appear arti?cial. The biggest issue is the point light source assumption, the most obvious consequence of which is that any surface normal pointing away from the light source (i.e., for which ~s ·~n < 0) will have a radiance of zero. A better approximation to the light source is a uniform ambient term plus a point light source. This is a still a remarkably crude model, but it's much better than the point source by itself. Ambient illumintation is modeled simply by:
+La(¯ p) = ra Ia (39)
+where ra is often called the ambient re?ection coef?cient, and Ia denotes the integral of the uniform illuminant.
+8.1.5 Phong Re?ectance Model
+The Phong re?ectance model is perhaps the simplest widely used shading model in computer graphics. It comprises a diffuse term (Eqn (81)), an ambient term (Eqn (82)), and a specular term
+Copyright c
+2005 David Fleet and Aaron Hertzmann 53
+CSC418 / CSCD18 / CSC2504 Basic Lighting and Re?ection
+(Eqn (85)):
+L(¯ p, ~ de) = rd Id max(0,~s·~n) + ra Ia + rsIs max(0,m~· ~ de)a, (40)
+where • Ia, Id, and Ir are parameters that correspond to the power of the light sources for the ambient, diffuse, and specular terms; • ra, rd and rs are scalar constants, called re?ection coef?cients, that determine the relative magnitudes of the three re?ection terms; • a determines the spread of the specurlar highlights; • ~n is the surface normal at ¯ p; • ~s is the direction of the distant point source; • m~ is the perfect mirror direction, given ~n and ~s; and • and ~ de is the emittant direction of interest (usually the direction of the camera).
+In effect, this is a model in which the diffuse and specular components of re?ection are due to incident light from a point source. Extended light sources and the bouncing of light from one surface to another are not modeled except through the ambient term. Also, arguably this model has more parameters than the physics might suggest; for example, the model does not constrain the parameters to conserve energy. Nevertheless it is sometimes useful to give computer graphics practitioners more freedom in order to acheive the appearance they're after.

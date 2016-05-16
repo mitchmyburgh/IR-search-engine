@@ -1,0 +1,193 @@
+
+      In Topological Sort an ordering of the vertices in a directed acyclic graph, such that if there is a path from u to v, then v appears after u in the ordering. Could you please explain topological sort and its complexity ? 
+       24.10  
+        Manali  
+        Posted 2014-01-20 19:50:46 
+       Topological sorting is useful for defining the order things must be done. DAG (directed acyclic graph) can model the problem and the DFS can produce a sort that defines one valid ordering of paths to follow. 
+       Lets take look at this example below: 
+       Question ::  
+       Answer 
+       For better explanation go through the video below :: 
+         5 
+         Marked as Insightful 
+         Link  
+       154.15  
+        Antonio   
+        Posted 2014-09-21 23:10:02 
+       Speaking in general,a valid sequences of task is known as topological sorting. 
+       It is a term in computer science used for referring to the ordering of vertices linearly from u to v, written as uv which is directed in a graph. Vertices of graph depicts the task that needs to be performed and edges depicts the constraints over that task. Topological sorting is applicable only for directed acyclic graph. While performing topological sort, temporary stack is used. 
+       For one graph, there could be more than one topological sort. One mandatory condition every topological sort need to follow, the first vertex in every topological sort is always a vertex which has no incoming edges. 
+       Example 1: 
+       Here the topological sort will “5 4 2 3 1 0" or “4 5 2 3 1 0". 
+       Example 2: 
+       After topological sorting, it would be 
+       When we talk about topological application, it is specifically used for scheduling jobs, logic synthesis, data serialization, resolving symbol dependencies in linker. 
+         1 
+         Marked as Insightful 
+         Link  
+       120.45  
+        Emily  
+        Posted 2014-09-28 19:00:01 
+       Speaking in general,a valid sequences of task is known as topological sorting. It is a term in computer science used for referring to the ordering of vertices linearly from u to v, written as uv which is directed in a graph. Vertices of graph depicts the task that needs to be performed and edges depicts the constraints over that task. Topological sorting is applicable only for directed acyclic graph. While performing topological sort, temporary stack is used. For one graph, there could be more than one topological sort. One mandatory condition every topological sort need to follow, the first vertex in every topological sort is always a vertex which has no incoming edges. 
+       Example 1:  
+       Here the topological sort will “5 4 2 3 1 0" or “4 5 2 3 1 0". 
+       Example 2:  
+       After topological sorting, it would be 
+       When we talk about topological application, it is specifically used for scheduling jobs, logic synthesis, data serialization, resolving symbol dependencies in linker. 
+         0 
+         Marked as Insightful 
+         Link  
+   Recommended Discussions
+    Difference between space complexity and auxiliary space? 
+    How can we efficiently check if a number is a Fibonacci number or not without using brute force method? 
+    What is Dutch national flag problem in sorting techniques? 
+    What is the use of sentinel node in linked lists? 
+    Sum of factorial of digits is the number itself! 
+   Recommended Articles
+    A courier guy stuck with NP Problem! 
+    Fibonacci series and Dynamic programming 
+    Collaborative Filtering: A Recommender System  
+    Sign up for free 
+     to share your opinion.  Already have an account? 
+    Sign in to post opinion 
+    × 
+    Modal title 
+     ... 
+    Close 
+    Save changes 
+    × 
+    Notifications 
+    Show all 
+    Close 
+    Clear all 
+    × 
+    Features 
+    Show all 
+    Close 
+    Clear all 
+              &times;
+              " data-tagtitle="" data-titlelower="" class="tag-desc ">
+       alert-messages">
+        &times;
+        ">
+          " height=48 width=48>
+       0) { %>
+      Following discussions
+          ">
+          You have  new  1 ? 'opinions' : 'opinion' %> on discussion
+      " + actor.name + " posted an opinion on discussion";
+        } else if ("opinionlike" === st) {
+          url = "/" + ['topic', source.discussion_id, 'opinion', source.opinion_id].join("/");
+          message = "" + actor.name + " marked opinion as insightful on discussion";
+        } else if ("follower" === st) {
+          url = '/profile/' + notification.actor.id;
+          message = "" + actor.name + " followed you";
+        } else if ("messageconnection" === st) {
+          url = "/message";
+          message = "" + actor.name + " wants to add you in message network";
+        } else if ("reply" === st) {
+          url = "/" + ['topic', notification.parent.discussion_id, 'opinion', notification.source.opinion_id].join("/");
+          message = "" + actor.name + " has replied to your opinion";
+        } else if ("discussionreply" === st) {
+          url = "/" + ['topic', notification.parent_id].join("/");
+          message = "" + actor.name + " has replied to your discussion";
+        } else if ("user" === st) {
+          if (!nt.parent_type || !nt.parent) return;
+          var pt = nt.parent_type.toLowerCase(),
+              p = nt.parent;
+          if (pt === 'opinion') {
+            url = "/" + ['topic', p.discussion_id, 'opinion', p.id].join("/");
+            message = "" + actor.name + " mentioned you on discussion";
+          } else if (pt === 'reply') {
+            url = "/" + ['topic', p.discussion_id, 'opinion', p.opinion_id].join("/");
+            message = "" + actor.name + " mentioned you on opinion's reply";
+          } else if (pt === 'discussionreply') {
+            url = "/" + ['topic', p.discussion_id].join("/");
+            message = "" + actor.name + " mentioned you on discussion's reply";
+          }
+        } else if('answer' === st){
+            url = "/" + ['question', parent.id, 'opinion', source.id].join("/");
+            message = "Congratulations! " + actor.name + ", your answer has been approved!";
+        }
+      %>
+      ">
+       0) { %>
+      Personal notifications
+      " + actor.name + " posted an opinion on discussion";
+        } else if ("opinionlike" === st) {
+          url = "/" + ['topic', source.discussion_id, 'opinion', source.opinion_id].join("/");
+          message = "" + actor.name + " marked opinion as insightful on discussion";
+        } else if ("follower" === st) {
+          url = '/profile/' + notification.actor.id;
+          message = "" + actor.name + " followed you";
+        } else if ("messageconnection" === st) {
+          url = "/message";
+          message = "" + actor.name + " wants to add you in message network";
+        } else if ("reply" === st) {
+          url = "/" + ['topic', notification.parent.discussion_id, 'opinion', notification.source.opinion_id].join("/");
+          message = "" + actor.name + " has replied to your opinion";
+        } else if ("discussionreply" === st) {
+          url = "/" + ['topic', notification.parent_id].join("/");
+          message = "" + actor.name + " has replied to your discussion";
+        } else if ("user" === st) {
+          if (!nt.parent_type || !nt.parent) return;
+          var pt = nt.parent_type.toLowerCase(),
+              p = nt.parent;
+          if (pt === 'opinion') {
+            url = "/" + ['topic', p.discussion_id, 'opinion', p.id].join("/");
+            message = "" + actor.name + " mentioned you on opinion";
+          } else if (pt === 'reply') {
+            url = "/" + ['topic', p.discussion_id, 'opinion', p.opinion_id].join("/");
+            message = "" + actor.name + " mentioned you on opinion's reply";
+          } else if (pt === 'discussionreply') {
+            url = "/" + ['topic', p.discussion_id].join("/");
+            message = "" + actor.name + " mentioned you on discussion's reply";
+          }
+        } else if('answer' === st){
+            url = "/" + ['question', notification.parent_id, 'answer', source.id].join("/");
+            message = "Congratulation! " + notification.user.name + ", your answer has been approved!";
+        }
+      %>
+      ">
+       0) { %>
+          New Features
+          ">
+            &times;
+            Cancel
+            OK
+try{ clicky.init(100815043); }catch(e){} 
+    $.timeago.settings.allowFuture = true;
+    $.timeago.settings.strings.suffixFromNow = "";
+    setTimeout(function(){
+      $('.alert-messages').fadeTo(2000, 500).slideUp(500, function(){
+        $(this).alert('close');
+      });
+    }, 4000);
+    " data-user="">
+      ">
+        " width="48" height="48" alt="">
+        ">
+         Posted ">
+        /opinion//reply//edit">
+        " data-backurl="/topic//opinion/" data-reply="">
+            /reply//edit">
+            " data-backurl="/topic/" data-opinion="">
+      " data-user="">
+        ">
+      " href="/profile/">
+        " width="48" height="48" alt="">
+            ">
+            " data-backurl="" data-opinion="">
+        ">
+            ">
+             Posted ">
+              Outstanding opinion
+            ">
+          ">Reply
+            ">
+            " data-discussion="">Marked as Insightful
+            " data-discussion="">
+          = 30) { %>
+            ">
+            " data-discussion="">
+ 

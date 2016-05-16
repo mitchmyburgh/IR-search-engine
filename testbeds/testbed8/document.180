@@ -1,0 +1,10 @@
+Cut[edit]
+Our cut operation will break a preferred path into two parts at a given node, a top part and a bottom part. More formally, it'll partition an auxiliary tree into two auxiliary trees, such that one contains all nodes at or above a certain depth in the reference tree, and the other contains all nodes below that depth. As in join, note that the top part has two nodes that bracket the bottom part. Thus, we can simply split on each of these two nodes to divide the path into three parts, then concatenate the two outer ones so we end up with two parts, the top and bottom, as desired.
+Analysis[edit]
+In order to bound the competitive ratio for tango trees, we must find a lower bound on the performance of the optimal offline tree that we use as a benchmark. Once we find an upper bound on the performance of the tango tree, we can divide them to bound the competitive ratio.
+Interleave Bound[edit]
+Main article: Interleave lower bound
+To find a lower bound on the work done by the optimal offline binary search tree, we again use the notion of preferred children. When considering an access sequence (a sequence of searches), we keep track of how many times a reference tree node's preferred child switches. The total number of switches (summed over all nodes) gives anasymptotic lower bound on the work done by any binary search tree algorithm on the given access sequence. This is called the interleave lower bound.[1]
+Tango Tree[edit]
+In order to connect this to tango trees, we will find an upper bound on the work done by the tango tree for a given access sequence. Our upper bound will be  , where k is the number of interleaves.
+The total cost is divided into two parts, searching for the element, and updating the structure of the tango tree to maintain the proper invariants (switching preferred children and re-arranging preferred paths).

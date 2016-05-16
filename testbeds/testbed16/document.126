@@ -1,0 +1,19 @@
+PREDICTING THE GREAT CLOUD SHAKEOUT – DON’T BECOME CLOUDKILL
+
+Setting aside the shameless cloud-washing that’s going on from some vendors, there are a lot of cloud service providers (CSPs – providers of cloud) today.  Many of those listed in Sys-Con’s Top 150 report are CSPs, while others are providing extensions, tools or services for clouds.  Everybody’s a cloud provider these days – and as Larry Ellison recently said “All boats are cloud boats.”
+
+Every telco, every hoster, every data center outsourcer, most systems providers and many, many startups are becoming CSPs.  After all, there have been thousands of hosting providers over the past several years competing for your business.  A few were huge, several were large, and most were small but often profitable.  I’m convinced this time it might be different — the cloud provider market will be increasingly consolidated with fewer opportunities for new entrants or profit from the tier 2 or 3 CSPs.  The APIs, data center economics and proprietary platforms will make cloud a much more consolidated market.
+
+The chart below depicts the scenario that I see taking place over the next few years, where the number of new entrants and the hyper-efficiencies gained by the biggest (Amazon, Google, Microsoft) result in razor thin margins that can’t be met by most of the players going forward.  The pricing curve will drive adoption, solidifying the economies of scale by these mega CSPs.
+
+GreatCloudShakeout
+
+One of the ways that the biggest guys will get scale is through completely proprietary cloud stacks that have a marginal cost of $0 to deploy new customers.  Contrast that with the vendor stacks from VMware, 3tera, Enomaly, and VMOps.  If you have to pay money to others based on the number of servers you have, the number of VMs or other components, it puts you at a disadvantage.  You can still win, but your profits will be lower and it will be harder to find the capital to invest to stay competitive.
+
+There are the open source alternatives such as Nebula and OpenNebula, and the VMware-free version of Eucalyptus.  Some will go this route, innovate around the core, and survive.  Others will rely on the vendors or community to keep them competitive and some may not be happy with the results.
+
+This goes back to the excellent recent post by James Urquhart on differentiation.  There are many ways that CSPs can differentiate their offerings, but price is probably not one of them (unless you’re in the mega category).  That said, your premium needs to be reasonable – selling cloud VMs at 5x the price of Amazon is not sustainable in the long run.  Relationships, custom services, security, applications, and other content that’s harder to commoditize needs to be part of your strategy.
+
+I predict that there will be many new CSPs over the next 18 months, but even before the new entrants stop coming many companies will exit the cloud business.  Some exits will be via consolidation/merger, but many will just pull out of unprofitable businesses in the face of blistering competition.  My take is that the great shakeout will be in full force in the 2012 time frame, with a bottom reached over the following 5-10 years.
+
+So, will you be a survivor, or will you be cloudkill?

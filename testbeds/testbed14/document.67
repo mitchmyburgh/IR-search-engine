@@ -1,0 +1,83 @@
+﻿In the
+recent
+years,  we
+developed  a
+methodology  for
+testing  the  ontological
+adequacy
+of  taxonomic  links
+called
+OntoClean  [14,  13],  which  was
+used  as   a
+tool
+for  a  first
+systematic  analysis  of
+WordNet’s
+upper  level  taxonomy  of  nouns  [6].  The   first
+version of OntoClean was based on  an  ontology  of  properties
+(unary
+universals
+),  characterized by means  of  meta-properties.  We
+are
+now  complementing  OntoClean  with  an
+ontology of
+particulars
+ called DOLCE  (Descriptive
+Ontology  for  Linguistic
+and
+Cognitive Engineering), which is presented here in some detail.
+DOLCE  is  the  first
+module  of  a
+Library  of  Foundational
+Ontologies
+  being
+developed
+within  the
+WonderWeb
+project
+1
+.   In   contrast   with   “lightweight”
+ontologies,
+which focus on a minimal terminological structure (often just  a  taxonomy)  fitting  the
+needs  of  a
+specific
+community,  the  main  purpose  of
+foundational
+ontologies  is  to
+negotiate meaning
+, either  for  enabling
+effective  cooperation
+among  multiple
+artificial
+agents, or for
+establishing consensus
+ in a mixed society where artificial  agents
+cooperate
+with  human  beings.  The
+WonderWeb
+vision  is  to
+have
+a  library
+  of  such  ontologies,
+reflecting
+different
+ontological  choices.  The
+idea  is   to
+make  the  rationales  and
+alternatives  underlying  such  choices  as  
+explicit  as  possible,  as  a  result  of  a
+careful
+isolation  of  the
+fundamental
+ontological  options
+and
+their  formal  relationships.  The
+library would form a network of different but systematically related modules  which  the
+various  Semantic
+Web
+applications
+can
+commit  to,
+according  to
+their  ontological
+assumptions.A

@@ -1,0 +1,29 @@
+Refinement
+
+The increased use of high-level languages introduced a requirement for low-level programming languages or system programming languages. These languages, to varying degrees, provide facilities between assembly languages and high-level languages, and can be used to perform tasks which require direct access to hardware facilities but still provide higher-level control structures and error-checking.
+
+The period from the 1960s to the late 1970s brought the development of the major language paradigms now in use:
+
+    APL introduced array programming and influenced functional programming.[37]
+    ALGOL refined both structured procedural programming and the discipline of language specification; the "Revised Report on the Algorithmic Language ALGOL 60" became a model for how later language specifications were written.
+    Lisp, implemented in 1958, was the first dynamically typed functional programming language
+    In the 1960s, Simula was the first language designed to support object-oriented programming; in the mid-1970s, Smalltalk followed with the first "purely" object-oriented language.
+    C was developed between 1969 and 1973 as a system programming language for the Unix operating system, and remains popular.[38]
+    Prolog, designed in 1972, was the first logic programming language.
+    In 1978, ML built a polymorphic type system on top of Lisp, pioneering statically typed functional programming languages.
+
+Each of these languages spawned descendants, and most modern programming languages count at least one of them in their ancestry.
+
+The 1960s and 1970s also saw considerable debate over the merits of structured programming, and whether programming languages should be designed to support it.[39] Edsger Dijkstra, in a famous 1968 letter published in the Communications of the ACM, argued that GOTO statements should be eliminated from all "higher level" programming languages.[40]
+Consolidation and growth
+A selection of textbooks that teach programming, in languages both popular and obscure. These are only a few of the thousands of programming languages and dialects that have been designed in history.
+
+The 1980s were years of relative consolidation. C++ combined object-oriented and systems programming. The United States government standardized Ada, a systems programming language derived from Pascal and intended for use by defense contractors. In Japan and elsewhere, vast sums were spent investigating so-called "fifth generation" languages that incorporated logic programming constructs.[41] The functional languages community moved to standardize ML and Lisp. Rather than inventing new paradigms, all of these movements elaborated upon the ideas invented in the previous decades.
+
+One important trend in language design for programming large-scale systems during the 1980s was an increased focus on the use of modules, or large-scale organizational units of code. Modula-2, Ada, and ML all developed notable module systems in the 1980s, which were often wedded to generic programming constructs.[42]
+
+The rapid growth of the Internet in the mid-1990s created opportunities for new languages. Perl, originally a Unix scripting tool first released in 1987, became common in dynamic websites. Java came to be used for server-side programming, and bytecode virtual machines became popular again in commercial settings with their promise of "Write once, run anywhere" (UCSD Pascal had been popular for a time in the early 1980s). These developments were not fundamentally novel, rather they were refinements of many existing languages and paradigms (although their syntax was often based on the C family of programming languages).
+
+Programming language evolution continues, in both industry and research. Current directions include security and reliability verification, new kinds of modularity (mixins, delegates, aspects), and database integration such as Microsoft's LINQ.
+
+Fourth-generation programming languages (4GL) are a computer programming languages which aim to provide a higher level of abstraction of the internal computer hardware details than 3GLs. Fifth generation programming languages (5GL) are programming languages based on solving problems using constraints given to the program, rather than using an algorithm written by a programmer.

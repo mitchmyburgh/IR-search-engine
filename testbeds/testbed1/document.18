@@ -1,0 +1,37 @@
+Apache_Cordova
+'''Apache Cordova''' (formerly '''PhoneGap''') is a popular  originally created by .  purchased Nitobi in 2011, rebranded it as PhoneGap, and later released an open source version of the software called Apache Cordova. Apache Cordova enables  s to build  for mobile devices using , , and  instead of relying on platform-specific s like those in , , or . It enables wrapping up of CSS, HTML, and JavaScript code depending upon the platform of the device. It extends the features of HTML and JavaScript to work with the device. The resulting applications are hybrid, meaning that they are neither truly native mobile application (because all layout rendering is done via Web views instead of the platform's native UI framework) nor purely Web-based (because they are not just Web apps, but are packaged as apps for distribution and have access to native device APIs). Mixing native and hybrid code snippets has been possible since version 1.9.
+The software was previously called just "PhoneGap", then "Apache Callback".
+ As , Apache Cordova allows wrappers around it, such as  or .
+PhoneGap is Adobes ''productized'' version and ecosystem on top of Cordova. Like PhoneGap, many other tools and frameworks are also built on top of Cordova, including , , , the , and the . These tools use Cordova, and not PhoneGap for their core tools.
+Contributors to the Apache Cordova project include , , , , , , , and others.
+==History==
+First developed at an iPhoneDevCamp event in San Francisco, PhoneGap went on to win the People's Choice Award at 's 2009 Web 2.0 Conference, and the framework has been used to develop many apps.  has confirmed that the framework has its approval, even with the new 4.0 developer license agreement changes. The PhoneGap framework is used by several mobile application platforms such as , , , , and  as the backbone of their mobile client development engine.
+Adobe officially announced the acquisition of Nitobi Software (the original developer) on October 4, 2011. Coincident with that, the PhoneGap code was contributed to the  to start a new project called Apache Cordova. The project's original name, Apache Callback, was viewed as too generic. Then, it also appears in Adobe Systems as ''Adobe PhoneGap'' and also as ''Adobe Phonegap Build''.
+Early versions of PhoneGap required an Apple computer to create iOS apps and a Windows computer to create Windows Mobile apps. After September 2012, Adobe's PhoneGap Build service allows programmers to upload , , and  source code to a " " that generates apps for every supported platform.
+Klint Finley.
+.
+2012.
+==Design and rationale==
+The core of Apache Cordova applications use  and  for their rendering and  for their logic. HTML5 provides access to underlying hardware such as the accelerometer, camera, and . However, browsers' support for HTML5-based device access is not consistent across mobile browsers, particularly older versions of Android. To overcome these limitations, Apache Cordova embeds the HTML5 code inside a native  on the device, using a  to access the native resources of it.
+Apache Cordova can be extended with native , allowing developers to add more functionalities that can be called from JavaScript, making it communicate directly between the native layer and the HTML5 page. These plugins allow access to the device's accelerometer, camera, compass, file system, microphone, and more.
+However, the use of Web-based technologies leads some Apache Cordova applications to run slower than native applications with similar functionality.  warns that applications may be rejected by  for being too slow or not feeling "native" enough (having appearance and functionality consistent with what users have come to expect on the platform). This can be an issue for some Apache Cordova applications.
+==Supported platforms==
+Apache Cordova currently supports development for the s Apple , , , , Google , LG , Microsoft  (7 and 8), Nokia  OS,  (SDK 2.x), and . The table below is a list of supported features for each operating system.
+==See also==
+* 
+* 
+* 
+==References==
+==Bibliography==
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+==External links==
+* 
+*

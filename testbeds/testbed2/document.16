@@ -1,0 +1,78 @@
+Evolutionary robotics (ER) is a methodology that uses evolutionary computation to develop controllers for autonomous robots. Algorithms in ER frequently operate on populations of candidate controllers, initially selected from some distribution. This population is then repeatedly modified according to a fitness function. In the case of genetic algorithms (or "GAs"), a common method in evolutionary computation, the population of candidate controllers is repeatedly grown according to crossover, mutation and other GA operators and then culled according to the fitness function. The candidate controllers used in ER applications may be drawn from some subset of the set of artificial neural networks, although some applications (including SAMUEL, developed at the Naval Center for Applied Research in Artificial Intelligence) use collections of "IF THEN ELSE" rules as the constituent parts of an individual controller. It is theoretically possible to use any set of symbolic formulations of a control law (sometimes called a policy in the machine learning community) as the space of possible candidate controllers. Artificial neural networks can also be used for robot learning outside of the context of evolutionary robotics. In particular, other forms of reinforcement learning can be used for learning robot controllers.
+Developmental robotics is related to, but differs from, evolutionary robotics. ER uses populations of robots that evolve over time, whereas DevRob is interested in how the organization of a single robot's control system develops through experience, over time.
+
+
+== History ==
+The foundation of ER was laid with work at the national research council in Rome in the 90s, but the initial idea of encoding a robot control system into a genome and have artificial evolution improve on it dates back to the late 80s.
+In 1992 and 1993 three research groups, one surrounding Floreano and Mondada at the EPFL in Lausanne and a second involving Cliff, Harvey, and Husbands from COGS at the University of Sussex and a third from the University of Southern California involved M. Anthony Lewis and Andrew H Fagg reported promising results from experiments on artificial evolution of autonomous robots. The success of this early research triggered a wave of activity in labs around the world trying to harness the potential of the approach.
+Lately, the difficulty in "scaling up" the complexity of the robot tasks has shifted attention somewhat towards the theoretical end of the field rather than the engineering end.
+
+
+== Objectives ==
+Evolutionary robotics is done with many different objectives, often at the same time. These include creating useful controllers for real-world robot tasks, exploring the intricacies of evolutionary theory (such as the Baldwin effect), reproducing psychological phenomena, and finding out about biological neural networks by studying artificial ones. Creating controllers via artificial evolution requires a large number of evaluations of a large population. This is very time consuming, which is one of the reasons why controller evolution is usually done in software. Also, initial random controllers may exhibit potentially harmful behaviour, such as repeatedly crashing into a wall, which may damage the robot. Transferring controllers evolved in simulation to physical robots is very difficult and a major challenge in using the ER approach. The reason is that evolution is free to explore all possibilities to obtain a high fitness, including any inaccuracies of the simulation. This need for a large number of evaluations, requiring fast yet accurate computer simulations, is one of the limiting factors of the ER approach.
+In rare cases, evolutionary computation may be used to design the physical structure of the robot, in addition to the controller. One of the most notable examples of this was Karl Sims' demo for Thinking Machines Corporation.
+
+
+== Motivation for evolutionary robotics ==
+Many of the commonly used machine learning algorithms require a set of training examples consisting of both a hypothetical input and a desired answer. In many robot learning applications the desired answer is an action for the robot to take. These actions are usually not known explicitly a priori, instead the robot can, at best, receive a value indicating the success or failure of a given action taken. Evolutionary algorithms are natural solutions to this sort of problem framework, as the fitness function need only encode the success or failure of a given controller, rather than the precise actions the controller should have taken. An alternative to the use of evolutionary computation in robot learning is the use of other forms of reinforcement learning, such as q-learning, to learn the fitness of any particular action, and then use predicted fitness values indirectly to create a controller.
+
+
+== Conferences and institutes ==
+
+
+=== Main conferences ===
+GECCO
+IEEE Congress on Evolutionary Computation
+European Conference on Artificial Life
+ALife
+
+
+=== Academic institutes and researchers ===
+Chalmers University of Technology: Peter Nordin, The Humanoid Project
+University of Sussex: Inman Harvey, Phil Husbands, Ezequiel Di Paolo
+Consiglio Nazionale delle Ricerche (CNR): Stefano Nolfi
+EPFL: Dario Floreano
+University of Zürich: Rolf Pfeifer
+Cornell University: Hod Lipson
+University of Vermont: Josh Bongard
+Indiana University: Randall Beer
+Center for Robotics and Intelligent Machines, North Carolina State University: Eddie Grant, Andrew Nelson
+University College London: Peter J. Bentley
+The IDSIA Robotics Lab: Juergen Schmidhuber, Juxi Leitner
+U.S. Naval Research Laboratory
+University of Osnabrueck, Neurocybernetics Group: Frank Pasemann
+Evolved Virtual Creatures by Karl Sims (GenArts)
+Ken Rinaldo artificial life robotics
+European Space Agency's Advanced Concepts Team: Dario Izzo
+University of the Basque Country (UPV-EHU): Robótica Evolutiva, Pablo González-Nalda (in Spanish) PDF (in English)
+University of Plymouth: Angelo Cangelosi, Davide Marocco, Fabio Ruini, * Martin Peniak
+Heriot-Watt University: Patricia A. Vargas
+Pierre and Marie Curie University, ISIR: Stephane Doncieux, Jean-Baptiste Mouret
+Paris-Sud University and INRIA, IAO/TAO: Nicolas Bredeche
+RIKEN Brain Science Institute
+Karlsruhe Institute of Technology, Institute of Applied Informatics and Formal Description Methods: Lukas Koenig
+
+
+== See also ==
+
+Artificial intelligence
+Cybernetics
+Cognitive robotics
+Evolutionary computation
+Roboticist
+Robotics
+Robot kit
+Universal Darwinism
+
+
+== References ==
+
+Evolutionary Robotics by Stefano Nolfi and Dario Floreano. (2000). ISBN 0-262-14070-5
+Advances in the Evolutionary Synthesis of Intelligent Agents by Mukesh Patel, Vasant Honavar and Karthik Balakrishnan (Ed). Cambridge, MA: MIT Press. (2001). ISBN 0-262-16201-6
+Evolving neuromorphic flight control for a flapping-wing mechanical insect by Boddhu, Sanjay K., and John C. Gallagher. International Journal of Intelligent Computing and Cybernetics 3.1 (2010): 94-116.
+The Horizons of Evolutionary Robotics edited by Patricia A. Vargas, Ezequiel Di Paolo, Inman Harvey and Phil Husbands. (2014). ISBN 9780262026765.
+
+
+== External links ==
+An introduction to Evolutionary Robotics with annotated bibliography
+The Evolutionary Robotics Homepage

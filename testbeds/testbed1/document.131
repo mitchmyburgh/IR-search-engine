@@ -1,0 +1,37 @@
+Apache_Jackrabbit
+'''Apache Jackrabbit''' is an   for the . The Jackrabbit project was started on August 28, 2004, when  licensed an initial implementation of the . Jackrabbit was also used as the  of , specified within the . The project graduated from the  on March 15, 2006, and is now a Top Level Project of the .
+JCR specifies an API for application developers (and application frameworks) to use for interaction with modern content repositories that provide content services such as searching, versioning, transactions, etc.
+==Features==
+* Fine and coarse-grained content access
+* Hierarchical content
+* Structured content 
+* Node types and mixins
+* Property types - text, number, date
+* Binary properties
+* XPath queries
+* SQL queries
+* Unstructured content
+* Import and export
+* Referential integrity
+* Access control
+* Versioning
+* JTA support
+* Observation
+* Locking
+* Clustering
+* Multiple persistence models
+==See also==
+*  - a web framework for building applications on top of Apache Jackrabbit
+*  - an Open Source content management system based on Apache Jackrabbit
+*  - another Open Source JCR implementation
+*  - Open Source  based on Apache Jackrabbit
+*  - Open Source, Enterprise Document Management that uses Apache Jackrabbit
+*  - an Open Source content management system based on Apache Jackrabbit
+*  - Open Source  based on Apache Jackrabbit
+*  - Open Source Collaboration and Learning Environment based on Apache Sling and Apache Jackrabbit
+==References==
+==External links==
+*
+*
+*
+*

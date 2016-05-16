@@ -1,0 +1,106 @@
+Syntax
+Main article: C syntax
+
+C has a formal grammar specified by the C standard.[19] Unlike languages such as FORTRAN 77, C source code is free-form which allows arbitrary use of whitespace to format code, rather than column-based or text-line-based restrictions; however, line boundaries do have significance during the preprocessing phase. Comments may appear either between the delimiters /* and */, or (since C99) following // until the end of the line. Comments delimited by /* and */ do not nest, and these sequences of characters are not interpreted as comment delimiters if they appear inside string or character literals.[20]
+
+C source files contain declarations and function definitions. Function definitions, in turn, contain declarations and statements. Declarations either define new types using keywords such as struct, union, and enum, or assign types to and perhaps reserve storage for new variables, usually by writing the type followed by the variable name. Keywords such as char and int specify built-in types. Sections of code are enclosed in braces ({ and }, sometimes called "curly brackets") to limit the scope of declarations and to act as a single statement for control structures.
+
+As an imperative language, C uses statements to specify actions. The most common statement is an expression statement, consisting of an expression to be evaluated, followed by a semicolon; as a side effect of the evaluation, functions may be called and variables may be assigned new values. To modify the normal sequential execution of statements, C provides several control-flow statements identified by reserved keywords. Structured programming is supported by if(-else) conditional execution and by do-while, while, and for iterative execution (looping). The for statement has separate initialization, testing, and reinitialization expressions, any or all of which can be omitted. break and continue can be used to leave the innermost enclosing loop statement or skip to its reinitialization. There is also a non-structured goto statement which branches directly to the designated label within the function. switch selects a case to be executed based on the value of an integer expression.
+
+Expressions can use a variety of built-in operators and may contain function calls. The order in which arguments to functions and operands to most operators are evaluated is unspecified. The evaluations may even be interleaved. However, all side effects (including storage to variables) will occur before the next "sequence point"; sequence points include the end of each expression statement, and the entry to and return from each function call. Sequence points also occur during evaluation of expressions containing certain operators (&&, ||, ?: and the comma operator). This permits a high degree of object code optimization by the compiler, but requires C programmers to take more care to obtain reliable results than is needed for other programming languages.
+
+Kernighan and Ritchie say in the Introduction of The C Programming Language: "C, like any other language, has its blemishes. Some of the operators have the wrong precedence; some parts of the syntax could be better."[21] The C standard did not attempt to correct many of these blemishes, because of the impact of such changes on already existing software.
+Character set
+
+The basic C source character set includes the following characters:
+
+    Lowercase and uppercase letters: a–z A–Z
+    Decimal digits: 0–9
+    Graphic characters: ! " # % & ' ( ) * + , - . / : ; < = > ? [ \ ] ^ _ { | } ~
+    Whitespace characters: space, horizontal tab, vertical tab, form feed, newline
+
+Newline indicates the end of a text line; it need not correspond to an actual single character, although for convenience C treats it as one.
+
+Additional multibyte encoded characters may be used in string literals, but they are not entirely portable. The latest C standard (C11) allows multinational Unicode characters to be embedded portably within C source text by using \uXXXX or \UXXXXXXXX encoding (where the X denotes a hexadecimal character), although this feature is not yet widely implemented.
+
+The basic C execution character set contains the same characters, along with representations for alert, backspace, and carriage return. Run-time support for extended character sets has increased with each revision of the C standard.
+Keywords
+
+C89 has 32 keywords (reserved words with special meaning):
+
+    auto
+    break
+    case
+    char
+    const
+    continue
+    default
+    do
+
+	
+
+    double
+    else
+    enum
+    extern
+    float
+    for
+    goto
+    if
+
+	
+
+    int
+    long
+    register
+    return
+    short
+    signed
+    sizeof
+    static
+
+	
+
+    struct
+    switch
+    typedef
+    union
+    unsigned
+    void
+    volatile
+    while
+
+C99 adds five more keywords:
+
+    _Bool
+    _Complex
+
+	
+
+    _Imaginary
+    inline
+
+	
+
+    restrict
+
+C11 adds seven more keywords:[22]
+
+    _Alignas
+    _Alignof
+
+	
+
+    _Atomic
+    _Generic
+
+	
+
+    _Noreturn
+    _Static_assert
+
+	
+
+    _Thread_local
+
+Most of the recently added keywords begin with an underscore followed by a capital letter, because identifiers of that form were previously reserved by the C standard for use only by implementations. Since existing program source code should not have been using these identifiers, it would not be affected when C implementations started supporting these extensions to the programming language. Some standard headers do define more convenient synonyms for underscored identifiers. The language previously included a reserved keyword called entry, but this was seldom implemented, and has now been removed as a reserved word.[23]

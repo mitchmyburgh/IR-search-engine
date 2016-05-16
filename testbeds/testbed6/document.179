@@ -1,0 +1,16 @@
+What is a data structure? What are the types of data structures?
+Data structures are used to store data in a computer in an organized fashion. Different types of data structures are:-
+Stack- Works in first in last out order. The element inserted first in stack is removed last.
+Queue- First in First out order. The element inserted first is removed first.
+Linked list- Stored data in a linear fashion.
+Trees- Stores data in a non linear fashion with one root node and sub nodes.
+
+What is a data structure? What are the types of data structures?
+The scheme of organizing related information is known as ‘data structure’.
+
+The types of data structure are:
+Lists: A group of similar items with connectivity to the previous or/and next data items.
+Arrays: A set of homogeneous values
+Records: A set of fields, where each field consists of data belongs to one data type.
+Trees: A data structure where the data is organized in a hierarchical structure. This type of data structure follows the sorted order of insertion, deletion and modification of data items.
+Tables: Data is persisted in the form of rows and columns. These are similar to records, where the result or manipulation of data is reflected for the whole table. 

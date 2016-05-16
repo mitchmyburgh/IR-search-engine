@@ -1,0 +1,40 @@
+A vantage-point tree, or VP tree is a BSP tree which segregates data in a metric space by choosing a position in the space (the "vantage point") and dividing the data points into two partitions: those that are nearer to the vantage point than a threshold, and those that are not. By repeatedly applying this procedure to partition the data into smaller and smaller sets, a tree data structure is created where neighbors in the tree are likely to be neighbors in the space.
+One of its declination is called the multi-vantage point tree, or MVP tree: an abstract data structure for indexing objects from large metric spaces for similarity search queries. It uses more than one point to partition each level.
+
+
+== History ==
+Peter Yianilos claimed that the VP-tree was discovered independently by him (Peter Yianilos) and by Jeffrey Uhlmann. Yet, Uhlmann published this method before Yianilos in 1991. Uhlmann called the data structure a metric tree, the name VP-tree was proposed by Yianilos. Vantage point trees have been generalized to non-metric spaces using Bregman divergences by Nielsen et al.
+
+This iterative partitioning process is similar to that of a k-d tree, but uses circular (or spherical, hyperspherical, etc.) rather than rectilinear partitions. In 2D Euclidean space, this can be visualized as a series of circles segregating the data.
+The VP tree is particularly useful in dividing data in a non-standard metric space into a BSP tree.
+
+
+== Understanding a VP tree ==
+The way a VP tree stores data can be represented by a circle. First, understand that each node of this tree contains an input point and a radius. All the left children of a given node are the points inside the circle and all the right children of a given node are outside of the circle. The tree itself does not need to know any other information about what is being stored. All it needs is the distance function that satisfies the properties of the metric space. Just imagine a circle with a radius. The left children are all located inside the circle and the right children are located outside the circle.
+
+
+== Searching through a VP tree ==
+Suppose there is a need to find the two nearest targets from a given point (The point will be placed relatively close to distance). Since there are no points yet, it is assumed that the middle point (center) is the closest target. Now a variable is needed to keep track of the distance X (This will change if another distance is greater). To determine whether we go to left or right child will depend on the given point. If the point is closer to the radius than the outer shell, search the left child. Otherwise, search the right child. Once the point (the neighbor) is found, the variable will be updated because the distance has increased.
+From here, all the points within the radius have been considered. To complete the search, we will now find the closest point outside the radius (right child) and determine the second neighbor. The search method will be the same, but it will be for the right child.
+
+
+== Advantages of a VP tree ==
+Instead of inferring multidimensional points for domain before the index being built, we build the index directly based on the distance. Doing this, avoids pre-processing steps.
+Updating a VP tree is relatively easy compared to the fast-map approach. For fast maps, after inserting or deleting data, there will come a time when fast-map will have to rescan itself. That takes up too much time and it is unclear to know when the rescanning will start.
+Distance based methods are flexible. It is “able to index objects that are represented as feature vectors of a fixed number of dimensions."
+
+
+== Implementation examples ==
+In Python
+In C
+In Java
+In Java (alternative implementation)
+In JavaScript
+In Ruby
+
+
+== References ==
+
+
+== External links ==
+Understanding VP Trees

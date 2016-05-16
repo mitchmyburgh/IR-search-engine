@@ -1,0 +1,22 @@
+Batik_(software)
+'''Batik''' is a pure- library that can be used to render, generate, and manipulate  graphics.  (SVG is an  markup language for describing two-dimensional .) IBM supported the project and then donated the code to the , where other companies and teams decided to join efforts.
+Batik provides a set of core modules that provide functionality to:
+* Render and dynamically modify SVG content,
+* Transcode SVG content to some raster s, such as ,  and ,
+* Transcode s to SVG (WMF or Windows Metafile Format is the vector format used by  applications),
+* And manage scripting and user events on SVG documents.
+The Batik distribution also contains a ready-to-use SVG browser (called Squiggle) making use of the above modules.
+The name of the library comes from the .
+==Status==
+Batik was long the most conformant existing  implementationalmost 94% of the official SVG tests are OK with the 1.7 version. and  is just a small fraction behind .
+The latest 1.7 version, made available on January 10, 2008, has an "almost full" implementation of the current state of the  specification, a nearly complete implementation of SVG   features, and some of the  late October 2004 working draft (see ).
+==See also==
+*
+*
+* : a mechanism for defining the presentation and interactive behavior of elements described in a namespace other than SVG's
+*
+==References==
+==External links==
+*
+*
+*, SVG Working Group

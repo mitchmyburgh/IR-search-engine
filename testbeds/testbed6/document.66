@@ -1,0 +1,202 @@
+         TechNet
+          Products 
+            Products 
+              Windows  
+              Windows Server  
+              System Center  
+              Browser  
+            &nbsp; 
+              Office  
+              Office 365  
+              Exchange Server  
+            &nbsp; 
+              SQL Server  
+              SharePoint Products  
+              Skype for Business  
+              See all products »  
+          IT Resources 
+            Resources 
+              Evaluation Center  
+              Learning Resources  
+              Microsoft Tech Companion App  
+              Microsoft Technical Communities  
+              Microsoft Virtual Academy  
+              Script Center  
+              Server and Tools Blogs  
+              TechNet Blogs  
+            &nbsp; 
+              TechNet Flash Newsletter  
+              TechNet Gallery  
+              TechNet Library  
+              TechNet Magazine  
+              TechNet Subscriptions  
+              TechNet Video  
+              TechNet Wiki  
+              Windows Sysinternals  
+              Virtual Labs  
+            Solutions 
+              Networking  
+              Cloud and Datacenter  
+              Security  
+              Virtualization  
+          Downloads 
+            Updates 
+              Service Packs  
+              Security Bulletins  
+              Windows Update  
+            Trials 
+              Windows Server 2012 R2  
+              System Center 2012 R2  
+              Microsoft SQL Server 2014 SP1  
+              Windows 8.1 Enterprise  
+              See all trials »  
+            Related Sites 
+              Microsoft Download Center  
+              TechNet Evaluation Center  
+              Drivers  
+              Windows Sysinternals  
+              TechNet Gallery  
+          Training 
+            Training 
+              Expert-led, virtual classes  
+              Training Catalog  
+              Class Locator  
+              Microsoft Virtual Academy  
+              Free Windows Server 2012 courses  
+              Free Windows 8 courses  
+              SQL Server training  
+              Microsoft Official Courses On-Demand  
+            Certifications 
+              Certification overview  
+              MCSA: Windows 10  
+              Windows Server Certification (MCSE)  
+              Private Cloud Certification (MCSE)  
+              SQL Server Certification (MCSE)  
+            Other resources 
+              TechNet Events  
+              Second shot for certification  
+              Born To Learn blog  
+              Find technical communities in your area  
+          Support 
+            Support options 
+              For small and midsize businesses  
+              For enterprises  
+              For developers  
+              For IT professionals  
+              From partners  
+            &nbsp; 
+              For technical support  
+              Support offerings  
+              For home users  
+            More support 
+              Microsoft Premier Online  
+              TechNet Forums  
+              MSDN Forums  
+              Security Bulletins &amp; Advisories  
+              International support solutions  
+              Log a support ticket  
+            Not an IT pro? 
+              Microsoft Customer Support  
+              Microsoft Community Forums  
+       United States (English) 
+      Sign in 
+      Home 
+      Library 
+      Wiki 
+      Learn 
+      Gallery 
+      Downloads 
+      Support 
+      Forums 
+      Blogs 
+   Export (0)  
+   Print  
+  Expand All 
+     TechNet Library 
+     TechNet Archive 
+     Windows Server 2003 
+     Product Help 
+     Windows Server 2003 Product Help 
+     Security 
+     Security Configuration Manager 
+     Security Configuration Manager Concepts 
+     Using Security Configuration Manager 
+     Security Setting Descriptions 
+     Local Policies 
+     Security Options 
+     Accounts: Administrator account status 
+     Accounts: Guest account status 
+     Accounts: Limit local account use of blank passwords to console logon only 
+     Accounts: Rename administrator account 
+     Accounts: Rename guest account 
+     Audit: Audit the access of global system objects 
+     Audit: Audit the use of Backup and Restore privilege 
+     Audit: Shut down system immediately if unable to log security audits 
+     Devices: Allow undock without having to log on 
+     Devices: Allowed to format and eject removable media 
+     Devices: Prevent users from installing printer drivers 
+     Devices: Restrict CD-ROM access to locally logged-on user only 
+     Devices: Restrict floppy access to locally logged-on user only 
+     Devices: Unsigned driver installation behavior 
+     Domain controller: Allow server operators to schedule tasks 
+     Domain controller: LDAP server signing requirements 
+     Domain controller: Refuse machine account password changes 
+     Domain member: Digitally encrypt or sign secure channel data (always) 
+     Domain member: Digitally encrypt secure channel data (when possible) 
+     Domain member: Digitally sign secure channel data (when possible) 
+     Domain member: Maximum machine account password age 
+     Domain member: Require strong (Windows 2000 or later) session key 
+     Domain member: Disable machine account password changes 
+     Interactive logon: Do not display last user name 
+     Interactive logon: Do not require CTRL+ALT+DEL 
+     Interactive logon: Message text for users attempting to log on 
+     Interactive logon: Message title for users attempting to log on 
+     Interactive logon: Number of previous logons to cache (in case domain controller is not available) 
+     Interactive logon: Prompt user to change password before expiration 
+     Interactive logon: Require Domain Controller authentication to unlock 
+     Interactive logon: Require smart card 
+     Interactive logon: Smart card removal behavior 
+     Microsoft network client: Digitally sign communications (always) 
+     Microsoft network client: Digitally sign communications (if server agrees) 
+     Microsoft network client: Send unencrypted password to connect to third-party SMB servers 
+     Microsoft network server: Amount of idle time required before suspending session 
+     Microsoft network server: Digitally sign communications (always) 
+     Microsoft network server: Digitally sign communications (if client agrees) 
+     Microsoft network server: Disconnect clients when logon hours expire 
+     Network access: Allow anonymous SID/Name translation 
+     Network access: Do not allow anonymous enumeration of SAM accounts 
+     Network access: Do not allow anonymous enumeration of SAM accounts and shares 
+     Network access: Do not allow storage of credentials or .NET Passports for network authentication 
+     Network access: Let Everyone permissions apply to anonymous users 
+     Network access: Named pipes that can be accessed anonymously 
+     Network access: Remotely accessible registry paths 
+     Network access: Remotely accessible registry paths and subpaths 
+     Network access: Restrict anonymous access to Named Pipes and Shares 
+     Network access: Shares that can be accessed anonymously 
+     Network access: Sharing and security model for local accounts 
+     Network security: Do not store LAN Manager hash value on next password change 
+     Network security: Force logoff when logon hours expire 
+     Network security: LAN Manager authentication level 
+     Network security: LDAP client signing requirements 
+     Network security: Minimum session security for NTLM SSP based (including secure RPC) clients 
+     Network security: Minimum session security for NTLM SSP based (including secure RPC) servers 
+     Recovery console: Allow automatic administrative logon 
+     Recovery console: Allow floppy copy and access to all drives and all folders 
+     Shutdown: Allow system to be shut down without having to log on 
+     Shutdown: Clear virtual memory pagefile 
+     System cryptography: Force strong key protection for user keys stored on the computer 
+     System cryptography: Use FIPS compliant algorithms for encryption, hashing, and signing 
+     System objects: Default owner for objects created by members of the Administrators group 
+     System objects: Require case insensitivity for non-Windows subsystems 
+     System objects: Strengthen default permissions of internal system objects (e.g., Symbolic Links) 
+     System settings: Optional subsystems 
+     System settings: Use Certificate Rules on Windows Executables for Software Restriction Policies 
+     Collapse the table of content
+     Expand the table of content
+     System cryptography: Use FIPS compliant algorithms for encryption, hashing, and signing 
+     Updated: January 21, 2005
+     Applies To: Windows Server 2003, Windows Server 2003 R2, Windows Server 2003 with SP1, Windows Server 2003 with SP2
+       System cryptography: Use FIPS compliant algorithms for encryption, hashing and signing 
+       Description 
+        This security setting determines if the Transport Layer Security/Secure Sockets Layer (TL/SS) Security Provider supports only the TLS_RSA_WITH_3DES_EDE_CBC_SHA cipher suite. In effect, this means that the provider only supports the Transport Layer Security (TLS) protocol as a client and as a server (if applicable). It uses only the Triple DES encryption algorithm for the TLS traffic encryption, only the Rivest, Shamir, and Adleman (RSA) public key algorithm for the TLS key exchange and authentication, and only the Secure Hashing Algorithm&nbsp;1 (SHA-1) for the TLS hashing requirements. 
+        For Encrypting File System Service (EFS), it supports only the Triple Data Encryption Standard (DES) encryption algorithm for encrypting file data supported by the NTFS file system. By default, EFS uses the Advanced Encryption Standard (AES) algorithm with a 256-bit key in the Windows Server&nbsp;2003 family and DESX algorithm in Windows&nbsp;XP for encrypting file data. For informat

@@ -1,0 +1,13 @@
+How Flashy is Your Cloud? Greylock’s Pure Storage Launches
+Nov 2, 2011
+Check out this new release from Greylock Partners, which calls Pure Storage “one of the most exciting enterprise companies in the Greylock Portfolio.” Pure Storage makes a flash based storage array. Greylock is a solid VC – I’ve pitched them on startup ideas a few times over the years.
+
+I’m the first to admit that storage arrays might be the most boring part of cloud infrastructure, aside from layer 1 signaling mechanisms maybe. Nonetheless, I’m excited to see this launch.
+
+The reason is that I/O for storage is becoming a limiting factor in some cloud infrastructure. I think more distributed, ambient cloud storage will eventually dominate for most applications, but no one denies the need for massive storage IO for some cloud applications, like transaction processing back-end databases.
+
+I’m also excited that Pure Storage is going the disruptive technology route and launching a new architecture instead of playing high-performance Band-Aid on top of existing ancient storage technologies. Clayton Christensen wrote “The Innovator’s Dilemma” based mostly on the evolution of the storage industry, and it’s nice to see the disruption trend continuing.
+
+For virtualization and cloud applications, I/O – not just for storage – is becoming a hot issue. I wrote the first whitepaper for new defunct I/O virtualization vendor 3Leaf and am a fan of successful I/O virtualization company Xsigo because it’s important that we be able to let a virtualized server allocate its I/O in the same way we allocate bandwidth today. That enables new kinds of n+1 scaling and brings virtualization closer to grid computing without giving up flexibility. Having extremely high I/O storage to plug in to servers which have virtualized I/O will make cloud data centers function much more like mainframes.
+
+That will make the cloud faster, cheaper, and ultimately more secure. And that’s what we’re all about! Good luck, Pure Storage.

@@ -1,0 +1,21 @@
+More complex operations
+
+As with character strings it is straightforward to define length, substring, lexicographical compare, concatenation, reverse operations. The implementation of some of these operations is sensitive to endianness.
+Population / Hamming weight
+
+If we wish to find the number of 1 bits in a bit array, sometimes called the population count or Hamming weight, there are efficient branch-free algorithms that can compute the number of bits in a word using a series of simple bit operations. We simply run such an algorithm on each word and keep a running total. Counting zeros is similar. See the Hamming weight article for examples of an efficient implementation.
+Inversion
+
+Vertical flipping of a one-bit-per-pixel image, or some FFT algorithms, requires flipping the bits of individual words (so b31 b30 ... b0 becomes b0 ... b30 b31). When this operation is not available on the processor, it's still possible to proceed by successive passes, in this example on 32 bits:
+
+exchange two 16bit halfwords
+exchange bytes by pairs (0xddccbbaa -> 0xccddaabb)
+...
+swap bits by pairs
+swap bits (b31 b30 ... b1 b0 -> b30 b31 ... b0 b1)
+
+The last operation can be written ((x&0x55555555)<<1) | (x&0xaaaaaaaa)>>1)).
+
+Find first one
+
+The find first set or find first one operation identifies the index or position of the 1-bit with the smallest index in an array, and has widespread hardware support (for arrays not larger than a word) and efficient algorithms for its computation. When a priority queue is stored in a bit array, find first one can be used to identify the highest priority element in the queue. To expand a word-size find first one to longer arrays, one can find the first nonzero word and then run find first one on that word. The related operations find first zero, count leading zeros, count leading ones, count trailing zeros, count trailing ones, and log base 2 (see find first set) can also be extended to a bit array in a straightforward manner.

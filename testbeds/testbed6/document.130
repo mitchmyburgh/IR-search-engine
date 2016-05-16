@@ -1,0 +1,28 @@
+
+  Data Types and Data Structures 
+  The Main Point 
+  Do NOT confuse these two things: 
+   Data type: a set of values together with operations on that type 
+   Data structure: a physical implementation of a data type 
+  So, one data type can be mapped to many different data structures. Some mappings make a good fit; others do not. By "good fit" we mean that the chosen data structure allows efficient implementations of the operations of the data type. If you understand this distinction, you can become an accomplished computer scientist. 
+  Some Data Types 
+  Almost any noun can give rise to a data type. Here are some examples: 
+   Example: integer, date, string, complex number, person, employee, department, paragraph, bond, image, set, bag, vector, list, stack, queue, deque, priority queue, ring, dictionary, tree, graph. 
+  Some nouns probably can't be warped into being a data type. Emotions or physical states such as love, mirth, hatred, pain, bliss and anger are in this category. 
+   Exercise: What other nouns don't make good data types?
+  Data Structures 
+  There are two fundamental kinds of data structures: array of contiguous memory locations and linked structures. You can even combine the two mechanisms. 
+  Implementing Types with Structures 
+  You can generally implement: 
+   any sequence type with an array 
+   stacks and queues with singly-linked lists 
+   lists and deques with doubly-linked lists 
+   Trees and priority queues with arrays 
+   etc. 
+   Example: You can have a data type called Stack, but data structures called LinkedStack, ArrayStack, etc. In Java, Stack would be an interface while LinkedStack and ArrayStack would be fully-specified, non-abstract (concrete) classes. 
+  Some Things In Between? 
+  There are a variety of constructs which are technically data types but are "low-level" in the sense that their operations are partially specified. For example, a binary search tree "implements" a set by performing lookups, insertions and deletions by "navigating left and right" — but the meanings of left and right depend on whether the items in the tree are stored in an array or are linked together. 
+   Example: binary search tree, AVL tree, B-tree, heap, pairing heap, hashtable, splay tree, trie, R-tree 
+      title = document.getElementsByTagName("h1")[0]; 
+      if (title) document.title = title.innerHTML;
+    

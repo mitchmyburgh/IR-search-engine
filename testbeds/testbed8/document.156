@@ -1,0 +1,20 @@
+Note: In order that the tree remains well-defined, we need that every null leaf remains a leaf after all transformations (that it will not have any children). If the node we are deleting has a non-leaf (non-null) child N, it is easy to see that the property is satisfied. If, on the other hand, N would be a null leaf, it can be verified from the diagrams (or code) for all the cases that the property is satisfied as well.
+We can perform the steps outlined above with the following code, where the function replace_node substitutes child into n's place in the tree. For convenience, code in this section will assume that null leaves are represented by actual node objects rather than NULL (the code in the Insertion section works with either representation).
+void delete_one_child(struct node *n)
+{
+ /*
+  * Precondition: n has at most one non-null child.
+  */
+ struct node *child = is_leaf(n->right) ? n->left : n->right;
+
+ replace_node(n, child);
+ if (n->color == BLACK) {
+  if (child->color == RED)
+   child->color = BLACK;
+  else
+   delete_case1(child);
+ }
+ free(n);
+}
+Note: If N is a null leaf and we do not want to represent null leaves as actual node objects, we can modify the algorithm by first calling delete_case1() on its parent (the node that we delete, n in the code above) and deleting it afterwards. We do this if the parent is black (red is trivial), so it behaves in the same way as a null leaf (and is sometimes called a 'phantom' leaf). And we can safely delete it at the end as n will remain a leaf after all operations, as shown above. In addition, the sibling tests in cases 2 and 3 require updating as it is no longer true that the sibling will have children represented as objects.
+If both N and its original parent are black, then deleting this original parent causes paths which proceed through N to have one fewer black node than paths that do not. As this violates property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes), the tree must be rebalanced. There are several cases to consider:

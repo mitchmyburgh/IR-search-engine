@@ -1,0 +1,22 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Texturing in OpenGL
+To use texturing in OpenGL, a texturing mode must be enabled. For displaying a 2D texture on polygons, this is accomplished with
+glEnable(GL_TEXTURE_2D);
+The dimensions of texture in OpenGL must be powers of 2, and texture coordinates are normalized, so that (0,0) is the lower left corner, and (1,1) is always the upper right corner. OpenGL 2.0, however, does allow textures of arbitrary size, in which case texture coordinates are based on the original pixel positions of the texture.
+Since multiple textures can be present at any time, the texture to render with must be selected. Use glGenTextures to create texture handles and glBindTexture to select the texture with a given handle. A texture can then be loaded from main memory with glTexImage2D For example:
+GLuint handles[2]; glGenTextures(2, handles);
+glBindTexture(GL_TEXTURE_2D, handles[0]); // Initialize texture parameters and load a texture with glTexImage2D
+glBindTexture(GL_TEXTURE_2D, handles[1]); // Initialize texture parameters and load another texture
+Copyright c
+2005 David Fleet and Aaron Hertzmann 62
+CSC418 / CSCD18 / CSC2504 Texture Mapping
+There are a number of texture parameters that can be set to affect the behavior of a texture, using glTexParameteri. For example, texture wrap repeating can be enabled to allow a texture to be tiled at the borders, or the minifying and magnifying functions can be set to control the quality of textures as they get very close or far away from the camera. The texture environment can be set with glTexEnvi, which controls how a texture affects the rendering of the primitives it is attached to. An example of setting parameters and loading an image follows:
+glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE); glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT) glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP) glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imageWidth, imageHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, imagePointer);
+Mipmaps can be generated automatically by using the GLU function gluBuild2DMipmaps instead of glTexImage2D.
+Once a texture is bound and texturing is enabled, texture coordinates must be supplied for each vertex, by calling glTexCoord before glVertex:
+glTexCoord2f(u, v); glVertex3f(x, y, z);
+When textures are no longer needed, they can be removed from the graphics hardware memory with
+glDeleteTextures(2, handles);

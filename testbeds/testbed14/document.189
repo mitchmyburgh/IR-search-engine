@@ -1,0 +1,184 @@
+﻿Math 481 Lecture 25 Semantic Tableaux for First-Order Logic 11/11/09
+1 Introduction
+Remark 25.1.1 We now describe a system for building proofs of sentences in predicate logic. As with
+propositional logic proofs will be labeled binary branching trees, whose nodes are labeled by first-order formulae.
+We will also take over the form of the rules of tableaux construction for the propositional connectives,
+and once again it will be true that if a formulae at a node is to be true, then at least one of the immediate
+successors must be true as well. We will add four additional rules for the two quantifiers, although come in
+two types: one type of rule is “universal” in character and the other type of rule is “existential” in character.
+The motivation behind the rules is that if a formula on the tableau is true then it is possible to also make
+one of its immediate successors true as well. I did not say that an immediate successor must be true, and
+this is one of the subtleties with the quantifier rules.
+The tableau method is based on an attempt to construct a counterexample to a formula. So, the tableau
+begins with ¬ α for some sentence α in a language L. A counterexample is now a structure A, which means
+we must specify (i) a domain, (ii) an interpretation of each constant in L and (iii) an interpretation of
+each predicate in L. (By Lemma 22.2.3 it is sufficient to provide an interpretation for the symbols actually
+occurring in α.) Lets start with the domain. We begin the construction with a countably infinite set of
+new constants A = {a0, a1, . . .} to the language L, and so will be working in the expanded language L ∪ A,
+denoted by LA. We call these new constants parameters since we start with no committments about them.
+Suppose at some point in our construction we come to an existential formula (∃x)φ(x) on a node in the
+tableau. We want to try to make this true, so we need some element a in our domain such that φ(a) will
+be true. Here we must be careful: we must make no commitment about the properties of a, except that
+φ(a) will be true of a. But we will have no commitments about any parameter not yet introduced into
+the construction, so our rule will allow us to introduce φ(a) on the path – provided that the parameter a
+has not yet appeared on the path. (We have an infinite supply of parameters, and a tableaux under construction
+is finite, so there are plenty of unused parameters lying around.) Now that we are committed to
+φ(a) being true, we will ensure (∃x)φ(x) is true, so there is nothing further to do and we mark it off as finished.
+Suppose at some point in our construction we come to a universal formula (∀x)φ(x) on a node of the
+tree. Since φ(a) must be true for any element of our domain, there is never a problem with substituting any
+term. So, our rule allows us to extend any path on which (∀x)φ(x) with Tφ(t) for any constant or parameter
+t. However, we are not yet through with T(∀x)φ(x) because if we are to really construct a counterexample
+then we must instantiate (∀x)φ(x) for every constant that is in L or appears as a parameter at some point
+along the path containing (∀x)φ(x). So, we can never truly be sure we are finished with a true universally
+quantified sentence, until a contradiction appear. The way we handle this in the rules of semantic tableaux
+is that we always add the instance φ(a) to a branch as well as (∀x)φ(x) again to the path.
+Aside. (∀x)φ(x) and ¬ (∃x)φ(x) are the source of difficulties for any attempt to automate proofs using tableau (or
+any other system). The other rules are basically one-and-done, you could prematurely branch, but eventually you
+will reach the end. There are very sophisticated heuristics for choosing how to choose terms to instantiate in these
+two cases, but there will always be limitations to these methods.
+1
+2 The Tableau Method for Predicate Logic
+Remark 25.2.1 Below are the quantifier truth conditions:
+vA((∃x)φ) = (
+T if vA(φ
+x
+a
+) = T for at least one a ∈ A,
+F if vA(φ
+x
+a
+) = F for all a ∈ A;
+vA((∀x)φ) = (
+T if vA(φ
+x
+a
+) = T for all a ∈ A,
+F if vA(φ
+x
+a
+) = F for at least one a ∈ A;
+Definition 25.2.2 (quantifier rules for tableaux) Here are the new rules for treating quantified formulae
+and negations of quantified formulae. Recall, that a ground term is a constant in the original language L
+together with the new parameters a1, a2, . . . we are using in constructing the domain.
+(∀x)φ(x)
+φ(t)
+(∀x)φ(x)
+where t is a ground term
+¬ (∀x)φ(x)
+¬ φ(a)
+where a is a new parameter
+(∃x)φ(x)
+φ(a)
+where a is a new parameter
+¬ (∃x)φ(x)
+¬ φ(t)
+¬ (∃x)φ(x)
+where t is ground term
+We can unify the rules and simplify notation. There are four types of tableaux rules based on the type of
+formulae. Type-A and type-B are the same as before. We add the two new types of for first-order formulae
+which act existentially (existential and negated universal) and those which act universally (universal and
+negated existential).
+type-C (universal)
+C C(a)
+(∀x)φ(x) φ(t)
+¬ (∃x)φ(x) ¬ φ(t)
+type-D (existential)
+D D(a)
+(∃x)φ(x) φ(a)
+¬ (∀x)φ(x) ¬ φ(a)
+A
+A1
+A2
+B
+B1 B2
+C
+C(t)
+C
+where t is ground term
+D
+D(a)
+where a is a new parameter
+In the last two rules we are replacing a quantified variable by a term, which may be of any of the forms
+(∀x),(∃x), ¬ (∀x), ¬ (∃x).
+Remark 25.2.3 In most situations in predicate logic we do not aim to prove a sentence outright. Instead,
+one normally proves a sentence based on various assumptions or axioms. The semantics embodied this in
+the notion of logical consequence. To capture the corresponding proof theoretic notion of a deduction from
+a set Σ of assumptions or axioms, we need to modify the rules of proof to allow that we are assuming the
+sentences of Σ are true. For the remainder of this section, Σ will be a set of sentences from the language L
+2
+(not the expanded language LA of the tableaux.)
+From now on we are going to define all notions for tableaux from a set of premises Σ. If we are proving
+a sentence with no assumptions, Σ will be empty and the additional clause (f) below to the construction of
+tableaux will not be required.
+Definition 25.2.4 (Tableaux for predicate logic) Let Σ be a set of sentences from L. A finite tableau from
+Σ is a binary tree labeled with formulae (of LA), which satisfies the following inductive definition:
+(a) All one-node trees labeled with a formula are finite tableaux from Σ.
+(b) If τ is a finite tableau from Σ, π a path through τ , and A on π, then the extension placing the components
+A1 and the A2 on π is also a finite tableau from Σ.
+(c) If τ is a finite tableau from Σ, π a path through τ , and B on π, then the extension of π placing the
+component B1 on the left branch and the B2 on the right branch is also a finite tableau from Σ.
+(d) If τ is a finite tableau from Σ, π a path through τ , and C on π, then the extension placing the component
+C1 and C on π is also a finite tableaux from Σ.
+(e) If τ is a finite tableau, π a path through τ , and D on π, then the extension placing the component D1
+on π is also a finite tableaux. from Σ
+(f) If τ is a finite tableaux from Σ, φ a sentence from Σ, then the extension of τ where φ is placed on each
+path π through τ (or any collection of paths through τ ) is also a finite tableaux from Σ.
+(g) If τ0, τ1, . . . , τn, . . . is a (finite or infinite) sequence of finite tableaux from Σ such that for each n ≥ 0,
+τn+1 is constructed from τn by an application of either (b), (c), (d), (e) or (f), then τ = ∪nτ is a tableau
+from Σ
+Warning. It is crucial that the application of (d) repeats the type-C formulae in the application of the
+rule. You may simplify your tableaux constructions by not repeating the type-C formulae, provided you are
+aware that an application of clause (d) never finishes the formula.
+Definition 25.2.5 (tableau proofs from Σ) Let τ be a tableau and π a path through τ .
+• π is contradictory if, for some sentence φ, both φ and ¬ φ appear on π.
+• τ is contradictory if every path on τ is contradictory.
+• τ is a proof of α from Σ if τ is a (finite) contradictory tableau from Σ with its root node labeled ¬ α.
+If there is a proof τ of α from Σ, the we say α is provable from Σ, denoted by Σ ` α.
+• Σ is inconsistent if there is a proof of ⊥ from Σ.
+Note that we are not requiring proofs to be finite tableaux; however, since a tableau is finite branching
+we know from K¨onig’s Lemma that if τ is an infinite contradictory tableau, then some finite subset τ
+0
+is a
+contradictory finite tableau. (There is nothing in the rules that prevents a contradictory path from being
+extended.)
+Example 25.2.6 Lets check the validity of ((∀x)φ(x) → (∃x)φ(x)).
+¬ ((∀x)φ(x) → (∃x)φ(x))
+(∀x)φ(x)
+¬ (∃x)φ(x)
+φ(a)
+(∀x)φ(x)
+¬ φ(a)
+¬ (∃x)φ(x)
+⊗
+3
+¬
+
+((∀x)P(x) → Q(x)) → ((∀x)P(x) → (∀x)Q(x))#
+((∀x)P(x) → Q(x))
+¬ ((∀x)P(x) → (∀x)Q(x))
+(∀x)P(x)
+¬ (∀x)Q(x) ¬ Q(a) new a
+P(a)
+(∀x)P(x)
+(P(c) → Q(a))
+((∀x)P(x) → Q(x))
+¬ P(a)
+⊗
+Q(a)
+⊗
+The reason the sentence is valid is that we have assumed that every structure has a nonempty domain.
+So, we are justified in bringing into the proof a parameter, even through an application of a type-C rule.
+Example 25.2.7 In practice it will generally be more efficient to extend a tableau by first applying type-D
+rules which require introducing new parameters, before applying type-C rules on those parameters.
+Example 25.2.8 Show (∃y)((∃x)P(x) → P(y)) is valid.
+(1) ¬ (∃y)((∃x)P(x) → P(y))
+(2) ¬ ((∃x)P(x) → P(a)) (1)
+(3) ¬ (∃y)((∃x)P(x) → P(y)) (1)
+(4) (∃x)P(x) (2)
+(5) ¬ P(a) (2)
+(6) P(b) (4) new b
+(7) ¬ ((∃x)P(x) → P(b)) (3)
+(8) ¬ (∃y)((∃x)P(x) → P(y)) (3)
+(9) (∃x)P(x) (7)
+(10) ¬ P(b) (7)
+⊗ (6,10)

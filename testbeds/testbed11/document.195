@@ -1,0 +1,22 @@
+The term half-open refers to TCP connections whose state is out of synchronization between the two communicating hosts, possibly due to a crash of one side. A connection which is in the process of being established is also known as embryonic connection. The lack of synchronization could be due to malicious intent.
+
+
+== RFC 793 ==
+According to RFC 793, a TCP connection is referred to as half-open when the host at one end of that TCP connection has crashed, or has otherwise removed the socket without notifying the other end. If the remaining end is idle, the connection may remain in the half-open state for unbounded periods of time.
+
+
+== Embryonic connection ==
+Nowadays, however, the term half-open connection is most often used to describe an embryonic connection, i.e. a TCP connection which is in the process of being established.
+The TCP protocol has a three state system for opening a connection. First, the originating endpoint (A) sends a SYN packet to the destination (B). A is now in an embryonic state (specifically, SYN_SENT), and awaiting a response. B now updates its kernel information to indicate the incoming connection from A, and sends out a request to open a channel back (the SYN/ACK packet).
+At this point, B is also in an embryonic state (specifically, SYN_RCVD). Note that B was put into this state by another machine, outside of B's control.
+Under normal circumstances (see denial-of-service attack for deliberate failure cases), A will receive the SYN/ACK from B, update its tables (which now have enough information for A to both send and receive), and send a final ACK back to B.
+Once B receives this final ACK, it also has sufficient information for two-way communication, and the connection is fully open. Both endpoints are now in an established state.
+
+
+== See also ==
+SYN flood
+SYN cookies
+
+
+== External links ==
+Transmission Control Protocol DARPA Internet Program Protocol Specification

@@ -1,0 +1,352 @@
+﻿Given an
+owl
+ontology for a knowledge domain, one
+can publish on the Web machine-readable data pertaining to that domain (e.g., catalogues of
+products, their features etc.), with the data having formally de ned semantics based on the
+conceptualization of the ontology.
+1
+Following common practice in Semantic Web research,
+we actually use the term
+ontology
+to refer jointly to
+terminological knowledge
+(TBox) that
+establishes a conceptualization of a knowledge domain, and
+assertional knowledge
+(ABox)
+that describes particular individuals.
+Several equivalent
+owl
+syntaxes have been developed, but people unfamiliar with formal
+knowledge representation often have difficulties understanding them (Rector, Drummond,
+Horridge, Rogers, Knublauch, Stevens, Wang, & Wroe, 2004). For example, the following
+statement de nes the class of St. Emilion wines, using the functional-style syntax of owl,
+one of the easiest to understand, which we also adopt throughout this article.
+2
+EquivalentClasses(:StEmilion
+ObjectIntersectionOf(:Bordeaux
+ObjectHasValue(:locatedIn :stEmilionRegion) ObjectHasValue(:hasColor :red)
+ObjectHasValue(:hasFlavor :strong) ObjectHasValue(:madeFrom :cabernetSauvignonGrape)
+ObjectMaxCardinality(1 :madeFrom)))
+To make ontologies easier to understand, several
+ontology verbalizers
+have been developed
+(Schwitter, 2010a). Verbalizers usually translate the axioms (in our case,
+owl
+statements) of
+the ontology one by one to controlled, often not entirely fluent English statements, typically
+without considering the coherence of the resulting texts, and mostly for the bene t of domain
+experts. By contrast, in this article we present a system that aims to produce fluent and
+coherent multi-sentence texts describing classes or individuals of
+owl
+ontologies, with the
+texts intended to be read by end-users (e.g., customers of on-line retail sites). For example,
+our system can generate the following text from the
+owl
+statement above, if the ontology
+has been annotated with domain-dependent linguistic resources discussed below.
+St. Emilion is a kind of Bordeaux from the St. Emilion region. It has red color and strong flavor. It is
+made from exactly one grape variety: Cabernet Sauvignon grapes.
+Our system, called Natural
+owl
+, is open-source and supports both English and Greek.
+Hence, Greek texts can also be generated from the same
+owl
+statements, as in the following
+product description, provided that appropriate Greek linguistic resources are also available.
+By contrast,
+owl
+verbalizers typically produce only English (or English-like) sentences.
+ClassAssertion(:Laptop :tecraA8)
+ObjectPropertyAssertion(:manufacturedBy :tecraA8 :toshiba)
+ObjectPropertyAssertion(:hasProcessor :tecraA8 :intelCore2)
+DataPropertyAssertion(:hasMemoryInGB :tecraA8 "2"^^xsd:nonNegativeInteger)
+DataPropertyAssertion(:hasHardDiskInGB :tecraA8 "110"^^xsd:nonNegativeInteger)
+DataPropertyAssertion(:hasSpeedInGHz :tecraA8 "2"^^xsd:float)
+DataPropertyAssertion(:hasPriceInEuro :tecraA8 "850"^^xsd:nonNegativeInteger)
+[English description:] Tecra A8 is a laptop, manufactured by Toshiba. It has an Intel Core 2 processor,
+2
+gb ram
+and a 110
+gb
+hard disk. Its speed is 2
+ghz and it costs 850 Euro.
+1. See
+http://owl.cs.manchester.ac.uk/repository/
+for a repository of
+owl
+ontologies.
+2. Consult
+http://www.w3.org/TR/owl2-primer/
+for an introduction to the functional-style syntax of
+owl
+.
+672
+Generating Natural Language Descriptions from OWL Ontologies
+[Greek description:]
+O
+Tecra A8
+e–nai Ënac forhtÏc upologist†c, kataskeuasmËnoc apÏ thn
+Toshiba.
+DiajËtei epexergast†
+Intel Core 2, 2
+gb ram
+kai sklhrÏ d–sko
+110
+gb
+.
+H taq‘thtà tou e–nai
+2
+gh
+z
+kai
+kost–zei
+850
+Eur∏
+.
+The examples above illustrate how a system like Natural
+owl
+can help publish information on the Web both as
+owl
+statements and as texts generated from the
+owl
+statements.
+This way, information becomes easily accessible to both computers, which can process
+the
+owl
+statements, and end-users speaking di erent languages; and changes in the
+owl
+statements can be automatically re ected in the texts by regenerating them. To produce
+uent, coherent multi-sentence texts, Natural
+owl
+relies on natural language generation
+(
+nlg
+) methods (McKeown, 1985; Reiter & Dale, 2000) to a larger extent compared to existing
+owl
+verbalizers; for example, it includes mechanisms to avoid repeating information,
+to order the facts to be expressed, aggregate smaller sentences into longer ones, generate
+referring expressions etc. Although
+nlg
+is an established area, this is the rst article to
+discuss in detail an
+nlg
+system for
+owl
+ontologies, excluding simpler verbalizers. We do
+not propose novel algorithms from a theoretical
+nlg
+perspective, but we show that there are
+several particular issues that need to be considered when generating from
+owl
+ontologies.
+For example, some
+owl
+statements lead to overly complicated sentences, unless they are
+converted to simpler intermediate representations rst; there are also several
+owl
+-speci c
+opportunities to aggregate sentences (e.g., when expressing axioms about the cardinalities
+of properties); and referring expression generation can exploit the class hierarchy.
+Natural
+owl
+can be used with any
+owl
+ontology, but to obtain texts of high quality
+domain-dependent generation resources
+are required; for example, the classes of the ontology
+can be mapped to natural language names, the properties to sentence plans etc. Similar
+linguistic resources are used in most
+nlg
+systems, though di erent systems adopt di erent
+linguistic theories and algorithms, requiring di erent resources. There is little consensus on
+exactly what information
+nlg
+resources should capture, apart from abstract speci cations
+(Mellish, 2010). The domain-dependent generation resources of Natural
+owl
+are created
+by a
+domain author
+, a person familiar with
+owl
+, when the system is con gured for a new
+ontology. The domain author uses the Protege ontology editor and a Protege plug-in that
+allows editing the domain-dependent generation resources and invoking Natural
+owl
+to view
+the resulting texts.
+3
+We do not discuss the plug-in in this article, since it is very similar to
+the authoring tool of
+m-piro
+(Androutsopoulos, Oberlander, & Karkaletsis, 2007).
+owl
+ontologies often use English words or concatenations of words (e.g.,
+manufacturedBy
+)
+as identi ers of classes, properties, and individuals. Hence, some of the domain-dependent
+generation resources can often be extracted from the ontology by guessing, for example,
+that a class identi er like
+Laptop
+in our earlier example is a noun that can be used to refer
+to that class, or that a statement of the form
+ObjectPropertyAssertion(:manufacturedBy
+X
+Y
+)
+should be expressed in English as a sentence of the form \
+X
+was manufactured by
+Y
+".
+Most
+owl
+verbalizers follow this strategy. Similarly, if domain-dependent generation resources are not provided, Natural
+owl
+attempts to extract them from the ontology, or it uses
+3. Consult
+http://protege.stanford.edu/
+for information on Protege. Natural
+owl
+and its Protege plug-
+in are freely available from
+http://nlp.cs.aueb.gr/software.html
+. We describe Natural
+owl
+version 2
+in this article; version 1 (Galanis & Androutsopoulos, 2007) used a less principled representation of its
+domain-dependent generation resources, without supporting
+owl2
+.
+673
+Androutsopoulos, Lampouras, & Galanis
+generic resources. The resulting texts, however, are of lower quality; also, non-English texts
+cannot be generated, if the identi ers of the ontology are English-like. There is a tradeo
+between reducing the e ort to construct domain-dependent generation resources for
+owl
+ontologies, and obtaining higher-quality texts in multiple languages, but this tradeo has
+not been investigated in previous work. We present trials we performed to measure the
+e ort required to construct the domain-dependent generation resources of Natural
+owl
+and
+the extent to which they improve the resulting texts, also comparing against a simpler
+verbalizer that requires no domain-dependent generation resources. The trials show that
+the domain-dependent generation resources help Natural
+owl
+produce signi cantly better
+texts, and that the resources can be constructed with relatively light e ort, compared to
+the e ort typically needed to construct an ontology.
+Overall, the main contributions of this article are: (i) it is the rst detailed discussion of
+a complete, general-purpose
+nlg
+system for
+owl
+ontologies and the particular issues that
+arise when generating from
+owl
+ontologies; (ii) it shows that a system that relies on
+nlg
+methods to a larger extent, compared to simpler
+owl
+verbalizers, can produce signi cantly
+better natural language descriptions of classes and individuals, provided that appropriate
+domain-dependent generation resources are available; (iii) it shows how the descriptions can
+be generated in more than one languages, again provided that appropriate resources are
+available; (iv) it shows that the domain-dependent generation resources can be constructed
+with relatively light e ort. As already noted, this article does not present novel algorithms
+from a theoretical
+nlg
+perspective. In fact, some of the algorithms that Natural
+owl
+uses
+are of a narrower scope, compared to more fully- edged
+nlg
+algorithms. Nevertheless, the
+trials show that the system produces texts of reasonable quality, especially when domain-
+dependent generation resources are provided. We hope that if Natural
+owl
+contributes
+towards a wider adoption of
+nlg
+methods on the Semantic Web, other researchers may
+wish to contribute improved components, given that Natural
+owl
+is open-source.
+Natural
+owl
+is based on ideas from
+ilex
+(O'Donnell, Mellish, Oberlander, & Knott,
+2001) and
+m-piro
+(Isard, Oberlander, Androutsopoulos, & Matheson, 2003). The
+ilex
+project developed an
+nlg
+system that was demonstrated mostly with museum exhibits, but
+did not support
+owl
+.
+4
+The
+m-piro
+project produced a multilingual extension of the system
+of
+ilex
+, which was tested in several domains (Androutsopoulos et al., 2007). Attempts to
+use the generator of
+m-piro
+with
+owl
+, however, ran into problems (Androutsopoulos,
+Kallonis, & Karkaletsis, 2005). By contrast, Natural
+owl
+was especially developed for
+owl
+.
+In the remainder of this article, we assume that the reader is familiar with
+rdf
+,
+rdf
+schema
+, and
+owl
+. Readers unfamiliar with the Semantic Web may wish to consult an
+introductory text rst (Antoniou & van Harmelen, 2008).
+5
+We also note that the recently
+very popular Linked Data are published and interconnected using Semantic Web technologies.
+6
+Most Linked Data currently use only
+rdf
+and
+rdf schema
+, but
+owl
+is in e ect a
+superset of
+rdf schema
+and, hence, the work of this paper also applies to Linked Data.
+4. Dale et al. (1998) and Dannels (2008, 2012) also discuss
+nlg
+for museums.
+5. A longer version of this article, with more background for readers who are unfamiliar with
+owl
+and the
+Semantic Web, is available as a technical report (Androutsopoulos, Lampouras, & Galanis, 2012); see
+http://nlp.cs.aueb.gr/publications.html
+.
+6. Consult
+http://linkeddata.org/
+. See also the work of Duma and Klein (2013).
+674
+Generating Natural Language Descriptions from OWL Ontologies
+Section 2 below briefly discusses some related work; we provide further pointers to
+related work in the subsequent sections. Section 3 then explains how Natural
+owl
+generates
+texts, also discussing the domain-dependent generation resources of each processing stage.
+Section 4 describes the trials we performed to measure the e ort required to construct the
+domain-dependent generation resources and their impact on the quality of the generated
+texts. Section 5 concludes and proposes future work.

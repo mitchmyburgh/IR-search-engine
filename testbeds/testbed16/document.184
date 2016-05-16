@@ -1,0 +1,27 @@
+What I Learned about Microsoft Azure and its Resource Management APIs
+By STEVE JIN | Published: MARCH 9, 2016
+It was my plan to go over the popular cloud services on their management APIs. After familiarizing myself with Amazon AWS Java SDK with a few samples, I started with Azure and it turned out to a painful process.
+
+In the following I will walk you through what I had experienced, and what works and not. Hope my experience will help you save some time with Azure.
+
+The first place I took a look at is to sign up a trial account which I can use for free for one month with limit of $200. Unless using heavy duty VMs, it should be good enough for trial purpose especially for me to try out the management APIs. I can always use the smallest virtual machines with lowest price tag. On that side, it’s all good.
+
+As I emphasized many times, management APIs and GUIs are two “views” for a system. To quickly get on board, the best thing to do at first is always to play with the GUI. The Azure is in process of “reinventing” itself, therefore it has dual GUIs out there. That is not a problem, but the problem is that if you use the old (or their way to call it “classic”) GUI, they keep asking you to try the new one. When you start to use the new one, they would sometimes bring you back to the old one because it’s not supported yet in the new one. So I got very confused where should I get something done, and where I am (classic one or the new one).
+
+That confusing GUI is a good indicator for confusing management APIs and it turned out to be true. The management APIs are actually much hard to start with compared with others like AWS and Google Cloud Platform.
+
+The first confusion comes from the fact that Azure has two sets of management APIs corresponding to the classic and new GUIs. The classic one is called “Service Management REST APIs” and the new one is called “Resource Management REST APIs.” Sometimes people refer the new one “ARM” as short name. Both of the APIs are based on REST.
+
+If you have read my previous blog posts, I am not a big fan of REST APIs. As a programmer, I like to use language bindings and found the Microsoft sponsors an open source project at Github. IMHO, the project is not ideal with many design issues but still acceptable.
+
+Following the readme, I got a sample to create a virtual machine and the real pain started.
+
+It turned out setting up Maven and getting the sample compiled was pretty straight-forward and took no time. The real problem is to get the authentication work. As the sample shows, I will need to provide values for the subscription id, tenant ID, client id, and client key. The first one subscription id is an easy one. The client id and key are hard to get. After reading so many pages, I finally got that done by creating an application with Azure ActiveDirectory. Along the way, I had to jump around the GUI here and there, and between old and new GUIs.
+
+The tenant id, however, turned out to the hardest one. I got it figured out after talking to a couple of Microsoft folks at RSA conference. They could not find anythere from GUI, but told me it’s part of the URL – just copy it to a notepad and cut it out. I got that and could run the code past the authentication phase.
+
+Then, another problem came up: I don’t have the permission to create a virtual machine. I had to go back to GUI trying to figure out how to set the permissions. It doesn’t seem to be part of my profile, but I could not find anywhere to configure it for my application.
+
+So, my first try with the new Azure Resource Management APIs did not go anywhere. Maybe I will try it again when it gets more mature in the future. As it stands today, I don’t think it’s usable for normal developers. It could be a different story if you can get Microsoft to support the development side by side.
+
+Still from the simple sample to create virtual machine, I think Microsoft should make the SDK better. The most important is to simplify the SDK for common use cases like creating a new virtual machine. It seems too much that forces users to instantiate storage client and network client when creating a new virtual machine. That may be needed, but they should be hidden from programmers.

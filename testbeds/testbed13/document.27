@@ -1,0 +1,396 @@
+
+
+# Superdense coding
+
+From Wikipedia, the free encyclopedia
+
+Jump to: navigation, search
+
+|  | This article has multiple issues. Please help **improve it** (see how) or
+discuss these issues on the **talk page**.  
+---  
+|
+
+| This article's **lead section may not adequately summarize key points of its
+contents**. Please consider expanding the lead to provide an accessible
+overview of all important aspects of the article. Please discuss this issue on
+the article's talk page. _(August 2013)_  
+---|---  
+  
+| This article includes a list of references, but **its sources remain
+unclear** because it has **insufficient inline citations**. Please help to
+improve this article by introducing more precise citations. _(August 2013)_  
+---|---  
+  
+| This article **needs additional citations for verification**. Please help
+improve this article by adding citations to reliable sources. Unsourced
+material may be challenged and removed. _(August 2013)_ _(Learn how and when
+to remove this template message)_  
+---|---  
+_(Learn how and when to remove this template message)_  
+  
+When the sender and receiver share a bell pair, two classical bits can be
+packed into one qubit.
+
+In quantum information theory, **superdense coding** is a technique used to
+send two bits of classical information using only one qubit.[1][2] It is the
+inverse of quantum teleportation, which sends one qubit with two classical
+bits.[3] Both superdense coding and quantum teleportation require, and use up,
+entanglement between the sender and receiver in the form of Bell pairs.
+
+## Contents
+
+  * 1 Overview
+  * 2 Details
+  * 3 General dense coding scheme
+  * 4 References
+  * 5 External links
+
+## Overview[edit]
+
+Suppose Alice would like to send classical information to Bob using qubits,
+instead of classical bits. Alice would encode the classical information in a
+qubit and send it to Bob. After receiving the qubit, Bob recovers the
+classical information via measurement. The question is: how much classical
+information can be transmitted per qubit? Since non-orthogonal quantum states
+cannot be distinguished reliably[_citation needed_], one would guess that
+Alice can do no better than one classical bit per qubit. Holevo's theorem
+discusses this bound on efficiency. Thus, there is no advantage gained in
+using qubits instead of classical bits[_citation needed_]. However, with the
+additional assumption that Alice and Bob share an entangled state, two
+classical bits per qubit can be achieved. The term _superdense_ refers to this
+doubling of efficiency. Also, it can be proved that the maximum amount of
+classical information that can be sent (even while using entangled state)
+using one qubit is 2 bits[_citation needed_].
+
+## Details[edit]
+
+Crucial to this procedure is the shared entangled state between Alice and Bob,
+and the property of entangled states that a (maximally) entangled state can be
+transformed into another state via local manipulation.
+
+Suppose parts of a Bell state, say
+
+    
+
+are distributed to Alice and Bob. The first subsystem, denoted by subscript
+_A_, belongs to Alice and the second, _B_, system to Bob. By only manipulating
+her particle locally, Alice can transform the composite system into any one of
+the Bell states (entanglement cannot be broken using local operations):
+
+  * Suppose Alice wants to send the classical bits 00.
+
+Then she will perform identity unitary operation on her particle. Her
+entangled qubit remains unchanged. The resultant tangled qubit would be
+
+  * Suppose Alice wants to send the bits "01". Then she will perform  unitary operation.
+
+is like a quantum NOT gate. After the application of  unitary gate the
+resultant entangled quantum state would be
+
+  * Suppose Alice wants to send the bits "10". Then she will perform  unitary operation.
+
+After the application of  unitary gate, the resultant entangled quantum state
+would be
+
+  * Suppose Alice wants to send the bits "11". Then she will perform  unitary operation.
+
+After the application of  unitary gate the resultant entangled quantum state
+would be
+
+are Pauli gates.  are called Bell states.
+
+Now, if Bob wants to find which classical bits Alice wanted to send he will
+perform the  unitary operation followed by unitary operation on the entangled
+qubit.
+
+  * If the resultant entangled qubit was  then after the application of the above unitary operations the entangled qubit will become 
+  * If the resultant entangled qubit was  then after the application of the above unitary operations the entangled qubit will become 
+  * If the resultant entangled qubit was  then after the application of the above unitary operations the entangled qubit will become 
+  * If the resultant entangled qubit was  then after the application of the above unitary operations the entangled qubit will become 
+
+So, depending on the message she would like to send, Alice performs one of the
+four local operations given above and sends her qubit to Bob. By performing a
+projective measurement in the Bell basis on the two particle system, Bob
+decodes the desired message.
+
+If some mischievous person, such as Eve, intercepts Alice's qubit en route to
+Bob, all that is obtained by Eve is part of an entangled state. Therefore, no
+useful information whatsoever is gained by Eve unless she can interact with
+Bob's qubit.
+
+## General dense coding scheme[edit]
+
+General dense coding schemes can be formulated in the language used to
+describe quantum channels. Alice and Bob share a maximally entangled state
+_ω_. Let the subsystems initially possessed by Alice and Bob be labeled 1 and
+2, respectively. To transmit the message _x_, Alice applies an appropriate
+channel
+
+    
+
+on subsystem 1. On the combined system, this is effected by
+
+    
+
+where _I_ denotes the identity map on subsystem 2. Alice then sends her
+subsystem to Bob, who performs a measurement on the combined system to recover
+the message. Let the _effects_ of Bob's measurement be _Fy_. The probability
+that Bob's measuring apparatus registers the message _y_ is
+
+    
+
+Therefore, to achieve the desired transmission, we require that
+
+    
+
+where _δxy_ is the Kronecker delta.
+
+## References[edit]
+
+  1. **^** Bennett, C.; Wiesner, S. (1992). "Communication via one- and two-particle operators on Einstein-Podolsky-Rosen states". _Physical Review Letters_ **69** (20): 2881. doi:10.1103/PhysRevLett.69.2881. 
+  2. **^** Michael A. Nielsen; Isaac L. Chuang (9 December 2010). "2.3 Application: superdense coding". _Quantum Computation and Quantum Information: 10th Anniversary Edition_. Cambridge University Press. p. 97\. ISBN 978-1-139-49548-6. 
+  3. **^** Mark Wilde (18 April 2013). _Quantum Information Theory_. Cambridge University Press. p. 181\. ISBN 978-1-107-03425-9. 
+
+## External links[edit]
+
+  * Qubits, Quantum Mechanics and Computers Course Notes
+  * Superdense coding: how to send two bits using one qubit on YouTube by Michael Nielsen
+
+|
+
+  * v
+  * t
+  * e
+
+Quantum information science  
+  
+---  
+General |
+
+  * Quantum computer
+  * Qubit
+  * Quantum information
+  * Quantum programming
+  * Timeline of quantum computing
+
+|  
+  
+Quantum communication |
+
+  * Quantum capacity
+  * Classical capacity
+  * Entanglement-assisted classical capacity
+  * Quantum channel
+    * Quantum network
+  * Quantum cryptography
+    * Quantum key distribution
+  * Quantum energy teleportation
+  * Quantum teleportation
+  * **Superdense coding**
+  * LOCC
+  * Entanglement distillation
+
+  
+  
+Quantum algorithms |
+
+  * Universal quantum simulator
+  * Deutsch–Jozsa algorithm
+  * Grover's algorithm
+  * Quantum Fourier transform
+  * Shor's algorithm
+  * Simon's problem
+  * Quantum phase estimation algorithm
+  * Quantum annealing
+  * Algorithmic cooling
+
+  
+  
+Quantum complexity theory |
+
+  * Quantum Turing machine
+  * EQP
+  * BQP
+  * QMA
+  * PostBQP
+
+  
+  
+Quantum computing models |
+
+  * Quantum circuit
+    * Quantum gate
+  * One-way quantum computer
+    * cluster state
+  * Adiabatic quantum computation
+  * Topological quantum computer
+
+  
+  
+Decoherence prevention |
+
+  * Quantum error correction
+  * Stabilizer codes
+  * Entanglement-Assisted Quantum Error Correction
+  * Quantum convolutional codes
+
+  
+  
+Physical implementations |
+
+|
+
+Quantum optics
+
+|
+
+  * Cavity QED
+  * Circuit QED
+  * Linear optical quantum computing
+
+  
+  
+---|---  
+  
+Ultracold atoms
+
+|
+
+  * Trapped ion quantum computer
+  * Optical lattice
+
+  
+  
+Spin-based
+
+|
+
+  * Nuclear magnetic resonance QC
+  * Kane QC
+  * Loss–DiVincenzo QC
+  * Nitrogen-vacancy center
+
+  
+  
+Superconducting quantum computing
+
+|
+
+  * Charge qubit
+  * Flux qubit
+  * Phase qubit
+
+  
+  
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Superdense_coding&a
+mp;oldid=696113508"
+
+Categories:
+
+  * Quantum information science
+
+Hidden categories:
+
+  * Wikipedia introduction cleanup from August 2013
+  * All pages needing cleanup
+  * Articles covered by WikiProject Wikify from August 2013
+  * All articles covered by WikiProject Wikify
+  * Articles lacking in-text citations from August 2013
+  * All articles lacking in-text citations
+  * Articles needing additional references from August 2013
+  * All articles needing additional references
+  * All articles with unsourced statements
+  * Articles with unsourced statements from May 2015
+
+## Navigation menu
+
+### Personal tools
+
+  * Not logged in
+  * Talk
+  * Contributions
+  * Create account
+  * Log in
+
+### Namespaces
+
+  * Article
+  * Talk
+
+###  Variants
+
+### Views
+
+  * Read
+  * Edit
+  * View history
+
+### More
+
+###  Search
+
+### Navigation
+
+  * Main page
+  * Contents
+  * Featured content
+  * Current events
+  * Random article
+  * Donate to Wikipedia
+  * Wikipedia store
+
+### Interaction
+
+  * Help
+  * About Wikipedia
+  * Community portal
+  * Recent changes
+  * Contact page
+
+### Tools
+
+  * What links here
+  * Related changes
+  * Upload file
+  * Special pages
+  * Permanent link
+  * Page information
+  * Wikidata item
+  * Cite this page
+
+### Print/export
+
+  * Create a book
+  * Download as PDF
+  * Printable version
+
+### Languages
+
+  * Čeština
+  * Français
+  * Polski
+  * Русский
+  * Suomi
+  * 
+
+Edit links
+
+  * This page was last modified on 21 December 2015, at 00:37.
+  * Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+  * Privacy policy
+  * About Wikipedia
+  * Disclaimers
+  * Contact Wikipedia
+  * Developers
+  * Cookie statement
+  * Mobile view
+
+  *   * 
+
+  *[v]: View this template
+  *[e]: Edit this template
+  *[t]: Discuss this template
+  *[RSS]: Really Simple Syndication
+

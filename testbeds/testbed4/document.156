@@ -1,0 +1,10 @@
+________________________________________
+2.3.2  Translation
+A translation transform simply moves every point by a certain amount horizontally and a certain amount vertically. If (x,y) is the original point and (x1,y1) is the transformed point, then the formula for a translation is
+x1 = x + e
+y1 = y + f
+where e is the number of units by which the point is moved horizontally and f is the amount by which it is moved vertically. (Thus for a translation, a = d = 1, and b = c = 0 in the general formula for an affine transform.) A 2D graphics system will typically have a function such as
+translate( e, f )
+to apply a translate transformation. The translation would apply to everything that is drawn after the command is given. That is, for all subsequent drawing operations, e would be added to the x-coordinate and f would be added to the y-coordinate. Let's look at an example. Suppose that you draw an "F" using coordinates in which the "F" is centered at (0,0). If you say translate(4,2) beforedrawing the "F", then every point of the "F" will be moved horizontally by 4 units and vertically by 2 units before the coordinates are actually used, so that after the translation, the "F" will be centered at (4,2):
+
+

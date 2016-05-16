@@ -1,0 +1,266 @@
+   GeeksforGeeks 
+   A computer science portal for geeks 
+    Placements 
+    Practice 
+    GATE CS 
+    IDE 
+    Q&amp;A 
+    GeeksQuiz 
+  (function() {
+    var cx = '009682134359037907028:tj6eafkv_be';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+  .gsc-control-cse {
+     padding: 0px 10px;
+  } 
+  .gsc-control-cse {
+    font-family: "Trebuchet MS", sans-serif;
+    /*border-color: #E1F3DA;*/
+    /*background-color: #E1F3DA;*/
+  }
+  input.gsc-input {
+    border-color: #94CC7A;
+  }
+  input.gsc-search-button {
+    border-color: #94CC7A;
+    background-color: #4CB96B;
+    margin-top:7px;
+  }
+  .gsc-tabHeader.gsc-tabhInactive {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-tabHeader.gsc-tabhActive {
+    border-color: #A9DA92;
+    background-color: #A9DA92;
+  }
+  .gsc-tabsArea {
+    border-color: #A9DA92;
+  }
+  .gsc-webResult.gsc-result {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-webResult.gsc-result:hover {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gs-webResult.gs-result a.gs-title:link,
+  .gs-webResult.gs-result a.gs-title:link b {
+    color: #009900;
+  }
+  .gs-webResult.gs-result a.gs-title:visited,
+  .gs-webResult.gs-result a.gs-title:visited b {
+    color: #009900;
+  }
+  .gs-webResult.gs-result a.gs-title:hover,
+  .gs-webResult.gs-result a.gs-title:hover b {
+    color: #003300;
+  }
+  .gs-webResult.gs-result a.gs-title:active,
+  .gs-webResult.gs-result a.gs-title:active b {
+    color: #009900;
+  }
+  .gsc-cursor-page {
+    color: #009900;
+  }
+  a.gsc-trailing-more-results:link {
+    color: #009900;
+  }
+  .gs-webResult.gs-result .gs-snippet {
+    color: #454545;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl {
+    color: #33cc00;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-short {
+    color: #33cc00;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-short {
+    display: none;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-long {
+    display: block;
+  }
+  .gsc-cursor-box {
+    border-color: #A9DA92;
+  }
+  .gsc-results .gsc-cursor-page {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+    border-color: #A9DA92;
+    background-color: #A9DA92;
+  }
+  .gs-promotion.gs-result {
+    border-color: #94CC7A;
+    background-color: #CBE8B4;
+  }
+  .gs-promotion.gs-result a.gs-title:link {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:visited {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:hover {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:active {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result .gs-snippet {
+    color: #454545;
+  }
+  .gs-promotion.gs-result .gs-visibleUrl,
+  .gs-promotion.gs-result .gs-visibleUrl-short {
+    color: #815FA7;
+  }
+  .gsib_a {
+    padding : 2px;
+  }
+    $(document).ready(function(){
+      $.ajax({
+type: 'GET', 
+dataType: "json", 
+url: "http://auth.geeksforgeeks.org/profileLink.php", xhrFields:{withCredentials:true},
+success: function (responseData, textStatus, jqXHR) {
+console.log('Data received from other domain. Below is the data');
+console.log(responseData);
+document.getElementById("profile").innerHTML = responseData.data;
+},
+error: function (responseData, textStatus, errorThrown) { 
+console.log('HTTP Status : ' + textStatus); 
+}
+});
+});
+   Skip to content 
+     Home 
+     Algo 
+       Analysis of Algorithms 
+       Searching and Sorting 
+       Greedy Algorithms 
+       Dynamic Programming 
+       Pattern Searching 
+       Other String Algorithms 
+       Backtracking 
+       Divide and Conquer 
+       Geometric Algorithms 
+       Mathematical Algorithms 
+       Bit Algorithms 
+       Graph Algorithms 
+       Randomized Algorithms 
+     DS 
+       LinkedList 
+       Stack 
+       Queue 
+       Binary Tree 
+       Binary Search Tree 
+       Heap 
+       Hashing 
+       Graph 
+       Advanced Data Structure 
+       Array 
+       Matrix 
+       Misc 
+     Interview 
+       Top Topics 
+       Practice Company Questions 
+       Interview Experiences 
+       Experienced Interviews 
+       Internship Interviews 
+       Competitive Programming 
+       Multiple Choice Quizzes 
+     Students 
+       Campus Ambassador Program 
+       Geek of the Month 
+       Placement Course 
+       Project 
+       Competitive Programming 
+       Testimonials 
+     C 
+     C++ 
+     Java 
+     Python 
+     Contribute 
+     Ask Q 
+     AndroidApp 
+     GFact 
+     Jobs 
+       Job Seekers 
+       Employers 
+       Advertise with us 
+       Internship 
+     GBlog 
+     Arr 
+     String 
+     Matrix 
+     LinkedList 
+     Stack 
+     Q 
+     Hash 
+     Heap 
+     Tree 
+     BST 
+     Graph 
+     C/C++ 
+     Bit 
+     MCQ 
+     Misc 
+     O/P 
+      AVL Tree | Set 1 (Insertion) 
+      AVL tree is a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtrees cannot be more than one for all nodes. 
+      Why AVL Trees? Most of the BST operations (e.g., search, max, min, insert, delete.. etc) take O(h) time where h is the height of the BST. The cost of these operations may become O(n) for a skewed Binary tree. If we make sure that height of the tree remains O(Logn) after every insertion and deletion, then we can guarantee an upper bound of O(Logn) for all these operations. The height of an AVL tree is always O(Logn) where n is the number of nodes in the tree (See this video lecture for proof).  
+      Insertion To make sure that the given tree remains AVL after every insertion, we must augment the standard BST insert operation to perform some re-balancing. Following are two basic operations that can be performed to re-balance a BST without violating the BST property (keys(left) &lt; key(root) &lt; keys(right)). 1) Left Rotation 2) Right Rotation 
+T1, T2 and T3 are subtrees of the tree rooted with y (on left side) 
+or x (on right side)           
+                y                               x
+               / \     Right Rotation          /  \
+              x   T3   – – – – – – – &gt;        T1   y 
+             / \       &lt; - - - - - - -            / \
+            T1  T2     Left Rotation            T2  T3
+Keys in both of the above trees follow the following order 
+      keys(T1) &lt; key(x) &lt; keys(T2) &lt; key(y) &lt; keys(T3)
+So BST property is not violated anywhere.
+      Steps to follow for insertion Let the newly inserted node be w 1) Perform standard BST insert for w. 2) Starting from w, travel up and find the first unbalanced node. Let z be the first unbalanced node, y be the child of z that comes on the path from w to z and x be the grandchild of z that comes on the path from w to z. 3) Re-balance the tree by performing appropriate rotations on the subtree rooted with z. There can be 4 possible cases that needs to be handled as x, y and z can be arranged in 4 ways. Following are the possible 4 arrangements: a) y is left child of z and x is left child of y (Left Left Case) b) y is left child of z and x is right child of y (Left Right Case) c) y is right child of z and x is right child of y (Right Right Case) d) y is right child of z and x is left child of y (Right Left Case) 
+      Following are the operations to be performed in above mentioned 4 cases. In all of the cases, we only need to re-balance the subtree rooted with z and the complete tree becomes balanced as the height of subtree (After appropriate rotations) rooted with z becomes same as it was before insertion. (See this video lecture for proof) 
+      a) Left Left Case 
+T1, T2, T3 and T4 are subtrees.
+         z                                      y 
+        / \                                   /   \
+       y   T4      Right Rotate (z)          x      z
+      / \          - - - - - - - - -&gt;      /  \    /  \ 
+     x   T3                               T1  T2  T3  T4
+    / \
+  T1   T2
+      b) Left Right Case 
+     z                               z                           x
+    / \                            /   \                        /  \ 
+   y   T4  Left Rotate (y)        x    T4  Right Rotate(z)    y      z
+  / \      - - - - - - - - -&gt;    /  \      - - - - - - - -&gt;  / \    / \
+T1   x                          y    T3                    T1  T2 T3  T4
+    / \                        / \
+  T2   T3                    T1   T2
+      c) Right Right Case 
+  z                                y
+ /  \                            /   \ 
+T1   y     Left Rotate(z)       z      x
+    /  \   - - - - - - - -&gt;    / \    / \
+   T2   x                     T1  T2 T3  T4
+       / \
+     T3  T4
+      d) Right Left Case 
+   z                            z                            x
+  / \                          / \                          /  \ 
+T1   y   Right Rotate (y)    T1   x      Left Rotate(z)   z      y
+    / \  - - - - - - - - -&gt;     /  \   - - - - - - - -&gt;  / \    / \
+   x   T4                      T2   y                  T1  T2  T3  T4
+  / \                              /  \
+T2   T3                           T3   T4
+      implementation Following is the implementation for AVL Tree Insertion. The following implementation uses the recursive BST insert to insert a new node. In the recursive BST insert, after insertion, we get pointers to all ancestors one by one in bottom up manner. So we don’t need parent pointer to travel up. The recursive code itself travels up and visits all the ancestors of the newly inserted node. 1) Perform the normal BST insertion. 2) The current node must be one of the ancestors of the newly inserted node. Update the height of the curren

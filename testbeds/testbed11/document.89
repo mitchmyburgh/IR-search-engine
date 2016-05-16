@@ -1,0 +1,20 @@
+Adaptive Wireless Path Protocol (AWPP) is a Cisco's proprietary protocol for wireless mesh networks. It dynamically discovers neighboring radios and calculates the quality of all possible paths to a wired network. An optimal path is established through a mesh of wireless nodes to a wired gateway and these calculations are continuously updated, allowing paths to change and optimize as traffic patterns on wireless links change. Furthermore, a self-configuring and self-healing wireless mesh backhaul is created.
+The wireless mesh routing protocol specification is defined by the 802.11s Working Group (TG-S).
+
+
+== Architecture ==
+Cisco Wireless Mesh Network uses a dual-radio design that enhances the performance and reliability of the wireless mesh. In this architecture, a WLAN controller system is used to create and enforce policies across many different lightweight AP. By using quality of service (Quality of Service) and other functions, outdoor WLAN operations can be efficiently managed across an entire wireless enterprise.
+
+
+== Comparison with traditional architectures ==
+Traditional architecture limits the visibility of 802.11 traffic to an individual access point since it distributes all traffic handling, RF control, security, and mobility functions to the access points.
+Issues include:
+Increased operation costs as each access point must be managed individually when used without a management device.
+Network-wide attacks and interference are not visible across the system.
+System cannot predict or correlate activity across the enterprise.
+
+
+== External links ==
+Cisco Wireless Mesh Networking Solution Overview
+Deploying a Fast and Stable Wireless Mesh Network
+How AWPP will make mesh networks easier to deploy

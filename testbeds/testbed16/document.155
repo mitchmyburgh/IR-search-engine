@@ -1,0 +1,28 @@
+The Three-Tier Model of Cloud Computing
+
+Cloud services are usually divided into three basic levels, or tiers, that are differentiated by the level of abstraction they present to consumers.
+
+The lowest tier is infrastructure-as-a-service (IaaS). With IaaS, users run software on machines owned and configured by a third party. IaaS makes up the hardware and software that supports the whole system, from the server to storage and networks.
+
+The next tier is platform-as-a-service (PaaS). PaaS is basically a platform that supports the complete life-cycle of building and delivering applications and services over the Web. PaaS provides services to deploy, test, host, and maintain applications within the same integrated development environment. With PaaS, each platform component – whether middleware, messaging, integration, or communication – is provided as a service.
+
+The most visible layer to end users is software-as-a-service (SaaS), which rests on top of the PaaS layer. With SaaS, users can access pre-baked services simply by navigating to them via a Web browser, without bothering with the hardware and software details involved in the implementation.
+
+
+
+PAAS: A TECHNOLOGY STACK AS A SERVICE
+
+The PaaS tier, the middle layer in the three-tier system, arguably contains some of the most crucial elements of the cloud. Users of the PaaS layer are developers who implement their applications and deploy them on the cloud. PaaS providers supply developers with a programming-language-level environment with a set of well-defined APIs to facilitate the interaction between the environments and the cloud applications, as well as to accelerate the deployment of those cloud applications. Developers reap several benefits with PaaS, from automatic scaling and load balancing to integration with other services (e.g. authentication services, email services, user interface) furnished by the PaaS provider. Pricing is typically pay-as-you-go, with no need to buy software, middleware, or licenses. Developers have the ability to integrate other services to their applications on-demand, which makes application development less complicated, accelerates deployment time, and minimizes the faults in applications. With PaaS, features of the operating system can be changed and updated frequently, and geographically disparate software-development teams can work together on projects.
+
+The following are some of the specific components of the PaaS layer:
+
+Database Management Systems-Database management systems (DBMs) often act as a courier between the upper/middle tiers of a technology stack and the hardware elements. DBMs often include comprehensive security protocols or deploy bots for maintenance and organization.
+Application Servers- In most cloud networking setups, entire servers or hardware elements can be reserved for sole use of applications, on the basis of the theory that congruence between all activities on a particular system results in better optimization and fewer errors.
+Business Process Management Suites- Business process management suites are complex sets of tasks or applications that are compiled together in one format, analyzed, and then used to formulate or provide fuel for additional application-intensive processes. Businesses often use them to automate internal processes.
+Applications / Data integration-Applications and elements responsible for data integration exist in the middle PaaS layer.
+Portals- A portal is an access point between a user and cloud resources. Users connect to cloud resources through a channel located in the middleware of the technology stack.
+WHO IS USING PAAS?
+
+PaaS is perfectly suited to the needs of users who don’t want to shoulder the responsibility of managing middleware or OS. Some vendors, such as Apprenda, provide advanced PaaS tiers on which users can easily build traditional Web applications that include a complete multi-tenant SaaS architecture. PaaS is especially useful for organizations in which multiple developers have to work together on development projects or in which other external parties need to participate in the development process. PaaS has proved an invaluable resource for enterprises with an existing data source who want to create applications that leverage that data, and for developers who want to automate testing and deployment services. Advanced PaaS offerings will sometimes add a layer of indirection between tiers to manage application-level messaging and to route traffic for the application.
+
+Businesses in particular have begun to reap the benefits of PaaS and to implement it to assist in decision making processes as well as daily operations. If current trends are any indication, PaaS will likely continue to grow, incorporating new applications.

@@ -1,0 +1,21 @@
+Wireless Zero Configuration (WZC), also known as Wireless Auto Configuration, or WLAN AutoConfig is a wireless connection management utility included with Microsoft Windows XP and later operating systems as a service that dynamically selects a wireless network to connect to based on a user's preferences and various default settings. This can be used instead of, or in the absence of, a wireless network utility from the manufacturer of a computer's wireless networking device. The drivers for the wireless adapter query the NDIS Object IDs and pass the available network names (SSIDs) to the service. The service then lists them in the user interface on the Wireless Networks tab in the connection's Properties or in the Wireless Network Connection dialog box accessible from the notification area. A checked (debug) build version of the WZC service can be used by developers to obtain additional diagnostic and tracing information logged by the service.
+
+
+== Overview ==
+Wireless Zero Configuration was first introduced with Windows XP. In Windows Vista and Windows 7, the service that provides equivalent functionality is called "WLAN AutoConfig". It is based on the Native Wi-Fi architecture introduced in Windows Vista.
+Initially, there was no Wireless LAN API in Windows XP for developers to create wireless client programs and manage profiles and connections. After the release of Windows Vista, Microsoft released KB918977 which includes a Wireless LAN API for Windows XP SP2. It was later integrated into Windows XP Service Pack 3.
+
+
+== See also ==
+List of Microsoft Windows components
+Wireless connection management utility
+Wireless LAN client comparison
+
+
+== References ==
+
+
+== External links ==
+Wireless Zero Configuration application programming interface
+Active Directory Schema Extensions for Windows Vista Wireless and Wired Group Policy Enhancements
+The Cable Guy: Wireless Group Policy Settings for Windows Vista

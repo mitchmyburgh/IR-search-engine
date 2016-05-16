@@ -1,0 +1,13 @@
+Key-independent optimality is a property of some binary search tree data structures in computer science proposed by John Iacono. Suppose that key-value pairs are stored in a data structure, and that the keys have no relation to their paired values. A data structure has **key-independent optimality** if, when randomly assigning the keys, the expected performance of the data structure is within a constant factor of the optimal data structure. Key-independent optimality is related to dynamic optimality.
+
+
+== Definitions ==
+There are many binary search tree algorithms that can look up a sequence of  keys , where each  is a number between  and . For each sequence , let  be the fastest binary search tree algorithm that looks up the elements in  in order. Let  be one of the  possible permutation of the sequence , chosen at random, where  is the th entry of . Let . Iacono defined, for a sequence , that .
+A data structure has key-independent optimality if it can lookup the elements in  in time .
+
+
+== Relationship with other bounds ==
+Key-independent optimality has been proved to be asymptotically equivalent to the working set theorem. Splay trees are known to have key-independent optimality.
+
+
+== References ==

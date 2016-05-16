@@ -1,0 +1,28 @@
+﻿An Algorithm for Learning with Probabilistic
+Description Logics
+Jos ́e Eduardo Ochoa Luna and Fabio Gagliardi Cozman
+Escola Polit ́ecnica, Universidade de S ̃ao Paulo,
+Av. Prof. Mello Morais 2231, S ̃ao Paulo - SP, Brazil
+eduardo.ol@gmail.com, fgcozman@usp.br
+Abstract.
+Probabilistic Description Logics are the basis of ontologies
+in the Semantic Web. Knowledge representation and reasoning for these
+logics have been extensively explored in the last years; less attention has
+been paid to techniques that learn ontologies from data. In this paper
+we report on algorithms that learn probabilistic concepts and roles. We
+present an initial effort towards semi-automated learning using probabilistic methods. We combine ILP (Inductive Logic Programming) methods and a probabilistic classifier algorithm (search for candidate hypotheses is conducted by a Noisy-OR classifier). Preliminary results on a real
+world dataset are presented.
+1 Introduction
+Ontologies are key components of the Semantic Web, and among
+the formalisms
+proposed within Knowledge Engineering, the most popular ones at the moment
+are based on Description Logics (DLs) [1]. There are however
+relatively few
+ontologies available, and on very few subjects. Moreover, building an ontology
+from scratch can be a very burdensome and difficult task; very often two domain
+experts design rather different ontologies for the same domain [2]. Considerable
+effort is now invested into developing automated means for the acquisition of
+ontologies. Most of the currently pursued approaches do not
+use the expressive
+power of languages such as OWL, and are only capable of learning ontologies of
+restricted form, such as taxonomic hierarchies [3].

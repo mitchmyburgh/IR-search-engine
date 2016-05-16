@@ -1,0 +1,21 @@
+Alpha_Microsystems
+'''Alpha Microsystems''' is a computer company founded in 1977 by John French, Dick Wilcox and Bob Hitchcock. The first Alpha Micro computer was the  AM-100, based upon the WD16 microprocessor chipset from . Later computers starting with the AM-100/L and the AM-1000 were based on the   and succeeding processors, though Alpha Micro swapped several addressing lines to create byte-ordering compatibility with their earlier processor.
+Early s included standard s (such models as   , , and ), Fortran s, 100   modems (later upgraded to 300 baud modems), and 10   Hawk s with removable s. 
+The company's primary claim to fame was selling inexpensive minicomputers that provided multi-user power using a proprietary operating system called AMOS (Alpha Micro Operating System). The operating system on the 68000 machines was called AMOS/L.  The operating system had major similarities to the operating system of the  . This may not be coincidental; legend has it that the founders based their operating system on "borrowed" source code from DEC, and DEC, perceiving the same, unsuccessfully tried to sue Alpha Micro over the similarities in 1984.
+As Motorola stopped developing their 68000 product, Alpha Micro started to move to the  CPU family, used in common PCs. This was initially done with the Falcon cards, allowing standard DOS and later Windows-based PCs to run AMOS applications on the 68000-series CPU on the Falcon card. The work done on AMPC became the foundation for AMOS 8.x, which runs natively on x86, but includes a 68K emulator to run older software in a method similar to 's  for .
+For application development, AMOS used a proprietary BASIC-like language called  (though several other languages, including Assembler, FORTRAN, Pascal, and COBOL, were available). Older versions interpreted a tokenized executable file. Later versions translate the tokenized executable into x86 code for performance.
+Other programming languages included ,  and .
+In the past, Alpha Micro bundled their operating system and tools such as BASIC and their  implementation as part of the hardware sale, also providing patches and OS upgrades for free or at minimal cost. Gradually, Alpha Micro has transitioned to charging for their software as hardware becomes more of a commodity item.
+Alpha Microsystems  package often included software that allow traditional multi-user systems, like AMOS and others such as , ,     and     to interface with     and   supported peripherals. This software would function similar to Citrix or the X Windowing system.
+The Alpha Micro computer has never achieved mainstream name recognition, though it has been traditionally popular in certain vertical markets, particularly medical, law, and dental offices.
+There were two organizations which produced periodic newsletters and held annual meetings; AMUS (Alpha Micro Users Society), and IAMDA (International Alpha Micro Dealer's Association).  It was typically at these annual meetings that the latest hardware and software products were announced by Alpha Microsystems and third party developers.
+==References==
+# Moore, Steve (6/1984). "Here come the clones." ''AMUS.LOG'', p67.
+==External links==
+* 
+* 
+* 
+* An  for the WD16 based system is available.
+* , running on an AMOS-based Eagle 300 system.
+* 
+*

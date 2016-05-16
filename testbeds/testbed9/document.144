@@ -1,0 +1,39 @@
+Pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. Pandas is free software released under the three-clause BSD license. The name is derived from the term "panel data", an econometrics term for multidimensional structured data sets.
+
+
+== Library features ==
+DataFrame object for data manipulation with integrated indexing
+Tools for reading and writing data between in-memory data structures and different file formats
+Data alignment and integrated handling of missing data
+Reshaping and pivoting of data sets
+Label-based slicing, fancy indexing, and subsetting of large data sets
+Data structure column insertion and deletion
+Group by engine allowing split-apply-combine operations on data sets
+Data set merging and joining
+Hierarchical axis indexing to work with high-dimensional data in a lower-dimensional data structure
+Time series-functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging
+The library is highly optimized for performance, with critical code paths written in Cython or C.
+
+
+== History ==
+Developer Wes McKinney started working on Pandas in 2008 while at AQR Capital Management out of the need for a high performance, flexible tool to perform quantitative analysis on financial data. Before leaving AQR he was able to convince management to allow him to Open Source the library.
+Another AQR employee, Chang She, joined the effort in 2012 as the second major contributor to the library. Around the same time, the library became popular in the Python community, and many more contributors joined the project. The project is considered one of the most vital and active data analysis libraries for Python.
+
+
+== See also ==
+NumPy
+SciPy
+matplotlib
+statsmodels
+R (programming language)
+Scikit-learn
+
+
+== References ==
+
+
+== External links ==
+Pandas website
+Pandas GitHub Repository
+Python for Data Analysis
+Pandas and Python: Top 10

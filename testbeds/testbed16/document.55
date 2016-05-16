@@ -1,0 +1,54 @@
+Cloudscaling’s Cloud Litmus Test: Take the Time to Read Their Open Cloud Announcement
+Feb 14, 2012
+Cloudscaling is a really interesting company run by a guy who really knows cloud computing, Randy Bias. It shows in their announcement today  about Open Cloud Infrastructure.
+
+Sure, we’ll see a slew of cloud announcements at this week’s Cloud Connect conference in Santa Clara, but you should take the time to read Randy’s announcement. Here’s why:
+
+Cloudscaling’s CEO Really Knows His Cloud
+
+Randy is the former CTO of GoGrid, and we first met about a decade ago when we were both on the technology advisory board of Panorama Capital. Randy is one of those guys who grokked the cloud before we even agreed that we would call it “the cloud.” While we were advising them, Panorama backed the founding of Vyatta, the earliest open source networking startup (and the one in use in many clouds today.)
+
+Even cooler, Trinity Ventures is backing Cloudscaling. I was the cloud and virtualization EIR at Trinity before I joined Trend Micro. And Dan Scholnick, my favorite cloud VC, is the partner behind Cloudscaling. He’s also behind Loggly, CrowdFlower, Likewise, dotCloud, StackMob, New Relic (founder), Aryaka, and Blue Stripe. Does it get any cloudier than that?
+
+This is a really good strategy announcement
+
+So here’s why the CloudScaling Open Cloud announcement is worth a look. It actually, honestly and truthfully, spells out the difference between enterprise clouds and open clouds, without any marketing BS.
+
+It also makes the case – convincingly – that enterprises need both an “enterprise cloud” (a private cloud built to service legacy apps) and an “open cloud” (a private or public cloud built to run cloud-ready applications).
+
+This is a very rational discussion that goes beyond the faded “public, private, hybrid” marketing messaging that will surely be plastered on booths at Cloud Connect this week. (I’m there on Wednesday by the way, walking the floor – stop me and say hi!)
+
+Anyway, in my experience, too often enterprises spend time and money trying to make enterprise apps fit on public clouds, or trying to build high scalability cloud infrastructure using enterprise tools that were never meant to scale.
+
+Randy’s blog post that accompanied the release was even more direct. Check out his cloud litmus test, replicated here for discussion.
+
+Enterprise Cloud Litmus Test
+If more than half of these are true, you have an enterprise cloud:
+
+Does this cloud focus on migration of existing applications in enterprise datacenters? (features like hypervisor compatibility, live migration, high availability SAN storage, etc.)
+Is it expensive, complex, and labor-intensive to operate?
+Do you find name-brand hardware throughout, creating lock-in?
+Does it encourage very complex networking?
+Are users obligated to contracts and monthly invoices? (no variable pricing options)
+Does it provide arbitrary ‘pools’ of ‘resources’ the the end-user has to carve up manually? (i.e. clock cycles, RAM, storage)
+Are you still in vendor-lock-in land?  Delivering F5-as-a-service or Netscaler-as-a-service rather than Load-Balancing-as-a-Service?
+That last one – Netscaler-as-a-service – made me smile. I was Director of Product Management at NetScaler when Citrix bought them, and later I was VP of Tech & Marketing at Zeus Technologies (the first virtual appliance load balancer), now named after a sea creature as a part of Riverbed.
+
+Open Cloud Litmus Test
+
+If more than half of these are true, you have an open cloud:
+
+Can you spin up 1,000 virtual servers in < 5 minutes?
+Are your tenants focused on using cloud-ready management platforms like RightScale and enStratus?
+Can you run a big data or Hadoop job on 1,000+ VMs for an hour without the system falling over?
+Are the basic networking and networking services (e.g. load balancing) simple, straightforward, and end-user manageable?
+Is it using standards-based APIs, de facto or not?  (AWS? OpenStack?)
+Is the underlying physical infrastructure and cloud operations team focused on: homogeneity, modularity, common denominator solutions, and automation?
+Can you compete successfully against Amazon Web Services on price and service levels combined?
+As a technologist with a knack for correctly predicting where things will go, my take on this is that Randy has made a brilliant move here. Instead of duking it out with VCE and Citrix for VM-based enterprise clouds, he’s focusing Cloudscaling on open clouds that enterprises can run with the same scale and economics as public cloud providers. For large enterprises, this is huge – it lets them escape paying a “cloud tax” to large cloud service providers to run tens or hundreds of thousands of servers.
+
+But a word of caution belongs here. I’m good at picking where technology will go, but not necessarily when, as evidenced by my interview in Entrepreneur Magazine in 1995 when I stated that within 2 years, companies wouldn’t need paper catalogs anymore…we’re STILL not there. But Randy is dealing with shorter timelines than that, and he’s making the right move.
+
+It is inevitable that open clouds will overtake enterprise clouds, but that process will take more than a decade. Now is the right time to focus on open clouds. That said, there are other OpenStack startups out there.
+
+But none of them has ever laid it out as simply as Randy did. Nice job.

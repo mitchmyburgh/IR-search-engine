@@ -1,0 +1,42 @@
+   Features
+   Installation
+   Docs
+   Tutorials
+   Support
+   Community
+   Pivotal is Hiring
+   Blog
+  Password Hashing Algorithms 
+   Overview 
+    This guide covers password hashing algorithms used by the internal authentication backend. If a different authentication backend (or mechanism) is used, the material in this guide is not applicable.  
+    As of version 3.6.0, RabbitMQ can be configured to use several password hashing functions: 
+    SHA-256 
+    SHA-512 
+    MD5 (only for backwards compatibility) 
+    SHA-256 is used by default. More algorithms can be provided by plugins. 
+   Configuring Algorithm to Use 
+    It is possible to change what algorithm is used via RabbitMQ configuration file, for example, to use SHA-512: 
+[
+  {rabbit, [{password_hashing_module, rabbit_password_hashing_sha512}]}
+].
+ Out of the box, the following hashing modules are provided: 
+    rabbit_password_hashing_sha256 (default) 
+    rabbit_password_hashing_sha512 
+    rabbit_password_hashing_md5 (for backwards compatibility) 
+    Updated hashing algorithm will be applied to newly created users or when password is changed using rabbitmqctl.  
+   Upgrading from pre-3.6.0 to 3.6.1 or Later Versions 
+    When upgrading from a pre-3.6 version to RabbitMQ 3.6.1 or later, all existing users are marked as using the legacy password hashing function, therefore they will be able to authenticate. No upgrade steps are required.  
+    When importing definitions exported from versions earlier than 3.6.0 into a 3.6.1 or later release, existing user records will use MD5 for password hashing. In order to migrate them to a more secure algorithm, use rabbitmqctl to update their passwords.  
+   Upgrading from pre-3.6.0 to 3.6.0 
+    When upgrading from a pre-3.6 version to RabbitMQ 3.6.0 (but not later versions), all existing users are marked as using the legacy password hashing function, therefore they will be able to authenticate. No upgrade steps are required.  
+    If you'd like to avoid using MD5 for existing users, you need to update passwords for all users using rabbitmqctl after upgrading.  
+    When importing definitions exported from versions earlier than 3.6.0, it is possible to go back to MD5 (as a temporary measure) by setting this to rabbit_password_hashing_md5: 
+    Set rabbit.password_hashing_module to rabbit_password_hashing_md5 in the config. This means all imported (or newly created any other way) user records will have MD5 applied for hashing, with a relevant hint stored for later authentication. 
+    Perform definitions import 
+    Stop the (new) node 
+    Set rabbit.password_hashing_module to rabbit_password_hashing_sha256 in the config 
+    The above steps are only necessary for those who perform an export on a pre-3.6.0 node and then an import to 3.6.0. Those who upgrade "in place" or move definitions from a 3.6.0+ node to another 3.6.0+ node do not need to do anything.  
+    The most secure thing to do is to update passwords for all existing users, if possible, to avoid relying on MD5 for anything.  
+  Sitemap | Contact
+   Copyright © 2007-2016 Pivotal Software, Inc. All rights reserved |&nbsp;Privacy Policy |&nbsp;This Site is Open Source |&nbsp;Pivotal is Hiring
+

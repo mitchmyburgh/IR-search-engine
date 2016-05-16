@@ -1,0 +1,23 @@
+The glowworm swarm optimization (GSO) is a swarm intelligence optimization algorithm developed based on the behaviour of glowworms (also known as fireflies or lightning bugs). The behaviour pattern of glowworms which is used for this algorithm is the apparent capability of the glowworms to change the intensity of the luciferin emission and thus appear to glow at different intensities.
+1.The GSO algorithm makes the agents glow at intensities approximately proportional to the function value being optimized. It is assumed that glowworms of brighter intensities attract glowworms that have lower intensity.
+2.The second significant part of the algorithm incorporates a dynamic decision range by which the effect of distant glowworms are discounted when a glowworm has sufficient number of neighbours or the range goes beyond the range of perception of the glowworms.
+The part 2 of the algorithm makes it different from Firefly algorithm(FA). In the Firefly algorithm, fireflies can automatically subdivide into subgroups and thus can find multiple global solutions simultaneously, and thus FA is very suitable for multimodal problems. However, in GSO, there is no "sufficient number or neighbours" limit and there is no perception limit based on distance, but it can have still have "cognitive limits" which allows swarms of glowworms to split into sub-groups and converge to high function value points. This property of the algorithm allows it to be used to identify multiple peaks of a multi-modal function and makes it part of Evolutionary multi-modal optimization algorithms family.
+The GSO algorithm was developed and introduced by K.N. Krishnanand and Debasish Ghose in 2005 at the Guidance, Control, and Decision Systems Laboratory in the Department of Aerospace Engineering at the Indian Institute of Science, Bangalore, India. Subsequently, it has been used in various applications and several papers have appeared in the literature using the GSO algorithm.
+
+
+== See also ==
+Metaheuristic
+Firefly algorithm (FA)
+Evolutionary multi-modal optimization
+
+
+== References ==
+K.N. Krishnanand and D. Ghose (2005). Detection of multiple source locations using a glowworm metaphor with applications to collective robotics. IEEE Swarm Intelligence Symposium, Pasadena, California, USA, pp. 84- 91. doi:10.1109/SIS.2005.1501606
+K.N. Krishnanand and D. Ghose. (2006). Glowworm swarm based optimization algorithm for multimodal functions with collective robotics applications. Multi-agent and Grid Systems, 2(3):209- 222.
+K.N. Krishnanand and D. Ghose. (2009) Glowworm swarm optimization for simultaneous capture of multiple local optima of multimodal functions. Swarm Intelligence, 3(2):87- 124. doi:10.1007/s11721-008-0021-5
+K.N. Krishnanand and D. Ghose. (2008). Theoretical foundations for rendezvous of glowworm-inspired agent swarms at multiple locations. Robotics and Autonomous Systems, 56(7):549- 569. doi:10.1016/j.robot.2007.11.003
+Prasad, Bhanu (2008). Studies in Fuzziness and Soft Computing, Soft Computing Applications in Industry, Volume 226/2008, 165- 87, doi:10.1007/978-3-540-77465-5
+
+
+== External links ==
+Glowworm Swarm Optimization algorithm in C++

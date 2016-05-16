@@ -1,0 +1,117 @@
+In cryptography, padding refers to a number of distinct practices.
+
+
+== Classical cryptography ==
+Official messages often start and end in predictable ways: My dear ambassador, Weather report, Sincerely yours, etc. The primary use of padding with classical ciphers is to prevent the cryptanalyst from using that predictability to find known plaintext that aids in breaking the encryption. Random length padding also prevents an attacker from knowing the exact length of the plaintext message.
+Many classical ciphers arrange the plaintext into particular patterns (e.g., squares, rectangles, etc.) and if the plaintext doesn't exactly fit, it is often necessary to supply additional letters to fill out the pattern. Using nonsense letters for this purpose has a side benefit of making some kinds of cryptanalysis more difficult.
+A famous example of classical padding which caused a great misunderstanding is "the world wonders".
+
+
+== Symmetric cryptography ==
+
+
+=== Hash functions ===
+Most modern cryptographic hash functions process messages in fixed-length blocks; all but the earliest hash functions include some sort of padding scheme. It is critical for cryptographic hash functions to employ termination schemes that prevent a hash from being vulnerable to length extension attacks.
+Many padding schemes are based on appending predictable data to the final block. For example, the pad could be derived from the total length of the message. This kind of padding scheme is commonly applied to hash algorithms that use the Merkle-Damgård construction.
+
+
+=== Block cipher mode of operation ===
+Electronic codebook and cipher-block chaining (CBC) mode are examples of block cipher mode of operation. Block cipher modes for symmetric-key encryption algorithms require plain text input that is a multiple of the block size, so messages may have to be padded to bring them to this length.
+There is currently a shift to use streaming mode of operation instead of block mode of operation. An example of streaming mode encryption is the counter mode of operation. Streaming modes of operation can encrypt and decrypt messages of any size and therefore do not require padding. More intricate ways of ending a message such as ciphertext stealing or residual block termination avoid the need for padding.
+A disadvantage of padding is that it makes the plain text of the message susceptible to padding oracle attacks. Padding oracle attacks allow the attacker to gain knowledge of the plain text without attacking the block cipher primitive itself. Padding oracle attacks can be avoided by making sure that an attacker cannot gain knowledge about the removal of the padding bytes. This can be accomplished by verifying a message authentication code (MAC) or digital signature before removal of the padding bytes, or by switching to a streaming mode of operation.
+
+
+==== Bit padding ====
+Bit padding can be applied to messages of any size.
+A single set ('1') bit is added to the message and then as many reset ('0') bits as required (possibly none) are added. The number of reset ('0') bits added will depend on the block boundary to which the message needs to be extended. In bit terms this is "1000 ... 0000".
+This method can be used to pad messages which are any number of bits long, not necessarily a whole number of bytes long. For example, a message of 23 bits that is padded with 9 bits in order to fill a 32-bit block:
+
+... | 1011 1001 1101 0100 0010 0111 0000 0000 |
+
+This padding is the first step of a two-step padding scheme used in many hash functions including MD5 and SHA. In this context, it is specified by RFC1321 step 3.1.
+This padding scheme is defined by ISO/IEC 9797-1 as Padding Method 2.
+
+
+==== Byte padding ====
+Byte padding can be applied to messages that can be encoded as an integral number of bytes.
+
+
+===== ANSI X.923 =====
+In ANSI X.923 bytes filled with zeros are padded and the last byte defines the padding boundaries or the number of padded bytes.
+Example: In the following example the block size is 8 bytes, and padding is required for 4 bytes (in hexadecimal format)
+
+... | DD DD DD DD DD DD DD DD | DD DD DD DD 00 00 00 04 |
+
+
+===== ISO 10126 =====
+ISO 10126 (withdrawn, 2007) specifies that the padding should be done at the end of that last block with random bytes, and the padding boundary should be specified by the last byte.
+Example: In the following example the block size is 8 bytes and padding is required for 4 bytes
+
+... | DD DD DD DD DD DD DD DD | DD DD DD DD 81 A6 23 04 |
+
+
+===== PKCS7 =====
+PKCS#7 is described in RFC 5652.
+Padding is in whole bytes. The value of each added byte is the number of bytes that are added, i.e. N bytes, each of value N are added. The number of bytes added will depend on the block boundary to which the message needs to be extended.
+The padding will be one of:
+
+01
+02 02
+03 03 03
+04 04 04 04
+05 05 05 05 05
+etc.
+
+This padding method (as well as the previous two) is well-defined if and only if N is less than 256.
+Example: In the following example the block size is 8 bytes and padding is required for 4 bytes
+
+... | DD DD DD DD DD DD DD DD | DD DD DD DD 04 04 04 04 |
+
+If the original data is a multiple of N bytes, then an extra block of bytes with value N is added.
+PKCS#5 padding is identical to PKCS#7 padding, except that it has only been defined for block ciphers that use a 64-bit (8 byte) block size. In practice the two can be used interchangeably.
+
+
+===== ISO/IEC 7816-4 =====
+ISO/IEC 7816-4:2005 is identical to the bit padding scheme, applied to a plain text of N bytes. This means in practice that the first byte is a mandatory byte valued '80' (Hexadecimal) followed, if needed, by 0 to N-1 bytes set to '00', until the end of the block is reached. ISO/IEC 7816-4 itself is a communication standard for smart cards containing a file system, and in itself does not contain any cryptographic specifications.
+Example: In the following example the block size is 8 bytes and padding is required for 4 bytes
+
+... | DD DD DD DD DD DD DD DD | DD DD DD DD 80 00 00 00 |
+
+The next example shows a padding of just one byte
+
+... | DD DD DD DD DD DD DD DD | DD DD DD DD DD DD DD 80 |
+
+
+==== Zero padding ====
+All the bytes that are required to be padded are padded with zero. The zero padding scheme has not been standardized for encryption, although it is specified for hashes and MACs as Padding Method 1 in ISO/IEC 10118-1 and ISO/IEC 9797-1.
+Example: In the following example the block size is 8 bytes and padding is required for 4 bytes
+
+... | DD DD DD DD DD DD DD DD | DD DD DD DD 00 00 00 00 |
+
+Zero padding may not be reversible if the original file ends with one or more zero bytes, making it impossible to distinguish between plaintext data bytes and padding bytes. It may be used when the length of the message can be derived out-of-band. It is often applied to binary encoded strings as the null character can usually be stripped off as whitespace.
+Zero padding is sometimes also referred to as "null padding" or "zero byte padding". Some implementations may add an additional block of zero bytes if the plaintext is already divisible by the block size.
+
+
+== Public key cryptography ==
+In public key cryptography, padding is the process of preparing a message for encryption or signing using a specification or scheme such as PKCS#1 v1.5, OAEP, PSS, PSSR, IEEE P1363 EMSA2 and EMSA5. A modern form of padding for asymmetric primitives is OAEP applied to the RSA algorithm, when it is used to encrypt a limited number of bytes.
+The operation is referred to as "padding" because originally, random material was simply appended to the message to make it long enough for the primitive. This form of padding is not secure and is therefore no longer applied. A modern padding scheme aims to ensure that the attacker cannot manipulate the plaintext to exploit the mathematical structure of the primitive and will usually be accompanied by a proof, often in the random oracle model, that breaking the padding scheme is as hard as solving the hard problem underlying the primitive.
+
+
+== Traffic analysis ==
+Even if perfect cryptographic routines are used, the attacker can gain knowledge of the amount of traffic that was generated. The attacker might not know what Alice and Bob were talking about, but can know that they were talking and how much they talked. In certain circumstances this can be very bad. Consider for example when a military is organising a secret attack against another nation: it may suffice to alert the other nation for them to know merely that there is a lot of secret activity going on.
+As another example, when encrypting Voice Over IP streams that use variable bit rate encoding, the number of bits per unit of time is not obscured, and this can be exploited to guess spoken phrases.
+Padding messages is a way to make it harder to do traffic analysis. Normally, a number of random bits are appended to the end of the message with an indication at the end how much this random data is. The randomness should have a minimum value of 0, a maximum number of N and an even distribution between the two extremes. Note that increasing 0 does not help, only increasing N helps, though that also means that a lower percentage of the channel will be used to transmit real data. Also note that, since the cryptographic routine is assumed to be uncrackable (otherwise the padding length itself is crackable), it does not help to put the padding anywhere else, e.g. at the beginning, in the middle, or in a sporadic manner. For the same reason, padding can be structured (e.g. it can simply be a set of zeros) - though structured padding can be hazard, as explained in timing attack.
+
+
+== See also ==
+Russian copulation, another technique to prevent cribs
+Initialization vector, salt (cryptography), which are sometimes confused with padding
+Key encapsulation, an alternative to padding for public key systems used to exchange symmetric keys
+Ciphertext stealing, another approach to deal with messages that are not a multiple of the block length
+
+
+== References ==
+
+
+== Further reading ==
+XCBC: csrc.nist.gov/groups/ST/toolkit/BCM/documents/workshop2/presentations/xcbc.pdf

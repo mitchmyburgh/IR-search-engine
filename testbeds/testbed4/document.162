@@ -1,0 +1,26 @@
+the surface the same. The correct normal vector for the back side is the negative of the normal vector for the front side, and the correct dot product is (-N)•L. We can handle both cases if we simply use abs(N•L). For L = (0,0,1), that would be abs(N.z). If color is a vec3 giving the diffuse color of the surface, the visible color can be computed as
+vec3 visibleColor = abs(N.z) * color;
+If color is instead a vec4 giving an RGBA color, only the RGB components should be multiplied by the dot product:
+vec4 visibleColor = vec4( abs(N.z)*color.rgb, color.a );
+The sample program webgl/cube-with-basic-lighting.html implements this minimal lighting model. The lighting calculations are done in the vertex shader. Part of the scene is drawn without lighting, and the vertex shader has a uniform bool variable to specify whether lighting should be applied. Here is the vertex shader source code from that program:
+attribute vec3 a_coords;            // Object coordinates for the vertex.
+uniform mat4 modelviewProjection;   // Combined transformation matrix.
+uniform bool lit;            // Should lighting be applied?
+uniform vec3 normal;         // Normal vector (in object coordinates).
+uniform mat3 normalMatrix;   // Transformation matrix for normal vectors.
+uniform vec4 color;          // Basic (diffuse) color.
+varying vec4 v_color;        // Color to be sent to fragment shader.
+void main() {
+    vec4 coords = vec4(a_coords,1.0);
+    gl_Position = modelviewProjection * coords;
+    if (lit) {
+        vec3 N = normalize(normalMatrix*normal); // Transformed unit normal.
+        float dotProduct = abs(N.z);
+        v_color = vec4( dotProduct*color.rgb, color.a );
+    }
+    else {
+        v_color = color;
+    }
+}
+It would be easy to add ambient light to this model, using a uniform variable to specify the ambient light level. Emission color is also easy.
+The directional light used in this example is technically only correct for an orthographic projection, although it will also generally give acceptable results for a perspective projection. But the correct viewpoint light for a perspective projection is 

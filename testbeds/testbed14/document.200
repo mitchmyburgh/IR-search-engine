@@ -1,0 +1,18 @@
+﻿A bottom-up approach results in a very high 
+level of detail. This in turn (1) increases overall effort,
+(2) makes it difficult to spot commonality
+between related concepts, and (3) increases risk of inconsistencies
+which leads in turn to (4) re-work and yet more effort.
+A top-down approach results in better control of the level of detail, however starting at the top
+can result in choosing and imposing arbitrary high level categories. Because these are not naturally
+arising, there is a risk of less stability
+in the model which in turn leads to re-work and greater effort. This is contrasted against a top-down approach which uses a more general top define concept.
+The emphasis on dividing up rather than putting together also results, for a different reason, in
+missing the commonality inherent in the complex web of inter-connected concepts.
+A middle-out approach, by contrast, strikes a balance in terms of the level detail. Detail only
+arises as necessary, by specialising the basic concepts, so some effort is avoided. By starting with
+most important concepts with the most important concepts 
+first, and defining higher level concepts
+in terms of these, the higher level categories naturally arise and thus are more likely to be stable.
+This, in turn, leads to less re-work and less overall effort.
+

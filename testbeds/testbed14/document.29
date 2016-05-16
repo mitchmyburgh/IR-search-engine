@@ -1,0 +1,49 @@
+3. A tableau calculus for ALC
+Our calculus combines features of Gentzen-type tableaux, prefixed tableaux, and
+constraint systems. Below we give (to the reader who is familiar with these calculi) some
+intuitive reasons why we need a calculus which is more general than each one of them.
+• Gentzen-type tableaux [28,36] provide too rough a level of granularity, since they
+implicitly work with sets of concepts, but concentrate on one element at the time, and
+there is no way to distinguish different elements linked to the same set of concepts.
+• Prefixed tableaux [28,36,54,57] and constraint systems [8] provide too fine a level of
+granularity. They give names to elements, but they do not immediately identify the
+whole set of concepts linked to an element.
+• Graph-based systems, from Kripke’s original proposal [50], to more recent incarnations
+in modal logics [11,26] and description logics [44,45] allow to identify the sets
+of concepts linked to a node. However, since they represent only a single tentative
+model in a tableau, and employ nondeterministic rules, they shift the problem of obtaining
+a deterministic algorithm into the implementation. Therefore they are suited
+only for proving decidability [26,44,45], or PSPACE-completeness, by exploiting Savitch’s
+Theorem that PSPACE is closed under nondeterminism [45].
+• Loop checking [18,36,39,54,57], also known as blocking [8,44,45] and filtering [36],
+is only useful for “reusing” satisfiable concepts, namely the concepts that can be used
+to build a (partial) model.
+• Standard algorithms do not learn from local proofs of unsatisfiability. Indeed, even
+if caching of unsatisfiable concepts is often claimed by many implementors [37,
+41,43,64], this feature is left out of the formal description of the calculus and the
+algorithm. Therefore, it is impossible to prove its correctness or its complexity. In
+contrast, we must formally re-use parts of the computations both for satisfiability and
+unsatisfiability.
+In a nutshell, the intuitions behind our system are close to those commonly described in
+the recent modal and description logic literature. What we have done is to actually distil
+and formalize the different fragments into a coherent and effective whole.
+F.M. Donini, F. Massacci / Artificial Intelligence 124 (2000) 87–138 93
+3.1. Tableau rules
+The basic component of our calculus is a pair e : C, composed by a prefix e and a
+set of concepts C. We call this pair a prefixed set. A prefix is an alternating sequence of
+integers and role names, starting with 1.
+Intuitively, a prefix e in a pair e : C is a name for an element in a domain of a model the
+calculus tries to build. If a model is actually built, e satisfies all concepts contained in the
+set C.
+To define a tableau, we adapt from Smullyan’s book [72, pp. 24 and 29] and use the
+uniform notation defined in Fig. 1 to avoid any preliminary reduction to negation normal
+form.
+A tableau for a concept C is an ordered dyadic tree, whose points are (occurrences of)
+prefixed sets, which is constructed as follows. We start by placing 1 : {C} at the root. Now
+suppose T is a tableau for C which has already been constructed; let B be a branch in T ,
+i.e., a path from the root to a leaf. Then we may extend T by using the rules in Fig. 2 as
+follows: if the antecedents of a rule appear along B, we add to B the consequent(s) of the
+rule. For the β rule, we simultaneously adjoin the two consequents as the left successor
+and the right successor of the leaf. Notice that the antecedent of a rule needs not be a leaf
+in the tree as in [41].
+We call the rules in Fig. 2 Prefixed Set rules (PS-rules for short).

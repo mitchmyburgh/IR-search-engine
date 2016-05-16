@@ -1,0 +1,8 @@
+A binary heap is a heap data structure created using a binary tree. It can be seen as a binary tree with two additional constraints:[1]
+Shape property
+A binary heap is a complete binary tree; that is, all levels of the tree, except possibly the last one (deepest) are fully filled, and, if the last level of the tree is not complete, the nodes of that level are filled from left to right.
+Heap property
+All nodes are either greater than or equal to or less than or equal to each of its children, according to a comparison predicatedefined for the heap.
+Heaps with a mathematical "greater than or equal to" (=) comparison predicate are called max-heaps; those with a mathematical "less than or equal to" (=) comparison predicate are called min-heaps. Min-heaps are often used to implement priority queues.[2][3]
+Since the ordering of siblings in a heap is not specified by the heap property, a single node's two children can be freely interchanged unless doing so violates the shape property (compare with treap). Note, however, that in the common array-based heap, simply swapping the children might also necessitate moving the children's sub-tree nodes to retain the heap property.
+The binary heap is a special case of the d-ary heap in which d = 2

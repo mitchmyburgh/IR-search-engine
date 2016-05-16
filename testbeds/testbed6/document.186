@@ -1,0 +1,14 @@
+How do you decide which data structure you need to use for any particular program/algorithm implementation?
+Is there any generalized method that you might refer to or does it come with practice and experience only?
+
+The first thing to do is look at the fundamental requirements - what are the inputs, what are the outputs, what are the operations in between? 
+
+Then, the performance and scale requirements - how much data are we talking about? How frequently will it be accessed?
+
+Then, ponder how those requirements align with the simple classic data structures that we all know and love - lists, arrays, hash sets, dictionaries, queues, trees, heaps, and so on. Usually there's a good match; if there is only a near-match, you can usually wrap one of those simple structures to give it the API that you really need (like turning a list into a stack or queue).
+
+Sometimes, there's no good fit with the usual structures. Then you have to consider stuff that isn't used often, but that works wonderfully for some special cases. Bloom filters are a great example. Or stuff that's "bigger" than the basic structures, like relational databases or the various NoSQL databases.
+
+The last two steps depend on having a mental catalog of structures to consider. That's something that comes from experience. The more code you write, the more familiar you will be with various data structures, algorithms, patterns, and so on. Reading books also helps, as does reading code, getting feedback on your code, reading other peoples' feedback on other peoples' code, and so on. It all takes time. But you can pick up a lot of that stuff without even trying - just by writing software on your own, or better yet as part of a team.
+
+If there's still no good fit that comes to mind, talk to people. Ask classmates or co-workers, find online forums, and so on. Maybe you can find someone who knows of a good fit, or maybe you can find someone who can help you picture your problem from a different perspective, and maybe that can help you think of a good way to meet your requirements.             

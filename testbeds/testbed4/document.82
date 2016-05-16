@@ -1,0 +1,85 @@
+Zed3D - A compact reference for 3d computer graphics programming
+Copyright 1994, 1995, 1996 by Sébastien Loisel All Rights Reserved, version 0.95ß
+Zed3D is a document about computer graphics, more particularly real-time 3d graphics. This document should be viewed as a practical reference for a first and perhaps second course in computer graphics.
+The original Zed3D document grew out of my work notes. As a matter of fact, the original Zed3D, up to version 0.61beta, was my work notes. As such, it was messy, incomplete and often incorrect. I have attempted to correct this a bit now. I still consider these my work notes, but I have added more formal introductory material which was not in the original document.
+In this document, I will attempt to describe various aspects of computer graphics in a clear, useful and complete fashion. You will find quite a bit of the theoretical aspects, copies of the calculations and proofs I made and so forth.
+3
+However, there is the painful fact that I am merely a student, trying to mark my territory in the university work, and since this work does not serve that purpose very well, Zed3D will oftentimes be lacking in areas that I wish I had more time to document. Also, I will attempt to distribute another nice portable graphics engine in the future, but that's only if I can find the time to make it.
+Also, please note that this document and any accompanying documentation/software for which I am the author should not be considered public domain. You can redistribute this whole thing, unmodified, if no fee is charged for it, otherwise you need the author's written permission. Also I am not responsible for anything that might happen anywhere even if it's related directly or indirectly to this package. If you wish to encourage my effort, feel free to send me a 10$ check, which will be considered to be your official registration. If you're really on a budget, I would appreciate at least a postcard. At any rate, please read the registration paragraph below. There have been rumours about a 0.70 version of Zed3D about. This would be a fake, versions between 0.63 and 0.79 do not exist, and have never existed.
+Contact information
+If you wish to contact me for any reason, you should be using the following snailmail address or my e-mail address. Given that snail-mail addresses tend to be more stable over time, you might try it if I don't answer to your electronic messages.
+E-Mail Address: zed@cs.mcgill.ca
+Snail Mail Address: For the 1995-1996 school year, I will reside at:
+Sébastien Loisel 3436 Aylmer Street, apartment 2 Montréal, Québec, Canada Postal Code: H2X 2B6
+Otherwise, it is possible to reach me at:
+Sébastien Loisel 1 J.K. Laflamme Lévis, Québec, Canada Postal Code: G6V 3R1
+Registration
+4
+If you want to register your copy of Zed3D for life, and be able to use the source in any way you want, even commercial (though commercial utilization of the documentation [this file] still requires the written permission of the author), you can send me a cheque of US$10.00. For more information, please consult the file register.frm, which should have come with this document. If you are experiencing difficulties with registration or if the file register.frm is missing, please mail me and we will work something out.
+Overview
+I am trying to put a bit more structure into this document. As such, this is how it is meant to be structured at this moment.
+The first section is heavily mathematical. It deals with transformations by and at large. First are discussed linear and affine transformations, which are used to spin and move stuff in space in a useful fashion, then is discussed and justified the perspective transforms. These two sections are very theoretical, but are required for proper understanding of the later sections.
+Then there will follow a section dealing specifically with applications of the preceding theory. Namely, rotation matrices and their inverse and object hierarchy.
+The third "section" concerns itself mainly with rendering techniques. These are becoming less and less important for several reasons. The complexity of the problem is of course not in the rendering section of the pipeline. Second, the recent trend has pushed the rendering part of the pipeline into cheap video hardware which can do the job fast and effectively while the CPU is off to some other, more important task. Eventually, we can hope that transforming objects will also be made a part of popular low-cost hardware, but that remains to be seen. As it is now, this is often the job of either the CPU, or sometimes we might wish to give this job to a better co-processor (for example, a programmable DSP).
+Fourthly, an attempt will be made to describe a few shading models and visible surface determination techniques. Shading models are but loosely related to the way the polygons are drawn. Visible surface determination depends somewhat more on the way polygons are drawn, and is often implemented in hardware.
+The following section deals with a few of the computer graphics related problems that are often encountered, such as error tolerant normal computation, the problem of finding a correctly oriented normal, polygon triangulation and quaternions to represent orientations, which are especially useful in keyframe animations.
+Vector mathematics
+Introduction
+Linear algebra is a rather broad yet basic field of college level mathematics. It is being taught (or should be at any rate) early on to students in mathematics and engineering. However simple it is, it's a lengthy topic to discuss. And since this document is not meant as a mathematics textbook, I will only give here the gist of the thing.
+If you need further information on the topic, browse your local library for linear algebra books and somesuch, or go ask a professor. As of now, I'm not making any bibliography for this, but if and when I do, I'll try to give a few decent references.
+The purpose of linear algebra in 3d graphics is to implement all the rotation, skewing, translation, changes in coordinates, and otherwise affine transformations to 3d object. The applications range from merely rotating an object about its own system of axis to object hierarchy, moving cameras and can be extended through quaternions for rotation interpolation and such.
+As such, linear algebra is something that is essential for any 3d graphics engine to be useful.
+Since my prime concern is 3d graphics, I will give only whatever theory is absolutely necessary for that topic. What's below extends in a vary natural way to n dimensions, n>3, except for cross product, which is a bit awkward.
+On notation
+I will frequently use the sigma symbol for sums, for example, something like this:
+?0=i=nai
+which stands for
+a0+a1+a2+a3+...+an.
+11
+More generally, the notation
+?i?Iai
+stands for "sum of all ai for all i in I". This notation will not be used frequently in this work. Notation from more advanced math might be used especially in proofs.
+Vector operations
+A vector in 3d is noted (a,b,c) where a, b and c are real numbers. Similarly, a vector in 2d is noted (a,b) for a, b real numbers. The vector for which all components are null deserves a special mention, it is usually noted 0, with the proper number of components implied in the notation but not explicitly given.
+A vector should be thought of as an oriented line segment from the origin (0) to a point P in space. Let's take a 2d example (this is also valid for 3d or higher dimension). The vector V=(1,2) can be represented as an oriented segment from (0,0) to P=(1,2), as can be seen below. A vector should always be pictured as an arrow from 0 to the point P. Using this model, we can think of a vector from P1=(a,b) to P2=(c,d) as the vector from (P1-P1) to (P2-P1), or from (0,0) to (ca,d-b). This illustrates a very important point. The vector from P1 to P2 is the exact same vector as the vector from 0 to P2-P1. Two vectors that differ only by a translation are considered equivalent.
+1
+2
+Y
+X
+1 2
+P=(1,2)
+(0,0)
+V
+Vector addition is defined as follows. Let U=(u1,u2,u3) and V=(v1,v2,v3) then the notation U+V means (u1+v1,u2+v2,u3+v3). Similarly, for 2d vectors, (u1,u2)+(v1,v2) means (u1+v1,u2+v2).
+Multiplication of a vector by a scalar is defined as follow. Given vector U and a scalar a (a is a real number), then a××U means (a××u1,a××u2,a××u3).
+Multiplication by the scalar -1 has a special notation. -1××U is written simply -U.
+Vector difference is defined from the above. U-V can be rewritten U+-1*V, which is a simple addition and a multiplication by the scalar -1 as above.
+12
+Multiplication of two vectors has no intuitive meaning. However, two types of "multiplications" of vectors are usually defined, which have little relation to the usual real number multiplication.
+The first is dot product. U dot V (usually noted U••V) yields a real number (not a vector). (u1,u2,u3)•(v1,v2,v3) means u1××v1+u2××v2+u3××v3. Similarly for 2d vectors, (u1,u2)•(v1,v2)=u1×v1+u2×v2. Note that the 1d case corresponds to normal multiplication of real numbers in a certain way.
+Vectors have a length, defined as follow. The length (or module, or norm) of vector U is written |U| and has the value of (U••U)1/2. If the length of a vector is one, the vector is said to be of unit length, or a unit or normal vector. Multiplying a vector V by the scalar 1/|V| is called normalizing a vector, because it has the effect of making V a unit vector. In the 1d case, length simplifies to absolute value, thus the notation |U|.
+Dot product is also used to define angle. U••V=|U|××|V|××Cos??, where ? is the angle between U and V. Incidentally, if |U|=1 then this simplifies to |V|×Cos?, which is the length of the projection of V onto U. It is of note that U•V is 0 if and only if either ? is p/2+2kp or |U|=0 or |V|=0. Assuming |U| and |V| are not 0, this means that if U•V is 0, then U and V are perpendicular, or orthogonal.
+The second product usually defined on vectors is the cross product. U cross V (usually noted U××V) is defined using matrix determinant and somesuch. Basically, (u1,u2,u3)×(v1,v2,v3) is (u2v3-u3v2, u3v1-u1v3, u1v2-u2v1).
+It is demonstrable that the cross product of two vectors is perpendicular to the two vectors and has a length of |U||V|Sin??. The fact that it is perpendicular has applications which we will see later.
+Exercises
+Q1 - Do the following vector operations:
+a) (1,3,2)+(3,5,6)
+b) 1.5×(3,4,2)
+c) (-1,3,0)•(2,5,2)
+d) |(3,4,20/3)|
+e) U•V where |U|=2, |V|=3 and the angle between U and V is 60 degrees
+f) (1,2,3)×(4,5,6)
+13
+Q2 - Which vectors satisfy the equation U•(1,1,1)=0?
+Answers
+A1 - a) (4,8,8)
+b) (4.5,6,3)
+c) 13
+d) 25/3
+e) 3
+f) (-3,6,-3)
+A2 - All vectors that satisfy u1+u2+u3=0. Since the dot product is 0, this means all vectors that are perpendicular to U. Incidentally, these vectors cover the whole plane and nothing but the plane for which the normal is (1,1,1). All the vectors of the said plane can be expressed as p(1,-1,0)+r(0,-1,1) [for example] for some real numbers p and r. This last notation is also known as a local coordinates system for the u1+u2+u3=0 plane.
+Alcoholism and dependance
+Given a set of vector U0, U1, U2, ... , Un, these vectors are said to be linearly independent if and only if the following is true:
+a0××U0+a1××U1+...+an××Un=0 implies that (a0,a1,a2, ... , an)=0.
+If there exists at least one solution for which (a0, a1, a2, ...,an) is not zero, then there exists an infinity of them, and the vector are said to be linearly dependant.

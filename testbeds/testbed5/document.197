@@ -1,0 +1,108 @@
+What JavaScript Means for Ecommerce Merchants
+April 19, 2016 • Eric Davis
+
+    PrintPrint
+    inShare38
+
+Web developers use three core tools when building ecommerce sites: HTML for content and organization, CSS for the design and presentation, and JavaScript for the interaction with backend servers.
+
+This article, addressing JavaScript, is the third installment in my series on those tools, following “What HTML5 Means for Ecommerce Merchants” and “What CSS Means for Ecommerce Merchants.”
+
+JavaScript is a complete programming language that is primarily used on the web. It’s powerful enough to use for servers and other applications, but until recently those uses were rare. In this article, I’ll focus on JavaScript’s role in websites, which is called client-side JavaScript. In web development, the browser is called the client. JavaScript runs in the web browser.
+
+There are two main roles for JavaScript within ecommerce stores:
+
+    Adding interactivity to a web page;
+    Connecting to backend servers.
+
+There is also a supplementary role: customer tracking and analytics.
+Why Interactivity?
+
+Since its introduction on websites, JavaScript has been adding dialog between humans and computer programs. Back in 2005, for example, I used JavaScript for flyout menus. It was interactive in that the flyout didn’t occur without a human first moving her mouse over, say, a category name.
+
+The point of adding interactivity to a web page is so that users can see changes based on their actions. Without it, there isn’t much happening on a page: a user can only scroll, click, and fill out forms. It makes it difficult to engage users — shoppers — and keep their attention.
+Adding Interactivity with JavaScript
+
+Using JavaScript, merchants can engage their visitors.
+
+Product images can change when the mouse hovers on them. Clicking on an image could zoom in and show a higher-resolution version, or slowly rotate the product 360 degrees.
+
+As a shopper is typing into a search form, common search terms can appear automatically and help guide the shopper’s search to one that has more results, or correct common typos.
+
+Something as simple as having multilevel navigational flyout menus can add interactivity, which improves a visitor’s experience by helping her to quickly drill down to appropriate product categories. (Interestingly, recent versions of CSS have added some JavaScript-like features for interactivity.)
+
+While using JavaScript for a more interactive web experience is popular, there is another use that has become common with ecommerce stores: backend integration.
+Better Backend Integration Using AJAX
+
+Using JavaScript, a visitor could interact with a page. But if he wanted to load another page or complete a new form, he’d have to wait for the server to respond with a new page or a new form.
+
+While this worked okay, it wasn’t very smooth. It was frustrating, for example, to change shopping cart quantities for five items and remove a few others. Each change would take a few seconds to load. Shoppers would often become annoyed and leave.
+
+Enter AJAX — Asynchronous JavaScript and XML — which was developed around 2005. AJAX allowed web applications to send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. Instead of the user performing an action and then waiting for a new page to appear, she could perform an action and AJAX would communicate with the server in the background and then update the existing page automatically.
+
+This opened up many interactions that are now common:
+
+    Updating an item in a cart and seeing the change right away;
+    Search suggestions and results that appear as you type;
+    New email messages appearing automatically in Gmail;
+    Ability to drag and drop elements of a web page;
+    Forms that notify you of problems as you fill them out.
+
+AJAX enabled JavaScript to expand its capabilities, so interactions were more than just visual changes and hints. They affected how a store functions.
+
+Now, because of AJAX, modern ecommerce applications are full of these dynamic, backend-supported interactions.
+Web Tracking and Analytics
+
+A third use of JavaScript is web tracking and analytics. Not only does JavaScript provide real-time tracking of page views, but it also allows you to see how far down a page people are reading (heatmaps), where their mouse is, and what they try to click on (click tracking). JavaScript can track on-site events — notifying backend servers about a visitor’s behavior and taking some action around it, such as loading an abandoned cart.
+
+Most ecommerce sites will not build their own tracking and analytics system, given that there are so many powerful ones already. But many merchants do use JavaScript to customize and log specific events.
+Disadvantages, Costs of JavaScript
+
+JavaScript provides ecommerce sites a powerful tool to improve their shoppers’ experiences. But it’s not without a cost.
+
+For example, seemingly simple interactions on the frontend can become complex underneath. Say you want your search form to automatically show the first five results. Simple, right? Here’s what is actually involved.
+
+    Add JavaScript to wait for a user to start typing in a field.
+
+    After three characters, make an AJAX request to the server with the search term.
+
+    On the server, perform your search function with that search term.
+
+    Format the search results as an HTML snippet or a JSON (a method of exchanging data) structure so it can be returned back to the search form’s JavaScript.
+
+    Once the search form gets the search results, display them nicely using CSS and make sure they appear on top of the page.
+
+    Cancel the AJAX requests and any server processing when a user continues to type more characters — four, five, six, and so on — in the search field.
+
+    Facilitate and communicate instances when there are no search results found on the server.
+
+    Facilitate and communicate server errors.
+
+    Add suggestions to the search, so the user can see popular searches.
+
+    Correct the user’s typos and misspellings.
+
+I’ll stop there. There are many more steps that even a simple search would need to do. Good developers understand this and are able to describe these additional parts to build interactivity.
+
+Also, you might have noticed that while we were building a JavaScript component, it required:
+
+    Changes on the server to perform the search;
+    HTML to display the search;
+    CSS to present the results in a visually appealing manner.
+
+Coordinating all of these means JavaScript development can become more difficult than it appears.
+JavaScript Libraries Help and Hurt
+
+To address the complexity, there has been a huge growth in code libraries and reusable JavaScript components. While building a live search would take all of the work described above, if a developer uses a live search code library, she might be able to cut 75 percent of that work.
+
+While code libraries are appealing, they come with their own disadvantages. Some can slow down pages when they are used. Some libraries provide hundreds of functions, even though you only need one or two. Even knowing which library to use can be difficult as there are so many choices.
+JavaScript: Powerful Tool in the Right Hands
+
+For the modern ecommerce store, using JavaScript is an easy decision. Most merchants are already using it, and rightly so. It’s a powerful tool and it provides valuable improvements to websites.
+
+Just be careful with how much you use it. It’s easy to overuse and damage your site. To get the most out of JavaScript:
+
+    Hire seasoned developers who know JavaScript well;
+    Carefully weigh the full costs and impacts of any changes made with JavaScript.
+
+As you use the web, note the interactions that surprise and delight you. Some will be subtle and some not. But JavaScript will power almost all of them. Some of them, in fact, you might be able to use in your own ecommerce site.

@@ -1,0 +1,36 @@
+Let us consider how to generalize Bresenham’s midpoint line drawing algorithm for the
+rasterization of a circle. We will make a number of assumptions to simplify the presentation of the algorithm.
+First, let us assume that the circle is centered at the origin. (If not, then the initial conditions to the following
+algorithm are changed slightly.) Let R denote the (integer) radius of the circle.
+The first observations about circles is that it suffices to consider how to draw the arc in the positive quadrant
+from _=4 to _=2, since all the other points on the circle can be determined from these by 8-way symmetry.
+8-way symmetry for circles.
+What are the comparable elements of Bresenham’s midpoint algorithm for circles? As before, we need an
+implicit representation of the function. For this we use
+F(x; y) = x2 +y2 -R2 = 0:
+Note that for points inside the circle (or under the arc) this expression is negative, and for points outside the
+circle (or above the arc) it is positive.
+Midpoint algorithm for circles.
+Let’s assume that we have just finished drawing pixel (xp; yp), and we want to select the next pixel to draw
+(drawing clockwise around the boundary). Since the slope of the circular arc is between 0 and -1, our choice
+Lecture Notes 117 CMSC 427
+at each step our choice is between the neighbor to the east E and the neighbor to the southeast SE. If the circle
+passes above the midpoint M between these pixels, then we go to E next, otherwise we go to SE.
+Next, we need a decision variable. We take this to be the value of F(M), which is
+D = F(M) = F(xp + 1; yp - 1
+2
+)
+= (xp+ 1)2 + (yp - 1
+2
+)2 -R2:
+IfD < 0 then M is below the arc, and so the E pixel is closer to the line. On the other hand, if D _ 0 then M
+is above the arc, so the SE pixel is closer to the line.
+Again, the new value of D will depend on our choice.
+We go to E next: Then the next midpoint will have coordinates (xp+2; yp-(1=2)) and hence the new d value
+This is something of a pain, because we have been trying to avoid floating point arithmetic. However, there is a
+very clever observation that can be made at this point. We are only interested in testing whether D is positive or
+negative. Whenever we change the value of D, we do so by a integer increment. Thus, D is always of the form
+D0 + 1=4, where D0 is an integer. Such a quantity is positive if and only if D0 is positive. Therefore, we can
+just ignore this extra 1=4 term. So, we initialize Dinit = 1-R(subtracting off exactly 1=4), and the algorithm
+behaves exactly as it would otherwise!
+

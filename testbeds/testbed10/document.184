@@ -1,0 +1,86 @@
+Using machine learning techniques in the construction of models.
+II. Data analysis with rule induction
+
+Sago D~eroski a, *, Jasna Grbovi6 h, William J. Walley c, Boris Kompare d
+
+1. Introduction
+Artificial intelligence is the study of ways in
+which computers can perform tasks that demand
+intelligent behavior. Such tasks can be roughly divided
+in two categories: task that can be solved by
+commonsense reasoning and tasks that require expert
+knowledge. Example tasks from the first category are
+the understanding of stories or jokes written in natural
+language, recognition of objects on photographs,
+path finding in an environment with obstacles, and SO on. The second category comprises tasks such as
+medical diagnostics, configuration of computer or
+telecommunication systems, diagnostics of different
+types of machinery, and so on. Ecological problems
+that belong to this category include the task of
+interpretation of biological or chemical samples of
+river water, i.e., classification of river water quality.
+For solving problems from the second category,
+the methodology of expert systems was developed
+within the area of artificial intelligence. Expert systems
+are computer systems that can solve problems
+in a narrow domain with a performance similar to
+the one of human experts. The basic building blocks
+of an expert system are a knowledge base, an inference engine, and a user interface (Harmon et al.,
+1988). The user interface takes care of the communication
+between the expert system and its user, including
+the acquisition of the data needed to solve a
+particular problem. The inference engine uses the
+acquired data and the rules in the knowledge base to
+infer intermediate and final conclusions regarding
+the solution of the problem.
+The key part of the expert system is the knowledge
+base. While the other two parts of the expert
+system (called an expert system shell) are interchangeable
+across problem domains, the knowledge
+base is specific to a particular problem domain. It
+contains knowledge about that particular domain,
+typically formulated as a set of IF-THEN rules,
+which have an antecedent (IF) and a consequent
+(THEN) part. These rules can be viewed as a model
+of the domain studied, albeit in a form different from
+the traditional differential equation models. A knowledge
+base for an ecological domain can be regarded
+as an ecological model.
+A model in the form of equations can be derived
+from expert knowledge and understanding of a particular
+domain. A knowledge base in the form of
+rules can be obtained in a similar manner. In the
+practice of building expert systems, this turned out to
+be a very difficult task. The construction of the
+knowledge base was mostly done through a process
+called knowledge acquisition (KA), during which a
+knowledge engineer (computer expert) tried to extract
+the knowledge from a domain expert (e.g.,
+ecologist) by a permanent dialogue. This turned out
+to be a difficult and frustrating process. Namely,
+while experts perform their tasks with ease on particular
+problems in the given domain, they find it very
+difficult to describe how they do it precisely and in
+detail. And even when they gave a description, it
+often turned out that the description did not fit the
+practice, i.e., what the expert said he was doing was
+not what he was actually doing. This problem was so
+acute that it got a name of its own - the knowledge
+acquisition bottleneck.
+A characteristic that defines a person as an expert
+in a particular area is his ability to solve problems in
+that area easily. Thus, examples of solved problems
+are not difficult to come by. Machine learning, i.e.,as indicated in a previous paper in this series
+(Kompare et al., 1994). From examples of solved
+problems (e.g., biological samples and the corresponding
+water quality classes), machine learning
+tools can construct general rules that capture the
+knowledge used to solve the problems. Such rules
+can constitute a knowledge base for an expert system.
+Expert systems of the second generation recognize
+the usefulness of machine learning (ML) and
+include ML tools, which can use examples of solved
+problems and additional knowledge about the domain,
+called deep knowledge. 
+learning from examples, can thus be a useful tool in
+constructing a knowledge base for an expert system, 

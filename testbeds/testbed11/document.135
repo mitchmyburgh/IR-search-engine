@@ -1,0 +1,13 @@
+I/O request packets (IRPs) are kernel mode structures that are used by Windows Driver Model (WDM) and Windows NT device drivers to communicate with each other and with the operating system. They are data structures that describe I/O requests, and can be equally well thought of as "I/O request descriptors" or similar. Rather than passing a large number of small arguments (such as buffer address, buffer size, I/O function type, etc.) to a driver, all of these parameters are passed via a single pointer to this persistent data structure. The IRP with all of its parameters can be put on a queue if the I/O request cannot be performed immediately. I/O completion is reported back to the I/O manager by passing its address to a routine for that purpose, IoCompleteRequest. The IRP may be repurposed as a special kernel APC object if such is required to report completion of the I/O to the requesting thread.
+IRPs are typically created by the I/O Manager in response to I/O requests from user mode. However, IRPs are sometimes created by the plug-and-play manager, power manager, and other system components, and can also be created by drivers and then passed to other drivers.
+The I/O request packet mechanism is also used by Digital Equipment Corporation's VMS operating system, and was used by Digital's RSX-11 family of operating systems before that.
+
+
+== See also ==
+Architecture of Windows NT
+
+
+== References and external links ==
+Whitepaper on Windows I/O model
+How Device Drivers work
+IRP (Windows Drivers)

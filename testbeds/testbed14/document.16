@@ -1,0 +1,60 @@
+Tableau Proof Techniques for DLs
+Knowledge Technologies
+
+Reasoning Algorithms for DLs
+• Terminating, complete and efficient algorithms for deciding
+satisfiability – and all the other reasoning problems we
+presented earlier – are available for various DLs.
+• Most of these algorithms are based on tableau proof
+techniques.
+• Such algorithms have been shown to be efficient for real
+knowledge bases, even if the problem in the corresponding logic
+is in PSPACE or EXPTIME. Most popular DL reasoners today
+are based on tableau techniques e.g., Pellet
+(http://clarkparsia.com/pellet/) or HermiT
+(http://www.comlab.ox.ac.uk/projects/HermiT/).
+Knowledge Technologies
+
+Outline
+• Introduction to tableau techniques
+– Tableau techniques for propositional logic
+– Tableau techniques for first-order logic
+• Tableau techniques for ALC:
+– Tableau techniques for concept satisfiability
+– Tableau techniques for ABox satisfiability
+– Tableau techniques for knowledge base satisfiability
+Knowledge Technologies
+
+Tableau Proof Techniques
+We will give a short introduction of tableau proof techniques for
+• Propositional logic (PL)
+• First-order logic (FOL)
+before we move to the case of description logics.
+What we want to demonstrate is that tableau techniques have been
+standard proof techniques in other logics before they were used by
+DL researchers. Regarding DLs, there are also close connections to
+tableau techniques for modal logics but we will not introduce them
+here in any detail.
+In the literature, the term semantic tableau is also used.
+Knowledge Technologies
+
+Tableau Proof Techniques - PL
+Tableau are refutation systems for PL (like resolution). To
+prove that a formula P is a tautology (or valid), we start with
+¬P and produce a contradiction.
+The procedure for doing this involves expanding ¬P so that
+inessential details of its logical structure are cleared away.
+In tableau proofs, such an expansion takes the form of a tree,
+where nodes are labeled with formulas.
+Each branch of this tree should be thought of as representing the
+conjunction of the formulas appearing on it, and the tree itself as
+representing the disjunction of its branches.
+Knowledge Technologies
+
+Uniform Notation for PL
+Theorem. (Unique Parsing) Every propositional formula is in
+exactly one of the following categories:
+1. atomic (propositional symbol, ⊤ or ⊥).
+2. ¬X, for a unique propositional formula X.
+3. (X ◦ Y ) for a unique binary symbol ◦ and unique propositional
+formulas X and Y .

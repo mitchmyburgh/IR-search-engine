@@ -1,0 +1,91 @@
+Whitespace (programming language)
+From Wikipedia, the free encyclopedia
+
+Whitespace hello world program with syntax highlighting
+  tabs
+  spaces
+Whitespace is an esoteric programming language developed by Edwin Brady and Chris Morris at the University of Durham (also developers of the Kaya and Idris programming languages). It was released on 1 April 2003 (April Fool's Day). Its name is a reference to whitespace characters. Unlike most programming languages, which ignore or assign little meaning to most whitespace characters, the Whitespace interpreter ignores any non-whitespace characters. Only spaces, tabs and linefeeds have meaning.[1] An interesting consequence of this property is that a Whitespace program can easily be contained within the whitespace characters of a program written in another language, except possibly in languages which depend on spaces for syntax validity such as Python, making the text a polyglot.
+
+The language itself is an imperative stack-based language. The virtual machine on which the programs run has a stack and a heap. The programmer is free to push arbitrary-width integers onto the stack (currently there is no implementation of floating point numbers) and can also access the heap as a permanent store for variables and data structures.
+
+Contents  [hide] 
+1	History
+2	Syntax
+3	Sample code
+4	See also
+5	References
+6	External links
+History[edit]
+Whitespace was created by Edwin Brady and Chris Morris in 2002. Slashdot gave a review of this programming language on 1 April 2003.[2] The same year an interpreter for it was implemented in Whitespace.[citation needed]
+
+The idea of using whitespace characters as operators for the C++ language was facetiously suggested five years earlier by Bjarne Stroustrup.[3]
+
+Syntax[edit]
+Commands are composed of sequences of spaces, tab stops and linefeeds. For example, tab-space-space-space performs arithmetic addition of the top two elements on the stack. Data is represented in binary using spaces (0) and tabs (1), followed by a linefeed; thus, space-space-space-tab-space-tab-tab-linefeed is the binary number 0001011, which is 11 in decimal. All other characters are ignored and thus can be used for comments.
+
+Code is written as an Instruction Modification Parameter (IMP) followed by the operation.[4] The table below shows a list of all the IMPs in Whitespace.
+
+IMP	Meaning
+[Space]	Stack Manipulation
+[Tab][Space]	Arithmetic
+[Tab][Tab]	Heap Access
+[LineFeed]	Flow Control
+[Tab][LineFeed]	I/O
+Each IMP is followed by one of several operations defined for that IMP. See the Whitespace Tutorial[5] for the list of operations supported in Whitespace.
+
+Sample code[edit]
+The following is a commented Whitespace program that simply prints "Hello, world!", where each Space, Tab, or Linefeed character is preceded by the identifying comment "S", "T", or "L", respectively:
+
+S S S T	S S T	S S S L
+T	L
+S S S S S T	T	S S T	S T	L
+T	L
+S S S S S T	T	S T	T	S S L
+T	L
+S S S S S T	T	S T	T	S S L
+T	L
+S S S S S T	T	S T	T	T	T	L
+T	L
+S S S S S T	S T	T	S S L
+T	L
+S S S S S T	S S S S S L
+T	L
+S S S S S T	T	T	S T	T	T	L
+T	L
+S S S S S T	T	S T	T	T	T	L
+T	L
+S S S S S T	T	T	S S T	S L
+T	L
+S S S S S T	T	S T	T	S S L
+T	L
+S S S S S T	T	S S T	S S L
+T	L
+S S S S S T	S S S S T	L
+T	L
+S S L
+L
+L
+
+Note that when Whitespace source code is displayed in some browsers, the horizontal spacing produced by a Tab character is not fixed, but depends on its location in the text relative to the next horizontal tab stop. Depending on the software, Tab characters may also get replaced by the corresponding variable number of Space characters.
+
+See also[edit]
+Polyglot, a program valid in more than one language
+Steganography, the technique of concealing a message within another message
+Off-side rule languages, where blocks are expressed by whitespace indentation
+Python, the best-known example of a language with syntactically significant whitespace
+Esoteric programming languages
+Brainfuck, which consists of only eight simple commands and an instruction pointer
+INTERCAL, the "Compiler Language With No Pronounceable Acronym"
+LOLCODE, which is patterned after a series of Internet memes
+Malbolge, which is specifically designed to be nearly impossible to program in
+References[edit]
+Jump up ^ "Whitespace". Compsoc. Retrieved 2015-10-26.
+Jump up ^ Timothy (2003-04-01). "New Whitespace-Only Programming Language". Slashdot. Retrieved 2014-01-23.
+Jump up ^ Stroustrup, Bjarne. "Generalizing Overloading for C++2000" (PDF). Florham Park, NJ, USA: AT&T Labs. Retrieved 2014-01-23.
+Jump up ^ "Whitespace Tutorial". Compsoc. Retrieved 2015-12-08.
+Jump up ^ Whitespace tutorial
+External links[edit]
+Official website
+Release announcement on Slashdot
+Collection of Whitespace interpreters in various script languages
+Acme::Bleach A Perl module that rewrites the body of your module to a whitespace-only encoding ("for really clean programs").

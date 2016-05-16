@@ -1,0 +1,39 @@
+Concurrent languages[edit]
+See also: List of concurrent and parallel programming languages and Category:Concurrent programming languages
+Message passing languages provide language constructs for concurrency. The predominant paradigm for concurrency in mainstream languages such as Java is shared memory concurrency based on monitors. Concurrent languages that make use of message passing have generally been inspired by CSP or the p-calculus, but have had little commercial success, except for Ada and Erlang. Ada is a multipurpose language and concurrent programming is only one option available.
+
+Ada (multi-purpose language)
+Alef – concurrent language with threads and message passing, used for systems programming in early versions of Plan 9 from Bell Labs
+Ateji PX an extension of the Java language for parallelism
+ChucK – domain specific programming language for audio, precise control over concurrency and timing
+Cilk – a concurrent C
+C? – C Omega, a research language extending C#, uses asynchronous communication
+Clojure – a dialect of Lisp for the Java virtual machine
+Chapel
+Co-array Fortran
+Concurrent Pascal (by Brinch-Hansen)
+Curry
+E – uses promises, ensures deadlocks cannot occur
+Eiffel (through the SCOOP mechanism, Simple Concurrent Object-Oriented Computation)
+Erlang – uses asynchronous message passing with nothing shared
+Go
+Java
+Join Java – concurrent language based on Java
+X10
+Julia
+Join-calculus
+Joule – dataflow language, communicates by message passing
+Limbo – relative of Alef, used for systems programming in Inferno (operating system)
+MultiLisp – Scheme variant extended to support parallelism
+occam – influenced heavily by Communicating Sequential Processes (CSP)
+occam-p – a modern variant of occam, which incorporates ideas from Milner's p-calculus
+Orc
+Oz – multiparadigm language, supports shared-state and message-passing concurrency, and futures, and Mozart Programming System cross-platform Oz
+Pict – essentially an executable implementation of Milner's p-calculus
+Rust – actor-based
+SALSA – actor language with token-passing, join, and first-class continuations for distributed computing over the Internet
+Scala – implements Erlang-style actors on the JVM
+SequenceL – purely functional, automatically parallelizing and race-free
+SR – research language
+Unified Parallel C
+XProc – XML processing language, enabling concurrency

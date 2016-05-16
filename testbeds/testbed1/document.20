@@ -1,0 +1,35 @@
+Apple_and_Adobe_Flash_controversy
+The '''Apple and Adobe Flash controversy''' is ongoing between  and  over  technology, and specifically the  and its use on Apple  devices such as the  and .
+==Flash Player==
+==="Thoughts on Flash"===
+On April 29, 2010, , the co-founder and chief executive officer of , published an open letter called "Thoughts on Flash" explaining why Apple would not allow Flash on the ,  and . He cited the rapid energy consumption, poor performance on mobile devices, abysmal security, lack of touch support, and desire to avoid "a third party layer of software coming between the platform and the developer". He touched on the idea of Flash being "open", claiming that "By almost any definition, Flash is a closed system". Jobs tried to dismiss the idea that Apple customers are missing out by being sold devices without Flash compatibility. He quoted a number of statistics and concluded with "Flash is no longer necessary to watch video or consume any kind of web content."
+===Response===
+The letter drew immediate and harsh criticism, with Steve Jobs being accused of hypocrisy or of deliberately misleading., Blixt Systems, TechCrunch, Business Insider Jobs' assertion that Flash is not open, or closed and proprietary, attracted a great deal of attention with references to open source projects that take advantage of Adobe making the Flash specification open for developers to build on., OSFlash Wiki
+Adobe's CEO  responded by saying, "If Flash  the number one reason that Macs crash, which I'm not aware of, it has as much to do with the Apple operating system."Richmond, Shane. (April 30, 2010) . Blogs.telegraph.co.uk. Retrieved on March 11, 2011.
+Some members of the industry claimed that Steve Jobs rejected Flash on the iPhone for business reasons, rather than the technical reasons he mentions in his letter:
+ 	
+Some neutral parties agreed with Jobs but highlighted the hypocrisy in his reasoning:
+Retrospectives following Adobe's withdrawal from mobile have tended to agree with Jobs on Flash's suitability for mobile devices:
+==iOS development==
+===Adobe workaround===
+Adobe developed , including the "Packager for iOS," which bundles the Flash runtime into a fully native iOS application. This allowed Flash developers to distribute any Flash application via the iTunes App Store as a standalone app.
+===Apple restriction===
+In April 2010, Apple modified its  developer agreement with version 4.0 of its  to limit the development of iOS apps to the use of a small set of Apple-approved programming languages and tools. Adobe's iOS packager was seen as the target of these new rules. However, because the new rules were broadly written, and did not cite Adobe's iOS Packager specifically, they also potentially restricted the development of many popular iOS games and applications created using other non-approved application frameworks, such as  (also known as C# Mono - cross-platform - iOS, Android, .NET), , and .
+The original iPhone OS 3 section 3.3.1 reads:
+:3.3.1 Applications may only use Published APIs in the manner prescribed by Apple and must not use or call any unpublished or private APIs.
+The revised iPhone OS 4 section 3.3.1 reads:
+:3.3.1  Applications may only use Documented APIs in the manner prescribed by Apple and must not use or call any private APIs. Applications must be originally written in Objective-C, C, C++, or JavaScript as executed by the iPhone OS WebKit engine, and only code written in C, C++, and Objective-C may compile and directly link against the Documented APIs (e.g., Applications that link to Documented APIs through an intermediary translation or compatibility layer or tool are prohibited).
+===Public reaction===
+Controversy over Apple's changes erupted after John Gruber's April 8, 2010 Daring Fireball blog post entitled, New iPhone Developer Agreement Bans the Use of Adobes Flash-to-iPhone.. 8 April 2010. Strong opposition to Apple's licensing changes spread quickly with bloggers and others. Others were quick to note that the language used in the agreement also banned other developer tools including , , , and many others.
+The change was criticized for being anti-competitiveAdobe Systems'  alleging expected loss of ability to compete in the market because of Apple's position on Flash on the iPhone and iPad, Form 10q, March 5, 2010. by disallowing use of  and other programs on the iPhone. The New York Times quoted an Adobe employee alleging the policy to be anti-competitive.
+Steve Jobs posted a reaction to critics entitled "Thoughts on Flash", but did not directly address any third party development tools other than Adobe's Flash platform.
+On May 3, 2010,  and The  reported that the US  (FTC) and the  (DOJ) were deciding which agency will launch an antitrust investigation into the matter.
+===Apple reversal===
+In September 2010, after having "listened to our developers and taken much of their feedback to heart", Apple removed the restrictions on third-party tools, languages and frameworks, removing uncertainty from developers who used these third-party tools, and again allowing the deployment of Flash applications on iOS using Adobe's iOS Packager.
+===Adobe abandonment of plugin===
+On November 8, 2011, Adobe announced that it was ceasing development of the Flash Player "plugin" for browsers on mobile devices, in an effort to shift its focus on using the  programming language and  to develop fully functional native apps for mobile. Quoted from Adobe's press release: "Our future work with Flash on mobile devices will be focused on enabling Flash developers to package native apps with Adobe AIR for all the major app stores."
+==References==
+==See also==
+*
+*
+*

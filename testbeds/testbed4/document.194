@@ -1,0 +1,52 @@
+Overview of Image Processing and Analysis - Image Processing operates on images and results in images, with changes intended to improve the visibility of features, or to make the images better for printing or transmission, or to facilitate subsequent analysis. Image Analysis is the process of obtaining numerical data from images. This is usually accomplished by a combination of measurement and processing operations. The data may subsequently be analyzed statistically, or used to generate graphs or other visualizations.
+
+Correcting Image Defects - Most images include some imperfections, the result of the inherent limitations in illumination, optics, camera or the specimen itself. Many of these can be improved by processing. If color images are being acquired, it is first of all important to understand something about color representations. Then the removal of noise may be required, using methods that depend on the noise source. After correction for nonuniform illumination, the contrast and brightness can be adjusted for optimum visibility of detail. Finally, limitations in image focus may be addressed.
+
+Enhancement of Image Detail - The procedures described and illustrated above are all intended to compensate for various limitations and defects that arise in acquiring a digitized image. Their goal is to produce a correct representation of the original scene. By proper use of many of the same tools, it is also possible to enhance the visibility of some details and information in the image. This is accomplished by removing or suppressing other information (which is not currently of interest), so that what remains is more readily seen by human vision, and/or more readily isolated for measurement.
+
+Binary Images - Thresholding an image converts a gray scale or color original to a black-and-white version that distinguishes feature(s) from background. The features are composed of those pixels that are of current interest for some kind of measurement procedure, whereas the background consists of the pixels that are not of current interest. Morphological and Boolean operations are applied to binary images to selectively and accurately delineate the features, which are usually assumed to correspond to some objects or structure that is present in the scene. Of course, the original image should always be kept because in the future the objects or structures of interest may change!
+
+Measurements - Measurements can be classed generally into two groups: those for the entire image or scene (usually based on stereological procedures and extrapolated to the entire specimen represented by the sample), and those performed on each individual feature or object present (measures of size, shape, position and color or density that are usually summarized statistically or used for feature recognition).
+
+Much more information on these topics can be found in the several of the author’s books, available at Amazon.com. You can contact the author at DrJohnRuss.com.
+
+Books by John C. Russ
+The Image Processing Handbook (5th edition) - Now in its fifth edition, John C. Russ's monumental image processing reference is an even more complete, modern, and hands-on tool than ever before. The new edition is fully updated and expanded to reflect the latest developments in the field. A companion CD-ROM to this edition is available and includes more than 200 images along with a set of Photoshop-compatible plug-ins that implement many of the algorithms described in the book.
+
+Introduction to Image Processing and Analysis - Explaining the reasoning behind each technique, this book demonstrates the typical practical use of each procedure. The authors describe each procedure with example images, present mathematical equations, and illustrate basic operations using clear and simple source code. Including a 16-page color insert as well as homework problems and solutions manual, this text discusses the familiar pixel array and the use of frequency space. To allow students to focus on image processing and analysis tasks, the text offers a simplified shell that conforms to the Adobe Photoshop interface and compiles writing modules into compatible plug-ins to perform various tasks.
+
+Practical Stereology (2nd Edition) - Stereology is the science that relates three-dimensional structure to the two-dimensional images that can be measured. The most common field of application is in microscopy, both of man-made materials (metals, ceramics, composites, etc.) and of biological tissue samples. This book covers the applications and terminology of both fields. Recent emphasis in stereology is concerned with sampling strategies to avoid bias due to directionality and non-uniformity, and these methods are fully covered.
+
+Image Analysis of Food Microstructure - Image Analysis of Food Microstructure offers a condensed guide to the most common procedures and techniques by which quantitative microstructural information about food can be obtained from images. The images are selected from a broad range of food items, including macroscopic images of meat and finished products such as pizza, and the microstructures of cheeses, dough and baked goods, ice cream, fruits and vegetables, emulsions, foams, and gels. The book informs food scientists about the image processing and measurement tools used to characterize a variety of microstructures in foods, using high-quality image techniques to illustrate chemical composition, thermo-mechanical processing, and genetic and structural properties.
+
+Forensic Uses of Digital Imaging - It happens all too often: The vague images of a poor quality video from a surveillance camera splash across the screen in a darkened courtroom and the guilt or innocence of the defendant hinges on whether or not the jury can determine if he or she is really the person in those images. Interpretation and misinterpretation of information about imaging in general, and digital image manipulation in computers in particular, by expert witnesses on both sides, and by counsel who ask questions that are both confused and confusing, may or may not help the jury in reaching a decision. Clearly there is a need for a simple guide to digital imaging for law and forensic professionals. Forensic Uses of Digital Imaging addresses that need.
+
+Contributing Authors
+
+John C. Russ - Materials Science and Engineering Dept., North Carolina State University, Raleigh, North Carolina, 27695.
+
+Matthew Parry-Hill and Michael W. Davidson - National High Magnetic Field Laboratory, 1800 East Paul Dirac Dr., The Florida State University, Tallahassee, Florida, 32310.
+
+BACK TO DIGITAL IMAGING
+
+BACK TO MICROSCOPY PRIMER HOME
+
+Questions or comments? Send us an email.
+
+© 1998-2009 by Michael W. Davidson, John Russ, Olympus America Inc., and The Florida State University. All Rights Reserved. No images, graphics, scripts, or applets may be reproduced or used in any manner without permission from the copyright holders. Use of this website means you agree to all of the Legal Terms and Conditions set forth by the owners.
+
+This website is maintained by our
+Graphics & Web Programming Team
+in collaboration with Optical Microscopy at the
+National High Magnetic Field Laboratory.
+
+Last modification: Friday, Nov 13, 2015 at 02:19 PM
+
+Access Count Since July 20, 2006: 60959
+
+For more information on microscope manufacturers,
+use the buttons below to navigate to their websites:
+
+    
+
+ 

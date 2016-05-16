@@ -1,0 +1,69 @@
+Ad_blocking
+'''Ad blocking''' or '''ad filtering''' is removing or altering  content in a . Advertising can exist in a variety of forms including , animations, embedded audio and video, text, or  and can employ  of audio and video. All browsers offer some solution to the problem, either by targeting technologies (/,  files, etc.) that are used to deliver ads, targeting s that are the source of ads, or targeting behaviours characteristic of ads (such as the use of  autoplay of both audio and video).
+== Benefits ==
+To users, the benefits of ad blocking include quicker loading and cleaner looking web pages free from advertisements, lower resource waste (bandwidth, CPU, memory, etc.), and privacy benefits gained through the exclusion of the tracking and profiling systems of ad delivery platforms. Blocking ads can also save substantial amounts of energy.http://research.microsoft.com/en-us/people/mzh/eurosys-2012.pdf
+Another important aspect is improving security; online advertising subjects users to a higher risk of infecting their devices than surfing porn sites. In a high-profile case malware was distributed through advertisements provided to YouTube by a malicious customer of Google's . In August 2015, a  in Firefox browser was discovered in an advertisement on a website. When Forbes required users to disable ad blocking before viewing their website, those users were immediately served with pop-under malware.
+Users who pay for total transferred bandwidth ("capped" or pay-for-usage connections) including most mobile users worldwide, have a direct financial benefit from filtering an ad before it is loaded. Streaming audio and video, even if they are not presented to the user interface, can rapidly consume gigabytes of transfer especially on a faster 4G connection. Users without a data plan often pay by the megabyte,the cost of tolerating ads can be quite high. Even fixed connections are often subject to usage limits, especially the faster connections (100Mbit/s and up) which can quickly saturate a network if filled by streaming media. 
+It is a known problem with most web browsers, including , that restoring sessions often plays multiple embedded ads at once. Using an advertisement blocker stops such behaviour.
+== Popularity ==
+Use of mobile and desktop ad blocking software designed to remove traditional advertising grew by 41% worldwide and by 48% in the U.S. between Q2 2014 and Q2 2015.
+As of Q2 2015, 45 million Americans were using ad blockers. In a survey research study released Q2 2016, MetaFacts reported 72 million Americans, 12.8 million adults in the UK, and 13.2 million adults in France were using ad blockers on their PCs, Smartphones, or Tablets.
+In March 2016, the Internet Advertising Bureau reported that UK adblocking was already at 22% among over-18s.http://www.theguardian.com/media/2016/mar/01/more-than-nine-million-brits-now-use-adblockers
+== Alternatives ==
+In recent years, advertisers and marketers look to involve their brands directly into the entertainment with  and  (also known as brand integration or embedded marketing).
+== Methods ==
+One method of filtering is simply to block (or prevent autoplay of) Flash animation or image loading or Windows audio and video files. This can be done in most browsers easily and also improves security and privacy. This crude technological method is refined by numerous s. Every internet browser handles this task differently, but, in general, one alters the options, preferences or application extensions to filter specific media types. An additional add-on is usually required to differentiate between ads and non-ads using the same technology, or between wanted and unwanted ads or behaviors.
+The more advanced filters allow fine-grained control of  through features such as s, s, and  filters. Certain security features also have the effect of disabling some ads. Some  can act as an ad blocker.
+Filtering by intermediaries such as providers or national governments is increasingly common. ''See below especially re provider ad substitution and national root DNS.''
+===Browser integration===
+Modern web browsers block unsolicited s automatically. Current versions of  and  also include content filtering support.
+Content filtering can be added to Firefox, , ,  and other browsers with extensions such as ,  and , and a number of sources provide regularly updated filter lists. Adblock Plus is included in the freeware browser  from the  by default.
+Another method for filtering advertisements uses  rules to hide specific  and  .
+===External programs===
+A number of external applications offer ad filtering as a primary or additional feature. A traditional solution is to customize an  (or web proxy) to filter content. These programs work by caching and filtering content before it is displayed in a user's browser. This provides an opportunity to remove not only ads but also content which may be offensive, inappropriate, or simply junk. Popular proxy software which blocks content effectively include , , , and some . The main advantage of the method is freedom from implementation limitations (browser, working techniques) and centralization of control (the proxy can be used by many users).
+Proxies are very good at filtering but have several limitations compared to browser based solutions:
+* Difficulty to filter  (https://) traffic
+* Full webpage context is not available to the filter
+* Difficulty to filter -generated content
+===Hosts file and DNS manipulation===
+Most operating systems, even those which are aware of the  (DNS), still offer backwards compatibility with a locally administered list of foreign hosts. This configuration, for historical reasons, is stored in a flat text file that by default contains very few hostnames and their associated IP addresses. Editing this hosts file is simple and effective because most DNS clients will read the local hosts file before querying a remote . Storing  entries in the hosts file prevents the browser from accessing an ad server by manipulating the name resolution of the ad server to a local or nonexistent IP address (127.0.0.1 or 0.0.0.0 are typically used for IPv4 addresses). While simple to implement, these methods are also very easy to circumvent. One method to circumvent this form of ad filtering is to load ads from servers with hard coded IP addresses, thus skipping name resolution altogether. Another method to evade this form of filtering is to load the advertisements from a server which also serves the main content; blocking name resolution of this server would also block the useful content of the site.
+:''Further information: .''
+Using a  by manipulating the hosts file exploits the fact that most operating systems store a file with IP address, domain name pairs which is consulted by most browsers before using a DNS server to look up a domain name. By assigning the  to each known , the user directs traffic intended to reach each  to the local machine or to a virtual blackhole of  or .
+===DNS cache===
+This method operates by filtering and changing records of a DNS cache. On most operating systems the domain name resolution always goes via DNS cache. By changing records within the cache or preventing records from entering the cache, programs are allowed or prevented from accessing domain names. The external programs monitor internal DNS cache and import DNS records from a file. As a part of the domain name resolution process, a DNS cache lookup is performed before contacting a DNS server. Thus its records take precedence over DNS server queries. Unlike the method of modifying a Hosts file, this method is more flexible as it uses more comprehensive data available from DNS cache records.
+===DNS filtering===
+Advertising can be blocked by using a DNS server which is configured to block access to domains or hostnames which are known to serve ads by spoofing the address. Users can choose to use an already modified DNS server or set up a dedicated device such as a  themselves.
+Manipulating DNS is a widely employed method to manipulate what the end user sees from the internet but can also be deployed locally for personal purposes.
+China runs its own  and the EU has considered the same.  has required their  be used for some applications on its  devices. Accordingly, DNS addresses / domains used for advertising may be extremely vulnerable to a broad form of ad substitution whereby a domain that serves ads is entirely swapped out with one serving more local ads to some subset of users.  This is especially likely in countries, notably ,  and , where advertisers often refuse to pay for clicks or page views. DNS-level blocking of domains for non-commercial reasons is already common in China.
+===Hardware devices===
+Devices such as AdTrap use their own hardware which one connects to their network to block internet advertising. Based on reviews of AdTrap uses a Linux Kernel running a version of PrivProxy to block ads from video streaming, music streaming, and any internet browser.
+===By external parties and internet providers===
+Internet providers, especially mobile operators, frequently offer proxies designed to reduce network traffic. Even when not targeted specifically at ad-filtering, these proxy-based arrangements will block many types of advertisements that are too large or bandwidth-consuming, or that are otherwise deemed unsuited for the specific internet connection or target device.
+Many internet operators block some form of advertisement and inject their own.
+==Economic consequences for online business==
+Some content providers have argued that widespread ad blocking results in decreased revenue to a website sustained by advertisements, where this blocking can be detected. 
+Some have argued that since advertisers are ultimately paying for ads to increase their own revenues, eliminating ad blocking would only dilute the value per impression and drive down the price of advertising, arguing that like clickfraud, impressions served to users who use ad blockers are of little to no value to advertisers. Consequently, they argue, eliminating ad blocking would not increase overall ad revenue to content providers in the long run.
+== Advertiser offensive countermeasures and justifications ==
+Some websites have taken counter-measures against ad-blocking software, such as attempting to detect the presence of ad blockers and informing users of their views, or outright preventing users from accessing the content unless they disable the ad-blocking software. There have been several arguments supporting and opposing the assertion that blocking ads is wrong. Some advertising companies have taken steps to protect their rights to conduct their business according to prevailing law.
+It has been suggested that in the , the practice of websites scanning for ad-blocking software may run afoul of the . This suggestion has been debunked by experts, and has been also confirmed to rely on false assumptions by several industry representatives. Industry groups and the EU are still expected to establish clear guidelines on how to handle the issue in the future.
+== Advertiser network blocking ==
+==See also==
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* s
+* 
+* 
+* 
+==References==

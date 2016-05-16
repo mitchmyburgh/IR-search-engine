@@ -1,0 +1,98 @@
+﻿Abstract.
+In this paper, we present an approach based on Reasoning and Natural Language Processing for Ontology Learning, specifically over Description
+Logic (DL) knowledge bases constituted by a TBox with ALC expressivity,
+from interactions with users in controled natural language text. The viability of
+our approach is demonstrated through the generation of descriptions of complex
+axioms from concepts defined by users. We evaluated our approach in an experiment with entry interactions enriched with hierarchy axioms, disjunction, conjunction, negation, as well as existential and universal quantification to impose
+restriction of properties. The obtained results prove that our model is an effective solution for reasoning, knowledge representation and automatic construction of
+expressive Ontologies. Thereby, it assists professionals involved in processes for obtain, construct and model knowledge domain.
+Keywords:
+Description Logic (DL), Ontology Learning,
+Natural Language Processing,
+Knowledge Representation
+and Reasoning.
+1
+Introduction
+and Motivation
+One of the subfields of Ontology that has been standing out along the last decade is
+Ontology Engineering. Its main purpose is to create, represent and model knowledge
+domains, most of which are not trivial, such as Bioinformatics and e-Business, among
+others. However, as pointed out by [14], the task of Ontology Engineering still consumes a big amount of resources even when principles, processes and methodologies
+are applied. Besides financially expensive, the ontology design is also an arduous and onerous task [
+6
+]. Thus, new technologies, methods and tools for overtaking these
+technical and economic challenges are necessary. This way, the need for highly sp
+ecialized manual efforts required can be minimized.
+For this purpose, a resea
+rch line that is gaining importance through the past two
+decades is the extraction of domain models from text writ
+ten in natural language,
+using Natural Language Processing (NLP) techniques. The process of modeling a
+knowledge domain from text and the auto
+mated design of ontologies, through an
+analysis of a set of texts using NLP techniques, for example, is known as Ontology
+
+
+Learning
+and was first proposed by [11]
+.
+Even so, as mentioned by [17], despite of
+the increasing interest and efforts taken towards the improvement of
+Ontology Learning
+methods based in NLP techniques [
+16
+]
+[
+1
+][
+2
+][
+3
+], the notable potential of the techniques and representations available to the learning process of expressive ontologies
+and complex axioms has not yet been completely exploited. In fact, there are still gaps
+and unanswered questions that need viable and effective solutions
+. Among them, the
+following stand out
+[
+13
+] [15] [
+16
+]:
+
+The lack of combining the knowledge of specialists of an arbitrary domain with the
+competencies and experience of ontology engineers in a single effort: there are
+scarce specialized resources and demand for professionals. This obstacle reduces the
+use of semantic ontologies by users and specialists in general.
+
+There is a considerable amount of tools and
+frameworks
+of
+Ontology Learning
+that
+have been developed aiming the automatic or semiautomatic construction of ontologies based on structured, semistructured or unstructured data. Nonetheless, although useful, the majority of these tools used in Ontology
+Learning are only capable of creating informal or unexpressive ontologies.
+
+Evaluating the consistency of ontologies automatically by reasoning: it is necessary
+that the automatically created ontologies be assessed by the time of their development, minimizing the amount of errors committed by the ones involved in the development phase and verify whether or not the ontology is contradictory and free of
+inconsistencies.
+
+Knowledge
+Based Systems which carry out large
+scale reasoning for automatic
+decision
+making in complex domains require and depend on expressive ontologies.
+These allow computational systems to infer precise conclusions. Thus, it is necessary that the tools used in Ontology Learning add axioms and perform subsumption
+reasoning, regarding the expressive DL
+based ontologies.
+All the questions and issues above mentioned justify the approach hereby pro-posed. It is based in a translator, which consists in the utilization of a hybrid method
+that combines syntactic and semantic text analysis both in superficial and in-
+depth 
+approaches of NLP. Our approach shows that a translator for creating ontologies that
+formalizes and codifies knowledge in OWL DL
+ALC
+[
+7
+] from sentences provided by
+users is a viable and effective solution to the process of automatic
+construction of
+expressive ontologies and complete axioms.

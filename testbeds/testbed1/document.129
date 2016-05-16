@@ -1,0 +1,15 @@
+Apache_Geronimo
+'''Apache Geronimo''' is an   developed by the  and distributed under the . 
+Geronimo 3, the current version, is compatible with the  (Java EE) 6 specification and therefore supports technologies such as , s, s, , , ,  and . This allows developers to create enterprise applications that are portable and scalable, and that integrate with legacy technologies. The older Geronimo 2 is compatible with Java EE 5.
+ has in the past provided considerable support to the project through marketing, code contributions, and the funding of several project committers. In October 2005, IBM announced a free edition of its  application server named  (WASCE), which is actually a distribution of Geronimo and despite its name not related to the commercial WebSphere server.http://www14.software.ibm.com/webapp/iwm/web/preLogin.do?lang=en_US&source=wsced However, IBM has withdrawn marketing and support for WASCE in 2013.  Other commercial supporters included , Chariot Solutions, Simula Labs, and Virtuas.
+Activity on Apache Geronimo has now largely ceased. Previous prolific Geronimo committers like David Jencks and others who are at IBM are now working on the Liberty Profile application server. http://arjan-tijms.omnifaces.org/2014/05/implementation-components-used-by.html?showComment=1399508132460#c5604447523115853997
+== Components ==
+Like an enterprise , Geronimo is built on a a  that lays the foundation for everything above it. Geronimo's kernel is Java EE agnostic. Its sole purpose is to manage Geronimo's building blocks. Geronimo is marked by an architectural design that is based on the concept of  (IoC) (sometimes called ), which means that the kernel has no direct dependency on any of its . The kernel is a framework for services that controls the service life cycle and . The kernel is based on Java EE. It works with Java EE services and components to build specific configurationsone of which is a full Java EE .
+A majority of the Geronimo services are added and configured through GBeans to become a part of the overall application server. A ''GBean'' is the interface that connects the component to the kernel. Each GBean can maintain state, depend on, and interrelate with other GBeans, and operate on events from the kernel and other GBeans. The GBeans interface makes it possible to switch between two s, for example  or , without affecting the whole architecture using a GBeans interface. This flexible architecture makes it possible for the Geronimo developers to integrate several existing field-tested  projects.
+Here a list of the open source components that are included in the Geronimo project.
+==References==
+==Bibliography==
+*
+*
+*
+*

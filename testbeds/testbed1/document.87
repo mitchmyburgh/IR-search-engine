@@ -1,0 +1,35 @@
+AdvertCity
+'''''AdvertCity''''' is a   developed and published by .  The game was released on 17 April 2015 for , , .  The player takes on the role of an advertising magnate in a  future city with a  aesthetic.
+The game has had a mixed reception, gathering a majority of positive reviews from players but moderate reviews in the press.  At the time of writing the game does not yet have a metacritic score.
+==Gameplay==
+Gameplay in AdvertCity involves selling advertising to client ; the player does this by moving around the city from a first person god-view perspective reminiscent of , selecting buildings and sites in  as targets for their advertising.  Advertising technologies are unlocked progressively depending on reputation with various megacorporations, and range from flyers to billboards and blimps.
+A key mechanic in the game is the ability to switch between  and  at any time, which is required to perform different actions in each space and to orchestrate advertising effectively.
+The goal of the game is to take over the city, and to do this the player must gain the trust of the various megacorporations they interact with.
+The game has a  save system to increase the level of challenge - there is only one savegame available, the player has no choice but to save their progress when exiting, and the player cannot reload to a previous state if they make a mistake.
+==Development==
+Development of the game began when an early version of the game was built in 7 days for the 2014 Cyberpunk Game Jam.  After receiving positive feedback during the jam, the developers decided to continue work on the game to create a full-scale release.
+The game sought  via  on 25 March 2014, and was fully funded on the second day of the campaign, going on be overfunded by 373% at its conclusion.
+AdvertCity was submitted to  during its Kickstarter in 2014 and was eventually greenlit after an unusually long delay in April 2015.
+AdvertCity entered a period of closed  during development after its kickstarter; the final release was announced on 17 April 2015, and by June it had appeared on  and several other stores.
+===Procedural city generation===
+Every city in the game is .
+The procedural city layout is positioned on top of a , which it conforms to and evolves around.  The developers considered using the industry standard Siggraph 2001 paper by Parish and Muller as a basis, including the subsequent work on tensor fields, but rejected the use of s on the grounds of their design being unsuited to cities, which ''"don't grow like branches on a tree"''.
+The system instead uses:
+"...maps calculated on a mix of realtime procedural projection and cached data about population layouts and terrain features (such as different terrain types, gradients, altitudes, population densities, whether the region should be considered urban or rural etc); the result is something that has the subtlety of the tensor field system, yet generates much larger cities than are feasible with the L-system at a far higher speed than possible with that design. The AdvertCity generator is an object-oriented system of roads, junctions and buildings that can be adjusted on the fly to interact with their immediate surroundings, so roads meet and cross at specific junctions, branch and fork (something not used in the L system design), and can also spontaneously degenerate from paved roads to footpaths etc as appropriate, due to terrain or other aspects of the landscape. Different classes of road or path can also have entirely different rules and code for how they react to different terrain types and other features, so it's possible to build a much more dynamic overall city map with those."
+===Procedural descriptions===
+Every building in the city has a procedurally generated description; these vary in content but usually mention the architectural style of the building and some information about its history as well as factual info about its current owners and tenants in-game and its population.
+All megacorporations are also described with text that is procedurally generated and updated during gameplay as their situation changes; this describes their standing in the city, their relationships with other megacorps, their financial status and their sentiments towards the player.
+===Distribution===
+The game is available on ,  and .
+Unusually, but in common with VoxelStorm's other games, there is no  - the game is packaged as a single monolithic executable, which can simply be downloaded and run right away.
+==Reception==
+From its initial alpha launch, AdvertCity drew comment widely about its stark and "hyper-stylized" aesthetic.  Critics frequently praised the dark  cyberpunk aesthetic of the game, as well as its tone, and referred to the vision of cyberspace as Gibson-inspired.  Stylistically, reviewers appreciated the dystopian bleakness of the vision of the future in the game, mentioning that your adverts are the only splashes of colour on the cold and uniform city, and the surreal building-linked conception of cyberspace.  Reviewers also praised the dark and cynical sense of humour throughout the game.
+Reviewers also expressed interest in the Oculus Rift support which was included in the game from the alpha stage.  One common complaint is the high level of difficulty and steep learning curve at the start of the game.  Reviewers also cited the disorientating nature of the interface and immutable fast pace of the game as a negative.  The developers cited games such as  as an inspiration, which is well known for its steep learning curve and difficult interface.
+The game also drew praise for its high-performing engine, which enables the game to run on previous-generation hardware; the minimum system requirements for CPU on Steam are stated simply as "Anything made since 2004" and the game supports  despite Microsoft having discontinued support for that operating system before development of AdvertCity began.
+==Soundtrack==
+AdvertCity's official soundtrack is a full-length score, unusual in that it is presented in two "sides", one for meatspace and one for cyberspace, with each track on each side having a beatmatched equivalent on the other; when the player switches between meatspace and cyberspace, the music smoothly crossfades between the two soundtracks.  A bespoke sound engine with was developed for this purpose, with EBU R128 2011 support and HDR capability.
+Critics praised the "cyber-jazz" soundtrack's ", jazz & glitch" qualities and praised the way it dovetails with the gameplay and "backs your every move" in the game.  It has been called "A profound and stunning accomplishment, even as a standalone soundtrack."
+==References==
+==External links==
+* 
+*

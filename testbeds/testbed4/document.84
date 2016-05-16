@@ -1,0 +1,66 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Since it is flat, it lies on a plane. The plane equation in question is Ax+By+Cz=D as seen before, where (A,B,C)=(0,0,1) is the plane normal. Thus the plane equation is z=D. The distance from the eye is thus D, and we want it to be k, so we set D=k. The plane equation is therefore z=k. We set a local basis for that plane with vectors i=(1,0,0) and j=(0,1,0) and position W=(0,0,k). The plane equation is thus (a,b)•(i,j)+W. (a,b) are the local coordinates on the plane. They happen to correspond to the (x,y) position on the plane in 3d space because (i,j) for the plane is the same as (i,j) for the world.
+The question we now ask ourselves is this: given a point that is reflecting light, say point (x,y,z), what point on screen should be lit that crosses the light ray from (x,y,z) to the eye, which is at (0,0,0).
+Here we will use the definition of the line in n space we mentioned before (namely, tV+W). Since the light ray goes from (x,y,z) to (0,0,0), it is parallel to the vector (x,y,z)-(0,0,0)=(x,y,z). Thus, we can set V=(x,y,z). (0,0,0) is a point on the line, so we can set W=(0,0,0). The line equation is thus t(x,y,z).
+We now want the intersection of the line t(x,y,z) with the plane z=k. Setting t=k/z (assuming z is nonzero), we find the following: k/z(x,y,z)=(k×x/z,k×y/z,k). This point has z=k thus it is in the plane z=k, thus it is the intersection of the plane z=k and the line t(x,y,z).
+Trivially from that, we find that the point (a,b) on screen are (k×x/z,k×y/z). Thus,
+(x,y,z) perspective projects to (k××x/z, k××y/z).
+A small note on aspect ratios. Sometimes, a screen's coordinate system is "squished" on one axis. In this case, it would be wise to "expand" one of the coordinates to make it larger to compensate for the screen being squished. For example, if the screen pixels are 3/4 as wide as they are high, it would be wise to multiply the b component of screen position by 3/4, or the a component by 4/3. This can be computed using 2 different values of k instead of the same. For example, use k1=k and k2=ratio*k. Then, the perspective projection equation is:
+(x,y,z) perspective projects to (k1××x/z, k2××y/z).
+Referring again to physics, only one point gets to be projected to a particular point on screen. That is, closer objects obscure objects farther away. It will thus be useful to do some form of visible surface determination eventually. Another special case is that anything behind the eye does not get projected at all. Thus, if before the projection, z=0, do not project. The image below is a perspective projected cube. Compare with the parallel projected cube of the preceding section.
+38
+Theorems
+The following theorems are not always entirely obvious, but they are of great help when doing 3d graphics. I will attempt to give the reader rough proofs and justifications when possible, usually they will be geometrical proofs for they are much more natural in this case. These proofs are not very formal, but formal proofs are not hard to find, just much less natural.
+A line in 3d perspective projects to a line in 2d. However, line segments sometimes have erratic behavior. The proof is as follows. If the object to project is a line, then the set of all projectors pass through the center of projection, which is a point, and the line. Since projector are linear, they all belong to the plane P defined by the line and the point. Thus, the projection will lie somewhere in the intersection of the plane P and the projection plane. However, the intersection of two planes is generally a line. Here follows the exception.
+If the planes are parallel, since the projection plane does not pass on the eye, they are necessarily disjoint. The projection in this case is nothing.
+A line segment generally projects to a line segment. First, the only portion of the line segment that needs to be projected is the portion for which z>0, as seen previously. If the segment crosses z=0, it should be cut at z=0, and only the z>0 section kept. Second, the projectors for a line segment all lie in a scaled up triangle which intersects the projection plane in a particular way, and the intersection of a triangle and a plane is always a line segment.
+Next proof is the proof that a n-gon (a n-sided polygon, example, triangles are 3gons, squares are 4-gons, etc...) projects to a n-gon. It can be demonstrated that any polygon can be triangulated in a finite set of triangles, so the proof is kept to triangles only. Also, if the n-gon crosses z=0, it should be cut at z=0, and only the z>0 section kept.
+A triangle projects to a triangle. The projectors of a triangle all lie in an infinitely high tetrahedron, and the intersection of an infinitely high tetrahedron and the projection plane, in the non-infinite direction is always a triangle.
+39
+In a similar line of thought, the set of all projectors of a sphere form a cone. The intersection of the cone with the projection plane can form any conic. Namely, a hyperbola, an ellipse or a circle. If the sphere contains the origin, the projection fills the whole projection plane.
+Other applications
+By not losing sight of the idea behind the projection, one can accomplish much more than what has been just described. One example is texture mapping. Often, a polygon will be drawn on screen, but some properties of the polygon (say color for example) changes across the polygon in 3d space. When this happens, we want to know what point from the polygon we are currently drawing. An application of this is texture mapping.
+Texture mapping involves taking the point on screen, finding the projector that goes through it and finding the intersection of that projector with the polygon. We then have a point in 3d space. However, it is usually much more useful to make a local 2d coordinate system for the plane containing the polygon and make the property a function of the location in that 2d coordinate system. This is what I did below in the snapshot of the screen from my math software.
+40
+Let (u,v) be the coordinates on the projection plane, (p,q) the coordinates on the projected plane, (Xp,Yp,Zp) and (Xq,Yq,Zq) the two vectors defining the plane, (A,B,C) the origin of that plane and the projection x=k1*z*u, y=k2*z*v. Then, the intersection of the projection ray and the projected plane in the projected plane's coordinate system (p,q) in function of the projection plane coordinate system (u,v) is: z . p Zp . q Zq C
+..k1 z u . p Xp . q Xq A
+..k1 ( ) .p Zp . q Zq C u . p Xp . q Xq A Equation A
+..k2 z v . p Yp . q Yq B
+..k2 ( ) .p Zp . q Zq C v . p Yp . q Yq B Equation B
+Now, let's solve for p then for q.
+..k1 ( ) .p Zp . q Zq C u . p Xp . q Xq A
+p=
+( ) ... k1 u q Zq . . k1 u C . q Xq A ( ) ..k1 Zp u Xp
+..k2 ( ) .p Zp . q Zq C v . p Yp . q Yq B
+q=
+( ) ...k2 v Zp A . ..k2 v C Xp . ..Yp k1 u C . Yp A . ..B k1 Zp u . B Xp ( ) ...k2 v Zp Xq . ..k2 v Zq Xp . ..Yp k1 u Zq . Yp Xq . ..Yq k1 Zp u . Yq Xp
+( ) ..( ) .Zp A . C Xp v k2 . .( ) .Yp C . B Zp u k1 . B Xp . Yp A ( ) ..( ) .Yp Zq . Yq Zp u k1 . .( ) .Zp Xq . Zq Xp v k2 . Yp Xq . Yq Xp
+Similarly,
+p=
+( ) ...k1 u Zq B . .. k1 u C Yq . ..Xq k2 v C . Xq B . ..A k2 v Zq .A Yq ( ) ...k2 v Zp Xq . ..k2 v Zq Xp . ..Yp k1 u Zq . Yp Xq . ..Yq k1 Zp u . Yq Xp
+( ) ..( ) .Zq B . C Yq u k1 . .( ) .Xq C . A Zq v k2 .A Yq . Xq B
+( ) ..( ) .Yp Zq . Yq Zp u k1 . .( ) .Zp Xq . Zq Xp v k2 . Yp Xq . Yq Xp
+As can be quite plainly seen above, the equations for p and q above are of the form:
+p=(Du+Ev+F)/(Au+Bv+C)
+q=(Gu+Hv+I)/(Au+Bv+C)
+Notice that the denominator is the same for both p and q. The values for the coefficients A through I can be found by examining the snapshot of the math software screen above.
+41
+Constant Z
+There is one specific case that might be especially interesting, given slow division but fast addition. The plane equation for a polygon is Ax+By+Cz=D. The projection is u=k1x/z, v=k2y/z. Then, we get x=uz/k1, y=vz/k2. By substituting this into the plane equation of the polygon, we find A(uz/k1)+B(vz/k2)+Cz=D. Then, we transform as follows:
+z(A'u+B'v+C)=D (A'=A/k1, B'=B/k2)
+Let us examine what happens when we look at a slice of constant z in the polygon's plane.
+k(A'u+B'v+C)=D
+Mu+Nv+K=0 (M=kA', N=kB', K=C-D)
+This is a line equation in (u,v) space. This means that, assuming non degenerate cases, a constant z slice of the polygon's plane projects to a line in the projection plane. Furthermore, and interestingly enough, the slope of the line is independent of z. Therefore, for a given polygon plane, all the constant-z lines of that plane project to parallel lines on screen. However, looking back at the Ax+By+Cz=0, taking a constant z, we get a line equation of x and y, therefore, the intersection of a constant z plane with the polygon plane is also a line.
+Now let's examine the projection equation. Let us assume that we wish to project everything that's on a specific constant-z line of the polygon. Then, the projection equation is simply u=Px, v=Qy, where P=k1/z, Q=k2/z, constants.
+This is what it all boils down to. In any polygon, there are lines of constant z. If we want to texture map the polygon, we only need to find these lines and draw them on screen, merely scaling the texture for such lines by a constant. Since all these lines are parallel on screen, it is possible to find the slope the line on screen that will yield a constant z on the polygon's plane, and then draw to the screen using these as scanlines. One has to be careful to cover each pixel, but that is not too difficult.
+As an example, a wall's constant-z lines are vertical once projected (assuming we're looking at it upright). A floor or ceiling's constant-z lines are horizontal once projected. This can be exploited to texture map floors, ceilings and wells very quickly.
+Texture mapping equations revisited
+42
+We derived the texture mapping equations using the intuitive math above, and got nasty looking rational expressions with even nastier coefficients (the constants A, B, C, D, E, F, G, H and I). In practice it might be useful to try to find an efficient way of computing these constants.
+There is a clever way to calculate these constants, but first we have to write down a few properties. First let us observe that our texture map is an affine mapping from our (x,y,z) 3d space to the (p,q) 2d texture map, which means that:
+1- p=P1×x+P2×y+P3×z+P4
+q=Q1×x+Q2×y+Q3×z+Q4
+(for some P1, P2, P3, P4, Q1, Q2, Q3, Q4).
+

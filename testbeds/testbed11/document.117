@@ -1,0 +1,64 @@
+In the IEEE 802 reference model of computer networking, the medium access control or media access control (MAC) layer is the lower sublayer of the data link layer (layer 2) of the seven-layer OSI model. The MAC sublayer provides addressing and channel access control mechanisms that make it possible for several terminals or network nodes to communicate within a multiple access network that incorporates a shared medium, e.g. an Ethernet network. The hardware that implements the MAC is referred to as a media access controller.
+The MAC sublayer acts as an interface between the logical link control (LLC) sublayer and the network's physical layer. The MAC layer emulates a full-duplex logical communication channel in a multi-point network. This channel may provide unicast, multicast or broadcast communication service.
+
+
+== Functions performed in the MAC sublayer ==
+According to IEEE Std 802-2001 section 6.2.3 "MAC sublayer", the primary functions performed by the MAC layer are:
+Frame delimiting and recognition
+Addressing of destination stations (both as individual stations and as groups of stations)
+Conveyance of source-station addressing information
+Transparent data transfer of LLC PDUs, or of equivalent information in the Ethernet sublayer
+Protection against errors, generally by means of generating and checking frame check sequences
+Control of access to the physical transmission medium
+In the case of Ethernet, according to 802.3-2002 section 4.1.4, the functions required of a MAC are:
+receive/transmit normal frames
+half-duplex retransmission and backoff functions
+append/check FCS (frame check sequence)
+interframe gap enforcement
+discard malformed frames
+prepend(tx)/remove(rx) preamble, SFD (start frame delimiter), and padding
+half-duplex compatibility: append(tx)/remove(rx) MAC address
+
+
+== Addressing mechanism ==
+The local network addresses used in IEEE 802 networks and FDDI networks are called MAC addresses; they are based on the addressing scheme used in early Ethernet implementations. A MAC address is a unique serial number. Once a MAC address has been assigned to a particular network interface (typically at time of manufacture), that device should be uniquely identifiable amongst all other network devices in the world. This guarantees that each device in a network will have a different MAC address (analogous to a street address). This makes it possible for data packets to be delivered to a destination within a subnetwork, i.e. hosts interconnected by some combination of repeaters, hubs, bridges and switches, but not by network layer routers. Thus, for example, when an IP packet reaches its destination (sub)network, the destination IP address (a layer 3 or network layer concept) is resolved with the Address Resolution Protocol for IPv4, or by Neighbor Discovery Protocol (IPv6) into the MAC address (a layer 2 concept) of the destination host.
+Examples of physical networks are Ethernet networks and Wi-Fi networks, both of which are IEEE 802 networks and use IEEE 802 48-bit MAC addresses.
+A MAC layer is not required in full-duplex point-to-point communication, but address fields are included in some point-to-point protocols for compatibility reasons.
+
+
+== Channel access control mechanism ==
+The channel access control mechanisms provided by the MAC layer are also known as a multiple access protocol. This makes it possible for several stations connected to the same physical medium to share it. Examples of shared physical media are bus networks, ring networks, hub networks, wireless networks and half-duplex point-to-point links. The multiple access protocol may detect or avoid data packet collisions if a packet mode contention based channel access method is used, or reserve resources to establish a logical channel if a circuit-switched or channelization-based channel access method is used. The channel access control mechanism relies on a physical layer multiplex scheme.
+The most widespread multiple access protocol is the contention based CSMA/CD protocol used in Ethernet networks. This mechanism is only utilized within a network collision domain, for example an Ethernet bus network or a hub-based star topology network. An Ethernet network may be divided into several collision domains, interconnected by bridges and switches.
+A multiple access protocol is not required in a switched full-duplex network, such as today's switched Ethernet networks, but is often available in the equipment for compatibility reasons.
+
+
+== Common multiple access protocols ==
+Examples of common statistical time division multiplexing multiple access protocols for wired multi-drop networks are:
+CSMA/CD (used in Ethernet and IEEE 802.3)
+Token bus (IEEE 802.4)
+Token ring (IEEE 802.5)
+Token passing (used in FDDI)
+Examples of common multiple access protocols that may be used in packet radio wireless networks are:
+CSMA/CA (used in IEEE 802.11/WiFi WLANs)
+Slotted ALOHA
+Dynamic TDMA
+Reservation ALOHA (R-ALOHA)
+Mobile Slotted Aloha (MS-ALOHA)
+CDMA
+OFDMA
+OFDM
+
+
+== MAC in cellular networks ==
+Cellular networks, such as GSM, UMTS or LTE networks, also use a MAC layer. The MAC protocol in cellular networks is designed to maximize the utilization of the expensive licensed spectrum.  The air interface of a cellular network is at layers 1 and 2 of the OSI model; at layer 2, it is divided into multiple protocol layers. In UMTS and LTE, those protocols are the Packet Data Convergence Protocol (PDCP), the Radio Link Control (RLC) protocol, and the MAC protocol. The base station has the absolute control over the air interface and schedules the downlink access as well as the uplink access of all devices. The MAC protocol is specified by 3GPP in TS 25.321 for UMTS and TS 36.321 for LTE.
+
+
+== See also ==
+List of channel access methods
+MAC-Forced Forwarding
+Isochronous media access controller
+
+
+== References ==
+
+This article is based on material taken from the Free On-line Dictionary of Computing prior to 1 November 2008 and incorporated under the "relicensing" terms of the GFDL, version 1.3 or later.

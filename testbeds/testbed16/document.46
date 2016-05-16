@@ -1,0 +1,22 @@
+Cloud Security 101: DLP Blind Spots and How to Fix Them
+
+September 9, 2015/1 Comment/in Cloud Security /by Willy Leichter
+Data loss prevention (DLP) is an integral part of an enterprise’s data security architecture. As more and more sensitive data enters the cloud, the risks of inappropriate and often inadvertent data sharing, data leakage, or data exposure grow exponentially. DLP solutions are powerful mechanisms for preventing such disasters. But the cloud throws a wrench in enterprise attempts to prevent data leaks and exposure through cloud DLP, since traditional DLP solutions can only see to the enterprise perimeter, not beyond it into the cloud. In fact, cloud applications create significant blind spots for traditional enterprise DLP technology.
+
+cloud security and data loss prevention
+
+What’s more, cloud applications create extremely easy avenues for inappropriate or inadvertent data leakage. Consider how many types of sensitive data information workers may be uploading into, or sharing from, the cloud at any given time:
+
+Customer personally identifying or financial information
+Confidential corporate documents
+HR and financial data
+Employee or consumer health records
+cloud security and DLP
+cloud security and DLP
+Now consider how little control most cloud-based communication and collaboration applications provide over what kinds of data can be shared with which kinds of users. Once your data is in the cloud, without the appropriate mechanisms in place to govern information sharing, workers could be accidentally leaking data and violating regulatory compliance requirements left and right—and your organization might have no way of knowing what’s happening, or preventing it, until it’s too late.
+
+Addressing DLP’s blind spots in the cloud demands a cloud data protection platform that tightly integrates your data loss prevention investments with your IT-sanctioned cloud applications. This integration must include granular, content-and context-aware controls that take into account user roles and permissions when assessing data access and activity within those cloud applications.
+
+In a perfect world, such DLP integration should also come with turnkey policy and enforcement mechanisms for a variety of regulations, including PCI DSS, HIPAA, GLBA, and ABA, so that administrators can begin utilizing the integrated solution right away, without losing precious time creating policies by hand. Your cloud DLP solution should also be able to integrate directly with popular enterprise DLP systems, such as those offered by RSA and Symantec, so that data loss prevention will be standardized and consistent across all enterprise environments.
+
+DLP is extremely important to maintaining your organization’s data security posture and regulatory compliance as you migrate more and more of your sensitive data and business-critical operations into the cloud, and traditional, on-premises DLP solutions alone won’t cut it anymore. Are you ready to extend your DLP into the cloud for full data protection? To learn more about fixing DLP blind spots and safely adopting and using cloud-based applications, download our free white paper, “CIO’s Guide to Enterprise Cloud Adoption,” today.

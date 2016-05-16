@@ -1,0 +1,774 @@
+|  
+---|---  
+  
+Quantum Computer Architecture Resources
+
+|
+
+[ home ]  
+  
+|  
+  
+**Quantum circuit viewer: qasm2circ**  
+  
+|  QASM is a simple text-format language for describing acyclic quantum
+circuits composed from single qubit, multiply controlled single-qubit gates,
+multiple-qubit, and multiple-qubit controlled multiple-qubit gates.
+
+_qasm2circ_ is a package which converts a QASM file into a graphical depiction
+of the quantum circuit, using standard quantum gate symbols (and other user-
+defined symbols). This is done using latex (specifically, xypic), to produce
+high-quality output in epsf, pdf, or png formats.
+
+Figures of quantum circuits in the book "Quantum Computation and Quantum
+Information," by Nielsen and Chuang, were produced using an earlier version of
+this package.
+
+* Download distribution here (zip) or (tgz) (the distribution includes all the examples). 
+* Current version = 1.4 (Released 14-Mar-05)   
+---  
+[ home | Example 1 | Example 2 | Example 3 | Example 4 | Example 5 | Example 6
+| Example 7 | Example 8 | Example 9 | Example 10 | Example 11 | Example 12 |
+Example 13 | Example 14 | Example 15 | Example 16 | Example 18 | Example 17 |
+qasm specification | Installation instructions ]
+
+Live demo (MIT only)  
+  
+* * *
+
+## Example 1
+
+[ test1.qasm |test1.png |test1.pdf |test1.eps |test1.tex ]
+
+    
+    
+    # 
+    # File:   test1.qasm
+    # Date:   22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - EPR creation
+    #
+            qubit 	q0
+            qubit 	q1
+    
+    	h	q0	# create EPR pair
+    	cnot	q0,q1
+      
+  
+---  
+  
+* * *
+
+## Example 2
+
+[ test2.qasm |test2.png |test2.pdf |test2.eps |test2.tex ]
+
+    
+    
+    # 
+    # File:   test2.qasm
+    # Date:   29-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - simple teleportation circuit
+    #
+            qubit 	q0
+            qubit 	q1
+    	qubit 	q2
+    
+    	h	q1	# create EPR pair
+    	cnot	q1,q2
+    	cnot	q0,q1	# Bell basis measurement
+    	h	q0
+    	nop	q1
+    	measure	q0	
+    	measure	q1
+    	c-x	q1,q2	# correction step
+    	c-z	q0,q2
+      
+  
+---  
+  
+* * *
+
+## Example 3
+
+[ test3.qasm |test3.png |test3.pdf |test3.eps |test3.tex ]
+
+    
+    
+    # 
+    # File:   test3.qasm
+    # Date:   22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - swap circuit
+    #
+            qubit 	q0
+            qubit 	q1
+    
+    	cnot	q0,q1
+    	cnot	q1,q0
+    	cnot	q0,q1
+      
+  
+---  
+  
+* * *
+
+## Example 4
+
+[ test4.qasm |test4.png |test4.pdf |test4.eps |test4.tex ]
+
+    
+    
+    # 
+    # File:	  test4.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - quantum
+    # fourier transform on three qubits
+    
+    	def	c-S,1,'S'
+    	def	c-T,1,'T'
+    
+    	qubit	j0
+    	qubit	j1
+    	qubit	j2
+    
+    	h	j0	
+    	c-S	j1,j0
+    	c-T	j2,j0
+    	nop	j1
+    	h	j1
+    	c-S	j2,j1
+    	h	j2
+    	swap	j0,j2
+      
+  
+---  
+  
+* * *
+
+## Example 5
+
+[ test5.qasm |test5.png |test5.pdf |test5.eps |test5.tex ]
+
+    
+    
+    # 
+    # File:	  test5.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - demonstrate arbitray qubit matrix ops
+    
+    	def	c-P,1,'\m{e^{i\alpha} & 0 \cr 0 & e^{-i\alpha}}'
+    	def	Ryt,0,'\m{\cos{\theta}&-\sin{\theta}\cr\sin{\theta}&\cos{\theta}}'
+    
+    	qubit	j0
+    	qubit	j1
+    
+    	c-P	j0,j1
+    	Ryt	j0  
+  
+---  
+  
+* * *
+
+## Example 6
+
+[ test6.qasm |test6.png |test6.pdf |test6.eps |test6.tex ]
+
+    
+    
+    # 
+    # File:	  test6.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - demonstrate
+    # multiple-qubit controlled single-q-gates
+    
+    	def	c-U,3,'U'
+    
+    	qubit	j0
+    	qubit	j1
+    	qubit	j2
+    	qubit	j3
+    
+    	toffoli	j0,j1,j2
+    	X	j0
+    	c-U	j2,j3,j0,j1
+    	H	j2
+    	measure	j3
+      
+  
+---  
+  
+* * *
+
+## Example 7
+
+[ test7.qasm |test7.png |test7.pdf |test7.eps |test7.tex ]
+
+    
+    
+    # 
+    # File:	  test7.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - measurement
+    # of operator with correction
+    
+    	def	c-U,1,'U'
+    	def	c-V,1,'V'
+    
+    	qubit	q0
+    	qubit	q1
+    
+    	H	q0
+    	c-U	q0,q1
+    	H	q0
+    	measure	q0
+    	c-V	q0,q1
+    	nop	q0
+    	nop	q1
+      
+  
+---  
+  
+* * *
+
+## Example 8
+
+[ test8.qasm |test8.png |test8.pdf |test8.eps |test8.tex ]
+
+    
+    
+    # 
+    # File:	  test8.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - stage in
+    # simplification of quantum teleportation
+    
+    	def	c-Z,1,'Z'
+    
+    	qubit	q0,\psi
+    	qubit	q1,0
+    	qubit	q2,0
+    
+    	H	q1
+    	cnot	q0,q1
+    	cnot	q1,q2
+    	cnot	q0,q1
+    	cnot	q1,q2
+    	H	q0
+    	c-Z	q2,q0
+    	H	q0
+    	H	q0
+      
+  
+---  
+  
+* * *
+
+## Example 9
+
+[ test9.qasm |test9.png |test9.pdf |test9.eps |test9.tex ]
+
+    
+    
+    # 
+    # File:	  test9.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - two-qubit gate circuit
+    # implementation of Toffoli 
+    
+    	def	c-X,1,'\sqrt{X}'
+    	def	c-Xd,1,'{\sqrt{X}}^\dagger'
+    
+    	qubit	q0
+    	qubit	q1
+    	qubit	q2
+    
+    	c-X	q1,q2
+    	cnot	q0,q1
+    	c-Xd	q1,q2
+    	cnot	q0,q1
+    	c-X	q0,q2
+      
+  
+---  
+  
+* * *
+
+## Example 10
+
+[ test10.qasm |test10.png |test10.pdf |test10.eps |test10.tex ]
+
+    
+    
+    # 
+    # File:	  test10.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - multi-qubit gates
+    # also demonstrates use of classical bits 
+    
+    	qubit	q0	
+    	cbit	c1
+    	qubit	q2
+    	
+    	h	q0
+    	Utwo	q0,c1
+    	S	q2
+    	Utwo	c1,q2
+      
+  
+---  
+  
+* * *
+
+## Example 11
+
+[ test11.qasm |test11.png |test11.pdf |test11.eps |test11.tex ]
+
+    
+    
+    # 
+    # File:	  test11.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - user-defined 
+    # multi-qubit ops
+    
+    	defbox	fx,2,0,'U_{f(x)}'
+    	defbox	fxy,3,0,'U_{f(x,y)}'
+      
+    	qubit	q0
+    	qubit	q1
+    	qubit	q2
+    
+    	h	q0
+    	fx	q0,q1
+    	h	q1
+    	fxy	q0,q1,q2
+    
+      
+  
+---  
+  
+* * *
+
+## Example 12
+
+[ test12.qasm |test12.png |test12.pdf |test12.eps |test12.tex ]
+
+    
+    
+    # 
+    # File:	  test12.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - multi-qubit controlled
+    # multi-qubit operations
+    
+    	defbox	CU2,3,1,'U'
+    	defbox	CV2,3,1,'V'
+    
+    	qubit	q0
+    	qubit	q1
+    	qubit	q2
+    	
+    	h	q0
+    	CU2	q0,q1,q2
+    	h	q0
+    	CV2	q2,q0,q1
+    	  
+  
+---  
+  
+* * *
+
+## Example 13
+
+[ test13.qasm |test13.png |test13.pdf |test13.eps |test13.tex ]
+
+    
+    
+    # 
+    # File:	  test13.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - three-qubit phase
+    # estimation circuit with QFT and controlled-U
+    
+    	defbox	CU,3,1,'U'
+    	defbox	CU2,3,1,'U^2'
+    	defbox	CU4,3,1,'U^4'
+    	def	c-S,1,'S'
+    	def	c-T,1,'T'
+    
+    	qubit	j0,0	# QFT qubits
+    	qubit	j1,0
+    	qubit	j2,0
+    	qubit	s0	# U qubits
+    	qubit	s1
+    
+    	h	j0	# equal superposition
+    	h	j1
+    	h	j2
+    
+    	CU4	j0,s0,s1	# controlled-U
+    	CU2	j1,s0,s1
+    	CU	j2,s0,s1
+    
+    	h	j0	# QFT
+    	c-S	j0,j1
+    	h	j1
+    	nop	j0
+    	c-T	j0,j2
+    	c-S	j1,j2
+    	h	j2
+    	nop	j0
+    	nop	j0
+    	nop	j1
+    	
+    	measure	j0	# final measurement
+    	measure	j1	
+    	measure	j2	
+      
+  
+---  
+  
+* * *
+
+## Example 14
+
+[ test14.qasm |test14.png |test14.pdf |test14.eps |test14.tex ]
+
+    
+    
+    # 
+    # File:	  test14.qasm
+    # Date:	  22-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - three-qubit FT QEC
+    # circuit with syndrome measurement
+    
+    	defbox	synd,4,0,'\txt{Process\\Syndrome}'
+    	defbox	rop,7,4,'{\cal R}'
+    
+    	qubit	q0	# code data qubits
+    	qubit	q1
+    	qubit	q2
+    	qubit	s0,0	# syndrome measurement qubits
+    	qubit	s1,0
+    	cbit	c0,0	# classical bits to store syndromes
+    	cbit	c1,0
+    
+    	h	s0	# create EPR pair for FT meas
+    	cnot	s0,s1
+    	cnot	q0,s0	# measure parity of q0,q1
+    	nop	s1	# prevent cnot's from colliding
+    	cnot	q1,s1
+    	cnot	s0,s1	# uncreate EPR
+    	h	s0
+    	measure	s0	# measure syndrome qubits
+    	nop	s1
+    	measure s1
+    	cnot	s0,c0	# copy to classical bits
+    	nop	s1
+    	cnot	s1,c1
+    	space	s0
+    
+    	zero	s0
+    	zero	s1
+    	h	s0	# create EPR pair for FT meas
+    	cnot	s0,s1
+    	cnot	q1,s0	# measure parity of q1,q2
+    	nop	s1	# prevent cnot's from colliding
+    	cnot	q2,s1
+    	cnot	s0,s1	# uncreate EPR
+    	h	s0
+    	measure	s0	# measure syndrome qubits
+    	nop	s1
+    	measure s1
+    
+    	synd	s0,s1,c0,c1
+    	rop	s0,s1,c0,c1,q0,q1,q2
+      
+  
+---  
+  
+* * *
+
+## Example 15
+
+[ test15.qasm |test15.png |test15.pdf |test15.eps |test15.tex ]
+
+    
+    
+    # 
+    # File:	  test15.qasm
+    # Date:	  24-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - "D-type" measurement
+    # requested by Nielsen
+    
+    	def	MeasZ,0,'\dmeterwide{HZ_\theta}{18pt}'
+    
+    	qubit	q0,\psi
+    	qubit	q1,+
+    
+    	nop	q0
+    	ZZ	q0,q1
+    	nop	q0
+    	MeasZ	q0
+      
+  
+---  
+  
+* * *
+
+## Example 16
+
+[ test16.qasm |test16.png |test16.pdf |test16.eps |test16.tex ]
+
+    
+    
+    # 
+    # File:	  test16.qasm
+    # Date:	  24-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - example from Nielsen
+    # paper on cluster states
+    
+    	qubit	q0,\psi
+    	qubit	q1,\psi
+    	qubit	q2,\phi
+    	qubit	q3,0
+    
+    	nop	q0
+    	nop	q0
+    	slash	q0
+    	nop	q1
+    	ZZ	q1,q2
+    	cnot	q2,q3
+    	nop	q2
+    	discard	q2
+    	dmeter	q3
+      
+  
+---  
+  
+* * *
+
+## Example 18
+
+[ test18.qasm |test18.png |test18.pdf |test18.eps |test18.tex ]
+
+    
+    
+    # 
+    # File:	  test18.qasm
+    # Date:	  25-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - multiple-control bullet op
+    
+    	def	MeasH,0,'\dmeter{H}'
+    	def	Z4,3,'bullet'	# handled specially
+    
+    	qubit	q0,\psi
+    	qubit	q1,+
+    	qubit	q2,+
+    	qubit	q3,\phi
+    
+    	nop	q0
+    	nop	q2
+    	Z4	q0,q1,q2,q3
+    	MeasH	q1
+    	MeasH	q2
+      
+  
+---  
+  
+* * *
+
+## Example 17
+
+[ test17.qasm |test17.png |test17.pdf |test17.eps |test17.tex ]
+
+    
+    
+    # 
+    # File:	  test17.qasm
+    # Date:	  24-Mar-04
+    # Author: I. Chuang 
+    #
+    # Sample qasm input file - example from Nielsen
+    # paper on cluster states
+    
+    	def	MeasH,0,'\dmeter{H}'
+    
+    	qubit	q0,\psi
+    	qubit	q1,+
+    	qubit	q2,+
+    	qubit	q3,\phi
+    
+    	nop	q0
+    	nop	q2
+    	ZZ	q0,q1
+    	ZZ	q2,q3
+    	ZZ	q1,q2
+    	MeasH	q1
+    	MeasH	q2
+      
+  
+---  
+<!------------------------------------------------------------------------ ->
+
+* * *
+
+## QASM Specification
+
+QASM instructions are as follows. Lines begining with '#' are comments. All
+other lines should be of the form **op args** where op-args pairs are:
+
+    
+    
+     qubit   name,initval
+     cbit    name,initval
+     measure qubit
+     H       qubit
+     X       qubit
+     Y       qubit
+     Z       qubit
+     S       qubit
+     T       qubit
+     nop     qubit
+     zero    qubit
+     discard qubit
+     slash   qubit
+     dmeter  qubit
+     cnot    ctrl,target
+     c-z     ctrl,target
+     c-x     ctrl,target
+     toffoli ctrl1,ctrl2,target
+     ZZ      b1,b2
+     SS      b1,b2
+     swap    b1,b2
+     Utwo    b1,b2
+     space   qubit
+     def     opname,nctrl,texsym
+     defbox  opname,nbits,nctrl,texsym
+    
+     Where:
+    
+     def     - define a custom controlled single-qubit operation, with
+               opname  = name of gate operation
+               nctrl   = number of control qubits
+               texsym  = latex symbol for the target qubit operation
+     defbox  - define a custom muti-qubit-controlled multi-qubit operation, with
+               opname  = name of gate operation
+               nbits   = number of qubits it acts upon
+               nctrl   = number of control qubits
+               texsym  = latex symbol for the target qubit operation
+     qubit   - define a qubit with a certain name (all qubits must be defined)
+               name    = name of the qubit, eg q0 or j2 etc
+               initval = initial value (optional), eg 0
+     cbit    - define a cbit with a certain name (all cbits must be defined)
+               name    = name of the cbit, eg c0
+               initval = initial value (optional), eg 0
+     H       - single qubit operator ("hadamard")
+     X       - single qubit operator 
+     Y       - single qubit operator 
+     Z       - single qubit operator
+     S       - single qubit operator
+     T       - single qubit operator
+     nop     - single qubit operator, just a wire
+     space   - single qubit operator, just an empty space
+     dmeter  - measure qubit, showing "D" style meter instead of rectangular box
+     zero    - replaces qubit with |0> state
+     discard - discard qubit (put "|" vertical bar on qubit wire)
+     slash   - put slash on qubit wire
+     measure - measurement of qubit, gives classical bit (double-wire) output
+     cnot    - two-qubit CNOT
+     c-z     - two-qubit controlled-Z gate
+     c-x     - two-qubit controlled-X gate
+     swap    - two-qubit swap operation 
+     Utwo    - two-qubit operation U
+     ZZ      - two-qubit controlled-Z gate, symmetric notation; two filled circles
+     SS      - two-qubit gate, symmetric; open squares
+     toffoli - three-qubit Toffoli gate
+    
+
+<!------------------------------------------------------------------------ ->
+
+* * *
+
+## Installation instructions
+
+    
+    
+    
+    -----------------------------------------------------------------------------
+    REQUIREMENTS:
+    
+    - latex2e with xypic (included in tetex)
+    - python version 2.3 or greater
+    - ghostscript (and epstopdf)
+    - netpbm (for creation of png files)
+    
+    -----------------------------------------------------------------------------
+    LIST OF FILES:
+    
+     README		- this file
+     meter.epsf     - picture of measurement meter
+     qasm2pdf	- script to create PDF from QASM file
+     qasm2png	- script to create PNG from QASM file
+     qasm2tex.py	- main python program to convert QASM to latex file
+     samples	- directory containing examples
+     xyqcirc.tex	- latex macros necessary to compile the latex files
+    
+    -----------------------------------------------------------------------------
+    INSTALLATION INSTRUCTIONS:
+    
+    untar/unzip this distribution; it creates the directory qasm2circ with
+    all of the files.  Copy your qasm file into this directory, and run
+    qasm2pdf or qasm2png to create the desired output.  You may also run
+    "python qasm2tex.py foo.qasm" to generate just the tex file (it will
+    appear on stdout).
+    
+
+<!------------------------------------------------------------------------ ->  
+  
+---  
+  
+Accessed  times
+
+|
+
+[ awcross at mit.edu ]
+
+  *[v]: View this template
+  *[e]: Edit this template
+  *[t]: Discuss this template
+  *[RSS]: Really Simple Syndication
+

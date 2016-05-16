@@ -1,0 +1,31 @@
+Searches are an important application.
+• What other searches have we considered?
+• brute force search (with array or linked list)
+– O(N)
+• binarySearch with a pre-sorted array (not a list!)
+– O(log(N))
+• Binary Search Trees are also O(log(N)) on
+average.
+• So why use „em?
+– Because sometimes a tree is the more natural structure.
+– Because insert and delete are also fast, O(logN). Not true for
+arrays.
+So It?s a Trade Off
+• Array Lists
+• O(N) insert
+• O(N) delete
+• O(N) search (assuming not pre-sorted)
+• Linked Lists
+• O(1) insert
+• O(1) delete
+• O(N) search
+• Binary Search Tree
+• O(log(N)) insert
+• O(log(N)) delete
+• O(log(N)) search
+– on average, but occasionally (rarely) as bad as O(N).
+Search Tree Concept
+• Every node stores a value.
+– Every left subtree (i.e., every node below and to the left) has a
+value less than that node.
+– Every right subtree has a value greater than that node. How Many Steps Did That Take? • 7 to 3 to 6 to 5. Three steps (after the root). • Will never be worse than the distance from the root to the furthest leaf (height!). • On average splits ~twice at each node So Time To Search? • So double the number of nodes at each layer. • It?s like “doubling the counter variable each time through a for loop.” How long does that take to run?

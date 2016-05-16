@@ -1,0 +1,33 @@
+In computer science, Iacono's working set structure is a comparison based dictionary. It supports insertion, deletion and access operation to maintain a dynamic set of  elements. The working set of an item  is the set of elements that have been accessed in the structure since the last time that  was accessed (or inserted if it was never accessed). Inserting and deleting in the working set structure takes  time while accessing an element  takes . Here,  represents the size of the working set of .
+
+
+== Structure ==
+
+To store a dynamic set of  elements, this structure consists of a series of Red–black trees, or other Self-balancing binary search trees , and a series of deques (Double-ended queues) , where . For every , tree  and deque  share the same contents and pointers are maintained between their corresponding elements. For every , the size of  and  is . Tree  and deque  consist of the remaining elements, i.e., their size is . Therefore, the number of items in all trees and the number of elements in all deques both add up to . Every element that has been inserted in the data structure is stored in exactly one of the trees and its corresponding deque.
+
+
+== Working set Invariant ==
+In the deques of this structure, elements are kept in sorted order according to their working set size. Formally, element  lies after  in deque  if and only if . Moreover, for every , the elements in deque  have a smaller working sets than the elements in deque . This property is referred to as the Working set invariant. Every operation in the data structure maintains the Working set invariant.
+
+
+== Operations ==
+The basic operation in this structure is called shift from  to , where  and  are indices of some trees in the structure. Two cases are considered in a shift from  to : If , then for every , taken in increasing order, an item is dequeued from  and enqueued into . The corresponding item is deleted from  and inserted into . The running time of this operation is . Analogously, if , then for every , taken in decreasing order, an item is dequeued from  and enqueued into . The corresponding item is deleted from  and inserted into . The running time of this operation is . Regardless of the case, after a shift operation, the size of  decreases by one whereas the size of  increases by one. Since that elements in the deques are sorted with respect to their working sets sizes, a shift operation maintains the Working set invariant.
+
+
+=== Search ===
+To search for an element , search for  in , in increasing order, until finding a tree  containing . If no tree is found, the search is unsuccessful. If  is found, it is deleted from  and then inserted into , i.e., it is moved to the front of the structure. The search finishes by performing a shift from  to  which restores the size of every tree and every deque to their size prior to the search operation. The running time of this search is  if the search was successful, or  otherwise. By the Working set property, every element in trees  belongs to the working set of . In particular, every element in  belongs to the working set of  and hence, . Thus, the running time of a successful search is .
+
+
+=== Insert ===
+Inserting an element  into the structure is performed by inserting  into  and enqueuing it into . Insertion is completed by performing a shift from  to . To avoid overflow, if  before the shift, i.e., if the last tree is full, then  is incremented and a new empty  and  is created. The running time of this operation is dominated by the shift from  to  whose running time is . Since element , whose working set is the smallest, is enqueued in , the Working set invariant is preserved after the shift.
+
+
+=== Delete ===
+Deleting an element  is done by searching for  on each tree in the structure, in increasing order, until finding a tree  that contains it (if non is found the deletion is unsuccessful). Item  is deleted from  and . Finally, a shift from  to  maintains the size of  equal to . The running time of this operation is . The working set invariant is preserved as deleting an element does not change the order of the working set of the elements.
+
+
+== Discussion ==
+Splay trees are self adjusting search trees introduced by Sleator and Tarjan in 1985. Using restructuring heuristic, splay trees are able to achieve insert and delete operations in  amortized time, without storing any balance information at the nodes. Moreover, the Working Set Theorem for splay trees states that the cost to access an element in a splay tree is  amortized. Iacono's workings set structure obtains the same running time for search, insert and delete in the worst-case. Therefore, offering an alternative to splay trees.
+
+
+== References ==

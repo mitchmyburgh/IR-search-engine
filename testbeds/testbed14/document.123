@@ -1,0 +1,8 @@
+﻿Process modeling has gained prominence in the information systems modeling area due to its focus on business processes and its usefulness in such business improvement methodologies as Total Quality Management, Business Process Reengineering. and Workflow Management. However, process modeling techniques are not without their criticisms [13]. This paper proposes 
+and uses the Bunge-Wand-Weber (BWW) representation model to analyze the five views - process, data, function, organization
+and output - provided in the Architecture of Integrated Information Systems (ARIS) popularized by Scheer [39, 40, 411. The BWW representation model attempts to provide a theoretical base on which to evaluate and thus contribute to the improvement
+of information systems modeling techniques. The analysis conducted in this paper prompts some propositions. It confirms
+that the process view alone is not sufficient to model all the real-world constructs required. Some other symbols or
+views are needed to overcome these deficiencies. However, even when considering all five views in combination, problems may
+arise in representing all potentially required business rules, specifying the scope and boundaries of the system under consideration, and employing a “top-down” approach to analysis and design. This type of approach is contrasted against bottom-up design methodologies. Further work from this study will involve the
+operationalization of these propositions and their empirical testing in the field.

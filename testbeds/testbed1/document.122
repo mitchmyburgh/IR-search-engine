@@ -1,0 +1,30 @@
+Abstract_Window_Toolkit
+The '''Abstract Window Toolkit''' ('''AWT''') is 's original platform-dependent , s, and   preceding . The AWT is part of the  (JFC)  the standard  for providing a  (GUI) for a Java program.
+AWT is also the GUI toolkit for a number of  profiles. For example,  profiles require Java runtimes on s to support AWT.
+== History ==
+When  first released Java in 1995, AWT widgets provided a thin level of abstraction over the underlying native user-interface. For example, creating an AWT  would cause AWT directly to call the underlying native subroutine that created a check box. However, a check box on  is not exactly the same as a check box on  or on the various types of . Some application developers prefer this model because it provides a high degree of fidelity to the underlying native windowing toolkit and seamless integration with native applications. In other words, a GUI program written using AWT looks like a native Microsoft Windows application when run on Windows, but the same program looks like a native  application when run on a Mac, etc. However, some application developers dislike this model because they prefer their applications to look exactly the same on every platform.
+In , the  toolkit largely superseded the AWT's widgets. In addition to providing a richer set of UI widgets, Swing draws its own widgets (by using  to call into low-level subroutines in the local graphics subsystem) instead of relying on the operating system's high-level user interface module. Swing provides the option of using either the native platform's  or a cross-platform look and feel (the "Java Look and Feel") that looks the same on all windowing systems.
+== Architecture ==
+The AWT provides two levels of s:
+* A general interface between Java and the native system, used for , , and s. This API is at the core of Java  programming and is also used by  and . It contains:
+** The interface between the native windowing system and the Java application;
+** The core of the GUI  subsystem;
+** Several s;
+** The interface to s such as  and ; and
+** A   for use with the  and .
+* A basic set of GUI widgets such as buttons, text boxes, and menus. It also provides the , which enables   compiled to  to draw directly to an AWT   drawing surface.
+AWT also makes some higher level functionality available to applications, such as:
+* Access to the  on supporting systems; and
+* The ability to launch some desktop applications such as s and  from a Java application.
+Neither AWT nor Swing are inherently . Therefore, code that updates the GUI or processes events should execute on the . Failure to do so may result in a  or race condition. To address this problem, a utility class called  allows applications to perform time-consuming tasks following user-interaction events in the event dispatching thread.
+== Mixing AWT and Swing components ==
+Prior to , mixing  components and basic AWT widgets often resulted in undesired side effects, with AWT widgets appearing on top of the Swing widgets regardless of their defined . This problem was because the rendering architecture of the two widget toolkits was very different, despite Swing borrowing heavyweight top  from AWT.
+Starting in , it is possible to mix Swing and AWT widgets without having z-order problems.
+== Example ==
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+public class AppletApplication extends Applet implements WindowListener 
+== Implementation ==
+As the AWT is a bridge to the underlying native user-interface, its implementation on a new  may involve a lot of work, especially if it involves any of the AWT GUI widgets, because each of them requires that its native peers be developed from scratch.
+A new project, , has been created, that provides an -based Java API to ease AWT implementation on new systems. The project has successfully implemented AWT widgets using . All the necessary core-JDK modifications have since been pushed to , which means that Java can now be used on a graphics stack other than one of those provided by the official JDK (,  or ), by including an external library and setting some system properties. A  backend for Caciocavallo is under development, as is an  backend; the aim is to deploy existing Swing applicationswithout Java supportas ordinary web applications running on a web server.

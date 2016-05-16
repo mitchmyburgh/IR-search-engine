@@ -1,0 +1,34 @@
+The Cloud Hits the Mainstream: More than Half of U.S. Businesses Now Use Cloud Computing
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+Clouds
+If you’ve attended a technology conference over the last couple years it’s hard to avoid the obvious buzz around cloud computing. Almost every vendor has applied the term to anything and everything imaginable. During this time there has been some debate over the level of adoption outside of the startup scene, specifically within the larger “enterprise class” of companies. We’re now at a point where most “new software” created, is created with the Internet as a central tenant.  It’s how modern software is developed, deployed and consumed.  Yes. The cloud has gone mainstream.
+
+New research sponsored by enterprise focused cloud computing firm, Virtustream, sheds new light on the adoption of cloud computing. The report findings indicate that the majority of U.S. businesses are now using some form of cloud computing for IT. The report notes that increasingly most of these businesses use multiple cloud providers leading to potential problems with interoperability and, so called, “Cloud Sprawl”.
+
+According to the report’s author Paul Burns, president of Neovise, “Enterprise IT organizations – and other organizations with a wide variety of applications – are using multiple types of IaaS clouds at the same time in order to meet their broad needs. Public clouds from the likes of Amazon, Google GOOG -0.85% and Microsoft MSFT -1.68% simply are not enough to satisfy all the computing needs of enterprise IT organizations.  This has led to a relatively new form of IT sprawl: cloud sprawl.”
+
+The timing of the report coincides with recent discussions in the OpenStack project about the lack of interoperability and compatibility between the various deployments of the open source platform.
+
+Rackspace and HP, two of the largest providers using OpenStack, have been found to not actually be compatible with the OpenStack project, an irony not lost on many industry observers. In a recent ITworld article, Josh McKenty, CTO of Piston and an OpenStack Foundation board member, noted that “neither of their public clouds could be called OpenStack under current interoperability guidelines,” he said. “They’re basically not interoperable.”
+
+Continued from page 1
+
+Research posted last year by Lydia Leong, Research VP at Gartner, points to some of the challenges facing Cloud providers, specifically within the OpenStack community. “Don’t assume that “open source” equates to open standards, broad interoperability and freedom from commercial interests. In reality, OpenStack is dominated by vendor interests, where they want customers to adopt their own offerings, potentially to include proprietary lock-in.” said Leong. “If interoperability is a concern, use a third-party cloud API library or cloud management tool that supports multiple cloud APIs, CMPs, or service providers.”
+
+With the growing usage of cloud resources within enterprise, fragmentation within the industry is quickly becoming a major concern. The Neovise report attempts to shed some light on the concerns by screening 822 IT leaders and decisions makers. The research found that 54% of organizations are already using public or private clouds, still leaving plenty of room for industry growth. Among the 161 organizations which completed in-depth surveys and that already use IaaS, 74% use more than one type of IaaS cloud among options that include public, on/off-premise private and hybrid clouds. At the same time, 40 to 50% of these organizations using IaaS use more than one of the same types of cloud.
+
+Burns also says; “Enterprise IT organizations are not simply adding a public cloud in addition to their existing infrastructures. In fact, about three fourths of the organizations that use cloud computing are using more than one type of IaaS cloud. While it is helpful to select clouds that most perfectly match the needs of each application, this approach also leads to some new challenges. For example, it can be much harder to track resources and spending, manage and maintain these environments, and maintain sufficient expertise on each cloud.“
+
+Some of the other key findings described in the report include:
+
+On the great debate about commodity versus enterprise-class infrastructure components, 45% of public cloud users felt that the quality or grade of these components is highly important. Another 34% felt quality of infrastructure components was somewhat important.
+Based on economic analysis, one of the greatest potential benefits of cloud computing stems from elasticity. Yet, less than half of cloud users have deployed elastic applications of any kind.
+Off-premise private clouds, such as hosted private clouds and virtual private clouds, are gaining a substantial following.
+Organizations with more than 1,000 employees are 46% more likely than smaller organizations to use hybrid clouds.
+Cloud users stand to benefit much more from cloud computing as the maturity of their usage increases, particularly with hybrid clouds.
+
+“We have already entered the multi-cloud world and there is no going back,” Burns said. “What remains is further maturity for hybrid clouds — where organizations not only use multiple clouds, but combine and integrate them to provide enhanced capabilities. Service providers and vendors that support multiple types of clouds have a competitive advantage here.”

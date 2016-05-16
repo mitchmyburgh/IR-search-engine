@@ -1,0 +1,127 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+On a plane (and of motion sickness)
+There are several ways to define a plane in 3d. The first one I will present is useful because it can be used to represent a plane in n dimensional space, even for n>3.
+First you need two linearly independent vectors to form a basis. Call them U and V. Then, if you take a×U+b×V for all possible values of a and b (them being real numbers of course), you generate a whole plane that goes through the origin of space. If you want to displace that plane in space by vector W (e.g. you want the point pointed to by W to be part of the plane), then a××U+b××V+W will generate the desired plane. (Proof, for a=b=0, it simplifies to W, thus the point at W is part of the plane).
+Note that the above equation can be written (a,b)••(U,V)+W. As such it can be viewed as a change of basis, from the canonical basis of 2d space to whatever space U and V's basis is.
+Another way for defining a plane that only works in 3d is as follows. (Note, in n dimensional space, this will define a n-1 dimensional object). As was seen earlier, if A•X=0, then A and X are perpendicular (A and X are vectors). Furthermore, for a given A, if you take all X's that satisfy the equation, you get all points in a certain plane. A is generally called normal to the plane, although the literature frequently assumes that the normal is also of unit length, which is not necessary (though A must not be the null vector). The values of X that satisfy the plane equation given include X=0, since A•0=0 for any value of A. Thus, that plane passes through the origin.
+16
+If one wants a plane that does not pass through the origin, one should proceed as follows. (This uses an intuitive form of affine transformations, described in depth later). First, find out the displacement vector K that describes the position of the plane in relation to the origin. Thus, if you subtract K from all the points in the plane, the plane ends up at the origin, and we can use the definition above. Thus, the new definition of the plane is A•(X-K)=0.
+To make this a bit more explicit, let A=(A,B,C) and X=(x,y,z) and K=(k1,k2,k3). Then the plane equation can be rewritten as: A×(x-k1)+B×(y-k2)+C×(z-k3)=0. A little algebra allows us to rewrite it as A×x+B×y+C×z=-A×k1-B×k2-C×k3. By setting D=-A×k1-B×k2-C×k3, we can make one more rewrite, which is the final form: A××x+B××y+C××z=D.
+It is important to remember that multiplying both side of the equation by a constant does not change the plane. Thus, plane x+y+z=1 is the same as plane 2x+2y+2z=2.
+Note that in this last representation, (A,B,C) is the normal vector to the plane. The last equation can also be re-written A••X=D. It would also be easy to demonstrate the following, but I will not do it. For any point P, (A••P-D)/|A| is the signed distance to the plane A•X=D. The sign can help you determine on what side of the plane that the point P lies on. If it is 0, P is on the plane. If it is positive, P is in the direction that the normal points to. If it is negative, P is on the side opposite of the normal. This has application in visible surface determination (namely, back face culling).
+Also note that if |A|=1, then the signed distance equation simplifies to A•P-D.
+It is easy to demonstrate that the equation for a line in n-space, for any integer value of n>0, is t××U+W, where U is a vector parallel to the line and W is a point on the line. As t takes all real values, we generate a line.
+Exercises
+Q1 - Given the basis U=(1,3,2) and V=(2,2,2), and the position vector W=(1,1,0), find the position in 3d space of the point (3,2) in UV space.
+Q2 - Express the plane described in Q1 in the form Ax+By+Cz=D
+Q3 - Find the signed distance of point (4,2,4) to the plane using the answer for question 2.
+Q4 - Given two basis vectors for a plane, P and Q, in 3d space, and a position vector for the plane, R, plus the direction vector of a line, M, that passes through origin, find the pq space point of intersection between the line and the plane.
+17
+Answers
+A1 - (8,14,10)
+A2 - x+y-2z=2 (hint : remember that the cross product of U and V is perpendicular to both U and V).
+A3 - -4/(61/2)?-1.633 - this means that the point (4,2,4) is in the direction opposite of (1,1,-2) from the plane x+2-2z=2.
+A4 - See the perspective chapter on texture mapping.
+Orthonormalizing a basis
+Sometimes we might have a basis B which is meant to be orthonormal, but due to accumulation in roundoff error in the computer, the vectors are slightly off the unit length and not quite perpendicular. Then it is useful to have a way of finding an orthonormal basis O from our basis B while making sure that O and B are "very similar" in a certain sense.
+The meaning of "very similar" can be made explicit easily. Let B be the basis (b1, b2, ..., bn) for a n-dimensional space (bi's are vectors). Let O be the basis (o1, o2, ..., on). Then, we measure the "similitude" of O and B by taking Max(|oi-bi|), that is, the greatest difference between the same vector in O and B. The closer this number is to 0, the more similar O and B are. The method given below will generate O from B such that the similitude is small enough (note that it will not necessarily be the smallest possible, it will simply be small enough).
+The process in n-dimensional space is as follows. Let
+v1=b1
+vn=bn-?1=i<n(bn•oi)oi
+on=vn/|vn|
+Then, the basis O is orthonormal and has good similitude with the basis B. (Proof is left as an exercise. Hint: find an upper bound on the similitude as a function of the maximum of the dot product between two vectors of the basis B and as a function of the length of the vectors in the basis B. Proof of orthogonality comes from examining vn closely. Unit norm of the vectors of the basis is obvious.)
+Explicitly for the 3d case, this simplifies to:
+o1=b1/|b1|
+18
+v2=b2-(b2•o1)o1
+o2=v2/|v2|
+v3=b3-(b3•o1)o1-(b3•o2)o2
+o3=v3/|v3|
+19
+Matrix mathematics
+Introduction
+Matrices are a tool used to handle a great deal of linear combinations in a homogeneous way. The operations on matrices are so defined as to ease whatever task you want to do with them. Be it expressing a system of equations, or making a change of basis, to some peculiar uses in calculus.
+Normally, matrices are noted using large parenthesis and the numbers written down in a grid-like disposition as follows. This is a generic 3x3 matrix:
+M
+m11
+m21
+m31
+m12
+m22
+m32
+m13
+m23
+m33
+In general, a pxq matrix is noted as above with the exception that it has p rows and q columns. The above matrix can also be written M=(mij) with i and j varying from 1 to 3. The first index is the row number, the second index is the column number, as in the example above.
+A matrix for which p=q, such as the M matrix above, is said to be a square matrix. There exist a particular type of square matrix called an identity matrix. There is one such matrix for each type of square matrix (e.g. one for 1x1 matrices, one for 2x2 matrices, one for 3x3 matrices, etc...) As an example, the 3x3 matrix is given here:
+1
+0
+0
+0
+1
+0
+0
+0
+1
+Strictly speaking, the identity matrix I=(mij) is defined such as:
+mij=0 if i?j and mij=1 if i=j
+Matrix operations
+20
+Matrix addition is defined as follows. Given 2 matrices A=(aij) and B=(bij) of same dimension pxq, then U=(uij)=A+B is defined as being (uij)=(aij+bij).
+Matrix multiplication by a scalar is defined also as follows. Given the matrix M and a scalar k, then the operation U=(uij)=k×M is defined as uij=k×mij.
+Matrix multiplication is a bit more involved. It is defined using sums, as follows. Given matrix A of dimension pxq, and matrix B of dimension qxr, the product C=AxB is given by:
+cij=?1=k=q(aik×bkj)
+More explicitly, for example, we have, for A and B 2x2 matrices:
+c11=a11×b11+a12×b21
+c12=a11×b12+a12×b22
+c21=a21×b11+a22×b21
+c22=a21×b12+a22×b22
+(Note: ?1=k=q(aik×bkj) means "sum of (aik×bkj) for k varying from 1 to q.")
+It is important to notice that matrix multiplication is not commutative in the general case. For example, it is not true that A×B=B×A with A and B matrices in the general case, even if A and B are square matrices. Matrix multiplication is, however, associative (ie, A×(B×C)=(A×B)×C) and distributive (ie, A(B+C)=AB+AC).
+The identity matrix has the property that, for any matrix A, A×I=I×A=A (I is the neutral element of matrix multiplication).
+Matrix transposition of matrix A, noted AT, reflects the A matrix along the great diagonal. That is, say A=(aij) and AT=(bij), then we have bij=aji.
+There are also other interesting operations you can do on a matrix, however they are much, much more involved. As of now, I am not willing to get too deeply into this. The topics of interest are matrix determinant (which has a recursive definition) and matrix inversion. I will content myself by giving one definition of matrix determinant and one way of finding matrix inverse. Note that there are at least a couple of different definitions for determinant, though they usually boil down to the same thing. Also, there are many ways of finding the inverse of a matrix, I will contend myself with presenting only one method. Strict definitions will be given, for more extensive coverage, consult a linear algebra book.
+21
+Given a matrix M=(mij), of size 1x1, the determinant (sometimes written detM) is defined as D=m11. For matrices of size nxn with n>1, the definition is recursive. First, pick an integer j such that 1=j=n. For example, you could pick j=1.
+D=mj1×Cj1+mj2×Cj2+...+mjn×Cjn
+The Cij are the cofactors of M - they require a bit more explaining, which follows.
+First let us define the minor matrix Mij of matrix M. If M is a nxn matrix, then the Mij matrix is a (n-1)x(n-1) matrix. To generate the Mij matrix, remove the ith line and jth column from the M matrix.
+Second what interests us is the cofactor Cij, which is defined to be: Cij=(-1)i+j×detMij
+As an example, the determinant of the 2x2 matrix M is m11×m22-m12×m21, and the determinant of a 3x3 matrix M is
+D3x3= m11×(m22×m33-m23×m32)
+- m12×(m21×m33-m23×m31)
++ m13×(m21×m32-m22×m31) Given a matrix A, the inverse of the matrix, noted A-1 (if it exists), is such that A ×A-1=A-1×A=I. It is possible that a matrix has no inverse.
+To inverse the matrix, we will first define the adjacent matrix of A, which we will call B=(bij). Let Cij denote the i,j cofactor of A. Then, we have:
+bij=Cij
+Which completely defines the cofactor matrix B. The inverse of A is then:
+A-1=(1/detA)×BT
+Another method of inverting matrices, which might be preferable for numerical stability reasons but will not be discussed here, is the Gauss-Jordan method.
+Exercise
+Q1 - Compute the product of these two matrices:
+22
+.
+m11
+m21
+m31
+m12
+m22
+m32
+m13
+m23
+m33
+n11
+n21
+n31
+n12
+n22
+n32
+n13
+n23
+n33
+Answer
+A1
+. m11n11 . m12n21 . m13n31 . m21n11 . m22n21 . m23n31 . m31n11 . m32n21 . m33n31
+. m11n12 . m12n22 . m13n32 . m21n12 . m22n22 . m23n32 . m31n12 . m32n22 . m33n32
+. m11n13 . m12n23 . m13n33 . m21n13 . m22n23 . m23n33 . m31n13 . m32n23 . m33n33
+chapter and you will see that D=X•(P,Q,R) literally 

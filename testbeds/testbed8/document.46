@@ -1,0 +1,8 @@
+Object-oriented programming methodology dictates that the operations of any interface of a class are to be independent of each other. It results in a layered design where clients of an interface use the methods declared in the interface. An interface places no requirements for clients to invoke the operations of one interface in any particular order. This approach has the benefit that client code can assume that the operations of an interface are available for use whenever the client has access to the object.[citation needed]
+Example
+
+The buttons on the front of your television set are the interface between you and the electrical wiring on the other side of its plastic casing. You press the "power" button to toggle the television on and off. In this example, your particular television is the instance, each method is represented by a button, and all the buttons together comprise the interface. (Other television sets that are the same model as yours would have the same interface.) In its most common form, an interface is a specification of a group of related methods without any associated implementation of the methods.
+
+A television set also has a myriad of attributes, such as size and whether it supports color, which together comprise its structure. A class represents the full description of a television, including its attributes (structure) and buttons (interface).
+
+Getting the total number of televisions manufactured could be a static method of the television class. This method is clearly associated with the class, yet is outside the domain of each individual instance of the class. Another example would be a static method that finds a particular instance out of the set of all television objects.

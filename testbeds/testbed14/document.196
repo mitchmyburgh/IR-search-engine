@@ -1,0 +1,30 @@
+3.6 Other Reasoning Techniques
+Although the tableau based approach is currently the most widely used technique
+for reasoning in DLs, other approaches have been developed as well. In general, a
+reasoning algorithm can be used in an implementation, or to prove a decidability or
+computational complexity result. Certain approaches may (for a given logic) be better
+suited for the former task, whereas others may be better suited for the latter—and it is
+sometimes hard to find one that is well-suited for both. Examples of other approaches
+are the automata based approach, the structural subsumption approach, the resolution
+based approach, and translation based approaches. For certain logics and tasks, other
+approaches turn out to be superior to the tableau based approach. For example, it is not
+clear how the polynomiality result for subsumption in EL with GCIs [42, 6], which
+uses a structural subsumption algorithm, could be obtained with the help of a tableau
+based algorithm. Similarly, the automata based approach can be used to show that satisfiability
+and subsumption of �LC concepts with respect to TBoxes can be decided
+within exponential time [49, 117, 116, 159],
+6 whereas this is very hard to prove using
+a tableau based approach [66]. Resolution based approaches [103, 5, 104, 107], which
+use the translation of DLs into first-order predicate logic, may have the advantage
+that they simultaneously yield a decision procedure for a certain decidable DL, and a
+semidecision procedure for a more expressive logic (such as OWL Full or first-order
+6The cited papers actually use automata based approaches to show EXPTIME results for extensions of
+�LC.
+156 3. Description Logics
+predicate logic). Moreover, some of them are worst-case optimal [104], and others can
+be implemented through appropriate parameterization of existing first-order theorem
+provers [103]. Finally, the translation of very expressive DLs into propositional dynamic
+logic or the propositional mu-calculus [57, 58, 56, 59] allows one to transfer
+known decidability and complexity results for these logics to very expressive DLs.
+It is not clear how these results could be obtained with the help of the tableau based
+approach.

@@ -1,0 +1,32 @@
+Daintree Networks, Inc. is a building automation company that provides wireless control systems for commercial and industrial buildings. Commercial building control and lighting control systems can reduce energy consumption, cost, and carbon footprint, and comply with "green" building regulations.
+Daintree's ControlScope wireless control includes switches, sensors, LED drivers, programmable thermostas, and plug load controllers. Wireless communication is achieved either by wirelessly adapting traditional wired devices (such as sensors), or by building wireless communications capabilities directly into devices.
+Daintree has produced a design verification and operational support tool, the Sensor Network Analyzer (SNA), which supports wireless embedded technologies including IEEE 802.15.4, ZigBee, ZigBee RF4CE, 6LoWPAN, JenNet (from Jennic Limited), SimpliciTI (from Texas Instruments), and Synkro (from Freescale Semiconductor).
+Founded in 2003, Daintree is headquartered in Los Altos, California with an R&D lab in Melbourne, Australia.
+
+
+== History ==
+Daintree was founded in 2003 by Bill Wood, who had previously worked as a General Manager for Agilent Technologies, and prior to that at Hewlett-Packard.
+Daintree managers have previously held roles within wireless standards bodies, including chair of several working groups within the ZigBee Alliance.
+In 2003, when many wireless technologies were new, Daintree provided design verification and operational support tools for wireless embedded developers. In 2007 the company began developing and delivering wireless systems for specific purposes; by 2009 it had narrowed its focus to lighting and building control.
+
+
+== Products ==
+ControlScope manager (CSM): Software to configure, manage, and maintain key energy loads in commercial buildings. It includes management of individual devices and "zones" of multiple devices, plus calibration, scheduling, alarm notification, energy monitoring, occupancy and daylight control, demand response controls, and an automated commissioning tool.
+Wireless area controller (WAC): Hardware that manages the wireless network, contains the control algorithms that converts sensing data into commands to ballasts and luminaires, tracks devices and stores their states, and detects issues and repairs the system.
+Wireless adapter: Hardware that enables traditional wired devices to communicate wirelessly within the network. It interfaces wireless signals to wired controls, and can be used in conjunction with devices such as wired sensors, LED drivers, ballasts and switches.
+Sensor network analyzer (SNA): Discontinued software for the development, deployment and management of wireless hardware devices and embedded applications based technologies such as ZigBee, IEEE 802.15.4, 6LoWPAN, SimpliciTI and Synkro. Carries out performance measurements and graphical network visualization. The SNA is a part of ZigBee Alliance interoperability and certification events. (Discontinued 31-March-2010)
+Sensor network adapter: Discontinued hardware used as a capture device in wireless embedded networks, able to interact with live ZigBee and IEEE 802.15.4 networks to poll, configure and commission devices. (Discontinued 31-March-2010)
+
+
+== ZigBee ==
+ZigBee is a specification for a suite of high-level communication protocols using small, low-power digital radios based on the IEEE 802.15.4 standard for wireless personal area networks (WPANs). ZigBee is targeted at RF applications that require a low data rate, long battery life, and secure networking.
+Daintree is an active member of the ZigBee Alliance, and their Sensor Network Analyzer is used by the ZigBee Alliance for product certification.
+
+
+== References ==
+
+
+== External links ==
+ZigBee Alliance
+IEEE 802.15.4
+Wireless Embedded Network resources including white papers, glossary and specification updates

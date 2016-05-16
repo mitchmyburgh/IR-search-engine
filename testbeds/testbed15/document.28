@@ -1,0 +1,27 @@
+Skeletal animation
+Skeletal animation is a technique in computer animation in which a character is represented in two parts: a surface representation used to draw the character (called skin or mesh) and a hierarchical set of interconnected bones (called the skeleton or rig) used to animate (pose and keyframe) the mesh.[1] While this technique is often used to animate humans or more generally for organic modeling, it only serves to make the animation process more intuitive and the same technique can be used to control the deformation of any object — a door, a spoon, a building, or a galaxy. When the animated object is more general than for example a humanoid character the set of bones may not be hierarchical or interconnected, but it just represents a higher level description of the motion of the part of mesh or skin it is influencing.
+
+This technique is used in virtually all animation systems where simplified user interfaces allows animators to control often complex algorithms and a huge amount of geometry; most notably through inverse kinematics and other "goal-oriented" techniques. In principle, however, the intention of the technique is never to imitate real anatomy or physical processes, but only to control the deformation of the mesh data.
+
+Benefits and drawbacks
+Strengths
+Bone represent set of vertices (or some other objects, which represent for example a leg).
+Animator controls fewer characteristics of the model
+Animator can focus on the large scale motion.
+Bones are independently movable.
+An animation can be defined by simple movements of the bones, instead of vertex by vertex (in the case of a polygonal mesh).
+
+Weaknesses
+Bone represents set of vertices (or some other object).
+Does not provide realistic muscle movement and skin motion
+Possible solutions to this problem:
+Special muscle controllers attached to the bones
+Consultation with physiology experts (increase accuracy of musculoskeletal realism with more thorough virtual anatomy simulations)
+
+Applications
+Skeletal animation is the standard way to animate characters or mechanical objects for a prolonged period of time (usually over 100 frames). It is commonly used by video game artists and in the movie industry, and can also be applied to mechanical objects and any other object made up of rigid elements and joints.
+
+Performance capture (or motion capture) can speed up development time of skeletal animation, as well as increasing the level of realism.
+
+For motion that is too dangerous for performance capture, there are computer simulations that automatically calculate physics of motion and resistance with skeletal frames. Virtual anatomy properties such as weight of limbs, muscle reaction, bone strength and joint constraints may be added for realistic bouncing, buckling, fracture and tumbling effects known as virtual stunts. However, there are other applications of virtual anatomy simulations such as military[3] and emergency response. Virtual soldiers, rescue workers, patients, passengers and pedestrians can be used for training, virtual engineering and virtual testing of equipment. Virtual anatomy technology may be combined with artificial intelligence for further enhancement of animation and simulation technology.
+

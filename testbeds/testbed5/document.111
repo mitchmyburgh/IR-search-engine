@@ -1,0 +1,48 @@
+Machine languages[edit]
+Machine languages are directly executable by a computer's CPU. They are typically formulated as bit patterns, usually represented in octal or hexadecimal. Each bit pattern causes the circuits in the CPU to execute one of the fundamental operations of the hardware. The activation of specific electrical inputs (e.g., CPU package pins for microprocessors), and logical settings for CPU state values, control the processor's computation. Individual machine languages are specific to a family of processors; machine-language code for one family of processors cannot run directly on processors in another family unless the processors in question have additional hardware to support it (for example, DEC VAX processors included a PDP-11 compatibility mode). They are (essentially) always defined by the CPU developer, not by 3rd parties. The symbolic version, the processor's assembly language, is also defined by the developer, in most cases. Some commonly-used machine code instruction sets are:
+
+ARM
+Original 32-bit
+16-bit Thumb instructions (subset or registers used)
+64-bit (major architecture change, more registers)
+DEC PDP-6/PDP-10/DECSYSTEM-20
+DEC PDP-11 (influenced VAX and M68000)
+DEC VAX
+DEC Alpha
+Intel 8008, 8080 and 8085
+Zilog Z80
+x86:
+16-bit x86, first used in the Intel 8086
+Intel 8086 and 8088 (the latter was used in the first and early IBM PC)
+Intel 80186
+Intel 80286 (the first x86 processor with protected mode, used in the IBM AT)
+IA-32, introduced in the 80386
+x86-64 The original specification was created by AMD. There are vendor variants, but they're essentially the same:
+AMD's AMD64
+Intel's Intel 64
+IBM System/360 and successors, including z/Architecture
+MIPS
+Motorola 6800
+Motorola 68000 family (CPUs used in early Apple Macintosh and early Sun computers)
+MOS Technology 65xx
+6502 (CPU for VIC-20, Apple II, and Atari 800)
+6510 (CPU for Commodore 64)
+Western Design Center 65816/65802 (CPU for Apple IIGS and (variant) Super Nintendo Entertainment System)
+National NS320xx
+Power Architecture
+POWER, first used in the IBM RS/6000
+PowerPC – used in Power Macintosh and the technology is used in many older generation game consoles)
+Sun,Oracle SPARC
+MCST Elbrus 2000
+Macro languages[edit]
+Textual substitution macro languages[edit]
+See also: Category:Macro programming languages
+Macro languages transform one source code file into another. A "macro" is essentially a short piece of text that expands into a longer one (not too be confused with hygienic macros), possibly with parameter substitution. They are often used to preprocess source code. Preprocessors can also supply facilities like file inclusion.
+
+Macro languages may be restricted to acting on specially labeled code regions (pre-fixed with a # in the case of the C preprocessor. Alternatively, they may not, but in this case it is still often undesirable to (for instance) expand a macro embedded in a string literal, so they still need a rudimentary awareness of syntax. That being the case, they are often still applicable to more than one language. Contrast with source-embeddable languages like PHP, which are fully featured.
+
+cpp (the C preprocessor)
+m4 (originally from AT&T, bundled with Unix)
+Application macro languages[edit]
+Scripting languages such as Tcl and ECMAScript (ActionScript, ECMAScript for XML, JavaScript, JScript) have been embedded into applications. These are sometimes called "macro languages", although in a somewhat different sense to textual-substitution macros like m4.
+

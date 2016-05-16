@@ -1,0 +1,22 @@
+To traverse a non-empty binary search tree in inorder (symmetric), perform the following operations recursively at each node: (LNR)
+1. Traverse the left subtree.
+2. go to root.
+3. Traverse the right subtree.
+
+To traverse a non-empty binary search tree in preorder, the following operations are done recursively at each node, starting with the root node: (NLR)
+1. go to root.
+2. Traverse the left subtree.
+3. Traverse the right subtree.
+
+To traverse a non-empty binary tree in postorder, perform the following operations recursively at each node: (LRN)
+1. Traverse the left subtree.
+2. Traverse the right subtree.
+3. go to root.
+
+Efficiency of tree traversal
+It depends what kind of traversal you are performing and the algorithm, but typically it would be O(n) where n is the total number of nodes in the tree. The canonical recursive implementation of depth first traversal, will consume memory (on the stack) in the order of the deepest level, which on a balanced tree it would be log(n).
+
+When would you use each traversal?
+-Pre-order traversal while duplicating nodes and values can make a complete duplicate of a binary tree. It can also be used to make a prefix expression (Polish notation) from expression trees: traverse the expression tree pre-orderly.
+-In-order traversal is very commonly used on binary search trees because it returns values from the underlying set in order, according to the comparator that set up the binary search tree (hence the name).
+-Post-order traversal while deleting or freeing nodes and values can delete or free an entire binary tree. It can also generate a postfix representation of a binary tree.

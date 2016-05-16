@@ -1,0 +1,106 @@
+In computer science, evolutionary computation is a subfield of artificial intelligence (more particularly computational intelligence) that can be defined by the type of algorithms it is concerned with. These algorithms, called evolutionary algorithms, are based on adopting Darwinian principles, hence the name. Technically they belong to the family of trial and error problem solvers and can be considered global optimization methods with a metaheuristic or stochastic optimization character, distinguished by the use of a population of candidate solutions (rather than just iterating over one point in the search space). They are mostly applied for black box problems (no derivatives known), often in the context of expensive optimization.
+Evolutionary computation uses iterative progress, such as growth or development in a population. This population is then selected in a guided random search using parallel processing to achieve the desired end. Such processes are often inspired by biological mechanisms of evolution.
+As evolution can produce highly optimised processes and networks, it has many applications in computer science.
+
+
+== History ==
+The use of Darwinian principles for automated problem solving originated in the 1950s. It was not until the 1960s that three distinct interpretations of this idea started to be developed in three different places.
+Evolutionary programming was introduced by Lawrence J. Fogel in the US, while John Henry Holland called his method a genetic algorithm. In Germany Ingo Rechenberg and Hans-Paul Schwefel introduced evolution strategies. These areas developed separately for about 15 years. From the early nineties on they are unified as different representatives ("dialects") of one technology, called evolutionary computing. Also in the early nineties, a fourth stream following the general ideas had emerged – genetic programming. Since the 1990s, nature-inspired algorithms are becoming an increasingly significant part of evolutionary computation.
+These terminologies denote the field of evolutionary computing and consider evolutionary programming, evolution strategies, genetic algorithms, and genetic programming as sub-areas.
+Simulations of evolution using evolutionary algorithms and artificial life started with the work of Nils Aall Barricelli in the 1960s, and was extended by Alex Fraser, who published a series of papers on simulation of artificial selection. Artificial evolution became a widely recognised optimisation method as a result of the work of Ingo Rechenberg in the 1960s and early 1970s, who used evolution strategies to solve complex engineering problems. Genetic algorithms in particular became popular through the writing of John Holland. As academic interest grew, dramatic increases in the power of computers allowed practical applications, including the automatic evolution of computer programs. Evolutionary algorithms are now used to solve multi-dimensional problems more efficiently than software produced by human designers, and also to optimise the design of systems.
+
+
+== Techniques ==
+Evolutionary computing techniques mostly involve metaheuristic optimization algorithms. Broadly speaking, the field includes:
+Ant colony optimization
+Artificial Bee Colony Algorithm
+Artificial immune systems
+Artificial life (also see digital organism)
+Bees algorithm
+Cultural algorithms
+Differential evolution
+Dual-phase evolution
+Evolutionary algorithms
+Evolutionary programming
+Evolution strategy
+Gene expression programming
+Genetic algorithm
+Genetic programming
+Harmony search
+Learnable Evolution Model
+Learning classifier systems
+Particle swarm optimization
+Self-organization such as self-organizing maps, competitive learning
+Swarm intelligence
+
+
+== Evolutionary algorithms ==
+
+Evolutionary algorithms form a subset of evolutionary computation in that they generally only involve techniques implementing mechanisms inspired by biological evolution such as reproduction, mutation, recombination, natural selection and survival of the fittest. Candidate solutions to the optimization problem play the role of individuals in a population, and the cost function determines the environment within which the solutions "live" (see also fitness function). Evolution of the population then takes place after the repeated application of the above operators.
+In this process, there are two main forces that form the basis of evolutionary systems: Recombination and mutation create the necessary diversity and thereby facilitate novelty, while selection acts as a force increasing quality.
+Many aspects of such an evolutionary process are stochastic. Changed pieces of information due to recombination and mutation are randomly chosen. On the other hand, selection operators can be either deterministic, or stochastic. In the latter case, individuals with a higher fitness have a higher chance to be selected than individuals with a lower fitness, but typically even the weak individuals have a chance to become a parent or to survive.
+
+
+== Some Evolutionary Computation Practitioners ==
+The list of active researchers is naturally changing over time. A good network analysis of the community has been published in 
+Thomas Bäck
+Wolfgang Banzhaf
+Kalyanmoy Deb
+Kenneth A De Jong
+Gusz Eiben
+Peter J. Fleming
+Stephanie Forrest
+David E. Goldberg
+Emma Hart
+John Henry Holland
+John Koza
+Zbigniew Michalewicz
+Peter Nordin
+Riccardo Poli
+Ingo Rechenberg
+Marc Schoenauer
+Hans-Paul Schwefel
+Jim Smith
+Gloria Townsend
+Xin Yao
+
+
+== See also ==
+
+Autoconstructive
+Estimation of distribution algorithm
+Evolutionary robotics
+Fitness approximation
+Grammatical evolution
+Human-based evolutionary computation
+Inferential programming
+Interactive evolutionary computation
+Mutation testing
+No free lunch in search and optimization
+Universal Darwinism
+
+
+== Bibliography ==
+Th. Bäck, D.B. Fogel, and Z. Michalewicz (Editors), Handbook of Evolutionary Computation, 1997, ISBN 0750303921
+Th. Bäck and H.-P. Schwefel. An overview of evolutionary algorithms for parameter optimization. Evolutionary Computation, 1(1):1–23, 1993.
+W. Banzhaf, P. Nordin, R.E. Keller, and F.D. Francone. Genetic Programming — An Introduction. Morgan Kaufmann, 1998.
+S. Cagnoni, et al., Real-World Applications of Evolutionary Computing, Springer-Verlag Lecture Notes in Computer Science, Berlin, 2000.
+R. Chiong, Th. Weise, Z. Michalewicz (Editors), Variants of Evolutionary Algorithms for Real-World Applications, Springer, 2012, ISBN 3642234232
+K. A. De Jong, Evolutionary computation: a unified approach. MIT Press, Cambridge MA, 2006
+A. E. Eiben and M. Schoenauer, Evolutionary computing, Information Processing Letters, 82(1): 1–6, 2002.
+A. E. Eiben and J.E. Smith, Introduction to Evolutionary Computing, Springer, First edition, 2003, ISBN 3-540-40184-9,
+D. B. Fogel. Evolutionary Computation. Toward a New Philosophy of Machine Intelligence. IEEE Press, Piscataway, NJ, 1995.
+L. J. Fogel, A. J. Owens, and M. J. Walsh. Artificial Intelligence through Simulated Evolution. New York: John Wiley, 1966.
+D. E. Goldberg. Genetic algorithms in search, optimization and machine learning. Addison Wesley, 1989.
+J. H. Holland. Adaptation in natural and artificial systems. University of Michigan Press, Ann Arbor, 1975.
+P. Hingston, L. Barone, and Z. Michalewicz (Editors), Design by Evolution, Natural Computing Series, 2008, Springer, ISBN 3540741097
+J. R. Koza. Genetic Programming: On the Programming of Computers by means of Natural Evolution. MIT Press, Massachusetts, 1992.
+F.J. Lobo, C.F. Lima, Z. Michalewicz (Editors), Parameter Setting in Evolutionary Algorithms, Springer, 2010, ISBN 3642088929
+Z. Michalewicz, Genetic Algorithms + Data Structures - Evolution Programs, 1996, Springer, ISBN 3540606769
+Z. Michalewicz and D.B. Fogel, How to Solve It: Modern Heuristics, Springer, 2004, ISBN 978-3-540-22494-5
+I. Rechenberg. Evolutionstrategie: Optimierung Technischer Systeme nach Prinzipien des Biologischen Evolution. Fromman-Hozlboog Verlag, Stuttgart, 1973. (German)
+H.-P. Schwefel. Numerical Optimization of Computer Models. John Wiley & Sons, New-York, 1981. 1995 – 2nd edition.
+D. Simon. Evolutionary Optimization Algorithms. Wiley, 2013.
+
+
+== References ==

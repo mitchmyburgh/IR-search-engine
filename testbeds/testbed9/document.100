@@ -1,0 +1,29 @@
+A binary heap is a heap data struc­ture cre­ated using a binary tree.
+
+binary tree has two rules -
+
+Binary Heap has to be com­plete binary tree at all lev­els except the last level. This is called shape prop­erty.
+All nodes are either greater than equal to (Max-Heap) or less than equal to (Min-Heap) to each of its child nodes. This is called heap prop­erty.
+Imple­men­ta­tion:
+
+Use array to store the data.
+Start stor­ing from index 1, not 0.
+For any given node at posi­tion i:
+Its Left Child is at [2*i] if available.
+Its Right Child is at [2*i+1] if available.
+Its Par­ent Node is at [i/2]if avail­able.
+Heap Majorly has 3 operations -
+
+Insert Oper­a­tion
+Delete Oper­a­tion
+Extract-Min (OR Extract-Max)
+Insert Oper­a­tion:
+
+Add the ele­ment at the bot­tom leaf of the Heap.
+Per­form the Bubble-Up operation.
+All Insert Oper­a­tions must per­form the bubble-up oper­a­tion(it is also called as up-heap, percolate-up, sift-up, trickle-up, heapify-up, or cascade-up)
+Bubble-up Oper­a­tion:
+
+If inserted ele­ment is smaller than its par­ent node in case of Min-Heap OR greater than its par­ent node in case of Max-Heap, swap the ele­ment with its parent.
+Keep repeat­ing the above step, if node reaches its cor­rect posi­tion, STOP.
+ 

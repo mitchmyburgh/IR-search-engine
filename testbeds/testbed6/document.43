@@ -1,0 +1,235 @@
+   NOW 
+   Adventure 
+   Animals 
+   Auto 
+   Culture 
+   Entertainment 
+   Health 
+   Home &amp; Garden 
+   Lifestyle 
+   Money 
+   Science 
+   Tech 
+   Video 
+   Shows 
+   Quizzes 
+  Follow us 
+  Facebook 
+  YouTube 
+  Twitter 
+  Pinterest 
+        HowStuffWorks 
+        Tech 
+         Tech  
+        Toggle navigation     
+        Follow us 
+        Facebook 
+        YouTube 
+        Twitter 
+        Pinterest 
+		$("#btn-search-nav").bind("click", function() {
+			var searchDropdown = '.headerModule';
+			var pageSlideDown = '#page'
+			$(this).toggleClass('reveal');
+			$(searchDropdown).toggleClass('reveal');
+			$(pageSlideDown).toggleClass('slide');
+		});
+       NOW 
+       Adventure 
+       Animals 
+       Auto 
+       Culture 
+       Entertainment 
+       Health 
+       Home &amp; Garden 
+        More 
+         Lifestyle 
+         Money 
+         Science 
+         Tech 
+         Video 
+         Shows 
+         Quizzes 
+       Lifestyle 
+       Money 
+       Science 
+       Tech 
+       Video 
+       Shows 
+       Quizzes 
+     How Encryption Works 
+var addthis_share = {
+	url: 'http://computer.howstuffworks.com/encryption.htm',
+	title: 'How\x20Encryption\x20Works',
+}
+var pubId = 'ra-54623f753bec8cb1';
+if (HSW.utilities.isMobile() === false) {
+	pubId = 'ra-5457ca106d18d8e5';
+}
+var js = document.createElement('script');
+js.async = true;
+js.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=' + pubId;
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(js, node);
+     by  Jeff Tyson   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+     Tech | 
+     Authentication 
+var widgetLoadEvents = widgetLoadEvents || [];
+widgetLoadEvents.push({
+	url         : location.pathname + location.hash,
+	event       : "object-load",
+	eventAction : "morestuff-widget",
+	eventLabel  : "morestuff_techPencil"
+});
+          Hashing Algorithm
+        &nbsp;&nbsp;Prev 
+        Next&nbsp;&nbsp; 
+        The key in public-key encryption is based on a hash value. This is a value that is computed from a base input number using a hashing algorithm. Essentially, the hash value is a summary of the original value. The important thing about a hash value is that it is nearly impossible to derive the original input number without knowing the data used to create the hash value. Here's a simple example: 
+        Input Number 
+        10,667 
+          Up Next 
+           How will biometrics affect our privacy? 
+           How CAPTCHA Works 
+           What is a digital signature? 
+           How Fingerprint Scanners Work 
+           How does a security passcard work? 
+        Hashing Algorithm 
+        Input# x 143 
+        Hash Value 
+        1,525,381 
+        You can see how hard it would be to determine that the value 1,525,381 came from the multiplication of 10,667 and 143. But if you knew that the multiplier was 143, then it would be very easy to calculate the value 10,667. Public-key encryption is actually much more complex than this example, but that's the basic idea. 
+        Public keys generally use complex algorithms and very large hash values for encrypting, including 40-bit or even 128-bit numbers. A 128-bit number has a possible 2128, or 3,402,823,669,209,384,634,633,746,074,300,000,000,000,000,000,000,000,000,000,000,000,000 different combinations -- this would be like trying to find one particular grain of sand in the Sahara Desert. 
+        1 
+        2 
+        … 
+        4 
+        5 
+        6 
+        7 
+        8 
+        9 
+        NEXT&nbsp; 
+       Print | 	
+		Jeff 
+		Tyson
+			 &quot;How Encryption Works&quot; 6 April 2001.HowStuffWorks.com. &amp;lt;http://computer.howstuffworks.com/encryption.htm&amp;gt; 3 May 2016" href="#">Citation &amp; Date 
+					$(function () {
+						$('.citation').click(function (e) { e.preventDefault(); }).popover();
+					});
+var widgetLoadEvents = widgetLoadEvents || [];
+$.getScript('http://cdn.widget.infospace.com/javascripts/more-stuff.js', function(data, textStatus, jqxhr) {
+	morestuff.showAll();
+});
+widgetLoadEvents.push({
+  url         : location.pathname + location.hash,
+  event       : "object-load",
+  eventAction : "morestuff-widget",
+  eventLabel  : "morestuff_techBody"
+});
+        Related Content 
+             How Trolls Work
+             How Protect IP Works
+         How Fingerprint Scanners Work 
+         What is the Year 2038 problem? 
+         What is a smart card? 
+      NOW 
+        It's Bumpy, Loud and a Little Bit Funny. It's Lawnmower Racing 
+        Why There Are More Sumatran Orangutans Than We Previously Thought 
+        Precious Plastic Wants You to Build Your Own Plastics Recycling Center 
+     See More Headlines » 
+      Most Popular 
+        10 Nightmare Scenarios From the Internet of Things 
+        How the Dyson Bladeless Fan Works 
+        Could you put a camera in a contact lens? 
+        How Amazon Fire TV Works 
+        How Google Glass Works 
+      More to Explore 
+if (HSW.utilities.isMobile() === false) {
+	if (GACtest == 'test18') {
+		var widgetLoadEvents = widgetLoadEvents || [];
+		$('#ob_tower').addClass('OUTBRAIN');
+		$('#ob_tower_title').show();
+		$.getScript('//widgets.outbrain.com/outbrain.js');
+		var widgetLoadEvents = widgetLoadEvents || [];
+		widgetLoadEvents.push({
+			url         : location.pathname + location.hash,
+			event       : "object-load",
+			eventAction : "outbrain-widget",
+			eventLabel  : "outbrain_SB_3"
+		});
+	}
+	else if (GACtest == 'test17') {
+		(function() {
+			var zergnet = document.createElement('script');
+			zergnet.type = 'text/javascript';
+			zergnet.async = true;
+			zergnet.src = 'http://www.zergnet.com/zerg.js?id=38635';
+			var znscr = document.getElementsByTagName('script')[0];
+			znscr.parentNode.insertBefore(zergnet, znscr); 
+		})();
+		var widgetLoadEvents = widgetLoadEvents || [];
+		widgetLoadEvents.push({
+			url         : location.pathname + location.hash,
+			event       : "object-load",
+			eventAction : "zergnet-widget",
+			eventLabel  : "zergnet-tech"
+		});
+	}
+}
+		//Only add this graphic if we're not on mobile
+		if (HSW.utilities.isMobile() === false) {
+			$('').attr({
+				'src' : 'http://s.hswstatic.com/gif/transparent.gif',
+				'data-src' : 'http://s.hswstatic.com/en-us/hsw//img/footer_devices.png'
+			}).appendTo('.devices-graphic');
+		}
+         About 
+         Shows 
+         Store 
+         Privacy 
+         Terms 
+         Contact Us 
+         Jobs at HowStuffWorks 
+         Advertising 
+         Help 
+      HOWSTUFFWORKS ON THE GO 
+      Take us with you on your iPad, iPhone or favorite Android device. 
+      NEWSLETTERS 
+      Get the best of HowStuffWorks by email. Keep up to date on: 
+       Latest Buzz 
+       Stuff Shows &amp; Podcasts 
+       Tours 
+       Weird &amp; Wacky 
+           Sign-up Now!
+            Testing this long verbose error message to check the behaviour
+      Copyright © 1998-2016 HowStuffWorks,a division of InfoSpace LLC 
+	WebFontConfig = {
+		google: { families: [ 'Source+Sans+Pro:300,400,600,900' ] }
+	};
+	(function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+		'://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
+(function(){'use strict';var f=[];function g(a){f.push(a);1===f.length&&l()}function m(){for(;f.length;)f[0](),f.shift()}if(window.MutationObserver){var n=document.createElement("div");(new MutationObserver(m)).observe(n,{attributes:!0});var l=function(){n.setAttribute("x",0)}}else l=function(){setTimeout(m)};function p(a){this.a=q;this.b=void 0;this.f=[];var b=this;try{a(function(a){r(b,a)},function(a){t(b,a)})}catch(c){t(b,c)}}var q=2;function u(a){return new p(function(b,c){c(a)})}function v(a){return new p(function(b){b(a)})}
+function r(a,b){if(a.a===q){if(b===a)throw new TypeError("Promise settled with itself.");var c=!1;try{var d=b&&b.then;if(null!==b&&"object"===typeof b&&"function"===typeof d){d.call(b,function(b){c||r(a,b);c=!0},function(b){c||t(a,b);c=!0});return}}catch(e){c||t(a,e);return}a.a=0;a.b=b;w(a)}}function t(a,b){if(a.a===q){if(b===a)throw new TypeError("Promise settled with itself.");a.a=1;a.b=b;w(a)}}
+function w(a){g(function(){if(a.a!==q)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0===a.a?"function"===typeof c?e(c.call(void 0,a.b)):e(a.b):1===a.a&&("function"===typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}p.prototype.g=function(a){return this.c(void 0,a)};p.prototype.c=function(a,b){var c=this;return new p(function(d,e){c.f.push([a,b,d,e]);w(c)})};
+function x(a){return new p(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e===a.length&&b(h)}}var e=0,h=[];0===a.length&&b(h);for(var k=0;kparseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))}B?d===q&&e===q&&f===q||d===r&&e===r&&f===r||d===t&&e===t&&f===t||(c(),a(p)):(c(),a(p))}}h(function(){function a(){if(Date.now()-D>=C)c(),b(p);else{var A=document.hidden;if(!0===A||void 0===A)d=l.a.offsetWidth,e=m.a.offsetWidth,f=n.a.offsetWidth,
+u();setTimeout(a,50)}}var D=Date.now();w(l,"sans-serif",k);w(m,"serif",k);w(n,"monospace",k);g.appendChild(l.a);g.appendChild(m.a);g.appendChild(n.a);document.body.appendChild(g);q=l.a.offsetWidth;r=m.a.offsetWidth;t=n.a.offsetWidth;a();y(l,function(a){d=a;u()});w(l,p.family+",sans-serif",k);y(m,function(a){e=a;u()});w(m,p.family+",serif",k);y(n,function(a){f=a;u()});w(n,p.family+",monospace",k)})})};window.FontFaceObserver=z;window.FontFaceObserver.prototype.check=z.prototype.a;}()); 
+	(function( w ){
+	    if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
+	        return;
+	    }
+	    var font1 = new w.FontFaceObserver( "Source Sans Pro", {
+	        weight: 300
+	    });
+	    var font2 = new w.FontFaceObserver( "Source Sans Pro", {
+	        weight: 400
+	    });
+	    var font3 = new w.FontFaceObserver( "Source Sans Pro", {
+	        weight: 600
+	

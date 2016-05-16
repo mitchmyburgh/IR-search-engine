@@ -1,0 +1,41 @@
+A personal area network (PAN) is a computer network used for data transmission amongst devices such as computers, telephones, tablets and personal digital assistants. PANs can be used for communication amongst the personal devices themselves (interpersonal communication), or for connecting to a higher level network and the Internet (an uplink) where one "master" device takes up the role as internet router.
+A wireless personal area network (WPAN) is a low-powered PAN carried over a short-distance wireless network technology such as:
+INSTEON
+IrDA
+Wireless USB
+Bluetooth
+Z-Wave
+ZigBee
+Body Area Network
+The reach of a WPAN varies from a few centimeters to a few meters. A PAN may also be carried over wired computer buses such as USB and FireWire.
+Although a (secured) Wi-Fi tethering connection could be used by only one single user it is not considered to be a PAN.
+
+
+== Wired PAN connection ==
+The data cable is an example of the above PAN. This is also a Personal Area Network because that connection is for the users personal use. PAN is used for personal use only.
+
+
+== Wireless Personal Area Network ==
+A wireless personal area network (WPAN) is a personal area network — a network for interconnecting devices centered on an individual person's workspace — in which the connections are wireless. Wireless PAN is based on the standard IEEE 802.15. The two kinds of wireless technologies used for WPAN are Bluetooth and Infrared Data Association.
+A WPAN could serve to interconnect all the ordinary computing and communicating devices that many people have on their desk or carry with them today; or it could serve a more specialized purpose such as allowing the surgeon and other team members to communicate during an operation.
+A key concept in WPAN technology is known as "plugging in". In the ideal scenario, when any two WPAN-equipped devices come into close proximity (within several meters of each other) or within a few kilometers of a central server, they can communicate as if connected by a cable. Another important feature is the ability of each device to lock out other devices selectively, preventing needless interference or unauthorized access to information.
+The technology for WPANs is in its infancy and is undergoing rapid development. Proposed operating frequencies are around 2.4 GHz in digital modes. The objective is to facilitate seamless operation among home or business devices and systems. Every device in a WPAN will be able to plug into any other device in the same WPAN, provided they are within physical range of one another. In addition, WPANs worldwide will be interconnected. Thus, for example, an archeologist on site in Greece might use a PDA to directly access databases at the University of Minnesota in Minneapolis, and to transmit findings to that database.
+
+
+=== Bluetooth ===
+Bluetooth uses short-range radio waves over distances up to approximately 10 metres. For example, Bluetooth devices such as a keyboards, pointing devices, audio head sets, printers may connect to personal digital assistants (PDAs), cell phones, or computers wirelessly.
+A Bluetooth PAN is also called a piconet (combination of the prefix "pico," meaning very small or one trillionth, and network), and is composed of up to 8 active devices in a master-slave relationship (a very large number of devices can be connected in "parked" mode). The first Bluetooth device in the piconet is the master, and all other devices are slaves that communicate with the master. A piconet typically has a range of 10 metres (33 ft), although ranges of up to 100 metres (330 ft) can be reached under ideal circumstances.
+
+
+=== Infrared Data Association ===
+Infrared Data Association (IrDA) uses infrared light, which has a frequency below the human eye's sensitivity. Infrared in general is used, for instance, in TV remotes. Typical WPAN devices that use IrDA include printers, keyboards, and other serial data interfaces.
+
+
+== See also ==
+
+
+== References ==
+
+
+== External links ==
+IEEE 802.15 Working Group for WPAN

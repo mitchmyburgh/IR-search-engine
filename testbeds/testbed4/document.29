@@ -1,0 +1,38 @@
+
+Intense introduction to image processing.
+•Intended for advanced undergraduate and graduate students.
+Topics include:
+-Image enhancement
+-Digital filtering theory, Fourier transforms
+-Image reconstruction, resampling, antialiasing
+-Scanline algorithms, geometric transforms
+-Warping, morphing, and visual effects
+
+Image processing is a subclass of signal processing concerned specifically with pictures
+
+•It aims to improve image quality for
+-human perception: subjective
+-computer interpretation: objective
+
+•Compress images for efficient storage/transmission
+
+We observe and evaluate images with our visual system
+•We must therefore understand the functioning of the human visual system and its capabilities for brightness adaptation and discrimination:
+-What intensity differences can we distinguish?
+-What is the spatial resolution of our eye?
+-How accurately do we estimate distances and areas?
+-How do we sense colors?
+-By which features can we detect/distinguish objects
+
+Images can be classified by whether they are defined over all points in the spatial domain and whether their image values have finite or infinite precision.
+•If the position variables (x,y) are continuous, then the function is defined over all points in the spatial domain.
+•If (x,y) is discrete, then the function can be sampled at only a finite set of points, i.e., the set of integers.
+•The value that the function returns can also be classified by its precision, independently of x and 
+
+Point operations are used to enhance an image. 
+•Processed image should be more suitable than the original image for a specific application.
+•Suitability is application-dependent.
+•A method which is quite useful for enhancing one image may not necessarily be the best approach for enhancing another image.
+•Very subjective
+
+

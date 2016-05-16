@@ -1,0 +1,215 @@
+
+       Code Review Stack Exchange is a question and answer site for peer programmer code reviews. It's 100% free, no registration required. 
+      Sign up 
+      Here's how it works: 
+       Anybody can ask a question  
+       Anybody can answer  
+       The best answers are voted up and rise to the top  
+        StackExchange.ready(function () {
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+    Topological sort in Java 
+          up vote 
+          14 
+          down vote 
+          favorite 
+           4
+           I am learning algorithms in graphs. I have implemented topological sort using Java. Kindly review my code and provide me with feedback.  
+           import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+public class TopologicalSortGraph {
+    /**
+     *  This Topological Sort implementation takes the example graph in 
+     *  Version 1: implementation with unweighted
+     *  Assumption : Graph is directed 
+     */
+    TopologicalSortGraph Graph = new TopologicalSortGraph();
+    //public LinkedList&lt;Node&gt; nodes  = new LinkedList&lt;Node&gt;();
+    public static void  topologicalSort(Graph graph) {
+        Queue&lt;Node&gt; q = new LinkedList&lt;Node&gt;();
+        int vertexProcessesCtr = 0;
+        for(Node m : graph.nodes){
+            if(m.inDegree==0){
+                ++vertexProcessesCtr;
+                q.add(m);
+                System.out.println(m.data);
+            }
+        }
+        while(!q.isEmpty()) {
+            Node m = q.poll();
+            //System.out.println(m.data);
+            for(Node child : m.AdjacenctNode){
+                --child.inDegree;
+                if(child.inDegree==0){
+                    q.add(child);
+                    ++vertexProcessesCtr;
+                    System.out.println(child.data);
+                }
+            }
+        }
+        if(vertexProcessesCtr &gt; graph.vertices) {
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        Graph g= new Graph();
+        g.vertices=8;
+    Node TEN = new Node("10");
+    Node ELEVEN = new Node("11");
+    Node TWO = new Node("2");
+    Node THREE = new Node("3");
+    Node FIVE = new Node("5");
+    Node SEVEN = new Node("7");
+    Node EIGHT = new Node("8");
+    Node NINE = new Node("9");
+    SEVEN.AdjacenctNode.add(ELEVEN);
+    ELEVEN.inDegree++;
+    SEVEN.AdjacenctNode.add(EIGHT);
+    EIGHT.inDegree++;
+    FIVE.AdjacenctNode.add(ELEVEN);
+    ELEVEN.inDegree++;
+    THREE.AdjacenctNode.add(EIGHT);
+    EIGHT.inDegree++;
+    THREE.AdjacenctNode.add(TEN);
+    TEN.inDegree++;
+    ELEVEN.AdjacenctNode.add(TEN);
+    TEN.inDegree++;
+    ELEVEN.AdjacenctNode.add(TWO);
+    TWO.inDegree++;
+    ELEVEN.AdjacenctNode.add(NINE);
+    NINE.inDegree++;    
+    EIGHT.AdjacenctNode.add(NINE);
+    NINE.inDegree++;    
+    g.nodes.add(TWO);
+    g.nodes.add(THREE);
+    g.nodes.add(FIVE);
+    g.nodes.add(SEVEN);
+    g.nodes.add(EIGHT);
+    g.nodes.add(NINE);
+    System.out.println("Now calling the topologial sorts");
+    topologicalSort(g);
+    }
+}
+           Graph class: 
+           class Graph {
+    public int vertices;
+    LinkedList&lt;Node&gt; nodes = new LinkedList&lt;Node&gt;();
+}
+           Node Class: 
+           class Node {
+    public String data;
+    public int dist;
+    public int inDegree;
+    LinkedList&lt;Node&gt; AdjacenctNode = new LinkedList&lt;Node&gt;( );
+    public void addAdjNode(final Node Child){
+        AdjacenctNode.add(Child);
+        Child.inDegree++;
+    }
+    public Node(String data) {
+        super();
+        this.data = data;
+    }
+}
+           java 
+           algorithm 
+           graph 
+               share
+               |
+               improve this question
+                edited Jul 16 '15 at 18:09 
+                Jamal
+                ♦ 
+                 27.5k
+                 9
+                 102
+                 205 
+                 asked 
+                Mar 18 '14 at 18:59 
+                vijayaragavan 
+                 73
+                 1
+                 1
+                 6 
+          add a comment
+          &nbsp;|&nbsp; 
+        1 Answer 1  
+          active 
+          oldest 
+          votes 
+           up vote 
+           10 
+           down vote 
+           accepted 
+           class Graph {
+    public int vertices;
+    LinkedList&lt;Node&gt; nodes = new LinkedList&lt;Node&gt;();
+}
+           Graph 
+           Graph, as other data structures in general, should be declared public. Because you want them to be able to be used outside of the package they are declared in.  
+           nodes, vertices should be private so that you can know that they are not changed outside the Graph class.  
+           nodes should not be a LinkedList. You must depend on abstractions as much as possible. You should prefer interfaces such as List over specific implementations LinkedList. 
+           Nodes of a graph is not a List, it is a Set. A standard graph cannot have multiple copies of a node. You should prefer a Set to represent a set unless you have a good reason.  
+           Node 
+           All of the above points also apply to Node. Apart from those:  
+           AdjacenctNode should be named adjacentNode by Java naming convention.  
+           Feel free to remove parameterless call to super();, although Eclipse adds it by default, it's just noise.  
+           TopologicalSortGraph 
+           Remove unused code :  
+           TopologicalSortGraph Graph = new TopologicalSortGraph();
+           Always remove commented code. If you need to see previous versions of a code use a version control system. :  
+           //public LinkedList&lt;Node&gt; nodes  = new LinkedList&lt;Node&gt;();
+           Do not put more than one space between tokens, use autoformat of your IDE to fix formatting after changing a piece of code:  
+           public static void  topologicalSort(Graph graph) {
+           The snippets : 
+           if(child.inDegree==0){
+    q.add(child);
+    ++vertexProcessesCtr;
+    System.out.println(child.data);
+}
+           and  
+           if(m.inDegree==0){
+    ++vertexProcessesCtr;
+    q.add(m);
+    System.out.println(m.data);
+}
+           are duplicates. They should be extracted to a private method. You are missing some kind of abstraction there.  
+           You are changing the internals of an object passed in as a parameter: --child.inDegree; I do not expect my graph to change after I ask to see its nodes printed in topological order. What if I want to print them again? 
+           You are mixing the calculation and the printing out of the calculation result, I do not expect to see printlns in a method implementing an algorithm:  
+           System.out.println( .... ); 
+           What if I want the result to be printed somewhere other than System.out? What if I do not want the result to be printed at all and want it to be used as an intermediate step in a bigger calculation instead?  
+           You probably want to return a List&lt;Node&gt; from a topological sort algorithm. List is the standard return type when you are sorting some collection, that is when the result is a collection whose order is important. You can then print that list as many times as you want or pass it as a parameter to wherever you like.  
+           public static void main(String[] args) { 
+           You should separate test code from your main code. If your actual class is named TopologicalSortGraph put your test code in TopologicalSortGraphTest.  
+           Use de facto standard JUnit so that instead of one big main you can have many small tests. You can run any one of them or all of them easily from within your IDE or from the command line.  
+           You should try to separate the test code into

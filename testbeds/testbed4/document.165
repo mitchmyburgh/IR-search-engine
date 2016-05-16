@@ -1,0 +1,23 @@
+Intro
+MASH is a suite of Maya nodes developed in-house at Mainframe aimed at enabling our artists to create versatile ‘motion design’ style animations. It offers a selection of effector nodes which can be daisy chained together to generate a wide variety of customisable effects. It’s fully controllable from both Maya’s Attribute and Node Editors.
+MASH is tested for Maya 2012, 2013 (.5), 2014 and 2015 for OSX 10.7+, Windows (64 bit) and Linux (CentOS 6.5 - Maya 2015 only).
+Check out our Vimeo channel for example videos and tutorials.
+Installation
+Note: If you have MASH 1.x installed, please remove it. Simply move/ delete all of the .py files from your plug-ins folder and delete the shelf as this no longer works with MASH 3.0. If you’re upgrading from MASH 2.0 then just overwrite any existing .bundle or .mll and restart Maya.
+We’ve slightly changed where the MASH plug-in installs to improve cross platform use. If you’ve got a previous version of MASH (2.x) installed on your machine then either remove this version manually or ensure it’s deactivated in Window > Settings/ Preferences > Plug-in Manager.
+The 2.x plug-in will be located in /Users/Shared/Autodesk/maya/plug-ins unless you have moved it to a different location yourself.
+ 
+Loading:
+Once installed, open Maya and navigate to Window > Settings/ Preferences > Plug-in Manager.
+Find MASH in the list, and check both auto-load and load.
+There will now be a new MASH menu under the Create menu.
+ 
+Mode:
+Spectrum: EQ frequencies will be used to drive the animation.
+Average: The average volume will be used rather then individual frequencies.
+Output Mode:
+Normal: Results will be added to the incoming channel.
+Multiply: Results will multiply the incoming values.
+Filename: The audio file.
+Sample Rate: The sample rate of your audio file (KHz).
+Amplifier: Amplifier for the effect.

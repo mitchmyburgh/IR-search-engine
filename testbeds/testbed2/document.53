@@ -1,0 +1,51 @@
+Neuroevolution, or neuro-evolution, is a form of machine learning that uses evolutionary algorithms to train artificial neural networks. It is most commonly applied in artificial life, computer games, and evolutionary robotics. A main benefit is that neuroevolution can be applied more widely than supervised learning algorithms, which require a syllabus of correct input-output pairs. In contrast, neuroevolution requires only a measure of a network's performance at a task. For example, the outcome of a game (i.e. whether one player won or lost) can be easily measured without providing labeled examples of desired strategies.
+
+
+== Features ==
+There are many neuroevolution algorithms. One common distinction is whether algorithms evolve only the strength of the connection weights for a fixed network topology (sometimes called conventional neuroevolution), as opposed to those that evolve both the topology of the network and its weights (called TWEANNs, for Topology & Weight Evolving Artificial Neural Network algorithms).
+A separate distinction can be made between methods that evolve the structure of ANNs in parallel to its parameters (those applying standard evolutionary algorithms) and those that develop them separately (through memetic algorithms).
+Other dimensions of variation include what type of neural model is employed, which ranges from simple weighted-sum units to more biologically accurate models; whether the neural network weights are fixed during evaluation or whether evolved learning rules can allow lifetime learning (i.e. plastic neural networks); and whether each element of the evolved network is directly encoded as a separate gene (called a direct encoding), or whether there is gene reuse through which one gene may encode many network elements (called an indirect encoding).
+
+
+== Direct and Indirect Encoding of Networks ==
+Evolutionary algorithms operate on a population of genotypes (also referred to as genomes). In neuroevolution, a genotype is mapped to a neural network phenotype that is evaluated on some task to derive its fitness.
+In direct encoding schemes the genotype directly maps to the phenotype. That is, every neuron and connection in the neural network is specified directly and explicitly in the genotype. In contrast, in indirect encoding schemes the genotype specifies indirectly how that network should be generated.
+Indirect encodings are often used to achieve several aims:
+Allow recurring structures or features in the network to form (modularity and other regularities);
+compression of phenotype to a smaller genotype, providing a smaller search space;
+mapping the search space (genome) to the problem domain.
+
+
+=== Taxonomy of Embryogenic Systems for Indirect Encoding ===
+Traditionally indirect encodings that employ artificial embryogeny (also known as artificial development) have been categorised along the lines of a grammatical approach versus a cell chemistry approach. The former evolves sets of rules in the form of grammatical rewrite systems. The latter attempts to mimic how physical structures emerge in biology through gene expression. However, this separation is somewhat superficial as indirect encoding systems often use aspects of both approaches.
+Stanley and Miikkulainen propose a taxonomy for embryogenic systems that is intended to reflect their underlying properties. The taxonomy identifies five continuous dimensions, along which any embryogenic system can be placed and, thus, compared with others:
+Cell (Neuron) Fate: the final characteristics and role of the cell in the mature phenotype. This dimension ranges from a single method for determining the fate of a cell to having many determination methods.
+Targeting: the method by which connections are directed from source cells to target cells. This ranges from speciﬁc targeting (source and target are explicitly identified) to only relative targeting (e.g. based on locations of cells relative to each other).
+Heterochrony: the timing and ordering of events during embryogeny. Ranges from no mechanisms for changing the timing of events to many mechanisms.
+Canalization: how tolerant the genome is to mutations (brittleness). Ranges from requiring precise genotypic instructions to a high tolerance of imprecision or mutation.
+Complexification: the ability of the system (including evolutionary algorithm and genotype to phenotype mapping) to allow complexification of the genome (and hence phenotype) over time. Ranges from allowing only ﬁxed-size genomes to allowing highly variable length genomes.
+
+
+== Examples ==
+Examples of Neuroevolution methods (those with direct encodings are necessarily non-embryogenic):
+
+
+== See also ==
+Evolutionary computation
+Artificial neural network
+NeuroEvolution of Augmented Topologies (NEAT)
+HyperNEAT (A Generative version of NEAT)
+Evolutionary Acquisition of Neural Topologies (EANT/EANT2)
+
+
+== References ==
+
+
+== External links ==
+BEACON Blog: What is neuroevolution?
+University of Texas neuroevolution page (has downloadable papers on NEAT and applications)
+SharpNEAT is a mature Open Source neuroevolution project implemented in C#/.Net.
+ANNEvolve is an Open Source AI Research Project (Has downloadable source code in C and Python for a variety of interesting problems. Also a tutorial & miscellaneous writings and illustrations)
+Web page on evolutionary learning with EANT/EANT2 (information and articles on EANT/EANT2 with applications to robot learning)
+NERD Toolkit. The Neurodynamics and Evolutionary Robotics Development Toolkit. A free, open source software collection for various experiments on neurocontrol and neuroevolution. Includes a scriptable simulator, several neuro-evolution algorithms (e.g. ICONE), cluster support, visual network design and analysis tools.
+DXNN Source code for the DXNN Neuroevolutionary system.

@@ -1,0 +1,28 @@
+Cloud Best Practices: Tokenization 101
+
+July 31, 2015/in Best Practices, Cloud /by Michael Higashi
+ 
+
+Tokenization 101 - cloud best practices
+
+Encryption is inarguably critical to cloud data protection for the enterprise, as every IT decision-maker knows. But encryption cannot be the only tool in an organization’s cloud data protection toolbox. There are cases where encryption is not the solution, and for many of those cases, tokenization is the answer. Here are the facts to know about tokenization and its role in an overall cloud data protection plan.
+
+What is tokenization?
+
+Put simply, tokenization enables enterprises to make use of cloud-based applications without having to transmit sensitive data values to the cloud. Tokenization substitutes randomly generated values in place of the actual data. Those values can then be stored in the cloud while the original data remains housed on a secure appliance behind the enterprise firewall, where it can remain safe in the event of a breach at the CSP. When used as part of a unified and well integrated cloud security platform, tokenization addresses fears of breaches and exposure better than any other cloud data protection technology can.
+
+Tokenization 101 - when to use
+
+When should enterprises use tokenization?
+
+While cloud data protection is often enough to satisfy compliance requirements and keep enterprise data safe from exposure in the event of a breach, there are cases where the data itself cannot be transmitted outside the enterprise. The most sensitive or high-value consumer financial or medical information, for example, should be secured on-premises. The same applies to the most confidential corporate data. Additionally, where data residency and transfer laws are particularly strict or where the global distribution of cloud service providers’ data centers poses data sovereignty concerns, tokenization can enable the use of cloud applications without incurring legal risks.
+
+Tokenization 101 - encryption vs. tokenization
+
+How do tokenization and encryption compare?
+
+Tokenization is not a substitute for, or an upgrade to, encryption. The two technologies serve distinct purposes and should ideally coexist in an overall data protection strategy that makes use of a variety of tools, applied as appropriate on a policy-driven basis. Tokenization may be considered the more “secure” of the two, but broadly applying tokenization is not a viable option for the vast majority of enterprises. Tokenization is significantly more resource-intensive and requires a much greater hardware investment thanks to the need for secure on-site storage of all the tokenized data, and it limits the functionality of many cloud applications. Encryption should be applied wherever possible and tokenization reserved for the most high-risk data or that whose transmission outside the enterprise is prohibited.
+
+As your enterprise moves into the cloud era and transitions into a data-centric approach that will protect data no matter where it travels, keep tokenization in mind as an option to use for data that your organization is simply not comfortable allowing beyond the firewall.
+
+Ready to learn more about cloud encryption and tokenization? Check out our free, on-demand webinar, Cloud Encryption & Tokenization 101: Understanding the Basics to Secure Your Data, today.

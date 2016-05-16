@@ -1,0 +1,153 @@
+﻿Criteria For
+Analysing Methodologies
+The criteria that we have established for
+analysing each
+methodology are:
+C1.
+Inheritance
+from
+Knowledge
+Engineer
+ing
+.
+Consideration
+of
+the
+influence
+of
+traditional
+Knowledge Engineering
+on
+the methodology
+in
+question.
+C2.
+Detail
+of the
+methodology
+. Consideration
+of
+whether the activities and techniques proposed by
+the methodology are exactly specified.
+C3.
+Recommendations
+for
+knowledge
+formalization
+.
+Consideration
+of
+the
+formalism
+or
+formalisms proposed for representing knowledge
+(logic, frames, etc.).
+C4.
+Strategy
+for building ontologies
+. Discussion of
+which
+of the
+following
+strategies
+are
+used
+to
+develop ontologies:
+a.
+Application-dependent
+: the ontology is built
+on the basis of an application knowledge base,
+by means of a process
+of abstraction.
+b.
+Application semidependent
+:
+possible
+scenarios of ontology use are identified
+in
+the
+specification stage.
+c.
+Application-independent
+: the
+process
+is
+totally independent of the uses to
+which the
+ontology
+will
+be
+put in knowledge-based
+systems, agents, etc.
+C5.
+Strategy
+for identifying concepts
+. The possible
+strategies are [UsG96
+]
+: from
+the most concrete to
+the
+most abstract (bottom-up), from
+the
+most
+abstract to the most concrete (top-down), or from
+the most relevant to the most abstract and most
+concrete (middle-out).
+C6.
+Recommend
+ed life cycle
+. Analysis of whether the
+methodology
+implicitly
+or explicitly
+proposes a
+life cycle.
+C7.
+Differences between the methodology and
+IEEE
+107
+4-1995
+. Discussion of which of the processes
+and
+activities
+proposed by
+the
+IEEE
+standard
+1074
+-1995
+are not mentioned in the methodology.
+C8.
+Recommended
+techniques
+.
+Specification
+of
+whether particular techniques are
+proposed
+for
+performing
+the different activities of which
+the
+methodology is composed.
+C9.
+What ontologies have been developed using the
+methodology and
+what systems have been built
+using
+these
+ontologies
+.
+The
+ontologies
+and
+systems
+develop
+ed
+will
+be
+listed
+and briefly
+described

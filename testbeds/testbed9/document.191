@@ -1,0 +1,31 @@
+In computing, a data descriptor is a structure containing information that describes data.
+Data descriptors may be used in compilers, as a software structure at run time in languages like Ada or PL/I, or as a hardware structure in some computers such as Burroughs large systems.
+Data descriptors are typically used at run-time to pass argument information to called subroutines. HP OpenVMS and Multics have system-wide language-independent standards for argument descriptors. Descriptors are also used to hold information about data that is only fully known at run-time, such as a dynamically allocated array.
+Unlike a dope vector, a data descriptor does not contain address information.
+
+
+== Examples ==
+The following descriptor is used by IBM Enterprise PL/I to describe a character string:
+
+      +--------+--------+--------+--------+
+      |  desc  | string |        | flags  |
+      |  type  |  type  | (res)  |        |
+      +--------+--------+--------+--------+
+      |       maximum string length       |
+      |                                   |
+      +--------+--------+--------+--------+
+ byte         0        1        2        3
+
+'desc type' is 2 to indicate that this is an element descriptor rather than an array or structure descriptor.
+'string type' indicates that this is a character or a bit string, with varying or non varying length. 2 indicates a non varying (fixed-length) character string.
+'(res)' is a reserved byte not used for character strings.
+'flags' indicate the encoding of the string, EBCDIC or ASCII, and the encoding of the length of varying strings.
+'maximum string length' is the actual length of the string for non varying strings, or the maximum length for varying strings.
+Here is the source of an array descriptor from Multics. The definitions include a structure for the base array information and a structure for each dimension. (Multics ran on systems with 36-bit words).
+
+
+== See also ==
+Burroughs large systems descriptors
+
+
+== References ==

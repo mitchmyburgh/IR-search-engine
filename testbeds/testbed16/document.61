@@ -1,0 +1,14 @@
+David Versus Goliath in Open-source Cloud Computing: The OpenNebula Recipe for Success
+Now that OpenNebula has been listed by GigaOM on the list of main reasons why Europe really matters to cloud computing, I am receiving several emails asking about how OpenNebula is able, what’s its "secret recipe", to compete with other open-source projects, like OpenStack, CloudStack or Eucalyptus, backed by strong IT vendors and with wide media presence. Here are some of its ingredients, mix them into a single product:
+
+A vibrant and engaged community. Many people and organizations contribute in different ways to the project, from the expertise and dedication of our core committers and hundreds of contributors to the valuable feedback of our thousands of users. 
+The power of user-driven development. OpenNebula's roadmap is completely driven by users needs with features that meet real demands, and not features that result from an agreement between IT vendors planning to create their own proprietary cloud solution. 
+Volunteer development by the users. Most of contributors are users of the software that are willing to contribute new innovative features from their production environments, they are not developers hired by vendors to contribute to the project. 
+Delivery as a production-proven, packaged product. OpenNebula comprises all key functionalities for cloud computing with a single installing, patching and updating process. Other open-source alternatives require proprietary components to be ready for the enterprise. 
+Cloud-API agnostic. OpenNebula provides cloud consumers with choice of interfaces, from open cloud by main standards bodies to de-facto standards. OpenNebula does not try to reinvent the wheel and create a new cloud API. 
+Richer functionality and wider integration capabilities. OpenNebula does not only bring an open-source implementation of the most common public cloud interfaces, but also the latest innovations in the management of virtualized data centers for the deployment of cutting edge enterprise clouds.  
+Marketing-free technology. OpenNebula mainly invests its resources in developing technology and serving its users, being really vendor agnostic and free of marketing. 
+
+In summary, a vibrant and engaged community, along with our focus on solving real user needs in innovative ways and the involvement of the users in a fully vendor-agnostic project, constitute the OpenNebula’s recipe to compete with the rest of open-source cloud management platforms. 
+
+Thanks to all the people and organizations that have contributed to OpenNebula since its foundation in 2005!

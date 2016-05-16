@@ -1,0 +1,17 @@
+There Has to Be a Better Way Than Using IPsec in the Cloud
+May 17, 2012
+
+
+You’ve probably seen some of my blog posts about the importance of encrypting data stored in the cloud and on servers in traditional data centers, but I write less about encrypting data in motion because most of us are probably thinking “That’s because we have SSL/TLS and IPSec; the problem is solved. “ The truth is that the problem is only kind of solved; using these things for clouds is a bit of a kluge because these technologies typically only protect network traffic to the edge of the cloud network, leaving traffic between servers within the cloud network unprotected.
+
+Tunnel-based solutions don’t really work that well in cloud networks due their point-to-point nature. Since “points” move around very quickly in clouds, point-to-point technologies can easily cause problems with scalability, management and performance in clouds.
+
+I am intrigued at how Certes Networks approaches this problem. They just announced vCEP (Virtual Certes Enforcement Point). According to the release “the vCEP is a virtual appliance that allows organizations to protect sensitive network traffic among virtual servers and between clouds without using tunnels. It encrypts network traffic from IaaS cloud infrastructures to data centers across the WAN and from server to server within the cloud.”
+
+Huh? Encrypting network traffic without tunnels? The OSI model must be quaking in its boots.
+
+Although they’re not a household name, Certes Networks is a pioneer in network encryption, having deployed the first group encryption solution years ago. Group based encryption removes the need for point-to-point key negotiations, which in turn eliminates tunnels and makes data in motion encryption scalable and transparent to the infrastructure. Since cloud infrastructure is always shifting its configuration, transparent encryption is really important.
+
+The other interesting thing here is that the Certes policy and key management system allows IaaS clients to maintain control of their own policies and keys. This really matters for regulated or sensitive workloads. It should also be a welcome development to cloud providers who can address client concerns about security without bearing the legal and administrative burden of owing (or having access to) their client policies and keys).
+
+The availability of cloud security for data in transit fills the security gap between the client’s trusted network and the data protection offered by Trend Micro’s SecureCloud data-at-rest encryption. This doesn’t exactly spell the end of IPsec, but it does make it easier to cryptographically isolate your data and traffic from other cloud clients. And that’s a good thing!

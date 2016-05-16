@@ -1,0 +1,21 @@
+﻿A realistic camera model for computer graphics
+Most recent rendering research has concentrated on two subproblems:
+modeling the reflection of light from materials, and calculating
+the direct and indirect illumination from light sources and other
+surfaces. Another key component of a rendering system is the camera
+model. Unfortunately, current camera models are not geometrically
+or radiometrically correct and thus are not sufficient for synthesizing
+images from physically-based rendering programs.
+In this paper we describe a physically-based camera model for
+computer graphics. More precisely, a physically-based camera
+model accurately computes the irradiance on the film given the incoming
+radiance from the scene. In our model a camera is described
+as a lens system and film backplane. The lens system consists of a
+sequence of simple lens elements, stops and apertures. The camera
+simulation module computes the irradiance on the backplane from
+the scene radiances using distributed ray tracing. This is accomplished
+by a detailed simulation of the geometry of ray paths through
+the lens system, and by sampling the lens system such that the radiometry
+is computed accurately and efficiently. Because even the
+most complicated lenses have a relatively small number of elements,
+the simulation only increases the total rendering time slightly

@@ -1,0 +1,23 @@
+Define Non-Linear Data Structure and it's examples?
+
+What is Non-Linear Data Structure. Define it?
+The term Data means Values and Structure means the way it is organized and arranged into mathematical and logical way. So the mathematical and logical model of a particular organisation of data is known as Data Structures. 
+
+Non-Linear Data Structure:-
+The Data structure is said to be Non-Linear Data Structures if it's elements do not form a sequence or a linear series but form a hierarchical format.
+For Example:- Graph, Tree, Binary Search Tree etc.
+
+What is Graph?
+Graph is a data structures which consists of a finite set of ordered pairs called edges . It is set of elements connected by edges. Each elements are called a vertex and node. 
+
+What is Tree?
+Tree is a widely used data structure in which elements are attached to one or more elements in a hierarchical order beneath it. The connection between the elements are called Branches.   
+
+What is Binary Tree?
+A Binary Tree is a special type of inverted tree in which each element has two branches below it. We can say that each node has at most two child nodes except the root node.
+
+What is an AVL Tree?
+An AVL tree (Georgy Adelson-Velsky and Evgenii Landis' tree, named after the inventors) is a self-balancing binary search tree. AVL trees are often compared with red-black trees because both support the same set of operations and take O(log n) time for the basic operations. For lookup-intensive applications, AVL trees are faster than red-black trees because they are more rigidly balanced.[4] Similar to red-black trees, AVL trees are height-balanced.
+
+What is B-Tree?
+A B-Tree is a tree data structure. It is a generalization of binary search tree in which a node can have more than two children. A B-Tree is designed to minimize the number of disk accesses. 

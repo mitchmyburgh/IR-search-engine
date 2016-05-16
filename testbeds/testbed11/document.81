@@ -1,0 +1,61 @@
+The Commodore serial IEEE-488 bus (IEC Bus), is Commodore's interface for primarily magnetic disk data storage and printers for the Commodore 8-bit home/personal computers, notably the VIC-20, C64 and C128.
+
+
+== Description and history ==
+The parallel IEEE-488 interface used on the Commodore PET (1977) computer line was too costly so a cost reduced version that consist of a striped down version of the IEEE-488 interface with only a few signals remaining. The general protocol layout were kept. And the bus began to be used starting with the VIC-20 (1980). Connection to the computer consists of a proprietary DIN-6 connector.
+
+
+== Transfer speed ==
+
+
+== Interface ==
+
+
+== Protocol description ==
+The bus signals are digital single-ended open collector 5 volt TTL and active when negative. Bus devices have to provide their own power.
+Because the bus lines are electrically open collector it works like a long OR gate between all device line drivers. The logical value for ground is true and vice versa. Any device may set a line "true". A line only becomes "false" if all devices signal false.
+Transmission begins with the IEEE talker holding the Clock line true, and the listener(s) holding the Data line true. To begin the talker releases the Clock line to false. When all IEEE listeners are ready to receive they release the Data line to false. If the talker waits more than 200 µs without the Clock line going true (idle state), listeners have to perform End-or-Identify (EOI).
+If the Data line being false (released) isn't acknowledged by the talker within 200 µs, the listener knows that the talker is in the process of EOI that means "this character will be the last one." When the listener detects the 200 µs timeout, it must acknowledge this by pulling the Data line true for at least 60 µs, and then release it. The talker can revert to transmitting again within 60 µs by pulling the Clock line true.
+Data is eight bits starting with the least significant bit. The Data line is set according to the bit to send (1=true=ground). Once the Data line is set, the Clock line is released to false. The Clock and Data lines will be held steady for at least 20 µs (except for Commodore 64 that needs 60 µs). After 8 bits has been sent, the talker releases the Data line to false and the listener then acknowledge the talker by pulling the Data line true within 1000 µs. After this the talker sets the Clock line true and listener sets the Data line true thus back where the transmission begun. If an EOI is signaled by holding the Clock line false the transmission is ended and the listener acknowledge this by pulling the Data line true for 200 µs.
+The ATN line is set to true and bytes are sent like above to all devices, but the byte is interpretated as one of the commands "Talk," "Listen," "Untalk," and "Unlisten". That tell a specific device to become a talker or listener. Only devices with matching device numbers switch into talk and listen mode. Sometimes followed by a secondary address.
+On higher logical level the host will set the ATN line to true and transmit the bytes "Device number 8, listen", "Secondary address 2, open". Set ATN line false and the host is then the talker, holding the Clock line true. The device will be the listener, holding the Data line true. The host will transmit the specifics open command and end it with an EOI signal sequence. After this the host will send with ATN line true, "Device number 8, unlisten". Followed up by ATN line true and "Device number 8, listen", "Secondary address 2, data". Then the host sets the ATN line false and sends the data. When the host has sent enough data for the moment, ATN line is set to true and "Device number 8, unlisten" is sent.
+When it's needed to switch places and make the host a listener and the device a talker which happens after such talk command is sent to the device. The host sets the Data line true and release the Clock line to false. The device waits for the Clock line to go false (released) and then pulls it to true and release the Data line to false. After this sequence the standard talk-listener interaction may follow.
+The Commodore 1541 floppy drive uses a slower Commodore 64 compatible mode which can be deactivated for faster speed by using the command OPEN 15,8,15,"UI-":CLOSE 15.
+
+
+== Device numbering ==
+Device number 0-3 will not be sent to the physical bus.
+
+
+== Host implementation ==
+The Commodore 64 computer uses the Complex Interface Adapter (6526 #2) to handle IEC Bus transmissions. The Commodore 1541 floppy drive uses the MOS Technology 6522 VIA. The Commodore 128 uses MOS 6526 and the Commodore 1571 uses MOS 6526 as well.
+
+
+== Common devices ==
+
+
+=== Commodore 1541 ===
+The Commodore 1541 floppy drive is the most common peripheral used with this bus and can store 170 kByte.
+
+
+== Devices ==
+
+
+== See also ==
+Commodore DOS
+Commodore 64 peripherals
+List of device bit rates
+Commodore 1541
+Fast loader
+Magnetic tape data storage
+IEEE-488, the original parallel version
+
+
+== References ==
+
+
+== External links ==
+lemon64.com - Saving with 64HDD / XE1541 cable length...
+IEEE spectrum 1985
+uwaterloo.ca - Serial Bus signal description
+zimmers.net: IEC-bus documentation as used for the 1541-III IEC dissected (dated 2008-02-24)

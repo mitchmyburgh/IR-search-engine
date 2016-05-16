@@ -1,0 +1,62 @@
+Arnon's Space  
+Just another WordPress.com site
+
+Traversing binary tree using an iterator 
+Posted on 
+August 19, 2010 
+by arnonaxelrod  
+Hi again,  
+This time I’m willing to explain a feature of C# that exists since version 2.0, but even though I find that many developers are either not familiar with, or don’t feel comfortable with, mainly because they don’t fully understand how it works. This feature is called iterators. I’m talking about these methods that return IEnumerator (or IEnumerator&lt;T&gt;, or IEnumerable or IEnumerable&lt;T&gt;) and use the yield return keyword. Another reason to explain this feature is that it is used extensively in Linq, and understanding how it works will allow you to use Linq better.  
+I’m sure you’re familiar with the foreach construct (which is available from C# 1.0) and probably use it extensively. Probably you also know that a foreach loop is using the IEnumerable interface on the object that it iterates on (which represents a collection). It’s even likely that you wrote a class that implements IEnumerable, and returned another object that implement IEnumerable (e.g. an Array or Dictionary), and maybe used Linq to filter, sort or otherwise “massage” your data before returning it. The truth is that you quite rarely need to implement IEnumerable yourself (without using some other underlying type that implement it), because the .Net Framework supplies many useful classes that already implement it, and those other methods to “wrap” it are usually good-enough.  
+But there are cases you do need. The example here is a “school” example, but it should give you the basic idea so you’ll be able to leverage it to your actual needs if you need to. At the end of this post I mentioned more usable scenarios where you might want to use iterators.  
+The example I’ve chosen is the classical problem of traversing a binary tree in 3 ways: preorder, inorder and postorder. All of these traversal methods are defined in a recursive manner:  
+In preorder, the root element is processed first, and then elements in each of the sub-trees are traversed (recursively using preorder traversal). 
+In postorder, first the sub-trees are traversed, and finally the root is processed.   
+In inorder traversal the left sub-tree is traversed first (using inorder traversal) then the root is processed, and then the right sub-tree is traversed. Note that if the binary tree is “ordered”, then the result is the elements in an ascending order.  
+Let’s first understand how the foreach statement and the IEnumerable interface interact before diving into the more confusing iterators.  
+In order to do that, we’ll create a simple class that wraps an existing IEnumerable class (System.Array), and see when and what methods are called. Here’s the code of this class. Throughout this article I’ll use strings as the element type, for generality purposes, but needless to mention that everything is applicable to collections of any type. Here’s the source of this class.  
+When you run it you’ll see the following output:  
+         IEnumerator&lt;string&gt;.GetEnumerator()ArrayEnumerator constructor. wrappedEnumerator.GetType = 'System.SZArrayHelper+SZGenericArrayEnumerator`1[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]'.IEnumerator.MoveNextIEnumerator&lt;string&gt;.Current: ainside foreach. element = 'a'IEnumerator.MoveNextIEnumerator&lt;string&gt;.Current: binside foreach. element = 'b'IEnumerator.MoveNextIEnumerator&lt;string&gt;.Current: cinside foreach. element = 'c'IEnumerator.MoveNextIEnumerator&lt;string&gt;.Current: dinside foreach. element = 'd'IEnumerator.MoveNextIEnumerator&lt;string&gt;.Current: einside foreach. element = 'e'IEnumerator.MoveNextIEnumerator&lt;string&gt;.Current: finside foreach. element = 'f'IEnumerator.MoveNextIEnumerator.Dispose 
+Note that the classes that implement IEnumerable and IEnumerator are different classes. Often the class that implements IEnumerator&lt;T&gt; is an inner internal class, but for the sake of simplicity I left it as distinct classes. You can see however that Array.GetEnumerator returns an internal inner class.j  
+As you can imagine, writing the tree traversal algorithms using this pattern is pretty complicated, error prone and counterintuitive. Instead of using recursion as you would normally do to traverse the binary tree you have to keep track not only of the next position in the tree between the calls to MoveNext, but also the entire path from the root to that node so you can go back up the tree.  
+However, if you implement the traversal method using recursion then you can’t use it with IEnumerator because you must provide one element at a time, and not the end result. Actually there’s one way to achieve this without iterators, but it’s even more complicated and more expensive in resources. This way is to create another thread that will implement the recursion, and communicate with the main thread whenever MoveNext is called.  
+So now let’s see what iterators are and how they work!  
+Here’s an example of a very simple iterator:  
+using System;using System.Collections.Generic;
+using System.Linq;using System.Text;
+namespace IteratorTest2{    
+class Program    {        
+static IEnumerable&lt;string&gt; Enumerate()        {  
+          Console.WriteLine("yield return \"this\""); 
+		  yield return "This";           
+		  Console.WriteLine("yield return \"is\""); 
+		  yield return "is";           
+		  Console.WriteLine("yield return \"a\"");   
+		  yield return "a";         
+		  Console.WriteLine("yield return \"very\"");   
+		  yield return "very";           
+		  Console.WriteLine("yield return \"simple\"");   
+		  yield return "simple";         
+		  Console.WriteLine("yield return \"iterator\""); 
+		  yield return "iterator.";       
+		  }      
+		  static void Main(string[] args)        {         
+		  IEnumerable&lt;string&gt; enumerable = Enumerate();   
+		  foreach (string element in enumerable)            {   
+		  Console.WriteLine("element = '{0}'", element);    
+		  } 
+		  } 
+		  }
+		  } 
+       The output of this program is:  
+         yield return "this" element = 'This' yield return "is" element = 'is' yield return "a" element = 'a' yield return "very" element = 'very' yield return "simple" element = 'simple' yield return "iterator" element = 'iterator.'  
+I still didn’t explain how iterators work, and what’s the yield return keyword, but you can probably grasp that the Enumerate() method is in some sense re-entrant. Each time the foreach loop calls MoveNext, another portion of the method is being executed. If it’s the first time you read about iterators you probably think that the Enumerate method uses some special means that were added to the CLR in order to behave that way.  
+Well… that’s wrong! The whole trick is performed at compile-time and not at run-time! In fact, the compiler translates the Enumerate method into a new hidden class, and compiles the Enumerate method to a very simple method that just instantiates and returns this new class. Needless to say that this class implements IEnumerable and IEnumerator (both in their generic and non-generic forms). The compiler uses a pretty sophisticated algorithm (out of the scope of this article) to create a state machine that manages the state of the object.  
+You can open the assembly in Reflector to see the implementation of this class, and most important the MoveNext method:  
+Note that the yield return keyword is only valid in methods that are declared as returning IEnumerable or IEnumerator (either generic or non-generic). When you use the yield return keyword (or yield break) you can’t have another normal return statement in that method. This is because the yield return keyword is what tells the compiler to create the iterator class. This has some limitations, for example, you can’t “extract method” a block that contains a yield return statement.  
+Here’s the code that implement the 3 traversal algorithms on the binary tree.  
+While I wrote this example I realized that even though I can use recursion in order to traverse the sub-trees, I must iterate over the result of the sub-tree each time, which turns the algorithm into O(nlogn) instead of just O(n) (given that the tree is balanced; if it’s not then it becomes O(n2)!). I looked for a way to avoid iterating over the result of the sub-trees, but unfortunately didn’t find a way. The only way I found is to use “flatten” the recursion into loops using a Stack object. Here’s the final result.  
+Other possible uses of iterators 
+While this example is a “school” example, I can think of few more uses, some are also “academic” but others are more realistic.  
+The other “academic” example would be iterators that produce some kind of numeric sequences (or any other sequences). Note that these sequences may be infinite – and it’s still OK, because you can always break from inside the foreach loop. For example, you can very easily write an iterator that produces a Fibonacci sequence. The code that uses this iterator can ask the user to press “Enter” for the next number of “Esc” to end.  
+The more realistic example is when you want your iterator to provide data from different sources.

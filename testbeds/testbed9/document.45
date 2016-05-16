@@ -1,0 +1,23 @@
+A finger tree is a purely functional data structure used in efficiently implementing other functional data structures. A finger tree gives amortized constant time access to the "fingers" (leaves) of the tree, where data is stored, and also stores in each internal node the result of applying some associative operation to its descendants. This "summary" data stored in the internal nodes can be used to provide the functionality of data structures other than trees. For example, a priority queue can be implemented by labeling the internal nodes by the minimum priority of its children in the tree, or an indexed list/array can be implemented with a labeling of nodes by the count of the leaves in their children.
+Finger trees can provide amortized O(1) pushing, reversing, popping, O(log n) append and split; and can be adapted to be indexed or ordered sequences. And like all functional data structures, it is inherently persistent; that is, older versions of the tree are always preserved.
+They have since been used in the Haskell core libraries (in the implementation of Data.Sequence), and an implementation in OCaml exists which was derived from a proven-correct Coq specification; and a C# implementation of finger trees was published in 2008; the Yi text editor specializes finger trees to finger strings for efficient storage of buffer text. Finger trees can be implemented with or without lazy evaluation, but laziness allows for simpler implementations.
+They were first published in 1977 by Leonidas J. Guibas, and periodically refined since (e.g. a version using AVL trees, non-lazy finger trees, simpler 2-3 finger trees, B-Trees and so on)
+
+
+== See also ==
+Monoid
+
+
+== References ==
+
+
+== External links ==
+http://www.soi.city.ac.uk/~ross/papers/FingerTree.html
+http://hackage.haskell.org/packages/archive/EdisonCore/1.2.1.1/doc/html/Data-Edison-Concrete-FingerTree.html
+Example of 2-3 trees in C#
+Example of Hinze/Paterson Finger Trees in Java
+Example of Hinze/Paterson Finger Trees in C#
+"Monoids and Finger Trees in Haskell"
+"Finger tree library for Clojure"
+"Finger tree in Scalaz"
+"Verified Finger Trees in Isabelle/HOL"

@@ -1,0 +1,17 @@
+A linear data structure traverses the data elements sequentially, in which only one data element can directly be reached. in which insertion and deletion is possible in linearsequential fashion .example:- arrays, linked lists.Non linear data structures:-in which sequential updation / addition is not possible. example:- trees ,stacksLinear data structures : Arrays, Linked ListNon-Linear data strctures :trees, GraphsIn Linear data structures traversals are linear. are multidimensional arrays and graphs. In the next few lessons, we will examine these data structures to see how they are represented using the computers linear memory. In a non-linear, the data items are not arrangedNon-Linear container classes represent trees and graphs. Each node or item may be connected with two or more other nodes or items in a non-linear arrangement. Moreover removing one of the links could.
+
+Linear DS:
+1. every item is related to its previous and next time.
+2. data is arranged in linear sequence.
+3. data items can be traversed in a single run.
+4. eg. array, stcks, linked list, queue.
+5. implementation is easy
+
+non-linear DS:
+1. every item is attached with many other items.
+2. data is not arranged in sequence.
+3. data cannot be traversed in a single run.
+4. eg. tree, graph, and AVL trees.
+5. implementation is difficult. 
+
+AVL trees are a special kind of trees which are 'balanced' binray tree (have a mxaimum of 2 children)

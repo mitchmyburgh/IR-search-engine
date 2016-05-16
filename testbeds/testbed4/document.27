@@ -1,0 +1,37 @@
+Mesh decimation describes a class of algorithms that transform a given polygonal mesh into
+another mesh with fewer faces, edges and vertices [GGK02]. The decimation procedure is usually
+controlled by user defined quality criteria which prefer meshes that preserve specific properties of
+the original data as well as possible. Typical criteria include geometric distance (e.g. Hausdorffdistance)
+or visual appearance (e.g. color difference, feature preservation, ...) [CMS98].
+There are many applications for decimation algorithms. First, they obviously can be used to
+adjust the complexity of a geometric data set. This makes geometry processing a scalable task
+where differently complex models can be used on computers with varying computing performance.
+Second, since many decimation schemes work iteratively, i.e. they decimate a mesh by removing
+one vertex at a time, they usually can be inverted. Running a decimation scheme backwards
+means to reconstruct the original data from a decimated version by inserting more and more
+detail information. This inverse decimation can be used for progressive transmission of geometry
+data [Hop96]. Obviously, in order to make progressive transmission effective we have to use
+decimation operators whose inverse can be encoded compactly (cf. Fig. 9.3).
+There are several different conceptual approaches to mesh decimation. In principle we can
+think of the complexity reduction as a one step operation or as an iterative procedure. The
+vertex positions of the decimated mesh can be obtained as a subset of the original set of vertex
+positions, as a set of weighted averages of original vertex positions, or by resampling the original
+piecewise linear surface. In the literature the different approaches are classified into
+• Vertex clustering algorithms
+• Incremental decimation algorithms
+• Resampling algorithms
+The first class of algorithms is usually very efficient and robust. The computational complexity
+is typically linear in the number of vertices. However, the quality of the resulting meshes is not
+always satisfactory. Incremental algorithms in most cases lead to higher quality meshes. The
+iterative decimation procedure can take arbitrary user-defined criteria into account, according to
+which the next removal operation is chosen. However, their total computation complexity in the
+average case is O(n log n) and can go up to O(n2) in the worst case, especially when a global error
+threshold is to be respected. Finally, resampling techniques are the most general approach to
+mesh decimation. Here, new samples are more or less freely distributed over the original piecewise
+linear surface geometry. By connecting these samples a completely new mesh is constructed. The
+major motivation for resampling techniques is that they can enforce the decimated mesh to have
+a special connectivity structure, i.e. subdivision connectivity (or semi-regular connectivity). By
+this they can be used in a straight forward manner to build multiresolution representations
+based on subdivision basis functions and their corresponding (pseudo-) wavelets [EDD+95]. The
+most serious disadvantage of resampling, however, is that alias errors can occur if the sampling
+pattern is not perfectly aligned to features in the original geometry. To avoid alias effects

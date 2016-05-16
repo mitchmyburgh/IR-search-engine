@@ -1,0 +1,74 @@
+Machine learning techniques for the computer security domain of anomaly detection
+
+Terran D Lane
+
+In this dissertation, we examine the machine learning issues raised by the domain
+of anomaly detection for computer security. The anomaly detection task is to
+recognize the presence of an unusual and potentially hazardous state within the activities
+of a computer user, system, or network. “Unusual” is defined with respect to
+some model of “normal” behavior which may be either hard-coded or learned from
+observation. We focus here on learning models of normalcy at the user behavioral
+level, as observed through command line data. An anomaly detection agent faces
+many learning problems including learning from streams of temporal data, learning
+from instances of a single class, and adaptation to a dynamically changing concept.
+We describe two approaches to the construction of such models: one that employs
+instance-based models of user behaviors and one that uses hidden Markov models.
+We demonstrate the performance of sensors based on these models under a wide range
+of parameter settings and show conditions under which maximal classification performance
+is achieved. Using provided labels of users’ job descriptions, we demonstrate
+that users can be roughly divided into behavioral classes related to their experience
+level. Finally, we study methods for adapting user models to changing behavioral
+patterns and show the methods’ performance strengths and weaknesses.
+
+1. INTRODUCTION
+This dissertation examines the machine learning issues concerned with the design,
+implementation, and performance evaluation of a user modeling system for the computer
+security task of anomaly detection [1, 2]. In this domain, the task is to develop
+a model or profile of the normal working state of a computer system, network, or user
+and to detect anomalous conditions as deviations from the expected behavior patterns.
+A subset of hostile activities can then be detected because of their anomalous
+activity patterns. We explore the task of modeling human behaviors at the computer
+interface level as an approach to the anomaly detection problem. In this formulation,
+we wish to model users’ normal work patterns and to detect abnormalities relative
+to their profiles. We note that this definition of anomaly detection encompasses not
+only intrusions by external agents but also insider abuses by authorized site users
+(possibly including the account owner).
+The anomaly detection problem can be framed as that of learning a binary concept
+(valid user versus anomaly) over a domain consisting of one or more temporal
+sequences of discrete, unordered elements. In general, the data space might consist
+of command line strings, system call traces, network packet logs, or even GUI event
+streams. For convenience, we will consider time to be a discrete quantity and all
+observations to take place synchronously. The job of the classifier is to label each
+time step in the observation sequence as normal or abnormal. Note that it may be
+insufficient to assign only a single label to an entire login session, as hostile behaviors
+may constitute only a subset of the session’s data (as, for example, when a hostile
+co-worker preempts the console of someone who has negligently left the console unattended
+for some period). Hostile activities occurring contemporaneously with valid
+usage of an account are referred to as superimposition fraud [3].In this work, we examine the task of learning user profiles at the user-interface level
+(as opposed to, say, analysis of system call traces or resource consumption patterns).
+Specifically, we examine traces of UNIX command line (shell) data accumulated via
+the csh and tcsh history mechanism. We chose to examine UNIX shell command data
+for three primary reasons: first, our interest is mainly in methods of characterizing
+human behavioral patterns and command traces reflect this more directly than do, say,
+CPU load averages. Second, in the UNIX environment, the shell is the predominant
+mode of user interface and a large proportion of user activity passes through this
+channel. Finally, shell data is convenient to collect and fairly simple to parse and
+manipulate.
+
+1.1 M achine Learning Goals
+In a Machine Learning context, this research constitutes an exploratory analysis
+of a challenging but valuable real-world domain. Modeling of humans for anomaly
+detection presents a number of difficult ML issues:
+H igh Noise Environm ent: Human generated data is notoriously noisy. Noise sources
+at the command line level include mistyped commands and file names, misremembered
+command options, changes in task, shell syntax errors, external
+interruptions (such as phone calls) which are unobservable to the system but
+which influence observables such as inter-command timings, and a host of others.
+H igh D im ensionalities and Large A lphabets: There are thousands of possible
+data sources which could potentially be used for user profiling including command
+line data, GUI events, system call traces, network packet logs, time
+stamps and time of day, resource consumption, and many others. In addition,
+many of these data sources generate symbols from a large discrete alphabet.
+For example, in the Purdue command line usage data that we employ here, we
+have observed alphabets of over 2500 unique symbols.
+

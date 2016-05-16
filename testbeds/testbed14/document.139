@@ -1,0 +1,84 @@
+﻿3.4 Imports
+An OWL 2 ontology can import other ontologies in order to gain access to their entities, expressions, and axioms, thus providing the basic facility for ontology modularization.
+Assume that one wants to describe research projects about diseases. Managing information about the projects and the diseases in the same ontology might be cumbersome. Therefore, one might create a separate ontology O about diseases and a separate ontology O' about projects. The ontology O' would import O in order to gain access to the classes representing diseases; this allows one to use the diseases from O when writing the axioms of O'.
+From a physical point of view, an ontology contains a set of IRIs, shown in Figure 1 as the directlyImportsDocuments association; these IRIs identify the ontology documents of the directly imported ontologies as specified in Section 3.2. The logical directly imports relation between ontologies, shown in Figure 1 as thedirectlyImports association, is obtained by accessing the directly imported ontology documents and converting them into OWL 2 ontologies. The logical imports relation between ontologies, shown in Figure 1 as the imports association, is the transitive closure of directly imports. In Figure 1, associations directlyImports and imports are shown as derived associations, since their values are derived from the value of the directlyImportsDocuments association. Ontology documents usually store thedirectlyImportsDocuments association. In contrast, the directlyImports and imports associations are typically not stored in ontology documents, but are determined during parsing as specified in Section 3.6.
+The following ontology document contains an ontology that directly imports an ontology contained in the ontology document accessible from IRI<http://www.example.com/my/2.0>.
+Ontology( <http://www.example.com/importing-ontology>
+    Import( <http://www.example.com/my/2.0> )
+
+...
+)
+The IRIs identifying the ontology documents of the directly imported ontologies can be redirected as described in Section 3.2. For example, in order to access the ontology document from a local cache, the ontology document <http://www.example.com/my/2.0> might be redirected to <file:///usr/local/ontologies/imported.v20.owl>. Note that this can be done without changing the ontology document of the importing ontology.
+The import closure of an ontology O is a set containing O and all the ontologies that O imports. The import closure of O should not contain ontologies O1 and O2 such that
+O1 and O2 are different ontology versions from the same ontology series, or
+O1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.
+The axiom closure of an ontology O is the smallest set that contains all the axioms from each ontology O' in the import closure of O with all anonymous individualsstandardized apart — that is, the anonymous individuals from different ontologies in the import closure of O are treated as being different; see Section 5.6.2 for further details.
+3.5 Ontology Annotations
+An OWL 2 ontology contains a set of annotations. These can be used to associate information with an ontology — for example the ontology creator's name. As discussed in more detail in Section 10, each annotation consists of an annotation property and an annotation value, and the latter can be a literal, an IRI, or an anonymous individual.
+ontologyAnnotations := { Annotation }
+OWL 2 provides several built-in annotation properties for ontology annotations. The usage of these annotation properties on entities other than ontologies is discouraged.
+The owl:priorVersion annotation property specifies the IRI of a prior version of the containing ontology.
+The owl:backwardCompatibleWith annotation property specifies the IRI of a prior version of the containing ontology that is compatible with the current version of the containing ontology.
+The owl:incompatibleWith annotation property specifies the IRI of a prior version of the containing ontology that is incompatible with the current version of the containing ontology.
+3.6 Canonical Parsing of OWL 2 Ontologies
+Many OWL 2 tools need to support ontology parsing — the process of converting an ontology document written in a particular syntax into an OWL 2 ontology. Depending on the syntax used, the ontology parser may need to know which IRIs are used in the ontology as entities of which type. This typing information is extracted from declarations — axioms that associate IRIs with entity types. Please refer to Section 5.8 for more information about declarations.
+An ontology parser for the ontology documents written in the RDF syntax might encounter the following triples:
+a:Father rdfs:subClassOf _:x .
+_:x owl:someValuesFrom a:Child .
+_:x owl:onProperty a:parentOf.
+From this axiom alone, it is not clear whether a:parentOf is an object or a data property, and whether a:Child is a class or a datatype. In order to disambiguate the types of these IRIs, the parser needs to look at the declarations in the ontology document being parsed, as well as those in the directly or indirectly imported ontology documents.
+In OWL 2 there is no requirement for a declaration of an entity to physically precede the entity's usage in ontology documents; furthermore, declarations for entities can be placed in imported ontology documents and imports are allowed to be cyclic. In order to precisely define the result of ontology parsing, this specification defines the notion of canonical parsing. An OWL 2 parser may implement parsing in any way it chooses, as long as it produces a result that is structurally equivalent to the result of canonical parsing.
+An OWL 2 ontology corresponding to an ontology document DGI accessible at a given IRI GI can be obtained using the following canonical parsing process. All steps of this process must be successfully completed.
+CP 1
+Make AllDoc and Processed equal to the empty set, and make ToProcess equal to the set containing only the IRI GI.
+CP 2
+While ToProcess is not empty, remove an arbitrary IRI I from it and, if I is not contained in Processed, perform the following steps:
+CP 2.1
+Retrieve the ontology document DI from I as specified in Section 3.2.
+CP 2.2
+Using the rules of the relevant syntax, analyze DI and compute the set Decl(DI) of declarations explicitly present in DI and the set Imp(DI) of IRIs of ontology documents directly imported in DI.
+CP 2.3
+Add DI to AllDoc, add I to Processed, and add each IRI from Imp(DI) to ToProcess.
+CP 3
+For each ontology document D in AllDoc, perform the following steps:
+CP 3.1
+Compute the set AllDecl(D) as the union of the set Decl(D), the sets Decl(D') for each ontology document D' that is (directly or indirectly) imported into D, and the set of all declarations listed in Table 5. For an OWL 2 DL ontology, the set AllDecl(D) must satisfy the typing constraints from Section 5.8.1.
+CP 3.2
+Create an instance OD of the Ontology UML class from the structural specification.
+CP 3.3
+Using the rules of the relevant syntax, analyze D and populate OD by instantiating appropriate classes from the structural specification. Use the declarations in AllDecl(D) to disambiguate IRIs if needed; it must be possible to disambiguate all IRIs.
+CP 4
+For each pair of ontology documents DS and DT in AllDoc such that the latter is directly imported into the former, add ODT to the directlyImports association of ODS.
+CP 5
+For each ontology document D in AllDoc, set the imports association of OD to the transitive closure of the directlyImports association of OD.
+CP 6
+For each ontology document D in AllDoc, ensure that OD is an OWL 2 ontology — that is, OD must satisfy all the restrictions listed in Section 3.
+It is important to understand that canonical parsing merely defines the result of the parsing process, and that an implementation of OWL 2 may optimize this process in numerous ways. In order to enable efficient parsing, OWL 2 implementations are encouraged to write ontologies into documents by placing all IRI declarations before the axioms that use these IRIs; however, this is not required for conformance.
+3.7 Functional-Style Syntax
+A functional-style syntax ontology document is a sequence of Unicode characters [UNICODE] accessible from some IRI by means of the standard protocols such that its text matches the ontologyDocument production of the grammar defined in this specification document, and it can be converted into an ontology by means of the canonical parsing process described in Section 3.6 and other parts of this specification document. A functional-style syntax ontology document should use the UTF-8 encoding [RFC 3629].
+ontologyDocument := { prefixDeclaration } Ontology
+prefixDeclaration := 'Prefix' '(' prefixName '=' fullIRI ')'
+Ontology :=
+    'Ontology' '(' [ ontologyIRI [ versionIRI ] ]
+       directlyImportsDocuments
+       ontologyAnnotations
+       axioms
+    ')'
+ontologyIRI := IRI
+versionIRI := IRI
+directlyImportsDocuments := { 'Import' '(' IRI ')' }
+axioms := { Axiom }
+Each part of the ontology document matching the prefixDeclaration declares a prefix name and associates it with a prefix IRI. An ontology document must contain at most one such declaration per prefix name, and it must not declare a prefix name listed in Table 2. Prefix declarations are used during parsing to expand abbreviated IRIs in the ontology document — that is, parts of the ontology document matching the abbreviatedIRI production — into full IRIs. This is done as follows:
+The abbreviated IRI is split into a prefix name pn: — the part up to and including the : (U+3A) character — and the remaining part rp following the : (U+3A) character.
+Either Table 2 or the prefix declarations of the ontology document being parsed must contain a declaration for pn: associating it with a prefix IRI PI.
+The resulting full IRI is obtained by concatenating the string representation of PI with rp. The resulting IRI must be a valid IRI.
+The following is a functional-style syntax ontology document containing an ontology with the ontology IRI <http://www.example.com/ontology1>. The IRI<http://www.example.com/ontology1#> is associated with the prefix name : (this prefix is often called "empty" or "default"). This ontology imports an ontology whose ontology document should be accessed from <http://www.example.com/ontology2>, and it contains an ontology annotation providing a label for the ontology and a single subclass axiom. The abbreviated IRI :Child is expanded into the full IRI <http://www.example.com/ontology1#Child> during parsing. The prefix name owl: occurs in Table 2 and therefore does not need to be explicitly declared in the ontology document.
+Prefix(:=<http://www.example.com/ontology1#>)
+Ontology( <http://www.example.com/ontology1>
+    Import( <http://www.example.com/ontology2> )
+    Annotation( rdfs:label "An example" )
+
+    SubClassOf( :Child owl:Thing )
+)
+
+

@@ -1,0 +1,31 @@
+You Can Now Sense Earthquakes On Your Smartphone
+
+What's shaking?
+Your phone, yes, the one you're (probably) reading this on, can detect earthquakes. All you need is an app.
+
+Researchers at the University of California, Berkeley announced today the release of a new app called MyShake, available as a free download for Android smartphones in the Google Play store.
+
+It uses the accelerometer in your phone (the device that lets your phone adjust the screen when you turn it sideways) and GPS to measure how much shaking is happening in a given location. The hope is that eventually, if enough people download it, the app will allow your phone to function as both a personal seismometer and an early warning system.
+"If we get only a small fraction of the state's 16 million mobile phones participating in our program, that would be a many-orders-of-magnitude increase."
+
+When the app detects shaking that resembles an earthquake, the information is sent to a server. If enough phones detect shaking, that data is pooled together in a computer and analyzed. If it's a large earthquake, in the future alerts can be generated from the phones of people closest to the earthquake's epicenter, and sent out ahead of the shaking, giving people further away (also equipped with the app) the chance to drop, cover, and hold on.
+
+But in order for the app to be effective as an early warning system, a decent number of people have to download it. The researchers estimate that in order to accurately detect the origin and start time of large earthquakes in a location, there need to be at least 300 phones equipped with the app in a roughly 4,761 square mile area. The more MyShake-equipped phones in an area, the faster the team can get accurate information.
+
+"Currently, we have a network of 400 seismic stations in California, one of the densest in the world," project leader Richard Allen said in a statement. "Even if we get only a small fraction of the state's 16 million mobile phones participating in our program, that would be a many-orders-of-magnitude increase in the amount of data we can gather."
+
+Dedicated seismometers are machines that measure shaking during an earthquake, but they can also pick up other signals like sonic blasts, fans cheering at football games, explosions and bear attacks. So how does a sensor in your smartphone (which moves around with you) detect the difference between everyday vibrations like your evening run, or commute on the train, and an earthquake?
+
+The researchers simulated earthquakes by placing an array of smartphones loaded with the app onto a table that shook violently on command, just like it would in a real earthquake. The researchers then "trained" the app to recognize when the phone was undergoing an earthquake or just getting bounced around in a backpack.
+
+Right now, MyShake is only available on Android through the Google Play store. The app doesn't use as much power as previous iterations (which required that the phone be dedicated almost entirely to earthquake detection) and can run in the background of your phone's normal activities.
+
+The team looked at using iOS, the operating system on Apple's iPhones and iPads, but at the time they were developing the app, iOS didn't allow third-party software to run in the background, a feature MyShake needs in order to gather data.
+
+In addition, there are far more people using Android smartphones around the world than iOS. One of the lead researchers on the project, Qingkai Kong told Popular Science in an e-mail that while the team is currently focused on the Android platform, they are also considering expanding MyShake to other platforms in the future.
+
+The researchers who developed the app hope that it can expand earthquake monitoring and even early detection systems, augmenting areas with large numbers of seismometers (California) and essentially creating new seismic networks in areas with limited earthquake infrastructure, but plenty of mobile phones. There are 1 billion smartphones in the world, many in areas that don't have a high concentration of seismometers.
+
+In a paper about the app, the researchers note that Nepal, which suffered a huge earthquake last year that killed over 8,000 people could have benefitted from an early warning system like the MyShake app. Nepal has only a few seismic stations, but 6 million smartphones.
+
+Given that the huge earthquake last year was located about 50 miles from the capital city, Katmandu, the researchers estimate that a smartphone based early warning system could have given people in the city 20 seconds of notice before the shaking started, potentially saving lives.

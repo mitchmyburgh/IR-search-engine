@@ -1,0 +1,50 @@
+Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work. Feature engineering is fundamental to the application of machine learning, and is both difficult and expensive. The need for manual feature engineering can be obviated by automated feature learning.
+Feature engineering is an informal topic, but it is considered essential in applied machine learning.
+
+Coming up with features is difficult, time-consuming, requires expert knowledge. "Applied machine learning" is basically feature engineering.
+
+When working on a machine learning problem, feature engineering is manually designing what the input x's should be.
+
+
+== Features ==
+A feature is a piece of information that might be useful for prediction. Any attribute could be a feature, as long as it is useful to the model.
+The purpose of a feature, other than being an attribute, would be much easier to understand in the context of a problem. A feature is a characteristic that might help when solving the problem.
+
+
+== Importance of features ==
+The features in your data are important to the predictive models you use and will influence the results you are going to achieve. The quality and quantity of the features will have great influence on whether the model is good or not.
+You could say the better the features are, the better the result is. This isn't entirely true, because the results achieved also depend on the model and the data, not just the chosen features. That said, choosing the right features is still very important. Better features can produce simpler and more flexible models, and they often yield better results.
+
+The algorithms we used are very standard for Kagglers. […] We spent most of our efforts in feature engineering. [...] We were also very careful to discard features likely to expose us to the risk of over-fitting our model.
+
+…some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used.
+
+
+== The process of feature engineering ==
+Brainstorming features;
+Deciding what features to create;
+Creating features;
+Checking how the features work with your model;
+Improving your features if needed;
+Go back to brainstorming/creating more features until the work is done.
+
+
+== Feature relevance ==
+Depending on a feature it could be strongly relevant (has information that doesn't exist in any other feature), relevant, weakly relevant (some information that other features include) or irrelevant. It is important to create a lot of features. Even if some of them are irrelevant, you can't afford missing the rest. Afterwards, feature selection can be used in order to prevent overfitting.
+
+
+== Feature explosion ==
+Feature explosion can be caused by feature combination or feature templates, both leading to a quick growth in the total number of features.
+Feature templates - implementing features templates instead of coding new features
+Feature combinations - combinations that cannot be represented by the linear system
+There are a few solutions to help stop feature explosion such as: regularisation, kernel method, feature selection.
+
+
+== See also ==
+Covariate
+Hashing trick
+Kernel method
+List of datasets for machine learning research
+
+
+== References ==

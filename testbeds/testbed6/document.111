@@ -1,0 +1,199 @@
+ Algorithm Implementation/Hashing 
+   From Wikibooks, open books for an open world
+   &lt; Algorithm Implementation
+   (Redirected from Algorithm implementation/Hashing)
+    Jump to: 
+   navigation, 
+   search 
+   Hashing algorithms are generically split into three sub-sets: 
+    Indexing Algorithms 
+    Checksums and Cyclic Redundancy Checks 
+    Message Digests 
+   An indexing algorithm hash is generally used to quickly find items, using lists called "hash tables". A Checksum or a Cyclic Redundancy Check is often used for simple data checking, to detect any accidental bit errors during communication -- we discuss them in an earlier chapter, Checksums. A Message Digest is a cryptographically secure one-way function, and many are closely examined for their security in the computer security field. 
+     Contents 
+     1 Indexing Algorithms 
+       1.1 Jenkins one-at-a-time hash 
+       1.2 other hash functions for hash tables 
+     2 Checksums and Cyclic Redundancy Checks 
+       2.1 The Microsoft FCIV Utility 
+         2.1.1 FCIV at the command line 
+         2.1.2 FCIV run from VBA 
+     3 Message Digests 
+       3.1 VBA Hashes - of Strings 
+       3.2 VBA Hashes - of Whole Files 
+     4 Further reading 
+   Indexing Algorithms[edit] 
+       Wikipedia has more about this subject: 
+        Hash table
+   Jenkins one-at-a-time hash[edit] 
+   The "Jenkins One-at-a-time hash", from an article by Bob Jenkins in Dr. Dobb's September 1997. 
+   C: 
+uint32 joaat_hash(uchar *key, size_t key_len) {
+    uint32 hash = 0;
+    size_t i;
+    for (i = 0; i &lt; key_len; i++) {
+        hash += key[i];
+        hash += (hash &lt;&lt; 10);
+        hash ^= (hash &gt;&gt; 6);
+    }
+    hash += (hash &lt;&lt; 3);
+    hash ^= (hash &gt;&gt; 11);
+    hash += (hash &lt;&lt; 15);
+    return hash;
+}
+   Java: 
+int joaat_hash(byte[] key) {
+    int hash = 0;
+    for (byte b : key) {
+        hash += (b &amp; 0xFF);
+        hash += (hash &lt;&lt; 10);
+        hash ^= (hash &gt;&gt;&gt; 6);
+    }
+    hash += (hash &lt;&lt; 3);
+    hash ^= (hash &gt;&gt;&gt; 11);
+    hash += (hash &lt;&lt; 15);
+    return hash;
+}
+   See Data Structures/Hash Tables#Choosing a good hash function for more details on the "Jenkins One-at-a-time hash". 
+   other hash functions for hash tables[edit] 
+   (FIXME: say a few words about " universal hash function") 
+   Other popular hash functions for hash tables include: 
+   Other Jenkins hash functions,[1] CityHash,[2] MurmurHash[3] 
+   Checksums and Cyclic Redundancy Checks[edit] 
+   The Microsoft FCIV Utility[edit] 
+   The utility FCIV, the File Checksum Integrity Verifier , is a free downloadable zipped package that allows a user to produce both SHA1 and MD5 hashes for any single file, a flat folder, or recursively for all files and folders. It can export its entire results package to a nominated .xml file. It can also conduct verification of file sets against a previously saved listing. It is used from a command prompt, but can be run using the Shell function from code like VBA, or from a batch file. For further reading in its use see: Availability and description of the File Checksum Integrity Verifier utility. 
+   FCIV at the command line[edit] 
+   Notice the use of double quotes for paths that contain spaces. A typical command line use is of this form: 
+c:\&gt;FCIV\fciv.exe -r "C:\users\My Folder\Documents" -sha1 -xml "c:\users\My Folder\Documents\myhash.xml"
+   FCIV run from VBA[edit] 
+   The Shell function in VBA has no Wait feature, so this line is best as the last. The quotes are a little different in this case from the usual VBA expectation. Note that all of the paths must be enclosed in two sets of double quotes and that the entire command line is enclosed in one set of double quotes. Assuming that the fciv.exe has been downloaded and installed as shown, this code line exports all of the hash strings for every file in the users Documents folder to the file myhash.xml. An exclusion file path can also be added. (See examples on the page File Checksum Integrity Verifier (FCIV) Examples). 
+Sub FCIV()
+   'runs the fciv function from VBA   
+Dim Ret
+   Ret = Shell("""c:\FCIV\fciv.exe"" -r ""C:\users\My Folder\Documents"" -sha1 -xml ""c:\users\My Folder\Documents\myhash.xml""")
+End Sub
+   Algorithm Implementation/Checksums 
+   Message Digests[edit] 
+       Wikipedia has more about this subject: 
+        Message digest
+    Message Digest 5 (MD5); RFC 1321 
+    Secure Hash Standard (SHA/SHA0 &amp; SHA1) (SHA/SHA0, SHA1); FIPS-180 (SHA0) &amp; FIPS-180-1 (SHA1) 
+    SHA2 
+    SHA-3 
+   VBA Hashes - of Strings[edit] 
+   The VBA code below generates the digests for the SHA1, SHA2/256, and SHA2/512 hashes, for strings, in either of the hex or base-64 output formats. These codings each make use of MS Office's built-in functions, and provide consistent results. It has been noted that original implementations elsewhere for the same digests can differ widely in their outputs. 
+Sub Test()
+    'run this to test sha1, sha2/256, or sha2/512
+    Dim sIn As String, sOut As String, bOpt As Boolean
+    'insert the text to hash within the sIn quotes
+    'note that this could be the concatenation of a string and some other for better security 
+    sIn = ""
+    'select as required
+    bOpt = False   'output hex
+    'bOpt = True   'output base-64
+    If SHA1(sIn, sOut, bOpt) Then MsgBox sOut: Debug.Print sOut
+    'If SHA256(sIn, sOut, bopt) Then MsgBox sOut: Debug.Print sOut
+    'If SHA512(sIn, sOut, bopt) Then MsgBox sOut: Debug.Print sOut
+End Sub
+Function SHA1(sIn As String, sOut As String, Optional bOpt As Boolean = 0) As Boolean
+    'Set a reference to mscorlib 4.0 64-bit
+    'Test with empty string input:
+    '40 Hex:   da39a3ee5e6...etc
+    '28 Base-64:   2jmj7l5rSw0yVb...etc
+    Dim oT As Object, oSHA1 As Object
+    Dim TextToHash() As Byte
+    Dim bytes() As Byte
+    Set oT = CreateObject("System.Text.UTF8Encoding")
+    Set oSHA1 = CreateObject("System.Security.Cryptography.SHA1Managed")
+    TextToHash = oT.GetBytes_4(sIn)
+    bytes = oSHA1.ComputeHash_2((TextToHash))
+    If bOpt = True Then
+       sOut = ConvToBase64String(bytes)
+    Else
+       sOut = ConvToHexString(bytes)
+    End If
+    Set oT = Nothing
+    Set oSHA1 = Nothing
+    SHA1 = True
+End Function
+Function SHA256(sIn As String, sOut As String, Optional bOpt As Boolean = 0) As Boolean
+    'Set a reference to mscorlib 4.0 64-bit
+    'Test with empty string input:
+    '64 Hex:   e3b0c44298f...etc
+    '44 Base-64:   47DEQpj8HBSa+/...etc
+    Dim oT As Object, oSHA256 As Object
+    Dim TextToHash() As Byte, bytes() As Byte
+    Set oT = CreateObject("System.Text.UTF8Encoding")
+    Set oSHA256 = CreateObject("System.Security.Cryptography.SHA256Managed")
+    TextToHash = oT.GetBytes_4(sIn)
+    bytes = oSHA256.ComputeHash_2((TextToHash))
+    If bOpt = True Then
+       sOut = ConvToBase64String(bytes)
+    Else
+       sOut = ConvToHexString(bytes)
+    End If
+    Set oT = Nothing
+    Set oSHA256 = Nothing
+    SHA256 = True
+End Function
+Function SHA512(sIn As String, sOut As String, Optional bOpt As Boolean = 0) As Boolean
+    'Set a reference to mscorlib 4.0 64-bit
+    'Test with empty string input:
+    '128 Hex:   cf83e1357eefb8bd...etc
+    '88 Base-64:   z4PhNX7vuL3xVChQ...etc
+    Dim oT As Object, oSHA512 As Object
+    Dim TextToHash() As Byte, bytes() As Byte
+    Set oT = CreateObject("System.Text.UTF8Encoding")
+    Set oSHA512 = CreateObject("System.Security.Cryptography.SHA512Managed")
+    TextToHash = oT.GetBytes_4(sIn)
+    bytes = oSHA512.ComputeHash_2((TextToHash))
+    If bOpt = True Then
+       sOut = ConvToBase64String(bytes)
+    Else
+       sOut = ConvToHexString(bytes)
+    End If
+    Set oT = Nothing
+    Set oSHA512 = Nothing
+    SHA512 = True
+End Function
+Function ConvToBase64String(vIn As Variant) As Variant
+    Dim oD As Object
+    Set oD = CreateObject("MSXML2.DOMDocument")
+      With oD
+        .LoadXML "&lt;root /&gt;"
+        .DocumentElement.DataType = "bin.base64"
+        .DocumentElement.nodeTypedValue = vIn
+      End With
+    ConvToBase64String = Replace(oD.DocumentElement.text, vbLf, "")
+    Set oD = Nothing
+End Function
+Function ConvToHexString(vIn As Variant) As Variant
+    Dim oD As Object
+    Set oD = CreateObject("MSXML2.DOMDocument")
+      With oD
+        .LoadXML "&lt;root /&gt;"
+        .DocumentElement.DataType = "bin.Hex"
+        .DocumentElement.nodeTypedValue = vIn
+      End With
+    ConvToHexString = Replace(oD.DocumentElement.text, vbLf, "")
+    Set oD = Nothing
+End Function
+   VBA Hashes - of Whole Files[edit] 
+   The code in the panel above provides a selection of methods to make hashes of STRINGS. The panel below bears code that is not very different, but it is used to make hashes of whole FILES. The user simply provides a full path to the file as the starting parameter. Again, an option has been provided for each to allow for a choice of hex or base-64 outputs. Functions are included for MD5, SHA1, SHA2-256, and SHA2-512 hashes. 
+Option Explicit
+Private Sub TestFileHashes()
+'run this to test the file hasher. Select or comment lines as necessary
+'enter your own paths for the files to test
+'Set a reference to mscorlib 4.0 64-bit
+    Dim sFullFilePath As String
+    'sFullFilePath = "C:\Users\Internet Use\Documents\Food\Food Project 13 Sep 2014.xlsm"
+    sFullFilePath = "C:\Users\Internet Use\Documents\Text Files\test.txt"
+    Debug.Print FileToMD5(sFullFilePath): MsgBox FileToMD5(sFullFilePath)       'MD5
+    Debug.Print FileToSHA1(sFullFilePath): MsgBox FileToSHA1(sFullFilePath)     'SHA1
+    Debug.Print FileToSHA256(sFullFilePath): MsgBox FileToSHA256(sFullFilePath) 'SHA2-256
+    Debug.Print FileToSHA512(sFullFilePath): MsgBox FileToSHA512(sFullFilePath) 'SHA2-512
+End Sub
+Public Function FileToMD5(sFileName As String, Optional bBase64 As Boolean = False) As String
+    'parameter full path with name of file returned in the function as an MD5 hash
+    'Set a reference to mscorlib 4.0 64-bit
+    Dim enc, bytes, outstr As String, pos As Integer

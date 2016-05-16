@@ -1,0 +1,78 @@
+Cloud Foundry is an open source cloud computing platform as a service (PaaS) originally developed by VMware and now owned by Pivotal Software - a joint venture by EMC, VMware and General Electric. Cloud Foundry was designed and developed by a small team from Google led by Derek Collison and was originally called project B29.
+Cloud Foundry is primarily written in Ruby and Go.
+A different PaaS project also used the name Cloud Foundry, and was written in Java for Amazon EC2. It was founded by Chris Richardson in 2008 and acquired by SpringSource in 2009  (the same month VMware acquired SpringSource). The current product is unrelated to the project under SpringSource, but the name was adopted when the original SpringSource project was ended.
+
+
+== Platform ==
+Cloud Foundry comes in three flavors.
+Cloud Foundry Open Source Software (OSS)
+Available to anyone. Deploying this version of Cloud Foundry involves interfacing with the underlying infrastructure using the Cloud Foundry BOSH (bosh outer shell) deployment scripting language, another open source tool from Pivotal. The Baidu website is implemented on OSS Cloud Foundry.
+
+Pivotal Cloud Foundry (Pivotal CF)
+A commercial product available from Pivotal. It provides extra tools for installation and administration not included in the OSS product.
+
+Pivotal Web Services (PWS)
+An instance of Pivotal Cloud Foundry hosted on Amazon Web Services (AWS).
+
+Other companies also offer platform as a service products using the Cloud Foundry platform.
+GE's Predix 
+IBM Bluemix 
+CenturyLink Cloud 
+ActiveState 
+HP Helion 
+anynines 
+Swisscom 
+
+
+== Usage ==
+Cloud Foundry supports the full lifecycle, from initial development, through all testing stages, to deployment. It is therefore well-suited to the continuous delivery strategy. Users have access to one or more spaces, which typically correspond to a lifecycle stages. For example, an application ready for QA testing might be pushed (deployed) to its project's QA space. Different users can be restricted to different spaces with different access permissions in each.
+Developers require an additional tool, the Cloud Foundry cf Command Line Interface. It is written in Go. Installers exist for MS Windows, MacOS, and Linux.
+The cf utility provides many options, but for deployment cf push is all that is required. It accepts arguments to specify the name of the application, where to load it from and the URL that should be used to access it. For example:
+
+   cf push spring-music -i 2 -m 512M -n spring-music-v1 -p build/libs/spring-music.war
+
+pushes the Java web application spring-music. Two instances are deployed (this is a Java web-application so by default this is two Tomcat instances), each with 512M of memory. The URL starts with spring-music-v1 and the web-archive (application) can be found at build/libs/spring-music.war. Every Cloud Foundry instance manages one or more domains. For example, all Pivotal Web Services (PWS) applications are accessed via the cfapps.io domain, so if this Spring Music application had been deployed to PWS, its URL would have been spring-music-v1.cfapps.io.
+When an application is deployed to Cloud Foundry, an image is created for it and stored internally. The image is then deployed to a Warden container to run in. For multiple instances, multiple images are started on multiple containers. This is where BOSH comes in - Cloud Foundry's internal Controller uses BOSH to get the underlying infrastructure to spin up virtual machines to run the Warden containers on. When an application is deleted, all of its containers are destroyed and their resources are freed for other applications to use. If the application instance crashes, its container is killed and a new Warden container is started automatically. A container only ever runs one application ensuring isolation, security and resilience.
+A load-balancing router sits at the front of Cloud Foundry to route incoming requests to the correct application - essentially to one of the containers where the application is running.
+
+
+== Services ==
+Applications deployed to Cloud Foundry access external resources via Services. In a PaaS environment, all external dependencies such as databases, messaging systems, files systems and so on are Services. When an application is pushed to Cloud Foundry, the services it should use also can be specified. Depending on the application language, auto-configuration of services is possible - for example a Java application requiring a MySQL database picks up the MySQL service on Cloud Foundry if it is the only one defined in the current space.
+Services have to be deployed to the platform first and then are available to any application using it. Another advantage of Pivotal CF is that many pre-defined services can be deployed into it directly using the Administration Console. Users of the Open Source Cloud Foundry must make services available by writing and running BOSH scripts.
+PWS provides services thanks to a partnership arrangement with App Direct.
+The following services are available to Pivotal CF and on PWS:
+Data Storage: MySQL, PostgreSQL, MongoDB, Redis, Riak, DataStax (Cassandra), Neo4J, Pivotal HD (Hadoop)
+Messaging: Pivotal RabbitMQ
+Development: CloudBees Jenkins (Continuous Integration)
+Mobile: API Gateway, Data Sync, Push Notifications (Pivotal proprietary services to support Mobile Apps).
+
+
+== Software ==
+The development of Cloud Foundry is controlled by a Foundation (similar to how Rackspace, NASA and others started the OpenStack Foundation). By mid-2014, 33 companies had signed up to the Cloud Foundry Foundation.
+The source code is under an Apache License 2.0, and contributions are governed by the Cloud Foundry contributors' licenses for individuals and corporations. These licenses grant both copyright and patent access and protection to the Cloud Foundry Foundation, which is the same model that VMware followed with the Spring Framework from SpringSource.
+Supported runtimes and frameworks include:
+Note: Where multiple versions are given the default can be overridden by specifying the required version in a `runtime.txt` file.
+Typically, Cloud Foundry is installed on-premises running over VMware's vSphere virtualization infrastructure, although deployment to OpenStack is an option using BOSH.
+It is also possible to run Cloud Foundry instances on VMware Fusion or Virtualbox using Vagrant and on AWS.
+
+
+== See also ==
+Cloud computing comparison
+Apprenda
+AppScale
+Heroku
+OpenShift
+Predix by GE
+Google App Engine
+SAP HANA Cloud Platform
+Jelastic
+Tsuru PaaS
+Cloudify
+TIBCO
+
+
+== References ==
+
+
+== External links ==
+Official website

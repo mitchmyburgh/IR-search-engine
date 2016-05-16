@@ -1,0 +1,13 @@
+Amazon's Kindle Fire Is Blazingly Fast for a Mobile Device
+
+And everyone else better catch up
+
+After last year's flood of largely indistinguishable Android tablets, it's natural to glance at Amazon's wildly different Kindle Fire and think "iPad killer." But although the seven-inch tablet's $200 price tag will do plenty to draw attention (and sales), the Fire, at its core, is little more than a video-ready e-reader. Even if it won't lay waste to the iPad, it could have an equally profound influence: The Fire sets a new ultrafast standard for how future mobile—and perhaps desktop—devices surf the Web.
+
+Today's typical mobile browser is a tease. Tap a link, and the first elements of the page zip into view. But then the progress bar crawls as the handset's processor struggles to load the remaining page elements—videos, images, even text—over limited cellular or Wi-Fi connections. Things get backed up in a load queue. On the iPhone 4S, for instance, it takes six seconds to load the 160 elements that make up the Pop Sci homepage. And even as faster 4G networks expand, richer Web languages such as HTML5 will make pages ever more bulky and slow.
+
+The Fire's browser, Amazon Silk, approaches the problem in a novel way. Silk shifts most of the processing duties to Amazon's cloud servers (a.k.a. Amazon Web Services, or AWS). Those servers provide many times the processing power of the Fire itself, so they can pull information from the ethersphere and store, or cache, the data from several sources at once. They also optimize full-resolution elements, like photos and video, for a smaller screen; a three-megabyte image becomes 50 kilobytes, a 1080p video becomes 480, and so on. AWS processes all the elements of the page, and the server then preassembles it for the Fire and sends it to the device as a single stream. Popsci.com should load in no more than a few milliseconds.
+
+Although the Fire is the first device to browse this way by default, it most likely won't be the last. Both Apple and Google have servers large and powerful enough to process every page the way Silk does. (Smaller mobile browsers, including Opera Mini, have used similar setups in the past, but none of them has ever had as wide an audience as Amazon.) Furthermore, Silk's coding ingredients are off-the-shelf—including HTML5 and JavaScript—so there's no proprietary code to stymie competition.
+
+At this point, there's little to stop Amazon or potential copycats from making fast server-based browsing the new standard. But until they do, the mere fact that Silk exists makes us hopeful that the days of impatiently waiting on the Web will soon end.

@@ -1,0 +1,56 @@
+Intel playing a key role with Cloud, Mobile, IoT & Analytics
+November 3, 2015Tim Crawford
+In the past couple of weeks, I spent time with the Intel team in Oregon to see their work in leading areas including Cloud, Mobile, Internet of Things (IoT) and Analytics. Before I get too far down the path, one may be asking what Intel, a chip manufacturer, is doing in some of these areas. As it turns out, Intel is actually one of the largest software developers today. Intel also plays a leadership role in driving adoption and bridging the gaps in these leading areas.
+
+SUPPORTING THE MOVE TO CLOUD
+
+Today, 75% of current cloud demand comes from consumer services. By 2020, 65-85% of applications will be delivered via cloud infrastructure. The key for Intel (and others) is to move from consumer applications to enterprise applications. Intel’s approach is to leverage Jevon’s Paradox. The easier computing is to access, the faster the adoption. One of the key areas Intel is working on is orchestration software that is transparent vs. opaque.
+
+Simply put, the industry is simply not moving fast enough. Friction exists in several key areas with adoption:
+
+Fragmented solution stacks
+Complexity in deploying solutions
+Lack of key features
+While these may seem straight forward, the path is not always the most direct. Intel IT is a great test bed of methodology, technology and culture. Today, any developer in Intel IT can go request their own instance for compute & storage.
+
+One of the areas related to cloud is Intel IT’s move to Software Defined Networking (SDN). Prior to SDN, the process of Landing, Security Setup (ACL), Load Balancing and Auto IP Provisioning took an average of 31.99 days(!). After SDN, the process is nearly instant. The biggest challenges were Immature Technology (71%), Existing Network/ Processes (64%), Lack of Knowledge/ Training (29% and Cost (25%).
+
+To Intel, cloud is not the end-game and does not see enterprises completely divesting of data centers. Intel’s perspective is that every CIO wants to get to a hybrid cloud scenario.
+
+ENGAGING IN THE MOBILE ECOSYSTEM
+
+Today, there are 1.9 billion smartphones. Each smartphone has an average of 26 applications. Each application has (on average) 20 transactions with a data center every day. That turns into 1 trillion data center transactions…every day!
+
+Imagine the challenges of scale using traditional data center technologies. The sheer amount of data, let along transactions, is massive. And this is just what we see from the mobile endpoints.
+
+THE INTERNET OF THINGS (IoT)
+
+There is a significant opportunity for any of the IoT players by turning data into value. With 50 billion ‘things’ and 35 zettabytes of data, there is quite a bit of upside for even the most narrowly focused of companies. Intel is working with companies to enable the two categories of the IoT.
+
+THE DATA AND ANALYTICS OF CANCER RESEARCH
+
+One example is Intel’s partnership with Oregon Health & Science University (OHSU) to assist with their cancer research programs. OHSU is one of the country’s leading cancer research institutions. Intel has engaged with OHSU on multiple levels. However, one of the core activities when doing cancer research is genome sequencing.
+
+Today, a single patient genome generates more than 1 terrabyte of data. That’s 1TB+ per patient. With 1.65 million cancer patients in the US alone, that equates to 4 exabytes of data for genome sequencing. Today, <1% of cancer patients are actually sequenced due to a number of issues including costs. Imagine if all cancer patients were sequenced. Now imagine if patients for other diseases were sequenced. One can quickly see that we are just scratching the surface on data analytics in healthcare and have a long way to go!
+
+SUPPORTING THE OVERALL EFFORT
+
+As the scale for workloads moves from rack-scale to larger, specialized implementation, Intel is ready with custom silicon. Cloud providers, such as Amazon AWS, have already taken this approach to leverage a myriad of features that best support their service offering. Expect others to follow suit as their scale increases.
+
+ 
+
+Today, the breakdown of Intel’s market by workload is as follows:
+
+Screen Shot 2015-11-03 at 9.53.29 AM
+
+ 
+
+It is impressive to see how much of the workload pie is squarely focused on technical computing today. Consider how this will change as the adoption rate of cloud and analytics increases.
+
+All that being said, Intel’s core is still building infrastructure technology. Their new 3D xPoint memory technology is about to turn the industry on its head. Consider that xPoint addresses many of the concerns with NAND memory today and presents significant opportunities for applications in need of low latency, fast system recovery and high-endurance. Large in-memory databases, gaming and genomics analysis are just a few of the leading contenders that will benefit from 3D xPoint memory technology.
+
+Screen Shot 2015-11-03 at 9.52.07 AM
+
+ 
+
+In summary, Intel is far from just a ‘chip manufacturer’. They are constantly innovating their silicon expertise while taking a leadership role in many of the hot technology areas. While many still struggle with basic block-and-tackling of cloud adoption, there are many significant opportunities that lie ahead of us both commercially and personally.

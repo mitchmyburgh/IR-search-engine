@@ -1,0 +1,195 @@
+   Data Structures through C &amp; C++ for beginners 
+    Search 
+    Primary Menu 
+    Skip to content 
+      INTRODUCTION TO DATA STRUCTURES
+        About Vinod
+          DS material..
+      Search for:   
+       Graphs 
+      Topological Sorting 
+       October 5, 2006 
+       Vinod 
+       10 Comments 
+      /******************************************************************** 
+      -&gt; This C++ Program is to implement Topological sorting. 
+      -&gt; This program sorts the given integers in increasing order using topological sorting 
+      -&gt; unwaighted digraph is used to sort the numbers 
+      -&gt; Data Structers: Graph:Adjacency List 
+      -&gt; This program works in microsoft vc++ 6.0 environment. 
+      *********************************************************************/ 
+      #include&lt;iostream.h&gt; class graph { private: int n; int data[20]; int gptr[20][20]; public: void create(); void topological(); }; void graph::create() { cout&lt;&lt;“**********************************************************\n” &lt;&lt;“This program sorts the given numbers in increasing order\n” &lt;&lt;“\t\t using topological sorting\n” &lt;&lt;“***********************************************************\n”; cout&lt;&lt;“Enter the no. of nodes in the directed unweighted graph ::”; cin&gt;&gt;n; for(int i=1;i&lt;=n;i++) { cout&lt;&lt;“enter data for the node “&lt;&lt;i&lt;&lt;” ::”; cin&gt;&gt;data[i]; } 
+      cout&lt;&lt;“enter the adjacency matrix for the graph ::\n”; cout&lt;&lt;“( type 1 for graph[i][j] if there is an edge from i to j” &lt;&lt;“else type 0 )\n\n”; 
+      int j; for(i=1;i&lt;=n;i++) for(j=1;j&lt;=n;j++) cin&gt;&gt;gptr[i][j]; } void graph::topological() { int flag; int i,j; int poset[20],included[20]; for(i=1;i&lt;=n;i++) { poset[i]=0; included[i]=false; } int k=1; flag=true; int zeroindegree; int c=1; while(flag==1) { for(i=1;i&lt;=n;i++) { if(!included[i]) { zeroindegree=true; for(j=1;j&lt;=n;j++) { if(gptr[j][i]&gt;0) { zeroindegree=false; break; } } 
+      if(zeroindegree) { included[i]=true; poset[k]=data[i]; k=k+1; for(j=1;j&lt;=n;j++) { gptr[i][j]=-1; gptr[j][i]=-1; } break; } } } if(i==n+1) { if(zeroindegree==false) { cout&lt;&lt;“Graph is not acyclic\n”; return; } else { poset[k]=data[i-1]; k=k+1; flag=false; } } } cout&lt;&lt;“After topological sorting the numbers are :\n”; for(i=1;i&lt;=n;i++) cout&lt;&lt;poset[i]&lt;&lt;“\t”; 
+      cout&lt;&lt;endl&lt;&lt;endl; } int main() { graph obj; obj.create(); obj.topological(); return 0; } 
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+         Share this:
+           Reddit
+        Like this:
+         Like 
+         Loading...
+        Related 
+     Post navigation 
+      Previous PostOperations On Polynomials
+      Next PostPrim’s Algorithm for Minimum Spanning tree 
+      10 thoughts on “Topological Sorting”  
+          A user 
+          says: 
+            February 25, 2008 at 7:04 pm   
+         POOR……… 
+         Reply
+          ambot 
+          says: 
+            August 13, 2008 at 8:39 am   
+         can teach me those…. 
+         Reply
+          prabhu 
+          says: 
+            March 2, 2009 at 8:30 pm   
+         i want this codeing 
+         Reply
+          Grim Reaper 
+          says: 
+            April 28, 2009 at 6:24 pm   
+         coul u upload programs of matrix chain multiplication , optimal binary search tree and floyd warshall in C++ 
+         THANX IN ADVANCE 
+         Reply
+          Grim Reaper 
+          says: 
+            April 28, 2009 at 6:28 pm   
+         could u pls upload floyd warshall binary search tree(optimal) matrix chain multiplication 
+         Reply
+          dhasn 
+          says: 
+            September 7, 2009 at 1:01 pm   
+         it would have been nice if it was in simple c 
+         Reply
+          jhgkjg 
+          says: 
+            March 8, 2011 at 3:44 pm   
+         boring ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh 
+         Reply
+          moin sayyed 
+          says: 
+            March 8, 2011 at 3:45 pm   
+         so boringggggggggggggggggggggggggggggggggggggggggggggggggg iwant break. 
+         Reply
+          alaa 
+          says: 
+            November 6, 2011 at 4:04 pm   
+         i want this cod 
+         Reply
+         Pingback: 
+        Cheap Downloadable DvDRip 
+      Leave a Reply Cancel reply 
+        Enter your comment here... 
+         Fill in your details below or click an icon to log in: 
+            Email (required) (Address never made public) 
+            Name (required) 
+            Website 
+            You are commenting using your WordPress.com account. (&nbsp;Log&nbsp;Out&nbsp;/&nbsp;Change&nbsp;) 
+            You are commenting using your Twitter account. (&nbsp;Log&nbsp;Out&nbsp;/&nbsp;Change&nbsp;) 
+            You are commenting using your Facebook account. (&nbsp;Log&nbsp;Out&nbsp;/&nbsp;Change&nbsp;) 
+            You are commenting using your Google+ account. (&nbsp;Log&nbsp;Out&nbsp;/&nbsp;Change&nbsp;) 
+          Cancel
+         Connecting to %s 
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+         Notify me of new comments via email.
+         Notify me of new posts via email.
+    Blog Stats 
+     931,444 hits 
+    Archives 
+    Archives 
+     Select Month  May 2007   April 2007   March 2007   February 2007   January 2007   December 2006   October 2006   September 2006   
+    Top Posts
+       Code For Dijkstra's Algorithm In C++   
+       SPARSE MATRIX ADDITION   
+       Rank Sort   
+       Aptitude Questions   
+       Prim's Algorithm for Minimum Spanning tree   
+       INTRODUCTION TO DATA STRUCTURES   
+       TOWERS OF HANOI   
+       BELLMAN FORD'S SINGLE SOURCE SHORTEST PATH ALGORITHM   
+       STACK IMPLEMENTATION USING LINKED LIST   
+       infix to postfix conversion   
+   If the code doesn't work, please replace the single quotes and double quotes(Actually these are not proper single and double quotes) in the code with single quotes and double quotes using your keyboard.. 
+   The Twenty Fourteen Theme. 
+   Create a free website or blog at WordPress.com. 
+/*  */
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+/*  */
+ Follow 
+  Follow “Data Structures through C &amp; C++ for beginners” 
+   Get every new post delivered to your Inbox. 
+   Join 110 other followers 
+   Build a website with WordPress.com
+/*  */
+/*  */
+// 
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "ds4beginners.wordpress.com";
+  %d bloggers like this:
+			var _comscore = _comscore || [];
+			_comscore.push({
+				c1: "2",
+				c2: "7518284"
+			});
+			(function() {
+				var s = document.createElement("script"),
+					el = document.getElementsByTagName("script")[0];
+				s.async = true;
+				s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+				el.parentNode.insertBefore(s, el);
+			})();
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'401911','blog_tz':'5','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'401911','v':'wpcom','tz':'5','user_id':'0','post':'42','subd':'ds4beginners'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWtpP0NsWnVkPS9sL0ViLndld3BHTWVJQ2xTcExndUZKNnR+Vnc/SmlkbmplRlRuOEZ2X210Qnd2WXZlaWxiJSVrSzdFX09+WUl8R2FCJWFPeF1+LklDMnJweUIsclRTa2tkUE1qN2ZjS1pQK0laeHF0VDQwej9za3ZfSnViUXhDLlk/MFQzMldXWnZhN29KRCxJNy1UciVfeVBNSmRzLk93V21YZjAraUclLk1WbUVWdXc1ZWlCWEp1PW4tW0NYdzdnKz9pRX5aen5WdFcyLV05aUY/WG9tQmhwSHI9L2ZsMllsWzZpSVEtRH5ldkJybVlNblp5bEJXUC5Xc2NiNjNdSjRCYUpbX21PYkldUXg='}]);
+_stq.push([ 'clickTrackerInit', '401911', '42' ]);
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+}
+

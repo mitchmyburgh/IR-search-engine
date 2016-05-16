@@ -1,0 +1,101 @@
+ Binary search tree 
+   In computer science, binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of containers: 
+   data structures that store "items" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and 
+   can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone 
+   number of a person by name).  
+   Binary search trees keep their keys in sorted order, so that lookup and other operations can use the principle of binary search: when looking 
+   for a key in a tree (or a place to insert a new key), they traverse the tree from root to leaf, making comparisons to keys stored in the nodes 
+   of the tree and deciding, based on the comparison, to continue searching in the left or right subtrees. On average, this means that each 
+   comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes time proportional to the 
+   logarithm of the number of items stored in the tree. This is much better than the linear time required to find items by key in an (unsorted) array, 
+   but slower than the corresponding operations on hash tables. 
+   Several variants of the binary search tree have been studied in computer science; this article deals primarily with the basic type, making
+   references to more advanced types when appropriate. 
+   
+ Definition 
+   A binary search tree is a rooted binary tree, whose internal nodes each store a key (and optionally, an associated value) and each have two distinguished sub-trees, commonly denoted left and right. The tree additionally satisfies the binary search tree property, which states that the key in each node must be greater than all keys stored in the left sub-tree, and smaller than all keys in right sub-tree.[1]:287 (The leaves (final nodes) of the tree contain no key and have no structure to distinguish them from one another. Leaves are commonly represented by a special leaf or nil symbol, a NULL pointer, etc.) 
+   Generally, the information represented by each node is a record rather than a single data element. However, for sequencing purposes, nodes are compared according to their keys rather than any part of their associated records. 
+   The major advantage of binary search trees over other data structures is that the related sorting algorithms and search algorithms such as 
+   in-order traversal can be very efficient; they are also easy to code. 
+   Binary search trees are a fundamental data structure used to construct more abstract data structures such as sets, multisets, and associative arrays. 
+   Some of their disadvantages are as follows: 
+   The shape of the binary search tree totally depends on the order of insertions and deletions, and can become degenerate. 
+   When inserting or searching for an element in a binary search tree, the key of each visited node has to be compared with the key of the element
+   to be inserted or found. 
+   The keys in the binary search tree may be long and the run time may increase. 
+   After a long intermixed sequence of random insertion and deletion, the expected height of the tree approaches square root of the number of keys, √n, which grows much faster than log n.[citation needed] 
+   Order relation 
+   Binary search requires an order relation by which every element (item) can be compared with every other element in the sense of a total preorder. The part of the element which effectively takes place in the comparison is called its key. Whether duplicates, i.e. different elements with same key, shall be allowed in the tree or not, does not depend on the order relation, but on the application only. 
+   In the context of binary search trees a total preorder is realized most flexibly by means of a three-way comparison subroutine. 
+   Operations 
+   Binary search trees support three main operations: insertion of elements, deletion of elements, and lookup (checking whether a key is present). 
+   
+   Searching
+   Searching a binary search tree for a specific key can be a recursive or an iterative process. 
+   We begin by examining the root node. If the tree is null, the key we are searching for does not exist in the tree. Otherwise, if the key equals that of the root, the search is successful and we return the node. If the key is less than that of the root, we search the left subtree. Similarly, if the key is greater than that of the root, we search the right subtree. This process is repeated until the key is found or the remaining subtree is null. If the searched key is not found before a null subtree is reached, then the key is not present in the tree. This is easily expressed as a recursive algorithm: 
+1 def search_recursively(key, node):
+2     if node is None or node.key == key:
+3         return node
+4     elif key &lt; node.key:
+5         return search_recursively(key, node.left)
+6     else:  # key &gt; node.key
+7         return search_recursively(key, node.right)
+   The same algorithm can be implemented iteratively: 
+ 1 def search_iteratively(key, node): 
+ 2     current_node = node
+ 3     while current_node is not None:
+ 4         if key == current_node.key:
+ 5             return current_node
+ 6         elif key &lt; current_node.key:
+ 7             current_node = current_node.left
+ 8         else:  # key &gt; current_node.key:
+ 9             current_node = current_node.right
+10     return None
+   Because in the worst case this algorithm must search from the root of the tree to the leaf farthest from the root, the search
+   operation takes time proportional to the tree's height (see tree terminology). On average, binary search trees with n nodes have O(log n) height. 
+   However, in the worst case, binary search trees can have O(n) height, when the unbalanced tree resembles a linked list (degenerate tree). 
+   
+   Insertion 
+   Insertion begins as a search would begin; if the key is not equal to that of the root, we search the left or right subtrees as before. 
+   Eventually, we will reach an external node and add the new key-value pair (here encoded as a record 'newNode') as its right or left child,
+   depending on the node's key. In other words, we examine the root and recursively insert the new node to the left subtree if its key is less 
+   than that of the root, or the right subtree if its key is greater than or equal to the root. 
+   
+   Here's how a typical binary search tree insertion might be performed in a binary tree in C++: 
+void insert(Node*&amp; root, int key, int value) {
+  if (!root) 
+    root = new Node(key, value);
+  else if (key &lt; root-&gt;key)
+    insert(root-&gt;left, key, value);
+  else  // key &gt;= root-&gt;key
+    insert(root-&gt;right, key, value);
+}
+   The above destructive procedural variant modifies the tree in place. It uses only constant heap space (and the iterative version uses constant
+   stack space as well), but the prior version of the tree is lost. Alternatively, as in the following Python example, we can reconstruct all 
+   ancestors of the inserted node; any reference to the original tree root remains valid, making the tree a persistent data structure: 
+ def binary_tree_insert(node, key, value):
+     if node is None:
+         return NodeTree(None, key, value, None)
+     if key == node.key:
+         return NodeTree(node.left, key, value, node.right)
+     if key &lt; node.key:
+         return NodeTree(binary_tree_insert(node.left, key, value), node.key, node.value, node.right)
+     else:
+         return NodeTree(node.left, node.key, node.value, binary_tree_insert(node.right, key, value))
+   
+   The part that is rebuilt uses O(log n) space in the average case and O(n) in the worst case. 
+   In either version, this operation requires time proportional to the height of the tree in the worst case, which is O(log n) time in 
+   the average case over all trees, but O(n) time in the worst case. 
+   Another way to explain insertion is that in order to insert a new node in the tree, its key is first compared with that of the root. 
+   If its key is less than the root's, it is then compared with the key of the root's left child. If its key is greater, it is compared 
+   with the root's right child. This process continues, until the new node is compared with a leaf node, and then it is added as this 
+   node's right or left child, depending on its key: if the key is less than the leaf's key, then it is inserted as the leaf's left child,
+   otherwise as the leaf's right child. 
+   There are other ways of inserting nodes into a binary tree, but this is the only way of inserting nodes at the leaves and at the same
+   time preserving the BST structure. 
+   
+   Deletion 
+   There are three possible cases to consider: 
+	-Deleting a node with no children: simply remove the node from the tree. 
+    -Deleting a node with one child: remove the node and replace it with its child. 
+    -Deleting a node with two children: call the node to be delete

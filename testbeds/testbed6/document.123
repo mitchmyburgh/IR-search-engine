@@ -1,0 +1,51 @@
+Hash table
+From Wikipedia, the free encyclopedia
+Not to be confused with Hash list or Hash tree.
+"Rehash" redirects here. For the South Park episode, see Rehash (South Park). For the IRC command, see List of Internet Relay Chat commands § REHASH.
+Hash table
+Type	Unordered associative array
+Invented	1953
+Time complexity
+in big O notation
+Average	Worst case
+Space	O(n)[1]	O(n)
+Search	O(1)	O(n)
+Insert	O(1)	O(n)
+Delete	O(1)	O(n)
+
+A small phone book as a hash table
+In computing, a hash table (hash map) is a data structure used to implement an associative array, a structure that can map keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+
+Ideally, the hash function will assign each key to a unique bucket, but it is possible that two keys will generate an identical hash causing both keys to point to the same bucket. Instead, most hash table designs assume that hash collisions—different keys that are assigned by the hash function to the same bucket—will occur and must be accommodated in some way.
+
+In a well-dimensioned hash table, the average cost (number of instructions) for each lookup is independent of the number of elements stored in the table. Many hash table designs also allow arbitrary insertions and deletions of key-value pairs, at (amortized[2]) constant average cost per operation.[3][4]
+
+In many situations, hash tables turn out to be more efficient than search trees or any other table lookup structure. For this reason, they are widely used in many kinds of computer software, particularly for associative arrays, database indexing, caches, and sets.
+Hashing[edit]
+Main article: Hash function
+The idea of hashing is to distribute the entries (key/value pairs) across an array of buckets. Given a key, the algorithm computes an index that suggests where the entry can be found:
+
+index = f(key, array_size)
+Often this is done in two steps:
+
+hash = hashfunc(key)
+index = hash % array_size
+In this method, the hash is independent of the array size, and it is then reduced to an index (a number between 0 and array_size − 1) using the modulo operator (%).
+
+In the case that the array size is a power of two, the remainder operation is reduced to masking, which improves speed, but can increase problems with a poor hash function.
+
+Choosing a good hash function[edit]
+A good hash function and implementation algorithm are essential for good hash table performance, but may be difficult to achieve.
+
+A basic requirement is that the function should provide a uniform distribution of hash values. A non-uniform distribution increases the number of collisions and the cost of resolving them. Uniformity is sometimes difficult to ensure by design, but may be evaluated empirically using statistical tests, e.g., a Pearson's chi-squared test for discrete uniform distributions.[5][6]
+
+The distribution needs to be uniform only for table sizes that occur in the application. In particular, if one uses dynamic resizing with exact doubling and halving of the table size s, then the hash function needs to be uniform only when s is a power of two. Here the index can be computed as some range of bits of the hash function. On the other hand, some hashing algorithms prefer to have s be a prime number.[7] The modulus operation may provide some additional mixing; this is especially useful with a poor hash function.
+
+For open addressing schemes, the hash function should also avoid clustering, the mapping of two or more keys to consecutive slots. Such clustering may cause the lookup cost to skyrocket, even if the load factor is low and collisions are infrequent. The popular multiplicative hash[3] is claimed to have particularly poor clustering behavior.[7]
+
+Cryptographic hash functions are believed to provide good hash functions for any table size s, either by modulo reduction or by bit masking[citation needed]. They may also be appropriate if there is a risk of malicious users trying to sabotage a network service by submitting requests designed to generate a large number of collisions in the server's hash tables. However, the risk of sabotage can also be avoided by cheaper methods (such as applying a secret salt to the data, or using a universal hash function).
+
+Perfect hash function[edit]
+If all keys are known ahead of time, a perfect hash function can be used to create a perfect hash table that has no collisions. If minimal perfect hashing is used, every location in the hash table can be used as well.
+
+Perfect hashing allows for constant time lookups in all cases. This is in contrast to most chaining and open addressing methods, where the time for lookup is low on average, but may be very large, O(n), for some sets of keys.

@@ -1,0 +1,10 @@
+Insertion[edit]
+Insertion begins by adding the node as any binary search tree insertion does and by coloring it red. Whereas in the binary search tree, we always add a leaf, in the red–black tree, leaves contain no information, so instead we add a red interior node, with two black leaves, in place of an existing black leaf.
+What happens next depends on the color of other nearby nodes. The term uncle node will be used to refer to the sibling of a node's parent, as in human family trees. Note that:
+•	property 3 (all leaves are black) always holds.
+•	property 4 (both children of every red node are black) is threatened only by adding a red node, repainting a black node red, or a rotation.
+•	property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes) is threatened only by adding a black node, repainting a red node black (or vice versa), or a rotation.
+Notes
+1.	The label N will be used to denote the current node (colored red). In the diagrams N carries a blue contour. At the beginning, this is the new node being inserted, but the entire procedure may also be applied recursively to other nodes (see case 3). P will denote N's parent node, G will denote N's grandparent, and U will denote N's uncle. In between some cases, the roles and labels of the nodes are exchanged, but in each case, every label continues to represent the same node it represented at the beginning of the case.
+2.	If a node in the right (target) half of a diagram carries a blue contour it will become the current node in the next iteration and there the other nodes will be newly assigned relative to it. Any color shown in the diagram is either assumed in its case or implied by those assumptions.
+3.	A numbered triangle represents a subtree of unspecified depth. A black circle atop a triangle means that black-height of subtree is greater by one compared to subtree without this circle.

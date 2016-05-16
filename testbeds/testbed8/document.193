@@ -1,0 +1,14 @@
+Both the insert and remove operations modify the heap to conform to the shape property first, by adding or removing from the end of the heap. Then the heap property is restored by traversing up or down the heap. Both operations take O(log n) time.
+Insert[edit]
+To add an element to a heap we must perform an up-heap operation (also known as bubble-up, percolate-up, sift-up, trickle-up, heapify-up, or cascade-up), by following this algorithm:
+1.	Add the element to the bottom level of the heap.
+2.	Compare the added element with its parent; if they are in the correct order, stop.
+3.	If not, swap the element with its parent and return to the previous step.
+The number of operations required depends only on the number of levels the new element must rise to satisfy the heap property, thus the insertion operation has a time complexity of O(log n).
+As an example of binary heap insertion, say we have a max-heap
+ 
+and we want to add the number 15 to the heap. We first place the 15 in the position marked by the X. However, the heap property is violated since 15 > 8, so we need to swap the 15 and the 8. So, we have the heap looking as follows after the first swap:
+ 
+However the heap property is still violated since 15 > 11, so we need to swap again:
+ 
+which is a valid max-heap. There is no need to check the left child after this final step: at the start, the max-heap was valid, meaning 11 > 5; if 15 > 11, and 11 > 5, then 15 > 5, because of the transitive relation.

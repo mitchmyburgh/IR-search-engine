@@ -1,0 +1,31 @@
+Ambient Cloud Storage Wars Begin: Why Microsoft & Apple Will Kick the Snot Out of Dropbox
+Nov 29, 2011
+ 
+
+I recently wrote about the cloud components of Microsoft’s upcoming Windows 8 operating system after reviewing the smarter ambient cloud architecture of Apple’s iCloud. Now, according to a blog post by the Group Program Managers for SkyDrive, Microsoft’s consumer-focused cloud offering, “SkyDrive represents an incredible opportunity to bring the benefits of the personal cloud to billions of PC users.”
+
+Ok, at least some of the guys at Microsoft get it. This is the whole point of all the stuff I write about the emergence of ambient clouds and their impact on security – and the future of clouds themselves.
+
+Skydrive launched in mid 2007  as basically a disk on the internet. But as I predicted about a year ago in the chart below, it’s all about Apple vs. Microsoft vs. Amazon (and Google). All of them have a disk in the sky, but it’s not that strategic for any of them. It’s just a component of a larger strategy.
+
+
+But there are a few companies who think cloud disks are a big deal. Those companies would be startups like Dropbox and Box.net because they don’t see cloud consumer storage as just a small part of a big war – for them it’s the only battle that matters. And that’s why they will lose.
+
+Can you think of another time, long long ago (the pressure to do a Clone/Cloud Star Wars pun here is incredible, but I will resist) when Microsoft was in this position? I bet Marc Andreessen of Andreessen Horowitz can. Back in the days before even LoudCloud, Marc was at this little company called Netscape, now ironically part of Oracle through their Sun acquisition.
+
+For Netscape, the war was about who would win on the web browser front. For Microsoft, the battlefield was bigger and more complex – it was the PC. And Microsoft was happy to give away Internet Explorer for free (they still do) and lose any profits to be made there in order to protect their (insane) margins on desktop operating systems and apps. Netscape was a high flyer for a while and made lots of my friends there very wealthy, but eventually Microsoft stomped them, and Netscape was split into 2 pieces, one sold to Sun for technology, the other to AoL for content.
+
+That, plus my chart above about ambient clouds, is all you need to know to predict what will happen here. Any player without both an ambient cloud play and a centralized cloud play will get squeezed mercilessly by the dominant players with both. Those would be Microsoft (with Windows 8, Skydrive, and Azure), Google (Search + Android + Apps), Amazon (Kindle + Cloud Storage + AWS), and Apple (ipad, ipod, PC, and iCloud).
+
+I predict that every one of those big companies will discount their cloud storage to the point that the “little guys” like Dropbox and Box.net will find it very hard to find enough oxygen to grow at rates that make VCs (like Andreessen in a bizarre twist of fate) happy.
+
+Even worse, putting on my cloud security hat, the large companies will do it while blatantly ignoring cloud security architecture for consumers. But there is ample room in the market for security-focused cloud storage according to Information Week. (Yes, I work for Trend Micro…)
+
+Ok, enough about that. Here’s what Microsoft’s new blog post says about the future of the market for consumer cloud offerings. There are three types of consumer clouds
+
+File clouds that use using a traditional file and folder structure like Microsoft’s SkyDrive, Dropbox, or the only really secure one I know, Trend Micro SafeSync. (plug)
+Device clouds “Device-centric view of cloud storage “hides” the folders from you,” like iCloud (Argh! Device cloud? It’s an ambient cloud for god’s sake!)
+App clouds; Basically, cloud-based Sharepoint killer attempts like Google Docs and Evernote.
+Finally, Microsoft released some awesome statistic about consumer cloud storage adoption that are both discouraging and encouraging. They’re discouraging if you’ve worked on the problem for 5 years and realize that no one is using it. They’re encouraging if you’ve worked on it for 5 years and have shares in your startup, because adoption is probably just around the corner. The survey said 22% of people store their photos online and 1% store documents online. It seems small to me:
+
+That said, whether it’s small or big, I’ll be on one thing: Dropbox and Box.net are features, not products, and both will be acquired within 3 years of now. Thanks to Read Write Web for their great analysis of the Microsoft blog announcement too (and for unconsciously letting me snarf the above image from their CDN…)

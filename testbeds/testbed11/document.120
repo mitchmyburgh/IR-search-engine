@@ -1,0 +1,84 @@
+A wide variety of different wireless data technologies exist, some in direct competition with one another, others designed for specific applications. Wireless technologies can be evaluated by a variety of different metrics of which some are described in this entry.
+Standards can be grouped as follows in increasing range order:
+Personal Area Network (PAN) systems are intended for short range communication between devices typically controlled by a single person. Some examples include wireless headsets for mobile phones or wireless heart rate sensors communicating with a wrist watch. Some of these technologies include standards such as ANT UWB, Bluetooth, ZigBee, and Wireless USB.
+Wireless Sensor Networks (WSN / WSAN) are, generically, networks of low-power, low-cost devices that interconnect wirelessly to collect, exchange, and sometimes act-on data collected from their physical environments - "sensor networks". Nodes typically connect in a star or mesh topology. While most individual nodes in a WSAN are expected to have limited range (Bluetooth, ZigBee, 6LoWPAN, etc.), particular nodes may be capable of more expansive communications (Wi-Fi, Cellular networks, etc.) and any individual WSAN can span a wide geographical range. An example of a WSAN would be a collection of sensors arranged throughout an agricultural facility to monitor soil moisture levels, report the data back to a computer in the main office for analysis and trend modeling, and maybe turn on automatic watering spigots if the level is too low.
+For wider area communications, Wireless Local Area Network (WLAN) is used. WLANs are often known by their commercial product name Wi-Fi. These systems are used to provide wireless access to other systems on the local network such as other computers, shared printers, and other such devices or even the internet. Typically a WLAN offers much better speeds and delays within the local network than an average consumer's Internet access. Older systems that provide WLAN functionality include DECT and HIPERLAN. These however are no longer in widespread use. One typical characteristic of WLANs is that they are mostly very local, without the capability of seamless movement from one network to another.
+Cellular networks or WAN are designed for city-wide/national/global coverage areas and seamless mobility from one access point (often defined as a Base Station) to another allowing seamless coverage for very wide areas. Cellular network technologies are often split into 2nd generation 2G, 3G and 4G networks. Originally 2G networks were voice centric or even voice only digital cellular systems (as opposed to the analog 1G networks). Typical 2G standards include GSM and IS-95 with extensions via GPRS, EDGE and 1xRTT, providing Internet access to users of originally voice centric 2G networks. Both EDGE and 1xRTT are 3G standards, as defined by the ITU, but are usually marketed as 2.9G due to their comparatively low speeds and high delays when compared to true 3G technologies.
+True 3G systems such as EV-DO, W-CDMA (including HSPA) provide combined circuit switched and packet switched data and voice services from the outset, usually at far better data rates than 2G networks with their extensions. All of these services can be used to provide combined mobile voice access and Internet access at remote locations.
+4G networks provide even higher bitrates and many architectural improvements, which are not necessarily visible to the consumer. The current 4G systems that are deployed widely are HSPA+, WIMAX and LTE. The latter two are pure packet based networks without traditional voice circuit capabilities. These networks provide voice services via VoIP.
+Some systems are designed for point-to-point line-of-sight communications, once two such nodes get too far apart they can no longer communicate. Other systems are designed to form a wireless mesh network using one of a variety of routing protocols. In a mesh network, when nodes get too far apart to communicate directly, they can still communicate indirectly through intermediate nodes.
+
+
+== Standards ==
+The following standards are included in this comparison.
+
+
+=== Wireless Wide Area Network (WWAN) ===
+EDGE
+EV-DO x1 Rev 0, Rev A, Rev B and x3 standards.
+Flash-OFDM: FLASH(Fast Low-latency Access with Seamless Handoff)-OFDM (Orthogonal Frequency Division Multiplexing)
+GPRS
+HSPA D and U standards.
+Lorawan
+LTE
+RTT
+UMTS over W-CDMA
+UMTS-TDD
+WiMAX: 802.16 standard
+
+
+=== Wireless Local Area Network (WLAN) ===
+Wi-Fi: 802.11a, 802.11b, 802.11g, 802.11n, 802.11ac standards.
+
+
+=== Wireless Personal Area Network (WPAN) and most Wireless Sensor Actor Networks (WSAN) ===
+6loWPAN
+Bluetooth V4.0 with standard protocol and with low energy protocol
+IEEE 802.15.4-2006 (low-level protocol definitions corresponding to the OSI model physical and link layers. ZigBee, 6LoWPAN, etc. build upward in the protocol stack and correspond to the network and transport layers.)
+Thread (network protocol)
+UWB
+Wireless USB
+ZigBee
+
+
+== Overview ==
+Notes: All speeds are theoretical maximums and will vary by a number of factors, including the use of external antennas, distance from the tower and the ground speed (e.g. communications on a train may be poorer than when standing still). Usually the bandwidth is shared between several terminals. The performance of each technology is determined by a number of constraints, including the spectral efficiency of the technology, the cell sizes used, and the amount of spectrum available. For more information, see Comparison of wireless data standards.
+For more comparison tables, see bit rate progress trends, comparison of mobile phone standards, spectral efficiency comparison table and OFDM system comparison table.
+
+
+== Peak bit rate and throughput ==
+When discussing throughput, there is often a distinction between the peak data rate of the physical layer, the theoretical maximum data throughput and typical throughput.
+The peak bit rate of the standard is the net bit rate provided by the physical layer in the fastest transmission mode (using the fastest modulation scheme and error code), excluding forward error correction coding and other physical layer overhead.
+The theoretical maximum throughput for end user is clearly lower than the peak data rate due to higher layer overheads. Even this is never possible to achieve unless the test is done under perfect laboratory conditions.
+The typical throughput is what users have experienced most of the time when well within the usable range to the base station. The typical throughput is hard to measure, and depends on many protocol issues such as transmission schemes (slower schemes are used at longer distance from the access point due to better redundancy), packet retransmissions and packet size. The typical throughput is often even lower because of other traffic sharing the same network or cell, interference or even the fixed line capacity from the base station onwards being limited.
+Note that these figures cannot be used to predict the performance of any given standard in any given environment, but rather as benchmarks against which actual experience might be compared.
+Downlink is the throughput from the base station to the user handset or computer.
+Uplink is the throughput from the user handset or computer to the base station.
+Range is the maximum range possible to receive data at 25% of the typical rate.
+
+
+== Typical spectral use ==
+
+
+=== Frequency ===
+
+
+== See also ==
+Comparison of mobile phone standards
+List of device bandwidths
+OFDM system comparison table
+Spectral efficiency comparison table
+NFC (Near field communication)
+RFID (Radio-frequency identification)
+CIR (Consumer Infrared)
+
+
+== References ==
+
+
+== External links ==
+Mobile WiMAX - Part I: A Technical Overview and Performance Evaluation
+Mobile WiMAX – Part II: A Comparative Analysis
+A Comparison of Bluetooth and IEEE 802.11
+WLAN Trainer at different speeds
+IEEE 802.11 Standard Overview

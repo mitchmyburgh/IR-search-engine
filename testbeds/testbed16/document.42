@@ -1,0 +1,11 @@
+Cloud Federation
+
+Cloud Federation refers to the unionization of software, infrastructure and platform services from disparate networks that can be accessed by a client via the internet. The federation of cloud resources is facilitated through network gateways that connect public or external clouds, private or internal clouds (owned by a single entity) and/or community clouds (owned by several cooperating entities); creating a hybrid cloud computing environment. It is important to note that federated cloud computing services still rely on the existence of physical data centers.
+
+CLOUD FEDERATION BENEFITS
+
+The federation of cloud resources allows clients to optimize enterprise IT service delivery. The federation of cloud resources allows a client to choose the best cloud services provider, in terms of flexibility, cost and availability of services, to meet a particular business or technological need within their organization. Federation across different cloud resource pools allows applications to run in the most appropriate infrastructure environments. The federation of cloud resources also allows an enterprise to distribute workloads around the globe, move data between disparate networks and implement innovative security models for user access to cloud resources.
+
+CLOUD FEDERATION IMPLEMENTATION
+
+One weakness that exists in the federation of cloud resources is the difficulty in brokering connectivity between a client and a given external cloud provider, as they each possess their own unique network addressing scheme. To resolve this issue, cloud providers must grant clients the permission to specify an addressing scheme for each server the cloud provider has extended to the internet. This provides customers with the ability to access cloud services without the need for reconfiguration when using resources from different service providers. Cloud federation can also be implemented behind a firewall, providing clients with a menu of cloud services provided by one or more trusted entities.

@@ -1,0 +1,15 @@
+Cloud Computing vs. Virtualization
+
+Cloud computing is a term that refers to the hosting and delivery methods used to provide software,
+
+platform and infrastructure services to clients on a remote basis over the internet. Virtualization is a term that is commonly used in conjunction with the term cloud computing, but the terms are not
+synonymous, since virtualization refers to the logical creation of an IT resource that doesn’t physically exist. Examples of virtualization include the creation of virtual application servers and virtual storage devices like hard drives. Virtualization is something entirely different from cloud computing, since the creation of virtual resources does not depend on the existence of a cloud computing environment.
+
+VIRTUALIZATION IN USE
+
+There are many different types of virtualization, including hardware, software, desktop, memory, storage, data and network virtualization. Hardware virtualization is one of the most common types of
+virtualization. It is synonymous with platform virtualization, which occurs through the creation of a virtual machine that behaves like a a real computer or computer operating system. Desktop virtualization is also another widely used type of virtualization that creates and stores a client’s desktop on a server that can be remotely accessed by the client over a network. Software virtualization is yet another commonly used type of virtualization that allows different versions of an operating system to coexist and run on the same physical machine, providing the ability to run applications in different environments without the need to invest in additional hardware. As with all types of virtualization, cloud computing is not a prerequisite to its implementation or use. Veteran technology firms like Citrix Systems and junior technology firms, like VMWare are a few of the major players in the virtualization landscape, that continues to grow in popularity and use within the enterprise.
+
+ADVANTAGES OF VIRTUALIZATION
+
+Virtualization brings many advantages to an enterprise. It shares several common threads with the IaaS (information as a service) component of cloud computing; including a reduction in capital expenditures on IT infrastructure (but to a lesser degree) and the ability to deliver flexible and scalable IT resources to an enterprise. Virtualization facilitates the smarter and more efficient use of IT resources within an enterprise; simplifying maintenance and speeding up the configuration and deployment of IT resources. Virtualization also provides another key benefit for an enterprise: a reduction in energy consumption, providing additional operational cost savings for organizations that use the technology.

@@ -1,0 +1,56 @@
+Apache_Tomcat
+'''Apache Tomcat''', often referred to as '''Tomcat''', is an open-source web server developed by the  (ASF). Tomcat implements several  specifications including ,  (JSP), , and , and provides a "pure "   environment in which  code can run.
+Tomcat is developed and maintained by an open community of developers under the auspices of the Apache Software Foundation, released under the  2.0 license, and is .
+==Components==
+Tomcat 4.x was released with Catalina (a servlet container), Coyote (an HTTP connector) and Jasper (a ).
+===Catalina===
+Catalina is Tomcat's  . Catalina implements ' specifications for  and  (JSP). In Tomcat, a Realm element represents a "database" of usernames, passwords, and roles (similar to Unix groups) assigned to those users. Different implementations of Realm allow Catalina to be integrated into environments where such authentication information is already being created and maintained, and then use that information to implement Container Managed Security as described in the Servlet Specification.
+===Coyote===
+Coyote is a Connector component for Tomcat that supports the HTTP 1.1 protocol as a web server. This allows Catalina, nominally a Java Servlet or JSP container, to also act as a plain web server that serves local files as HTTP documents., Apache
+Coyote listens for incoming connections to the server on a specific  port and forwards the request to the Tomcat Engine to process the request and send back a response to the requesting client. Another Coyote Connector, Coyote JK, listens similarly but instead forwards its requests to another web server, such as Apache, using the . This usually offers better performance.
+===Jasper===
+Jasper is Tomcat's JSP Engine.  Jasper parses  to compile them into Java code as servlets (that can be handled by Catalina). At runtime, Jasper detects changes to JSP files and recompiles them.
+As of version 5, Tomcat uses Jasper 2, which is an implementation of the 's  2.0 specification. From Jasper to Jasper 2, important features were added:
+* JSP Tag library pooling - Each tag markup in JSP file is handled by a tag handler class. Tag handler class objects can be pooled and reused in the whole JSP servlet.
+* Background JSP compilation - While recompiling modified JSP Java code, the older version is still available for server requests. The older JSP servlet is deleted once the new JSP servlet has finished being recompiled.
+* Recompile JSP when included page changes - Pages can be inserted and included into a JSP at runtime. The JSP will not only be recompiled with JSP file changes but also with included page changes.
+* JDT Java compiler - Jasper 2 can use the Eclipse JDT (Java Development Tools) Java compiler instead of  and .
+Three new components were added with the release of Tomcat 7:
+===Cluster===
+This component has been added to manage large applications. It is used for  that can be achieved through many techniques. Clustering support currently requires the JDK version 1.5 or later.
+===High availability===
+A high-availability feature has been added to facilitate the scheduling of system upgrades (e.g. new releases, change requests) without affecting the live environment. This is done by dispatching live traffic requests to a temporary server on a different port while the main server is upgraded on the main port. It is very useful in handling user requests on high-traffic web applications.
+===Web application===
+It has also added user- as well as system-based web applications enhancement to add support for deployment across the variety of environments. It also tries to manage sessions as well as applications across the network.
+Tomcat is building additional components.  A number of additional components may be used with Apache Tomcat. These components may be built by users should they need them or they can be downloaded from one of the mirrors.
+==Features==
+Tomcat 7.x implements the Servlet 3.0 and JSP 2.2 specifications. It requires Java version 1.6, although previous versions have run on Java 1.1 through 1.5. Versions 5 through 6 saw improvements in , JSP parsing, performance and scalability. Native wrappers, known as "Tomcat Native", are available for  and Unix for platform integration.
+==History==
+Tomcat started off as a servlet  by , a software architect at . He later helped make the project  and played a key role in its donation by  to the Apache Software Foundation. The  software build automation tool was developed as a side-effect of the creation of Tomcat as an open source project.
+Davidson had initially hoped that the project would become open sourced and, since many open source projects had  books associated with them featuring an animal on the cover, he wanted to name the project after an animal. He came up with '''' since he reasoned the animal represented something that could fend for itself. Although the tomcat was already in use for another O'Reilly title, his wish to see an animal cover eventually came true when O'Reilly published their Tomcat book with a  on the cover in 2003.
+===Releases===
+==Communities==
+Apache software is built as part of a community process that involves both user and developer . The developer list is where discussion on building and testing the next release takes place, while the user list is where users can discuss their problems with the developers and other users.
+Some of the free Apache Tomcat resources and communities include  (a  sponsored community for developers and operators who are running Apache Tomcat in large-scale production environments) and MuleSoft's  (which has instructional guides on installing, updating, configuring, monitoring, troubleshooting and securing various versions of Tomcat).
+==Apache TomEE==
+ (pronounced "Tommy") is the  of Apache Tomcat (Tomcat + Java EE = TomEE) that combines several Java enterprise projects including , Apache OpenWebBeans, ,  and others. In October 2011, the project obtained certification by  as a compatible implementation of the Java EE 6 Web Profile.
+==See also==
+* , producer of Tcat, an enterprise Tomcat server
+* , an application server that can use Tomcat as its web container
+*  Application Server from 
+* , formerly known as JBoss Application Server
+* 
+* , application server that can use Tomcat as its web container
+* , can be added to Tomcat to turn it into a JavaEE server
+* , the  of Java EE, supporting , , , , , , servlets etc.
+* 
+== References ==
+==Bibliography==
+*
+*
+*
+==External links==
+*
+*
+*
+*

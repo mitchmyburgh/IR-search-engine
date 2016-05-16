@@ -1,0 +1,68 @@
+We have discussed the use of lighting as a method of producing more realistic images. This is fine
+for smooth surfaces of uniform color (plaster walls, plastic cups, metallic objects), but many of the objects that
+we want to render have some complex surface finish that we would like to model. In theory, it is possible to try
+to model objects with complex surface finishes through extremely detailed models (e.g. modeling the cover of
+a book on a character by character basis) or to define some sort of regular mathematical texture function (e.g. a
+checkerboard or modeling bricks in a wall). But this may be infeasible for very complex unpredictable textures.
+Textures and Texture Space : Although originally designed for textured surfaces, the process of texture mapping can
+be used to map (or “wrap”) any digitized image onto a surface. For example, suppose that we want to render a
+picture of the Mona Lisa. We could download a digitized photograph of the painting, and then map this image
+onto a rectangle as part of the rendering process.
+There are a number of common image formats which we might use. We will not discuss these formats. Instead,
+we will think of an image simply as a 2-dimensional array of RGB values. Let us assume for simplicity that
+the image is square, of dimensions N  N (OpenGL requires that N actually be a power of 2 for its internal
+representation). Images are typically indexed row by row with the upper left corner as the origin. The individual
+RGB pixel values of the texture image are often called texels, short for texture elements.
+Rather than thinking of the image as being stored in an array, it will be a little more elegant to think of the image
+as function that maps a point (s; t) in 2-dimensional texture space to an RGB value. That is, given any pair
+(s; t), 0  s; t  1, the texture image defines the value of T(s; t) is an RGB value.
+For example, if we assume that our image array Im is indexed by row and column from 0 to N - 1 starting
+from the upper left corner, and our texture space T(s; t) is coordinatized by s (horizontal) and t (vertical)
+Lecture Notes 70 CMSC 427
+from the lower left corner, then we could apply the following function to round a point in image space to the
+corresponding array element:
+T(s; t) = Im[b(1 - t)Nc ; bsNc]; for s; t 2 (0; 1):
+This is illustrated in Fig. 50.
+s
+t
+s
+Image Repeated texture space
+T
+t
+i
+j
+Im
+N-1
+0
+0 N-1
+Texture space
+(single copy)
+Fig. 50: Texture space.
+In many cases, it is convenient to imagine that the texture is an infinite function. We do this by imagining that
+the texture image is repeated cyclically throughout the plane. This is sometimes called a repeated texture. In
+this case we can modify the above function to be
+T(s; t) = Im[b(1 - t)Nc mod N; bsNc mod N]; for s; t 2 R:
+Parameterizations: We wish to “wrap” this 2-dimensional texture image onto a 2-dimensional surface. We need
+to define a wrapping function that achieves this. The surface resides in 3-dimensional space, so the wrapping
+function would need to map a point (s; t) in texture space to the corresponding point (x; y; z) in 3-space.
+This is typically done by first computing a 2-dimensional parameterization of the surface. This means that we
+associate each point on the object surface with two coordinates (u; v) in surface space. Then we have three
+functions, x(u; v), y(u; v) and z(u; v), which map the parameter pair (u; v) to the x; y; z-coordinates of the
+corresponding surface point. We then map a point (u; v) in the parameterization to a point (s; t) in texture
+space.
+Let’s make this more concrete with an example. Suppose that our shape is the surface of a unit sphere centered
+at the origin. We can represent any point on the sphere with two angles, representing the point’s latitude and
+longitude. We will use a slightly different approach. Any point on the sphere can be expressed by two angles,
+ and . (These will take the roles of the parameters u and v mentioned above.) Think of the vector from the
+origin to the point on the sphere. Let  denote the angle in radians between this vector and the z-axis (north
+pole). So  is related to, but not equal to, the latitude. We have 0    . Let  denote the counterclockwise
+angle of the projection of this vector onto the xy-plane. Thus 0    2. (This is illustrated in Fig. 51.)
+What are the coordinates of the point on the sphere as a function of these two parameters? The z-coordinate is
+just cos , and clearly ranges from 1 to -1 as  increases from 0 to . The length of the projection of such a
+vector onto the x; y-plane will be sin . It follows that the x and y coordinates are related to the cosine and sine
+of angle , respectively, but scaled by this length. Thus we have
+z(; ) = cos ; x(; ) = cos  sin ; y(; ) = sin  sin :
+If we wanted to normalize the values of our parameters to the range [0; 1], we could reparameterize by letting
+u = 1-(=) and v = =(2). (The reason for subtracting = from 1 is that its value decreases as we
+go from bottom to top, and having it increase is more natural.) Thus, u implicitly encodes a function of the
+latitude ranging from 0 at the so

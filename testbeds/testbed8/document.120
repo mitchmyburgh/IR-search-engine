@@ -1,0 +1,24 @@
+So the condition we need to check at each node is:
+•	if the node is the left child of its parent, then it must be smaller than (or equal to) the parent and it must pass down the value from its parent to its right subtree to make sure none of the nodes in that subtree is greater than the parent
+•	if the node is the right child of its parent, then it must be larger than the parent and it must pass down the value from its parent to its left subtree to make sure none of the nodes in that subtree is lesser than the parent.
+A recursive solution in C++ can explain this further:
+struct TreeNode {
+    int key;
+    int value;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
+
+bool isBST(struct TreeNode *node, int minKey, int maxKey) {
+    if(node == NULL) return true;
+    if(node->key < minKey || node->key > maxKey) return false;
+    
+    return isBST(node->left, minKey, node->key) && isBST(node->right, node->key, maxKey);
+}
+The initial call to this function can be something like this:
+if(isBST(root, INT_MIN, INT_MAX)) {
+    puts("This is a BST.");
+} else {
+    puts("This is NOT a BST!");
+}
+Essentially we keep creating a valid range (starting from [MIN_VALUE, MAX_VALUE]) and keep shrinking it down for each node as we go down recursively.

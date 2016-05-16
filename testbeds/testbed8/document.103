@@ -1,0 +1,60 @@
+Deletion[edit]
+As in most balanced binary trees, the deletion of an internal node can be turned into the deletion of a leaf node by swapping the internal node with either its closest predecessor or successor, depending on which are in the tree or on the implementor's whims. Retrieving a predecessor is simply a matter of following one left link and then all of the remaining right links. Similarly, the successor can be found by going right once and left until a null pointer is found. Because of the AA property of all nodes of level greater than one having two children, the successor or predecessor node will be in level 1, making their removal trivial.
+To re-balance a tree, there are a few approaches. The one described by Andersson in his original paper is the simplest, and it is described here, although actual implementations may opt for a more optimized approach. After a removal, the first step to maintaining tree validity is to lower the level of any nodes whose children are two levels below them, or who are missing children. Then, the entire level must be skewed and split. This approach was favored, because when laid down conceptually, it has three easily understood separate steps:
+1.	Decrease the level, if appropriate.
+2.	Skew the level.
+3.	Split the level.
+However, we have to skew and split the entire level this time instead of just a node, complicating our code.
+function delete is
+    input: X, the value to delete, and T, the root of the tree from which it should be deleted.
+    output: T, balanced, without the value X.
+   
+    if nil(T) then
+        return T
+    else if X > value(T) then
+        right(T) := delete(X, right(T))
+    else if X < value(T) then
+        left(T) := delete(X, left(T))
+    else
+        If we're a leaf, easy, otherwise reduce to leaf case. 
+        if leaf(T) then
+            return Nil
+        else if nil(left(T)) then
+            L := successor(T)
+            right(T) := delete(value(L), right(T))
+            value(T) := value(L)
+        else
+            L := predecessor(T)
+            left(T) := delete(value(L), left(T))
+            value(T) := value(L)
+        end if
+    end if
+
+    Rebalance the tree. Decrease the level of all nodes in this level if
+    necessary, and then skew and split all nodes in the new level.
+    T := decrease_level(T)
+    T := skew(T)
+    right(T) := skew(right(T))
+    if not nil(right(T))
+        right(right(T)) := skew(right(right(T)))
+    end if
+    T := split(T)
+    right(T) := split(right(T))
+    return T
+end function
+function decrease_level is
+    input: T, a tree for which we want to remove links that skip levels.
+    output: T with its level decreased.
+
+    should_be = min(level(left(T)), level(right(T))) + 1
+    if should_be < level(T) then
+        level(T) := should_be
+        if should_be < level(right(T)) then
+            level(right(T)) := should_be
+        end if
+    end if
+    return T
+end function
+A good example of deletion by this algorithm is present in the Andersson paper.
+Performance[edit]
+The performance of an AA tree is equivalent to the performance of a red-black tree. While an AA tree makes more rotations than a red-black tree, the simpler algorithms tend to be faster, and all of this balances out to result in similar performance. A red-black tree is more consistent in its performance than an AA tree, but an AA tree tends to be flatter, which results in slightly faster search times.[1]

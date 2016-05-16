@@ -1,0 +1,15 @@
+A Hacked Mobile Antenna In A Backpack Could Spy On Cell Phone Conversations
+
+Vulnerability could allow for homegrown NSA-like spies.
+
+Two security experts with the firm iSEC told Reuters that they've developed a system that would allow pretty much anyone, with as little as $250 worth of equipment, to make a mobile spy station that could get illicit access to any Verizon device. Ever wanted to feel like the NSA?
+
+The hack relies on a femtocell, a smallish mobile antennae sold by wireless carriers like Verizon and AT&T that act like very small cell towers. You typically use a femtocell in areas where you don't have cell service; plug it into your broadband connection and it'll deliver a strong signal with about a 40-foot range. Verizon calls their model a "Network Extender" and sells it for $250, though they can be bought used for less. This particular hack is the first on a CDMA network like Verizon's (CDMA is one kind of network protocol, used by Sprint and Verizon. T-Mobile, AT&T, and just about every European and Asian networks all use the GSM protocol), though there's no reason to think other networks' femtocells couldn't be similarly hacked.
+
+The two security experts figured out a way, which they're not disclosing, to hack a Verizon femtocell and, according to Reuters, "eavesdrop on text messages, photos and phone calls made with an Android phone and an iPhone." But the most concerning thing is that these femtocells are fairly mobile; with an additional antenna to boost that 40-foot range and a mobile source of battery power, you could stick a hacked femtocell in a backpack, drop it in a crowded place, and hack into anyone who mistakenly uses the network.
+
+It's especially insidious because unlike a Wi-Fi connection, users have no indication that they're connected to a femtocell rather than a regular tower. Cell service doesn't require a login or confirmation; it's assumed you want to be connected to your network whenever you're in range of anything that'll connect you. There's no alert for the same reason you don't get an alert when you switch from connecting to one tower to connecting to another tower: it happens too often and it's unlikely to be hacked.
+
+But a femtocell can, apparently, be hacked. The security experts aren't saying how, waiting to disclose it in a few weeks to a pair of hacker conferences in Las Vegas, the Black Hat and Def Con conferences.
+
+Verizon says as soon as they were made aware of the security hole, they patched their femtocells to plug the hole. The iSEC guys say their hacked femtocell still works, because they had hacked it before March, when the patch was released. That means the hack is no longer of much use to evildoers, but might indicate that hacking a femtocell isn't quite as hard as Verizon would like it to be.

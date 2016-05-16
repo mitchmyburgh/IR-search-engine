@@ -1,0 +1,87 @@
+ Cryptographic hash function 
+   From Wikipedia, the free encyclopedia
+    Jump to: 
+   navigation, 
+   search 
+       A cryptographic hash function (specifically 
+      SHA-1) at work. A small change in the input (in the word "over") drastically changes the output (digest). This is the so-called 
+      avalanche effect.
+   A cryptographic hash function is a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (a hash function) which is designed to also be one-way function, that is, a function which is infeasible to invert. The only way to recreate the input data from an ideal cryptographic hash function's output is to try a large number of possible inputs to see if they produce a match. Bruce Schneier has called one-way hash functions "the workhorses of modern cryptography".[1] The input data is often called the message, and the output (the hash value or hash) is often called the message digest or simply the digest. 
+   The ideal cryptographic hash function has four main properties: 
+    it is quick to compute the hash value for any given message 
+    it is infeasible to generate a message from its hash value except by trying all possible messages 
+    a small change to a message should change the hash value so extensively that the new hash value appears uncorrelated with the old hash value 
+    it is infeasible to find two different messages with the same hash value 
+   Cryptographic hash functions have many information-security applications, notably in digital signatures, message authentication codes (MACs), and other forms of authentication. They can also be used as ordinary hash functions, to index data in hash tables, for fingerprinting, to detect duplicate data or uniquely identify files, and as checksums to detect accidental data corruption. Indeed, in information-security contexts, cryptographic hash values are sometimes called (digital) fingerprints, checksums, or just hash values, even though all these terms stand for more general functions with rather different properties and purposes. 
+     Contents 
+     1 Properties 
+       1.1 Degree of difficulty 
+     2 Illustration 
+     3 Applications 
+       3.1 Verifying the integrity of files or messages 
+       3.2 Password verification 
+       3.3 Proof-of-work 
+       3.4 File or data identifier 
+       3.5 Pseudorandom generation and key derivation 
+     4 Hash functions based on block ciphers 
+     5 Merkle–Damgård construction 
+     6 Use in building other cryptographic primitives 
+     7 Concatenation of cryptographic hash functions 
+     8 Cryptographic hash algorithms 
+     9 See also 
+     10 References 
+     11 External links 
+   Properties[edit] 
+   Most cryptographic hash functions are designed to take a string of any length as input and produce a fixed-length hash value. 
+   A cryptographic hash function must be able to withstand all known types of cryptanalytic attack. At a minimum, it must have the following properties: 
+    Pre-image resistance 
+       Given a hash value 
+       h it should be difficult to find any message 
+       m such that 
+       h = hash(m). This concept is related to that of 
+       one-way function. Functions that lack this property are vulnerable to 
+       preimage attacks.
+    Second pre-image resistance 
+       Given an input 
+       m
+       1 it should be difficult to find different input 
+       m
+       2 such that 
+       hash(m1) = hash(m2). Functions that lack this property are vulnerable to 
+       second-preimage attacks.
+    Collision resistance 
+       It should be difficult to find two different messages 
+       m
+       1 and 
+       m
+       2 such that 
+       hash(m1) = hash(m2). Such a pair is called a cryptographic 
+       hash collision. This property is sometimes referred to as 
+       strong collision resistance. It requires a hash value at least twice as long as that required for preimage-resistance; otherwise collisions may be found by a 
+       birthday attack.
+   These properties imply that a malicious adversary cannot replace or modify the input data without changing its digest. Thus, if two strings have the same digest, one can be very confident that they are identical. 
+   A function meeting these criteria may still have undesirable properties. Currently popular cryptographic hash functions are vulnerable to length-extension attacks: given hash(m) and len(m) but not m, by choosing a suitable m' an attacker can calculate hash(m || m') where || denotes concatenation.[2] This property can be used to break naive authentication schemes based on hash functions. The HMAC construction works around these problems. 
+   Ideally, one may wish for even stronger conditions. It should be impossible for an adversary to find two messages with substantially similar digests; or to infer any useful information about the data, given only its digest. Therefore, a cryptographic hash function should behave as much as possible like a random function while still being deterministic and efficiently computable. 
+   Checksum algorithms, such as CRC32 and other cyclic redundancy checks, are designed to meet much weaker requirements, and are generally unsuitable as cryptographic hash functions. For example, a CRC was used for message integrity in the WEP encryption standard, but an attack was readily discovered which exploited the linearity of the checksum. 
+   Degree of difficulty[edit] 
+   In cryptographic practice, "difficult" generally means "almost certainly beyond the reach of any adversary who must be prevented from breaking the system for as long as the security of the system is deemed important". The meaning of the term is therefore somewhat dependent on the application, since the effort that a malicious agent may put into the task is usually proportional to his expected gain. However, since the needed effort usually grows very quickly with the digest length, even a thousand-fold advantage in processing power can be neutralized by adding a few dozen bits to the latter. 
+   For messages selected from a limited set of messages, for example passwords or other short messages, it can be feasible to invert a hash by trying all possible messages in the set. Because cryptographic hash functions are typically designed to be computed quickly, special key derivation functions that require greater computing resources have been developed that make such brute force attacks more difficult. 
+   In some theoretical analyses "difficult" has a specific mathematical meaning, such as "not solvable in asymptotic polynomial time". Such interpretations of difficulty are important in the study of provably secure cryptographic hash functions but do not usually have a strong connection to practical security. For example, an exponential time algorithm can sometimes still be fast enough to make a feasible attack. Conversely, a polynomial time algorithm (e.g., one that requires n20 steps for n-digit keys) may be too slow for any practical use. 
+   Illustration[edit] 
+   An illustration of the potential use of a cryptographic hash is as follows: Alice poses a tough math problem to Bob and claims she has solved it. Bob would like to try it himself, but would yet like to be sure that Alice is not bluffing. Therefore, Alice writes down her solution, computes its hash and tells Bob the hash value (whilst keeping the solution secret). Then, when Bob comes up with the solution himself a few days later, Alice can prove that she had the solution earlier by revealing it and having Bob hash it and check that it matches the hash value given to him before. (This is an example of a simple commitment scheme; in actual practice, Alice and Bob will often be computer programs, and the secret would be something less easily spoofed than a claimed puzzle solution). 
+   Applications[edit] 
+   Verifying the integrity of files or messages[edit] 
+    Main article: 
+    File verification
+   An important application of secure hashes is verification of message integrity. Determining whether any changes have been made to a message (or a file), for example, can be accomplished by comparing message digests calculated before, and after, transmission (or any other event). 
+   For this reason, most digital signature algorithms only confirm the authenticity of a hashed digest of the message to be "signed". Verifying the authenticity of a hashed digest of the message is considered proof that the message itself is authentic. 
+   MD5, SHA1, or SHA2 hashes are sometimes posted along with files on websites or forums to allow verification of integrity.[3] This practice establishes a chain of trust so long as the hashes are posted on a site authenticated by HTTPS. 
+   Password verification[edit] 
+   A related application is password verification (first invented by Roger Needham). Storing all user passwords as cleartext can result in a massive security breach if the password file is compromised. One way to reduce this danger is to only store the hash digest of each password. To authenticate a user, the password presented by the user is hashed and compared with the stored hash. (Note that this approach prevents the original passwords from being retrieved if forgotten or lost, and they have to be replaced with new ones.) The password is often concatenated with a random, non-secret salt value before the hash function is applied. The salt is stored with the password hash. Because users have different salts, it is not feasible to store tables of precomputed hash values for common passwords. Key stretching functions, such as PBKDF2, Bcrypt or Scrypt, typically use repeated invocations of a cryptographic hash to increase the time required to perform brute force attacks on stored password digests. 
+    Main article: 
+    Password cracking
+   In 2013 a long-term Password Hashing Competition was announced to choose a new, standard algorithm for password hashing.[4] 
+   Proof-of-work[edit] 
+    Main article: 
+    Proof-of-work system
+   A proof-of-wor

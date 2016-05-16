@@ -1,0 +1,40 @@
+In genetic algorithms, inheritance is the ability of modeled objects to mate, mutate (similar to biological mutation), and propagate their problem solving genes to the next generation, in order to produce an evolved solution to a particular problem. The selection of objects that will be inherited from in each successive generation is determined by a fitness function, which varies depending upon the problem being addressed.
+The traits of these objects are passed on through chromosomes by a means similar to biological reproduction. These chromosomes are generally represented by a series of genes, which in turn are usually represented using binary numbers. This propagation of traits between generations is similar to the inheritance of traits between generations of biological organisms. This process can also be viewed as a form of reinforcement learning, because the evolution of the objects is driven by the passing of traits from successful objects which can be viewed as a reward for their success, thereby promoting beneficial traits.
+
+
+== Process ==
+Once a new generation is ready to be created, all of the individuals that have been successful and have been chosen for reproduction are randomly paired together. Then the traits of these individuals are passed on through a combination of crossover and mutation. This process follows these basic steps:
+Pair off successful objects for mating.
+Determine randomly a crossover point for each pair.
+Switch the genes after the crossover point in each pair.
+Determine randomly if any genes are mutated in the child objects.
+After following these steps, two child objects will be produced for every pair of parent objects used. Then, after determining the success of the objects in the new generation, this process can be repeated using whichever new objects were most successful. This will usually be repeated until either a desired generation is reached or an object that meets a minimum desired result from the fitness function is found.
+While crossover and mutation are the common genetic operators used in inheritance, there are also other operators such as regrouping and colonization-extinction.
+
+
+=== Example ===
+Assume these two strings of bits represent the traits being passed on by two parent objects:
+Object 1: 1100011010110001
+Object 2: 1001100110011001
+Now, consider that the crossover point is randomly positioned after the fifth bit:
+Object 1: 11000 | 11010110001
+Object 2: 10011 | 00110011001
+During crossover, the two objects will swap all of the bits after the crossover point, leading to:
+Object 1: 11000 | 00110011001
+Object 2: 10011 | 11010110001
+Finally, mutation is simulated on the objects by there being zero or more bits flipped randomly. Assuming the tenth bit for object 1 is mutated, and the second and seventh bits are mutated for object 2, the final children produced by this inheritance would be:
+Object 1: 1100000111011001
+Object 2: 1101110010110001
+
+
+== See also ==
+Artificial intelligence
+Bioinformatics
+Speciation (genetic algorithm)
+
+
+== References ==
+
+
+== External links ==
+BoxCar 2D An interactive example of the use of a genetic algorithm to construct 2-dimensional cars.

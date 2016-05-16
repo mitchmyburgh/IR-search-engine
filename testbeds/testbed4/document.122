@@ -1,0 +1,25 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Distribution Ray Tracing
+In Distribution Ray Tracing (hereafter abbreviated as "DRT"), our goal is to render a scene as accurately as possible. Whereas Basic Ray Tracing computed a very crude approximation to radiance at a point, in DRT we will attempt to compute the integral as accurately as possible. Additionally, the intensity at each pixel will be properly modeled as an integral as well. Since these integrals cannot be computed exactly, we must resort to numerical integration techniques to get approximate solutions.
+Aside: When originally introduced, DRT was known as "Distributed Ray Tracing." We will avoid this name to avoid confusion with distributed computing, especially because some ray-tracers are implemented as parallel algorithms.
+13.1 Problem statement
+Recall that, shading at a surface point is given by:
+L(~ de) =Z? ?(~ de, ~ di(f,?))L(-~ di(f,?))(~n· ~ di)d? (87) This equation says that the radiance emitted in direction ~ de is given by integrating over the hemisphere ? the BRDF ? times the incoming radiance L(-~ di(f,?)). Directions on the hemisphere are parameterized as ~ di = (sin?sinf,sin?cosf,cos?) (88) The differential solid angle d? is given by:
+d? = sin?d?df (89)
+and so:
+L(~ de) =Zf?[0,2p]Z??[0,p/2] ?(~ de, ~ di(f,?))L(-~ di(f,?))(~n· ~ di) sin?d?df (90) This is an integral over all incoming light directions, and we cannot compute these integrals in closed-form. Hence, we need to develop numerical techniques to compute approximations.
+Intensity of a pixel. Up to now, we've been engaged in a ?ction, namely, that the intensity of a pixel is the light passing through a single point on an image plane. However, real sensors - including cameras and the human eye - cannot gather light at an in?nitesimal point, due both to the nature of light and the physical properties of the sensors. The actual amount of light passing through any in?nitesimal region (a point) is in?nitesimal (approaching zero) and cannot be measured. Instead light must be measured within a region. Speci?cally, the image plane (or
+Copyright c
+2005 David Fleet and Aaron Hertzmann 92
+CSC418 / CSCD18 / CSC2504 Distribution Ray Tracing
+retina) is divided up into an array of tiny sensors, each of which measures the total light incident on the area of the sensor.
+As derived previously, the image plane can be parameterized as ¯ p(a,ß) = ¯ p0 + a~u + ß~v. In camera coordinates, ¯ pc 0 = (0,0,f), and the axes correspond to the x and y axes: ~uc = (1,0,0) and ~vc = (0,1,0). Then, we placed pixel coordinates on a grid: ¯ pci,j = (L+i?i,T +j?j,f) = ¯ p0+a, where ?i = (R-L)/nc and ?j = (B -T)/nr, and L,T,B,R are the boundaries of the image plane.
+We will now view each pixel as an area on the screen, rather than a single point. In other words, pixel (i,j) is all values ¯ p(a,ß) for amin = a < amax, ßmin = ß < ßmax. The bounds of each pixel are: amin = L + i?i,amax = L + (i + 1)?i,ßmin = T + j?j, and ßmax = T + (j + 1)?j. (In general, we will set things up so that this rectangle is a square in world-space.) For each point on the image plane, we can write the ray passing through this pixel as
+~ d(a,ß) =
+¯ p(a,ß)-¯ e ||¯ p(a,ß)-¯ e||
+(91)
+To compute the color of a pixel, we should compute the total light energy passing through this rectangle, i.e., the ?ux at that pixel: Fi,j =Zamin=a<amaxZßmin=ß<ßmax H(a,ß)dadß (92) where H(a,ß) is the incoming light (irradiance) on the image at position a,ß. For color images, this integration is computed for each color channel. Again, we cannot compute this integral exactly.
+Aside: An even more accurate model of a pixel intensity is to weight rays according to how close they are to the center of the pixel, using a Gaussian weighting function.

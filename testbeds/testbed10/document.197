@@ -1,0 +1,63 @@
+Beyond PageRank: Machine Learning for Static Ranking 
+
+
+Matthew Richardson
+Amit Prakash 
+Eric Brill 
+
+1. INTRODUCTION
+Over the past decade, the Web has grown exponentially in size.
+Unfortunately, this growth has not been isolated to good-quality
+pages. The number of incorrect, spamming, and malicious (e.g.,
+phishing) sites has also grown rapidly. The sheer number of both
+good and bad pages on the Web has led to an increasing reliance
+on search engines for the discovery of useful information. Users
+rely on search engines not only to return pages related to their
+search query, but also to separate the good from the bad, and
+order results so that the best pages are suggested first.
+To date, most work on Web page ranking has focused on
+improving the ordering of the results returned to the user (querydependent
+ranking, or dynamic ranking). However, having a good
+query-independent ranking (static ranking) is also crucially
+important for a search engine. A good static ranking algorithm
+provides numerous benefits: 
+
+• Relevance: The static rank of a page provides a general
+indicator to the overall quality of the page. This is a
+useful input to the dynamic ranking algorithm.
+• Efficiency: Typically, the search engine’s index is
+ordered by static rank. By traversing the index from highquality
+to low-quality pages, the dynamic ranker may
+abort the search when it determines that no later page
+will have as high of a dynamic rank as those already
+found. The more accurate the static rank, the better this
+early-stopping ability, and hence the quicker the search
+engine may respond to queries.
+• Crawl Priority: The Web grows and changes as quickly
+as search engines can crawl it. Search engines need a way
+to prioritize their crawl—to determine which pages to recrawl,
+how frequently, and how often to seek out new
+pages. Among other factors, the static rank of a page is
+used to determine this prioritization. A better static rank
+thus provides the engine with a higher quality, more upto-date
+index. 
+
+7. CONCLUSIONS
+A good static ranking is an important component for today’s
+search engines and information retrieval systems. We have
+demonstrated that PageRank does not provide a very good static
+ranking; there are many simple features that individually out
+perform PageRank. By combining many static features, fRank
+achieves a ranking that has a significantly higher pairwise
+accuracy than PageRank alone. A qualitative evaluation of the top
+documents shows that fRank is less technology-biased than
+PageRank; by using popularity data, it is biased toward pages that
+Web users, rather than Web authors, visit. The machine learning
+component of fRank gives it the additional benefit of being more
+robust against spammers, and allows it to leverage further
+developments in the machine learning community in areas such as
+adversarial classification. We have only begun to explore the
+options, and believe that significant strides can be made in the
+area of static ranking by further experimentation with additional
+features, other machine learning techniques, and additional
+sources of data. 

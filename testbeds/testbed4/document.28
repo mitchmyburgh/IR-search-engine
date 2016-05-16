@@ -1,0 +1,22 @@
+geometric details D = S 	B, i.e., the fine surface features
+that have been removed, represent the high frequencies of S and are stored as detail information.
+This allows reconstructing the original surface S by adding the geometric details back onto the
+base surface: S = B  D. The special operators 	 and  are called the decomposition and
+the reconstruction operator of the multiresolution framework, respectively. This multiresolution
+surface representation is now enhanced by an editing operator, that is used to deform the smooth
+base surface B into a modified version B0. Adding the geometric details onto the deformed base
+surface then results in a multiresolution deformation S0 = B0  D.
+Notice that in general more than one decomposition step is used to generate a hierarchy of
+meshes S = S0, S1, . . . , Sk = B with decreasing geometric complexity. In this case the frequencies
+that are lost from one level Si to the next smoother one Si+1 are stored as geometric details
+Di+1 = Si 	Si+1, such that after deforming the base surface to B0, the modified original surface
+can be reconstructed by S0 = B0Lk-1
+i=0 Dk-i. Since the generalization to several hierarchy levels
+is straightforward, we restrict our explanations to the simpler case of a two-band decomposition,
+as shown in Fig. 11.7.
+A complete multiresolution deformation framework has to provide the three basic operators
+shown in Fig. 11.7: the decomposition operator (detail analysis), the editing operator (shape
+deformation), and the reconstruction operator (detail synthesis). The decomposition is typically
+performed by mesh smoothing or fairing (Chapter 7), and surface deformation has been discussed
+in the previous sections. The missing component is a suitable representation for the geometric
+detail D = S 	 B, which we describe in the following.

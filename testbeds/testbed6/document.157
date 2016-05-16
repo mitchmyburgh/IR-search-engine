@@ -1,0 +1,43 @@
+
+      Traversing binary trees 
+       December 25, 2012 by aquameerkat Leave a comment  
+      It can be hard to remember how to traverse trees by name. It can also be hard to understand the difference between traversing in different ways(postorder, preorder, inorder, level order, etc). I try here to make it easier for the reader to understand the different ways of traversing a binary tree. Intuition is the key to remembering(and visualization ofcourse). 
+       I use the words parents and children for the elements in the tree instead of nodes, root, branches and leafs. I think those words are easier to describe what is going on without getting anyone too confused. 
+      Recursive traversal 
+      I want to firstly point out that this method is commonly called “depth/height traversal”. However I use the word recursion as it seems more appropriate to me. There are three ways to traverse a tree recursively. The only real difference between them is the order we visit the parent node. 
+       Pre order ——- here we visit the parent in the beginning 
+       In order ——— here we visit the parent second 
+       Post order —— here we visit the parent lastly 
+      Because recursion is hard to grasp and even harder to have a visual insight of the goings, we will use a simple example to begin with. We start by examining, with all three methods, this binary tree:  
+      Pre order 
+      Here the path we follow to traverse is: 
+       Parent 
+       Left child 
+       Right child 
+     
+      In order 
+      Here the path we follow to traverse is: 
+       Left child 
+       Parent 
+       Right child 
+      
+      Post order 
+      Here the path we follow to traverse is: 
+       Left child 
+       Right child 
+       Parent 
+      The bigger picture 
+      All this seems simple for a tree with only three nodes. But what happens when we have a huge tree with multiple nodes? Which node would we visit first? 
+      The answers are rather simple but there are not good resources actually to give a good visualization of how a recursive traversing can look like. 
+      So let’s start by taking this big tree:  
+      The trick is to start by seeing see the whole structure as a tree with three nodes. In all three traversing methods we start with the node on the top of the tree: the root node. We thus see that as the parent in the beginning of the traversing. All the rest of the nodes on the left is considered the left child and everything on the right of it is considered the right child.  The bigger complex tree has been compressed to a three-node tree. We can now start traversing it with whatever -order traversal method we want. 
+      
+      An even more complicated tree could look like bellow. However exactly the same principles are valid.  This looks a lot like a fractal, doesn’t it? That’s because fractals are actually based on recursion. The only difference with this example is that the recursion is not endless but instead is made of three different levels: the outer level where we see three cyan circles, the level where we see three green circles and the level where we see three nodes(inside each green circle). 
+      Traversal by Breadth 
+      All methods discussed earlier are actually what is called traversal by height or depth. I am not so sure as to why we call it that instead of traversal by recursion as the real difference between depth traversal and breadth traversal is: 
+       Height traversal uses recursion. 
+       Breadth traversal is linear, going from one node to the next as you see the whole tree. 
+      Traverse by level 
+      Traversing by breadth or by level(which is more intuitive) is the simplest method to traverse a tree. You can see the nodes of an arbitrary tree grouped into different levels depending on how close to the root they are. In the bellow tree I have numbered the different level of nodes:  Node with value 4(the root) belongs to level 1. Nodes 2 and 7 belong to level 2. Lastly, nodes 5, 6, 9 and 1 belong to level 3. 
+      To traverse the tree with traversal by level we just go from left to right on each level jumping from node to node like this:  
+

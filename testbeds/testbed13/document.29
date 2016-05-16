@@ -1,0 +1,149 @@
+  
+---  
+|  |  |  |  |  |  |  |  |  |  |  |  
+---|---|---|---|---|---|---|---|---|---|---|---  
+|  |  |  |  |  |  |  |  |  |  |  
+|  | Sponsors  
+  
+  
+---  
+  
+  
+Air Force Office  
+of Scientific Research  
+  
+  
+  
+  
+Advanced Research and Development Activity  
+  
+  
+  
+National Security  
+Agency  
+  
+  
+  
+Army Research  
+Office  
+  
+  
+  
+National Science  
+ Foundation  
+  
+  
+  
+Department of  
+Defense  
+  
+  
+  
+The goal of our group is to implement a quantum computer with superconducting
+qubits. There exist many quantum systems that could be used as part of a
+quantum computer, but the class of superconducting qubits based on Josephson
+junction circuits is one of the most promising. One advantage of these qubits
+is the ability to precisely engineer the Hamiltonian of the system, which
+includes single qubit design, multiple qubit design, and measurement design.
+The superconducting circuit we study is the Persistent-Current Qubit (PC
+Qubit).
+
+A fully functional single qubit is the first step towards a quantum computer.
+This is why single qubit characterization and the demonstration of single
+qubit control is our top priority. One of the hallmarks of a quantum system is
+its discrete energy levels, and so characterization always includes a study of
+the qubit energy spectra via spectroscopy. Single qubit control is studied by
+applying radiation to the qubit and using nanosecond-scale resolution
+measurements to watch population transfer between eigenstates.
+
+Just as important as a fully functional qubit is a good way to measure the
+qubit. The conventional way of measuring flux qubits is by ramping the bias
+current of a DC SQUID magnetometer until a voltage is seen across the DC
+SQUID. The qubit state is then inferred from the current at which the switch
+to finite voltage takes place. However, strong qubit decoherence can result
+due to this readout process. To address this we have experimentally
+implemented a resonant readout technique that only requires the readout SQUID
+to be biased at low currents along the supercurrent branch. The low current
+bias tends to maintain the first-order noise isolation, helping to minimize
+the level of decoherence of the qubit. Since the SQUID does not switch to the
+voltage state, the number of quasi-particles is also drastically reduced. In
+addition, the resonant readout approach utilizes a narrow-band filter that
+shields the qubit from broadband noise.
+
+The greatest applications of a quantum computer require thousands of qubits
+coherently coupled. To avoid having enormous amounts of room temperature
+electronics, as well as the noise they contribute, it would be extremely
+advantageous to integrate qubit and control electronics monolithically. Modern
+superconducting foundries, such as the one at MIT Lincoln Laboratory, have the
+capability of manufacturing classical digital and analog electronics alongside
+quantum bits in the same integrated circuit process. We have recently studied
+a single Josephson junction coupled inductively to the PC Qubit. When
+sufficient dc current is provided, the device acts as a current controlled
+oscillator. Utilizing radiation sources directly integrated with qubits
+permits individual control radiation for many different qubits with a modest
+overhead in room-temperature electronic complexity. The eventual need for very
+large-scale control circuitry to control timing and order of operations on
+different qubits also has us investigating Rapid Single Flux Quantum (RSFQ).
+RSFQ is capable of shuttling fundamental quanta of magnetic flux throughout a
+microprocessor at clock speeds of 10's of GHz. These magnetic quanta are used
+as digital data bits, and can also be used to stimulate the state of the
+qubit.
+
+A thorough understanding of the nature of the decoherence present in our
+system is another extremely important step towards a quantum computer. Probing
+decoherence with Electromagnetically Induced Transparency is a technique we
+have mapped from the atomic world to the PC Qubit. The basic idea is that you
+utilize three states of the qubit, two meta-stable states 1 and 2, and a
+third, shorter-lived state 3, that may spontaneously decay (to other
+unmentioned states) at a relatively fast rate R3. A strong "control" microwave
+source couples the 2-3 transition, and a weak "probe" microwave source couples
+the 1-3 transition. Individually, the microwaves from the probe and control
+sources are readily absorbed by the qubit and thus the transmittance of the
+radiation through the PC Qubit is quite low. However, when the control and
+probe sources are applied simultaneously, destructive quantum interference
+between the qubit states involved in the two driven transitions causes the
+qubit to become "transparent" to both the probe and control radiation. Thus,
+the fields pass through with virtually no absorption. This can serve as a
+sensitive probe of decoherence since even the smallest deviations from perfect
+destructive interference between the qubit states results in a loss of
+transparency.
+
+With the daunting tasks involved with building a large quantum computer, the
+ability to do near-term quantum computation is quite attractive. This is why
+we have designed schemes to implement the Factorized Quantum Lattice-Gas
+Algorithm (FQLGA) for fluid dynamics simulation, as well as a scheme to run
+our quantum computer as an Adiabatic Quantum Computer. The FQLGA is the
+quantum version of classical lattice-gases. By replacing bits with qubits you
+gain an exponential decrease in required memory and the ability to simulate
+arbitrarily small viscosities. These advantages are seen with only modest
+numbers of qubits, making the implementation foreseeable in the not so far
+future. We have demonstrated multiple schemes to implement this algorithm with
+the PC Qubit. Adiabatic quantum computation, while mathematically equivalent
+to conventional quantum computation, runs by exploiting the ability of
+coherent quantum systems to adiabatically follow the ground state of a slowly
+changing Hamiltonian. This has great practical interest because encoding a
+quantum computation in a single eigenstate, the ground state, offers intrinsic
+protection against dephasing and dissipation. We have demonstrated a scalable
+superconducting architecture for adiabatic quantum computation that can handle
+any class NP problem without requiring interqubit couplings that vary during
+the course of the computation. The proposal we have given requires neither
+interqubit couplings to extend beyond nearest neighbors nor qubit measurements
+to be highly efficient.
+
+|  
+|
+
+Massachusetts Institute of Technology | 77 Massachusetts Avenue, Room 13-3057
+| Cambridge, MA 02139  
+617.253.0085--Tel | 617.258.6640--Fax | emoran@mit.edu  
+  
+---  
+home | about the group | our research | publications | people | classes | (C)
+Massachusetts Institute of Technology  
+|
+
+  *[v]: View this template
+  *[e]: Edit this template
+  *[t]: Discuss this template
+  *[RSS]: Really Simple Syndication
+

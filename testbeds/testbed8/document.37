@@ -1,0 +1,47 @@
+Anonymous union
+
+In C++, unions can also be anonymous; that is, they do not have a name. Their data members are accessed directly. In addition to this, they have certain other restrictions like:
+
+    They must also be declared as static if declared in file scope. If declared in local scope, they must be static or automatic.
+    They can have only public members; private and protected members in anonymous unions generate errors.
+    They cannot have function members.
+
+Simply omitting the class-name portion of the syntax does not make a union an anonymous union. For a union to qualify as an anonymous union, the declaration must not declare an object. Example:
+
+// anonymous_unions.cpp
+#include <iostream>
+using namespace std;
+int main() {
+   union {
+      int d;
+      char f;
+   };
+
+   d = 4;
+   cout << d << endl;
+
+   f = 'i';
+   cout << f << endl;
+}
+
+Anonymous unions are supported by C11 and as a non-standard GCC extension.
+COBOL
+
+In COBOL, union data items are defined in two ways. The first uses the RENAMES (66 level) keyword, which effectively maps a second alphanumeric data item on top of the same memory location as a preceding data item. In the example code below, data item PERSON-REC is defined as a group containing another group and a numeric data item. PERSON-DATA is defined as an alphanumeric data item that renames PERSON-REC, treating the data bytes continued within it as character data.
+
+  01  PERSON-REC.
+      05  PERSON-NAME.
+          10  PERSON-NAME-LAST    PIC X(12).
+          10  PERSON-NAME-FIRST   PIC X(16).
+          10  PERSON-NAME-MID     PIC X.
+      05  PERSON-ID               PIC 9(9) PACKED-DECIMAL.
+  
+  01  PERSON-DATA                 RENAMES PERSON-REC.
+
+The second way to define a union type is by using the REDEFINES keyword. In the example code below, data item VERS-NUM is defined as a 2-byte binary integer containing a version number. A second data item VERS-BYTES is defined as a two-character alphanumeric variable. Since the second item is redefined over the first item, the two items share the same address in memory, and therefore share the same underlying data bytes. The first item interprets the two data bytes as a binary value, while the second item interprets the bytes as character values.
+
+  01  VERS-INFO.
+      05  VERS-NUM        PIC S9(4) COMP.
+      05  VERS-BYTES      PIC X(2)
+                          REDEFINES VERS-NUM.
+

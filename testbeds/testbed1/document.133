@@ -1,0 +1,13 @@
+Apache_Shiro
+'''Apache Shiro''' (pronounced "sheeroh", a Japanese word for  ) is an open source software security framework that performs , ,  and .  Shiro has been designed to be an intuitive and easy-to-use framework while still providing robust security features.
+==History==
+Shiro's predecessor, JSecurity, was founded in 2004 by Les Hazlewood and Jeremy Haile because they could not find a suitable Java security framework that operated well at the application level and they were frustrated with .  Between 2004 and 2008, JSecurity was hosted on  and its committer list grew to include Peter Ledbrook, Alan Ditzel, Tim Veil.
+In 2008, JSecurity project was submitted to the  (ASF) and accepted into their  to be stewarded by mentors in order to become a top level Apache Project.  Under the ASF's Incubator, Jsecurity was renamed Ki (pronounced Key) and shortly later renamed Shiro by the community because of trademark concerns.
+The project continued to grow while in the Apache Incubator, adding Kalle Korhonen as a project committer.  And in July 2010, the Shiro community released its official version 1.0, marking a period of stability in the code base.  Following the release of version 1.0, the Shiro community created a Project Management Committee and elected Les Hazlewood as its chair.  On September 22, 2010, Shiro became a ''top level project'' (TLP) in the Apache Software Foundation.
+== Releases == 
+* 1.2.4 on 2015-07-07 (current release)
+* 1.2.3 on 2014-02-25
+* 1.2.2 on 2013-05-15
+* 1.2.1 on 2012-07-28
+* 1.2.0 on 2012-01-24
+* 1.1.0 on 2010-11-01

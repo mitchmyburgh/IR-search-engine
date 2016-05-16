@@ -1,0 +1,15 @@
+AWS Security Alert: Insecure RDP Server Configuration
+Matthias Jung / September 2, 2011
+What is the Problem?
+
+Some days ago, I received a mail from Amazon AWS telling me that one of our security groups gives public access (that is, an ACL with value “0.0.0.0/0”) to the port TCP/3389, which by default runs the Remote Desktop Protocol on Windows machines. The reason for this their mail is that “a new Internet worm has been discovered in the wild that spreads via the above protocol […]“. To remedy this danger, they  “suggest that you audit your Amazon EC2 security group settings and restrict access to only the instances and IP addresses that need access“.
+
+I checked the configuration, found out that fortunately no service instance is running in that security group, but fixed the wrong configuration. While I appreciated the notification, I have two points of critique:
+
+My colleague, who wanted to reproduce such an alert by adding port TCP/3389 with public address to one of his security groups, has not been notified yet. This raises the question, how often such a security group audit is run by AWS.
+When checking my security groups, I realized that I had also other critical ports open, e.g. port SSH/22, that may be subject to future attacks, but for which I didn’t receive a security notification. What about those other sensitive ports?
+How to fix this?
+
+In order to make AWS’s recommendation of auditing security groups easy to perform by anybody, we implemented a ruby-script that retrieves all security groups and identifies permissions that give public access to critical ports, i.e. ports that we consider such sensitive that accessibility may cause critical damage to your machines. For now, we check against the ports 22 (SSH), 23 (telnet), 389 (LDAP), 1433 (MSSQL), 3306 (MySQL), 3389 (RDP), 5432 (Postgres), and 5500 (VNC).
+
+The script is part of the CloudyScripts open source project and thus can be either installed and run locally by yourself or executed from this web-site. We hope to help make your EC2 cloud more secure! Any feedback or collaboration is welcome!

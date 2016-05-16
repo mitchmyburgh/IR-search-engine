@@ -1,0 +1,43 @@
+Data Structures 
+Introduction 
+- Arrays
+- List Structures
+- Queues
+- Trees
+- Graphs 
+- Hash Tables 
+- Sets 
+
+Trees 
+A tree is a non-empty set one element of which is designated the root of the tree while the remaining elements are partitioned into non-empty sets each of which is a subtree of the root. 
+Tree nodes have many useful properties. The depth of a node is the length of the path (or the number of edges) from the root to that node. The height of a node is the longest path from that node to its leaves. The height of a tree is the height of the root. A leaf node has no children -- its only path is up to its parent. 
+See the axiomatic development of trees and its consequences for more information. 
+Types of trees: 
+Binary: Each node has zero, one, or two children. This assertion makes many tree operations simple and efficient. 
+Binary Search: A binary tree where any left child node has a value less than its parent node and any right child node has a value greater than or equal to that of its parent node. 
+Traversal 
+Many problems require we visit the nodes of a tree in a systematic way: tasks such as counting how many nodes exist or finding the maximum element. Three different methods are possible for binary trees: preorder, postorder, and in-order, which all do the same three things: recursively traverse both the left and right subtrees and visit the current node. The difference is when the algorithm visits the current node: 
+preorder: Current node, left subtree, right subtree (DLR) 
+postorder: Left subtree, right subtree, current node (LRD) 
+in-order: Left subtree, current node, right subtree (LDR) 
+levelorder: Level by level, from left to right, starting from the root node. 
+* Visit means performing some operation involving the current node of a tree, like incrementing a counter or checking if the value of the current node is greater than any other recorded. 
+Balancing 
+When entries that are already sorted are stored in a tree, all new records will go the same route, and the tree will look more like a list (such a tree is called a degenerate tree). Therefore the tree needs balancing routines, making sure that under all branches are an equal number of records. This will keep searching in the tree at optimal speed. Specifically, if a tree with n nodes is a degenerate tree, the longest path through the tree will be n nodes; if it is a balanced tree, the longest path will be log n nodes. 
+Algorithms/Left_rotation: This shows how balancing is applied to establish a priority heap invariant in a Treap, a data structure which has the queueing performance of a heap, and the key lookup performance of a tree. A balancing operation can change the tree structure while maintaining another order, which is binary tree sort order. The binary tree order is left to right, with left nodes' keys less than right nodes' keys, whereas the priority order is up and down, with higher nodes' priorities greater than lower nodes' priorities. Alternatively, the priority can be viewed as another ordering key, except that finding a specific key is more involved. 
+The balancing operation can move nodes up and down a tree without affecting the left right ordering. 
+AVL: A balanced binary search tree according to the following specification: the heights of the two child subtrees of any node differ by at most one. 
+Red-Black Tree: A balanced binary search tree using a balancing algorithm based on colors assigned to a node, and the colors of nearby nodes. 
+AA Tree: A balanced tree, in fact a more restrictive variation of a red-black tree. 
+Binary Search Trees 
+Is a balanced binary tree.
+
+Terms
+Node Any item that is stored in the tree. Root The top item in the tree. (50 in the tree above) Child Node(s) under the current node. (20 and 40 are children of 30 in the tree above) Parent The node directly above the current node. (90 is the parent of 100 in the tree above) Leaf A node which has no children. (20 is a leaf in the tree above) 
+Searching through a binary search tree
+To search for an item in a binary tree: 
+Start at the root node 
+If the item that you are searching for is less than the root node, move to the left child of the root node, if the item that you are searching for is more than the root node, move to the right child of the root node and if it is equal to the root node, then you have found the item that you are looking for. 
+Now check to see if the item that you are searching for is equal to, less than or more than the new node that you are on. Again if the item that you are searching for is less than the current node, move to the left child, and if the item that you are searching for is greater than the current node, move to the right child. 
+Repeat this process until you find the item that you are looking for or until the node does not have a child on the correct branch, in which case the tree doesn't contain the item which you are looking for. 
+  

@@ -1,0 +1,11 @@
+This lecture focused on modiying the SingleLinkedList example from the last class period to become a Double Linked List, a linked list whose Node elements have both next and previous pointers. As we saw last time, Single Linked Lists are very inefficient for most common list-based tasks. That’s why in practice all LinkedList implementations are Double Linked Lists. In addition to previous references in each Node, Double Linked Lists have a tail reference as well. This allows a Double Linked List to walk the list from the front of the list (head) or the end of the list (tail) as appropriate. Any operation involving walking the list (get, remove) is still O(n) time but in practice should be twice as fast as a Single Linked List implementation.
+Here is a summary of the Big O runtime of common linked list operations when implemented with a Double Linked List:
+Add to front: O(1)
+Add to back: O(1), improves upon single linked list’s O(n)
+Get at index: O(n), still need to walk the list but can walk from the back if the index is in the back half of the list
+Remove at index: O(n), same rationale as get
+Remove from front or back: O(1), same reasoning as add to front and add to back.
+Since getting items from a linked list is always O(n), logic like the example below is very inefficient. Assume that list is a LinkedList containing n Strings.
+for (int i = 0; i < list.size(); i++)
+    System.out.println(list.get(i));
+The code above runs n times and then another n times (due to walking the list) each time through the loop for each get giving us O(n²) runtime. Using an ArrayList as list in the same code gives us O(n) runtime as getting from an ArrayList is O(1). Luckily the O(n²) performance can be avoided when using LinkedList by using an Iterator instead of making calls to get().

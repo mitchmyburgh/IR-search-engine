@@ -1,0 +1,48 @@
+﻿. What is augmented reality?
+Augmented reality is a way of fusing the real and the virtual world by overlaying digital data on to real-world analogue views. Augmented reality applications are appearing in products as diverse as T-shirts on fashion cat walks, interactive games, CVs designed literally to speak to the future employer and jobseeking tools.
+
+And what’s more, anyone with a mobile phone or laptop with built-in video capability can augment and extend their reality with easy-to-use applications. 
+2. How does it work?
+Applications generally use one of two approaches: marker-based and location-based.
+
+Markers work by having software recognise a particular pattern, such as a barcode or symbol, when a camera points at it, and overlaying a digital image at that point on the screen. If the image is three-dimensional or animated, the effect is of a digital experience unfolding on the surface upon which the pattern is printed.
+
+Location-based applications use the ability of a particular device to record its position in the world and then offer data that’s relevant to that location: finding your way around a city, remembering where you parked the car, naming the mountains around you or the stars in the sky.
+3. What’s different about developing augmented reality applications?
+Most augmented reality applications rely on superimposing either 3D-generated computer imagery or some form of descriptive knowledge over the real-time images obtained through a camera, webcam or phone. This requires a good understanding of image processing and computer vision techniques, mainly for tracking either markers or the natural features on which this imagery is superimposed.
+
+Computer-generated imagery has to look realistic and be properly aligned with the real environment in order to create an authentic impression. Most of the applications are designed for the general public so a good understanding of intuitive user interfaces is also required to provide a seamless experience.
+4. What other skills do you need?
+AR developers chiefly need a mixture of advanced computer vision skills, 3D modelling and desktop, web or mobile programming. A grasp of 3D modelling should include texturing, shading and rendering.
+
+Preferred programming languages can vary according to the platform but are usually C++ and C#.
+
+Last, but not least, the bleeding-edge nature of the field means that would-be AR developers should have a passion for pushing the boundaries of new technologies. Keeping abreast of new research in the field is a must - a lot of the technologies come from university-based R&D projects. 
+
+Search for C++ jobs
+Search for C# jobs
+5. Are there any AR platforms to work with?
+The Dutch-based company Layar has a platform, or augmented reality browser, that runs on the iPhone 3G and Google’s Android. Layar works by using a combination of the mobile phone’s camera, compass and GPS data to identify the user’s location and field of view, retrieve data based on those geographical coordinates, and overlay that data over the camera view.
+Qualcomm has also unveiled a new software development kit for the Google Android operating system that will make it easier for developers to create new augmented reality apps for devices running Google’s mobile operating system.
+6. How can you get into AR?
+One of the simplest ways is to develop for an existing platform such as Layar is to join the thriving community of developers busy utilising the browser to deliver functionality.
+
+C2K is one such developer with its Conquar game, which handles most of the game engine - usernames and logins etc - on the C2K server. Developers code in JavaScript Object Notation (JSON) to the platform and Layar is then responsible for making it display on the iPhone and Android phones.
+
+Through the API of Layar and JSON, developers can make use of the triggers such as a web view and also place action buttons such as watch video, listen to audio and call a phone number. This kind of data is provided with PHP. 
+
+Search for Java developer jobs
+7. Where’s AR going to be big?
+The world of retail is one sector with myriad opportunities for augmented reality applications, especially online. Here, the lack of the ‘try-on’ phase before buying for many products including fashion, jewellery, watches, glasses and home products is an incentive for companies to try out augmented reality applications.
+
+Holition is one augmented reality retailer offering these real-time try on opportunities. This can be combined with providing extra information for the products being displayed.
+8. What about education?
+The technology offers many opportunities to support experiential and location-based learning by layering data and information on top of the real-world.
+
+Adding historical context to a particular place, highlighting geometric shapes and hidden angles in buildings are just a couple of examples of ways that lessons could be brought to life.
+
+The explosion in popularity of mobile phone apps offers hundreds of possibilities for educators to bring AR into the classroom with relative ease. Apps like Pocket Universe provide star maps relative to your location and offer educators the opportunity to bring objects that are traditionally seen 'out there' right into the classroom.
+9. What’s the future for augmented reality?
+Perhaps the biggest innovations will come when we step away from the screen. At the moment the majority of AR applications use a camera and screen of some kind, and while the effects are often spectacular, the screen still acts as a barrier.
+10. Any other uses?
+AR has been around for a long time. One of the oldest examples is the double exposure technique by which the impression of a ghost can be created on stage. The military also equips pilots with goggles that provide a layer of radar data over the real-world view to enable them to target missile attacks.

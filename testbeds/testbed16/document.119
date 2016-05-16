@@ -1,0 +1,15 @@
+ORACLE OF THE CLOUD – SEEK AND YE SHALL FIND
+
+Oracle logoOracle & Cloud. Oil & Water. Never the twain shall mix. Or so it’s been until now.
+
+Excluding SaaS offerings that were mostly acquired, Oracle has been largely absent from the cloud these past 7 years. However, one thing you can always count from Larry & Co is an uncanny ability to adapt, embrace and compete like hell when it matters. Coming from an 8-1 deficit to win 8 straight America’s Cup matches shows you just how much Ellison likes to win.
+
+After years of ignoring or aggressively denying the importance of cloud computing, Oracle has finally demonstrated their credible progress with no less than 10 new offerings announced at Oracle Open World this week. There is still a fair amount of cloudwashing going on, but for the first time it is no longer fair to deride Oracle as cloud hype without substance. It was fun while it lasted though.
+
+Oracle is embracing the public cloud with database, middleware, compute and storage offerings. Their compute solution, powered by the acquisition of Nimbula and Chris Pinkham, looks pretty reasonable at first glance. And storage built on OpenStack Swift is also pretty leading edge. Multiple DBaaS offerings and a cloud-extended database backup appliance will probably be well-received by Oracle’s customer base.
+
+In the private cloud, Oracle is starting to make some progress as well. I wouldn’t use them to build private IaaS clouds at this point, but they are selling an IaaS-in-box “engineered system” that might get some users. What’s more interesting is their database consolidation play which is being offered to major enterprises through an Exadata DBaaS offering that can be run in customer data centers. A very solid customer case from UBS shows that this is real.
+
+Another interesting area is in the middle tier with the availability of Dynamic Clusters in WebLogic 12c. Like a good PaaS environment (which this is not), the ability to seamlessly (and with preset constraints) perform horizontal scaling of workloads is pretty interesting. Application changes might be required, and I don’t believe that multi-geo scaling would work with their model without significant code changes, but it’s a good start at enterprise PaaS functionality.
+
+I came to the Oracle [Open World] seeking truth and wisdom on the cloud but expecting very little. To Oracle’s credit, they have exceeded my expectations. If you are an Oracle client or partner, it’s time to take a look at their cloud story to see how it might fit with your plans. I’d still be wary of some of their claims and don’t believe that they will be able to meet all of your needs, but at least they are in the game and competing. And we all know what happens when Ellison chooses to compete.

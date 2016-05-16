@@ -1,0 +1,12 @@
+Apache_Tika
+'''Apache Tika''' is a content detection and analysis framework, written in , stewarded at the . It detects and extracts metadata and text from over a thousand different file types, and as well as providing a 
+ library, has Server and Command Line editions suitable for use from other programming languages.
+== History ==
+The project originated as part of the  codebase, to provide content identification and extraction when . In 2007, it was separated out, to make it more extensible and usable by , other , and information retrieval systems. The standalone Tika was founded by Jrme Charron,  and Jukka Zitting. In 2011 Chris Mattmann and Jukka Zitting released the Manning book "Tika in Action", and the project released version 1.0.
+== Features ==
+Tika provides capabilities for identification of more than 1400 file types from the  taxonomy of  types. For most of the more common and popular formats, Tika then provides content extraction, metadata extraction and language identification capabilities.
+While Tika is written in , it is widely used from other languages. The  server and  permit non-Java programs to access the Tika functionality.
+== Notable uses ==
+Tika is used by financial institutions including the  (FICO), by  and academic researchers by major content management systems including , and  to analyze large amounts of content, and to make it available in common formats using information retrieval techniques.
+On April 4, 2016  published an article identifying Tika as one of the key technologies used by more than 400 journalists to analyze 11.5 million leaked documents that expose an international scandal involving world leaders storing money in offshore s. The leaked documents and the project to analyze them is referred to as the .
+==References==

@@ -1,0 +1,13 @@
+Taxonomy of classes
+
+There are many categories of classes, some of which overlap.
+Abstract and concrete
+Main article: Abstract type
+
+In a language that supports inheritance, an abstract class, or abstract base class (ABC), is a class that cannot be instantiated because it is either labeled as abstract or it simply specifies abstract methods (or virtual methods). An abstract class may provide implementations of some methods, and may also specify virtual methods via signatures that are to be implemented by direct or indirect descendants of the abstract class. Before a class derived from an abstract class can be instantiated, all abstract methods of its parent classes must be implemented by some class in the derivation chain.[25]
+
+Most object-oriented programming languages allow the programmer to specify which classes are considered abstract and will not allow these to be instantiated. For example, in Java, C# and PHP, the keyword abstract is used.[26][27] In C++, an abstract class is a class having at least one abstract method given by the appropriate syntax in that language (a pure virtual function in C++ parlance).[25]
+
+A class consisting of only virtual methods is called a Pure Abstract Base Class (or Pure ABC) in C++ and is also known as an interface by users of the language.[13] Other languages, notably Java and C#, support a variant of abstract classes called an interface via a keyword in the language. In these languages, multiple inheritance is not allowed, but a class can implement multiple interfaces. Such a class can only contain abstract publicly accessible methods.[19][28][29]
+
+A concrete class is a class that can be instantiated, as opposed to abstract classes, which cannot.

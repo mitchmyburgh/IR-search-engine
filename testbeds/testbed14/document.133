@@ -1,0 +1,67 @@
+﻿The MedScan parser is based on the active chart parser
+algorithm (Allen, 1994) in combination with bottom-up parsing approach. Active chart parsing has a number of benefits
+compared to other algorithms. It keeps record of all created
+constituents and thus eliminates the necessity of backtracking
+and allows the reuse of constructed constituents. It also allows
+for compact representation of local ambiguity and implementation of various ‘packing’ techniques, which accelerate
+processing significantly. Since our goal was to implement an
+extremely efficient parser, MedScan utilizes a number of additional algorithmic improvements and advanced programming
+techniques.
+Unlike the classical chart parser, which operates with
+rewrite rules, MedScan uses the grammar in a form of augmented transition networks. ATNs are formally equivalent but
+are a significantly more compact and efficient representation
+of rewrite rules, where common parts of rules are packed
+into a single network path and are traversed only once during
+the parsing. The most computationally expensive step is an
+arc extension, which includes search for candidate arcs and
+performing feature unification. We have implemented a two dimensional indexing structure that uses phrasal category and
+constituent position as keys to quickly look up the candidate
+arc extension. In addition, a special filtering procedure rapidly
+identifies and filters out arcs that cannot be further extended,
+resulting in more efficient memory management.
+Operations with features also consume significant processing time, since they are performed at every attempt of an
+arc traverse. The MedScan feature system and augmentation
+programs were designed to allow effective implementation
+of feature comparison and unification. MedScan contains a
+special-purpose virtual machine executing feature operations.
+Programs stored in MedScan grammar in a simple text form
+are compiled into a run-time representation and interpreted by
+this virtual machine.
+MedScan grammar uses a pre-defined set of features and
+feature values. We found that this approach is capable of handling most of the grammatical phenomena we have encountered
+in MEDLINE and has a significant technical advantage:
+compact feature implementation in a form similar to bit vectors. Bit-vector representation of features allows extremely
+efficient comparison, unification, and other set-theoretical
+1702
+at University of Cape Town Libraries on May 3, 2016
+http://bioinformatics.oxfordjournals.org/
+Downloaded from
+
+
+NLP engine for MEDLINE abstracts
+operations. We also found that feature value comparison is
+significantly less expensive computationally than new feature structure initialization. However, by the very nature of a
+natural language-to-grammar mapping, most of the evaluated
+run-time constituent combinations fail the unification process.
+We therefore split the unification process into two steps—
+feature evaluation, performed by test programs, and actual
+unification (initialization of new feature structure and value
+assignment), performed by action programs. The second step
+is performed only if the first has succeeded. In addition, each
+test program is designed to evaluate the features with the
+highest probability of unification failure first.
+Packing was found to be a very effective method to encode
+ambiguity; it tremendously decreases the computational complexity of parsing by concurrently maintaining thousands of
+alternative syntactic trees in a compressed form. The general idea of packing is to introduce a special ‘packed’ type of
+constituent, which serves as a single representative of a set of
+similar constituents. ‘Similarity’ means that all the properties
+of constituents taken into account during an arc extension are
+identical. In our implementation, similar constituents have the
+same category, start, and current positions, and an identical set
+of features. When a particular active arrow is completed and a
+new constituent is created, a special routine evaluates whether
+it can be packed with any existing constituents. If it occurs,
+this single ‘packed’ constituent is used in place of original
+ones in all subsequent processing steps. Effective implementation of constituent packing in MedScan accelerates parsing
+up to three orders of magnitude, depending on the structure
+of a sentence.

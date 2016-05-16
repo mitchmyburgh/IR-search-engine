@@ -1,0 +1,45 @@
+This sketch describes a simple way to set up coefficients
+to implement quadratic shading in rendering hardware.
+Quadratic shading interpolates a second-order shading
+function to provide quality comparable to per-pixel Phong
+shading,1 at a fraction of the complexity and with no restrictions
+on the number of light sources or the type of lighting.
+Simple adaptive algorithms allow software and hardware to
+fall back to Gouraud shading.
+Triangle Preparation
+Fig. 1 shows a triangle with lighting computed at six positions:
+vertex colors L, M, and N, and edge midpoint colors Q, R, and
+S. Any lighting algorithm may be used to produce these colors.
+Edge midpoint colors need not be computed or transmitted
+to the rendering hardware if they are similar to the values
+produced by Gouraud shading. This may be determined by
+existing adaptive algorithms for subdividing Gouraud shaded
+triangles.2
+Fig. 1 also defines the M and N vertex coordinates (x1, y1)
+and (x2, y2), as well as terms i = x2/x1, j = y1/y2, and
+k = 1–| i j | . The vertex with color L is translated to the origin
+and must be at a corner of the triangle’s bounding box. As in
+the figure, assign the vertices such that i and j are no greater
+than 2, which is possible except for co-incident vertices. This
+reduces the numerical precision required for quadratic shading.
+Quadratic Function Coefficients
+We want to define a quadratic shading function
+I (x, y) = ax2 + bxy + cy2 + dx + ey + f that evaluates to
+the specified color values at the six sample points. Equations
+(1) define five intermediate color values. Equations (2) define
+the six coefficients. T/2, U/2, and (T + U - 2V)/2 measure
+the worst-case difference between Gouraud shading and
+quadratic shading on the three edges, which occurs at edge
+midpoints. Rendering hardware may compare these to a
+threshold to select whether to fall back to Gouraud shading.
+Phong shading on this patch. Fig. 3
+graphs quadratic shading on two triangles using colors computed
+at nine points, three of which are shared between the
+two triangles. The result is quite similar to per-pixel Phong
+shading.
+Fig. 4 graphs eight triangles that are Gouraud shaded using
+the same nine colors. This result produces artifacts such as
+Mach banding and a displaced, dimmer specular highlight.
+Animation exacerbates these problems. Eliminating the artifacts
+requires further triangle subdivision and many more
+Phong-lighting computations than quadratic shading requires

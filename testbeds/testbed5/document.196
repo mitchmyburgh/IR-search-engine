@@ -1,0 +1,34 @@
+
+
+Robert Abel Robert Abel, Content Coordinator/Reporter
+April 26, 2016
+Locky ransomware spotted using Javascript downloader
+Share this content:
+
+    facebook
+    twitter
+    linkedin
+    google
+    0
+    Email
+    Print
+
+Researchers spotted a Locky campaign infecting users via obfuscated Javascript.
+Researchers spotted a Locky campaign infecting users via obfuscated Javascript.
+
+FireEye researchers spotted a Locky ransomware campaign using Javascript downloaders to infect users instead of macro- or binary-based downloaders.
+
+Threat actors are sending the malicious downloaders using malicious .zip and .rar files disguised as invoices, corporate documents, tax information, and other seemingly benign files in order to spread the new downloader.
+
+The new downloader is written in "more compact" script coding that allows attackers to encrypt the malicious code into .zip or .rar files multiple times, InfoArmor's chief intelligence officer,  Andrew Komarov, told SCMagazine.com
+
+The malicious code bypasses anti-spam filters and anti-virus software through obfuscation, Komarov said.
+
+Komarov said the previous downloaders weren't very efficient because most users have their machines set up to block macros but the new downloaders are based on script language and are easier to obfuscate within Javascript which makes it harder to detect.  
+
+Those behind the Locky malware didn't design the malicious downloaders but obtained them from a third party, he said, noting that 50 unique malicious downloaders can be purchased for between $1 to $25, making them an inexpensive way to spread the ransomware.
+
+FireEye researchers observed the new downloader using a custom network communication protocol which in their, in their tests, only downloaded the Locky ransomware as its payload, according to an April 22  blog post.
+
+The researchers went on to say that the downloader could be a new platform for installing other malware or for “pay-per-install” malware distribution.
+

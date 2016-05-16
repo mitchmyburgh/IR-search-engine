@@ -1,0 +1,35 @@
+In computer science, a search data structure is any data structure that allows the efficient retrieval of specific items from a set of items, such as a specific record from a database.
+The simplest, most general, and least efficient search structure is merely an unordered sequential list of all the items. Locating the desired item in such a list, by the linear search method, inevitably requires a number of operations proportional to the number n of items, in the worst case as well as in the average case. Useful search data structures allow faster retrieval; however, they are limited to queries of some specific kind. Moreover, since the cost of building such structures is at least proportional to n, they only pay off if several queries are to be performed on the same database (or on a database that changes little between queries).
+Static search structures are designed for answering many queries on a fixed database; dynamic structures also allow insertion, deletion, or modification of items between successive queries. In the dynamic case, one must also consider the cost of fixing the search structure to account for the changes in the database.
+
+
+== Classification ==
+The simplest kind of query is to locate a record that has a specific field (the key) equal to a specified value v. Other common kinds of query are "find the item with smallest (or largest) key value", "find the item with largest key value not exceeding v", "find all items with key values between specified bounds vmin and vmax".
+In certain databases the key values may be points in some multi-dimensional space. For example, the key may be a geographic position (latitude and longitude) on the Earth. In that case, common kinds of queries are find the record with a key closest to a given point v", or "find all items whose key lies at a given distance from v", or "find all items within a specified region R of the space".
+A common special case of the latter are simultaneous range queries on two or more simple keys, such as "find all employee records with salary between 50,000 and 100,000 and hired between 1995 and 2007".
+
+
+=== Single ordered keys ===
+Array if the key values span a moderately compact interval.
+Priority-sorted list; see linear search
+Key-sorted array; see binary search
+Self-balancing binary search tree
+Hash table
+
+
+=== Finding the smallest element ===
+Heap
+
+
+==== Asymptotic amortized worst-case analysis ====
+In this table, the asymptotic notation O(f(n)) means "not exceeding some fixed multiple of f(n) in the worst case."
+Note: Insert on an unsorted array is sometimes quoted as being O(n) due to the assumption that the element to be inserted must be inserted at one particular location of the array, which would require shifting all the subsequent elements by one position. However, in a classic array, the array is used to store arbitrary unsorted elements, and hence the exact position of any given element is of no consequence, and insert is carried out by increasing the array size by 1 and storing the element at the end of the array, which is a O(1) operation. Likewise, the deletion operation is sometimes quoted as being O(n) due to the assumption that subsequent elements must be shifted, but in a classic unsorted array the order is unimportant (though elements are implicitly ordered by insert-time), so deletion can be carried out by swapping the element to be deleted with the last element in the array and then decrementing the array size by 1, which is a O(1) operation.
+This table is only an approximate summary; for each data structure there are special situations and variants that may lead to different costs. Also two or more data structures can be combined to obtain lower costs.
+
+
+== Footnotes ==
+
+
+== See also ==
+List of data structures
+Skip list

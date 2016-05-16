@@ -1,0 +1,76 @@
+Virtualization vs. Cloud Computing: What's the Difference?
+By Sara Angeles, BusinessNewsDaily Staff Writer January 20, 2014 06:34 am EST
+     MORE
+ Virtualization vs. Cloud Computing: What's the Difference?
+Is virtualization the same as cloud computing? / Credit: Server room image via Shutterstock
+Is virtualization right for your business? How about cloud computing? Don't know the difference? That's OK — most non-IT folks don't either. The word "cloud" is often thrown around as an umbrella term, while "virtualization" is often confused with cloud computing. Although the two technologies are similar, they are not interchangeable, and the difference is significant enough to affect your business decisions. Here is a guide to help demystify the tech behind the jargon.
+
+What is virtualization?
+
+In a nutshell, virtualization is software that separates physical infrastructures to create various dedicated resources. It is the fundamental technology that powers cloud computing. [Cloud Computing: A Small Business Guide]
+
+"Virtualization software makes it possible to run multiple operating systems and multiple applications on the same server at the same time," said Mike Adams, director of product marketing at VMware, a pioneer in virtualization and cloud software and services. "It enables businesses to reduce IT costs while increasing the efficiency, utilization and flexibility of their existing computer hardware."
+
+The technology behind virtualization is known as a virtual machine monitor (VMM) or virtual manager, which separates compute environments from the actual physical infrastructure.
+
+Virtualization makes servers, workstations, storage and other systems independent of the physical hardware layer, said John Livesay, vice president of InfraNet, a network infrastructure services provider. "This is done by installing a Hypervisor on top of the hardware layer, where the systems are then installed."
+
+How is virtualization different from cloud computing?
+
+Essentially, virtualization differs from cloud computing because virtualization is software that manipulates hardware, while cloud computing refers to a service that results from that manipulation.
+
+"Virtualization is a foundational element of cloud computing and helps deliver on the value of cloud computing," Adams said. "Cloud computing is the delivery of shared computing resources, software or data — as a service and on-demand through the Internet."
+
+Most of the confusion occurs because virtualization and cloud computing work together to provide different types of services, as is the case with private clouds.
+
+The cloud can, and most often does, include virtualization products to deliver the compute service, said Rick Philips, vice president of compute solutions at IT firm Weidenhammer. "The difference is that a true cloud provides self-service capability, elasticity, automated management, scalability and pay-as you go service that is not inherent in virtualization."
+
+What are the advantages of a virtualized environment over the cloud?
+
+To best understand the advantages of virtualization, consider the difference between private and public clouds.
+
+"Private cloud computing means the client owns or leases the hardware and software that provides the consumption model," Livesay said. With public cloud computing, users pay for resources based on usage. "You pay for resources as you go, as you consume them, from a [vendor] that is providing such resources to multiple clients, often in a co-tenant scenario."
+
+A private cloud, in its own virtualized environment, gives users the best of both worlds. It can give users more control and the flexibility of managing their own systems, while providing the consumption benefits of cloud computing, Livesay said.
+
+On the other hand, a public cloud is an environment open to many users, built to serve multi-tenanted requirements, Philips said. "There are some risks associated here," he said, such as having bad neighbors and potential latency in performance.  
+
+In contrast, with virtualization, companies can maintain and secure their own "castle," Philips said. This "castle" provides the following benefits:
+
+Maximize resources — Virtualization can reduce the number of physical systems you need to acquire, and you can get more value out of the servers.  Most traditionally built systems are underutilized. Virtualization allows maximum use of the hardware investment.
+Multiple systems — With virtualization, you can also run multiple types of applications and even run different operating systems for those applications on the same physical hardware.
+IT budget integration — When you use virtualization, management, administration and all the attendant requirements of managing your own infrastructure remain a direct cost of your IT operation. 
+[8 Reasons to Fear Cloud Computing]
+
+How do you know if your business needs a virtualization solution?
+
+Determining whether or not virtualization is the best solution for a business requires an in-depth analysis of the organization's specific needs and requirements.
+
+"Some of the items we discuss with customers when they are evaluating private cloud — virtualization — versus cloud computing include who is going to be providing the support and how challenging is integration with other systems," Livesay said.
+
+You should also consider costs — total cost of expenditure (TCO), operational expenditures (OPEX) and capital expenditures (CAPEX) — how much management the business can and want to do, scalability requirements, security needs and how much feature development can be expected, Livesay said.
+
+"Generally speaking, businesses who work more on an OPEX model that have less IT staff and fewer security concerns are more cloud oriented," Livesay said. "Businesses that need greater control for integration and security or who work more on a CAPEX model would lean towards virtualization."
+
+How do businesses know if they should use a true cloud solution?
+
+While virtualization is the best solution for some organizations, a cloud solution offers several benefits that are more suitable for other businesses.
+
+Philips said cloud solutions are best for business with the following needs:
+
+Outsourced IT — The day-to-day administration, care and feeding of supporting systems move away from you to the service provider. This could free up internal IT resources for higher-value business support and allow you to put IT budget dollars toward efforts that advance your business. 
+Quick setup — Cloud startup is relatively quick and easy. Plus, servers, appliances and software perpetual licenses go away when you use such a service.
+Pay-as-you-go — An example could be found in Software-as-a-Service (SaaS) applications available today that allow the off-loading of basic IT requirements to cloud service providers.  You pay for what you need and use. But you do not have to continue to invest in many of the products used to support the network and systems, such as spam/anti-virus, encryption, data archiving, email services and off-site storage.
+Scalability — By using the cloud, you can also temporarily scale your IT capacity by off-loading high-demand compute requirements to an outside provider. As a result, as mentioned above, you pay for only what you need and use, only at the time when you need it.
+Keep in mind, however, that virtualization and cloud services are not end-all, be-all solutions. Like any other technology or service a business adopts, things can always change.
+
+"While cloud computing and virtualization each have their own benefits, they are not competing approaches," Adams said. "We view cloud computing as an evolution of virtualization. Customers that virtualize their hardware servers may adopt cloud computing over time for increased self-service, scale, service delivery levels and agility."
+
+What should businesses look for in a virtualization provider?
+
+Businesses considering virtualization should think about the following questions, Adams said:
+
+Is it a tried and tested solution? Research the vendor's track record of product innovation, success and customer adoption.
+Is there a vision and public roadmap for the solution? You want to understand how the solution will advance and how it will help your business in the long run.
+What type of ecosystem support exists for the solution? It's imperative that the vendor work with key business and industry-specific independent software vendors (ISVs), as well as a wide range of resellers, service providers and system integrators.
+Does the solution support openness and choice? As your business grows, you want the flexibility to evolve your products and processes, and the ability to incorporate other technologies over time.

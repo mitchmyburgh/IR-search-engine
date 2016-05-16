@@ -1,0 +1,38 @@
+
+        Return a list of nodes in topological sort order. 
+        A topological sort is a nonunique permutation of the nodes such that an edge from u to v implies that u appears before v in the topological sort order. 
+           Parameters:
+           G : NetworkX digraph 
+              A directed graph 
+             nbunch : container of nodes (optional) 
+              Explore graph in specified order given in nbunch 
+             reverse : bool, optional 
+              Return postorder instead of preorder if True. Reverse mode is a bit more efficient. 
+           Raises:
+           NetworkXError 
+              Topological sort is defined for directed graphs only. If the graph G is undirected, a NetworkXError is raised. 
+             NetworkXUnfeasible 
+              If G is not a directed acyclic graph (DAG) no topological sort exists and a NetworkXUnfeasible exception is raised. 
+         See also 
+         is_directed_acyclic_graph 
+        Notes 
+        This algorithm is based on a description and proof in The Algorithm Design Manual [R237] . 
+        References 
+           [R237]
+           (1, 2) Skiena, S. S. The Algorithm Design Manual (Springer-Verlag, 1998). http://www.amazon.com/exec/obidos/ASIN/0387948600/ref=ase_thealgorithmrepo/
+      Next 
+       Previous 
+       © Copyright 2014, NetworkX Developers. Last updated on Sep 20, 2014.  
+     Sphinx theme provided by 
+     Read the Docs 
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.9.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  

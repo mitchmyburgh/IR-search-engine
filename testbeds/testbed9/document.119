@@ -1,0 +1,69 @@
+In finance, market data is price and trade-related data for a financial instrument reported by a trading venue such as a stock exchange. Market data allows traders and investors to know the latest price and see historical trends for instruments such as equities, fixed-income products, derivatives and currencies.
+The market data for a particular instrument would include the identifier of the instrument and where it was traded such as the ticker symbol and exchange code plus the latest bid and ask price and the time of the last trade. It may also include other information such as volume traded, bid and offer sizes and static data about the financial instrument that may have come from a variety of sources. There are a number of financial data vendors that specialise in collecting, cleaning, collating and distributing market data and this has become the most common way that traders and investors get access to market data.
+Delivery of price data from exchanges to users, such as traders, is highly time-sensitive and specialized technologies designed to handle collection and throughput of massive data streams are used to distribute the information to traders and investors. The speed that market data is distributed can become critical when trading systems are based on analysing the data before others are able to, such as in high-frequency trading.
+Market price data is not only used in real time to make on-the-spot decisions about buying or selling, but historical market data can also be used to project pricing trends and to calculate market risk on portfolios of investments that may be held by an individual or an institutional investor.
+
+
+== Data structure ==
+A typical equity market data message or business object furnished from NYSE, TSX, or NASDAQ might appear something like this:
+The above example is an aggregation of different sources of data, as quote data (bid, ask, bid size, ask size) and trade data (last sale, last size, volume) are often generated over different data feeds.
+
+
+== Delivery of data ==
+Delivery of price data from exchanges to users is highly time-sensitive. Specialized software and hardware systems called ticker plants are designed to handle collection and throughput of massive data streams, displaying prices for traders and feeding computerized trading systems fast enough to capture opportunities before markets change. When stored, historical market data is also called time-series data.
+While market data generally refers to realtime or delayed price quotations, the term increasingly includes static or reference data—i.e. any type of data related to securities that is not changing in realtime.
+Reference data includes identifier codes such as ISIN codes, the exchange a security trades on, end-of-day pricing, name and address of the issuing company, the terms of the security (such as dividends or interest rate and maturity on a bond), and the outstanding corporate actions (such as pending stock splits or proxy votes) related to the security.
+While price data generally originates from the exchanges, reference data generally originates from the issuer. However, before it arrives in the hands of investors or traders, it usually passes through the hands of financial data vendors that may reformat it, organize it and attempt to clear obvious anomalies on a realtime basis.
+For consumers of market data, which are primarily the financial institutions and industry utilities serving the capital markets, the complexity of managing market data rose with the increase in the number of issued securities, number of exchanges and the globalization of capital markets. Beyond the rising volume of data, the continuing evolution of complex derivatives and indices, along with new regulations designed to contain risk and protect markets and investors, all created more operational demands on market data management.
+Initially individual financial data vendors provided data for software applications in financial institutions that were specifically designed for one data feed, thus giving that financial data vendor a lock on that area of operations. However a number of the larger investment banks and asset management firms started to design systems that would integrate market data into one central store. This drove investments in large-scale enterprise data management systems which collect, normalize and integrate feeds from multiple financial data vendors, with the goal of building one "golden copy" of data supporting every kind of operation throughout the institution. Beyond the operational efficiency gained, this data consistency became increasingly necessary to enable compliance with regulatory requirements, such as Sarbanes Oxley, Regulation NMS and the Basel 2 accord.
+
+
+== Industry bodies ==
+There are various industry bodies that focus on Market Data:
+FISD - The Financial Information Services Division of the Software and Information Industry Association. Based in Washington DC FISD operates globally and consists of three constituency groups: Consumer Firms, Vendor Firms and Exchanges.
+IPUG, The Information Providers User Group, is a UK-based organisation whose membership is limited to Consumer Firms. Its main activities consist of lobbying Vendor Firms on key issues.
+Cossiom, Commission des Services et Systèmes d'Informations destinés aux Opérateurs de Marchés, is the Paris-based organisation for French Consumer Firms.
+
+
+== Technology solutions ==
+The business of providing technology solutions to financial institutions for data management has grown over the past decade, as market data management has emerged from a little-known discipline for specialists to a high-priority issue for the entire capital markets industry and its regulators. Providers range from middleware and messaging vendors, vendors of cleansing and reconciliation software and services, and vendors of highly scalable solutions for managing the massive loads of incoming and stored reference data that must be maintained for daily trading, accounting, settlement, risk management and reporting to investors and regulators.
+The market data distribution platforms are designed to transport over the network large amounts of data from financial markets. They are intended to respond to the fast changes on the financial markets, compressing or representing data using specially designed protocols to increase throughput and/or reduce latency.
+Most market data servers run on Solaris or Linux as main targets, however some have versions for Windows.
+
+
+=== Feed handlers ===
+A typical usage can be a "feed handler" solution. Applications (Sources) receive data from specific feed and connect to a server (Authority) which accepts connections from clients (Destinations) and redistributes data further. When a client (Destination) wants to subscribe for an instrument (to open an instrument), it sends a request to the server (Authority) and if the server hasn’t got the information in its cache it forwards the request to the Source(s). Each time a server (Authority) receives updates for an instrument, it sends them to all clients (Destinations), subscribed for it.
+Notes:
+1. A client (Destination) can unsubscribe itself for an individual instrument (close the instrument) and no further updates will be sent. When the connection between Authority and Destination breaks off, all requests made from the client will be dropped.
+2. A server (Authority) can handle large client-connections, though usually a relatively small amount of clients are connect to the same server at the same time.
+3. A client (Destination) usually has a small amount of open instruments, though larger numbers are also supported.
+4. The server has two levels of access permission:
+Logon permission – whether the client is allowed to connect to the server.
+Information permission – whether the client is allowed to view information about the current instrument. (This check is usually made by checking the contents of the instrument.).
+
+
+=== Management ===
+Market data is expensive (global expenditure yearly exceeds $50 billion) and complex (data variety, functionality, technology, billing). Therefore, it needs to be managed professionally. Professional market data management deals with issues such as:
+Inventory management
+Contract management
+Cost management
+Change management
+Invoice Reconciliation & Administration
+Permissioning
+Reporting
+Budgeting
+Demand management
+Technology management
+Vendor management
+
+
+=== Mobile applications ===
+Financial data vendors typically also offer mobile applications that provide market data in real time to financial institutions and consumers.
+
+
+== See also ==
+Stock market data systems
+Reference data (financial markets)
+
+
+== References ==

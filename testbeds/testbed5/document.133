@@ -1,0 +1,157 @@
+<<<<<<< HEAD
+Programming language
+
+Related Terms
+
+    C++
+    C#
+    C
+    BASIC
+    C-RIMM
+    cHTML
+    Visual C++
+    Visual Basic
+    AspectC++
+    c-learning
+
+
+
+By Vangie Beal
+
+Programming Language
+
+A vocabulary and set of grammatical rules for instructing a computer to perform specific tasks. The term programming language usually refers to high-level languages, such as BASIC, C, C++, COBOL, FORTRAN, Ada, and Pascal. Each language has a unique set of keywords (words that it understands) and a special syntax for organizing program instructions.
+
+High-level programming languages, while simple compared to human languages, are more complex than the languages the computer actually understands, called machine languages. Each different type of CPUhas its own unique machine language.
+The Challenges of Cloud Integration
+Download Now
+
+Lying between machine languages and high-level languages are languages called assembly languages. Assembly languages are similar to machine languages, but they are much easier to program in because they allow a programmer to substitute namesfor numbers. Machine languages consist of numbers only.
+
+Lying above high-level languages are languages called fourth-generation languages (usually abbreviated 4GL). 4GLs are far removed from machine languages and represent the class of computer languages closest to human languages.
+
+Regardless of what language you use, you eventually need to convertyour program into machine language so that the computer can understand it. There are two ways to do this:
+
+1) compile the program
+2) interpret the program
+
+Recommended Reading: See compile and interpreter for more information about these two methods.
+
+The question of which language is best is one that consumes a lot of time and energy among computer professionals. Every language has its strengths and weaknesses. For example, FORTRAN is a particularly good language for processing numerical data, but it does not lend itself very well to organizing large programs. Pascal is very good for writing well-structured and readable programs, but it is not as flexible as the C programming language. C++ embodies powerful object-oriented features, but it is complex and difficult to learn.
+
+The choice of which language to use depends on the type of computer the program is to run on, what sort of program it is, and the expertise of the programmer.
+
+
+
+
+PREVIOUS
+programmer
+NEXT
+Progress Software
+
+
+Related Links
+
+    Programmer's Oasis
+    C programming language
+    Programming Language Research
+
+
+=======
+Off-side rule languages[edit]
+Off-side rule languages are those where blocks are formed, indicated, by their indentation.
+
+ISWIM, the abstract language that introduced the rule
+ABC, Python's parent
+Python
+Cobra
+Boo
+Genie
+Miranda, Haskell's parent
+Orwell
+Haskell
+Curry
+Elixir
+F#
+Nim
+Occam
+SPIN
+XL
+Procedural languages[edit]
+Procedural programming languages are based on the concept of the unit and scope (the data viewing range of an executable code statement). A procedural program is composed of one or more units or modules, either user coded or provided in a code library; each module is composed of one or more procedures, also called a function, routine, subroutine, or method, depending on the language. Examples of procedural languages include:
+
+Ada (multi-purpose language)
+ALGOL (extremely influential language design – the second high level language compiler)
+SMALL Machine Algol Like Language
+Alma-0
+BASIC (BASICs are innocent of most modularity in (especially) versions before about 1990)
+BCPL
+BLISS
+Blue
+C
+C++ (C with objects plus much else, such as, generics through STL)
+C# (similar to Java/C++)
+Ceylon
+ChucK (C/Java-like syntax, with new syntax elements for time and parallelism)
+COBOL
+Cobra
+ColdFusion
+Combined Programming Language (CPL)
+Curl
+D
+DASL (partly declarative, partly imperative)
+eC
+ECMAScript
+ActionScript
+ECMAScript for XML
+JavaScript (first named Mocha, then LiveScript)
+JScript
+Eiffel
+Fortran (better modularity in later Standards)
+F
+GAUSS
+Go
+Harbour
+HyperTalk
+Java
+Groovy
+Join Java
+Tea
+JOVIAL
+Julia
+Lasso
+Modula-2 (fundamentally based on modules)
+Mathematica
+MATLAB
+MUMPS (More modular in its first release than a language of the time should have been; The standard has become still more modular since then.)
+Nemerle
+Oberon and Oberon-2 (improved, smaller, faster, safer follow-ons for Modula-2)
+Component Pascal
+Lagoona
+Seneca
+Occam
+Oriel
+Pascal (successor to ALGOL 60, predecessor of Modula-2)
+Free Pascal (FPC)
+Object Pascal (Delphi)
+PCASTL
+Perl
+Pike
+PL/C
+PL/I (large general purpose language, originally for IBM mainframes)
+Plus
+PROSE
+Python
+R
+Rapira
+RPG (available only in IBM's System i midrange computers)
+Rust
+S-Lang
+VBScript
+Visual Basic
+Visual FoxPro
+Wolfram Language
+X++
+X#
+XL
+>>>>>>> 8101f027b4ff76c9c7a47c43e46d5824b49ecf5a

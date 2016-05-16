@@ -1,0 +1,25 @@
+In computer science, a scapegoat tree is a self-balancing binary search tree, invented by Arne Andersson[1] and again by Igal Galperin and Ronald L. Rivest.[2] It provides worst-case O(log n) lookup time, and O(log n) amortized insertion and deletion time.
+Unlike most other self-balancing binary search trees that provide worst case O(log n) lookup time, scapegoat trees have no additional per-node memory overhead compared to a regular binary search tree: a node stores only a key and two pointers to the child nodes. This makes scapegoat trees easier to implement and, due to data structure alignment, can reduce node overhead by up to one-third.
+Contents
+  [hide] 
+•	1Theory
+•	2Operations
+o	2.1Insertion
+?	2.1.1Sketch of proof for cost of insertion
+o	2.2Deletion
+?	2.2.1Sketch of proof for cost of deletion
+o	2.3Lookup
+•	3See also
+•	4References
+•	5External links
+Theory[edit]
+A binary search tree is said to be weight-balanced if half the nodes are on the left of the root, and half on the right. An a-weight-balanced node is defined as meeting a relaxed weight balance criterion:
+size(left) <= a*size(node)
+size(right) <= a*size(node)
+Where size can be defined recursively as:
+function size(node)
+ if node = nil
+  return 0
+ else
+  return size(node->left) + size(node->right) + 1
+end

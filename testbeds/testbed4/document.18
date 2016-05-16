@@ -1,0 +1,64 @@
+We begin discussion of 3-dimensional object models. There is an important fundamental
+split in the question of how objects are to be represented. Two common choices are between representing
+the 2-dimensional boundary of the object, called a boundary representation or B-rep for short, and a
+volume-based representation, which is sometimes called CSG for constructive solid geometry. Both have their
+advantages and disadvantages.
+Volume Based Representations: One of the most popular volume-based representations is constructive solid geometry,
+or CSG for short. It is widely used in manufacturing applications. One of the most intuitive ways to describe
+complex objects, especially those arising in manufacturing applications, is as set of boolean operations (that
+is, set union, intersection, difference) applied to a basic set of primitive objects. Manufacturing is an important
+application of computer graphics, and manufactured parts made by various milling and drilling operations can
+be described most naturally in this way. For example, consider the object shown in the figure below. It can be
+described as a rectangular block, minus the central rectangular notch, minus two cylindrical holes, and union
+with the rectangular block on the upper right side.
++
+= - -
+-
+Fig. 64: Constructive Solid Geometry.
+This idea naturally leads to a tree representation of the object, where the leaves of the tree are certain primitive
+object types (rectangular blocks, cylinders, cones, spheres, etc.) and the internal nodes of the tree are boolean
+operations, union (X [ Y ), intersection (X \ Y ), difference (X -Y ), etc. For example, the object above might
+be described with a tree of the following sort. (In the figure we have used + for union.)
+Fig. 65: CSG Tree.
+The primitive objects stored in the leaf nodes are represented in terms of a primitive object type (block, cylinder,
+sphere, etc.) and a set of defining parameters (location, orientation, lengths, radii, etc.) to define the location
+and shape of the primitive. The nodes of the tree are also labeled by transformation matrices, indicating the
+transformation to be applied to the object prior to applying the operation. By storing both the transformation
+and its inverse, as we traverse the tree we can convert coordinates from the world coordinates (at the root of the
+tree) to the appropriate local coordinate systems in each of the subtrees.
+This method is called constructive solid geometry (CSG) and the tree representation is called a CSG tree. One
+nice aspect to CSG and this hierarchical representation is that once a complex part has been designed it can
+be reused by replicating the tree representing that object. (Or if we share subtrees we get a representation as a
+directed acyclic graph or DAG.)
+Point membership: CSG trees are examples of unevaluated models. For example, unlike a B-rep representation in
+which each individual element of the representation describes a feature that we know is a part of the object,
+it is generally impossible to infer from any one part of the CSG tree whether a point is inside, outside, or on
+the boundary of the object. As a ridiculous example, consider a CSG tree of a thousand nodes, whose root
+operation is the subtraction of a box large enough to enclose the entire object. The resulting object is the empty
+set! However, you could not infer this fact from any local information in the data structure.
+Consider the simple membership question: Given a point P does P lie inside, outside, or on the boundary of an
+object described by a CSG tree. How would you write an algorithm to solve this problem? For simplicity, let
+us assume that we will ignore the case when the point lies on the boundary (although we will see that this is a
+tricky issue below).
+The idea is to design the program recursively, solving the problem on the subtrees first, and then combining
+results from the subtrees to determine the result at the parent. We will write a procedure isMember(Point P,
+CSGnode T) where P is the point, and T is pointer to a node in the CSG tree. This procedure returns True if the
+object defined by the subtree rooted at T contains P and False otherwise. If T is an internal node, let T:left and
+T:right denote the children of T. The algorithm breaks down into the following cases.
+Note that the semantics of operations “jj” and “&&” avoid making recursive calls when they are not needed. For
+example, in the case of union, if P lies in the right subtree, then the left subtree need not be searched.
+CSG and Ray Tracing: CSG objects can be handled very naturally in ray tracing. Suppose that R is a ray, and T is
+a CSG tree. The intersection of the ray with any CSG object can be described as a (possibly empty) sorted set
+of intervals in the parameter space.
+I = h[t0; t1]; [t2; t3]; : : :i:
+(See Fig. 66.) This means that we intersect the object whenever t0 _ t _ t1 and t2 _ t _ t3, and so on. At the
+leaf level, the set of intervals is either empty (if the ray misses the object) or is a single interval (if it hits). Now,
+Lecture Notes 94 CMSC 427
+Membership Test for CSG Tree
+we evaluate the CSG tree through a post-order traversal, working from the leaves up to the root. Suppose that
+we are at a union node v and we have the results from the left child IL and the right child IR.
+We compute the union of these two sets of intervals. This is done by first sorting the endpoints of the intervals.
+With each interval endpoint we indicate whether this is an entry or exit. Then we traverse this sorted list. We
+maintain a depth counter, which is initialized to zero, and is incremented whenever we enter an interval and
+decremented when we exit an interval. Whenever this count transitions from 0 to 1, we output the endpoint as
+the start of a new interval in the union, and whenever the depth count transitio

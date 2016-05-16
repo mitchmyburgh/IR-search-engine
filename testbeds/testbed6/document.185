@@ -1,0 +1,11 @@
+Data Structure
+
+A data structure is a specialized format for organizing and storing data. General data structure types include the array, the file, the record, the table, the tree, and so on. Any data structure is designed to organize data to suit a specific purpose so that it can be accessed and worked with in appropriate ways. In computer programming, a data structure may be selected or designed to store data for the purpose of working on it with various algorithms.
+
+As a programmer you have to decide which structure to use in which situation. we have covered arrays, linked lists, trees, and hash tables. as we've seen, they each have their benefits and detriments. this will be a relatively short post reviewing all we've learned so far.
+
+My approach is generally ordered as follows, although I seldom verbalize about the process
+
+Look for fit - Some problems will dictate a particular data structure - for example, if you need FIFO, then a stack won't do, and vice versa. If you need random access, then a list is probably not the best choice
+Look for speed - in cases there are equivalent data structures, that's when performance (in Big-O sense) can be evaluated
+Look for implementation - obviously look for performance, maturity, supportability, etc

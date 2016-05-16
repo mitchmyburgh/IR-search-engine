@@ -1,0 +1,7 @@
+﻿Photorealistic Rendering in Computer Graphics
+
+Proceedings of the Second Eurographics Workshop on Rendering
+
+Editors: Brunet, Pere, Jansen, Frederik W. (Eds.)
+About this book
+Photorealistic rendering strives to generate images from computer modeled scenes with an image quality as close to real life as possible. A major issue in rendering is simulation of local and global light reflection in a scene. Both ray tracing and radiosity algorithms capture only some of the possible light reflection phenomena. Recently developed two-pass algorithms combine the ray tracing and radiosity approaches and are able to capture the whole range of light reflection. This book is a collection of papers discussing the latest developments, including a new range of improvements, in stochastic sampling strategies, radiosity form factor calculation, and parallel processing for ray tracing and radiosity. A number of papers on rendering applications in interior design, lighting design, and remote sensing conclude the volume. The contributions are revised versions of papers originally presented at the Second Eurographics Workshop on Rendering, held in Barcelona, Spain, in May 1991. The book fully reflects the state of the art in rendering and presentsa wide variety of novel techniques. It will interest researchers and students in computer graphics, as well as designers who want to apply rendering techniques for realistic simulation in lighting design, interior design, and architecture.

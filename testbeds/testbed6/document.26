@@ -1,0 +1,279 @@
+     12,247,258 members (55,132 online)
+     //
+      Sign in 
+         Email
+         Password
+function Join(){
+ var url = 'http://www.codeproject.com/script/Membership/Modify.aspx?meml=' + document.subForm.Email.value;
+ document.location.href=url;return false;
+}
+document.write('');
+          &nbsp; 
+         Forgot your password? 
+        Sign in using 
+       Search within: 
+       Articles
+       Quick Answers
+       Messages
+     home 
+     articles 
+       Chapters and Sections&gt;
+       Search 
+       Latest Articles 
+       Latest Tips/Tricks 
+       Top Articles 
+       Beginner Articles 
+       Technical Blogs 
+       Posting/Update Guidelines 
+       Article Help Forum 
+       Article Competition 
+         Submit an article or tip  
+         Post your Blog  
+       quick answersQ&amp;A  
+         Ask a Question about this article  
+        Ask a Question 
+       View Unanswered Questions 
+       View All Questions... 
+       C# questions 
+       ASP.NET questions 
+       SQL questions 
+       VB.NET questions 
+       Javascript questions 
+      discussionsforums  
+       All Message Boards... 
+       Application Lifecycle&gt; 
+         Running a Business 
+         Sales / Marketing 
+         Collaboration / Beta Testing 
+         Work Issues 
+       Design and Architecture  
+       ASP.NET  
+       JavaScript  
+       C / C++ / MFC&gt; 
+         ATL / WTL / STL 
+         Managed C++/CLI 
+       C#  
+       Free Tools  
+       Objective-C and Swift  
+       Database  
+       Hardware &amp; Devices&gt; 
+         System Admin 
+       Hosting and Servers  
+       Java  
+       .NET Framework  
+       Android  
+       iOS  
+       Mobile  
+       SharePoint  
+       Silverlight / WPF  
+       Visual Basic  
+       Web Development  
+       Site Bugs / Suggestions  
+       Spam and Abuse Watch  
+     features 
+       Competitions 
+       News 
+       The Insider Newsletter 
+       The Daily Build Newsletter 
+       Newsletter archive 
+       Surveys 
+       Product Showcase 
+       Research Library 
+       CodeProject Stuff 
+      communitylounge  
+       Who's Who 
+       Most Valuable Professionals 
+       The Lounge &nbsp; 
+       The Insider News 
+       The Weird &amp; The Wonderful 
+       The Soapbox 
+       Press Releases 
+       Non-English Language &gt; 
+         General Indian Topics 
+         General Chinese Topics 
+     help 
+       What is 'CodeProject'? 
+       General FAQ 
+       Ask a Question 
+       Bugs and Suggestions 
+       Article Help Forum 
+       Site Map 
+       Advertise with us 
+       Employment Opportunities 
+       About Us 
+      Articles » 
+      General Programming » 
+      Algorithms &amp; Recipes » 
+      Data Structures
+      &nbsp; 
+          Article
+          Alternatives
+          Comments (1) 
+        Add your ownalternative version 
+         Tagged as 
+          Java
+          Dev
+         Stats 
+            113.7K views
+            8 bookmarked
+         Posted 
+         19 Jan 2010
+            Binary Trees in Java 
+              Wang Jeon, 
+               20 Jan 2010 
+              CPOL
+                   &nbsp; &nbsp;3.57 (4 votes)  
+                     1 
+                     2 
+                      3 
+                      4 
+                      5 
+                   3.57/5 - 4 votes
+                   μ 3.57, σ
+                   a 2.02 [
+                   ?]
+                      Rate this:  
+                  Please 
+                 Sign up or sign in to vote. 
+            This sample includes code for addition, retrieval, deletion, and searching in a simple binary tree structure with Java.
+           Introduction 
+           Binary search tree (BST) is a node-based binary tree data structure which has the following properties: 
+            The left subtree of a node contains only nodes with keys less than the node's key. 
+            The right subtree of a node contains only nodes with keys greater than the node's key. 
+            Both the left and right subtrees must also be binary search trees. 
+           From the above properties, it naturally follows that each node (item in the tree) has a distinct key. Generally, the information represented by each node is an Object element. However, for sequencing purposes, nodes are compared according to their keys rather than any part of their associated records. 
+           The major advantage of binary search trees over other data structures is that the related sorting algorithms and search algorithms such as in-order traversal can be very efficient. 
+           Using the Code 
+           As said in the introduction, every node has left and right nodes. Below is how a node should look like: 
+           public class BNode {
+    public BNode leftBNode,  rightBNode; // the nodes
+    public AnyClass anyClass; //the AnyClass objext
+    public BNode(AnyClass anyClass ) {//constructor
+        this.anyClass= anyClass;
+        this.leftBNode = null;
+        this.rightBNode = null;
+    }
+    public void show() {
+        //calls the show method of the AnyClass
+        System.out.print(anyClass.show());
+    }
+} 
+           Below is a simple class that traverses, adds, and searches for a particular node value: 
+           public class BinTree {
+    BNode theBTRootNode;
+    public BinTree() // constructor
+    {
+        theBTRootNode = null;
+    }
+    // ------------------ Addition of the node to the BST-------------------
+    protected BNode insertAB(BNode theRootNode, BNode myNewNode) {
+        if (theRootNode == null) {
+            theRootNode = myNewNode;
+            //checks if the username is smaller than 
+            //the root object, if smaller appends to the left
+        } else if (myNewNode.anyClass.surname.compareTo(
+                          theRootNode.anyClass.surname) &lt; 0) {
+            theRootNode.leftBNode = insertAB(theRootNode.leftBNode, myNewNode);
+        } else {
+            // else if bigger appends to the right
+            theRootNode.rightBNode = 
+               insertAB(theRootNode.rightBNode, myNewNode);
+        }
+        return theRootNode;
+    }
+    public void insertBST(AnyClass anyClass) {
+        BNode anyClassBTNode = new BNode(anyClass);
+        //calls insert above
+        theBTRootNode = insertAB(theBTRootNode, anyClassBTNode);
+    }
+    // ------------------ InOrder traversal-------------------
+    protected void inorder(BNode theRootNode) {
+        if (theRootNode != null) {
+            inorder(theRootNode.leftBNode);
+            theRootNode.show();
+            inorder(theRootNode.rightBNode);
+        }
+    }
+    //calls the method to do in order
+    public void inorderBST() {
+        inorder(theBTRootNode);
+    }
+    // ----- Search for key name and  returns ref. 
+    //              to BNode or null if not found--------
+    protected BNode search(BNode theRootNode, String keyName) {
+        //if the root is null returns null
+        if (theRootNode == null) {
+            return null;
+        } else {
+            //checks if they are equal
+            if (keyName.compareTo(theRootNode.anyClass.surname) == 0) {
+                return theRootNode;
+            //checks id the key is smaller than the current
+            //record  if smaller traverses to the left
+            } else if (keyName.compareTo(theRootNode.anyClass.surname) &lt; 0) {
+                return search(theRootNode.leftBNode, keyName);
+            } else {
+                // if bigger traverses to the left
+                return search(theRootNode.rightBNode, keyName);
+            }
+        }
+    }
+    //returns null if no result else returns 
+    //the AnyClass object matched with the keyName
+    public AnyClass searchBST(String keyName) {
+        BNode temp = search(theBTRootNode, keyName);
+        if (temp == null) {
+      //noresults found
+           return null;
+        } else {
+         //result found
+           return temp.anyClass;
+        }
+    }
+} 
+           Points of Interest 
+           This should help you a lot in achieving faster applications when traversing through a list. 
+           You can add this method to the BinTree class object to transfer your lists to a binary tree: 
+           public void populateBinTree(List theList) {
+    //clearing the root as not to append, 
+    //if you want to append just remove the below line
+    theBTRootNode = null;
+   //keeps looping untill reaches the end of the list
+    for(int i = 0;i &lt; theList.size();i++)
+            Node temporaryNode = null; 
+         //inserts in the BST
+        insertBST((AnyClass)theList.get(i));
+        //goes to the next element
+    }
+} 
+           History 
+            Initial version. 
+          License 
+           This article, along with any associated source code and files, is licensed under The Code Project Open License (CPOL)
+          Share 
+                 email   
+                 twitter   
+                 facebook   
+                 linkedin   
+                 reddit   
+                 google+   
+          About the Author 
+            Wang Jeon 
+                Korea (Republic of)   
+             No Biography provided 
+        You may also be interested in... 
+              Fast Binary Tree Operations
+              Microsoft Guide to Modern Dev/Test
+              Binary Tree Introduction
+              SAPrefs - Netscape-like Preferences Dialog
+              A simple Binary Search Tree written in C#
+              Generate and add keyword variations using AdWords API
+        Comments and Discussions 
+        &nbsp;
+                First Prev Next 
+                    deletion 
+                      Christ Kennedy
+                      20-Jan-10 7:14 
+                    Christ Kennedy
+                    20-Jan-10 7:14&nbsp; 
+                            i use BSTs quite often but the only way i've found to effectively(and safely!) perform a deletion is by adding a boolean 'flag' to toggle on/off a leaf and in the title

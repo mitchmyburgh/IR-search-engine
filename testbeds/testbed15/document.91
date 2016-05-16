@@ -1,0 +1,63 @@
+How computer animation works
+The movie opens with a sweeping aerial shot of an alien world. As the camera swoops downward from the clouds, a vast city emerges. Thousands of space-age vehicles whir past on an intergalactic freeway. Great skyscrapers crowd a smoggy skyline lit by a deep orange sunset. The camera continues its speedy descent to the 112th-story balcony of a steel gray apartment building, where it focuses on the pensive face of our hero, a giant lizard man named Fizzle.
+
+We know that none of this is real, but we still believe. That's the magic of modern filmmaking. Using powerful computers, animators and digital effects artists at companies like Industrial Light & Magic can construct fictional worlds and virtual characters that are so lifelike, so convincingly real, that the audience suspends its disbelief and enjoys the show.
+
+Computer animators are artists. While their tools are high-tech, nothing replaces their creative vision. That said, over the past two decades, computers have opened up unimaginable possibilities for animators. With sophisticated modeling software and powerful computer processors, the only limit is the animator's imagination.
+
+The applications of computer animation extend far beyond film and television. Video games are at the forefront of interactive 2-D and 3-D animation. 3-D animators help design and model new products and industrial machines. In fields like medicine and engineering, 3-D animation can help simplify and visualize complex internal processes. And computer animators are in high demand for marketing and advertising campaigns.
+
+But how exactly do these magicians create people, animals, objects and landscapes out of thin air? What are the basic techniques for modeling and animating virtual creations? And how long does the process take? (Hint: much longer than you think!) Keep reading to find out.
+
+what is computer animation
+To animate means "to give life to". An animator's job is to take a static image or object and literally bring it to life by giving it movement and personality. In computer animation, animators use software to draw, model and animate objects and characters in vast digital landscapes. There are two basic kinds of computer animation: computer-assisted and computer-generated.
+
+Computer-assisted animation is typically two-dimensional (2-D), like cartoons. The animator draws objects and characters either by hand or with a computer. Then he positions his creations in key frames, which form an outline of the most important movements. Next, the computer uses mathematical algorithms to fill in the "in-between" frames. This process is called tweening. Key framing and tweening are traditional animation techniques that can be done by hand, but are accomplished much faster with a computer.
+
+Computer-generated animation is a different story. First of all, it's three-dimensional (3-D), meaning that objects and characters are modeled on a plane with an X, Y and Z axis. This can't be done with pencil and paper. Key framing and tweening are still an important function of computer-generated animation, but there are other techniques that don't relate to traditional animation. Using mathematical algorithms, animators can program objects to adhere to (or break) physical laws like gravity, mass and force. Or create tremendous herds and flocks of creatures that appear to act independently, yet collectively. With computer-generated animation, instead of animating each hair on a monster's head, the monster's fur is designed to wave gently in the wind and lie flat when wet.
+
+Technology has long been a part of the animator's toolkit. Animators at Disney revolutionized the industry with innovations like the use of sound in animated short films and the multi-plane camera stand that created the parallax effect of background depth.
+
+The roots of computer animation began with computer graphics pioneers in the early 1960s working at major U.S. research institutes, often with government funding [source: Carnegie Mellon School of Computer Science]. Their earliest films were scientific simulations with titles like "Flow of a Viscous Fluid" and "Propagation of Shock Waves in a Solid Form" .
+
+Ed Catmull at the University of Utah was one of the first to toy with computer animation as art, beginning with a 3-D rendering of his hand opening and closing. The University of Utah was the source of the earliest important breakthroughs in 3-D computer graphics, like the hidden surface algorithm that allows a computer to conceptualize three-dimensional objects, and the Utah Teapot, a strikingly rendered 3-D teapot that signaled a turning point in the photorealistic quality of 3-D graphics [source: Carnegie Mellon School of Computer Science].
+
+In 1973, "Westworld" became the first film to contain computer-generated 2D graphics. More films in the late 1970s and early 1980s relied on computer graphics, or CG, to create primitive effects that were designed to look computer-generated. "Tron" (1982) was ideal for showcasing undeniably digital effects since the movie took place inside a computer.
+
+"Jurassic Park" (1993) was the first feature film to integrate convincingly real, entirely computer-generated characters into a live action film, and "Toy Story" (1995) from Pixar was the first full-length "cartoon" made entirely with computer-generated 3-D animation.
+
+The increasing sophistication and realism of 3-D animation can be directly credited to an exponential growth in computer processing power. Today, a standard desktop computer runs 5,000 times faster than those used by computer graphics pioneers in the 1960s. And the cost of the basic technology for creating computer animation has gone from $500,000 to less than $2,000 [source: PBS].
+
+Now let's look at the basics of creating a 3-D computer-generated object.
+
+Computer generated objects
+To create a 3-D computer-generated object, you'll need modeling software like Maya, 3ds Max or Blender. These programs come loaded with a large number of basic 3-D shapes, called primitives or prims, which are the building blocks of more complex objects. For example, you could model a car by connecting cubes, cylinders, pyramids and spheres of different shapes and sizes. Since these are 3D objects, they're modeled on the X, Y and Z axes and can be rotated and viewed from any angle.
+
+When you first begin to model an object, it doesn't have any surface color or texture. All you see on your screen is the object's skeleton -- the lines and outlines of the individual cubes, blocks and spheres that have been used to construct it. This is called a wireframe. Each shape that's formed by the lines of the wireframe is called a polygon. A pyramid, for example, is made up of four triangle-shaped polygons.
+
+In practice, there are several ways to create a wireframe model of an object. If you don't want to be confined to constructing objects from fixed shapes like blocks and cylinders, you can use a more free-form technique called spline-based modeling. Splines allow for objects with smooth, curved lines. Another method is to sculpt an object out of clay or some other physical material and use a 3-D scanner to create a wireframe copy of the object in the modeling software.
+
+Once you have your wireframe -- through any modeling method you choose -- you can shade its surface to see what it would look like as a 3-D object. But to make the object look more realistic, you need to add color and surface texture. This is done in something called the materials editor . Here you can play with an endless palette of colors or create your own by adjusting the red, green and blue values, and tinkering with hue and saturation. Common surface textures like wood grain, rock, metal and glass usually come with the modeling software and can be easily applied to surfaces. You can also create image files in a program like Photoshop and wrap the image around the object like wallpaper.
+
+Lighting is perhaps the most important component for giving an object depth and realism. Modeling programs allow you to light your objects from every imaginable angle and adjust how the surface of your objects reflect or absorb light. There are three basic values that dictate how a surface responds to light:
+
+Ambient: the color of an object's surface that's not exposed to direct light
+Diffuse: the color of the surface that's directly facing the light source
+Specular: the value that controls the reflectiveness or shininess of the surface
+
+Modeling programs are especially helpful for creating realistic looking 3D objects because they contain mathematical algorithms that replicate the natural world. For example, when you light a sphere from a certain angle, the surface reflects light in just the right way and the shadow is cast at the precise angle. These details trick the mind into thinking that this object on a two-dimensional screen actually has depth and texture.
+
+Now let's look at how animators use computers to help create vast digital landscapes and realistic animated sets.
+computer generated landscapes
+Since the earliest days of motion pictures, filmmakers have looked for ways to convincingly (and inexpensively!) recreate vast, realistic landscapes and backdrops without having to actually film on-location at the peak of Mt. Everest or the moon's surface.
+
+The most common solution is a production effect called matte painting. In traditional matte painting, artists relied on several techniques, from simply painting a huge fake backdrop (think of those old westerns with the cactus and sunset in the distance) to carefully replacing parts of a shot with scenes painted on glass.
+
+Computers have added a whole new dimension to matte paintings. Literally. Digital matte painters use a combination of source photographs, 2-D Photoshop images, 3-D modeling and 3-D animation to create impressive fictional landscapes. Think of those magnificent establishing shots in the recent "Star Wars" movies, showing a sprawling intergalactic metropolis or a jungle fortress crawling with thick foliage and perched atop a raging waterfall.
+
+For live action films, digital matte painters often get the assignment of creating a historically accurate backdrop for a scene. In "The Last Samurai," for example, the script called for Tom Cruise's character to wander out of a bar and into the streets of San Francisco, circa 1876. First, the live actors performed their scene in front of a green or blue screen. Then the digital matte painters consulted archive photos of the city to model a 3-D skyline. They took digital photos of a beautiful sunset and placed it behind their model cityscape. Then they created a computer-generated trolley that would clank down the steep street in front of the actors. (Go here for behind-the-scenes pictures and videos from Matte World Digital.)
+
+Digital matte painters use the same techniques when creating landscapes for fully animated films, like those made by Pixar. If the characters are going to interact a lot with the virtual set, then each set element is rendered in 3-D [source: Pixar]. But for large establishing shots, or an enormous backdrop that will only be seen once, the matte painters use a combination of 2D Photoshop collages and 3D models to build realistic landscapes that fit within the style of the animated film. Pixar movies, for example, have become increasingly photorealistic without losing their "cartoony" quality. So the landscapes can't look perfectly "real." They have to be built on a color and texture palette that matches the rest of the movie.
+
+Another technology that adds impressive realism to a digital landscape is something called a particle system [source: Vanderbilt University School of Engineering]. Particle systems use mathematical algorithms to recreate the natural movements of animated elements like smoke, fire and flocks of birds. For digital matte paintings, the animator doesn't have to draw every flame and every wisp of smoke as the city burns. He just uses the modeling software's particle tools to program how large he wants the flames to be and how dark and billowy the smoke should be. With the same controls, he can model one CG seagull and program the software to create a flock of birds that flap their wings at different paces to take slightly different paths as they soar across the sunset.
+

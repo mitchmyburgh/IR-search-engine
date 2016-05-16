@@ -1,0 +1,15 @@
+Applications
+
+Because of their compactness, bit arrays have a number of applications in areas where space or efficiency is at a premium. Most commonly, they are used to represent a simple group of boolean flags or an ordered sequence of boolean values.
+
+Bit arrays are used for priority queues, where the bit at index k is set if and only if k is in the queue; this data structure is used, for example, by the Linux kernel, and benefits strongly from a find-first-zero operation in hardware.
+
+Bit arrays can be used for the allocation of memory pages, inodes, disk sectors, etc. In such cases, the term bitmap may be used. However, this term is frequently used to refer to raster images, which may use multiple bits per pixel.
+
+Another application of bit arrays is the Bloom filter, a probabilistic set data structure that can store large sets in a small space in exchange for a small probability of error. It is also possible to build probabilistic hash tables based on bit arrays that accept either false positives or false negatives.
+
+Bit arrays and the operations on them are also important for constructing succinct data structures, which use close to the minimum possible space. In this context, operations like finding the nth 1 bit or counting the number of 1 bits up to a certain position become important.
+
+Bit arrays are also a useful abstraction for examining streams of compressed data, which often contain elements that occupy portions of bytes or are not byte-aligned. For example, the compressed Huffman coding representation of a single 8-bit character can be anywhere from 1 to 255 bits long.
+
+In information retrieval, bit arrays are a good representation for the posting lists of very frequent terms. If we compute the gaps between adjacent values in a list of strictly increasing integers and encode them using unary coding, the result is a bit array with a 1 bit in the nth position if and only if n is in the list. The implied probability of a gap of n is 1/2n. This is also the special case of Golomb coding where the parameter M is 1; this parameter is only normally selected when -log(2-p)/log(1-p) ≤ 1, or roughly the term occurs in at least 38% of documents.

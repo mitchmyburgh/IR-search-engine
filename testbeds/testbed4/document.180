@@ -1,0 +1,29 @@
+Platform Specific Rendering Differences
+Unity runs on various platforms and in some cases there are differences in how things behave. Most of the time Unity hides the differences from you, but sometimes you can still bump into them.
+Render Texture Coordinates
+Vertical texture coordinate conventions differ between Direct3D-like and OpenGL-like platforms:
+•	In Direct3D, Metal and consoles, the coordinate is zero at the top, and increases downwards.
+•	In OpenGL and OpenGL ES, the coordinate is zero at the bottom, and increases upwards.
+Most of the time this does not really matter, except when rendering into a Render Texture. In that case, Unity internally flips rendering upside down when rendering into a texture on non-OpenGL, so that the conventions match between the platforms. Two common cases where that needs to be handled in the shaders are: image effects, and rendering things in UV space.
+Image Effects, upside-down RenderTextures, and MSAA
+One case where the above “on non-OpenGL, render upside down when rendering into a texture” does not happen, is when Image Effectsand Anti-Aliasing is used. In this case, Unity renders to screen to get anti-aliasing, and then “resolves” rendering into a RenderTexture for further processing with an Image Effect. The resulting source texture for an image effect is not flipped upside down on Direct3D/Metal (unlike all other Render Textures).
+If your Image Effect is a simple one (processes one texture at a time) then this does not really matter because Graphics.Blit takes care of that.
+However, if you’re processing more than one RenderTexture together in your Image Effect, most likely they will come out at different vertical orientations (only in Direct3D-like platforms, and only when anti-aliasing is used). You need to manually “flip” the screen texture upside down in your vertex shader, like this:
+// On non-GL when AA is used, the main texture and scene depth texture
+// will come out in different vertical orientations.
+// So flip sampling of the texture when that is the case (main texture
+// texel size will have negative Y).
+
+#if UNITY_UV_STARTS_AT_TOP
+if (_MainTex_TexelSize.y < 0)
+        uv.y = 1-uv.y;
+#endif
+Check out the Edge Detection scene in the Shader Replacement sample project for an example of this. Edge detection there uses both the screen texture and the Camera’s Depth+Normals texture.
+Rendering in UV space
+When doing rendering in texture coordinate (UV) space for special effects or tools, you might need to adjust your shaders to that the rendering is consistent between D3D-like and OpenGL-like systems, and between rendering into screen vs. rendering into a texture. A check for built-in variable _ProjectionParams.x is typically done. For example, a vertex shader that renders an object in UV space:
+float4 vert(float2 uv : TEXCOORD0) : SV_POSITION
+{
+    float4 pos;
+    pos.xy = uv;
+    // we're rendering with upside-down flipped projection,
+    // so flip the vertical UV coordinate too

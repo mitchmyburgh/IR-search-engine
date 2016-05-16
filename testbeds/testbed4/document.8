@@ -1,0 +1,81 @@
+For the next couple of lectures we will discuss how viewing and perspective transformations
+are handled for 3-dimensional scenes. In OpenGL, and most similar graphics systems, the process involves
+the following basic steps, of which the perspective transformation is just one component. We assume that all
+objects are initially represented relative to a standard 3-dimensional coordinate frame, in what are called world
+coordinates.
+Modelview transformation: Maps objects (actually vertices) from their world-coordinate representation to one
+that is centered around the viewer. The resulting coordinates are called eye coordinates.
+(Perspective) projection: This projects points in 3-dimensional eye-coordinates to points on a plane called the
+viewplane. (We will see later that this transformation actually produces a 3-dimensional output, where the
+third component records depth information.) This projection process consists of three separate parts: the
+projection transformation (affine part), clipping, and perspective normalization. Each will be discussed
+below.
+Mapping to the viewport: Convert the point from these idealized 2-dimensional coordinates (normalized device
+coordinates) to the viewport (pixel) coordinates.
+Lecture Notes 45 CMSC 427
+We have ignored a number of issues, such as lighting and hidden surface removal. These will be considered
+separately later. The process is illustrated in Fig. 34. We have already discussed the viewport transformation, so
+it suffices to discuss the first two transformations.
+ez ex
+ey
+scene
+viewport transformation
+viewport
+view plane
+viewer
+Fig. 34: OpenGL Viewing Process.
+Converting to Viewer-Centered Coordinate System: As we shall see below, the perspective transformation is simplest
+when the center of projection, the location of the viewer, is the origin and the view plane (sometimes
+called the projection plane or image plane), onto which the image is projected, is orthogonal to one of the axes,
+say the z-axis. Let us call these eye coordinates. However the user represents points relative to a coordinate
+system that is convenient for his/her purposes. Let us call these world coordinates. This suggests that prior
+to performing the perspective transformation, we perform a change of coordinate transformation to map points
+from world-coordinates to eye coordinates.
+In OpenGL, there is a nice utility for doing this. The procedure gluLookAt() generates the desired transformation
+to perform this change of coordinates and multiplies it times the transformation at the top of the current
+Lecture Notes 46 CMSC 427
+transformation stack. (Recall OpenGL’s transformation structure from the previous lecture on OpenGL transformations.)
+This should be done in Modelview mode. Conceptually, this change of coordinates is performed
+after all other Modelview transformations are performed, and immediately before the projection. By the “reverse
+rule” of transformations, this implies that this change of coordinates transformation should be the first
+transformation on the Modelview transformation matrix stack. Thus, it is almost always preceded by loading
+the identity matrix. Here is the typical calling sequence. This should be called when the camera position is set
+initially, and whenever the camera is (conceptually) repositioned in space.
+// ... assuming: glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+gluLookAt(eyeX, eyeY, eyeZ, ctrX, ctrY, ctrZ, upX, upY, upZ);
+// ... all other Modelview transformations follow this
+The arguments are all of type GLdouble. The arguments consist of the coordinates of two points and vector, in
+the standard coordinate system. The point Eye = (eyex; eyey; eyez)T is the viewpoint, that is the location of they
+viewer (or the camera). To indicate the direction that the camera is pointed, a central point to which the camera
+is facing is given by Ctr = (ctrx; ctry; ctrz)T . The center is significant only that its defines the viewing vector,
+which indicates the direction that the viewer is facing. It is defined to be Ctr - Eye.
+These points define the position and direction of the camera, but the camera is still free to rotate about the
+viewing direction vector. To fix last degree of freedom, the vector
+-!
+up = (upx; upy; upz)T provides the direction
+that is “up” relative to the camera. Under typical circumstances, this would just be a vector pointing straight up
+(which might be (0; 0; 1)T in your world coordinate system). In some cases (e.g. in a flight simulator, when the
+plane banks to one side) you might want to have this vector pointing in some other direction. This vector need
+not be perpendicular to the viewing vector. However, it cannot be parallel to the viewing direction vector.
+The Camera Frame: OpenGL uses the arguments to gluLookAt() to construct a coordinate frame centered at the
+viewer. The x- and y-axes are directed to the right and up, respectively, relative to the viewer. It might seem
+natural that the z-axes be directed in the direction that the viewer is facing, but this is not a good idea.
+To see why, we need to discuss the distinction between right-handed and left-handed coordinate systems. Consider
+an orthonormal coordinate system with basis vectors ~ex, ~ey and ~ez. This system is said to be right-handed
+if ~ex _ ~ey = ~ez, and left-handed otherwise (~ex _ ~ey = -~ez). Right-handed coordinate systems are used by
+default throughout mathematics. (Otherwise computation of orientations is all screwed up.) Given that the xand
+y-axes are directed right and up relative to the viewer, if the z-axis were to point in the direction that the
+viewer is facing, this would result in left-handed coordinate system. The designers of OpenGL wisely decided
+to stick to a right-handed coordinate system, which requires that the z-axes is directed opposite to the viewing
+direction.
+Building the Camera Frame: How does OpenGL implement this change of coordinate transformation? This turns
+out to be a nice exercise in geometric computation, so let’s try it. We want to construct an orthonormal frame
+whose origin is the point Eye, whose -z-basis vector is parallel to the view vector, and such that the
+ (Recall that normalization operation divides a vector by its length, thus resulting in a vector having the same
+direction and unit length.)
+Next, we want to select the x-basis vector for our camera frame. It should be orthogonal to the viewing direction,
+it should be orthogonal to the up vector, and it should be directed to the camera’s right. Recall that the cross
+product will produce a vector that is orthogonal to any pair of vectors, and directed according to the right hand
+rule. Also, we want this vector to have unit length. Thus we choose
+C:~e

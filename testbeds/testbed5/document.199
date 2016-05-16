@@ -1,0 +1,61 @@
+JavaScript Style: Semicolons, or No?
+
+A fledgling effort to promote a new standard for styling JavaScript code is getting hung up on the issue of whether or not to use semicolons over at Hacker News.
+
+The JavaScript Standard Style project on GitHub (and here on the Web) promises "one style to rule them all."
+
+"The beauty of JavaScript Standard Style is that it's simple," the project's README.md states. "No one wants to maintain multiple hundred-line style configuration files for every module/project they work on. Enough of this madness! This module saves you time in two ways:
+
+    No configuration. The easiest way to enforce consistent style in your project. Just drop it in.
+    Catch style errors before they're submitted in PRs. Saves precious code review time by eliminating back-and-forth between maintainer and contributor."
+
+XXX
+[Click on image for larger view.]
+The JavaScript Standard Style TL:DR (source: Standardjs.com)
+
+Although it appears to have been in the works for about a year, it was just introduced on the coding forum site Hacker News today, where semicolons emerged as a big sticking point, judging from comments such as:
+
+    Why do these people want to avoid semicolons at all costs? Even inconsistencies? Even potential bugs? Why?? I just don't get it.
+    If there was an actual gain to leaving out the semicolons, I'd be onboard but the only gain here is someone's aesthetic pleasure and someone else's aesthetic displeasure.
+    No semicolons, two space indentation, space after function name, single quotes for strings? There's no way this would fly with a majority of developers.
+    The no semicolons and space after function name are really the weird things here.
+    I started skimming the rules and was like "this all seems fine" and then noticed "no semicolons". YOU'LL PRY THEM FROM MY COLD, DEAD HANDS FIRST.
+    no semicolons = no deal.
+    There's no real good reason why, but my mild OCDish tendencies get intensely triggered by looking at Javascript with no semicolons.
+    Downside [of adopting this style, which the commenter did] is that very few other authors are using it, so when you share code people are concerned about its format (no semicolons in particular).
+    No semicolons? REALLY? We've already spoke about this, people.
+
+Ah, yes, spoken about it we have. It turns out this debate has been raging in the JavaScript world for years -- possibly since JavaScript creator Brendan Eich first called it a wrap in 1995.
+
+"Do you recommend using semicolons after every statement in JavaScript?" asks a question on the coding Q&A site StackOverflow seven years ago.
+
+Even earlier than that, Robert Nyman addressed the issue in a post that generated debate in comments that persisted for some four years. (His advice: "make sure to always put semicolons in your code, to avoid potential problems."
+
+Eich himself addressed the issue in a 2012 post titled The Infernal Semicolon. "Most of the comments in this semicolons in JS exchange make me sad," it starts out.
+
+And Hacker News itself published a poll on the question exactly 2,103 days ago. Answers to "Poll: Semicolons in JavaScript" were 418 points yea and 45 points nay.
+The Required Response Whenever a New Standard is Discussed on Hacker News
+[Click on image for larger view.]
+The Required Response Whenever a New Standard Is Discussed on Hacker News (source: xkcd.com)
+
+From a quick perusal of the debate still underway on the Web, that seems to be in line with the general developer consensus on the matter.
+
+Not that there aren't vocal supporters of doing away with semicolons, even in the aforementioned Hacker News post. "Everything will be fine if you don't use semicolons," read one comment. "My team and I haven't, for years now. It's really, really, truly honestly ok. I promise. (Only exception is for-loops)."
+
+The creators (Feross Aboukhadijeh published the GitHub effort) of this new style effort echo that view and obviously anticipated the ensuing debate. The project rules specify: "No semicolons -– It's fine. Really!" (Note there are three different links in the preceding text, though it might look like just one.)
+
+The "official" stance is somewhat murkier. Ecma International is in charge of setting standards for the scripting-language specification called ECMAScript, under which fall scripting languages such as JavaScript, JScript and ActionScript.
+
+Here's what that governing body says in a section titled "Automatic Semicolon Insertion":
+
+    Certain ECMAScript statements (empty statement, variable statement, expression statement, do-while statement, continue statement, break statement, return statement, and throw statement) must be terminated with semicolons. Such semicolons may always appear explicitly in the source text. For convenience, however, such semicolons may be omitted from the source text in certain situations. These situations are described by saying that semicolons are automatically inserted into the source code token stream in those situations."
+
+There's a bunch more verbiage on the rules for Automatic Semicolon Insertion, but I didn't even try to decipher it as I don't speak ECMAScript-ese. If somebody wants to wade through that officious-sounding crap and provide me with a TL:DR, I'm all ears. (One sentence in this Automatic Semicolon Insertion "guidance" is 88 words long -- who writes this stuff?)
+
+A GitHub project detailing ECMAScript 6 features provides more information in something more closely resembling English:
+
+    ECMAScript since its earliest days supported automatic semicolon inference/insertion, of course. But people coding ECMAScript 5 started it in an era where lots of tools (especially source code compressors) had problems when semicolons were left out from the source code. As a consequence, most ECMAScript 5 coders maintained the traditional coding style with semicolons as the syntactic sugar, although in most of the cases they are not necessary. But this era is gone today. Both ECMAScript 6 and all tools (including compressors) perfectly support automatic semicolon inference/insertion nowadays. As a consequence, ECMAScript 6 coders nowadays can get rid of nearly all semicolons and remove clutter from their source code.
+
+I'm all for removing clutter, but I somehow can't see myself not using semicolons. They just seem to provide some structured stability or something in a language that's fast and loose enough as it is.
+
+What about you? Weigh in here in the comments or drop me a line. 

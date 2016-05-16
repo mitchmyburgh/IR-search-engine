@@ -1,0 +1,116 @@
+Improving Machine Learning Approaches to Coreference Resolution
+
+
+Vincent Ng and Claire Cardie
+
+1 Introduction
+Noun phrase coreference resolution refers to the
+problem of determining which noun phrases (NPs)
+refer to each real-world entity mentioned in a document.
+Machine learning approaches to this problem
+have been reasonably successful, operating primarily
+by recasting the problem as a classification
+task (e.g. Aone and Bennett (1995), McCarthy and
+Lehnert (1995)). Specifically, a pair of NPs is classified
+as co-referring or not based on constraints that
+are learned from an annotated corpus. A separate
+clustering mechanism then coordinates the possibly
+contradictory pairwise classifications and constructs
+a partition on the set of NPs. Soon et al. (2001),
+for example, apply an NP coreference system based
+on decision tree induction to two standard coreference
+resolution data sets (MUC-6, 1995; MUC-
+7, 1998), achieving performance comparable to the
+best-performing knowledge-based coreference engines.
+Perhaps surprisingly, this was accomplished
+in a decidedly knowledge-lean manner — the learning
+algorithm has access to just 12 surface-level features.
+This paper presents an NP coreference system that
+investigates two types of extensions to the Soon et
+al. corpus-based approach. First, we propose and
+evaluate three extra-linguistic modifications to the
+machine learning framework, which together provide
+substantial and statistically significant gains
+in coreference resolution precision. Second, in an
+attempt to understand whether incorporating additional
+knowledge can improve the performance of
+a corpus-based coreference resolution system, we
+expand the Soon et al. feature set from 12 features
+to an arguably deeper set of 53. We propose additional
+lexical, semantic, and knowledge-based features;
+most notably, however, we propose 26 additional
+grammatical features that include a variety of
+linguistic constraints and preferences. Although the
+use of similar knowledge sources has been explored
+in the context of both pronoun resolution (e.g. Lappin
+and Leass (1994)) and NP coreference resolution
+(e.g. Grishman (1995), Lin (1995)), most previous
+work treats linguistic constraints as broadly and unconditionally
+applicable hard constraints. Because
+sources of linguistic information in a learning-based
+system are represented as features, we can, in contrast,
+incorporate them selectively rather than as universal
+hard constraints.
+Our results using an expanded feature set are
+mixed. First, we find that performance drops signifi-
+cantly when using the full feature set, even though
+the learning algorithms investigated have built-in
+feature selection mechanisms. We demonstrate empirically that the degradation in performance can be
+attributed, at least in part, to poor performance on
+common noun resolution. A manually selected subset
+of 22–26 features, however, is shown to provide
+significant gains in performance when chosen
+specifically to improve precision on common noun
+resolution. Overall, the learning framework and linguistic
+knowledge source modifications boost performance
+of Soon’s learning-based coreference resolution
+approach from an F-measure of 62.6 to 70.4,
+and from 60.4 to 63.4 for the MUC-6 and MUC-7
+data sets, respectively. To our knowledge, these are
+the best results reported to date on these data sets for
+the full NP coreference problem.1
+The rest of the paper is organized as follows. In
+sections 2 and 3, we present the baseline coreference
+system and explore extra-linguistic modifications
+to the machine learning framework. Section 4
+describes and evaluatesthe expanded feature set. We
+conclude with related and future work in Section 5.
+
+5 Conclusions
+We investigate two methods to improve existing
+machine learning approaches to the problem ofnoun phrase coreference resolution. First, we propose
+three extra-linguistic modifications to the machine
+learning framework, which together consistently
+produce statistically significant gains in precision
+and corresponding increases in F-measure.
+Our results indicate that coreference resolution systems
+can improve by effectively exploiting the interaction
+between the classification algorithm, training
+instance selection, and the clustering algorithm.
+We plan to continue investigations along these lines,
+developing, for example, a true best-first clustering
+coreference framework and exploring a “supervised
+clustering” approach to the problem. In addition,
+we provide the learning algorithms with many additional
+linguistic knowledge sources for coreference
+resolution. Unfortunately, we find that performance
+drops significantly when using the full feature set;
+we attribute this, at least in part, to the system’s poor
+performance on common noun resolution and to data
+fragmentation problems that arise with the larger
+feature set. Manual feature selection, with an eye
+toward eliminating low-precision rules for common
+noun resolution, is shown to reliably improve performance
+over the full feature set and produces the
+best results to date on the MUC-6 and MUC-7 coreference
+data sets — F-measures of 70.4 and 63.4, respectively.
+Nevertheless, there is substantial room
+for improvement. As noted above, for example, it is
+important to automate the precision-oriented feature
+selection procedure as well as to investigate other
+methods for feature selection. We also plan to investigate
+previous work on common noun phrase
+interpretation (e.g. Sidner (1979), Harabagiu et al.
+(2001)) as a means of improving common noun
+phrase resolution, which remains a challenge for
+state-of-the-art coreference resolution systems.

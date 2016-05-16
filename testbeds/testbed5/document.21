@@ -1,0 +1,124 @@
+Know Your Language: Coding Toil and Trouble with Shakespeare
+
+Among esoteric programming languages, Shakespeare is the precise opposite of Brainfuck. While the latter reduces syntax and structure to a few scraps of symbols, as far away from the adornments of English as possible, the prior reimagines code as lavish Shakespearean prose.
+
+In fact, it requires it.
+
+What could that possibly mean? Just what it says. A program written in Shakespeare looks like the text of a Shakespearean play, while also fulfilling all of the obligations of a Turing complete programming language; that is, given infinite memory and time, a Shakespeare program can be written that replicates the functionality of any program written in any other language.
+
+Unsurprisingly, it began as a class assignment.
+
+Late one February night, Kalle Hasselström and Jon Åslund, the language's authors, were sitting around with a programming assignment meant to be presented at nine the following morning.
+
+"A few weeks earlier we had discovered a number of truly fascinating programming languages, such as Java2k, Sorted!, Brainfuck, and Malbolge, and we wanted to make our own," Hasselström and Åslund explain. "We have no idea why, but that night we were also thinking about Shakespeare in general, and Shakespearian insults in particular and three hours later we had come up with this amazing idea: the Shakespeare Programming Language, SPL."
+... wherefore art thou, integer?
+
+To see how this works, consider a variable declaration, perhaps the most fundamental mechanic in coding. A variable declared within a Shakespeare program must have the name of a Shakespearean character, or it will be ignored by the compiler (the thing that translates human-readable programs, composed using higher-level programming languages, into assembly and then machine code).
+
+The syntax for this is simply the name of the variable (the character name), followed by a comma, and then whatever fluff the programmer wants to write and have ignored by the compiler. In a normal programming language, this bonus text would be considered a comment.
+
+So, a series of variable declarations might look like this.
+
+The Infamous Hello World Program.
+
+Romeo, a young man with a remarkable patience.
+Juliet, a likewise young woman of remarkable grace.
+Ophelia, a remarkable woman much in dispute with Hamlet.
+Hamlet, the flatterer of Andersen Insulting A/S.
+
+The compiler just cares about the names, which correspond to the integer data type (and only the integer data type). The stuff afterward that gets ignored could be used as documentation, I suppose, which is often the point of commenting code: explaining what this or that chunk of program is supposed to do or any other guidance from one programmer to another.
+
+Meanwhile, a program (or play) is composed of one or more acts, which are then composed of one or more scenes, which are then composed of one or more lines. These are meaningful divisions.
+
+Acts, scenes, and lines function as labels do in C—they can be jumped to from other places in the program using the "goto" statement. There's no goto in Shakespeare, however.
+
+Instead of, say, "goto Act III"—how one would program a jump to a section of code labeled "Act III" in C—Shakespeare requires the programmer to type a variation of "Let us return to scene III," where "let us" can be replaced by "we shall" or "we must" and "return to" can be replaced by "proceed to." It just depends on what sounds the most natural, given the context, for a Shakespearean play. Jumps like this form the basis of many programming control structures.
+
+Shakespeare comes with an if-then mechanic that's similar to how assembly languages handle if-thens. That is, it's a two-step process of comparison and then jumping:
+
+Juliet:
+ Am I better than you?
+
+Hamlet:
+ If so, let us proceed to scene III.
+
+"Is X better than Y" tests if X > Y. If the integer stored in X is bigger than the integer stored in Y, then the program jumps to the label "scene III."
+
+To push or not to push
+
+Variables in Shakespeare have an extra property that's pretty interesting. They're a bit more than plain integers and instead function as integer stacks. A stack is a crucial data structure in which lists of items are stored in a first-in-last-out fashion. For example, if I added the numbers 1, 2, and 3 to a stack in that order. The first item I could remove is 3, then 2, and then 1. The classic stack illustration is a stack of dinner plates—you can only grab the top one, and to access the bottom plate, all other plates must be removed.
+
+Stacks are manipulated with push and pop operations. In ASM/MASM assembly language, the following code snippet adds two items to the stack and then removes the top one, leaving one item.
+
+push x
+ push y
+ pop
+
+Pop doesn't have an argument because there's really just the one thing that can be popped.
+
+In Shakespeare, the above code would look like this (but with Shakespearean names):
+
+remember x
+ remember y
+ recall
+
+In the above, the language is constructed so that the programmer could write whatever Shakespearean thing they want following "recall" and, like the variable fluff mentioned above, it will be ignored by the compiler. The example given in the Shakespeare documentation is this, where "me" is a variable and "your imminent death" is meaningless to the program's functionality.
+
+Lady Macbeth:
+ Remember me.
+
+Lady Macbeth:
+ Recall your imminent death!
+
+Hello, World
+
+I thought about not copying the entire Shakespeare "Hello, World" program because it's really long, but the length and verbosity is also the point. Here 'tis:
+
+The Infamous Hello World Program.
+
+Romeo, a young man with a remarkable patience.
+Juliet, a likewise young woman of remarkable grace.
+Ophelia, a remarkable woman much in dispute with Hamlet.
+Hamlet, the flatterer of Andersen Insulting A/S.
+
+
+                    Act I: Hamlet's insults and flattery.
+
+                    Scene I: The insulting of Romeo.
+
+[Enter Hamlet and Romeo]
+
+Hamlet:
+ You lying stupid fatherless big smelly half-witted coward!
+ You are as stupid as the difference between a handsome rich brave
+ hero and thyself! Speak your mind!
+
+ You are as brave as the sum of your fat little stuffed misused dusty
+ old rotten codpiece and a beautiful fair warm peaceful sunny summer's
+ day. You are as healthy as the difference between the sum of the
+ sweetest reddest rose and my father and yourself! Speak your mind!
+
+ You are as cowardly as the sum of yourself and the difference
+ between a big mighty proud kingdom and a horse. Speak your mind.
+
+ Speak your mind!
+
+[Exit Romeo]
+
+                    Scene II: The praising of Juliet.
+
+[Enter Juliet]
+
+Hamlet:
+ Thou art as sweet as the sum of the sum of Romeo and his horse and his
+ black cat! Speak thy mind!
+
+[Exit Juliet]
+
+                    Scene III: The praising of Ophelia.
+
+[Enter Ophelia]
+
+Hamlet:
+ Thou art as lovely as the product of a large rural town and my amazing
+ bottomless embroidered purse. Speak thy mind!

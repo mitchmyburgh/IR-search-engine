@@ -1,0 +1,21 @@
+Linear Vs Non-linear Data Structures.
+Linear data fashion- Linked list is an example of linear data storage or structure. Linked list stores data in an organized a linear fashion. They store data in the form of a list. A linear data structure traverses the data elements sequentially, in which only one data element can directly be reached. Ex: Arrays, Linked Lists.
+
+Non Linear data structure- Tree data structure is an example of a non linear data structure. A tree has one node called as root node that is the starting point that holds data and links to other nodes.Every data item is attached to several other data items in a way that is specific for reflecting relationships. The data items are not arranged in a sequential structure. Ex: Trees, Graphs 
+
+Binary Trees 
+A binary tree is an important type of structure which occurs very often. 
+It is characterized by the fact that any node can have at most two branches, i.e., there is no node with degree greater than two. For binary trees we distinguish between the subtree on the left and on the right, whereas for trees the order of the subtreewas irrelevant. Also a binary tree may have zero nodes. Thus a binary tree is really a different object than a tree. 
+Definition: A binary tree is a finite set of nodes which is either empty or consists of a root and two disjoint binary trees called the left subtree and the right subtree. 
+
+A binary search tree (BST) is a binary tree in which all nodes follows the below mentioned properties:
+The left sub-tree of a node has key less than or equal to its parent node's key.
+The right sub-tree of a node has key greater than or equal to its parent node's key.
+Thus, a binary search tree (BST) divides all its sub-trees into two segments; left sub-tree and right sub-tree. 
+
+Following are basic primary operations of a tree which are following.
+Search − search an element in a tree.
+Insert − insert an element in a tree.
+Preorder Traversal − traverse a tree in a preorder manner.
+Inorder Traversal − traverse a tree in an inorder manner.
+Postorder Traversal − traverse a tree in a postorder manner.

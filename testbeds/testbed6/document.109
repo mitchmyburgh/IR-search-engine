@@ -1,0 +1,115 @@
+
+      topological sorting again (Python recipe) by yota 
+        ActiveState Code (http://code.activestate.com/recipes/578406/) 
+           ▲ 
+           3
+           ▼ 
+          Topological sorting is the answer to the following question : in a direct acyclic graph, how can I pick up nodes "in order", such as upstream nodes are always before downstream ones ? Many solutions may exists, many algorithms too. 
+          Alas, it seems I'm too stupid to understand already proposed recipes on topological sorting. Hopefully I do grasp the "write once, read many" concept. 
+          Here, you will find a plain algorithm, optimized only for code clarity, of a topological sorting for direct acyclic graphs, implemented in python from the pseudo code found on wikipedia: 
+          L ← Empty list that will contain the sorted elements
+S ← Set of all nodes with no incoming edges
+while S is non-empty do
+    remove a node n from S
+    insert n into L
+    for each node m with an edge e from n to m do
+        remove edge e from the graph
+        if m has no other incoming edges then
+            insert m into S
+if graph has edges then
+    return error (graph has at least one cycle)
+else 
+    return L (a topologically sorted order)
+          Only tested with python3.2, should work with other versions. Be careful, code indented with tabs, since space is evil è_é 
+            Python, 48 lines 
+             Download
+              Copy to clipboard
+                1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+                 #!/usr/bin/env python3.2
+def sort_direct_acyclic_graph(edge_list) :
+	# edge_set is consummed, need a copy
+	edge_set = set([tuple(i) for i in edge_list])
+	# node_list will contain the ordered nodes
+	node_list = list()
+	# source_set is the set of nodes with no incomming edges
+	node_from_list, node_to_list = zip(* edge_set)
+	source_set = set(node_from_list) - set(node_to_list)
+	while len(source_set) != 0 :
+		# pop node_from off source_set and insert it in node_list
+		node_from = source_set.pop()
+		node_list.append(node_from)
+		# find nodes which have a common edge with node_from
+		from_selection = [e for e in edge_set if e[0] == node_from]
+		for edge in from_selection :
+			# remove the edge from the graph
+			node_to = edge[1]
+			edge_set.discard(edge)
+			# if node_to don't have any remaining incomming edge :
+			to_selection = [e for e in edge_set if e[1] == node_to]
+			if len(to_selection) == 0 :
+				# add node_to to source_set
+				source_set.add(node_to)
+	if len(edge_set) != 0 :
+		raise IndexError # not a direct acyclic graph
+	else :
+		return node_list
+u = [
+	['a', 'b'], # a -&gt; b, etc.
+	['a', 'c'],
+	['b', 'e'],
+	['c', 'd'],
+	['b', 'd'],
+	['e', 'f'],
+	['c', 'f'],
+]
+&gt;&gt;&gt; sort_direct_acyclic_graph(u)
+['a', 'c', 'b', 'e', 'd', 'f']
+          var addthis_config = {services_compact: 'delicious,digg,reddit,twitter,email,favorites,more', username: 'xa-4b4f86a749591ece', data_use_flash: false}; 
+          

@@ -1,0 +1,47 @@
+Rust programming language for speed, safety, and concurrency
+
+
+
+Rust is a systems programming language that got its start in 2010 with Mozilla Research. Today, one of Rust's most ardent developers and guardians is Steve Klabnik, who can you find traveling the globe touting its features and teaching people how to use it.
+
+At All Things Open 2015, Steve will give attendees all they need to know about Rust, but we got an exclusive interview prior to his talk in case you can't make it.
+
+In June, earlier this year, you gave us an update on Rust. So, what's new today?
+
+Lots of things! Since then, we've continued our six-week release schedule, recently releasing Rust 1.3. The compiler keeps getting quicker, more features have been added to the standard library, and the ecosystem keeps growing. At the time I'm writing this, we have over 3,000 crates, with almost 9 million downloads.
+Is your aim is to build a practical programming language with a large community? Who is the target audience for Rust?
+
+The focus of Rust is three-fold: speed, safety, and concurrency.
+
+Historically speaking, most programming languages have seen speed and safety as a trade-off. Through heavy use of static analysis, Rust is able to guarantee the safety of a lot of low-level programming, while generating incredibly fast code.
+
+Rust's core audience is people who need control. Control over memory layout, control over performance details, control over exactly how
+their systems work. This comes up surprisingly often, however. For example, one of our earliest production users, skylight.io, does web
+application performance monitoring. One side effect of Rust's ability to give you control is that it integrates really well with other
+languages, and so Skylight is able to ship a regular Ruby gem to their customers that's actually implemented in Rust under the hood.
+What do you have to carefully consider?
+
+One example is some new syntax, which is being described here on GitHub. This feature is very important to Rust, so we want to get it right.
+
+The general concept is called "placement new." What this means is that right now,
+
+vec.push(value)
+
+to put something into a vector creates that value, then gets passed to the function, which then copies it into the vector. It'd be nice to just create the value in the vector directly, without the copy. This requires language support to get it right. So, the two proposed syntaxes are
+
+value in vec
+
+and
+
+vec <- value
+
+Both have pros and cons to them.
+What do you hope attendees will get out of your talk? Is it a workshop or more hands-on?
+
+I'm hoping they'll get some context around Rust and why it's special.
+
+Last year's talk was a bit workshoppy, so I'm looking at making this year a bit more of a typical talk.
+You've said, "A potential user of Rust needs to literally read a book to learn how to use it." Are you teaching people how to use it?
+
+I have been giving various talks on Rust at conferences around the world. It's very fulfilling, but maybe someday I won't spend half of my life on planes!
+

@@ -1,0 +1,88 @@
+﻿Future
+Operations
+Centre
+Analysis
+Laboratory (FOCAL)
+The Future Operations Centre Analysis Laboratory
+(FOCAL) is a research project whose goal is to
+"pioneer
+a
+paradigm
+shift
+in
+command
+environments through a superior use of capability
+and greater situation awareness" (FOCAL Task
+Plan). In part, this involves building a high-level
+information fusion system for the military domain
+(Lambert, 2003; FOCAL, 2002).
+To support this goal, the FOCAL facility was
+designed
+to
+experiment
+with
+innovative
+technologies. FOCAL contains a large-screen
+(150
+°
+) semi-immersive virtual reality environment
+as its primary display, allowing vast quantities of
+information (real or virtual) to be displayed.
+Spoken dialogue with virtual characters known as
+VAs (Virtual Advisers) is one of the means of
+delivering information (Estival et al., 2003).
+Within the FOCAL project, the Natural
+Language Processing (NLP) and the Knowledge
+Representation
+and
+Reasoning
+(KR)
+work
+packages are tasked with providing appropriate
+NLP and KR functionalities, including processing
+natural language queries and providing a
+formalisation of the domain and reasoning
+capabilities. These two work packages are closely
+related in that a natural language query is to be
+processed, mapped to its formal representation and
+answered by a reasoning subsystem, and then a
+natural language answer is returned to the user.
+Current
+FOCAL
+work
+is
+focused
+on
+implementing a scenario, which is located within a
+particular military situation and describes a
+military domain, a limited (in space and time)
+region of the world, and other relevant elements of
+that situation. Among other things, the domain
+description requires dealing with geography,
+logistics and planning.
+The FOCAL architecture is agent-based and
+uses the CoABS (Control of Agent Based Systems)
+Grid as its infrastructure (Global InfoTek, 2002).
+The CoABS Grid was designed to allow a large
+number of heterogeneous procedural, object-
+oriented and agent-based systems to communicate.
+FOCAL agents process information, communicate
+and collaborate. Most agents are implemented in
+ATTITUDE
+and communication between agents is
+accomplished via string messages (Wark et al.,
+2004).
+Humans are also involved in FOCAL, as the end
+users who interact with the system to perform their
+work and achieve their goal: successfully planning
+and conducting an operation. The current scenario
+provides a testbed for the system. Extensions of
+the scenario and new scenarios for different
+domains will ensure that FOCAL functions as
+expected outside of the limited domain of the
+current scenario.
+There are many aspects of FOCAL which are
+not directly related to NLP and KR activities, and
+which are therefore excluded from this discussion.
+In the rest of this paper, only aspects relevant to
+NLP and KR are considered.

@@ -1,0 +1,10 @@
+Types generally represent nouns, such as a person, place or thing, or something nominalized, and a class represents an implementation of these. For example, a Banana type might represent the properties and functionality of bananas in general, while the ABCBanana and XYZBanana classes would represent ways of producing bananas (say, banana suppliers or data structures and functions to represent and draw bananas in a video game). The ABCBanana class could then produce particular bananas: instances of the ABCBanana class would be objects of type Banana. Often only a single implementation of a type is given, in which case the class name is often identical with the type name.
+Design and implementation
+
+Classes are composed from structural and behavioral constituents.[4] Programming languages that include classes as a programming construct offer support for various class-related features, and the syntax required to use these features varies greatly from one programming language to another.
+Structure
+UML notation for classes
+
+A class contains data field descriptions (or properties, fields, data members, or attributes). These are usually field types and names that will be associated with state variables at program run time; these state variables either belong to the class or specific instances of the class. In most languages, the structure defined by the class determines the layout of the memory used by its instances. Other implementations are possible: for example, objects in Python use associative key-value containers.[5]
+
+Some programming languages support specification of invariants as part of the definition of the class, and enforce them through the type system. Encapsulation of state is necessary for being able to enforce the invariants of the class.

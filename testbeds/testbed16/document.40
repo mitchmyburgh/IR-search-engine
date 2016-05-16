@@ -1,0 +1,42 @@
+Cloud Elasticity vs. Scalability - Which is Best for You?
+16
+Mar 15
+Posted March 16, 2015 by  Tim Pat Dufficy
+
+Cloud Elasticity vs Scalability - Which is Best for You
+
+Everywhere you look these days cloud vendors are promoting elasticity, but what is it and can you benefit from it?
+
+Elasticity is the latest innovation in cloud computing and, helped along by the marketing of several giant Public Cloud vendors, it's whipping up quite a storm.
+
+In an elastic cloud, the application is able to monitor changes in the demand for resources, like bandwidth, connections, compute, RAM and storage, in real-time. It can then autonomously add or remove resources to the system to cope with that changing demand, all without human intervention. This is theoretically ideal for applications with variable, spiky or unpredictable demand.
+
+While any cloud can be made elastic, the practice is most common within the Public Cloud space where it enables: 
+
+Users to grow or shrink their cloud (to a point) and only pay for what they use
+Vendors to cope with spikes in demand, improve utilisation and generate additional revenue 
+Cloud elasticity and scalability are not equal
+
+Be careful when evaluating potential solutions and providers, however, as the words 'elasticity' and 'scalability' are frequently being used interchangeably in the market when in fact they are not the same. 
+
+Autonomous cloud elasticity is achieved by giving the application the ability to make calls to the hypervisor to create new machine instances with the resources required to meet the current demand. This means that when demand is expected to exceed what one virtual machine can provide, another one is created to support it. When demand drops, so too is the support machine. 
+
+This is not the same as scaling the resources available to an existing machine - increasing CPU power, adding RAM or expanding hard disk capacity, for example. The major challenge with scaling a machine's available resources is that, as yet, it cannot be performed without restarting the machine. 
+
+In cloud terms, scalability can refer to the creation of additional machines. When people hear scalability however, it is typically the scaling of resources on existing machines of which they think. Hence, when the words elasticity and scalability are interchanged, a misunderstanding can be formed. 
+
+Which is better - elasticty or scalability?
+
+Both elasticity and scalability are highly desirable under different circumstances.
+
+When an application has been developed to be truly cloud-native, or cloud-aware, it can take advantage of the dynamically created machines that elasticity offers. These elastic applications can scale fluidly in-line with demand and provide a consistently good user experience in an extremely cost effective way. Under these circumstances, an elastic Public Cloud solution can be very advantageous.
+
+The vast majority of applications, however, are not cloud-aware. This is particularly true of business process software. Most of these applications are coded to run on a single machine. If that machine receives new resources, the application can make use of them, but if a new machine is offered up, it cannot. Databases, currently, are also unable to make use of elastic capacity.
+
+If your applications fall in to this category, you need scalability, not elasticity.
+
+Virtualising inelastic apps
+
+When looking to host inelastic apps while offering a reliable user experience and having access to scalability that you can easily and affordably use, consider a Private Cloud solution.
+
+Private Cloud is typically expected to be more expensive than Public Cloud alternatives. But when demand is relatively stable and the flexibility, in terms of capacity and commitment, of Public Cloud is no longer as beneficial there is a clear tipping point in Private Cloud's favour. Once you reach that tipping point the aggregate costs of Public Cloud's utility pricing frquently exceeds that of an equivalent Private Cloud platform.

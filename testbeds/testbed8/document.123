@@ -1,0 +1,10 @@
+Performance comparisons[edit]
+D. A. Heger (2004)[3] presented a performance comparison of binary search trees. Treap was found to have the best average performance, while red-black tree was found to have the smallest amount of performance variations.
+Optimal binary search trees[edit]
+Main article: Optimal binary search tree
+ 
+Tree rotations are very common internal operations in binary trees to keep perfect, or near-to-perfect, internal balance in the tree.
+If we do not plan on modifying a search tree, and we know exactly how often each item will be accessed, we can construct[4]an optimal binary search tree, which is a search tree where the average cost of looking up an item (the expected search cost) is minimized.
+Even if we only have estimates of the search costs, such a system can considerably speed up lookups on average. For example, if you have a BST of English words used in a spell checker, you might balance the tree based on word frequency intext corpora, placing words like the near the root and words like agerasia near the leaves. Such a tree might be compared with Huffman trees, which similarly seek to place frequently used items near the root in order to produce a dense information encoding; however, Huffman trees store data elements only in leaves, and these elements need not be ordered.
+If we do not know the sequence in which the elements in the tree will be accessed in advance, we can use splay trees which are asymptotically as good as any static search tree we can construct for any particular sequence of lookup operations.
+Alphabetic trees are Huffman trees with the additional constraint on order, or, equivalently, search trees with the modification that all elements are stored in the leaves. Faster algorithms exist for optimal alphabetic binary trees (OABTs).

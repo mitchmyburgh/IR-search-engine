@@ -1,0 +1,20 @@
+Flow Cytometry Standard (FCS) is a data file standard for the reading and writing of data from flow cytometry experiments. The FCS specification has traditionally been developed and maintained by the International Society for Advancement of Cytometry (ISAC). FCS used to be the only widely adopted file format in flow cytometry. Recently, additional standard file formats have been developed by ISAC.
+
+
+== Data structure ==
+Flow cytometry data is typically saved for analysis in the form of an array, with fluorescence and scatter channels represented in columns, and individual "events" (most of which are cells) forming the rows. The number of events acquired from each sample usually ranges between the low thousands and the low millions.
+
+
+== History ==
+The first version of a Flow Cytometry Standard (FCS) was developed in 1984. Since then, FCS became the standard file format supported by all flow cytometry software and hardware vendors. FCS is a binary file format with three main segments: a text segment containing meta data in keyword/value pairs structures, a data segment usually containing a matrix of detected expression values (so called list mode format), and a rarely used analysis segment.
+Over the years, updates were incorporated to adapt to technological advancements in both flow cytometry and computing technologies.
+In 1990, FCS 2.0 was introduced.  Features introduced in FCS 2.0 included the option of multiple data sets within a data file, the use of different byte orders accommodating hardware variations on different computing platforms, and basic compensation and scaling information. FCS 2.0 was followed by FCS 3.0 in 1997, which introduced the possibility of storing data sets larger than 100MB.
+The latest version, FCS 3.1, was introduced in 2010.  It retains the basic FCS file structure and most features of previous versions of the standard. Changes included in FCS 3.1 address potential ambiguities in the previous versions and provide a more robust standard. They include simplified support for international characters and improved support for storing compensation. The major additions are support for preferred display scale, a standardized way of capturing the sample volume, information about the origins of the data file, and support for plate and well identification in high throughput, plate based experiments.
+
+
+== See also ==
+Flow cytometry
+Flow cytometry bioinformatics
+
+
+== References ==

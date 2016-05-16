@@ -1,0 +1,117 @@
+WEKA: A Machine Learning Workbench
+
+Geoffrey Holmes, Andrew Donkin, and Ian H. Witten 
+
+1. Introduction
+Machine learning is a burgeoning new
+technology with a wide range of applications.
+It has the potential to become one of the key
+components of intelligent information
+systems, enabling compact generalizations,
+inferred from large databases of recorded
+information, to be applied as knowledge in
+various practical ways-such as being
+embedded in automatic processes like expert
+systems, or used directly for communicating
+with human experts and for educational
+purposes. Presently, however, the field is
+not well placed to do this. Most research
+effort is directed towards the invention of
+new algorithms for learning, rather than
+towards gaining experience in applying
+existing techniques to real problems. The
+WEKA* project (Waikato Environment for
+Knowledge Analysis) is redressing the
+balance by applying standard machine
+learning techniques to a variety of agricultural
+and horticultural problems. Our goal is to
+discover and characterize what is required for successful applications of machine learning
+to real-world data.
+To support this effort, a workbench has
+been developed to provide an integrated
+environment which not only gives easy
+access to a variety of machine learning
+techniques through an interactive interface,
+but also incorporates those pre- and postprocessing
+tools that we have found to be
+essential when working with real-world data
+sets.
+Other systems for machine learning
+experimentation exist [ 1,2,3], but these are
+libraries of routines that are intended for use
+by a researcher who is extending and
+comparing algorithms. One exceptionalthough
+still a library of modules-is
+Consultant [4], an expert system that allows
+domain experts to choose a learning
+algorithm suited to their needs. Consultant
+assumes that a machine learning algorithm
+exists that can be applied directly to solve the
+problem at hand. Our experience has been
+that although a suitable algorithm may well
+exist, it is unlikely that its direct application
+on the domain expert’s data will produce a
+meaningful result. Domain experts, in our
+experience, need an environment in which
+they can easily manipulate data and run
+experiments themselves.
+The philosophy behind WEKA is to move
+away from supporting a computer science or
+machine learning researcher, and towards
+supporting the end user of machine learning.
+The end user is someone-typically, in our
+applications, an agricultural scientist-with
+an understanding of the data and sufficient
+knowledge of the capabilities of machine
+learning to select and investigate the
+application of different techniques. In order
+to maintain this philosophy, we have
+concentrated on ensuring that the
+implementation details of the machine
+learning algorithms and the input formats
+they require are hidden from the user.
+This paper describes the workbench and
+some of the experiences we have had in applying it to real-world data. We describe
+some of the support tools for viewing,
+analysing and manipulating data, and discuss
+our plans for future development of the
+workbench. 4. Conclusions and future work
+Our experience of processing real-world
+data sets has enabled us to identify a number
+of issues that influence future development of
+WEKA. Most agricultural and horticultural
+data is characterised by one or more timedependent
+attributes that are largely ignored
+or misused by the schemes in the workbench
+[14]. This has led us to consider the role of
+sequence-identification schemes such as
+hidden Markov models in machine learning.
+We plan to develop hybrid schemes for
+WEKA which identify time-dependent data
+directly, and interpret it correctly.
+As mentioned earlier, most data originates
+from a database which is typically
+constructed from many relations. Performing
+many join operations on the data, which is
+generally necessary to convert it into the flat
+file format expected by most machine
+learning techniques, inevitably introduces
+greater duplication and functional
+dependencies [ 141. We are enabling the
+machine learning schemes to be applied
+directly to the data in the database in much
+the same way as systems that perform
+knowledge discovery in databases [17]. This
+approach allows owners of the data to use
+WEKA immediately, rather than waiting for a
+macro, Per1 script or database query to be
+written.
+Finally, as a further encouragement to
+knowledgeable users, we are investigating
+the feasibility of adding an interactive scheme
+such as PROTOS [I81 to the workbench. This will allow users to build applications
+using both their specialist knowledge of the
+data and the learning capability of the
+match of skills needed to build successful
+intelligent information systems using
+machine learning. 

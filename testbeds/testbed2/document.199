@@ -1,0 +1,29 @@
+C-evo is a free turn-based strategy computer game whose source code – written in Delphi – has been put in the public domain by Steffen Gerlach, its programmer and designer. Other people have contributed separately downloadable alternative artificial intelligences for C-evo. Likewise, some of the graphics in the game are of external origin, but all are freeware.
+C-evo is based on Civilization II, but with the aim of correcting the latter's alleged design mistakes by implementing six design principles which correct the game itself and strengthen its weak artificial intelligence.
+
+
+== Gameplay ==
+C-evo is an empire building game, dealing with the history of humans from antiquity into the future. This includes aspects of exploration and expansion, war and diplomacy, cultivation and pollution, industry and agriculture, research and administration. Players must constantly make decisions such as whether and where to build cities, roads, irrigation, fortresses, and whether to form an alliance with a neighboring country or risk attacking it, and whether to devote scarce resources to research, production, warfare, or the morale of the populace. A successful player manages to find a balance among these choices. The game starts with the development of the wheel, and ends when the first player has successfully constructed the first off-planet spaceship headed to the Solar System. As the game progresses, the player finds that the building of factories, for example, leads to increased pollution, which must be cleared up and could be stopped through development of cleaner technologies.
+The setup allows the player to either choose a map or supply size and ocean-to-land ratio to have one generated randomly, and to choose how many (1 to 15) tribes – also called nations – will populate it when the game starts, as well as which intelligence will control each tribe during the game – that is, either a human player or any artificial intelligence such as Gerlach's default AI that is included with the game; alternative AIs have been designed and contributed by other programmers. A supervisor mode allows games where all tribes are controlled by artificial intelligence. Games with more than one human player can be played in hotseat mode without further requirements, although C-evo does have a limited client–server architecture, and can be played easily over either a LAN or the internet using Microsoft's Remote Desktop Protocol when the game is run from a game server.
+
+
+== Resources ==
+On the C-evo webpage, the game, its source code, AI modules, player contributions such as many additional nations, maps, mods, and utilities are available.
+The documentation of the AI's DLL-interface is available from the project homepage. There is also an AI development kit, available in C# since version 1.1.2, in Delphi, and in C++. The C# kit is included with the game, as is a map editor.
+
+
+== Reception ==
+C-evo has been praised as one of the best freeware strategy games, particularly for its strong artificial intelligence opponents.
+At the 2005 International Joint Conference on Artificial Intelligence, Rubén Sánchez-Pelegrín and Belén Díaz-Agudo presented a paper entitled "An Intelligent Decision Module based on CBR for C-evo" which discusses using C-evo as a platform to perform artificial intelligence research.
+
+
+== See also ==
+
+List of open source games
+
+
+== References ==
+
+
+== External links ==
+Official website

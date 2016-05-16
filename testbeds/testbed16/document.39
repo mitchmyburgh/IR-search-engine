@@ -1,0 +1,36 @@
+Cloud elasticity and cloud scalability are not the same thing
+      	 
+May 24, 2012 / Guy Fardone
+Evolve IP attended the AlwaysOn OnDemand conference in Silicon Valley last month. The buzz at the event was all about mobile, social, cloud, and big data. Around the cloud, all the talk was about elasticity and scalability, and everyone was using the terms interchangeably to describe a service’s capacity for supporting some unlimited number of users.
+
+Here’s the problem: Elasticity and scalability should never be used interchangeably. Small- and mid-sized business (SMB) leaders need to know that while elasticity isn’t a must-have for every SMB, scalability is. The same goes for most enterprise businesses as well.
+
+Elasticity is aimed at companies building consumer- or business-facing software applications that they plan to sell on a subscription basis. Think: Evernote, Netflix, Dropbox, and Salesforce.com. Elasticity basically means that your platform can handle sudden, unanticipated, and extraordinary loads. This could be the result of a Superbowl ad or some other widespread promotional technique that results in a massive but brief influx of users and load on the system.
+
+Think of elasticity as, essentially, unlimited head room. When you’re a software developer building SaaS that you plan to offer to the entire planet (such as Facebook, which hopes to have the whole world as users), you need unlimited head room for those unpredictable moments.
+
+Contrast that to scalability. Scalability is a planned level of capacity, with appropriate overhead, that you anticipate your company’s systems to require over time, in addition to the ability to scale in a quick and easy manner when (and if) you need more (or less) resources.
+
+For example, if you’re a business leader and you have 500 users who will be using a particular set of software applications that you want to put in the cloud, you know that you will need to have a specific level of capacity if all 500 users are logged on at the same time.
+
+You will also want the scalability benefit of quickly adding 100 or 200 users, because you know that the necessary resources are easily available to you. You might want to double or triple the number of users over a period of time. Or, you might want to add a nationwide group of business partners using these applications. Adding more users is quick and easily scalable in the cloud, but it certainly does not require elasticity.
+
+Scalability also works the other way. Let’s say you have a business downturn and need capacity for 50 less users than you previously had, and you don’t want to have to continue paying for all 500. You don’t need to provision or pay for more capacity than you need (such as unlimited head room), when you know that you will only need to support a specific number of maximum users at one time.
+
+The smaller your business, the more this applies. The typical enterprise forecasts, monitors, and adjusts its capacity planning on an annual or quarterly basis. If the business is rapidly growing or has a crucial initiative, it might re-evaluate its required capacity monthly.
+
+Scalability is much more specific and gradual than elasticity, and it is very controlled by you and your cloud services provider in conjunction with your IT department. By no means does the typical enterprise need elasticity for its production environments.
+
+In reality, cloud elasticity only applies to e-commerce; mobile and web development; and SaaS, as well as any other software development companies. But for an organization like yours—that wants to put some or all of your business infrastructure in the cloud (i.e. a law firm, call center, mortgage banker, car dealer)—scalability is the key metric for capacity planning, maximizing operational performance, and pinching pennies. Elasticity has nothing to do with it.
+
+So how exactly has this myth—that elasticity is interchangeable with scalability, and therefore, crucial to your apps—managed to catch on? Because major public cloud vendors such as Rackspace, Amazon, and Google, have been grooming the market to expect it. And their efforts to do so have been so successful that even leading analyst organizations like Gartner mention elasticity in tandem with scalability, further muddying the waters for the typical business organization.
+
+Elasticity is also a term that was coined to promote and enable metered use, which is so prevalent in public cloud, development, and test environments. Coincidently, Gartner also cites metered use in its Five Attributes of Cloud Computing. Any reasonably talented business analyst will quickly figure out that a metered use model will easily cost more in the overwhelming majority of typical production business environments.
+
+But frankly, this is a public-versus-private-cloud argument, and we, as an industry, need to start connecting elasticity to the public cloud and scalability to the private cloud. Now that you understand the difference between the two, you can see why elasticity would be important for the public cloud, but scalability is the crucial metric for a private cloud.
+
+Let’s also not forget the not-so-small fact that in order for something to be elastic, ALL parts of the equation need to be infinitely elastic. That includes firewalls, VPN concentrators, switches, QoS policies, private bandwidth, and any other devices that enable the so-called elastic applications.
+
+We all know beyond any reason of a doubt that in private, secure environments, this is simply not practical, if possible at all. Yes, they can be scalable but they are simply not elastic. This is an exact case of only being as strong as your weakest link. Simply put: There is a reasonably major tradeoff between private and scalable versus public and elastic. I won’t go into this topic in detail here, but we will visit it in a later post.
+
+The bottom-line is that when it comes to elasticity and scalability, business owners and IT directors need to remember that it’s scalability that’s important for success with the private cloud. Don’t be confused by the hype on elasticity – it’s real, but it’s also irrelevant to the small- and mid-sized business, unless you are a building a public-facing application that you fully expect to need to handle the entire planet logging onto it simultaneously.

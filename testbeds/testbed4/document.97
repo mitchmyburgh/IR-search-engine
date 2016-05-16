@@ -1,0 +1,16 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Bi-linear interpolation
+Now we have (more or less) taken care of the case where several texels are in the same pixel. But sometimes the opposite happens, and a texel gets stretched over several pixels. Of course, if we are using one of the smaller mipmaps and the texels cover many pixels it could mean that we should be using a larger mipmap. But when we get to the raw texture map and there are no more "larger" texture maps, we're stuck.
+Bi-linear interpolation attempts to solve this problem. We will be using a linear polynomial of two variables (ie, a plane equation), thus the "Bi" of bi-linear. Typically, the texel coordinates will not be integer, as is depicted below.
+The texels are nw, ne, sw and se (short for north west, north east and such). P is the actual texture coordinate for the current pixel. A, B, C and D are the area of the rectangles seen on the diagram above. The color we assign to the pixel will be:
+A×nw+B×ne+C×se+D×sw
+This is the "bi" part of bi-linear. Incidentally, this will also improve pictures when mipmapping is used.
+It is possible to use something other than linear interpolation. For instance, bicubic interpolation is popular. Bicubic polynomials are often used. A grid of 4x4 texels will be used as control points for some uniform spline of two variables. Once the spline coefficients are known, the spline is evaluated at the intermediate point P (see the figure for bi-linear interpolation, above) and this value is used to shade the pixel.
+111
+Tri-linear interpolation
+Tri-linear interpolation is bi-linear interpolation with an additional interpolation. First, a description for uniform mipmapping will be given, then this will be extended to nonuniform mipmapping and summed area tables.
+When we use mipmapping, we need a function which tells us what mipmap to use. However, maybe this function tells us to use "mipmap #3.15", which we round to simply "mipmap #3". This means that we should use a mipmap somewhat in between 3 and 4, but more towards 3. Tri-linear interpolation simply interpolates linearly the mipmap between mipmap 3 and 4 (probably using, in our specific example of "mipmap #3.15", 85% of mipmap 3 and 15% of mipmap 4).
+This will make the change in mipmaps quite smoother, which will have an important effect on animations in particular.
+Using nonuniform mipmapping, we simply extend our idea to interpolate linearly between four mipmaps. Ie, if we want mipmap #3.2 in the x direction and #5.7 in the y direction, we mix in (0.8×0.3)=0.24 of mipmap (3,5) with (0.2×0.3)=0.06 of mipmap (4,5), (0.8×0.7)=0.56 of mipmap (3,6) and lastly (0.2×0.7)=0.14 of mipmap (4,7). As we can see, mipmap (3,6) is the dominant one, as is to be expected and mipmap (4,5) is barely used at all.
+

@@ -1,0 +1,61 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Antialiasing
+Introduction
+In many places, we have approximated continuous phenomena by sampling it at discrete intervals, and then reconstructing an image with these samples. As an example, we have studied shooting one beam of light through the center of a pixel and see what it intersects and then coloring the whole of the pixel by whatever color corresponds to what it hits.
+This might result in very inaccurate and sometimes unsightly pictures. As an example, take a black and white tiled floor for which the tiles are 0.25 meters wide, which we sampled at intervals of .5 meters. Then, we will have either all white samples or all black samples. This does not represent the color of the floor, which should either be a mix of black and white, or, in a certain sense, gray.
+This is an example of aliasing in space, but numerous other types of aliasing exist. For example, say we are making an animation by generating several pictures of a scene with moving object and then displaying the still frames quickly (say, 24 frames per second). In our model, if an object moves fast enough, it might appear to jump around on the screen. For example, if the object is 1 centimeter big, but moves so fast that in 1/24th of a second (the duration of a frame), it's 5 centimeters away from where it was before, the object will appear to jump very drastically. Or even worse, an object could pass right in front of the camera in between frame a and b, but not be on neither frame a nor b.
+In this section, we will introduce a few of the techniques that can be used to fix these problems.
+Filtering
+Filtering, in the way that we want to use it, is essentially a weighted average of a signal. Filtering theory is extensive, but we are not concerned too much by it here. I will just mention that it is possible to take the transform (Fourier, wavelet or other) of a signal and then remove very small amplitude components and/or "high frequency" components. This is what is traditionally viewed as filtering.
+102
+In our case a filter is represented by a filtering mask. We'll start with 1d cases. If we have a 1d signal (think of it as a single scanline in a pixmap, or maybe some sampled sound), then we have something like s1,s2,s3,s4, ..., sn, where the si's are sampled data. Here, we have n samples. Then, we might want to create the samples s1', s2', s3', ..., sn-1', where si'=(si+si+1)/2. This is an example of a filter, sometimes referred to as a "low-pass filter". This is another legitimate filter: si'=.25si+.75si+1. This particular filter is said to be biased towards si+1. In general, the class of filters asi+bsi+1 can be represented by the vector equation (a,b)•(si,si+1).  (a,b) is said to be the filter mask. In the last example we gave, the filter mask is (.25, .75).
+In general, filters are applied by taking the weighted sum of several samples. We normally like that the sum of the components of the filter mask be one, in which case the filter tends to not change the overall intensity of the image. If the sum of the components of the filter is not one, we get very different effect. As an example, the filter (-1,2,-1) is sometimes called the differential filter, for it approximates the derivative of a signal. It is generally not very useful as an approximation to the derivative, however it tends to highlight contrasts in a signal and can be used to help in edge detection, for example. This filter can be written as si'=-si+2si+1-si+2.
+Two dimensional filters are generally more useful to computer graphics people. They are usually written in matrix form, F=(fij). This is an example filter, called the box filter.
+1
+16
+2
+16
+1
+16
+2
+16
+4
+16
+2
+16
+1
+16
+2
+16
+1
+16
+q[i][j]=(p[i][j]+2p[i][j+1]+p[i][j+2]+
+2p[i+1]+4p[i+1][j+1]+2p[i+1][j+2]+
+p[i+2][j]+2p[i+2][j+1]+p[i+2][j+2])/16
+Where q[i][j] is the filtered sample, and p[i][j]'s are the original samples.
+These filters are made so as to remove very high frequency from images, which are usually poorly represented. (High frequency component here is taken in the Fourier series sense.)
+Pixel accuracy
+103
+When applying any type of shading except flat shading to a polygon, pixel precision becomes an issue. We often calculate incrementally some value per edge (for example, in gouraud shading, we interpolate the shading linearly along the edge, and in texture mapping, (u,v) texture coordinates get interpolated along edges and across the polygon).
+Referring to the figure above, an example will be given with Gouraud shading. The small circles represent the pixels, and the dark edges are the edge of a triangle. With Gouraud shading, we start at P and we are given some initial color. Then, we want to interpolate down the edge. However, it is important to notice that P is less than one scanline above the scanline of P1. Therefore, the vector drawn above from P to P1 is shorter than the vector from P1 to P2, also drawn above. This needs to be taken into consideration to get correct pixel accuracy. Furthermore, once we have the correct color at P1, we can't simply put that color into pixel A even though the distance between P1 and A is less than one pixel. We have to take into account the distance from P1 to A into our calculations. As a matter of fact, in this particular example, A is roughly halfway between the left and right edge so its color should be roughly the average color of the two edges.
+Then, as we go to the next scanline, we need to perform our calculations starting from P1. Given the color at P1, we find the color at P2, and then we need to calculate the proper color for pixel B by taking into account the distance from P2 to B. This goes on for the whole triangle or polygon.
+This example can also illustrate how edge pixels should be considered. First of all, edge pixels should be extremely rare. As can be seen in the example above, not one pixel is exactly on an edge. In the very rare case when a pixel is exactly on an edge, you can use a simple disambiguating rule to decide one it, such as "draw the pixel only if it's on a left edge, not on a right edge". Another way of doing this is of thinking of pixels as having irrational x coordinate and rational y coordinate so that edges with rational endpoints have no hope of going through them.
+104
+Sub-pixel accuracy
+The other way of improving the quality of our images is by doing all calculations at some higher accuracy. The intuitive way of doing this is to create a high resolution image and scale it down to the display resolution afterwards, which ought to produce a better looking image.
+It turns out that this works well, and is in fact hard to beat. However, it is rather expensive, both in rendering time and storage space, and we will attempt to look into alternate algorithms as well.
+When scaling an image down, there comes the question of how pixels should be averaged. This boils down to picking a filter, as in the previous section, and applying it to each region of the pixmap that gets scaled down to one pixel. Note that the uniform filter (the filter in which each pixel has equal weight) might not, as could be thought at first, be the best choice. The box filter is already a better choice. However, a uniform filter is better than no filter, and one should be considered for a real-time system if it is easier to achieve than a generic filter.
+An alternative to generating a fully blown high resolution picture is to adaptively increase the resolution. If you find that several small objects get drawn in the same pixel, subdivide that pixel into a small bitmap and calculate more precisely for that pixel. This can be recursed at will, for arbitrary precision. However, this process is still somewhat expensive, and has the disadvantage that it has to be more or less hard-wired all over the graphics engine. It is hard to perform this in real time.
+A very attractive alternative is the so-called A-buffer.
+For each pixel, a 4x8 subpixel grid is associated. However, instead of having full R,G and B components, they are merely bitmasks. Then, for all pixels, the following is done. A list of all polygons covering this pixel has to be generated. Then, the 4x8 bitmask of whatever is covered by a polygon in that pixel is generated. Then, using and's the amount of overlap can be determined, etc... and color can be computed using this (more on this later).
+Let us use an example. Let's say that the following polygonal piece is in a pixel:
+This is represented by the following bitmask:
+105
+00000000   00001111     11100000 00010000 = 00011111 and 11110000 00010000   00011111     11110000 00111000   00111111     11111000 (A)         (B)         (C)
+Notice that (A) is the bitmask for the part of the triangle that covers the pixel, while (B) and (C) are the bitmasks for what's inside of the left and right edge, respectively. Thus, bitmasks are computed for each edge and are and'ed together to get the bitmask for the triangle. The bitmap can also be made by some exclusive or of bitmasks (this latter method might be a bit less useful).
+If we then or all bitmasks for all polygonal pieces together, we get a bitmask that tells us what portions of the pixel are covered by any polygons. Then, using and, we determine which pieces of polygons overlap. We might also need the Z value of the pixel per polygon (not for each bit in the bitmask, only for the whole pixel), so that we can determine which bitmasks are in front of each other. What follows is a suggested algorithm for drawing a pixel:
+Let B[i] be the bitmask of polygon i, i varies from 1 to n (number of polygons covering the pixel). Let C[i] is the color of the polygon i. Let M be the following bitmask: 11111111 11111111 11111111 11111111 Let P be the pixel color, initialized to 0 (black) (either a color vector, or a monochrome intensity) Let K be the background pixel color Assume polygons are sorted front to back (ie, polygon i is in front of all polygons greater than i). Let #X be the number of bits that are set in X
+For j=1 to n, do foo=B[j] AND M P=P+C[j] * #foo / 32 M=M XOR foo End For P=P+K * #M / 32
+Note that 4x8 bitmasks have the nice property of being 32 bits numbers, which can be manipulated very easily on today's platforms. The algorithm can very easily be adapted to 4x4 bitmasks (for 16 bit machines, for example) or 8x8 bitmasks (for 64 bits machines for example).
+Also note that this algorithm works relatively well if polygons are depth sorted front to back and then drawn. It can't really be drawn strictly back to front.

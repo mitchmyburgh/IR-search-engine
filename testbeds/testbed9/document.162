@@ -1,0 +1,46 @@
+In data architecture, a logical data model (LDM) is a type of data model showing a detailed representation of an organization's data, independent of any particular technology, and described in business language.
+A logical data model standardizes people, places, things and the rules, relationships and the events between them.
+
+
+== Overview ==
+Logical data models represent the abstract structure of a domain of information. They are often diagrammatic in nature and are most typically used in business processes that seek to capture things of importance to an organization and how they relate to one another. Once validated and approved, the logical data model can become the basis of a physical data model and form the design of a database.
+Logical data models should be based on the structures identified in a preceding conceptual data model, since this describes the semantics of the information context, which the logical model should also reflect. Even so, since the logical data model anticipates implementation on a specific computing system, the content of the logical data model is adjusted to achieve certain efficiencies.
+The term 'Logical Data Model' is sometimes used as a synonym of 'domain model' or as an alternative to the domain model. While the two concepts are closely related, and have overlapping goals, a domain model is more focused on capturing the concepts in the problem domain rather than the structure of the data associated with that domain.
+
+
+== History ==
+
+When ANSI first laid out the idea of a logical schema in 1975, the choices were hierarchical and network. The relational model – where data is described in terms of tables and columns – had just been recognized as a data organization theory but no software existed to support that approach. Since that time, an object-oriented approach to data modelling – where data is described in terms of classes, attributes, and associations – has also been introduced.
+
+
+== Logical data model topics ==
+
+
+=== Reasons for building a logical data structures ===
+Helps common understanding of business data elements and requirements
+Provides foundation for designing a database
+Facilitates avoidance of data redundancy and thus prevent data & business transaction inconsistency
+Facilitates data re-use and sharing
+Decreases development and maintenance time and cost
+Confirms a logical process model and helps impact analysis.
+
+
+=== Conceptual, logical and physical data model ===
+A logical data model is sometimes incorrectly called a physical data model, which is not what the ANSI people had in mind. The physical design of a database involves deep use of particular database management technology. For example, a table/column design could be implemented on a collection of computers, located in different parts of the world. That is the domain of the physical model.
+Conceptual, logical and physical data models are very different in their objectives, goals and content. Key differences noted below.
+
+
+== See also ==
+DODAF
+Core architecture data model
+Database design
+Entity-relationship model
+Logical schema
+Object-role modeling
+
+
+== References ==
+
+
+== External links ==
+Building a Logical Data Model By George Tillmann, DBMS, June 1995.

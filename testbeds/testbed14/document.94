@@ -1,0 +1,484 @@
+﻿The Approach and Example
+One of the goals of this work consists in
+demonstrating that a translator, through the
+processing of sentences in natural language provided by
+users, is capable of creating
+automatically
+and
+,
+according to the discourse
+,
+interpreted
+ALC
+[
+7
+]
+ontologies
+with
+minimal expressivity
+. An overview of the
+translator’s architecture and function flow
+diagram
+are depicted in Figure
+1
+and described as follows.
+The architecture of our
+approach is composed by
+4
+modules: the
+Syntactic Parsing Module (1)
+,
+Semantic
+Parsing Module (2)
+,
+OWL DL Axioms Module (3)
+and the
+Reasoning Module
+(4)
+.
+Fig. 1.
+Translator’s architecture and function flow diagram
+The activities executed in the respective modules and their functions are presented
+in the following sections.
+2.1
+Syntactic Parsing Module
+The syntactic analysis of the sentences inserted by users takes place in the
+Syntactic
+Parsing
+Module
+(1)
+,
+this module uses a
+Probabilistic Context
+Free Gramma
+rs
+(
+PCFGs)
+. For this purpose, we used the Stanford Parser 2.0.5
+1
+.
+Two activities are
+executed by this module, the lexical tagging
+and the dependence analysis (Using
+PCFG). The results obtained by this module are shown in Fig. 2 and 3
+.
+We used the
+sentence
+(S1)
+: “A self
+-
+propelled vehicle is a motor vehicle or road vehicle that does 
+not operate on rails” to illustrate the results obtai
+ned by the translator’s modules.
+Fig. 2
+.
+Lexical
+tagging and dependence structure
+Each word of the sentence (S1) above (Figure
+2) is grammatically classified according to their lexical categories and the dependence between them is attributed.
+Syntagmatic categories are in red and, in black, the lexicon to w
+hich each category
+pertains:
+(
+ROOT
+(
+S
+(
+NP
+(DT A) (JJ self
+-
+propelled) (NN vehcle))
+(
+VP
+(VBZ is)
+(NP (DT
+a) (NN motor) (NN veh
+i
+cle)(CC or) (NN road) (NN vehicle))(
+SBAR
+(
+WHNP
+(WDT
+that)) (S
+(
+VP
+(VBZ does) (RB not) (
+VP
+(
+VB
+operate) (
+PP
+(IN on) (
+NP
+(NNS rails))
+1
+http://nlp.stanford.edu/software/lex
+-
+parser.shtml
+2.2
+Semantic Parsing Module
+The results of the activities carried out by the systems of the
+Syntactic Parsing
+Module (1)
+are used by the systems of the
+Semantic
+Parsing Module (2)
+, which
+carries out the activities shown in Figure 4 and are detailed as follows.
+Fig. 4.
+Activities carried out in the Semantic Parsing Module
+This module initiates its activities by assessing the entry sentence and the re
+ferred
+result of the syntactic analysis obtained in the previous module and then starts the
+extraction of terms (
+Term Extraction
+) that are fit to be concepts of the ontology
+(Activity (1)).
+Therefore, the terms extracted, which fit the concepts were: motor/NN,
+vehicle/NN, road/NN, vehicle/NN, self-
+propelled/JJ, vehicle/NN and rails/NNS.
+The page must be prepared in two equal-
+width columns with 3/8inch spacing between the columns. Text is to be single spaced. Left and right margins must be 1.25
+inches, top margin 1 inch, and bottom margin 1.5 inches. The top margin of the first
+page only should be 1.5 inches instead of 1 inch. Use justified alignment with hyphenation.
+After the term extraction activity is done, the Activity (2), called
+Concate-nationis enabled. This activity uses the results of the dependences between the terms
+(See Figures 2 e 3) and makes the junction of NPs composed by two or more nouns
+and/ or adjectives inside the analyzed sentence and which, in fact, are related. In the
+example sentence (S1), the concatenation results in the junction of the terms (self-
+propelled/JJ ↔ vehicle/NN), (motor/NN ↔ vehicle/NN) and (road/NN ↔ vehicle/NN) into an only term, because they are dependent of one another, resulting in just
+3 terms:
+self-
+propelled_vehicle,
+motor_vehiclee
+road_vehicle
+, and no longer 7 terms,
+as in the initial phase of the
+Term Extraction
+activity.
+In Activity (3),
+Break Phrases,
+every time terms or punctuation marks like com-ma (,), period (.), and
+,
+or
+,
+that, who
+or
+which
+(what we call sentence breakers) are
+found, the sentences are divided into subsentences and analyzed separately, the result
+for (S1) was:
+self
+-
+propelled_vehicle is a motor_vehicle | or road_vehicle | that does
+not operate on rails
+The last activity to take place in the
+Semantic
+Parsing Module
+is
+Activity (4),
+Relations Extraction
+. The relations between the terms are verified and
+validated through verbs found in
+the sentences and patterns observed in the translator’s inner grammar. The verbs are separated and the terms dependent on verbs are
+extracted, resulting in:
+self-
+propelled_vehicle
+is a
+motor_vehicle | self-
+propelled_vehicle
+is a
+road_vehicle | self-
+propelled_vehicle
+operate
+on rails
+This module detects the terms and the relations between them, both hierarchical
+and nonhierarchical. However, this module neither extracts disjunctions, conjunctions
+nor generates OWL code corresponding to the result obtained.
+The activity of this
+module is exclusively for detecting terms, their relations and validity. Some patterns/rules are used during the discovery and the learning of the
+Semantic Parsing
+Module (2).
+The patterns/rules used for learning hierarchical axioms are showed in
+Table 1.
+Table 1.
+Patterns/Rules for transforming the hierarchical axioms of terms
+Construction Patterns of hierarchical axioms of terms
+(1)
+SN
+1
+(
+is a | is an | is
+)
+SN
+(2)
+SN
+1
+(
+are a | are an | are
+)
+SN
+(3)
+SN
+1
+and
+SN
+2
+and
+SN
+3
+and
+SNn (
+are a | are an |
+are | is a | is an | is
+)
+SN
+(4)
+SN
+1
+,
+SN
+2
+,
+SN
+3
+, SN
+n
+(
+are a | are an | are | is a | is an | is
+)
+SN
+(5)
+SN
+1
+,
+SN
+2
+and
+SN
+3
+(
+are a | are an | are | is a | is an | is
+)
+SN
+(6)
+SN
+1
+,
+SN
+2
+and
+SN
+3,
+SN
+4
+(
+are a | are an | are | is a | is an | is
+)
+SN
+(7)
+SN
+1
+(
+is a | is an | i
+s
+)
+SN and/that/who/which (
+is a | is an | is)
+SN and (
+is a | is an
+| is)
+SN...
+(8)
+SN
+1
+SNn (
+are a | are an | are | is a | is an | is
+)
+SN and SNn (
+are a | are an | are |
+is a | is an | is
+)
+SN
+1
+and SN
+n
+...
+(9)
+SN
+1
+and
+SN
+2
+and
+SN
+3
+and
+SNn (
+are a | are an | are | is a |
+is an | is
+)
+SN and
+(
+are a | are an | are | is a | is an | is
+)
+SN
+1
+and SN
+n
+...
+(10)
+SN
+1
+,
+SN
+2
+and
+SN
+3,
+SN
+n
+(
+are a | are an | are | is a | is an | is
+)
+SN
+(11)
+SN
+1
+(
+are a | are an | are | is a | is an | is
+)
+SN
+2
+or/and
+SN
+3
+The generated result for the above patters are
+the same,
+i.e.
+, {SN
+1
+, SN
+2
+, SN
+3,
+SN
+n
+}
+⊑
+SN
+. Notice that the
+and
+connector for the mentioned patterns play the role of
+connector of concepts, establishing among them a dependency relation. The patterns
+above also are recognized as axioms OR, AND, and NOT an
+d may be represented in
+the following way (See Table 2):
+Table 2.
+Patterns/Rules for transforming the hierarchical axioms of relations using
+Inserction (and), Conjuction (or) and Nagation (not)
+Construction Patterns
+using verbs, intersection (and), conju
+ction (or) and neg
+ation (not)
+(1)
+SN
+1
+(
+are a | are an | are | is a | is an | is
+)
+SN
+o
+r/and
+SN (
+That/Who/
+Which
+)
+(
+has
+not)
+SN
+(2)
+SN
+1
+(
+are a | are an | are | is a | is an | is
+)
+SN
+or/and
+SN (
+That/Who/
+Which
+)
+(
+has
+)
+SN
+(3)
+SN
+1
+(
+are a | are an | are | is a | is an | is
+)
+SN
+or/and
+SN (
+That/Who/
+Which
+)
+(
+Verb
+)
+SN
+(4)
+SN
+1
+(Verbo) SN (
+or/and
+) SN
+(5)
+SN
+1
+(Verb) SN (
+or/and
+) (Verb) SN
+(6)
+SN
+1
+has
+SN
+n
+and
+SN
+n
+(7)
+SN
+1 (
+has not
+)
+SN
+n
+(8)
+SN
+1 (
+does not
+| doesn’t | is not | isn’t
+)
+SN
+n
+(9)
+SN
+1 (
+does not | doesn’t | is not | isn’t
+)
+(Verb) SN
+n
+(10)
+SN
+1
+has
+SN
+n
+and has not
+SN
+n

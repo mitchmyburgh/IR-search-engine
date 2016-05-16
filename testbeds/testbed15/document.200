@@ -1,0 +1,36 @@
+﻿2D Two dimensional  [To be expanded]
+3D Three dimensional  [To be expanded]
+4D Four dimensional  [To be expanded]
+ANIMATIC A more advanced storyboard using proxy models to rough out basic animation and camera shots. (Film industry term)
+ANTI-ALIASING Over-sampling methods for avoiding the unwanted visual effects or artefacts caused by limited display resolution. These aliasing effects include ‘jaggies’ (stair-casing along diagonal lines), moiré effects, and temporal aliasing (strobing) in animated scenes.
+ALPHA CHANNEL A view of an image that represents the presence and degree of opacity of objects. The channel associated with each pixel determines the degree of opacity of that pixel using a greyscale range. In video production, the alpha channels used to determine layer masking (mask channel).
+ANIMATION The process of developing the actions (poses, timing, motion) of objects. Animation methods include key-frame animation, path animation, non-linear character animation, and motion capture animation. Animations are sequences of frames.
+ASPECT RATIO The proportions of an image expressed as the ratio between the horizontal and vertical dimensions. Because pixels are not necessarily proportional, the aspect ratio is independent of the number of pixels in the X and Y directions. For example, both NTSC and PAL television screens are 4 x 3 (aspect ratio 1.33). However, a CCIR601 NTSC image is 720 x 486 pixels, while a PAL image is 720 x 576 pixels.
+ATMOSPHERE In rendering, the environment that surrounds the objects in a scene. For example, the simulation of fine particles (fog, smoke, or dust) in the air. When an object is photographed in the real world, it is usually within an atmosphere (for example, air) and can be surrounded by other background objects.
+AXIS One of three vectors (X, Y, and Z) that define the three dimensions of a scene. Often defined as local space, object space, origin axis or world space.
+BEZIER CURVE In modelling, a curve with at least four control points available to control shape of the curve. This term may also refer to a NURBS curve.
+BEZIER PATCH In modelling, a parametric surface, approximately rectangular, that is quilted together with other Bezier patches to form a large, curved surface. The shape of a Bezier patch is controlled by 16 control points distributed uniformly over the surface. Also known as patch surface.
+BITMAP Image comprising pixels (as opposed to vector artwork such as EPS).
+CAD Computer Aided Design. Designing 2D and 3D work using a computer as a tool.
+CAMERA Like a real-world camera, the 3D camera frames the view of a scene by tracking, tumbling, panning, and zooming. Unlike a real-world camera, the 3D camera does not automatically capture lighting, motion blur, and other effects - these effects must be explicitly created and tuned for realistic output.
+CAUSTICS Light pattern created by specular reflection or refraction of light, such as the patterns of light on the bottom of a swimming pool, or light through a glass of wine.
+CARTESIAN COORDINATE A mathematical representation of Euclidean space. Every point can be described by three coordinates (X, Y, Z) representing the position along the orthogonal X, Y, and Z axes. The point (0, 0, 0) is called the origin, which is the global centre of the 3D world.
+CG Computer generated. Design output via a computer.
+CGI Computer generated Imagery. Design output via a computer.
+CODEC Abbreviation of “compressor/de-compressor”. This is the term used to reference the way that software programs handle different movie files, such as Quick Time, AVI, etc. The CODEC can control image quality, and can assign the amount of space given to the movie file.
+COLOUR DEPTH The number of bits used to represent a colour. For example an 8-bit image uses 2^8=256 colours. The bits build up the three primary colours red, green and blue. The following table indicates the number of colours an image can have.
+8-bit = 2^8 = 256
+16-bit = 2^16 = 65536
+24-bit = 2^24 = 16 million
+32-bit = 2^32 = 4.3 billion (inc alpha channel)
+Also see Floating Point, or HDR images.
+
+COMPOSITING (‘COMPING’) The process of combining two or more images to form a new image. In video, compositing is the process of combining two or more video sequences to form a new video sequence.
+CMYK Cyan/Magenta/Yellow/Black. The four ink colours used in 4-colour process printing.
+DEPTH CHANNEL The distance of objects from the camera. Also known as Z-depth or Z-buffer channel.
+DEPTH OF FIELD (DOF) A photographic term for the range of distances within which objects will be sharply focused. 
+(Objects outside of this range appear blurred or out of focus)
+DEVICE ASPECT RATIO The aspect ratio of the display device on which you view the rendered image. The device aspect ratio represents the image aspect ratio multiplied by the pixel aspect ratio.
+DIFFUSE Surfaces reflect (or scatter) light, and colour in many angles. This type of surface causes light and colour to spread freely.
+DYNAMICS A branch of physics that describes how objects move using physical rules to simulate the natural forces that act upon them. Dynamic simulations are difficult to achieve with traditional key-frame animation techniques, but new technology lets you set up the conditions 
+

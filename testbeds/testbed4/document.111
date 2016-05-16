@@ -1,0 +1,30 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Basic Ray Tracing
+11.1 Basics • So far, we have considered only local models of illumination; they only account for incident light coming directly from the light sources. • Global models include incident light that arrives from other surfaces, and lighting effects that account for global scene geometry. Such effects include:
+- Shadows
+- Secondary illumination (such as color bleeding)
+- Re?ections of other objects, in mirrors, for example • Ray Tracing was developed as one approach to modeling the properties of global illumination. • The basic idea is as follows: For each pixel:
+- Cast a ray from the eye of the camera through the pixel, and ?nd the ?rst surface hit by the ray.
+- Determine the surface radiance at the surface intersection with a combination of local and global models.
+- To estimate the global component, cast rays from the surface point to possible incident directions to determine how much light comes from each direction. This leads to a recursive form for tracing paths of light backwards from the surface to the light sources.
+Aside: Basic Ray Tracing is also sometimes called Whitted Ray Tracing, after its inventor, Turner Whitted.
+Computational Issues • Form rays. • Find ray intersections with objects. • Find closest object intersections. • Find surface normals at object intersection. • Evaluate re?ectance models at the intersection.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 64
+CSC418 / CSCD18 / CSC2504 Basic Ray Tracing
+11.2 Ray Casting
+We want to ?nd the ray from the eye through pixel (i,j).
+• Camera Model ¯ eW is the origin of the camera, in world space. ~u, ~v, and w~ are the world space directions corresponding to the ~x, ~y, and ~z axes in eye space. The image plane is de?ned by (¯ p-¯ r)·w~ = 0, or ¯ r + a~u + b~v, where ¯ r = ¯ eW + fw~. • Window A window in the view-plane is de?ned by its boundaries in camera coordinates: wl, wr, wt, and wb. (In other words, the left-most edge is the line (wl,?,f).) • Viewport Let the viewport (i.e., output image) have columns 0...nc -1 and rows 0...nr -1. (0,0) is the upper left entry. The camera coordinates of pixel (i,j) are as follows:
+¯ pC i,j = (wl + i?u,wt + j?v,f)
+?u =
+wr -wl nc -1
+?v =
+wb -wt nr -1
+In world coordinates, this is:
+¯ pW i,j =? ?
+| | | ~u ~v w~ | | |
+? ?¯ pC i,j + ¯ eW • Ray: Finally, the ray is then de?ned in world coordinates as follows: ¯ r(?) = ¯ pW i,j + ?~ di,j
+where ~ di,j = ¯ pW i,j -¯ eW. For ? > 0, all points on the ray lie in front of the viewplane along a single line of sight.

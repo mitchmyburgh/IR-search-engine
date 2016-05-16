@@ -1,0 +1,32 @@
+Kaspersky: Duqu Trojan uses 'unknown programming language'
+
+The Duqu Trojan, referred to by some as Stuxnet 2.0, was partly written using an unknown programming language. The payload DLL, which communicates exclusively with the Command and Control (C&C) server so that the worm knows what to do once it has infected a system, has code that doesn't resemble anything seen before. While security researchers have worked out what the mystery code does, they aren't sure about the syntax.
+
+Some parts of it, including those for downloading and executing additional modules, were written in standard C++, but a big chunk of it was not. This particular section contains no references to any standard or user-written C++ functions, and may have been created by a different programming team. Security firm Kaspersky says the unusual code is unique to Duqu: many parts are directly borrowed from Stuxnet, but this one is new. The company has named it the Duqu Framework, and has noted that it is not written in C++, Objective C, Java, Python, Ada, Lua, and many other languages it checked. Unlike the rest of Duqu, it also wasn't compiled with Microsoft's Visual C++ 2008. All we know is that it's object-oriented.
+
+The sophistication of the worm is one thing, but the fact that an entirely new programming language may have been created for it, points to some seriously deep pockets backing the project. Security experts have suggested that a state must have been involved in its development, and Kaspersky CEO Eugene Kaspersky supports this speculation on Twitter:
+
+    The mystery of #Duqu framework http://bit.ly/w5BrzP
+
+Here is what Kaspersky was able to conclude in its analysis:
+
+    The Duqu Framework appears to have been written in an unknown programming language.
+    Unlike the rest of the Duqu body, it's not C++ and it's not compiled with Microsoft's Visual C++ 2008.
+    The highly event driven architecture points to code which was designed to be used in pretty much any kind of conditions, including asynchronous commutations.
+    Given the size of the Duqu project, it is possible that another team was responsible for the framework than the team which created the drivers and wrote the system infection and exploits.
+    The mysterious programming language is definitively NOT C++, Objective C, Java, Python, Ada, Lua and many other languages we have checked.
+    Compared to Stuxnet (entirely written in MSVC++), this is one of the defining particularities of the Duqu framework.
+
+"After having performed countless hours of analysis, we are 100% confident that the Duqu Framework was not programmed with Visual C++," writes Kaspersky Lab Expert Igor Soumenkov. "It is possible that its authors used an in-house framework to generate intermediary C code, or they used another completely different programming language. We would like to make an appeal to the programming community and ask anyone who recognizes the framework, toolkit or the programming language that can generate similar code constructions, to contact us or drop us a comment in this blogpost. We are confident that with your help we can solve this deep mystery in the Duqu story."
+
+The blog post from Kaspersky Lab is already filled with comments guessing at the possible programming language used. Check them out for yourself: The Mystery of the Duqu Framework. One comment from user As400tech, who registered his account with Kaspersky Lab today, looks particularly promising:
+
+    That code looks familiar The code your referring to .. the unknown c++ looks like the older IBM compilers found in OS400 SYS38 and the oldest sys36.
+
+    The C++ code was used to write the tcp/ip stack for the operating system and all of the communications. The protocols used were the following x.21(async) all modes, Sync SDLC, x.25 Vbiss5 10 15 and 25. CICS. RSR232. This was a very small and powerful communications framework. The IBM system 36 had only 300MB hard drive and one megabyte of memory,the operating system came on diskettes.
+
+    This would be very useful in this virus. It can track and monitor all types of communications. It can connect to everything and anything.
+
+Duqu was first detected in September 2011, but Kaspersky Lab believes it has seen the first pieces of Duqu-related malware dating back to August 2007. The Russian security firm also notes Duqu, like Stuxnet before it, is highly targeted and related to Iran's nuclear program.
+
+Update: Duqu Trojan programming language identified 

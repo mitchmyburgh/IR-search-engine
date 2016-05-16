@@ -1,0 +1,22 @@
+The method chosen for representing color depends on the characteristics of the graphics output device (e.g.,
+whether it is additive as are video displays or subtractive as are printers). It also depends on the number of bits
+per pixel that are provided, called the pixel depth. For example, the most method used currently in video and
+color LCD displays is a 24-bit RGB representation. Each pixel is represented as a mixture of red, green and
+blue components, and each of these three colors is represented as a 8-bit quantity (0 for black and 255 for the
+brightest color).
+In many graphics systems it is common to add a fourth component, sometimes called alpha, denoted A. This
+component is used to achieve various special effects, most commonly in describing how opaque a color is. We
+will discuss its use later in the semester. For now we will ignore it.
+In some instances 24-bits may be unacceptably large. For example, when downloading images from the web,
+24-bits of information for each pixel may be more than what is needed. A common alternative is to used a color
+map, also called a color look-up-table (LUT). (This is the method used in most gif files, for example.) In a
+typical instance, each pixel is represented by an 8-bit quantity in the range from 0 to 255. This number is an
+index to a 256-element array, each of whose entries is a 234-bit RGB value. To represent the image, we store
+both the LUT and the image itself. The 256 different colors are usually chosen so as to produce the best possible
+reproduction of the image. For example, if the image is mostly blue and red, the LUT will contain many more
+blue and red shades than others.
+A typical photorealistic image contains many more than 256 colors. This can be overcome by a fair amount
+of clever trickery to fool the eye into seeing many shades of colors where only a small number of distinct
+colors exist. This process is called digital halftoning, as shown in Fig. 8. Colors are approximated by putting
+combinations of similar colors in the same area. The human eye averages them out.
+Lecture

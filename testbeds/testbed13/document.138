@@ -1,0 +1,381 @@
+
+
+Connect with us
+
+facebook
+
+twitter
+
+CNET
+
+Reviews
+
+  * Top Categories
+  * CNET 100
+  * Appliances
+  * Audio
+  * Cameras
+  * Desktops
+  * Headphones
+  * Laptops
+  * Networking
+  * Phones
+  * Printers
+  * Roadshow
+  * Smart Home
+  * Software
+  * Storage
+  * Tablets
+  * TVs
+  * Wearable Tech
+  * Deals
+  * Web Hosting
+  * Forums
+
+  * Popular Forums
+  * ### Computer Help
+
+  * ### Computer Newbies
+
+  * ### Laptops
+
+  * ### Phones
+
+  * ### TVs &amp; Home Theaters
+
+  * ### Networking &amp; Wireless
+
+  * ### Windows 7
+
+  * ### Windows 10
+
+  * ### Cameras
+
+  * ### All Forums
+
+News
+
+  * Top Categories
+  * Apple
+  * Computers
+  * Crave
+  * Deals
+  * Google
+  * Internet
+  * Microsoft
+  * Mobile
+  * Photography
+  * Security
+  * Sci-Tech
+  * Tech Culture
+  * Tech Industry
+  * Photo Galleries
+  * Video
+  * Forums
+
+Video
+
+  * Top Categories
+  * Apple Byte
+  * Carfection
+  * CNET Top 5
+  * CNET Update
+  * Googlicious
+  * How To
+  * Netpicks
+  * Next Big Thing
+  * News
+  * On Cars
+  * Phones
+  * Prizefight
+  * Tablets
+  * Tomorrow Daily
+  * CNET Podcasts
+
+How To
+
+  * Top Categories
+  * Appliances
+  * Computers
+  * Gaming
+  * Home Entertainment
+  * Internet
+  * Mobile Apps
+  * Phones
+  * Photography
+  * Security
+  * Smart Home
+  * Tablets
+  * Wearable Tech
+  * Forums
+  * Speed Test
+
+Deals
+
+  * Top Categories
+  * All Deals
+  * Cheapskate
+  * Best tech under $50
+  * Web Hosting Deals
+
+Download
+
+Sign In / Join
+
+  * Sign In to CNET
+  * Sign In with Facebook  Googleplus  Yahoo 
+  * Join CNET
+  * Member Benefits
+
+  * Facebook  Googleplus  Yahoo 
+  * My Profile
+  * Forums
+  * Sign Out
+
+US Edition
+
+  * Other editions
+  * United Kingdom
+  * Australia
+  * China
+  * France
+  * Germany
+  * Japan
+  * Korea
+  * CNET en Español
+
+CNET
+
+  * Confirmed, finally: D-Wave quantum computer is sometimes sluggish
+
+  * ##### Top Stories
+
+  * Kentucky Derby Day shows its tech side
+
+  * World Password Day: Here are 4 tips for staying safe online
+
+  * You can now pay someone to call customer service for you
+
+  * Where did Planet Nine come from?
+
+  * Now you, too, can try out IBM's quantum computer
+
+  * This robot is better at soft-tissue surgery than a human
+
+  * Apple Music makeover may add lyrics, black-and-white design
+
+  * Why strong female Star Wars role models matter
+
+  * The surprising way Transhumanist Zoltan Istvan could make it to the White House
+
+  * Watch out Siri, Cortana and Alexa, here comes Viv
+
+  * Ellen Pao among female leaders joining forces to help diversify tech
+
+  * CNET
+  * Sci-Tech
+  * Confirmed, finally: D-Wave quantum computer is sometimes sluggish
+
+# Confirmed, finally: D-Wave quantum computer is sometimes sluggish
+
+The D-Wave Two quantum computer clocks in no faster than a standard PC, but
+those already well-known results still leave us scratching our heads over
+speed testing.
+
+by  Nick Statt
+
+@nickstatt / June 19, 20144:20 PM PDT
+
+###### Sci-Tech
+
+June 19, 20144:20 PM PDT
+
+  * by Nick Statt
+
+@nickstatt
+
+  *   *   *   *   *   *   *     *     *     * 
+
+Jeremy Hilton, D-Wave's vice president of processor development, with one of
+the company's quantum computers. Screenshot by Nick Statt/CNET
+
+D-Wave Systems, the leading manufacturer of the world's first commercially
+available quantum computers, is the most well funded and far along player in
+the quantum chip race, but hasn't yet succeeded in convincing scientists that
+its machines are successfully achieving quantum speedup. In other words, we're
+not sure that its product is speedier than traditional, silicon-based
+machines.
+
+In fact, in certain situations, the $15 million D-Wave Two is still no faster
+than the computer on your desk right now.
+
+A research team at the Swiss Federal Institute of Technology in Zurich reports
+that there is still a lack of definitive evidence that the D-Wave Two can
+perform functions any faster than traditional machines. The results of the
+test were published in the journal Science Thursday, though the work of head
+physicist Matthias Troyer has been widely circulated since January because the
+paper was available in pre-print.
+
+"Using random spin glass instances as a benchmark, we find no evidence of
+quantum speedup when the entire data set is considered, and obtain
+inconclusive results when comparing subsets of instances on an instance-by-
+instance basis," Troyer, a physicist at the Swiss Federal Institute of
+Technology, wrote.
+
+Quantum speedup is the process by which a computer not based on silicon --
+D-Wave uses tiny liquid helium-cooled loops of niobium for its computers --
+can bypass traditional computational limits through the quirky, occasionally
+unexplainable weirdness of quantum mechanics. While binary computers are
+restricted to math-based computations using bits that flip between 1 and 0,
+quantum computers hijack properties like entanglement and superposition using
+quantum bits, or qubits, that exist as 1 and 0 simultaneously, theoretically
+amping up the calculation speed exponentially.
+
+Screenshot by Nick Statt/CNET
+
+The Zurich tech is yet another conflicting assessment of D-Wave's hardware --
+and runs counter to the results touted by D-Wave itself, as well as Google.
+The search giant last year established its Quantum Artificial Intelligence Lab
+in a partnership with the NASA Ames Research Center and Universities Space
+Research Association. The goal is to use quantum computations to unearth new
+ways of breaking through the computation walls currently plaguing the progress
+of algorithmic AI and machine learning. Google is using D-Wave as its primary
+product.
+
+Google and NASA celebrated the D-Wave Two back in January with test results of
+its own showcasing the D-Wave's quantum speedup clocking in at 35,500 times
+faster than off-the-shelf optimization solvers. But Google was quick to point
+out, as Troyer laid out in the Science article, that there is no clear cut way
+of testing quantum computation because we don't really know how to calculate,
+or even detect, quantum speedup, let alone set a standard for benchmarking.
+
+"While this is an interesting baseline, these competitors are general-purpose
+solvers. You can create much tougher classical competition by writing highly
+optimized code that accounts for the sparse connectivity structure of the
+current D-Wave chip," Google admitted in a blog post concerning the results.
+
+Google even cites Troyer and his team's results as reason not to hail the
+D-Wave as a catch-all quantum computer: "Two world-class teams have done that
+[wrote highly optimized code]. One is a team at ETH Zurich led by Matthias
+Troyer, considered to be one of the world's strongest computational
+physicists. With help from Nvidia, his team managed to write classical
+simulated annealing code running on GPUs that achieves an incredible 200 spin
+updates per nanosecond. The other tailor-made classical competitor was written
+by Alex Selby. You may recall he won £1 million for cracking the Eternity
+puzzle."
+
+D-Wave was not pleased with the way the Troyer test has been perceived for
+those very reasons, as co-founder Geordie Rose told Wired's Clive Thompson in
+May. "[They] had the best algorithm ever developed by a team of the top
+scientists in the world, finely tuned to compete on what this processor does,
+running on the fastest processors that humans have ever been able to build,"
+he said. And D-Wave's offering "is now competitive with those things, which is
+a remarkable step," he added.
+
+Troyer and his team were using the University of Southern California's D-Wave
+Two and running it against a Cray supercomputer software optimizer tuned
+specifically to run blazingly fast on an Intel desktop.
+
+"Basically, the paper being released in Science looks at a narrow set of
+benchmarking problems that aren't expected to show an advantage for quantum
+annealing," a D-Wave spokesperson told CNET, adding that Troyer's research
+roused a similar debate back in January.
+
+That brings up a central problem in the nascent quantum computing field right
+now. A lot of the hype and debunking surrounding D-Wave is about shifting the
+parameters around which tests are performed and against which kinds of
+traditional machines optimized for various types of computations. So you can
+make the D-Wave look 35,000 times faster -- or 100 times slower, as Troyer did
+-- if you simply have it tackle certain types of problems and race it against
+something that's really good, or crummy, at solving said problems.
+
+One thing is clear: The D-Wave is no ordinary computer, and even Troyer and
+the Zurich team will admit it can sometimes achieve speeds up to five times
+faster than the Intel PC. "Our results do not rule out the possibility of
+speedup for other classes of problems and illustrate the subtle nature of the
+quantum speedup question," Troyer concluded.
+
+For now, quantum computing is still a bit of a question mark. Hitting that
+quantum speedup remains an issue of feeding it the right problems and tuning
+the D-Wave software to crack them. For now, there's no reason to write the
+D-Wave off when quantum computing has barely arrived and there's still mounds
+of work to do when it comes to figuring out how to adequately test it.
+
+**Update at 2:15 p.m. PT, Friday, June 20:**_Clarified that the research published in Science Thursday, June 19 concerned scientific research made first available in pre-print back in January._
+
+**Tags: **
+    Sci-Tech
+
+
+
+### Discuss: Confirmed, finally: D-Wave quantum computer...
+
+Conversation powered by Livefyre
+
+Show CommentsHide Comments
+
+###### Featured Video
+
+######
+
+© CBS Interactive Inc.  /  All Rights Reserved.
+
+Privacy Policy Ad Choice Terms of Use Mobile User Agreement
+
+  * cnet
+
+  * Reviews
+  * All Reviews
+  * Audio
+  * Cameras
+  * Desktops
+  * Laptops
+  * Phones
+  * Roadshow
+  * Tablets
+  * TVs
+
+  * News
+  * All News
+  * Apple
+  * Crave
+  * Internet
+  * Microsoft
+  * Mobile
+  * Sci-Tech
+  * Security
+  * Tech Industry
+
+  * Video
+  * All Video
+  * Apple Byte
+  * Carfection
+  * CNET Top 5
+  * CNET Update
+  * Next Big Thing
+  * On Cars
+  * Tomorrow Daily
+  * CNET Podcasts
+
+  * More
+  * About CBS Interactive
+  * About CNET
+  * CNET 100
+  * CNET Deals
+  * CNET Forums
+  * CNET Magazine
+  * CNET Mobile
+  * Help Center
+  * Permissions
+
+  * Follow CNET via...
+  * Facebook
+  * Twitter
+  * Google+
+  * YouTube
+  * LinkedIn
+  * Tumblr
+  * Pinterest
+  * Newsletters
+  * RSS
+

@@ -1,0 +1,114 @@
+In data mining and statistics, hierarchical clustering (also called hierarchical cluster analysis or HCA) is a method of cluster analysis which seeks to build a hierarchy of clusters. Strategies for hierarchical clustering generally fall into two types:
+Agglomerative: This is a "bottom up" approach: each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy.
+Divisive: This is a "top down" approach: all observations start in one cluster, and splits are performed recursively as one moves down the hierarchy.
+In general, the merges and splits are determined in a greedy manner. The results of hierarchical clustering are usually presented in a dendrogram.
+In the general case, the complexity of agglomerative clustering is , which makes them too slow for large data sets. Divisive clustering with an exhaustive search is , which is even worse. However, for some special cases, optimal efficient agglomerative methods (of complexity ) are known: SLINK for single-linkage and CLINK for complete-linkage clustering.
+
+
+== Cluster dissimilarity ==
+In order to decide which clusters should be combined (for agglomerative), or where a cluster should be split (for divisive), a measure of dissimilarity between sets of observations is required. In most methods of hierarchical clustering, this is achieved by use of an appropriate metric (a measure of distance between pairs of observations), and a linkage criterion which specifies the dissimilarity of sets as a function of the pairwise distances of observations in the sets.
+
+
+=== Metric ===
+
+The choice of an appropriate metric will influence the shape of the clusters, as some elements may be close to one another according to one distance and farther away according to another. For example, in a 2-dimensional space, the distance between the point (1,0) and the origin (0,0) is always 1 according to the usual norms, but the distance between the point (1,1) and the origin (0,0) can be 2 under Manhattan distance,  under Euclidean distance, or 1 under maximum distance.
+Some commonly used metrics for hierarchical clustering are:
+For text or other non-numeric data, metrics such as the Hamming distance or Levenshtein distance are often used.
+A review of cluster analysis in health psychology research found that the most common distance measure in published studies in that research area is the Euclidean distance or the squared Euclidean distance.
+
+
+=== Linkage criteria ===
+The linkage criterion determines the distance between sets of observations as a function of the pairwise distances between observations.
+Some commonly used linkage criteria between two sets of observations A and B are:
+where d is the chosen metric. Other linkage criteria include:
+The sum of all intra-cluster variance.
+The decrease in variance for the cluster being merged (Ward's criterion).
+The probability that candidate clusters spawn from the same distribution function (V-linkage).
+The product of in-degree and out-degree on a k-nearest-neighbor graph (graph degree linkage).
+The increment of some cluster descriptor (i.e., a quantity defined for measuring the quality of a cluster) after merging two clusters.
+
+
+== Discussion ==
+Hierarchical clustering has the distinct advantage that any valid measure of distance can be used. In fact, the observations themselves are not required: all that is used is a matrix of distances.
+
+
+== Example for Agglomerative Clustering ==
+For example, suppose this data is to be clustered, and the Euclidean distance is the distance metric.
+Cutting the tree at a given height will give a partitioning clustering at a selected precision. In this example, cutting after the second row of the dendrogram will yield clusters {a} {b c} {d e} {f}. Cutting after the third row will yield clusters {a} {b c} {d e f}, which is a coarser clustering, with a smaller number but larger clusters.
+
+The hierarchical clustering dendrogram would be as such:
+
+This method builds the hierarchy from the individual elements by progressively merging clusters. In our example, we have six elements {a} {b} {c} {d} {e} and {f}. The first step is to determine which elements to merge in a cluster. Usually, we want to take the two closest elements, according to the chosen distance.
+Optionally, one can also construct a distance matrix at this stage, where the number in the i-th row j-th column is the distance between the i-th and j-th elements. Then, as clustering progresses, rows and columns are merged as the clusters are merged and the distances updated. This is a common way to implement this type of clustering, and has the benefit of caching distances between clusters. A simple agglomerative clustering algorithm is described in the single-linkage clustering page; it can easily be adapted to different types of linkage (see below).
+Suppose we have merged the two closest elements b and c, we now have the following clusters {a}, {b, c}, {d}, {e} and {f}, and want to merge them further. To do that, we need to take the distance between {a} and {b c}, and therefore define the distance between two clusters. Usually the distance between two clusters  and  is one of the following:
+The maximum distance between elements of each cluster (also called complete-linkage clustering):
+
+The minimum distance between elements of each cluster (also called single-linkage clustering):
+
+The mean distance between elements of each cluster (also called average linkage clustering, used e.g. in UPGMA):
+
+The sum of all intra-cluster variance.
+The decrease in variance for the cluster being merged (Ward's method)
+The probability that candidate clusters spawn from the same distribution function (V-linkage).
+Each agglomeration occurs at a greater distance between clusters than the previous agglomeration, and one can decide to stop clustering either when the clusters are too far apart to be merged (distance criterion) or when there is a sufficiently small number of clusters (number criterion).
+
+
+== Software ==
+
+
+=== Open Source Implementations ===
+
+Cluster 3.0 provides a Graphical User Interface to access to different clustering routines and is available for Windows, Mac OS X, Linux, Unix.
+ELKI includes multiple hierarchical clustering algorithms, various linkage strategies and also includes the efficient SLINK, CLINK and Anderberg algorithms, flexible cluster extraction from dendrograms and various other cluster analysis algorithms.
+Octave, the GNU analog to MATLAB implements hierarchical clustering in linkage function
+Orange, a free data mining software suite, module orngClustering for scripting in Python, or cluster analysis through visual programming.
+R has several functions for hierarchical clustering: see CRAN Task View: Cluster Analysis & Finite Mixture Models for more information.
+SCaViS computing environment in Java that implements this algorithm.
+scikit-learn implements a hierarchical clustering.
+Weka includes hierarchical cluster analysis.
+
+
+=== Standalone implementations ===
+CrimeStat implements two hierarchical clustering routines, a nearest neighbor (Nnh) and a risk-adjusted(Rnnh).
+figue is a JavaScript package that implements some agglomerative clustering functions (single-linkage, complete-linkage, average-linkage) and functions to visualize clustering output (e.g. dendrograms).
+hcluster is a Python implementation, based on NumPy, which supports hierarchical clustering and plotting.
+Hierarchical Agglomerative Clustering implemented as C# visual studio project that includes real text files processing, building of document-term matrix with stop words filtering and stemming.
+MultiDendrograms An open source Java application for variable-group agglomerative hierarchical clustering, with graphical user interface.
+Graph Agglomerative Clustering (GAC) toolbox implemented several graph-based agglomerative clustering algorithms.
+Hierarchical Clustering Explorer provides tools for interactive exploration of multidimensional data.
+
+
+=== Commercial ===
+MATLAB includes hierarchical cluster analysis.
+SAS includes hierarchical cluster analysis in PROC CLUSTER.
+Mathematica includes a Hierarchical Clustering Package.
+NCSS (statistical software) includes hierarchical cluster analysis.
+SPSS includes hierarchical cluster analysis.
+Qlucore Omics Explorer includes hierarchical cluster analysis.
+Stata includes hierarchical cluster analysis.
+
+
+== See also ==
+Statistical distance
+Brown clustering
+Cluster analysis
+CURE data clustering algorithm
+Dendrogram
+Determining the number of clusters in a data set
+Hierarchical clustering of networks
+Nearest-neighbor chain algorithm
+Numerical taxonomy
+OPTICS algorithm
+Nearest neighbor search
+Locality-sensitive hashing
+
+
+== Notes ==
+
+
+== References and further reading ==
+Kaufman, L.; Rousseeuw, P.J. (1990). Finding Groups in Data: An Introduction to Cluster Analysis (1 ed.). New York: John Wiley. ISBN 0-471-87876-6. 
+Hastie, Trevor; Tibshirani, Robert; Friedman, Jerome (2009). "14.3.12 Hierarchical clustering". The Elements of Statistical Learning (PDF) (2nd ed.). New York: Springer. pp. 520–528. ISBN 0-387-84857-6. Retrieved 2009-10-20. 
+Press, WH; Teukolsky, SA; Vetterling, WT; Flannery, BP (2007). "Section 16.4. Hierarchical Clustering by Phylogenetic Trees". Numerical Recipes: The Art of Scientific Computing (3rd ed.). New York: Cambridge University Press. ISBN 978-0-521-88068-8. 
+Hierarchical Cluster Analysis
+Free statistical software. An overview of statistical software and methods used in published microbiological studies

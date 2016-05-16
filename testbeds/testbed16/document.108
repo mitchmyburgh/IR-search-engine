@@ -1,0 +1,17 @@
+Multi-tenancy
+
+Among the many definitions of cloud computing, almost all include the principle of multi tenancy, or the ability to use the same software and interfaces to configure resources and isolate customer-specific traffic and data. In a typical multi tenancy environment, multiple users who do not share or see each other’s data can share the same applications while running on the same operating system, using the same hardware and the same data storage mechanism.
+
+A SIMPLE MULTI TENANCY DEFINITION
+
+In a multi tenant definition for people without a background in software engineering, it helps to think of another kind of tenant. Imagine you have to provide housing for a number of tenants. You could do one of two things: Provide a separate house for each tenant to live in, or provide tenants with individual units within one apartment building. The former would include higher costs, a poor utilization of resources (because a single tenant wouldn’t use all the space in a house), and poor maintenance (because it would be difficult to maintain so many houses). The latter option would eliminate these disadvantages: It would be cheaper, the resources (space or air conditioning) provided to each tenant would be better utilized, and maintenance would be easier and cheaper.
+
+Based on this multi tenancy definition, we can see that the same principles apply to the use of software. When clients install software on individual employees’ desktops or on a dedicated server, it’s like providing individual tenants with entire houses. It requires a large investment, servers are underused, resources are poorly utilized, and maintenance is more complicated because all servers or installations must be upgraded individually. This approach is not ideal, especially for smaller companies. Instead, a company can let multiple users share a database server and applications. This decreases costs, improves the utilization of resources, and streamlines maintenance.
+
+WHAT IS MULTI TENANCY ABLE TO DO?
+
+Decrease Costs: Each instance of an application usually incurs a certain amount of memory and processing overhead, and the cost can be substantial when multiplied by many users. Multi tenancy reduces this overhead by amortizing it over many users. The licensing costs of the underlying software can be cut because everything can be run on a single software instance, so only one software license will need to be purchased.
+
+Simplify Data Mining: Instead of being collected from multiple data sources, all data for all customers is stored in a single database schema. Data mining, running queries across customers, and identifying trends is simplified.
+
+Streamline Release Management: Multitenancy streamlines the release management process. Traditionally, packages containing code and database changes had to be distributed and installed on each client desktop or server machine. With the multi tenant model, the package may only need to be installed on a single server.

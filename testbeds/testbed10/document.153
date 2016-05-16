@@ -1,0 +1,93 @@
+Using Emoticons to reduce Dependency in
+Machine Learning Techniques for Sentiment Classification
+
+Jonathon Read
+
+1 Introduction
+Recent years have seen an increasing amount of research
+effort expended in the area of understanding
+sentiment in textual resources. A sub-topic of this
+research is that of Sentiment Classification. That
+is, given a problem text, can computational methods
+determine if the text is generally positive or generally
+negative? Several diverse applications exist
+for this potential technology, ranging from the automatic
+filtering of abusive messages (Spertus, 1997)
+to an in-depth analysis of market trends and consumer
+opinions (Dave et al., 2003). This is a complex
+and challenging task for a computer to achieve
+— consider the difficulties involved in instructing a
+computer to recognise sarcasm, for example.Previous work has shown that traditional text classification
+approaches can be quite effective when
+applied to the sentiment analysis problem. Models
+such as Na¨ıve Bayes (NB), Maximum Entropy (ME)
+and Support Vector Machines (SVM) can determine
+the sentiment of texts. Pang et al. (2002) used a bagof-features
+framework (based on unigrams and bigrams)
+to train these models from a corpus of movie
+reviews labelled as positive or negative. The best accuracy
+achieved was 82.9%, using an SVM trained
+on unigram features. A later study (Pang and Lee,
+2004) found that performance increased to 87.2%
+when considering only those portions of the text
+deemed to be subjective.
+However, Engstrom (2004) showed that the bag- ¨
+of-features approach is topic-dependent. A classifier
+trained on movie reviews is unlikely to perform
+as well on (for example) reviews of automobiles.
+Turney (2002) noted that the unigram unpredictable
+might have a positive sentiment in a movie
+review (e.g. unpredictable plot), but could be negative
+in the review of an automobile (e.g. unpredictable
+steering). In this paper, we demonstrate
+how the models are also domain-dependent — how
+a classifier trained on product reviews is not effective
+when evaluating the sentiment of newswire articles,
+for example. Furthermore, we show how the models
+are temporally-dependent — how classifiers are biased
+by the trends of sentiment apparent during the
+time-period represented by the training data.
+We propose a novel source of training data based
+on the language used in conjunction with emoticons
+in Usenet newsgroups. Training a classifier using
+this data provides a breadth of features that, while it does not perform to the state-of-the-art, could function
+independent of domain, topic and time.
+
+5 Conclusions and Future Work
+This paper has demonstrated that dependency in sentiment
+classification can take the form of domain,
+topic, temporal and language style. One might suppose
+that dependency is occurring because classi-
+fiers are learning the semantic sentiment of texts
+rather than the general sentiment of language used.
+That is, the classifiers could be learning authors’
+sentiment towards named entities (e.g. actors, directors,
+companies, etc.). However, this does not seem
+to be the case. In a small experiment, we part-ofspeech
+tagged the Polarity 2004 dataset and automatically
+replaced proper nouns with placeholders.
+Retraining on this modified text did not significantly
+affect performance.
+But it may be that something more subtle is happening.
+Possibly, the classifiers are learning the
+words associated with the semantic sentiment of entities.
+For example, suppose that there has been a
+well-received movie about mountaineering. During
+this movie, there is a particularly stirring scene involving
+an ice-axe and most of the reviewers mention
+this scene. During training, the word ‘ice-axe’
+would become associated with a positive sentiment,
+whereas one would suppose that this word does not
+in general express any kind of sentiment.
+In future work we will perform further tests to determine
+the nature of dependency in machine learning
+techniques for sentiment classification. One way
+of evaluating the ‘ice-axe’ effect could be to build a
+‘pseudo-ontology’ of the movie reviews — a map
+of the sentiment-bearing relations that would enablethe analysis of the dependencies created by the training
+process. Other extensions of this work are to
+collect more text marked-up with emoticons, and to
+experiment with techniques to automatically remove
+noisy examples from the training data.
+
+

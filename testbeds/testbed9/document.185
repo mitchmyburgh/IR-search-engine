@@ -1,0 +1,26 @@
+In the C programming language, Obstack is a memory-management GNU extension to the C standard library. An "obstack" is a "stack" of "objects" (data items) which is dynamically managed. It implements a region-based memory management scheme.
+Obstack code typically provides C macros which take care of memory allocation and management for the user. Basically, obstacks are used as a form of memory management which can be more efficient and less difficult to implement than malloc/free in several situations. For example, say one needs to set up a stack for handling data items whose number grows for a while and then reach a final form; such a stack could be defined in obstack.h.
+
+
+== Freeing allocated objects ==
+Once the object is allocated a new chunk of memory in obstack it must be freed after its use.
+
+
+== Functions and macros ==
+The interfaces for using obstacks may be defined either as functions or as macros, depending on the compiler. The obstack facility works with all C compilers.
+In an old-fashioned non-ISO C compiler, all the obstack functions are actually defined only as macros. You can call these macros like functions, but you cannot use them in any other way. For example, you cannot take their address.
+Calling the macros requires a special precaution: namely, the first operand (the obstack pointer) may not contain any side effects, because it may be computed more than once.
+In ISO C, each function has both a macro definition and a function definition. The function definition is used if the address of the function without calling it is taken. An ordinary call uses the macro definition by default, but you can request the function definition instead by writing the function name in parentheses, as shown here:
+
+This is the same situation that exists in ISO C for the standard library functions.
+
+
+== Growing Objects ==
+Since the memory chunks in an obstack are used sequentially, it is possible to build up an object by adding data of size 'bytes' at the end of it.This technique of step by step building up of an object is termed as 'growing an object'.
+
+
+== References ==
+
+
+== External links ==
+Obstacks - The GNU C Library

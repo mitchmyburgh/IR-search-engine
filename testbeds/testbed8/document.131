@@ -1,0 +1,8 @@
+Encoding general trees as binary trees[edit]
+There is a one-to-one mapping between general ordered trees and binary trees, which in particular is used by Lisp to represent general ordered trees as binary trees. To convert a general ordered tree to binary tree, we only need to represent the general tree in left child-right sibling way. The result of this representation will automatically be a binary tree, if viewed from a different perspective. Each node N in the ordered tree corresponds to a node N' in the binary tree; the left child of N' is the node corresponding to the first child ofN, and the right child of N' is the node corresponding to N 's next sibling --- that is, the next node in order among the children of the parent of N. This binary tree representation of a general order tree is sometimes also referred to as a left child-right sibling binary tree (LCRS tree), or a doubly chained tree, or a Filial-Heir chain.
+One way of thinking about this is that each node's children are in a linked list, chained together with their right fields, and the node only has a pointer to the beginning or head of this list, through its left field.
+For example, in the tree on the left, A has the 6 children {B,C,D,E,F,G}. It can be converted into the binary tree on the right.
+ 
+The binary tree can be thought of as the original tree tilted sideways, with the black left edges representing first child and the blue right edges representing next sibling. The leaves of the tree on the left would be written in Lisp as:
+(((N O) I J) C D ((P) (Q)) F (M))
+which would be implemented in memory as the binary tree on the right, without any letters on those nodes that have a left child.

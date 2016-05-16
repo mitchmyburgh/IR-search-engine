@@ -1,0 +1,76 @@
+Elements of Pictures: Computer graphics is all about producing pictures (realistic or stylistic) by computer. Before
+discussing how to do this, let us first consider the elements that make up images and the devices that produce
+them. How are graphical images represented? There are four basic types that make up virtually of computer
+generated pictures: polylines, filled regions, text, and raster images.
+Polylines: A polyline (or more properly a polygonal curve is a finite sequence of line segments joined end to
+end. These line segments are called edges, and the endpoints of the line segments are called vertices. A
+single line segment is a special case. (An infinite line, which stretches to infinity on both sides, is not
+usually considered to be a polyline.) A polyline is closed if it ends where it starts. It is simple if it does not
+self-intersect. Self-intersections include such things as two edge crossing one another, a vertex intersecting
+in the interior of an edge, or more than two edges sharing a common vertex. A simple, closed polyline is
+also called a simple polygon. If all its internal angle are at most 180_, then it is a convex polygon.
+A polyline in the plane can be represented simply as a sequence of the (x; y) coordinates of its vertices.
+This is sufficient to encode the geometry of a polyline. In contrast, the way in which the polyline is
+rendered is determined by a set of properties call graphical attributes. These include elements such as
+color, line width, and line style (solid, dotted, dashed), how consecutive segments are joined (rounded,
+mitered or beveled; see the book for further explanation).
+Closed polyline Simple polyline
+No joint
+Simple polygon Convex polygon
+Mitered Rounded Beveled
+Fig. 2: Polylines and joint styles.
+Many graphics systems support common special cases of curves such as circles, ellipses, circular arcs, and
+Bezier and B-splines. We should probably include curves as a generalization of polylines. Most graphics
+drawing systems implement curves by breaking them up into a large number of very small polylines, so
+this distinction is not very important.
+Filled regions: Any simple, closed polyline in the plane defines a region consisting of an inside and outside.
+(This is a typical example of an utterly obvious fact from topology that is notoriously hard to prove. It is
+called the Jordan curve theorem.) We can fill any such region with a color or repeating pattern. In some
+instances the bounding polyline itself is also drawn and others the polyline is not drawn.
+Lecture Notes 4 CMSC 427
+A polyline with embedded “holes” also naturally defines a region that can be filled. In fact this can be
+generalized by nesting holes within holes (alternating color with the background color). Even if a polyline
+is not simple, it is possible to generalize the notion of interior. Given any point, shoot a ray to infinity. If it
+crosses the boundary an odd number of times it is colored. If it crosses an even number of times, then it is
+given the background color.
+with boundary without boundary with holes self intersecting
+Fig. 3: Filled regions.
+Text: Although we do not normally think of text as a graphical output, it occurs frequently within graphical
+images such as engineering diagrams. Text can be thought of as a sequence of characters in some font. As
+with polylines there are numerous attributes which affect how the text appears. This includes the font’s
+face (Times-Roman, Helvetica, Courier, for example), its weight (normal, bold, light), its style or slant
+(normal, italic, oblique, for example), its size, which is usually measured in points, a printer’s unit of
+measure equal to 1=72-inch), and its color.
+12 point
+10 point
+8 point
+Face (family) Size
+Courier
+Times-Roman
+Helvetica
+Bold
+Normal
+Weight
+Italic
+Normal
+Style (slant)
+Fig. 4: Text font properties.
+Raster Images: Raster images are what most of us think of when we think of a computer generated image.
+Such an image is a 2-dimensional array of square (or generally rectangular) cells called pixels (short for
+“picture elements”). Such images are sometimes called pixel maps.
+The simplest example is an image made up of black and white pixels, each represented by a single bit (0
+for black and 1 for white). This is called a bitmap. For gray-scale (or monochrome) raster images raster
+images, each pixel is represented by assigning it a numerical value over some range (e.g., from 0 to 255,
+ranging from black to white). There are many possible ways of encoding color images. We will discuss
+these further below.
+Graphics Devices: The standard interactive graphics device today is called a raster display. As with a television, the
+display consists of a two-dimensional array of pixels. There are two common types of raster displays.
+Video displays: consist of a screen with a phosphor coating, that allows each pixel to be illuminated momentarily
+when struck by an electron beam. A pixel is either illuminated (white) or not (black). The level of
+intensity can be varied to achieve arbitrary gray values. Because the phosphor only holds its color briefly,
+the image is repeatedly rescanned, at a rate of at least 30 times per second.
+Liquid crystal displays (LCD’s): use an electronic field to alter polarization of crystalline molecules in each
+pixel. The light shining through the pixel is already polarized in some direction. By changing the polarization
+of the pixel, it is possible to vary the amount of light which shines through, thus controlling its
+intensity.
+Lecture Notes

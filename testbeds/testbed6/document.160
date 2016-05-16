@@ -1,0 +1,10 @@
+What are the time complexities of preorder, inorder, postorder, and level order binary tree traversals with both recursive and iterative algorithms?
+
+Solutions
+It depends what kind of traversal you are performing and the algorithm,  but typically it would be O(n) where n is the total number of nodes in  the tree. The canonical recursive implementation of depth first  traversal, will consume memory (on the stack) in the order of the  deepest level, which on a balanced tree it would be log(n). I am not sure, but I only think that preorder, inorder, and post order makes a difference if the tree is sorted?
+
+It is O (n) where n is the number of nodes in the tree. It is simply because the algorithm will need to visit every node exactly once.
+
+It has to be O(n) where n is the total number of nodes in the tree. All types of traversals touch all the nodes during the traversal.
+
+Study Big Oh notation to get a better understanding of the efficiency of Algorithms. Big O notation is used in Computer Science to describe the performance or complexity of an algorithm. Big O specifically describes the worst-case scenario, and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm.

@@ -1,0 +1,56 @@
+Reconciling Schemas of Disparate Data Sources:
+A Machine-Learning Approach
+
+
+AnHai Doan, Pedro Domingos, Alon Halevy
+
+1. INTRODUCTION
+The increasing need of enterprises to uniformly access multiple sources of data and the rapid growth of structured
+data available on the WWW have spurred considerable interest
+in building data-integration systems (e.g., [8, 9, 24, 15,
+11, 13]). Such a system provides users with a uniform interface
+to a multitude of data sources, thus freeing them from
+the details of the schemas of the sources and the particular
+mode of interaction with each source. The system provides
+this interface by enabling users to pose queries against a me- diated schema, which is a virtual schema that captures the
+domain's salient aspects.
+To answer queries, the data-integration system uses a set
+of semantic mappings between the mediated schema and
+the local schemas of the data sources. The system uses the mappings to reformulate a user query into a set of queries on
+the data sources. Wrapper programs, attached to each data
+source, handle the data formatting transformations between
+the local data model and the data model in the integration
+system. Figure 1 illustrates a data-integration system that
+helps users end houses on the real-estate market.
+A key bottleneck in building data-integration systems is
+the acquisition of semantic mappings. Today these mappings
+are provided manually by the builders of the system,
+resulting in a laborious and error-prone process. The emergence
+of XML as a standard syntax for sharing data among
+sources further fuels data sharing applications, and hence
+underscores the need to develop methods for acquiring se- mantic mappings. Clearly, while the task of ending semantic
+mappings cannot be fully automated, the development
+of tools for assisting the process is crucial to truly achieve
+large-scale data integration.
+In this paper we describe the LSD (Learning Source Descriptions)
+system that uses and extends machine learning
+techniques to semi-automatically create semantic mappings.
+Throughout the discussion, we shall assume that the
+sources present their data in XML, and that the mediatedand
+source schemas are represented with DTDs. Then, the
+schema-matching problem is toe nd correspondences among
+the elements of the mediated schema and the source DTDs.
+The key idea underlying our approach is that after a small
+set of data sources have been manually mapped to the mediated
+schema, LSD should be able to glean signifcant information
+from these mappings to successfully propose mappings
+for subsequent data sources.
+
+9. CONCLUSIONS & FUTURE WORK
+We have described an approach to schema matching that
+employs and extends machine learning techniques. Our approach
+utilizes both schema and data from the sources. To match a source-schema element, the system applies a set of
+learners, each of which looks at the problem from a different
+perspective, then combines the learners' predictions using
+a meta-learner. The meta-learner's predictions are further
+improved using domain constraints and user feedback. We also developed a novel XML learner that exploits the hierar-

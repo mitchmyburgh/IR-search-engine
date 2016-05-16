@@ -1,0 +1,59 @@
+Five Languages That Are No More 
+
+The past few years have seen the unfortunate passings of several celebrities and artists that we have come to know and, likely, love, including Prince, who passed away today (April 21, 2016).  We are reminded that life is fleeting, so it's best to make the most of it while we can.
+
+Programming languages, in some ways, are celebrities in the software space. Sometimes, we lose those celebrities, either via a quick burnout, or a longer fade to obscurity,
+
+(Aside: Neil Young tells us that the former is better--is that still the case here?)
+
+That "fade to black" seems to be the more common scenario in the development world.
+
+Today, we take a look at five languages (in no particular order) that are either no longer with us or have fallen into extremely infrequent use (although I am positive we can name some instances of languages being resurrected or seeing renewed use.)
+
+To paraphrase Monty Python,
+
+Logo
+
+This was actually the very first programming language I ever attempted at the tender age of six. What better way to motivate a person new to programming by having them issue instructions that would essentially result in a drawing?
+
+By issuing movement commands to a "turtle", you could have it draw lines and other figures.
+
+Created in the 1960s, future versions eventually included an object-oriented version.
+
+These days, it can be tough to find an actual implementation, but they do exist. Whether it's for a trip down memory lane or to introduce someone younger to programming, Logo still serves a purpose, however limited.
+Pascal
+
+It seemed that, back in "the day" (not a Thursday, this time), if you wanted to program something at home, you were either using C/C++, Pascal, or BASIC (QBasic, anyone?).  Pascal was a sort of middle ground between the other two languages.
+
+While BASIC evolved into Visual Basic, and C/C++ continues to be extremely popular, it would seem that Pascal has gone the way of the dodo, though like other "obsolete" languages, you can likely still find some implementations around. It is likely that the rise of object-oriented programming contributed greatly to this former-great's demise.
+Modula-3
+
+A more academically-geared language, this language was the evolution from Modula-2. And while it has had influence and impact on how some other object-oriented languages were designed (e.g. Java, Python), it never really caught on with the industry as a whole.
+
+To wit, I recall Modula-3 being one of the options for languages to use in my first year of university for my Computer Science courses, with the other option being Java.  A couple of years later, the option for Modula-3 was dropped entirely: The torch for learning object-oriented programming had been passed.
+
+RIP Modula-3.
+LISP
+
+Who doesn't like seeing a bunch of parentheses scattered all over their code?
+
+Apparently most people, although in recent years the rise of languages like Clojure have seen a rebirth of LISP-esque languages.
+
+Ready-made for the artificial intelligence community back in the 1950s, its handling of linked lists (a LISt Processor) made it a powerful tool for its users; however, its biggest strength was also its greatest limitation and, as such, the industry never really made widespread used of it in applications other than AI.
+
+For those interested, you can check out GNU's Common Lisp implementation here.
+Smalltalk
+
+Another academic language, Smalltalk is a language devised with strict parameters. With only six keywords, it worked by implementing a message-passing model, through which many people learned how to program using an object-oriented methodology.
+
+When used in the wild, the deployed code did not perform very well and frequently required obscene amounts of memory. It's not wonder it didn't really catch on.
+
+That said, Smalltalk lives on in a way, as iOS developers will attest to. Anyone who has used Objective-C will recognize Smalltalk's message-passing mechanisms. Indeed, Objective-C was created by combining C with the message-passing capabilities of Smalltalk.
+Honorable Mention: Visual Basic
+
+While Visual Basic lives on with Microsoft's .NET platform, in this engineer's humble opinion, I have seen a decline in the proliferation of its use in commercial, enterprise projects.
+
+VB also continues to live on in its own little ecosystem with the Microsoft Office suite of products under the name, "Visual Basic for Applications".  VBA has been with us for as long as Office has, and continues to be the best way to internally automate the products included in Microsoft Office.
+Conclusion
+
+While we can see the remnants and feel the impact of these ex-languages, reminding ourselves that they existed and what they were used for is an excellent exercise for today's developers. Where we end up has a lot do with where we've been.

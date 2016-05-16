@@ -1,0 +1,34 @@
+A quad-edge data structure is a computer representation of the topology of a two-dimensional or three-dimensional map, that is, a graph drawn on a (closed) surface.
+
+
+== Overview ==
+The quad-edge data structure:
+represents simultaneously both the map, its dual and mirror image.
+can represent the most general form of a map, admitting vertices and faces of degree 1 and 2.
+is a variant of the earlier winged edge data structure.
+The fundamental idea behind the quad-edge structure is the recognition that a single edge, in a closed polygonal mesh topology, sits between exactly two faces and exactly two vertices. Thus, it can represent a dual of the graph simply by reversing the convention on what is a vertex and what is a face.
+
+
+== Details ==
+The quad-edge structure gets its name from the general mechanism by which they are stored. A single Edge structure conceptually stores references to up to two faces, two vertices, and 4 edges. The four edges stored are the edges starting with the two vertices that are attached to the two stored faces.
+
+
+== Uses ==
+Much like Winged Edge, quad-edge structures are used in programs to store the topology of a 2D or 3D polygonal mesh. The mesh itself does not need to be closed in order to form a valid quad-edge structure.
+Using a quad-edge structure, iterating through the topology is quite easy. Often, the interface to quad-edge topologies is through directed edges. This allows the two vertices to have explicit names (start and end), and this gives faces explicit names as well (left and right, relative to a person standing on start and looking in the direction of end). The four edges are also given names, based on the vertices and faces: start-left, start-right, end-left, and end-right. A directed edge can be reversed to generate the edge in the opposite direction.
+Iterating around a particular face only requires having a single directed edge to which that face is on the left (by convention) and then walking through all of the start-left edges until the original edge is reached.
+
+
+== See also ==
+Combinatorial maps
+Winged edge
+Doubly connected edge list
+
+
+== References ==
+The quad-edge data structure was described in the paper by Leonidas J. Guibas and Jorge Stolfi, "Primitives for the manipulation of general subdivisions and the computation of Voronoi diagrams", ACM Transactions on Graphics, 4(2), 1985, 75–123
+
+
+== External links ==
+http://www.cs.cmu.edu/afs/andrew/scs/cs/15-463/2001/pub/src/a2/quadedge.html A quad-edge implementation in C++.
+http://www.ic.unicamp.br/~stolfi/EXPORT/software/c/2000-05-04/libquad/ A quad-edge implementation in C.

@@ -1,0 +1,12 @@
+The early languages developed for numeric computing, such as FORTRAN (up to FORTRAN IV) and Algol 60, did not have support for record types; but later versions of those languages, such as Fortran 77 and Algol 68 did add them. The original Lisp programming language too was lacking records (except for the built-in cons cell), but its S-expressions provided an adequate surrogate. The Pascal programming language was one of the first languages to fully integrate record types with other basic types into a logically consistent type system. The PL/I programming language provided for COBOL-style records. The C programming language initially provided the record concept as a kind of template (struct) that could be laid on top of a memory area, rather than a true record data type. The latter were provided eventually (by the typedef declaration), but the two concepts are still distinct in the language. Most languages designed after Pascal (such as Ada, Modula, and Java) also supported records.
+Operations
+
+    Declaration of a new record type, including the position, type, and (possibly) name of each field;
+    Declaration of variables and values as having a given record type;
+    Construction of a record value from given field values and (sometimes) with given field names;
+    Selection of a field of a record with an explicit name;
+    Assignment of a record value to a record variable;
+    Comparison of two records for equality;
+    Computation of a standard hash value for the record.
+
+The selection of a field from a record value yields a value.

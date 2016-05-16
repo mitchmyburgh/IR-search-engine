@@ -1,0 +1,11 @@
+What is the difference between iteration and traversing?
+
+The past few weeks I have been learning about iterators. I still do not understand the main difference between iterating through a link list and traversing through one. I know that traversing means to go through (visiting every element) the link list, and when iterating you basically do the same thing, but what is different, and why cannot you iterate through everything (standard library data-structures)?
+
+“Traversal” just means walking through (all or some) elements of a data structure such as binary trees. We traverse a binary tree to get the data at each point.
+Traversing can be done in three ways namly; Pre-order, post-order and in-order.
+Historically, “iteration” in computer science is a special form of recursion for which no additional stack space is needed – in other words, tail recursion. This form is computationally exactly equivalent to what we now colloquially know as “iteration”, namely a finite loop (such as a for loop with a fixed lower and upper bound).
+Now this makes iteration especially well suited (compared to general recursion) for traversing linear data structures2. Note that it does not work for all containers (e.g. general graphs) because here you need to remember the already visited nodes (e.g. using depth-first search, which is defined recursively in terms of adjacent nodes, rather than via the C++ concept of iterators).
+It is in this context that the term “iteration” is used in C++ applied to containers.
+In summary: not every traversal is an iteration but every iteration (over a data structure) is a traversal. However, it’s worth noting that many people make no such distinction and use the terms interchangeably.
+

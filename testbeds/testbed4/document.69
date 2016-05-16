@@ -1,0 +1,171 @@
+In computer graphics, we work with sets of geometric objects, such as lines, polygons,
+and polyhedra. Such objects exist in a three-dimensional world and have properties
+that can be described using concepts such as length and angles. As we discovered
+working in two dimensions, we can define most geometric objects using a limited set
+of simple entities. These basic geometric objects and the relationships among them
+can be described using three fundamental types: scalars, points, and vectors.
+Although we will consider each type from a geometric perspective, each of these
+types also can be defined formally, as in Appendix B, as obeying a set of axioms.
+Although ultimately we will use the geometric instantiation of each type, we want to
+take great care in distinguishing between the abstract definition of each entity and any
+particular example, or implementation, of it. By taking care here, we can avoid many
+subtle pitfalls later. Although we will work in three-dimensional spaces, virtually all
+our results will hold in n-dimensional spaces.
+3.1.1 Geometric Objects
+Our fundamental geometric object is a point. In a three-dimensional geometric system,
+a point is a location in space. The only property that a point possesses is that
+point’s location; a mathematical point has neither a size nor a shape.
+Points are useful in specifying geometric objects but are not sufficient by themselves.
+We need real numbers to specify quantities such as the distance between two
+points. Real numbers—and complex numbers, which we will use occasionally—are
+examples of scalars. Scalars are objects that obey a set of rules that are abstractions
+of the operations of ordinary arithmetic. Thus, addition and multiplication are defined
+and obey the usual rules such as commutivity and associativity. Every scalar has
+multiplicative and additive inverses, which implicitly define subtraction and division.
+We need one additional type—the vector—to allow us to work with directions.1
+Physicists and mathematicians use the termvector for any quantity with direction and
+magnitude. Physical quantities, such as velocity and force, are vectors. A vector does
+not, however, have a fixed location in space.
+In computer graphics, we often connect points with directed line segments, as
+shown in Figure 3.1. A directed line segment has both magnitude—its length—
+and direction—its orientation—and thus is a vector. Because vectors have no fixed
+position, the directed line segments shown in Figure 3.2 are identical because they
+have the same direction and magnitude. We will often use the terms vector and
+directed line segment synonymously.
+Vectors can have their lengths altered by real numbers. Thus, in Figure 3.3(a),
+line segment A has the same direction as line segment B, but B has twice the length
+1. The types such as vec3 used by GLSL and that we have used in our classes are not geometric types
+but rather storage types. Hence, we can use a vec3 to store information about a point, a vector, or a
+color. Unfortunately, the choice of names by GLSL can cause some confusion.
+3.1 Scalars, Points, and Vectors 117
+A B = 2A
+(a)
+A
+C
+D = A + C
+(b)
+FIGURE 3.3 (a) Parallel line segments. (b) Addition of line segments.
+A
+E = –A
+FIGURE 3.4 Inverse vectors.
+v
+P
+Q
+FIGURE 3.5 Point-vector
+addition.
+that A has, so we can write B = 2A. We can also combine directed line segments by
+the head-to-tail rule, as shown in Figure 3.3(b). Here, we connect the head of vector
+A to the tail of vector C to form a new vector D, whose magnitude and direction are
+determined by the line segment from the tail of A to the head of C. We call this new
+vector, D, the sum of A and C and write D = A + C. Because vectors have no fixed
+positions, we can move any two vectors as necessary to form their sum graphically.
+Note that we have described two fundamental operations: the addition of two vectors
+and the multiplication of a vector by a scalar.
+If we consider two directed line segments, A and E, as shown in Figure 3.4, with
+the same length but opposite directions, their sum as defined by the head-to-tail
+addition has no length. This sum forms a special vector called the zero vector, which
+we denote 0, that has a magnitude of zero. Because it has no length, the orientation of
+this vector is undefined. We say that E is the inverse of A and we can write E =-A.
+Using inverses of vectors, scalar-vector expressions such as A + 2B - 3C make sense.
+Although we can multiply a vector by a scalar to change its length, there are no
+obvious sensible operations between two points that produce another point. Nor are
+there operations between a point and a scalar that produce a point. There is, however,
+an operation between points and directed line segments (vectors), as illustrated in
+Figure 3.5. We can use a directed line segment to move from one point to another.
+We call this operation point-vector addition, and it produces a new point. We write
+this operation as P = Q + v.We can see that the vector v displaces the point Q to the
+new location P.
+Looking at things slightly differently, any two points define a directed line segment
+or vector from one point to the second. We call this operation point-point
+subtraction, and we can write it as v = P - Q. Because vectors can be multiplied
+by scalars, some expressions involving scalars, vectors, and points make sense, such
+as P + 3v, or 2P - Q + 3v (because it can be written as P + (P - Q) + 3v, a sumof
+a point and a vector), whereas others, such as P + 3Q - v, do not.
+3.1.2 Coordinate-Free Geometry
+Points exist in space regardless of any reference or coordinate system. Thus, we do not
+need a coordinate system to specify a point or a vector. This fact may seem counter
+118 Chapter 3 Geometric Objects and Transformations
+(1, 1)
+(3, 3)
+FIGURE 3.6 Object and
+coordinate system.
+2
+2
+FIGURE 3.7 Object without
+coordinate system.
+to your experiences, but it is crucial to understanding geometry and how to build
+graphics systems. Consider the two-dimensional example shown in Figure 3.6. Here
+we see a coordinate system defined by two axes, an origin, and a simple geometric
+object, a square. We can refer to the point at the lower-left corner of the square as
+having coordinates (1, 1) and note that the sides of the square are orthogonal to each
+other and that the point at (3, 1) is 2 units from the point at (1, 1). Now suppose
+that we remove the axes as shown in Figure 3.7. We can no longer specify where the
+points are. But those locations were relative to an arbitrary location of the origin
+and the orientation of the axes. What is more important is that the fundamental
+geometric relationships are preserved. The square is still a square, orthogonal lines
+are still orthogonal, and distances between points remain the same.
+Of course, we may find it inconvenient, at best, to refer to a specific point as “that
+point over there” or “the blue point to the right of the red one.” Coordinate systems
+and frames (see Section 3.3) solve this reference problem, but for now we want to see
+just how far we can get following a coordinate-free approach that does not require an
+arbitrary reference system.
+3.1.3 The Mathematical View: Vector and Affine Spaces
+If we view scalars, points, and vectors as members of mathematical sets, then we
+can look at a variety of abstract spaces for representing and manipulating these
+sets of objects. Mathematicians have explored a variety of such spaces for applied
+problems, ranging from the solution of differential equations to the approximation
+of mathematical functions. The formal definitions of the spaces of interest to us—
+vector spaces, affine spaces, and Euclidean spaces—are given in Appendix B. We are
+concerned with only those examples in which the elements are geometric types.
+We start with a set of scalars, any pair of which can be combined to formanother
+scalar through two operations, called addition and multiplication. If these operations
+obey the closure, associativity, commutivity, and inverse properties described in Appendix
+B, the elements form a scalar field. Familiar examples of scalars include the
+real numbers, complex numbers, and rational functions.
+Perhaps the most important mathematical space is the (linear) vector space. A
+vector space contains two distinct types of entities: vectors and scalars. In addition
+to the rules for combining scalars, within a vector space, we can combine scalars and
+vectors to form new vectors through scalar–vector multiplication and vectors with
+vectors through vector–vector addition. Examples of mathematical vector spaces
+include n-tuples of real numbers and the geometric operations on our directed line
+segments.
+In a linear vector space, we do not necessarily have a way of measuring a scalar
+quantity. A Euclidean space is an extension of a vector space that adds a measure of
+size or distance and allows us to define such things as the length of a line segment.
+An affine space is an extension of the vector space that includes an additional
+type of object: the point. Although there are no operations between two points or
+between a point and a scalar that yield points, there is an operation of vector–point
+addition that produces a new point. Alternately, we can say there is an operation
+3.1 Scalars, Points, and Vectors 119
+called point–point subtraction that produces a vector from two points. Examples of
+affine spaces include the geometric operations on points and directed line segments
+that we introduced in Section 3.1.1.
+In these abstract spaces, objects can be defined independently of any particular
+representation; they are simply members of various sets. One of the major vectorspace
+concepts is that of representing a vector in terms of one or more sets of basis
+vectors. Representation (Section 3.3) provides the tie between abstract objects and
+their implementation. Conversion between representations leads us to geometric
+transformations.
+3.1.4 The Computer Science View
+Although the mathematician may prefer to think of scalars, points, and vectors as
+members of sets that can be combined according to certain axioms, the computer
+scientist prefers to see them as abstract data types (ADTs). An ADT is a set of operations
+on data; the operations are defined independently of how the data are represented
+internally or of how the operations are implemented. The notion of data
+abstraction is fundamental to modern computer science. For example, the operation
+of adding an element to a list or of multiplying two polynomials can be defined independently
+of how the list is stored or of how real numbers are represented on a
+particular computer. People familiar with this concept should have no trouble distinguishing
+between objects (and operations on objects) and objects’ representations
+(or implementations) in a particular system. Froma computational point of view, we
+should be able to declare geometric objects through code such as
+regardless of the internal representation or implementation of the objects on a particular
+system. In object-oriented languages, such as C++, we can use language features,
+such as classes and overloading of operators, so we can write lines of code, such as
+q = p+a*v;
+using our geometric data types. Of course, first we must define functions that perform
+the necessary operations; so that we can write them, we must look at the mathematical
+functions that we wish to implement. First, we will define our objects. Then
+we will look to certain abstract mathematical spaces to help us with the operations
+among them.
+

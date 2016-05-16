@@ -1,0 +1,25 @@
+﻿There is an assumption that ontology developers will use a
+top-down approach by using a foundational ontology, because it purportedly speeds up ontology development and improves quality and interoperability of the domain ontology. Informal assessment of these assumptions
+reveals ambiguous results that are not only open to different interpretations but also such that foundational ontology usage is not foreseen in
+most methodologies. Therefore, we investigated these assumptions in a
+controlled experiment. After a lecture about DOLCE, BFO, and part-
+whole relations, one-third chose to start domain ontology development
+with an OWLized foundational ontology. On average, those who commenced with a foundational ontology added more new classes and class
+axioms, and signi cantly less object properties than those who started
+from scratch. No ontology contained errors regarding part-of vs. is-a.
+The comprehensive results show that the `cost' incurred spending time
+getting acquainted with a foundational ontology compared to starting
+from scratch was more than made up for in size, understandability, and
+interoperability already within the limited time frame of the experiment.
+Ontologists tend to be outspoken about the usefulness of foundational (top-
+level) ontologies, such as BFO, DOLCE [1], GFO [2], and SUMO: either they are
+perceived to be essential or an impractical burden. Older ontology development
+methodologies that are still in use, such as
+Methontology
+[3] and On-To-
+Knowledge [4], do not mention the use of a foundational ontology, but at the time
+of their development there were hardly any available, and the larger projects,
+such as GALEN and Cyc, developed their own. More recent methodologies, such
+as the NeON Methodology [5], mention it either in passing as part of ontology
+reuse in general, or explicitly, as in OntoSpec [6], and it is considered as an
+essential component in the OBO Foundry project [7, 8].

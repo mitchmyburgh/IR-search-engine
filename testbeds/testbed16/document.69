@@ -1,0 +1,19 @@
+Elastic Security: Vulnerability Assessment
+Frederic Donnat / November 22, 2011
+Elastic Detector, our FREE Vulnerability Assessment tool for Amazon EC2, has been recently updated with NEW features. Of course, the NEW Amazon US-West (Oregon) has been added at the meantime (see the AWS blogpost for more information).
+
+Sometimes, security is considered boring (as shown in one of our previous posts on Open Ports Check), I take this opportunity to give some explanation on the recent Security Features that have been added and to point out two features of Elastic Detector, that are essential for providing a security solution that can cope with the elasticity of cloud infrastructures.
+
+New Security Features of Elastic Detector
+
+Blacklist Checks: Check against well-known RBLs if your Elastic IP Address (EIP according to Amazon naming), or the IP address taken from Amazon pool address is blacklisted.
+This allows cloud users to detect configuration errors in a mail server that is used as an Open-Relay or to detect a malicious insider that is using your infrastructure to install a bot-net (part of CloudSecurityAlliance Top Threats).
+Critical Ports Audit: Check against a tunnable list of sensitive ports that there are no critical ports open to the public.
+This allows cloud users to be protected from dictionary attacks on administrative services such as SSH, Webmin (for Linux instances), or RDP (for Windows instances).
+Security Zones Auditor: Define Security Zones according to the port that are accessible (using 3 Levels of Security: public, sensitive and critical) and the source IP addresses that have access to those ports (using 3 Levels of Trust: untrusted, fairly-trusted, trusted). Based on that information, Elastic Detector verifies if there is a perfect separation between servers of different trust levels with regard to their Security Zones. For example, in a three tiered architecture (Web server, Application server, Database server), an instance running a Web server should not be able to directly access an instance running the database server as this will potentially expose your data in case of compromise of the web server.
+Two Characteristics of Elastic Detector
+
+AgentLess: No additional agent or software to install on your instance (AMI according to Amazon convention naming).
+Using APIs, there is no risk of loosing connectivity with an agent (due to a network problem, a misconfiguration, or a human error) and no need to maintained the agents that are deployed. Moreover, the agent is itself a target for attack, so using APIs give us an additional level of isolation.
+Auto-Check Technology: Any cloud resources (especially instances) are under control during the complete life-cycle, as continuous Security Checks based on customizable templates are automatically put in place as soon as the resource is detected by a real time polling system til the resource is shutdown.
+Feel free to comment or ask more details on the security points.

@@ -1,0 +1,47 @@
+The Evolution Of Programming Languages 
+
+If you know a few computer languages and a little history you probably have some ideas about how they relate to one another. If informal ideas aren't quite what you want, how about a full taxonomy derived as if the languages were species?
+
+I need to say right at the start that most of the conclusions of this research fit in with your preconceptions of how languages fit together - or they should. 
+
+Sergi Valverde and Ricard Sol working at the Santa Fe Institute have taken the methods of computational evolutionary theory and classified languages into clades to form a phylogenetic network or evolutionary tree. The aim of the research is to clarify whether cultural evolution is like biological evolution, but the specific results about programming languages are still interesting to us programmers. 
+
+The data source was Wikipedia's extensive pages on computer languages, a total of 347 different languages to be exact. Using a time ordering it is possible to say which language influenced which - later languages could not have influenced earlier languages. This produces a directed network but not a phylogenetic tree. A measure of which languages influenced which was created based on the network topology and using it you can convert the network to a tree. 
+
+ 
+
+evolution4
+
+The network of languages that was used to create a phylogenetic tree
+
+ 
+
+The tree that results does seem to be sensible in that the clades correspond with reasonable groupings of languages based on their characteristics - object oriented, functional and so on.
+
+evolution1
+
+The Fortran clade
+
+It also reveals that the evolution is "bursty" and there is a big growth phase in the 1980s corresponding to the introduction of the home microcomputer. 
+
+Another interesting finding is:
+
+The influence graphs describe a very interesting situation: far from observing links relating languages close in time, bundles of links reveal very large time windows connecting modern and old languages.
+
+... there are groups of time-close languages whose properties are recruited to build new clusters of languages far in the future.
+
+ 
+
+evolution3
+
+Relationships between languages from different eras
+
+Finally there seems to be evidence that programming languages develop much like natural languages and biological systems in that they exhibit punctuated equilibrium. Essentially, things carry on unchanged for longish stretches of time and then suddenly there is a lot of activity with new entities being produced at a much faster rate:
+
+As it occurs with the tree of life, technological trees are highly imbalanced, largely a consequence of accelerated diversification events tied to innovations. This pattern has also been found in the diversification pattern of human languages, which exhibited strong imbalances too. The asymmetries have been proposed to be evidence of punctuated equilibrium. In our system, we do identify these shifts as major innovations associated to novel forms of engineering programming languages. The tree imbalance, but also the bundles observed in the horizontal transfer interactions are consistent with such bursts of rapid modifications.
+
+So really the way that we think of programming language informally seems to fit this pattern. Any programmer will tell you that things seem to go on for a long while with the same languages dominating, then all of a sudden something new appears and becomes so popular that it gives rise to closely related languages and technologies. 
+
+evolution2
+
+ The Lisp Clade

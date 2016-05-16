@@ -1,0 +1,82 @@
+﻿The relation between language and space has long been an area of active research (cf. [152,74,106,27,28,154,111]). Human
+languages impose particular linguistic constructions of space, of spatially-anchored events, and of spatial configurations
+that relate in complex ways to the spatial situations in which they are used. Establishing tighter formal specifications
+of this relationship has proved a considerable challenge and has so far eluded general solutions. One reason for this is
+that the precise nature of the contribution made by spatial language has been conceived too simply. In much earlier and
+ongoing work, language is assumed to offer a relatively simple inventory of terms for which spatial interpretations can be
+directly stated. Examples of this can be found not only in accounts that focus on formalizations of particular tasks, such
+as path descriptions [112], scene descriptions [33], navigation and way-finding [158,163,140], but also in foundational work
+on the formal ontology of space [30,120,22], on qualitative spatial calculi [43,42], and on cognitive approaches involving,
+for example, image schemas [135,97]. In all of these approaches the principal burden of explanation is located within
+the non-linguistic formalizations pursued. This produces characterizations of spatial semantics that mirror the tasks and
+formal criteria addressed rather than the properties required for treating spatial language. As we shall argue below, such
+characterizations turn out to be ill-suited for dealing with the extreme flexibility of spatial language use observable in real
+contexts.
+✩
+This paper has been improved substantially by the detailed critical comments of three anonymous reviewers and Thomas Stolz (Bremen). We also
+gratefully acknowledge the financial support of the Deutsche Forschungsgemeinschaft (DFG) through the Collaborative Research Center on Spatial Cognition
+(SFB/TR 8) for the work reported.
+*
+Corresponding author.
+E-mail address:
+bateman@uni-bremen.de
+(J.A. Bateman).
+0004-3702/$ – see front matter
+©
+2010 Elsevier B.V. All rights reserved.
+doi:10.1016/j.artint.2010.05.008
+
+
+1028
+J.A. Bateman et al. / Artificial Intelligence 174 (2010) 1027–1071
+To bring the flexibility of spatial language use under control, we pursue a detailed formalization of what language itself
+brings to the interpretation of space. In particular, we consider language as contributing a structure of the spatial world that
+can be formulated as an ontology. This organization provides an additional layer of ontological information that formalizes
+the ‘semantic commitments’ entered into by any linguistic spatial construction. Such semantic commitments are intended
+to capture precisely the degree of formalization required to explain the linguistic options taken up while at the same time
+avoiding
+over-commitment
+with respect to the physical or conceptual spatial situations in which those linguistic options may
+be exercised. This then serves as an intermediate ‘interface ontology’ supporting mediation between linguistic forms on the
+one hand and contextualized interpretations on the other. We organize this intermediate layer around the central notion of
+‘spatial modalities’, abstract categories that group collections of similarly functioning linguistic spatial constructions together
+without committing to particular contextual interpretations. For example, linguistic constructions involving the prepositions
+‘at’, ‘near’ and so on are related to the spatial modality
+Proximal
+, which stands in contrast to
+Distal
+and is a superconcept
+of spatial modalities involved with lateral (left–right) and frontal (front–back) ‘projection’. The characterization of the linguistic expression “Bill is waiting at the post office” as expressing the spatial modality
+Proximal
+then makes commitments
+to a functional connection between the person waiting and the post office without (wrongly) committing to a spatial contextualization involving containment; both inside and outside the post office are still compatible with descriptions with ‘at’.
+An expression ‘near the post office’ brings in addition a contribution from the spatial modality
+Disjointness
+and so overlaps
+with, but is distinct from, ‘at’. The interface ontology as a whole provides a rich web of semantic inter-relationships; each
+of the spatial modalities we define brings with it semantic commitments that help constrain appropriate contextualizations.
+This paper motivates the design of the ontology in depth and provides extensive details of its use.
+Constructing a view of spatial semantics as an additional layer of ontology in this way brings several advantages crucial
+for adequately capturing the relationship between language use and spatial interpretation. First, it supports the application
+of the full range of methods developed within ontological engineering and applied ontology in order to organize the information necessary in ways that conform to a strict and formally specified modeling style [65,67,148]. Second, it provides
+a suitable level of abstraction for dealing effectively with spatial language and for describing what linguistic expressions
+themselves bring to the interpretation process—something that has not been found possible when focusing on linguistic elements as isolated terms. And third, it allows the relationship between linguistic expressions and spatial interpretation to be
+recast as a particular case of ontological alignment, or mediation, whereby two or more distinct ontologies are brought into
+a formal relationship [89,100,99,80,98]. Combining these considerations establishes a formally robust and well grounded
+framework from which to consider the full flexibility required for dealing with the mapping between language and space.
+A distinct, well-defined and empirically-motivated layer of semantics for spatial language of this kind has direct applications for many currently relevant tasks involving spatial language. These include attempts to support communication via
+natural language with the human users of Geographic Information Systems [21,118,97,24], of context-based services [20],
+and of devices operating
+in
+space, such as situated robots [137,122,96]. In addition, the growing demand for automatic enrichment of textual data with spatial annotations in the context of the semantic web raises precisely analogous issues [116].
+In all of these areas, solutions to the language–space mapping problem are urgently required. We also suggest that the
+organization we propose is equally relevant as a contribution to the
+linguistic
+discussion of space, particularly concerning
+how the interpretation of spatial language can be managed.
+We organize our discussion as follows. In Section 2 we establish precisely why we consider spatial language to demand
+its own layer of ontological description. We then present in Section 3 two examples of linguistic spatial descriptions illustrating the general spatial categories of our linguistic ontology and their connection both to natural language constructions
+and to formal contextualized interpretations. In Section 4 we turn to the detailed structure and definitions of our linguistic
+ontology, including illustrative examples. Section 5 discusses issues concerning applicability and use of the ontology, and
+in Section 6 we address evaluation—itself now an area of increasing importance for ontological engineering in general. In
+Section 7, we conclude with a summary of what has been achieved and consider future research tasks.

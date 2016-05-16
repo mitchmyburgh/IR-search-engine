@@ -1,0 +1,31 @@
+Computable Document Format (CDF) is an electronic document format designed to allow easy authoring of dynamically generated interactive content. CDF is a published public format created by Wolfram Research.
+
+
+== Features ==
+Computable document format supports GUI elements such as sliders, menus and buttons. Content is updated using embedded computation in response to GUI interaction. Contents can include formatted text, tables, images, sounds and animations. CDF supports Mathematica typesetting and technical notation. Paginated layout, structured drill down layout and slide-show mode are supported. Styles can be controlled using a cascading style sheet.
+
+
+== Reading ==
+CDF files can be read using a proprietary CDF Player with a restrictive license, which can be downloaded free of charge from Wolfram Research. In contrast to static formats such as PDF and pre-generated interactive content provided by formats such as Adobe Flash the CDF Player contains an entire runtime library of Mathematica allowing document content to be generated in response to user interaction using any algorithms or visualizations which can be described in Mathematica. This makes it suitable for scientific, engineering and other technical content and digital textbooks.
+CDF reader support is available for Microsoft Windows, Macintosh and Linux but not for e-book readers or tablets. The reader supports a plugin mode for Internet Explorer, Mozilla Firefox, Google Chrome, Opera and Safari, which allows CDF content to be embedded inline in HTML pages.
+
+
+== Authoring ==
+CDF Files can be created using Mathematica. Online authoring tools are planned.
+
+
+== Uses ==
+Computable Document Format has been used in electronic books by Pearson Education, to provide the content for the Wolfram Demonstrations Project, and to add client-side interactivity to Wolfram Alpha.
+
+
+== See also ==
+List of numerical analysis software
+Comparison of numerical analysis software
+
+
+== References ==
+
+
+== External links ==
+Wolfram Research CDF
+CDF Player download

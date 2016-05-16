@@ -1,0 +1,248 @@
+    Home
+    Java
+    2D Graphics GUI
+    3D
+    Advanced Graphics
+    Ant
+    Apache Common
+    Chart
+    Class
+    Collections Data Structure
+    Data Type
+    Database SQL JDBC
+    Design Pattern
+    Development Class
+    EJB3
+    Email
+    Event
+    File Input Output
+    Game
+    Generics
+    GWT
+    Hibernate
+    I18N
+    J2EE
+    J2ME
+    JavaFX
+    JDK 6
+    JDK 7
+    JNDI LDAP
+    JPA
+    JSP
+    JSTL
+    Language Basics
+    Network Protocol
+    PDF RTF
+    Reflection
+    Regular Expressions
+    Scripting
+    Security
+    Servlets
+    Spring
+    Swing Components
+    Swing JFC
+    SWT JFace Eclipse
+    Threads
+    Tiny Application
+    Velocity
+    Web Services SOA
+    XML
+    Menu
+   Topological sorting : Sort Search&nbsp;«&nbsp;Collections Data Structure&nbsp;«&nbsp;Java
+    Java
+    Collections Data Structure
+    Sort Search
+   Topological sorting
+class Vertex {
+  public char label;
+  public Vertex(char lab) {
+    label = lab;
+  }
+}
+public class GraphTS {
+  private final int MAX_VERTS = 20;
+  private Vertex vertexList[]; // list of vertices
+  private int matrix[][]; // adjacency matrix
+  private int numVerts; // current number of vertices
+  private char sortedArray[];
+  public GraphTS() {
+    vertexList = new Vertex[MAX_VERTS];
+    matrix = new int[MAX_VERTS][MAX_VERTS];
+    numVerts = 0;
+    for (int i = 0; i &lt; MAX_VERTS; i++)
+      for (int k = 0; k &lt; MAX_VERTS; k++)
+        matrix[i][k] = 0;
+    sortedArray = new char[MAX_VERTS]; // sorted vert labels
+  }
+  public void addVertex(char lab) {
+    vertexList[numVerts++] = new Vertex(lab);
+  }
+  public void addEdge(int start, int end) {
+    matrix[start][end] = 1;
+  }
+  public void displayVertex(int v) {
+    System.out.print(vertexList[v].label);
+  }
+  public void topo() // toplogical sort
+  {
+    int orig_nVerts = numVerts; 
+    while (numVerts &gt; 0) // while vertices remain,
+    {
+      // get a vertex with no successors, or -1
+      int currentVertex = noSuccessors();
+      if (currentVertex == -1) // must be a cycle
+      {
+        System.out.println("ERROR: Graph has cycles");
+        return;
+      }
+      // insert vertex label in sorted array (start at end)
+      sortedArray[numVerts - 1] = vertexList[currentVertex].label;
+      deleteVertex(currentVertex); // delete vertex
+    }
+    // vertices all gone; display sortedArray
+    System.out.print("Topologically sorted order: ");
+    for (int j = 0; j &lt; orig_nVerts; j++)
+      System.out.print(sortedArray[j]);
+    System.out.println("");
+  }
+  public int noSuccessors() // returns vert with no successors (or -1 if no such verts)
+  { 
+    boolean isEdge; // edge from row to column in adjMat
+    for (int row = 0; row &lt; numVerts; row++) {
+      isEdge = false; // check edges
+      for (int col = 0; col &lt; numVerts; col++) {
+        if (matrix[row][col] &gt; 0) // if edge to another,
+        {
+          isEdge = true;
+          break; // this vertex has a successor try another
+        }
+      }
+      if (!isEdge) // if no edges, has no successors
+        return row;
+    }
+    return -1; // no
+  }
+  public void deleteVertex(int delVert) {
+    if (delVert != numVerts - 1) // if not last vertex, delete from vertexList
+    {
+      for (int j = delVert; j &lt; numVerts - 1; j++)
+        vertexList[j] = vertexList[j + 1];
+      for (int row = delVert; row &lt; numVerts - 1; row++)
+        moveRowUp(row, numVerts);
+      for (int col = delVert; col &lt; numVerts - 1; col++)
+        moveColLeft(col, numVerts - 1);
+    }
+    numVerts--; // one less vertex
+  }
+  private void moveRowUp(int row, int length) {
+    for (int col = 0; col &lt; length; col++)
+      matrix[row][col] = matrix[row + 1][col];
+  }
+  private void moveColLeft(int col, int length) {
+    for (int row = 0; row &lt; length; row++)
+      matrix[row][col] = matrix[row][col + 1];
+  }
+  public static void main(String[] args) {
+    GraphTS g = new GraphTS();
+    g.addVertex('A'); // 0
+    g.addVertex('B'); // 1
+    g.addVertex('C'); // 2
+    g.addVertex('D'); // 3
+    g.addVertex('E'); // 4
+    g.addVertex('F'); // 5
+    g.addVertex('G'); // 6
+    g.addVertex('H'); // 7
+    g.addEdge(0, 3); // AD
+    g.addEdge(0, 4); // AE
+    g.addEdge(1, 4); // BE
+    g.addEdge(2, 5); // CF
+    g.addEdge(3, 6); // DG
+    g.addEdge(4, 6); // EG
+    g.addEdge(5, 7); // FH
+    g.addEdge(6, 7); // GH
+    g.topo(); // do the sort
+  }
+}
+   Related examples in the same category
+      1.
+      Linear search
+      2.
+      Animation for quick sort
+      3.
+      Quick Sort Implementation with median-of-three partitioning and cutoff for small arrays
+      4.
+      Simple Sort Demo
+      5.
+      A simple applet class to demonstrate a sort algorithm
+      6.
+      Sorting an array of Strings
+      7.
+      Simple version of quick sort
+      8.
+      Combine Quick Sort Insertion Sort
+      9.
+      Quick sort with median-of-three partitioning
+      10.
+      Fast Quick Sort
+      11.
+      Selection sort
+      12.
+      Insert Sort for objects
+      13.
+      Insert sort
+      14.
+      Bubble sort
+      15.
+      Merge sort
+      16.
+      Fast Merge Sort
+      17.
+      Binary Search
+      18.
+      Shell sort
+      19.
+      Recursive Binary Search Implementation in Java
+      20.
+      Heap sort
+      21.
+      Sort Numbers
+      22.
+      A quick sort demonstration algorithm
+      23.
+      Performing Binary Search on Java byte Array Example
+      24.
+      Performing Binary Search on Java char Array Example
+      25.
+      Performing Binary Search on Java double Array Example
+      26.
+      Performing Binary Search on Java float Array Example
+      27.
+      Performing Binary Search on Java int Array Example
+      28.
+      Performing Binary Search on Java long Array Example
+      29.
+      Performing Binary Search on Java short Array
+      30.
+      Sort items of an array
+      31.
+      Sort an array of objects
+      32.
+      Sort a String array
+      33.
+      Sort string array with Collator
+      34.
+      Binary search routines
+      35.
+      FastQ Sorts the [l,r] partition (inclusive) of the specfied array of Rows, using the comparator.
+      36.
+      A binary search implementation.
+      37.
+      Handles QuickSort and all of its methods.
+      38.
+      Implements QuickSort three different ways
+      39.
+      A quick sort algorithm to sort Vectors or arrays. Provides sort and binary search capabilities.
+      40.
+      Returns an array of indices indicating the order the data should be sorted in.
+  java2s.com &nbsp;|&nbsp;Email:info at java2s.com&nbsp;|&nbsp;© Demo Source and Support. All rights reserved.
+

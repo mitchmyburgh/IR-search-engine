@@ -1,0 +1,21 @@
+Hans-Paul Schwefel (born December 4, 1940 in Berlin) is a German computer scientist and professor emeritus at University of Dortmund (now Dortmund University of Technology), where he held the chair of systems analysis from 1985 until 2006. He is one of the pioneers in evolutionary computation and one of the authors responsible for the evolution strategies (Evolutionsstrategien). His work has helped to understand the dynamics of evolutionary algorithms and to put evolutionary computation on formal grounds.
+He attended the Technical University of Berlin (TUB) and graduated as an aerospace engineer in 1965 and got his Dr.-Ing. in 1975. While as a student at TUB, he met Ingo Rechenberg in November 1963. Both of them were studying the aero- and space technology and both of them were keen on cybernetics and bionics. Rechenberg was dealing with wall shear stress measurements and Schwefel was responsible for organizing fluid dynamics exercises for other students. Together they were dreaming of a research robot working according to cybernetic principles, but computers became available only later on.
+While attending the Hermann Föttinger-Institute for Hydrodynamics (HFI) at TUB, he and Rechenberg began performing experiments upon wings, kinked plates, and other objects related to fluid dynamics. The main objective of those experiments concerned optimizing the shape and/or parameters through mostly small modifications on the real objects, a "technique" they called experimental optimization, in order to reduce the drag, increase the thrust, and so on. Applying classical optimization methods (such as Gauss–Seidel and gradient-based techniques) on such experiments showed that those methods are not well suited to be adopted in experimental optimization, mainly due to noisy measurements and/or multimodality. They realized modifying all the variables at same time via a random manner (e.g., small modifications are more frequent than larger ones). This was the seminal idea to bring to light the first, two membered, evolution strategy, which was initially used on a discrete problem (optimization of a kinked plate in a wind tunnel) and was handled without computers.
+Some time later, Schwefel expanded the idea toward evolution strategies to deal with numerical/parametric optimization and, also, has helped to formalize it as it is known nowadays.
+
+
+== References ==
+Hans-Paul Schwefel: Numerical Optimization of Computer Models, Birkhäuser Verlag, Basel, 1977, traduction John Wiley and Sons Ltd., 1980. ISBN 0-471-09988-0
+Hans-Paul Schwefel's Curriculum Vitae
+Hans-Georg Beyer and Hans-Paul Schwefel, (2002). Evolution Strategies: A Comprehensive Introduction. In Natural Computing, 1(1):3-52.
+Günter Rudolph and Hans-Paul Schwefel: Simulated evolution under multiple criteria conditions revisited, pp. 49–261 in: J.M. Zurada, G.G. Yen and J. Wang (eds.), Computational Intelligence - Research Frontiers, Plenary and Invited Lectures at the IEEE World Congress on Computational Intelligence, Hong Kong, June 2008, Springer, Berlin, 2008.
+Hans-Paul Schwefel: Cybernetic Evolution as Strategy for Experimental Research in Fluid Mechanics (in German). Diploma Thesis, Hermann Föttinger-Institute for Fluid Mechanics, Technical University of Berlin, March 1965.
+Hans-Paul Schwefel: Evolution Strategy and Numerical Optimization (in German). Dissertation, Technical University of Berlin, 1974/1975.
+Hans-Paul Schwefel: Evolution and Optimum Seeking, Wiley Interscience, New York, 1995.
+Ingo Rechenberg: Evolutionsstrategie '94. Stuttgart: Frommann-Holzboog 1994.
+Hans-Georg Beyer (2001). The Theory of Evolution Strategies. Natural Computing Series. Springer, Berlin 2001.
+
+
+== External links ==
+Hans-Paul Schwefel's Webpage
+Chair of Algorithm Engineering (former Systems Analysis)

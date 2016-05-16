@@ -1,0 +1,119 @@
+Explicit Congestion Notification (ECN) is an extension to the Internet Protocol and to the Transmission Control Protocol and is defined in RFC 3168 (2001). ECN allows end-to-end notification of network congestion without dropping packets. ECN is an optional feature that may be used between two ECN-enabled endpoints when the underlying network infrastructure also supports it.
+Conventionally, TCP/IP networks signal congestion by dropping packets. When ECN is successfully negotiated, an ECN-aware router may set a mark in the IP header instead of dropping a packet in order to signal impending congestion. The receiver of the packet echoes the congestion indication to the sender, which reduces its transmission rate as if it detected a dropped packet.
+Rather than responding properly or ignoring the bits, some outdated or faulty network equipment has historically dropped or mangled packets that have ECN bits set. As of 2015, measurements suggested that the fraction of web servers on the public Internet for which setting ECN prevents network connections had been reduced to less than 1%.
+In June 2015, Apple announced that ECN will be enabled by default on its supported and future products, to help drive the adoption of ECN signalling industry-wide.
+
+
+== Operation ==
+ECN requires specific support at both the Internet layer and the transport layer for the following reasons:
+In TCP/IP, routers operate within the Internet layer, while the transmission rate is handled by the endpoints at the transport layer.
+Congestion may be handled only by the transmitter, but since it is known to have happened only after a packet was sent, there must be an echo of the congestion indication by the receiver to the transmitter.
+Without ECN, congestion indication echo is achieved indirectly by the detection of lost packets. With ECN, the congestion is indicated by setting the ECN field within an IP packet to CE and is echoed back by the receiver to the transmitter by setting proper bits in the header of the transport protocol. For example, when using TCP, the congestion indication is echoed back by setting the ECE bit.
+
+
+=== Operation of ECN with IP ===
+ECN uses the two least significant (right-most) bits of the DiffServ field in the IPv4 or IPv6 header to encode four different codepoints:
+00 – Non ECN-Capable Transport, Non-ECT
+10 – ECN Capable Transport, ECT(0)
+01 – ECN Capable Transport, ECT(1)
+11 – Congestion Encountered, CE.
+When both endpoints support ECN they mark their packets with ECT(0) or ECT(1). If the packet traverses an active queue management (AQM) queue (e.g., a queue that uses random early detection (RED)) that is experiencing congestion and the corresponding router supports ECN, it may change the codepoint to CE instead of dropping the packet. This act is referred to as “marking” and its purpose is to inform the receiving endpoint of impending congestion. At the receiving endpoint, this congestion indication is handled by the upper layer protocol (transport layer protocol) and needs to be echoed back to the transmitting node in order to signal it to reduce its transmission rate.
+Because the CE indication can only be handled effectively by an upper layer protocol that supports it, ECN is only used in conjunction with upper layer protocols, such as TCP, that support congestion control and have a method for echoing the CE indication to the transmitting endpoint.
+
+
+=== Operation of ECN with TCP ===
+TCP supports ECN using three flags in the TCP header. The first one, the Nonce Sum (NS), is used to protect against accidental or malicious concealment of marked packets from the TCP sender. The other two bits are used to echo back the congestion indication (i.e. signal the sender to reduce the amount of information it sends) and to acknowledge that the congestion-indication echoing was received. These are the ECN-Echo (ECE) and Congestion Window Reduced (CWR) bits.
+Use of ECN on a TCP connection is optional; for ECN to be used, it must be negotiated at connection establishment by including suitable options in the SYN and SYN-ACK segments.
+When ECN has been negotiated on a TCP connection, the sender indicates that IP packets that carry TCP segments of that connection are carrying traffic from an ECN Capable Transport by marking them with an ECT codepoint. This allows intermediate routers that support ECN to mark those IP packets with the CE codepoint instead of dropping them in order to signal impending congestion.
+Upon receiving an IP packet with the Congestion Experienced codepoint, the TCP receiver echoes back this congestion indication using the ECE flag in the TCP header. When an endpoint receives a TCP segment with the ECE bit it reduces its congestion window as for a packet drop. It then acknowledges the congestion indication by sending a segment with the CWR bit set.
+A node keeps transmitting TCP segments with the ECE bit set until it receives a segment with the CWR bit set.
+To see affected packets with tcpdump, use the filter predicate (tcp[13] & 0xc0 != 0).
+
+
+==== ECN and TCP control packets ====
+Since the Transmission Control Protocol (TCP) does not perform congestion control on control packets (pure ACKs, SYN, FIN segments), control packets are usually not marked as ECN-capable.
+A 2009 proposal suggests marking SYN-ACK packets as ECN-capable. This improvement, known as ECN+, has been shown to provide dramatic improvements to performance of short-lived TCP connections.
+
+
+=== Operation of ECN with other transport protocols ===
+ECN is also defined for other transport layer protocols that perform congestion control, notably DCCP and Stream Control Transmission Protocol (SCTP). The general principle is similar to TCP, although the details of the on-the-wire encoding differ.
+It should in principle be possible to use ECN with protocols layered above UDP. However, UDP requires that congestion control be performed by the application, and current networking APIs do not give access to the ECN bits.
+
+
+== Effects on performance ==
+Since ECN is only effective in combination with an Active Queue Management (AQM) policy, the benefits of ECN depend on the precise AQM being used. A few observations, however, appear to hold across different AQMs.
+As expected, ECN reduces the number of packets dropped by a TCP connection, which, by avoiding a retransmission, reduces latency and especially jitter. This effect is most drastic when the TCP connection has a single outstanding segment, when it is able to avoid an RTO timeout; this is often the case for interactive connections, such as remote logins, and transactional protocols, such as HTTP requests, the conversational phase of SMTP, or SQL requests.
+Effects of ECN on bulk throughput are less clear because modern TCP implementations are fairly good at resending dropped segments in a timely manner when the sender's window is large.
+Use of ECN has been found to be detrimental to performance on highly congested networks when using AQM algorithms that never drop packets. Modern AQM implementations avoid this pitfall by dropping rather than marking packets at very high load.
+
+
+== Implementations ==
+Many modern implementations of the TCP/IP protocol suite have some support for ECN; however, they usually ship with ECN disabled.
+
+
+=== ECN support in TCP by hosts ===
+
+
+==== Microsoft Windows ====
+Windows versions since Windows Server 2008 and Windows Vista support ECN for TCP. Since Windows Server 2012, it is enabled by default in Windows Server versions, because Data Center Transmission Control Protocol (DCTCP) is used. In previous Windows versions and non-server versions it is disabled by default.
+ECN support can be enabled using a shell command such as netsh interface tcp set global ecncapability=enabled.
+
+
+==== Unix-like ====
+
+
+===== BSD =====
+FreeBSD 8.0 and NetBSD 4.0 implement ECN support for TCP; it can be activated through the sysctl interface by setting 1 as value for the sysctl net.inet.tcp.ecn.enable parameter. Likewise, the sysctl net.inet.tcp.ecn can be used in OpenBSD. 
+
+
+===== Linux =====
+Since version 2.4.20 of the Linux kernel, Linux supports three working modes of the ECN for TCP, as configured through the sysctl interface by setting parameter /proc/sys/net/ipv4/tcp_ecn to one of the following values:
+0 –  disable ECN and neither initiate nor accept it
+1 –  enable ECN when requested by incoming connections, and also request ECN on outgoing connection attempts
+2 –  (default) enable ECN when requested by incoming connections, but do not request ECN on outgoing connections
+Beginning with version 4.1 of the Linux kernel, the tcp_ecn_fallback mechanism, as specified in RFC 3168, is enabled by default when ECN is enabled (the value of 1). The fallback mechanism attempts ECN connectivity in the initial setup of outgoing connections, with a graceful fallback for transmissions without ECN capability, mitigating issues with ECN-intolerant hosts or firewalls.
+
+
+===== Mac OS X =====
+Mac OS X 10.5 and 10.6 implements ECN support for TCP. It is controlled using the boolean sysctl variables net.inet.tcp.ecn_negotiate_in and net.inet.tcp.ecn_initiate_out. The first variable enables ECN on incoming connections that already have ECN flags set; the second one tries to initiate outgoing connections with ECN enabled. Both variables default to 0, but can be set to 1 to enable the respective behavior.
+In June 2015, Apple Inc. announced that OS X 10.11, to be released later in the year, would have ECN turned on by default.
+
+
+===== iOS =====
+In June 2015, Apple Inc. announced that iOS 9, its next version of iOS, would support ECN and have it turned on by default.
+
+
+===== Solaris =====
+The Solaris kernel supports three states of ECN for TCP:
+never –  no ECN
+active –  use ECN
+passive –  only advertise ECN support when asked for.
+The default behavior is passive. As of Solaris 11, full ECN usage can be activated via ipadm set-prop -p ecn=active tcp.
+
+
+=== ECN support in IP by routers ===
+Since ECN marking in routers is dependent on some form of active queue management, routers must be configured with a suitable queue discipline in order to perform ECN marking.
+Cisco IOS routers perform ECN marking if configured with the WRED queuing discipline since version 12.2(8)T.
+Linux routers perform ECN marking if configured with one of the RED or GRED queue disciplines with an explicit ecn parameter, by using the sfb discipline, or by using the CoDel Fair Queueing (fq_codel) discipline.
+Modern BSD implementations, such as FreeBSD, NetBSD and OpenBSD, have support for ECN marking in the ALTQ queueing implementation for a number of queuing disciplines, notably RED and Blue.
+
+
+=== Data Center TCP ===
+Data Center Transmission Control Protocol (Data Center TCP or DCTCP) utilizes ECN to enhance the Transmission Control Protocol congestion control algorithm. It is used in data center networks. Whereas the standard TCP congestion control algorithm is only able to detect the presence of congestion, DCTCP, using ECN, is able to gauge the extent of congestion.
+DCTCP modifies the TCP receiver to always relay the exact ECN marking of incoming packets at the cost of ignoring a function that is meant to preserve signalling reliability. This makes a DCTCP sender vulnerable to loss of ACKs from the receiver, which it has no mechanism to detect or cope with. As of July 2014, algorithms that provide equivalent or better receiver feedback in a more reliable approach are an active research topic, and one experimental proposal is known as "More accurate ECN feedback in TCP" (AccECN).
+
+
+== See also ==
+
+Backward ECN (BECN)
+Network congestion avoidance
+Type of service (ToS)
+
+
+== References ==
+
+
+== External links ==
+ECN web page by Sally Floyd
+RFC 4774 (BCP), Specifying Alternate Semantics for the Explicit Congestion Notification (ECN) Field, S. Floyd, (November 2006)
+Linux kernel support for defining a per-route/destination congestion control algorithm (merged in Linux kernel 4.0)

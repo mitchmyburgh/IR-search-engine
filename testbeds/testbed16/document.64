@@ -1,0 +1,71 @@
+Dell Acquistion Of Cloud Pioneer Enstratius Highlights The Growing Importance Of Cloud APIs
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+
+
+(Update: The original title of this post incorrectly named the firm “Entratius”, Enstratius is the correct name)
+
+It’s been a busy morning, first came the news that Bain Capital and Golden Gate Capital together with GIC Special Investments and Insight Venture Partners will acquire all outstanding BMC common stock for $46.25 per share in cash, or approximately $6.9 billion, representing an attractive premium to the company’s unaffected stock price.
+
+Next comes the news that Dell has announced the acquisition of Enstratius (formerly enStratus), an early cloud pioneer and enterprise cloud-management software and services provider that delivers single and multi-cloud management capabilities. Enstratius helps organizations manage applications across private, public and hybrid clouds, including automated application provisioning and scaling, application configuration management, usage governance, and cloud utilization monitoring.
+
+As I wrote last week, apart from today’s announcement, it has been a busy few weeks in the cloud space with a fury of acquisitions. Intel INTC -0.82% acquired Mashery, a 125 person firm for about $180 million, then news of CA CA +0.16%’s intent to acquire Layer 7 Technologies. On top of those stories was the news that MuleSoft had acquired ProgrammableWeb, a company that pioneered the idea of open APIs. It seems that the business of APIs has never been hotter. (See previous story for background)
+
+I recently had the opportunity to speak with George Reese, the founder of Enstratius. Our discussion highlights some of the potential rationale behind Dell DELL +%‘s acquisition of his firm. Below is an excerpt from our conversation.
+
+—————
+
+People often have not thought out exactly what they are asking for when they ask for cloud portability. In particular, cloud portability can mean one of two things:
+
+Recommended by Forbes
+With Recent Intel and CA Acquisitions, The Cloud API Market is On Fire
+New App Allows Anyone to Create Musical Scores by Humming or Singing, No Instruments...
+MOST POPULAR Photos: The Most Expensive Home Listing in Every State 2016
++80,559 VIEWS Eleven Signs You've Stayed In Your Job Too Long
+
+1. VM portability
+
+2. Workload portability
+
+VM portability means you can literally lift VMs from one cloud to the next and have them keep running in much the same way that vMotion gives you VM portability across physical systems.
+
+Workload portability means you can take the data and configuration of your systems in one cloud and load them into the next without moving any of the underlying executable components. In other words, you dump your app into a completely fresh VM in a second cloud and it works.
+
+The more homogeneous clouds are, the easier it is, in theory, to achieve either sense of portability. The greater the fragmentation, the harder it is to achieve either. VM portability, however, is much more difficult and much less desirable than workload portability. Nevertheless, most people think of VM portability when they talk portability because it is something for which they have a reference point in vMotion.
+
+There are a number of problems with VM portability:
+
+The volume of data that must be actively kept in sync between clouds is greater (generally, MUCH greater than that required by workload portability
+VM portability requires both clouds to behave identically, often (though not necessarily) down to the hypervisor level
+VM portability is incapable of taking advantage of any unique features in the secondary cloud
+Networking is a huge problem with VM portability, because it ends up baked into the VMs
+Furthermore, VM portability has a single actual use case: redundancy/disaster recovery. All other use cases assume that there’s something different about the clouds in which you are operating (otherwise, you’d be operating in a single cloud). In other words, you will have multiple clouds exactly because you want different things out of them. The minute they become portable at a low layer is the minute meaningful distinctions cease to exist.
+
+Finally, VM portability, for the most part, doesn’t exist even though OpenStack and VMware VMW -2.23% keep pushing that vision. VM portability doesn’t simply require similarity, it requires homogeneity.
+
+Portability of workloads depends on ecosystem support for the following two components across clouds:
+
+The API
+The underlying cloud model
+If there were a single API and cloud model, we’d have easy workload portability. But we’d still be subject to the same problem as with VM portability: if all clouds are alike, the value proposition of portability is diminished. Fortunately, workload portability handles heterogeneity much better than VM portability. In fact, workloads don’t require the clouds be anything alike. It simply needs an ecosystem that can lift the workload from one cloud and place it in another. Fragmentation makes the task of the ecosystem harder, but it also gives unique values to the underlying clouds.
+
+Recommended by Forbes
+With Recent Intel and CA Acquisitions, The Cloud API Market is On Fire
+New App Allows Anyone to Create Musical Scores by Humming or Singing, No Instruments...
+MOST POPULAR Photos: The Most Expensive Home Listing in Every State 2016
++80,559 VIEWS Eleven Signs You've Stayed In Your Job Too Long
+
+That’s why we see a lot of noise around the EC2 APIs as defacto APIs. The theory is that “if everyone were using the EC2 APIs, then we’d have greater workload portability. Unfortunately, the EC2 APIs are terrible “defacto” APIs unless you are exposing a cloud that models itself after EC2. Eucalyptus does this well and Cloudscaling deployed OpenStack environments do this well. Most other cloud platforms (and most other OpenStack environments) that claim EC2 compatibility fail because of a modeling mismatch. For example, if Quantum QTM -4.71% is a critical component of your OpenStack environment, how do you expose that through the EC2 API? There’s a significant conceptual mismatch between Quantum and VPC.
+
+The other bit of noise exists around the OpenStack API and the use of the OpenStack environments to create workload portability among those environments. Unfortunately, OpenStack isn’t compatible with itself. Let’s just look at networking for a second. Most clouds don’t yet support Quantum, but a few support old networks. That’s OK. But of those that do have some kind of networking, I have encountered three different APIs for interacting with it: the Rackspace proprietary version of Quantum (which I call FrankenQuantum), the nova-networks API, and the official Quantum API.
+
+There’s no way to query a cloud as to which it supports. The Rackspace version doesn’t even reflect the way Quantum models networking. So a tool wanting to move workloads across OpenStack environments has to have hacks to account for all three and identify which is which. Enstratius accounts for this. But most of the ecosystem built on OpenStack networking does not.
+
+So I tend to break fragmentation into two classes:
+
+Meaningful fragmentation that reflects modeling/functional differences among clouds
+Silly fragmentation (aka OpenStack) which reflects lack of discipline in the development of the APIs
+The former is a good thing and that’s why you have rich ecosystem tools. The latter is just stupid.

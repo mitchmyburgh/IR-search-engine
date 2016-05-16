@@ -1,0 +1,40 @@
+A data dictionary, or Metadata Repository, as defined in the IBM Dictionary of Computing, is a "centralized repository of information about data such as meaning, relationships to other data, origin, usage, and format." The term can have one of several closely related meanings pertaining to databases and database management systems (DBMS):
+A document describing a database or collection of databases
+An integral component of a DBMS that is required to determine its structure
+A piece of middleware that extends or supplants the native data dictionary of a DBMS
+
+
+== Documentation ==
+The terms data dictionary and data repository indicate a more general software utility than a catalogue. A catalogue is closely coupled with the DBMS software. It provides the information stored in it to the user and the DBA, but it is mainly accessed by the various software modules of the DBMS itself, such as DDL and DML compilers, the query optimiser, the transaction processor, report generators, and the constraint enforcer. On the other hand, a data dictionary is a data structure that stores metadata, i.e., (structured) data about information. The software package for a stand-alone data dictionary or data repository may interact with the software modules of the DBMS, but it is mainly used by the designers, users and administrators of a computer system for information resource management. These systems maintain information on system hardware and software configuration, documentation, application and users as well as other information relevant to system administration.
+If a data dictionary system is used only by the designers, users, and administrators and not by the DBMS Software, it is called a passive data dictionary. Otherwise, it is called an active data dictionary or data dictionary. When a passive data dictionary is updated, it is done so manually and independently from any changes to a DBMS (database) structure. With an active data dictionary, the dictionary is updated first and changes occur in the DBMS automatically as a result.
+Database users and application developers can benefit from an authoritative data dictionary document that catalogs the organization, contents, and conventions of one or more databases. This typically includes the names and descriptions of various tables (records or Entities) and their contents (fields) plus additional details, like the type and length of each data element. Another important piece of information that a data dictionary can provide is the relationship between Tables. This is sometimes referred to in Entity-Relationship diagrams, or if using Set descriptors, identifying which Sets database Tables participate in.
+In an active data dictionary constraints may be placed upon the underlying data. For instance, a Range may be imposed on the value of numeric data in a data element (field), or a Record in a Table may be FORCED to participate in a set relationship with another Record-Type. Additionally, a distributed DBMS may have certain location specifics described within its active data dictionary (e.g. where Tables are physically located).
+The data dictionary consists of record types (tables) created in the database by systems generated command files, tailored for each supported back-end DBMS. Command files contain SQL Statements for CREATE TABLE, CREATE UNIQUE INDEX, ALTER TABLE (for referential integrity), etc., using the specific statement required by that type of database.
+There is no universal standard as to the level of detail in such a document.
+
+
+== Middleware ==
+In the construction of database applications, it can be useful to introduce an additional layer of data dictionary software, i.e. middleware, which communicates with the underlying DBMS data dictionary. Such a "high-level" data dictionary may offer additional features and a degree of flexibility that goes beyond the limitations of the native "low-level" data dictionary, whose primary purpose is to support the basic functions of the DBMS, not the requirements of a typical application. For example, a high-level data dictionary can provide alternative entity-relationship models tailored to suit different applications that share a common database. Extensions to the data dictionary also can assist in query optimization against distributed databases. Additionally, DBA functions are often automated using restructuring tools that are tightly coupled to an active data dictionary.
+Software frameworks aimed at rapid application development sometimes include high-level data dictionary facilities, which can substantially reduce the amount of programming required to build menus, forms, reports, and other components of a database application, including the database itself. For example, PHPLens includes a PHP class library to automate the creation of tables, indexes, and foreign key constraints portably for multiple databases. Another PHP-based data dictionary, part of the RADICORE toolkit, automatically generates program objects, scripts, and SQL code for menus and forms with data validation and complex joins. For the ASP.NET environment, Base One's data dictionary provides cross-DBMS facilities for automated database creation, data validation, performance enhancement (caching and index utilization), application security, and extended data types. Visual DataFlex features provides the ability to use DataDictionaries as class files to form middle layer between the user interface and the underlying database. The intent is to create standardized rules to maintain data integrity and enforce business rules throughout one or more related applications.
+
+
+== Platform-specific examples ==
+Developers use a data description specification (DDS) to describe data attributes in file descriptions that are external to the application program that processes the data, in the context of an IBM System i.
+
+
+== See also ==
+Data hierarchy
+Data modeling
+Database schema
+ISO/IEC 11179
+Metadata registry
+Semantic spectrum
+Vocabulary OneSource
+Metadata repository
+
+
+== References ==
+
+
+== External links ==
+Yourdon, Structured Analysis Wiki, Data Dictionaries

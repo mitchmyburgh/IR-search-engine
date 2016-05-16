@@ -1,0 +1,44 @@
+The Cramer–Shoup system is an asymmetric key encryption algorithm, and was the first efficient scheme proven to be secure against adaptive chosen ciphertext attack using standard cryptographic assumptions. Its security is based on the computational intractability (widely assumed, but not proved) of the decisional Diffie–Hellman assumption. Developed by Ronald Cramer and Victor Shoup in 1998, it is an extension of the ElGamal cryptosystem. In contrast to ElGamal, which is extremely malleable, Cramer–Shoup adds other elements to ensure non-malleability even against a resourceful attacker. This non-malleability is achieved through the use of a universal one-way hash function and additional computations, resulting in a ciphertext which is twice as large as in ElGamal.
+
+
+== Adaptive chosen ciphertext attacks ==
+The definition of security achieved by Cramer–Shoup is formally termed "indistinguishability under adaptive chosen ciphertext attack" (IND-CCA2). This security definition is currently the strongest definition known for a public key cryptosystem: it assumes that the attacker has access to a decryption oracle which will decrypt any ciphertext using the scheme's secret decryption key. The "adaptive" component of the security definition means that the attacker has access to this decryption oracle both before and after he observes a specific target ciphertext to attack (though he is prohibited from using the oracle to simply decrypt this target ciphertext). The weaker notion of security against non-adaptive chosen ciphertext attacks (IND-CCA1) only allows the attacker to access the decryption oracle before observing the target ciphertext.
+Though it was well known that many widely used cryptosystems were insecure against such an attacker, for many years system designers considered the attack to be impractical and of largely theoretical interest. This began to change during the late 1990s, particularly when Daniel Bleichenbacher demonstrated a practical adaptive chosen ciphertext attack against SSL servers using a form of RSA encryption.
+Cramer–Shoup was not the first encryption scheme to provide security against adaptive chosen ciphertext attack. Naor–Yung, Rackoff–Simon, and Dolev–Dwork–Naor proposed provably secure conversions from standard (IND-CPA) schemes into IND-CCA1 and IND-CCA2 schemes. These techniques are secure under a standard set of cryptographic assumptions (without random oracles), however they rely on complex zero-knowledge proof techniques, and are inefficient in terms of computational cost and ciphertext size. A variety of other approaches, including Bellare/Rogaway's OAEP and Fujisaki–Okamoto achieve efficient constructions using a mathematical abstraction known as a random oracle. Unfortunately, to implement these schemes in practice requires the substitution of some practical function (e.g., a cryptographic hash function) in place of the random oracle. A growing body of evidence suggests the insecurity of this approach, although no practical attacks have been demonstrated against deployed schemes.
+
+
+== The cryptosystem ==
+Cramer–Shoup consists of three algorithms: the key generator, the encryption algorithm, and the decryption algorithm.
+
+
+=== Key generation ===
+Alice generates an efficient description of a cyclic group  of order  with two distinct, random generators .
+Alice chooses five random values  from .
+Alice computes .
+Alice publishes , along with the description of , as her public key. Alice retains  as her secret key. The group can be shared between users of the system.
+
+
+=== Encryption ===
+To encrypt a message  to Alice under her public key ,
+Bob converts  into an element of .
+Bob chooses a random  from , then calculates:
+
+, where H() is a universal one-way hash function (or a collision-resistant cryptographic hash function, which is a stronger requirement).
+
+Bob sends the ciphertext  to Alice.
+
+
+=== Decryption ===
+To decrypt a ciphertext  with Alice's secret key ,
+Alice computes  and verifies that . If this test fails, further decryption is aborted and the output is rejected.
+Otherwise, Alice computes the plaintext as .
+The decryption stage correctly decrypts any properly-formed ciphertext, since
+, and 
+If the space of possible messages is larger than the size of , then Cramer–Shoup may be used in a hybrid cryptosystem to improve efficiency on long messages. Note that it is not possible to split the message into several pieces and encrypt each piece independently, because the chosen-ciphertext security property is not preserved in this way.
+
+
+== References ==
+Ronald Cramer and Victor Shoup. "A practical public key cryptosystem provably secure against adaptive chosen ciphertext attack." in proceedings of Crypto 1998, LNCS 1462, p. 13ff (ps,pdf)
+Toy implementations of Cramer–Shoup in Emacs Lisp and Java
+1998 vintage news coverage of Cramer and Shoup's publication in Wired News and in Bruce Schneier's Crypto-Gram
+Ronald Cramer and Victor Shoup: "Universal hash proofs and a paradigm for chosen ciphertext secure public key encryption." in proceedings of Eurocrypt 2002, LNCS 2332, pp. 45–64. Full Version (pdf)

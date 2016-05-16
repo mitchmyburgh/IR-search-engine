@@ -1,0 +1,37 @@
+THE TABLEAU METHOD FOR TEMPORAL LOGIC:
+AN OVERVIEW
+Pierre WOLPER
+Abstract: An overview of the tableau decision method for propositional
+temporal logic is presented. The method is described in detail for
+linear time temporal logic. It is then discussed how it can be applied to
+other variants of temporal logic like branching time temporal logic and
+extensions o f linear time temporal logic. Finally, applications o f
+temporal logics to computer science are reviewed.
+I. Introduction
+Temporal logic (TL) has been studied as a branch of logic for
+several decades. It was developed as a logical framework to formalize
+reasoning about time, temporal relations such as before
+and related concepts such as tenses. TL is closely related to the modal
+logic of necessity ([HC68]) which attempts to formalize the notions of
+possible and necessary truth. As temporal logic can in fact be viewed
+asa special case of modal logic, its origins can also be traced to those
+of that theory. Tableau decision procedures for temporal and modal
+logic have been known for some time. An account of earlier work on
+temporal logic can be found in either the book of Prior ([Pr67]) or of
+Rescher and Urquhart ([RU711).
+In [P677], it was suggested that temporal logic could be a useful tool
+to formalize reasoning about the execution sequence of programs and
+especially of concurrent programs. In that approach, the sequence of
+states a machine goes through during a computation is viewed as the
+temporal sequence of worlds described by TL. Since then, several
+researchers have been using TL to state and prove properties of
+concurrent programs (e.g. [GPSS801, [La80], [0L80], [BP80],
+[MP8 I], [CES831, [MP83], [MW84]), protocols (e.g. [Ha80], [H081],
+[SM81], [SM82], [Vo82], [SS82], [SMV83], [SPE841, and hardware
+(e.g. [Bo821 , [M081], [HMM83], [Mo831).
+120 P. WOLPER
+In this paper, we first define the propositional version of linear time
+temporal logic. We then describe the tableau decision procedure for
+PTL. We also review other variants o f temporal logics and state
+results about their decision problems. And finally, we discuss the use
+of temporal logic in computer science.

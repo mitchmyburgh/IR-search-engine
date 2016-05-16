@@ -1,0 +1,42 @@
+﻿What is Computer Graphics? 
+Cornell University Program of Computer Graphics	 Cornell Seal
+The term computer graphics includes almost everything on computers that is not text or sound. Today almost every computer can do some graphics, and people have even come to expect to control their computer through icons and pictures rather than just by typing.
+Here in our lab at the Program of Computer Graphics, we think of computer graphics as drawing pictures on computers, also called rendering. The pictures can be photographs, drawings, movies, or simulations -- pictures of things which do not yet exist and maybe could never exist. Or they may be pictures from places we cannot see directly, such as medical images from inside your body.
+
+We spend much of our time improving the way computer pictures can simulate real world scenes. We want images on computers to not just look more realistic, but also to BE more realistic in their colors, the way objects and rooms are lighted, and the way different materials appear. We call this work "realistic image synthesis", and the following series of pictures will show some of our techniques in stages from very simple pictures through very realistic ones.
+
+Object Rendering
+
+  
+Computer graphics uses several simple object rendering techniques to make models appear three-dimensional.
+
+Shading
+
+   
+
+Shading techniques extend the realistic appearance of objects and introduce features such as transparency and textures.
+
+Color
+
+ 
+Computers don't create color exactly the way we see it.
+
+Ray Tracing
+
+Reflection and Transparency
+ 
+
+The best way to appreciate how far these simple techniques have been developed is through much more complex (and more recent) Cornell computer graphics images
+
+Radiosity
+
+Why Radiosity?
+   
+
+Most surfaces are diffuse, not shiny, and ray tracing does not correctly depict how light reflects from diffuse surfaces. Our laboratory has played a major role in developing radiosity techniques for more realistic and more physically accurate rendering.
+
+Quality of Light
+
+   
+
+Our research image sampler shows more current work in radiosity and other techniques.

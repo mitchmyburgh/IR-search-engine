@@ -1,0 +1,33 @@
+Paradigm Shift in Data Center Management: What’s After VMware?
+By STEVE JIN | Published: MARCH 10, 2016
+The recent release of DoubleCloud vSearch represents a paradigm shift in how we manage data center in the future. Before agreeing with me on that, let’s take a quick look at the history.
+
+Yahoo vs. Google
+
+When the Web first came out in the early 90s, there weren’t many Web sites and pages out there. To help us find pages of interest, a typical directory approach was used. That created the initial success for Yahoo in the first place.
+
+Later the Internet exploded with much more organizations and bloggers going online. Google came up with an innovative search technology and enjoyed a huge success thereafter.
+
+On the face, Google’s huge success comes from its way to monetize the search engine with advertisements. But fundamentally it was a paradigm shift on how people find information from directory service to search.
+
+The question is then, why people like searching better than directory?
+
+Tree vs. Flat
+
+Anyone who has studied data structure in programming knows about tree well. Even you haven’t learned any programming but used a computer as normal user, you use file system all the time. A typical file system is essentially a tree! On Windows there may be multiple trees, each of which is a drive. The tree structure is essentially the core behind Internet directory services that Yahoo did.
+
+While powerful as it is, a tree has its own limitations. It works very well when the base of information is relatively small. When there are huge number of entities (or nodes), however, it becomes harder and harder to organize them into tree hierarchy. It’s not only simply due to the number of entities, but also because it’s hard to have one containing relationship. For example, a document can be in design folder and in project folder at the same time, but you can only pick one. Placing something into its right place in tree hierarchy can demand some thoughts sometimes.
+
+Google’s approach solves the problem nicely in that you don’t have to organize information into trees, but dump them flat into one or more huge databases. The search algorithm then digs information out based on the keywords users enter.
+
+VMware vs. DoubleCloud
+
+In the VMware world, all the entities are structured in tree like hierarchy. For example, each vCenter server has an inventory tree with root, under which you can have folders and/or datacenters. Under a data center, you can have clusters, hosts, virtual machines, etc. This structure is very intuitive in the scope of what a vCenter is capable of. Typically a vCenter manages around 37 ESXi hosts with average 426 virtual machines according to vOpendata.org. I am sure a single vCenter can manage some more hosts and virtual machines. What I quoted here is the average used in reality.
+
+When the scope becomes bigger, say hundreds or thousands of hosts, the total entities could go up to tens of thousands or more. In this case, the tree hierarchy cannot handle it easily. Technically it’s not a big deal to get all these entities into a gigantic tree, but it’s a killer for user experience. To get hold of an entity, you need to know the path to where is located. If you don’t think it’s a problem, just pause a bit and try to remember how long you took to find a document or photo on your personal computer.
+
+Unlike VMware, DoubleCloud keeps the data flat and uses search technology. With this approach, a user can easily find anything with Google like GUI – simple and fast. To bridge the user experience, the path of an entity in the tree hierarchy of each vCenter is also displayed. Every component in the path is hyper-linked, thus provides an excellent context for further searches.
+
+With this paradigm change, DoubleCloud can easily work with millions of entities, much more than any VMware shop possibly has today. Thus, the scalability is limitless in reality.
+
+In this comparison, VMware is Yahoo and DoubleCloud is Google. Hope you would agree with me now. Please feel free to leave your comments.

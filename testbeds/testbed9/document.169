@@ -1,0 +1,76 @@
+A data definition language or data description language (DDL) is a syntax similar to a computer programming language for defining data structures, especially database schemas.
+
+
+== History ==
+The concept of the data definition language and its name was first introduced in relation to the Codasyl database model, where the schema of the database was written in a language syntax describing the records, fields, and sets of the user data model. Later it was used to refer to a subset of Structured Query Language (SQL) for creating tables and constraints. SQL-92 introduced a schema manipulation language and schema information tables to query schemas. These information tables were specified as SQL/Schemata in SQL:2003. The term DDL is also used in a generic sense to refer to any formal language for describing data or information structures.
+
+
+== Structured query language ==
+Many data description languages use a declarative syntax to define fields and data types. Structured query language (e.g., SQL), however, uses a collection of imperative verbs whose effect is to modify the schema of the database by adding, changing, or deleting definitions of tables or other objects. These statements can be freely mixed with other SQL statements, making the DDL not a separate language.
+
+
+=== CREATE statement ===
+The CREATE command is used to establish a new database, table, index, or stored procedure.
+The CREATE statement in SQL creates an object in a relational database management system (RDBMS). In the SQL 1992 specification, the types of objects that can be created are schemas, tables, views, domains, character sets, collations, translations, and assertions. Many implementations extend the syntax to allow creation of additional objects, such as indexes and user profiles. Some systems, such as PostgreSQL, allow CREATE, and other DDL commands, inside a database transaction and thus they may be rolled back.
+
+
+==== CREATE TABLE statement ====
+A commonly used CREATE command is the CREATE TABLE command. The typical usage is:
+
+CREATE TABLE [table name] ( [column definitions] ) [table parameters]
+
+column definitions
+A comma-separated list consisting of any of the following
+Column definition: [column name] [data type] {NULL | NOT NULL} {column options}
+Primary key definition: PRIMARY KEY ( [comma separated column list] )
+Constraints: {CONSTRAINT} [constraint definition]
+RDBMS specific functionality
+
+For example, the command to create a table named employees with a few sample columns would be:
+
+Some forms of CREATE TABLE DDL may incorporate DML (data manipulation language)-like constructs, such as the CREATE TABLE AS SELECT (CTAS) syntax of SQL.
+
+
+=== DROP statement ===
+The DROP statement destroys an existing database, table, index, or view.
+A DROP statement in SQL removes an object from a relational database management system (RDBMS). The types of objects that can be dropped depends on which RDBMS is being used, but most support the dropping of tables, users, and databases. Some systems (such as PostgreSQL) allow DROP and other DDL commands to occur inside of a transaction and thus be rolled back. The typical usage is simply:
+
+DROP objecttype objectname.
+
+For example, the command to drop a table named employees is:
+
+The DROP statement is distinct from the DELETE and TRUNCATE statements, in that DELETE and TRUNCATE do not remove the table itself. For example, a DELETE statement might delete some (or all) data from a table while leaving the table itself in the database, whereas a DROP statement removes the entire table from the database.
+
+
+=== ALTER statement ===
+The ALTER statement modifies an existing database object.
+An ALTER statement in SQL changes the properties of an object inside of a relational database management system (RDBMS). The types of objects that can be altered depends on which RDBMS is being used. The typical usage is:
+
+ALTER objecttype objectname parameters.
+
+For example, the command to add (then remove) a column named bubbles for an existing table named sink is:
+
+
+=== RENAME statement ===
+The RENAME statement is used to rename a database table.
+
+
+=== Referential integrity statements ===
+Finally, another kind of DDL sentence in SQL is one used to define referential integrity relationships, usually implemented as primary key and foreign key tags in some columns of the tables.
+These two statements can be included inside a CREATE TABLE or an ALTER TABLE sentence.
+
+
+== Other languages ==
+XML Schema is an example of a DDL for XML.
+
+
+== See also ==
+Data manipulation language
+Data control language
+Select (SQL)
+Insert (SQL)
+Update (SQL)
+Delete (SQL)
+
+
+== References ==

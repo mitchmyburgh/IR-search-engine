@@ -1,0 +1,25 @@
+Android N Developer Preview is out with multi-window mode built-in 
+
+Vlad, 09 March, 2016 Google Android
+Today Google has released the first Developer Preview of the upcoming Android N release. And yes, this is just called "N" for now, expect the official desert name to be outed alongside its final build many months from now.
+
+It's a surprise, this, because Google has so far introduced developer previews of its new Android versions at the annual I/O conference, which generally takes place in May. This time, however, the search giant is giving developers a taste of a build that's even earlier in the development cycle than usual, which means it should have more time to incorporate feedback into the final thing. It will also let Google "hand off the final N release to device makers this summer, so they can get their hands on the latest version of Android earlier than ever".
+
+What's new
+The big new headline feature in Android N, at least so far, is the addition of a multi-window mode. Or call it split-screen multitasking if you want, it's the same thing. This will be incorporated by developers into their apps by using a new manifest attribute. Once engaged, multi-window mode will look like you can see in the screenshots below. Notice that it's not limited to tablets, but will also work on phones, and even TVs - where you'll even get a picture-in-picture mode.
+
+
+Next up, in Android N you are able to reply to incoming stuff directly from the notification. This uses the same API as Android Wear, so any app that works with Wear will work with it without the need for any code changes at all.
+
+While we're on the subject of notifications, the new release also lets developers group notifications from the same app together. The bundled notification can be expanded into individual ones by tapping a newly-introduced expansion button or by using a two-finger gesture.
+
+Doze Mode was put into Marshmallow in order to enhance standby battery life. But while that only works when your device has been stationary for a while, the new revamped Doze Mode in Android N also sometimes kicks in when the screen is off and the device isn't stationary. Project Svelte has also been worked on some more - it's an effort to reduce the operating system's memory use so it can be more usable on low-end hardware.
+
+And in a bit of news that will surely only concern actual developers, Java 8 language features have now come to Android, and you can use them through the Jack compiler.
+
+Download
+Google has already posted factory images for the Android N Developer Preview on its dedicated website. These are available for the Nexus 6, Nexus 5X, Nexus 6P, Nexus 9, Nexus Player, and Pixel C. The company stresses that this initial release is only intended for developers to fiddle with, and not for daily use or consumers.
+
+It is however making it easier than ever before to test it. Later today a special page will allow you to sign up for the new Android Beta Program. And once you've done that you'll get this Developer Preview build, along with all the others that are coming in the future as over-the-air updates. So you won't have to flash those factory images to take a peek at Android N.
+
+Google says that it will invite consumers in to have a look the new Android version once it gets closer to a final product.

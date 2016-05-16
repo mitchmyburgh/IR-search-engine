@@ -1,0 +1,349 @@
+
+
+  * CL 2016
+  * Whitepapers
+  * The Channel
+  * The Next Platform
+
+Data Centre  Software  Networks  Security  Infrastructure  DevOps  Business
+Hardware  Science  Bootnotes  Forums
+
+  * Alerts 
+  * Newsletters 
+  * Columnists 
+  * Mobile 
+  * Video 
+
+##### 'Apple ate my music!' Streaming jukebox wipes 122GB – including muso's
+original tracks
+
+##### Q. What's orange and white, has a new CEO but is red all over? A.
+Teradata
+
+##### Stop resetting your passwords, says UK govt's spy network
+
+##### Ford tops up Pivotal's $253m cash slurp, parks CIO on its board
+
+  * Servers 
+  * HPC 
+  * Cloud 
+  * Storage 
+  * Data Networking 
+  * Virtualisation 
+  * BOFH 
+
+##### Q. What's orange and white, has a new CEO but is red all over? A.
+Teradata
+
+##### Keep an eye on your lunch, integrated systems. Hyper-convergers are
+hungry
+
+##### Alibaba says its AWS-a-like division embiggened by 138%
+
+##### Lost little X-IO lays off ~75 staff in Colorado as it shutters factory
+
+  * Operating Systems 
+  * Applications 
+  * Developer 
+  * Verity Stob 
+
+##### 'Apple ate my music!' Streaming jukebox wipes 122GB – including muso's
+original tracks
+
+##### BT Sport takes Elemental step of software encoding
+
+##### Router hackers reach for the fork: LEDE splits from OpenWRT
+
+##### Microsoft: Why we tore handy Store block out of Windows 10 Pro PCs
+
+  * Mobile 
+  * Broadband 
+
+##### FCC gives the nod to $17.7bn US cable mega-merger (no, not that one)
+
+##### We will end misleading broadband adverts, thunders ASA...
+
+##### Government tips last dollars into NBN
+
+##### Verizon worker strike now in its third week
+
+##### Stop resetting your passwords, says UK govt's spy network
+
+##### Daisy-chained research spells malware worm hell for power plants and
+other utilities
+
+##### Miscreants tripled output of proof of concept exploits in 2015
+
+##### Suck on this: White hats replace Locky malware payload with dummy
+
+  * Converged 
+  * Hybrid delivery 
+  * Software-Defined 
+
+##### Do you know where your trade secrets are?
+
+##### There's more to life than Windows
+
+##### Meet the malware that screwed a Bangladeshi bank out of $81m
+
+##### Planning to throw capacity at an IT problem? Read this first
+
+##### Review legacy code: Waking dragons is risk worth taking, says Trainline
+ops head
+
+##### Flinging Slack at them won't get team talking – senior Etsy engineer
+
+##### Getting started with DevOps: A guide for IT managers
+
+##### The Devils of DevOps stick it to YOU
+
+  * Financial News 
+  * Small Biz 
+  * CIO 
+  * Media 
+  * Law 
+  * Government 
+  * Jobs 
+
+##### 'Apple ate my music!' Streaming jukebox wipes 122GB – including muso's
+original tracks
+
+##### Q. What's orange and white, has a new CEO but is red all over? A.
+Teradata
+
+##### Ford tops up Pivotal's $253m cash slurp, parks CIO on its board
+
+##### Alibaba says its AWS-a-like division embiggened by 138%
+
+  * Laptops and Tablets 
+  * Phones 
+  * Games 
+
+##### ZX Printer's American cousin still in use, 34 years after purchase
+
+##### VxRackery dominates EMC World day 2
+
+##### Sat TV biz Dish: I'm not an authorized iPhone repairer ... but $20 is
+$20
+
+##### Samsung tightens smart home kit security after curious bods prod apps
+
+  * SPB 
+  * Geek's Guide 
+
+##### Robot surgeon outperforms human doctor with porcine patients
+
+##### Nerds make it rain in Nevada. The Las Vegas strip? No, cloud-seeding
+drones over the desert
+
+##### Space boffins win $3m prize for discovering gravitational waves
+
+##### Mercury to transit Sun: Viewer discretion advised
+
+##### Woman charged with blowing AU$4.6m overdraft on 'a lot of handbags'
+
+##### Siemens Healthcare struck by rebranding madness
+
+##### EU set to bin €500 note
+
+##### Venezuela tops world lightning conductor league
+
+#### Data Centre
+
+#### HPC
+
+# How much faster is a quantum computer than your laptop?
+
+## Supercomputing chaps talk qubits and more with Dan Olds
+
+18 Apr 2016 at 10:33,  Dan Olds, Gabriel Consulting
+
+### Dan Olds, Gabriel Consulting
+
+Get email alert when this author posts
+
+##### Common Topics
+
+  * Cluster Competition, 
+  * Cluster, 
+  * Hpc, 
+  * High Performance Computing, 
+  * Nvidia
+
+##### Recent Articles
+
+  * Sweaty students push hot HPC clusters through benchmark tests
+  * Some HPC kids just can't help piling on the weight
+  * Student cluster warriors build out 'roomy sedan' clusters
+
+**HPC blog** I jumped at the chance to interview supercomputing pioneer Bo Ewald and quantum computing whiz kid Murray Thom a few months ago. Although it's been in my “vault of lost content” for a while, the video serves as a good primer for quantum computing and its promise.
+
+It turns out that there are three broad categories of problem where your best
+bet is a quantum computer. The first is a Monte Carlo type simulation, the
+second is machine learning, and the third is optimization problems that would
+drive a regular computer nuts – or, at least, take a long time for it to
+process.
+
+An example of this type of optimization problem is this: Consider the
+approximately 2,000 professional hockey players in North America. Your task is
+to select the very best starting line-up from that roster of guys.
+
+There are a lot of variables to consider. First there's all the individual
+stats, like how well they score, pass, and defend. But since hockey is a team
+sport, you also have to consider how well they work when combined with other
+specific players. When you start adding variables like this, the problem gets
+exponentially more difficult to solve.
+
+But it's right up the alley of a quantum computer. A D Wave system would
+consider all of the possible solutions at the same time, then collapse down to
+the optimal set of player. It's more complicated than I'm making out, of
+course, but it's a good layman-like example.
+
+So how much faster can quantum computers perform than their digital
+counterparts? Before purchasing their own D Wave system a few years back,
+Google put it through its paces and found that when the problem size got to
+the 500 qubit size range, the D Wave system outperformed its binary cousins by
+10,000 times – a solid win in anyone's book.
+
+More recently, Google and NASA found that a D Wave 2 system with 1,097 qubits
+outperformed existing supercomputers by more than 3,600 times (and personal
+computers by 100 million x) on an optimization problem, solving it in mere
+seconds.
+
+Youtube Video
+
+I need to point out that we shouldn't get out over our skis when it comes to
+quantum computing. These performance numbers I'm citing are from corner cases
+that hit right on the quantum sweet spot. General computing use performance
+still lags and programming one of these beasts is still more art than science.
+
+Still, I'm intrigued, and want to learn more about quantum computing and the D
+Wave boxes in particular. Is there RAID on the motherboard? How about PCIe 3?
+I actually did ask the RAID question in the video – and Bo didn't slap me.
+
+Tips and corrections
+
+36 Comments
+
+### More from The Register
+
+#### Western Australian government funds Pawsey supercomputing centre until
+2021
+
+Iron ore state splurges on Big Iron
+
+#### Supercomputing speed growth hits 'historical low' in new TOP500 list
+
+Chinese complete top-spot trifecta with Tianhe-2
+
+11 Comments
+
+#### Super-computers aren't super-secure
+
+US National Science Foundation flings US$5 million at scientific computing
+infosec
+
+5 Comments
+
+#### Intel Xeon chip ban? Pfeh. China triples top 500 supercomputer tally
+
+SC15 Real reasons behind Middle Kingdom's rise
+
+9 Comments
+
+#### Join _The Register_ at ISC 16
+
+Promo Europe's premier HPC conference, June 19-23
+
+#### NASA rockets datasets into Amazon’s cloud with Avere
+
+As endorsements go, this is pretty neat
+
+2 Comments
+
+###  Whitepapers
+
+#### ISFW solution guide
+
+The quantity, sophistication, and impact of threats are on the rise.
+
+#### Data architecture optimisation
+
+learn how Data Architecture Optimisation can make data architectures capable
+of realising new and improved business outcomes while driving significant
+cost.
+
+#### Hyper converge your IT and get ready for hybrid cloud
+
+Highly efficient general-purpose virtualisation platform is easy to use and
+hybrid cloud-ready.
+
+#### Practical tips for detecting and fixing the underlying causes of common
+application performance problems
+
+Performance issues today are compounded by the ever-increasingly complex
+infrastructures that IT teams must contend with when delivering applications.
+
+### Most read
+
+  1. #### Revealed: How NASA saved the Kepler space telescope from suicide 
+
+  2. #### Facebook bungs 10-year-old kid $10k to not 'eliminate' Justin Bieber 
+
+  3. #### Cops deploy StingRay anti-terror tech against $50 chicken-wing thief 
+
+  4. #### Ex-HP boss Carly Fiorina sacked one week into new job 
+
+  5. #### Server-jacking exploits for ImageMagick are so trivial, you'll scream 
+
+### Spotlight
+
+#### The 4 stages of All-Flash storage: Denial, anger, bargaining... and
+integration
+
+#### IBM's FlashSystem looks flashy enough, but peek under the hood...
+
+#### Hold on a sec. When did HDDs get SSD-style workload rate limits?
+
+#### No objections to object stores: Everyone's going smaller and faster
+
+#### Is VMware the power it once was?
+
+#### You're only young but you're going to die: Farewell, all-flash startups
+
+#### What the world needs now is... not disk drives
+
+#### BOFH: Thermo-electric funeral
+
+### Sponsored links
+
+  * Sign up to The Register to receive newsletters and alerts
+
+#### Follow us
+
+#### More content
+
+  * Subscribe to newsletter
+  * Top 20 stories
+  * Week’s headlines
+  * Archive
+  * Webcasts
+
+#### About us
+
+  * Privacy
+  * Company info
+  * Advertise with us
+  * Syndication
+  * Send us news tips
+
+#### The Register
+
+Biting the hand that feeds IT © 1998–2016
+
+Independent news, views, opinions and reviews on the latest in the IT
+industry. Offices in London, San Francisco and Sydney.
+
+  *[5/16/2013]: 2013-05-16T10:37:00-07:00
+  *[BOFH]: Bastard Operator from Hell
+

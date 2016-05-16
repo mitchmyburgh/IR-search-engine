@@ -1,0 +1,57 @@
+History
+Early developments
+Ken Thompson (left) with Dennis Ritchie (right, the inventor of the C programming language)
+
+The origin of C is closely tied to the development of the Unix operating system, originally implemented in assembly language on a PDP-7 by Ritchie and Thompson, incorporating several ideas from colleagues. Eventually, they decided to port the operating system to a PDP-11. The original PDP-11 version of Unix was developed in assembly language. The developers were considering rewriting the system using the B language, Thompson's simplified version of BCPL.[9] However B's inability to take advantage of some of the PDP-11's features, notably byte addressability, led to C.
+
+The development of C started in 1972 on the PDP-11 Unix system[10] and first appeared in Version 2 Unix.[11] The language was not initially designed with portability in mind, but soon ran on different platforms as well: a compiler for the Honeywell 6000 was written within the first year of C's history, while an IBM System/370 port followed soon.[1][10] The name of C simply continued the alphabetic order started by B.[12]
+
+Also in 1972, a large part of Unix was rewritten in C.[13] By 1973, with the addition of struct types, the C language had become powerful enough that most of the Unix's kernel was now in C.
+
+Unix was one of the first operating system kernels implemented in a language other than assembly. (Earlier instances include the Multics system (written in PL/I), and MCP (Master Control Program) for the Burroughs B5000 written in ALGOL in 1961.) Circa 1977, Ritchie and Stephen C. Johnson made further changes to the language to facilitate portability of the Unix operating system. Johnson's Portable C Compiler served as the basis for several implementations of C on new platforms.[10]
+K&R C
+The cover of the book, The C Programming Language
+
+In 1978, Brian Kernighan and Dennis Ritchie published the first edition of The C Programming Language.[1] This book, known to C programmers as "K&R", served for many years as an informal specification of the language. The version of C that it describes is commonly referred to as K&R C. The second edition of the book[14] covers the later ANSI C standard, described below.
+
+K&R introduced several language features:
+
+    standard I/O library
+    long int data type
+    unsigned int data type
+    compound assignment operators of the form =op (such as =-) were changed to the form op= (that is, -=) to remove the semantic ambiguity created by such constructs as i=-10, which had been interpreted as i =- 10 (decrement i by 10) instead of the possibly intended i = -10 (let i be -10)
+
+Even after the publication of the 1989 ANSI standard, for many years K&R C was still considered the "lowest common denominator" to which C programmers restricted themselves when maximum portability was desired, since many older compilers were still in use, and because carefully written K&R C code can be legal Standard C as well.
+
+In early versions of C, only functions that returned a non-int value needed to be declared if used before the function definition; a function used without any previous declaration was assumed to return type int, if its value was used.
+
+For example:
+
+long some_function();
+/* int */ other_function();
+
+/* int */ calling_function()
+{
+    long test1;
+    register /* int */ test2;
+
+    test1 = some_function();
+    if (test1 > 0)
+          test2 = 0;
+    else
+          test2 = other_function();
+    return test2;
+}
+
+The int type specifiers which are commented out could be omitted in K&R C, but are required in later standards.
+
+Since K&R function declarations did not include any information about function arguments, function parameter type checks were not performed, although some compilers would issue a warning message if a local function was called with the wrong number of arguments, or if multiple calls to an external function used different numbers or types of arguments. Separate tools such as Unix's lint utility were developed that (among other things) could check for consistency of function use across multiple source files.
+
+In the years following the publication of K&R C, several features were added to the language, supported by compilers from AT&T (in particular PCC[15]) and some other vendors. These included:
+
+    void functions (i.e., functions with no return value)
+    functions returning struct or union types (rather than pointers)
+    assignment for struct data types
+    enumerated types
+
+The large number of extensions and lack of agreement on a standard library, together with the language popularity and the fact that not even the Unix compilers precisely implemented the K&R specification, led to the necessity of standardization.

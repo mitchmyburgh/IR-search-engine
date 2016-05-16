@@ -1,0 +1,58 @@
+Microsoft: C#, Visual Basic are now set to diverge
+More like this
+
+    toy 2016 intro center crop
+    InfoWorld's 2016 Technology of the Year Award winners
+    windows mobile
+    Microsoft Visual Studio '15' Preview expands Android, iOS support
+    swift 2
+    Seven Swift 2 enhancements every iOS developer will love
+    on IDG Answers
+    What is two-factor authentication and why should I use it?
+
+Microsoft: C#, Visual Basic are now set to diverge
+Credit: Ian Paterson
+Automatic alignment of features between the two languages is coming to an end, and C# may see faster release cycles
+
+Paul Krill By Paul Krill Follow
+
+InfoWorld | Apr 5, 2016
+RELATED TOPICS
+
+    Application Development Microsoft Windows C# Microsoft 
+
+8Comments
+
+Developers using Microsoft's C# and Visual Basic languages can expect to see more differentiation between them soon. Microsoft also expects to speed the release cycle for C#.
+
+The two object-oriented languages have shared programming concepts and features over the years. But Microsoft has decided to differentiate them more strongly, after hearing from the two developer communities. Visual Basic developers value stability, quality, support, and tooling. C# developers appreciate those aspects but particularly prize getting new features and being modern, said Mads Torgersen, Microsoft's program manager for C#.
+pearl oyster shell treasure jewel gem
+Get to know Perl 6
+
+Perl 6 finally arrived a few weeks ago, carrying a load of new features without losing its free-form
+Read Now
+[ Find out how to handle the real-world problems faced by developers, with InfoWorld's professional programmer's business survival guide. | Keep up with hot topics in programming with InfoWorld's Application Development newsletter. ]
+
+"We are realizing that this approach of doing everything to Visual Basic that we're doing to C# just sort of automatically doesn't seem like the right approach," Torgerson said.
+
+Despite the planned differentiation, the two languages will continue to share the open source Roslyn compiler platform for .Net. Microsoft envisions Roslyn becoming the language engine for programming tools such as editors, IDEs, refactoring tools, listing tools, scripting tools, and analysis tools, said Dustin Campbell, Microsoft's principal programming manager for the Visual Studio team.
+
+Microsoft would like to quicken the pace of C# feature releases as of the upcoming version 7, instead of holding off until a complete feature set is ready. "We're going to try releasing C# a little quicker," Torgersen said. C# 7 is due to be released with the next version of Visual Studio; Microsoft previewed this version, dubbed the "15" release, last week. C# 6.0 was released in July 2015 along with the Visual Studio 2015 IDE.
+
+Features planned for C# 7 include binary literals, for showing bit patterns. "If you really want to show bit patterns, you don't have to be part of the secret brotherhood of hex. You can just see the bits" using binary literals, Torgersen said. Also scheduled for C# 7 is a local functions capability, for writing helper functions inside other functions. With this feature, Torgersen said developers could “structure your code like JavaScript.”
+
+Tuples, for temporarily grouping a set of typed values, also is a feature of C# 7. Another C# 7 feature is patterns, with which a developer can test a value to see if it matches a pattern and, if it does, extract information from it into fresh variables that can be used in scope of where patterns match. "That's a pretty powerful control structure," Torgersen said.
+
+As part of the effort to introduce new features more quickly, Microsoft is hoping to add another pair of new features in C# 7, but it can't yet commit that it will complete them in time. One is the use of object initializers on immutable types to make it easier to use immutable types. The other is a records capability, which serves as an abbreviation of classes to represent data and features a syntax that extends code to have value-based classes with immutability.
+Can You Digitally Transform Your Business Before Others Do It For You?
+
+BrandPost Sponsored by SAP
+
+Can You Digitally Transform Your Business Before Others Do It For You?
+
+Upstart visionaries ranging from Uber to Airbnb to Netflix have achieved stunning success by blending cutting-edge technical capabilities with innovative business models
+Paul Krill
+
+Paul Krill — Editor at Large
+
+Paul Krill is an editor at large at InfoWorld, whose coverage focuses on application development.

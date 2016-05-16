@@ -1,0 +1,19 @@
+12 predictions for the future of programming
+
+If hitting a target is hard and hitting a moving target is even harder, then creating a new hit technology is next to impossible because the shape and nature of the target morphs as it moves. Think of building a swish new laptop just as laptops are heading out of favor, or a must-have mobile app just as smartphones plateau, or a dynamite tablet experience just as the wearable future takes hold.
+
+It's no secret that technology trends move fast -- and the tools and means for building those technologies constantly evolve. But if you don't lift your head up every once in a while to look past the next year's projects, you could end up coding yourself down an inescapable rabbit hole.
+
+[ What's in and what's out in app dev: 15 hot programming trends -- and 15 going cold. | Show off how much you really know about development by acing our Programming IQ test, round 3 and our "Hello, world" programming languages quiz. | Work smarter, not harder -- download the Developers' Survival Guide from InfoWorld for all the tips and trends programmers need to know. | Keep up with the latest developer news with InfoWorld's Developer World newsletter. ]
+
+To help you prepare for -- or at least start contemplating -- a future that's screaming across the sky faster than we can see, we've compiled a dozen predictions about how the next five years of programming will shake out. Our crystal ball is very subjective, and some of the following conjectures might not prove universal. Some won't be fully realized in five years. Others are already true, but the extent of their truth is not as well-established or widely known as it will be fairly soon. Some may surface as half-truths because some faction of coders may take a different path. Some might even be flat-out wrong.
+
+Despite all of those caveats, there's truth here in the main. Read them quickly because the future is changing faster than we know.  
+
+Future of programming prediction No. 1: GPUs will be the next CPUs
+
+Remember the days when people bragged about the CPU in their box? Now even the best CPUs rarely cost more than $200, while fancy graphics cards routinely cost $500, $600, or much more. Gamers love to brag about the power of their graphics cards, not their CPUs, and that's driving the market.
+
+The rest of the world is slowly catching on. More and more software uses the GPUs. True, some of these early forays are inherently graphical processes, like the work of Web browsers, but increasingly we're seeing applications that have nothing to do with drawing fancy pictures being rewritten to use the parallel architecture of GPUs. Physicists use them to study matter; chemists use them to study reactions; astronomers simulate the galaxy with graphics cards; biologists crunch statistics via GPUs for population studies. And for a while this year, I heated my office by using my GPU to mine bitcoins.
+
+Practices like these will only become more widespread. Soon better compilers will make it possible to write code and let the compiler detect when it can run effectively on the GPU. The academic tools can already do this at a limited level, but it will become more popular when it is easier for everyone to do so with any project.

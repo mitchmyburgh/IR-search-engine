@@ -1,0 +1,22 @@
+In computer science, constrained clustering is a class of semi-supervised learning algorithms. Typically, constrained clustering incorporates either a set of must-link constraints, cannot-link constraints, or both, with a Data clustering algorithm. Both a must-link and a cannot-link constraint define a relationship between two data instances. A must-link constraint is used to specify that the two instances in the must-link relation should be associated with the same cluster. A cannot-link constraint is used to specify that the two instances in the cannot-link relation should not be associated with the same cluster. These sets of constraints acts as a guide for which a constrained clustering algorithm will attempt to find clusters in a data set which satisfy the specified must-link and cannot-link constraints. Some constrained clustering algorithms will abort if no such clustering exists which satisfies the specified constraints. Others will try to minimize the amount of constraint violation should it be impossible to find a clustering which satisfies the constraints. Constraints could also be used to guide the selection of a clustering model among several possible solutions. 
+A cluster in which the members conform to all must-link and cannot-link constraints is called a chunklet.
+
+
+== Examples ==
+Examples of constrained clustering algorithms include:
+COP K-means 
+PCKmeans
+CMWK-Means 
+
+
+== References ==
+
+
+== Further reading ==
+Biswas, A.; Jacobs, D. (2012). "Active image clustering: Seeking constraints from humans to complement algorithms". 2012 IEEE Conference on Computer Vision and Pattern Recognition. p. 2152. doi:10.1109/CVPR.2012.6247922. ISBN 978-1-4673-1228-8. 
+Huang, H.; Cheng, Y.; Zhao, R. (2008). "A Semi-supervised Clustering Algorithm Based on Must-Link Set". Advanced Data Mining and Applications. Lecture Notes in Computer Science 5139. p. 492. doi:10.1007/978-3-540-88192-6_48. ISBN 978-3-540-88191-9. 
+Zhang, S.; Wong, H. S. (2008). "Partial closure-based constrained clustering with order ranking". 2008 19th International Conference on Pattern Recognition. p. 1. doi:10.1109/ICPR.2008.4760984. ISBN 978-1-4244-2174-9. 
+Grira, N.; Crucianu, M.; Boujemaa, N. (2005). "Semi-supervised image database categorization using pairwise constraints". IEEE International Conference on Image Processing 2005. pp. III. doi:10.1109/ICIP.2005.1530620. ISBN 0-7803-9134-9. 
+Shi Rui; Wanjun Jin; Tat-Seng Chua (2005). "A Novel Approach to Auto Image Annotation Based on Pairwise Constrained Clustering and Semi-Naïve Bayesian Model". 11th International Multimedia Modelling Conference. p. 322. doi:10.1109/MMMC.2005.14. ISBN 0-7695-2164-9. 
+Ismail, M. M. B.; Frigui, H. (2009). "Image annotation based on constrained clustering and semi-naive bayesian model". 2009 IEEE Symposium on Computers and Communications. p. 431. doi:10.1109/ISCC.2009.5202230. ISBN 978-1-4244-4672-8. 
+A list of codes for constrained algorithms available online

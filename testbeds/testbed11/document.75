@@ -1,0 +1,45 @@
+The EnOcean technology is an energy harvesting wireless technology used primarily in building automation systems, and is also applied to other applications in industry, transportation, logistics and smart homes. Modules based on EnOcean technology combine micro energy converters with ultra low power electronics, and enable wireless communications between batteryless wireless sensors, switches, controllers and gateways.
+In March 2012, the EnOcean wireless standard was ratified as the international standard ISO/IEC 14543-3-10. The standard covers the OSI (Open Systems Interconnection) layers 1-3 which are the physical, data link and networking layers.
+The energy harvesting wireless modules are manufactured and marketed by the company EnOcean which is based in Oberhaching, Germany. EnOcean offers its technology and licenses for the patented features within the EnOcean Alliance framework.
+
+
+== Technology ==
+EnOcean technology is based on the energetically efficient exploitation of slight mechanical motion and other potentials from the environment, such as indoor light and temperature differences, using the principles of energy harvesting. In order to transform such energy fluctuations into usable electrical energy, electromagnetic, solar, and thermoelectric energy converters are used.
+EnOcean-based products (such as sensors and light switches) perform without batteries and are engineered to operate maintenance-free. The radio signals from these sensors and switches can be transmitted wirelessly over a distance of up to 300 meters in the open and up to 30 meters inside buildings. Early designs from the company used piezo generators, but were later replaced with electromagnetic energy sources to reduce the operating force (3.5 newtons), and increase the service life to 100 operations a day for more than 25 years.
+
+EnOcean wireless data packets are relatively small, with the packet being only 14 bytes long and are transmitted at 125 kbit/s. RF energy is only transmitted for the 1's of the binary data, reducing the amount of power required. Three packets are sent at pseudo-random intervals reducing the possibility of RF packet collisions. Modules optimized for switching applications transmit additional data packets on release of push-button switches, enabling other features such as light dimming to be implemented. The transmission frequencies used for the devices are 902 MHz, 928.35 MHz, 868.3 MHz and 315 MHz.
+
+
+== Application examples ==
+One example of the technology is a battery-free wireless light switch. Advantages are that it saves time and material by eliminating the need to install wires between the switch and controlled device, e.g., a light fixture. It also reduces noise on switched circuits, as the switching is performed locally at the load. Other lighting applications include occupancy sensors, light sensors and key card switches. Furthermore, heating, ventilation, and air conditioning (hvac) applications such as temperature sensors, humidity sensors, CO2 sensors, metering sensors already use EnOcean’s energy harvesting wireless technology.
+
+
+== Company ==
+EnOcean GmbH is a venture-funded spin-off company of Siemens AG founded in 2001. It is a German company headquartered in Oberhaching, near Munich, which currently employs 60 employees in Germany and the USA. It is a technology supplier of self-powered modules (transmitters, receivers, transceivers, energy converter) to companies (e.g. Siemens Building Technologies, Distech Controls, Zumtobel, Omnio, Osram, Wieland Electric, Pressac, Peha, Thermokon, Wago, Herga), which develop and manufacture products used in building automation (light, shading, hvac), industrial automation, and automotive industry (replacement of the conventional battery in tyre pressure sensors).
+The company won the Bavarian Innovation Prize 2002 for its technology, the award "Technology Pioneer 2006" by the World Economic Forum, the "Top-10 Product for 2007" award by Building Green and was among the global cleantech 100 in 2011.
+In November 2007, MK Electric, the manufacturer of consumer electrical fitments in the UK, adopted EnOcean technology for a wireless switches.
+In April 2012, EnOcean wireless technology was ratified as the international wireless standard ISO/IEC 14543-3-10 Information technology - Home Electronic Systems (HES) - Part 3-10: Wireless Short-Packet (WSP) protocol optimized for energy harvesting - Architecture and lower layer protocols.
+
+
+== Alliance ==
+A group of companies including EnOcean, Texas Instruments, Omnio, Sylvania, Masco, and MK Electric formed the EnOcean Alliance in April 2008 as a non-profit, mutual benefit corporation. The EnOcean Alliance aims to internationalise this technology, and is dedicated to creating interoperability between the products of OEM partners, in order to bring about the existence of a broad range of interoperable wireless monitoring and controlling products for use in and around residential, commercial and industrial buildings. For this the EnOcean Alliance has drawn up the application level protocols are referred to as EEPs (EnOcean Equipment Profiles). Together with the three lower levels of the international wireless standard ISO/IEC 14543-3-10 the Alliance lay the foundation for a fully interoperable, open wireless technology. More than 250 companies currently belong to the EnOcean Alliance. The headquarters of the organization is in San Ramon, California.
+Market research company WTRS estimated that EnOcean module shipments might reach $1.4B in 2013.
+
+
+== Software automation ==
+EnOcean is newly supported by Fhem and ago control. Fhem and ago control are GPL licensed software suites for house automation. They are used to automate some common tasks in the household like switching lamps, shutters, heating, etc., and to log events like temperature, humidity, and power consumption. Both run as servers that are controlled via web front-end, telnet, command line, or TCP/IP directly.
+
+
+== See also ==
+
+
+== References ==
+
+
+== External links ==
+Arveni s.a.s website: other examples of vibration and pulse piezo energy harvesting
+PERPETUUM website
+EnOcean website
+EnOcean Alliance website
+Description of voting system
+Home Electronic Systems (HES) -- Part 3-10: Wireless Short-Packet (WSP) protocol

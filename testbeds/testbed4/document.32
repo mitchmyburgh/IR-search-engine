@@ -1,0 +1,68 @@
+The means to produce real-time 3D graphical applications have improved over the
+last few years tremendously. Hardware is becoming more and more powerful as new
+processors, chipsets and memories are introduced. But the needs and expectations of
+the users have grown even more rapidly. Scenes must be modeled with fine detail,
+which leads to large models with many polygons. Users often want interaction with
+the model. And all this has to be rendered at speeds that enable real-time animation -
+which means at least 10 frames per second.
+The hardware improvements alone do not suffice. The size of the models that meet
+the requirements grow more rapidly than the size of the models that can be rendered.
+The solution to this situation is output sensitivity. Output sensitivity means that the runtime
+depends on the size of the output, not on the size of the input. Put it another way,
+an algorithm is output sensitive if it has a runtime per frame that is ??
+	
+, where
+ is number of visible primitives, 	 is total number of all primitives and 
+	 	
+is the overhead imposed by the model. (Sudarsky & Gotsman, 1996)
+This can be achieved several ways. One technique is level-of-detail control, which
+means that objects that are farther away are rendered with less detail. Another technique
+is to render nothing that is not visible to the viewer. The process of leaving
+out the non-visible parts from the model is called visibility culling. Visibility culling
+actually contains three different mechanisms: back-face culling, view-frustrum culling
+and occlusion culling. Back-face culling means leaving out the back-faces of the polygons,
+view-frustrum culling means ignoring all objects that are not contained in the
+view frustrum. Occlusion culling means leaving out all the polygons that are occluded
+1
+by other polygons. An object is occluded by another object if it is totally hidden behind
+it. Thus the occluder conceals the occluded object. Usually occlusion culling
+techniques include view-frustrum culling as a part of the algorithm. Occlusion culling
+is especially important in dense models, like cities or buildings, where a large portion
+of the objects are occluded.
+This paper concentrates on dynamic occlusion culling algorithms. Word dynamic
+has unfortunately many meanings. Sometimes dynamic means that the culling computation
+is done on-the-fly, depending on the viewpoint, and the result is a real-time
+animated model in which the user can walk or fly around freely. But often dynamic
+means that the objects in the model are not static but can move just like the camera
+moves. This paper discusses both cases.
+Chapter 2 discusses different algorithms that are based on hierarchical representations
+of the model. In chapter 3, one tries to adopt two of these techniques to handle
+models with moving objects. Chapter 4 introduces different approaches to handle the
+moving objects. In chapter 5, conclusions are drawn based upon the contents of the
+previous chapters.
+2 HIERARCHICAL REAL-TIME ALGORITHMS
+For algorithms to be output sensitive, they cannot iterate through all objects and decide
+the ones that are visible. Instead, they must reject large portions of the object-space
+with one query, if these large portions are hidden. This usually requires the use of
+some hierarchical data structures.
+The algorithms in this section do the visibility culling on-the-fly, enabling (at least
+almost) real-time rendering of models. They all use some kind of hierarchical data
+structure that divides the object-space into regions. This means that the model must
+be preprocessed to obtain this hierarchical representation. If an object in the model
+moved, the whole structure should be preprocessed again. Since the preprocessing is
+very time-consuming, these algorithms cannot be used in models where objects are
+moving.
+The algorithms presented are Hierarchical Z-buffer (Greene et al. , 1993), BSP
+tree projection algorithm (Naylor, 1992) and cPLP (Klosowski & Silva, 2001). Other
+similar algorithms use for example hierarchical occlusion maps (Zhang et al. , 1997)
+and kD-trees (Coorg & Teller, 1997).
+2.1 Hierarchical Z-buffer
+Hierarchical Z-buffer algorithm (HZB), first introduced in (Greene et al. , 1993), is
+an improvement of traditional Z-buffer algorithm. It exploits two hierarchical data
+structures: an octree in object-space and a Z-pyramid in image-space (see figure 1).
+The octree contains the whole model inside a cube. The cube is then divided into
+eight subcubes (see figure 1), which are then divided again. Each primitive in the
+model is associated with the smallest possible enclosing cube. When the construction
+is ready, each octree cube knows its direct children and the polygons associated to it.
+This construction of the model into an octree is done at a preprocessing stage.
+2

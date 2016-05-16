@@ -1,0 +1,15 @@
+﻿Photo-realism is one of the ultimate goals for many CG artists, and it's also one of the most difficult to achieve. Even if you're relatively new to 3D computer graphics however, today's tools and workflow techniques make photo-realism very obtainable. Here are eight techniques to help you get there:
+1.  Bevel, Bevel, Bevel
+
+Forgetting to bevel or chamfer edges is one of the most common errors committed by beginning 3D artists. There are almost no razor sharp edges in nature, and even most man-made objects have a slight roundness where two opposing surfaces meet. Beveling helps bring out detail, and really sells the realism of your model by allowing edges to properly catch highlights from your lighting solution.
+
+Using the bevel (or chamfer tool in 3ds Max) is one of the first things you should learn as a modeler. If you're new enough to 3D that you're unsure how to create a beveled edge, chances are you could truly benefit from a good introductory tutorial, or even a training subscription.
+2.  Learn to Use Linear Workflow
+
+Even though linear workflow has been around for years, it's still a confusing and complicated idea for beginners. I'm won't try to completely explain the theory here (there's just too much to say), but I do want to make sure you're at least aware that these techniques exist.
+
+The need for linear workflow essentially comes down to the fact that your monitor displays images in a different color space (sRGB) than what is output by your render engine (linear). In order to combat this, artists must take the necessary steps to apply gamma correction to a render.
+
+But linear workflow actually goes pretty far beyond simple gamma corrections—it's all about eschewing old techniques and workarounds (most of which are based on outdated math), and moving toward true physically based lighting solutions.
+
+There's a lot more to say on linear workflow, and thankfully it's been discussed exhaustively over the past few years. Here's a link that I found useful when learning the theory behind the process—he links out to quite a few sources, so there's plenty of reading to be done. The second link is a Digital Tutors course that deals specifically with linear workflow in Maya 2012.

@@ -1,0 +1,15 @@
+﻿One of the most challenging problems in computer graphics is to generate images that appear realistic;
+that is, images that can fool a human observer when displayed on a screen. The quest for this "Holy
+Grail" began in earnest in the early 70’s when memory prices dropped low enough to allow raster technologies
+to be cost-effective over the then prevailing calligraphic displays. Calligraphic displays could only
+drawalimited number of lines and even the most capable of these displays allowed for only a handful of
+colours. Previously, research work concentrated on removing "hidden lines" from objects drawn on these
+displays. The objects displayed were obviously not realistic but contained enough information for the task
+at hand, such as computer aided design. Raster technology, by subdividing the screen into pixels, allowed
+whole regions of the screen to be filled with colours, colours that had a wide variety of intensities and tints.
+This new technology, capable of displaying realistic images, opened up research in this direction and it is
+this research that we will outline.
+This paper will survey most of the major issues that one must deal with when generating realistic
+images†. We begin with an overview of the rendering process and a quick review of visible surface determination
+algorithms. We then discuss, in more detail, shading, anti-aliasing, texture mapping, shadows,
+optical effects and close with a discussion of modeling primitives.

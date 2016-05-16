@@ -1,0 +1,53 @@
+Genetic Algorithms as a Tool for Feature Selection
+in Machine Learning
+
+
+Haleh Vafaie and Kenneth De Jong 
+
+1.0 Introduction
+In recent years there has been a significant increase in
+research on automatic image recognition in more realistic
+contexts involving noise, changing lighting conditions,
+and shifting viewpoints. The corresponding increase in
+dfficulty in designing effective classifkation procedures for
+the important components of these more complex
+recognition problems has led to an interest in machine
+techniques as a possible strategy for automatically
+producing classification rules. This paper describes part of
+a larger effort to apply machine learning techniques to such
+problems in an attempt to generate and improve the
+classification rules required for various recognition tasks.
+The immediate problem attacked is that of texture
+recognition in the context of noise and changing lighting
+conditions. In this context standard rule induction systems
+like AQl5 produce sets of classification rules which are
+sub-optimal in two respects. First, there is a need to
+minimize the number of features actually used for
+classification, since each feature used adds to the design and
+manufacturing costs as well as the running time of a
+recognition system. At the same time there is a need to
+achieve high recognition rates in the presence of noise and
+changing environmental conditions.
+This paper describes an approach being explored to
+improve the usefulness of machine learning techniques for
+such problems. The approach described here involves the
+use of genetic algorithms as a "front end" to traditional rule
+induction systems in order to identify and select the best
+subset of features to be used by the rule induction system.
+The results presented suggest that genetic algorithms are a
+useful tool for solving difficult feature selection problems in which both the size of the feature set and the
+performance of the underlying system are important design
+considerations. 
+
+6.0 Summary and Conclusions
+The experimental results obtained indicate the potential
+advantages of using feature selection techniques to improve
+rule induction techniques. The reported results indicate that
+an adaptive feature selection strategy using genetic
+algorithms can yield a significant reduction in the number
+of features required for texture classification and
+simultaneously produce improvements in recognition rates
+of the rules produced by AQ15. This is a step towards the
+application of machine leaming techniques for automating
+the of constructing classification systems for difficult
+image processing problems. 

@@ -1,0 +1,75 @@
+Scripting languages[edit]
+"Scripting language" has two apparently different, but in fact similar meanings. In a traditional sense, scripting languages are designed to automate frequently used tasks that usually involve calling or passing commands to external programs. Many complex application programs provide built-in languages that let users automate tasks. Those that are interpretive are often called scripting languages.
+
+Recently, many applications have built-in traditional scripting languages, such as Perl or Visual Basic, but there are quite a few native scripting languages still in use. Many scripting languages are compiled to bytecode and then this (usually) platform-independent bytecode is run through a virtual machine (compare to Java virtual machine).
+
+AppleScript
+AWK
+BeanShell
+Bash
+Ch (Embeddable C/C++ interpreter)
+CLIST
+ColdFusion
+ECMAScript
+ActionScript
+ECMAScript for XML
+JavaScript (first named Mocha, then LiveScript)
+JScript
+CMS EXEC
+EXEC 2
+F-Script
+Falcon
+Game Maker Language (GML)
+ICI
+Io
+JASS
+Groovy
+Join Java
+Julia (still, compiled on the fly to machine code)
+Lasso
+Lua
+MAXScript
+MEL
+Oriel
+Perl
+PHP (intended for Web servers)
+Pikt
+Python
+R
+REBOL
+REXX
+Revolution
+Ruby
+Smalltalk
+S-Lang
+sed
+Tea
+Tcl
+TorqueScript
+VBScript
+WebDNA, dedicated to database-driven websites
+Windows PowerShell (Microsoft .NET-based CLI)
+Winbatch
+Many shell command languages such as the Unix shell or DCL on VMS have powerful scripting abilities.
+Stack-based languages[edit]
+See also: Category:Stack-oriented programming languages
+Stack-based languages are a type of data-structured language that are based upon the stack data structure.
+
+Beatnik
+colorForth
+Factor
+Forth
+Joy (all functions work on parameter stacks instead of named parameters)
+Piet
+Poplog via its implementation language POP-11
+PostScript
+RPL
+Synchronous languages[edit]
+See also: Category:Synchronous programming languages
+Synchronous programming languages are optimized for programming reactive systems, systems that are often interrupted and must respond quickly. Many such systems are also called realtime systems, and are used often in embedded systems. Examples:
+
+Argus
+Averest
+Esterel
+Lustre
+SyncCharts

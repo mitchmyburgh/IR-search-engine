@@ -1,0 +1,33 @@
+Culling: Before performing a general hidden surface removal algorithm, it is common to first apply heuristics to
+remove objects that are obviously not visible. This process is called culling. There are three common forms of
+culling.
+Back-face Culling: This is a simple trick, which can eliminate roughly half of the faces from consideration.
+Assuming that the viewer is never inside any of the objects of the scene, then the back sides of objects are
+never visible to the viewer, and hence they can be eliminated from consideration.
+For each polygonal face, we assume an outward pointing normal has been computed. If this normal is
+directed away from the viewpoint, that is, if its dot product with a vector directed towards the viewer is
+negative, then the face can be immediately discarded from consideration. (See Fig. 91.)
+View Frustum Culling: If a polygon does not lie within the view frustum (recall from the lecture on perspective),
+that is, the region that is visible to the viewer, then it does not need to be rendered. This automatically
+eliminates polygons that lie behind the viewer. (See Fig. 91.)
+This amounts to clipping a 2-dimensional polygon against a 3-dimensional frustum. The Liang-Barsky
+clipping algorithm can be generalized to do this.
+Sometimes a polygon can be culled because it is “known” that the polygon cannot be visible,
+based on knowledge of the domain. For example, if you are rendering a room of a building, then it is
+reasonable to infer that furniture on other floors or in distant rooms on the same floor are not visible. This
+is the hardest type of culling, because it relies on knowledge of the environment. This information is
+typically precomputed, based on expert knowledge or complex analysis of the environment.
+Depth-Sort Algorithm: A fairly simple hidden-surface algorithm is based on the principle of painting objects from
+back to front, so that more distant polygons are overwritten by closer polygons. This is called the depthsort
+algorithm. This suggests the following algorithm: sort all the polygons according to increasing distance
+from the viewpoint, and then scan convert them in reverse order (back to front). This is sometimes called the
+painter’s algorithm because it mimics the way that oil painters usually work (painting the background before
+the foreground). The painting process involves setting pixels, so the algorithm is an image precision algorithm.
+There is a very quick-and-dirty technique for sorting polygons, which unfortunately does not generally work.
+Compute a representative point on each polygon (e.g. the centroid or the farthest point to the viewer). Sort the
+objects by decreasing order of distance from the viewer to the representative point (or using the pseudodepth
+which we discussed in discussing perspective) and draw the polygons in this order. Unfortunately, just because
+the representative points are ordered, it does not imply that the entire polygons are ordered. Worse yet, it may
+be impossible to order polygons so that this type of algorithm will work. The Fig. 92 shows such an example, in
+which the polygons overlap one another cyclically.
+3

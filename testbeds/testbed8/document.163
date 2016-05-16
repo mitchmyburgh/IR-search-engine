@@ -1,0 +1,11 @@
+Split[edit]
+ 
+Figure 2.3: Splitting a rope in half.
+Definition: Split (i, S): split the string S into two new strings S1 and S2, S1 = C1, …, Ci and S2 = Ci + 1, …, Cm.
+Time complexity: O(log N)
+There are two cases that must be dealt with:
+1.	The split point is at the end of a string (i.e. after the last character of a leaf node)
+2.	The split point is in the middle of a string.
+The second case reduces to the first by splitting the string at the split point to create two new leaf nodes, then creating a new node that is the parent of the two component strings.
+For example, to split the 22-character rope pictured in Figure 2.3 into two equal component ropes of length 11, query the 12th character to locate the node K at the bottom level. Remove the link between K and the right child of G. Go to the parent of G and subtract the weight of K from the weight of D. Travel up the tree and remove any right links to subtrees covering characters past position 11, subtracting the weight of Kfrom their parent nodes (only node D and A, in this case). Finally, build up the newly orphaned nodes Kand H by concatenating them together and creating a new parent P with weight equal to the length of the left node K.
+As most rope operations require balanced trees, the tree may need to be re-balanced after splitting.

@@ -1,0 +1,8 @@
+Improving propensity score weighting using machine learning
+
+
+Brian K. Lee,
+Justin Lessler,
+Elizabeth A. Stuart
+
+Machine learning techniques such as classification and regression trees (CART) have been suggested as promising alternatives to logistic regression for the estimation of propensity scores. The authors examined the performance of various CART-based propensity score models using simulated data. Hypothetical studies of varying sample sizes (n=500, 1000, 2000) with a binary exposure, continuous outcome, and 10 covariates were simulated under seven scenarios differing by degree of non-linear and non-additive associations between covariates and the exposure. Propensity score weights were estimated using logistic regression (all main effects), CART, pruned CART, and the ensemble methods of bagged CART, random forests, and boosted CART. Performance metrics included covariate balance, standard error, per cent absolute bias, and 95 per cent confidence interval (CI) coverage. All methods displayed generally acceptable performance under conditions of either non-linearity or non-additivity alone. However, under conditions of both moderate non-additivity and moderate non-linearity, logistic regression had subpar performance, whereas ensemble methods provided substantially better bias reduction and more consistent 95 per cent CI coverage. The results suggest that ensemble methods, especially boosted CART, may be useful for propensity score weighting. Copyright © 2009 John Wiley & Sons, Ltd.

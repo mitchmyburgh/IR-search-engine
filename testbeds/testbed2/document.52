@@ -1,0 +1,58 @@
+Statistical learning theory is a framework for machine learning drawing from the fields of statistics and functional analysis. Statistical learning theory deals with the problem of finding a predictive function based on data. Statistical learning theory has led to successful applications in fields such as computer vision, speech recognition, bioinformatics and baseball.
+
+
+== Introduction ==
+The goal of learning is prediction. Learning falls into many categories, including supervised learning, unsupervised learning, online learning, and reinforcement learning. From the perspective of statistical learning theory, supervised learning is best understood. Supervised learning involves learning from a training set of data. Every point in the training is an input-output pair, where the input maps to an output. The learning problem consists of inferring the function that maps between the input and the output in a predictive fashion, such that the learned function can be used to predict output from future input.
+Depending of the type of output, supervised learning problems are either problems of regression or problems of classification. If the output takes a continuous range of values, it is a regression problem. Using Ohm's Law as an example, a regression could be performed with voltage as input and current as output. The regression would find the functional relationship between voltage and current to be , such that
+
+Classification problems are those for which the output will be an element from a discrete set of labels. Classification is very common for machine learning applications. In facial recognition, for instance, a picture of a person's face would be the input, and the output label would be that person's name. The input would be represented by a large multidimensional vector whose elements represent pixels in the picture.
+After learning a function based on the training set data, that function is validated on a test set of data, data that did not appear in the training set.
+
+
+== Formal Description ==
+Take  to be the vector space of all possible inputs, and  to be the vector space of all possible outputs. Statistical learning theory takes the perspective that there is some unknown probability distribution over the product space , i.e. there exists some unknown . The training set is made up of  samples from this probability distribution, and is notated
+
+Every  is an input vector from the training data, and  is the output that corresponds to it.
+In this formalism, the inference problem consists of finding a function  such that . Let  be a space of functions  called the hypothesis space. The hypothesis space is the space of functions the algorithm will search through. Let  be the loss functional, a metric for the difference between the predicted value  and the actual value . The expected risk is defined to be
+
+The target function, the best possible function  that can be chosen, is given by the  that satisfies
+
+Because the probability distribution  is unknown, a proxy measure for the expected risk must be used. This measure is based on the training set, a sample from this unknown probability distribution. It is called the empirical risk
+
+A learning algorithm that chooses the function  that minimizes the empirical risk is called empirical risk minimization.
+
+
+== Loss Functions ==
+The choice of loss function is a determining factor on the function  that will be chosen by the learning algorithm. The loss function also affects the convergence rate for an algorithm. It is important for the loss function to be convex.
+Different loss functions are used depending on whether the problem is one of regression or one of classification.
+
+
+=== Regression ===
+The most common loss function for regression is the square loss function. This familiar loss function is used in ordinary least squares regression. The form is:
+
+The absolute value loss is also sometimes used:
+
+
+=== Classification ===
+
+In some sense the 0-1 indicator function is the most natural loss function for classification. It takes the value 0 if the predicted output is the same as the actual output, and it takes the value 1 if the predicted output is different from the actual output. For binary classification with , this is:
+
+where  is the Heaviside step function.
+
+
+== Regularization ==
+
+In machine learning problems, a major problem that arises is that of overfitting. Because learning is a prediction problem, the goal is not to find a function that most closely fits the (previously observed) data, but to find one that will most accurately predict output from future input. Empirical risk minimization runs this risk of overfitting: finding a function that matches the data exactly but does not predict future output well.
+Overfitting is symptomatic of unstable solutions; a small perturbation in the training set data would cause a large variation in the learned function. It can be shown that if the stability for the solution can be guaranteed, generalization and consistency are guaranteed as well. Regularization can solve the overfitting problem and give the problem stability.
+Regularization can be accomplished by restricting the hypothesis space . A common example would be restricting  to linear functions: this can be seen as a reduction to the standard problem of linear regression.  could also be restricted to polynomial of degree , exponentials, or bounded functions on L1. Restriction of the hypothesis space avoids overfitting because the form of the potential functions are limited, and so does not allow for the choice of a function that gives empirical risk arbitrarily close to zero.
+One example of regularization is Tikhonov regularization. This consists of minimizing
+
+where  is a fixed and positive parameter, the regularization parameter. Tikhonov regularization ensures existence, uniqueness, and stability of the solution.
+
+
+== See also ==
+Reproducing kernel Hilbert spaces are a useful choice for .
+Proximal gradient methods for learning
+
+
+== References ==

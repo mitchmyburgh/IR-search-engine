@@ -1,0 +1,52 @@
+Ruby on Rails-style development comes to Apple's Swift
+More like this
+
+    swift 2
+    Seven Swift 2 enhancements every iOS developer will love
+    lorimerlite framework structure build construction
+    Beyond jQuery: An expert guide to JavaScript frameworks
+    The cover of Ruby on Rails book
+    Ruby on Rails takes on Node.js with WebSocket support, API mode
+    on IDG Answers
+    How to turn on Windows 10's 'Find My Device' feature?
+
+Ruby on Rails-style development comes to Apple's Swift
+The Swifton framework shares the model-view-controller development pattern with Rails
+
+Paul Krill By Paul Krill Follow
+
+InfoWorld | Feb 25, 2016
+RELATED TOPICS
+
+    Application Development Web Development 
+
+Comments
+
+Apple's trendy Swift language is getting a Web framework inspired by the popular Ruby on Rails MVC framework.
+
+Open source Swifton, running on Mac OS X and Linux, is in an early stage of development. But it's already picking up traction, attractibg more than 1,200 stargazers on GitHub within a couple of days of its release this week, said Swifton's main developer, Saulius Grigaitis, founder and CTO of Ruby on Rails and Swift consulting firm Necolt.
+pearl oyster shell treasure jewel gem
+Get to know Perl 6
+
+Perl 6 finally arrived a few weeks ago, carrying a load of new features without losing its free-form
+Read Now
+[ Check out InfoWorld's Deep Dive primer on Apple's Swift for iOS and OS X. | Keep up with hot topics in programming with InfoWorld's Application Development newsletter. ]
+
+Swifton shares the model-view-controller development pattern with Rails. For the model aspect of the framework, Swifton is ORM-agnostic. "Swifton comes with simple in-memory MemoryModel class that you can inherit and use for your apps," Swifton's Github documentation states. Similar to Rails, Swifton features an ApplicationController class. A controller in Swifton inherits from ApplicationController, which in turn inherits from the Controller class.
+
+For views, Swifton backs Mustache-like templates via the Stencil template language. The view is rendered with controller's method render(template_path, object), according to documentation. Views are loaded from the views directory by default, with developers able to change the default setting. "Currently, views are not cached, so you don't need to restart server or recompile after views are changed," the GitHub page notes.
+ADVERTISING
+inRead invented by Teads
+
+With Swifton, Grigaitis said he wanted to build a framework inspired by Rails because he is a big Rails fan. "I [have used] Ruby on Rails for 10 years to build large-scale systems for successful startups, and I don't think there's something significantly better then Rails currently. Sure, one can try to invent something really new, but chances are really low to build something as successful as Rails."
+
+Grigaitis added that Swift, Apple's successor to Objective-C that was introduced in June 2014, reminds him of Ruby but is still very different. The biggest obstacle he has come across in building Swifton has been Swift's static and type-safe nature. "Web development is more like gluing inconsistent real-world things together -- information in database, external APIs calls, data representation templates, etc. Unfortunately, Swift doesn't help here a lot."
+
+Swifton is offered via an MIT license, supports JSON, and features the Currasow server, a Swift Nest HTTP server. The framework also comes with a router, although developers can use other routers. Use of Swifton requires installing the latest development snapshot of Swift from Swift.org or swiftenv.
+Paul Krill
+
+Paul Krill — Editor at Large
+
+Paul Krill is an editor at large at InfoWorld, whose coverage focuses on application development.
+
+From CIO: 8 Free Online Courses to Grow Your Tech Skills

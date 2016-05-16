@@ -1,0 +1,9 @@
+Mathematically, tagged unions correspond to disjoint or discriminated unions, usually written using +. Given an element of a disjoint union A + B, it is possible to determine whether it came from A or B. If an element lies in both, there will be two effectively distinct copies of the value in A + B, one from A and one from B.
+
+In type theory, a tagged union is called a sum type. Sum types are the dual of product types. Notations vary, but usually the sum type A+B comes with two introduction forms \text{inj}_1 : A \to A+B and \text{inj}_2 : B \to A+B. The elimination form is case analysis, known as pattern matching in ML-style programming languages: if e has type A+B and e_1 and e_2 have type \tau under the assumptions x:A and y:B respectively, then the term \mathsf{case}\ e\ \mathsf{of}\ x \Rightarrow e_1 | y \Rightarrow e_2 has type \tau. The sum type corresponds to intuitionistic logical disjunction under the Curry–Howard correspondence.
+
+An enumerated type can be seen as a degenerate case: a tagged union of unit types. It corresponds to a set of nullary constructors and may be implemented as a simple tag variable, since it holds no additional data besides the value of the tag.
+
+Many programming techniques and data structures – including rope (data structure), lazy evaluation, class hierarchy (see below), arbitrary-precision arithmetic, CDR coding, the indirection bit and other kinds of tagged pointers, etc. – are usually implemented using some sort of tagged union.
+
+A tagged union can be seen as the simplest kind of self-describing data format. The tag of the tagged union can be seen as the simplest kind of metadata.

@@ -1,0 +1,164 @@
+ (function(a,b,c,d)
+        { a='//tags.tiqcdn.com/utag/lynda/main/prod/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a; d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a) }
+        )();  
+ Skip navigation 
+    Lynda.com | a LinkedIn company 
+        Library   
+          Learning Paths 
+          Authors 
+          Documentaries 
+          " data-ev-type="link_click">Playlists 
+          Software 
+      Log in 
+      Sign Up 
+       Start A Free Trial 
+       Reactivate 
+       Solutions for: 
+         Business   
+            Small Business 
+            Mid Market 
+            Fortune 1000 
+            Non Profit 
+          Academic   
+            Higher Ed 
+            K-12 
+          Government   
+            State &amp; Local 
+            Federal 
+            Library 
+      Search 
+   See what's Up Next
+     Start your free trial now, and begin learning software, business and creative skills—anytime, anywhere—with video instruction from recognized industry experts. 
+    Start Your Free Trial Now 
+      Watching: 
+      Hashing algorithms
+       show more 
+       Hashing algorithms provides you with in-depth training on IT. Taught by Jungwoo Ryoo as part of the Computer Forensics Essential Training 
+       show less 
+        From: 
+       Computer Forensics Essential Training with 
+       Jungwoo Ryoo 
+      with Jungwoo Ryoo 
+         Practice  
+          Did you like what you watched? 
+          Become a member and get unlimited access to the entire skills library of over 4,600 courses, including more Developer and personalized recommendations. 
+           Start Your Free Trial 
+          Ready to watch this entire course? 
+          Become a member and get unlimited access to the entire skills library of over 4,600 courses, including more Developer and personalized recommendations. 
+           Start Your Free Trial 
+var gaClassicTrackingEnabled = false;
+var initLyndaPlayer = function (callback) {
+	var es5ShimPath = "https://cdn.lynda.com/assets/2118-r20160502/Website/ui/scripts/es5-shim.min.js?c-v=24747";
+	require.config({
+		baseUrl: "/Player",
+		waitSeconds: 15,
+		paths: {
+			"LyndaPlayer" : "https://cdn.lynda.com/assets/2118-r20160502/Website/Player/LyndaPlayer.min.js?c-v=24747",
+			"Mousetrap" : "https://cdn.lynda.com/assets/2118-r20160502/Website/ui/scripts/mousetrap.min.js?c-v=24747"
+		}
+	});
+    require(
+	    ["LyndaPlayer", es5ShimPath, "Mousetrap"],
+	    function(LyndaPlayer, es5, Mousetrap) {
+			function playerLoadComplete() {
+				if(callback !== null && callback !== undefined) {
+					callback(lyndaPlayer);
+				}
+			}
+	        var lyndaPlayer = LyndaPlayer({
+	            type: "coursePlayer",
+	            target: "#courseplayer",
+	            autoPlay: "hidden",
+	            previousButton: "enabled",
+	            nextButton: "enabled",
+	            playbackSpeed: "enabled",
+	            returnToCourseButton: "hidden",
+	            courseId: 170337,
+	            library: "en",
+	        	contentId: 0,
+	        	contentType: "course",
+				playerType: "web",
+	            videoId: 186828,
+	            playerLoadCallback: playerLoadComplete,
+	            isEmbed: false,
+	            autoStart: "hidden",
+	            resize: "hidden",
+	            movieBookmark: "hidden",
+	            embedCode: "hidden",
+	        	timecodeBookmark: "hidden",
+				duration: "0",
+	            timecode: "0",
+	            isLoggedIn: false,
+                wideNarrow: "enabled",
+                wideNarrowStartState: "narrowscreen",
+                fullScreen : "enabled",
+                urlReferrer : "lynda.com",
+                videoStartedCallback : videoStarted,
+                timeUpdateCallback : timeUpdate,
+                videoEndCallback : videoEnd,
+                nextVideoCallback : nextVideo,
+	            previousVideoCallback : previousVideo,
+	            showEndplateForAutoPlay : showEndplateForAutoPlay,
+	            hasAssessmentsCallback : hasAssessment,
+                toggleFullscreenCallback : toggleFullscreen,
+	        	toggleWideNarrowCallback : toggleWideNarrow,
+	        	toggleLightsOutCallback : toggleLightsOut,
+                fallbackSwfUrl : "https://cdn.lynda.com/assets/2118-r20160502/Website/Player/VideoDisplay.swf?c-v=24747",
+                popOut : playerPopOutCallback,
+				conviva : {
+					customerId : "c3.Lynda",
+					serviceURL : "https://livepass.conviva.com",
+					toggleTrace : "False",
+                    tags : { uid: "0", author: "Jungwoo Ryoo", coursename: "Computer Forensics Essential Training", level: "Intermediate", pubyear: "2014", software: "" }
+				},
+	        	preferredMode : "Flash",
+				lang : {"autoPlay":"auto-play","autoPlayButtonTooltip":"Auto play","bookmarkButtonTooltip":"Bookmark video","bookmarkDialogTitle":"bookmark this video","bookmarkTimecodeButtonTooltip":"Bookmark timecode","bookmarkTimecodeDialogTitle":"bookmark this timecode","callCustomerService":"or call Customer Service at 1(888) 335-9632 or +1(805) 477-3900.","cancel":"cancel","charactersLeft":"characters left","checkNetworkConnection":"Check your network connection.","closedCaptionsButtonAvailableTooltip":"Closed-captions toggle","closedCaptionsButtonNotAvailableTooltip":"Closed captions are not available for this video","closedCaptionsFlyout":"Closed captioning isn't available for this course right now. New courses usually include captioning a few weeks after they're released.","courseNoLongerAvailable":"Course no longer available","description":"description","done":"Done","email":"Email","embedCodeButtonAvailableTooltip":"Embed Code","embedCodeButtonNotAvailableTooltip":"This feature is not available","embedDialogTitle":"embed this video","endPlateContentActionLabel":"watch this course","endPlateFooterActionLabel":"learn more","endPlateFooterTitle":"lynda.com video tutorials help anyone learn software, business, and creative skills.","endPlateSubtitle":"Watch all the videos in this course on lynda.com","flash":"Flash","forMoreHelp":"For more help","fullscreenButtonAvailableTooltip":"Full screen toggle","fullscreenButtonNotAvailableTooltip":"This feature is not available.","html5":"HTML5","isNoLongerAvailable":"is no longer available. Visit","lowerLightsLabel":"dim lights","memberError1SpeedFlyout":"Enabling speed control will switch your player to HTML5.","memberError2SpeedFlyout":"To switch back to Flash, go to site preferences from the my account menu.","name":"name","next":"next","nextFlyout":"next video:","nextMovieButtonTooltip":"Play next video","noLongerAvailableOnSite":"is no longer available on this site.","noLongerFreeTitle":"Check out the entire course on lynda.com","noLongerLoggedIn":"You are no longer logged into lynda.com","nonMemberErrorSpeedFlyout":"If you are a member, to switch back to Flash go to site preferences from the my account menu.","off":"OFF","on":"ON","onLyndaCom":"on lynda.com.","orLater":"or later","orSpeedFlyout":"or","orVideoFail":", or","playNextVideo":"play the next video","playTogglePauseTooltip":"Pause","playTogglePlayTooltip":"Play","playbackSpeedButtonTooltip":"Playback speed","playerSettingsFlyout":"Player","pleaseRefreshPage":"Please refresh the page and log back into","popOutButtonTooltip":"Pop-out video","prev":"prev","prevFlyout":"previous video:","previousMovieButtonTooltip":"Play previous video","raiseLightsLabel":"raise lights","reloadVideoButtonLabel":"reload this video","reloadVideoText":"Reload this video or play the next video in the course.","returnToCourse":"Return to course","returnToThisCourse":"Return to this course:","rewindButtonTooltip":"Rewind 10 seconds","save":"save","scrubBarThumbTooltip":"current video position","scrubBarTooltip":"video position bar","settingsButtonTooltip":"Settings","switchNowSpeedFlyout":"Switch Now","switchToSpeedFlyout":"Switch to:","theCourse":"The course","theCourseIsNoLongerAvailable":"The course {0} is no longer available. Visit {1} to browse our video library.","theVideo":"The video","toBrowseVideoLibrary":"to browse our video library.","tryToFix":"To try to fix the problem:","unsupportedBrowserSpeedFlyout":"Your browser doesn't support speed control.","updateBrowser":"Make sure your browser is up to date:","videoFailHeading":"To try to fix the problem:","videoFailTitle":"There was a problem playing this video","videoQualitySettingsFlyout":"Video Quality","viewModeSettingsFlyout":"View Mode","volumeButtonTooltip":"Volume","watchFreeVideos":"Watch free videos from the course","watchThisCourse":"Watch this course on lynda.com:","wideNarrowButtonBigVideoTooltip":"Big video","wideNarrowButtonSmallVideoTooltip":"Small video"}
+		    });
+			$("#preloader").hide();
+	    }
+    );
+}
+var playerPopOutReference = null;
+var currentVideoId = null;
+var currentPlayerConfig = null;
+var shouldPlayVideo = true;
+var intervalId = 0;
+var isVideoStarted = false;
+function videoStarted(config) {
+  var tocVid = "#toc-video-" + config.currentVideoId;
+	$('#course-toc-outer, .course-search-results').find('dl.now').removeClass('now');
+	$('.course-search-results').find(tocVid).addClass('now viewed');
+	$(tocVid).addClass('now viewed');
+	if (!showPracticeWindowEndPlate) {
+	    $("body").trigger("cleanUpPracticeEnvironmentEndplate.pe");
+	}
+    scrollToc();
+	highlightTranscript();
+	isVideoStarted = true;
+	if ($('.show_transcript').length) {
+	    if(!$('.transcript_box').is(':visible')){
+            $('.show_transcript').find('a').trigger('click');
+        }
+	}
+    if (typeof getCurrentUsers == 'function') {
+        window.activityStart = true;
+    }
+    if (isVideoStarted) {
+        $("body").trigger("videoHasStarted");
+    } else {
+        $("body").trigger("videoNotYetStarted");
+    }
+}
+function focusPlayer() {
+	$('.course-player').show(0, function() {
+		$('.course-player').focus();
+	});
+}
+function showPlayer(welcomeId) {
+  var welcomeId = welcomeId || 0;
+	$('#banner-thumb').hide();
+	focusPlayer();
+    $('.custom_endplate').hide();
+    $('.player-box').show();
+  var isOrganic = false;
+  i

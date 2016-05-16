@@ -1,0 +1,108 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+3D Objects
+5.1 Surface Representations
+As with 2D objects, we can represent 3D objects in parametric and implicit forms. (There are also explicit forms for 3D surfaces - sometimes called "height ?elds" - but we will not cover them here).
+5.2 Planes • Implicit: (¯ p- ¯ p0)·~n = 0, where ¯ p0 is a point in R3 on the plane, and ~n is a normal vector perpendicular to the plane.
+n
+p 0
+A plane can be de?ned uniquely by three non-colinear points ¯ p1, ¯ p2, ¯ p3. Let~a = ¯ p2-¯ p1 and ~ b = ¯ p3 - ¯ p1, so ~a and~ b are vectors in the plane. Then ~n = ~a×~ b. Since the points are not colinear,k~nk6= 0.
+• Parametric: ¯ s(a,ß) = ¯ p0 + a~a + ß~ b, for a,ß ? R. Note: This is similar to the parametric form of a line: ¯ l(a) = ¯ p0 + a~a.
+A planar patch is a parallelogram de?ned by bounds on a and ß.
+Example: Let 0 = a = 1 and 0 = ß = 1:
+a
+bp 0
+Copyright c
+2005 David Fleet and Aaron Hertzmann 21
+CSC418 / CSCD18 / CSC2504 3D Objects
+5.3 Surface Tangents and Normals
+The tangent to a curve at ¯ p is the instantaneous direction of the curve at ¯ p.
+The tangent plane to a surface at ¯ p is analogous. It is de?ned as the plane containing tangent vectors to all curves on the surface that go through ¯ p.
+A surface normal at a point ¯ p is a vector perpendicular to a tangent plane.
+5.3.1 Curves on Surfaces
+The parametric form ¯ p(a,ß) of a surface de?nes a mapping from 2D points to 3D points: every 2D point (a,ß) in R2 corresponds to a 3D point ¯ p in R3. Moreover, consider a curve ¯ l(?) = (a(?),ß(?)) in 2D - there is a corresponding curve in 3D contained within the surface: ¯ l*(?) = ¯ p(¯ l(?)).
+5.3.2 Parametric Form
+For a curve ¯ c(?) = (x(?),y(?),z(?))T in 3D, the tangent is
+d¯ c(?) d?
+=dx(?) d?
+,
+dy(?) d?
+,
+dz(?) d? . (10)
+For a surface point ¯ s(a,ß), two tangent vectors can be computed:
+?¯ s ?a
+and
+?¯ s ?ß
+. (11)
+Derivation: Consider a point (a0,ß0) in 2D which corresponds to a 3D point ¯ s(a0,ß0). De?ne two straight lines in 2D:
+¯ d(?1) = (?1,ß0)T (12) ¯ e(?2) = (a0,?2)T (13)
+These lines correspond to curves in 3D:
+¯ d*(?1) = ¯ s(¯ d(?1)) (14) ¯ e*(?2) = ¯ s(¯ d(?2)) (15)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 22
+CSC418 / CSCD18 / CSC2504 3D Objects
+Using the chain rule for vector functions, the tangents of these curves are:
+? ¯ d* ??1
+=
+?¯ s ?a
+? ¯ da ??1
++
+?¯ s ?ß
+? ¯ dß ??1
+=
+?¯ s ?a
+(16)
+?¯ e* ??2
+=
+?¯ s ?a
+?¯ ea ??2
++
+?¯ s ?ß
+?¯ eß ??2
+=
+?¯ s ?ß
+(17)
+The normal of ¯ s at a = a0, ß = ß0 is ~n(a0,ß0) = ?¯ s ?a
+ 
+ 
+ 
+a0,ß0
+!× ?¯ s ?ß
+ 
+ 
+ 
+a0,ß0
+!. (18)
+The tangent plane is a plane containing the surface at ¯ s(a0,ß0) with normal vector equal to the surface normal. The equation for the tangent plane is: ~n(a0,ß0)·(¯ p-¯ s(a0,ß0)) = 0. (19) What if we used different curves in 2D to de?ne the tangent plane? It can be shown that we get the same tangent plane; in other words, tangent vectors of all 2D curves through a given surface point are contained within a single tangent plane. (Try this as an exercise).
+Note: The normal vector is not unique. If ~n is a normal vector, then any vector a~n is also normal to the surface, for a ? R. What this means is that the normal can be scaled, and the direction can be reversed.
+5.3.3 Implicit Form
+In the implicit form, a surface is de?ned as the set of points ¯ p that satisfy f(¯ p) = 0 for some function f. A normal is given by the gradient of f,
+~n(¯ p) = ?f(¯ p)|¯ p (20)
+where?f =?f(¯ p) ?x , ?f(¯ p) ?y , ?f(¯ p) ?z . Derivation: Consider a 3D curve ¯ c(?) that is contained within the 3D surface, and that passes through ¯ p0 at ?0. In other words, ¯ c(?0) = ¯ p0 and
+f(¯ c(?)) = 0 (21)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 23
+CSC418 / CSCD18 / CSC2504 3D Objects
+for all ?. Differentiating both sides gives:
+?f ??
+= 0 (22)
+Expanding the left-hand side, we see:
+?f ??
+=
+?f ?x
+?¯ cx ??
++
+?f ?y
+?¯ cy ??
++
+?f ?z
+?¯ cz ??
+(23)
+= ?f(¯ p)|¯ p ·
+d¯ c d?
+= 0 (24)
+This last line states that the gradient is perpendicular to the curve tangent, which is the de?nition of the normal vector.
+Example: The implicit form of a sphere is: f(¯ p) = k¯ p-¯ ck2 -R2 = 0. The normal at a point¯ p is: ?f = 2(¯ p-¯ c).
+Exercise: show that the normal computed for a plane is the same, regardless of whether it is computed using the parametric or implicit forms. (This was done in class). Try it for another surface.

@@ -1,0 +1,35 @@
+Document clustering (or text clustering) is the application of cluster analysis to textual documents. It has applications in automatic document organization, topic extraction and fast information retrieval or filtering.
+
+
+== Overview ==
+Document clustering involves the use of descriptors and descriptor extraction. Descriptors are sets of words that describe the contents within the cluster. Document clustering is generally considered to be a centralized process. Examples of document clustering include web document clustering for search users.
+The application of document clustering can be categorized to two types, online and offline. Online applications are usually constrained by efficiency problems when compared to offline applications.
+In general, there are two common algorithms. The first one is the hierarchical based algorithm, which includes single link, complete linkage, group average and Ward's method. By aggregating or dividing, documents can be clustered into hierarchical structure, which is suitable for browsing. However, such an algorithm usually suffers from efficiency problems. The other algorithm is developed using the K-means algorithm and its variants. These algorithms can further be classified as hard or soft clustering algorithms. Hard clustering computes a hard assignment – each document is a member of exactly one cluster. The assignment of soft clustering algorithms is soft – a document’s assignment is a distribution over all clusters. In a soft assignment, a document has fractional membership in several clusters. Dimensionality reduction methods can be considered a subtype of soft clustering; for documents, these include latent semantic indexing (truncated singular value decomposition on term histograms) and topic models.
+Other algorithms involve graph based clustering, ontology supported clustering and order sensitive clustering.
+Given a clustering, it can be beneficial to automatically derive human-readable labels for the clusters. Various methods exist for this purpose.
+
+
+== Clustering in search engines ==
+A web search engine often returns thousands of pages in response to a broad query, making it difficult for users to browse or to identify relevant information. Clustering methods can be used to automatically group the retrieved documents into a list of meaningful categories, as is achieved by Enterprise Search engines such as Northern Light and Vivisimo, consumer search engines such as PolyMeta and Helioid, or open source software such as Carrot2.
+Examples:
+Clustering divides the results of a search for "cell" into groups like "biology," "battery," and "prison."
+FirstGov.gov, the official Web portal for the U.S. government, uses document clustering to automatically organize its search results into categories. For example, if a user submits “immigration”, next to their list of results they will see categories for “Immigration Reform”, “Citizenship and Immigration Services”, “Employment”, “Department of Homeland Security”, and more.
+
+
+== Clustering v. Classifying ==
+Clustering algorithms in computational text analysis groups documents into what are called subsets or clusters where the algorithm's goal is to create internally coherent clusters that are distinct from one another. Classification on the other hand, is a form of supervised learning where the individual coder creates internal, coherent clusters that are based on either inductive, deductive, or abductive reasoning. Clustering relies on no supervisory teacher imposing previously derived categories upon the data, just types of distances, of which the most commonly found distance is Euclidean.
+
+
+== References ==
+
+Publications:
+Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schütze. Flat Clustering in Introduction to Information Retrieval. Cambridge University Press. 2008
+Nicholas O. Andrews and Edward A. Fox, Recent Developments in Document Clustering, October 16, 2007 [1]
+Claudio Carpineto, Stanislaw Osiński, Giovanni Romano, Dawid Weiss. A survey of Web clustering engines. ACM Computing Surveys, Volume 41, Issue 3 (July 2009), Article No. 17, ISSN 0360-0300
+http://semanticquery.com/archive/semanticsearchart/researchBest.html - comparison of several popular clustering algorithms, data and software to reproduce the result.
+Tanmay Basu, C.A. Murthy, CUES: A New Hierarchical Approach for Document Clustering, 2013 [http:]
+
+
+== See also ==
+Cluster Analysis
+Fuzzy clustering

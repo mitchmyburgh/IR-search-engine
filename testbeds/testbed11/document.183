@@ -1,0 +1,26 @@
+EtherNet/IP is an industrial Ethernet network that combines standard Ethernet technologies with the media-independent Common Industrial Protocol or "CIP." EtherNet/IP is one of the leading industrial Ethernet networks in the United States, and is widely used in a range from industries including factory, hybrid and process. The EtherNet/IP and CIP technologies are managed by ODVA, Inc., a global trade and standards development organization founded in 1995 with over 300 corporate members.
+EtherNet/IP uses both of the most widely deployed collections of Ethernet standards –the Internet Protocol suite and IEEE 802 project – to define the features and functions for its transport, network, data link and physical layers. CIP uses its object-oriented design to provide EtherNet/IP with the services and device profiles needed for real-time control applications and to promote consistent implementation of automation functions across a diverse ecosystem of products. In addition, EtherNet/IP adapts key elements of Ethernet’s standard capabilities and services to the CIP object model framework, such as the User Datagram Protocol (UDP), which EtherNet/IP uses to transport I/O messages.
+
+
+== History ==
+Development of EtherNet/IP began in the 1990s within a technical working group of ControlNet International, Ltd.(CI), another trade and standards development organization, In 2000, ODVA and CI formed a joint technology agreement (JTA) for the development of EtherNet/IP. In 2009, the JTA was terminated and EtherNet/IP became under the sole control of ODVA and its members. Today, EtherNet/IP is one of four networks that adapt CIP to an industrial network along with DeviceNet, ControlNet and CompoNet. All of these networks are managed by ODVA, Inc.
+
+
+== Technical Detail ==
+EtherNet/IP classifies Ethernet nodes as predefined device types with specific behaviors. Among other things, this enables:
+Transfer of basic I/O data via User Datagram Protocol (UDP)-based implicit messaging
+Uploading and downloading of parameters, setpoints, programs and recipes via TCP (i.e., explicit messaging.)
+Polled, cyclic and change-of-state monitoring via UDP.
+One-to-one (unicast), one-to-many (multicast), and one-to-all (broadcast) communication via IP.
+EtherNet/IP makes use of well known TCP port number 44818 for explicit messaging and UDP port number 2222 for implicit messaging
+
+
+== See also ==
+Common Industrial Protocol
+Industrial Ethernet
+
+
+== References ==
+ODVA
+ODVA EtherNet/IP page
+EtherNet/IP developers guide from ODVA

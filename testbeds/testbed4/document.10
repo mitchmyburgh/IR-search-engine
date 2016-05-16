@@ -1,0 +1,107 @@
+The next issue needed to determine how objects appear is how this light is reflected off of
+the objects in the scene and reach the viewer. So the discussion shifts from the discussion of light sources to
+the discussion of object surface properties. We will assume that all objects are opaque. The simple model that
+we will use for describing the reflectance properties of objects is called the Phong model. The model is over 20
+years old, and is based on modeling surface reflection as a combination of the following components:
+Emission: This is used to model objects that glow (even when all the lights are off). This is unaffected by the
+presence of any light sources. However, because our illumination model is local, it does not behave like a
+light source, in the sense that it does not cause any other objects to be illuminated.
+Ambient reflection: This is a simple way to model indirect reflection. All surfaces in all positions and orientations
+are illuminated equally by this light energy.
+Diffuse reflection: The illumination produced by matte (i.e, dull or nonshiny) smooth objects, such as foam
+rubber.
+Lecture Notes 62 CMSC 427
+Specular reflection: The bright spots appearing on smooth shiny (e.g. metallic or polished) surfaces. Although
+specular reflection is related to pure reflection (as with mirrors), for the purposes of our simple model these
+two are different. In particular, specular reflection only reflects light, not the surrounding objects in the
+scene.
+Let L = (Lr; Lg; Lb) denote the illumination intensity of the light source. OpenGL allows us to break this
+light’s emitted intensity into three components: ambient La, diffuse Ld, and specular Ls. Each type of light
+component consists of the three color components, so, for example, Ld = (Ldr; Ldg; Ldb), denotes the RGB
+vector (or more generally the RGBA components) of the diffuse component of light. As we have seen, modeling
+the ambient component separately is merely a convenience for modeling indirect reflection. It is not as clear why
+someone would want to turn on or turn off a light source’s ability to generate diffuse and specular reflection.
+(There is no physical justification to this that I know of. It is an object’s surface properties, not the light’s
+properties, which determine whether light reflects diffusely or specularly. But, again this is all just a model.)
+The diffuse and specular intensities of a light source are usually set equal to each other.
+An object’s color determines how much of a given intensity is reflected. Let C = (Cr; Cg; Cb) denote the
+object’s color. These are assumed to be normalized to the interval [0; 1]. Thus we can think of Cr as the fraction
+of red light that is reflected from an object. Thus, if Cr = 0, then no red light is reflected. When light of
+intensity L hits an object of color C, the amount of reflected light is given by the product
+LC = (LrCr; LgCg; LbCb):
+Beware: This is a component-by-component multiplication, and not a vector multiplication or dot-product in
+the usual sense. For example, if the light is white L = (1;1;1) and the color is red C = (1;0;0) then the
+reflection is LC = (1;0; 0) which is red. However if the light is blue L = (0;0; 1), then there is no reflection,
+LC = (0;0; 0), and hence the object appears to be black.
+In OpenGL rather than specifying a single color for an object (which indicates how much light is reflected for
+each component) you instead specify the amount of reflection for each type of illumination: Ca, Cd, and Cs.
+Each of these is an RGBA vector. This seems to be a rather extreme bit of generality, because, for example, it
+allows you to specify that an object can reflect only red light ambient light and only blue diffuse light. Again, I
+know of no physical explanation for this phenomenon. Note that it is common that the specular color (since it
+arises by way of reflection of the light source) is usually made the same color as the light source, not the object.
+In our presentation, we will assume that Ca = Cd = C, the color of the object, and that Cs = L, the color of
+the light source.
+So far we have laid down the foundation for the Phong Model. Next time we will discuss exactly how the Phong
+model assigns colors to the points of a scene.
+The Relevant Vectors: The shading of a point on a surface is a function of the relationship between the viewer, light
+sources, and surface. (Recall that because this is a local illumination model the other objects of the scene are
+ignored.) The following vectors are relevant to shading. We can think of them as being centered on the point
+whose shading we wish to compute. For the purposes of our equations below, it will be convenient to think of
+them all as being of unit length. They are illustrated in Fig. 46.
+l r
+u u
+n
+l
+v
+r
+h
+n’
+n
+viewer
+Fig. 46: Vectors used in Phong Shading.
+Lecture Notes 63 CMSC 427
+Normal vector: A vector ~n that is perpendicular to the surface and directed outwards from the surface. There
+are a number of ways to compute normal vectors, depending on the representation of the underlying object.
+For our purposes, the following simple method is sufficient. Given any three noncollinear points,
+P0; P1; P2, on a polygon, we can compute a normal to the surface of the polygon as a cross product of two
+of the associated vectors.
+~n = normalize((P1 - P0)  (P2 - P0)):
+The vector will be directed outwards if the triple P0P1P2 has a counterclockwise orientation when seen
+from outside.
+View vector: A vector ~v that points in the direction of the viewer (or camera).
+Light vector: A vector~`
+that points towards the light source.
+Reflection vector: A vector ~r that indicates the direction of pure reflection of the light vector. (Based on the
+law that the angle of incidence with respect to the surface normal equals the angle of reflection.) The
+reflection vector computation reduces to an easy exercise in vector arithmetic. First observe that (because
+all vectors have been normalized to unit length) the orthogonal projection of~`
+onto ~n is
+~n
+0 = (~n ~`
+)~n:
+The vector directed from the tip of~`
+to the tip of ~n0 is ~u = ~n0 -~`
+. To get ~r observe that we need add two
+copies of ~u to~`
+. Thus we have
+~r = ~`
++ 2~u = ~`
++ 2(~n
+0 -~`
+) = 2(~n ~`
+)~n-~`:
+Halfway vector: A vector ~h that is midway between ~`
+and ~v. Since this is half way between ~`
+and ~v, and
+both have been normalized to unit length, we can compute this by simply averaging these two vectors and
+normalizing (assuming that they are not pointing in exactly opposite directions). Since we are normalizing,
+the division by 2 for averaging is not needed.
+~h = normalize((~`
++~v)=2) = normalize(~`
++~v):
+Phong Lighting Equations: There almost no objects that are pure diffuse reflectors or pure specular reflectors. The
+Phong reflection model is based on the simple modeling assumption that we can model any (nontextured) object’s
+surface to a reasonable extent as some mixture of purely diffuse and purely specular components of
+reflection along with emission and ambient reflection. Let us ignore emission for now, since it is the rarest of
+the group, and will be easy to add in at the end of the process.
+The surface material properties of each object will be specified

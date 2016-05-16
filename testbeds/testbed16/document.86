@@ -1,0 +1,32 @@
+How to Establish Ethical Firewalls for Cloud File Sharing
+
+March 15, 2016/in CASB, File Sharing /by Michael Higashi
+The cloud enables your team to collaborate easily, but collaboration in the cloud shouldn’t mean a loss of control over who shares files with whom. This isn’t just about protecting your files against outside threats. Even within a business, not all employees should have access to all documents. In the financial industry, many firms have compliance requirements to separate the “public” side of the organization from the “private” side. For example, traders should not see files related to a merger being worked on by the investment side of the firm, which would be inside information they’re not allowed to know.
+
+file-sharing-ethical-firewalls
+
+Financial firms need to establish “ethical firewall” polices to enforce that separation between employees and content where cloud access must be restricted by group. This issue largely does not exist internally because each business line can administer their own access to files on servers they control. With the move to the cloud users can make decisions about who they want to share files with and may not understand corporate governance and industry regulations covering which group is allowed to see specific content.
+
+The Challenge of Establishing an Ethical Firewall
+The challenge comes when financial firms need to establish an ethical firewall within and across file sharing clouds. When they use file sharing services like Box, One Drive, and SharePoint, employees are able to share files with partners outside the corporate network, but the business loses the control and auditability of user actions.
+
+Finding a way to regain control and audit capabilities while allowing users the productivity gains of an easy collaborative environment in the cloud is key. Departments that need to work together still need to be allowed access, and to share files with their external partners, but companies need a way to ensure that no other user is able to access content or that specific content is not shared with unauthorized internal or external users. If a user accidentally attempts to share a file with an unapproved collaborator, the action needs to be remediated and the user needs to be notified of the policy violation.
+
+The security features of cloud providers don’t allow this detailed layer of control and monitoring with and across clouds. Companies that require an ethical firewall in the cloud need to look for additional tools that provide the controls without interfering with the collaboration.
+
+Here’s How: CASB Helps Ethical Firewalls Reach the Cloud
+A cloud access security broker (CASB) like CipherCloud Trust Platform offers the functionality firms need to establish ethical firewall rules for collaboration in cloud environments. Three key features allow companies to enforce the separation required by compliance:
+
+Advanced, granular policy. The business can craft fine-grained rules that control access to resources in the cloud. With the CASB, rules can be flexibly defined, spelling out who has access to what information in which locations. Beyond that level of control, the rules can also define who the information can be shared with and what action should be taken if there is a sharing violation.
+
+External collaboration controls. Clouds make sharing information outside the corporate network boundary easy, but controlling that sharing is critical to maintain the confidentiality of corporate information and compliance. With CipherCloud, sensitive information is automatically discovered when files are uploaded to a folder. Rules determine whether data can be shared externally, but allowing external sharing doesn’t mean every external user has access. With the CASB, external sharing can be enabled for some contexts and content but blocked for other scenarios.
+
+Policy-based encryption. A further layer of control comes by adding encryption on top of those collaboration controls. When data loss prevention (DLP) scans detect sensitive information in a cloud file, the file can be automatically encrypted. Authorized users are granted the key, which allows them to decrypt the file locally. Unauthorized users, who don’t have the key, have no ability to view the file contents.
+
+Cloud-based Ethical Firewall in Practice
+CipherCloud worked with one of its clients, a leading investment and financial services firm, to implement an ethical firewall in the cloud. The firm needed a way to allow its 5,000 employees and 2,000,000 clients to collaborate on Box while satisfying SEC, FTC, and FINRA regulations to separate its brokerage team and financial advisors from its investment business. The firm was looking for a solution that would leverage its existing DLP products without costly customization.
+
+Using CipherCloud, the company was able to build an ethical firewall that met all regulatory requirements. Existing DLP policies were integrated with CipherCloud using standard protocols. The cost-effective solution not only satisfied regulators and employees, it extended the firm’s sensitive document discovery policies to the cloud. Combined with Box and Office 365 CipherCloud enables file sharing while monitoring and logging violations for security and compliance personnel to review and remediate.
+
+Next Steps
+Learn more about CipherCloud’s Cloud Security Broker to see the case study and learn more about how our advanced collaboration controls support ethical firewalls.

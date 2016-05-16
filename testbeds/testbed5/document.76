@@ -1,0 +1,36 @@
+oioy (nguages
+	This section does not cite any sources. Please help improve this section by adding citations to reliable sources. Unsourced material may be challenged and removed. (July 2015)
+
+Although most of the most commonly used programming languages have fully open specifications and implementations, many programming languages exist only as proprietary programming languages with the implementation available only from a single vendor, which may claim that such a proprietary language is their intellectual property. Proprietary programming languages are commonly domain specific languages or internal scripting languages for a single product; some proprietary languages are used only internally within a vendor, while others are available to external users.
+
+Some programming languages exist on the border between proprietary and open; for example, Oracle Corporation asserts proprietary rights to some aspects of the Java programming language, and Microsoft's C# programming language, which has open implementations of most parts of the system, also has Common Language Runtime (CLR) as a closed environment.
+
+Many proprietary languages are widely used, in spite of their proprietary nature; examples include MATLAB and VBScript. Some languages may make the transition from closed to open; for example, Erlang was originally an Ericsson's internal programming language.
+Usage
+
+Thousands of different programming languages have been created, mainly in the computing field.[61] Software is commonly built with 5 programming languages or more.[62]
+
+Programming languages differ from most other forms of human expression in that they require a greater degree of precision and completeness. When using a natural language to communicate with other people, human authors and speakers can be ambiguous and make small errors, and still expect their intent to be understood. However, figuratively speaking, computers "do exactly what they are told to do", and cannot "understand" what code the programmer intended to write. The combination of the language definition, a program, and the program's inputs must fully specify the external behavior that occurs when the program is executed, within the domain of control of that program. On the other hand, ideas about an algorithm can be communicated to humans without the precision required for execution by using pseudocode, which interleaves natural language with code written in a programming language.
+
+A programming language provides a structured mechanism for defining pieces of data, and the operations or transformations that may be carried out automatically on that data. A programmer uses the abstractions present in the language to represent the concepts involved in a computation. These concepts are represented as a collection of the simplest elements available (called primitives).[63] Programming is the process by which programmers combine these primitives to compose new programs, or adapt existing ones to new uses or a changing environment.
+
+Programs for a computer might be executed in a batch process without human interaction, or a user might type commands in an interactive session of an interpreter. In this case the "commands" are simply programs, whose execution is chained together. When a language can run its commands through an interpreter (such as a Unix shell or other command-line interface), without compiling, it is called a scripting language.[64]
+Measuring language usage
+Main article: Measuring programming language popularity
+
+It is difficult to determine which programming languages are most widely used, and what usage means varies by context. One language may occupy the greater number of programmer hours, a different one have more lines of code, and a third may consume the most CPU time. Some languages are very popular for particular kinds of applications. For example, COBOL is still strong in the corporate data center, often on large mainframes;[65][66] Fortran in scientific and engineering applications; Ada in aerospace, transportation, military, real-time and embedded applications; and C in embedded applications and operating systems. Other languages are regularly used to write many different kinds of applications.
+
+Various methods of measuring language popularity, each subject to a different bias over what is measured, have been proposed:
+
+    counting the number of job advertisements that mention the language[67]
+    the number of books sold that teach or describe the language[68]
+    estimates of the number of existing lines of code written in the language – which may underestimate languages not often found in public searches[69]
+    counts of language references (i.e., to the name of the language) found using a web search engine.
+
+Combining and averaging information from various internet sites, langpop.com claims that in 2013 the ten most popular programming languages are (in descending order by overall popularity): C, Java, PHP, JavaScript, C++, Python, Shell, Ruby, Objective-C and C#.[70](i = 1; i<= 200; i++))
+do
+	touch ./for_submission/document.$i
+doneor ((i = 1; i<= 200; i++))
+do
+	touch ./for_submission/document.$i
+done

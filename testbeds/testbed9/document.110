@@ -1,0 +1,37 @@
+The Information Interchange Model (IIM) is a file structure and set of metadata attributes that can be applied to text, images and other media types. It was developed in the early 1990s by the International Press Telecommunications Council (IPTC) to expedite the international exchange of news among newspapers and news agencies.
+The full IIM specification includes a complex data structure and a set of metadata definitions.
+Although IIM was intended for use with all types of news items — including simple text articles — a subset found broad worldwide acceptance as the standard embedded metadata used by news and commercial photographers. Information such as the name of the photographer, copyright information and the caption or other description can be embedded either manually or automatically.
+IIM metadata embedded in images are often referred to as "IPTC headers", and can be easily encoded and decoded by most popular photo editing software.
+The Extensible Metadata Platform (XMP) has largely superseded IIM's file structure, but the IIM image attributes are defined in the IPTC Core schema for XMP and most image manipulation programs keep the XMP and non-XMP IPTC attributes synchronized.
+Because of its nearly universal acceptance among photographers — even amateurs — this is by far IPTC's most widely used standard. On the other hand, the use of IIM structure and metadata for text and graphics is mainly limited to European news agencies.
+
+
+== Overview ==
+IIM attributes are widely used and supported by many image creation and manipulation programs. Almost all the IIM attributes are supported by the Exchangeable image file format (Exif), a specification for the image file format used by digital cameras.
+IIM metadata can be embedded into JPEG/Exif, TIFF, JPEG2000 or Portable Network Graphics formatted image files. Other file formats such as GIF or PCX do not support IIM.
+IIM's file structure technology has largely been overtaken by the Extensible Metadata Platform (XMP), but the IIM attribute definitions are the basis for the IPTC Core schema for XMP.
+
+
+== History ==
+Since the late 1970s the IPTC’s activities have primarily focused on developing and publishing industry standards for the interchange of news. The first standard, IPTC 7901, bridged the eras of teleprinters and computers.
+In the late 1980s development began on a standard (the Information Interchange Model) that would be designed to best work with computerized news editing systems.
+In particular, the IPTC defined a set of IIM metadata attributes that can be applied to images. These were defined originally in 1979, and revised significantly in 1991 to be part of the IIM, but the concept really advanced in 1994 when Adobe Systems defined a specification for actually embedding the metadata into digital image files — yielding "IPTC headers."
+(Adobe adopted the IPTC IIM metadata definitions, but not the overall IIM data structure. Photos that contain IPTC Headers appear in all other respects to be normal JPEG or TIFF images; software that does not recognize IPTC Headers will simply ignore the metadata.)
+In 2001, Adobe introduced "Extensible Metadata Platform" (XMP), which is an XML schema for the same types of metadata as IPTC, but is based on XML/RDF, and is therefore inherently extensible. The effort spawned a collaboration with the IPTC, eventually producing the "IPTC Core Schema for XMP", which merges the two approaches to embedded metadata. The XMP specification describes techniques for embedding metadata in JPEG, TIFF, JPEG2000, GIF, PNG, HTML, PostScript, PDF, SVG, Adobe Illustrator, and DNG files. Recent versions of all the main Adobe software products, (Photoshop, Illustrator, Acrobat, Framemaker, etc.) support XMP, as do an increasing number of third-party tools.
+In June 2007, IPTC in cooperation with IFRA held the First International Photo Metadata conference, titled "Working towards a seamless photo workflow" to a standing room only crowd (over 130 attendees), prior to the CEPIC Congress, in Florence, Italy. A similar conference was held in Malta in June 2008.
+The IPTC Photo Metadata working group released a white paper, which figured prominently at this event. The conference keynote was given by Andreas Trampe, head of the photo desk of Stern. Other speakers included photographers such as David Riecks and Peter Krogh, photo and news agencies such as Reuters; representatives of standards bodies such as PLUS, IPTC, and IFRA; as well as spokespersons from the photo metadata implementers side, such as Adobe Systems, Apple Inc., Canon Inc., FotoWare AS, Hasselblad, and Microsoft.
+The electronic presentations given by most of the speakers are available online from the Photo Metadata Conference website including a link to a report on each of the speakers' talks
+
+
+== See also ==
+Comparison of metadata editors
+
+
+== References ==
+
+
+== External links ==
+The International Press Telecommunications Council
+IPTC Core schema for XMP
+NewsML
+IPTC Recommendation 7901 - The Text Transmission Format

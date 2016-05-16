@@ -1,0 +1,75 @@
+Automatic_parallelization
+'''Automatic parallelization''', also '''auto parallelization''', '''autoparallelization''', or '''parallelization''', the last one of which implies automation when used in context, refers to converting sequential  into  or  (or even both) code in order to utilize multiple processors simultaneously in a shared-memory  () machine. The goal of automatic parallelization is to relieve programmers from the hectic and error-prone manual parallelization process. Though the quality of automatic parallelization has improved in the past several decades, fully automatic parallelization of sequential programs by compilers remains a grand challenge due to its need for complex  and the unknown factors (such as input data range) during compilation.
+The programming control structures on which autoparallelization places the most focus are s, because, in general, most of the  of a program takes place inside some form of loop.
+There are two main approaches to parallelization of loops: pipelined multi-threading and cyclic multi-threading.
+Simone Campanoni, Timothy Jones, Glenn Holloway, Gu-Yeon Wei, David Brooks.
+.
+2012.
+For example, consider a loop that on each iteration applies a hundred operations, runs for a thousand iterations.  This can be thought of as a grid of 100 columns by 1000 rows, a total of 100,000 operations. Cyclic multi-threading assigns each row to a different thread. Pipelined multi-threading assigns each column to a different thread.
+==Cyclic multi-threading==
+A cyclic multi-threading parallelizing compiler tries to split up a loop so that each  can be executed on a separate  concurrently.
+===Compiler parallelization analysis===
+The ''compiler'' usually conducts two passes of analysis before actual parallelization in order to determine the following:
+* Is it safe to parallelize the loop? Answering this question needs accurate  and 
+* Is it worthwhile to parallelize it? This answer requires a reliable estimation (modeling) of the program workload and the capacity of the parallel system.
+The first pass of the compiler performs a  of the loop to determine whether each iteration of the loop can be executed independently of the others. Data dependence can sometimes be dealt with, but it may incur additional overhead in the form of , synchronization of , or some other method of processor communication.
+The second pass attempts to justify the parallelization effort by comparing the theoretical execution time of the code after parallelization to the code's sequential execution time.  Somewhat counterintuitively, code does not always benefit from parallel execution. The extra overhead that can be associated with using multiple processors can eat into the potential speedup of parallelized code.
+===Example===
+A loop is called DOALL if all of its iterations, in any given invocation, can be executed concurrently.
+The  code below is DOALL, and can be auto-parallelized by a compiler because each iteration is independent of the others, and the final result of array z will be correct regardless of the execution order of the other iterations.
+   do i = 1, n
+     z(i) = x(i) + y(i)
+   enddo
+There are many  problems that have such DOALL loops.
+For example, when  a ray-traced movie,
+each frame of the movie can be independently rendered,
+and each pixel of a single frame may be independently rendered.
+On the other hand, the following code cannot be auto-parallelized, because the value of z(i) depends on the result of the previous iteration, z(i - 1).
+   do i = 2, n
+     z(i) = z(i - 1)*2
+   enddo
+This does not mean that the code cannot be parallelized. Indeed, it is equivalent to
+   do i = 2, n
+     z(i) = z(1)*2**(i - 1)
+   enddo
+However, current parallelizing compilers are not usually capable of bringing out these parallelisms automatically, and it is questionable whether this code would benefit from parallelization in the first place. 
+==Pipelined multi-threading==
+A pipelined multi-threading parallelizing compiler tries to break up the sequence of operations inside a loop into a series of code blocks,
+such that each code block can be executed on separate s concurrently.
+There are many pleasingly parallel problems that have such relatively independent code blocks, in particular systems using .
+For example, when producing live broadcast television, the following tasks must be performed many times a second:
+#Read a frame of raw pixel data from the image sensor,
+#Do MPEG motion compensation on the raw data,
+#Entropy compress the motion vectors and other data,
+#Break up the compressed data into packets,
+#Add the appropriate error correction and do a FFT to convert the data packets into  signals, and
+#Send the COFDM signals out the TV antenna.
+A pipelined multi-threading parallelizing compiler could assign each of these 6 operations to a different processor, perhaps arranged in a ,
+inserting the appropriate code to forward the output of one processor to the next processor.
+Recent research focuses on using the power of GPU'sJ Anantpur, R Govindarajan, Runtime dependence computation and execution of loops on heterogeneous systems  and multicore systemsX. Zhuang, A. E. Eichenberger, Y. Luo, Kevin OBrien, Kathryn, Exploiting Parallelism with Dependence-Aware Scheduling to compute such independent code blocks( or simply independent iterations of a loop) at runtime. 
+The memory accessed (whether direct or indirect) can be simply marked for different iterations of a loop and can be compared for dependency detection. Using this information, the iterations are grouped into levels such that iterations belonging to the same level are independent of each other, and can be executed in parallel.
+==Difficulties==
+Automatic parallelization by compilers or tools is very difficult due to the following reasons:
+* dependence analysis is hard for code that uses indirect addressing, pointers, recursion, or indirect function calls because it is difficult to detect such dependencies at compile time;
+* loops have an unknown number of iterations;
+* accesses to global resources are difficult to coordinate in terms of memory allocation, I/O, and shared variables;
+* ''irregular algorithms'' that use input-dependent indirection interfere with compile-time analysis and optimization.
+==Workaround==
+Due to the inherent difficulties in full automatic parallelization, several easier approaches exist to get a parallel program in higher quality. They are:
+* Allow programmers to add "hints" to their programs to guide compiler parallelization, such as  for  systems and  or  for  systems.
+* Build an interactive system between programmers and parallelizing tools/compilers. Notable examples are ' Pareon,  Explorer (The Stanford University Intermediate Format compiler), the Polaris compiler, and ParaWise (formally CAPTools).
+* Hardware-supported .
+==Historical parallelizing compilers==
+Most research s for automatic parallelization consider  programs, because Fortran makes stronger guarantees about  than languages such as . Typical examples are:
+* Paradigm compiler
+* Polaris compiler
+* Rice Fortran D compiler
+*  compiler
+* Vienna Fortran compiler
+==References==
+==See also==
+* 
+* 
+* 
+* 
+*

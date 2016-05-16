@@ -1,0 +1,473 @@
+
+
+## nature.com
+
+  * Sitemap
+  * Register
+  * Login
+
+## Nature
+
+### International weekly journal of science
+
+Search Go Advanced search
+
+  * Home
+  * News &amp; Comment
+  * Research
+  * Careers &amp; Jobs
+  * Current Issue
+  * Archive
+  * Audio &amp; Video
+  * For Authors
+
+  * Archive
+  * Volume 525
+  * Issue 7568
+  * News
+  * Article
+
+Nature | News
+
+### Sharing
+
+  *   *   * #### 
+
+    *     *     *     *     *     *     *     * 
+
+# Online security braces for quantum revolution
+
+Encryption fix begins in preparation for arrival of futuristic computers.
+
+  * Chris Cesare
+
+08 September 2015 Corrected:
+
+  1. 08 September 2015
+
+## Article tools
+
+  * PDF
+  * Rights &amp; Permissions
+
+Carol Highsmith/Buyenlarge/Getty
+
+Today’s most widely used encryption methods will not be strong enough resist
+quantum computers.
+
+It is an inevitability that cryptographers dread: the arrival of powerful
+quantum computers that can break the security of the Internet. Although these
+devices are thought to be a decade or more away, researchers are adamant that
+preparations must begin now.
+
+Computer-security specialists are meeting in Germany this week to discuss
+quantum-resistant replacements for today’s cryptographic systems — the
+protocols used to scramble and protect private information as it traverses the
+web and other digital networks. Although today’s hackers can, and often do,
+steal private information by guessing passwords, impersonating authorized
+users or installing malicious software on computer networks, existing
+computers are unable to crack standard forms of encryption used to send
+sensitive data over the Internet.
+
+But on the day that the first large quantum computer comes online, some
+widespread and crucial encryption methods will be rendered obsolete. Quantum
+computers exploit laws that govern subatomic particles, so they could easily
+defeat existing encryption methods.
+
+“I’m genuinely worried we’re not going to be ready in time,” says Michele
+Mosca, co-founder of the Institute for Quantum Computing (IQC) at the
+University of Waterloo in Canada and chief executive of evolutionQ, a cyber-
+security consulting company.
+
+It will take years for governments and industry to settle on quantum-safe
+replacements for today’s encryption methods. Any proposed replacement — even
+if it seems impregnable at first — must withstand multitudes of real and
+theoretical challenges before it is considered reliable enough to protect the
+transfer of intellectual property, financial data and state secrets.
+
+“To trust a cryptosystem, you need a lot of people to scrutinize it and try to
+devise attacks on it and see if it has any flaws,” says Stephen Jordan, a
+physicist at the US National Institute of Standards and Technology (NIST) in
+Gaithersburg, Maryland. “That takes a long time.”
+
+This week’s workshop, held at the Schloss Dagstuhl–Leibniz Center for
+Informatics in Wadern, is one of several this year bringing together
+cryptographers, physicists and mathematicians to evaluate and develop
+cryptographic tools that are less vulnerable to quantum computers. NIST hosted
+its own workshop in April, and the IQC will team up with the European
+Telecommunications Standards Institute for another, in early October in Seoul.
+
+Intelligence agencies have also taken notice. On 11 August, the US National
+Security Agency (NSA) revealed its intention to transition to quantum-
+resistant protocols when it released security recommendations to its vendors
+and clients. And in a memo posted on its website earlier this year, the Dutch
+General Intelligence and Security Service singled out a looming threat that
+adds even more urgency to the need for quantum-safe encryption. In a scenario
+it calls ‘intercept now, decrypt later’, a nefarious attacker could start
+intercepting and storing financial transactions, personal e-mails and other
+sensitive encrypted traffic and then unscramble it all once a quantum computer
+becomes available. “I wouldn’t be at all surprised if people are doing that,”
+says Jordan.
+
+As far back as 1994, mathematician Peter Shor showed that a quantum computer
+would be able to quickly foil ‘RSA encryption’, one of the major safeguards
+used today (P. W. Shor Preprint available at http://arxiv.org/abs/quant-
+ph/9508027v2; 1995). At the time, it was not clear whether such a machine
+would ever be built, says Mosca, because researchers assumed that it would
+need to operate flawlessly. But a theoretical discovery in 1996 showed that up
+to a limit, a quantum computer with some flaws could be just as effective as a
+perfect one.
+
+Published experiments with small quantum devices are starting to approach this
+faultiness threshold, notes Mosca. And because secretive organizations such as
+the NSA are keenly interested in the technology, it is widely assumed that
+these published results do not represent the cutting edge of research. “We
+have to assume there’s going to be people that are a few years ahead of what’s
+available in the public literature,” says Mosca. “You can’t wait for the
+headlines in _The__ New York Times _to have your plan in place.”
+
+The safety of today’s Internet traffic relies in part on a type of encryption
+called public-key cryptography — which includes RSA — to establish secret
+communication between users. A sender uses a freely available digital key to
+lock a message, which can be unlocked only with a secret key held by the
+recipient. The security of RSA depends on the difficulty of breaking up a
+large number into its prime factors, which serve as its secret key. In
+general, the larger the number, the harder this problem is to solve.
+
+Researchers believe that it takes existing computers a long time to factorize
+big numbers, partly because no one has yet discovered how to do it quickly.
+But quantum computers could factorize a large number exponentially faster than
+any conventional computer, and this nullifies RSA’s reliance on factoring
+being difficult.
+
+Several options already exist for new public-key cryptosystems. These replace
+the factoring problem with other difficult mathematics problems that are not
+expected to yield to quantum computers. Although these systems are not
+perfectly safe, researchers think that they are secure enough to protect
+secrets from quantum computers for all practical purposes.
+
+One such system is lattice-based cryptography, in which the public key is a
+grid-like collection of points in a high-dimensional mathematical space. One
+way to send a secret message is to hide it some distance from a point in the
+lattice. Working out how far the encrypted message is to a lattice point is a
+difficult problem for any computer, conventional or quantum. But the secret
+key provides a simple way to determine how close the encrypted message is to a
+lattice point.
+
+A second option, known as McEliece encryption, hides a message by first
+representing it as the solution to a simple linear algebra problem. The public
+key transforms the simple problem into one that seems much more difficult. But
+only someone who knows how to undo this transformation — that is, who has the
+private key — can read the secret message.
+
+One drawback of these replacements is that they require up to 1,000 times more
+memory to store public keys than existing methods, although some lattice-based
+systems have keys not much bigger than those used by RSA. But both methods
+encrypt and decrypt data faster than today’s systems, because they rely on
+simple multiplication and addition, whereas RSA uses more-complex arithmetic.
+
+PQCRYPTO, a European consortium of quantum-cryptography researchers in
+academia and industry, released a preliminary report on 7 September
+recommending cryptographic techniques that are resistant to quantum computers
+(see go.nature.com/5kellc). It favoured the McEliece system, which has
+resisted attacks since 1978, for public-key cryptography. Tanja Lange, head of
+the €3.9-million (US$4.3-million) project, favours the safest possible choices
+for early adopters. “Sizes and speed will improve during the project,” she
+says, “but anybody switching over now will get the best security.”
+
+Journal name:
+
+    Nature
+Volume:
+
+    525,
+Pages:
+
+    167-168
+Date published:
+
+    (10 September 2015)
+DOI:
+
+    doi:10.1038/525167a
+
+  * Tweet Follow @NatureNews
+
+# Corrections
+
+Corrected:
+
+    
+
+An earlier version of this story incorrectly named the location for the
+cryptography workshop that began on 6 September. The workshop was held at the
+Schloss Dagstuhl–Leibniz Center for Informatics in Wadern, not the Leibniz
+Center for Informatics in Oktavie-Allee.
+
+# Related stories and links
+
+## From nature.com
+
+  * # Extreme cryptography paves way to personalized medicine
+
+23 March 2015
+
+  * # Quantum cryptography conquers noise problem
+
+20 November 2012
+
+  * # Hackers blind quantum cryptographers
+
+29 August 2010
+
+  * # Quantum cryptography is hacked
+
+27 April 2007
+
+## From elsewhere
+
+  * # PQCRYPTO project
+
+  * # National Security Agency’s Cryptography Today page
+
+  * # Dagstuhl Quantum Cryptanalysis workshop
+
+  * # PQCRYPTO recommendations
+
+# Author information
+
+## Author details
+
+  * ### Chris Cesare
+
+#### Search for this author in
+
+    * NPG journals
+    * PubMed
+    * Google Scholar
+
+For the best commenting experience, please login or register as a user and
+agree to our Community Guidelines. You will be re-directed back to this page
+where you will see comments updating in real-time and have the ability to
+recommend comments to other users.
+
+### Comments for this thread are now closed.
+
+Comments
+
+### 1 comment Subscribe to comments
+
+  1. Steve B • 2016-01-15 11:35 AM
+
+    How secure is RSA and when you say the more numbers are you talking about the bit? I'm interested in IT security and would love to learn more..Glad I found this site. For now, I sell RAM http://micro-star.com
+    * Share to Twitter Share to Facebook Share link to this comment
+
+## See other News &amp; Comment articles from _Nature_
+
+  * #### Computer gleans chemical insight from lab notebook failures
+
+  * #### Ethology: Intrepid translator of the hive
+
+  * #### Physics: Material to meaning
+
+  * #### Human embryos grown in lab for longer than ever before
+
+  * #### Can artificial intelligence create the next wonder material?
+
+  * #### Books in brief
+
+  * #### How club drug ketamine fights depression
+
+  * #### Embryology policy: Revisit the 14-day rule
+
+  * #### The week in science: 29 April–5 May 2016
+
+  * #### US and China eye up European gravitational-wave mission
+
+  * #### Citizen scientists aid Ecuador earthquake relief
+
+  * #### Set up a public registry of competing interests
+
+  * #### UK graphene inquiry reveals commercial struggles
+
+  * #### Stem-cell plan aims to bring rhino back from brink of extinction
+
+  * #### Policy: Security spending must cover disease outbreaks
+
+  * #### Nine years of censorship
+
+  * #### Cattle drug threatens thousands of vultures
+
+  * #### Software error doomed Japanese Hitomi spacecraft
+
+  * #### Antibody infusions provide long-term defence against HIV-like infection
+
+  * #### Technology: Beyond the ‘InterNyet’
+
+## Social Media Box - AML
+
+  * E-alert
+  * RSS
+  * Facebook
+  * Twitter
+
+Close Follow @naturenews
+
+## Muzzled
+
+###  Nine years of censorship
+
+Canadian scientists are now allowed to speak out about their work — and the
+government policy that had restricted communications.
+
+## Top Content - Article Page
+
+## Recent
+
+  1. ## Computer gleans chemical insight from lab notebook failures
+
+Nature 04 May 2016
+
+  2. ## Ethology: Intrepid translator of the hive
+
+Nature 04 May 2016
+
+  3. ## Physics: Material to meaning
+
+Nature 04 May 2016
+
+## Read
+
+  1. ### The quiet revolutionary: How the co-discovery of CRISPR explosively changed Emmanuelle Charpentier's life
+
+Nature 27 Apr 2016
+
+  2. ### Speak up about subtle sexism in science
+
+Nature 26 Apr 2016
+
+  3. ### Software error doomed Japanese Hitomi spacecraft
+
+Nature 28 Apr 2016
+
+View all
+
+## Commented
+
+  1. ### Speak up about subtle sexism in science
+
+Nature 26 Apr 2016 38 comments
+
+  2. ### Measurement of Universe's expansion rate creates cosmological puzzle
+
+Nature 11 Apr 2016 18 comments
+
+  3. ### Trump’s immigration stance stokes fears for science
+
+Nature 05 Apr 2016 18 comments
+
+View all
+
+## Newsletter
+
+The best science news from _Nature_ and beyond, direct to your inbox every
+day.
+
+Your browser does not support iframes.
+
+## Embryo ethics
+
+###  Human embryos grown in lab for longer than ever before
+
+Embryos cultured for up to 13 days after fertilization open a window into
+early development.
+
+## Intelligent search
+
+###  Can artificial intelligence create the next wonder material?
+
+Some researchers believe that machine-learning techniques can revolutionize
+how materials science is done.
+
+## Shifting focus
+
+###  AI talent grab sparks excitement and concern
+
+Google, Facebook and other tech firms are changing how artificial-intelligence
+research is done.
+
+## Receptive targets
+
+###  How club drug ketamine fights depression
+
+Breakdown product of drug reduces signs of depression in mice without side
+effects.
+
+## Listen
+
+###  This week...
+
+The value of failed experiments, ketamine without side effects, and our
+brains’ energy demands.
+
+## Science jobs from nature jobs
+
+  * ### Grand stage for great players: CCID recruiting principal investigators
+
+The Collaborative Innovation Center for Diagnosis and Treatment of Infectious
+Diseases (CCID)
+
+  * ### Talents Wanted Programme-Faculty search for the School of Environment, Beijing Normal University
+
+Beijing Normal University
+
+  * ### Research Engineer / Research Scientist in Renewable Energy
+
+King Fahd University of Petroleum & Minerals
+
+  * ### Faculty Positions at IDG / McGovern Institute for Brain Research at Peking University
+
+IDG/McGovern Institute for Brain Research at Peking University
+
+  * ### Shanghai Jiao Tong University Seeking Global Talents
+
+Shanghai Jiao Tong University
+
+  * Post a Job
+  * More Science Jobs
+
+  * Nature
+  * ISSN: 0028-0836
+  * EISSN: 1476-4687
+
+  * About NPG
+  * Contact NPG
+  * Accessibility statement
+  * Help
+
+  * Privacy policy
+  * Use of cookies
+  * Legal notice
+  * Terms
+
+  * Nature jobs
+  * Nature Asia
+  * Nature Education
+  * RSS web feeds
+
+  * About **Nature**
+  * Contact **Nature**
+  * About the Editors
+  * **Nature** awards
+
+Search Go
+
+(C) 2016 Nature Publishing Group, a division of Macmillan Publishers Limited.
+All Rights Reserved. partner of AGORA, HINARI, OARE, INASP, CrossRef and
+COUNTER
+
+  *[NPG]: Nature Publishing Group
+  *[doi]: Digital Object Identifier
+  *[ISSN]: International Standard Serial Number
+  *[EISSN]: Electronic International Standard Serial Number
+

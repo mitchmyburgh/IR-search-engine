@@ -1,0 +1,41 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Conversion between quaternions and matrices
+The quaternion Q=(W,X,Y,Z) (assuming Q is unit) is equivalent, when interpreted as a rotation, to the matrix:
+1 . 2 Y 2 . 2 Z
+2
+..2 X Y . .2 W Z
+..2 X Z . .2 W Y
+..2 X Y . .2 W Z
+1 . 2 X 2 . 2 Z
+2
+..2 Y Z . .2 W X
+..2 X Z . .2 W Y
+..2 Y Z . .2 W X
+1 . 2 X 2 . 2 Y 2
+By examining the above matrix, it is easy to find, given an orthonormal orientation matrix, the corresponding quaternion. First, compute W.
+m11+m22+m33=3-4X2-4Y2-4Z2
+(m11+m22+m33+1)/4=1-X2-Y2-Z2
+But |(W,X,Y,Z)|=1 hence W2+X2+Y2+Z2=1 hence
+W=[(m11+m22+m33+1)/4]1/2
+Then, compute X, Y and Z.
+X=(m32-m23)/4W
+Y=(m13-m31)/4W
+Z=(m21-m12)/4W
+Orientation interpolation
+Often, we might only have an initial orientation, and a desired orientation at some point in the future, and no data in between. In this case, it might be desirable to interpolate the orientations between these two key orientations. Assuming no other data is available, quaternion interpolation is very appropriate.
+100
+This could be done with Euler angles. However, several problems arise when we do so. We can very difficultly control the exact path of the rotation, or the speed for that matter. We also get a problem called "Gimbal lock", where the object appears to stop turning for a brief moment, and then starts again in an odd direction.
+Using quaternions, we get none of these problems. Speed of rotation can be made constant, and the path of the rotation will be that of the shortest arc. However, we get numerical problems when the rotation is close to 180 degrees. Also, we will need to interpolate through more than 2 quaternions if we want to rotate by more than 180 degrees.
+The idea is to picture the unit quaternions as being on the unit hypersphere in 4d. Then, we can find the shortest arc over that hypersphere between these two quaternions, and interpolate linearly the angle along that arc.
+Given two unit quaternions, q1 and q2, let us first find the angle between them. By definition of angle as a function of dot product, we have:
+f=acos(q1•q2)
+Then, let us have a parameter t that varies from 0 to 1. Then, the quaternion given by:
+q( ) t . sin( ) .( ) 1 t f sin( ) f
+q1 . sin( ) .t f sin( ) f
+q2
+will give uniformly distributed orientations between q1 and q2 as t varies from 0 to 1. In particular, q(0)=q1, q(1)=q2. This is called spherical linear interpolation, or SLERP.
+Note that we didn't check if we were using the shortest arc or the longest on the great circle. In order to take the shortest path, we simply check that
+(q1-q2)•(q1-q2)>(q1+q2)•(q1+q2)
+If that is false, replace q2 by -q2 (this is allowed since Q and -Q represent the same rotation).
+The above formula will have numerical difficulties when f is close to 0 or p. When f is close to 0, we can replace the SLERP with a simple linear interpolation. E.g. q(t)=(1-t)q1+tq2. When f is close to p, we need to add more keyframes (intermediate quaternions).

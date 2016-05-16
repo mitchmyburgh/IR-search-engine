@@ -1,0 +1,364 @@
+
+
+# Mamuta memuāri
+
+## math, music, me
+
+# Post navigation
+
+&lt;- Three myths about quantum computing -- Part 2: No-cloning theorem
+
+Nonlocality without entanglement -&gt;
+
+# Three myths about quantum computing -- Part 3: Teleportation and superdense
+coding
+
+Posted by Māris Ozols
+
+5
+
+This is the last post in the series on myths about quantum computing.
+
+One of the most exciting things about quantum information is quantum
+teleportation--the ability to transmit quantum data by sending only classical
+bits. Superdense coding is another surprising protocol which lets you transmit
+two classical bits by sending only one qubit.
+
+It is often mistakenly believed that these two features of quantum information
+do not have a classical equivalent. The goal of this post is to explain why
+this is not the case, and to clarify other related misconceptions.
+
+**Bell states**
+
+Let us first briefly discuss some simple facts that are useful for explaining
+how quantum teleportation works. Let . Then the following four two-qubit
+states are orthonormal and form a basis:
+
+This is known as Bell basis. One can prepare  from the standard basis state
+as follows:
+
+One of the most important properties of Bell states is that any Bell state can
+be mapped to any other by applying local Pauli matrices on only one of the
+systems:
+
+**Quantum teleportation**
+
+The setting for quantum teleportation is as follows. Assume that Alice has a
+single-qubit quantum state  that she wants to send to Bob. Moreover, they have
+met beforehand and established a joint two-qubit quantum state
+
+known as EPR pair, shared between them. Here is a schematic diagram of how
+quantum teleportation works:
+
+Here "Bell" denotes the measurement in the Bell basis whose outcomes are
+classical bits _z_ and _x_, and  is the correction operator that Bob has to
+apply to recover the original state.
+
+Quantum teleportation works because of the following identity:
+
+which holds for any single qubit state . From this identity we see that when
+Alice performs the Bell measurement, she gets two uniformly random bits _z_
+and _x_, and Bob's state collapses to  which is a distorted version of . Once
+Bob receives _z_ and _x_, he can apply  to recover . Note that an adversary
+who intercepts _z_ and _x_ cannot learn anything about , since both bits are
+uniformly random.
+
+The usual argument why quantum teleportation is surprising, is that it allows
+to transmit a quantum state  with two continuous degrees of freedom (say, the
+angles in the Bloch sphere) by sending only two classical bits. This may seem
+quite paradoxical, since it appears as if two real numbers have been
+transmitted by sending just two bits. However, this is not the case at all,
+since the two parameters describing  cannot be recovered (to any reasonable
+degree of precision) from a single copy of . For example, we know by Holevo's
+theorem that one cannot learn more than one bit of information by measuring .
+
+**Classical teleportation**
+
+What is the classical equivalent of the above procedure? Let us first set up
+some terminology and notation. Since we will be dealing with probability
+distributions, let
+
+denote the uniform distribution over {0,1}. Similarly, let
+
+be the classical version of the EPR state .
+
+Intuitively, one should think of probability distributions as a way of
+describing a coin that has been flipped and (without looking at it) put inside
+a sealed envelope. Note that one can perform operations on such coin, even
+though its exact state is not known. For example, by flipping the envelope
+around one can perform the logical NOT. One could also imagine some more
+complicated procedures for performing joint operations on two coins in a joint
+unknown state.
+
+We will use the term **_pbit_** to refer to a _probabilistic bit_ that
+describes a coin inside the envelope. Note that a pbit has one degree of
+freedom. However, once the envelope has been opened, the state of the coin
+becomes certain, i.e., either [0] or [1], so we will describe it by a
+_deterministic bit_ or **_dbit_**. Note that this is analogous to how
+measurements work in the quantum case, except that in the classical case there
+is only one measurement basis--the standard basis.
+
+Now we are ready to describe the classical teleportation. Our task is the
+following: we would like to transmit one pbit by sending one dbit. In other
+words, we want to transmit one degree of freedom per one classical bit being
+sent, just as in the quantum case.
+
+At first, this might seem trivial--can't we just send the bit over and be
+done? Unfortunately, not. Recall that we want to transmit a pbit or an
+"unobserved coin", but we are allowed to send only a dbit. In other words,
+your envelope will always be opened and its content revealed, just as if you
+were a journalist sending an e-mail from China. Let us depict this situation
+with the following diagram:
+
+Here the dark pipe represents a pbit in state , but the white pipe a dbit
+obtained by observing . The dashed line between Alice and Bob represents
+Chinese government.
+
+To make this scheme work, we will use a shared resource between Alice and Bob
+as in the quantum case. A natural classical equivalent of the EPR state  is
+the probability distribution  defined above. To preserve our pbit , we will
+XOR it with Alice's half of , and send the result over to Bob. Even though the
+pbit  is turned into a dbit due to Chinese government spying on Alice, Bob can
+still XOR it with his half of  and recover the original pbit :
+
+This indeed gives the correct result, since the original pbit essentially gets
+XORed with the same value twice. Intuitively, one can think of it being
+transmitted "back in time" through the black pipe that represents . Just as in
+the quantum case, the party who intercepts the transmitted bit learns nothing
+about , since the transmitted bit is uniformly random. In fact, this scheme is
+equivalent to one-time pad.
+
+**Quantum superdense coding**
+
+Quantum superdense coding is the dual protocol of quantum teleportation (this
+can be made more precise by considering coherent communication). It allows to
+send two classical bits by transmitting a single qubit and consuming one
+shared EPR pair.
+
+Initially Alice and Bob share an EPR state . Alice encodes her two classical
+bits _z_ and _x_ in her half of  by performing . This maps the joint state of
+Alice and Bob to Bell state  as discussed above. Then Alice sends her qubit
+over to Bob, who can recover both bits by performing a measurement in the Bell
+basis:
+
+Quantum superdense coding works because of the following identity:
+
+This immediately follows from the properties of Bell states discussed above.
+Since all Bell states are maximally entangled, their reduced states are
+completely mixed, so the transmitted qubit contains no information about the
+two encoded classical bits _z_ and _x_.
+
+**Classical "supersparse" coding**
+
+Classical superdense coding is very similar to classical teleportation, except
+the roles of dbit and pbit are reversed, i.e., Alice wants to transmit a dbit
+by sending a pbit. This seems to be even simpler than teleportation, since we
+are given more resources and asked to perform a simpler task! In fact, there
+is nothing "superdense" about this task, as it only wastes resources. In this
+sense it would be more appropriate to call it "supersparse" coding!
+
+The only catch is that for complete analogy with the quantum case, the
+transmitted pbit should be uniformly random, so that a potential eavesdropper
+could learn nothing about the original message. Here is a protocol that
+achieves the task of transmitting a dbit _b_ in the desired way:
+
+Note that the only difference between this picture and the one for classical
+teleportation is the color of pipes.
+
+**Conclusion**
+
+Quantum teleportation should not seem more surprising than the classical one,
+since in both cases one degree of freedom is transmitted per one classical bit
+being sent. The only quantitative difference is a factor of two in the amount
+of resources consumed: one ebit is consumed for sending two degrees of freedom
+in the quantum case versus one shared random bit per single degree of freedom
+in the classical case. Recall that we observed the same factor-of-two
+difference in the case of the amount of information needed to specify a
+quantum versus a classical probabilistic state within the exponential state
+space.
+
+Thus, given the existence of a classical equivalent, quantum teleportation
+should not seem too surprising. At least, no more than by a factor of two!
+
+p.s. As Matthew Leifer has pointed out to me, these and many other analogies
+between quantum entanglement and secret classical correlations have been
+described in the paper "A classical analogue of entanglement" by Daniel
+Collins and Sandu Popescu.
+
+### Share this:
+
+  * Google
+  * Facebook
+  * Twitter
+  * 
+
+### Like this:
+
+Like Loading...
+
+### _Related_
+
+Posted in Math, Quantum
+
+Tagged Bell states, quantum information theory, quantum teleportation,
+superdense coding
+
+May*23
+
+##  5 thoughts on "Three myths about quantum computing -- Part 3:
+Teleportation and superdense coding"
+
+  1. Pingback: Three myths about quantum computing | Mamuta memuāri
+
+  2. Manuel Bärenz
+
+December 17, 2012 at 11:49 am
+
+There is one decisive difference between quantum and classical (statistical)
+teleportation and superdense coding. A qubit can be in a pure (non-
+statistical) state whereas your pbit has to be in a mixed (statistical) state.
+So the interesting thing is that phenomena which classically only worked in
+the setting of statistical physics now also work in quantum mechanics without
+statistics.
+
+(Of course this is not a big practical difference since we as classical humans
+need statistics to interpret quantum mechanics.)
+
+Reply
+
+    * Manuel Bärenz
+
+December 17, 2012 at 11:50 am
+
+The same goes for entanglement, by the way.
+
+Reply
+
+  3. Kamran
+
+July 13, 2013 at 12:58 pm
+
+Reblogged this on Observer.
+
+Reply
+
+  4. Pradeep
+
+September 8, 2014 at 12:43 am
+
+Your classical analogy for teleportation is very similar to the following
+paper:  
+Cohen, O. (2006). Classical teleportation of classical states. Fluctuation and
+Noise Letters, 6(02), C1-C8.
+
+Reply
+
+### Leave a Reply Cancel reply
+
+Enter your comment here...
+
+Fill in your details below or click an icon to log in:
+
+  *   *   *   *   * 
+
+Email (required) (Address never made public)
+
+Name (required)
+
+Website
+
+**** You are commenting using your WordPress.com account. ( Log Out / Change )
+
+**** You are commenting using your Twitter account. ( Log Out / Change )
+
+**** You are commenting using your Facebook account. ( Log Out / Change )
+
+**** You are commenting using your Google+ account. ( Log Out / Change )
+
+Cancel
+
+Connecting to %s
+
+Notify me of new comments via email.
+
+# Post navigation
+
+&lt;- Three myths about quantum computing -- Part 2: No-cloning theorem
+
+Nonlocality without entanglement -&gt;
+
+# Author
+
+# Recent Posts
+
+  * A cute trace inequality
+  * Quantum walks can find a marked element on any graph
+  * Philip Glass: _Opening_ and _Mad Rush_
+  * Exact quantum query algorithms
+  * SIC-POVM sickness
+  * Ctrl+Z for Mathematica!
+  * Nonlocality without entanglement
+  * Three myths about quantum computing -- Part 3: Teleportation and superdense coding
+  * Three myths about quantum computing -- Part 2: No-cloning theorem
+  * Three myths about quantum computing -- Part 1: Exponential size state space
+
+# Archives
+
+  * December 2014
+  * March 2014
+  * December 2013
+  * July 2013
+  * May 2013
+  * April 2013
+  * June 2012
+  * May 2012
+  * March 2012
+  * January 2012
+
+# Categories
+
+  * Math
+  * Mathematica
+  * Music
+  * Programming
+  * Quantum
+  * Quantum algorithms
+  * SIC-POVM
+
+# Tags
+
+algorithms Bell states Bloch sphere classical music complexity theory
+contemporary classical music Dalai Lama differential geometry eigenvalues and
+eigenvectors electromagnetism entanglement geometry Glassworks graph grover's
+algorithm inequalities LOCC Mad Rush math Mathematica matrices Maxwell’s
+equations minimalism music New York no-cloning theorem nonlocality without
+entanglement Opening Philip Glass piano piano music polyrhythm purification
+quantum algorithm quantum algorithms quantum computing quantum information
+theory quantum states quantum teleportation qubit query algorithms query
+complexity qutrit random walk Schmidt decomposition science SIC-POVM simplex
+state discrimination superdense coding superposition unitary Wolfram
+
+Search
+
+# Meta
+
+  * Register
+  * Log in
+  * Entries RSS
+  * Comments RSS
+  * WordPress.com
+
+Blog at WordPress.com. |  The Reddle Theme.
+
+Follow
+
+### Follow "Mamuta memuāri"
+
+Get every new post delivered to your Inbox.
+
+Build a website with WordPress.com
+
+%d bloggers like this:
+
+  *[RSS]: Really Simple Syndication
+

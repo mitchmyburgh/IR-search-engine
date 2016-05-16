@@ -1,0 +1,67 @@
+The authors have developed a modeling system Do in three dimensional
+computer graphics (3D-CG) that, by verbal instructions in
+natural language, models geometrical shapes and renders the images.
+The former system is based on a step-by-step construction
+scheme using static instructions and a static display, that is, a static
+verbal instruction creates a static scene and an image. This staticbased
+system scheme has a critical limitation at the conversation
+stage between a user and the system. In this paper, the authors propose
+a dynamic instruction and dynamic display methods for the
+modeling system. First, the dynamic display enables users to watch
+the animation indicating the change between the previous geometries
+and the next geometries with smooth transition during the execution
+of an instruction from the user. Second, the dynamic instruction
+enables users to give the next instruction before the animation
+ends. For those purposes, two geometrical transformation methods
+by affine transformation: (a) with a common difference matrix,
+and (b) with a common ratio matrix, are introduced and studied
+to generate frames for the animation. The proposed methods are
+implemented and evaluated by some experiments. The changes between
+instructions are observed naturally by the common ratio matrix
+method.
+In contrast to it, the system Do requires only verbal
+instructions for input to realize the purposes mentioned above.
+Picnyck[H. Nishiyama and Matsusita 1997] creates an appropriate
+scenery image for a scenery description text including vague expressions
+such as ‘vast’, ‘pure’, etc. At the present phase, system
+Do does not support sensitive words yet, however, it is effective
+to introduce some operations, for example, changing the texture of
+the object. A system Put[Clay and Wilhelms 1996] refers to the
+position of existing objects and puts an object using the position
+information. Our system Do introduces a disposition function of
+objects similar to the system Put and has a lot of operations including
+translation, scaling, rotation, CSG operations, etc. by not
+only instructions with a single word but also sentences in natural
+language.
+However, a user is required to indicate clearly the state of the imagined
+scene statically by an instruction sentence in step-by-step operations
+in the former instruction method, called a static instruction
+method. Users of the system based on this instruction method
+watch a static scene, called a static display method. Increase of the
+number of conversations by this method becomes problematic. This
+static instruction and static display method have a critical limitation
+at conversations between a user and the system. In this paper, the
+authors propose the dynamic instruction and the dynamic display
+method for the modeling system by such a verbal interface. There
+are two important ideas in this study. One is that the dynamic display
+enables users to watch the animation indicating the change between
+previous and next geometries with a smooth transition. The
+other is that the dynamic instruction enables users to issue the next
+instruction before the animation ends.
+For an instruction from the user, the dynamic display method provides
+an animation indicating the change of the state of the object
+continuously. The dynamic instruction method enables the user to
+change the transformation and/or to add another transformation to
+a current transformation instructed previously while the object is
+changing. This system utilizes affine transformations to change
+states of objects. To realize the above functions, two basic strategies
+to transform the objects: (a) a common difference matrix, and
+(b) a common ratio matrix, are studied for an affine matrix. Some
+experiments by the matrices indicate that the common ratio matrix
+method provides better impressions. For related works of the
+dynamic display method [S. Miyazaki and Yasuda 2003] proposed
+a method converting scenarios of natural texts into multiple basic
+motions of a CG character and synthesizing various motions with
+emotions by synchronization. In this method, the target of the dynamic
+instruction is a motion with emotions of the CG character
+and the effectiveness of the dynamic instruction method is shown.

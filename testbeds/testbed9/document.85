@@ -1,0 +1,44 @@
+In computer science a level set data structure is designed to represent discretely sampled dynamic level sets functions.
+A common use of this form of data structure is in efficient image rendering. The underlying method constructs a signed distance field that extends from the boundary, and can be used to solve the motion of the boundary in this field.
+
+
+== Chronological developments ==
+The powerful level set method is due to Osher and Sethian 1988. However, the straightforward implementation via a dense d-dimensional array of values, results in both time and storage complexity of , where  is the cross sectional resolution of the spatial extents of the domain and  is the number of spatial dimensions of the domain.
+
+
+=== Narrow band ===
+The narrow band level set method, introduced in 1995 by Adalsteinsson and Sethian, restricted most computations to a thin band of active voxels immediately surrounding the interface, thus reducing the time complexity in three dimensions to  for most operations. Periodic updates of the narrowband structure, to rebuild the list of active voxels, were required which entailed an  operation in which voxels over the entire volume were accessed. The storage complexity for this narrowband scheme was still  Differential constructions over the narrow band domain edge require careful interpolation and domain alteration schemes to stabilise the solution.
+
+
+=== Sparse field ===
+This  time complexity was eliminated in the approximate "sparse field" level set method introduced by Whitaker in 1998. The sparse field level set method employs a set of linked lists to track the active voxels around the interface. This allows incremental extension of the active region as needed without incurring any significant overhead. While consistently  efficient in time,  storage space is still required by the sparse field level set method. See  for implementation details.
+
+
+=== Sparse block grid ===
+The sparse block grid method, introduced by Bridson in 2003, divides the entire bounding volume of size  into small cubic blocks of  voxels each. A coarse grid of size  then stores pointers only to those blocks that intersect the narrow band of the level set. Block allocation and deallocation occur as the surface propagates to accommodate to the deformations. This method has a suboptimal storage complexity of , but retains the constant time access inherent to dense grids.
+
+
+=== Octree ===
+The octree level set method, introduced by Strain in 1999  and refined by Losasso, Gibou and Fedkiw, and more recently by Min and Gibou uses a tree of nested cubes of which the leaf nodes contain signed distance values. Octree level sets currently require uniform refinement along the interface (i.e. the narrow band) in order to obtain sufficient precision. This representation is efficient in terms of storage,  and relatively efficient in terms of access queries,  An advantage of the level method on octree data structures is that one can solve the partial differential equations associated with typical free boundary problems that use the level set method. The CASL research group has developed this line of work in computational materials, computational fluid dynamics, electrokinetics, image guided surgery and controls.
+
+
+=== Run-length encoded ===
+The run-length encoding (RLE) level set method, introduced in 2004, applies the RLE scheme to compress regions away from the narrow band to just their sign representation while storing with full precision the narrow band. The sequential traversal of the narrow band is optimal and storage efficiency is further improved over the octree level set. The addition of an acceleration lookup table allows for fast  random access, where r is the number of runs per cross section. Additional efficiency is gained by applying the RLE scheme in a dimensional recursive fashion, a technique introduced by Nielsen & Museth's similar DT-Grid.
+
+
+=== Hash Table Local Level Set ===
+The Hash Table Local Level Set method, introduced in 2012 by Brun, Guittet and Gibou, only computes the level set data in a band around the interface, as in the Narrow Band Level-Set Method, but also only stores the data in that same band. A hash table data structure is used, which provides an  access to the data. However, the authors conclude that their method, while being easier to implement, performs worse than a quadtree implementation. They find that
+
+as it is, [...] a quadtree data structure seems more adapted than the hash table data structure for level-set algorithms.
+
+Three main reasons for worse efficiency are listed:
+to obtain accurate results, a rather large band is required close to the interface, which counterbalances the absence of grid nodes far from the interface;
+the performances are deteriorated by extrapolation procedures on the outer edges of the local grid and
+the width of the band restricts the time step and slows down the method.
+
+
+=== Point-based ===
+Corbett in 2005  introduced the point-based level set method. Instead of using a uniform sampling of the level set, the continuous level set function is reconstructed from a set of unorganized point samples via moving least squares.
+
+
+== References ==

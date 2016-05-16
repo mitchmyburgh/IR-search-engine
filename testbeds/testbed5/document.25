@@ -1,0 +1,31 @@
+The Programming Languages That Spawn The Most Software Vulnerabilities
+
+PHP, ASP Web scripting languages breed more vulnerabilities than Java, .NET programming platforms, Veracode's new state of software security report says.
+
+The wave of WordPress and Drupal vulnerability warnings and patches over the past couple of years, as well as the never-ending discovery of SQL injection bugs in Web applications, can actually be traced back to their underlying scripting language -- PHP.
+
+Some 86% of applications written in PHP contained at least one cross-site scripting (XSS) vulnerability and 56% came with at least one SQL injection bug, according to new research released today from Veracode, which studied applications written in the most pervasive programming languages -- PHP, Java, Microsoft Classic ASP, .NET, iOS, Android, C and C++, JavaScript, ColdFusion, Ruby, and COBOL. The data is based on its cloud-based scans and code analysis of more than 50,000 applications in the past 18 months.
+
+Some 64% of applications written in Classic ASP and 62% of those written in ColdFusion had at least one SQL injection bug. Meantime, .NET and Java fare the best, with far fewer instances of security flaws in their applications: 29% of .NET apps and 21% of Java apps were found with at least one SQL injection bug.
+
+Chris Wysopal, founder and CTO of Veracode, says PHP's problems are one of the reasons SQL injection -- one of the most abused yet easiest vulns to fix -- just won't die. "When I see a breach, one of the things that sticks out in my head is 'I'll bet that was a PHP site.'" Wysopal says. "What keeps some of these vulnerabilities alive and well is using languages that are harder to program securely.
+
+"I had always suspected that scripting languages are worse. Now we have solid data to show we are getting twice the number of serious issues on those languages," he says.
+
+It comes down to how these programming languages are designed, and their use. While Java and .NET have built-in functions to reduce the risk of buffer overflows, XSS, and SQL injection, PHP and ASP don't come as well-equipped and have fewer security APIs. According to Veracode's report, it traditionally has been difficult to write apps in PHP that "bind parameters in SQL queries," making it more prone to SQL injection flaws.
+
+"It's harder to program in those languages [scripting languages]. There are not as many built-in functions," Wysopal says. "And .NET and Java programs are typically used by computer science graduates who learned those languages in school. A lot of the scripting languages like ColdFusion and ASP came out of the Web dev world, where you're designing websites and starting to learn coding, [and] to make sites more interactive."
+
+These languages also fail the OWASP Top 10: four out of five apps written in PHP, Classic ASP, and ColdFusion failed at least one of the application security standard's benchmarks. Veracode points out that this has a big impact on the Net overall, as some 70% of content management systems on the Web are PHP-based WordPress, Drupal, and Joomla. So "organizations seeking to use these CMSes should carefully plan their deployments," Veracode said in its report.
+
+"If I put on my attacker hat and want to break into a site, I'm going to find PHP sites," Wysopal says.
+
+Developers are basically stuck with the language and platform their organization chooses. "It's not often that a developer gets to select that," he says. "They are kind of [limited] by the environment and language they need to build their applications on."
+
+That's not to say they can't be better trained to write secure code. Veracode also studied vulnerability remediation rates, which showed a 30% improvement in vuln fixes in organizations that employ secure coding training for its developers.
+
+Mobile
+
+Veracode also found mobile applications in both Android and iOS contain rampant cryptographic weaknesses. There isn't much daylight between Android and iOS app crypto bugs, either:  some 87% of Android apps were found with the bugs, and 81% of iOS apps.
+
+Wysopal says it came down to four issues: insufficient entropy or "randomness;" not checking SSL certificates; not encrypting sensitive information to disk; and using outdated crypto algorithms. "Developers are not understanding how to write crypto properly," he says.

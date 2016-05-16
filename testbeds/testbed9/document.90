@@ -1,0 +1,27 @@
+In computer science, a hashed array tree (HAT) is a dynamic array data-structure published by Edward Sitarski in 1996, maintaining an array of separate memory fragments (or "leaves") to store the data elements, unlike simple dynamic arrays which maintain their data in one contiguous memory area. Its primary objective is to reduce the amount of element copying due to automatic array resizing operations, and to improve memory usage patterns.
+Whereas simple dynamic arrays based on geometric expansion waste linear (Ω(n)) space, where n is the number of elements in the array, hashed array trees waste only order O(√n) storage space. An optimization of the algorithm allows to eliminate data copying completely, at a cost of increasing the wasted space.
+It can perform access in constant (O(1)) time, though slightly slower than simple dynamic arrays. The algorithm has O(1) amortized performance when appending a series of objects to the end of a hashed array tree. Contrary to its name, it does not use hash functions.
+
+
+== Definitions ==
+As defined by Sitarski, a hashed array tree has a top-level directory containing a power of two number of leaf arrays. All leaf arrays are the same size as the top-level directory. This structure superficially resembles a hash table with array-based collision chains, which is the basis for the name hashed array tree. A full hashed array tree can hold m2 elements, where m is the size of the top-level directory. The use of powers of two enables faster physical addressing through bit operations instead of arithmetic operations of quotient and remainder and ensures the O(1) amortized performance of append operation in the presence of occasional global array copy while expanding.
+
+
+== Expansions and size reductions ==
+In a usual dynamic array geometric expansion scheme, the array is reallocated as a whole sequential chunk of memory with the new size a double of its current size (and the whole data is then moved to the new location). This ensures O(1) amortized operations at a cost of O(n) wasted space, as the enlarged array is filled to the half of its new capacity.
+When a hashed array tree is full, its directory and leaves must be restructured to twice their prior size to accommodate additional append operations. The data held in old structure is then moved into the new locations. Only one new leaf is then allocated and added into the top array which thus becomes filled only to a quarter of its new capacity. All the extra leaves are not allocated yet, and will only be allocated when needed, thus wasting only O(√n) of storage.
+There are multiple alternatives for reducing size: when a Hashed Array Tree is one eighth full, it can be restructured to a smaller, half-full hashed array tree; another option is only freeing unused leaf arrays, without resizing the leaves. Further optimizations include adding new leaves without resizing, growing the directory array as needed, possibly through geometric expansion. This would eliminate the need for data copying completely, at the cost of making the wasted space O(n), with a small coefficient, and only performing restructuring when a set threshold overhead is reached.
+
+
+== Related data structures ==
+Brodnik et al. presented a dynamic array algorithm with a similar space wastage profile to hashed array trees. Brodnik's implementation retains previously allocated leaf arrays, with a more complicated address calculation function as compared to hashed array trees.
+
+
+=== See also ===
+Dynamic array
+Unrolled linked list
+VList
+B-tree
+
+
+== References ==

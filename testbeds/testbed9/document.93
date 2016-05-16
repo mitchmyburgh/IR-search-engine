@@ -1,0 +1,23 @@
+A Kinetic Triangulation data structure is a kinetic data structure that maintains a triangulation of a set of moving points. Maintaining a kinetic triangulation is important for applications that involve motion planning, such as video games, virtual reality, dynamic simulations and robotics.
+
+
+== Choosing a triangulation scheme ==
+The efficiency of a kinetic data structure is defined based on the ratio of the number of internal events to external events, thus good runtime bounds can sometimes be obtained by choosing to use a triangulation scheme that generates a small number of external events. For simple affine motion of the points, the number of discrete changes to the convex hull is estimated by , thus the number of changes to any triangulation is also lower bounded by . Finding any triangulation scheme that has a near-quadratic bound on the number of discrete changes is an important open problem.
+
+
+=== Delaunay triangulation ===
+The Delaunay triangulation seems like a natural candidate, but a tight analysis of the number of discrete changes that will occur to the Delaunay triangulation (external events) is one of the hardest problems in computational geometry, and the best currently known upper bound is .
+There is a kinetic data structure that efficiently maintains the Delaunay triangulation of a set of moving points, in which the ratio of the total number of events to the number of external events is .
+
+
+=== Other triangulations ===
+Kaplan et al. developed a randomized triangulation scheme that experiences an expected number of  external events, where  is the maximum number of times each triple of points can become collinear, , and  is the maximum length of a Davenport-Schinzel sequence of order s + 2 on n symbols.
+
+
+=== Pseudo-triangulations ===
+There is a kinetic data structure (due to Agarwal et al.) which maintains a pseudo-triangulation in  events total. All events are external and require  time to process.
+
+
+== References ==
+
+Pankaj K. Agarwal, Julien Basch, Mark de Berg, Leonidas J. Guibas, and John Hershberger. Lower bounds for kinetic planar subdivisions. In SCG '99: Proceedings of the fifteenth annual symposium on Computational geometry, pages 247{254, New York, NY, USA, 1999. ACM.[2]

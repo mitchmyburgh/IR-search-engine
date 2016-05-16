@@ -1,0 +1,264 @@
+Quantum computers might soon render RSA encryption obsolete
+
+###
+
+Skip to content
+
+  * News
+  * Environment
+
+  * Health &amp; Medicine
+
+  * Space
+
+  * Feature
+
+  * Q&amp;A
+  * More
+
+    * ### ZME Science
+
+      * About
+      * Authors
+      * Archives
+
+    * ### Advertise
+
+      * Advertise
+      * Media Kit
+
+    * ### Legal
+
+      * Privacy Policy
+      * Comment Policy
+
+    * ### Contact
+
+      * Contact Info
+      * Subscribe
+      * Contribute
+
+    *   * __
+
+Home → Science → News → **Quantum computers might soon render RSA encryption
+obsolete**
+
+# Quantum computers might soon render RSA encryption obsolete
+
+by Tibi Puiu
+
+__Twitter__Facebook__Share on Google+__Share on Linkedin__Pin this Post__Share
+on Tumblr__More services
+
+__ March 4, 2016March 4, 2016
+
+A-AA+
+
+Many protocols like SSH, OpenPGP, S/MIME, and SSL/TLS rely on RSA encryption
+where access to data is secured with two keys. The encryption key is public
+and differs from the decryption key which is kept secret. The cryptosystem's
+reliability exploits the fact that factoring large primes takes years to do
+even for today's fastest supercomputers, so protocols based on RSA have proven
+paramount to anything from processing payments to storing classified
+intelligence. RSA, however, might become obsolete soon as quantum computer
+system become stabler and more efficient. Using only five atoms, a team of
+international researchers showed how to factor a prime, albeit a trivial one
+for demo purposes. The researchers say there aren't any _physical_
+restrictions that might hinder scalability. Theoretically, more atoms could be
+added in the process and large primes could be solved at lightning speed. That
+doesn't make the_ engineering_ challenges easy, though.
+
+Finding the private key for a RSA protocol can take years on the fastest
+supercomputers. ImageȘ Pixabay
+
+RSA was first described in 1977 by Ron Rivest, Adi Shamir and Leonard Adleman
+of the Massachusetts Institute of Technology. In this a**symmetric
+cryptography**,  two different but mathematically linked keys, one public and
+one private, are used to decrypt a message. The public key, which anyone can
+see and use to encrypt a message, is based on the product of two large primes,
+and an auxiliary exponential. Multiplying two large primes to an integer is
+easy, but determining the original primes that make the product with no other
+info is very difficult.
+
+In 1994, Peter Shor, the Morss Professor of Applied Mathematics at MIT, came
+up with a quantum algorithm that calculates the prime factors of a large
+number, vastly more efficiently than a classical computer. To actually run the
+algorithm though a quantum computer would require many qubits or quantum bits.
+
+In conventional computers, operations that transform inputs into outputs work
+with bits which can be 0s or 1s. Qubits  are atomic-scale units that can be 0
+and 1 at the same time -- a state known as a superposition. What this means is
+that a quantum computer can essentially carry out two calculations in
+parallel. A system that works with qubits can be not twice but _millions_ of
+times faster than a conventional computer.
+
+Previously, scientists designed quantum computers that could factor the number
+15 (primes 3 and 5), but these couldn't be scaled to factor larger numbers.
+"The difficulty is to implement [the algorithm] in a system that’s
+sufficiently isolated that it can stay quantum mechanical for long enough that
+you can actually have a chance to do the whole algorithm,”  Isaac Chuang,
+professor of physics and professor of electrical engineering and computer
+science at MIT.
+
+Chuang and colleagues at MIT and the University of Innsbruck in Austria claim
+they not only found a way to make a quantum system scalable, but also more
+efficient. Typically, it took 12 qubits to factor the number 15. The
+researchers factored the same number using only five qubits or atoms. These
+five atoms are held in an ion trap, which removes an electron from each atom
+thereby charging it. The system is stabilized by holding the atoms in place
+with a magnetic field.
+
+Logic gates operations are performed using laser pulses on four of the atoms,
+while the fifth is used to store or extract results. Using the fifth atom to
+store information was the brilliant part. "Measuring a qubit knocks it out of
+superposition and thereby destroys the information it holds. Restricting the
+measurement step to the fifth ion kept the four involved in the computation
+from being corrupted," wrote Amy Nordrum in an article  for IEEE.
+
+The number 15, albeit trivial to solve, is the smallest that can meaningfully
+demonstrate Shor's algorithm. A working system developed at University of
+Innsbruck factored the number with  a confidence exceeding 99 percent, as
+reported in the journal _Science_.
+
+>  “In future generations, we foresee it being straightforwardly scalable,
+once the apparatus can trap more atoms and more laser beams can control the
+pulses,” Chuang says. “We see no physical reason why that is not going to be
+in the cards.”
+
+To decrypt a typical  1024-bit key, the same system would need thousands of
+qubits or simultaneous laser pulses. This is doable, but highly challenging
+and it might take a long time before you can use a quantum computer to break
+RSA.
+
+Moreover, many researchers are already aware of the limitations of current
+cryptosystem and are preparing for the future: “quantum-resistant public-key
+algorithms”.
+
+> "Continued advances in quantum computing will draw broad attention to the
+threat it represents to all of today’s widely used public-key cryptosystems –
+the cryptography that underlies electronic commerce and secure communications
+on the Internet. The security community will begin planning the migration to
+new `quantum-resistant’ public-key cryptosystems for which quantum computers
+provide no computational advantage," said Brian LaMacchia,  Director, Security
+&amp; Cryptography, Microsoft Research.
+
+#### **Enjoyed this story? Like ZME Science on facebook:**
+
+##### Learn about the most amazing things. Get smarter everyday!
+
+**__ Tags:** quantum computerquantum computing
+
+  * IJK
+
+Define "soon". In geological terms, it might be soon. In human terms… This
+sounds like little more than hype and hoopla.
+
+  * Jake
+
+It's definitely not hype. There's so much we don't know about the quantum
+world, but what we do know tells us that the quantum world is amazing.
+
+  * IJK
+
+Define "soon". In geological terms, it might be soon. In human terms… This
+sounds like little more than hype and hoopla.
+
+  * Jake
+
+It's definitely not hype. There's so much we don't know about the quantum
+world, but what we do know tells us that the quantum world is amazing.
+
+### Advertisement
+
+### What readers liked
+
+  * This Week
+  * Last Month
+
+### This Week
+
+  * 01 Feral Children: Mind Blowing Cases of Children Raised by Animals 
+  * 02 9 Mathematical facts that will blow your mind [and a delicious bonus] 
+  * 03 The amazing bombardier beetle sprays boiling chemicals from its butt 
+  * 04 The prodigal son returns: tailless comet from Earth's distant past might hold primordial secrets 
+  * 05 The price of solar keeps falling, Dubai received the lowest ever asking bid for energy 
+
+### Last Month
+
+  * 01 Feral Children: Mind Blowing Cases of Children Raised by Animals 
+  * 02 Why Ernest Hemingway was Probably the Most Interesting Man in the World 
+  * 03 Enlightening Facts about Solar Energy You Should Know 
+  * 04 Why depression makes you tired 
+  * 05 A desk-sized turbine can power 10,000 homes 
+
+### Advertisement
+
+### Editor's Pick
+
+  * Art
+
+Artist uses plants as stencils for beautiful, delicate tattoos
+
+  * Anatomy
+
+Why we get goosebumps
+
+  * Feature Post
+
+Feral Children: Mind Blowing Cases of Children Raised by Animals
+
+### Advertisement
+
+(C) 2007-2016 **ZME Science**. All Rights Reserved. ZME Science is a ZME Media
+brand.
+
+Back to top
+
+  * News
+  * Environment__
+    * Animals
+    * Climate
+    * Renewable Energy
+    * Eco tips
+    * Environmental Issues
+    * Green Living
+  * Health &amp; Medicine__
+    * Alternative Medicine
+    * Anatomy
+    * Diseases
+    * Genetics
+    * Mind &amp; Brain
+    * Nutrition
+  * Space__
+    * Astronomy
+    * Astrophysics
+    * Observations
+  * Feature__
+    * Feature Post
+    * Art
+    * Great Pics
+    * Design
+    * Fossil Friday
+    * AstroPicture
+    * GeoPicture
+    * Did you know?
+    * Offbeat
+  * Q&amp;A
+  * More__
+    * ZME Science
+    * Advertise
+    * Legal
+    * Contact
+    * logo
+
+### Search the site
+
+__
+
+×
+
+  *[NPG]: Nature Publishing Group
+  *[doi]: Digital Object Identifier
+  *[ISSN]: International Standard Serial Number
+  *[EISSN]: Electronic International Standard Serial Number
+

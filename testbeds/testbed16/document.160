@@ -1,0 +1,41 @@
+Think you are ready to build a cloud? Think again.
+December 5, 2014Tim Crawford
+There is plenty of banter about what it truly takes to play in cloud. Do you think you are ready to jump into the deep end? Is your team ready? What about your processes? And finally, is the technology ready to take the leap? Read on before you answer.
+
+Two months ago, I wrote “8 Reasons Not to Move to Cloud” to address the common reasons why organizations are hesitant to move to cloud. This post is geared to address the level one must play if they want to build their own clouds. Having built cloud services myself, I can say from experience that it is not for the faint of heart.
+
+Automation and agility
+
+Traditional corporate infrastructure is typically not automated or agile. Meaning, a change in the requirements or demands may constitute a change in architecture, which in turn, requires a manual change in the configurations. All of this takes time, which works against the real-time expectations of cloud provisioning.
+
+Cloud-based solutions must have some form of automation and agility to address the changing demands coming from customers. Customers expect real-time provisioning of their resources. Speed is key here and only possible with automation. And a prerequisite for automation is standardization.
+
+Standardization is key
+
+The need for standardization is key when building cloud-based solutions. In order to truly enable automation, there must be a level of assumption around hardware configurations, architecture, and logical network. Even relatively small things such as BIOS version, NIC model and patch level can throw havoc into cloud automation. From a corporate perspective, even the same model of server hardware could have different versions of BIOS, NIC and patches.
+
+Add logical configurations such as network topology, and the complexities start to mount. Where are the switches? How is the topology configured? Which protocols are in play for which sections of the network? One can quickly see how a very small hiccup can throw things into whack pretty quickly.
+
+For the average corporate environment, managing physical and logical configurations at this level is challenging. Even for those operating at scale, it is a challenge. This is one reason why those at scale build their own systems; so they can control the details.
+
+The scale problem
+
+At scale, however, the challenge is more than just numbers. Managing at scale requires a different mode of thinking. In a traditional corporate environment, when a server fails, an alert goes off to dispatch someone to replace the failed component. In parallel, the impacted workload is moved or changed to limit the impact to users. These issues can range from a small fire to a three-alarm inferno.
+
+At scale, those processes simply collapse under the stress. This is where operating at scale requires a different mode of thinking. Manual intervention for every issue is not an option.
+
+The operations math problem
+
+First, the cloud architecture must endure multiple hardware failures. Single points of failure must come out of the equation as much as possible. I wrote about this back in 2011 with my post “Clouds, Failure and Other Things That Go Bump in the Night.” This is where we revert to probability and statistics. There will be hardware failures. Even entire data centers will fail. The challenge is how to change out operational thinking to assuming failure. I detail this a bit further in my post “Is the cloud unstable and what can we do about it?”
+
+Discipline, discipline, discipline
+
+All of these lead to a required chance in discipline. No longer is one able to simply run into the data center to fix something. No longer are humans able to fix everything manually. In fact, the level of discipline goes way up with cloud. Even the smallest mistake can have cataclysmic consequences. Refer to the November Microsoft Azure outage that was caused by a ‘performance update’. Process, operations, configurations and architectures must all raise their level of discipline.
+
+Consider the consequences
+
+Going full-circle, the question is: Should an enterprise or corporate entity consider building private clouds? For the vast majority of organizations, the answer should be no. But there are exceptions. Refer to my post way back in 2009 on the “Importance of Private Clouds.” Internal private clouds may present challenges for some, but hosted private clouds provide an elegant alternative.
+
+In the end, building clouds are hard and complicated. Is it plausible for an enterprise to build their own cloud? Yes. Typically, it may come as a specific solution to a specific problem. But the hurdle is pretty high…and getting higher every day. Consider the consequences before making the leap.
+
+ 

@@ -1,0 +1,66 @@
+Zed3D - A compact reference for 3d computer graphics programming
+
+Texture mapping & variants on the same theme
+Texture mapping is the process by which we give a polygon its own planar coordinate system, with two base vector that lie in the polygon's plane, and a vector for the position of a point in the plane. Specifically, if u and v lie in the plane of the polygon, and w is a point in the plane of the polygon (for example, a vertex), then the plane equation for the polygon can be written as:
+au+bv+w
+90
+where (a,b) are the texture coordinates on the polygon. Once we have (a,b), we can assign different properties to different (a,b) pairs. For example, we can make the color of the polygon a function of (a,b), which corresponds to classical texture mapping. Another thing we can do is perturb the surface normal of the polygon with some function of (a,b), which corresponds to bump mapping.
+As it is, the Phong shading approximation we saw in the last bit of the preceding section is essentially a texture mapping trick.
+Note that it is possible to have several different coordinate systems for the same polygon, if several different textures have to be applied (ie, one for the actual texture mapping, another one for the phong shading, another one for bump mapping, and who knows what else).
+What we have said in this section up to now is (relatively) independent of the projection used. Now we will consider the type of projection used.
+In a parallel projection, linear interpolation, just like we did for Gouraud, across the projected surface is correct (so long as the surface is planar). However, when perspective projecting, linear interpolation is generally wrong. For an elaborate discussion of the texture mapping equation in the perspective projection case, see the perspective chapter.
+If the plane of the perspectively projected polygon is perpendicular to the z axis, then linear interpolation is exact. As the angle between the plane of the polygon and the z axis moves away from 90 degrees, linear interpolation becomes more and more wrong. If the polygons are small enough on screen, the perspective distortion might now show, but for larger and more angled polygons, it is quite apparent.
+Linear interpolation may suffice for some purposes on low end platforms and games, but a correction for perspective will definitely be needed for more serious applications, as discussed in the perspective chapter.
+91
+Computer graphics related problems
+Introduction
+In the process of learning computer graphics, one comes across several of the classical questions in one version or another. These include "how do I compute the plane normal of a triangle" or more generally "how do I compute the plane normal of a polygon, preferably using all vertices to minimize error", "how do I make a normal that points outwards" and such.
+These technical questions need to be addressed individually, since they typically have very little in common. First will be covered generating normals that point outwards for polygons. An application of that will be covered, which is triangulation of a concave polygon. Computation of a normal for any polygon is then considered, by using all vertices to compute it. Then will be covered the problem of generating plane normals that point outwards of a polyhedron, which relies on edge normals that point outwards of a polygon.
+Generating edge normals
+It will prove to be essential for the later problems to have normals for the edges that point outwards from the polygon. We might as well start by saying that for an edge of slope m, the normal would be (-m,1) unitized. The second preliminary is defining modulo space addition and subtraction.
+Let a and b be integers of modulo n space. Then, a?b is defined to be (a+b)%n, where x%y means "remainder of the division of x by y" (the remainder is always positive, between 0 and y-1). Similarly, aTb is defined to be (a-b)%n. As an example, let's assume we are working in modulo 8 space. Then,
+3?2=5%8=5 5?6=11%8=3 4T3=1%8=1 4T7=-3%8=5
+The first step is to generate normals for all edges by calculating (-m,1) and unitizing it. These normals will not all be oriented correctly.
+92
+Let x0, x1, x2, ..., xn-1 be the vertices in a clockwise or counter-clockwise order around a n-sided polygon. Furthermore, let Ni be the normal of the edge between xi and xi?1.
+The second step is finding the topmost vertex. In cases of ambiguity, of all topmost vertices, take the leftmost. This vertex is certain to be convex. Say this is vertex is vertex xi.
+Let U be the vector from xi to xi?1, and V be the vector from xi to xiT1. Then calculate the value of U•Ni. If it is positive, invert Ni, otherwise do nothing. Similarly, calculate V•NiT1 and if it is positive, invert NiT1, otherwise do nothing. Ni and NiT1 are now correctly oriented.
+The point of that first step was to make at least one correctly oriented normal. Then, start following the edges and generate correctly oriented normals as follows.
+Given a vertex xi for which NiT1 is known to be correctly oriented, Ni can be computed as follows. Let U be the vector from xi to xi?1, and V be the vector from xi to xiT1. Calculate NiT1•(U+V) and Ni•(U+V). If the results are of the same sign do nothing. If they are of different signs, invert Ni. Ni is now correctly oriented.
+Triangulating a polygon
+Let us first cover the convex scenario. We will be using the same notation as in the previous section.
+Take any triplet of vertices xiT1, xi, xi?1. These three vertices form the first triangle. Then, remove vertex xi from the list, and the polygon has now one less vertex. Repeat until the polygon is a triangle, at which point you are finished.
+One step of the algorithm is shown above.
+93
+The concave scenario is a bit more complicated. What we will do is split the concave polygon into smaller polygons, eventually resulting in either triangles or convex polygons that can be triangulated as above.
+Find a vertex that is concave. Let U be the vector from xiT1 to xi. Then, vertex xi is concave if and only if U•Ni is more than zero. Loop through the vertices until you find such a vertex. If you do not find one, then the polygon is convex and triangulate it as above.
+From that vertex, find a second vertex xj for which the line segment from xi to xj does not intersect any other edge. Then, insert that new edge, making two polygons, one that has the vertices xi, xi?1, xi?2, ..., xj, and one that has vertices xj, xj?1, xj?2, ..., xi. Re-apply the algorithm on these two smaller polygons.
+It can be demonstrated that using the above algorithm on a n sided polygon will generate exactly n-2 triangles.
+Computing a plane normal from vertices
+It can be shown that the (P,Q,R) components of the normal vectors are proportional to the signed area of the projection of the polygon on the yz, xz and xy plane respectively.
+The signed area of a polygon in (u,v) coordinates can be shown to be:
+A(u,v)=1/2×?0=i<n(vi+vi?1)×(ui?1-ui)
+where (ui, vi) are the coordinates of vertex xi in 2d.
+Since we're not really interested in the signed area, but some constant time the signed area, the 1/2 can be safely ignored without loss of precision.
+Given a polygon in 3d, one can compute the above with:
+P=A(y,z) Q=A(z,x) R=A(x,y)
+Or, if you want, P is the area as calculated using only the y and z components of the points in 3d, Q is the area as calculated using the z and x components of points in 3d, and R is the area as calculated using the x and y components of points in 3d.
+Once this value of (P,Q,R) is known, the result should be normalized, and then correct orientation should be checked as described hereafter.
+It should be noted that the A(u,v) equation simplifies to
+94
+A(u,v)=1/2×[(u0-u1)(v0-v2)-(v0-v1)(u0-u2)]
+in the case of a triangle. Again, the 1/2 constant can be ignored for normal generation purposes.
+Generating correctly oriented normals for polyhedra
+In some cases, normal orientation is implicit in the object description we have. For instance, some modelers output all vertices in a counterclockwise manner when seen from above. If this is the case, then all that is needed is that the normal be computed in a specific way, without changing the ordering of the vertices. Then the normals will be correctly oriented.
+If this is not the case, we need some form of algorithm to ensure proper normal orientation.
+For this task, we need to have computed the normals to the edges to for all polygons making up the polyhedron, each in their respective plane of course. The edges normals in the polygons planes can be localized in space for the polyhedron, we are going to use this. Note that each edge is connected to two polygons, thus has two normals, one per polygon.
+Find the vertex with the smallest x coordinate. In case of ambiguity, resolve with the smallest y coordinate. In case of ambiguity, resolve with the smallest z value. This vertex is known to be convex. Take all edges connected to that vertex, and find the vector U that is the sum of all edge normals (two per edge). Then, for each face touching the point, calculate A•U, where A is the face normal. If the result is negative, invert A, otherwise leave it as it is. All such faces now have correctly oriented normal.
+From this point, traverse all faces, propagating correctly oriented normals as follows. Let us assume we have two faces F1 and F2, and that F1's normal is correctly oriented. Let A1 and A2 denote F1 and F2's normals respectively. Pick an edge shared by F1 and F2, and compute U, the sum of the two edge normals. Then evaluate A1•U and A2•U. If they are of different signs, invert A2, otherwise leave it that way. A2 is now correctly oriented.
+A special note, if the dot products are very close to zero, the face should be initialized with the same normal, and marked as ambiguous. Later, if you can find another face to help you better determine the orientation of that face, use that normal instead. At any rate, ambiguous faces should be avoided when propagating normal orientation.
+95
+One very good way of propagating the normals is to start with one of the initial faces for which we generated the normal, and then do a depth first search through connected faces. The depth first search is elementary and will not be discussed here because it is not absolutely necessary, though it will tend to minimize time spend computing normals orientation.
+Polygon clipping against a line or plane
+This problem often occurs in computer graphics, and is often needed real time. Fortunately, convenient solutions exist that work well.
+The simplest solution is with convex polygons. In this case, one should note that there are only 2 intersections of the clipping line or plane with the edges of the polygon. When we face a concave case, there is an even number of intersections with the edges, but some ordering should be done for them, or degenerate edges might result.
+The method for clipping convex polygons is illustrated below.
+Note that if one wants to keep both pieces of the clipped polygon, this algorithm can be trivially extended.

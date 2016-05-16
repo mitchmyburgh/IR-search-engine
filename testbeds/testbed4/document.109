@@ -1,0 +1,40 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+Mission 
+Convergence 
+
+Texture Mapping
+10.1 Overview
+We would like to give objects a more varied and realistic appearance through complex variations in re?ectance that convey textures. There are two main sources of natural texture: • Surface markings - variations in albedo (i.e. the total light re?ected from ambient and diffuse components of re?ection), and • Surface relief - variations in 3D shape which introduces local variability in shading. We will focus only on surface markings.
+Examples of surface markings and surface relief
+These main issues will be covered: • Where textures come from, • How to map textures onto surfaces, • How texture changes re?ectance and shading, • Scan conversion under perspective warping, and • Aliasing
+10.2 Texture Sources
+10.2.1 Texture Procedures
+Textures may be de?ned procedurally. As input, a procedure requires a point on the surface of an object, and it outputs the surface albedo at that point. Examples of procedural textures include checkerboards, fractals, and noise.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 59
+CSC418 / CSCD18 / CSC2504 Texture Mapping
+A procedural checkerboard pattern applied to a teapot. The checkerboard texture comes from the OpenGL programming guide chapter on texture mapping.
+10.2.2 Digital Images To map an arbitrary digital image to a surface, we can de?ne texture coordinates (u,v) ? [0,1]2. For each point [u0,v0] in texture space, we get a point in the corresponding image.
+(0, 0) (1, 0)
+(0, 1) (1, 1)
+Texture coordinates of a digital image
+10.3 Mapping from Surfaces into Texture Space
+For each face of a mesh, specify a point (µi,?i) for vertex ¯ pi. Then de?ne a continuous mapping from the parametric form of the surface ¯ s(a,ß) onto the texture, i.e. de?ne m such that (µ,?) = m(a,ß).
+Example: For a planar patch ¯ s(a,ß) = ¯ p0 + a~a + ß~ b, where 0 = a = 1 and 0 = ß = 1. Then we could use µ = a and ? = ß.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 60
+CSC418 / CSCD18 / CSC2504 Texture Mapping
+Example: For a surface of revolution, ¯ s(a,ß) = (cx(a)cos(ß),cx(a)sin(ß),cz(a)). So let 0 = a = 1 and 0 = ß = 2p. Then µ = a and ? = ß/2p.
+(1, 1)
+3D surface Texture space Image
+10.4 Textures and Phong Re?ectance Scale texture values in the source image to be in the range 0 = t = 1 and use them to scale the re?ection coef?cients rd and ra. That is,
+˜ rd = trd, ˜ ra = tra.
+We could also multiply t by the specular re?ection, in which case we are simply scaling E from the Phong model.
+10.5 Aliasing
+A problem with high resolution texturing is aliasing, which occurs when adjacent pixels in a rendered image are sampled from pixels that are far apart in a texture image. By down-sampling- reducing the size of a texture-aliasing can be reduced for far away or small objects, but then textured objects look blurry when close to the viewer. What we really want is a high resolution texture for nearby viewing, and down-sampled textures for distant viewing. A technique called mipmapping gives us this by prerendering a texture image at several different scales. For example, a 256x256 image might be down-sampled to 128x128, 64x64, 32x32, 16x16, and so on. Then it is up to the renderer to select the correct mipmap to reduce aliasing artifacts at the scale of the rendered texture.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 61
+CSC418 / CSCD18 / CSC2504 Texture Mapping
+An aliased high resolution texture image (left) and the same texture after mipmapping (right)

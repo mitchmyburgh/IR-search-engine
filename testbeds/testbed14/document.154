@@ -1,0 +1,275 @@
+﻿Reasoning in OWL 2 RL and RDF Graphs using Rules
+This section presents a partial axiomatization of the OWL 2 RDF-Based Semantics [OWL 2 RDF-Based Semantics] in the form of first-order implications; this axiomatization is called the OWL 2 RL/RDF rules. These rules provide a useful starting point for practical implementation using rule-based technologies.
+The rules are given as universally quantified first-order implications over a ternary predicate T. This predicate represents a generalization of RDF triples in which bnodes and literals are allowed in all positions (similar to the partial generalization in pD* [pD*] and to generalized RDF triples in RIF [RIF]); thus, T(s, p, o) represents a generalized RDF triple with the subject s, predicate p, and the object o. Variables in the implications are preceded with a question mark. The rules that have empty "if" parts should be understood as being always applicable. The propositional symbol false is a special symbol denoting contradiction: if it is derived, then the initial RDF graph was inconsistent. The set of rules listed in this section is not minimal, as certain rules are implied by other ones; this was done to make the definition of the semantic consequences of each piece of OWL 2 vocabulary self-contained.
+Many conditions contain atoms that match to the list construct of RDF. In order to simplify the presentation of the rules, LIST[h, e1, ..., en] is used as an abbreviation for the conjunction of triples shown in Table 3, where z2, ..., zn are fresh variables that do not occur anywhere where the abbreviation is used.
+Table 3. Expansion of LIST[h, e1, ..., en]
+T(h, rdf:first, e1)
+T(h, rdf:rest, z2)
+T(z2, rdf:first, e2)
+T(z2, rdf:rest, z3)
+...
+...
+T(zn, rdf:first, en)
+T(zn, rdf:rest, rdf:nil)
+The axiomatization is split into several tables for easier navigation. Each rule is given a short unique name. The rows of several tables specify rules that need to be instantiated for each combination of indices given in the right-most column.
+Table 4 axiomatizes the semantics of equality. In particular, it defines the equality relation owl:sameAs as being reflexive, symmetric, and transitive, and it axiomatizes the standard replacement properties of equality for it.
+
+eq-diff2
+T(?x, rdf:type, owl:AllDifferent)
+T(?x, owl:members, ?y)
+LIST[?y, ?z1, ..., ?zn]
+T(?zi, owl:sameAs, ?zj)
+false
+for each 1 ≤ i < j ≤ n
+eq-diff3
+T(?x, rdf:type, owl:AllDifferent)
+T(?x, owl:distinctMembers, ?y)
+LIST[?y, ?z1, ..., ?zn]
+T(?zi, owl:sameAs, ?zj)
+false
+for each 1 ≤ i < j ≤ n
+Table 5 specifies the semantic conditions on axioms about properties.
+Table 5. The Semantics of Axioms about Properties
+
+If
+then
+
+prp-ap
+
+T(ap, rdf:type, owl:AnnotationProperty)
+for each built-in annotation property of OWL 2 RL
+prp-dom
+T(?p, rdfs:domain, ?c)
+T(?x, ?p, ?y)
+T(?x, rdf:type, ?c)
+
+prp-rng
+T(?p, rdfs:range, ?c)
+T(?x, ?p, ?y)
+T(?y, rdf:type, ?c)
+
+prp-fp
+T(?p, rdf:type, owl:FunctionalProperty)
+T(?x, ?p, ?y1)
+T(?x, ?p, ?y2)
+T(?y1, owl:sameAs, ?y2)
+
+prp-ifp
+T(?p, rdf:type, owl:InverseFunctionalProperty)
+T(?x1, ?p, ?y)
+T(?x2, ?p, ?y)
+T(?x1, owl:sameAs, ?x2)
+
+prp-irp
+T(?p, rdf:type, owl:IrreflexiveProperty)
+T(?x, ?p, ?x)
+false
+
+prp-symp
+T(?p, rdf:type, owl:SymmetricProperty)
+T(?x, ?p, ?y)
+T(?y, ?p, ?x)
+
+prp-asyp
+T(?p, rdf:type, owl:AsymmetricProperty)
+T(?x, ?p, ?y)
+T(?y, ?p, ?x)
+false
+
+prp-trp
+T(?p, rdf:type, owl:TransitiveProperty)
+T(?x, ?p, ?y)
+T(?y, ?p, ?z)
+T(?x, ?p, ?z)
+
+prp-spo1
+T(?p1, rdfs:subPropertyOf, ?p2)
+T(?x, ?p1, ?y)
+T(?x, ?p2, ?y)
+
+prp-spo2
+T(?p, owl:propertyChainAxiom, ?x)
+LIST[?x, ?p1, ..., ?pn]
+T(?u1, ?p1, ?u2)
+T(?u2, ?p2, ?u3)
+...
+T(?un, ?pn, ?un+1)
+T(?u1, ?p, ?un+1)
+
+prp-eqp1
+T(?p1, owl:equivalentProperty, ?p2)
+T(?x, ?p1, ?y)
+T(?x, ?p2, ?y)
+
+prp-eqp2
+T(?p1, owl:equivalentProperty, ?p2)
+T(?x, ?p2, ?y)
+T(?x, ?p1, ?y)
+
+prp-pdw
+T(?p1, owl:propertyDisjointWith, ?p2)
+T(?x, ?p1, ?y)
+T(?x, ?p2, ?y)
+false
+
+prp-adp
+T(?x, rdf:type, owl:AllDisjointProperties)
+T(?x, owl:members, ?y)
+LIST[?y, ?p1, ..., ?pn]
+T(?u, ?pi, ?v)
+T(?u, ?pj, ?v)
+false
+for each 1 ≤ i < j ≤ n
+prp-inv1
+T(?p1, owl:inverseOf, ?p2)
+T(?x, ?p1, ?y)
+T(?y, ?p2, ?x)
+
+prp-inv2
+T(?p1, owl:inverseOf, ?p2)
+T(?x, ?p2, ?y)
+T(?y, ?p1, ?x)
+
+prp-key
+T(?c, owl:hasKey, ?u)
+LIST[?u, ?p1, ..., ?pn]
+T(?x, rdf:type, ?c)
+T(?x, ?p1, ?z1)
+...
+T(?x, ?pn, ?zn)
+T(?y, rdf:type, ?c)
+T(?y, ?p1, ?z1)
+...
+T(?y, ?pn, ?zn)
+T(?x, owl:sameAs, ?y)
+
+prp-npa1
+T(?x, owl:sourceIndividual, ?i1)
+T(?x, owl:assertionProperty, ?p)
+T(?x, owl:targetIndividual, ?i2)
+T(?i1, ?p, ?i2)
+false
+
+prp-npa2
+T(?x, owl:sourceIndividual, ?i)
+T(?x, owl:assertionProperty, ?p)
+T(?x, owl:targetValue, ?lt)
+T(?i, ?p, ?lt)
+false
+
+Table 6 specifies the semantic conditions on classes.
+Table 6. The Semantics of Classes
+
+If
+then
+
+cls-thing
+
+T(owl:Thing, rdf:type, owl:Class)
+
+cls-nothing1
+
+T(owl:Nothing, rdf:type, owl:Class)
+
+cls-nothing2
+T(?x, rdf:type, owl:Nothing)
+false
+
+cls-int1
+T(?c, owl:intersectionOf, ?x)
+LIST[?x, ?c1, ..., ?cn]
+T(?y, rdf:type, ?c1)
+T(?y, rdf:type, ?c2)
+...
+T(?y, rdf:type, ?cn)
+T(?y, rdf:type, ?c)
+
+cls-int2
+T(?c, owl:intersectionOf, ?x)
+LIST[?x, ?c1, ..., ?cn]
+T(?y, rdf:type, ?c)
+T(?y, rdf:type, ?c1)
+T(?y, rdf:type, ?c2)
+...
+T(?y, rdf:type, ?cn)
+
+cls-uni
+T(?c, owl:unionOf, ?x)
+LIST[?x, ?c1, ..., ?cn]
+T(?y, rdf:type, ?ci)
+T(?y, rdf:type, ?c)
+for each 1 ≤ i ≤ n
+cls-com
+T(?c1, owl:complementOf, ?c2)
+T(?x, rdf:type, ?c1)
+T(?x, rdf:type, ?c2)
+false
+
+cls-svf1
+T(?x, owl:someValuesFrom, ?y)
+T(?x, owl:onProperty, ?p)
+T(?u, ?p, ?v)
+T(?v, rdf:type, ?y)
+T(?u, rdf:type, ?x)
+
+cls-svf2
+T(?x, owl:someValuesFrom, owl:Thing)
+T(?x, owl:onProperty, ?p)
+T(?u, ?p, ?v)
+T(?u, rdf:type, ?x)
+
+cls-avf
+T(?x, owl:allValuesFrom, ?y)
+T(?x, owl:onProperty, ?p)
+T(?u, rdf:type, ?x)
+T(?u, ?p, ?v)
+T(?v, rdf:type, ?y)
+
+cls-hv1
+T(?x, owl:hasValue, ?y)
+T(?x, owl:onProperty, ?p)
+T(?u, rdf:type, ?x)
+T(?u, ?p, ?y)
+
+cls-hv2
+T(?x, owl:hasValue, ?y)
+T(?x, owl:onProperty, ?p)
+T(?u, ?p, ?y)
+T(?u, rdf:type, ?x)
+
+T(dt, rdf:type, rdfs:Datatype)
+for each datatype dt supported in OWL 2 RL
+dt-type2
+
+T(lt, rdf:type, dt)
+for each literal lt and each datatype dt supported in OWL 2 RL
+such that the data value of lt is contained in the value space of dt
+dt-eq
+
+T(lt1, owl:sameAs, lt2)
+for all literals lt1 and lt2 with the same data value
+dt-diff
+
+T(lt1, owl:differentFrom, lt2)
+for all literals lt1 and lt2 with different data values
+dt-not-type
+T(lt, rdf:type, dt)
+false
+for each literal lt and each datatype dt supported in OWL 2 RL
+such that the data value of lt is not contained in the value space of dt
+Table 9 specifies the semantic restrictions on the vocabulary used to define the schema.
+
+In order to avoid potential performance problems in practice, OWL 2 RL/RDF rules do not include the axiomatic triples of RDF and RDFS (i.e., those triples that must be satisfied by, respectively, every RDF and RDFS interpretation) [RDF Semantics] and the relevant OWL vocabulary [OWL 2 RDF-Based Semantics]; moreover, OWL 2 RL/RDF rules include most, but not all of the entailment rules of RDFS [RDF Semantics]. An OWL 2 RL/RDF implementation may include these triples and entailment rules as necessary without invalidating the conformance requirements for OWL 2 RL [Conformance].
+Theorem PR1. Let R be the OWL 2 RL/RDF rules as defined above. Furthermore, let O1 and O2 be OWL 2 RL ontologies satisfying the following properties:
+neither O1 nor O2 contains a IRI that is used for more than one type of entity (i.e., no IRIs is used both as, say, a class and an individual);
+O1 does not contain SubAnnotationPropertyOf, AnnotationPropertyDomain, and AnnotationPropertyRange axioms; and
+each axiom in O2 is an assertion of the form as specified below, for a, a1, ..., an named individuals:
+ClassAssertion( C a ) where C is a class,
+ObjectPropertyAssertion( OP a1 a2 ) where OP is an object property,
+DataPropertyAssertion( DP a v ) where DP is a data property, or
+SameIndividual( a1 ... an ).
+Furthermore, let RDF(O1) and RDF(O2) be translations of O1 and O2, respectively, into RDF graphs as specified in the OWL 2 Mapping to RDF Graphs [OWL 2 RDF Mapping]; and let FO(RDF(O1)) and FO(RDF(O2)) be the translation of these graphs into first-order theories in which triples are represented using the T predicate — that is, T(s, p, o) represents an RDF triple with the subject s, predicate p, and the object o. Then, O1 entails O2 under the OWL 2 Direct Semantics [OWL 2 Direct Semantics] if and only if FO(RDF(O1)) ∪ R entails FO(RDF(O2)) under the standard first-order semantics.
+Proof Sketch. Without loss of generality, it can be assumed that all axioms in O1 are fully normalized — that is, that all class expressions in the axioms are of depth at most one. Let DLP(O1) be the set of rules obtained by translating O1 into a set of rules as in Description Logic Programs [DLP].
+Consider now each assertion A ∈ O2 that is entailed by DLP(O1) (or, equivalently, by O1). Let dt be a derivation tree for A from DLP(O1). By examining the set of OWL 2 RL constructs, it is possible to see that each such tree can be transformed to a derivation tree dt' for FO(RDF(A)) from FO(RDF(O1)) ∪ R. Each assertion B occurring in dtis of the form as specified in the theorem. The tree dt' can, roughly speaking, be obtained from dt by replacing each assertion B with FO(RDF(B)) and by replacing each rule from DLP(O1) with a corresponding rule from Tables 3–8. Consequently, FO(RDF(O1)) ∪ R entails FO(RDF(A)).
+Since no IRI in O1 is used as both an individual and a class or a property, FO(RDF(O1)) ∪ R does not entail a triple of the form T(a:i1, owl:sameAs, a:i2) where eithera:i1 or a:i2 is used in O1 as a class or a property. This allows one to transform a derivation tree for FO(RDF(A)) from FO(RDF(O1)) ∪ R to a derivation tree for A fromDLP(O1) in a way that is analogous to the previous case. QED
+

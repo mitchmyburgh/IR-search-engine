@@ -1,0 +1,29 @@
+iPhone 6S security hole lets attackers access contacts and photos without passcode
+Lockscreen flaw allows attackers to quickly access personal information on a locked iPhone 6S or 6S Plus using Siri, Twitter and 3D Touch
+ twitter 3D Touch
+ iPhone 6S flaw allows attackers to access photos and contacts without knowing the passcode using Twitter search. Photograph: Dominic Lipinski/PA
+Samuel Gibbs
+Tuesday 5 April 2016 11.02 BST Last modified on Wednesday 6 April 2016 12.02 BST
+Share on Pinterest Share on LinkedIn Share on Google+
+Shares
+7
+ Save for later
+A security flaw with the iPhone 6S and 6S Plus will let anyone bypass the phone lock and access personal information without having to know the passcode.
+
+The bug, discovered by Jose Rodriguez, who found a similar security hole last year, requires Siri but unlike many other iPhone hacks is relatively easy to execute.
+
+All an attacker needs to do is fire up Siri from the lockscreen and prompt it to search Twitter for any email address. Once one is found, 3D Touching the email address will bring up a context menu from which you can create a new contact or add to an existing contact.
+
+That gives the attacker complete access to your contacts. If the Contacts app has ever been given permission to access the iPhone’s photo library, the attacker can also browse your photos by attempting to add a photo to that new or existing contact.
+
+All that is possible without unlocking the device.
+
+Facebook Twitter Pinterest
+ Rodriguez demonstrating the lockscreen bypass, which affects iPhone 6S and 6S Plus devices running iOS 9, including the recently released version, iOS 9.3.1.
+Users can protect themselves from having their photos accessed with the lockscreen bypass by simply denying Siri and the Contacts app access to their photos within the iPhone’s Privacy settings. But to prevent access to contacts through the flaw requires disabling Siri while the iPhone is locked within the Touch ID and Passcode settings.
+
+The bypass bug only affects those devices with 3D Touch screens - the iPhone 6S and 6S Plus - but comes just after FBI’s recent battles with Apple to unlock the San Bernardino shooter’s iPhone 5C.
+
+The federal agency has yet to divulge how it unlocked the smartphone or whether it or the third-party that is thought to have assisted it used a security flaw similar to this one to bypass the passcode. In an advisory to US local and state law enforcement, the FBI pledged to help them unlock iPhones in criminal cases where possible.
+
+Update: Apple has fixed the issue with Siri, forcing it to ask for a passcode if searching Twitter from the lockscreen.

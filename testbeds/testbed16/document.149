@@ -1,0 +1,49 @@
+The enterprise view of cloud, specifically Private Cloud, is confusing
+February 19, 2015Tim Crawford
+Enterprise organizations are actively looking for ways to leverage cloud computing. Cloud presents the single-largest opportunity for CIOs and the organizations they lead. The move to cloud is often part of a larger strategy for the CIO moving to a consumption-first paradigm. As the CIO charts a path to cloud along the cloud spectrum, Private Cloud provides a significant opportunity.
+
+Adoption of private cloud infrastructure is anemic at best. Looking deeper into the problem, the reason becomes painfully clear. The marketplace is heavily fractured and quite confusing even to the sophisticated enterprise buyer. After reading this post, one could question the feasibility of private cloud. The purpose of this post is not to present a case to avoid private cloud, but rather expose the challenges to adoption to help build awareness towards solving the issues.
+
+Problem statement
+
+Most enterprises have a varied strategy with cloud adoption. Generally there are two categories of applications and services:
+
+Existing enterprise applications: These may include legacy and custom applications. The vast majority was never designed for virtualization let alone cloud. Even if there is an interest to move to cloud, the cost and risk to move (read: re-write) these applications to cloud is extreme.
+Greenfield development: New applications or those modified to support cloud-based architectures. Within the enterprise, greenfield development represents a small percentage compared with existing applications. On the other hand, web-scale and startup organizations are able to leverage almost 100% greenfield development.
+ 
+
+Private Cloud Market Mismatch
+
+The disconnect is that most cloud solutions in the market today suit greenfield development, but not existing enterprise applications. Ironically, from a marketing perspective, most of the marketing buzz today is geared toward solutions that service the greenfield development leaving existing enterprise applications in the dust.
+
+Driving focus to private cloud
+
+For the average enterprise organization, they are faced with a cloud conundrum. Cloud, theoretically, is a major opportunity for enterprise applications. Yet the private cloud solutions are a mismatched potpourri of offerings, which make it difficult to compare. In addition, private cloud may take different forms.
+
+ 
+
+Private Cloud Models
+
+Keep in mind that within the overall cloud spectrum, this is only private cloud. At the edges of private cloud, colocation and public cloud present a whole new set of criteria to consider.
+
+Within the private cloud models, it would be easy if the only criteria were compute, storage and network requirements. The reality is that a myriad of other factors are the true differentiators.
+
+The hypervisor and OpenStack phenomenon
+
+The defacto hypervisor in enterprises today is VMware. Not every provider supports VMware. Private cloud providers may support VMware along with other hypervisors such as Hyper-V, KVM and Zen. Yes, it is possible to move enterprise workloads from one hypervisor to another. That is not the problem. The problem is the amount of work required to address the intricacies of the existing environment. Unwinding the ball of yarn is not a trivial task and presents yet another hurdle. On the flipside, there are advantages to leveraging other hypervisors + OpenStack.
+
+Looking beyond the surface of selection criteria
+
+There are about a dozen different criteria that often show up when evaluating providers. Of those, hypervisor, architecture, location, ecosystem and pricing models are just some of the top-line criteria.
+
+In order to truly evaluate providers, one must delve further into the details of each to understand the nuances of each component. It is those details that can make the difference between success and failure. And each nuance is unique to the specific provider. As someone recent stated, “Each provider is like a snowflake.” No two are alike.
+
+The large company problem
+
+Compounding the problem is a wide field of providers trying to capture a slice of the overall pie. Even large, incumbent companies are failing miserably to deliver private cloud solutions. There are a number of reasons companies are failing.
+
+Time to go!
+
+With all of these reasons, one may choose to hold off considering private cloud solutions. That would be a mistake. Sure, there are a number of challenges to adopting private cloud solutions today. Yes, the marketplace is highly fractured and confusing. However, with work comes reward.
+
+The more enterprise applications and services move to private cloud solutions, the more opportunities open for the CIO. The move to private cloud does not circumvent alternatives from public cloud and SaaS-based solutions. It does, however, help provide greater agility and focus for the IT organization compared to traditional infrastructure solutions.

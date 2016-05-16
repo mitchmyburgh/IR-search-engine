@@ -1,0 +1,18 @@
+CloudyScripts Supports New Amazon EC2 Region: Asia Pacific (Tokyo)
+Frederic Donnat / March 9, 2011
+Amazon announces that a new AWS Region in Tokyo is supported (see AWS blogpost for more information).
+
+CloudyScripts WebSite
+
+CloudyScripts has been updated in order to support this new AWS Region.
+
+This AWS Region is available in all the following CloudyScripts:
+
+Convert Instance-store AMI To EBS-booted AMI: Takes an instance-store AMI, instantiates it, copies the boot-data to a temporary EBS volume, takes a snapshot of this EBS volume and registers the snapshot as EBS-booted AMI. As a result, the new AMI behaves exactly as the original AMI, but boots from an EBS volume.
+Copy Ami to Different Region: Creates a copy of a given AMI and make it available in another region. Therefore, instances are created in both regions that perform copying (via rsync) of all files from a volume in the original region based on a snapshot created for the original AMI to a clean volume in the target region. After successful copying, a snapshot is performed in the target region and registered as AMI.
+Download a Snapshot: Allows to download a snapshot as zip-file. Therefore, the script starts up an instance with a web-server, creates and attaches an EBS volume from the specified snapshot, zips the snapshot data, and makes it available as download link for 5 minutes.
+Copy Snapshot To Different Region: Creates a copy of a given snapshot and make it available in another region. Therefore, instances are created in both regions that perform copying (via rsync) of all files from a volume in the original region based on the specified snapshot to a clean volume in the target region. After successful copying, a snapshot is performed in the target region.
+Encrypt Storage Using dm-crypt: Allows you to encrypt an EBS storage using the dmcrypt tool. The script transforms an EBS volume (which must already be attached to an instance) into a dm-encrypted volume, creates a file-system (ext3), and mounts it to the specified path.
+CloudyScripts Community AMI
+
+The CloudyScripts Community AMI has also been updated in order to support this new AWS Region. This AMI can be found in EU East (Northern Virginia) Region with the current AMI ID ami-f291639b.

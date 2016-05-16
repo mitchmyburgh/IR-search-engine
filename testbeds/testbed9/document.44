@@ -1,0 +1,21 @@
+A kinetic smallest enclosing disk data structure is a kinetic data structure that maintains the smallest enclosing disk of a set of moving points.
+
+
+== 2D ==
+In 2 dimensions, the best known kinetic smallest enclosing disk data structure uses the farthest point delaunay triangulation of the point set to maintain the smallest enclosing disk. The farthest-point Delaunay triangulation is the dual of the farthest-point Voronoi diagram. It is known that if the farthest-point delaunay triangulation of a point set contains an acute triangle, the circumcircle of this triangle is the smallest enclosing disk. Otherwise, the smallest enclosing disk has the diameter of the point set as its diameter. Thus, by maintaining the kinetic diameter of the point set, the farthest-point delaunay triangulation, and whether or not the farthest-point delaunay triangulation has an acute triangle, the smallest enclosing disk can be maintained. This data structure is responsive and compact, but not local or efficient:
+Responsiveness: This data structure requires  time to process each certificate failure, and thus is responsive.
+Locality: A point can be involved in  certificates. Therefore, this data structure is not local.
+Compactness: This data structure requires O(n) certificates total, and thus is compact.
+Efficiency: This data structure has  events total.(for all  The best known lower bound on the number of changes to the smallest enclosing disk is . Thus the efficiency of this data structure, the ratio of total events to external events, is .
+The existence of kinetic data structure that has  events is an open problem.
+
+
+== Approximate 2D ==
+The smallest enclosing disk of a set of n moving points can be ε-approximated by a kinetic data structure that processes  events and requires  time total.
+
+
+== Higher dimensions ==
+In dimensions higher than 2, efficiently maintaining the smallest enclosing sphere of a set of moving points is an open problem.
+
+
+== References ==

@@ -1,0 +1,10 @@
+Data Structures and Algorithms with Object-Oriented Design Patterns in Java
+Implementing AVL Trees 
+ Having already implemented a binary search tree class, BinarySearchTree, we can make use of much of the existing code to implement an AVL tree class. Program&nbsp; introduces the AVLTree class which extends the BinarySearchTree class introduced in Program&nbsp;. The AVLTree class inherits most of its functionality from the binary tree class. In particular, it uses the inherited insert and withdraw methods! However, the inherited balance, attachKey and detachKey methods are overridden and a number of new methods are declared. 
+&nbsp;&nbsp;  Program: AVLTree fields. 
+ Program&nbsp; indicates that an additional field is added in the AVLTree class. This turns out to be necessary because we need to be able to determine quickly, i.e., in O(1) time, that the AVL balance condition is satisfied at a given node in the tree. In general, the running time required to compute the height of a tree containing n nodes is O(n). Therefore, to determine whether the AVL balance condition is satisfied at a given node, it is necessary to traverse completely the subtrees of the given node. But this cannot be done in constant time. 
+ To make it possible to verify the AVL balance condition in constant time, the field height has been added. Thus, every node in an AVLTree keeps track of its own height. In this way it is possible for the getHeight method to run in constant time--all it needs to do is to return the value of the height field. And this makes it possible to test whether the AVL balanced condition satisfied at a given node in constant time. 
+  Constructor 
+  getHeight, adjustHeight, and getBalanceFactor Methods 
+         Copyright © 1998 by Bruno R. Preiss, P.Eng. All rights reserved.    
+

@@ -1,0 +1,75 @@
+Performance of KNN and SVM classifiers on full word Arabic articles
+
+Ismail Hmeidi , Bilal Hawashin , Eyas El-Qawasmeh  
+
+1. Introduction
+Text categorization is the automatic assignment of one
+or more predefined labels to free texts based on their content
+[1–3]. Currently, the amount of the information that is
+available on the web is increasing daily. The huge size of
+the information makes the process of categorizing it manually
+a very difficult task. Previously, some companies
+and organizations had human experts in order to manipulate
+these data, but now, this process is increasingly diffi-
+cult. So, the trend of automatically categorize the data
+has been introduced. Automatic categorization is used in
+many fields, such as searching or filtering emails, digital
+libraries, online databases, and online articles and news
+[1,13,16].
+Many methods, or classifiers, have been proposed in the
+previous years. Examples are regression models [8,9], nearest
+neighbor [10–14], decision trees [16,15,17] and support
+vector machines [1]. Many studies have been conducted
+on the performance of these classifiers based on English
+articles. The most common source of data on these
+researches was Reuters Newswire Corpus. However, for
+Arabic data, the studies are limited in comparison to English
+language.
+The few examples that study the performance of automatic
+classifiers on Arabic language can be found in [4–6].
+In this paper, we studied both K Nearest Neighbor
+(KNN) algorithm, and Support Vector Machines (SVM)
+algorithm KNN and SVM classifiers, which are superior
+on classifying English articles, and compared their performance
+on Arabic articles. The performance measures that
+we used are: recall, precision, and prediction time. We faced
+a problem of finding a suitable corpus. As there is a lack of
+publicly available Arabic corpus for evaluating Arabic text
+categorization, we constructed our own corpus that is
+extracted from the most common news papers. They are
+called Alrai and Addustour newspapers. Our corpus is composed
+of 2206 training articles and 29 testing articles. The
+articles include two topics: Sport and Economy. Besides,
+we used the common term-weighting tf.idf measure that is
+used commonly to weight features. The tf.idf measure combines
+the term frequency (tf) which measure the term density
+in a document multiplied by the inverse document
+frequency (idf) which is a measure of informativeness of a
+term (its rarity across the whole corpus) [2,18,10]. Also,
+we used the full word features from the corpus. The rest of this paper is organized as follows. Section 2
+describes our methods of feature selection and dimensionality
+reduction. Section 3 gives a short description of both
+KNN and SVM classifiers. Section 4 describes our experimental
+method and reports the experimental results.
+Section 5 is a discussion, and Section 6 is a conclusion.
+
+6. Conclusion
+In this paper, we compared the performance of both
+KNN and SVM classifiers on Arabic articles. Both classifi-
+ers are superior in classifying Arabic articles. The SVM has
+better Micro recall than KNN. The Micro precision values
+of both classifiers are similar, with KNN a bit better. Micro
+average F1 for both classifiers is high. When the number of
+features is low, classifiers have similar performance, with
+advantage given to SVM. But SVM outperforms KNN
+clearly as the number of features increases. The prediction
+time of SVM is better also than KNN.
+The performance of both classifiers could be studied on
+stemmed Arabic articles, and the results could be compared
+with those obtained from Full word Arabic articles. Also,
+the effect of the Arabic language sparsity on classifiers
+could be studied in details. Finally, there should be a large
+Arabic corpus that is used for research in order to give
+more accurate results.
+
+

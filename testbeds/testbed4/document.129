@@ -1,0 +1,48 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Keyframing
+Keyframing is an animation technique where motion curves are interpolated through states at times, (~q1,...,~qT), called keyframes, speci?ed by a user.
+Catmull-Rom splines are well suited for keyframe animation because they pass through their control points.
+q1
+q2
+q3
+q4
+u = 0 t = 0 u = 1/3 t = 20
+u = 2/3 t = 30
+u = 1 t = 50
+• Pros: - Very expressive
+- Animator has complete control over all motion parameters • Cons:
+Copyright c
+2005 David Fleet and Aaron Hertzmann 112
+CSC418 / CSCD18 / CSC2504 Animation
+- Very labor intensive
+- Dif?cult to create convincing physical realism • Uses: - Potentially everything except complex physical phenomena such as smoke, water, or ?re
+16.3 Kinematics
+Kinematics describe the properties of shape and motion independent of physical forces that cause motion. Kinematic techniques are used often in keyframing, with an animator either setting joint parameters explicitly with forward kinematics or specifying a few key joint orientations and having the rest computed automatically with inverse kinematics.
+16.3.1 Forward Kinematics
+With forward kinematics, a point ¯ p is positioned by ¯ p = f(T)whereTis a state vector (?1,?2,...?n) specifying the position, orientation, and rotation of all joints.
+p
+l1
+l2
+For the above example, ¯ p = (l1 cos(?1) + l2 cos(?1 + ?2),l1 sin(?1) + l2 sin(?1 + ?2)).
+16.3.2 Inverse Kinematics
+With inverse kinematics, a user speci?es the position of the end effector, ¯ p, and the algorithm has to evaluate the required T give ¯ p. That is, T = f-1(¯ p).
+Usually, numerical methods are used to solve this problem, as it is often nonlinear and either underdetermined or overdetermined. A system is underdetermined when there is not a unique solution, such as when there are more equations than unknowns. A system is overdetermined when it is inconsistent and has no solutions.
+Extra constraints are necessary to obtain unique and stable solutions. For example, constraints may be placed on the range of joint motion and the solution may be required to minimize the kinetic energy of the system.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 113
+CSC418 / CSCD18 / CSC2504 Animation
+16.4 Motion Capture
+In motion capture, an actor has a number of small, round markers attached to his or her body that re?ect light in frequency ranges that motion capture cameras are speci?cally designed to pick up.
+(image from movement.nyu.edu)
+With enough cameras, it is possible to reconstruct the position of the markers accurately in 3D. In practice, this is a laborious process. Markers tend to be hidden from cameras and 3D reconstructions fail, requiring a user to manually ?x such drop outs. The resulting motion curves are often noisy, requiring yet more effort to clean up the motion data to more accurately match what an animator wants.
+Despite the labor involved, motion capture has become a popular technique in the movie and game industries, as it allows fairly accurate animations to be created from the motion of actors. However, this is limited by the density of markers that can be placed on a single actor. Faces, for example, are still very dif?cult to convincingly reconstruct.
+Copyright c
+2005 David Fleet and Aaron Hertzmann 114
+CSC418 / CSCD18 / CSC2504 Animation
+• Pros: - Captures speci?c style of real actors • Cons: - Often not expressive enough
+- Time consuming and expensive
+- Dif?cult to edit • Uses: - Character animation
+- Medicine, such as kinesiology and biomechanics

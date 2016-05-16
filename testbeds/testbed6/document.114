@@ -1,0 +1,167 @@
+_atrk_opts = { atrk_acct:"oydse1a8gR00wM", domain:"mssqltips.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+			  (function() {
+				var cx = '004111219998430415686:pjndvj5e2n4';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+				'//cse.google.com/cse/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			  })();
+   &nbsp; 
+   &nbsp; 
+   Tutorials&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Career&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Categories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Events&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Whitepapers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Today's&nbsp;Tip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Join  
+   Tutorials&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Categories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Events  
+   DBA&nbsp;&nbsp;&nbsp; Dev&nbsp;&nbsp;&nbsp; BI&nbsp;&nbsp;&nbsp; Categories  
+  &nbsp; 
+  Understanding the SQL Server HASHBYTES hashing algorithms 
+					 googletag.cmd.push(function() {googletag.display('ad-slot-leader'); });
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk')); 
+   By: K. Brian Kelley &nbsp;&nbsp;|&nbsp;&nbsp; Read Comments (11) &nbsp;&nbsp;|&nbsp;&nbsp; Related Tips: More &gt; Security 
+   Problem 
+   I'm trying to use the HASHBYTES() function and I see there is an assortment of hashing algorithms available. What is the difference between each one? 
+   Solution 
+   HASHBYTES(), as the name implies, is a function or algorithm that generates a hash from some input. If you're not familiar with what a hash is, here's a good working definition for a hash function: 
+   hash function - A hash function takes in data and returns back a fixed length block of bits such that any change to the data should result in a different block. 
+   HASHBYTES() is actually a function which provides access to several hashing algorithms. SQL Server 2005 and up have the following protocols (how you specify them in HASHBYTES is in parentheses): 
+    MD 2 (MD2) 
+    MD 4 (MD4) 
+    MD 5 (MD5) 
+    SHA-0 (SHA) 
+    SHA-1 (SHA1)
+   SQL Server 2012 introduces these additional hashing algorithms: 
+    SHA-2 256 bits AKA SHA-256 (SHA2_256) 
+    SHA-2 512 bits AKA SHA-512 (SHA2_512)
+   With these options, which should you choose?  
+   If you're looking for something just to quickly differentiate between two blocks of data, then it doesn't make a whole lot of difference.  
+   If, however, you're dealing with hashes for passwords or anything related to security, then your choice can make a big difference. 
+   Hashing Algorithms You Should Probably Avoid 
+   Since a hash function will return a fixed length block, obviously, there are a finite set of possibilities for the output. Therefore, there's bound to be different inputs that will result in the same output. We call these situations collisions. What is of concern is if a collision can be engineered fairly quickly/cheaply. This is referred to as a collision attack. If a hashing algorithm is susceptible to this type of attack or other attacks with reasonable resources that either (a) allow you to create an identical hash with different input or (b) figure out the input from the hash, then those algorithms should be avoided. As of the writing of this tip, the following algorithms fall into that list:  
+    MD 2 - developed in 1989 by Ronald Rivest, it generates a 128-bit hash value. It is susceptible to several attacks and is no longer considered cryptopgraphically secure. 
+    MD 4 - Also developed by Rivest (1990), it generates a 128-bit hash value like MD 2. And like MD 2, it is susceptible to a couple of attacks and is no longer considered cryptographically secure. 
+    MD 5 - Developed by Rivest in 1992, it also generates a 128-bit hash value. While we see it used often to "digitally fingerprint" files and documents, it is also considered "broken" and no longer cryptographically secure. 
+    SHA-0 - SHA-0 was withdrawn shortly after being made public due to a "significant" flaw. It generates a 160-bit hash value. It was replaced by SHA-1.
+   Hashing Algorithms Which Are Good for Now 
+   There is one algorithm in this group, and that's SHA-1 (SHA 1). While it is theoretically possible to generate collisions, in 2012 it's rather expensive to do so, as this Bruce Schneier post points out. In a few years, especially with cloud computing, it should be within the financial resources of organized crime to be able to break the algorithm. As a result, the US government had recommended that government agencies start phasing it out start back in 2010. However, it's still very much in use. 
+   If you're not on SQL Server 2012, SHA-1 is the best choice to use. 
+   Hashing Algorithms Good for the Foreseeable Future 
+   The SHA-2 algorithm comes in several block sizes, of which SQL Server 2012 implements two: 
+    SHA-2 256 bit block size (called SHA-256) 
+    SHA-2 512 bit block size (called SHA-512)
+   Other than the block size, is there a real difference between the two? Yes, there is. The SHA-512 implementation utilizes 80 rounds, whereas the SHA-256 implementation only uses 64. A round is basically a repeated series of steps in the algorithm itself. Therefore, most attacks should have a harder time with SHA-512. That being said, SHA-256 is more widely implemented. 
+   Next Steps 
+    Read up on how to use HASHBYTES() to track and store historical changes in data. 
+    Understand the different between symmetric and asymmetric encryption algorithms. 
+    Learn how to use certificates to encrypt sensitive data in SQL Server. 
+    Read more about the HASHBYTES function
+    Last Update: 
+   7/11/2013 
+   About the author 
+      K. Brian Kelley is a SQL Server author and columnist focusing primarily on SQL Server security. 
+     View all my tips 
+     Related Resources
+      More SQL Server DBA Tips... 
+     Tweet
+				  (function() {
+				    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				    po.src = 'https://apis.google.com/js/plusone.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				  })();
+     Become a paid author 
+    More SQL Server Solutions
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388505177750-12'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388505177750-13'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388505177750-14'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388505177750-15'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388505177750-16'); });
+function RefreshImage(valImageId) {
+	var objImage = document.images[valImageId];
+	if (objImage == undefined) {
+		return;
+	}
+	var now = new Date();
+	objImage.src = objImage.src.split('?')[0] + '?x=' + now.toUTCString();
+}
+/**
+ * DHTML email validation script. Courtesy of SmartWebby.com (http://www.smartwebby.com/dhtml/)
+ */
+function echeck(str) {
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){
+		   alert("Invalid E-mail")
+		   return false
+		}
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+		   alert("Invalid E-mail")
+		   return false
+		}
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		    alert("Invalid E-mail")
+		    return false
+		}
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    alert("Invalid E-mail")
+		    return false
+		 }
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+		    alert("Invalid E-mail")
+		    return false
+		 }
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    alert("Invalid E-mail")
+		    return false
+		 }
+		 if (str.indexOf(" ")!=-1){
+		    alert("Invalid E-mail")
+		    return false
+		 }
+ 		 return true					
+	}
+function ValidateForm(){
+	var emailID=document.comment.email
+	var name=document.comment.name
+	var captchacode=document.comment.captchacode
+	if ((name.value==null)||(name.value=="")){
+		alert("Please Enter your Name")
+		name.focus()
+		return false
+	}	
+	if ((emailID.value==null)||(emailID.value=="")){
+		alert("Please Enter your Email")
+		emailID.focus()
+		return false
+	}
+	if (echeck(emailID.value)==false){
+		emailID.focus()
+		return false
+	}
+	if ((captchacode.value==null)||(captchacode.value=="")){
+		alert("Please Enter Code")
+		captchacode.focus()
+		return false
+	}
+	return true
+ }
+tinymce.init({
+    selector: "textarea",
+    menubar: false,
+    plugins: "preview",
+    toolbar: "undo redo | bold italic | bullist numlist outdent indent | link | preview"
+});
+      Post a comment or let the author know this tip helped. 
+      All comments are reviewed, so stay on subject or we may delete your comment. Note: your email address is not published. Required fields are marked with an asterisk (*). *Name&nbsp;
+      &nbsp;&nbsp; *Email&nbsp;
+      &nbsp;&nbsp; Notify for updates&nbsp;
+      &lt;p&gt;&lt;/

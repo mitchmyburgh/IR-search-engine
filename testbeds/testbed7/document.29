@@ -1,0 +1,20 @@
+Flaw In Apple's iMessage Encryption Lets Hackers Snoop Photos
+
+Major software bug announced on eve of Apple product launch event
+
+With Apple's biannual March event and pending court hearing, the half-trillion dollar company is poised to dominate the gadget news cycle this week.
+
+But the night before Apple's incredible very good week, the Washington Post published work from Johns Hopkins University stating iMessage had encryption flaws, leaving pictures and videos open to skilled hackers.
+
+The researchers are waiting to publish their findings until Apple has patched the bug, but they outlined them in brief.
+
+The attack targeted photos stored in Apple's iCloud, with software that mimics Apple's own server.
+
+The software intercepted an iMessage message containing a link to a photo on Apple's iCloud storage, which we reported is used to transmit video and photos, and then pinged the iPhone with a guess at the 64-bit encryption key. If the guess was wrong, then the software changed one digit, and tried again. When they did get a digit right, the phone's software confirmed it. Then, it was a matter of having the software repeat the process thousands of times.
+
+The iOS 9.3 update, launching today, will completely fix the bug, although the Washington Post reports that Apple previously attempted to fix this bug with iOS 9.
+
+Matthew D. Green, who led the group, says that this finding is disconcerting in the wake of the FBI's battle for ways around encryption.
+
+“Even Apple, with all their skills — and they have terrific cryptographers — wasn’t able to quite get this right,” Green told the Washington Post. “So it scares me that we’re having this conversation about adding back doors to encryption when we can’t even get basic encryption right.”
+

@@ -1,0 +1,51 @@
+Super Elastic Clouds: Is it Time to Remove the OS From Cloud Computing Stacks?
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+JOPLIN, MO - MAY 27:  A storm cloud passes ove...
+ 
+The typical virtual machine deployed on Amazon EC2 takes more than 300 seconds to fully start. Needless to say a lot can happen in 5 minutes. Based on a recent quarter’s revenue of $4.13 billion globally, a full-scale global outage would cost Amazon more than $31,000 per minute or about $155,000 in five minutes. In the modern Internet centric world speed has never been more important. A new project by Cloudozer called Erlang on Xen is looking to address this need for speed by removing the OS from the equation all together.
+
+According to the project creators a fast startup is the cornerstone of the super-elastic clouds of the future. Think personal Facebook, personal Gmail, personal bank at the new level of privacy and security.
+
+A demo puts the need for speed into perspective with a few interesting benchmarks; 50 sec is the time between power on and the lock screen for an Android phone. The demo then goes on to point out that 0.6 sec ago is when we received your request. Within this time we managed to create a new Xen instance, boot it, and run the application that rendered the page you are viewing. By the time you are done reading this, the instance will be gone. In a nutshell, this is the opportunity. Speed for transient application components. No longer is a monolithic OS required. Just the bits and pieces rendered on the fly as demand requires.
+
+The company was formed in 2012 by a group of software entrepreneurs and technologists. To date, they have completed a critical piece of the super-elastic puzzle – LING VM – an Erlang VM with unprecendented boot-up time. Currently, the company is focusing on clustering, orchestration, and adaptation/testing of applications, such as Ejabberd and RabbitMQ.
+
+How it works.
+
+LING VM runs directly on top of a Xen hypervisor. It does not require Linux or any traditional OS. This takes away numerous administrative, scalability, and performance issues. Erlang on Xen uses a new highly compatible Erlang VM – codenamed LING – capable of running as a Xen guest OS.
+
+Recommended by Forbes
+Lean Analytics: Using Data to Build a Better, Stronger, Faster Startup
+A Few Early Cloud Computing Mavericks
+MOST POPULAR Photos: The Most Expensive Home Listing in Every State 2016
++80,526 VIEWS Eleven Signs You've Stayed In Your Job Too Long
+
+Here is the full breakdown of what happens during a request process:
+
+Phase	Duration	Notes
+A	314.9 ms	An HTTP GET request received by nginx. The request is temporarily forwarded to the ‘spawner’ application. The spawner asks Xen via libvirt daemon to launch a new instance. The new instance gets created and is ready to boot.
+B	21.0 ms	The LING VM starts to execute. It performs all preparatory steps needed to run Erlang code. Control reaches the main emulator loop. Erlang code starts to run.
+C	248.0 ms	init:boot() is entered and the standard Erlang boot sequence is performed. Many standard servers, such as code_server and application_master, are started. The boot sequence concludes with the launch of ‘zergling_app’ application as requested by a command line flag.
+D	1.5 ms	zergling_app:start() is entered. A cowboy webserver is asked to listen for incoming requests on port 8000.
+E	0.9 ms	The spawner is notified that the new instance is ready to process web requests.
+F	2.1 ms	The spawner replies to nginx with X-Accel-Redirect header citing the location of the instance. nginx proxies the original client connection to the new instance.
+G	?	After rendering the page you are viewing the instance immediately shuts itself down. The spawner recongnises that the instance has gone away and notes that its IP address may be reused.
+
+Why is this important?
+
+According to the company, “your shiny app gets noticed by media and a praise piece is published on a high-traffic website. Thousands and thousands of new visitors start pouring in. Unfortunately, your backend is not prepared to handle the load. It goes under not capturing even 1% of them. You have just been “slashdotted” or in our case “Forbed”. To tackle the effect, the industry wisdom suggests having a 10x bigger infrastructure right in the beginning. It is fine you are ready to pay more but you still miss the spike that will require 20x the server capacity. Erlang on Xen can spawn new instances in under 100ms, scaling up while the spike is already under full swing. Your infrastructure may balloon to hundreds and thousands of instances to absorb the load and then scale down (to zero) in minutes to keep the infrastructure costs in check.”
+
+Who would use it?
+
+Cloudozer expects its development partners to come from diverse areas including;
+
+Startup companies that are building products that may benefit from the super-elastic properties of the cloud.
+Cloud stack developers who want to increase the pace of resource provisioning of their solutions.
+Developers of other OS-less technologies who may benefit from standardisation of hybrid super-elastic clouds.
+I could easily see a variety of infrastructure focused companies in the Cloud space like Cisco, IBM, Citrix, Rackspace or even Google taking advantage of this sort of approach to cloud application hosting and deployment.
+
+The company behind the project has created a public build service that generates images using the development branch of the LING VM and is free for everybody to use. It’s important to note Erlang on Xen is not open source but the public build service is free for any purpose, including commercial use.

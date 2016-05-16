@@ -1,0 +1,25 @@
+Multi-Factor Authentication
+Create Free Account »
+AWS Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of your user name and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their user name and password (the first factor—what they know), as well as for an authentication code from their AWS MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for your AWS account settings and resources.
+
+You can enable MFA for your AWS account and for individual IAM users you have created under your account. MFA can be also be used to control access to AWS service APIs.
+
+After you've obtained a supported hardware or virtual MFA device, AWS does not charge any additional fees for using MFA.
+You can also protect cross-account access using MFA.
+The SMS MFA Preview Is Now Available
+
+Sign Up for the Preview
+ Follow @AWSIdentity on Twitter
+MFA Form Factors
+ 	Virtual MFA Device	Hardware Key Fob MFA Device	Hardware Display Card MFA Device	SMS MFA Device
+Device
+
+See table below.
+Purchase device.	Purchase device.	Use your mobile device.
+Physical Form Factor	Use your existing smartphone or tablet running any application that supports the open TOTP standard.	Tamper-evident hardware key fob device provided by Gemalto, a third-party provider.	Tamper-evident hardware display card device provided by Gemalto, a third-party provider.	Any mobile device that can receive Short Message Service (SMS) messages.
+Price	Free	$12.99	$19.99	SMS or data charges may apply.
+Features	Support for multiple tokens on a single device.	The same type of device used by many financial services and enterprise IT organizations.	Similar to key fob devices, but in a convenient form factor that fits in your wallet like a credit card.	Familiar option with low setup costs.
+Compatibility with Root Account	✔	✔	✔	 
+Compatibility with IAM User	✔	✔	✔	✔
+Virtual MFA Applications
+Applications for your smartphone can be installed from the application store that is specific to your phone type. The following table lists some applications for different smartphone types.

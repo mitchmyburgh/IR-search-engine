@@ -1,0 +1,18 @@
+Node structures[edit]
+A T-tree node usually consists of pointers to the parent node, the left and right child node, an ordered array of data pointers and some extra control data. Nodes with twosubtrees are called internal nodes, nodes without subtrees are called leaf nodes and nodes with only one subtree are named half-leaf nodes. A node is called the bounding nodefor a value if the value is between the node's current minimum and maximum value, inclusively.
+ 
+Bound values.
+For each internal node, leaf or half leaf nodes exist that contain the predecessor of its smallest data value (called the greatest lower bound) and one that contains the successor of its largest data value (called the least upper bound). Leaf and half-leaf nodes can contain any number of data elements from one to the maximum size of the data array. Internal nodes keep their occupancy between predefined minimum and maximum numbers of elements
+Algorithms[edit]
+ 	This section requires expansion.(June 2008)
+Search[edit]
+•	Search starts at the root node
+•	If the current node is the bounding node for the search value then search its data array. Search fails if the value is not found in the data array.
+•	If the search value is less than the minimum value of the current node then continue search in its left subtree. Search fails if there is no left subtree.
+•	If the search value is greater than the maximum value of the current node then continue search in its right subtree. Search fails if there is no right subtree.
+Insertion[edit]
+•	Search for a bounding node for the new value. If such a node exists then
+•	check whether there is still space in its data array, if so then insert the new value and finish
+•	if no space is available then remove the minimum value from the node's data array and insert the new value. Now proceed to the node holding the greatest lower bound for the node that the new value was inserted to. If the removed minimum value still fits in there then add it as the new maximum value of the node, else create a new right subnode for this node.
+•	If no bounding node was found then insert the value into the last node searched if it still fits into it. In this case the new value will either become the new minimum or maximum value. If the value doesn't fit anymore then create a new left or right subtree.
+If a new node was added then the tree might need to be rebalanced, as described below.

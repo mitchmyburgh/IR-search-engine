@@ -1,0 +1,37 @@
+﻿DOLCE
+
+
+DOLCE stands for Descriptive Ontology for Linguistic and Cognitive Engineering. It is an example of a Foundational Ontology. 
+
+Contents
+1 Overview 
+2 Outline of DOLCE categories 
+3 DOLCE's basic relations 
+4 Uses of DOLCE in OWL 
+5 References 
+Overview
+DOLCE has a strong cognitive/linguistic bias. DOLCE uses a descriptive approach, which means that we represent what we know about the topic which may or may not be true. This is contrasted with the perscriptive approach.
+This means that it has a descriptive attitude and that the categories reflect the lexical structure of natural language. 
+DOLCE allows easy comparison with different ontological options 
+It follows a rigorous, systematic, interdisciplinary approach. 
+Rich axiomatization 
+37 basic categories 
+7 basic relations 
+80 axioms, 100 definitions, 20 theorems
+DOLCE has rigorous quality criteria 
+Documentation
+Outline of DOLCE categories
+An outline of the DOLCE categories is available here. The four basic categories are Region, Quality, Endurant and Perdurant. Regions and Qualities can be further divided into Abstract, Physical and Temporal Regions/Qualities; and Endurants can be Physical or Non-physical. 
+DOLCE's basic relations
+Parthood (immediate and temporary) 
+Constitution 
+Participation 
+Representation 
+Dependence 
+Inherence (between quality and its host) 
+Quale
+Uses of DOLCE in OWL
+DOLCE-Lite can be used in OWL. It does not consider modality, temporal indexing, or relation composition. 
+References
+Keet, C. M., 2015. 
+

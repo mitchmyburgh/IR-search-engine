@@ -1,0 +1,73 @@
+ Ben Pfaff
+ : [ 
+ News
+  |  
+ Papers
+  |  
+ Software
+  |  
+ GNU libavl
+  |  
+ Pictures
+  |  
+ Writings
+  |  
+ Links 
+ ] 
+GNU libavl 
+Binary search trees provide O(lg n) performance on average for important operations such as item insertion, deletion, and search operations. Balanced trees provide O(lg n) even in the worst case. 
+GNU libavl is the most complete, well-documented collection of binary search tree and balanced tree library routines anywhere. It supports these kinds of trees: 
+  Plain binary trees: 
+   Binary search trees
+   AVL trees
+   Red-black trees 
+  Threaded binary trees: 
+   Threaded binary search trees
+   Threaded AVL trees
+   Threaded red-black trees 
+  Right-threaded binary trees: 
+   Right-threaded binary search trees
+   Right-threaded AVL trees
+   Right-threaded red-black trees 
+  Binary trees with parent pointers: 
+   Binary search trees with parent pointers
+   AVL trees with parent pointers
+   Red-black trees with parent pointers 
+Visit the online HTML version of libavl. 
+libavl's name is a historical accident: it originally implemented only AVL trees. Its name may change to something more appropriate in the future, such as “libsearch”. You should also expect this page to migrate to www.gnu.org sometime in the indefinite future. 
+Version 2.0 
+Version 2.0 of libavl was released on January 6, 2002. It is a complete rewrite of earlier versions implemented in a “literate programming” fashion, such that in addition to being a useful library, it is also a book describing in full the algorithms behind the library. 
+Version 2.0.1 of libavl was released on August 24, 2002. It fixes some typos in the text and introduces an HTML output format. No bugs in the libavl code were fixed, because none were reported. Unlike 2.0, this version is compatible with recent releases of Texinfo. dvipdfm is now used for producing the PDF version. 
+Version 2.0.2 of libavl was released on December 28, 2004. It fixes a bug in tavl_delete() reported by Petr Silhavy a long time ago. This is the same fix posted here earlier. This version (again) works with recent versions of Texinfo, fixes a few typos in the text, and slightly enhances the HTML output format. 
+You can download the preformatted book or a source distribution that will allow you to use the library in your own programs. You can also use the source distribution to format the book yourself: 
+  Preformatted book: 
+    Online HTML or gzip'd tar archive (1.7 MB) 
+    gzip'd PDF (1.4 MB) 
+    gzip'd PostScript (746 kB) 
+    gzip'd plain text (224 kB)  
+   The PostScript and PDF versions are 432 U.S. letter-size pages in length. The plain text version is 26,968 lines long, or about 409 pages at 66 lines per page. 
+  Source distribution as a gzip'd tar archive (1.4 MB)  
+For an overview of the ideas behind libavl 2.0, see the poster presentation made on April 6, 2001, at Michigan State University. This presentation is also available in the original PostScript. 
+Older Versions 
+Version 1.4.0 is the predecessor to 2.0. It implemented only the following types of trees: 
+ AVL tree.
+ Threaded AVL tree.
+ Right-threaded AVL tree.
+ Red-black tree. 
+Version 1.4.0 is no longer being actively developed, but any reported bugs that affect its behavior will be fixed. Source code for libavl 1.4.0 can be obtained from ftp://ftp.gnu.org/pub/gnu/avl. 
+Other AVL resources 
+Several AVL tree libraries are available on the net. The following is a list of the ones that I consider to be well-written and generally useful in other code. Let me know of any others and I'll add them to the list after checking them out. 
+  libdict. This library implements AVL and red-black trees and several other kinds of dictionary data structures. 2-clause BSD-style license. 
+  avlmap. A library in C by Phil Howard that provides convenient implementations for several variable types and voluminous documentation in HTML format. Very large code; e.g., one included header file is 68 kilobytes. GNU Lesser General Public License. 
+  glib. GTK+ includes a library named glib, which has an unoptimized recursive C implementation. GNU Lesser General Public License. 
+  cprops. AVL trees, red-black tree, splay trees, and more, in a recursive implementation designed for multithreaded applications. GNU Lesser General Public License. 
+  Python avllib. Iterative C implementation including all the usual routines. Although I haven't tested it, it looks very well-written. Includes Python bindings as well as some unusual but useful features (Knuth's RANK field, for instance). BSD license without advertising clause. 
+  avllib. Brad Appleton's C and C++ implementations. Distributed under an unusual, mostly free license. 
+  libredblack. Damian Ivereigh's implementation of red-black tree algorithms from Cormen, Leiserson, Rivest. Includes documentation and examples. GNU Lesser General Public License. 
+  avl. Daniel Nagy's lightweight recursive implementation intended for embedded use. Implements only insertion, deletion, and search. GNU General Public License. 
+  ubiqx. Chris Hertel's data structures library, which includes ordinary binary trees and AVL and splay trees using an object-oriented design in C. GNU Lesser General Public License.  
+The following are also AVL libraries, but not suited for the above list because they are incomplete or difficult to use in other code. At one time I also listed non-free libraries here, but I no longer do so due to the current profusion of free ones: 
+ Linux kernel. The kernel uses a recursive C implementation in its mmap code. GNU General Public License. 
+Translations 
+This webpage has been translated to Belorussian. 
+  Last updated 27 Sep 2014 21:26. Copyright © 2014 Ben Pfaff. May be freely redistributed, but copyright notice must be retained.  

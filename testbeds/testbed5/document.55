@@ -1,0 +1,79 @@
+10 programming languages that could shake up IT 
+
+Do we really need another programming language? There is certainly no shortage of choices already. Between imperative languages, functional languages, object-oriented languages, dynamic languages, compiled languages, interpreted languages, and scripting languages, no developer could ever learn all of the options available today.
+
+And yet, new languages emerge with surprising frequency. Some are designed by students or hobbyists as personal projects. Others are the products of large IT vendors. Even small and midsize companies are getting in on the action, creating languages to serve the needs of their industries. Why do people keep reinventing the wheel?
+
+[ Test your programming smarts with our programming IQ test: Round 1 and Round 2. | Learn how to work smarter, not harder with InfoWorld's roundup of all the tips and trends programmers need to know in the Developers' Survival Guide. Download the PDF today! | Keep up with the latest developer news with InfoWorld's Developer World newsletter. ]
+
+The answer is that, as powerful and versatile as the current crop of languages may be, no single syntax is ideally suited for every purpose. What's more, programming itself is constantly evolving. The rise of multicore CPUs, cloud computing, mobility, and distributed architectures have created new challenges for developers. Adding support for the latest features, paradigms, and patterns to existing languages -- especially popular ones -- can be prohibitively difficult. Sometimes the best answer is to start from scratch.
+
+Here, then, is a look at 10 cutting-edge programming languages, each of which approaches the art of software development from a fresh perspective, tackling a specific problem or a unique shortcoming of today's more popular languages. Some are mature projects, while others are in the early stages of development. Some are likely to remain obscure, but any one of them could become the breakthrough tool that changes programming for years to come -- at least, until the next batch of new languages arrives.
+
+Experimental programming language No. 1: Dart
+
+JavaScript is fine for adding basic interactivity to Web pages, but when your Web applications swell to thousands of lines of code, its weaknesses quickly become apparent. That's why Google created Dart, a language it hopes will become the new vernacular of Web programming.
+
+Like JavaScript, Dart uses C-like syntax and keywords. One significant difference, however, is that while JavaScript is a prototype-based language, objects in Dart are defined using classes and interfaces, as in C++ or Java. Dart also allows programmers to optionally declare variables with static types. The idea is that Dart should be as familiar, dynamic, and fluid as JavaScript, yet allow developers to write code that is faster, easier to maintain, and less susceptible to subtle bugs.
+
+You can't do much with Dart today. It's designed to run on either the client or the server (a la Node.js), but the only way to run client-side Dart code so far is to cross-compile it to JavaScript. Even then it doesn't work with every browser. But because Dart is released under a BSD-style open source license, any vendor that buys Google's vision is free to build the language into its products. Google only has an entire industry to convince.
+
+Experimental programming language No. 2: Ceylon
+
+Gavin King denies that Ceylon, the language he's developing at Red Hat, is meant to be a "Java killer." King is best known as the creator of the Hibernate object-relational mapping framework for Java. He likes Java, but he thinks it leaves lots of room for improvement.
+
+Among King's gripes are Java's verbose syntax, its lack of first-class and higher-order functions, and its poor support for meta-programming. In particular, he's frustrated with the absence of a declarative syntax for structured data definition, which he says leaves Java "joined at the hip to XML." Ceylon aims to solve all these problems.
+
+King and his team don't plan to reinvent the wheel completely. There will be no Ceylon virtual machine; the Ceylon compiler will output Java bytecode that runs on the JVM. But Ceylon will be more than just a compiler, too. A big goal of the project is to create a new Ceylon SDK to replace the Java SDK, which King says is bloated and clumsy, and it's never been "properly modernized."
+
+That's a tall order, and Red Hat has released no Ceylon tools yet. King says to expect a compiler this year. Just don't expect software written in "100 percent pure Ceylon" any time soon.
+
+Experimental programming language No. 3: Go
+
+Interpreters, virtual machines, and managed code are all the rage these days. Do we really need another old-fashioned language that compiles to native binaries? A team of Google engineers -- led by Robert Griesemer and Bell Labs legends Ken Thompson and Rob Pike -- says yes.
+
+Go is a general-purpose programming language suitable for everything from application development to systems programing. In that sense, it's more like C or C++ than Java or C#. But like the latter languages, Go includes modern features such as garbage collection, runtime reflection, and support for concurrency.
+
+Equally important, Go is meant to be easy to program in. Its basic syntax is C-like, but it eliminates redundant syntax and boilerplate while streamlining operations such as object definition. The Go team's goal was to create a language that's as pleasant to code in as a dynamic scripting language yet offers the power of a compiled language.
+
+Go is still a work in progress, and the language specification may change. That said, you can start working with it today. Google has made tools and compilers available along with copious documentation; for example, the Effective Go tutorial is a good place to learn how Go differs from earlier languages.
+
+Experimental programming language No. 4: F#
+
+Functional programming has long been popular with computer scientists and academia, but pure functional languages like Lisp and Haskell are often considered unworkable for real-world software development. One common complaint is that functional-style code can be difficult to integrate with code and libraries written in imperative languages like C++ and Java.
+
+Enter F# (pronounced "F-sharp"), a Microsoft language designed to be both functional and practical. Because F# is a first-class language on the .Net Common Language Runtime (CLR), it can access all of the same libraries and features as other CLR languages, such as C# and Visual Basic.
+
+F# code resembles OCaml somewhat, but it adds interesting syntax of its own. For example, numeric data types in F# can be assigned units of measure to aid scientific computation. F# also offers constructs to aid asynchronous I/O, CPU parallelization, and off-loading processing to the GPU.
+
+After a long gestation period at Microsoft Research, F# now ships with Visual Studio 2010. Better still, in an unusual move, Microsoft has made the F# compiler and core library available under the Apache open source license; you can start working with it for free and even use it on Mac and Linux systems (via the Mono runtime).
+
+Experimental programming language No. 5: Opa
+
+Web development is too complicated. Even the simplest Web app requires countless lines of code in multiple languages: HTML and JavaScript on the client, Java or PHP on the server, SQL in the database, and so on.
+
+Opa doesn't replace any of these languages individually. Rather, it seeks to eliminate them all at once, by proposing an entirely new paradigm for Web programming. In an Opa application, the client-side UI, server-side logic, and database I/O are all implemented in a single language, Opa.
+
+Opa accomplishes this through a combination of client- and server-side frameworks. The Opa compiler decides whether a given routine should run on the client, server, or both, and it outputs code accordingly. For client-side routines, it translates Opa into the appropriate JavaScript code, including AJAX calls.
+
+Naturally, a system this integrated requires some back-end magic. Opa's runtime environment bundles its own Web server and database management system, which can't be replaced with stand-alone alternatives. That may be a small price to pay, however, for the ability to prototype sophisticated, data-driven Web applications in just a few dozen lines of code. Opa is open source and available now for 64-bit Linux and Mac OS X platforms, with further ports in the works.
+
+Experimental programming language No. 6: Fantom
+
+Should you develop your applications for Java or .Net? If you code in Fantom, you can take your pick and even switch platforms midstream. That's because Fantom is designed from the ground up for cross-platform portability. The Fantom project includes not just a compiler that can output bytecode for either the JVM or the .Net CLI, but also a set of APIs that abstract away the Java and .Net APIs, creating an additional portability layer.
+
+There are plans to extend Fantom's portability even further. A Fantom-to-JavaScript compiler is already available, and future targets might include the LLVM compiler project, the Parrot VM, and Objective-C for iOS.
+
+But portability is not Fantom's sole raison d'être. While it remains inherently C-like, it is also meant to improve on the languages that inspired it. It tries to strike a middle ground in some of the more contentious syntax debates, such as strong versus dynamic typing, or interfaces versus classes. It adds easy syntax for declaring data structures and serializing objects. And it includes support for functional programming and concurrency built into the language.
+
+Fantom is open source under the Academic Free License 3.0 and is available for Windows and Unix-like platforms (including Mac OS X).
+
+Experimental programming language No. 7: Zimbu
+
+Most programming languages borrow features and syntax from an earlier language. Zimbu takes bits and pieces from almost all of them. The brainchild of Bram Moolenaar, creator of the Vim text editor, Zimbu aims to be a fast, concise, portable, and easy-to-read language that can be used to code anything from a GUI application to an OS kernel.
+
+Owing to its mongrel nature, Zimbu's syntax is unique and idiosyncratic, yet feature-rich. It uses C-like expressions and operators, but its own keywords, data types, and block structures. It supports memory management, threads, and pipes.
+
+Portability is a key concern. Although Zimbu is a compiled language, the Zimbu compiler outputs ANSI C code, allowing binaries to be built only on platforms with a native C compiler.
+
+Unfortunately, the Zimbu project is in its infancy. The compiler can build itself and some example programs, but not all valid Zimbu code will compile and run properly. Not all proposed features are implemented yet, and some are implemented in clumsy ways. The language specification is also expected to change over time, adding keywords, types, and syntax as necessary. Thus, documentation is spotty, too. Still, if you would like to experiment, preliminary tools are available under the Apache license.

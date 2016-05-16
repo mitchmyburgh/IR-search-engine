@@ -1,0 +1,31 @@
+Computer Graphics Lecture Notes
+CSC418 / CSCD18 / CSC2504 Computer Science Department University of Toronto
+Version: November 24, 2006
+
+Shading integration
+Our goal in shading a point is to compute the integral:
+L(~ de) = Zf?[0,2p]Z??[0,p/2] ?(~ de, ~ di(f,?))L(-~ di(f,?))(~n· ~ di) sin?d?df (101)
+We can choose uniformly-spaced values of f and ? values as follows: ?m = (m-1)??, ?? = (p/2)/M (102) fn = (n-1)?f, ?f = 2p/N (103) This divides up the unit hemisphere into MN solid angles, each with area approximately equal to sin????f. Applying 2D numerical integration gives:
+L(~ de) ˜
+M X m=1
+N X n=1
+?(~ de, ~ di(f,?))L(-~ di(f,?))(~n· ~ di) sin????f (104)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 95
+CSC418 / CSCD18 / CSC2504 Distribution Ray Tracing
+Once you have all the elements in place (e.g., the ray-tracer, the BRDF model, etc.), evaluating this equation is actually quite simple, and doesn't require all the treatment of special cases required for basic ray-tracing (such as specular, diffuse, mirror, etc.). However, it is potentially much slower to compute.
+13.6 Strati?ed Sampling
+A problem with Simple Monte Carlo is that, if you use a small number of samples, these samples will be spaced very irregularly. For example, you might be very unlucky and get samples that don't place any samples in some parts of the space. This can be addressed by a technique called strati?ed sampling: divide the domain into K-uniformly sized regions, and randomly sample J points xi within each region; then sum D NPi f(xi) as before. 13.7 Non-uniformly spaced points
+Quite often, most of the radiance will come from a small part of the integral. For example, if the scene is lit by a bright point light source, then most of the energy comes from the direction to this source. If the surface is very shiny and not very diffuse, then most of the energy comes from the re?ected direction. In general, it is desirable to sample more densely in regions where the function changes faster and where the function values are large. The general equation for this is: SN =X i f(xi)di (105) where di is the size of the region around point xi. Alternatively, we can use strati?ed sampling, and randomly sample J values within each region. How we choose to de?ne the region sizes and spaces depends on the speci?c integration problem. Doing so can be very dif?cult, and, as a consequence, deterministic non-uniform spacing is normally used in graphics; instead, importance sampling (below) is used instead.
+13.8 Importance sampling
+The method of importance sampling is a more sophisticated form of Monte Carlo that allows non-uniform sample spacing. Instead of sampling the points xi uniformly, we sample them from another probability distribution function (PDF) p(x). We need to design this PDF so that it gives us more samples in regions of x that are more "important," e.g., values of f(x) are larger. We can then approximate the integral S as:
+SN =
+1 NX i
+f(xi) p(xi)
+(106)
+Copyright c
+2005 David Fleet and Aaron Hertzmann 96
+CSC418 / CSCD18 / CSC2504 Distribution Ray Tracing
+If we use a uniform distribution: p(x) = 1/D for x ? [0,D], then it is easy to see that this procedure reduces to Simple Monte Carlo. However, we can also use something more sophisticated, such as a Gaussian distribution centered around the point we expect to provide the greatest contribution to the intensity.
+Copyright c
+2005 David Fleet and Aaron Hertzmann

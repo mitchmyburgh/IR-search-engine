@@ -1,0 +1,59 @@
+﻿Tbox, Abox and Role Hierarchy
+Besides the concept descriptions for describing sets of individuals or objects, the second major representation mechanism of description logics is the knowledge base, which consists of a Tbox and an Abox. In this part, we introduce the Tbox, Abox, and Role hierarchy.
+1.3.1 Tbox
+The first component of a DL knowledge base is the Tbox (“T” for terminological). A Tbox can be either a simple Tbox or a general Tbox. A simple Tbox was also called a terminology in the past.
+Definition 7. (Simple Tbox) The elements of a simple Tbox are either concept
+inclusions (e.g., A # C) or concept definitions (e.g., A ≡ C).
+Both inclusions and definitions introduce symbolic names for complex concept descriptions.
+In a simple Tbox, at most one concept definition is allowed per concept
+name. The concept inclusions or concept definitions of a simple Tbox can serve as “rewrite rules” to expand concept names to their definition without compromising soundness. If concept names are not allowed to refer to themselves, neither directly nor indirectly, then we have an acyclic simple Tbox. Otherwise, it is called a cyclic simple Tbox.
+As an example, the concept “mother”, as interpreted in English as “a woman who
+has a child”, could be introduced by a description like:
+Mother # Woman # ∃has child.Person
+7
+To state that a “woman is a person”, we could use a second concept inclusion like:
+Woman # Person
+Among these two concept inclusions there is no cyclic reference relationship, therefore together they are acyclic.
+Definition 8. (General Concept Inclusion) A concept inclusion is called general
+(a.k.a. general concept inclusion, or GCI for short) if it is of the form C # D, where
+C and D are arbitrary SHOIQ-concepts. A Tbox is a finite set of GCIs.
+A Tbox having general concept inclusions is a general Tbox. As usually perceived by a knowledge engineer in the knowledge representation area: the unfoldable part of a general Tbox provides definitions; the GCI part (containing general concept inclusions) provides background knowledge.
+The definition of the interpretation given in the previous section is extended for Tboxes as follows. An interpretation I satisfies a GCI C # D if CI ⊆ DI. I satisfies a Tbox T if I satisfies all GCIs in T; in this case, I is called a model of T, and T is coherent.
+Likewise, the notions of Satisfiability, Subsumption, Equivalence and Disjointness are extended for a Tbox as follows. A concept C is satisfiable w.r.t a Tbox T if there is a model I of T with CI #= ∅. A concept C is subsumed by a concept D w.r.t T (written C #T D) if, for each model I of T, we have that CI ⊆ DI. Two concepts are equivalent if each one subsumes the other. Two concepts are disjoint if CI ∩ DI = ∅ for every model I of T. Any one of the two reasoning problems, satisfiability and subsumption, can be reduced to the other: C is satisfiable w.r.t T 8 iff C is not subsumed by ⊥ w.r.t T; C #T D iff C # ¬D is not satisfiable w.r.t T. Moreover, C ≡ D is an abbreviation for C # D and D # C.
+The taxonomy of a Tbox T is a partial order (i.e. subsumption hierarchy) of the
+concept names w.r.t. #T , and may be viewed as a mathematical structure, such as a lattice or Hasse diagram. The process of computing the taxonomy of concept names is also called the classification of terminologies.
+Checking Tbox coherence, computing the Tbox taxonomy, testing concept subsumption and concept satisfiability with respect to a Tbox are Tbox-related reasoning tasks, among which the concept satisfiability problem is the fundamental one [BCM+03].
+1.3.2 Abox
+The second component of the knowledge base is the Abox (“A” for assertional). An
+Abox describes named individuals and their relations while possibly referring to the concept descriptions in the Tbox.
+Definition 9. (Abox Assertion) Given a set of individual names NI , an Abox
+assertion is of either of the following two forms:
+• a : C
+• (a, b) : R
+where a, b ∈ NI are individual names, C is a concept, and R is a role. An Abox is a
+finite set of assertions.
+The definition of an interpretation I is also extended to an Abox. It associates with each a ∈ NI some aI ∈ ΔI. An interpretation I satisfies an Abox if: (1) for each assertion a : C, we have that aI ∈ CI; and (2) for each assertion (a, b) : R, we have
+that (aI, bI) ∈ RI. An interpretation that satisfies all the assertions in an Abox Is called a model of the Abox. An Abox that has a model is said to be consistent.
+The Abox consistency test is the fundamental Abox-related reasoning task, which
+checks if a given Abox is consistent.
+1.3.3 Role Hierarchy
+A role hierarchy (denoted by H as in ALCHIQ and SHIQ) is a mechanism for
+specifying the subsumption relationships between roles. In addition to Tbox and
+ABox, a role hierarchy is sometimes regarded as a third component of a DL knowledge base and is called Rbox (“R” for Role). However, there is no recognized reasoning task on a Rbox itself. A role hierarchy specifies the subsumption relation between a pair of roles by using a role inclusion in the form of R1 # R2, where R1 and R2 are roles. An interpretation I satisfies a role inclusion R1 # R2 if RI
+1 ⊆ RI
+2 .
+We should point out that this report is not intended for delineating the expressive differences for different description logic formalisms. General information about expressiveness can be found in [BCM+03] or at the website of “the DL Complexity Navigator” at www.cs.man.ac.uk/˜ezolin/dl/. Therefore, a comparison between the expressiveness of nominals versa Abox individuals and others alike are out of the scope.
+In Section 1.4, small examples using description logic formalisms for knowledge representation will be given. By working through those small examples, inexperienced readers are expected to gain a better understanding of the notions central to description logics such as concepts, concept inclusions, and named individuals (which can be equivalently represented either in a nominal or in an Abox individual). One thing to notice is that (general) concept inclusions are used in all examples. We also expect that readers have no difficulty in finding out that an Abox assertion is a special form of a concept inclusion (Example 10 tries to give such a hint).
+1.4 Examples
+The convenience of using inverse roles has been long recognized. For example, it is difficult to directly express a sentence4 such as “mary likes all cats” even in SHO. By contrast, its equivalence to “all cats are liked by mary” can be easily expressed in ALCOI by using the inverse likes− of the role likes.
+In the following, Cat, Mouse, Animal and Female are concepts, each of which is
+to be interpreted as a set of individuals; {Mary}, {Jessica}, and {Tom} are named individuals (i.e., nominals, each of which is a singleton set); likes and has child are role names, and likes− and has child − are their inverse roles respectively. 
+Example 1. “Cat likes mouse” can be expressed simply in ALC as:
+Cat # ∃likes.Mouse
+Example 2. “No Dog likes a Cat” can be expressed either by
+Dog # ∀likes.¬Cat or by
+∃likes−.Dog # ¬Cat
+Example 3. “Mary likes all cats, Mary is a female person and cat is an animal.”
+There is a paper [LS00] discussing the right description logic to express “mary likes all cats”.
+In this report, we will show that inverse roles in examples like this can be eliminated, which means there exists an automatic and “polynomial” translation from ALCOI to ALCO.
+Cat # Animal # ∃likes−.{Mary} and {Mary} # Female

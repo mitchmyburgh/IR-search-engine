@@ -1,0 +1,44 @@
+Cloud Computing Forecast: Cloudy With A Chance of Fail
+
+Reuven Cohen , CONTRIBUTOR
+I focus on disruptive trends in technology and cloud computing.
+     
+Opinions expressed by Forbes Contributors are their own.
+Image representing Amazon Web Services as depi...
+Amazon’s Cloud service is having a bad a couple weeks. For the second time in as many weeks Amazon’s East Coast cloud crashed during a severe storm that left 1.3 million in the Washington D.C. area without power. The outage brought down numerous high profile web sites hosted on Amazon including Netflix, Instagram, Pinterest, and Heroku. Making things worse was the fact that other cloud services hosted in the area experienced no downtime.
+
+I spoke briefly to George Branch, Director of Service Delivery for Washington D.C. based cloud provider Virtustream, who told me “The Virtustream Data Center was generally unaffected by the storms in the region. We did not have to switch over to generator at any time and we remain on utility power at the facility. Due to problems with one of our telephone vendors, we did lose access to our 877 telephone support line.” (Disclosure, the author of this post is employed by Virtustream)
+
+This isn’t the first time a lightning storm has taken down Amazon’s cloud. Back in 2009, a lightning storm caused damage to a single power distribution unit which resulted in a wide scale outage for the company. The latest outage brings new and unneeded attention to the potential pitfalls of hosting in the cloud.
+
+Krishnan Subramanian, a well respected technology expert with focus on cloud computing notes “In the clouds, if you don’t design for failure, you are destined to fail.”
+
+A possible solution is the use of a hybrid cloud approach that combines many data centers and cloud based resources into a federated global cloud. This approach is quickly becoming a preferred deployment model for enterprises looking to use the cloud but who don’t want to put all their eggs in one basket.
+
+Recommended by Forbes
+Survey Of Effects Of Cloud Outage Shows How Much Of The Web Runs On Amazon
+Amazon Cloud Goes Down Friday Night, Taking Netflix, Instagram And Pinterest...
+MOST POPULAR Photos: The Most Expensive Home Listing in Every State 2016
++80,526 VIEWS Eleven Signs You've Stayed In Your Job Too Long
+
+In a post on GigaOM, Steve Zivanic, VP of marketing for Nirvanix, proposes a multi cloud approach saying, ”It’s becoming rather clear that the answer for [Amazon's] customers is not to try to master the AWS cloud and learn how to leverage multiple availability zones in an attempt to avoid the next outage but rather to look into a multi-vendor cloud strategy to ensure continuous business operations.You can spend days, months and years trying to master AWS or you could simply do what large-scale IT organizations have been doing for decades — rely on more than one vendor.”
+
+In a conversation, Ben Kepes, a prominent New Zealand based technology analyst who focuses on cloud computing, said, “Outages happen and the onus is on the user to architect accordingly. That said there seems to be a suggestion that in this case there was a degree of culpability on the part of AWS. I’m waiting to see a definitive post mortem until deriding AWS for this event. At the end of the day however – multi site, multi provider and automated failover are increasingly important.”
+
+In a blog post, Nati Shalom, CTO and Founder of GigaSpaces, an Israeli Platform as a service company wrote, “The general lesson from this and previous failures is actually not new. To be fair, this lesson is not specific to AWS or to any cloud service. Failures are inevitable, and often happen when and where we least expect them to. Instead of trying to prevent failure from happening we should design our systems to cope with failure. The method of dealing with failures is also not that new — use redundancy, don’t rely on a single point failure (including a data center or even a data center provider). Automate the fail-over process.”
+
+Here’s the problem with the “blame the customer” sentiment: many new cloud users have a hard time learning the rules of the road. A quick search for AWS failure planning on the Amazon’s Web Services forums resulted in little additional insights and really appears to be mostly about trial and error.
+
+In the case of outages, which happens to everyone at some point, it seems Amazon, along with the various industry pundits, expects you to design your architecture correctly for these kinds of events through redundancy. For example, use multiple VM’s across multiple availability zones. Amazon expects a certain level of knowledge of both system administration as well as how AWS itself has been designed to be used. The mantra is novice users need not apply or should use at their own risk. This certainly doesn’t seem to be all that clear to a new user who hears that cloud computing is safe and the answer to all the world’s IT problems. That claim, in itself, should be a red flag.
+
+The problem is twofold. An over hyped technology and unclear failure models combine to create a perfect storm. You need the late adopters for the real revenue opportunities, but these same late adopters require a different gentler kind of cloud service. One that is a little more platform focused rather than infrastructure focused. Complicating things is the reality that a lot of the easy to use “platforms”, such as SalesForce’s Heroku, were also offline during the outage. A big part of the pitch to use these sorts of cloud platforms is that they hide the infrastructure complexity so developers can focus on the more important parts of building applications.
+
+As the IaaS market matures, it is becoming obvious that the “Über Geek” developers who first adopted the service are not where the long tail revenue opportunities are. To make IaaS viable to a broader market, AWS and other IaaS vendors need to mature their platforms to accommodate for a lower or least common denominator level of user. One who is just smart enough to be dangerous. Otherwise these various cloud providers are doomed to be limited to the “for experts only” segment.
+
+George Reese, CTO of enStratus and O’Reilly Cloud Author, says it is up to the customer to handle failures saying, “I’m worried about the repeated issues in the us-east-1 region and recommend to customers to deploy to the other regions with cross-region and cross-cloud redundancy or backup capabilities. However, uptime is ultimately in the customer’s hands in the cloud.”
+
+The bigger question is should a cloud customer have to worry about hardware failures or should these types of failures be the sole responsibility of the service provider? Deploying to the cloud should reduce complexity, not increase it.
+
+I don’t believe that the sole responsibility should be placed on customer. In the case of AWS, they should be responsible for failures that are brought about by the applications and related components they build and control. This is especially true in the case of power failures.
+
+In an optimal cloud environment, any single server failures shouldn’t matter. But it appears at AWS it does. Needless to say, using a single vendor cloud based infrastructure may be problematic when the power goes out.

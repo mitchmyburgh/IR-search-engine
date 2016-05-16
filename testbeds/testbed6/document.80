@@ -1,0 +1,33 @@
+     Topological Sorting 
+      By Jonathan Pincus and Jerry Schwarz, August 01, 1997 
+      Source Code Accompanies This Article. Download It Now. 
+        aa897.txt  
+        aa897.zip  
+     Sometimes, traditional sorting is overkill-you only need to rearrange things to satisfy a few conditions. Our authors show how topological sorting does only as much as you need.
+      Dr. Dobb's Journal August 1997: Algorithm Alley  
+       Jonathan is the chief technical officer and one of the founders of Intrinsa Corp. Jerry is a member of the technical staff at Intrinsa and a veteran of the ANSI C++ Standards Committee. They can be reached at jon@intrinsa.com and jerry@intrinsa.com, respectively. 
+       An old adage claims that "Anyone can make a bridge that stands, but it takes an engineer to make one that just barely stands." This is as true of software as bridges. It takes considerable skill to design efficient software that only does as much work as necessary. For example, traditional sorting may be overkill if you really only have a few conditions you need to satisfy. This month, Jonathan and Jerry show how topological sorting does only enough work to satisfy a few constraints. They then extend the basic algorithm to provide good results even when those constraints are contradictory. 
+       -- Tim Kientzle 
+       In developing our PREfix software component simulator, we realized that to get the best results, we should analyze functions in a particular order. For example, if Foo() calls Bar(), it's best to analyze Bar() before analyzing Foo(). Given an entire program, we needed to sort the various functions so that a called function was analyzed before the function that called it. Note that there are many different orders that might work; we just needed to find one. 
+       This is an example of a "topological sort." Most sorting techniques require a "total order," where you have to be able to compare any two elements. A topological sort uses a "partial order" -- you may know that A precedes both B and C, but not know (or care) whether B precedes C or C precedes B. Topological sorting is a useful technique in many different domains, including software tools, dependency analysis, constraint analysis, and CAD. 
+       Topological sorting works well in certain situations. If there are very few relations (the partial order is "sparse"), then a topological sort is likely to be faster than a standard sort. Given n objects and m relations, a topological sort's complexity is O(n+m) rather than the O(n log n) of a standard sort. In our case, most functions typically call a handful of other functions, meaning the total number of relations (caller/callee pairs) is relatively small, so topological sorting makes sense. 
+       Topological sorts can also deal gracefully with cycles. For example, imagine that two functions X and Y are mutually recursive: X calls Y and Y calls X. In this case, it is useful to detect the cycle and the specific relations that cause the cycle. Standard sorting algorithms, however, will simply fail in this situation. We developed an extension to topological sorting that can produce a "best" order, even in the presence of cycles. 
+       In this article, we present a basic topological sorting algorithm and implementation, then extend the algorithm and implementation to deal with cycles. The implementations presented here make heavy use of, the C++ Standard Template Library (STL). Much of the work involves manipulating vectors and queues, and STL's primitives make it easier. Furthermore, packaging the various functions as STL algorithms allows them to be reused on different types of data. 
+      The Basic Algorithm 
+       For simplicity, we'll describe the algorithm in terms of a generic "precedes" relation: If X precedes Y, we say that X is the predecessor and Y is the successor. Our terminology and discussion follows Donald Knuth's presentation in The Art of Computer Programming, Volume 1 (Addison-Wesley, 1997). 
+       For example, Figure 1 illustrates the following set of relations on the input set { A, B, C, D }: A precedes B, C precedes D, and B precedes D. For these relations, there are several valid orderings: 
+       { A, B, C, D } 
+       { A, C, B, D } 
+       { C, A, B, D } 
+       However, { C, D, A, B } would not be valid, because it violates the relation that B precedes D. 
+       One way of ensuring a correct order is to simply copy the data, making sure that whenever we copy one item, we know that all of its predecessors have already been copied. As a shorthand for this notion of "already been copied," we'll define a predecessor X as an "active" predecessor of Y if X precedes Y and X has not (yet) been copied. Then this basic algorithm can be summed up quite succinctly: 
+        While there is a member that has no active predecessors, repeat: 
+        1. Pick a member X with no active predecessors. 
+        2. Copy X to the output. 
+       Clearly, the output will indeed be ordered. What is not so obvious is that -- assuming there are no cycles in the input -- the while loop will not terminate until every item has been output. 
+       The key to an efficient implementation of this algorithm is to be able to pick members with no active predecessors without having to rescan the entire list at each iteration. One way of accomplishing this is to associate a count of predecessors and a list of successors to each input item, and use an auxiliary queue Q as interim storage of nodes that have no active predecessors but have not yet been output. In fact, Knuth uses the topological sorting algorithm as an example of using a linked list as a queue. 
+       Assume we have an array, count, which stores the predecessor count for each member. Using the basic queue operations add (at the end of the queue) and pop (from the front of the queue), we can refine the algorithm as in Figure 2. 
+       The while loop terminates when there are no items left on the queue, either because everything in the input list has been processed, or because there is a cycle. 
+      Complexity 
+       The overall time complexity of this basic algorithm is O(n+m). The O(n) comes from the number of times that the while loop (and initial for loop) is executed, and the O(m) from the nested for loop.  
+       Although there is no way to calculate how many times the inner loop will be executed on any one 

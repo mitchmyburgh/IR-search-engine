@@ -1,0 +1,336 @@
+  
+  
+This page may be out of date. Save your draft before refreshing this
+page.Submit any pending changes before refreshing this page.
+
+Hide this message.
+
+Quora
+
+****
+
+Sign In
+
+Quantum Computation
+
+College and University Majors
+
+Physics
+
+# If I'm interested in quantum computing, should I major in Computer Science
+or Physics?
+
+My current goal is to major in Computer Engineering with a possible minor in
+Physics, and then get a masters in Physics. How realistic is this to work in
+quantum computing?
+
+UpdateCancel
+
+### Answer Wiki
+
+10 Answers
+
+Matthew Saul Leifer, Previously a Postdoctoral Fellow in Quantum Information
+Theory
+
+19.1k Views • Upvoted by
+
+Jay Wacker, physicist, phd+postdoc+faculty,
+
+George Hagstrom, I have a Phd in physics from the University of Texas at
+Austin, the topic of my thesis was plasma p…,
+
+Stephan Hoyer, Physics Ph.D, UC Berkeley
+
+You should major in Computer *Science* or Physics, but not Computer
+Engineering.  If you major in CS you should take lots of Theoretical Computer
+Science Courses (Discrete math, combinatorics, Algorithms, Computational
+Complexity, etc.)  Which one you major in depends on whether you are more
+interested in developing the theory of quantum computing, e.g. trying to
+understand what sort of problems quantum computers are good for solving, or
+actually trying to build them.  
+  
+Unlike the other responders, I would not say that physics is obviously the
+best choice.  I have worked in several academic institutions with quantum
+computing groups and the split between people with a physics or a CS/math
+background is roughly 50/50.  If you come via a CS route you will definitely
+end up doing theoretical work because there aren't actually any full scale
+quantum computers for you to play with yet.  If you do physics you can end up
+doing theory or experiment.  There are a large number of experimental groups
+in physics, so I don't know why so many of the other responses say you can
+only do theory.  It is, however, true that the experiments involve
+manipulating a small number of qubits, so they can't really be called full-
+blown quantum computers at this stage.  Physicists also do theoretical work,
+but typically of a different sort to computer scientists.  They try to figure
+out new ways of building quantum computers, apply ideas from quantum
+information to other fields of physics, and work on the foundations of quantum
+theory.  Computer scientists are more likely to be found working on quantum
+algorithms and complexity, although several groups now do semantics,
+programming languages, logics and things like that as well.  
+  
+Having said all that, it doesn't matter too much what you major in right now.
+It matters much more what you do your Ph.D. in.  I know several former physics
+undergrads who did Ph.D.s in quantum computing in computer science departments
+and vice versa.  It is not so hard to pick up the missing bits of knowledge
+that you need.
+
+Written Feb 16, 2013 • View Upvotes
+
+#### Related Questions
+
+More Answers Below
+
+  * How can an undergrad student of computer science apply for quantum computing or advance physics courses in India?
+
+  * I am a physics undergraduate interested in quantum computing, but I'm not a particularly good programmer. What should I do in terms of physics...
+
+  * If I want to build and test a quantum computer, should I pursue pure physics, computer science or electrical engineering?
+
+  * Should a person who is interested in developing quantum computers study theoretical computer science or electrical engineering?
+
+  * Should I major in Computer Science or Physics?
+
+Stephan Hoyer, Physics Ph.D, UC Berkeley
+
+10.5k Views • Upvoted by
+
+Mark Eichenlaub, PhD student in Physics
+
+Stephan has 10+ answers in
+
+Quantum Computation.
+
+As Joshua Engel notes, this point in time, quantum computing is an academic
+pursuit. There is no industry to work for, with the exception of a single
+venture funded company that may or may not still be around when you graduate.
+This means that to pursue an interest in quantum computing, you should be
+excited about a career doing scientific research. A masters degrees will not
+suffice -- you will eventually need to get a PhD.  
+  
+Quantum computing is an interdisciplinary field with contributions from
+physicists, computer scientists, engineers, mathematicians and even chemists
+(such as my adviser). Researchers in quantum computing come from all these
+backgrounds, so there are many paths you could take to be successful. I am
+really excited about quantum computing research, but it is a specialized
+enough sub-field of academia that I think it would be a mistake to choose your
+undergraduate major entirely for this reason. If you major in any of these
+related fields, it will be possible for you to make a transition into quantum
+computing.  
+  
+That said, the optimal background to choose as a future quantum computing
+researcher depends on your interests. If you are most interested in developing
+quantum computing algorithms in an abstract sense, I would pick theoretical
+computer science or mathematics. If you want to work on physical
+implementations (either experimentally or theoretically), then you should do
+physics or possibly a closely related engineering field. Theoretical
+physicists often work on more abstract aspects as well, but usually in a more
+applied way than the computer scientists. Either way, take all the courses you
+can on quantum mechanics and theoretical computer science.  
+  
+Realistically, there is significantly more work being done on implementations
+than algorithms. So a physics degree as an undergraduate is probably the
+easiest route to working in this field. It probably also preserves the
+greatest number of options (in the field of quantum computing), since you can
+later choose to go take more or less applied routes.
+
+Written Dec 12, 2011 • View Upvotes
+
+Joshua Engel, not a physicist
+
+7.4k Views • Upvoted by
+
+Stephan Hoyer, Physics Ph.D, UC Berkeley
+
+Joshua has 1,210+ answers in
+
+Physics.
+
+I concur with the others: physics.  
+  
+There's not much overlap between computer engineering and the current state of
+quantum computing.  Quantum computing isn't done in a fab plant; it's done
+with paper and pencil.  The quantum devices that are built look more like
+physics equipment than like computers.  
+  
+Only one company is even claiming to make a quantum computer, and it's not at
+all clear that this is what they're actually doing.  
+  
+For everybody else, quantum computing is a blackboard exercise, not a computer
+engineering task.  And that blackboard exercise requires an extensive
+background in quantum mechanics that you're not going to get in a computer
+engineering class.  Actually developing a quantum computer will require even
+more background in experimental physics, the kind you'll get in a master's
+degree.  
+  
+It will be hard to get into a master's degree program without an undergrad
+physics degree.  It does happen, but it will require a lot of outside work.
+
+Written Dec 11, 2011 • View Upvotes
+
+Alex Kritchevsky
+
+5.1k Views
+
+It depends. I took my university's quantum computing course last year, and it
+was in the Engineering department but largely involved physics (and some
+computer science). You can really go either way with it: there are a ton of
+engineering challenges with implementing the things, and a lot of active
+research that will probably become really big in our lifetimes. There's also a
+ton of theoretical work that will never involve implementation and which
+requires a really solid grasp of quantum mechanics and high-level math. I
+think it really depends on whether physics or engineering is more your thing.  
+  
+I'd suggest physics because it's my major, but... I'm biased.  
+  
+  
+My class was largely engineers, who are as capable of learning quantum
+mechanics as physicists are once in graduate school, though I'm certain we
+physics majors have had longer exposure to it.  
+Note also that quantum computing is very much a subject of graduate-level
+work. I asked my professor about undergraduate opportunities and he said that
+that was very unrealistic; it requires a lot of theoretical background. A
+masters in physics might work if you get in a research group for quantum
+computing by then, but don't expect to get a masters in physics and then go
+find a job in quantum computing somewhere; it is largely an academic field at
+the moment.
+
+Written Dec 11, 2011 • View Upvotes
+
+Matthew Putman, i have been a physics Proffessor at Columbia university and
+also have a Ph.D....
+
+3.6k Views
+
+I would vote for physics. I assume that you know enough computer tech already
+to understand the basics in the state of the art. In order to design new
+hardware, on logic that will be needed for Quantum computing you will need to
+be a great physicist.
+
+Written Dec 11, 2011 • View Upvotes
+
+More
+
+#### Related Questions
+
+  * I love quantum physics and geology (study them too) and I am currently a computer science undergraduate. Which subject should I major in? I am...
+
+  * I'm a computer science major, and I'm getting really interested in quantum physics, but it may just be a "phase." What should I do?
+
+  * What Indian universities are some of the good places to do an M.Sc in physics if one is interested in quantum computation?
+
+  * How can I learn the basics about quantum computers?
+
+  * How do I switch majors from computer science engineering to physics?
+
+  * What should I do if I'm a computer science engineering graduate drawn towards quantum physics and want to pursue a master's in quantum computi...
+
+  * Should I study computer science or physics?
+
+  * Should I major in earth science with a concentration in geophysics, computational physics, or computer science?
+
+  * Is a bachelor's in electrical engineering going to hamper the prospects of securing a PhD/MS position in quantum information and computing? Ar...
+
+  * What is the best physical implementation technology in quantum computers?
+
+  * How is Quantum Computation, as pursued by professors in Computer Science departments different from how it is pursued by physicists working on...
+
+  * Should I major in computer science even if I feel I'm not naturally good at it?
+
+  * Should I major in computer science or engineering physics?
+
+  * Which is harder: majoring in physics or computer science?
+
+  * If I am majoring in computer science, should I take physics courses?
+
+### Related Questions
+
+  * How can an undergrad student of computer science apply for quantum computing or advance physics courses in India?
+
+  * I am a physics undergraduate interested in quantum computing, but I'm not a particularly good programmer. What should I do in terms of physics...
+
+  * If I want to build and test a quantum computer, should I pursue pure physics, computer science or electrical engineering?
+
+  * Should a person who is interested in developing quantum computers study theoretical computer science or electrical engineering?
+
+  * Should I major in Computer Science or Physics?
+
+  * I love quantum physics and geology (study them too) and I am currently a computer science undergraduate. Which subject should I major in? I am...
+
+  * I'm a computer science major, and I'm getting really interested in quantum physics, but it may just be a "phase." What should I do?
+
+  * What Indian universities are some of the good places to do an M.Sc in physics if one is interested in quantum computation?
+
+  * How can I learn the basics about quantum computers?
+
+  * How do I switch majors from computer science engineering to physics?
+
+Top Stories
+
+Read More
+
+Does it seem like Putin is on his way to bankrupting Russia, with many years
+of economic difficulty to come?
+
+
+
+Igor Markov, Can tell D.Kiselev from E.Kiselev
+
+26k Views •
+
+Igor is a Most Viewed Writer in
+
+Politics of Russia.
+
+Various economic forecasts, in Russia and abroad, predict as much, although
+not everyone has factored in the current oil prices yet. Russia is running a
+significant budget deficit which is covered from reserve funds. At this rate,
+social and military spending will have to be cut by a lot within two years.
+Foreign trade dropped by half in 2015, inflation has been already
+significantly higher tha...
+
+Read More
+
+I want my 6 weeks daughter to be president of United States when she grows up.
+What can I do to help her prepare during her growth years?
+
+Craig Good, I know about as much as is likely from raising one.
+
+40.9k Views • Upvoted by
+
+Melia Janssen, Parent of one, daughter to one, friend to a few.
+
+You seem to have mistaken your daughter, a human being, for property. Don't
+you dare decide her career, future mate, or even hair color for her. Show a
+little respect.
+
+Let her learn and grow. Enjoy the few years you have to get to know her. I can
+almost guarantee she'll surprise you.
+
+Read More
+
+Batman vs Superman: How did Batman stop Superman's punch in the last trailer?
+
+Quora User
+
+15.9k Views • Quora User is a Most Viewed Writer in
+
+Batman v Superman: Dawn of Justice (2016 movie).
+
+There are two things at play here. The element of surprise, and the suit
+itself.
+
+In the animated movie _Batman/Superman: World's Finest_, the first time
+Superman tries to stop Batman from doing something, Batman just _throws_
+Superman over his shoulder. The simple reason for that, is that Superman was
+not expecting that move.
+
+When Superman fights, he doesn't always go in with his full strength. It's ...
+
+Sitemap
+
+#
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+About \- Careers \- Privacy \- Terms \- Contact
+

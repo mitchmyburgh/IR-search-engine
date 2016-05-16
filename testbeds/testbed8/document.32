@@ -1,0 +1,7 @@
+Some languages may also allow assignment between records whose fields have different names, matching each field value with the corresponding field variable by their positions within the record; so that, for example, a complex number with fields called real and imag can be assigned to a 2D point record variable with fields X and Y. In this alternative, the two operands are still required to have the same sequence of field types. Some languages may also require that corresponding types have the same size and encoding as well, so that the whole record can be assigned as an uninterpreted bit string. Other languages may be more flexible in this regard, and require only that each value field can be legally assigned to the corresponding variable field; so that, for example, a short integer field can be assigned to a long integer field, or vice versa.
+
+Other languages (such as COBOL) may match fields and values by their names, rather than positions.
+
+These same possibilities apply to the comparison of two record values for equality. Some languages may also allow order comparisons ('<'and '>'), using the lexicographic order based on the comparison of individual fields.[citation needed]
+
+PL/I allows both of the preceding types of assignment, and also allows structure expressions, such as a = a+1; where "a" is a record, or structure in PL/I terminology.

@@ -1,0 +1,190 @@
+Binary Trees 
+Posted on November 15, 2013 
+Last updated on January 25, 2014 
+Table of Contents 
+1 Definition 
+2 Insertion Algorithm 
+3 Traversal Algorithms
+3.1 Preorder
+3.1.1 Recursive 
+3.1.2 Iterative 
+3.2 Inorder
+3.2.1 Recursive 
+3.2.2 Iterative 
+3.3 Postorder
+3.3.1 Recursive 
+3.3.2 Iterative 
+3.4 Level Order
+3.4.1 Level Order without level delimiters 
+3.4.2 Level order with delimiters 
+4 Tree Depth
+4.1 Recursive solution 
+4.2 Iterative version 
+5 Maximal sum from root to leaf
+5.1 Recursively 
+5.2 Iteratively 
+6 Validating a BST 
+7 Visualizing a tree with dot/Graphviz
+7.1 Generating the dot file in Java 
+
+In this article I will cover various algorithms pertaining to binary trees. This can be useful if you are preparing for some interviews (I try to cover popular questions), or need to brush up your knowledge on binary trees. 
+1 Definition 
+A binary tree is a data structure that has a node with a value, and pointers to two other data structures - a left tree, and a right tree, both of which are themselves binary trees. A binary search tree is a binary tree such that for every node \(n\), all elements in the left subtree are smaller than or equal to the value of \(n\), and all elements in the right subtree are greater than the value of \(n\). 
+Here is how we could implement a simple Binary Tree class in Java: 
+public class BinTree {
+  private Node root;
+  public BinTree (Node r){
+    root = r;
+  }
+}
+public class Node {
+  int value;
+  Node left;
+  Node right;
+  public Node(int v) {
+    value = v;
+  }
+}
+A binary tree is defined by its root element, which is a Node. Each node then has a value, and pointers to its left and right subtrees. 
+2 Insertion Algorithm 
+   Given a binary search tree and an integer, insert the integer into the binary search tree, such that the result is still a binary search tree. 
+  We need to traverse the tree to find the insertion point for the new element. Start at the root, and keep traversing the tree as if to find where the element, if it was already in the tree, would be located. Once you get to an empty leaf during this traversal, this is precisely where you should insert the new element. In Java: 
+    public void insert(int i){
+  Node newNode = new Node(i);
+  if(this.root == null) this.root = newNode;
+  else insertR(root, newNode);
+}
+private void insertR(Node parent, Node toInsert){
+  if(toInsert.value &lt;= parent.value){
+    if(parent.left == null) parent.left = toInsert;
+    else insertR(parent.left, toInsert);
+  }
+  else{
+    if(parent.right == null) parent.right = toInsert;
+    else insertR(parent.right, toInsert);
+  }
+}
+  3 Traversal Algorithms 
+   Given a binary tree, print out its elements 
+  Looks simple. We have a couple of options to do this. There are four well known tree traversal methods: preorder, inorder, postorder, and level order. I will explain them in the relevant subsections. Firstly, notice that all our algorithms must be \(O(n)\) in time, since we have to necessarily visit every element of an \(n\)-element binary tree. What can differ though is the space complexity of our solutions. A recursive formulation, while the simplest, might quickly get us a stack overflow exception due to size of the call stack. Without using recursion, we can keep all the data we need on the much larger heap. 
+  In the following sections, I’ll go through how to implement all four methods both recursively and iteratively. We will simply print out the node’s value when visiting it, although that step can obviously be adapted, for example to return list of the nodes visited in the desired order. 
+  3.1 Preorder 
+  A preorder traversal for a binary tree \(t\) means we first visit the root node, and then recursively visit the left, and then recursively visit the right subtree. 
+  3.1.1 Recursive 
+  Very easy to implement. Java: 
+    public static void preorderRecursive(BinTree t){
+  if(t.root != null) preorderRecursiveAux(t.root);
+}
+private static void preorderRecursiveAux(Node n){
+  System.out.println(n.value);
+  if(n.left != null) preorderRecursiveAux(n.left);
+  if(n.right != null) preorderRecursiveAux(n.right);
+}
+  3.1.2 Iterative 
+  The iterative versions of all the algorithms are more challenging than the simple recursive versions. The core idea is to use a stack to manager your program as it would be run if it would be ran recursively. Except now you own the stack and it’s on the heap, giving you more space to work with than the call stack. 
+  A preorder traversal will first visit the root, and then continually visit left children until it can no longer visit left children. Then, it will go to visit the right node of the last element visited, and again go on a spree visiting the left children until there are no more left. This continues until there are no elements left to visit. 
+  In Java: 
+    public static void preorderIterative(BinTree t){
+  if(t.root != null) preorderIterativeAux(t.root);
+}
+private static void preorderIterativeAux(Node n){
+  Stack&lt;Node&gt; s = new Stack&lt;Node&gt;();
+  while(n != null){
+    System.out.println(n.value);
+    s.push(n);
+    n = n.left;
+  }
+  while(!s.empty()){
+    Node topNode = s.pop(); // already been printed
+    topNode = topNode.right;
+    while(topNode != null){
+      System.out.println(topNode.value);
+      s.push(topNode);
+      topNode = topNode.left;
+    }
+  }
+}
+  3.2 Inorder 
+  An inorder traversal for a binary tree \(t\) means we first recursively visit the left tree, then the root, and then recursively visit the right tree. 
+  3.2.1 Recursive 
+  Java implementation: 
+    public static void inorderRecursive(BinTree t){
+  if(t.root != null) inorderRecursiveAux(t.root);
+}
+private static void inorderRecursiveAux(Node n){
+  if(n.left != null) inorderRecursiveAux(n.left);
+  System.out.println(n.value);
+  if(n.right != null) inorderRecursiveAux(n.right);
+}
+  3.2.2 Iterative 
+  Again, you have to figure out how to simulate the recursion using a normal stack on the heap, and while loops. First, notice that an inorder traversal will start off with the smallest element if its traversing a binary search tree. Indeed, an inorder traversal of a binary search tree is a sort. The smallest element will be the leftmost element. Then, the next smallest element, will be the leftmost element of the right child of the element we’ve just visited. All this can be easily modelled with a stack. Here is the Java code: 
+    public static void inorderIterative(BinTree t){
+  if(t.root != null) inorderIterative(t.root);
+}
+private static void inorderIterative(Node n){
+  Stack&lt;Node&gt; s = new Stack&lt;Node&gt;();
+  while(n != null){
+    s.push(n);
+    n = n.left;
+  }
+  while(!s.empty()){
+    Node topStackNode = s.pop();
+    System.out.println(topStackNode.value);
+    if(topStackNode.right != null){
+      topStackNode = topStackNode.right;
+      while(topStackNode != null){
+        s.push(topStackNode);
+        topStackNode = topStackNode.left;
+      }
+    }
+  }
+}
+  3.3 Postorder 
+  A postorder traversal for a binary tree \(t\) means we first recursively visit the left tree, then recursively visit the right tree, and then finally visit the root of the tree. 
+  3.3.1 Recursive 
+  Again, the recursive implementation is dead simple. 
+    public static void postorderRecursive(BinTree t){
+  if(t.root != null) postorderRecursiveAux(t.root);
+}
+private static void postorderRecursiveAux(Node n){
+  if(n.left != null) postorderRecursiveAux(n.left);
+  if(n.right != null) postorderRecursiveAux(n.right);
+  System.out.println(n.value);
+}
+  3.3.2 Iterative 
+  The iterative version is non-trivial. Have a think about it and try doing it yourself before continuing. 
+  The issue is that, before visiting anything, we have to in a way simulate two consecutive recursions, one for each subtree. The key operation we need is to be able to get the deepest and leftmost element in any subtree we are currently traversing. This will be the first element that a post-order traversal will print out. Then, we have to simulate backtracking, by visiting the parent, and performing the same operation on the right subtree (if it hasn’t been visited already). It’s better if you actually first attempt to do it yourself, and then have a look at the working Java code below. 
+    public static void postorderIterative(BinTree t){
+  if(t.root != null) postorderIterativeAux(t.root);
+}
+private static void postorderIterativeAux(Node n){
+  Stack&lt;Node&gt; s = new Stack&lt;Node&gt;();
+  // Go left while adding to the stack. When can't go
+  // anymore, go right, and then left again and repeat,
+  // adding to the stack the whole time.
+  while(n != null){
+    s.push(n);
+    if(n.left == null) n = n.right;
+    else               n = n.left;
+  }
+  while(!s.empty()){
+    // Get the top node, print it out, and get its parent.
+    // The parent must be the next element on the stack
+    Node topNode = s.pop();
+    System.out.println(topNode.value);
+    Node topNodeParent = null;
+    if(!s.empty()) topNodeParent = s.peek();
+    // If there is a parent, and it's left subtree is unexplored,
+    // go explore it. 
+    if(topNodeParent != null &amp;&amp; topNodeParent.right != topNode){
+      Node tempNode = topNodeParent.right;
+      // Same process as in the beginning.
+      while(tempNode != null){
+        s.push(tempNode);
+        if(tempNode.left == null)    tempNode = tempNode.right;
+        else                         tempNode = tempNode.left;
+      }
+    }
+  }
+}
+  

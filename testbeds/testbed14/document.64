@@ -1,0 +1,29 @@
+﻿We are confident that foundational ontologies will eventually improve communication
+among agents in most cases of information exchange: information retrieval
+and extraction, semantic web services, software requirement analysis and unified modeling process, control knowledge, etc. In fact, foundational ontologies can act as a reference for agents to commit to certain theories, as a set of formal guidelines for domain  modeling, and as a tool
+for making heterogeneous ontologies interoperate or merge. According to the needs, an upper level ontology can be used either in a
+light version, for computationally intensive applications, or as an off-the-shelf fully axiomatized theory, to be consulted as a reference source for more sporadic meaning negotiation purposes.
+That is why we intended DOLCE to be as detailed and rigorous as possible, and yet we
+plan to release a light-weight version.
+In the light of this vision, we have started using DOLCE (or one of its
+preliminary
+versions) in several
+projects, either as a
+tool or a set of guidelines, with substantial
+results in the creation of well-founded and useful ontologies (by the way,
+there is
+still
+no benchmark or testbed for
+ontology quality, since
+there is
+small
+agreement on the
+criteria to adopt, and we are suggesting some of them ...).
+The
+WordNet
+experiment is one of the
+research
+applications of DOLCE,
+already
+presented in several contexts, which seems promising in bridging one of the multidisciplinary gaps in ontological engineering, between the domain of lexical technologies,
+and that of conceptual modelling.

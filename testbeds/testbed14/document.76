@@ -1,0 +1,24 @@
+﻿Evaluation of natural language processing
+Objectives
+The goal of NLP evaluation is to measure one or more qualities of an algorithm or a system, in order to determine: whether the algorithm answers the goals of its designers, or if the system meets the needs of its users. Research in NLP evaluation has received considerable attention, because the definition of proper evaluation criteria is one way to specify precisely an NLP problem. The metric of NLP evaluation on an algorithmic system allows for the integration of language understanding and language generation. A precise set of evaluation criteria, which include mainly evaluation data and evaluation metrics can enable several teams to compare their solutions for a given NLP problem.
+Timeline of evaluation in NLP
+In 1987, the first evaluation campaign on written texts seems to be a campaign dedicated to message understanding (Pallet 1998). 
+The Parseval/GEIG project compared phrase-structure grammars (Black 1991). 
+There were series of campaigns within Tipster project on tasks like summarization, translation, and searching (Hirschman 1998). 
+In 1994, in Germany, the Morpholympics compared German morphological taggers. 
+The Senseval & Romanseval campaigns were conducted with the objectives of semantic disambiguation. 
+In 1996, the Sparkle campaign compared syntactic parsers in four different languages (English, French, German and Italian). 
+In France, the Grace project compared a set of 21 taggers for French in 1997 (Adda 1999). 
+In 2004, during the Technolangue/Easy project, 13 parsers for French were compared. 
+Large-scale evaluation of dependency parsers were performed in the context of the CoNLL shared tasks in 2006 and 2007. 
+In France, within the ANR-Passage project (end of 2007), 10 parsers for French were compared - passage web site. 
+In Italy, the EVALITA campaign was conducted in 2007,[10] 2009, 2011, and 2014[11] to compare various NLP and speech tools for Italian - EVALITA web site. 
+Different types of evaluation
+Depending on the evaluation procedures, a number of distinctions are traditionally made in NLP evaluation.
+Intrinsic v. extrinsic evaluation 
+Intrinsic evaluation considers an isolated NLP system and characterizes its performance with respect to a gold standard result as defined by the evaluators. Extrinsic evaluation, also called evaluation in use, considers the NLP system in a more complex setting as either an embedded system or a precise function for a human user. The extrinsic performance of the system is then characterized in terms of utility with respect to the overall task of the extraneous system or the human user. For example, consider a syntactic parser which is based on the output of some part of speech (POS) tagger. An intrinsic evaluation would run the POS tagger on structured data, and compare the system output of the POS tagger to the gold standard output. An extrinsic evaluation would run the parser with some other POS tagger, and then with the novel POS tagger, and compare the parsing accuracy. 
+Black-box v. glass-box evaluation 
+Black-box evaluation requires someone to run an NLP system on a sample data set and to measure a number of parameters related to: the quality of the process, such as speed, reliability, resource consumption; and most importantly, the quality of the result, such as the accuracy of data annotation or the fidelity of a translation. Glass-box evaluation looks at the: design of the system; the algorithms that are implemented; the linguistic resources it uses, like vocabulary size or expression set cardinality. Given the complexity of NLP problems, it is often difficult to predict performance only on the basis of glass-box evaluation; but this type of evaluation is more informative with respect to error analysis or future developments of a system. 
+Automatic v. manual evaluation 
+In many cases, automatic procedures can be defined to evaluate an NLP system by comparing its output with the gold standard one. Although the cost of reproducing the gold standard can be quite high, bootstrapping automatic evaluation on the same input data can be repeated as often as needed without inordinate additional costs. However for many NLP problems the precise definition of a gold standard is a complex task and it can prove impossible when inter-annotator agreement is insufficient. Manual evaluation is best performed by human judges instructed to estimate the quality of a system, or most often of a sample of its output, based on a number of criteria. Although, thanks to their linguistic competence, human judges can be considered as the reference for a number of language processing tasks, there is also considerable variation across their ratings. That is why automatic evaluation is sometimes referred to as objective evaluation while the human evaluation is perspective. 
+

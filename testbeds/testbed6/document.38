@@ -1,0 +1,181 @@
+  Source Code 
+  Get programs to develop you own applications. 
+   Home 
+   About 
+   Downloads 
+   Recommended Books 
+    Browse 
+      All (31) 
+        C programs (7) 
+          Computer Network (7)  
+        Java Programs (22) 
+          Data Structures (22) 
+            Graphs (2)  
+            Trees (4)  
+        Web Mining (2)  
+     Recent Posts 
+       Dijkstra’s algorithm in&nbsp;C  
+       CRC polynomials CRC-16 in&nbsp;C  
+       CRC polynomials CRC-12 in&nbsp;C  
+       Character Stuffing in&nbsp;C  
+       Bit Stuffing in&nbsp;C  
+       Distance Vector Routing Algorithm in&nbsp;C  
+       RSA algorithm in&nbsp;C  
+       Breadth-First Search  
+       Depth First Search  
+       Java Search Engine&nbsp;API  
+       Link Extractor or Html&nbsp;Parser  
+       Dictionary  
+       B-Tree  
+       AVL Tree  
+       Binary Search Tree  
+       Level Order Traversal  
+       Binary Trees  
+       Priority Queue  
+       Deque ADT  
+       Linked Queue  
+       Linked Implementation of a&nbsp;Stack  
+       Palindrome  
+       Matching Brackets (Delimiters) using&nbsp;Stack  
+       Evaluation of postfix&nbsp;expression  
+       Infix to Postfix&nbsp;Conversion  
+       Queue ADT  
+       Stack ADT  
+       Linked Implementation of&nbsp;List  
+       List ADT(Linked List)  
+       Binary search  
+       Linear search  
+    Subscribe 
+      Entries (RSS) 
+      Comments (RSS) 
+    Blog Stats 
+      159,184 hits 
+    Archives 
+      April 2012 
+      March 2012 
+    Source Code on Facebook 
+        Source Code on Facebook
+      (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=249643311490&version=v2.3'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));  
+    Follow Blog via Email 
+      Enter your email address to follow this blog and receive notifications of new posts by email. 
+      Join 95 other followers 
+     Follow Source Code on WordPress.com (function(d){var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');p.type = 'text/javascript';p.async = true;p.src = '//widgets.wp.com/platform.js';f.parentNode.insertBefore(p,f);}(document));  
+    Category Cloud 
+      All 
+      Computer Network 
+      Data Structures 
+      Graphs 
+      Trees 
+      Web Mining 
+    Tag Cloud 
+      abstract data type 
+      Adi Shamir 
+      Algorithm 
+      Apache Lucene 
+      Apache Solr 
+      Application programming interface 
+      arithmetic operators 
+      asymmetric cryptography 
+      avl tree 
+      avl trees 
+      Binary search 
+      binary search tree 
+      binary search trees 
+      Breadth-first search 
+      C 
+      class graph 
+      class hashtable 
+      class node 
+      Combinatorics 
+      Data structure 
+      Depth-first search 
+      Deque ADT 
+      Distance-vector routing protocol 
+      distance vector 
+      Encryption 
+      google results 
+      graph problems 
+      graphs 
+      Graph Theory 
+      graph traversal 
+      infix expression 
+      Information Retrieval 
+      input node 
+      Java 
+      Java Platform Standard Edition 
+      Leonard Adleman 
+      level order traversal 
+      Linear search 
+      Linked Implementation List 
+      Linked Implementation of a Stack 
+      LinkedList 
+      Linked Queue 
+      List ADT(Linked List) 
+      Lucene 
+      node data 
+      node object 
+      node points 
+      node tree 
+      NoSQL 
+      Palindrome stack queue 
+      parent node 
+      postfix expression 
+      Prime number 
+      Priority Queue 
+      Public-key cryptography 
+      Queue ADT 
+      regex pattern 
+      ronald l rivest 
+      Routing 
+      Routing Information Protocol 
+      Routing table 
+      RSA 
+      rsa algorithm 
+      rt data 
+      search dfs 
+      stack class 
+      stack implementation 
+      stack operations 
+      target key 
+      target node 
+      tree traversal 
+      Uniform Resource Locator 
+      User agent 
+      vector table 
+      Vertex (graph theory)
+     « 
+     Binary Search Tree
+     B-Tree »
+    AVL Tree 
+    Posted by Mohammed Moulana on March 26, 2012 
+     An AVL tree is a binary search tree in which the heights of the left and right subtrees of the root differ at most 1 and in which the left and right subtrees are again AVL trees. Each node of an AVL tree is associated with a balance factor that is the left subtree has height greater than, equal to, or less than that of the right subtree. 
+     Recommended book: Java: The Complete Reference 
+     AVL tree operations 
+     class AVLTree { private class AVLNode { int data; // Data in the node AVLNode left; // Left child AVLNode right; // Right child int height; // Height AVLNode( int d ) // Constructors { this( d, null, null ); } AVLNode( int d, AVLNode lt, AVLNode rt ) { data = d; left = lt; right = rt; height = 0; } } private AVLNode root; // The tree root public AVLTree( ) // Construct the tree { root = null; } /* Insert into the tree; duplicates are ignored. x the item to insert. */ 
+     public void insert( int x ) { root = insert( x, root ); } /* Find an item in the tree. x the item to search for. return true if x is found. */ public boolean search( int x ) { return search( x, root ); } 
+     public void makeEmpty( ) // Make the tree logically empty. { root = null; } /* Test if the tree is logically empty. return true if empty, false otherwise. */ public boolean isEmpty( ) { return root == null; } /* Print the tree contents in sorted order. */ public void printTree( ) { if( isEmpty( ) ) System.out.println( “Empty tree” ); else printTree( root ); } /* method to insert into a subtree. x the item to insert. t the node that roots the subtree. return the new root of the subtree. */ 
+     private AVLNode insert( int x, AVLNode t ) { if( t == null ) return new AVLNode( x, null, null ); if( x &lt; t.data ) { t.left = insert( x, t.left ); if( height( t.left ) – height( t.right ) == 2 ) if( x &lt; t.left.data ) t = rotateLeft( t ); else t = doubleLeft( t ); } else if( x &gt; t.data ) { t.right = insert( x, t.right ); if( height( t.right ) – height( t.left ) == 2 ) if( x &gt; t.right.data ) t = rotateRight( t ); else t = doubleRight( t ); } else ; // Duplicate; do nothing t.height = Math.max( height( t.left ), height( t.right )) + 1; return t; 
+     } /* method to find an item in a subtree. x is item to search for. t the node that roots the tree. return true if x is found in subtree. */ private boolean search( int x, AVLNode t ) { while( t != null ) { if( x &lt; t.data ) t = t.left; else if( x &gt; t.data ) t = t.right; else return true; // Match } return false; // No match } /* method to print the tree in sorted order. t the node that roots the tree. */ 
+     private void printTree( AVLNode t ) // inorder traversal { if( t != null ) { printTree( t.left ); System.out.print( t.data + ” “); printTree( t.right ); } } private int height( AVLNode t ) // return height of node t, or -1, if null. { if( t == null ) return -1; else return t.height; } /* Rotate binary tree node with left child. For AVL trees, this is a single rotation. Update heights, then return new root. */ private AVLNode rotateLeft( AVLNode node2 ) { AVLNode node1 = node2.left; node2.left = node1.right; node1.right = node2; node2.height = Math.max(height(node2.left), height(node2.right))+1; node1.height = Math.max(height(node1.left), node2.height)+1; return node1; } 
+     /* Rotate binary tree node with right child. For AVL trees, this is a single rotation. Update heights, then return new root. */ private AVLNode rotateRight( AVLNode node1 ) { AVLNode node2 = node1.right; node1.right = node2.left; node2.left = node1; node1.height = Math.max(height(node1.left), height(node1.right))+1; node2.height = Math.max(height(node2.right), node1.height)+1; return node2; } /* Double rotate binary tree node: first left child with its right child; then node node3 with new left child. For AVL trees, this is a double rotation. Update heights, then return new root. */ private AVLNode doubleLeft( AVLNode node3 ) { node3.left = rotateRight( node3.left ); return rotateLeft( node3 ); } 
+     /* Double rotate binary tree node: first right child with its left child; then node node1 with new right child. For AVL trees, this is a double rotation. Update heights, then return new root. */ private AVLNode doubleRight( AVLNode node1 ) { node1.right = rotateLeft( node1.right ); return rotateRight( node1 ); } } 
+     AVLTreeDemo.java class AVLTreeDemo { public static void main( String [] args ) { AVLTree avl = new AVLTree(); int[] a = {30,80,50,40,20,60,70,10,90,95}; // build tree by successive insertions of 30, 80, 50, 40 … for( int i = 0; i &lt; a.length; i++ ) avl.insert( a[i] ); System.out.println( “\nAVL Tree nodes in sorted order:”); avl.printTree(); avl.insert( 15 ); 
+     avl.insert( 85 ); System.out.println( “\n\nAfter insertion of 15 &amp; 85”); avl.printTree(); int item = 82; // search for an item if( avl.search( item ) ) System.out.println( “\n\n” + item + ” found”); else System.out.println( “\n\n” + item + ” not found”); } } 
+     Output of this program is as follows: AVL Tree nodes in sorted order: 10 20 30 40 50 60 70 80 90 95 After insertion of 15 &amp; 85 10 15 20 30 40 50 60 70 80 85 90 95 82 not found 
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+       Rate this:
+        Share this:
+          Twitter
+          Facebook
+          LinkedIn
+          Google
+          Print
+          Email
+       Like this:
+        Like 
+        Loading...
+       Related 
+     This entry was posted on March 26, 2012 at 12:18 pm and is filed under Data Structures, Trees. Tagged: avl tree, avl trees, binary search tree, rt data. You can follow any responses to this entry through the RSS 2.0 feed. You can leave a response, or trackback from your own site.  
+   5 Responses to “AVL Tree” 
+      Eleazar said 
+       Apri

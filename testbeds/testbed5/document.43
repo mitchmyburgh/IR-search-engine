@@ -1,0 +1,24 @@
+Big data sparks interest in statistical programming languages
+
+
+Statistical languages offer a great fit for big data, but due to their specific use cases, they're unlikely to catch to up to generalized stalwarts like Java and C
+
+InfoWorld | Nov 10, 2014
+RELATED TOPICS
+
+    Application Development Java Big Data 
+
+Comments
+
+Big data is driving the use of statistical programming languages, in particular the open source R language.
+
+This month's edition of the Tiobe index, which assesses language popularity based on data from search engines, has the R language ranked 15th, after being 12th last month and 31st a year ago. "Thanks to the big data hype, computational statistics is gaining attention nowadays," Tiobe says in its assessment.
+
+"Yes, R is gaining share for a while now," Tiobe Managing Director Paul Jansen said in an email. "Please note that it is only 1.5 percent now, so it is still not 'a lot of share.' R is a language that is designed to process a lot of data and visualize the results in an easy way. It has also a lot of statistical features availability to make analysis of big data easy."
+
+Several other statistical programming languages also show up on the index, including Julia (number 126), LabView (63), Mathematica, (80), MatLab (24), and S (84). "I think that the rise of statistical language has not stopped yet, but there is a natural upper limit because it is not a general purpose language but specifically designed to do statistical computing," Jansen said. "So it won't be able to compete with languages like C and Java."
+
+Elsewhere in the index this month, Java, which has been ranked number 2 behind C for a while, gained some share in the index, moving up to a 14.39 rating after slipping to 13.51 percent in October. C++, which also had been slipping, comes in at fourth place with a 6.10 percent rating. But a year ago, Java had a 16.52 rating and C++ was at 8.37 percent. Falling ratings for Java and C++ have been attributed to the rise of domain-specific languages. "I have the feeling that Java will rise again above 15 percent the next few years. This is mainly thanks to the success of Android," said Jansen. "There is also a future for C++ because it is one of the leading languages in the computer game industry, which is still a flourishing business. So for C++ I expect that it will stay around 5 percent for a long time."
+
+The top five spots in the index were: C (17.47 percent), Java, Objective-C (9.06 percent), C++, and C# (4.99). In contrast, the rival PyPL index, which examines searches on language tutorials in Google, has Java as its leader with a 25.9 percent share, followed by PHP (12.2 percent), Python (11.5 percent), C# (9.5 percent), and C++ (8.8 percent).
+

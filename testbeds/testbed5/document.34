@@ -1,0 +1,53 @@
+The Next Big Programming Language You’ve Never Heard Of
+
+Andrei Alexandrescu didn’t stand much of a chance. And neither did Walter Bright.
+
+When the two men met for beers at a Seattle bar in 2005, each was in the midst of building a new programming language, trying to remake the way the world creates and runs its computer software. That’s something pretty close to a hopeless task, as Bright knew all too well. “Most languages never go anywhere,” he told Alexandrescu that night. “Your language may have interesting ideas. But it’s never going to succeed.”
+
+Alexandrescu, a graduate student at the time, could’ve said the same thing to Bright, an engineer who had left the venerable software maker Symantec a few years earlier. People are constantly creating new programming languages, but because the software world is already saturated with so many if them, the new ones rarely get used by more than a handful of coders—especially if they’re built by an ex-Symantec engineer without the backing of a big-name outfit. But Bright’s new language, known as D, was much further along than the one Alexandrescu was working on, dubbed Enki, and Bright said they’d both be better off if Alexandrescu dumped Enki and rolled his ideas into D. Alexandrescu didn’t much like D, but he agreed. “I think it was the beer,” he now says.
+
+Andrei Alexandrescu. Click to Open Overlay Gallery
+Andrei Alexandrescu.
+Photo: Ariel Zambelich/WIRED
+
+The result is a programming language that just might defy the odds. Nine years after that night in Seattle, a $200-million startup has used D to build its entire online operation, and thanks to Alexandrescu, one of biggest names on the internet is now exploring the new language as well. Today, Alexandrescu is a research scientist at Facebook, where he and a team of coders are using D to refashion small parts of the company’s massive operation. Bright, too, has collaborated with Facebook on this experimental software, as an outsider contractor. The tech giant isn’t an official sponsor of the language—something Alexandrescu is quick to tell you—but Facebook believes in D enough to keep him working on it full-time, and the company is at least considering the possibility of using D in lieu of C++, the venerable language that drives the systems at the heart of so many leading web services.
+
+C++ is an extremely fast language—meaning software built with it runs at high speed—and it provides great control over your code. But it’s not as easy to use as languages like Python, Ruby, and PHP. In other words, it doesn’t let coders build software as quickly. D seeks to bridge that gap, offering the performance of C++ while making things more convenient for programmers.
+
+Among the giants of tech, this is an increasingly common goal. Google’s Go programming language aims for a similar balance of power and simplicity, as does the Swift language that Apple recently unveiled. In the past, the programming world was split in two: the fast languages and the simpler modern languages. But now, these two worlds are coming together. “D is similar to C++, but better,” says Brad Anderson, a longtime C++ programmer from Utah who has been using D as well. “It’s high performance, but it’s expressive. You can get a lot done without very much code.”
+
+In the past, the programming world was split in two: the fast languages and the simpler modern languages. But now, these two worlds are coming together.
+
+In fact, Facebook is working to bridge this gap with not one but two languages. As it tinkers with D, the company has already revamped much of its online empire with a new language called Hack, which, in its own way, combines speed with simplicity. While using Hack to build the front-end of its service—the webpages you see when you open the service in your web browser—Facebook is experimenting with D on the back-end, the systems that serve as the engine of its social network.
+
+But Alexandrescu will also tell you that programmers can use D to build anything, including the front-end of a web service. The language is so simple, he says, you can even use it for quick-and-dirty programming scripts. “You want to write a 50-line script? Sure, go for it.” This is what Bright strove for—a language suitable for all situations. Today, he says, people so often build their online services with multiple languages—a simpler language for the front and a more powerful language for the back. The goal should be a single language that does it all. “Having a single language suitable for both the front and the back would be a lot more productive for programmers,” Bright says. “D aims to be that language.”
+The Cape of a Superhero
+
+When Alexandrescu discusses his years of work on D, he talks about wearing the “cape of a superhero”—being part of a swashbuckling effort to make the software world better. That’s not said with arrogance. Alexandrescu, whose conversations reveal a wonderfully self-deprecating sense of humor, will also tell you he “wasn’t a very good” programming language researcher at the University of Washington—so bad he switched his graduate studies to machine learning. The superhero bit is just a product of his rather contagious enthusiasm for the D project.
+
+For years, he worked on the language only on the side. “It was sort of a free-time activity, in however much free-time a person in grad school can have, which is like negative,” says Alexandrescu, a Romanian who immigrated to the States in the late ’90s. Bright says the two of them would meet in coffee shops across Seattle to argue the ins and outs of the language. The collaboration was fruitful, he explains, because they were so different. Alexandrescu was an academic, and Bright was an engineer. “We came at the same problems from opposite directions. That’s what made the language great–the yin and the yang of these two different viewpoints of how the language should be put together.”
+
+For Alexandrescu, D is unique. It’s not just that it combines speed and simplicity. It also has what he calls “modeling power.” It lets coders more easily create models of stuff we deal with in the real world, including everything from bank accounts and stock exchanges to automative sensors and spark plugs. D, he says, doesn’t espouse a particular approach to modeling. It allows the programmer “to mix and match a variety of techniques to best fit the problem.”
+
+That’s what made the language great–the yin and the yang of these two different viewpoints of how the language should be put together.
+
+He ended up writing the book on D. But when he joined Facebook in 2009, it remained a side project. His primary research involved machine learning. Then, somewhere along the way, the company agreed to put him on language full-time. “It was better,” he says, “to do the caped-superhero-at-night thing during the daytime.”
+
+For Facebook, this is still a research project. But the company has hosted the past two D conferences—most recently in May—and together with various Facebook colleagues, Alexandrescu has used D to rebuild two select pieces of Facebook software. They rebuilt the Facebook “linter,” known as Flint, a means of identifying errors in other Facebook software, and they fashioned a new Facebook “preprocessor,” dubbed Warp, which helps generate the company’s core code.
+
+In both cases, D replaced C++. That, at least for the moment, is where the language shines the most. When Bright first started the language, he called it Mars, but the community that sprung up around the language called it D, because they saw it as the successor to C++. “D became the nickname,” Bright says. “And the nickname stuck.”
+The Interpreted Language That Isn’t
+
+Facebook is the most high-profile D user. But it’s not alone. Sociomantic—a German online advertising outfit recently purchased by British grocery giant Tesco for a reported $200 million—has built its operation in D. About 10,000 people download the D platform each month. “I’m assuming it’s not the same 10,000 every month,” Alexandrescu quips. And judging from D activity on various online developer services—from GitHub to Stackoverflow—the language is now among the 20 to 30 most popular in the world.
+
+For coder Brad Anderson, the main appeal is that D feels like interpreted languages such as Ruby and PHP. “It results in code that’s more compact,” he says. “You’re not writing boilerplate as much. You’re not writing as much stuff you’re obligated to write in other languages.” It’s less “verbose” than C++ and Java.
+
+Yes, like C++ and Java, D is a compiled language, meaning that you must take time to transform it into executable software before running it. Unlike with interpreted languages, you can’t run your code as soon as you write it. But it compiles unusually quickly. Bright—who worked on C++, Java, and Javascript compilers at Symantec and Sun Microsystems—says this was a primary goal. “When your compiler runs fast,” he says, “it transforms the way your write code.” It lets you see the results much faster. For Anderson, this is another reason that D feels more like an interpreted language. “It’s usually very, very fast to compile–fast enough that the edit [and] run cycle usually feels just like an interpreted language.” He adds, however, that this begins to change if your program gets very large.
+
+It’s usually very, very fast to compile–fast enough that the edit and run cycle usually feels just like an interpreted language.
+
+What’s more, Anderson explains, a D program has this unusual ability to generate additional D code and weave this into itself at compile time. That may sound odd, but the end result is a program more finely tuned to the task at hand. Essentially, a program can optimize itself as it compiles. “It makes for some amazing code generation capabilities,” Anderson says.
+
+The trouble with the language, according to Alexandrescu, is that it still needs a big-name backer. “Corporate support would be vital right now,” he says. This shows you that Facebook’s involvement only goes so far, and it provides some insight into why new languages have such trouble succeeding. In addition to backing Hack, Facebook employs some of the world’s leading experts in Haskell, another powerful but relatively underused language. What D needs, Alexandrescu says, is someone willing to pump big money into promoting it. The Java programming language succeeded, he says, because Sun Microsystems put so much money behind it back in the ’90s.
+
+Certainly, D still faces a long road to success. But this new language has already come further than most.

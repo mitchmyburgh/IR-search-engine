@@ -1,0 +1,59 @@
+Suppose you want to draw an animation of a spinning ball. How would you define the function that
+maps each point on the ball to its position rotated through some given angle?
+We will consider a limited, but interesting class of transformations, called affine transformations. These include
+(among others) the following transformations of space: translations, rotations, uniform and nonuniform scalings
+(stretching the axes by some constant scale factor), reflections (flipping objects about a line) and shearings
+(which deform squares into parallelograms). They are illustrated in the figure below.
+These transformations all have a number of things in common. For example, they all map lines to lines. Note that
+some (translation, rotation, reflection) preserve the lengths of line segments and the angles between segments.
+Others (like uniform scaling) preserve angles but not lengths. Others (like nonuniform scaling and shearing) do
+not preserve angles or lengths.
+All of the transformation listed above preserve basic affine relationships. (In fact, this is the definition of an
+affine transformation.) For example, given any transformation T of one of the above varieties, and given two
+points P and Q, and any scalar _,
+R = (1-_)P +_Q ) T(R) = (1-_)T(P) + _T(Q):
+(We will leave the proof that each of the above transformations is affine as an exercise.) Putting this more
+intuitively, if R is the midpoint of segment PQ, before applying the transformation, then it is the midpoint after
+the transformation.
+There are a couple of special cases of affine transformations that are worth noting.
+Rigid transformations: These transformations (also called Euclidean transformations) preserve both angles
+and lengths. Examples include translations, rotations, reflections and their combinations.
+Orthogonal transformations: These transformations preserve angles but not necessarily lengths. Examples
+include translation, rotation, uniform scaling, and their combinations.
+Homothetic transformations: These transformations preserves slopes of lines (and hence preserve angles), but
+do not necessarily preserve lengths. Examples include translation, uniform scaling, and their combinations.
+Matrix Representation of Affine Transformations: Let us concentrate on transformations in 3-space. An important
+consequence of the preservation of affine relations is the following.
+R = _0F:~e0 + _1F:~e1 + _2F:~e2 + _3O
+)
+T(R) = _0T(F:~e0) + _1T(F:~e1) + _2T(F:~e2) + _3T(O):
+Here _3 is either 0 (for vectors) or 1 (for points). The equation on the left is the representation of a point or
+vector R in terms of the coordinate frame F. This implication shows that if we know the image of the frame
+elements under the transformation, then we know the image R under the transformation.
+Lecture Notes 36 CMSC 427
+From the previous lecture we know that the homogeneous coordinate representation of R relative to frame F
+is R[F] = (_0; _1; _2; _3)T . (Recall that the superscript T in this context means to transpose this row vector
+into a column vector, and should not be confused with the transformation T.) Thus, we can express the above
+relationship in the following matrix form.
+Here the columns of the array are the representation (relative to F) of the images of the elements of the frame
+under T. This implies that applying an affine transformation (in coordinate form) is equivalent to multiplying
+the coordinates by a matrix. In dimension d this is a (d + 1)_(d + 1) matrix.
+If this all seems a bit abstract. In the remainder of the lecture we will give some concrete examples of transformations.
+Rather than considering this in the context of 2-dimensional transformations, let’s consider it in
+the more general setting of 3-dimensional transformations. The two dimensional cases can be extracted by just
+ignoring the rows and columns for the z-coordinates.
+Translation: Translation by a fixed vector ~v maps any point P to P +~v. Note that free vectors are not altered
+by translation. (Can you see why?)
+Suppose that relative to the standard frame, v[F] = (_x; _y; _z; 0)T are the homogeneous coordinates
+of ~v. The three unit vectors are unaffected by translation, and the origin is mapped to O + ~v, whose
+homogeneous coordinates are (_x; _y; _z; 1). Thus, by the rule given earlier, the homogeneous matrix
+representation for this translation transformation is
+Fig. 26: Derivation of transformation matrices.
+Scaling: Uniform scaling is a transformation which is performed relative to some central fixed point. We will
+assume that this point is the origin of the standard coordinate frame. (We will leave the general case as
+an exercise.) Given a scalar _, this transformation maps the object (point or vector) with coordinates
+(_x; _y; _z; _w)T to (__x; __y; __z; _w)T .
+In general, it is possible to specify separate scaling factors for each of the axes. This is called nonuniform
+scaling. The unit vectors are each stretched by the corresponding scaling factor, and the origin is unmoved.
+Thus, the transformation matrix has the following form:
+

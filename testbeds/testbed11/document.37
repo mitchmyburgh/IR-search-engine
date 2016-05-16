@@ -1,0 +1,60 @@
+Open Cascade Technology (OCCT), formerly called CAS.CADE, is an open source software development platform for 3D CAD, CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
+
+
+== History ==
+CAS.CADE (abbreviated from Computer Aided Software for Computer Aided Design and Engineering) was originally developed in the early 1990s by Matra Datavision, developer of Euclid CAD software as the underlying infrastructure for its future version Euclid Quantum. In 1998 the company abandoned software development to concentrate on services, and most of the software development facilities were sold to Dassault Systemes, developer of competing CATIA.
+
+
+=== Open-Sourcing ===
+In 1999 Matra Datavision decided to publish its CAS.CADE infrastructure under an open source model under the Open CASCADE Technology Public License and renamed it Open Cascade.
+In 2000, a separate company, Open Cascade SAS, was created to make business around Open Cascade. Open Cascade SAS was sold in 2003 to Principia, a French service provider corporation, and then in 2006 it was acquired by Euriware Group, a subsidiary of Areva.
+In 2004, software was renamed to Open Cascade Technology in order to distinguish it from the name of the company itself.
+Open Cascade S.A.S. provides a certified version of the library, which is released sporadically, usually 1-2 releases per year. Until version 6.5.0 (2011), only minor and major versions were publicly available, while intermediate (maintenance) releases were accessible only to customers of Open Cascade S.A.S. For example, version 6.3.0 was publicly released in 2008, and the next public version 6.5.0 was released in early 2011. All recent releases starting from version 6.5.0 are public.
+
+
+=== Community fork ===
+In March 2011, Thomas Paviot initiated a fork of the then most recent publicly available version 6.5.0 of Open Cascade library. The initiative is called Open Cascade Community Edition. The project aims to establish a separate community-based release and bug-report process for the library.
+
+
+=== Collaborative development portal ===
+In December 2011, Open Cascade installed a web portal for external contributors and made its bugtracker and further Git repository publicly available. According to the statements on the new website, external contributors from the Open Source Community are encouraged to participate in the development of Open Cascade Technology, i.e. register bugs directly in the bugtracker, make contributions to the code after signing a Contributor License Agreement, etc.
+
+
+=== License change ===
+Since 18 December, 2013 with version 6.7.0 Open Cascade Technology is available under the LGPL 2.1 with additional exception. Versions before that were licensed under the "Open Cascade Technology Public License" which was not compatible with the GPL and was considered non-free by the Fedora project.
+
+
+== Functionality ==
+
+
+=== Object libraries ===
+Foundation Classes
+Modeling Data
+Modeling Algorithms
+Visualization
+Application Framework
+Data Exchange
+DRAW
+
+
+=== Workshop Organization Kit ===
+Workshop Organization Kit (WOK) is Open Cascade development environment, which has been designed to allow a large number of developers to work on a product getting advantage of common reference version shared over the local network. Though being rather obsolete, it is still in use in some legacy environments, and in particular is used for production of certified versions of OCCT.
+WOK is de facto a necessity for making substantial changes in OCCT since it is the only tool that provides support for CDL (CAS.CADE definition language), used for declaration of most of OCCT classes and also serving to define logical structure of OCCT libraries. WOK has been included in previous OCCT distributions; since OCCT version 6.4 it is made an independent tool.
+
+
+== See also ==
+
+Free hardware
+
+
+== References ==
+
+
+== External links ==
+Official webpage
+Discussion of Open Cascade license on Open Cascade forums (started 25th Feb '09)
+Github repository of the OCE project
+Discussion forum for the OCE project
+Python binding to Open Cascade library
+Collaborative Development Portal
+New Geometry Kernel in MEDINA

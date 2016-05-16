@@ -1,0 +1,25 @@
+Derivation of index equations[edit]
+In an array-based heap, the children and parent of a node can be located via simple arithmetic on the node's index. This section derives the relevant equations for heaps with their root at index 0, with additional notes on heaps with their root at index 1.
+To avoid confusion, we'll define the level of a node as its distance from the root, such that the root itself occupies level 0.
+Child nodes[edit]
+For a general node located at index   (beginning from 0), we will first derive the index of its right child,  .
+Let node   be located in level  , and note that any level   contains exactly   nodes. Furthermore, there are exactly   nodes contained in the layers up to and including layer   (think of binary arithmetic; 0111...111 = 1000...000 - 1). Because the root is stored at 0, the  th node will be stored at index  . Putting these observations together yields the following expression for the index of the last node in layer l.
+ 
+Let there be   nodes after node   in layer L, such that
+ 
+Each of these   nodes must have exactly 2 children, so there must be   nodes separating  's right child from the end of its layer ( ).
+ 
+As required.
+Noting that the left child of any node is always 1 place before its right child, we get  .
+If the root is located at index 1 instead of 0, the last node in each level is instead at index  . Using this throughout yields   and   for heaps with their root at 1.
+Parent node[edit]
+Every node is either the left or right child of its parent, so we know that either of the following is true.
+1.	 
+2.	 
+Hence,
+ 
+Now consider the expression  .
+If node   is a left child, this gives the result immediately, however, it also gives the correct result if node   is a right child. In this case,   must be even, and hence  must be odd.
+ 
+Therefore, irrespective of whether a node is a left or right child, its parent can be found by the expression:
+ 

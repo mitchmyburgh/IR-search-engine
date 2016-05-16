@@ -1,0 +1,169 @@
+[![Build Status](https://secure.travis-ci.org/Prinzhorn/skrollr.png)](http://travis-ci.org/Prinzhorn/skrollr)
+
+Please note:
+============
+
+**skrollr hasn't been under active development since about September 2014** (check out the contributions graphs on https://github.com/Prinzhorn/skrollr/graphs/contributors) and I don't have any plans for doing major changes to it. Please consider this before using skrollr in production as problems with new browser versions, especially on mobile, will most definitely surface. To be honest, mobile support always sucked (because mobile browsers are hard) and you shouldn't compromise UX for some fancy UI effects. Ever.
+
+skrollr 0.6.30
+==============
+
+Stand-alone **parallax scrolling** JavaScript library for **mobile (Android, iOS, etc.) and desktop** in about 12k minified.
+
+Designer friendly. No JavaScript skills needed. Just plain CSS and HTML.
+
+_Actually, skrollr is much more than "just" **parallax scrolling**. It's a full-fledged scrolling animation library. In fact, you can use it and still have no parallax scrolling at all. But I wanted to sound hip and use some buzz-words. By the way, skrollr leverages HTML5 and CSS3 ;-)_
+
+Resources
+=====
+
+Plugins
+-----
+
+### Official
+
+* [skrollr-menu](https://github.com/Prinzhorn/skrollr-menu) - Hash navigation
+* [skrollr-ie](https://github.com/Prinzhorn/skrollr-ie) - IE < 9 CSS fixes
+* [skrollr-stylesheets](https://github.com/Prinzhorn/skrollr-stylesheets) - Keyframes inside CSS files
+
+### Third party
+
+* [skrollr-colors](https://github.com/FezVrasta/skrollr-colors) - Mix and match hex, rgb and hsl colors.
+* [skrollr-decks](https://github.com/TrySound/skrollr-decks) - Fullpage presentation decks.
+
+In the wild
+-----
+
+Check out the [wiki page](https://github.com/Prinzhorn/skrollr/wiki/In-the-wild) for websites using skrollr and feel free to add your own website :). You can also shamelessly add yourself to the list [here](https://github.com/Prinzhorn/skrollr/wiki/Agencies-and-freelancers) if you are offering paid skrollr support.
+
+Further resources (tutorials etc.)
+-----
+
+Moved to the [wiki](https://github.com/Prinzhorn/skrollr/wiki/Resources).
+
+
+Documentation
+=====
+
+First of all: look at the [examples and read the source ;-)](https://github.com/Prinzhorn/skrollr/tree/master/examples). This might give you a feeling of how stuff works and you can see how some patterns can be implemented.
+
+Abstract
+------
+
+skrollr allows you to animate any CSS property of any element depending on the horizontal scrollbar position. All you need to do is define key frames for each element at certain points in top scroll offset.
+
+Other libraries require you to write JavaScript in order to define your animations. This introduces two main problems:
+
+* Animation and element are not at one place. In order to find out if any animations are defined for a given element, you have to scroll through many (sometimes thousands) of lines of JavaScript.
+* You have to learn a new syntax which is often very verbose and limited at the same time.
+
+With skrollr, you put the definition of your key frames right where they belong (to the element) using a syntax you already know (plain CSS).
+
+If you would rather have the keyframes inside a separate file, take a look at [skrollr-stylesheets](https://github.com/Prinzhorn/skrollr-stylesheets).
+
+If you prefer to use JavaScript to define your animations make sure to take a look at [ScrollMagic](https://github.com/janpaepke/ScrollMagic). It depends on both jQuery and the Greensock Animation Platform (GSAP) and gives you full control over every detail of your animations.
+
+Let's get serious
+------
+
+First of all you want to include the `skrollr.min.js` file at the bottom of your document (right before the closing `</body>`) and then call `skrollr.init()`. Or you can place it inside the `<head>` if you want to, but make sure to call `init()` once the document has been loaded (e.g. jQuery's `ready` event or even `window.onload`).
+
+```html
+	<script type="text/javascript" src="skrollr.min.js"></script>
+	<script type="text/javascript">
+	var s = skrollr.init();
+	</script>
+</body>
+```
+
+If you are using require.js to structure your project, you can use skrollr as a module as well.
+
+```javascript
+require(['skrollr'], function(skrollr){
+	var s = skrollr.init();
+});
+```
+
+If you're familiar with CSS, you already know the `style` attribute. In order to create an animation you would need several, at least two, of them. That's what skrollr does. You use the HTML5 `data-` attributes to define multiple sets of styles (we call each of them **keyframe**) and skrollr interpolates between them.
+
+#### Let's change the background-color of a `div` starting at `#00f` when the scrollbar is at the top and ending with `#f00` when the user scrolled 500 pixels down
+
+```html
+<div data-0="background-color:rgb(0,0,255);" data-500="background-color:rgb(255,0,0);">WOOOT</div>
+```
+[View in browser](http://prinzhorn.github.io/skrollr/examples/docu/1.html)
+
+##### Lessons learned
+
+* Skrollr ensures that you can actually scroll down 500 pixels or more, even if there's not enough content. You can suppress this by using the `forceHeight` option.
+* You can't use `#00f` or `#0000ff`. You need to use `rgb` or `hsl` and explicitly decide which color space you want because they result in different animations (HSL is much cooler most of the time). Don't worry, the IE plugin teaches IE < 9 to display `rgb` and `hsl` correctly.
+
+#### Now let's do a barrel roll at the same time
+
+```html
+<div data-0="background-color:rgb(0,0,255);transform:rotate(0deg);" data-500="background-color:rgb(255,0,0);transform:rotate(360deg);">WOOOT</div>
+```
+[View in browser](http://prinzhorn.github.io/skrollr/examples/docu/2.html)
+
+##### Lessons learned
+
+* Skrollr handles all these nasty CSS prefixes for you. Just -moz-relax and get yourself a cup of -webkit-coffee.
+
+#### Now let the rotation bounce like it were a hip-hop video
+
+```html
+<div data-0="background-color:rgb(0,0,255);transform[bounce]:rotate(0deg);" data-500="background-color:rgb(255,0,0);transform[bounce]:rotate(360deg);">WOOOT</div>
+```
+[View in browser](http://prinzhorn.github.io/skrollr/examples/docu/3.html)
+
+#### Lessons learned
+
+* Skrollr allows non-linear animations. The so called *easing functions* can be used per-property by putting them in square brackets behind the property. There's a built-in list of easing functions (see below in the [JavaScript](#javascript) section) and you can use your own functions by using the `easings` options.
+
+Now you may have noticed that using `500` as a keyframe position is kind of random and the look depends on your browser size.
+
+#### Let's have the animation end when the top of the element reaches the top of the viewport (element leaves the viewport)
+
+```html
+<div data-0="background-color:rgb(0,0,255);transform[bounce]:rotate(0deg);" data-top="background-color:rgb(255,0,0);transform[bounce]:rotate(360deg);">WOOOT</div>
+```
+[View in browser](http://prinzhorn.github.io/skrollr/examples/docu/4.html)
+
+##### Lessons learned
+
+* Skrollr keyframes can either be [absolute](#absolute-mode-or-document-mode) or [relative](#relative-mode-or-viewport-mode).
+
+That's the end of this short intro. The following sections will explain some more things in detail.
+
+If you're not a fan of `data-attributes` or if you're planning a big website where you want a better and more flexible structure, take a look at [skrollr-stylesheets](https://github.com/Prinzhorn/skrollr-stylesheets).
+
+Mobile support
+-----
+Starting with version 0.5.0 skrollr officially supports mobile browsers including Android and iOS. Furthermore, mobile support has been rewritten from scratch for skrollr 0.6.0.
+
+### The Problem with mobile and the solution
+
+(If you're not interested in the details, just scroll down a bit to see what you need to do for mobile support.)
+
+Some words on why this is an important milestone and why others failed: Mobile browsers try to save battery wherever they can. That's why mobile browsers delay the execution of JavaScript while you are scrolling. iOS in particular does this very aggressively and completely stops JavaScript. In short, that's the reason why many scrolling libraries either don't work on mobile devices or they come with their own scrollbar which is a usability nightmare on desktop. It was an important requirement while I developed skrollr that I don't force you to scroll the way I want it. skrollr on desktop uses a native scrollbar and you can scroll the way you want to (keyboard, mouse, etc.).
+
+You just told me it doesn't work on mobile, but why does it? The answer is simple. When using skrollr on mobile you don't actually scroll. When detecting a mobile browser, skrollr disables native scrolling and instead listens for touch events and moves the content (more specific the `#skrollr-body` element) using CSS transforms.
+
+### What you need in order to support mobile browsers
+
+Starting with skrollr 0.6.0 there's just one thing you need to do: Include an element on your page with the id `skrollr-body`. That's the element we move in order to fake scrolling. The only case where you don't need a `#skrollr-body` is when using `position:fixed` exclusively. In fact, the skrollr website doesn't include a `#skrollr-body` element. If you need both fixed and non-fixed (i.e. static) elements, put the static ones inside the `#skrollr-body` element.
+
+Or to put it differently: On mobile the `skrollr-body` element is moved using CSS transforms. You can't have `position:fixed` or `background-attachment:fixed` inside elements which use CSS transforms as per CSS spec (http://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/). That's why those elements need to be **outside** of the `skrollr-body` element.
+
+The `skrollr-body` element might be configured within the [init-options](#skrollrinitoptions).
+
+AMD
+---
+
+Starting with `0.6.22` there's experimental AMD support. Please note that only skrollr core has AMD support so far. We will update the plugins in the future.
+
+```js
+require(['skrollr'], function(skrollr){
+	skrollr.init();
+});
+```

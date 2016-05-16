@@ -1,0 +1,25 @@
+﻿Semantic representation of multimedia information is vital
+for enabling the kind of multimedia search capabilities that professional
+searchers require. Manual annotation is often not possible
+because of the
+shear scale of the multimedia information that needs indexing. This paper explores the ways in which we are using both top-down, ontologically
+driven approaches and bottom-up, automatic-annotation approaches to
+provide retrieval facilities to users. We also discuss many of the current techniques that we are investigating to combine these top-down and
+bottom-up approaches.
+1 Introduction
+The hallmark of a good retrieval system is its ability to respond to a user’s queries
+and present results in a desired fashion. In the past there has been a tendency
+for research to focus on content-based retrieval techniques, ignoring the issues of
+users. In spite of this, some investigators have attempted to characterise image
+queries, providing insights in retrieval system design [1,
+2, 3, 4] and highlighting
+the problem of what has become known as the
+semantic gap.
+In the survey of content-based image retrieval by Smeulders
+et al. [5], the
+semantic gap is described as;
+...the lack of coincidence between the information that one
+can extract
+from the visual data and the interpretation that the same dat
+a have for
+a user in a given situation.

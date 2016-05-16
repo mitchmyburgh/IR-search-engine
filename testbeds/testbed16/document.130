@@ -1,0 +1,21 @@
+Secure Cloud Computing Collaboration 101
+
+October 6, 2015/in Cloud Data Security, Cloud Security /by Michael Higashi
+ 
+
+secure cloud computing mainAmong the many benefits cloud computing has brought to the enterprise, improved collaboration is one of the most significant. On a day-to-day basis, cloud-based collaboration applications like file sharing and email enable teams to communicate with more efficiency both internally and externally, increasing engagement, responsiveness, and productivity. But cloud collaboration isn’t all sunshine and rainbows. Without the proper visibility and controls in place, cloud collaboration can create security and compliance issues. Here are the basics of secure cloud collaboration.
+
+Understand the security challenges of your collaboration apps
+Back in the pre-cloud days, information workers were for the most part tethered to their workstations on corporate premises, and sensitive corporate data stayed inside the corporate perimeter. Mobility, BYOD, and the cloud have changed that. Employees today must be able to access and share files and documents from anywhere, at any time, and often with external partners. Administrators must be aware of the scope and extent of data sharing going on within external, cloud-based collaboration applications. This means that your first step towards secure cloud collaboration will be to evaluate and classify all data being shared so that you can understand your security and compliance priorities.
+
+Img2
+
+Data loss prevention (DLP) must be extended into your clouds
+Once you’ve classified and prioritized the data your employees are putting into your cloud collaboration apps, it’s time to implement data loss prevention in your cloud. Traditional DLP solutions are already effective for identifying data use patterns and detecting anomalies on the corporate network, but traditional DLP solutions are blind to the cloud. A secure cloud collaboration initiative demands tight integration of DLP with your cloud collaboration applications. Ideally, your cloud DLP will provide content- and context-sensitive enforcement capabilities and out-of-the-box policies for common regulations like PCI, HIPAA, and GLBA to ease the burden of preventing inappropriate data sharing, data loss, or disastrous data breaches.
+
+Know what employees are doing in your cloud collaboration apps
+DLP is one part of the puzzle; robust user activity monitoring is another. A key challenge for organizations migrating collaboration to the cloud is gaining visibility into what’s happening in the cloud. To ensure that sensitive data and documents are being accessed and shared appropriately, robust user activity monitoring within cloud collaboration applications is a must. Your monitoring tools should be able to extend across all your cloud applications and unify monitoring data—including user, role, data flow, and contextual information—into a clear and easy-to-understand interface so that administrators can easily detect and address anomalous behavior.
+
+With these pieces in place, even the largest organization can adopt cloud-based collaboration applications securely and in compliance with relevant legal regulations and industry best practices. But with just one of these pieces missing, cloud collaboration can quickly become an issue.
+
+Ready to learn more about secure cloud collaboration and best practices for enterprise cloud adoption? Download our free white paper, “CIO’s Guide to Enterprise Cloud Adoption,” today.

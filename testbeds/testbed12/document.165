@@ -1,0 +1,293 @@
+![header](https://raw.githubusercontent.com/loverajoel/jstips/master/resources/jstips-header-blog.gif)
+
+# Introducing JavaScript Tips [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+> New year, new project. **A JS tip per day!**
+
+With great excitement, I introduce these short and useful daily JavaScript tips that will allow you to improve your code writing. With less than 2 minutes each day, you will be able to read about performance, conventions, hacks, interview questions and all the items that the future of this awesome language holds for us.
+
+At midday, no matter if it is a weekend or a holiday, a tip will be posted and tweeted.
+
+### Can you help us enrich it?
+Please feel free to send us a PR with your own JavaScript tip to be published here.
+Any improvements or suggestions are more than welcome!
+[Click to see the instructions](https://github.com/loverajoel/jstips/blob/master/CONTRIBUTING.md)
+
+### Let’s keep in touch
+To get updates, watch the repo and follow the [Twitter account](https://twitter.com/tips_js). Only one tweet will be sent per day. It is a deal!
+> Don't forget to Star the repo, as this will help to promote the project!
+
+### Other language
+[简体中文(simplified Chinese)](https://github.com/loverajoel/jstips/blob/master/README-zh_CN.md)
+
+# Tips list
+
+## #23 - Converting to number fast way
+
+> 2016-01-23 by [@sonnyt](http://twitter.com/sonnyt)
+
+Converting strings to numbers is extremely common. The easiest and fastest ([jsPref](https://jsperf.com/number-vs-parseint-vs-plus/29)) way to achieve that would be using the `+` (plus) operator.
+
+```javascript
+var one = '1';
+
+var numberOne = +one; // Number 1
+```
+
+You can also use the `-` (minus) operator which type-converts the value into number but also negates it.
+
+```javascript
+var one = '1';
+
+var negativeNumberOne = -one; // Number -1
+```
+
+## #22 - Empty an Array
+
+> 2016-01-22 by [microlv](https://github.com/microlv)
+
+You define an array and want to empty its contents.
+Usually, you would do it like this:
+
+```javascript
+// define Array
+var list = [1, 2, 3, 4];
+function empty() {
+    //empty your array
+    list = [];
+}
+empty();
+```
+But there is another way to empty an array that is more performant.
+
+You should use code like this:
+```javascript
+var list = [1, 2, 3, 4];
+function empty() {
+    //empty your array
+    list.length = 0;
+}
+empty();
+```
+* `list = []` assigns a reference to a new array to a variable, while any other references are unaffected.
+which means that references to the contents of the previous array are still kept in memory, leading to memory leaks.
+
+* `list.length = 0` deletes everything in the array, which does hit other references.
+
+However, if you have a copy of the array (A and Copy-A), if you delete its contents using `list.length = 0`, the copy will also lose its contents.
+
+Think about what will output:
+```js
+var foo = [1,2,3];
+var bar = [1,2,3];
+var foo2 = foo;
+var bar2 = bar;
+foo = [];
+bar.length = 0;
+console.log(foo, bar, foo2, bar2);
+
+//[] [] [1, 2, 3] []
+```
+Stackoverflow more detail:
+[difference-between-array-length-0-and-array](http://stackoverflow.com/questions/4804235/difference-between-array-length-0-and-array)
+
+
+## #21 - Shuffle an Array
+
+> 2016-01-21 by [@0xmtn](https://github.com/0xmtn/)
+
+ This snippet here uses [Fisher-Yates Shuffling](https://www.wikiwand.com/en/Fisher%E2%80%93Yates_shuffle) Algorithm to shuffle a given array.
+
+```javascript
+function shuffle(arr) {
+    var i,
+        j,
+        temp;
+    for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr;
+};
+```
+An example:
+
+```javascript
+var a = [1, 2, 3, 4, 5, 6, 7, 8];
+var b = shuffle(a);
+console.log(b);
+// [2, 7, 8, 6, 5, 3, 1, 4]
+```
+
+## #20 - Return objects to enable chaining of functions
+
+> 2016-01-20 by [@WakeskaterX](https://twitter.com/WakeStudio)
+
+When creating functions on an object in Object Oriented Javascript, returning the object in the function will enable you to chain functions together.
+
+```js
+function Person(name) {
+  this.name = name;
+
+  this.sayName = function() {
+    console.log("Hello my name is: ", this.name);
+    return this;
+  };
+
+  this.changeName = function(name) {
+    this.name = name;
+    return this;
+  };
+}
+
+var person = new Person("John");
+person.sayName().changeName("Timmy").sayName();
+```
+
+## #19 - Safe string concatenation
+
+> 2016-01-19 by [@gogainda](https://twitter.com/gogainda)
+
+Suppose you have a couple of variables with unknown types and you want to concatenate them in a string. To be sure that the arithmetical operation is not be applied during concatenation, use `concat`:
+
+```javascript
+var one = 1;
+var two = 2;
+var three = '3';
+
+var result = ''.concat(one, two, three); //"123"
+```
+
+This way of concatenting does exactly what you'd expect. In contrast, concatenation with pluses might lead to unexpected results:
+```javascript
+var one = 1;
+var two = 2;
+var three = '3';
+
+var result = one + two + three; //"33" instead of "123"
+```
+
+Speaking about performance, compared to the `join` [type](http://www.sitepoint.com/javascript-fast-string-concatenation/) of concatenation, the speed of `concat` is pretty much the same.
+
+You can read more about the `concat` function on MDN [page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat).
+
+## #18 - Rounding the fast way
+
+> 2016-01-18 by [pklinger](https://github.com/pklinger)
+
+Today's tip is about performance. [Ever came across the double tilde] (http://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript) `~~` operator? It is sometimes also called the double NOT bitwise operator. You can use it as a faster substitute for `Math.floor()`. Why is that?
+
+One bitwise shift `~` transforms the 32 bit converted input into `-(input+1)`. The double bitwise shift therefore transforms the input into `-(-(input + 1)+1)` making it a great tool to round towards 0. For numeric input, it therefore mimics the `Math.ceil()` for negative and `Math.floor()` for positive input. On failure, `0` is returned, which might come in handy sometimes instead of `Math.floor()`, which returns a value of `NaN` on failure.
+
+```javascript
+// single ~
+console.log(~1337)    // -1338
+
+// numeric input
+console.log(~~47.11)  // -> 47
+console.log(~~-12.88) // -> -12
+console.log(~~1.9999) // -> 1
+console.log(~~3)      // -> 3
+
+// on failure
+console.log(~~[]) // -> 0
+console.log(~~NaN)  // -> 0
+console.log(~~null) // -> 0
+
+// greater than 32 bit integer fails
+console.log(~~(2147483647 + 1) === (2147483647 + 1)) // -> 0
+```
+
+Although `~~` may perform better, for the sake of readability please use `Math.floor()`.
+
+## #17 - Node.js: Run a module if it is not "required"
+
+> 2016-01-17 by [@odsdq](https://twitter.com/odsdq)
+
+In node, you can tell your program to do two different things depending on whether the code is run from `require('./something.js')` or `node something.js`.  This is useful if you want to interact with one of your modules independently.
+
+```js
+if (!module.parent) {
+    // ran with `node something.js`
+    app.listen(8088, function() {
+        console.log('app listening on port 8088');
+    })
+} else {
+    // used with `require('/.something.js')`
+    module.exports = app;
+}
+```
+
+See [the documentation for modules](https://nodejs.org/api/modules.html#modules_module_parent) for more info.
+
+## #16 - Passing arguments to callback functions
+> 2016-01-16 by [@minhazav](https://twitter.com/minhazav)
+
+By default you cannot pass arguments to a callback function. For example:
+```js
+function callback() {
+  console.log('Hi human');
+}
+
+document.getElementById('someelem').addEventListener('click', callback);
+```
+You can take advantage of the closure scope in Javascript to pass arguments to callback functions. Check this example:
+```js
+function callback(a, b) {
+  return function() {
+    console.log('sum = ', (a+b));
+  }
+}
+
+var x = 1, y = 2;
+document.getElementById('someelem').addEventListener('click', callback(x, y));
+```
+
+**What are closures?**
+Closures are functions that refer to independent (free) variables. In other words, the function defined in the closure 'remembers' the environment in which it was created. [Check MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) to learn more.
+
+So this way the arguments `x` and `y` are in scope of the callback function when it is called.
+
+Another method to do this is using the `bind` method. For example:
+```js
+var alertText = function(text) {
+  alert(text);
+};
+
+document.getElementById('someelem').addEventListener('click', alertText.bind(this, 'hello'));
+```
+There is a very slight difference in performance of both methods, checkout [jsperf](http://jsperf.com/bind-vs-closure-23).
+
+## #15 - Even simpler way of using indexOf as a contains clause
+> 2016-01-15 by [@jhogoforbroke](https://twitter.com/jhogoforbroke)
+
+JavaScript by default does not have a contains method. And for checking existence of a substring in a string or an item in an array you may do this:
+
+```javascript
+var someText = 'javascript rules';
+if (someText.indexOf('javascript') !== -1) {
+}
+
+// or
+if (someText.indexOf('javascript') >= 0) {
+}
+```
+
+But let's look at these [Expressjs](https://github.com/strongloop/express) code snippets.
+
+[examples/mvc/lib/boot.js](https://github.com/strongloop/express/blob/2f8ac6726fa20ab5b4a05c112c886752868ac8ce/examples/mvc/lib/boot.js#L26)
+```javascript
+for (var key in obj) {
+  // "reserved" exports
+  if (~['name', 'prefix', 'engine', 'before'].indexOf(key)) continue;
+```
+
+[lib/utils.js](https://github.com/strongloop/express/blob/2f8ac6726fa20ab5b4a05c112c886752868ac8ce/lib/utils.js#L93)
+```javascript
+exports.normalizeType = function(type){
+  return ~type.indexOf('/')
+    ? acceptParams(type)
+    : { value: mime.lookup(type), params: {} };
+};
+```

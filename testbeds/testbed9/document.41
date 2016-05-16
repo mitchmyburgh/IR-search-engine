@@ -1,0 +1,69 @@
+A sorting algorithm is an algorithm that puts elements of a list in a certain order. The most-used orders are numerical order and lexicographical order. Efficient sorting is important for optimizing the use of other algorithms (such as search and merge algorithms) which require input data to be in sorted lists; it is also often useful for canonicalizing data and for producing human-readable output. More formally, the output must satisfy two conditions:
+
+The output is in nondecreasing order (each element is no smaller than the previous element according to the desired total order);
+The output is a permutation (reordering) of the input.
+Further, the data is often taken to be in an array, which allows random access, rather than a list, which only allows sequential access, though often algorithms can be applied with suitable modification to either type of data.
+
+Since the dawn of computing, the sorting problem has attracted a great deal of research, perhaps due to the complexity of solving it efficiently despite its simple, familiar statement. For example, bubble sort was analyzed as early as 1956.[1] Comparison sorting algorithms have a fundamental requirement of O(n log n) comparisons (some input sequences will require a multiple of n log n comparisons); algorithms not based on comparisons, such as counting sort, can have better performance. Although many[who?] consider sorting a solved problem—asymptotically optimal algorithms have been known since the mid-20th century—useful new algorithms are still being invented, with the now widely used Timsort dating to 2002, and the library sort being first published in 2006.
+
+Sorting algorithms are prevalent in introductory computer science classes, where the abundance of algorithms for the problem provides a gentle introduction to a variety of core algorithm concepts, such as big O notation, divide and conquer algorithms, data structures such as heaps and binary trees, randomized algorithms, best, worst and average case analysis, time-space tradeoffs, and upper and lower bounds.
+
+Contents  [hide] 
+1	Classification
+1.1	Stability
+2	Comparison of algorithms
+3	Popular sorting algorithms
+3.1	Simple sorts
+3.1.1	Insertion sort
+3.1.2	Selection sort
+3.2	Efficient sorts
+3.2.1	Merge sort
+3.2.2	Heapsort
+3.2.3	Quicksort
+3.3	Bubble sort and variants
+3.3.1	Bubble sort
+3.3.2	Shell sort
+3.3.3	Comb sort
+3.4	Distribution sort
+3.4.1	Counting sort
+3.4.2	Bucket sort
+3.4.3	Radix sort
+4	Memory usage patterns and index sorting
+5	Inefficient sorts
+6	Related algorithms
+7	See also
+8	References
+9	Further reading
+10	External links
+Classification[edit]
+Sorting algorithms are often classified by:
+
+Computational complexity (worst, average and best behavior) in terms of the size of the list (n). For typical serial sorting algorithms good behavior is O(n log n), with parallel sort in O(log2 n), and bad behavior is O(n2). (See Big O notation.) Ideal behavior for a serial sort is O(n), but this is not possible in the average case. Optimal parallel sorting is O(log n). Comparison-based sorting algorithms, need at least O(n log n) comparisons for most inputs.
+Computational complexity of swaps (for "in-place" algorithms).
+Memory usage (and use of other computer resources). In particular, some sorting algorithms are "in-place". Strictly, an in-place sort needs only O(1) memory beyond the items being sorted; sometimes O(log(n)) additional memory is considered "in-place".
+Recursion. Some algorithms are either recursive or non-recursive, while others may be both (e.g., merge sort).
+Stability: stable sorting algorithms maintain the relative order of records with equal keys (i.e., values).
+Whether or not they are a comparison sort. A comparison sort examines the data only by comparing two elements with a comparison operator.
+General method: insertion, exchange, selection, merging, etc. Exchange sorts include bubble sort and quicksort. Selection sorts include shaker sort and heapsort. Also whether the algorithm is serial or parallel. The remainder of this discussion almost exclusively concentrates upon serial algorithms and assumes serial operation.
+Adaptability: Whether or not the presortedness of the input affects the running time. Algorithms that take this into account are known to be adaptive.
+Stability[edit]
+
+An example of stable sort on playing cards. When the cards are sorted by rank with a stable sort, the two 5s must remain in the same order in the sorted output that they were originally in. When they are sorted with a non-stable sort, the 5s may end up in the opposite order in the sorted output.
+When sorting some kinds of data, only part of the data is examined when determining the sort order. For example, in the card sorting example to the right, the cards are being sorted by their rank, and their suit is being ignored. This allows the possibility of multiple different correctly sorted versions of the original list. Stable sorting algorithms choose one of these, according to the following rule: if two items compare as equal, like the two 5 cards, then their relative order will be preserved, so that if one came before the other in the input, it will also come before the other in the output.
+
+More formally, the data being sorted can be represented as a record or tuple of values, and the part of the data that is used for sorting is called the key. In the card example, cards are represented as a record (rank, suit), and the key is the rank. A sorting algorithm is stable if whenever there are two records R and S with the same key, and R appears before S in the original list, then R will always appear before S in the sorted list.
+
+When equal elements are indistinguishable, such as with integers, or more generally, any data where the entire element is the key, stability is not an issue. Stability is also not an issue if all keys are different.
+
+Unstable sorting algorithms can be specially implemented to be stable. One way of doing this is to artificially extend the key comparison, so that comparisons between two objects with otherwise equal keys are decided using the order of the entries in the original input list as a tie-breaker. Remembering this order, however, may require additional time and space.
+
+One application for stable sorting algorithms is sorting a list using a primary and secondary key. For example, suppose we wish to sort a hand of cards such that the suits are in the order clubs (?), diamonds (?), hearts (?), spades (?), and within each suit, the cards are sorted by rank. This can be done by first sorting the cards by rank (using any sort), and then doing a stable sort by suit:
+
+Sorting playing cards using stable sort.svg
+
+Within each suit, the stable sort preserves the ordering by rank that was already done. This idea can be extended to any number of keys, and is leveraged by radix sort. The same effect can be achieved with an unstable sort by using a lexicographic key comparison, which, e.g., compares first by suit, and then compares by rank if the suits are the same.
+
+Comparison of algorithms[edit]
+In this table, n is the number of records to be sorted. The columns "Average" and "Worst" give the time complexity in each case, under the assumption that the length of each key is constant, and that therefore all comparisons, swaps, and other needed operations can proceed in constant time. "Memory" denotes the amount of auxiliary storage needed beyond that used by the list itself, under the same assumption. The run times and the memory requirements listed below should be understood to be inside big O notation, hence the base of the logarithms does not matter; the notation log2 n means (log n)2.
+
+These are all comparison sorts, and so cannot perform better than O(n log n) in the average or worst case.

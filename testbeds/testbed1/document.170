@@ -1,0 +1,64 @@
+Array_programming
+In , '''array programming languages''' (also known as  or '''multidimensional''' languages) generalize operations on s to apply transparently to s, , and higher-dimensional arrays.
+Array programming primitives concisely express broad ideas about data manipulation. The level of concision can be dramatic in certain cases: it is not uncommon to find array programming language  that require more than a couple of pages of Java code.
+Modern programming languages that support array programming are commonly used in  and engineering settings; these include , , ,  (as lists), , , , , and the  extension to Python. In these languages, an operation that operates on entire arrays can be called a '''vectorized''' operation, regardless of whether it is executed on a  or not.
+==Concepts==
+The fundamental idea behind array programming is that operations apply at once to an entire set of values. This makes it a  model as it allows the programmer to think and operate on whole aggregates of data, without having to resort to explicit loops of individual scalar operations.
+Iverson described the rationale behind array programming (actually referring to APL) as follows:
+The basis behind array programming and thinking is to find and exploit the properties of data where individual elements are similar or adjacent. Unlike object orientation which implicitly breaks down data to its constituent parts (or  quantities), array orientation looks to group data and apply a uniform handling.
+ is an important concept to array programming languages in general, by analogy to  rank in mathematics: functions that operate on data may be classified by the number of dimensions they act on. Ordinary multiplication, for example, is a scalar ranked function because it operates on zero-dimensional data (individual numbers). The  operation is an example of a vector rank function because it operates on vectors, not scalars.  is an example of a 2-rank function, because it operates on 2-dimensional objects (matrices).  reduce the dimensionality of an input data array by one or more dimensions. For example, summing over elements collapses the input array by 1 dimension.
+==Uses==
+Array programming is very well suited to implicit parallelization; a topic of much research nowadays. Further,  and compatible CPUs developed and produced after 1997 contained various instruction set extensions, starting from  and continuing through  and , which include rudimentary  array capabilities. Array processing is distinct from  in that one physical processor performs operations on a group of items simultaneously while parallel processing aims to split a larger problem into smaller ones () to be solved piecemeal by numerous processors. Processors with two or more cores are increasingly common today.
+==Languages==
+The canonical examples of array programming languages are , , and . Others include: , , , , , , , , , , , , , , , , ,  and .
+===Scalar languages===
+In scalar languages such as  and , operations apply only to single values, so ''a''+''b'' expresses the addition of two numbers. In such languages, adding one array to another requires indexing and looping, the coding of which is tedious and error-prone.
+for (i = 0; i  B  B
+      
+    6    5
+    4    3
+    2    1
+> C  C
+      
+   28   19
+   40   28
+> D  D
+      
+   29   20
+   41   29
+> D + c(1, 1)  # c() creates a vector
+      
+   30   21
+   42   30
+==Mathematical reasoning and language notation==
+The matrix left-division operator concisely expresses some semantic properties of matrices. As in the scalar equivalent, if the ( of the) coefficient (matrix) A is not null then it is possible to solve the (vectorial) equation A * x = b by left-multiplying both sides by the  of A: A1 (in both MATLAB and GNU Octave languages: A^-1). The following mathematical statements hold when A is a  :
+:A^-1  *(A * x)==A^-1 * (b)
+:(A^-1 * A)* x ==A^-1 *  b  &nbsp; &nbsp; &nbsp; (matrix-multiplication )
+:x = A^-1 * b
+where == is the equivalence .
+The previous statements are also valid MATLAB expressions if the third one is executed before the others (numerical comparisons may be false because of round-off errors).
+If the system is overdetermined - so that A has more rows than columns - the pseudoinverse A+ (in MATLAB and GNU Octave languages: pinv(A)) can replace the inverse A1, as follows:
+:pinv(A)  *(A * x)==pinv(A) * (b)
+:(pinv(A) * A)* x ==pinv(A) * b &nbsp; &nbsp; &nbsp; (matrix-multiplication )
+:x = pinv(A) * b
+However, these solutions are neither the most concise ones (e.g. still remains the need to notationally differentiate overdetermined systems) nor the most computationally efficient.  The latter point is easy to understand when considering again the scalar equivalent a * x = b, for which the solution x = a^-1 * b would require two operations instead of the more efficient x = b / a.
+The problem is that generally matrix multiplications are not  as the extension of the scalar solution to the matrix case would require:
+:(a * x)/ a ==b / a
+:(x * a)/ a ==b / a &nbsp; &nbsp; &nbsp; (commutativity does not hold for matrices!)
+:x * (a / a)==b / a &nbsp; &nbsp; &nbsp; (associativity also holds for matrices)
+:x = b / a
+The MATLAB language introduces the left-division operator \ to maintain the essential part of the analogy with the scalar case, therefore simplifying the mathematical reasoning and preserving the conciseness:
+:A \ (A * x)==A \ b
+:(A \ A)* x ==A \ b &nbsp; &nbsp; &nbsp; (associativity also holds for matrices, commutativity is no more required)
+:x = A \ b
+This is not only an example of terse array programming from the coding point of view but also from the computational efficiency perspective, which in several array programming languages benefits from quite efficient linear algebra libraries such as  or .
+Returning to the previous quotation of Iverson, the rationale behind it should now be evident: 
+==Third-party libraries==
+The use of specialized and efficient libraries to provide more terse abstractions is also common in other programming languages. In  several linear algebra libraries exploit the language ability to . In some cases a very terse abstraction in those languages is explicitly influenced by the array programming paradigm, as the  and  libraries do.
+==See also==
+*
+*
+==References==
+==External links==
+*
+*

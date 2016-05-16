@@ -1,0 +1,39 @@
+The Benaloh Cryptosystem is an extension of the Goldwasser-Micali cryptosystem (GM) created in 1994 by Josh (Cohen) Benaloh. The main improvement of the Benaloh Cryptosystem over GM is that longer blocks of data can be encrypted at once, whereas in GM each bit is encrypted individually.
+
+
+== Scheme Definition ==
+Like many public key cryptosystems, this scheme works in the group  where n is a product of two large primes. This scheme is homomorphic and hence malleable.
+
+
+=== Key Generation ===
+Given block size r, a public/private key pair is generated as follows:
+Choose large primes p and q such that  and 
+Set 
+Choose  such that .
+
+Note: If r is composite, it was pointed out by Fousse et al. in 2011 that the above conditions (i.e., those stated in the original paper) are insufficient to guarantee correct decryption, i.e., to guarantee that  in all cases (as should be the case). To address this, the authors propose the following check: let  be the prime factorization of r. Choose  such that for each factor , it is the case that .
+
+Set 
+The public key is then , and the private key is .
+
+
+=== Message Encryption ===
+To encrypt message :
+Choose a random 
+Set 
+
+
+=== Message Decryption ===
+To decrypt a ciphertext :
+Compute 
+Output , i.e., find m such that 
+To understand decryption, first notice that for any  and  we have:
+
+To recover m from a, we take the discrete log of a base x. If r is small, we can recover m by an exhaustive search, i.e. checking if  for all . For larger values of r, the Baby-step giant-step algorithm can be used to recover m in  time and space.
+
+
+=== Security ===
+The security of this scheme rests on the Higher residuosity problem, specifically, given z,r and n where the factorization of n is unknown, it is computationally infeasible to determine whether z is an rth residue mod n, i.e. if there exists an x such that .
+
+
+== References ==

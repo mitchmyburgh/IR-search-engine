@@ -1,0 +1,156 @@
+Face-vertex meshes represent an object as a set of faces and a set of vertices. This is the most widely used mesh representation, being the input typically accepted by modern graphics hardware.
+
+Face-vertex meshes improve on VV-mesh for modeling in that they allow explicit lookup of the vertices of a face, and the faces surrounding a vertex. The above figure shows the "box-cylinder" example as an FV mesh. Vertex v5 is highlighted to show the faces that surround it. Notice that, in this example, every face is required to have exactly 3 vertices. However, this does not mean every vertex has the same number of surrounding faces.
+
+For rendering, the face list is usually transmitted to the GPU as a set of indices to vertices, and the vertices are sent as position/color/normal structures (in the figure, only position is given). This has the benefit that changes in shape, but not geometry, can be dynamically updated by simply resending the vertex data without updating the face connectivity.
+
+Modeling requires easy traversal of all structures. With face-vertex meshes it is easy to find the vertices of a face. Also, the vertex list contains a list of faces connected to each vertex. Unlike VV meshes, both faces and vertices are explicit, so locating neighboring faces and vertices is constant time. However, the edges are implicit, so a search is still needed to find all the faces surrounding a given face. Other dynamic operations, such as splitting or merging a face, are also difficult with face-vertex meshes.
+
+Winged-edge meshes[edit]
+Figure 4. Winged-edge meshes
+Introduced by Baumgart 1975, winged-edge meshes explicitly represent the vertices, faces, and edges of a mesh. This representation is widely used in modeling programs to provide the greatest flexibility in dynamically changing the mesh geometry, because split and merge operations can be done quickly. Their primary drawback is large storage requirements and increased complexity due to maintaining many indices. A good discussion of implementation issues of Winged-edge meshes may be found in the book Graphics Gems II.
+
+Winged-edge meshes address the issue of traversing from edge to edge, and providing an ordered set of faces around an edge. For any given edge, the number of outgoing edges may be arbitrary. To simplify this, winged-edge meshes provide only four, the nearest clockwise and counter-clockwise edges at each end. The other edges may be traversed incrementally. The information for each edge therefore resembles a butterfly, hence "winged-edge" meshes. The above figure shows the "box-cylinder" as a winged-edge mesh. The total data for an edge consists of 2 vertices (endpoints), 2 faces (on each side), and 4 edges (winged-edge).
+
+Rendering of winged-edge meshes for graphics hardware requires generating a Face index list. This is usually done only when the geometry changes. Winged-edge meshes are ideally suited for dynamic geometry, such as subdivision surfaces and interactive modeling, since changes to the mesh can occur locally. Traversal across the mesh, as might be needed for collision detection, can be accomplished efficiently.
+
+See Baumgart (1975) for more details.[2]
+
+Render dynamic meshes[edit]
+Winged-edge meshes are not the only representation which allows for dynamic changes to geometry. A new representation which combines winged-edge meshes and face-vertex meshes is the render dynamic mesh, which explicitly stores both, the vertices of a face and faces of a vertex (like FV meshes), and the faces and vertices of an edge (like winged-edge).
+
+Render dynamic meshes require slightly less storage space than standard winged-edge meshes, and can be directly rendered by graphics hardware since the face list contains an index of vertices. In addition, traversal from vertex to face is explicit (constant time), as is from face to vertex. RD meshes do not require the four outgoing edges since these can be found by traversing from edge to face, then face to neighboring edge.
+
+RD meshes benefit from the features of winged-edge meshes by allowing for geometry to be dynamically updated.
+
+See Tobler & Maierhofer (WSCG 2006) for more details.[3]
+
+Summary of mesh representation[edit]
+Operation	Vertex-vertex	Face-vertex	Winged-edge	Render dynamic
+V-V	All vertices around vertex	Explicit	V ? f1, f2, f3, ... ? v1, v2, v3, ...	V ? e1, e2, e3, ... ? v1, v2, v3, ...	V ? e1, e2, e3, ... ? v1, v2, v3, ...
+E-F	All edges of a face	F(a,b,c) ? {a,b}, {b,c}, {a,c}	F ? {a,b}, {b,c}, {a,c}	Explicit	Explicit
+V-F	All vertices of a face	F(a,b,c) ? {a,b,c}	Explicit	F ? e1, e2, e3 ? a, b, c	Explicit
+F-V	All faces around a vertex	Pair search	Explicit	V ? e1, e2, e3 ? f1, f2, f3, ...	Explicit
+E-V	All edges around a vertex	V ? {v,v1}, {v,v2}, {v,v3}, ...	V ? f1, f2, f3, ... ? v1, v2, v3, ...	Explicit	Explicit
+F-E	Both faces of an edge	List compare	List compare	Explicit	Explicit
+V-E	Both vertices of an edge	E(a,b) ? {a,b}	E(a,b) ? {a,b}	Explicit	Explicit
+Flook	Find face with given vertices	F(a,b,c) ? {a,b,c}	Set intersection of v1,v2,v3	Set intersection of v1,v2,v3	Set intersection of v1,v2,v3
+Storage size	V*avg(V,V)	3F + V*avg(F,V)	3F + 8E + V*avg(E,V)	6F + 4E + V*avg(E,V)
+Example with 10 vertices, 16 faces, 24 edges:
+10 * 5 = 50	3*16 + 10*5 = 98	3*16 + 8*24 + 10*5 = 290	6*16 + 4*24 + 10*5 = 242
+Figure 6: summary of mesh representation operations
+In the above table, explicit indicates that the operation can be performed in constant time, as the data is directly stored; list compare indicates that a list comparison between two lists must be performed to accomplish the operation; and pair search indicates a search must be done on two indices. The notation avg(V,V) means the average number of vertices connected to a given vertex; avg(E,V) means the average number of edges connected to a given vertex, and avg(F,V) is the average number of faces connected to a given vertex.
+
+The notation "V ? f1, f2, f3, ... ? v1, v2, v3, ..." describes that a traversal across multiple elements is required to perform the operation. For example, to get "all vertices around a given vertex V" using the face-vertex mesh, it is necessary to first find the faces around the given vertex V using the vertex list. Then, from those faces, use the face list to find the vertices around them. Notice that winged-edge meshes explicitly store nearly all information, and other operations always traverse to the edge first to get additional info. Vertex-vertex meshes are the only representation that explicitly stores the neighboring vertices of a given vertex.
+
+As the mesh representations become more complex (from left to right in the summary), the amount of information explicitly stored increases. This gives more direct, constant time, access to traversal and topology of various elements but at the cost of increased overhead and space in maintaining indices properly.
+
+Figure 7 shows the connectivity information for each of the four technique described in this article. Other representations also exist, such as half-edge and corner tables. These are all variants of how vertices, faces and edges index one another.
+
+As a general rule, face-vertex meshes are used whenever an object must be rendered on graphics hardware that does not change geometry (connectivity), but may deform or morph shape (vertex positions) such as real-time rendering of static or morphing objects. Winged-edge or render dynamic meshes are used when the geometry changes, such as in interactive modeling packages or for computing subdivision surfaces. Vertex-vertex meshes are ideal for efficient, complex changes in geometry or topology so long as hardware rendering is not of concern.
+
+Other representations[edit]
+Streaming meshes store faces in an ordered, yet independent, way so that the mesh can be transmitted in pieces. The order of faces may be spatial, spectral, or based on other properties of the mesh. Streaming meshes allow a very large mesh to be rendered even while it is still being loaded.
+
+Progressive meshes transmit the vertex and face data with increasing levels of detail. Unlike streaming meshes, progressive meshes give the overall shape of the entire object, but at a low level of detail. Additional data, new edges and faces, progressively increase the detail of the mesh.
+
+Normal meshes transmit progressive changes to a mesh as a set of normal displacements from a base mesh. With this technique, a series of textures represent the desired incremental modifications. Normal meshes are compact, since only a single scalar value is needed to express displacement. However, the technique requires a complex series of transformations to create the displacement textures.
+
+File formats[edit]
+There exist many different file formats for storing polygon mesh data. Each format is most effective when used for the purpose intended by its creator. Some of these formats are presented below:
+
+File suffix	Format name	Organization(s)	Program(s)	Description
+.raw	Raw mesh	Unknown	Various	Open, ASCII-only format. Each line contains 3 vertices, separated by spaces, to form a triangle, like so: X1 Y1 Z1 X2 Y2 Z2 X3 Y3 Z3
+.blend	Blender File Format	Blender Foundation	Blender 3D	Open source, binary-only format
+.fbx	Autodesk FBX Format	Autodesk	Various	Proprietary. Binary and ASCII specifications exist.
+.3ds	3ds Max File	Autodesk	3ds Max	
+.dae	Digital Asset Exchange (COLLADA)	Sony Computer Entertainment, Khronos Group	N/A	Stands for "COLLAborative Design Activity". A universal format designed to prevent incompatibility.
+.dgn	MicroStation File	Bentley Systems	MicroStation	
+.3dm	Rhino File	Robert McNeel & Associates	Rhinoceros 3D	
+.dxf	Drawing Exchange Format	Autodesk	AutoCAD	
+.obj	Wavefront OBJ	Wavefront Technologies	Various	ASCII format describing 3D geometry alone. All faces' vertices are ordered counter-clockwise, thus removing the need to specify normals.
+.ply	Polygon File Format	Stanford University	Unknown	Binary and ASCII
+.pmd	Polygon Movie Maker data	Yu Higuchi	MikuMikuDance	Proprietary binary file format for storing humanoid model geometry with rigging, material, and physics information.
+.stl	Stereolithography Format	3D Systems	Many	Binary and ASCII format originally designed to aid in "3D printing".
+.amf	Additive Manufacturing File Format	ASTM International	N/A	Like the STL format, but with added native color, material, and constellation support.
+.wrl	Virtual Reality Modeling Language	Web3D Consortium	Web Browsers	ISO Standard 14772-1:1997
+.wrz	VRML Compressed	Web3D Consortium	Web Browsers	
+.x3d, .x3db, .x3dv	Extensible 3D	Web3D Consortium	Web Browsers	ISO Standard 19775/19776/19777
+.x3dz, .x3dbz, .x3dvz	X3D Compressed Binary	Web3D Consortium	Web Browsers	
+.c4d	Cinema 4D File	MAXON	CINEMA 4D	
+.lwo	LightWave 3D object File	NewTek	LightWave 3D	
+.smb	SCOREC apf	RPI SCOREC	PUMI	Open source parallel adaptive unstructured 3D meshes for PDE based simulation workflows.
+.msh	Gmsh Mesh	GMsh Developers	GMsh Project	Open source, providing an ASCII mesh description for linear and polynomially interpolated elements in 1 to 3 dimensions.
+.mesh	OGRE XML	OGRE Development Team	OGRE, purebasic	Open Source. Binary (.mesh) and ASCII (.mesh.xml) format available. Includes data for vertex animation and Morph target animation (blendshape). Skeletal animation data in separate file (.skeleton).
+.veg	Vega FEM tetrahedral mesh	Jernej Barbic	Vega FEM	Open Source. Stores a tetrahedral mesh and its material properties for FEM simulation. ASCII (.veg) and binary (.vegb) formats available.
+.z3d	Z3d	Oleg Melashenko	Zanoza Modeler	-
+.vtk	VTK mesh	VTK, Kitware	VTK, Paraview	Open, ASCII or binary format that contains many different data fields, including point data, cell data, and field data.
+See also[edit]
+Wire-frame model
+Euler operator
+B-rep
+Simplex
+Triangulation (geometry)
+Manifold (a mesh can be manifold or non-manifold)
+Mesh subdivision (a technique for adding detail to a polygon mesh)
+T-Spline
+Polygonizer
+Polygon modeling
+References[edit]
+^ Jump up to: a b Colin Smith, On Vertex-Vertex Meshes and Their Use in Geometric and Biological Modeling, http://algorithmicbotany.org/papers/smithco.dis2006.pdf
+Jump up ^ Bruce Baumgart, Winged-Edge Polyhedron Representation for Computer Vision. National Computer Conference, May 1975. http://www.baumgart.org/winged-edge/winged-edge.html
+Jump up ^ Tobler & Maierhofer, A Mesh Data Structure for Rendering and Subdivision. 2006. [1]
+External links[edit]
+Weisstein, Eric W., "Simplicial complex", MathWorld.
+Weisstein, Eric W., "Triangulation", MathWorld.
+OpenMesh open source half-edge mesh representation.
+Categories: 3D computer graphicsVirtual realityComputer graphics data structuresMesh generation
+Navigation menu
+Not logged inTalkContributionsCreate accountLog inArticleTalkReadEditView history
+
+Search
+Go
+Main page
+Contents
+Featured content
+Current events
+Random article
+Donate to Wikipedia
+Wikipedia store
+Interaction
+Help
+About Wikipedia
+Community portal
+Recent changes
+Contact page
+Tools
+What links here
+Related changes
+Upload file
+Special pages
+Permanent link
+Page information
+Wikidata item
+Cite this page
+Print/export
+Create a book
+Download as PDF
+Printable version
+Languages
+???????
+Deutsch
+Español
+Français
+???
+Italiano
+???
+Polski
+Português
+???????
+Svenska
+??????????
+??
+Edit links
+This page was last modified on 22 April 2016, at 15:33.
+Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile viewWikimedia Foundation

@@ -1,0 +1,13 @@
+The Open Grid Services Infrastructure (OGSI) was published by the Global Grid Forum (GGF) as a proposed recommendation in June 2003. It was intended to provide an infrastructure layer for the Open Grid Services Architecture (OGSA). OGSI takes the statelessness issues (along with others) into account by essentially extending Web services to accommodate grid computing resources that are both transient and stateful.
+
+
+== Obsolescence ==
+Web services groups started to integrate their own approaches to capturing state into the Web Services Resource Framework (WSRF). With the release of GT4, the open source tool kit is migrating back to a pure Web services implementation (rather than OGSI), via integration of the WSRF. 
+"OGSI, which was the former set of extensions to Web services to provide stateful interactions -- I would say at this point is obsolete," Jay Unger said. "That was the model that was used in the Globus Toolkit 3.0, but it's been replaced by WSRF, WS-Security, and the broader set of Web services standards. But OGSA, which focuses on specific service definition in the areas of execution components, execution modeling, grid data components, and information virtualization, still has an important role to play in the evolution of standards and open source tool kits like Globus."
+
+
+== Implementations ==
+Globus Toolkit version 3 contains an implementation of OGSI.
+
+
+== References ==

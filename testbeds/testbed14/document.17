@@ -1,0 +1,54 @@
+tableau based Reasoning
+1 Introduction
+As part of the infrastructure for working with ontologies, reasoning systems
+are required. Reasoning is used at ontology development or maintenance time
+as well as at the time ontologies are used for solving application problems.
+In this section we will review so-called tableau based decision procedures for
+inference problems arising in both contexts. We start with the satisfiability
+problem for a set of logical formulae. Speaking about ontologies, we focus on
+description logics , which provide the basis for standardized practical ontology
+languages. In this context, the set of formulae mentioned above is usually divided
+into a Tbox and an Abox for the intensional and extensional part of the
+ontology, respectively (see below for details). We are aware of the fact that ontology
+processing systems based on description logics also support some form
+of rules as well as means for specifying constraints among attributes of different
+individuals [5]. For introductory purposes, here we focus on satisfiability
+checking in basic description logics, however.
+The main idea of tableau based methods for satisfiability checking is to
+systematically construct a representation for a model of the input formulae.
+If all representations that are considered by the procedure turn out to contain
+an obvious contradiction (clash), it is concluded that the set of formulae
+is unsatisfiable. In early publications on tableau based proof procedures, in
+particular for first-order logics, the notation for the model representations
+was done using tables (tableaux in French). In recent approaches these tables
+are better described as graph structures. The name tableau is retained for
+historical reasons, however.
+Initially, tableau based methods for description logics have been developed
+for decidability proofs, and due to this fact, they are highly nondeterministic
+for expressive description logics. It turned out, however, that they can indeed
+be efficiently implemented using appropriate search strategies and index
+structures such that for typical-case inputs, acceptable runtimes can be expected
+even though the worst-case complexity is high. In practical systems,
+tableau structures are efficiently maintained during branch and bound (or
+backtracking) with the result that tableau based methods have been successfully
+employed in ontology reasoning systems such as FaCT++, Pellet, or
+RacerPro (cf. [26] for an overview about description logic systems).
+Although, in practical contexts, tableau based methods are often applied
+in a refutation-based way (i.e., they are used to show unsatisfiability of a set of
+formulae), the graph structures computed for solving the ontology satisfiability
+problem can be reused for efficiently implementing higher-level reasoning
+services such as instance retrieval requests. In other words, in practical systems,
+tableau based methods are not just used for satisfiability checking but
+are also used to compute index structures for subsequent calls to other reasoning
+services.
+In this chapter, tableau based reasoning methods are formally introduced.
+We start with a nondeterministic basic version which subsequently will be
+extended with optimization techniques in order to demonstrate how practical
+systems can be built. We also demonstrate how computed tableau structures
+can be exploited in an ontology reasoning system. In order to make this
+chapter self-contained, we shortly introduce the syntax and semantics of the
+description logic ALC and introduce Tboxes and Aboxes.
+An overview on tableau algorithms for description logics can also be found
+in [7] as well as in [6]. In this chapter, we also consider optimization issues,
+and the presentation is oriented towards implementation aspects in order to
+complement the presentations in [7, 6].

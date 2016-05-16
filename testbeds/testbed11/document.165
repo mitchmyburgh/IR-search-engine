@@ -1,0 +1,36 @@
+The Damgård–Jurik cryptosystem is a generalization of the Paillier cryptosystem. It uses computations modulo  where  is an RSA modulus and  a (positive) natural number. Paillier's scheme is the special case with . The order  (Euler's totient function) of  can be divided by . Moreover  can be written as the direct product of .  is cyclic and of order , while  is isomorphic to . For encryption, the message is transformed into the corresponding coset of the factor group  and the security of the scheme relies on the difficulty of distinguishing random elements in different cosets of . It is semantically secure if it is hard to decide if two given elements are in the same coset. Like Paillier, the security of Damgård–Jurik can be proven under the decisional composite residuosity assumption.
+
+
+== Key generation ==
+Choose two large prime numbers p and q randomly and independently of each other.
+Compute  and .
+Choose an element  such that  for a known  relative prime to  and .
+Using the Chinese Remainder Theorem, choose  such that  and . For instance  could be  as in Paillier's original scheme.
+The public (encryption) key is .
+The private (decryption) key is .
+
+
+== Encryption ==
+Let  be a message to be encrypted where .
+Select random  where .
+Compute ciphertext as: .
+
+
+== Decryption ==
+Ciphertext 
+Compute . If c is a valid ciphertext then .
+Apply a recursive version of the Paillier decryption mechanism to obtain . As  is known, it is possible to compute .
+
+
+== Simplification ==
+At the cost of no longer containing the classical Paillier cryptosystem as an instance, Damgård–Jurik can be simplified in the following way:
+The base g is fixed as .
+The decryption exponent d is computed such that  and .
+In this case decryption produces . Using recursive Paillier decryption this gives us directly the plaintext m.
+
+
+== See also ==
+The Damgård–Jurik cryptosystem interactive simulator demonstrates a voting application.
+
+
+== References ==
