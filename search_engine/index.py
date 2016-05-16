@@ -50,7 +50,7 @@ def index(folder_name, i):
 	                    index[word][key] = 1
 	                else:
 	                    index[word][key] += 1
-	    print (key, doc_length, "document."+str(j), sep=':', file=g) 
+	    print (key, doc_length, key, sep=':', file=g) 
 
 	# document length/title file
 	g.close ()
