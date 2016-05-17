@@ -7,13 +7,6 @@ from index import index
 from query import query
 
 def create_index():
-	#create the indexes folder
-	try:
-		os.mkdir ("indexes")
-	except:
-		print("fail")
-		pass
-
 	startTime = datetime.now()
 	#index teh testbeds
 	for i in range(1, 17):
@@ -29,14 +22,15 @@ def run_queries(output_dir, output_file):
 		pass
 	#clean the output file
 	f = open (output_dir+"/"+output_file, 'w')
-	f.write("Testbed,Query,MAP,NDCG\n")
+	f.write("Testbed,Query,MAP,NDCG,MAPwithBRF,NDCGwithBRF\n")
 	f.close()
 	for i in range(1, 17): #loop over testbeds
 		for j in range(1, 6): #loop over queries
 			#read the query 
 			f = open ("testbeds/testbed"+str(i)+"/query."+str(j))
 			#process the query on the appropriate testset
-			result = query(f.read().replace("\n", ""), "testbed"+str(i), i)
+			result = query(f.read().replace("\n", ""), "testbed"+str(i), i, false, 0)
+			result_brf = query(f.read().replace("\n", ""), "testbed"+str(i), i, true, 0)
 			f.close()
 
 			#read the relevance judgements
