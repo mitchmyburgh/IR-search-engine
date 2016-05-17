@@ -73,6 +73,8 @@ def index(folder_name, i):
 	tf_idf_arr = []
 
 	for key in index:
+		if (len(key) >30):
+			key = key[:31]
 		f = open ("indexes/testbed"+str(i)+"_index/"+key, "w")
 		for entry in index[key]:
 			# additionally calculate the tf-idf for use in Blind relevance feedback
