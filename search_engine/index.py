@@ -100,6 +100,7 @@ def index(folder_name, i):
 	f.close ()
 	# sort on tf_idf
 	for j in tf_idf_arr:
+		print("working")
 		#tf_idf = open ("indexes/tf-idf/"+ "testbed"+str(i) + "_document_"+str(j)+"_tf-idf", "r")
 		#lines = tf_idf.readlines()
 		#tf_idf.close()
