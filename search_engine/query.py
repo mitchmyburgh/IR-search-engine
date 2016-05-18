@@ -11,6 +11,21 @@ import porter
 
 import parameters
 
+stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours',
+'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers',
+'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves',
+'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are',
+'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does',
+'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until',
+'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into',
+'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down',
+'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here',
+'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more',
+'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so',
+'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'a',
+'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
+'w','x','y','z',]
+
 def call_query(query, collection, i, brf, brf_count, brf_number_words):
     # clean query
     if parameters.case_folding:
@@ -77,8 +92,9 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words):
     # print top ten results
     result = sorted (accum, key=accum.__getitem__, reverse=True)
     final_result = []
+    print(collection+" "+query)
     for c in range (min (len (result), 10)):
-       #print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
+       print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
        final_result.append([accum[result[c]], result[c]])
     if (brf and brf_count == 0):
         for result in final_result:
@@ -92,7 +108,7 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words):
             word = ""
             while (c < brf_number_words and len(lines) > d):
                 mo = lines[d].split(":")
-                if (word == mo[1].replace("\n", "")):
+                if (word == mo[1].replace("\n", "") or mo[1].replace("\n", "") in stop_words):
                     d+=1
                     continue
                 word = mo[1].replace("\n", "")
