@@ -26,7 +26,7 @@ stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you'
 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
 'w','x','y','z',]
 
-def call_query(query, collection, i, brf, brf_count, brf_number_words):
+def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from):
     # clean query
     if parameters.case_folding:
        query = query.lower ()
@@ -92,12 +92,16 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words):
     # print top ten results
     result = sorted (accum, key=accum.__getitem__, reverse=True)
     final_result = []
-    print(collection+" "+query)
+    #print(collection+" "+query)
     for c in range (min (len (result), 10)):
-       print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
+       #print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
        final_result.append([accum[result[c]], result[c]])
     if (brf and brf_count == 0):
+        total = 0
         for result in final_result:
+            if total > brf_from:
+                break
+            total += 1
             document = result[1]
             accumulation = result[0]
             f = open("indexes/tf-idf/testbed"+str(i)+"_document_"+str(document)+"_tf-idf", "r")
@@ -115,5 +119,5 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words):
                 query+=" "+word
                 d+=1
                 c+=1
-        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words)
+        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words, brf_from)
     return final_result

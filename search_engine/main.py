@@ -24,25 +24,51 @@ def run_queries(output_dir, output_file):
 	f = open (output_dir+"/"+output_file, 'w')
 	f.write("Testbed,Query,MAP,NDCG,MAPwithBRF,NDCGwithBRF\n")
 	f.close()
+	num_words = {}
+	num_sources = {}
 	for i in range(1, 17): #loop over testbeds
 		for j in range(1, 6): #loop over queries
 			#read the query
 			f = open ("testbeds/testbed"+str(i)+"/query."+str(j))
 			#process the query on the appropriate testset
 			read_query = f.read().replace("\n", "")
-			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0)
-			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 2)
 			f.close()
-			#calculate scores
+			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0)
+			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 2, 1)
 			base_scores = calculate_scores(result, i, j, output_dir, output_file)
 			brf_scores = calculate_scores(result_brf, i, j, output_dir, output_file)
+			#
+			# for k in range (11):
+			# 	for l in range (11):
+			# 		result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, k, l)
+			# 		brf_scores = calculate_scores(result_brf, i, j, output_dir, output_file)
+			# 		if (brf_scores and base_scores and base_scores[0]< brf_scores[0] and base_scores[1]< brf_scores[1]):
+			# 			print("We got a better result with brf_number_words="+str(k)+" brf_from="+str(l)+" for testbed="+str(i)+" for query="+str(j))
+			# 			if str(k) in num_words:
+			# 				num_words[str(k)] += 1
+			# 			else:
+			# 				num_words[str(k)] = 1
+			# 			if str(l) in num_sources:
+			# 				num_sources[str(l)] += 1
+			# 			else:
+			# 				num_sources[str(l)] = 1
+			# check for best brf combination
+
 
 			#write MAP and NDCG to file
 			if (base_scores and brf_scores):
 				f = open (output_dir+"/"+output_file, 'a')
 				f.write(str(i)+","+str(j)+","+str(base_scores[0])+","+str(base_scores[1])+","+str(brf_scores[0])+","+str(brf_scores[1])+"\n")
 				f.close()
-
+	print(num_words)
+	print(num_sources)
+def calculate_averages(scores):
+	totalMap = 0
+	totalNDCG = 0
+	for i in scores:
+		totalMap+= i[0]
+		totalNDCG+= i[0]
+	return [totalMap/len(scores),totalNDCG/len(scores)]
 def calculate_scores(result, i, j, output_dir, output_file):
 	#read the relevance judgements
 	f = open ("testbeds/testbed"+str(i)+"/relevance."+str(j))
