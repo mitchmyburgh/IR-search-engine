@@ -26,12 +26,13 @@ def run_queries(output_dir, output_file):
 	f.close()
 	for i in range(1, 17): #loop over testbeds
 		for j in range(1, 6): #loop over queries
-			#read the query 
+			#read the query
 			f = open ("testbeds/testbed"+str(i)+"/query."+str(j))
 			#process the query on the appropriate testset
-			result = query(f.read().replace("\n", ""), "testbed"+str(i), i, false, 0)
-			result_brf = query(f.read().replace("\n", ""), "testbed"+str(i), i, true, 0)
+			result = query(f.read().replace("\n", ""), "testbed"+str(i), i, False, 0)
+			#result_brf = query(f.read().replace("\n", ""), "testbed"+str(i), i, True, 0)
 			f.close()
+			print(result)
 
 			#read the relevance judgements
 			f = open ("testbeds/testbed"+str(i)+"/relevance."+str(j))
@@ -55,7 +56,7 @@ def run_queries(output_dir, output_file):
 						precision.append(relevant/(c+1))
 					else: # article not relevant
 						precision.append(relevant/(c+1))
-				#cacluate mean of the average precisions 
+				#cacluate mean of the average precisions
 				total = 0
 				for c in range(len(precision)):
 					total+= precision[c]

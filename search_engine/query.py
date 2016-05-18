@@ -34,6 +34,8 @@ def query(query, collection, i, brf, brf_count):
     f = open ("indexes/"+collection+"_index_len", "r")
     lengths = f.readlines ()
     f.close ()
+    print(str(i)+" "+query)
+    print(query_words)
 
     # get index for each term and calculate similarities using accumulators
     for term in query_words:
@@ -41,9 +43,12 @@ def query(query, collection, i, brf, brf_count):
             if parameters.stemming:
                 term = p.stem (term, 0, len(term)-1)
             if not os.path.isfile ("indexes/"+collection+"_index/"+term):
-               continue
+                print("broken")
+                continue
             f = open ("indexes/"+collection+"_index/"+term, "r")
             lines = f.readlines ()
+            print("printing lines")
+            print(lines)
             idf = 1
             if parameters.use_idf:
                df = len(lines)
@@ -74,15 +79,26 @@ def query(query, collection, i, brf, brf_count):
                 accum[document_id] = accum[document_id] / length
              titles[document_id] = title
 
+    print(accum)
     # print top ten results
     result = sorted (accum, key=accum.__getitem__, reverse=True)
     final_result = []
-    for i in range (min (len (result), 10)):
-       #print ("{0:10.8f} {1:5} {2}".format (accum[result[i]], result[i], titles[result[i]]))
-       final_result.append([accum[result[i]], result[i]])
+    for c in range (min (len (result), 10)):
+       print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
+       final_result.append([accum[result[c]], result[c]])
     if (brf and brf_count == 0):
         for result in final_result:
             document = result[1]
             accumulation = result[0]
-
+            f = open("indexes/tf-idf/testbed"+str(i)+"_document_"+str(document)+"_tf-idf", "r")
+            lines = f.readlines()
+            f.close()
+            c = 0
+            d = 0
+            word = ""
+            while (c < 10 and len(lines) > d):
+                mo = re.match (r'([0-9]+)\:([0-9a-zA-Z\.]+)', lines[d])
+                word = file_id = mo.group(2)
+                print(word)
+                c+=1
     return final_result

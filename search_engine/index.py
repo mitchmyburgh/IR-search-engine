@@ -65,7 +65,7 @@ def index(folder_name, i):
 						index[word][key] = 1
 					else:
 						index[word][key] += 1
-		print (key, doc_length, key, sep=':', file=g) 
+		print (key, doc_length, key, sep=':', file=g)
 
 	# document length/title file
 	g.close ()
@@ -74,7 +74,7 @@ def index(folder_name, i):
 
 	for key in index:
 		if (len(key) >30):
-			break
+			continue
 		f = open ("indexes/testbed"+str(i)+"_index/"+key, "w")
 		for entry in index[key]:
 			# additionally calculate the tf-idf for use in Blind relevance feedback
@@ -107,5 +107,3 @@ def index(folder_name, i):
 			print("working")
 			print (line[0], line[1], sep=':', file=tf_idf)
 		tf_idf.close()
-
-
