@@ -11,7 +11,7 @@ import porter
 
 import parameters
 
-def query(query, collection, i, brf, brf_count):
+def call_query(query, collection, i, brf, brf_count, brf_number_words):
     # clean query
     if parameters.case_folding:
        query = query.lower ()
@@ -34,8 +34,6 @@ def query(query, collection, i, brf, brf_count):
     f = open ("indexes/"+collection+"_index_len", "r")
     lengths = f.readlines ()
     f.close ()
-    print(str(i)+" "+query)
-    print(query_words)
 
     # get index for each term and calculate similarities using accumulators
     for term in query_words:
@@ -43,12 +41,9 @@ def query(query, collection, i, brf, brf_count):
             if parameters.stemming:
                 term = p.stem (term, 0, len(term)-1)
             if not os.path.isfile ("indexes/"+collection+"_index/"+term):
-                print("broken")
                 continue
             f = open ("indexes/"+collection+"_index/"+term, "r")
             lines = f.readlines ()
-            print("printing lines")
-            print(lines)
             idf = 1
             if parameters.use_idf:
                df = len(lines)
@@ -79,12 +74,11 @@ def query(query, collection, i, brf, brf_count):
                 accum[document_id] = accum[document_id] / length
              titles[document_id] = title
 
-    print(accum)
     # print top ten results
     result = sorted (accum, key=accum.__getitem__, reverse=True)
     final_result = []
     for c in range (min (len (result), 10)):
-       print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
+       #print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
        final_result.append([accum[result[c]], result[c]])
     if (brf and brf_count == 0):
         for result in final_result:
@@ -96,9 +90,14 @@ def query(query, collection, i, brf, brf_count):
             c = 0
             d = 0
             word = ""
-            while (c < 10 and len(lines) > d):
-                mo = re.match (r'([0-9]+)\:([0-9a-zA-Z\.]+)', lines[d])
-                word = file_id = mo.group(2)
-                print(word)
+            while (c < brf_number_words and len(lines) > d):
+                mo = lines[d].split(":")
+                if (word == mo[1].replace("\n", "")):
+                    d+=1
+                    continue
+                word = mo[1].replace("\n", "")
+                query+=" "+word
+                d+=1
                 c+=1
+        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words)
     return final_result
