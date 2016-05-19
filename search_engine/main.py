@@ -26,6 +26,7 @@ def run_queries(output_dir, output_file):
 	f.close()
 	num_words = {}
 	num_sources = {}
+	best_combo = {}
 	for i in range(1, 17): #loop over testbeds
 		for j in range(1, 6): #loop over queries
 			#read the query
@@ -34,18 +35,18 @@ def run_queries(output_dir, output_file):
 			read_query = f.read().replace("\n", "")
 			f.close()
 			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False)
-			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 20, 10, False)
+			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 10, 1, False) #12, 18
 			result_stop_words = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, True)
-			result_combined = call_query(read_query, "testbed"+str(i), i, True, 0, 20, 10, True)
+			result_combined = call_query(read_query, "testbed"+str(i), i, True, 0, 10, 1, True)
 			# calculate the scores
 			base_scores = calculate_scores(result, i, j, output_dir, output_file)
 			brf_scores = calculate_scores(result_brf, i, j, output_dir, output_file)
 			stop_words_scores = calculate_scores(result_stop_words, i, j, output_dir, output_file)
 			combined_scores = calculate_scores(result_combined, i, j, output_dir, output_file)
-			#
-			# for k in range (11):
-			# 	for l in range (11):
-			# 		result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, k, l)
+
+			# for k in range (21):
+			# 	for l in range (21):
+			# 		result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, k, l, False)
 			# 		brf_scores = calculate_scores(result_brf, i, j, output_dir, output_file)
 			# 		if (brf_scores and base_scores and base_scores[0]< brf_scores[0] and base_scores[1]< brf_scores[1]):
 			# 			print("We got a better result with brf_number_words="+str(k)+" brf_from="+str(l)+" for testbed="+str(i)+" for query="+str(j))
@@ -57,6 +58,10 @@ def run_queries(output_dir, output_file):
 			# 				num_sources[str(l)] += 1
 			# 			else:
 			# 				num_sources[str(l)] = 1
+			# 			if (str(k)+str(l)) in best_combo:
+			# 				best_combo[(str(k)+str(l))] += 1
+			# 			else:
+			# 				best_combo[(str(k)+str(l))] = 1
 			# check for best brf combination
 
 
@@ -68,15 +73,16 @@ def run_queries(output_dir, output_file):
 				str(stop_words_scores[0])+","+str(stop_words_scores[1])+","+
 				str(combined_scores[0])+","+str(combined_scores[1])+"\n")
 				f.close()
-	print(num_words)
-	print(num_sources)
-def calculate_averages(scores):
-	totalMap = 0
-	totalNDCG = 0
-	for i in scores:
-		totalMap+= i[0]
-		totalNDCG+= i[0]
-	return [totalMap/len(scores),totalNDCG/len(scores)]
+	# print(num_words)
+	# print(num_sources)
+	# print(best_combo)
+	# maxi = 0
+	# out = ""
+	# for key in best_combo:
+	# 	if best_combo[key] > maxi:
+	# 		out = key
+	# print(out)
+
 def calculate_scores(result, i, j, output_dir, output_file):
 	#read the relevance judgements
 	f = open ("testbeds/testbed"+str(i)+"/relevance."+str(j))

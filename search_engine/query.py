@@ -102,7 +102,7 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from,
     if (brf and brf_count == 0):
         total = 0
         for result in results:
-            if total > brf_from:
+            if total >= brf_from:
                 break
             total += 1
             document = result
