@@ -26,7 +26,7 @@ stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you'
 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
 'w','x','y','z',]
 
-def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from):
+def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from, stopwords):
     # clean query
     if parameters.case_folding:
        query = query.lower ()
@@ -52,6 +52,8 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from)
 
     # get index for each term and calculate similarities using accumulators
     for term in query_words:
+        if stopwords and (term in stop_words):
+            continue
         if term != '':
             if parameters.stemming:
                 term = p.stem (term, 0, len(term)-1)
@@ -90,20 +92,23 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from)
              titles[document_id] = title
 
     # print top ten results
-    result = sorted (accum, key=accum.__getitem__, reverse=True)
+    results = sorted (accum, key=accum.__getitem__, reverse=True)
+    print(results)
     final_result = []
     #print(collection+" "+query)
-    for c in range (min (len (result), 10)):
+    for c in range (min (len (results), 10)):
        #print ("{0:10.8f} {1:5} {2}".format (accum[result[c]], result[c], titles[result[c]]))
-       final_result.append([accum[result[c]], result[c]])
+       final_result.append([accum[results[c]], results[c]])
     if (brf and brf_count == 0):
         total = 0
-        for result in final_result:
+        for result in results:
             if total > brf_from:
                 break
             total += 1
-            document = result[1]
-            accumulation = result[0]
+            document = result
+            print(document)
+            print(str(i))
+            #accumulation = result[0]
             f = open("indexes/tf-idf/testbed"+str(i)+"_document_"+str(document)+"_tf-idf", "r")
             lines = f.readlines()
             f.close()
@@ -119,5 +124,5 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from)
                 query+=" "+word
                 d+=1
                 c+=1
-        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words, brf_from)
+        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words, brf_from, stopwords)
     return final_result

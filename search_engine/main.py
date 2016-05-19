@@ -22,7 +22,7 @@ def run_queries(output_dir, output_file):
 		pass
 	#clean the output file
 	f = open (output_dir+"/"+output_file, 'w')
-	f.write("Testbed,Query,MAP,NDCG,MAPwithBRF,NDCGwithBRF\n")
+	f.write("Testbed,Query,MAP,NDCG,MAPwithBRF,NDCGwithBRF,MAPwithSW,NDCGwithSW,MAPwithCom,NDCGwithCom\n")
 	f.close()
 	num_words = {}
 	num_sources = {}
@@ -33,10 +33,15 @@ def run_queries(output_dir, output_file):
 			#process the query on the appropriate testset
 			read_query = f.read().replace("\n", "")
 			f.close()
-			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0)
-			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 2, 1)
+			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False)
+			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 20, 10, False)
+			result_stop_words = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, True)
+			result_combined = call_query(read_query, "testbed"+str(i), i, True, 0, 20, 10, True)
+			# calculate the scores
 			base_scores = calculate_scores(result, i, j, output_dir, output_file)
 			brf_scores = calculate_scores(result_brf, i, j, output_dir, output_file)
+			stop_words_scores = calculate_scores(result_stop_words, i, j, output_dir, output_file)
+			combined_scores = calculate_scores(result_combined, i, j, output_dir, output_file)
 			#
 			# for k in range (11):
 			# 	for l in range (11):
@@ -58,7 +63,10 @@ def run_queries(output_dir, output_file):
 			#write MAP and NDCG to file
 			if (base_scores and brf_scores):
 				f = open (output_dir+"/"+output_file, 'a')
-				f.write(str(i)+","+str(j)+","+str(base_scores[0])+","+str(base_scores[1])+","+str(brf_scores[0])+","+str(brf_scores[1])+"\n")
+				f.write(str(i)+","+str(j)+","+str(base_scores[0])+","+str(base_scores[1])+","+
+				str(brf_scores[0])+","+str(brf_scores[1])+","+
+				str(stop_words_scores[0])+","+str(stop_words_scores[1])+","+
+				str(combined_scores[0])+","+str(combined_scores[1])+"\n")
 				f.close()
 	print(num_words)
 	print(num_sources)
@@ -90,15 +98,16 @@ def calculate_scores(result, i, j, output_dir, output_file):
 		relevant = 0 # number of relevant articles
 		for c in range (len(result)):
 			if (int(relevance[int(result[c][1])-1].strip()) != 0): # if article is relevant
-				relevant += 1
-				precision.append(relevant/(c+1))
+				relevant += int(relevance[int(result[c][1])-1].strip())
+				precision.append(relevant/((c+1)*2))
 			else: # article not relevant
-				precision.append(relevant/(c+1))
+				precision.append(relevant/((c+1)*2))
+			print(relevant)
 		#cacluate mean of the average precisions
 		total = 0
 		for c in range(len(precision)):
 			total+= precision[c]
-		meanap = total/len(precision)
+		meanap = total/(len(precision)*2)
 
 		# Calculate NDCG
 		#calculate DCG
