@@ -24,7 +24,7 @@ def run_queries(output_dir, output_file):
 		pass
 	#clean the output file
 	f = open (output_dir+"/"+output_file, 'w')
-	f.write("Testbed,Query,MAP,NDCG,MAPwithBRF,NDCGwithBRF,MAPwithSW,NDCGwithSW,MAPwithThes,NDCGwithThes,MAPwithThesAndStop,NDCGwithThesAndStop,MAPwithCom,NDCGwithCom\n")
+	f.write("Testbed,Query,MAP,NDCG,MAPwithBRF,NDCGwithBRF,MAPwithSW,NDCGwithSW,MAPwithThes,NDCGwithThes,MAPwithBRFAndStop,NDCGwithBRFAndStop,MAPwithCom,NDCGwithCom\n")
 	f.close()
 
 	for i in range(1, 17): #loop over testbeds
@@ -35,17 +35,17 @@ def run_queries(output_dir, output_file):
 			read_query = f.read().replace("\n", "")
 			f.close()
 			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False, False)
-			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, False, False) #12, 18
+			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, False, False)
 			result_stop_words = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, True, False)
 			result_thesauri = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False, True)
-			result_stop_and_thesauri = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, True, True)
+			result_stop_and_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, True, False)
 			result_combined = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, True, True)
 			# calculate the scores
 			base_scores = calculate_scores(result, i, j)
 			brf_scores = calculate_scores(result_brf, i, j)
 			stop_words_scores = calculate_scores(result_stop_words, i, j)
 			thesauri_scores = calculate_scores(result_thesauri, i, j)
-			stop_and_thesauri_scores = calculate_scores(result_stop_and_thesauri, i, j)
+			stop_and_brf_scores = calculate_scores(result_stop_and_brf, i, j)
 			combined_scores = calculate_scores(result_combined, i, j)
 			#write MAP and NDCG to file
 			if (base_scores and brf_scores):
@@ -54,7 +54,7 @@ def run_queries(output_dir, output_file):
 				str(brf_scores[0])+","+str(brf_scores[1])+","+
 				str(stop_words_scores[0])+","+str(stop_words_scores[1])+","+
 				str(thesauri_scores[0])+","+str(thesauri_scores[1])+","+
-				str(stop_and_thesauri_scores[0])+","+str(stop_and_thesauri_scores[1])+","+
+				str(stop_and_brf_scores[0])+","+str(stop_and_brf_scores[1])+","+
 				str(combined_scores[0])+","+str(combined_scores[1])+"\n")
 				f.close()
 
