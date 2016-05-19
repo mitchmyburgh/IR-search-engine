@@ -44,7 +44,7 @@ def run_queries(output_dir, output_file):
 			base_scores = calculate_scores(result, i, j)
 			brf_scores = calculate_scores(result_brf, i, j)
 			stop_words_scores = calculate_scores(result_stop_words, i, j)
-			thesauri_scores = calculate_scores(result_stop_words, i, j)
+			thesauri_scores = calculate_scores(result_thesauri, i, j)
 			stop_and_thesauri_scores = calculate_scores(result_stop_and_thesauri, i, j)
 			combined_scores = calculate_scores(result_combined, i, j)
 			#write MAP and NDCG to file
