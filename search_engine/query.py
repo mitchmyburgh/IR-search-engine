@@ -11,6 +11,8 @@ import porter
 
 import parameters
 
+from thesaurus import getSynonyms
+
 stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours',
 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers',
 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves',
@@ -26,13 +28,23 @@ stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you'
 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
 'w','x','y','z',]
 
-def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from, stopwords):
+def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from, stopwords, thesaurus):
     # clean query
     if parameters.case_folding:
        query = query.lower ()
     query = re.sub (r'[^ a-zA-Z0-9]', ' ', query)
     query = re.sub (r'\s+', ' ', query)
     query_words = query.split (' ')
+
+    if (thesaurus):
+        query_with_thesaurus = []
+        for word in query_words:
+            query_with_thesaurus.append(word)
+            syns = getSynonyms(word)
+            for syn in syns:
+                query_with_thesaurus.append(syn)
+        query_words = query_with_thesaurus
+    print(query_words)
 
     # create accumulators and other data structures
     accum = {}
@@ -124,5 +136,5 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from,
                 query+=" "+word
                 d+=1
                 c+=1
-        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words, brf_from, stopwords)
+        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words, brf_from, stopwords, thesaurus)
     return final_result
