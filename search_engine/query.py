@@ -44,7 +44,7 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from,
             for syn in syns:
                 query_with_thesaurus.append(syn)
         query_words = query_with_thesaurus
-    print(query_words)
+
 
     # create accumulators and other data structures
     accum = {}
@@ -105,7 +105,6 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from,
 
     # print top ten results
     results = sorted (accum, key=accum.__getitem__, reverse=True)
-    print(results)
     final_result = []
     #print(collection+" "+query)
     for c in range (min (len (results), 10)):
@@ -118,8 +117,6 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from,
                 break
             total += 1
             document = result
-            print(document)
-            print(str(i))
             #accumulation = result[0]
             f = open("indexes/tf-idf/testbed"+str(i)+"_document_"+str(document)+"_tf-idf", "r")
             lines = f.readlines()

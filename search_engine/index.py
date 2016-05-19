@@ -10,7 +10,9 @@ import math
 import porter
 import parameters
 
+# index folder for testbed i
 def index(folder_name, i):
+	print('Indexing Testbed '+str(i))
 	# Make index directories
 	try:
 		os.makedirs("indexes/testbed"+str(i)+"_index")
@@ -70,7 +72,7 @@ def index(folder_name, i):
 	# document length/title file
 	g.close ()
 
-	tf_idf_arr = {}
+	tf_idf_arr = {} # dict of tf-idf scores
 
 	for key in index:
 		if (len(key) >30):
@@ -80,8 +82,6 @@ def index(folder_name, i):
 			if  (not (entry in tf_idf_arr)):
 				tf_idf_arr[entry] = []
 			# additionally calculate the tf-idf for use in Blind relevance feedback
-			#tf_idf = open ("indexes/tf-idf/"+ "testbed"+str(i) + "_document_"+str(entry)+"_tf-idf", "a")
-			print(key+" , "+entry)
 			print (entry, index[key][entry], sep=':', file=f)
 			tf = float(index[key][entry])
 			idf = 1
@@ -91,8 +91,6 @@ def index(folder_name, i):
 				if parameters.log_idf:
 					idf = math.log (1 + N/df)
 			tf_idf_arr[entry].append([tf*idf, key])
-			#print (tf*idf, key, sep=':', file=tf_idf) # format tf-idf: word
-			#tf_idf.close()
 		f.close ()
 	# write N
 	f = open ("indexes/testbed"+str(i)+"_index_N", "w")
@@ -100,13 +98,11 @@ def index(folder_name, i):
 	f.close ()
 	# sort on tf_idf
 	for j in tf_idf_arr:
-		print("working")
-		#tf_idf = open ("indexes/tf-idf/"+ "testbed"+str(i) + "_document_"+str(j)+"_tf-idf", "r")
-		#lines = tf_idf.readlines()
-		#tf_idf.close()
 		tf_idf_arr[j].sort(key=lambda k: (k[0], k[1]), reverse=True)
+		# Write tf-idf to file
 		tf_idf = open ("indexes/tf-idf/"+ "testbed"+str(i) + "_document_"+str(j)+"_tf-idf", "w")
 		for line in tf_idf_arr[j]:
 			print(j)
 			print (line[0], line[1], sep=':', file=tf_idf)
 		tf_idf.close()
+	print('Indexing Testbed '+str(i)+' Done')
