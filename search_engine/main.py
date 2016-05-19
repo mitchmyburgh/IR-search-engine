@@ -64,14 +64,18 @@ def check_params():
 	best_scores = {}
 	for i in range(1, 17): #loop over testbeds
 		for j in range(1, 6): #loop over queries
-			for k in range (31):#31
+			for k in range (10):#31
 				if not (k in best_scores):
 					best_scores[k] = {}
-				for l in range (21):#21
+				for l in range (10):#21
 					if not (l in best_scores[k]):
 						best_scores[k][l] = []
-					result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, k, l, False, False)
-					brf_scores = calculate_scores(result_brf, i, j, output_dir, output_file)
+					f = open ("testbeds/testbed"+str(i)+"/query."+str(j))
+					#process the query on the appropriate testset
+					read_query = f.read().replace("\n", "")
+					f.close()
+					result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, k, l, False, False, True)
+					brf_scores = calculate_scores(result_brf, i, j)
 					if (brf_scores):
 						best_scores[k][l].append(brf_scores)
 	calculate_best_average(best_scores)
@@ -86,8 +90,8 @@ def calculate_best_average(best_scores):
 	best_average_NDCG_for_map = 0
 	k_NDCG = 0
 	l_NDCG = 0
-	for k in range (31):#number of words
-		for l in range (21):#number of documents
+	for k in range (10):#number of words
+		for l in range (10):#number of documents
 			total_map = 0
 			total_NDCG = 0
 			#calculate avaerage
