@@ -28,7 +28,7 @@ stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you'
 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
 'w','x','y','z',]
 
-def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from, stopwords, thesaurus):
+def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from, stopwords, thesaurus, normalization):
     # clean query
     if parameters.case_folding:
        query = query.lower ()
@@ -99,7 +99,7 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from,
           length = eval (mo.group (2))
           title = mo.group (3)
           if document_id in accum:
-             if parameters.normalization:
+             if normalization:
                 accum[document_id] = accum[document_id] / length
              titles[document_id] = title
 
@@ -133,5 +133,5 @@ def call_query(query, collection, i, brf, brf_count, brf_number_words, brf_from,
                 query+=" "+word
                 d+=1
                 c+=1
-        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words, brf_from, stopwords, thesaurus)
+        final_result = call_query(query, collection, i, brf, brf_count+1, brf_number_words, brf_from, stopwords, thesaurus, normalization)
     return final_result

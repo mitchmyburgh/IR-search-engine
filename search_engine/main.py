@@ -34,12 +34,12 @@ def run_queries(output_dir, output_file):
 			#process the query on the appropriate testset
 			read_query = f.read().replace("\n", "")
 			f.close()
-			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False, False)
-			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, False, False)
-			result_stop_words = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, True, False)
-			result_thesauri = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False, True)
-			result_stop_and_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, True, False)
-			result_combined = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, True, True)
+			result = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False, False, True)
+			result_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, False, False, False)
+			result_stop_words = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, True, False, False)
+			result_thesauri = call_query(read_query, "testbed"+str(i), i, False, 0, 0, 0, False, True, False)
+			result_stop_and_brf = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, True, False, False)
+			result_combined = call_query(read_query, "testbed"+str(i), i, True, 0, 1, 1, True, True, False)
 			# calculate the scores
 			base_scores = calculate_scores(result, i, j)
 			brf_scores = calculate_scores(result_brf, i, j)
